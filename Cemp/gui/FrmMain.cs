@@ -64,8 +64,8 @@ namespace Cemp
             tv1.Nodes["nInitConfig"].Nodes.Add("nPartTypeView", "สร้างรายการ Parameter");
             tv1.Nodes["nInitConfig"].Nodes.Add("nPartTypeSubView", "สร้าง ลูกค้า");
             tv1.Nodes["nInitConfig"].Nodes.Add("nStaffView", "สร้าง พนักงาน");
-            
-            //    tv1.Nodes["nInitConfig"].Nodes.Add("nStaffView", "สร้างคนป้อนข้อมูล");
+
+            tv1.Nodes["nInitConfig"].Nodes.Add("nCompany", "ข้อมูลบริษัท");
             //    tv1.Nodes["nInitConfig"].Nodes.Add("nRateView", "สร้างอัตรา");
             tv1.Nodes["nInitConfig"].Nodes.Add("nPassword", "เปลี่ยนรหัสผ่าน");
             //    tv1.Nodes["nInitConfig"].Nodes.Add("nThooDefault", "กำหนดเจ้ามือ (เจ้าของโปรแกรม)");
@@ -119,11 +119,11 @@ namespace Cemp
                 FrmPassword frm = new FrmPassword(sf.Id);
                 showFrame(frm);
             }
-            //else if (e.Node.Name.ToString() == "nInputView")
-            //{
-            //    FrmInputView frm = new FrmInputView(sf.Code);
-            //    showFrame(frm);
-            //}
+            else if (e.Node.Name.ToString() == "nCompany")
+            {
+                FrmCompany frm = new FrmCompany(sf.Id, cc);
+                showFrame(frm);
+            }
             //else if (e.Node.Name.ToString() == "nInputAdd")
             //{
             //    FrmInputAdd frm = new FrmInputAdd(sf.Code, lc);

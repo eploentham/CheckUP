@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cemp.object1
 {
-    class Province:Persistent
+    public class Province:Persistent
     {
         public String provinceId = "";
         public String provinceCode = "";

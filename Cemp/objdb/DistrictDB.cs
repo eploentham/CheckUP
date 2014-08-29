@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Cemp.objdb
 {
-    class DistrictDB
+    public class DistrictDB
     {
         private ConnectDB conn;
         public District dist;

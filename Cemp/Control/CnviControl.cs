@@ -23,6 +23,7 @@ namespace Cemp.Control
         public ConnectDB conn;//
 
         public StaffDB sfdb;
+        public DistrictDB didb;
 
         public Staff sf;
 
@@ -45,6 +46,7 @@ namespace Cemp.Control
             conn = new ConnectDB(initC);
 
             sfdb = new StaffDB(conn);
+            didb = new DistrictDB(conn);
 
         }
         public String getTextCboItem(ComboBox c, String valueId)
