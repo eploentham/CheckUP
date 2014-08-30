@@ -46,3 +46,7 @@ C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\lottory.gui.FrmStaffAdd.resources
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\lottory.gui.FrmStaffView.resources
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.Properties.Resources.resources
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.csproj.GenerateResource.Cache
+C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmCustAdd.resources
+C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmCustView.resources
+C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmItemAdd.resources
+C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmItemView.resources

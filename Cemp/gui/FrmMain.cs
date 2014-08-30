@@ -121,7 +121,7 @@ namespace Cemp
             }
             else if (e.Node.Name.ToString() == "nCompany")
             {
-                FrmCompany frm = new FrmCompany(sf.Id, cc);
+                FrmCompany frm = new FrmCompany(cc);
                 showFrame(frm);
             }
             //else if (e.Node.Name.ToString() == "nInputAdd")

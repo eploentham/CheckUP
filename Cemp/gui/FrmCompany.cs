@@ -18,6 +18,7 @@ namespace Cemp.gui
     public partial class FrmCompany : Form
     {
         CnviControl cc;
+        Company cp;
         //Staff sf;
         public FrmCompany(CnviControl c)
         {
@@ -28,7 +29,7 @@ namespace Cemp.gui
         {
             cc = c;
             //sf = cc.sfdb.selectByPk(sfId);
-
+            cp = new Company();
             setControl();
         }
         private void setResize()
@@ -41,6 +42,41 @@ namespace Cemp.gui
         }
         private void setControl()
         {
+            cp = cc.cpdb.selectByPk();
+            txtCode.Text = cp.Id;
+            txtId.Text = cp.Id;
+            txtNameE.Text = cp.NameE;
+            txtNameT.Text = cp.NameT;
+            txtAddr.Text = cp.AddressT;
+            txtAddressT.Text = cp.AddressT;
+            cboDistrict.SelectedItem = cp.districtId;
+            cboAmphur.SelectedItem = cp.amphurId;
+            cboProvince.SelectedItem = cp.provinceId;
+            txtZipcode.Text = cp.Zipcode;
+            txtAddressE.Text = cp.AddressE;
+            txtTele.Text = cp.Tele;
+            TxtFax.Text = cp.Fax;
+            txtEmail.Text = cp.Email;
+            txtTaxID.Text = cp.TaxId;
+            txtVat.Text = cp.vat;
+        }
+        private void getCompany()
+        {
+            cp.Id = txtId.Text;
+            cp.AddressE = txtAddressE.Text;
+            cp.AddressT = txtAddressT.Text;
+            cp.amphurId = cboAmphur.SelectedItem.ToString();
+            cp.districtId = cboDistrict.SelectedItem.ToString();
+            cp.Email = txtEmail.Text;
+            cp.Fax = TxtFax.Text;
+            cp.logo = "";
+            cp.NameE = txtNameE.Text;
+            cp.NameT = txtNameT.Text;
+            cp.provinceId = cboProvince.SelectedItem.ToString();
+            cp.TaxId = txtTaxID.Text;
+            cp.Tele = txtTele.Text;
+            cp.vat = txtVat.Text;
+            cp.Zipcode = txtZipcode.Text;
 
         }
 
@@ -201,6 +237,28 @@ namespace Cemp.gui
                 }
             }
             
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (txtNameE.Text.Equals(""))
+            {
+                MessageBox.Show("ไม่ได้ป้อนชื่อ", "ป้อนข้อมูลไม่ครบ");
+                return;
+            }
+            if (txtNameT.Text.Equals(""))
+            {
+                MessageBox.Show("ไม่ได้ป้อนรหัส", "ป้อนข้อมูลไม่ครบ");
+                return;
+            }
+
+            getCompany();
+            if (cc.cpdb.insertCompany(cp).Length >= 1)
+            {
+                MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
+                this.Dispose();
+                //this.Hide();
+            }
         }
     }
 }

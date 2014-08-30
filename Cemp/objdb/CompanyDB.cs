@@ -10,7 +10,7 @@ namespace Cemp.objdb
 {
     public class CompanyDB
     {
-        Company comp;
+        Company cp;
         ConnectDB conn;
         public CompanyDB(ConnectDB c)
         {
@@ -19,46 +19,46 @@ namespace Cemp.objdb
         }
         private void initConfig()
         {
-            comp = new Company();
-            comp.AddressE = "comp_address_e";
-            comp.AddressT = "comp_address_t";
-            comp.amphurId = "amphur_id";
+            cp = new Company();
+            cp.AddressE = "comp_address_e";
+            cp.AddressT = "comp_address_t";
+            cp.amphurId = "amphur_id";
             //comp.Code = "";
-            comp.districtId = "district_id";
-            comp.Email = "email";
-            comp.Fax = "fax";
-            comp.Id = "comp_id";
-            comp.NameE = "comp_name_e";
-            comp.NameT = "comp_name_t";
-            comp.provinceId = "province_id";
-            comp.TaxId = "tax_id";
-            comp.Tele = "tele";
-            comp.vat = "vat";
-            comp.Zipcode = "zipcode";
-            comp.website = "website";
-            comp.logo = "logo";
+            cp.districtId = "district_id";
+            cp.Email = "email";
+            cp.Fax = "fax";
+            cp.Id = "comp_id";
+            cp.NameE = "comp_name_e";
+            cp.NameT = "comp_name_t";
+            cp.provinceId = "province_id";
+            cp.TaxId = "tax_id";
+            cp.Tele = "tele";
+            cp.vat = "vat";
+            cp.Zipcode = "zipcode";
+            cp.website = "website";
+            cp.logo = "logo";
 
-            comp.pkField = "comp_id";
-            comp.table = "b_company";
+            cp.pkField = "comp_id";
+            cp.table = "b_company";
         }
         private Company setData(Company item, DataTable dt)
         {
-            item.AddressE = dt.Rows[0][comp.AddressE].ToString();
-            item.AddressT = dt.Rows[0][comp.AddressT].ToString();
-            item.amphurId = dt.Rows[0][comp.amphurId].ToString();
-            item.districtId = dt.Rows[0][comp.districtId].ToString();
-            item.Email = dt.Rows[0][comp.Email].ToString();
-            item.Fax = dt.Rows[0][comp.Fax].ToString();
-            item.Id = dt.Rows[0][comp.Id].ToString();
-            item.NameE = dt.Rows[0][comp.NameE].ToString();
-            item.NameT = dt.Rows[0][comp.NameT].ToString();
-            item.provinceId = dt.Rows[0][comp.provinceId].ToString();
-            item.TaxId = dt.Rows[0][comp.TaxId].ToString();
-            item.Tele = dt.Rows[0][comp.Tele].ToString();
-            item.vat = dt.Rows[0][comp.vat].ToString();
-            item.Zipcode = dt.Rows[0][comp.Zipcode].ToString();
-            item.website = dt.Rows[0][comp.website].ToString();
-            item.logo = dt.Rows[0][comp.logo].ToString();
+            item.AddressE = dt.Rows[0][cp.AddressE].ToString();
+            item.AddressT = dt.Rows[0][cp.AddressT].ToString();
+            item.amphurId = dt.Rows[0][cp.amphurId].ToString();
+            item.districtId = dt.Rows[0][cp.districtId].ToString();
+            item.Email = dt.Rows[0][cp.Email].ToString();
+            item.Fax = dt.Rows[0][cp.Fax].ToString();
+            item.Id = dt.Rows[0][cp.Id].ToString();
+            item.NameE = dt.Rows[0][cp.NameE].ToString();
+            item.NameT = dt.Rows[0][cp.NameT].ToString();
+            item.provinceId = dt.Rows[0][cp.provinceId].ToString();
+            item.TaxId = dt.Rows[0][cp.TaxId].ToString();
+            item.Tele = dt.Rows[0][cp.Tele].ToString();
+            item.vat = dt.Rows[0][cp.vat].ToString();
+            item.Zipcode = dt.Rows[0][cp.Zipcode].ToString();
+            item.website = dt.Rows[0][cp.website].ToString();
+            item.logo = dt.Rows[0][cp.logo].ToString();
             //item.Priority = dt.Rows[0][comp.Priority].ToString();
 
             return item;
@@ -67,7 +67,7 @@ namespace Cemp.objdb
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + comp.table + " ";
+            sql = "Select * From " + cp.table + " ";
             dt = conn.selectData(sql);
 
             return dt;
@@ -77,7 +77,7 @@ namespace Cemp.objdb
             Company item = new Company();
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + comp.table + " ";
+            sql = "Select * From " + cp.table + " ";
             dt = conn.selectData(sql);
             if (dt.Rows.Count > 0)
             {
@@ -96,12 +96,12 @@ namespace Cemp.objdb
             p.AddressT = p.AddressT.Replace("''", "'");
             p.NameE = p.NameE.Replace("''", "'");
             p.NameT = p.NameT.Replace("''", "'");
-            sql = "Insert Into " + comp.table + " (" + comp.pkField + "," + comp.AddressE + "," + comp.AddressT + "," +
-                comp.amphurId + "," + comp.districtId + "," + comp.Email + "," +
-                comp.Fax + "," + comp.NameE + "," + comp.NameT + "," +
-                comp.provinceId + "," + comp.TaxId + "," + comp.Tele + "," +
-                comp.vat + "," + comp.Zipcode + "," + comp.website + "," +
-                comp.logo + ") " +
+            sql = "Insert Into " + cp.table + " (" + cp.pkField + "," + cp.AddressE + "," + cp.AddressT + "," +
+                cp.amphurId + "," + cp.districtId + "," + cp.Email + "," +
+                cp.Fax + "," + cp.NameE + "," + cp.NameT + "," +
+                cp.provinceId + "," + cp.TaxId + "," + cp.Tele + "," +
+                cp.vat + "," + cp.Zipcode + "," + cp.website + "," +
+                cp.logo + ") " +
                 "Values('" + p.Id + "','" + p.AddressE + "','" + p.AddressT + "','" +
                 p.amphurId + "','" + p.districtId + "','" + p.Email + "','" +
                 p.Fax + "','" + p.NameE + "','" + p.NameT + "','" +
@@ -128,21 +128,21 @@ namespace Cemp.objdb
 
             p.NameT = p.NameT.Replace("''", "'");
 
-            sql = "Update " + comp.table + " Set " + comp.AddressE + "='" + p.AddressE + "', " +
-                comp.AddressT + "='" + p.AddressT + "', " +
-                comp.amphurId + "='" + p.amphurId + "', " +
-                comp.districtId + "='" + p.districtId + "', " +
-                comp.Email + "='" + p.Email + "', " +
-                comp.Fax + "='" + p.Fax + "', " +
-                comp.NameE + "='" + p.NameE + "', " +
-                comp.NameT + "='" + p.NameT + "', " +
-                comp.provinceId + "='" + p.provinceId + "', " +
-                comp.TaxId + "='" + p.TaxId + "', " +
-                comp.Tele + "='" + p.Tele + "', " +
-                comp.vat + "='" + p.vat + "', " +
-                comp.Zipcode + "='" + p.Zipcode + "', " +
-                comp.website + "='" + p.website + "' " +
-                "Where " + comp.pkField + "='" + p.Id + "'";
+            sql = "Update " + cp.table + " Set " + cp.AddressE + "='" + p.AddressE + "', " +
+                cp.AddressT + "='" + p.AddressT + "', " +
+                cp.amphurId + "='" + p.amphurId + "', " +
+                cp.districtId + "='" + p.districtId + "', " +
+                cp.Email + "='" + p.Email + "', " +
+                cp.Fax + "='" + p.Fax + "', " +
+                cp.NameE + "='" + p.NameE + "', " +
+                cp.NameT + "='" + p.NameT + "', " +
+                cp.provinceId + "='" + p.provinceId + "', " +
+                cp.TaxId + "='" + p.TaxId + "', " +
+                cp.Tele + "='" + p.Tele + "', " +
+                cp.vat + "='" + p.vat + "', " +
+                cp.Zipcode + "='" + p.Zipcode + "', " +
+                cp.website + "='" + p.website + "' " +
+                "Where " + cp.pkField + "='" + p.Id + "'";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

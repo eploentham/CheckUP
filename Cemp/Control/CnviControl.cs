@@ -24,6 +24,7 @@ namespace Cemp.Control
 
         public StaffDB sfdb;
         public DistrictDB didb;
+        public CompanyDB cpdb;
 
         public Staff sf;
 
@@ -47,6 +48,7 @@ namespace Cemp.Control
 
             sfdb = new StaffDB(conn);
             didb = new DistrictDB(conn);
+            cpdb = new CompanyDB(conn);
 
         }
         public String getTextCboItem(ComboBox c, String valueId)
