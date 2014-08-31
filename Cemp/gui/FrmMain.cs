@@ -14,7 +14,7 @@ namespace Cemp
 {
     public partial class FrmMain : Form
     {
-        CnviControl dc;
+        CnviControl cc;
         Form frm;
         Staff sf;
         public FrmMain(Form f, String sfCode, CnviControl l)
@@ -25,7 +25,7 @@ namespace Cemp
         private void initConfig(Form f, String sfCode, CnviControl l)
         {
             //lc = new LottoryControl();
-            dc = l;
+            cc = l;
             frm = f;
             //sf = dc.sfdb.selectByCode(sfCode);
             tvMain();
@@ -42,9 +42,10 @@ namespace Cemp
 
             //if (sf.Priority.Equals("1") || sf.Priority.Equals("3"))
             //{
-            tv1.Nodes.Add("nPartView", "ข้อมูลอะไหล่ต่างๆ");
-            //    tv1.Nodes.Add("nInputImage", "ป้อนข้อมูลจากรูป");
-            //    tv1.Nodes.Add("nInputView", "ดูข้อมูลเก่า");
+            tv1.Nodes.Add("nQuotationView", "พิมพ์ Quotation");
+            tv1.Nodes.Add("nMOUView", "พิมพ์ ใบMOU และใบรับตัวอย่าง");
+            tv1.Nodes.Add("nInputResult", "ป้อนผลตัวอย่าง");
+            tv1.Nodes.Add("nBillNoteView", "พิมพ์ Bill Note");
             //    tv1.Nodes.Add("nRewardAdd", "ป้อนรางวัล");
             //}
             //if (sf.Priority.Equals("2") || sf.Priority.Equals("3"))
@@ -57,13 +58,13 @@ namespace Cemp
             //if (sf.Priority.Equals("3"))
             //{
             tv1.Nodes.Add("nInitConfig", "กำหนดค่าโปรแกรม");
-            tv1.Nodes["nInitConfig"].Nodes.Add("nPartTypeView", "สร้างประเภทอะไหล่");
-            tv1.Nodes["nInitConfig"].Nodes.Add("nPartTypeSubView", "สร้างประเภทย่อยอะไหล่");
-            tv1.Nodes["nInitConfig"].Nodes.Add("nPartCateView", "สร้างชนิดอะไหล่");
+            tv1.Nodes["nInitConfig"].Nodes.Add("nPartTypeView", "สร้างรายการ Parameter");
+            tv1.Nodes["nInitConfig"].Nodes.Add("nPartTypeSubView", "สร้าง ลูกค้า");
+            tv1.Nodes["nInitConfig"].Nodes.Add("nStaffView", "สร้าง พนักงาน");
             
             //    tv1.Nodes["nInitConfig"].Nodes.Add("nStaffView", "สร้างคนป้อนข้อมูล");
             //    tv1.Nodes["nInitConfig"].Nodes.Add("nRateView", "สร้างอัตรา");
-            //    tv1.Nodes["nInitConfig"].Nodes.Add("nPassword", "เปลี่ยนรหัสผ่าน");
+            tv1.Nodes["nInitConfig"].Nodes.Add("nPassword", "เปลี่ยนรหัสผ่าน");
             //    tv1.Nodes["nInitConfig"].Nodes.Add("nThooDefault", "กำหนดเจ้ามือ (เจ้าของโปรแกรม)");
             //    tv1.Nodes["nInitConfig"].Nodes.Add("nInitConfig1", "กำหนดค่าโปรแกรม");
             //}

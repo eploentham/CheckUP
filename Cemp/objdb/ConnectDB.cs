@@ -42,31 +42,49 @@ namespace Cemp.objdb
         public DataTable toReturn = new DataTable();
         public DataTable dt = new DataTable();
         //OleDbCommand cmdToExecute = new OleDbCommand();
-        public ConnectDB(InitConfig  i)
+        public ConnectDB(InitConfig i)
         {
             initc = i;
 
-            if (initc.connectServer.ToLower().Equals("yes"))
+            if (initc.StatusServer.ToLower().Equals("yes"))
             {
-                cMysql = new MySql.Data.MySqlClient.MySqlConnection();
-                cMysql.ConnectionString = "server="+initc.ServerIP+";uid="+initc.User+";pwd="+initc.Password+";database=test;";
+                if (initc.connectDatabaseServer.ToLower().Equals("yes"))
+                {
+                    cMysql = new MySql.Data.MySqlClient.MySqlConnection();
+                    cMysql.ConnectionString = "server=" + initc.ServerIP + ";uid=" + initc.User + ";pwd=" + initc.Password + ";database=test;";
+                }
+                else
+                {
+                    if (Environment.Is64BitOperatingSystem)
+                    {
+                        _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
+                        _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\lottory.mdb;Persist Security Info=False";
+                    }
+                    else
+                    {
+                        _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
+                        _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\lottory.mdb;Persist Security Info=False";
+                    }
+                }
             }
             else
             {
                 if (Environment.Is64BitOperatingSystem)
                 {
-                    _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
-                    _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\Cemp.mdb;Persist Security Info=False";
+                    //_mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
+                    //_mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\lottory.mdb;Persist Security Info=False";
+                    _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + "\\" + initc.pathShareData + "\\Database\\lottory.mdb;Persist Security Info=False";
                 }
                 else
                 {
-                    _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
-                    _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\Cemp.mdb;Persist Security Info=False";
+                    //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
+                    //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\lottory.mdb;Persist Security Info=False";
+                    _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + "\\" + initc.pathShareData + "\\Database\\lottory.mdb;Persist Security Info=False";
                 }
             }
             //_mainConnection = new OleDbConnection();
             //_mainConnection.ConnectionString = GetConfig("Main.ConnectionString");
-            
+
             //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
             _isDisposed = false;
         }
@@ -77,14 +95,14 @@ namespace Cemp.objdb
                 hostname = "mainhis";
                 connMainHIS = new SqlConnection();
                 //connMainHIS.ConnectionString = GetConfig(hostName);
-                connMainHIS.ConnectionString = "Server="+hostNameMainHIS+";Database="+databaseNameMainHIS.ToString()+";Uid="+userNameMainHIS+";Pwd="+passwordMainHIS+";";
+                connMainHIS.ConnectionString = "Server=" + hostNameMainHIS + ";Database=" + databaseNameMainHIS.ToString() + ";Uid=" + userNameMainHIS + ";Pwd=" + passwordMainHIS + ";";
             }
             else if (hostName == "bangna")
             {
                 hostname = "bangna";
                 connMainHIS = new SqlConnection();
                 //connMainHIS.ConnectionString = GetConfig(hostName);
-                connMainHIS.ConnectionString = "Server="+hostNameBua+";Database="+databaseNameBua+";Uid="+userNameBua+";Pwd="+passwordBua+";";
+                connMainHIS.ConnectionString = "Server=" + hostNameBua + ";Database=" + databaseNameBua + ";Uid=" + userNameBua + ";Pwd=" + passwordBua + ";";
             }
             else
             {
@@ -111,28 +129,53 @@ namespace Cemp.objdb
         }
         public DataTable selectData(String sql)
         {
-            //DataTable toReturn = new DataTable();
-            toReturn.Clear();
-            if (initc.connectServer.Equals("yes"))
+            DataTable toReturn = new DataTable();
+            //toReturn.Clear();
+            if (initc.StatusServer.Equals("yes"))
             {
-                MySqlCommand cmd = new MySqlCommand(sql, cMysql);
-                //SqlDataAdapter adapMainhis = new SqlDataAdapter(comMainhis);
-                try
+                if (initc.connectDatabaseServer.Equals("yes"))
                 {
-                    if (cMysql.State != ConnectionState.Open) cMysql.Open();
-                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                    da.Fill(toReturn);
-                    //return toReturn;
+                    MySqlCommand cmd = new MySqlCommand(sql, cMysql);
+                    //SqlDataAdapter adapMainhis = new SqlDataAdapter(comMainhis);
+                    try
+                    {
+                        if (cMysql.State != ConnectionState.Open) cMysql.Open();
+                        MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                        da.Fill(toReturn);
+                        //return toReturn;
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("", ex);
+                    }
+                    finally
+                    {
+                        if (cMysql.State != ConnectionState.Open) cMysql.Close();
+                        cmd.Dispose();
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    throw new Exception("", ex);
+                    OleDbDataAdapter adapter = new OleDbDataAdapter(sql, _mainConnection);
+                    //cmdToExecute.Connection = _mainConnection;
+                    try
+                    {
+                        _mainConnection.Open();
+                        adapter.Fill(toReturn);
+                        //return toReturn;
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("", ex);
+                    }
+                    finally
+                    {
+                        _mainConnection.Close();
+                        //cmdToExecute.Dispose();
+                        adapter.Dispose();
+                    }
                 }
-                finally
-                {
-                    if (cMysql.State != ConnectionState.Open) cMysql.Close();
-                    cmd.Dispose();
-                }
+
             }
             else
             {
@@ -155,37 +198,60 @@ namespace Cemp.objdb
                     adapter.Dispose();
                 }
             }
-            return toReturn;            
+            return toReturn;
         }
         public void selectDataN(String sql)
         {
             //DataTable toReturn = new DataTable();
             dt.Clear();
-            if (initc.connectServer.Equals("yes"))
+            if (initc.StatusServer.Equals("yes"))
             {
-                MySqlCommand cmd = new MySqlCommand(sql, cMysql);
-                //SqlDataAdapter adapMainhis = new SqlDataAdapter(comMainhis);
-                try
+                if (initc.connectDatabaseServer.Equals("yes"))
                 {
-                    if (cMysql.State != ConnectionState.Open) cMysql.Open();
-                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                    da.Fill(dt);
-                    //return toReturn;
+                    MySqlCommand cmd = new MySqlCommand(sql, cMysql);
+                    //SqlDataAdapter adapMainhis = new SqlDataAdapter(comMainhis);
+                    try
+                    {
+                        if (cMysql.State != ConnectionState.Open) cMysql.Open();
+                        MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                        da.Fill(dt);
+                        //return toReturn;
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("", ex);
+                    }
+                    finally
+                    {
+                        if (cMysql.State != ConnectionState.Open) cMysql.Close();
+                        cmd.Dispose();
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    throw new Exception("", ex);
+                    OleDbDataAdapter adapter = new OleDbDataAdapter(sql, _mainConnection);
+                    try
+                    {
+                        _mainConnection.Open();
+                        adapter.Fill(dt);
+                        //return toReturn;
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("", ex);
+                    }
+                    finally
+                    {
+                        _mainConnection.Close();
+                        //cmdToExecute.Dispose();
+                        adapter.Dispose();
+                    }
                 }
-                finally
-                {
-                    if (cMysql.State != ConnectionState.Open) cMysql.Close();
-                    cmd.Dispose();
-                }
+
             }
             else
             {
                 OleDbDataAdapter adapter = new OleDbDataAdapter(sql, _mainConnection);
-                
                 try
                 {
                     _mainConnection.Open();
@@ -208,26 +274,53 @@ namespace Cemp.objdb
         public String ExecuteNonQuery(String sql)
         {
             String toReturn = "";
-            if (initc.connectServer.Equals("yes"))
+            if (initc.StatusServer.Equals("yes"))
             {
-                MySqlCommand cmd = new MySqlCommand(sql, cMysql);
-                try
+                if (initc.connectDatabaseServer.Equals("yes"))
                 {
-                    if (cMysql.State != ConnectionState.Open) cMysql.Open();
-                    _rowsAffected = cmd.ExecuteNonQuery();
-                    toReturn = _rowsAffected.ToString();
+                    MySqlCommand cmd = new MySqlCommand(sql, cMysql);
+                    try
+                    {
+                        if (cMysql.State != ConnectionState.Open) cMysql.Open();
+                        _rowsAffected = cmd.ExecuteNonQuery();
+                        toReturn = _rowsAffected.ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("ExecuteNonQuery::Error occured.", ex);
+                        toReturn = ex.Message;
+                    }
+                    finally
+                    {
+                        //_mainConnection.Close();
+                        if (cMysql.State != ConnectionState.Open) cMysql.Close();
+                        cmd.Dispose();
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    throw new Exception("ExecuteNonQuery::Error occured.", ex);
-                    toReturn = ex.Message;
+                    OleDbCommand cmdToExecute = new OleDbCommand();
+                    cmdToExecute.CommandText = sql;
+                    cmdToExecute.CommandType = CommandType.Text;
+                    cmdToExecute.Connection = _mainConnection;
+                    try
+                    {
+                        _mainConnection.Open();
+                        _rowsAffected = cmdToExecute.ExecuteNonQuery();
+                        toReturn = _rowsAffected.ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("ExecuteNonQuery::Error occured.", ex);
+                        toReturn = ex.Message;
+                    }
+                    finally
+                    {
+                        _mainConnection.Close();
+                        cmdToExecute.Dispose();
+                    }
                 }
-                finally
-                {
-                    //_mainConnection.Close();
-                    if (cMysql.State != ConnectionState.Open) cMysql.Close();
-                    cmd.Dispose();
-                }
+
             }
             else
             {
@@ -257,24 +350,50 @@ namespace Cemp.objdb
         public String ExecuteNonQueryNoClose(String sql)
         {
             String toReturn = "";
-            if (initc.connectServer.Equals("yes"))
+            if (initc.StatusServer.Equals("yes"))
             {
-                MySqlCommand cmd = new MySqlCommand(sql, cMysql);
-                try
+                if (initc.connectDatabaseServer.Equals("yes"))
                 {
-                    if (cMysql.State != ConnectionState.Open) cMysql.Open();
-                    _rowsAffected = cmd.ExecuteNonQuery();
-                    toReturn = _rowsAffected.ToString();
+                    MySqlCommand cmd = new MySqlCommand(sql, cMysql);
+                    try
+                    {
+                        if (cMysql.State != ConnectionState.Open) cMysql.Open();
+                        _rowsAffected = cmd.ExecuteNonQuery();
+                        toReturn = _rowsAffected.ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("ExecuteNonQuery::Error occured.", ex);
+                        toReturn = ex.Message;
+                    }
+                    finally
+                    {
+                        //_mainConnection.Close();
+                        //comMainhis.Dispose();
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    throw new Exception("ExecuteNonQuery::Error occured.", ex);
-                    toReturn = ex.Message;
-                }
-                finally
-                {
-                    //_mainConnection.Close();
-                    //comMainhis.Dispose();
+                    OleDbCommand cmdToExecute = new OleDbCommand();
+                    cmdToExecute.CommandText = sql;
+                    cmdToExecute.CommandType = CommandType.Text;
+                    cmdToExecute.Connection = _mainConnection;
+                    try
+                    {
+                        //_mainConnection.Open();
+                        _rowsAffected = cmdToExecute.ExecuteNonQuery();
+                        toReturn = _rowsAffected.ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("ExecuteNonQuery::Error occured.", ex);
+                        toReturn = ex.Message;
+                    }
+                    finally
+                    {
+                        //_mainConnection.Close();
+                        //cmdToExecute.Dispose();
+                    }
                 }
             }
             else
@@ -305,21 +424,47 @@ namespace Cemp.objdb
         public String OpenConnection()
         {
             String toReturn = "";
-            if (initc.connectServer.Equals("yes"))
-            {                
-                try
+            if (initc.StatusServer.Equals("yes"))
+            {
+                if (initc.connectDatabaseServer.Equals("yes"))
                 {
-                    if (cMysql.State != ConnectionState.Open) cMysql.Open();
+                    try
+                    {
+                        if (cMysql.State != ConnectionState.Open) cMysql.Open();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("ExecuteNonQuery::Error occured.", ex);
+                        toReturn = ex.Message;
+                    }
+                    finally
+                    {
+                        //_mainConnection.Close();
+                        //comMainhis.Dispose();
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    throw new Exception("ExecuteNonQuery::Error occured.", ex);
-                    toReturn = ex.Message;
-                }
-                finally
-                {
-                    //_mainConnection.Close();
-                    //comMainhis.Dispose();
+                    //OleDbCommand cmdToExecute = new OleDbCommand();
+                    ////cmdToExecute.CommandText = sql;
+                    //cmdToExecute.CommandType = CommandType.Text;
+                    //cmdToExecute.Connection = _mainConnection;
+                    try
+                    {
+                        _mainConnection.Open();
+                        //_rowsAffected = cmdToExecute.ExecuteNonQuery();
+                        //toReturn = _rowsAffected.ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("ExecuteNonQuery::Error occured.", ex);
+                        toReturn = ex.Message;
+                    }
+                    finally
+                    {
+                        //_mainConnection.Close();
+                        //cmdToExecute.Dispose();
+                    }
                 }
             }
             else
@@ -349,15 +494,22 @@ namespace Cemp.objdb
         }
         public void CloseConnection()
         {
-            if (initc.connectServer.Equals("yes"))
+            if (initc.connectDatabaseServer.Equals("yes"))
             {
-                cMysql.Close();
+                if (initc.connectDatabaseServer.Equals("yes"))
+                {
+                    cMysql.Close();
+                }
+                else
+                {
+                    connMainHIS.Close();
+                }
+
             }
             else
             {
                 connMainHIS.Close();
             }
-            
         }
     }
 }

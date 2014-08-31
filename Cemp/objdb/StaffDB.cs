@@ -73,6 +73,7 @@ namespace Cemp.objdb
             {
                 item.Code = "pop";
                 item.NameT = "Administrator";
+                item.Password = "pop";
                 item.Priority = "3";
                 return item;
             }

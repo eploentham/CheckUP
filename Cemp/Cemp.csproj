@@ -52,11 +52,47 @@
     <Compile Include="gui\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmLogin.designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="gui\FrmMain.designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmMOUAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmMOUAdd.Designer.cs">
+      <DependentUpon>FrmMOUAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmMOUView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmMOUView.Designer.cs">
+      <DependentUpon>FrmMOUView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmPassword.designer.cs">
+      <DependentUpon>FrmPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmQuotationAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmQuotationAdd.Designer.cs">
+      <DependentUpon>FrmQuotationAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmQuotationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmQuotationView.Designer.cs">
+      <DependentUpon>FrmQuotationView.cs</DependentUpon>
     </Compile>
     <Compile Include="objdb\AmphurDB.cs" />
     <Compile Include="objdb\ConnectDB.cs" />
@@ -80,8 +116,26 @@
     <EmbeddedResource Include="gui\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmMOUAdd.resx">
+      <DependentUpon>FrmMOUAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmMOUView.resx">
+      <DependentUpon>FrmMOUView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmPassword.resx">
+      <DependentUpon>FrmPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmQuotationAdd.resx">
+      <DependentUpon>FrmQuotationAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmQuotationView.resx">
+      <DependentUpon>FrmQuotationView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

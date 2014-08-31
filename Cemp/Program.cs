@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Cemp.gui;
+//using Cemp.;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -15,7 +17,8 @@ namespace Cemp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new Form1());
+            Application.Run(new FrmLogin());
         }
     }
 }

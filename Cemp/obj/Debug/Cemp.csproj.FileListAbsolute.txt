@@ -7,3 +7,7 @@ D:\source\CNVI\Cemp\Cemp\bin\Debug\Cemp.exe
 D:\source\CNVI\Cemp\Cemp\bin\Debug\Cemp.pdb
 D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.exe
 D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.pdb
+D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.gui.FrmLogin.resources
+D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.gui.FrmPassword.resources
+D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.gui.FrmQuotationAdd.resources
+D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.gui.FrmQuotationView.resources
