@@ -8,7 +8,7 @@ namespace Cemp.object1
 {
     public class Staff : Persistent
     {
-        public String Id = "", NameT = "", NameE="", Password = "", Active = "", Remark = "", Code = "", Priority="", Email="", Tele="";
+        public String Id = "", NameT = "", NameE="", Password = "", Active = "", Remark = "", Code = "", Priority="", Email="", Tele="", Fax="";
         public override string ToString()
         {
             return NameT;
