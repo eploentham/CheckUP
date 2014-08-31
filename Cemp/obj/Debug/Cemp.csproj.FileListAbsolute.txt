@@ -1,0 +1,9 @@
+D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.csprojResolveAssemblyReference.cache
+D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.Form1.resources
+D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.Properties.Resources.resources
+D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.csproj.GenerateResource.Cache
+D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.FrmMain.resources
+D:\source\CNVI\Cemp\Cemp\bin\Debug\Cemp.exe
+D:\source\CNVI\Cemp\Cemp\bin\Debug\Cemp.pdb
+D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.exe
+D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.pdb
