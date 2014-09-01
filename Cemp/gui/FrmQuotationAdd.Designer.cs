@@ -29,54 +29,54 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtQuoId = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtQuoId = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.dgvView = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -87,6 +87,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
@@ -96,7 +98,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtQuoId);
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBox2);
@@ -107,65 +108,19 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(511, 230);
+            this.groupBox1.Size = new System.Drawing.Size(511, 167);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "รายละเอียด บริษัท";
             // 
-            // label1
+            // txtQuoId
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label1.Location = new System.Drawing.Point(16, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "บริษัท :";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(89, 30);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(396, 28);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label2.Location = new System.Drawing.Point(16, 67);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "ที่อยู่1 :";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox1.Location = new System.Drawing.Point(89, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(396, 27);
-            this.textBox1.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label3.Location = new System.Drawing.Point(17, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "ที่อยู่2 :";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox2.Location = new System.Drawing.Point(89, 97);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(396, 27);
-            this.textBox2.TabIndex = 5;
+            this.txtQuoId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtQuoId.Location = new System.Drawing.Point(420, 215);
+            this.txtQuoId.Name = "txtQuoId";
+            this.txtQuoId.Size = new System.Drawing.Size(97, 27);
+            this.txtQuoId.TabIndex = 8;
+            this.txtQuoId.Visible = false;
             // 
             // textBox3
             // 
@@ -184,6 +139,61 @@
             this.label4.Size = new System.Drawing.Size(64, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Tax Id :";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox2.Location = new System.Drawing.Point(89, 97);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(396, 27);
+            this.textBox2.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label3.Location = new System.Drawing.Point(17, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "ที่อยู่2 :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox1.Location = new System.Drawing.Point(89, 64);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(396, 27);
+            this.textBox1.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label2.Location = new System.Drawing.Point(16, 67);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "ที่อยู่1 :";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(89, 30);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(396, 28);
+            this.comboBox1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label1.Location = new System.Drawing.Point(16, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "บริษัท :";
             // 
             // groupBox2
             // 
@@ -206,32 +216,77 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "รายละเอียด ลูกค้า";
             // 
-            // txtQuoId
+            // textBox7
             // 
-            this.txtQuoId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtQuoId.Location = new System.Drawing.Point(388, 163);
-            this.txtQuoId.Name = "txtQuoId";
-            this.txtQuoId.Size = new System.Drawing.Size(97, 27);
-            this.txtQuoId.TabIndex = 8;
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox7.Location = new System.Drawing.Point(89, 188);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(396, 27);
+            this.textBox7.TabIndex = 13;
             // 
-            // comboBox2
+            // label10
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(89, 21);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(396, 28);
-            this.comboBox2.TabIndex = 3;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label10.Location = new System.Drawing.Point(16, 191);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(61, 20);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Email :";
             // 
-            // label5
+            // textBox6
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label5.Location = new System.Drawing.Point(16, 24);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 20);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "ลูกค้า :";
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox6.Location = new System.Drawing.Point(89, 155);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(396, 27);
+            this.textBox6.TabIndex = 11;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label9.Location = new System.Drawing.Point(16, 158);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(51, 20);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "Fax  :";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox5.Location = new System.Drawing.Point(89, 122);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(396, 27);
+            this.textBox5.TabIndex = 9;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label8.Location = new System.Drawing.Point(16, 125);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(46, 20);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "โทร :";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox4.Location = new System.Drawing.Point(89, 89);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(396, 27);
+            this.textBox4.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label7.Location = new System.Drawing.Point(16, 92);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 20);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "ที่อยู่1 :";
             // 
             // comboBox3
             // 
@@ -252,77 +307,24 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "เรียน :";
             // 
-            // textBox4
+            // comboBox2
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox4.Location = new System.Drawing.Point(89, 89);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(396, 27);
-            this.textBox4.TabIndex = 7;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(89, 21);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(396, 28);
+            this.comboBox2.TabIndex = 3;
             // 
-            // label7
+            // label5
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label7.Location = new System.Drawing.Point(16, 92);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 20);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "ที่อยู่1 :";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox5.Location = new System.Drawing.Point(89, 122);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(396, 27);
-            this.textBox5.TabIndex = 9;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label8.Location = new System.Drawing.Point(16, 125);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 20);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "โทร :";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox6.Location = new System.Drawing.Point(89, 155);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(396, 27);
-            this.textBox6.TabIndex = 11;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label9.Location = new System.Drawing.Point(16, 158);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(51, 20);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Fax  :";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox7.Location = new System.Drawing.Point(89, 188);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(396, 27);
-            this.textBox7.TabIndex = 13;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label10.Location = new System.Drawing.Point(16, 191);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 20);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Email :";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label5.Location = new System.Drawing.Point(16, 24);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 20);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "ลูกค้า :";
             // 
             // dgvView
             // 
@@ -360,146 +362,15 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "amount";
             // 
-            // groupBox4
+            // label22
             // 
-            this.groupBox4.Controls.Add(this.textBox20);
-            this.groupBox4.Controls.Add(this.label25);
-            this.groupBox4.Controls.Add(this.textBox19);
-            this.groupBox4.Controls.Add(this.label24);
-            this.groupBox4.Controls.Add(this.textBox18);
-            this.groupBox4.Controls.Add(this.label23);
-            this.groupBox4.Location = new System.Drawing.Point(12, 551);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(653, 129);
-            this.groupBox4.TabIndex = 4;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "หมายเหตุ";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox10.Location = new System.Drawing.Point(272, 21);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(187, 27);
-            this.textBox10.TabIndex = 21;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label14.Location = new System.Drawing.Point(186, 24);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(80, 20);
-            this.label14.TabIndex = 20;
-            this.label14.Text = "รวมราคา :";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox11.Location = new System.Drawing.Point(272, 54);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(187, 27);
-            this.textBox11.TabIndex = 23;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label15.Location = new System.Drawing.Point(201, 57);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(65, 20);
-            this.label15.TabIndex = 22;
-            this.label15.Text = "ส่วนลด :";
-            // 
-            // textBox12
-            // 
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox12.Location = new System.Drawing.Point(272, 87);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(187, 27);
-            this.textBox12.TabIndex = 25;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label16.Location = new System.Drawing.Point(120, 90);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(146, 20);
-            this.label16.TabIndex = 24;
-            this.label16.Text = "ราคาหลังหักส่วนลด :";
-            // 
-            // textBox13
-            // 
-            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox13.Location = new System.Drawing.Point(273, 120);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(187, 27);
-            this.textBox13.TabIndex = 27;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label17.Location = new System.Drawing.Point(80, 123);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(186, 20);
-            this.label17.TabIndex = 26;
-            this.label17.Text = "ค่าภาคสนาม(ค่าเดินทาง) :";
-            // 
-            // textBox14
-            // 
-            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox14.Location = new System.Drawing.Point(272, 153);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(187, 27);
-            this.textBox14.TabIndex = 29;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label18.Location = new System.Drawing.Point(186, 156);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(80, 20);
-            this.label18.TabIndex = 28;
-            this.label18.Text = "รวมราคา :";
-            // 
-            // textBox15
-            // 
-            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox15.Location = new System.Drawing.Point(272, 185);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(187, 27);
-            this.textBox15.TabIndex = 31;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label19.Location = new System.Drawing.Point(154, 188);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(112, 20);
-            this.label19.TabIndex = 30;
-            this.label19.Text = "ภาษีมูลค่าเพิ่ม :";
-            // 
-            // textBox16
-            // 
-            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox16.Location = new System.Drawing.Point(272, 218);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(187, 27);
-            this.textBox16.TabIndex = 33;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label20.Location = new System.Drawing.Point(148, 221);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(118, 20);
-            this.label20.TabIndex = 32;
-            this.label20.Text = "รวมราคาทั้งสิ้น :";
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label22.Location = new System.Drawing.Point(104, 188);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(24, 20);
+            this.label22.TabIndex = 36;
+            this.label22.Text = "%";
             // 
             // textBox17
             // 
@@ -519,33 +390,164 @@
             this.label21.TabIndex = 34;
             this.label21.Text = "VAT :";
             // 
-            // label22
+            // textBox16
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label22.Location = new System.Drawing.Point(104, 188);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(24, 20);
-            this.label22.TabIndex = 36;
-            this.label22.Text = "%";
+            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox16.Location = new System.Drawing.Point(272, 218);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(187, 27);
+            this.textBox16.TabIndex = 33;
             // 
-            // textBox18
+            // label20
             // 
-            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox18.Location = new System.Drawing.Point(54, 24);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(593, 27);
-            this.textBox18.TabIndex = 23;
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label20.Location = new System.Drawing.Point(148, 221);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(118, 20);
+            this.label20.TabIndex = 32;
+            this.label20.Text = "รวมราคาทั้งสิ้น :";
             // 
-            // label23
+            // textBox15
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label23.Location = new System.Drawing.Point(20, 27);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(28, 20);
-            this.label23.TabIndex = 22;
-            this.label23.Text = "1 :";
+            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox15.Location = new System.Drawing.Point(272, 185);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(187, 27);
+            this.textBox15.TabIndex = 31;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label19.Location = new System.Drawing.Point(154, 188);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(112, 20);
+            this.label19.TabIndex = 30;
+            this.label19.Text = "ภาษีมูลค่าเพิ่ม :";
+            // 
+            // textBox14
+            // 
+            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox14.Location = new System.Drawing.Point(272, 153);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(187, 27);
+            this.textBox14.TabIndex = 29;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label18.Location = new System.Drawing.Point(186, 156);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(80, 20);
+            this.label18.TabIndex = 28;
+            this.label18.Text = "รวมราคา :";
+            // 
+            // textBox13
+            // 
+            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox13.Location = new System.Drawing.Point(273, 120);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(187, 27);
+            this.textBox13.TabIndex = 27;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label17.Location = new System.Drawing.Point(80, 123);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(186, 20);
+            this.label17.TabIndex = 26;
+            this.label17.Text = "ค่าภาคสนาม(ค่าเดินทาง) :";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox12.Location = new System.Drawing.Point(272, 87);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(187, 27);
+            this.textBox12.TabIndex = 25;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label16.Location = new System.Drawing.Point(120, 90);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(146, 20);
+            this.label16.TabIndex = 24;
+            this.label16.Text = "ราคาหลังหักส่วนลด :";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox11.Location = new System.Drawing.Point(272, 54);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(187, 27);
+            this.textBox11.TabIndex = 23;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label15.Location = new System.Drawing.Point(201, 57);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(65, 20);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "ส่วนลด :";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox10.Location = new System.Drawing.Point(272, 21);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(187, 27);
+            this.textBox10.TabIndex = 21;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label14.Location = new System.Drawing.Point(186, 24);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(80, 20);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "รวมราคา :";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.textBox20);
+            this.groupBox4.Controls.Add(this.label25);
+            this.groupBox4.Controls.Add(this.textBox19);
+            this.groupBox4.Controls.Add(this.label24);
+            this.groupBox4.Controls.Add(this.textBox18);
+            this.groupBox4.Controls.Add(this.label23);
+            this.groupBox4.Location = new System.Drawing.Point(12, 551);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(653, 129);
+            this.groupBox4.TabIndex = 4;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "หมายเหตุ";
+            // 
+            // textBox20
+            // 
+            this.textBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox20.Location = new System.Drawing.Point(54, 90);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(593, 27);
+            this.textBox20.TabIndex = 27;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label25.Location = new System.Drawing.Point(20, 93);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(28, 20);
+            this.label25.TabIndex = 26;
+            this.label25.Text = "3 :";
             // 
             // textBox19
             // 
@@ -565,23 +567,23 @@
             this.label24.TabIndex = 24;
             this.label24.Text = "2 :";
             // 
-            // textBox20
+            // textBox18
             // 
-            this.textBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox20.Location = new System.Drawing.Point(54, 90);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(593, 27);
-            this.textBox20.TabIndex = 27;
+            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox18.Location = new System.Drawing.Point(54, 24);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(593, 27);
+            this.textBox18.TabIndex = 23;
             // 
-            // label25
+            // label23
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label25.Location = new System.Drawing.Point(20, 93);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(28, 20);
-            this.label25.TabIndex = 26;
-            this.label25.Text = "3 :";
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label23.Location = new System.Drawing.Point(20, 27);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(28, 20);
+            this.label23.TabIndex = 22;
+            this.label23.Text = "1 :";
             // 
             // comboBox5
             // 
@@ -675,11 +677,32 @@
             this.label13.TabIndex = 20;
             this.label13.Text = "Email :";
             // 
+            // textBox21
+            // 
+            this.textBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox21.Location = new System.Drawing.Point(101, 193);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(182, 27);
+            this.textBox21.TabIndex = 22;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label28.Location = new System.Drawing.Point(28, 200);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(55, 20);
+            this.label28.TabIndex = 23;
+            this.label28.Text = "เลขที่ :";
+            // 
             // FrmQuotationAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1148, 835);
+            this.Controls.Add(this.label28);
+            this.Controls.Add(this.textBox21);
+            this.Controls.Add(this.txtQuoId);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBox8);
@@ -697,6 +720,8 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmQuotationAdd";
             this.Text = "FrmQuotationAdd";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmQuotationAdd_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -772,5 +797,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.Label label28;
     }
 }

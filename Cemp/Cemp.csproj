@@ -35,6 +35,8 @@
     <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +53,18 @@
     </Compile>
     <Compile Include="gui\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmCompany.Designer.cs">
+      <DependentUpon>FrmCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmInitConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmInitConfig.designer.cs">
+      <DependentUpon>FrmInitConfig.cs</DependentUpon>
     </Compile>
     <Compile Include="gui\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -82,6 +96,18 @@
     <Compile Include="gui\FrmPassword.designer.cs">
       <DependentUpon>FrmPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmQuoConfirmAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmQuoConfirmAdd.Designer.cs">
+      <DependentUpon>FrmQuoConfirmAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmQuoConfirmView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmQuoConfirmView.Designer.cs">
+      <DependentUpon>FrmQuoConfirmView.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmQuotationAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +119,30 @@
     </Compile>
     <Compile Include="gui\FrmQuotationView.Designer.cs">
       <DependentUpon>FrmQuotationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmResultAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmResultAdd.Designer.cs">
+      <DependentUpon>FrmResultAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmResultView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmResultView.Designer.cs">
+      <DependentUpon>FrmResultView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmStaffAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmStaffAdd.designer.cs">
+      <DependentUpon>FrmStaffAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmStaffView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmStaffView.designer.cs">
+      <DependentUpon>FrmStaffView.cs</DependentUpon>
     </Compile>
     <Compile Include="objdb\AmphurDB.cs" />
     <Compile Include="objdb\ConnectDB.cs" />
@@ -116,6 +166,12 @@
     <EmbeddedResource Include="gui\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmCompany.resx">
+      <DependentUpon>FrmCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmInitConfig.resx">
+      <DependentUpon>FrmInitConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,11 +187,29 @@
     <EmbeddedResource Include="gui\FrmPassword.resx">
       <DependentUpon>FrmPassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmQuoConfirmAdd.resx">
+      <DependentUpon>FrmQuoConfirmAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmQuoConfirmView.resx">
+      <DependentUpon>FrmQuoConfirmView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmQuotationAdd.resx">
       <DependentUpon>FrmQuotationAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmQuotationView.resx">
       <DependentUpon>FrmQuotationView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmResultAdd.resx">
+      <DependentUpon>FrmResultAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmResultView.resx">
+      <DependentUpon>FrmResultView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmStaffAdd.resx">
+      <DependentUpon>FrmStaffAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmStaffView.resx">
+      <DependentUpon>FrmStaffView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -158,6 +232,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="report\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

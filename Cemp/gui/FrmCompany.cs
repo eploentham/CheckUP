@@ -1,5 +1,4 @@
-﻿using Cemp.Control;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,17 +9,11 @@ using System.Windows.Forms;
 
 namespace Cemp.gui
 {
-    public partial class FrmMOUAdd : Form
+    public partial class FrmCompany : Form
     {
-        CnviControl cc;
-        public FrmMOUAdd()
+        public FrmCompany()
         {
             InitializeComponent();
-        }
-
-        private void FrmMOUAdd_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

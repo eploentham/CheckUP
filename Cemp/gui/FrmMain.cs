@@ -1,4 +1,5 @@
 ﻿using Cemp.Control;
+using Cemp.gui;
 using Cemp.object1;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,8 @@ namespace Cemp
             //lc = new LottoryControl();
             cc = l;
             frm = f;
-            //sf = dc.sfdb.selectByCode(sfCode);
+            sf = cc.sfdb.selectByCode(sfCode);
+            cc.sf = sf;
             tvMain();
         }
         private void showFrame(Form f)
@@ -43,10 +45,11 @@ namespace Cemp
             //if (sf.Priority.Equals("1") || sf.Priority.Equals("3"))
             //{
             tv1.Nodes.Add("nQuotationView", "พิมพ์ Quotation");
+            tv1.Nodes.Add("nQuoConfirmView", "Confirm Quotation");
             tv1.Nodes.Add("nMOUView", "พิมพ์ ใบMOU และใบรับตัวอย่าง");
             tv1.Nodes.Add("nInputResult", "ป้อนผลตัวอย่าง");
             tv1.Nodes.Add("nBillNoteView", "พิมพ์ Bill Note");
-            //    tv1.Nodes.Add("nRewardAdd", "ป้อนรางวัล");
+            tv1.Nodes.Add("nRewardAdd", "ป้อนรางวัล");
             //}
             //if (sf.Priority.Equals("2") || sf.Priority.Equals("3"))
             //{
@@ -91,31 +94,31 @@ namespace Cemp
 
         private void tv1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            //if (e.Node.Name.ToString() == "nPartView")
-            //{
-            //    FrmPartView frm = new FrmPartView(dc);
-            //    showFrame(frm);
-            //}
-            //else if (e.Node.Name.ToString() == "nPartTypeView")
-            //{
-            //    FrmPartTypeView frm = new FrmPartTypeView(dc);
-            //    showFrame(frm);
-            //}
-            //else if (e.Node.Name.ToString() == "nPartCateView")
-            //{
-            //    FrmPartCateView frm = new FrmPartCateView(dc);
-            //    showFrame(frm);
-            //}
-            //else if (e.Node.Name.ToString() == "nPartTypeSubView")
-            //{
-            //    FrmPartTypeSubView frm = new FrmPartTypeSubView(dc);
-            //    showFrame(frm);
-            //}
-            //else if (e.Node.Name.ToString() == "nPassword")
-            //{
-            //    FrmPassword frm = new FrmPassword(sf.Id);
-            //    showFrame(frm);
-            //}
+            if (e.Node.Name.ToString() == "nQuotationView")
+            {
+                FrmQuotationView frm = new FrmQuotationView(sf.Id,cc);
+                showFrame(frm);
+            }
+            else if (e.Node.Name.ToString() == "nQuoConfirmView")
+            {
+                FrmQuoConfirmView frm = new FrmQuoConfirmView(sf.Id, cc);
+                showFrame(frm);
+            }
+            else if (e.Node.Name.ToString() == "nMOUView")
+            {
+                FrmMOUView frm = new FrmMOUView(sf.Id, cc);
+                showFrame(frm);
+            }
+            else if (e.Node.Name.ToString() == "nInputResult")
+            {
+                FrmResultView frm = new FrmResultView(sf.Id, cc);
+                showFrame(frm);
+            }
+            else if (e.Node.Name.ToString() == "nBillNoteView")
+            {
+                FrmPassword frm = new FrmPassword(sf.Id);
+                showFrame(frm);
+            }
             //else if (e.Node.Name.ToString() == "nInputView")
             //{
             //    FrmInputView frm = new FrmInputView(sf.Code);

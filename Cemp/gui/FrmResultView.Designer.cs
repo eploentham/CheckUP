@@ -1,6 +1,6 @@
 ﻿namespace Cemp.gui
 {
-    partial class FrmMOUView
+    partial class FrmResultView
     {
         /// <summary>
         /// Required designer variable.
@@ -53,17 +53,18 @@
             this.dgvView.Size = new System.Drawing.Size(816, 619);
             this.dgvView.TabIndex = 5;
             // 
-            // FrmMOUView
+            // FrmResultView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 713);
+            this.ClientSize = new System.Drawing.Size(1033, 724);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvView);
-            this.Name = "FrmMOUView";
-            this.Text = "FrmMOUView";
+            this.Name = "FrmResultView";
+            this.Text = "FrmResultView";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmMOUView_Load);
+            this.Load += new System.EventHandler(this.FrmResultView_Load);
+            this.Resize += new System.EventHandler(this.FrmResultView_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();
             this.ResumeLayout(false);
 

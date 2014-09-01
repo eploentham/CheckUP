@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Cemp.gui
 {
-    public partial class FrmMOUView : Form
+    public partial class FrmResultView : Form
     {
         CnviControl cc;
-        public FrmMOUView(String sfId, CnviControl c)
+        public FrmResultView(String sfId, CnviControl c)
         {
             InitializeComponent();
             initConfig(sfId, c);
@@ -35,14 +35,20 @@ namespace Cemp.gui
         {
 
         }
-        private void FrmMOUView_Load(object sender, EventArgs e)
+
+        private void FrmResultView_Load(object sender, EventArgs e)
         {
 
         }
 
+        private void FrmResultView_Resize(object sender, EventArgs e)
+        {
+            setResize();
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            FrmMOUAdd frm = new FrmMOUAdd();
+            FrmResultAdd frm = new FrmResultAdd();
             frm.ShowDialog(this);
             setGrd();
         }

@@ -11,3 +11,13 @@ D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.gui.FrmLogin.resources
 D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.gui.FrmPassword.resources
 D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.gui.FrmQuotationAdd.resources
 D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.gui.FrmQuotationView.resources
+D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.gui.FrmMOUAdd.resources
+D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.gui.FrmMOUView.resources
+D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.gui.FrmCompany.resources
+D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.gui.FrmQuoConfirmAdd.resources
+D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.gui.FrmQuoConfirmView.resources
+D:\source\CNVI\Cemp\Cemp\obj\Debug\lottory.gui.FrmStaffAdd.resources
+D:\source\CNVI\Cemp\Cemp\obj\Debug\lottory.gui.FrmStaffView.resources
+D:\source\CNVI\Cemp\Cemp\obj\Debug\lottory.gui.FrmInitConfig.resources
+D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.gui.FrmResultAdd.resources
+D:\source\CNVI\Cemp\Cemp\obj\Debug\Cemp.gui.FrmResultView.resources
