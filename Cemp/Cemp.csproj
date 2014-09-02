@@ -63,11 +63,35 @@
     <Compile Include="gui\FrmCompany.Designer.cs">
       <DependentUpon>FrmCompany.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmCustAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmCustAdd.Designer.cs">
+      <DependentUpon>FrmCustAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmCustView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmCustView.Designer.cs">
+      <DependentUpon>FrmCustView.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmInitConfig.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="gui\FrmInitConfig.designer.cs">
       <DependentUpon>FrmInitConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmItemAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmItemAdd.Designer.cs">
+      <DependentUpon>FrmItemAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmItemView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmItemView.Designer.cs">
+      <DependentUpon>FrmItemView.cs</DependentUpon>
     </Compile>
     <Compile Include="gui\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -148,6 +172,7 @@
       <DependentUpon>FrmStaffView.cs</DependentUpon>
     </Compile>
     <Compile Include="objdb\AmphurDB.cs" />
+    <Compile Include="objdb\CompanyDB.cs" />
     <Compile Include="objdb\ConnectDB.cs" />
     <Compile Include="objdb\CustomerDB.cs" />
     <Compile Include="objdb\DistrictDB.cs" />
@@ -172,8 +197,20 @@
     <EmbeddedResource Include="gui\FrmCompany.resx">
       <DependentUpon>FrmCompany.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmCustAdd.resx">
+      <DependentUpon>FrmCustAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmCustView.resx">
+      <DependentUpon>FrmCustView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmInitConfig.resx">
       <DependentUpon>FrmInitConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmItemAdd.resx">
+      <DependentUpon>FrmItemAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmItemView.resx">
+      <DependentUpon>FrmItemView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

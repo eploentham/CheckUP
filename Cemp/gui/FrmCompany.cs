@@ -18,18 +18,18 @@ namespace Cemp.gui
     public partial class FrmCompany : Form
     {
         CnviControl cc;
-        Staff sf;
-        public FrmCompany(String sfId, CnviControl c)
+        //Staff sf;
+        public FrmCompany(CnviControl c)
         {
             InitializeComponent();
-            initConfig(sfId, c);
+            initConfig(c);
         }
-        private void initConfig(String sfId, CnviControl c)
+        private void initConfig(CnviControl c)
         {
             cc = c;
-            sf = cc.sfdb.selectByPk(sfId);
+            //sf = cc.sfdb.selectByPk(sfId);
 
-            setGrd();
+            setControl();
         }
         private void setResize()
         {
@@ -39,7 +39,7 @@ namespace Cemp.gui
             //groupBox1.Width = this.Width - 50;
             //groupBox1.Height = this.Height = 150;
         }
-        private void setGrd()
+        private void setControl()
         {
 
         }
