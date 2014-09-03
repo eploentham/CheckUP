@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace lottory.gui
+namespace Cemp.gui
 {
     public partial class FrmStaffAdd : Form
     {

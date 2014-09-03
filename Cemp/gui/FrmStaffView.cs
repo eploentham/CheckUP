@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace lottory.gui
+namespace Cemp.gui
 {
     public partial class FrmStaffView : Form
     {
@@ -20,13 +20,13 @@ namespace lottory.gui
         int colCnt = 7;
         int colRow = 0, colName = 2, colRemark = 3, colId=4, colCode=1, colPassword=6, colPriority=5;
 
-        public FrmStaffView(String sfId, CnviControl c)
+        public FrmStaffView(CnviControl c)
         {
             InitializeComponent();
-            initConfig(sfId,c);
+            initConfig(c);
             setControl();
         }
-        private void initConfig(String sfId, CnviControl c)
+        private void initConfig( CnviControl c)
         {
             cc = c;
             //dt = lc.selectStaffAll();

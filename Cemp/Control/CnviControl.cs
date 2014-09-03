@@ -24,12 +24,16 @@ namespace Cemp.Control
 
         public StaffDB sfdb;
         public DistrictDB didb;
+        public AmphurDB amdb;
+        public ProvinceDB prdb;
         public CompanyDB cpdb;
+        public CustomerDB cudb;
 
         public Staff sf;
 
         private IniFile iniFile;
         public InitConfig initC;
+        public String PathLogo;
 
         public CnviControl()
         {
@@ -48,8 +52,11 @@ namespace Cemp.Control
 
             sfdb = new StaffDB(conn);
             didb = new DistrictDB(conn);
+            amdb = new AmphurDB(conn);
+            prdb = new ProvinceDB(conn);
             cpdb = new CompanyDB(conn);
-
+            cudb = new CustomerDB(conn);
+            PathLogo = Environment.CurrentDirectory;
         }
         public String getTextCboItem(ComboBox c, String valueId)
         {

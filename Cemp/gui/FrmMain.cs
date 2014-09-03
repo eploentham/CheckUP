@@ -61,8 +61,8 @@ namespace Cemp
             //if (sf.Priority.Equals("3"))
             //{
             tv1.Nodes.Add("nInitConfig", "กำหนดค่าโปรแกรม");
-            tv1.Nodes["nInitConfig"].Nodes.Add("nPartTypeView", "สร้างรายการ Parameter");
-            tv1.Nodes["nInitConfig"].Nodes.Add("nPartTypeSubView", "สร้าง ลูกค้า");
+            tv1.Nodes["nInitConfig"].Nodes.Add("nItemView", "สร้างรายการ Parameter");
+            tv1.Nodes["nInitConfig"].Nodes.Add("nCustomerView", "สร้าง ลูกค้า");
             tv1.Nodes["nInitConfig"].Nodes.Add("nStaffView", "สร้าง พนักงาน");
 
             tv1.Nodes["nInitConfig"].Nodes.Add("nCompany", "ข้อมูลบริษัท");
@@ -124,21 +124,21 @@ namespace Cemp
                 FrmCompany frm = new FrmCompany(cc);
                 showFrame(frm);
             }
-            //else if (e.Node.Name.ToString() == "nInputAdd")
-            //{
-            //    FrmInputAdd frm = new FrmInputAdd(sf.Code, lc);
-            //    showFrame(frm);
-            //}
-            //else if (e.Node.Name.ToString() == "nRewardAdd")
-            //{
-            //    FrmRewardAdd frm = new FrmRewardAdd(sf.Code);
-            //    showFrame(frm);
-            //}
-            //else if (e.Node.Name.ToString() == "nLottoResult")
-            //{
-            //    FrmLottoResult frm = new FrmLottoResult(sf.Code, lc);
-            //    showFrame(frm);
-            //}
+            else if (e.Node.Name.ToString() == "nCustomerView")
+            {
+                FrmCustView frm = new FrmCustView(cc);
+                showFrame(frm);
+            }
+            else if (e.Node.Name.ToString() == "nStaffView")
+            {
+                FrmStaffView frm = new FrmStaffView(cc);
+                showFrame(frm);
+            }
+            else if (e.Node.Name.ToString() == "nItemView")
+            {
+                FrmItemView frm = new FrmItemView(cc);
+                showFrame(frm);
+            }
             //else if (e.Node.Name.ToString() == "nLottoApprove")
             //{
             //    FrmLottoApprove frm = new FrmLottoApprove(sf.Code, lc);

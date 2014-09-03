@@ -35,8 +35,11 @@ namespace Cemp.objdb
             cp.Tele = "tele";
             cp.vat = "vat";
             cp.Zipcode = "zipcode";
-            cp.website = "website";
+            //cp.website = "website";
             cp.logo = "logo";
+            cp.Addr = "addr";
+            cp.Code = "comp_code";
+            cp.WebSite = "website";
 
             cp.pkField = "comp_id";
             cp.table = "b_company";
@@ -57,9 +60,11 @@ namespace Cemp.objdb
             item.Tele = dt.Rows[0][cp.Tele].ToString();
             item.vat = dt.Rows[0][cp.vat].ToString();
             item.Zipcode = dt.Rows[0][cp.Zipcode].ToString();
-            item.website = dt.Rows[0][cp.website].ToString();
+            //item.website = dt.Rows[0][cp.website].ToString();
             item.logo = dt.Rows[0][cp.logo].ToString();
-            //item.Priority = dt.Rows[0][comp.Priority].ToString();
+            item.Addr = dt.Rows[0][cp.Addr].ToString();
+            item.Code = dt.Rows[0][cp.Code].ToString();
+            item.WebSite = dt.Rows[0][cp.WebSite].ToString();
 
             return item;
         }
@@ -90,24 +95,25 @@ namespace Cemp.objdb
             String sql = "", chk = "";
             if (p.Id.Equals(""))
             {
-                p.Id = p.getGenID();
+                p.Id = "cp"+p.getGenID();
             }
             p.AddressE = p.AddressE.Replace("''", "'");
             p.AddressT = p.AddressT.Replace("''", "'");
             p.NameE = p.NameE.Replace("''", "'");
             p.NameT = p.NameT.Replace("''", "'");
+            p.Addr = p.Addr.Replace("''", "'");
             sql = "Insert Into " + cp.table + " (" + cp.pkField + "," + cp.AddressE + "," + cp.AddressT + "," +
                 cp.amphurId + "," + cp.districtId + "," + cp.Email + "," +
                 cp.Fax + "," + cp.NameE + "," + cp.NameT + "," +
                 cp.provinceId + "," + cp.TaxId + "," + cp.Tele + "," +
-                cp.vat + "," + cp.Zipcode + "," + cp.website + "," +
-                cp.logo + ") " +
+                cp.vat + "," + cp.Zipcode + "," + cp.WebSite + "," +
+                cp.logo + "," + cp.Addr + "," + cp.Code + ") " +
                 "Values('" + p.Id + "','" + p.AddressE + "','" + p.AddressT + "','" +
                 p.amphurId + "','" + p.districtId + "','" + p.Email + "','" +
                 p.Fax + "','" + p.NameE + "','" + p.NameT + "','" +
                 p.provinceId + "','" + p.TaxId + "','" + p.Tele + "','" +
-                p.vat + "','" + p.Zipcode + "','" + p.website + "','" +
-                p.logo + "')";
+                p.vat + "','" + p.Zipcode + "','" + p.WebSite + "','" +
+                p.logo + "','" + p.Addr + "','" + p.Code + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -126,7 +132,11 @@ namespace Cemp.objdb
         {
             String sql = "", chk = "";
 
+            p.AddressE = p.AddressE.Replace("''", "'");
+            p.AddressT = p.AddressT.Replace("''", "'");
+            p.NameE = p.NameE.Replace("''", "'");
             p.NameT = p.NameT.Replace("''", "'");
+            p.Addr = p.Addr.Replace("''", "'");
 
             sql = "Update " + cp.table + " Set " + cp.AddressE + "='" + p.AddressE + "', " +
                 cp.AddressT + "='" + p.AddressT + "', " +
@@ -141,7 +151,9 @@ namespace Cemp.objdb
                 cp.Tele + "='" + p.Tele + "', " +
                 cp.vat + "='" + p.vat + "', " +
                 cp.Zipcode + "='" + p.Zipcode + "', " +
-                cp.website + "='" + p.website + "' " +
+                cp.WebSite + "='" + p.WebSite + "', " +
+                cp.Addr + "='" + p.Addr + "', " +
+                cp.Code + "='" + p.Code + "' " +
                 "Where " + cp.pkField + "='" + p.Id + "'";
             try
             {
@@ -169,6 +181,14 @@ namespace Cemp.objdb
             {
                 chk = update(p);
             }
+            return chk;
+        }
+        public String UpdateLogo(String logo)
+        {
+            String sql = "", chk = "";
+            sql = "Update " + cp.table + " Set " + cp.logo + "='" + logo + "' ";
+
+            chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
     }

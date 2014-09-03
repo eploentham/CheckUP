@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(845, 704);
             this.Name = "FrmItemAdd";
             this.Text = "FrmItemAdd";
+            this.Load += new System.EventHandler(this.FrmItemAdd_Load);
             this.ResumeLayout(false);
 
         }

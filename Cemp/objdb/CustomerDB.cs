@@ -11,7 +11,7 @@ namespace Cemp.objdb
     public class CustomerDB
     {
         ConnectDB conn;
-        public Customer cust;
+        public Customer cu;
         public CustomerDB(ConnectDB c)
         {
             conn = c;
@@ -19,25 +19,60 @@ namespace Cemp.objdb
         }
         private void initConfig()
         {
-            cust = new Customer();
-            cust.Active = "cust_active";
-            cust.NameT = "cust_name";
-            cust.Id = "cust_id";
-            cust.saleId = "sale_id";
-            cust.thoId = "thoo_id";
-            cust.saleName = "sale_name";
+            cu = new Customer();
+            cu.Active = "cust_active";
+            cu.Addr = "addr";
+            cu.AddressE = "address_e";
+            cu.AddressT = "address_t";
+            cu.amphurId = "amphur_id";
+            cu.Code = "cust_code";
+            cu.ContactName1 = "contact_name1";
+            cu.ContactName1Tel = "contact_name1_tel";
+            cu.ContactName2 = "contact_name2";
+            cu.ContactName2Tel = "contact_name2_tel";
+            cu.districtId = "district_id";
+            cu.Email = "email";
+            cu.Fax = "fax";
+            cu.Id = "cust_id";
+            cu.NameE = "cust_name_e";
+            cu.NameT = "cust_name_t";
+            cu.provinceId = "province_id";
+            cu.Remark = "remark";
+            cu.saleId = "sale_id";
+            cu.saleName = "sale_name_t";
+            cu.TaxId = "tax_id";
+            cu.Tele = "tele";
+            //cu.thoId = "";
+            cu.Zipcode = "zipcode";
 
-            cust.table = "b_sale_cust";
-            cust.pkField = "cust_id";
+            cu.table = "b_customer";
+            cu.pkField = "cust_id";
         }
         private Customer setData(Customer item, DataTable dt)
         {
-            item.Id = dt.Rows[0][cust.Id].ToString();
-            item.Active = dt.Rows[0][cust.Active].ToString();
-            item.NameT = dt.Rows[0][cust.NameT].ToString();
-            item.saleId = dt.Rows[0][cust.saleId].ToString();
-            item.thoId = dt.Rows[0][cust.thoId].ToString();
-            item.saleName = dt.Rows[0][cust.saleName].ToString();
+            item.Id = dt.Rows[0][cu.Id].ToString();
+            item.Active = dt.Rows[0][cu.Active].ToString();
+            item.Addr = dt.Rows[0][cu.Addr].ToString();
+            item.AddressE = dt.Rows[0][cu.AddressE].ToString();
+            item.AddressT = dt.Rows[0][cu.AddressT].ToString();
+            item.amphurId = dt.Rows[0][cu.amphurId].ToString();
+            item.Code = dt.Rows[0][cu.Code].ToString();
+            item.ContactName1 = dt.Rows[0][cu.ContactName1].ToString();
+            item.ContactName1Tel = dt.Rows[0][cu.ContactName1Tel].ToString();
+            item.ContactName2 = dt.Rows[0][cu.ContactName2].ToString();
+            item.ContactName2Tel = dt.Rows[0][cu.ContactName2Tel].ToString();
+            item.districtId = dt.Rows[0][cu.districtId].ToString();
+            item.Email = dt.Rows[0][cu.Email].ToString();
+            item.Fax = dt.Rows[0][cu.Fax].ToString();
+            item.NameE = dt.Rows[0][cu.NameE].ToString();
+            item.NameT = dt.Rows[0][cu.NameT].ToString();
+            item.provinceId = dt.Rows[0][cu.provinceId].ToString();
+            item.Remark = dt.Rows[0][cu.Remark].ToString();
+            item.saleId = dt.Rows[0][cu.saleId].ToString();
+            item.saleName = dt.Rows[0][cu.saleName].ToString();
+            item.TaxId = dt.Rows[0][cu.TaxId].ToString();
+            item.Tele = dt.Rows[0][cu.Tele].ToString();
+            item.Zipcode = dt.Rows[0][cu.Zipcode].ToString();
 
             return item;
         }
@@ -45,21 +80,35 @@ namespace Cemp.objdb
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + cust.table + " Where " + cust.Active + "='1'";
+            sql = "Select * From " + cu.table + " Where " + cu.Active + "='1'";
             dt = conn.selectData(sql);
 
             return dt;
         }
-        public Customer selectByPk(String saleId)
+        public Customer selectByPk(String cuId)
         {
             Customer item = new Customer();
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + cust.table + " Where " + cust.pkField + "='" + saleId + "'";
+            sql = "Select * From " + cu.table + " Where " + cu.pkField + "='" + cuId + "'";
             dt = conn.selectData(sql);
             if (dt.Rows.Count > 0)
             {
                 item = setData(item, dt);
+            }
+            return item;
+        }
+        public Customer selectByCode(String cuId)
+        {
+            Customer item = new Customer();
+            String sql = "";
+
+            sql = "Select * From " + cu.table + " Where " + cu.Code + "='" + cuId + "' and " + cu.Active + "='1' ";
+            //dt = conn.selectData(sql);
+            conn.selectDataN(sql);
+            if (conn.dt.Rows.Count > 0)
+            {
+                item = setData(item, conn.dt);
             }
             return item;
         }
@@ -68,15 +117,35 @@ namespace Cemp.objdb
             String sql = "", chk = "";
             if (p.Id.Equals(""))
             {
-                p.Id = p.getGenID();
+                p.Id = "cu"+p.getGenID();
             }
 
+            p.Addr = p.Addr.Replace("''", "'");
+            p.AddressE = p.AddressE.Replace("''", "'");
+            p.AddressT = p.AddressT.Replace("''", "'");
+            p.AddressE = p.AddressE.Replace("''", "'");
+            p.ContactName1 = p.ContactName1.Replace("''", "'");
+            p.ContactName2 = p.ContactName2.Replace("''", "'");
+            p.NameE = p.NameE.Replace("''", "'");
             p.NameT = p.NameT.Replace("''", "'");
-            //p.Remark = p.Remark.Replace("''", "'");
-            sql = "Insert Into " + cust.table + " (" + cust.pkField + "," + cust.NameT + "," + cust.saleId + "," +
-                cust.Active + "," + cust.thoId + ") " +
-                "Values('" + p.Id + "','" + p.NameT + "','" + p.saleId + "','" +
-                p.Active + "','" + p.thoId + "')";
+            p.Remark = p.Remark.Replace("''", "'");
+            p.saleName = p.saleName.Replace("''", "'");
+            sql = "Insert Into " + cu.table + " (" + cu.pkField + "," + cu.Active + "," + cu.Addr + "," +
+                cu.AddressE + "," + cu.AddressT + "," + cu.amphurId + "," +
+                cu.Code + "," + cu.ContactName1 + "," + cu.ContactName1Tel + "," +
+                cu.ContactName2 + "," + cu.ContactName2Tel + "," + cu.districtId + "," +
+                cu.Email + "," + cu.Fax + "," + cu.NameE + "," +
+                cu.NameT + "," + cu.provinceId + "," + cu.Remark + "," +
+                cu.saleId + "," + cu.saleName + "," + cu.TaxId + "," +
+                cu.Tele + "," + cu.Zipcode + ") " +
+                "Values('" + p.Id + "','" + p.Active + "','" + p.Addr + "','" +
+                p.AddressE + "','" + p.AddressT + "','" + p.amphurId + "','" +
+                p.Code + "','" + p.ContactName1 + "','" + p.ContactName1Tel + "','" +
+                p.ContactName2 + "','" + p.ContactName2Tel + "','" + p.districtId + "','" +
+                p.Email + "','" + p.Fax + "','" + p.NameE + "','" +
+                p.NameT + "','" + p.provinceId + "','" + p.Remark + "','" +
+                p.saleId + "','" + p.saleName + "','" + p.TaxId + "','" +
+                p.Tele + "','" + p.Zipcode + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -95,14 +164,40 @@ namespace Cemp.objdb
         {
             String sql = "", chk = "";
 
+            p.Addr = p.Addr.Replace("''", "'");
+            p.AddressE = p.AddressE.Replace("''", "'");
+            p.AddressT = p.AddressT.Replace("''", "'");
+            p.AddressE = p.AddressE.Replace("''", "'");
+            p.ContactName1 = p.ContactName1.Replace("''", "'");
+            p.ContactName2 = p.ContactName2.Replace("''", "'");
+            p.NameE = p.NameE.Replace("''", "'");
             p.NameT = p.NameT.Replace("''", "'");
+            p.Remark = p.Remark.Replace("''", "'");
             p.saleName = p.saleName.Replace("''", "'");
 
-            sql = "Update " + cust.table + " Set " + cust.NameT + "='" + p.NameT + "', " +
-                cust.saleId + "='" + p.saleId + "', " +
-                cust.thoId + "='" + p.thoId + "', " +
-                cust.saleName + "='" + p.saleName + "' " +
-                "Where " + cust.pkField + "='" + p.Id + "'";
+            sql = "Update " + cu.table + " Set " + cu.Addr + "='" + p.Addr + "', " +
+                cu.AddressE + "='" + p.AddressE + "', " +
+                cu.AddressT + "='" + p.AddressT + "', " +
+                cu.amphurId + "='" + p.amphurId + "', " +
+                cu.ContactName1 + "='" + p.ContactName1 + "', " +
+                cu.Code + "='" + p.Code + "', " +
+                cu.ContactName1Tel + "='" + p.ContactName1Tel + "', " +
+                cu.ContactName2 + "='" + p.ContactName2 + "', " +
+                cu.ContactName2Tel + "='" + p.ContactName2Tel + "', " +
+                cu.districtId + "='" + p.districtId + "', " +
+                cu.Email + "='" + p.Email + "', " +
+                cu.Fax + "='" + p.Fax + "', " +
+                cu.NameE + "='" + p.NameE + "', " +
+                cu.NameT + "='" + p.NameT + "', " +
+                cu.provinceId + "='" + p.provinceId + "', " +
+                cu.Remark + "='" + p.Remark + "', " +
+                cu.saleId + "='" + p.saleId + "', " +
+                cu.saleName + "='" + p.saleName + "', " +
+                cu.TaxId + "='" + p.TaxId + "', " +
+                cu.Tele + "='" + p.Tele + "', " +
+                cu.Zipcode + "='" + p.Zipcode + "' " +
+                
+                "Where " + cu.pkField + "='" + p.Id + "'";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -116,10 +211,26 @@ namespace Cemp.objdb
             }
             return chk;
         }
+        public String insertCustomer(Customer p)
+        {
+            Customer item = new Customer();
+            String chk = "";
+            item = selectByPk(p.Id);
+            if (item.Id == "")
+            {
+                p.Active = "1";
+                chk = insert(p);
+            }
+            else
+            {
+                chk = update(p);
+            }
+            return chk;
+        }
         public String deleteAll()
         {
             String sql = "", chk = "";
-            sql = "Delete From " + cust.table;
+            sql = "Delete From " + cu.table;
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
@@ -131,8 +242,8 @@ namespace Cemp.objdb
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 item = new ComboBoxItem();
-                item.Value = dt.Rows[i][cust.Id].ToString();
-                item.Text = dt.Rows[i][cust.NameT].ToString();
+                item.Value = dt.Rows[i][cu.Id].ToString();
+                item.Text = dt.Rows[i][cu.NameT].ToString();
                 c.Items.Add(item);
                 //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
                 //c.Items.Add(new );
@@ -142,8 +253,8 @@ namespace Cemp.objdb
         public String VoidCustomer(String saleId)
         {
             String sql = "", chk = "";
-            sql = "Update " + cust.table + " Set " + cust.Active + "='3' " +
-                "Where " + cust.pkField + "='" + saleId + "'";
+            sql = "Update " + cu.table + " Set " + cu.Active + "='3' " +
+                "Where " + cu.pkField + "='" + saleId + "'";
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }

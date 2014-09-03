@@ -1,4 +1,4 @@
-﻿namespace lottory.gui
+﻿namespace Cemp.gui
 {
     partial class FrmStaffView
     {

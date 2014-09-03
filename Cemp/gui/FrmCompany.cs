@@ -11,7 +11,9 @@ using System.IO;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+
 
 namespace Cemp.gui
 {
@@ -19,6 +21,8 @@ namespace Cemp.gui
     {
         CnviControl cc;
         Company cp;
+        OpenFileDialog ofd;
+        Boolean pageLoad = false, keyDistrict = false;
         //Staff sf;
         public FrmCompany(CnviControl c)
         {
@@ -27,10 +31,15 @@ namespace Cemp.gui
         }
         private void initConfig(CnviControl c)
         {
+            pageLoad = true;
             cc = c;
             //sf = cc.sfdb.selectByPk(sfId);
             cp = new Company();
+            ofd = new OpenFileDialog();
             setControl();
+            txtCode.ReadOnly = true;
+            pageLoad = false;
+            //txtNameT.Focus();
         }
         private void setResize()
         {
@@ -43,15 +52,15 @@ namespace Cemp.gui
         private void setControl()
         {
             cp = cc.cpdb.selectByPk();
-            txtCode.Text = cp.Id;
+            txtCode.Text = cp.Code;
             txtId.Text = cp.Id;
             txtNameE.Text = cp.NameE;
             txtNameT.Text = cp.NameT;
-            txtAddr.Text = cp.AddressT;
+            txtAddr.Text = cp.Addr;
             txtAddressT.Text = cp.AddressT;
-            cboDistrict.SelectedItem = cp.districtId;
-            cboAmphur.SelectedItem = cp.amphurId;
-            cboProvince.SelectedItem = cp.provinceId;
+            //cboDistrict.SelectedItem = cp.districtId;
+            //cboAmphur.SelectedItem = cp.amphurId;
+            //cboProvince.SelectedItem = cp.provinceId;
             txtZipcode.Text = cp.Zipcode;
             txtAddressE.Text = cp.AddressE;
             txtTele.Text = cp.Tele;
@@ -59,42 +68,54 @@ namespace Cemp.gui
             txtEmail.Text = cp.Email;
             txtTaxID.Text = cp.TaxId;
             txtVat.Text = cp.vat;
+            txtWebSite.Text = cp.WebSite;
+            viewImage(cc.PathLogo + "\\" + cp.logo);
+            label18.Text = cp.districtId;
+            if (label18.Text.Length > 4)
+            {
+                cboDistrict = cc.didb.getCboDist1(cboDistrict, label18.Text);
+                cboAmphur = cc.amdb.getCboAmphur1(cboAmphur, label18.Text.Substring(0, 4));
+                cboProvince = cc.prdb.getCboProv1(cboProvince, label18.Text.Substring(0, 2));
+            }
+            
         }
         private void getCompany()
         {
             cp.Id = txtId.Text;
+            cp.Code = txtCode.Text;
+            cp.Addr = txtAddr.Text;
             cp.AddressE = txtAddressE.Text;
             cp.AddressT = txtAddressT.Text;
-            cp.amphurId = cboAmphur.SelectedItem.ToString();
-            cp.districtId = cboDistrict.SelectedItem.ToString();
+            cp.amphurId = cc.cf.getValueCboItem(cboAmphur);
+            cp.districtId = cc.cf.getValueCboItem(cboDistrict);
             cp.Email = txtEmail.Text;
             cp.Fax = TxtFax.Text;
             cp.logo = "";
             cp.NameE = txtNameE.Text;
             cp.NameT = txtNameT.Text;
-            cp.provinceId = cboProvince.SelectedItem.ToString();
+            cp.provinceId = cc.cf.getValueCboItem(cboProvince);
             cp.TaxId = txtTaxID.Text;
             cp.Tele = txtTele.Text;
             cp.vat = txtVat.Text;
             cp.Zipcode = txtZipcode.Text;
-
+            cp.WebSite = txtWebSite.Text;
         }
 
         private void FrmCompany_Load(object sender, EventArgs e)
         {
-
+            //txtNameT.Focus();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Document doc = new Document(PageSize.A4);
-            var output = new FileStream(Environment.CurrentDirectory+"\\MyFirstPDF.pdf", FileMode.Create);
+            var output = new FileStream(Environment.CurrentDirectory + "\\MyFirstPDF.pdf", FileMode.Create);
             var writer = PdfWriter.GetInstance(doc, output);
 
             doc.Open();
 
 
-            var logo = iTextSharp.text.Image.GetInstance(Environment.CurrentDirectory+"\\logo.jpg");
+            var logo = iTextSharp.text.Image.GetInstance(Environment.CurrentDirectory + "\\logo.jpg");
             logo.SetAbsolutePosition(430, 770);
             logo.ScaleAbsoluteHeight(30);
             logo.ScaleAbsoluteWidth(70);
@@ -229,14 +250,25 @@ namespace Cemp.gui
 
         private void cboDistrict_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Down)
+            if ((e.KeyCode == Keys.Enter) && (keyDistrict))
+            {
+                cboDistrict = cc.didb.getCboDist1(cboDistrict, label18.Text);
+                cboAmphur = cc.amdb.getCboAmphur1(cboAmphur, label18.Text.Substring(0, 4));
+                cboProvince = cc.prdb.getCboProv1(cboProvince, label18.Text.Substring(0, 2));
+                txtZipcode.Text = cc.didb.selectZipCodeByPk(label18.Text);
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                keyDistrict = true;
+                //    aaa = cc.cf.getValueCboItem(cboDistrict);
+            }
+            else if (e.KeyCode == Keys.Enter)
             {
                 if (cboDistrict.Text.Length >= 3)
                 {
-                    cboDistrict = cc.didb.getCboDistrict(cboDistrict, cboDistrict.Text);
+                    cboDistrict = cc.didb.getCboDistrict1(cboDistrict, cboDistrict.Text);
                 }
             }
-            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -248,7 +280,7 @@ namespace Cemp.gui
             }
             if (txtNameT.Text.Equals(""))
             {
-                MessageBox.Show("ไม่ได้ป้อนรหัส", "ป้อนข้อมูลไม่ครบ");
+                MessageBox.Show("ไม่ได้ป้อนName", "ป้อนข้อมูลไม่ครบ");
                 return;
             }
 
@@ -258,6 +290,242 @@ namespace Cemp.gui
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 this.Dispose();
                 //this.Hide();
+            }
+        }
+        private void viewImage(String filename)
+        {
+            if (System.IO.File.Exists(filename))
+            {
+                pic1.Image = System.Drawing.Image.FromFile(filename);
+                pic1.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+        }
+
+        private void btnLogo_Click(object sender, EventArgs e)
+        {
+            String fileName = "", fileName1 = "", ex = "";
+            //fileName = fileCertify + txtPaId.Text + "";
+            ofd.ShowDialog();
+            if (ofd.FileName.Equals(""))
+            {
+                return;
+            }
+            fileName1 = ofd.FileName;
+            ex = fileName1.Substring(ofd.FileName.IndexOf("."));
+            //fbd.SelectedPath = Environment.CurrentDirectory + "\\pic";
+            //DirectoryInfo dir = new DirectoryInfo(ofd.FileName);
+
+            if (System.IO.File.Exists(ofd.FileName))
+            {
+                System.Drawing.Image image = System.Drawing.Image.FromFile(ofd.FileName);
+                if (System.IO.File.Exists(cc.PathLogo + "\\" + ofd.SafeFileName))
+                {
+                    System.IO.File.Delete(cc.PathLogo + "\\" + ofd.SafeFileName);
+                }
+                image.Save(cc.PathLogo + "\\" + ofd.SafeFileName);
+            }
+            //cc.padb.UpdatePathPicCertify(txtPaId.Text, fileName + ex);
+            viewImage(cc.PathLogo + "\\" + ofd.SafeFileName);
+            cc.cpdb.UpdateLogo(ofd.SafeFileName);
+        }
+
+        private void cboDistrict_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!pageLoad)
+            {
+                String aaa = "";
+                aaa = cc.cf.getValueCboItem(cboDistrict);
+                label18.Text = aaa;
+            }
+        }
+
+        private void txtNameT_Enter(object sender, EventArgs e)
+        {
+            txtNameT.BackColor = Color.LightYellow;
+        }
+
+        private void txtNameT_Leave(object sender, EventArgs e)
+        {
+            txtNameT.BackColor = Color.White;
+        }
+
+        private void txtNameE_Enter(object sender, EventArgs e)
+        {
+            txtNameE.BackColor = Color.LightYellow;
+        }
+
+        private void txtNameE_Leave(object sender, EventArgs e)
+        {
+            txtNameE.BackColor = Color.White;
+        }
+
+        private void txtAddr_Enter(object sender, EventArgs e)
+        {
+            txtAddr.BackColor = Color.LightYellow;
+        }
+
+        private void txtAddr_Leave(object sender, EventArgs e)
+        {
+            txtAddr.BackColor = Color.White;
+        }
+
+        private void cboDistrict_Enter(object sender, EventArgs e)
+        {
+            cboDistrict.BackColor = Color.LightYellow;
+        }
+
+        private void cboDistrict_Leave(object sender, EventArgs e)
+        {
+            cboDistrict.BackColor = Color.White;
+        }
+
+        private void cboAmphur_Enter(object sender, EventArgs e)
+        {
+            cboAmphur.BackColor = Color.LightYellow;
+        }
+
+        private void cboAmphur_Leave(object sender, EventArgs e)
+        {
+            cboAmphur.BackColor = Color.White;
+        }
+
+        private void cboProvince_Enter(object sender, EventArgs e)
+        {
+            cboProvince.BackColor = Color.LightYellow;
+        }
+
+        private void cboProvince_Leave(object sender, EventArgs e)
+        {
+            cboProvince.BackColor = Color.White;
+        }
+
+        private void txtZipcode_Enter(object sender, EventArgs e)
+        {
+            txtZipcode.BackColor = Color.LightYellow;
+        }
+
+        private void txtZipcode_Leave(object sender, EventArgs e)
+        {
+            txtZipcode.BackColor = Color.White;
+        }
+
+        private void txtAddressT_Enter(object sender, EventArgs e)
+        {
+            txtAddressT.BackColor = Color.LightYellow;
+        }
+
+        private void txtAddressT_Leave(object sender, EventArgs e)
+        {
+            txtAddressT.BackColor = Color.White;
+        }
+
+        private void txtAddressE_Enter(object sender, EventArgs e)
+        {
+            txtAddressE.BackColor = Color.LightYellow;
+        }
+
+        private void txtAddressE_Leave(object sender, EventArgs e)
+        {
+            txtAddressE.BackColor = Color.White;
+        }
+
+        private void txtTele_Enter(object sender, EventArgs e)
+        {
+            txtTele.BackColor = Color.LightYellow;
+        }
+
+        private void txtTele_Leave(object sender, EventArgs e)
+        {
+            txtTele.BackColor = Color.White;
+        }
+
+        private void TxtFax_Enter(object sender, EventArgs e)
+        {
+            TxtFax.BackColor = Color.LightYellow;
+        }
+
+        private void TxtFax_Leave(object sender, EventArgs e)
+        {
+            TxtFax.BackColor = Color.White;
+        }
+
+        private void txtEmail_Enter(object sender, EventArgs e)
+        {
+            txtEmail.BackColor = Color.LightYellow;
+        }
+
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            txtEmail.BackColor = Color.White;
+        }
+
+        private void txtTaxID_Enter(object sender, EventArgs e)
+        {
+            txtTaxID.BackColor = Color.LightYellow;
+        }
+
+        private void txtTaxID_Leave(object sender, EventArgs e)
+        {
+            txtTaxID.BackColor = Color.White;
+        }
+
+        private void txtWebSite_Enter(object sender, EventArgs e)
+        {
+            txtWebSite.BackColor = Color.LightYellow;
+        }
+
+        private void txtWebSite_Leave(object sender, EventArgs e)
+        {
+            txtWebSite.BackColor = Color.White;
+        }
+
+        private void txtVat_Enter(object sender, EventArgs e)
+        {
+            txtVat.BackColor = Color.LightYellow;
+        }
+
+        private void txtVat_Leave(object sender, EventArgs e)
+        {
+            txtVat.BackColor = Color.White;
+        }
+
+        private void txtTaxID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtVat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtZipcode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtNameE_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //e.Handled = Regex.IsMatch(txtNameE.Text, "^[a-zA-Z]*$");
+            if (((int)e.KeyChar >= 48 && (int)e.KeyChar <= 122) || (int)e.KeyChar == 8 || (int)e.KeyChar == 13 || (int)e.KeyChar == 46)
+            {
+                e.Handled = false; // OS will handle this event.
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNameT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((int)e.KeyChar >= 48 && (int)e.KeyChar <= 122) || (int)e.KeyChar == 8 || (int)e.KeyChar == 13 || (int)e.KeyChar == 46)
+            {
+                e.Handled = true; // OS will handle this event.
+            }
+            else
+            {
+                e.Handled = false;
             }
         }
     }

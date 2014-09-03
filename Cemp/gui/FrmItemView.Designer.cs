@@ -41,6 +41,7 @@
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "ป้อนใหม่";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dgvView
             // 
@@ -61,6 +62,9 @@
             this.Controls.Add(this.dgvView);
             this.Name = "FrmItemView";
             this.Text = "FrmItemView";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmItemView_Load);
+            this.Resize += new System.EventHandler(this.FrmItemView_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();
             this.ResumeLayout(false);
 
