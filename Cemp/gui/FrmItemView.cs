@@ -18,6 +18,7 @@ namespace Cemp.gui
         public FrmItemView(CnviControl c)
         {
             InitializeComponent();
+            initConfig(c);
         }
         private void initConfig(CnviControl c)
         {
