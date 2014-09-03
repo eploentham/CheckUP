@@ -62,6 +62,7 @@ namespace Cemp
             //{
             tv1.Nodes.Add("nInitConfig", "กำหนดค่าโปรแกรม");
             tv1.Nodes["nInitConfig"].Nodes.Add("nItemView", "สร้างรายการ Parameter");
+            tv1.Nodes["nInitConfig"].Nodes.Add("nMethodView", "สร้างรายการ Method");
             tv1.Nodes["nInitConfig"].Nodes.Add("nCustomerView", "สร้าง ลูกค้า");
             tv1.Nodes["nInitConfig"].Nodes.Add("nStaffView", "สร้าง พนักงาน");
 
@@ -139,11 +140,11 @@ namespace Cemp
                 FrmItemView frm = new FrmItemView(cc);
                 showFrame(frm);
             }
-            //else if (e.Node.Name.ToString() == "nLottoApprove")
-            //{
-            //    FrmLottoApprove frm = new FrmLottoApprove(sf.Code, lc);
-            //    showFrame(frm);
-            //}
+            else if (e.Node.Name.ToString() == "nMethodView")
+            {
+                FrmMethodView frm = new FrmMethodView(cc);
+                showFrame(frm);
+            }
             //else if (e.Node.Name.ToString() == "nLottoSummary")
             //{
             //    FrmLottoSummary frm = new FrmLottoSummary(sf.Code, lc);

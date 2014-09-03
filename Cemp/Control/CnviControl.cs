@@ -28,6 +28,7 @@ namespace Cemp.Control
         public ProvinceDB prdb;
         public CompanyDB cpdb;
         public CustomerDB cudb;
+        public MethodDB medb;
 
         public Staff sf;
 
@@ -56,6 +57,7 @@ namespace Cemp.Control
             prdb = new ProvinceDB(conn);
             cpdb = new CompanyDB(conn);
             cudb = new CustomerDB(conn);
+            medb = new MethodDB(conn);
             PathLogo = Environment.CurrentDirectory;
         }
         public String getTextCboItem(ComboBox c, String valueId)

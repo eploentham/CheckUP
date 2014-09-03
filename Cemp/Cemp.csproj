@@ -188,6 +188,8 @@
     <Compile Include="objdb\ConnectDB.cs" />
     <Compile Include="objdb\CustomerDB.cs" />
     <Compile Include="objdb\DistrictDB.cs" />
+    <Compile Include="objdb\ItemDB.cs" />
+    <Compile Include="objdb\MethodDB.cs" />
     <Compile Include="objdb\ProvinceDB.cs" />
     <Compile Include="objdb\StaffDB.cs" />
     <Compile Include="object1\Amphur.cs" />
@@ -198,6 +200,7 @@
     <Compile Include="object1\District.cs" />
     <Compile Include="object1\IniFile.cs" />
     <Compile Include="object1\InitConfig.cs" />
+    <Compile Include="object1\Item.cs" />
     <Compile Include="object1\Method.cs" />
     <Compile Include="object1\Persistent.cs" />
     <Compile Include="object1\Province.cs" />

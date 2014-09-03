@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnUnActive = new System.Windows.Forms.Button();
+            this.ChkUnActive = new System.Windows.Forms.RadioButton();
+            this.chkActive = new System.Windows.Forms.RadioButton();
+            this.txtRemark = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtNameE = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,12 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtRemark = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnUnActive = new System.Windows.Forms.Button();
-            this.ChkUnActive = new System.Windows.Forms.RadioButton();
-            this.chkActive = new System.Windows.Forms.RadioButton();
-            this.btnSave = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +66,74 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(251, 179);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 33);
+            this.btnSave.TabIndex = 121;
+            this.btnSave.Text = "บันทึก";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnUnActive
+            // 
+            this.btnUnActive.Location = new System.Drawing.Point(230, 150);
+            this.btnUnActive.Name = "btnUnActive";
+            this.btnUnActive.Size = new System.Drawing.Size(86, 23);
+            this.btnUnActive.TabIndex = 120;
+            this.btnUnActive.Text = "ยกเลิกการใช้งาน";
+            this.btnUnActive.UseVisualStyleBackColor = true;
+            this.btnUnActive.Click += new System.EventHandler(this.btnUnActive_Click);
+            // 
+            // ChkUnActive
+            // 
+            this.ChkUnActive.AutoSize = true;
+            this.ChkUnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.ChkUnActive.Location = new System.Drawing.Point(165, 149);
+            this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2);
+            this.ChkUnActive.Name = "ChkUnActive";
+            this.ChkUnActive.Size = new System.Drawing.Size(60, 21);
+            this.ChkUnActive.TabIndex = 119;
+            this.ChkUnActive.TabStop = true;
+            this.ChkUnActive.Text = "ยกเลิก";
+            this.ChkUnActive.UseVisualStyleBackColor = true;
+            this.ChkUnActive.Click += new System.EventHandler(this.ChkUnActive_Click);
+            // 
+            // chkActive
+            // 
+            this.chkActive.AutoSize = true;
+            this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.chkActive.Location = new System.Drawing.Point(40, 149);
+            this.chkActive.Margin = new System.Windows.Forms.Padding(2);
+            this.chkActive.Name = "chkActive";
+            this.chkActive.Size = new System.Drawing.Size(61, 21);
+            this.chkActive.TabIndex = 118;
+            this.chkActive.TabStop = true;
+            this.chkActive.Text = "ใช้งาน";
+            this.chkActive.UseVisualStyleBackColor = true;
+            this.chkActive.Click += new System.EventHandler(this.chkActive_Click);
+            // 
+            // txtRemark
+            // 
+            this.txtRemark.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRemark.Location = new System.Drawing.Point(87, 103);
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Size = new System.Drawing.Size(239, 22);
+            this.txtRemark.TabIndex = 3;
+            this.txtRemark.Enter += new System.EventHandler(this.txtRemark_Enter);
+            this.txtRemark.Leave += new System.EventHandler(this.txtRemark_Leave);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 106);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 16);
+            this.label4.TabIndex = 116;
+            this.label4.Text = "หมายเหตุ :";
+            // 
             // txtId
             // 
             this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -73,6 +141,7 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 22);
             this.txtId.TabIndex = 113;
+            this.txtId.TabStop = false;
             this.txtId.Visible = false;
             // 
             // txtNameE
@@ -81,7 +150,9 @@
             this.txtNameE.Location = new System.Drawing.Point(87, 75);
             this.txtNameE.Name = "txtNameE";
             this.txtNameE.Size = new System.Drawing.Size(239, 22);
-            this.txtNameE.TabIndex = 112;
+            this.txtNameE.TabIndex = 2;
+            this.txtNameE.Enter += new System.EventHandler(this.txtNameE_Enter);
+            this.txtNameE.Leave += new System.EventHandler(this.txtNameE_Leave);
             // 
             // label3
             // 
@@ -99,7 +170,9 @@
             this.txtNameT.Location = new System.Drawing.Point(87, 47);
             this.txtNameT.Name = "txtNameT";
             this.txtNameT.Size = new System.Drawing.Size(239, 22);
-            this.txtNameT.TabIndex = 109;
+            this.txtNameT.TabIndex = 1;
+            this.txtNameT.Enter += new System.EventHandler(this.txtNameT_Enter);
+            this.txtNameT.Leave += new System.EventHandler(this.txtNameT_Leave);
             // 
             // label2
             // 
@@ -119,6 +192,8 @@
             this.txtCode.Size = new System.Drawing.Size(100, 22);
             this.txtCode.TabIndex = 114;
             this.txtCode.TabStop = false;
+            this.txtCode.Enter += new System.EventHandler(this.txtCode_Enter);
+            this.txtCode.Leave += new System.EventHandler(this.txtCode_Leave);
             // 
             // label1
             // 
@@ -130,69 +205,6 @@
             this.label1.TabIndex = 108;
             this.label1.Text = "รหัส :";
             // 
-            // txtRemark
-            // 
-            this.txtRemark.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRemark.Location = new System.Drawing.Point(87, 103);
-            this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(239, 22);
-            this.txtRemark.TabIndex = 117;
-            this.txtRemark.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 106);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 16);
-            this.label4.TabIndex = 116;
-            this.label4.Text = "หมายเหตุ :";
-            // 
-            // btnUnActive
-            // 
-            this.btnUnActive.Location = new System.Drawing.Point(230, 150);
-            this.btnUnActive.Name = "btnUnActive";
-            this.btnUnActive.Size = new System.Drawing.Size(86, 23);
-            this.btnUnActive.TabIndex = 120;
-            this.btnUnActive.Text = "ยกเลิกการใช้งาน";
-            this.btnUnActive.UseVisualStyleBackColor = true;
-            // 
-            // ChkUnActive
-            // 
-            this.ChkUnActive.AutoSize = true;
-            this.ChkUnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.ChkUnActive.Location = new System.Drawing.Point(165, 149);
-            this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2);
-            this.ChkUnActive.Name = "ChkUnActive";
-            this.ChkUnActive.Size = new System.Drawing.Size(60, 21);
-            this.ChkUnActive.TabIndex = 119;
-            this.ChkUnActive.TabStop = true;
-            this.ChkUnActive.Text = "ยกเลิก";
-            this.ChkUnActive.UseVisualStyleBackColor = true;
-            // 
-            // chkActive
-            // 
-            this.chkActive.AutoSize = true;
-            this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chkActive.Location = new System.Drawing.Point(40, 149);
-            this.chkActive.Margin = new System.Windows.Forms.Padding(2);
-            this.chkActive.Name = "chkActive";
-            this.chkActive.Size = new System.Drawing.Size(61, 21);
-            this.chkActive.TabIndex = 118;
-            this.chkActive.TabStop = true;
-            this.chkActive.Text = "ใช้งาน";
-            this.chkActive.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(251, 179);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 33);
-            this.btnSave.TabIndex = 121;
-            this.btnSave.Text = "บันทึก";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
             // FrmMethodAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,6 +212,7 @@
             this.ClientSize = new System.Drawing.Size(376, 242);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmMethodAdd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMethodAdd";
             this.Load += new System.EventHandler(this.FrmMethodAdd_Load);
             this.groupBox1.ResumeLayout(false);
