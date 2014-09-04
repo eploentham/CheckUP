@@ -32,6 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="itextsharp">
       <HintPath>..\..\..\..\Lib\iTextPdf\itextsharp.dll</HintPath>
     </Reference>
@@ -40,6 +45,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
     <Reference Include="System.Messaging" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,11 +58,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Control\CnviControl.cs" />
-    <Compile Include="gui\Form1.cs">
+    <Compile Include="gui\FrmReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="gui\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="gui\FrmReport.Designer.cs">
+      <DependentUpon>FrmReport.cs</DependentUpon>
     </Compile>
     <Compile Include="gui\FrmCompany.cs">
       <SubType>Form</SubType>
@@ -191,6 +198,8 @@
     <Compile Include="objdb\ItemDB.cs" />
     <Compile Include="objdb\MethodDB.cs" />
     <Compile Include="objdb\ProvinceDB.cs" />
+    <Compile Include="objdb\QuotationDB.cs" />
+    <Compile Include="objdb\QuotationItemDB.cs" />
     <Compile Include="objdb\StaffDB.cs" />
     <Compile Include="object1\Amphur.cs" />
     <Compile Include="object1\ComboBoxItem.cs" />
@@ -204,11 +213,13 @@
     <Compile Include="object1\Method.cs" />
     <Compile Include="object1\Persistent.cs" />
     <Compile Include="object1\Province.cs" />
+    <Compile Include="object1\Quotation.cs" />
+    <Compile Include="object1\QuotationItem.cs" />
     <Compile Include="object1\Staff.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="gui\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="gui\FrmReport.resx">
+      <DependentUpon>FrmReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmCompany.resx">
       <DependentUpon>FrmCompany.cs</DependentUpon>

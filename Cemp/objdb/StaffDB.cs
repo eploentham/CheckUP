@@ -91,7 +91,7 @@ namespace Cemp.objdb
             String sql = "", chk = "";
             if (p.Id.Equals(""))
             {
-                p.Id = p.getGenID();
+                p.Id = "sf"+p.getGenID();
             }
             p.NameT = p.NameT.Replace("''", "'");
             p.Remark = p.Remark.Replace("''", "'");
@@ -106,7 +106,7 @@ namespace Cemp.objdb
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex.ToString(), "insert Sale");
+                MessageBox.Show("Error " + ex.ToString(), "insert Staff");
             }
             finally
             {
@@ -130,7 +130,7 @@ namespace Cemp.objdb
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex.ToString(), "update Sale");
+                MessageBox.Show("Error " + ex.ToString(), "update Staff");
             }
             finally
             {

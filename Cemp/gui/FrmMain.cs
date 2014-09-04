@@ -69,7 +69,7 @@ namespace Cemp
             tv1.Nodes["nInitConfig"].Nodes.Add("nCompany", "ข้อมูลบริษัท");
             //    tv1.Nodes["nInitConfig"].Nodes.Add("nRateView", "สร้างอัตรา");
             tv1.Nodes["nInitConfig"].Nodes.Add("nPassword", "เปลี่ยนรหัสผ่าน");
-            //    tv1.Nodes["nInitConfig"].Nodes.Add("nThooDefault", "กำหนดเจ้ามือ (เจ้าของโปรแกรม)");
+            tv1.Nodes["nInitConfig"].Nodes.Add("nTest", "Test ");
             //    tv1.Nodes["nInitConfig"].Nodes.Add("nInitConfig1", "กำหนดค่าโปรแกรม");
             //}
 
@@ -145,11 +145,11 @@ namespace Cemp
                 FrmMethodView frm = new FrmMethodView(cc);
                 showFrame(frm);
             }
-            //else if (e.Node.Name.ToString() == "nLottoSummary")
-            //{
-            //    FrmLottoSummary frm = new FrmLottoSummary(sf.Code, lc);
-            //    showFrame(frm);
-            //}
+            else if (e.Node.Name.ToString() == "nTest")
+            {
+                FrmReport frm = new FrmReport();
+                showFrame(frm);
+            }
             //else if (e.Node.Name.ToString() == "nThooDefault")
             //{
             //    FrmThooDefault frm = new FrmThooDefault(sf.Code);

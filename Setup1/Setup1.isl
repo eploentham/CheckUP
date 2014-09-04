@@ -340,7 +340,7 @@
 		<col def="S0">ISDotNetInstallerArgsCommit</col>
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
-		<row><td>Cemp.exe</td><td>{7D4BE7CA-27FE-4761-8F0B-F1E0994E08D0}</td><td>INSTALLDIR</td><td>2</td><td/><td>cemp.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Cemp.exe</td><td>{20BAB8C2-F941-45E1-9E96-613ED2A55DD5}</td><td>INSTALLDIR</td><td>2</td><td/><td>cemp.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{249FAD22-C6E7-456F-9E5B-EE9F59F4F20B}</td><td>DATABASEDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{6DF01165-746A-40E3-B59D-E2A6B94F5758}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
@@ -1880,9 +1880,9 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
-		<row><td>cemp.exe</td><td>Cemp.exe</td><td>Cemp.exe</td><td>0</td><td/><td/><td/><td>1</td><td>D:\source\CNVI\Cemp\Cemp\bin\Debug\Cemp.exe</td><td>1</td><td/></row>
-		<row><td>cemp.ini</td><td>ISX_DEFAULTCOMPONENT1</td><td>Cemp.ini</td><td>0</td><td/><td/><td/><td>1</td><td>D:\source\CNVI\Cemp\Cemp\bin\Debug\Cemp.ini</td><td>1</td><td/></row>
-		<row><td>cemp.mdb</td><td>ISX_DEFAULTCOMPONENT</td><td>Cemp.mdb</td><td>0</td><td/><td/><td/><td>1</td><td>D:\source\CNVI\Cemp\Cemp\bin\Debug\Database\Cemp.mdb</td><td>1</td><td/></row>
+		<row><td>cemp.exe</td><td>Cemp.exe</td><td>Cemp.exe</td><td>0</td><td/><td/><td/><td>1</td><td>D:\source\CNVI\CNVI.Cemp\Cemp\bin\Debug\Cemp.exe</td><td>1</td><td/></row>
+		<row><td>cemp.ini</td><td>ISX_DEFAULTCOMPONENT1</td><td>Cemp.ini</td><td>0</td><td/><td/><td/><td>1</td><td>D:\source\CNVI\CNVI.Cemp\Cemp\bin\Debug\Cemp.ini</td><td>1</td><td/></row>
+		<row><td>cemp.mdb</td><td>ISX_DEFAULTCOMPONENT</td><td>Cemp.mdb</td><td>0</td><td/><td/><td/><td>1</td><td>D:\source\CNVI\CNVI.Cemp\Cemp\bin\Debug\Database\Cemp.mdb</td><td>1</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2026,7 +2026,7 @@
 		<col def="S0">FTPLocation</col>
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
-		<row><td>Cemp.exe</td><td/><td/><td>_657D3A0F_8CDB_4B31_AD28_D96D3CC0413F_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Cemp.exe</td><td/><td/><td>_AB8F0E31_E46C_442F_BF57_BB9ADE76026F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_E04249ED_735E_401B_9BB8_22014198A0C7_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_17BD3FB3_095A_48C2_80D9_A5A875E3C086_FILTER</td><td/><td/><td/><td/></row>
 	</table>
@@ -3460,6 +3460,7 @@
 		<row><td>IDS_SETUPEXE_EXPIRE_MSG</td><td>1033</td><td>This setup works until %s. The setup will now exit.</td><td>0</td><td/><td>346169803</td></row>
 		<row><td>IDS_SETUPEXE_LAUNCH_COND_E</td><td>1033</td><td>This setup was built with an evaluation version of InstallShield and can only be launched from setup.exe.</td><td>0</td><td/><td>346169803</td></row>
 		<row><td>IDS_SHORTCUT_DISPLAY_NAME1</td><td>1033</td><td>LAUNCH~1.EXE|Launch Cemp.exe</td><td>0</td><td/><td>346196523</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME2</td><td>1033</td><td>LAUNCH~1.EXE|Launch Cemp.exe</td><td>0</td><td/><td>614599626</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO</td><td>1033</td><td>From the list of servers below, select the database server you would like to target.</td><td>0</td><td/><td>346169803</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_DB</td><td>1033</td><td>From the list of catalog names below, select the database catalog you would like to target.</td><td>0</td><td/><td>346169803</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_TEMPLATE</td><td>1033</td><td>[IS_SQLBROWSE_INTRO]</td><td>0</td><td/><td>346169803</td></row>
@@ -3860,6 +3861,7 @@
 		<col def="I2">ISIconIndex</col>
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\setupicon.ico</td><td>0</td></row>
 		<row><td>Cemp.exe1_31984DAEEC5A43A0BB07DA5C832F420D.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
+		<row><td>Cemp.exe_247C916F5950456C9A0D4A9FBEF39BE4.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
 		<row><td>Cemp.exe_D7D1E3C77B1142D8928D09A2646A556D.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
 	</table>
 
@@ -4445,8 +4447,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
 		<row><td>Cemp.exe</td><td>Cemp.exe</td><td/><td>cemp</td><td>2</td></row>
-		<row><td>FileKey1</td><td>Cemp.exe</td><td/><td>cnvi</td><td>2</td></row>
-		<row><td>FileKey2</td><td>Cemp.exe</td><td/><td>cemp</td><td>2</td></row>
 	</table>
 
 	<table name="RemoveIniFile">
@@ -4532,8 +4532,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>Cemp.exe</td><td>cemp</td><td>##IDS_SHORTCUT_DISPLAY_NAME1##</td><td>Cemp.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>Cemp.exe_D7D1E3C77B1142D8928D09A2646A556D.exe</td><td>0</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>Cemp.exe1</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME1##</td><td>Cemp.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>Cemp.exe1_31984DAEEC5A43A0BB07DA5C832F420D.exe</td><td>0</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>Cemp.exe</td><td>cemp</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>Cemp.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>Cemp.exe_247C916F5950456C9A0D4A9FBEF39BE4.exe</td><td>0</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">

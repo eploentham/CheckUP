@@ -29,6 +29,8 @@ namespace Cemp.Control
         public CompanyDB cpdb;
         public CustomerDB cudb;
         public MethodDB medb;
+        public QuotationDB qudb;
+        public QuotationItemDB quidb;
 
         public Staff sf;
 
@@ -58,6 +60,9 @@ namespace Cemp.Control
             cpdb = new CompanyDB(conn);
             cudb = new CustomerDB(conn);
             medb = new MethodDB(conn);
+            qudb = new QuotationDB(conn);
+            quidb = new QuotationItemDB(conn);
+
             PathLogo = Environment.CurrentDirectory;
         }
         public String getTextCboItem(ComboBox c, String valueId)

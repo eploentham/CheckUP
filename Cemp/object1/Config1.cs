@@ -292,6 +292,17 @@ namespace Cemp.object1
             return a.ToString();
 
         }
+        public String NumberNull1(String o)
+        {
+            if (o.Equals(""))
+            {
+                return "0";
+            }
+            else
+            {
+                return o;
+            }
+        }
         public String NumberNullSort(object o)
         {
             float a = new float();

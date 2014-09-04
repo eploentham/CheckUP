@@ -29,106 +29,115 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtQuoId = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCompTaxId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCompAddress2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCompAddress1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboComp = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtQuId = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtCustEmail = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtCustFax = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtCustTel = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtCustAddress = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cboContact = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboCust = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dgvView = new System.Windows.Forms.DataGridView();
+            this.dgvAdd = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.txtVatRate = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.txtNetTotal = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.txtVat = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.txtPlus1 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtAmountDiscount = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtDiscount = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtAmount = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.cboRemark3 = new System.Windows.Forms.ComboBox();
+            this.cboRemark2 = new System.Windows.Forms.ComboBox();
+            this.cboRemark1 = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBox19 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.cboStaffApprove = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cboStaff = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtStaffTel = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtStaffEmail = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.txtQuNumber = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
+            this.dtpDateQu = new System.Windows.Forms.DateTimePicker();
+            this.label27 = new System.Windows.Forms.Label();
+            this.cboItem = new System.Windows.Forms.ComboBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.cboMethod = new System.Windows.Forms.ComboBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.txtItemQty = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.txtItemPrice = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
+            this.txtItemAmount = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.txtRow = new System.Windows.Forms.TextBox();
+            this.txtCompId = new System.Windows.Forms.TextBox();
+            this.txtCustId = new System.Windows.Forms.TextBox();
+            this.txtStaffId = new System.Windows.Forms.TextBox();
+            this.txtStaffApproveId = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtCompTaxId);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtCompAddress2);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtCompAddress1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cboComp);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 74);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(511, 167);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "รายละเอียด บริษัท";
             // 
-            // txtQuoId
+            // txtCompTaxId
             // 
-            this.txtQuoId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtQuoId.Location = new System.Drawing.Point(420, 215);
-            this.txtQuoId.Name = "txtQuoId";
-            this.txtQuoId.Size = new System.Drawing.Size(97, 27);
-            this.txtQuoId.TabIndex = 8;
-            this.txtQuoId.Visible = false;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox3.Location = new System.Drawing.Point(89, 130);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(396, 27);
-            this.textBox3.TabIndex = 7;
+            this.txtCompTaxId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCompTaxId.Location = new System.Drawing.Point(89, 130);
+            this.txtCompTaxId.Name = "txtCompTaxId";
+            this.txtCompTaxId.Size = new System.Drawing.Size(396, 27);
+            this.txtCompTaxId.TabIndex = 7;
             // 
             // label4
             // 
@@ -140,13 +149,13 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Tax Id :";
             // 
-            // textBox2
+            // txtCompAddress2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox2.Location = new System.Drawing.Point(89, 97);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(396, 27);
-            this.textBox2.TabIndex = 5;
+            this.txtCompAddress2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCompAddress2.Location = new System.Drawing.Point(89, 97);
+            this.txtCompAddress2.Name = "txtCompAddress2";
+            this.txtCompAddress2.Size = new System.Drawing.Size(396, 27);
+            this.txtCompAddress2.TabIndex = 5;
             // 
             // label3
             // 
@@ -158,13 +167,13 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "ที่อยู่2 :";
             // 
-            // textBox1
+            // txtCompAddress1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox1.Location = new System.Drawing.Point(89, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(396, 27);
-            this.textBox1.TabIndex = 3;
+            this.txtCompAddress1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCompAddress1.Location = new System.Drawing.Point(89, 64);
+            this.txtCompAddress1.Name = "txtCompAddress1";
+            this.txtCompAddress1.Size = new System.Drawing.Size(396, 27);
+            this.txtCompAddress1.TabIndex = 3;
             // 
             // label2
             // 
@@ -176,14 +185,14 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "ที่อยู่1 :";
             // 
-            // comboBox1
+            // cboComp
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(89, 30);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(396, 28);
-            this.comboBox1.TabIndex = 1;
+            this.cboComp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cboComp.FormattingEnabled = true;
+            this.cboComp.Location = new System.Drawing.Point(89, 30);
+            this.cboComp.Name = "cboComp";
+            this.cboComp.Size = new System.Drawing.Size(396, 28);
+            this.cboComp.TabIndex = 1;
             // 
             // label1
             // 
@@ -195,34 +204,43 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "บริษัท :";
             // 
+            // txtQuId
+            // 
+            this.txtQuId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtQuId.Location = new System.Drawing.Point(306, 12);
+            this.txtQuId.Name = "txtQuId";
+            this.txtQuId.Size = new System.Drawing.Size(50, 27);
+            this.txtQuId.TabIndex = 8;
+            this.txtQuId.Visible = false;
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.txtCustEmail);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.txtCustFax);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.txtCustTel);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.txtCustAddress);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.comboBox3);
+            this.groupBox2.Controls.Add(this.cboContact);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.cboCust);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(529, 12);
+            this.groupBox2.Location = new System.Drawing.Point(529, 11);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(607, 230);
+            this.groupBox2.Size = new System.Drawing.Size(502, 230);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "รายละเอียด ลูกค้า";
             // 
-            // textBox7
+            // txtCustEmail
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox7.Location = new System.Drawing.Point(89, 188);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(396, 27);
-            this.textBox7.TabIndex = 13;
+            this.txtCustEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCustEmail.Location = new System.Drawing.Point(89, 188);
+            this.txtCustEmail.Name = "txtCustEmail";
+            this.txtCustEmail.Size = new System.Drawing.Size(396, 27);
+            this.txtCustEmail.TabIndex = 13;
             // 
             // label10
             // 
@@ -234,13 +252,13 @@
             this.label10.TabIndex = 12;
             this.label10.Text = "Email :";
             // 
-            // textBox6
+            // txtCustFax
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox6.Location = new System.Drawing.Point(89, 155);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(396, 27);
-            this.textBox6.TabIndex = 11;
+            this.txtCustFax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCustFax.Location = new System.Drawing.Point(89, 155);
+            this.txtCustFax.Name = "txtCustFax";
+            this.txtCustFax.Size = new System.Drawing.Size(396, 27);
+            this.txtCustFax.TabIndex = 11;
             // 
             // label9
             // 
@@ -252,13 +270,13 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "Fax  :";
             // 
-            // textBox5
+            // txtCustTel
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox5.Location = new System.Drawing.Point(89, 122);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(396, 27);
-            this.textBox5.TabIndex = 9;
+            this.txtCustTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCustTel.Location = new System.Drawing.Point(89, 122);
+            this.txtCustTel.Name = "txtCustTel";
+            this.txtCustTel.Size = new System.Drawing.Size(396, 27);
+            this.txtCustTel.TabIndex = 9;
             // 
             // label8
             // 
@@ -270,13 +288,13 @@
             this.label8.TabIndex = 8;
             this.label8.Text = "โทร :";
             // 
-            // textBox4
+            // txtCustAddress
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox4.Location = new System.Drawing.Point(89, 89);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(396, 27);
-            this.textBox4.TabIndex = 7;
+            this.txtCustAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCustAddress.Location = new System.Drawing.Point(89, 89);
+            this.txtCustAddress.Name = "txtCustAddress";
+            this.txtCustAddress.Size = new System.Drawing.Size(396, 27);
+            this.txtCustAddress.TabIndex = 7;
             // 
             // label7
             // 
@@ -288,14 +306,14 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "ที่อยู่1 :";
             // 
-            // comboBox3
+            // cboContact
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(89, 55);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(396, 28);
-            this.comboBox3.TabIndex = 5;
+            this.cboContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cboContact.FormattingEnabled = true;
+            this.cboContact.Location = new System.Drawing.Point(89, 55);
+            this.cboContact.Name = "cboContact";
+            this.cboContact.Size = new System.Drawing.Size(396, 28);
+            this.cboContact.TabIndex = 5;
             // 
             // label6
             // 
@@ -307,14 +325,14 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "เรียน :";
             // 
-            // comboBox2
+            // cboCust
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(89, 21);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(396, 28);
-            this.comboBox2.TabIndex = 3;
+            this.cboCust.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cboCust.FormattingEnabled = true;
+            this.cboCust.Location = new System.Drawing.Point(89, 21);
+            this.cboCust.Name = "cboCust";
+            this.cboCust.Size = new System.Drawing.Size(396, 28);
+            this.cboCust.TabIndex = 3;
             // 
             // label5
             // 
@@ -326,36 +344,36 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "ลูกค้า :";
             // 
-            // dgvView
+            // dgvAdd
             // 
-            this.dgvView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvView.Location = new System.Drawing.Point(12, 248);
-            this.dgvView.Name = "dgvView";
-            this.dgvView.RowTemplate.Height = 24;
-            this.dgvView.Size = new System.Drawing.Size(1119, 297);
-            this.dgvView.TabIndex = 2;
+            this.dgvAdd.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAdd.Location = new System.Drawing.Point(11, 334);
+            this.dgvAdd.Name = "dgvAdd";
+            this.dgvAdd.RowTemplate.Height = 24;
+            this.dgvAdd.Size = new System.Drawing.Size(1119, 297);
+            this.dgvAdd.TabIndex = 2;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label22);
-            this.groupBox3.Controls.Add(this.textBox17);
+            this.groupBox3.Controls.Add(this.txtVatRate);
             this.groupBox3.Controls.Add(this.label21);
-            this.groupBox3.Controls.Add(this.textBox16);
+            this.groupBox3.Controls.Add(this.txtNetTotal);
             this.groupBox3.Controls.Add(this.label20);
-            this.groupBox3.Controls.Add(this.textBox15);
+            this.groupBox3.Controls.Add(this.txtVat);
             this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Controls.Add(this.textBox14);
+            this.groupBox3.Controls.Add(this.txtTotal);
             this.groupBox3.Controls.Add(this.label18);
-            this.groupBox3.Controls.Add(this.textBox13);
+            this.groupBox3.Controls.Add(this.txtPlus1);
             this.groupBox3.Controls.Add(this.label17);
-            this.groupBox3.Controls.Add(this.textBox12);
+            this.groupBox3.Controls.Add(this.txtAmountDiscount);
             this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.textBox11);
+            this.groupBox3.Controls.Add(this.txtDiscount);
             this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.textBox10);
+            this.groupBox3.Controls.Add(this.txtAmount);
             this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Location = new System.Drawing.Point(671, 551);
+            this.groupBox3.Location = new System.Drawing.Point(671, 636);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(465, 258);
             this.groupBox3.TabIndex = 3;
@@ -372,13 +390,13 @@
             this.label22.TabIndex = 36;
             this.label22.Text = "%";
             // 
-            // textBox17
+            // txtVatRate
             // 
-            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox17.Location = new System.Drawing.Point(59, 185);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(42, 27);
-            this.textBox17.TabIndex = 35;
+            this.txtVatRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtVatRate.Location = new System.Drawing.Point(59, 185);
+            this.txtVatRate.Name = "txtVatRate";
+            this.txtVatRate.Size = new System.Drawing.Size(42, 27);
+            this.txtVatRate.TabIndex = 35;
             // 
             // label21
             // 
@@ -390,13 +408,13 @@
             this.label21.TabIndex = 34;
             this.label21.Text = "VAT :";
             // 
-            // textBox16
+            // txtNetTotal
             // 
-            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox16.Location = new System.Drawing.Point(272, 218);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(187, 27);
-            this.textBox16.TabIndex = 33;
+            this.txtNetTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtNetTotal.Location = new System.Drawing.Point(273, 218);
+            this.txtNetTotal.Name = "txtNetTotal";
+            this.txtNetTotal.Size = new System.Drawing.Size(187, 27);
+            this.txtNetTotal.TabIndex = 33;
             // 
             // label20
             // 
@@ -408,13 +426,13 @@
             this.label20.TabIndex = 32;
             this.label20.Text = "รวมราคาทั้งสิ้น :";
             // 
-            // textBox15
+            // txtVat
             // 
-            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox15.Location = new System.Drawing.Point(272, 185);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(187, 27);
-            this.textBox15.TabIndex = 31;
+            this.txtVat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtVat.Location = new System.Drawing.Point(272, 185);
+            this.txtVat.Name = "txtVat";
+            this.txtVat.Size = new System.Drawing.Size(187, 27);
+            this.txtVat.TabIndex = 31;
             // 
             // label19
             // 
@@ -426,13 +444,13 @@
             this.label19.TabIndex = 30;
             this.label19.Text = "ภาษีมูลค่าเพิ่ม :";
             // 
-            // textBox14
+            // txtTotal
             // 
-            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox14.Location = new System.Drawing.Point(272, 153);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(187, 27);
-            this.textBox14.TabIndex = 29;
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtTotal.Location = new System.Drawing.Point(272, 153);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(187, 27);
+            this.txtTotal.TabIndex = 29;
             // 
             // label18
             // 
@@ -444,13 +462,13 @@
             this.label18.TabIndex = 28;
             this.label18.Text = "รวมราคา :";
             // 
-            // textBox13
+            // txtPlus1
             // 
-            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox13.Location = new System.Drawing.Point(273, 120);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(187, 27);
-            this.textBox13.TabIndex = 27;
+            this.txtPlus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtPlus1.Location = new System.Drawing.Point(273, 120);
+            this.txtPlus1.Name = "txtPlus1";
+            this.txtPlus1.Size = new System.Drawing.Size(187, 27);
+            this.txtPlus1.TabIndex = 27;
             // 
             // label17
             // 
@@ -462,13 +480,13 @@
             this.label17.TabIndex = 26;
             this.label17.Text = "ค่าภาคสนาม(ค่าเดินทาง) :";
             // 
-            // textBox12
+            // txtAmountDiscount
             // 
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox12.Location = new System.Drawing.Point(272, 87);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(187, 27);
-            this.textBox12.TabIndex = 25;
+            this.txtAmountDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAmountDiscount.Location = new System.Drawing.Point(272, 87);
+            this.txtAmountDiscount.Name = "txtAmountDiscount";
+            this.txtAmountDiscount.Size = new System.Drawing.Size(187, 27);
+            this.txtAmountDiscount.TabIndex = 25;
             // 
             // label16
             // 
@@ -480,13 +498,13 @@
             this.label16.TabIndex = 24;
             this.label16.Text = "ราคาหลังหักส่วนลด :";
             // 
-            // textBox11
+            // txtDiscount
             // 
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox11.Location = new System.Drawing.Point(272, 54);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(187, 27);
-            this.textBox11.TabIndex = 23;
+            this.txtDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtDiscount.Location = new System.Drawing.Point(272, 54);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.Size = new System.Drawing.Size(187, 27);
+            this.txtDiscount.TabIndex = 23;
             // 
             // label15
             // 
@@ -498,13 +516,13 @@
             this.label15.TabIndex = 22;
             this.label15.Text = "ส่วนลด :";
             // 
-            // textBox10
+            // txtAmount
             // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox10.Location = new System.Drawing.Point(272, 21);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(187, 27);
-            this.textBox10.TabIndex = 21;
+            this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAmount.Location = new System.Drawing.Point(272, 21);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(187, 27);
+            this.txtAmount.TabIndex = 21;
             // 
             // label14
             // 
@@ -518,26 +536,45 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox20);
+            this.groupBox4.Controls.Add(this.cboRemark3);
+            this.groupBox4.Controls.Add(this.cboRemark2);
+            this.groupBox4.Controls.Add(this.cboRemark1);
             this.groupBox4.Controls.Add(this.label25);
-            this.groupBox4.Controls.Add(this.textBox19);
             this.groupBox4.Controls.Add(this.label24);
-            this.groupBox4.Controls.Add(this.textBox18);
             this.groupBox4.Controls.Add(this.label23);
-            this.groupBox4.Location = new System.Drawing.Point(12, 551);
+            this.groupBox4.Location = new System.Drawing.Point(12, 636);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(653, 129);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "หมายเหตุ";
             // 
-            // textBox20
+            // cboRemark3
             // 
-            this.textBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox20.Location = new System.Drawing.Point(54, 90);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(593, 27);
-            this.textBox20.TabIndex = 27;
+            this.cboRemark3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cboRemark3.FormattingEnabled = true;
+            this.cboRemark3.Location = new System.Drawing.Point(54, 92);
+            this.cboRemark3.Name = "cboRemark3";
+            this.cboRemark3.Size = new System.Drawing.Size(593, 28);
+            this.cboRemark3.TabIndex = 30;
+            // 
+            // cboRemark2
+            // 
+            this.cboRemark2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cboRemark2.FormattingEnabled = true;
+            this.cboRemark2.Location = new System.Drawing.Point(54, 58);
+            this.cboRemark2.Name = "cboRemark2";
+            this.cboRemark2.Size = new System.Drawing.Size(593, 28);
+            this.cboRemark2.TabIndex = 29;
+            // 
+            // cboRemark1
+            // 
+            this.cboRemark1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cboRemark1.FormattingEnabled = true;
+            this.cboRemark1.Location = new System.Drawing.Point(54, 24);
+            this.cboRemark1.Name = "cboRemark1";
+            this.cboRemark1.Size = new System.Drawing.Size(593, 28);
+            this.cboRemark1.TabIndex = 28;
             // 
             // label25
             // 
@@ -549,14 +586,6 @@
             this.label25.TabIndex = 26;
             this.label25.Text = "3 :";
             // 
-            // textBox19
-            // 
-            this.textBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox19.Location = new System.Drawing.Point(54, 57);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(593, 27);
-            this.textBox19.TabIndex = 25;
-            // 
             // label24
             // 
             this.label24.AutoSize = true;
@@ -566,14 +595,6 @@
             this.label24.Size = new System.Drawing.Size(28, 20);
             this.label24.TabIndex = 24;
             this.label24.Text = "2 :";
-            // 
-            // textBox18
-            // 
-            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox18.Location = new System.Drawing.Point(54, 24);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(593, 27);
-            this.textBox18.TabIndex = 23;
             // 
             // label23
             // 
@@ -585,148 +606,332 @@
             this.label23.TabIndex = 22;
             this.label23.Text = "1 :";
             // 
-            // comboBox5
+            // cboStaffApprove
             // 
-            this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(183, 751);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(272, 28);
-            this.comboBox5.TabIndex = 6;
+            this.cboStaffApprove.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cboStaffApprove.FormattingEnabled = true;
+            this.cboStaffApprove.Location = new System.Drawing.Point(183, 860);
+            this.cboStaffApprove.Name = "cboStaffApprove";
+            this.cboStaffApprove.Size = new System.Drawing.Size(272, 28);
+            this.cboStaffApprove.TabIndex = 6;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label26.Location = new System.Drawing.Point(15, 754);
+            this.label26.Location = new System.Drawing.Point(15, 863);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(155, 20);
             this.label26.TabIndex = 5;
             this.label26.Text = "ผู้อนุมัติใบเสนอราคา :";
             // 
-            // label27
+            // cboStaff
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label27.Location = new System.Drawing.Point(15, 787);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(152, 20);
-            this.label27.TabIndex = 7;
-            this.label27.Text = "วันที่ในใบเสนอราคา :";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(183, 785);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(140, 27);
-            this.dateTimePicker1.TabIndex = 8;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(183, 686);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(282, 28);
-            this.comboBox4.TabIndex = 17;
+            this.cboStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cboStaff.FormattingEnabled = true;
+            this.cboStaff.Location = new System.Drawing.Point(183, 795);
+            this.cboStaff.Name = "cboStaff";
+            this.cboStaff.Size = new System.Drawing.Size(282, 28);
+            this.cboStaff.TabIndex = 17;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label11.Location = new System.Drawing.Point(15, 689);
+            this.label11.Location = new System.Drawing.Point(15, 798);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(97, 20);
             this.label11.TabIndex = 16;
             this.label11.Text = "ผู้เสนอราคา :";
             // 
-            // textBox8
+            // txtStaffTel
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox8.Location = new System.Drawing.Point(183, 720);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(200, 27);
-            this.textBox8.TabIndex = 19;
+            this.txtStaffTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtStaffTel.Location = new System.Drawing.Point(183, 829);
+            this.txtStaffTel.Name = "txtStaffTel";
+            this.txtStaffTel.Size = new System.Drawing.Size(200, 27);
+            this.txtStaffTel.TabIndex = 19;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label12.Location = new System.Drawing.Point(15, 723);
+            this.label12.Location = new System.Drawing.Point(15, 832);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(46, 20);
             this.label12.TabIndex = 18;
             this.label12.Text = "โทร :";
             // 
-            // textBox9
+            // txtStaffEmail
             // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox9.Location = new System.Drawing.Point(463, 720);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(196, 27);
-            this.textBox9.TabIndex = 21;
+            this.txtStaffEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtStaffEmail.Location = new System.Drawing.Point(463, 829);
+            this.txtStaffEmail.Name = "txtStaffEmail";
+            this.txtStaffEmail.Size = new System.Drawing.Size(196, 27);
+            this.txtStaffEmail.TabIndex = 21;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label13.Location = new System.Drawing.Point(396, 723);
+            this.label13.Location = new System.Drawing.Point(396, 832);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(61, 20);
             this.label13.TabIndex = 20;
             this.label13.Text = "Email :";
             // 
-            // textBox21
+            // txtQuNumber
             // 
-            this.textBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox21.Location = new System.Drawing.Point(101, 193);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(182, 27);
-            this.textBox21.TabIndex = 22;
+            this.txtQuNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtQuNumber.Location = new System.Drawing.Point(98, 12);
+            this.txtQuNumber.Name = "txtQuNumber";
+            this.txtQuNumber.Size = new System.Drawing.Size(182, 27);
+            this.txtQuNumber.TabIndex = 22;
             // 
             // label28
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label28.Location = new System.Drawing.Point(28, 200);
+            this.label28.Location = new System.Drawing.Point(25, 19);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(55, 20);
             this.label28.TabIndex = 23;
             this.label28.Text = "เลขที่ :";
             // 
+            // dtpDateQu
+            // 
+            this.dtpDateQu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dtpDateQu.Location = new System.Drawing.Point(183, 45);
+            this.dtpDateQu.Name = "dtpDateQu";
+            this.dtpDateQu.Size = new System.Drawing.Size(140, 27);
+            this.dtpDateQu.TabIndex = 25;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label27.Location = new System.Drawing.Point(25, 45);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(152, 20);
+            this.label27.TabIndex = 24;
+            this.label27.Text = "วันที่ในใบเสนอราคา :";
+            // 
+            // cboItem
+            // 
+            this.cboItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cboItem.FormattingEnabled = true;
+            this.cboItem.Location = new System.Drawing.Point(241, 255);
+            this.cboItem.Name = "cboItem";
+            this.cboItem.Size = new System.Drawing.Size(282, 28);
+            this.cboItem.TabIndex = 27;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label29.Location = new System.Drawing.Point(138, 258);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(97, 20);
+            this.label29.TabIndex = 26;
+            this.label29.Text = "Parameter :";
+            // 
+            // cboMethod
+            // 
+            this.cboMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cboMethod.FormattingEnabled = true;
+            this.cboMethod.Location = new System.Drawing.Point(241, 289);
+            this.cboMethod.Name = "cboMethod";
+            this.cboMethod.Size = new System.Drawing.Size(282, 28);
+            this.cboMethod.TabIndex = 29;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label30.Location = new System.Drawing.Point(138, 292);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(74, 20);
+            this.label30.TabIndex = 28;
+            this.label30.Text = "Method :";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label31.Location = new System.Drawing.Point(634, 269);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(31, 20);
+            this.label31.TabIndex = 31;
+            this.label31.Text = "qty";
+            // 
+            // txtItemQty
+            // 
+            this.txtItemQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtItemQty.Location = new System.Drawing.Point(618, 292);
+            this.txtItemQty.Name = "txtItemQty";
+            this.txtItemQty.Size = new System.Drawing.Size(74, 27);
+            this.txtItemQty.TabIndex = 30;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label32.Location = new System.Drawing.Point(775, 269);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(46, 20);
+            this.label32.TabIndex = 33;
+            this.label32.Text = "price";
+            // 
+            // txtItemPrice
+            // 
+            this.txtItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtItemPrice.Location = new System.Drawing.Point(760, 292);
+            this.txtItemPrice.Name = "txtItemPrice";
+            this.txtItemPrice.Size = new System.Drawing.Size(103, 27);
+            this.txtItemPrice.TabIndex = 32;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(1055, 19);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 36);
+            this.btnSave.TabIndex = 14;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(1055, 286);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(41, 31);
+            this.btnAdd.TabIndex = 15;
+            this.btnAdd.Text = "+";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label33.Location = new System.Drawing.Point(940, 269);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(64, 20);
+            this.label33.TabIndex = 35;
+            this.label33.Text = "amount";
+            // 
+            // txtItemAmount
+            // 
+            this.txtItemAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtItemAmount.Location = new System.Drawing.Point(928, 292);
+            this.txtItemAmount.Name = "txtItemAmount";
+            this.txtItemAmount.Size = new System.Drawing.Size(103, 27);
+            this.txtItemAmount.TabIndex = 34;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label34.Location = new System.Drawing.Point(15, 292);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(56, 20);
+            this.label34.TabIndex = 37;
+            this.label34.Text = "ลำดับ :";
+            // 
+            // txtRow
+            // 
+            this.txtRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtRow.Location = new System.Drawing.Point(77, 289);
+            this.txtRow.Name = "txtRow";
+            this.txtRow.Size = new System.Drawing.Size(55, 27);
+            this.txtRow.TabIndex = 36;
+            // 
+            // txtCompId
+            // 
+            this.txtCompId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCompId.Location = new System.Drawing.Point(400, 47);
+            this.txtCompId.Name = "txtCompId";
+            this.txtCompId.Size = new System.Drawing.Size(65, 27);
+            this.txtCompId.TabIndex = 38;
+            this.txtCompId.Visible = false;
+            // 
+            // txtCustId
+            // 
+            this.txtCustId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCustId.Location = new System.Drawing.Point(1040, 66);
+            this.txtCustId.Name = "txtCustId";
+            this.txtCustId.Size = new System.Drawing.Size(56, 27);
+            this.txtCustId.TabIndex = 39;
+            this.txtCustId.Visible = false;
+            // 
+            // txtStaffId
+            // 
+            this.txtStaffId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtStaffId.Location = new System.Drawing.Point(471, 796);
+            this.txtStaffId.Name = "txtStaffId";
+            this.txtStaffId.Size = new System.Drawing.Size(56, 27);
+            this.txtStaffId.TabIndex = 40;
+            this.txtStaffId.Visible = false;
+            // 
+            // txtStaffApproveId
+            // 
+            this.txtStaffApproveId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtStaffApproveId.Location = new System.Drawing.Point(467, 860);
+            this.txtStaffApproveId.Name = "txtStaffApproveId";
+            this.txtStaffApproveId.Size = new System.Drawing.Size(56, 27);
+            this.txtStaffApproveId.TabIndex = 41;
+            this.txtStaffApproveId.Visible = false;
+            // 
             // FrmQuotationAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 835);
-            this.Controls.Add(this.label28);
-            this.Controls.Add(this.textBox21);
-            this.Controls.Add(this.txtQuoId);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.dateTimePicker1);
+            this.ClientSize = new System.Drawing.Size(1355, 915);
+            this.Controls.Add(this.txtStaffApproveId);
+            this.Controls.Add(this.txtStaffId);
+            this.Controls.Add(this.txtCustId);
+            this.Controls.Add(this.txtCompId);
+            this.Controls.Add(this.label34);
+            this.Controls.Add(this.txtRow);
+            this.Controls.Add(this.label33);
+            this.Controls.Add(this.txtItemAmount);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.label32);
+            this.Controls.Add(this.txtItemPrice);
+            this.Controls.Add(this.label31);
+            this.Controls.Add(this.txtItemQty);
+            this.Controls.Add(this.cboMethod);
+            this.Controls.Add(this.label30);
+            this.Controls.Add(this.cboItem);
+            this.Controls.Add(this.label29);
+            this.Controls.Add(this.dtpDateQu);
             this.Controls.Add(this.label27);
-            this.Controls.Add(this.comboBox5);
+            this.Controls.Add(this.label28);
+            this.Controls.Add(this.txtStaffEmail);
+            this.Controls.Add(this.txtQuNumber);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.txtStaffTel);
+            this.Controls.Add(this.txtQuId);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.cboStaff);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.cboStaffApprove);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.dgvView);
+            this.Controls.Add(this.dgvAdd);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmQuotationAdd";
             this.Text = "FrmQuotationAdd";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmQuotationAdd_Load);
+            this.Resize += new System.EventHandler(this.FrmQuotationAdd_Resize);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -739,65 +944,83 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCompAddress2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCompAddress1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboComp;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCompTaxId;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtQuoId;
+        private System.Windows.Forms.TextBox txtQuId;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtCustEmail;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtCustFax;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtCustTel;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtCustAddress;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboContact;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboCust;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dgvView;
+        private System.Windows.Forms.DataGridView dgvAdd;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtDiscount;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox txtPlus1;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtAmountDiscount;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox txtVat;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox txtVatRate;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox txtNetTotal;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox20;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox19;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox18;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox cboStaffApprove;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cboStaff;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtStaffTel;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtStaffEmail;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.TextBox txtQuNumber;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.ComboBox cboRemark3;
+        private System.Windows.Forms.ComboBox cboRemark2;
+        private System.Windows.Forms.ComboBox cboRemark1;
+        private System.Windows.Forms.DateTimePicker dtpDateQu;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.ComboBox cboItem;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.ComboBox cboMethod;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox txtItemQty;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox txtItemPrice;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox txtItemAmount;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox txtRow;
+        private System.Windows.Forms.TextBox txtCompId;
+        private System.Windows.Forms.TextBox txtCustId;
+        private System.Windows.Forms.TextBox txtStaffId;
+        private System.Windows.Forms.TextBox txtStaffApproveId;
     }
 }
