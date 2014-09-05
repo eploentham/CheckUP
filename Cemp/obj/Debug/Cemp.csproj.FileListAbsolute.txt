@@ -79,5 +79,5 @@ C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmStaffView.resources
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.FrmReport.resources
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmMethodAdd.resources
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmMethodView.resources
-D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.csprojResolveAssemblyReference.cache
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.FrmReport.resources
+D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.csprojResolveAssemblyReference.cache

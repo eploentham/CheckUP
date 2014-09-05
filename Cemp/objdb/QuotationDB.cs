@@ -226,7 +226,7 @@ namespace Cemp.objdb
                 p.Remark3 + "','" + p.StaffEmail + "','" + p.StaffId + "','" +
                 p.StaffName + "','" + p.StaffTel + "','" + p.StatusQuo + "'," +
                 NumberNull1(p.Total) + "," + NumberNull1(p.Vat) + "," + NumberNull1(p.VatRate) + ",'" +
-                p.StaffApproveId + "','" + p.StaffApproveName + "'," + NumberNull1(p.Discount) + "'," + 
+                p.StaffApproveId + "','" + p.StaffApproveName + "'," + NumberNull1(p.Discount) + "," + 
                 NumberNull1(p.QuoNumberCnt) + ")";
             try
             {
@@ -375,10 +375,12 @@ namespace Cemp.objdb
         {
             String sql = "", doc="", cnt="",year="";
             String[] doc1 = quoNumber.Split('-');
-
-            if (doc[0].ToString().Length > 5)
+            if (!quoNumber.Equals(""))
             {
-                year = doc[0].ToString().Substring(2,2);
+                if (doc[0].ToString().Length > 5)
+                {
+                    year = doc[0].ToString().Substring(2, 2);
+                }
             }
             sql = "Select count("+qu.QuoNumber+") as cnt From "+qu.table+" Where +"+qu.QuoNumber+"='"+doc1[0]+"'";
             DataTable dt = conn.selectData(sql);
@@ -399,11 +401,15 @@ namespace Cemp.objdb
                     {
                         year = String.Concat(System.DateTime.Now.Year + 543);
                     }
-                    year.Substring(2);
+                    year = year.Substring(2);
                 }
                 sql = "Select count(" + qu.QuoNumber + ") as cnt From " + qu.table ;
+                dt = conn.selectData(sql);
+                doc = String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);
+                doc = "00000" + doc;
+                doc = doc.Substring(doc.Length - 5);
                 cnt = "1";
-                doc = "00001";
+                //doc = "00001";
             }
             return "QUO"+year+doc+"-"+cnt;
         }
@@ -429,8 +435,8 @@ namespace Cemp.objdb
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 item = new ComboBoxItem();
-                item.Value = dt.Rows[i][qu.Remark1].ToString();
-                item.Text = dt.Rows[i][qu.Remark1].ToString();
+                item.Value = dt.Rows[i][qu.Remark2].ToString();
+                item.Text = dt.Rows[i][qu.Remark2].ToString();
                 c.Items.Add(item);
                 //c.Items.Add(new );
             }
@@ -444,8 +450,8 @@ namespace Cemp.objdb
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 item = new ComboBoxItem();
-                item.Value = dt.Rows[i][qu.Remark1].ToString();
-                item.Text = dt.Rows[i][qu.Remark1].ToString();
+                item.Value = dt.Rows[i][qu.Remark3].ToString();
+                item.Text = dt.Rows[i][qu.Remark3].ToString();
                 c.Items.Add(item);
                 //c.Items.Add(new );
             }

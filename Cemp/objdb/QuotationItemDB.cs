@@ -76,19 +76,16 @@ namespace Cemp.objdb
             }
             return item;
         }
-        public QuotationItem selectByQuoId(String quiId)
+        public DataTable selectByQuId(String quId)
         {
-            QuotationItem item = new QuotationItem();
+            //QuotationItem item = new QuotationItem();
             String sql = "";
 
-            sql = "Select * From " + qui.table + " Where " + qui.QuoId + "='" + quiId + "' and " + qui.Active + "='1' ";
+            sql = "Select * From " + qui.table + " Where " + qui.QuoId + "='" + quId + "' and " + qui.Active + "='1' ";
             //dt = conn.selectData(sql);
-            conn.selectDataN(sql);
-            if (conn.dt.Rows.Count > 0)
-            {
-                item = setData(item, conn.dt);
-            }
-            return item;
+            DataTable dt = conn.selectData(sql);
+
+            return dt;
         }
         public DataTable selectDistinctItemDescription()
         {
@@ -115,6 +112,26 @@ namespace Cemp.objdb
             {
                 p.Id = "qui"+p.getGenID();
             }
+            if (p.Discount.Equals(""))
+            {
+                p.Discount = "0";
+            }
+            if (p.Qty.Equals(""))
+            {
+                p.Qty = "0";
+            }
+            if (p.PriceSale.Equals(""))
+            {
+                p.PriceSale = "0";
+            }
+            if (p.Amount.Equals(""))
+            {
+                p.Amount = "0";
+            }
+            if (p.RowNumber.Equals(""))
+            {
+                p.RowNumber = "0";
+            }
             p.ItemDescription = p.ItemDescription.Replace("''", "'");
             p.MethodDescription = p.MethodDescription.Replace("''", "'");
             p.Remark = p.Remark.Replace("''", "'");
@@ -123,10 +140,10 @@ namespace Cemp.objdb
                 qui.MethodDescription + "," + qui.MethodId + "," + qui.PriceSale + "," +
                 qui.Qty + "," + qui.QuoId + "," + qui.RowNumber + "," +
                 qui.Remark + ") " +
-                "Values('" + p.Id + "','" + p.Active + "','" + p.Amount + "','" +
-                p.Discount + "','" + p.ItemDescription + "','" + p.ItemId + "','" +
-                p.MethodDescription + "','" + p.MethodId + "','" + p.PriceSale + "','" +
-                p.Qty + "','" + p.QuoId + "','" + p.RowNumber + "','" +
+                "Values('" + p.Id + "','" + p.Active + "'," + p.Amount + "," +
+                p.Discount + ",'" + p.ItemDescription + "','" + p.ItemId + "','" +
+                p.MethodDescription + "','" + p.MethodId + "'," + p.PriceSale + "," +
+                p.Qty + ",'" + p.QuoId + "'," + p.RowNumber + ",'" +
                 p.Remark + "')";
             try
             {

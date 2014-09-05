@@ -16,8 +16,8 @@ namespace Cemp.gui
         CnviControl cc;
         Quotation qu;
         Company cp;
-        int colRow = 0, colItem = 1, colMethod = 2, colQty = 3, colPrice = 4, colAmount = 5, colId=6;
-        int colCnt = 7;
+        int colRow = 0, colItem = 1, colMethod = 2, colQty = 3, colPrice = 4, colAmount = 5, colId=6, colDel=7;
+        int colCnt = 8;
         String oldNetTotal = "";
         Boolean pageLoad = false;
         public FrmQuotationAdd(String quId, CnviControl c)
@@ -31,10 +31,20 @@ namespace Cemp.gui
             cc = c;
             qu = new Quotation();
             cp = cc.cpdb.selectByPk();
+            txtVatRate.Text = cp.vat;
             dtpDateQu.Format = DateTimePickerFormat.Short;
             setControl(quId);
-            setGrd();
+            setGrd(quId);
             pageLoad = false;
+            txtItemAmount.ReadOnly = true;
+            txtRow.ReadOnly = true;
+            dgvAdd.ReadOnly = true;
+            txtAmount.ReadOnly = true;
+            txtAmountDiscount.ReadOnly = true;
+            txtVatRate.ReadOnly = true;
+            txtVat.ReadOnly = true;
+            txtTotal.ReadOnly = true;
+            txtNetTotal.ReadOnly = true;
         }
         private void setResize()
         {
@@ -52,8 +62,8 @@ namespace Cemp.gui
             cboStaff = cc.sfdb.getCboStaff(cboStaff);
             cboStaffApprove = cc.sfdb.getCboStaff(cboStaffApprove);
             cboRemark1 = cc.qudb.getCboRemark1(cboRemark1);
-            cboRemark2 = cc.qudb.getCboRemark1(cboRemark2);
-            cboRemark3 = cc.qudb.getCboRemark1(cboRemark3);
+            cboRemark2 = cc.qudb.getCboRemark2(cboRemark2);
+            cboRemark3 = cc.qudb.getCboRemark3(cboRemark3);
             cboItem = cc.quidb.getCboItemDescription(cboItem);
             cboMethod = cc.quidb.getCboMethodDescription(cboMethod);
 
@@ -84,6 +94,10 @@ namespace Cemp.gui
             txtVatRate.Text = qu.VatRate;
             cboStaffApprove.Text = qu.StaffApproveName;
             txtStaffApproveId.Text = qu.StaffApproveId;
+            txtVatRate.Text = qu.VatRate;
+            cboRemark1.Text = qu.Remark1;
+            cboRemark2.Text = qu.Remark2;
+            cboRemark3.Text = qu.Remark3;
 
             if (qu.Id.Equals(""))
             {
@@ -94,6 +108,7 @@ namespace Cemp.gui
                     txtCompAddress1.Text = cp.AddressT;
                     txtCompAddress2.Text = cp.AddressT;
                     txtCompTaxId.Text = cp.TaxId;
+                    txtVatRate.Text = cp.vat;
                 }
             }
 
@@ -130,17 +145,21 @@ namespace Cemp.gui
             qu.StaffApproveName = cboStaffApprove.Text;
             qu.StaffApproveId = txtStaffApproveId.Text;
             qu.Active = "1";
+            qu.Remark1 = cboRemark1.Text;
+            qu.Remark2 = cboRemark2.Text;
+            qu.Remark3 = cboRemark3.Text;
             //qu.StatusQuo = "1";
         }
-        private void setGrd()
+        private void setGrd(String quId)
         {
+            DataTable dt = cc.quidb.selectByQuId(quId);
             //DataGridViewComboBoxColumn newColumn = new DataGridViewComboBoxColumn();
             //newColumn.Name = "abc";
             //newColumn.DataSource = new string[] { "a", "b", "c" };
             //newColumn.ReadOnly = false;
 
-            DataTable dt = new DataTable();
-            dt = cc.sfdb.selectAll();
+            //DataTable dt = new DataTable();
+            //dt = cc.sfdb.selectAll();
             dgvAdd.ColumnCount = colCnt;
 
             dgvAdd.RowCount = dt.Rows.Count + 1;
@@ -165,6 +184,7 @@ namespace Cemp.gui
 
             dgvAdd.Font = font;
             dgvAdd.Columns[colId].Visible = false;
+            dgvAdd.Columns[colDel].Visible = false;
             //dgvAdd.Columns.Add(newColumn);
             if (dt.Rows.Count > 0)
             {
@@ -173,14 +193,15 @@ namespace Cemp.gui
                     //dgvAdd.Rows[0].Cells = newColumn;
                     //DataGridViewComboBoxCell cell = (DataGridViewComboBoxCell)(dgvAdd.Rows[i].Cells[colItem]);
                     //cell.DataSource = newColumn;
-                    
-                    //dgvAdd[colRow, i].Value = (i + 1);
-                    //dgvAdd[colItem, i].Value = dt.Rows[i][cc.sfdb.sf.Code].ToString();
-                    //dgvAdd[colMethod, i].Value = dt.Rows[i][cc.sfdb.sf.NameT].ToString();
-                    //dgvAdd[colQty, i].Value = dt.Rows[i][cc.sfdb.sf.Remark].ToString();
-                    //dgvAdd[colPrice, i].Value = dt.Rows[i][cc.sfdb.sf.Remark].ToString();
-                    //dgvAdd[colAmount, i].Value = dt.Rows[i][cc.sfdb.sf.Remark].ToString();
-                    //dgvAdd[colId, i].Value = dt.Rows[i][cc.sfdb.sf.Id].ToString(); 
+
+                    dgvAdd[colRow, i].Value = (i + 1);
+                    dgvAdd[colItem, i].Value = dt.Rows[i][cc.quidb.qui.ItemDescription].ToString();
+                    dgvAdd[colMethod, i].Value = dt.Rows[i][cc.quidb.qui.MethodDescription].ToString();
+                    dgvAdd[colQty, i].Value = dt.Rows[i][cc.quidb.qui.Qty].ToString();
+                    dgvAdd[colPrice, i].Value = dt.Rows[i][cc.quidb.qui.PriceSale].ToString();
+                    dgvAdd[colAmount, i].Value = dt.Rows[i][cc.quidb.qui.Amount].ToString();
+                    dgvAdd[colId, i].Value = dt.Rows[i][cc.quidb.qui.Id].ToString();
+                    dgvAdd[colDel, i].Value = "";
 
                     if ((i % 2) != 0)
                     {
@@ -188,6 +209,37 @@ namespace Cemp.gui
                     }
                 }
             }
+        }
+        private void calAmount()
+        {
+            Double amt = 0;
+            String amt1 = "";
+            for (int i = 0; i < dgvAdd.Rows.Count; i++)
+            {
+                if (dgvAdd[colAmount, i].Value==null)
+                {
+                    continue;
+                }
+                if (dgvAdd[colAmount, i].Value.ToString().Equals(""))
+                {
+                    continue;
+                }
+                amt += Double.Parse(cc.cf.NumberNull1(dgvAdd[colAmount, i].Value.ToString()));
+            }
+            txtAmount.Text = amt.ToString();
+        }
+        private void calNetTotal()
+        {
+            Double amt = 0, amtDis=0,total=0,netTotal=0, vat=0;
+            amt = Double.Parse(cc.cf.NumberNull1(txtAmount.Text));
+            amtDis = amt - Double.Parse(cc.cf.NumberNull1(txtDiscount.Text));
+            total = amtDis+Double.Parse(cc.cf.NumberNull1(txtPlus1.Text));
+            vat = (total * Double.Parse(cc.cf.NumberNull1(txtVatRate.Text)) / 100);
+            netTotal = total + vat;
+            txtAmountDiscount.Text = amtDis.ToString();
+            txtTotal.Text = total.ToString();
+            txtVat.Text = vat.ToString();
+            txtNetTotal.Text = netTotal.ToString();
         }
         private void FrmQuotationAdd_Load(object sender, EventArgs e)
         {
@@ -201,6 +253,7 @@ namespace Cemp.gui
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            String quId = "";
             if (txtQuNumber.Text.Equals(""))
             {
                 MessageBox.Show("ไม่มีเลขที่ Quotation", "ป้อนข้อมูลไม่ครบ");
@@ -250,6 +303,8 @@ namespace Cemp.gui
             //        return;
             //    }
             //}
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             getQuotation();
             if (qu.Id.Equals(""))
             {
@@ -271,12 +326,44 @@ namespace Cemp.gui
                     qu.QuoNumberCnt = String.Concat(int.Parse(doc1[1])+1);
                 }
             }
-            if (cc.qudb.insertQuotation(qu).Length >= 1)
+            quId = cc.qudb.insertQuotation(qu);
+            if (quId.Length >= 1)
             {
+                for (int i = 0; i < dgvAdd.RowCount; i++)
+                {
+                    QuotationItem qui = new QuotationItem();
+                    if (dgvAdd[colAmount, i].Value == null)
+                    {
+                        continue;
+                    }
+                    if (dgvAdd[colAmount, i].Value.ToString().Equals(""))
+                    {
+                        continue;
+                    }
+                    qui.RowNumber = dgvAdd[colRow, i].Value.ToString();
+                    qui.PriceSale = cc.cf.NumberNull1(dgvAdd[colPrice, i].Value.ToString());
+                    qui.Qty = cc.cf.NumberNull1(dgvAdd[colQty, i].Value.ToString());
+                    qui.Amount = cc.cf.NumberNull1(dgvAdd[colAmount, i].Value.ToString());
+                    qui.ItemDescription = dgvAdd[colItem, i].Value.ToString();
+                    qui.MethodDescription = dgvAdd[colMethod, i].Value.ToString();
+                    qui.Id = dgvAdd[colId, i].Value.ToString();
+                    qui.Active = "1";
+                    qui.QuoId = quId;
+                    if (dgvAdd[colDel, i].Value.ToString().Equals("1"))
+                    {
+                        cc.quidb.VoidQuotationItem(dgvAdd[colId, i].Value.ToString());
+                    }
+                    else
+                    {
+                        cc.quidb.insertQuotationItem(qui);
+                    }
+                    
+                }
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 this.Dispose();
                 //this.Hide();
             }
+            Cursor.Current = cursor;
         }
 
         private void cboCust_SelectedIndexChanged(object sender, EventArgs e)
@@ -292,6 +379,56 @@ namespace Cemp.gui
                 txtCustTel.Text = cu.Tele;
                 cboContact.Text = cu.ContactName1;
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            int row= dgvAdd.Rows.Add(1);
+            dgvAdd[colRow, row].Value = (row+1);
+            dgvAdd[colItem, row].Value = cboItem.Text;
+            dgvAdd[colMethod, row].Value = cboMethod.Text;
+            dgvAdd[colQty, row].Value = txtItemQty.Text;
+            dgvAdd[colPrice, row].Value = txtItemPrice.Text;
+            dgvAdd[colAmount, row].Value = txtItemAmount.Text;
+            dgvAdd[colId, row].Value = "";
+            dgvAdd[colDel, row].Value = "";
+            calAmount();
+            calNetTotal();
+        }
+
+        private void dgvAdd_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtRow.Text = dgvAdd[colRow, e.RowIndex].Value.ToString();
+            txtItemPrice.Text = dgvAdd[colPrice, e.RowIndex].Value.ToString();
+            txtItemQty.Text = dgvAdd[colQty, e.RowIndex].Value.ToString();
+            txtItemAmount.Text = dgvAdd[colAmount, e.RowIndex].Value.ToString();
+            cboItem.Text = dgvAdd[colItem, e.RowIndex].Value.ToString();
+            cboMethod.Text = dgvAdd[colMethod, e.RowIndex].Value.ToString();
+        }
+
+        private void txtItemPrice_Leave(object sender, EventArgs e)
+        {
+            txtItemAmount.Text = String.Concat(Double.Parse(cc.cf.NumberNull1(txtItemQty.Text)) * Double.Parse(cc.cf.NumberNull1(txtItemPrice.Text)));
+            btnAdd.Focus();
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            if (txtRow.Text.Equals(""))
+            {
+                return;
+            }
+            dgvAdd[colDel, int.Parse(txtRow.Text)].Value = "1";
+        }
+
+        private void txtDiscount_Leave(object sender, EventArgs e)
+        {
+            calNetTotal();
+        }
+
+        private void txtPlus1_Leave(object sender, EventArgs e)
+        {
+            calNetTotal();
         }
     }
 }
