@@ -258,5 +258,32 @@ namespace Cemp.objdb
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
+        public String selectCodeMax()
+        {
+            //Customer item = new Customer();
+            String sql = "",year="";
+            if (System.DateTime.Now.Year > 2550)
+            {
+                year = System.DateTime.Now.Year.ToString().Substring(2);
+            }
+            else
+            {
+                year = String.Concat(System.DateTime.Now.Year + 543);
+            }
+            year = year.Substring(2);
+            sql = "Select count(1) as cnt From " + cu.table ;
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                sql = "00000" + String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);
+                sql = sql.Substring(sql.Length - 5);
+            }
+            else
+            {
+                sql = "00001";
+            }
+            return "CU" + year + sql;
+        }
     }
 }

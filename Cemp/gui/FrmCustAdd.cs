@@ -58,11 +58,19 @@ namespace Cemp.gui
             {
                 chkActive.Checked = true;
                 ChkUnActive.Checked = false;
+                btnUnActive.Visible = false;
             }
             else
             {
                 chkActive.Checked = false;
                 ChkUnActive.Checked = true;
+                btnUnActive.Visible = true;
+            }
+            if (cu.Active.Equals(""))
+            {
+                chkActive.Checked = true;
+                ChkUnActive.Checked = false;
+                btnUnActive.Visible = false;
             }
             label18.Text = cu.districtId;
             if (label18.Text.Length > 4)
@@ -133,6 +141,10 @@ namespace Cemp.gui
                 //}
             }
             getCustomer();
+            if (cu.Id.Equals(""))
+            {
+                cu.Code = cc.cudb.selectCodeMax();
+            }
             if (cc.cudb.insertCustomer(cu).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
@@ -224,6 +236,8 @@ namespace Cemp.gui
                 cboAmphur = cc.amdb.getCboAmphur1(cboAmphur, label18.Text.Substring(0, 4));
                 cboProvince = cc.prdb.getCboProv1(cboProvince, label18.Text.Substring(0, 2));
                 txtZipcode.Text = cc.didb.selectZipCodeByPk(label18.Text);
+
+                txtAddressT.Text = txtAddr.Text+" "+cboDistrict.Text+" "+cboAmphur.Text+" "+cboProvince.Text+" "+txtZipcode.Text;
             }
             else if (e.KeyCode == Keys.Down)
             {

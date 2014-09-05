@@ -28,7 +28,6 @@ C:\source\CNVI\CNVI.Cemp\Cemp\bin\Debug\Cemp.pdb
 C:\source\CNVI\CNVI.Cemp\Cemp\bin\Debug\itextsharp.dll
 C:\source\CNVI\CNVI.Cemp\Cemp\bin\Debug\itextsharp.xml
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.csprojResolveAssemblyReference.cache
-C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.Form1.resources
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmCompany.resources
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\lottory.gui.FrmInitConfig.resources
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmLogin.resources
@@ -81,3 +80,4 @@ D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.FrmReport.resources
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmMethodAdd.resources
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmMethodView.resources
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.csprojResolveAssemblyReference.cache
+C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.FrmReport.resources

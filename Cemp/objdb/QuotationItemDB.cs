@@ -90,6 +90,24 @@ namespace Cemp.objdb
             }
             return item;
         }
+        public DataTable selectDistinctItemDescription()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select Distinct " + qui.ItemDescription + " From " + qui.table + " Where " + qui.Active + "='1'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectDistinctMethodDescription()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select Distinct " + qui.MethodDescription + " From " + qui.table + " Where " + qui.Active + "='1'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
         private String insert(QuotationItem p)
         {
             String sql = "", chk = "";
@@ -188,6 +206,36 @@ namespace Cemp.objdb
                 "Where " + qui.pkField + "='" + quId + "'";
             chk = conn.ExecuteNonQuery(sql);
             return chk;
+        }
+        public ComboBox getCboItemDescription(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectDistinctItemDescription();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i][qui.ItemDescription].ToString();
+                item.Text = dt.Rows[i][qui.ItemDescription].ToString();
+                c.Items.Add(item);
+                //c.Items.Add(new );
+            }
+            //c.SelectedItem = item;
+            return c;
+        }
+        public ComboBox getCboMethodDescription(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectDistinctMethodDescription();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i][qui.MethodDescription].ToString();
+                item.Text = dt.Rows[i][qui.MethodDescription].ToString();
+                c.Items.Add(item);
+                //c.Items.Add(new );
+            }
+            //c.SelectedItem = item;
+            return c;
         }
     }
 }

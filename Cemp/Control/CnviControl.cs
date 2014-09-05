@@ -291,5 +291,18 @@ namespace Cemp.Control
             return addr[addr.Length - 1].ToString();
             //return localIP;
         }
+        public String getValueCboItem(ComboBox c)
+        {
+            ComboBoxItem iSale;
+            iSale = (ComboBoxItem)c.SelectedItem;
+            if (iSale == null)
+            {
+                return "";
+            }
+            else
+            {
+                return iSale.Value;
+            }
+        }
     }
 }

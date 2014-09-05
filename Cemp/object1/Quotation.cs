@@ -11,7 +11,7 @@ namespace Cemp.object1
         public String CustName = "", Line1 = "", ContactName = "", CustAddress = "", CustTel = "", CustFax = "", CustEmail = "", StaffId = "", StaffName = "", StaffTel = "";
         public String StaffEmail = "", Line2 = "", Remark1 = "", Remark2 = "", Remark3 = "", Amount = "", DiscountPer = "", AmountDiscount = "", Plus1 = "", Plus1Name = "";
         public String Total = "", VatRate = "", Vat = "", NetTotal = "", Line3 = "", Line4 = "", Line5 = "", Line6 = "", Active = "", StatusQuo = "", Discount="";
-        public String StaffApproveId = "", StaffApproveName = "";
+        public String StaffApproveId = "", StaffApproveName = "", QuoNumberCnt="";
         public override string ToString()
         {
             return QuoNumber;

@@ -22,7 +22,7 @@ namespace Cemp.objdb
             sf = new Staff();
             sf.Id = "staff_id";
             sf.Code = "staff_code";
-            sf.NameT = "staff_name";
+            sf.NameT = "staff_name_t";
             sf.Remark = "staff_remark";
             sf.Password = "staff_password";
             sf.Active = "staff_active";

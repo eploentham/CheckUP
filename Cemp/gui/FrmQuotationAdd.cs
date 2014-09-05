@@ -15,8 +15,11 @@ namespace Cemp.gui
     {
         CnviControl cc;
         Quotation qu;
+        Company cp;
         int colRow = 0, colItem = 1, colMethod = 2, colQty = 3, colPrice = 4, colAmount = 5, colId=6;
         int colCnt = 7;
+        String oldNetTotal = "";
+        Boolean pageLoad = false;
         public FrmQuotationAdd(String quId, CnviControl c)
         {
             InitializeComponent();
@@ -24,10 +27,14 @@ namespace Cemp.gui
         }
         private void initConfig(String quId, CnviControl c)
         {
+            pageLoad = true;
             cc = c;
             qu = new Quotation();
+            cp = cc.cpdb.selectByPk();
+            dtpDateQu.Format = DateTimePickerFormat.Short;
             setControl(quId);
             setGrd();
+            pageLoad = false;
         }
         private void setResize()
         {
@@ -40,6 +47,16 @@ namespace Cemp.gui
         private void setControl(String quId)
         {
             qu = cc.qudb.selectByPk(quId);
+            cboComp = cc.cpdb.getCboCustomer(cboComp);
+            cboCust = cc.cudb.getCboCustomer(cboCust);
+            cboStaff = cc.sfdb.getCboStaff(cboStaff);
+            cboStaffApprove = cc.sfdb.getCboStaff(cboStaffApprove);
+            cboRemark1 = cc.qudb.getCboRemark1(cboRemark1);
+            cboRemark2 = cc.qudb.getCboRemark1(cboRemark2);
+            cboRemark3 = cc.qudb.getCboRemark1(cboRemark3);
+            cboItem = cc.quidb.getCboItemDescription(cboItem);
+            cboMethod = cc.quidb.getCboMethodDescription(cboMethod);
+
             txtAmount.Text = qu.Amount;
             txtAmountDiscount.Text = qu.AmountDiscount;
             txtCompAddress1.Text = qu.CompAddress1;
@@ -57,7 +74,7 @@ namespace Cemp.gui
             txtNetTotal.Text = qu.NetTotal;
             txtPlus1.Text = qu.Plus1;
             txtQuId.Text = qu.Id;
-            txtQuNumber.Text = qu.QuoNumber;
+            txtQuNumber.Text = qu.QuoNumber+"-"+qu.QuoNumberCnt;
             txtStaffEmail.Text = qu.StaffEmail;
             txtStaffTel.Text = qu.StaffTel;
             txtStaffId.Text = qu.StaffId;
@@ -67,6 +84,21 @@ namespace Cemp.gui
             txtVatRate.Text = qu.VatRate;
             cboStaffApprove.Text = qu.StaffApproveName;
             txtStaffApproveId.Text = qu.StaffApproveId;
+
+            if (qu.Id.Equals(""))
+            {
+                if (cboComp.Items.Count == 1)
+                {
+                    cboComp.Text = cp.NameT;
+                    txtCompId.Text = cp.Id;
+                    txtCompAddress1.Text = cp.AddressT;
+                    txtCompAddress2.Text = cp.AddressT;
+                    txtCompTaxId.Text = cp.TaxId;
+                }
+            }
+
+            txtQuNumber.ReadOnly = true;
+            oldNetTotal = qu.NetTotal;
         }
         private void getQuotation()
         {
@@ -148,7 +180,7 @@ namespace Cemp.gui
                     //dgvAdd[colQty, i].Value = dt.Rows[i][cc.sfdb.sf.Remark].ToString();
                     //dgvAdd[colPrice, i].Value = dt.Rows[i][cc.sfdb.sf.Remark].ToString();
                     //dgvAdd[colAmount, i].Value = dt.Rows[i][cc.sfdb.sf.Remark].ToString();
-                    //dgvAdd[colId, i].Value = dt.Rows[i][cc.sfdb.sf.Id].ToString();
+                    //dgvAdd[colId, i].Value = dt.Rows[i][cc.sfdb.sf.Id].ToString(); 
 
                     if ((i % 2) != 0)
                     {
@@ -219,11 +251,46 @@ namespace Cemp.gui
             //    }
             //}
             getQuotation();
+            if (qu.Id.Equals(""))
+            {
+                qu.QuoNumber = cc.qudb.getQuoNumber("");
+                String[] doc1 = qu.QuoNumber.Split('-');
+                qu.QuoNumber = doc1[0];
+                qu.QuoNumberCnt = doc1[1];
+            }
+            else
+            {
+                String[] doc1 = qu.QuoNumber.Split('-');
+                qu.QuoNumber = doc1[0];
+                if (qu.NetTotal.Equals(oldNetTotal))
+                {
+                    qu.QuoNumberCnt = doc1[1];
+                }
+                else
+                {
+                    qu.QuoNumberCnt = String.Concat(int.Parse(doc1[1])+1);
+                }
+            }
             if (cc.qudb.insertQuotation(qu).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 this.Dispose();
                 //this.Hide();
+            }
+        }
+
+        private void cboCust_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Customer cu = new Customer();
+            if (!pageLoad)
+            {
+                cu = cc.cudb.selectByPk(cc.getValueCboItem(cboCust));
+                txtCustId.Text = cu.Id;
+                txtCustAddress.Text = cu.AddressT;
+                txtCustEmail.Text = cu.Email;
+                txtCustFax.Text = cu.Fax;
+                txtCustTel.Text = cu.Tele;
+                cboContact.Text = cu.ContactName1;
             }
         }
     }

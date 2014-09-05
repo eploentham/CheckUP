@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label20 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.btnUnActive = new System.Windows.Forms.Button();
             this.ChkUnActive = new System.Windows.Forms.RadioButton();
             this.chkActive = new System.Windows.Forms.RadioButton();
             this.txtRemark = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtContactName2Tel = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.txtContactName2 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
@@ -78,14 +78,14 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label20);
+            this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.btnUnActive);
             this.groupBox1.Controls.Add(this.ChkUnActive);
             this.groupBox1.Controls.Add(this.chkActive);
             this.groupBox1.Controls.Add(this.txtRemark);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtContactName2Tel);
-            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.txtContactName2);
             this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.btnSave);
@@ -128,14 +128,14 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // label20
+            // label18
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(350, 142);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(26, 13);
-            this.label20.TabIndex = 65;
-            this.label20.Text = "ชื่อ :";
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(350, 142);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(26, 13);
+            this.label18.TabIndex = 65;
+            this.label18.Text = "ชื่อ :";
             // 
             // btnUnActive
             // 
@@ -152,7 +152,7 @@
             this.ChkUnActive.AutoSize = true;
             this.ChkUnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.ChkUnActive.Location = new System.Drawing.Point(691, 188);
-            this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2);
             this.ChkUnActive.Name = "ChkUnActive";
             this.ChkUnActive.Size = new System.Drawing.Size(60, 21);
             this.ChkUnActive.TabIndex = 63;
@@ -166,7 +166,7 @@
             this.chkActive.AutoSize = true;
             this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.chkActive.Location = new System.Drawing.Point(566, 188);
-            this.chkActive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkActive.Margin = new System.Windows.Forms.Padding(2);
             this.chkActive.Name = "chkActive";
             this.chkActive.Size = new System.Drawing.Size(61, 21);
             this.chkActive.TabIndex = 62;
@@ -205,15 +205,15 @@
             this.txtContactName2Tel.Enter += new System.EventHandler(this.txtContactName2Tel_Enter);
             this.txtContactName2Tel.Leave += new System.EventHandler(this.txtContactName2Tel_Leave);
             // 
-            // label18
+            // label20
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(542, 105);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(77, 16);
-            this.label18.TabIndex = 58;
-            this.label18.Text = "เบอร์ผู้ติดต่อ2 :";
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(542, 105);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(77, 16);
+            this.label20.TabIndex = 58;
+            this.label20.Text = "เบอร์ผู้ติดต่อ2 :";
             // 
             // txtContactName2
             // 
@@ -584,7 +584,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(866, 457);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmCustAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCustAdd";
@@ -633,7 +633,7 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox txtContactName2Tel;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtContactName2;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtRemark;
@@ -641,6 +641,6 @@
         private System.Windows.Forms.Button btnUnActive;
         private System.Windows.Forms.RadioButton ChkUnActive;
         private System.Windows.Forms.RadioButton chkActive;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label18;
     }
 }

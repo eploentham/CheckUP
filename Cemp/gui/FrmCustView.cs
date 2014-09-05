@@ -67,7 +67,7 @@ namespace Cemp.gui
                 {
                     dgvView[colRow, i].Value = (i + 1);
                     dgvView[colNameT, i].Value = dt.Rows[i][cc.cudb.cu.NameT].ToString();
-                    dgvView[colAddr, i].Value = dt.Rows[i][cc.cudb.cu.NameT].ToString();
+                    dgvView[colAddr, i].Value = dt.Rows[i][cc.cudb.cu.AddressT].ToString();
                     dgvView[colTel, i].Value = dt.Rows[i][cc.cudb.cu.Tele].ToString();
                     dgvView[colFax, i].Value = dt.Rows[i][cc.cudb.cu.Fax].ToString();
                     dgvView[colRemark, i].Value = dt.Rows[i][cc.cudb.cu.Remark].ToString();
