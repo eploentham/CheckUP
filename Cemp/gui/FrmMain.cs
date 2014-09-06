@@ -70,7 +70,7 @@ namespace Cemp
             //    tv1.Nodes["nInitConfig"].Nodes.Add("nRateView", "สร้างอัตรา");
             tv1.Nodes["nInitConfig"].Nodes.Add("nPassword", "เปลี่ยนรหัสผ่าน");
             tv1.Nodes["nInitConfig"].Nodes.Add("nTest", "Test ");
-            //    tv1.Nodes["nInitConfig"].Nodes.Add("nInitConfig1", "กำหนดค่าโปรแกรม");
+            tv1.Nodes["nInitConfig"].Nodes.Add("nInitConfig", "กำหนดค่าโปรแกรม");
             //}
 
             tv1.ExpandAll();
@@ -155,11 +155,11 @@ namespace Cemp
             //    FrmThooDefault frm = new FrmThooDefault(sf.Code);
             //    showFrame(frm);
             //}
-            //else if (e.Node.Name.ToString() == "nInitConfig1")
-            //{
-            //    FrmInitConfig frm = new FrmInitConfig(sf.Code, lc);
-            //    showFrame(frm);
-            //}
+            else if (e.Node.Name.ToString() == "nInitConfig")
+            {
+                FrmInitConfig frm = new FrmInitConfig(sf.Code, cc);
+                showFrame(frm);
+            }
             //else if (e.Node.Name.ToString() == "nInputImage")
             //{
             //    FrmInputImage frm = new FrmInputImage(sf.Code, lc);

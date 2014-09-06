@@ -10,7 +10,7 @@ using System.Net;
 using System.Text;
 using System.Windows.Forms;
 
-namespace lottory.gui
+namespace Cemp.gui
 {
     public partial class FrmInitConfig : Form
     {
@@ -73,6 +73,14 @@ namespace lottory.gui
             else
             {
                 chkDelImage.Checked = false;
+            }
+            if (cc.initC.use32Bit.Equals("yes"))
+            {
+                chkUse32bit.Checked = true;
+            }
+            else
+            {
+                chkUse32bit.Checked = false;
             }
         }
         private void FrmInitConfig_Load(object sender, EventArgs e)
