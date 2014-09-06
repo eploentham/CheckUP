@@ -58,6 +58,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Control\CnviControl.cs" />
+    <Compile Include="gui\FrmItemGroupAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmItemGroupAdd.Designer.cs">
+      <DependentUpon>FrmItemGroupAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmItemGroupView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmItemGroupView.Designer.cs">
+      <DependentUpon>FrmItemGroupView.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +208,7 @@
     <Compile Include="objdb\CustomerDB.cs" />
     <Compile Include="objdb\DistrictDB.cs" />
     <Compile Include="objdb\ItemDB.cs" />
+    <Compile Include="objdb\ItemGroupDB.cs" />
     <Compile Include="objdb\MethodDB.cs" />
     <Compile Include="objdb\MOUDB.cs" />
     <Compile Include="objdb\MOUItemDB.cs" />
@@ -212,6 +225,7 @@
     <Compile Include="object1\IniFile.cs" />
     <Compile Include="object1\InitConfig.cs" />
     <Compile Include="object1\Item.cs" />
+    <Compile Include="object1\ItemGroup.cs" />
     <Compile Include="object1\Method.cs" />
     <Compile Include="object1\MOU.cs" />
     <Compile Include="object1\MOUItem.cs" />
@@ -222,6 +236,12 @@
     <Compile Include="object1\Staff.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="gui\FrmItemGroupAdd.resx">
+      <DependentUpon>FrmItemGroupAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmItemGroupView.resx">
+      <DependentUpon>FrmItemGroupView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmReport.resx">
       <DependentUpon>FrmReport.cs</DependentUpon>
     </EmbeddedResource>

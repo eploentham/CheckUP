@@ -33,6 +33,7 @@ namespace Cemp.Control
         public QuotationItemDB quidb;
         public MOUDB modb;
         public MOUItemDB moidb;
+        public ItemDB itdb;
 
         public Staff sf;
 
@@ -66,6 +67,7 @@ namespace Cemp.Control
             quidb = new QuotationItemDB(conn);
             modb = new MOUDB(conn);
             moidb = new MOUItemDB(conn);
+            itdb = new ItemDB(conn);
 
             PathLogo = Environment.CurrentDirectory;
         }
@@ -319,6 +321,20 @@ namespace Cemp.Control
             {
                 return iSale.Value;
             }
+        }
+        public String getYear()
+        {
+            String year = "";
+            if (System.DateTime.Now.Year > 2550)
+            {
+                year = System.DateTime.Now.Year.ToString().Substring(2);
+            }
+            else
+            {
+                year = String.Concat(System.DateTime.Now.Year + 543);
+            }
+            year = year.Substring(2);
+            return year;
         }
     }
 }

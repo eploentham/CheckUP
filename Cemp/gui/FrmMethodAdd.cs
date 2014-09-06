@@ -25,8 +25,16 @@ namespace Cemp.gui
             cc = c;
             me = new Method();
             setControl(meId);
+            if (meId.Equals(""))
+            {
+                label9.Text = cc.medb.getMaxCode();
+            }
+            else
+            {
+                label9.Visible = false;
+            }
             btnUnActive.Visible = false;
-            txtCode.ReadOnly = true;
+            //txtCode.ReadOnly = true;
         }
         private void setControl(String meId)
         {
@@ -91,6 +99,10 @@ namespace Cemp.gui
                 //}
             }
             getMethod();
+            if (me.Code.Equals(""))
+            {
+                me.Code = cc.medb.getMethodCode();
+            }
             if (cc.medb.insertMethod(me).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
@@ -129,7 +141,7 @@ namespace Cemp.gui
 
         private void btnUnActive_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("ต้องการยกเลิก", "ยกเลิก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            if (MessageBox.Show("ต้องการยกเลิก"+txtCode.Text+"  "+txtNameT.Text, "ยกเลิก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
                 cc.medb.VoidMethod(txtId.Text);
                 this.Dispose();
@@ -174,6 +186,17 @@ namespace Cemp.gui
         private void txtRemark_Leave(object sender, EventArgs e)
         {
             txtRemark.BackColor = Color.White;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            Method me = cc.medb.selectByCode(txtCode.Text);
+            label8.Text = "รหัสซ้ำ" + me.Code + " ชื่อ " + me.NameT;
+            if (!me.Code.Equals(""))
+            {
+                MessageBox.Show("ป้อนรหัสซ้ำ\nรหัส " + me.Code + " ชื่อ " + me.NameT, "รหัสซ้ำ");
+                return;
+            }
         }
     }
 }

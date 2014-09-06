@@ -73,7 +73,7 @@ namespace Cemp.objdb
             DataTable dt = conn.selectData(sql);
             if (dt.Rows.Count > 0)
             {
-                item = setData(item, conn.dt);
+                item = setData(item, dt);
             }
             return item;
         }
@@ -127,7 +127,7 @@ namespace Cemp.objdb
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex.ToString(), "update Customer");
+                MessageBox.Show("Error " + ex.ToString(), "update Method");
             }
             finally
             {
@@ -180,6 +180,50 @@ namespace Cemp.objdb
                 "Where " + me.pkField + "='" + saleId + "'";
             chk = conn.ExecuteNonQuery(sql);
             return chk;
+        }
+        public String getMaxCode()
+        {
+            String sql = "", cnt = "", year = "";
+            sql = "Select count(1) as cnt From " + it.table;
+            DataTable dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                cnt = String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);
+                cnt = "00000" + cnt;
+                cnt = cnt.Substring(cnt.Length - 5);
+                //year = getYear();
+            }
+            //return "me" + year + cnt;
+            return cnt;
+        }
+        public String getMethodCode()
+        {
+            String sql = "", cnt="", year ="";
+            sql = "Select count(1) as cnt From "+me.table;
+            DataTable dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                cnt = String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);
+                cnt = "00000" + cnt;
+                cnt = cnt.Substring(cnt.Length - 5);
+                year = getYear();
+            }
+            //return "me" + year + cnt;
+            return cnt;
+        }
+        public String getYear()
+        {
+            String year = "";
+            if (System.DateTime.Now.Year > 2550)
+            {
+                year = System.DateTime.Now.Year.ToString().Substring(2);
+            }
+            else
+            {
+                year = String.Concat(System.DateTime.Now.Year + 543);
+            }
+            year = year.Substring(2);
+            return year;
         }
     }
 }

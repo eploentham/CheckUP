@@ -389,7 +389,7 @@ namespace Cemp.objdb
             }
             sql = "Select count("+qu.QuoNumber+") as cnt From "+qu.table+" Where +"+qu.QuoNumber+"='"+doc1[0]+"'";
             DataTable dt = conn.selectData(sql);
-            if (conn.dt.Rows.Count > 0)
+            if (dt.Rows.Count > 0)
             {
                 cnt = String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString())+1);
                 doc = doc1[0];
@@ -398,14 +398,7 @@ namespace Cemp.objdb
             {
                 if (!System.DateTime.Now.Year.ToString().Equals(year))
                 {
-                    if (System.DateTime.Now.Year > 2550)
-                    {
-                        year = System.DateTime.Now.Year.ToString().Substring(2);
-                    }
-                    else
-                    {
-                        year = String.Concat(System.DateTime.Now.Year + 543);
-                    }
+                    year = getYear();
                     year = year.Substring(2);
                 }
                 sql = "Select count(" + qu.QuoNumber + ") as cnt From " + qu.table ;
@@ -462,6 +455,20 @@ namespace Cemp.objdb
             }
             //c.SelectedItem = item;
             return c;
+        }
+        public String getYear()
+        {
+            String year = "";
+            if (System.DateTime.Now.Year > 2550)
+            {
+                year = System.DateTime.Now.Year.ToString().Substring(2);
+            }
+            else
+            {
+                year = String.Concat(System.DateTime.Now.Year + 543);
+            }
+            year = year.Substring(2);
+            return year;
         }
     }
 }
