@@ -13,9 +13,14 @@ namespace Cemp.gui
     public partial class FrmMOUAdd : Form
     {
         CnviControl cc;
-        public FrmMOUAdd()
+        public FrmMOUAdd(String moId, CnviControl c)
         {
             InitializeComponent();
+            initConfig(moId,c);
+        }
+        private void initConfig(String moId, CnviControl c)
+        {
+            cc = c;
         }
 
         private void FrmMOUAdd_Load(object sender, EventArgs e)

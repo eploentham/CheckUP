@@ -167,14 +167,14 @@ namespace Cemp.objdb
             p.MethodDescription = p.MethodDescription.Replace("''", "'");
             p.Remark = p.Remark.Replace("''", "'");
 
-            sql = "Update " + qui.table + " Set " + qui.Amount + "='" + p.Amount + "', " +
-                qui.Discount + "='" + p.Discount + "', " +
+            sql = "Update " + qui.table + " Set " + qui.Amount + "=" + p.Amount + ", " +
+                qui.Discount + "=" + NumberNull1(p.Discount) + ", " +
                 qui.ItemDescription + "='" + p.ItemDescription + "', " +
                 qui.ItemId + "='" + p.ItemId + "', " +
                 qui.MethodDescription + "='" + p.MethodDescription + "', " +
                 qui.MethodId + "='" + p.MethodId + "', " +
-                qui.PriceSale + "='" + p.PriceSale + "', " +
-                qui.Qty + "='" + p.Qty + "', " +
+                qui.PriceSale + "=" + p.PriceSale + ", " +
+                qui.Qty + "=" + p.Qty + ", " +
                 qui.QuoId + "='" + p.QuoId + "', " +
                 qui.RowNumber + "='" + p.RowNumber + "', " +
                 qui.Remark + "='" + p.Remark + "' " +
@@ -253,6 +253,17 @@ namespace Cemp.objdb
             }
             //c.SelectedItem = item;
             return c;
+        }
+        private String NumberNull1(String o)
+        {
+            if (o.Equals(""))
+            {
+                return "0";
+            }
+            else
+            {
+                return o;
+            }
         }
     }
 }

@@ -170,8 +170,8 @@ namespace Cemp.objdb
 
             sql = "Select * From " + qu.table + " Where " + qu.QuoNumber + "='" + quId + "'" ;
             //dt = conn.selectData(sql);
-            conn.selectDataN(sql);
-            if (conn.dt.Rows.Count > 0)
+            DataTable dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
             {
                 item = setData(item, conn.dt);
             }
@@ -196,7 +196,10 @@ namespace Cemp.objdb
             p.Plus1Name = p.Plus1Name.Replace("''", "'");
             p.StaffName = p.StaffName.Replace("''", "'");
             p.StaffApproveName = p.StaffApproveName.Replace("''", "'");
+
             p.QuoNumberCnt = "1";
+
+            
             //p.Remark = p.Remark.Replace("''", "'");
             sql = "Insert Into " + qu.table + " (" + qu.pkField + "," + qu.Amount + "," + qu.AmountDiscount + "," +
                 qu.CompAddress1 + "," + qu.CompAddress2 + "," + qu.CompId + "," +
@@ -298,11 +301,13 @@ namespace Cemp.objdb
                 qu.VatRate + "=" + NumberNull1(p.VatRate) + ", " +
                 qu.StaffApproveId + "='" + p.StaffApproveId + "', " +
                 qu.StaffApproveName + "='" + p.StaffApproveName + "', " +
-                qu.Discount + "=" + NumberNull1(p.Discount) + " " +
+                qu.Discount + "=" + NumberNull1(p.Discount) + ", " +
+                qu.QuoNumberCnt + "='" + p.QuoNumberCnt + "' " +
                 "Where " + qu.pkField + "='" + p.Id + "'";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
+                chk = p.Id;
             }
             catch (Exception ex)
             {

@@ -107,7 +107,7 @@ namespace Cemp
             }
             else if (e.Node.Name.ToString() == "nMOUView")
             {
-                FrmMOUView frm = new FrmMOUView(sf.Id, cc);
+                FrmMOUView frm = new FrmMOUView(cc);
                 showFrame(frm);
             }
             else if (e.Node.Name.ToString() == "nInputResult")

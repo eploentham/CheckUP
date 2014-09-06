@@ -83,6 +83,7 @@ namespace lottory.gui
         private void btnSave_Click(object sender, EventArgs e)
         {
             cc.SetClearInput(chkClearInput.Checked);
+            cc.SetUse32Bit(chkUse32bit.Checked);
             if (ChkServer.Checked)
             {
                 cc.SetSetatusServer(true);

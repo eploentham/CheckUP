@@ -197,6 +197,8 @@
     <Compile Include="objdb\DistrictDB.cs" />
     <Compile Include="objdb\ItemDB.cs" />
     <Compile Include="objdb\MethodDB.cs" />
+    <Compile Include="objdb\MOUDB.cs" />
+    <Compile Include="objdb\MOUItemDB.cs" />
     <Compile Include="objdb\ProvinceDB.cs" />
     <Compile Include="objdb\QuotationDB.cs" />
     <Compile Include="objdb\QuotationItemDB.cs" />
@@ -211,6 +213,8 @@
     <Compile Include="object1\InitConfig.cs" />
     <Compile Include="object1\Item.cs" />
     <Compile Include="object1\Method.cs" />
+    <Compile Include="object1\MOU.cs" />
+    <Compile Include="object1\MOUItem.cs" />
     <Compile Include="object1\Persistent.cs" />
     <Compile Include="object1\Province.cs" />
     <Compile Include="object1\Quotation.cs" />

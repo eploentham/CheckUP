@@ -24,6 +24,7 @@ namespace Cemp.gui
         {
             cc = c;
             setGrd();
+            dgvView.ReadOnly = true;
         }
         private void setResize()
         {
@@ -67,7 +68,7 @@ namespace Cemp.gui
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     dgvView[colRow, i].Value = (i + 1);
-                    dgvView[colQuoNumber, i].Value = dt.Rows[i][cc.qudb.qu.QuoNumber].ToString();
+                    dgvView[colQuoNumber, i].Value = dt.Rows[i][cc.qudb.qu.QuoNumber].ToString() + "-" + dt.Rows[i][cc.qudb.qu.QuoNumberCnt].ToString();
                     dgvView[colCustName, i].Value = dt.Rows[i][cc.qudb.qu.CustName].ToString();
                     dgvView[colContactName, i].Value = dt.Rows[i][cc.qudb.qu.ContactName].ToString();
                     dgvView[colId, i].Value = dt.Rows[i][cc.qudb.qu.Id].ToString();

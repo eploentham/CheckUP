@@ -31,6 +31,8 @@ namespace Cemp.Control
         public MethodDB medb;
         public QuotationDB qudb;
         public QuotationItemDB quidb;
+        public MOUDB modb;
+        public MOUItemDB moidb;
 
         public Staff sf;
 
@@ -62,6 +64,8 @@ namespace Cemp.Control
             medb = new MethodDB(conn);
             qudb = new QuotationDB(conn);
             quidb = new QuotationItemDB(conn);
+            modb = new MOUDB(conn);
+            moidb = new MOUItemDB(conn);
 
             PathLogo = Environment.CurrentDirectory;
         }
@@ -93,6 +97,7 @@ namespace Cemp.Control
             initC.StatusServer = iniFile.Read("statusserver");
             initC.pathShareData = iniFile.Read("pathsharedata");
             initC.pathShareImage = iniFile.Read("pathshareimage");
+            initC.use32Bit = iniFile.Read("use32bit");
             //initC.Password = regE.getPassword();
         }
         public void SetPathImage(String path)
@@ -142,6 +147,17 @@ namespace Cemp.Control
             else
             {
                 iniFile.Write("delimage", "no");
+            }
+        }
+        public void SetUse32Bit(Boolean value)
+        {
+            if (value)
+            {
+                iniFile.Write("use32bit", "yes");
+            }
+            else
+            {
+                iniFile.Write("use32bit", "no");
             }
         }
         public void SetConnectServer(Boolean value, String host, String username, String password)

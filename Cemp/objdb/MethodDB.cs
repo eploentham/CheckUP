@@ -70,8 +70,8 @@ namespace Cemp.objdb
 
             sql = "Select * From " + me.table + " Where " + me.Code + "='" + cuId + "' and " + me.Active + "='1' ";
             //dt = conn.selectData(sql);
-            conn.selectDataN(sql);
-            if (conn.dt.Rows.Count > 0)
+            DataTable dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
             {
                 item = setData(item, conn.dt);
             }

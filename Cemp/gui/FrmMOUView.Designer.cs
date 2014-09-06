@@ -35,9 +35,10 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(842, 12);
+            this.btnAdd.Location = new System.Drawing.Point(632, 10);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 48);
+            this.btnAdd.Size = new System.Drawing.Size(56, 39);
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "ป้อนใหม่";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -47,23 +48,27 @@
             // 
             this.dgvView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvView.Location = new System.Drawing.Point(12, 12);
+            this.dgvView.Location = new System.Drawing.Point(9, 10);
+            this.dgvView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvView.Name = "dgvView";
             this.dgvView.RowTemplate.Height = 24;
-            this.dgvView.Size = new System.Drawing.Size(816, 619);
+            this.dgvView.Size = new System.Drawing.Size(612, 503);
             this.dgvView.TabIndex = 5;
+            this.dgvView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvView_CellDoubleClick);
             // 
             // FrmMOUView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 713);
+            this.ClientSize = new System.Drawing.Size(735, 579);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvView);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmMOUView";
             this.Text = "FrmMOUView";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMOUView_Load);
+            this.Resize += new System.EventHandler(this.FrmMOUView_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();
             this.ResumeLayout(false);
 

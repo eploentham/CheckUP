@@ -67,6 +67,7 @@ namespace Cemp.gui
             cboItem = cc.quidb.getCboItemDescription(cboItem);
             cboMethod = cc.quidb.getCboMethodDescription(cboMethod);
 
+            cboContact.Text = qu.ContactName;
             txtAmount.Text = qu.Amount;
             txtAmountDiscount.Text = qu.AmountDiscount;
             txtCompAddress1.Text = qu.CompAddress1;
@@ -148,6 +149,7 @@ namespace Cemp.gui
             qu.Remark1 = cboRemark1.Text;
             qu.Remark2 = cboRemark2.Text;
             qu.Remark3 = cboRemark3.Text;
+            qu.ContactName = cboContact.Text;
             //qu.StatusQuo = "1";
         }
         private void setGrd(String quId)

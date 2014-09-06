@@ -45,43 +45,57 @@ namespace Cemp.objdb
         public ConnectDB(InitConfig i)
         {
             initc = i;
-
-            if (initc.StatusServer.ToLower().Equals("yes"))
+            if (initc.use32Bit.Equals("yes"))
             {
-                if (initc.connectDatabaseServer.ToLower().Equals("yes"))
+                if (initc.StatusServer.ToLower().Equals("yes"))
                 {
-                    cMysql = new MySql.Data.MySqlClient.MySqlConnection();
-                    cMysql.ConnectionString = "server=" + initc.ServerIP + ";uid=" + initc.User + ";pwd=" + initc.Password + ";database=test;";
+                    _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\cemp.mdb;Persist Security Info=False";
+                }
+                else
+                {
+                    _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + "\\" + initc.pathShareData + "\\Database\\cemp.mdb;Persist Security Info=False";
+                }
+            }
+            else
+            {
+                if (initc.StatusServer.ToLower().Equals("yes"))
+                {
+                    if (initc.connectDatabaseServer.ToLower().Equals("yes"))
+                    {
+                        cMysql = new MySql.Data.MySqlClient.MySqlConnection();
+                        cMysql.ConnectionString = "server=" + initc.ServerIP + ";uid=" + initc.User + ";pwd=" + initc.Password + ";database=test;";
+                    }
+                    else
+                    {
+                        if (Environment.Is64BitOperatingSystem)
+                        {
+                            _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
+                            _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\cemp.mdb;Persist Security Info=False";
+                        }
+                        else
+                        {
+                            _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
+                            _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\cemp.mdb;Persist Security Info=False";
+                        }
+                    }
                 }
                 else
                 {
                     if (Environment.Is64BitOperatingSystem)
                     {
-                        _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
-                        _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\cemp.mdb;Persist Security Info=False";
+                        //_mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
+                        //_mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\lottory.mdb;Persist Security Info=False";
+                        _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + "\\" + initc.pathShareData + "\\Database\\cemp.mdb;Persist Security Info=False";
                     }
                     else
                     {
-                        _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
-                        _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\cemp.mdb;Persist Security Info=False";
+                        //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
+                        //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\lottory.mdb;Persist Security Info=False";
+                        _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + "\\" + initc.pathShareData + "\\Database\\cemp.mdb;Persist Security Info=False";
                     }
                 }
             }
-            else
-            {
-                if (Environment.Is64BitOperatingSystem)
-                {
-                    //_mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
-                    //_mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\lottory.mdb;Persist Security Info=False";
-                    _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + "\\" + initc.pathShareData + "\\Database\\cemp.mdb;Persist Security Info=False";
-                }
-                else
-                {
-                    //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
-                    //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\lottory.mdb;Persist Security Info=False";
-                    _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + "\\" + initc.pathShareData + "\\Database\\cemp.mdb;Persist Security Info=False";
-                }
-            }
+            
             //_mainConnection = new OleDbConnection();
             //_mainConnection.ConnectionString = GetConfig("Main.ConnectionString");
 
