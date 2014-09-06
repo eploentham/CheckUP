@@ -20,36 +20,39 @@ namespace Cemp.objdb
         private void initConfig()
         {
             mo = new MOU();
-            mo.Active = "";
-            mo.CompAddress1 = "";
-            mo.CompAddress2 = "";
-            mo.CompId = "";
-            mo.CompName = "";
-            mo.CompTaxId = "";
-            mo.ContactName = "";
-            mo.CustAddress = "";
-            mo.CustEmail = "";
-            mo.CustFax = "";
-            mo.CustMobile = "";
-            mo.CustMou = "";
-            mo.CustName = "";
-            mo.CustTel = "";
-            mo.Id = "";
-            mo.Line1 = "";
-            mo.MOUNumber = "";
-            mo.QuoId = "";
-            mo.QuoNumber = "";
-            mo.Remark = "";
-            mo.StaffEmail = "";
-            mo.StaffId = "";
-            mo.StaffMOU = "";
-            mo.StaffName = "";
-            mo.StaffTel = "";
-            mo.MOUNumberCnt = "";
-            mo.statusMOU = "";
+            mo.Active = "mou_active";
+            mo.CompAddress1 = "comp_address1";
+            mo.CompAddress2 = "comp_address2";
+            mo.CompId = "comp_id";
+            mo.CompName = "comp_name";
+            mo.CompTaxId = "comp_tax_id";
+            mo.ContactName = "contact_name";
+            mo.CustAddress = "cust_address";
+            mo.CustEmail = "cust_email";
+            mo.CustFax = "cust_fax";
+            mo.CustMobile = "cust_mobile";
+            mo.CustMou = "cust_mou";
+            mo.CustName = "cust_name";
+            mo.CustTel = "cust_tel";
+            mo.Id = "mou_id";
+            mo.Line1 = "line1";
+            mo.MOUNumber = "mou_number";
+            mo.QuoId = "quo_id";
+            mo.QuoNumber = "quo_number";
+            mo.Remark = "remark";
+            mo.StaffEmail = "staff_email";
+            mo.StaffId = "staff_id";
+            mo.StaffMOU = "staff_mou";
+            mo.StaffName = "staff_name";
+            mo.StaffTel = "staff_tel";
+            mo.MOUNumberCnt = "mou_number_cnt";
+            mo.statusMOU = "status_mou";
+            mo.DatePeriod = "date_period";
+            mo.CustId = "cust_id";
+            mo.StaffMobile = "staff_mobile";
 
-            mo.pkField = "";
-            mo.table = "";
+            mo.pkField = "mou_id";
+            mo.table = "t_mou";
         }
         private MOU setData(MOU item, DataTable dt)
         {
@@ -80,6 +83,9 @@ namespace Cemp.objdb
             item.StaffTel = dt.Rows[0][mo.StaffTel].ToString();
             item.MOUNumberCnt = dt.Rows[0][mo.MOUNumberCnt].ToString();
             item.statusMOU = dt.Rows[0][mo.statusMOU].ToString();
+            item.DatePeriod = dt.Rows[0][mo.DatePeriod].ToString();
+            item.CustId = dt.Rows[0][mo.CustId].ToString();
+            item.StaffMobile = dt.Rows[0][mo.StaffMobile].ToString();
             
             return item;
         }
@@ -171,7 +177,8 @@ namespace Cemp.objdb
                 mo.Line1 + "," + mo.MOUNumber + "," + mo.QuoId + "," +
                 mo.QuoNumber + "," + mo.Remark + "," + mo.StaffEmail + "," +
                 mo.StaffId + "," + mo.StaffMOU + "," + mo.StaffName + "," +
-                mo.StaffTel + "," + mo.MOUNumberCnt + "," + mo.Remark + "," + mo.statusMOU + ") " +
+                mo.StaffTel + "," + mo.MOUNumberCnt + "," + mo.Remark + "," +
+                mo.statusMOU + "," + mo.DatePeriod + "," + mo.CustId + "," + mo.StaffMobile + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.CompAddress1 + "','" +
                 p.CompAddress2 + "','" + p.CompId + "','" + p.CompName + "','" +
                 p.CompTaxId + "','" + p.ContactName + "','" + p.CustAddress + "','" +
@@ -180,7 +187,8 @@ namespace Cemp.objdb
                 p.Line1 + "','" + p.MOUNumber + "','" + p.QuoId + ",'" +
                 p.QuoNumber + "','" + p.Remark + "','" + p.StaffEmail + "','" +
                 p.StaffId + "','" + p.StaffMOU + "','" + p.StaffName + "','" +
-                p.StaffTel + "','" + p.MOUNumberCnt + "','" + p.Remark + "','" + p.statusMOU + "')";
+                p.StaffTel + "','" + p.MOUNumberCnt + "','" + p.Remark + "','" +
+                p.statusMOU + "','" + p.DatePeriod + "','" + p.CustId + "','" + p.StaffMobile + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -233,9 +241,10 @@ namespace Cemp.objdb
                 mo.StaffName + "='" + p.StaffName + "', " +
                 mo.StaffTel + "='" + p.StaffTel + "', " +
                 mo.MOUNumberCnt + "='" + p.MOUNumberCnt + "', " +
-                
-                mo.Remark + "='" + p.Remark + "' " +
-
+                mo.DatePeriod + "='" + p.DatePeriod + "', " +
+                mo.Remark + "='" + p.Remark + "', " +
+                mo.CustId + "='" + p.CustId + "', " +
+                mo.StaffMobile + "='" + p.StaffMobile + "' " +
                 "Where " + mo.pkField + "='" + p.Id + "'";
             try
             {

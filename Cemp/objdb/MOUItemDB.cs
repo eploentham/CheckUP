@@ -20,19 +20,19 @@ namespace Cemp.objdb
         private void initConfig()
         {
             moi = new MOUItem();
-            moi.Active = "";
-            moi.Id = "";
-            moi.ItemDescription = "";
-            moi.ItemId = "";
-            moi.MethodDescription = "";
-            moi.MethodId = "";
-            moi.MOUId = "";
-            moi.PlaceRecord = "";
-            moi.RowNumber = "";
-            moi.Sample = "";
+            moi.Active = "mou_item_active";
+            moi.Id = "mou_item_id";
+            moi.ItemDescription = "item_description";
+            moi.ItemId = "item_id";
+            moi.MethodDescription = "method_description";
+            moi.MethodId = "method_id";
+            moi.MOUId = "mou_id";
+            moi.PlaceRecord = "place_record";
+            moi.RowNumber = "row_number";
+            moi.Sample = "sample";
 
-            moi.pkField = "";
-            moi.table = "";
+            moi.pkField = "mou_item_id";
+            moi.table = "t_mou_item";
         }
         private MOUItem setData(MOUItem item, DataTable dt)
         {
