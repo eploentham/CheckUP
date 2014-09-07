@@ -1,4 +1,5 @@
 ﻿using Cemp.Control;
+using Cemp.object1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,8 @@ namespace Cemp.gui
     public partial class FrmItemView : Form
     {
         CnviControl cc;
-        int colRow = 0, colNameT = 1, colAddr = 2, colTel = 3, colFax = 4, colRemark = 5, colId = 6;
+        Item it;
+        int colRow = 0, colNameT = 1, colNameE = 2, colMethod = 3, colGroup = 4, colRemark = 5, colId = 6;
         int colCnt = 7;
         public FrmItemView(CnviControl c)
         {
@@ -23,6 +25,7 @@ namespace Cemp.gui
         private void initConfig(CnviControl c)
         {
             cc = c;
+            it = new Item();
             setGrd();
         }
         private void setResize()
@@ -36,23 +39,23 @@ namespace Cemp.gui
         private void setGrd()
         {
             DataTable dt = new DataTable();
-            dt = cc.cudb.selectAll();
+            dt = cc.itdb.selectAll();
             dgvView.ColumnCount = colCnt;
 
             dgvView.RowCount = dt.Rows.Count + 1;
             dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvView.Columns[colRow].Width = 50;
             dgvView.Columns[colNameT].Width = 150;
-            dgvView.Columns[colAddr].Width = 200;
-            dgvView.Columns[colTel].Width = 80;
-            dgvView.Columns[colFax].Width = 80;
+            dgvView.Columns[colNameE].Width = 200;
+            dgvView.Columns[colMethod].Width = 80;
+            dgvView.Columns[colGroup].Width = 80;
             dgvView.Columns[colRemark].Width = 180;
 
             dgvView.Columns[colRow].HeaderText = "ลำดับ";
             dgvView.Columns[colNameT].HeaderText = "ชื่อ";
-            dgvView.Columns[colAddr].HeaderText = "ที่อยู่";
-            dgvView.Columns[colTel].HeaderText = "เบอร์";
-            dgvView.Columns[colFax].HeaderText = "Fax";
+            dgvView.Columns[colNameE].HeaderText = "Name";
+            dgvView.Columns[colMethod].HeaderText = "วิธีการตรวจ";
+            dgvView.Columns[colGroup].HeaderText = "กลุ่ม";
             dgvView.Columns[colRemark].HeaderText = "หมายเหตุ";
             //dgvView.Columns[colPassword].HeaderText = "  ";
 
@@ -66,12 +69,12 @@ namespace Cemp.gui
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     dgvView[colRow, i].Value = (i + 1);
-                    dgvView[colNameT, i].Value = dt.Rows[i][cc.cudb.cu.NameT].ToString();
-                    dgvView[colAddr, i].Value = dt.Rows[i][cc.cudb.cu.NameT].ToString();
-                    dgvView[colTel, i].Value = dt.Rows[i][cc.cudb.cu.Tele].ToString();
-                    dgvView[colFax, i].Value = dt.Rows[i][cc.cudb.cu.Fax].ToString();
-                    dgvView[colRemark, i].Value = dt.Rows[i][cc.cudb.cu.Remark].ToString();
-                    dgvView[colId, i].Value = dt.Rows[i][cc.cudb.cu.Id].ToString();
+                    dgvView[colNameT, i].Value = dt.Rows[i][cc.itdb.it.NameT].ToString();
+                    dgvView[colNameE, i].Value = dt.Rows[i][cc.itdb.it.NameE].ToString();
+                    dgvView[colMethod, i].Value = dt.Rows[i][cc.itdb.it.MethodNameT].ToString();
+                    dgvView[colGroup, i].Value = dt.Rows[i][cc.itdb.it.ItemGroupNameT].ToString();
+                    dgvView[colRemark, i].Value = dt.Rows[i][cc.itdb.it.Remark].ToString();
+                    dgvView[colId, i].Value = dt.Rows[i][cc.itdb.it.Id].ToString();
 
                     if ((i % 2) != 0)
                     {
@@ -96,6 +99,22 @@ namespace Cemp.gui
         private void FrmItemView_Resize(object sender, EventArgs e)
         {
             setResize();
+        }
+
+        private void dgvView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            if (dgvView[colId, e.RowIndex].Value == null)
+            {
+                return;
+            }
+            FrmItemAdd frm = new FrmItemAdd(dgvView[colId, e.RowIndex].Value.ToString(), cc);
+            //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
+            frm.ShowDialog(this);
+            setGrd();
         }
     }
 }

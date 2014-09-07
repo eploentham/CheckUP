@@ -108,7 +108,7 @@ namespace Cemp.gui
             //{
             //    itg.Code = cc.medb.getMethodCode();
             //}
-            if (cc.itgdb.insertMethod(itg).Length >= 1)
+            if (cc.itgdb.insertItemGroup(itg).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 this.Dispose();

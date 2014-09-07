@@ -58,6 +58,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Control\CnviControl.cs" />
+    <Compile Include="gui\FrmQuotationAdd1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmQuotationAdd1.Designer.cs">
+      <DependentUpon>FrmQuotationAdd1.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmItemGroupAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +242,9 @@
     <Compile Include="object1\Staff.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="gui\FrmQuotationAdd1.resx">
+      <DependentUpon>FrmQuotationAdd1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmItemGroupAdd.resx">
       <DependentUpon>FrmItemGroupAdd.cs</DependentUpon>
     </EmbeddedResource>

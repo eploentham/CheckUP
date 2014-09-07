@@ -387,20 +387,24 @@ namespace Cemp.objdb
                     year = doc[0].ToString().Substring(2, 2);
                 }
             }
+            else
+            {
+                year = getYear();
+            }
             sql = "Select count("+qu.QuoNumber+") as cnt From "+qu.table+" Where +"+qu.QuoNumber+"='"+doc1[0]+"'";
             DataTable dt = conn.selectData(sql);
-            if (dt.Rows.Count > 0)
+            if ((dt.Rows.Count > 0)&&(!doc1[0].Equals("")))
             {
                 cnt = String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString())+1);
                 doc = doc1[0];
             }
             else
             {
-                if (!System.DateTime.Now.Year.ToString().Equals(year))
-                {
-                    year = getYear();
-                    year = year.Substring(2);
-                }
+                //if (!System.DateTime.Now.Year.ToString().Equals(year))
+                //{
+                //year = getYear();
+                //    year = year.Substring(2);
+                //}
                 sql = "Select count(" + qu.QuoNumber + ") as cnt From " + qu.table ;
                 dt = conn.selectData(sql);
                 doc = String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);

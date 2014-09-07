@@ -18,6 +18,7 @@ namespace Cemp.gui
         public FrmItemAdd(String itId,CnviControl c)
         {
             InitializeComponent();
+            initConfig(itId, c);
         }
         private void initConfig(String itId, CnviControl c)
         {
@@ -64,6 +65,10 @@ namespace Cemp.gui
                 ChkUnActive.Checked = false;
                 btnUnActive.Visible = false;
             }
+            cboMethod = cc.medb.getCboMethod(cboMethod);
+            cboGroup = cc.itgdb.getCboItemGroup(cboGroup);
+            cboMethod.Text = it.MethodNameT;
+            cboGroup.Text = it.ItemGroupNameT;
         }
         private void getItem()
         {
@@ -74,6 +79,10 @@ namespace Cemp.gui
             it.Remark = txtRemark.Text;
             it.PriceSale = txtPriceSale.Text;
             it.PriceCost = txtPriceCost.Text;
+            it.ItemGroupId = cc.getValueCboItem(cboGroup);
+            it.MethodId = cc.getValueCboItem(cboMethod);
+            it.ItemGroupNameT = cboGroup.Text;
+            it.MethodNameT = cboMethod.Text;
         }
         private void FrmItemAdd_Load(object sender, EventArgs e)
         {
@@ -90,6 +99,16 @@ namespace Cemp.gui
             if (txtNameE.Text.Equals(""))
             {
                 MessageBox.Show("ไม่ได้ป้อนชื่อ", "ป้อนข้อมูลไม่ครบ");
+                return;
+            }
+            if (cboMethod.Text.Equals(""))
+            {
+                MessageBox.Show("ไม่ได้เลือก Method", "ป้อนข้อมูลไม่ครบ");
+                return;
+            }
+            if (cboGroup.Text.Equals(""))
+            {
+                MessageBox.Show("ไม่ได้เลือก Group", "ป้อนข้อมูลไม่ครบ");
                 return;
             }
             if (txtId.Text.Equals(""))
@@ -122,11 +141,16 @@ namespace Cemp.gui
         private void btnSearch_Click(object sender, EventArgs e)
         {
             Item it = cc.itdb.selectByCode(txtCode.Text);
-            label8.Text = "รหัสซ้ำ" + it.Code + " ชื่อ " + it.NameT;
+
             if (!it.Code.Equals(""))
             {
+                label8.Text = "รหัสซ้ำ" + it.Code + " ชื่อ " + it.NameT;
                 MessageBox.Show("ป้อนรหัสซ้ำ\nรหัส " + it.Code + " ชื่อ " + it.NameT, "รหัสซ้ำ");
                 return;
+            }
+            else
+            {
+                label8.Text = "ok";
             }
         }
 

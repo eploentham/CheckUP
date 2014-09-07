@@ -15,6 +15,7 @@ namespace Cemp.objdb
         public ItemDB(ConnectDB c)
         {
             conn = c;
+            initConfig();
         }
         private void initConfig()
         {
@@ -27,11 +28,11 @@ namespace Cemp.objdb
             it.PriceCost = "price_cost";
             it.PriceSale = "price_sale";
             it.Remark = "item_remark";
-            it.ItemGroupId = "";
-            it.ItemGroupNameT = "";
-            it.MeasuringPoint = "";
-            it.MethodId = "";
-            it.MethodNameT = "";
+            it.ItemGroupId = "item_group_id";
+            it.ItemGroupNameT = "item_group_name_t";
+            it.MeasuringPoint = "measuring_point";
+            it.MethodId = "method_id";
+            it.MethodNameT = "method_name_t";
 
             it.table = "b_item";
             it.pkField = "item_id";
@@ -46,6 +47,11 @@ namespace Cemp.objdb
             item.PriceCost = dt.Rows[0][it.PriceCost].ToString();
             item.PriceSale = dt.Rows[0][it.PriceSale].ToString();
             item.Remark = dt.Rows[0][it.Remark].ToString();
+            item.ItemGroupId = dt.Rows[0][it.ItemGroupId].ToString();
+            item.ItemGroupNameT = dt.Rows[0][it.ItemGroupNameT].ToString();
+            item.MethodNameT = dt.Rows[0][it.MethodNameT].ToString();
+            item.MethodId = dt.Rows[0][it.MethodId].ToString();
+            item.MeasuringPoint = dt.Rows[0][it.MeasuringPoint].ToString();
 
             return item;
         }
@@ -96,11 +102,17 @@ namespace Cemp.objdb
             p.NameE = p.NameE.Replace("''", "'");
             p.NameT = p.NameT.Replace("''", "'");
             p.Remark = p.Remark.Replace("''", "'");
+            p.ItemGroupNameT = p.ItemGroupNameT.Replace("''", "'");
+            p.MethodNameT = p.MethodNameT.Replace("''", "'");
 
             sql = "Insert Into " + it.table + " (" + it.pkField + "," + it.Active + "," + it.Code + "," +
-                it.NameE + "," + it.NameT + "," + it.Remark + "," + it.PriceCost + "," + it.PriceSale + ") " +
+                it.NameE + "," + it.NameT + "," + it.Remark + "," +
+                it.PriceCost + "," + it.PriceSale + "," + it.ItemGroupId + "," + 
+                it.ItemGroupNameT + "," + it.MethodNameT + "," + it.MethodId + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.Code + "','" +
-                p.NameE + "','" + p.NameT + "','" + p.Remark + "'," + NumberNull1(p.PriceCost) + "," + NumberNull1(p.PriceSale) + ")";
+                p.NameE + "','" + p.NameT + "','" + p.Remark + "'," +
+                NumberNull1(p.PriceCost) + "," + NumberNull1(p.PriceSale) + ",'" + p.ItemGroupId + "','" +
+                p.ItemGroupNameT + "','" + p.MethodNameT + "','" + p.MethodId + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -122,11 +134,17 @@ namespace Cemp.objdb
             p.NameE = p.NameE.Replace("''", "'");
             p.NameT = p.NameT.Replace("''", "'");
             p.Remark = p.Remark.Replace("''", "'");
+            p.ItemGroupNameT = p.ItemGroupNameT.Replace("''", "'");
+            p.MethodNameT = p.MethodNameT.Replace("''", "'");
 
             sql = "Update " + it.table + " Set " + it.Code + "='" + p.Code + "', " +
                 it.NameE + "='" + p.NameE + "', " +
                 it.NameT + "='" + p.NameT + "', " +
                 it.Remark + "='" + p.Remark + "', " +
+                it.ItemGroupId + "='" + p.ItemGroupId + "', " +
+                it.ItemGroupNameT + "='" + p.ItemGroupNameT + "', " +
+                it.MethodNameT + "='" + p.MethodNameT + "', " +
+                it.MethodId + "='" + p.MethodId + "', " +
                 it.PriceCost + "=" + NumberNull1(p.PriceCost) + ", " +
                 it.PriceSale + "=" + NumberNull1(p.PriceSale) + " " +
                 "Where " + it.pkField + "='" + p.Id + "'";
@@ -166,7 +184,7 @@ namespace Cemp.objdb
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
-        public ComboBox getCboMethod(ComboBox c)
+        public ComboBox getCboItem(ComboBox c)
         {
             ComboBoxItem item = new ComboBoxItem();
             DataTable dt = selectAll();
@@ -182,7 +200,23 @@ namespace Cemp.objdb
             }
             return c;
         }
-        public String VoidMethod(String saleId)
+        public ComboBox getCboItemQuotation(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectAll();
+            //String aaa = "";
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i][it.Id].ToString();
+                item.Text = dt.Rows[i][it.Code].ToString() + " " + dt.Rows[i][it.NameT].ToString() + " " + dt.Rows[i][it.MethodNameT].ToString();
+                c.Items.Add(item);
+                //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
+                //c.Items.Add(new );
+            }
+            return c;
+        }
+        public String VoidItem(String saleId)
         {
             String sql = "", chk = "";
             sql = "Update " + it.table + " Set " + it.Active + "='3' " +

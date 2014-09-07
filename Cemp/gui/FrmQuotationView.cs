@@ -18,11 +18,12 @@ namespace Cemp.gui
         public FrmQuotationView(String sfId, CnviControl c)
         {
             InitializeComponent();
-            initConfig(sfId,c);
-        }
-        private void initConfig(String sfId, CnviControl c)
-        {
             cc = c;
+            initConfig(sfId);
+        }
+        private void initConfig(String sfId)
+        {
+            //cc = c;
             setGrd();
             dgvView.ReadOnly = true;
         }

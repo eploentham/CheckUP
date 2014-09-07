@@ -34,6 +34,7 @@ namespace Cemp.gui
                 label9.Visible = false;
             }
             btnUnActive.Visible = false;
+            label8.Text = "";
             //txtCode.ReadOnly = true;
         }
         private void setControl(String meId)
@@ -191,9 +192,10 @@ namespace Cemp.gui
         private void btnSearch_Click(object sender, EventArgs e)
         {
             Method me = cc.medb.selectByCode(txtCode.Text);
-            label8.Text = "รหัสซ้ำ" + me.Code + " ชื่อ " + me.NameT;
+            //label8.Text = "รหัสซ้ำ" + me.Code + " ชื่อ " + me.NameT;
             if (!me.Code.Equals(""))
             {
+                label8.Text = "รหัสซ้ำ" + me.Code + " ชื่อ " + me.NameT;
                 MessageBox.Show("ป้อนรหัสซ้ำ\nรหัส " + me.Code + " ชื่อ " + me.NameT, "รหัสซ้ำ");
                 return;
             }

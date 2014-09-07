@@ -1,6 +1,6 @@
 ﻿namespace Cemp.gui
 {
-    partial class FrmQuotationAdd
+    partial class FrmQuotationAdd1
     {
         /// <summary>
         /// Required designer variable.
@@ -91,6 +91,8 @@
             this.label27 = new System.Windows.Forms.Label();
             this.cboItem = new System.Windows.Forms.ComboBox();
             this.label29 = new System.Windows.Forms.Label();
+            this.cboMethod = new System.Windows.Forms.ComboBox();
+            this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.txtItemQty = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -374,11 +376,11 @@
             // 
             this.dgvAdd.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAdd.Location = new System.Drawing.Point(8, 247);
+            this.dgvAdd.Location = new System.Drawing.Point(8, 271);
             this.dgvAdd.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAdd.Name = "dgvAdd";
             this.dgvAdd.RowTemplate.Height = 24;
-            this.dgvAdd.Size = new System.Drawing.Size(839, 265);
+            this.dgvAdd.Size = new System.Drawing.Size(839, 241);
             this.dgvAdd.TabIndex = 2;
             this.dgvAdd.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdd_CellDoubleClick);
             // 
@@ -789,28 +791,49 @@
             // 
             this.cboItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.cboItem.FormattingEnabled = true;
-            this.cboItem.Location = new System.Drawing.Point(196, 216);
+            this.cboItem.Location = new System.Drawing.Point(191, 207);
             this.cboItem.Margin = new System.Windows.Forms.Padding(2);
             this.cboItem.Name = "cboItem";
-            this.cboItem.Size = new System.Drawing.Size(342, 25);
+            this.cboItem.Size = new System.Drawing.Size(212, 25);
             this.cboItem.TabIndex = 27;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label29.Location = new System.Drawing.Point(110, 221);
+            this.label29.Location = new System.Drawing.Point(104, 210);
             this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(82, 17);
             this.label29.TabIndex = 26;
             this.label29.Text = "Parameter :";
             // 
+            // cboMethod
+            // 
+            this.cboMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cboMethod.FormattingEnabled = true;
+            this.cboMethod.Location = new System.Drawing.Point(191, 235);
+            this.cboMethod.Margin = new System.Windows.Forms.Padding(2);
+            this.cboMethod.Name = "cboMethod";
+            this.cboMethod.Size = new System.Drawing.Size(212, 25);
+            this.cboMethod.TabIndex = 29;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label30.Location = new System.Drawing.Point(104, 237);
+            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(63, 17);
+            this.label30.TabIndex = 28;
+            this.label30.Text = "Method :";
+            // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label31.Location = new System.Drawing.Point(554, 200);
+            this.label31.Location = new System.Drawing.Point(476, 219);
             this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(27, 17);
@@ -820,7 +843,7 @@
             // txtItemQty
             // 
             this.txtItemQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtItemQty.Location = new System.Drawing.Point(542, 218);
+            this.txtItemQty.Location = new System.Drawing.Point(464, 237);
             this.txtItemQty.Margin = new System.Windows.Forms.Padding(2);
             this.txtItemQty.Name = "txtItemQty";
             this.txtItemQty.Size = new System.Drawing.Size(56, 23);
@@ -830,7 +853,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label32.Location = new System.Drawing.Point(619, 200);
+            this.label32.Location = new System.Drawing.Point(581, 219);
             this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(39, 17);
@@ -840,7 +863,7 @@
             // txtItemPrice
             // 
             this.txtItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtItemPrice.Location = new System.Drawing.Point(608, 218);
+            this.txtItemPrice.Location = new System.Drawing.Point(570, 237);
             this.txtItemPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtItemPrice.Name = "txtItemPrice";
             this.txtItemPrice.Size = new System.Drawing.Size(78, 23);
@@ -860,7 +883,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(786, 218);
+            this.btnAdd.Location = new System.Drawing.Point(786, 237);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(31, 25);
@@ -873,7 +896,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label33.Location = new System.Drawing.Point(705, 200);
+            this.label33.Location = new System.Drawing.Point(705, 219);
             this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(55, 17);
@@ -883,7 +906,7 @@
             // txtItemAmount
             // 
             this.txtItemAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtItemAmount.Location = new System.Drawing.Point(696, 218);
+            this.txtItemAmount.Location = new System.Drawing.Point(696, 237);
             this.txtItemAmount.Margin = new System.Windows.Forms.Padding(2);
             this.txtItemAmount.Name = "txtItemAmount";
             this.txtItemAmount.Size = new System.Drawing.Size(78, 23);
@@ -893,7 +916,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label34.Location = new System.Drawing.Point(13, 222);
+            this.label34.Location = new System.Drawing.Point(11, 237);
             this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(45, 17);
@@ -903,7 +926,7 @@
             // txtRow
             // 
             this.txtRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtRow.Location = new System.Drawing.Point(60, 220);
+            this.txtRow.Location = new System.Drawing.Point(58, 235);
             this.txtRow.Margin = new System.Windows.Forms.Padding(2);
             this.txtRow.Name = "txtRow";
             this.txtRow.Size = new System.Drawing.Size(42, 23);
@@ -951,7 +974,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(821, 218);
+            this.btnDel.Location = new System.Drawing.Point(821, 237);
             this.btnDel.Margin = new System.Windows.Forms.Padding(2);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(31, 25);
@@ -991,6 +1014,8 @@
             this.Controls.Add(this.txtItemPrice);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.txtItemQty);
+            this.Controls.Add(this.cboMethod);
+            this.Controls.Add(this.label30);
             this.Controls.Add(this.cboItem);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.dtpDateQu);
@@ -1096,6 +1121,8 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.ComboBox cboItem;
         private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.ComboBox cboMethod;
+        private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox txtItemQty;
         private System.Windows.Forms.Label label32;

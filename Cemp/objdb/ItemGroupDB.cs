@@ -24,7 +24,7 @@ namespace Cemp.objdb
             itg.Id = "item_group_id";
             itg.NameE = "item_group_name_e";
             itg.NameT = "item_group_name_t";
-            //itg.Remark = "item_group_remark";
+            itg.Remark = "item_group_remark";
 
             itg.table = "b_item_group";
             itg.pkField = "item_group_id";
@@ -36,7 +36,7 @@ namespace Cemp.objdb
             item.Id = dt.Rows[0][itg.Id].ToString();
             item.NameE = dt.Rows[0][itg.NameE].ToString();
             item.NameT = dt.Rows[0][itg.NameT].ToString();
-            //item.Remark = dt.Rows[0][itg.Remark].ToString();
+            item.Remark = dt.Rows[0][itg.Remark].ToString();
 
             return item;
         }
@@ -89,9 +89,9 @@ namespace Cemp.objdb
             p.Remark = p.Remark.Replace("''", "'");
 
             sql = "Insert Into " + itg.table + " (" + itg.pkField + "," + itg.Active + "," + itg.NameE + "," +
-                itg.NameT  + ") " +
+                itg.NameT + "," + itg.Remark + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.NameE + "','" +
-                p.NameT  + "')";
+                p.NameT + "','" + p.Remark + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -115,8 +115,9 @@ namespace Cemp.objdb
             p.Remark = p.Remark.Replace("''", "'");
 
             sql = "Update " + itg.table + " Set " + itg.NameE + "='" + p.NameE + "', " +
-                itg.NameE + "='" + p.NameE + "', " +
-                itg.NameT + "='" + p.NameT + "' " +
+                //itg.NameE + "='" + p.NameE + "', " +
+                itg.NameT + "='" + p.NameT + "', " +
+                itg.Remark + "='" + p.Remark + "' " +
 
                 "Where " + itg.pkField + "='" + p.Id + "'";
             try
@@ -132,7 +133,7 @@ namespace Cemp.objdb
             }
             return chk;
         }
-        public String insertMethod(ItemGroup p)
+        public String insertItemGroup(ItemGroup p)
         {
             ItemGroup item = new ItemGroup();
             String chk = "";
@@ -155,7 +156,7 @@ namespace Cemp.objdb
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
-        public ComboBox getCboMethod(ComboBox c)
+        public ComboBox getCboItemGroup(ComboBox c)
         {
             ComboBoxItem item = new ComboBoxItem();
             DataTable dt = selectAll();
@@ -171,7 +172,7 @@ namespace Cemp.objdb
             }
             return c;
         }
-        public String VoidMethod(String saleId)
+        public String VoidItemGroup(String saleId)
         {
             String sql = "", chk = "";
             sql = "Update " + itg.table + " Set " + itg.Active + "='3' " +

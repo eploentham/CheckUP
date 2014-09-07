@@ -11,25 +11,24 @@ using System.Windows.Forms;
 
 namespace Cemp.gui
 {
-    public partial class FrmQuotationAdd : Form
+    public partial class FrmQuotationAdd1 : Form
     {
         CnviControl cc;
         Quotation qu;
         Company cp;
-        int colRow = 0, colItem = 1, colMethod = 2, colQty = 3, colPrice = 4, colAmount = 5, colId=6, colDel=7, colItemId=8, colMethodId=9;
-        int colCnt = 10;
+        int colRow = 0, colItem = 1, colMethod = 2, colQty = 3, colPrice = 4, colAmount = 5, colId=6, colDel=7;
+        int colCnt = 8;
         String oldNetTotal = "";
         Boolean pageLoad = false;
-        public FrmQuotationAdd(String quId, CnviControl c)
+        public FrmQuotationAdd1(String quId, CnviControl c)
         {
             InitializeComponent();
-            cc = c;
-            initConfig(quId);
+            initConfig(quId, c);
         }
-        private void initConfig(String quId)
+        private void initConfig(String quId, CnviControl c)
         {
             pageLoad = true;
-            //cc = c;
+            cc = c;
             qu = new Quotation();
             cp = cc.cpdb.selectByPk();
             txtVatRate.Text = cp.vat;
@@ -65,8 +64,8 @@ namespace Cemp.gui
             cboRemark1 = cc.qudb.getCboRemark1(cboRemark1);
             cboRemark2 = cc.qudb.getCboRemark2(cboRemark2);
             cboRemark3 = cc.qudb.getCboRemark3(cboRemark3);
-            cboItem = cc.itdb.getCboItemQuotation(cboItem);
-            //cboMethod = cc.medb.getCboMethod(cboMethod);
+            cboItem = cc.quidb.getCboItemDescription(cboItem);
+            cboMethod = cc.quidb.getCboMethodDescription(cboMethod);
 
             cboContact.Text = qu.ContactName;
             txtAmount.Text = qu.Amount;
@@ -112,11 +111,6 @@ namespace Cemp.gui
                     txtCompTaxId.Text = cp.TaxId;
                     txtVatRate.Text = cp.vat;
                 }
-                btnPrint.Visible = false;
-            }
-            else
-            {
-                btnPrint.Visible = true;
             }
 
             txtQuNumber.ReadOnly = true;
@@ -193,8 +187,6 @@ namespace Cemp.gui
             dgvAdd.Font = font;
             dgvAdd.Columns[colId].Visible = false;
             dgvAdd.Columns[colDel].Visible = false;
-            dgvAdd.Columns[colItemId].Visible = false;
-            dgvAdd.Columns[colMethodId].Visible = false;
             //dgvAdd.Columns.Add(newColumn);
             if (dt.Rows.Count > 0)
             {
@@ -210,8 +202,6 @@ namespace Cemp.gui
                     dgvAdd[colQty, i].Value = dt.Rows[i][cc.quidb.qui.Qty].ToString();
                     dgvAdd[colPrice, i].Value = dt.Rows[i][cc.quidb.qui.PriceSale].ToString();
                     dgvAdd[colAmount, i].Value = dt.Rows[i][cc.quidb.qui.Amount].ToString();
-                    dgvAdd[colItemId, i].Value = dt.Rows[i][cc.quidb.qui.ItemId].ToString();
-                    dgvAdd[colMethodId, i].Value = dt.Rows[i][cc.quidb.qui.MethodId].ToString();
                     dgvAdd[colId, i].Value = dt.Rows[i][cc.quidb.qui.Id].ToString();
                     dgvAdd[colDel, i].Value = "";
 
@@ -352,18 +342,12 @@ namespace Cemp.gui
                     {
                         continue;
                     }
-                    if (dgvAdd[colItemId, i].Value.ToString().Equals(""))
-                    {
-                        continue;
-                    }
                     qui.RowNumber = dgvAdd[colRow, i].Value.ToString();
                     qui.PriceSale = cc.cf.NumberNull1(dgvAdd[colPrice, i].Value.ToString());
                     qui.Qty = cc.cf.NumberNull1(dgvAdd[colQty, i].Value.ToString());
                     qui.Amount = cc.cf.NumberNull1(dgvAdd[colAmount, i].Value.ToString());
                     qui.ItemDescription = dgvAdd[colItem, i].Value.ToString();
                     qui.MethodDescription = dgvAdd[colMethod, i].Value.ToString();
-                    qui.ItemId = dgvAdd[colItemId, i].Value.ToString();
-                    qui.MethodId = dgvAdd[colMethodId, i].Value.ToString();
                     qui.Id = dgvAdd[colId, i].Value.ToString();
                     qui.Active = "1";
                     qui.QuoId = quId;
@@ -402,16 +386,9 @@ namespace Cemp.gui
         private void btnAdd_Click(object sender, EventArgs e)
         {
             int row= dgvAdd.Rows.Add(1);
-            Item it = cc.itdb.selectByPk(cc.getValueCboItem(cboItem));
-            if (it.Id.Equals(""))
-            {
-                return;
-            }
             dgvAdd[colRow, row].Value = (row+1);
-            dgvAdd[colItemId, row].Value = it.Id;
-            dgvAdd[colMethodId, row].Value = it.MethodId;
-            dgvAdd[colItem, row].Value = it.NameT;
-            dgvAdd[colMethod, row].Value = it.MethodNameT;
+            dgvAdd[colItem, row].Value = cboItem.Text;
+            dgvAdd[colMethod, row].Value = cboMethod.Text;
             dgvAdd[colQty, row].Value = txtItemQty.Text;
             dgvAdd[colPrice, row].Value = txtItemPrice.Text;
             dgvAdd[colAmount, row].Value = txtItemAmount.Text;
@@ -428,7 +405,7 @@ namespace Cemp.gui
             txtItemQty.Text = dgvAdd[colQty, e.RowIndex].Value.ToString();
             txtItemAmount.Text = dgvAdd[colAmount, e.RowIndex].Value.ToString();
             cboItem.Text = dgvAdd[colItem, e.RowIndex].Value.ToString();
-            //cboMethod.Text = dgvAdd[colMethod, e.RowIndex].Value.ToString();
+            cboMethod.Text = dgvAdd[colMethod, e.RowIndex].Value.ToString();
         }
 
         private void txtItemPrice_Leave(object sender, EventArgs e)
