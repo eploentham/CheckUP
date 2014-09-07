@@ -184,7 +184,7 @@ namespace Cemp.objdb
         public String getMaxCode()
         {
             String sql = "", cnt = "", year = "";
-            sql = "Select count(1) as cnt From " + it.table;
+            sql = "Select count(1) as cnt From " + me.table;
             DataTable dt = conn.selectData(sql);
             if (dt.Rows.Count > 0)
             {

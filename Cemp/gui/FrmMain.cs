@@ -63,6 +63,7 @@ namespace Cemp
             tv1.Nodes.Add("nInitConfig", "กำหนดค่าโปรแกรม");
             tv1.Nodes["nInitConfig"].Nodes.Add("nItemView", "สร้างรายการ Parameter");
             tv1.Nodes["nInitConfig"].Nodes.Add("nMethodView", "สร้างรายการ Method");
+            tv1.Nodes["nInitConfig"].Nodes.Add("nItemGroupView", "สร้าง Parameter Group");
             tv1.Nodes["nInitConfig"].Nodes.Add("nCustomerView", "สร้าง ลูกค้า");
             tv1.Nodes["nInitConfig"].Nodes.Add("nStaffView", "สร้าง พนักงาน");
 
@@ -148,6 +149,11 @@ namespace Cemp
             else if (e.Node.Name.ToString() == "nTest")
             {
                 FrmReport frm = new FrmReport();
+                showFrame(frm);
+            }
+            else if (e.Node.Name.ToString() == "nItemGroupView")
+            {
+                FrmItemGroupView frm = new FrmItemGroupView(cc);
                 showFrame(frm);
             }
             //else if (e.Node.Name.ToString() == "nThooDefault")

@@ -7,5 +7,6 @@ namespace Cemp.object1
 {
     public class ItemGroup:Persistent
     {
+        public String Id = "", NameT = "", NameE = "", Active = "", Remark = "";
     }
 }

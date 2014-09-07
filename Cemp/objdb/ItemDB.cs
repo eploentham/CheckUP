@@ -26,7 +26,12 @@ namespace Cemp.objdb
             it.NameT = "item_name_t";
             it.PriceCost = "price_cost";
             it.PriceSale = "price_sale";
-            it.Remark = "remark";
+            it.Remark = "item_remark";
+            it.ItemGroupId = "";
+            it.ItemGroupNameT = "";
+            it.MeasuringPoint = "";
+            it.MethodId = "";
+            it.MethodNameT = "";
 
             it.table = "b_item";
             it.pkField = "item_id";

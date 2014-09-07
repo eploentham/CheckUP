@@ -34,6 +34,7 @@ namespace Cemp.Control
         public MOUDB modb;
         public MOUItemDB moidb;
         public ItemDB itdb;
+        public ItemGroupDB itgdb;
 
         public Staff sf;
 
@@ -68,6 +69,7 @@ namespace Cemp.Control
             modb = new MOUDB(conn);
             moidb = new MOUItemDB(conn);
             itdb = new ItemDB(conn);
+            itgdb = new ItemGroupDB(conn);
 
             PathLogo = Environment.CurrentDirectory;
         }

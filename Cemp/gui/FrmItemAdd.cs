@@ -132,7 +132,7 @@ namespace Cemp.gui
 
         private void btnGroupAdd_Click(object sender, EventArgs e)
         {
-            FrmItemGroupAdd frm = new FrmItemGroupAdd();
+            FrmItemGroupAdd frm = new FrmItemGroupAdd("",cc);
             frm.ShowDialog(this);
 
         }

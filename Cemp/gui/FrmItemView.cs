@@ -88,7 +88,7 @@ namespace Cemp.gui
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            FrmItemAdd frm = new FrmItemAdd(cc);
+            FrmItemAdd frm = new FrmItemAdd("",cc);
             frm.ShowDialog(this);
             setGrd();
         }

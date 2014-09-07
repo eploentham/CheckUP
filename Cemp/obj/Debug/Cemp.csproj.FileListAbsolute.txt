@@ -80,3 +80,5 @@ D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.csproj.GenerateResource.Cache
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.exe
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.pdb
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmInitConfig.resources
+C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmItemGroupAdd.resources
+C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmItemGroupView.resources

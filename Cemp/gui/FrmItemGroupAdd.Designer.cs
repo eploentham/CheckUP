@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnUnActive = new System.Windows.Forms.Button();
             this.ChkUnActive = new System.Windows.Forms.RadioButton();
@@ -40,13 +42,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtNameT = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.btnSave);
@@ -66,6 +68,24 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(101, 177);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 134;
+            this.label8.Text = "label8";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(451, 15);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(37, 23);
+            this.btnSearch.TabIndex = 133;
+            this.btnSearch.Text = "...";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(422, 167);
@@ -74,6 +94,7 @@
             this.btnSave.TabIndex = 132;
             this.btnSave.Text = "บันทึก";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnUnActive
             // 
@@ -83,6 +104,7 @@
             this.btnUnActive.TabIndex = 131;
             this.btnUnActive.Text = "ยกเลิกการใช้งาน";
             this.btnUnActive.UseVisualStyleBackColor = true;
+            this.btnUnActive.Click += new System.EventHandler(this.btnUnActive_Click);
             // 
             // ChkUnActive
             // 
@@ -96,6 +118,7 @@
             this.ChkUnActive.TabStop = true;
             this.ChkUnActive.Text = "ยกเลิก";
             this.ChkUnActive.UseVisualStyleBackColor = true;
+            this.ChkUnActive.Click += new System.EventHandler(this.ChkUnActive_Click);
             // 
             // chkActive
             // 
@@ -109,6 +132,7 @@
             this.chkActive.TabStop = true;
             this.chkActive.Text = "ใช้งาน";
             this.chkActive.UseVisualStyleBackColor = true;
+            this.chkActive.Click += new System.EventHandler(this.chkActive_Click);
             // 
             // txtRemark
             // 
@@ -174,23 +198,14 @@
             this.label2.TabIndex = 125;
             this.label2.Text = "ชื่อ :";
             // 
-            // btnSearch
+            // label9
             // 
-            this.btnSearch.Location = new System.Drawing.Point(451, 15);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(37, 23);
-            this.btnSearch.TabIndex = 133;
-            this.btnSearch.Text = "...";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(101, 177);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 134;
-            this.label8.Text = "label8";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(355, 177);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 135;
+            this.label9.Text = "label9";
             // 
             // FrmItemGroupAdd
             // 
@@ -200,6 +215,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmItemGroupAdd";
             this.Text = "FrmItemGroupAdd";
+            this.Load += new System.EventHandler(this.FrmItemGroupAdd_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -222,5 +238,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
