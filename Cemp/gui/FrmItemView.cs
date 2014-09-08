@@ -35,6 +35,7 @@ namespace Cemp.gui
             dgvView.Width = this.Width - 80 - btnAdd.Width;
             dgvView.Height = this.Height - 150;
             btnAdd.Left = dgvView.Width + 20;
+            btnPrint.Left = dgvView.Width + 20;
             //groupBox1.Width = this.Width - 50;
             //groupBox1.Height = this.Height = 150;
         }
@@ -47,11 +48,11 @@ namespace Cemp.gui
             dgvView.RowCount = dt.Rows.Count + 1;
             dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvView.Columns[colRow].Width = 50;
-            dgvView.Columns[colNameT].Width = 150;
+            dgvView.Columns[colNameT].Width = 200;
             dgvView.Columns[colNameE].Width = 200;
-            dgvView.Columns[colMethod].Width = 80;
-            dgvView.Columns[colGroup].Width = 80;
-            dgvView.Columns[colRemark].Width = 180;
+            dgvView.Columns[colMethod].Width = 200;
+            dgvView.Columns[colGroup].Width = 200;
+            dgvView.Columns[colRemark].Width = 200;
 
             dgvView.Columns[colRow].HeaderText = "ลำดับ";
             dgvView.Columns[colNameT].HeaderText = "ชื่อ";

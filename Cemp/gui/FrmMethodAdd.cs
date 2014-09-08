@@ -157,6 +157,7 @@ namespace Cemp.gui
         private void txtCode_Leave(object sender, EventArgs e)
         {
             txtCode.BackColor = Color.White;
+            btnSearch_Click(null,null);
         }
 
         private void txtNameT_Enter(object sender, EventArgs e)

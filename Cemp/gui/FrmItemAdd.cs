@@ -170,6 +170,7 @@ namespace Cemp.gui
         private void txtCode_Leave(object sender, EventArgs e)
         {
             txtCode.BackColor = Color.White;
+            btnSearch_Click(null,null);
         }
 
         private void txtNameT_Enter(object sender, EventArgs e)
@@ -248,6 +249,16 @@ namespace Cemp.gui
             frm.ShowDialog(this);
             cboMethod = cc.medb.getCboMethod(cboMethod);
             //cboGroup = cc.itgdb.getCboItemGroup(cboGroup);
+        }
+
+        private void txtPriceSale_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtPriceCost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

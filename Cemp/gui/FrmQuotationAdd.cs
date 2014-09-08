@@ -20,6 +20,7 @@ namespace Cemp.gui
         int colCnt = 10;
         String oldNetTotal = "";
         Boolean pageLoad = false;
+        //NumberFormat fmt = NumberFormat.getCurrencyInstance();
         public FrmQuotationAdd(String quId, CnviControl c)
         {
             InitializeComponent();
@@ -50,9 +51,11 @@ namespace Cemp.gui
         private void setResize()
         {
             dgvAdd.Width = this.Width - 80;
-            //dgvAdd.Height = this.Height - 150;
-            //btnAdd.Left = dgvView.Width + 20;
-            //groupBox1.Width = this.Width - 50;
+            //groupBox3.Left = dgvAdd.Width - groupBox3.Width - 50;
+            btnSave.Left = dgvAdd.Width - 80;
+            btnPrint.Left = btnPrint.Width - 80;
+            groupBox2.Left = this.Width - groupBox2.Width - btnSave.Width - 150;
+            groupBox3.Left = groupBox2.Left;
             //groupBox1.Height = this.Height = 150;
         }
         private void setControl(String quId)
@@ -69,8 +72,8 @@ namespace Cemp.gui
             //cboMethod = cc.medb.getCboMethod(cboMethod);
 
             cboContact.Text = qu.ContactName;
-            txtAmount.Text = qu.Amount;
-            txtAmountDiscount.Text = qu.AmountDiscount;
+            txtAmount.Text = String.Format("{0:#,###,###.00}",double.Parse(qu.Amount));
+            txtAmountDiscount.Text = String.Format("{0:#,###,###.00}",double.Parse(qu.AmountDiscount));
             txtCompAddress1.Text = qu.CompAddress1;
             txtCompAddress2.Text = qu.CompAddress2;
             txtCompTaxId.Text = qu.CompTaxId;
@@ -82,21 +85,21 @@ namespace Cemp.gui
             txtCustTel.Text = qu.CustTel;
             cboCust.Text = qu.CustName;
             txtCustId.Text = qu.CustId;
-            txtDiscount.Text = qu.Discount;
-            txtNetTotal.Text = qu.NetTotal;
-            txtPlus1.Text = qu.Plus1;
+            txtDiscount.Text = String.Format("{0:#,###,###.00}",double.Parse(qu.Discount));
+            txtNetTotal.Text = String.Format("{0:#,###,###.00}",double.Parse(qu.NetTotal));
+            txtPlus1.Text = String.Format("{0:#,###,###.00}",double.Parse(qu.Plus1));
             txtQuId.Text = qu.Id;
             txtQuNumber.Text = qu.QuoNumber+"-"+qu.QuoNumberCnt;
             txtStaffEmail.Text = qu.StaffEmail;
             txtStaffTel.Text = qu.StaffTel;
             txtStaffId.Text = qu.StaffId;
             cboStaff.Text = qu.StaffName;
-            txtTotal.Text = qu.Total;
-            txtVat.Text = qu.Vat;
+            txtTotal.Text = String.Format("{0:#,###,###.00}",double.Parse(qu.Total));
+            txtVat.Text = String.Format("{0:#,###,###.00}",double.Parse(qu.Vat));
             txtVatRate.Text = qu.VatRate;
             cboStaffApprove.Text = qu.StaffApproveName;
             txtStaffApproveId.Text = qu.StaffApproveId;
-            txtVatRate.Text = qu.VatRate;
+            //txtVatRate.Text = qu.VatRate;
             cboRemark1.Text = qu.Remark1;
             cboRemark2.Text = qu.Remark2;
             cboRemark3.Text = qu.Remark3;
@@ -124,8 +127,8 @@ namespace Cemp.gui
         }
         private void getQuotation()
         {
-            qu.Amount = txtAmount.Text;
-            qu.AmountDiscount=txtAmountDiscount.Text;
+            qu.Amount = txtAmount.Text.Replace(",", "");
+            qu.AmountDiscount = txtAmountDiscount.Text.Replace(",", "");
             qu.CompAddress1 = txtCompAddress1.Text;
             qu.CompAddress2 = txtCompAddress2.Text;
             qu.CompTaxId = txtCompTaxId.Text;
@@ -137,17 +140,17 @@ namespace Cemp.gui
             qu.CustTel = txtCustTel.Text;
             qu.CustName = cboCust.Text;
             qu.CustId = txtCustId.Text;
-            qu.Discount = txtDiscount.Text;
-            qu.NetTotal = txtNetTotal.Text;
-            qu.Plus1 = txtPlus1.Text;
+            qu.Discount = txtDiscount.Text.Replace(",", "");
+            qu.NetTotal = txtNetTotal.Text.Replace(",", "");
+            qu.Plus1 = txtPlus1.Text.Replace(",", "");
             qu.Id = txtQuId.Text;
             qu.QuoNumber = txtQuNumber.Text;
             qu.StaffEmail = txtStaffEmail.Text;
             qu.StaffTel = txtStaffTel.Text;
             qu.StaffId = txtStaffId.Text;
             qu.StaffName = cboStaff.Text;
-            qu.Total = txtTotal.Text;
-            qu.Vat = txtVat.Text;
+            qu.Total = txtTotal.Text.Replace(",","");
+            qu.Vat = txtVat.Text.Replace(",", "");
             qu.VatRate = txtVatRate.Text;
             qu.StaffApproveName = cboStaffApprove.Text;
             qu.StaffApproveId = txtStaffApproveId.Text;
@@ -208,8 +211,8 @@ namespace Cemp.gui
                     dgvAdd[colItem, i].Value = dt.Rows[i][cc.quidb.qui.ItemDescription].ToString();
                     dgvAdd[colMethod, i].Value = dt.Rows[i][cc.quidb.qui.MethodDescription].ToString();
                     dgvAdd[colQty, i].Value = dt.Rows[i][cc.quidb.qui.Qty].ToString();
-                    dgvAdd[colPrice, i].Value = dt.Rows[i][cc.quidb.qui.PriceSale].ToString();
-                    dgvAdd[colAmount, i].Value = dt.Rows[i][cc.quidb.qui.Amount].ToString();
+                    dgvAdd[colPrice, i].Value = String.Format("{0:#,###,###.00}", dt.Rows[i][cc.quidb.qui.PriceSale]);
+                    dgvAdd[colAmount, i].Value = String.Format("{0:#,###,###.00}", dt.Rows[i][cc.quidb.qui.Amount]);
                     dgvAdd[colItemId, i].Value = dt.Rows[i][cc.quidb.qui.ItemId].ToString();
                     dgvAdd[colMethodId, i].Value = dt.Rows[i][cc.quidb.qui.MethodId].ToString();
                     dgvAdd[colId, i].Value = dt.Rows[i][cc.quidb.qui.Id].ToString();
@@ -238,7 +241,7 @@ namespace Cemp.gui
                 }
                 amt += Double.Parse(cc.cf.NumberNull1(dgvAdd[colAmount, i].Value.ToString()));
             }
-            txtAmount.Text = amt.ToString();
+            txtAmount.Text = String.Format("{0:#,###,###.00}", amt);
         }
         private void calNetTotal()
         {
@@ -248,10 +251,10 @@ namespace Cemp.gui
             total = amtDis+Double.Parse(cc.cf.NumberNull1(txtPlus1.Text));
             vat = (total * Double.Parse(cc.cf.NumberNull1(txtVatRate.Text)) / 100);
             netTotal = total + vat;
-            txtAmountDiscount.Text = amtDis.ToString();
-            txtTotal.Text = total.ToString();
-            txtVat.Text = vat.ToString();
-            txtNetTotal.Text = netTotal.ToString();
+            txtAmountDiscount.Text = String.Format("{0:#,###,###.00}", amtDis);
+            txtTotal.Text = String.Format("{0:#,###,###.00}", total);
+            txtVat.Text = String.Format("{0:#,###,###.00}", vat);
+            txtNetTotal.Text = String.Format("{0:#,###,###.00}", netTotal);
         }
         private void FrmQuotationAdd_Load(object sender, EventArgs e)
         {
@@ -378,10 +381,16 @@ namespace Cemp.gui
                     
                 }
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
-                this.Dispose();
+                btnPrint.Visible = true;
+                //this.Dispose();
                 //this.Hide();
             }
             Cursor.Current = cursor;
+        }
+        private void calItemAmount()
+        {
+            txtItemAmount.Text = String.Format("{0:#,###,###.00}", (Double.Parse(cc.cf.NumberNull1(txtItemQty.Text)) * Double.Parse(cc.cf.NumberNull1(txtItemPrice.Text))));
+            //txtItemAmount.Text = String.Concat(Double.Parse(cc.cf.NumberNull1(txtItemQty.Text)) * Double.Parse(cc.cf.NumberNull1(txtItemPrice.Text)));
         }
 
         private void cboCust_SelectedIndexChanged(object sender, EventArgs e)
@@ -433,7 +442,7 @@ namespace Cemp.gui
 
         private void txtItemPrice_Leave(object sender, EventArgs e)
         {
-            txtItemAmount.Text = String.Concat(Double.Parse(cc.cf.NumberNull1(txtItemQty.Text)) * Double.Parse(cc.cf.NumberNull1(txtItemPrice.Text)));
+            calItemAmount();
             btnAdd.Focus();
         }
 
@@ -443,7 +452,8 @@ namespace Cemp.gui
             {
                 return;
             }
-            dgvAdd[colDel, int.Parse(txtRow.Text)].Value = "1";
+            dgvAdd[colDel, (int.Parse(txtRow.Text)-1)].Value = "1";
+            dgvAdd.Rows[(int.Parse(txtRow.Text)-1)].DefaultCellStyle.BackColor = Color.DarkGray;
         }
 
         private void txtDiscount_Leave(object sender, EventArgs e)
@@ -455,5 +465,238 @@ namespace Cemp.gui
         {
             calNetTotal();
         }
+
+        private void btnItemSearch_Click(object sender, EventArgs e)
+        {
+            FrmItemAdd frm = new FrmItemAdd("", cc);
+            frm.ShowDialog(this);
+            cboItem = cc.itdb.getCboItemQuotation(cboItem);
+        }
+
+        private void cboComp_Enter(object sender, EventArgs e)
+        {
+            cboComp.BackColor = Color.LightYellow;
+        }
+
+        private void cboComp_Leave(object sender, EventArgs e)
+        {
+            cboComp.BackColor = Color.White;
+        }
+
+        private void txtCompAddress1_Enter(object sender, EventArgs e)
+        {
+            txtCompAddress1.BackColor = Color.LightYellow;
+        }
+
+        private void txtCompAddress1_Leave(object sender, EventArgs e)
+        {
+            txtCompAddress1.BackColor = Color.White;
+        }
+
+        private void txtCompAddress2_Enter(object sender, EventArgs e)
+        {
+            txtCompAddress2.BackColor = Color.LightYellow;
+        }
+
+        private void txtCompAddress2_Leave(object sender, EventArgs e)
+        {
+            txtCompAddress2.BackColor = Color.White;
+        }
+
+        private void txtCompTaxId_Enter(object sender, EventArgs e)
+        {
+            txtCompTaxId.BackColor = Color.LightYellow;
+        }
+
+        private void txtCompTaxId_Leave(object sender, EventArgs e)
+        {
+            txtCompTaxId.BackColor = Color.White;
+        }
+
+        private void cboCust_Enter(object sender, EventArgs e)
+        {
+            cboCust.BackColor = Color.LightYellow;
+        }
+
+        private void cboCust_Leave(object sender, EventArgs e)
+        {
+            cboCust.BackColor = Color.White;
+        }
+
+        private void cboContact_Enter(object sender, EventArgs e)
+        {
+            cboContact.BackColor = Color.LightYellow;
+        }
+
+        private void cboContact_Leave(object sender, EventArgs e)
+        {
+            cboContact.BackColor = Color.White;
+        }
+
+        private void txtCustAddress_Enter(object sender, EventArgs e)
+        {
+            txtCustAddress.BackColor = Color.LightYellow;
+        }
+
+        private void txtCustAddress_Leave(object sender, EventArgs e)
+        {
+            txtCustAddress.BackColor = Color.White;
+        }
+
+        private void txtCustTel_Enter(object sender, EventArgs e)
+        {
+            txtCustTel.BackColor = Color.LightYellow;
+        }
+
+        private void txtCustTel_Leave(object sender, EventArgs e)
+        {
+            txtCustTel.BackColor = Color.White;
+        }
+
+        private void txtCustFax_Enter(object sender, EventArgs e)
+        {
+            txtCustFax.BackColor = Color.LightYellow;
+        }
+
+        private void txtCustFax_Leave(object sender, EventArgs e)
+        {
+            txtCustFax.BackColor = Color.White;
+        }
+
+        private void txtCustEmail_Enter(object sender, EventArgs e)
+        {
+            txtCustEmail.BackColor = Color.LightYellow;
+        }
+
+        private void txtCustEmail_Leave(object sender, EventArgs e)
+        {
+            txtCustEmail.BackColor = Color.White;
+        }
+
+        private void cboItem_Enter(object sender, EventArgs e)
+        {
+            cboItem.BackColor = Color.LightYellow;
+        }
+
+        private void cboItem_Leave(object sender, EventArgs e)
+        {
+            cboItem.BackColor = Color.White;
+        }
+
+        private void txtItemQty_Enter(object sender, EventArgs e)
+        {
+            txtItemQty.BackColor = Color.LightYellow;
+        }
+
+        private void txtItemQty_Leave(object sender, EventArgs e)
+        {
+            txtItemQty.BackColor = Color.White;
+            calItemAmount();
+        }
+
+        private void txtItemPrice_Enter(object sender, EventArgs e)
+        {
+            txtItemPrice.BackColor = Color.LightYellow;
+        }
+
+        private void cboRemark1_Enter(object sender, EventArgs e)
+        {
+            cboRemark1.BackColor = Color.LightYellow;
+        }
+
+        private void cboRemark1_Leave(object sender, EventArgs e)
+        {
+            cboRemark1.BackColor = Color.White;
+        }
+
+        private void cboRemark2_Enter(object sender, EventArgs e)
+        {
+            cboRemark2.BackColor = Color.LightYellow;
+        }
+
+        private void cboRemark2_Leave(object sender, EventArgs e)
+        {
+            cboRemark2.BackColor = Color.White;
+        }
+
+        private void cboRemark3_Enter(object sender, EventArgs e)
+        {
+            cboRemark3.BackColor = Color.LightYellow;
+        }
+
+        private void cboRemark3_Leave(object sender, EventArgs e)
+        {
+            cboRemark3.BackColor = Color.White;
+        }
+
+        private void cboStaff_Enter(object sender, EventArgs e)
+        {
+            cboStaff.BackColor = Color.LightYellow;
+        }
+
+        private void cboStaff_Leave(object sender, EventArgs e)
+        {
+            cboStaff.BackColor = Color.White;
+        }
+
+        private void txtStaffTel_Enter(object sender, EventArgs e)
+        {
+            txtStaffTel.BackColor = Color.LightYellow;
+        }
+
+        private void txtStaffTel_Leave(object sender, EventArgs e)
+        {
+            txtStaffTel.BackColor = Color.White;
+        }
+
+        private void cboStaffApprove_Enter(object sender, EventArgs e)
+        {
+            cboStaffApprove.BackColor = Color.LightYellow;
+        }
+
+        private void cboStaffApprove_Leave(object sender, EventArgs e)
+        {
+            cboStaffApprove.BackColor = Color.White;
+        }
+
+        private void txtDiscount_Enter(object sender, EventArgs e)
+        {
+            txtDiscount.BackColor = Color.LightYellow;
+        }
+
+        private void txtPlus1_Enter(object sender, EventArgs e)
+        {
+            txtPlus1.BackColor = Color.LightYellow;
+        }
+
+        private void txtStaffEmail_Enter(object sender, EventArgs e)
+        {
+            txtStaffEmail.BackColor = Color.LightYellow;
+        }
+
+        private void txtStaffEmail_Leave(object sender, EventArgs e)
+        {
+            txtStaffEmail.BackColor = Color.White;
+        }
+
+        private void txtItemQty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtItemPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void cboItem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!pageLoad)
+            {
+                Item it = cc.itdb.selectByPk(cc.getValueCboItem(cboItem));
+                txtItemPrice.Text = it.PriceSale;
+            }
+        }
+
     }
 }

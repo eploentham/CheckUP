@@ -43,9 +43,9 @@ namespace Cemp.gui
             dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvView.Columns[colRow].Width = 50;
             dgvView.Columns[colCode].Width = 80;
-            dgvView.Columns[colNameT].Width = 150;
+            dgvView.Columns[colNameT].Width = 200;
             dgvView.Columns[colNameE].Width = 200;
-            dgvView.Columns[colRemark].Width = 180;
+            dgvView.Columns[colRemark].Width = 200;
 
             dgvView.Columns[colRow].HeaderText = "ลำดับ";
             dgvView.Columns[colCode].HeaderText = "code";

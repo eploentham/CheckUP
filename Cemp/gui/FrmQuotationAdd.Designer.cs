@@ -107,6 +107,7 @@
             this.txtStaffApproveId = new System.Windows.Forms.TextBox();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.btnItemSearch = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
@@ -141,6 +142,8 @@
             this.txtCompTaxId.Name = "txtCompTaxId";
             this.txtCompTaxId.Size = new System.Drawing.Size(298, 23);
             this.txtCompTaxId.TabIndex = 7;
+            this.txtCompTaxId.Enter += new System.EventHandler(this.txtCompTaxId_Enter);
+            this.txtCompTaxId.Leave += new System.EventHandler(this.txtCompTaxId_Leave);
             // 
             // label4
             // 
@@ -161,6 +164,8 @@
             this.txtCompAddress2.Name = "txtCompAddress2";
             this.txtCompAddress2.Size = new System.Drawing.Size(298, 23);
             this.txtCompAddress2.TabIndex = 5;
+            this.txtCompAddress2.Enter += new System.EventHandler(this.txtCompAddress2_Enter);
+            this.txtCompAddress2.Leave += new System.EventHandler(this.txtCompAddress2_Leave);
             // 
             // label3
             // 
@@ -181,6 +186,8 @@
             this.txtCompAddress1.Name = "txtCompAddress1";
             this.txtCompAddress1.Size = new System.Drawing.Size(298, 23);
             this.txtCompAddress1.TabIndex = 3;
+            this.txtCompAddress1.Enter += new System.EventHandler(this.txtCompAddress1_Enter);
+            this.txtCompAddress1.Leave += new System.EventHandler(this.txtCompAddress1_Leave);
             // 
             // label2
             // 
@@ -202,6 +209,8 @@
             this.cboComp.Name = "cboComp";
             this.cboComp.Size = new System.Drawing.Size(298, 25);
             this.cboComp.TabIndex = 1;
+            this.cboComp.Enter += new System.EventHandler(this.cboComp_Enter);
+            this.cboComp.Leave += new System.EventHandler(this.cboComp_Leave);
             // 
             // label1
             // 
@@ -255,6 +264,8 @@
             this.txtCustEmail.Name = "txtCustEmail";
             this.txtCustEmail.Size = new System.Drawing.Size(298, 23);
             this.txtCustEmail.TabIndex = 13;
+            this.txtCustEmail.Enter += new System.EventHandler(this.txtCustEmail_Enter);
+            this.txtCustEmail.Leave += new System.EventHandler(this.txtCustEmail_Leave);
             // 
             // label10
             // 
@@ -275,6 +286,8 @@
             this.txtCustFax.Name = "txtCustFax";
             this.txtCustFax.Size = new System.Drawing.Size(298, 23);
             this.txtCustFax.TabIndex = 11;
+            this.txtCustFax.Enter += new System.EventHandler(this.txtCustFax_Enter);
+            this.txtCustFax.Leave += new System.EventHandler(this.txtCustFax_Leave);
             // 
             // label9
             // 
@@ -295,6 +308,8 @@
             this.txtCustTel.Name = "txtCustTel";
             this.txtCustTel.Size = new System.Drawing.Size(298, 23);
             this.txtCustTel.TabIndex = 9;
+            this.txtCustTel.Enter += new System.EventHandler(this.txtCustTel_Enter);
+            this.txtCustTel.Leave += new System.EventHandler(this.txtCustTel_Leave);
             // 
             // label8
             // 
@@ -315,6 +330,8 @@
             this.txtCustAddress.Name = "txtCustAddress";
             this.txtCustAddress.Size = new System.Drawing.Size(298, 23);
             this.txtCustAddress.TabIndex = 7;
+            this.txtCustAddress.Enter += new System.EventHandler(this.txtCustAddress_Enter);
+            this.txtCustAddress.Leave += new System.EventHandler(this.txtCustAddress_Leave);
             // 
             // label7
             // 
@@ -336,6 +353,8 @@
             this.cboContact.Name = "cboContact";
             this.cboContact.Size = new System.Drawing.Size(298, 25);
             this.cboContact.TabIndex = 5;
+            this.cboContact.Enter += new System.EventHandler(this.cboContact_Enter);
+            this.cboContact.Leave += new System.EventHandler(this.cboContact_Leave);
             // 
             // label6
             // 
@@ -358,6 +377,8 @@
             this.cboCust.Size = new System.Drawing.Size(298, 25);
             this.cboCust.TabIndex = 3;
             this.cboCust.SelectedIndexChanged += new System.EventHandler(this.cboCust_SelectedIndexChanged);
+            this.cboCust.Enter += new System.EventHandler(this.cboCust_Enter);
+            this.cboCust.Leave += new System.EventHandler(this.cboCust_Leave);
             // 
             // label5
             // 
@@ -509,6 +530,7 @@
             this.txtPlus1.Name = "txtPlus1";
             this.txtPlus1.Size = new System.Drawing.Size(141, 23);
             this.txtPlus1.TabIndex = 27;
+            this.txtPlus1.Enter += new System.EventHandler(this.txtPlus1_Enter);
             this.txtPlus1.Leave += new System.EventHandler(this.txtPlus1_Leave);
             // 
             // label17
@@ -550,6 +572,7 @@
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(141, 23);
             this.txtDiscount.TabIndex = 23;
+            this.txtDiscount.Enter += new System.EventHandler(this.txtDiscount_Enter);
             this.txtDiscount.Leave += new System.EventHandler(this.txtDiscount_Leave);
             // 
             // label15
@@ -609,6 +632,8 @@
             this.cboRemark3.Name = "cboRemark3";
             this.cboRemark3.Size = new System.Drawing.Size(446, 25);
             this.cboRemark3.TabIndex = 30;
+            this.cboRemark3.Enter += new System.EventHandler(this.cboRemark3_Enter);
+            this.cboRemark3.Leave += new System.EventHandler(this.cboRemark3_Leave);
             // 
             // cboRemark2
             // 
@@ -619,6 +644,8 @@
             this.cboRemark2.Name = "cboRemark2";
             this.cboRemark2.Size = new System.Drawing.Size(446, 25);
             this.cboRemark2.TabIndex = 29;
+            this.cboRemark2.Enter += new System.EventHandler(this.cboRemark2_Enter);
+            this.cboRemark2.Leave += new System.EventHandler(this.cboRemark2_Leave);
             // 
             // cboRemark1
             // 
@@ -629,6 +656,8 @@
             this.cboRemark1.Name = "cboRemark1";
             this.cboRemark1.Size = new System.Drawing.Size(446, 25);
             this.cboRemark1.TabIndex = 28;
+            this.cboRemark1.Enter += new System.EventHandler(this.cboRemark1_Enter);
+            this.cboRemark1.Leave += new System.EventHandler(this.cboRemark1_Leave);
             // 
             // label25
             // 
@@ -672,6 +701,8 @@
             this.cboStaffApprove.Name = "cboStaffApprove";
             this.cboStaffApprove.Size = new System.Drawing.Size(205, 25);
             this.cboStaffApprove.TabIndex = 6;
+            this.cboStaffApprove.Enter += new System.EventHandler(this.cboStaffApprove_Enter);
+            this.cboStaffApprove.Leave += new System.EventHandler(this.cboStaffApprove_Leave);
             // 
             // label26
             // 
@@ -693,6 +724,8 @@
             this.cboStaff.Name = "cboStaff";
             this.cboStaff.Size = new System.Drawing.Size(212, 25);
             this.cboStaff.TabIndex = 17;
+            this.cboStaff.Enter += new System.EventHandler(this.cboStaff_Enter);
+            this.cboStaff.Leave += new System.EventHandler(this.cboStaff_Leave);
             // 
             // label11
             // 
@@ -713,6 +746,8 @@
             this.txtStaffTel.Name = "txtStaffTel";
             this.txtStaffTel.Size = new System.Drawing.Size(151, 23);
             this.txtStaffTel.TabIndex = 19;
+            this.txtStaffTel.Enter += new System.EventHandler(this.txtStaffTel_Enter);
+            this.txtStaffTel.Leave += new System.EventHandler(this.txtStaffTel_Leave);
             // 
             // label12
             // 
@@ -733,6 +768,8 @@
             this.txtStaffEmail.Name = "txtStaffEmail";
             this.txtStaffEmail.Size = new System.Drawing.Size(148, 23);
             this.txtStaffEmail.TabIndex = 21;
+            this.txtStaffEmail.Enter += new System.EventHandler(this.txtStaffEmail_Enter);
+            this.txtStaffEmail.Leave += new System.EventHandler(this.txtStaffEmail_Leave);
             // 
             // label13
             // 
@@ -758,7 +795,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label28.Location = new System.Drawing.Point(19, 15);
+            this.label28.Location = new System.Drawing.Point(19, 13);
             this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(43, 17);
@@ -768,7 +805,7 @@
             // dtpDateQu
             // 
             this.dtpDateQu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dtpDateQu.Location = new System.Drawing.Point(137, 37);
+            this.dtpDateQu.Location = new System.Drawing.Point(146, 37);
             this.dtpDateQu.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDateQu.Name = "dtpDateQu";
             this.dtpDateQu.Size = new System.Drawing.Size(106, 23);
@@ -794,6 +831,9 @@
             this.cboItem.Name = "cboItem";
             this.cboItem.Size = new System.Drawing.Size(342, 25);
             this.cboItem.TabIndex = 27;
+            this.cboItem.SelectedIndexChanged += new System.EventHandler(this.cboItem_SelectedIndexChanged);
+            this.cboItem.Enter += new System.EventHandler(this.cboItem_Enter);
+            this.cboItem.Leave += new System.EventHandler(this.cboItem_Leave);
             // 
             // label29
             // 
@@ -810,7 +850,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label31.Location = new System.Drawing.Point(554, 200);
+            this.label31.Location = new System.Drawing.Point(600, 200);
             this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(27, 17);
@@ -820,17 +860,20 @@
             // txtItemQty
             // 
             this.txtItemQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtItemQty.Location = new System.Drawing.Point(542, 218);
+            this.txtItemQty.Location = new System.Drawing.Point(588, 218);
             this.txtItemQty.Margin = new System.Windows.Forms.Padding(2);
             this.txtItemQty.Name = "txtItemQty";
             this.txtItemQty.Size = new System.Drawing.Size(56, 23);
             this.txtItemQty.TabIndex = 30;
+            this.txtItemQty.Enter += new System.EventHandler(this.txtItemQty_Enter);
+            this.txtItemQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemQty_KeyPress);
+            this.txtItemQty.Leave += new System.EventHandler(this.txtItemQty_Leave);
             // 
             // label32
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label32.Location = new System.Drawing.Point(619, 200);
+            this.label32.Location = new System.Drawing.Point(665, 200);
             this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(39, 17);
@@ -840,16 +883,18 @@
             // txtItemPrice
             // 
             this.txtItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtItemPrice.Location = new System.Drawing.Point(608, 218);
+            this.txtItemPrice.Location = new System.Drawing.Point(654, 218);
             this.txtItemPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtItemPrice.Name = "txtItemPrice";
             this.txtItemPrice.Size = new System.Drawing.Size(78, 23);
             this.txtItemPrice.TabIndex = 32;
+            this.txtItemPrice.Enter += new System.EventHandler(this.txtItemPrice_Enter);
+            this.txtItemPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemPrice_KeyPress);
             this.txtItemPrice.Leave += new System.EventHandler(this.txtItemPrice_Leave);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(791, 15);
+            this.btnSave.Location = new System.Drawing.Point(842, 22);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(56, 29);
@@ -860,7 +905,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(786, 218);
+            this.btnAdd.Location = new System.Drawing.Point(832, 218);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(31, 25);
@@ -873,7 +918,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label33.Location = new System.Drawing.Point(705, 200);
+            this.label33.Location = new System.Drawing.Point(751, 200);
             this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(55, 17);
@@ -883,7 +928,7 @@
             // txtItemAmount
             // 
             this.txtItemAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtItemAmount.Location = new System.Drawing.Point(696, 218);
+            this.txtItemAmount.Location = new System.Drawing.Point(742, 218);
             this.txtItemAmount.Margin = new System.Windows.Forms.Padding(2);
             this.txtItemAmount.Name = "txtItemAmount";
             this.txtItemAmount.Size = new System.Drawing.Size(78, 23);
@@ -951,7 +996,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(821, 218);
+            this.btnDel.Location = new System.Drawing.Point(867, 218);
             this.btnDel.Margin = new System.Windows.Forms.Padding(2);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(31, 25);
@@ -962,7 +1007,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(791, 156);
+            this.btnPrint.Location = new System.Drawing.Point(842, 156);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(56, 29);
@@ -970,11 +1015,23 @@
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
             // 
+            // btnItemSearch
+            // 
+            this.btnItemSearch.Location = new System.Drawing.Point(542, 216);
+            this.btnItemSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnItemSearch.Name = "btnItemSearch";
+            this.btnItemSearch.Size = new System.Drawing.Size(31, 25);
+            this.btnItemSearch.TabIndex = 44;
+            this.btnItemSearch.Text = "...";
+            this.btnItemSearch.UseVisualStyleBackColor = true;
+            this.btnItemSearch.Click += new System.EventHandler(this.btnItemSearch_Click);
+            // 
             // FrmQuotationAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(957, 628);
+            this.ClientSize = new System.Drawing.Size(957, 749);
+            this.Controls.Add(this.btnItemSearch);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.txtStaffApproveId);
@@ -1112,5 +1169,6 @@
         private System.Windows.Forms.TextBox txtStaffApproveId;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnItemSearch;
     }
 }
