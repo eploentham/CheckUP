@@ -1,5 +1,6 @@
 ﻿using Cemp.Control;
 using Cemp.object1;
+using CrystalDecisions.CrystalReports.Engine;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,11 +21,12 @@ namespace Cemp.gui
         public FrmItemView(CnviControl c)
         {
             InitializeComponent();
-            initConfig(c);
-        }
-        private void initConfig(CnviControl c)
-        {
             cc = c;
+            initConfig();
+        }
+        private void initConfig()
+        {
+            //cc = c;
             it = new Item();
             setGrd();
         }
@@ -115,6 +117,13 @@ namespace Cemp.gui
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             setGrd();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            String sql = "";
+            DataTable dt = cc.itdb.selectAll();
+            FrmReport frm = new FrmReport("", "", cc);
         }
     }
 }

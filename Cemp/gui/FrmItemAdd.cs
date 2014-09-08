@@ -158,7 +158,96 @@ namespace Cemp.gui
         {
             FrmItemGroupAdd frm = new FrmItemGroupAdd("",cc);
             frm.ShowDialog(this);
+            //cboMethod = cc.medb.getCboMethod(cboMethod);
+            cboGroup = cc.itgdb.getCboItemGroup(cboGroup);
+        }
 
+        private void txtCode_Enter(object sender, EventArgs e)
+        {
+            txtCode.BackColor = Color.LightYellow;
+        }
+
+        private void txtCode_Leave(object sender, EventArgs e)
+        {
+            txtCode.BackColor = Color.White;
+        }
+
+        private void txtNameT_Enter(object sender, EventArgs e)
+        {
+            txtNameT.BackColor = Color.LightYellow;
+        }
+
+        private void txtNameT_Leave(object sender, EventArgs e)
+        {
+            txtNameT.BackColor = Color.White;
+        }
+
+        private void txtNameE_Enter(object sender, EventArgs e)
+        {
+            txtNameE.BackColor = Color.LightYellow;
+        }
+
+        private void txtNameE_Leave(object sender, EventArgs e)
+        {
+            txtNameE.BackColor = Color.White;
+        }
+
+        private void cboGroup_Enter(object sender, EventArgs e)
+        {
+            cboGroup.BackColor = Color.LightYellow;
+        }
+
+        private void cboGroup_Leave(object sender, EventArgs e)
+        {
+            cboGroup.BackColor = Color.White;
+        }
+
+        private void cboMethod_Enter(object sender, EventArgs e)
+        {
+            cboMethod.BackColor = Color.LightYellow;
+        }
+
+        private void cboMethod_Leave(object sender, EventArgs e)
+        {
+            cboMethod.BackColor = Color.White;
+        }
+
+        private void txtPriceSale_Enter(object sender, EventArgs e)
+        {
+            txtPriceSale.BackColor = Color.LightYellow;
+        }
+
+        private void txtPriceSale_Leave(object sender, EventArgs e)
+        {
+            txtPriceSale.BackColor = Color.White;
+        }
+
+        private void txtPriceCost_Enter(object sender, EventArgs e)
+        {
+            txtPriceCost.BackColor = Color.LightYellow;
+        }
+
+        private void txtPriceCost_Leave(object sender, EventArgs e)
+        {
+            txtPriceCost.BackColor = Color.White;
+        }
+
+        private void txtRemark_Enter(object sender, EventArgs e)
+        {
+            txtRemark.BackColor = Color.LightYellow;
+        }
+
+        private void txtRemark_Leave(object sender, EventArgs e)
+        {
+            txtRemark.BackColor = Color.White;
+        }
+
+        private void btnMethodAdd_Click(object sender, EventArgs e)
+        {
+            FrmMethodAdd frm = new FrmMethodAdd("", cc);
+            frm.ShowDialog(this);
+            cboMethod = cc.medb.getCboMethod(cboMethod);
+            //cboGroup = cc.itgdb.getCboItemGroup(cboGroup);
         }
     }
 }

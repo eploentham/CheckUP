@@ -199,6 +199,15 @@ namespace Cemp.gui
                 MessageBox.Show("ป้อนรหัสซ้ำ\nรหัส " + me.Code + " ชื่อ " + me.NameT, "รหัสซ้ำ");
                 return;
             }
+            else
+            {
+                label8.Text = "ok";
+            }
+        }
+
+        private void txtCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }

@@ -62,6 +62,19 @@ namespace Cemp.objdb
             }
             return item;
         }
+        public ItemGroup selectByNameT(String cuId)
+        {
+            ItemGroup item = new ItemGroup();
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From " + itg.table + " Where " + itg.NameT + "='" + cuId + "'";
+            dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                item = setData(item, dt);
+            }
+            return item;
+        }
         //public ItemGroup selectByCode(String cuId)
         //{
         //    ItemGroup item = new ItemGroup();
@@ -160,6 +173,7 @@ namespace Cemp.objdb
         {
             ComboBoxItem item = new ComboBoxItem();
             DataTable dt = selectAll();
+            c.Items.Clear();
             //String aaa = "";
             for (int i = 0; i < dt.Rows.Count; i++)
             {

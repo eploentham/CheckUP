@@ -30,6 +30,7 @@
         {
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvView = new System.Windows.Forms.DataGridView();
+            this.btnPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,11 +57,23 @@
             this.dgvView.TabIndex = 7;
             this.dgvView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvView_CellDoubleClick);
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(843, 88);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(75, 48);
+            this.btnPrint.TabIndex = 10;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // FrmCustView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(939, 686);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvView);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -78,5 +91,6 @@
 
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dgvView;
+        private System.Windows.Forms.Button btnPrint;
     }
 }

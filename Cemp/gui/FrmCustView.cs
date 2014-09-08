@@ -30,6 +30,7 @@ namespace Cemp.gui
             dgvView.Width = this.Width - 80 - btnAdd.Width;
             dgvView.Height = this.Height - 150;
             btnAdd.Left = dgvView.Width + 20;
+            btnPrint.Left = dgvView.Width + 20;
             //groupBox1.Width = this.Width - 50;
             //groupBox1.Height = this.Height = 150;
         }
@@ -113,6 +114,14 @@ namespace Cemp.gui
             frm.ShowDialog(this);
             setGrd();
 
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            String sql = "";
+            DataTable dt = cc.itdb.selectAll();
+            FrmReport frm = new FrmReport("customerList3", dt, cc);
+            frm.Show();
         }
     }
 }

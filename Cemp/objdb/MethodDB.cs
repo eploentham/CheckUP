@@ -161,6 +161,7 @@ namespace Cemp.objdb
         {
             ComboBoxItem item = new ComboBoxItem();
             DataTable dt = selectAll();
+            c.Items.Clear();
             //String aaa = "";
             for (int i = 0; i < dt.Rows.Count; i++)
             {

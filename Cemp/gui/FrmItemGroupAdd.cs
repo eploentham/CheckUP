@@ -35,6 +35,7 @@ namespace Cemp.gui
             //    label9.Visible = false;
             //}
             btnUnActive.Visible = false;
+            label8.Text = "";
             //txtCode.ReadOnly = true;
         }
         private void setControl(String itgId)
@@ -151,6 +152,51 @@ namespace Cemp.gui
                 cc.medb.VoidMethod(txtId.Text);
                 this.Dispose();
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            ItemGroup itg = cc.itgdb.selectByNameT(txtNameT.Text);
+            if (!itg.NameT.Equals(""))
+            {
+                label8.Text = "ชื่อซ้ำ" + itg.NameT + " ชื่อ " + itg.NameE;
+                MessageBox.Show("ป้อนชื่อซ้ำ\nชื่อ " + itg.NameT + " Name " + itg.NameE, "ชื่อซ้ำ");
+                return;
+            }
+            else
+            {
+                label8.Text = "ok";
+            }
+        }
+
+        private void txtNameT_Enter(object sender, EventArgs e)
+        {
+            txtNameT.BackColor = Color.LightYellow;
+        }
+
+        private void txtNameT_Leave(object sender, EventArgs e)
+        {
+            txtNameT.BackColor = Color.White;
+        }
+
+        private void txtNameE_Enter(object sender, EventArgs e)
+        {
+            txtNameE.BackColor = Color.LightYellow;
+        }
+
+        private void txtNameE_Leave(object sender, EventArgs e)
+        {
+            txtNameE.BackColor = Color.White;
+        }
+
+        private void txtRemark_Enter(object sender, EventArgs e)
+        {
+            txtRemark.BackColor = Color.LightYellow;
+        }
+
+        private void txtRemark_Leave(object sender, EventArgs e)
+        {
+            txtRemark.BackColor = Color.White;
         }
     }
 }

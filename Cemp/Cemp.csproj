@@ -242,6 +242,11 @@
     <Compile Include="object1\Staff.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="report\customerList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerList.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="gui\FrmQuotationAdd1.resx">
       <DependentUpon>FrmQuotationAdd1.cs</DependentUpon>
     </EmbeddedResource>
@@ -326,6 +331,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -335,10 +341,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="report\customerList.xsc">
+      <DependentUpon>customerList.xsd</DependentUpon>
+    </None>
+    <None Include="report\customerList.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customerList.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="report\customerList.xss">
+      <DependentUpon>customerList.xsd</DependentUpon>
+    </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="report\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>

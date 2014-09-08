@@ -432,5 +432,15 @@ namespace Cemp.gui
         {
             txtContactName2Tel.BackColor = Color.White;
         }
+
+        private void txtCode_Enter(object sender, EventArgs e)
+        {
+            txtCode.BackColor = Color.LightYellow;
+        }
+
+        private void txtCode_Leave(object sender, EventArgs e)
+        {
+            txtCode.BackColor = Color.White;
+        }
     }
 }
