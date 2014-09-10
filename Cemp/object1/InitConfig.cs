@@ -8,6 +8,6 @@ namespace Cemp.object1
     public class InitConfig
     {
         public String clearInput = "", connectDatabaseServer = "", ServerIP = "", User = "", Password = "", Database = "", pathImage = "", delImage = "", pathImageBefore = "";
-        public String StatusServer = "", pathShareImage = "", pathShareData = "", use32Bit="";
+        public String StatusServer = "", pathShareImage = "", pathShareData = "", use32Bit="", PathReport="";
     }
 }

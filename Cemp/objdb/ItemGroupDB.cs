@@ -25,6 +25,7 @@ namespace Cemp.objdb
             itg.NameE = "item_group_name_e";
             itg.NameT = "item_group_name_t";
             itg.Remark = "item_group_remark";
+            itg.Sort1 = "sort1";
 
             itg.table = "b_item_group";
             itg.pkField = "item_group_id";
@@ -37,6 +38,7 @@ namespace Cemp.objdb
             item.NameE = dt.Rows[0][itg.NameE].ToString();
             item.NameT = dt.Rows[0][itg.NameT].ToString();
             item.Remark = dt.Rows[0][itg.Remark].ToString();
+            item.Sort1 = dt.Rows[0][itg.Sort1].ToString();
 
             return item;
         }
@@ -97,14 +99,18 @@ namespace Cemp.objdb
                 p.Id = "cu" + p.getGenID();
             }
 
+            if (p.Sort1.Equals(""))
+            {
+                p.Sort1 = "999";
+            }
             p.NameE = p.NameE.Replace("''", "'");
             p.NameT = p.NameT.Replace("''", "'");
             p.Remark = p.Remark.Replace("''", "'");
 
             sql = "Insert Into " + itg.table + " (" + itg.pkField + "," + itg.Active + "," + itg.NameE + "," +
-                itg.NameT + "," + itg.Remark + ") " +
+                itg.NameT + "," + itg.Remark + "," + itg.Sort1 + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.NameE + "','" +
-                p.NameT + "','" + p.Remark + "')";
+                p.NameT + "','" + p.Remark + "','" + p.Sort1 + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -126,11 +132,15 @@ namespace Cemp.objdb
             p.NameE = p.NameE.Replace("''", "'");
             p.NameT = p.NameT.Replace("''", "'");
             p.Remark = p.Remark.Replace("''", "'");
-
+            if (p.Sort1.Equals(""))
+            {
+                p.Sort1 = "999";
+            }
             sql = "Update " + itg.table + " Set " + itg.NameE + "='" + p.NameE + "', " +
                 //itg.NameE + "='" + p.NameE + "', " +
                 itg.NameT + "='" + p.NameT + "', " +
-                itg.Remark + "='" + p.Remark + "' " +
+                itg.Remark + "='" + p.Remark + "', " +
+                itg.Sort1 + "='" + p.Sort1 + "' " +
 
                 "Where " + itg.pkField + "='" + p.Id + "'";
             try

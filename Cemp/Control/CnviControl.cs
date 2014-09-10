@@ -37,6 +37,7 @@ namespace Cemp.Control
         public ItemGroupDB itgdb;
 
         public Staff sf;
+        public Company cp;
 
         private IniFile iniFile;
         public InitConfig initC;
@@ -71,6 +72,7 @@ namespace Cemp.Control
             itdb = new ItemDB(conn);
             itgdb = new ItemGroupDB(conn);
 
+            cp = cpdb.selectByPk();
             PathLogo = Environment.CurrentDirectory;
         }
         public String getTextCboItem(ComboBox c, String valueId)
@@ -102,6 +104,7 @@ namespace Cemp.Control
             initC.pathShareData = iniFile.Read("pathsharedata");
             initC.pathShareImage = iniFile.Read("pathshareimage");
             initC.use32Bit = iniFile.Read("use32bit");
+            initC.PathReport = iniFile.Read("pathreport");
             //initC.Password = regE.getPassword();
         }
         public void SetPathImage(String path)
@@ -119,6 +122,10 @@ namespace Cemp.Control
         public void SetPathShareData(String path)
         {
             iniFile.Write("pathsharedata", path);
+        }
+        public void SetPathReport(String path)
+        {
+            iniFile.Write("pathreport", path);
         }
         public void SetSetatusServer(Boolean value)
         {

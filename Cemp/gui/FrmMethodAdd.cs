@@ -45,6 +45,8 @@ namespace Cemp.gui
             txtNameE.Text = me.NameE;
             txtNameT.Text = me.NameT;
             txtRemark.Text = me.Remark;
+            txtSort1.Text = me.Sort1;
+
             if (me.Active.Equals("1"))
             {
                 chkActive.Checked = true;
@@ -71,6 +73,7 @@ namespace Cemp.gui
             me.NameE = txtNameE.Text;
             me.NameT = txtNameT.Text;
             me.Remark = txtRemark.Text;
+            me.Sort1 = txtSort1.Text;
         }
 
         private void FrmMethodAdd_Load(object sender, EventArgs e)

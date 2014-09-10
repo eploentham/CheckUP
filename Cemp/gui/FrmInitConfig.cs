@@ -66,6 +66,7 @@ namespace Cemp.gui
 
             txtPathImage.Text = cc.initC.pathImage;
             txtPathBefore.Text = cc.initC.pathImageBefore;
+            txtPathReport.Text = cc.initC.PathReport;
             if (cc.initC.delImage.Equals("yes"))
             {
                 chkDelImage.Checked = true;
@@ -92,6 +93,7 @@ namespace Cemp.gui
         {
             cc.SetClearInput(chkClearInput.Checked);
             cc.SetUse32Bit(chkUse32bit.Checked);
+            cc.SetPathReport(txtPathReport.Text);
             if (ChkServer.Checked)
             {
                 cc.SetSetatusServer(true);
@@ -200,6 +202,13 @@ namespace Cemp.gui
         {
             gBServer.Visible = false;
             gBClient.Visible = true;
+        }
+
+        private void btnPathReport_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            DialogResult result = fbd.ShowDialog();
+            txtPathReport.Text = fbd.SelectedPath;
         }
 
     }

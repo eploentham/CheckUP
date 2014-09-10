@@ -30,6 +30,7 @@
         {
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvView = new System.Windows.Forms.DataGridView();
+            this.btnPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,11 +57,23 @@
             this.dgvView.TabIndex = 9;
             this.dgvView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvView_CellDoubleClick);
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(634, 85);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(56, 39);
+            this.btnPrint.TabIndex = 11;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // FrmMethodView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(718, 530);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvView);
             this.Name = "FrmMethodView";
@@ -77,5 +90,6 @@
 
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dgvView;
+        private System.Windows.Forms.Button btnPrint;
     }
 }

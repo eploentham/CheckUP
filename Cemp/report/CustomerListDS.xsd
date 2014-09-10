@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSCustomerList" targetNamespace="http://tempuri.org/DSCustomerList.xsd" xmlns:mstns="http://tempuri.org/DSCustomerList.xsd" xmlns="http://tempuri.org/DSCustomerList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSCustomerList" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSCustomerList" msprop:Generator_UserDSName="DSCustomerList">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="b_customer" msprop:Generator_TableClassName="b_customerDataTable" msprop:Generator_TableVarName="tableb_customer" msprop:Generator_TablePropName="b_customer" msprop:Generator_RowDeletingName="b_customerRowDeleting" msprop:Generator_RowChangingName="b_customerRowChanging" msprop:Generator_RowEvHandlerName="b_customerRowChangeEventHandler" msprop:Generator_RowDeletedName="b_customerRowDeleted" msprop:Generator_UserTableName="b_customer" msprop:Generator_RowChangedName="b_customerRowChanged" msprop:Generator_RowEvArgName="b_customerRowChangeEvent" msprop:Generator_RowClassName="b_customerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cust_code" msprop:Generator_ColumnVarNameInTable="columncust_code" msprop:Generator_ColumnPropNameInRow="cust_code" msprop:Generator_ColumnPropNameInTable="cust_codeColumn" msprop:Generator_UserColumnName="cust_code" type="xs:string" minOccurs="0" />
+              <xs:element name="cust_name_t" msprop:Generator_ColumnVarNameInTable="columncust_name_t" msprop:Generator_ColumnPropNameInRow="cust_name_t" msprop:Generator_ColumnPropNameInTable="cust_name_tColumn" msprop:Generator_UserColumnName="cust_name_t" type="xs:string" minOccurs="0" />
+              <xs:element name="cust_name_e" msprop:Generator_ColumnVarNameInTable="columncust_name_e" msprop:Generator_ColumnPropNameInRow="cust_name_e" msprop:Generator_ColumnPropNameInTable="cust_name_eColumn" msprop:Generator_UserColumnName="cust_name_e" type="xs:string" minOccurs="0" />
+              <xs:element name="address_t" msprop:Generator_ColumnVarNameInTable="columnaddress_t" msprop:Generator_ColumnPropNameInRow="address_t" msprop:Generator_ColumnPropNameInTable="address_tColumn" msprop:Generator_UserColumnName="address_t" type="xs:string" minOccurs="0" />
+              <xs:element name="contact_name1" msprop:Generator_ColumnVarNameInTable="columncontact_name1" msprop:Generator_ColumnPropNameInRow="contact_name1" msprop:Generator_ColumnPropNameInTable="contact_name1Column" msprop:Generator_UserColumnName="contact_name1" type="xs:string" minOccurs="0" />
+              <xs:element name="contact_name1_tel" msprop:Generator_ColumnVarNameInTable="columncontact_name1_tel" msprop:Generator_ColumnPropNameInRow="contact_name1_tel" msprop:Generator_ColumnPropNameInTable="contact_name1_telColumn" msprop:Generator_UserColumnName="contact_name1_tel" type="xs:string" minOccurs="0" />
+              <xs:element name="remark" msprop:Generator_ColumnVarNameInTable="columnremark" msprop:Generator_ColumnPropNameInRow="remark" msprop:Generator_ColumnPropNameInTable="remarkColumn" msprop:Generator_UserColumnName="remark" type="xs:string" minOccurs="0" />
+              <xs:element name="tele" msprop:Generator_ColumnVarNameInTable="columntele" msprop:Generator_ColumnPropNameInRow="tele" msprop:Generator_ColumnPropNameInTable="teleColumn" msprop:Generator_UserColumnName="tele" type="xs:string" minOccurs="0" />
+              <xs:element name="tax_id" msprop:Generator_ColumnVarNameInTable="columntax_id" msprop:Generator_ColumnPropNameInRow="tax_id" msprop:Generator_ColumnPropNameInTable="tax_idColumn" msprop:Generator_UserColumnName="tax_id" type="xs:string" minOccurs="0" />
+              <xs:element name="contact_name2" msprop:Generator_ColumnVarNameInTable="columncontact_name2" msprop:Generator_ColumnPropNameInRow="contact_name2" msprop:Generator_ColumnPropNameInTable="contact_name2Column" msprop:Generator_UserColumnName="contact_name2" type="xs:string" minOccurs="0" />
+              <xs:element name="contact_name2_tel" msprop:Generator_ColumnVarNameInTable="columncontact_name2_tel" msprop:Generator_ColumnPropNameInRow="contact_name2_tel" msprop:Generator_ColumnPropNameInTable="contact_name2_telColumn" msprop:Generator_UserColumnName="contact_name2_tel" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

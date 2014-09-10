@@ -46,6 +46,7 @@ namespace Cemp.gui
             txtNameE.Text = itg.NameE;
             txtNameT.Text = itg.NameT;
             txtRemark.Text = itg.Remark;
+            txtSort1.Text = itg.Sort1;
             if (itg.Active.Equals("1"))
             {
                 chkActive.Checked = true;

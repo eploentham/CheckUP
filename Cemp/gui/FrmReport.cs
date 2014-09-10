@@ -17,22 +17,23 @@ namespace Cemp
     {
         CnviControl cc;
         ConnectDB conn;
-        public FrmReport(String rptName, String sql,CnviControl c)
+        public FrmReport(String rptName, String reportName, String condition, String sql, CnviControl c)
         {
             InitializeComponent();
             cc = c;
             conn = cc.conn;
-            initConfig(rptName, sql, null);
+            initConfig(rptName, reportName, sql, null);
         }
-        public FrmReport(String rptName, DataTable dt, CnviControl c)
+        public FrmReport(String rptName, String reportName, String condition, DataTable dt, CnviControl c)
         {
             InitializeComponent();
             cc = c;
             conn = cc.conn;
-            initConfig(rptName, "", dt);
+            initConfig(rptName, reportName, condition, "", dt);
         }
-        private void initConfig(String rptName, String sql, DataTable dt)
+        private void initConfig(String rptName, String reportName, String condition, String sql, DataTable dt)
         {
+            String chk = "";
             ReportDocument rpt = new ReportDocument();
             DataTable dt1;
             if (!sql.Equals(""))
@@ -46,7 +47,8 @@ namespace Cemp
             
             //string directory = My.Application.Info.DirectoryPath;
             //rpt.Load(directory & "\myCrystalReport1.rpt")
-            rpt.Load(Environment.CurrentDirectory + "\\report\\" + rptName + ".rpt");
+            //rpt.Load(Environment.CurrentDirectory + "\\report\\" + rptName + ".rpt");
+            
             //ConnectionInfo crConnectionInfo = new ConnectionInfo();
             //crConnectionInfo.ServerName = "";
             //crConnectionInfo.DatabaseName = Environment.CurrentDirectory + "\\database\\cemp.mdb";
@@ -61,10 +63,27 @@ namespace Cemp
             //rpt.DataSourceConnections[0].SetConnection("", Environment.CurrentDirectory + "\\database\\cemp.mdb", false);
             //rpt.Database.Tables[0].Location = Environment.CurrentDirectory + "\\database\\cemp.mdb";
             //rpt.Load(Environment.CurrentDirectory + "\\report\\test.rpt");
-            //rpt.SetDataSource(dt1);
+            try
+            {
+                rpt.Load(cc.initC.PathReport+"\\" + rptName + ".rpt");
+                rpt.SetDataSource(dt1);
+                //ParameterField myParam = new ParameterField();
+                //myParam.Name = "header1";
+                //myParam.
+                rpt.SetParameterValue("header1", cc.cp.NameT);
+                rpt.SetParameterValue("header2", reportName);
+                rpt.SetParameterValue("header3", condition);
+
+                this.crystalReportViewer1.ReportSource = rpt;
+                this.crystalReportViewer1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                chk = ex.Message.ToString();
+            }
+            
             //rpt.SetParameterValue("CustomerID", this.txtCustomerID.Text);
-            this.crystalReportViewer1.ReportSource = rpt;
-            this.crystalReportViewer1.Refresh();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)

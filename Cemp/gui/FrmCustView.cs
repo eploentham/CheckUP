@@ -119,9 +119,9 @@ namespace Cemp.gui
         private void btnPrint_Click(object sender, EventArgs e)
         {
             String sql = "";
-            DataTable dt = cc.itdb.selectAll();
-            FrmReport frm = new FrmReport("customerList3", dt, cc);
-            frm.Show();
+            DataTable dt = cc.cudb.selectAll();
+            FrmReport frm = new FrmReport("CustomerList", "รายงานรายละเอียด ลูกค้า", "เงื่อนไข ทั้งหมด", dt, cc);
+            frm.Show(this);
         }
     }
 }

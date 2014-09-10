@@ -85,6 +85,15 @@ namespace Cemp.objdb
 
             return dt;
         }
+        public DataTable selectCustomerList()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select "+cu.Code+","+cu.NameT+","+cu.NameE+" From " + cu.table + " Where " + cu.Active + "='1'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
         public Customer selectByPk(String cuId)
         {
             Customer item = new Customer();

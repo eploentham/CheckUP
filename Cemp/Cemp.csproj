@@ -242,10 +242,69 @@
     <Compile Include="object1\Staff.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="report\customerList.Designer.cs">
+    <Compile Include="report\CustomerList.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>customerList.xsd</DependentUpon>
+      <DependentUpon>CustomerList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="report\CustomerListDS.cs">
+      <DependentUpon>CustomerListDS.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\CustomerListDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerListDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="report\ItemGroupList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemGroupList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\ItemGroupListDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemGroupListDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="report\ItemListDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemListDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="report\ItemList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\MethodList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MethodList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\MethodListDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MethodListDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="report\QuotationDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuotationDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="report\QuotationPrint.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuotationPrint.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="gui\FrmQuotationAdd1.resx">
       <DependentUpon>FrmQuotationAdd1.cs</DependentUpon>
@@ -331,7 +390,29 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="app.config" />
+    <EmbeddedResource Include="report\CustomerList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CustomerList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\ItemGroupList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ItemGroupList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\ItemList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ItemList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\MethodList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MethodList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\QuotationPrint.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>QuotationPrint.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -341,19 +422,76 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="report\customerList.xsc">
-      <DependentUpon>customerList.xsd</DependentUpon>
+    <None Include="report\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="report\customerList.xsd">
+    <None Include="report\DataSet1.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>customerList.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
     </None>
-    <None Include="report\customerList.xss">
-      <DependentUpon>customerList.xsd</DependentUpon>
+    <None Include="report\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="report\CustomerListDS.xsc">
+      <DependentUpon>CustomerListDS.xsd</DependentUpon>
+    </None>
+    <None Include="report\CustomerListDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CustomerListDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="report\CustomerListDS.xss">
+      <DependentUpon>CustomerListDS.xsd</DependentUpon>
+    </None>
+    <None Include="report\ItemGroupListDS.xsc">
+      <DependentUpon>ItemGroupListDS.xsd</DependentUpon>
+    </None>
+    <None Include="report\ItemGroupListDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ItemGroupListDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="report\ItemGroupListDS.xss">
+      <DependentUpon>ItemGroupListDS.xsd</DependentUpon>
+    </None>
+    <None Include="report\ItemListDS.xsc">
+      <DependentUpon>ItemListDS.xsd</DependentUpon>
+    </None>
+    <None Include="report\ItemListDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ItemListDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="report\ItemListDS.xss">
+      <DependentUpon>ItemListDS.xsd</DependentUpon>
+    </None>
+    <None Include="report\MethodListDS.xsc">
+      <DependentUpon>MethodListDS.xsd</DependentUpon>
+    </None>
+    <None Include="report\MethodListDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MethodListDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="report\MethodListDS.xss">
+      <DependentUpon>MethodListDS.xsd</DependentUpon>
+    </None>
+    <None Include="report\QuotationDS.xsc">
+      <DependentUpon>QuotationDS.xsd</DependentUpon>
+    </None>
+    <None Include="report\QuotationDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuotationDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="report\QuotationDS.xss">
+      <DependentUpon>QuotationDS.xsd</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>

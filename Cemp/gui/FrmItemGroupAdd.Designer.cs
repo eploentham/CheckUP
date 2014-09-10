@@ -43,11 +43,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtNameT = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtSort1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtSort1);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnSearch);
@@ -64,14 +68,14 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(503, 206);
+            this.groupBox1.Size = new System.Drawing.Size(503, 265);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(355, 177);
+            this.label9.Location = new System.Drawing.Point(355, 232);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 135;
@@ -80,7 +84,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(101, 177);
+            this.label8.Location = new System.Drawing.Point(101, 232);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 13);
             this.label8.TabIndex = 134;
@@ -98,7 +102,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(422, 167);
+            this.btnSave.Location = new System.Drawing.Point(422, 222);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 33);
             this.btnSave.TabIndex = 132;
@@ -108,7 +112,7 @@
             // 
             // btnUnActive
             // 
-            this.btnUnActive.Location = new System.Drawing.Point(304, 116);
+            this.btnUnActive.Location = new System.Drawing.Point(304, 171);
             this.btnUnActive.Name = "btnUnActive";
             this.btnUnActive.Size = new System.Drawing.Size(101, 23);
             this.btnUnActive.TabIndex = 131;
@@ -120,8 +124,8 @@
             // 
             this.ChkUnActive.AutoSize = true;
             this.ChkUnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.ChkUnActive.Location = new System.Drawing.Point(229, 116);
-            this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ChkUnActive.Location = new System.Drawing.Point(229, 171);
+            this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2);
             this.ChkUnActive.Name = "ChkUnActive";
             this.ChkUnActive.Size = new System.Drawing.Size(60, 21);
             this.ChkUnActive.TabIndex = 130;
@@ -134,8 +138,8 @@
             // 
             this.chkActive.AutoSize = true;
             this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chkActive.Location = new System.Drawing.Point(104, 116);
-            this.chkActive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkActive.Location = new System.Drawing.Point(104, 171);
+            this.chkActive.Margin = new System.Windows.Forms.Padding(2);
             this.chkActive.Name = "chkActive";
             this.chkActive.Size = new System.Drawing.Size(61, 21);
             this.chkActive.TabIndex = 129;
@@ -214,11 +218,29 @@
             this.label2.TabIndex = 125;
             this.label2.Text = "ชื่อ :";
             // 
+            // txtSort1
+            // 
+            this.txtSort1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSort1.Location = new System.Drawing.Point(94, 112);
+            this.txtSort1.Name = "txtSort1";
+            this.txtSort1.Size = new System.Drawing.Size(100, 22);
+            this.txtSort1.TabIndex = 136;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(13, 115);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 16);
+            this.label5.TabIndex = 137;
+            this.label5.Text = "เรียง :";
+            // 
             // FrmItemGroupAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 232);
+            this.ClientSize = new System.Drawing.Size(522, 289);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmItemGroupAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -247,5 +269,7 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtSort1;
+        private System.Windows.Forms.Label label5;
     }
 }

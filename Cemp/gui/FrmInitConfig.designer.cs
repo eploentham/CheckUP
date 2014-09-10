@@ -30,6 +30,7 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chkUse32bit = new System.Windows.Forms.CheckBox();
             this.gBClient = new System.Windows.Forms.GroupBox();
             this.txtConnectShareImage = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -66,7 +67,9 @@
             this.ChkServer = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkClearInput = new System.Windows.Forms.CheckBox();
-            this.chkUse32bit = new System.Windows.Forms.CheckBox();
+            this.btnPathReport = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtPathReport = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.gBClient.SuspendLayout();
@@ -79,29 +82,39 @@
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(9, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(680, 496);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.chkUse32bit);
             this.groupBox3.Controls.Add(this.gBClient);
             this.groupBox3.Controls.Add(this.btnSave);
             this.groupBox3.Controls.Add(this.gBServer);
             this.groupBox3.Controls.Add(this.ChkClient);
             this.groupBox3.Controls.Add(this.ChkServer);
             this.groupBox3.Location = new System.Drawing.Point(4, 70);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(670, 421);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "ใช้งานหลายเครื่อง";
+            // 
+            // chkUse32bit
+            // 
+            this.chkUse32bit.AutoSize = true;
+            this.chkUse32bit.Location = new System.Drawing.Point(4, 37);
+            this.chkUse32bit.Margin = new System.Windows.Forms.Padding(2);
+            this.chkUse32bit.Name = "chkUse32bit";
+            this.chkUse32bit.Size = new System.Drawing.Size(68, 17);
+            this.chkUse32bit.TabIndex = 30;
+            this.chkUse32bit.Text = "ใช้ 32 bit";
+            this.chkUse32bit.UseVisualStyleBackColor = true;
             // 
             // gBClient
             // 
@@ -121,9 +134,9 @@
             this.gBClient.Controls.Add(this.label3);
             this.gBClient.Controls.Add(this.btnTest);
             this.gBClient.Location = new System.Drawing.Point(120, 204);
-            this.gBClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gBClient.Margin = new System.Windows.Forms.Padding(2);
             this.gBClient.Name = "gBClient";
-            this.gBClient.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gBClient.Padding = new System.Windows.Forms.Padding(2);
             this.gBClient.Size = new System.Drawing.Size(420, 181);
             this.gBClient.TabIndex = 29;
             this.gBClient.TabStop = false;
@@ -132,7 +145,7 @@
             // txtConnectShareImage
             // 
             this.txtConnectShareImage.Location = new System.Drawing.Point(120, 84);
-            this.txtConnectShareImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConnectShareImage.Margin = new System.Windows.Forms.Padding(2);
             this.txtConnectShareImage.Name = "txtConnectShareImage";
             this.txtConnectShareImage.Size = new System.Drawing.Size(97, 20);
             this.txtConnectShareImage.TabIndex = 15;
@@ -150,7 +163,7 @@
             // txtConnectShareData
             // 
             this.txtConnectShareData.Location = new System.Drawing.Point(120, 63);
-            this.txtConnectShareData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConnectShareData.Margin = new System.Windows.Forms.Padding(2);
             this.txtConnectShareData.Name = "txtConnectShareData";
             this.txtConnectShareData.Size = new System.Drawing.Size(97, 20);
             this.txtConnectShareData.TabIndex = 13;
@@ -169,7 +182,7 @@
             // 
             this.chkConnectServer.AutoSize = true;
             this.chkConnectServer.Location = new System.Drawing.Point(14, 17);
-            this.chkConnectServer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkConnectServer.Margin = new System.Windows.Forms.Padding(2);
             this.chkConnectServer.Name = "chkConnectServer";
             this.chkConnectServer.Size = new System.Drawing.Size(147, 17);
             this.chkConnectServer.TabIndex = 2;
@@ -180,7 +193,7 @@
             // txtHost
             // 
             this.txtHost.Location = new System.Drawing.Point(120, 41);
-            this.txtHost.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtHost.Margin = new System.Windows.Forms.Padding(2);
             this.txtHost.Name = "txtHost";
             this.txtHost.Size = new System.Drawing.Size(97, 20);
             this.txtHost.TabIndex = 3;
@@ -188,7 +201,7 @@
             // txtUser
             // 
             this.txtUser.Location = new System.Drawing.Point(79, 131);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(2);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(97, 20);
             this.txtUser.TabIndex = 4;
@@ -196,7 +209,7 @@
             // txtPwd
             // 
             this.txtPwd.Location = new System.Drawing.Point(79, 154);
-            this.txtPwd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPwd.Margin = new System.Windows.Forms.Padding(2);
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.Size = new System.Drawing.Size(97, 20);
             this.txtPwd.TabIndex = 5;
@@ -224,7 +237,7 @@
             // txtDatabase
             // 
             this.txtDatabase.Location = new System.Drawing.Point(79, 108);
-            this.txtDatabase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDatabase.Margin = new System.Windows.Forms.Padding(2);
             this.txtDatabase.Name = "txtDatabase";
             this.txtDatabase.Size = new System.Drawing.Size(97, 20);
             this.txtDatabase.TabIndex = 11;
@@ -242,7 +255,7 @@
             // lV1
             // 
             this.lV1.Location = new System.Drawing.Point(287, 98);
-            this.lV1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lV1.Margin = new System.Windows.Forms.Padding(2);
             this.lV1.Name = "lV1";
             this.lV1.Size = new System.Drawing.Size(122, 80);
             this.lV1.TabIndex = 10;
@@ -261,7 +274,7 @@
             // btnTest
             // 
             this.btnTest.Location = new System.Drawing.Point(287, 70);
-            this.btnTest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTest.Margin = new System.Windows.Forms.Padding(2);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(56, 26);
             this.btnTest.TabIndex = 9;
@@ -271,7 +284,7 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(584, 344);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(82, 41);
             this.btnSave.TabIndex = 3;
@@ -296,9 +309,9 @@
             this.gBServer.Controls.Add(this.btnIP);
             this.gBServer.Controls.Add(this.txtIP);
             this.gBServer.Location = new System.Drawing.Point(120, 17);
-            this.gBServer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gBServer.Margin = new System.Windows.Forms.Padding(2);
             this.gBServer.Name = "gBServer";
-            this.gBServer.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gBServer.Padding = new System.Windows.Forms.Padding(2);
             this.gBServer.Size = new System.Drawing.Size(546, 182);
             this.gBServer.TabIndex = 28;
             this.gBServer.TabStop = false;
@@ -307,7 +320,7 @@
             // txtPathShareData
             // 
             this.txtPathShareData.Location = new System.Drawing.Point(120, 126);
-            this.txtPathShareData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPathShareData.Margin = new System.Windows.Forms.Padding(2);
             this.txtPathShareData.Name = "txtPathShareData";
             this.txtPathShareData.Size = new System.Drawing.Size(170, 20);
             this.txtPathShareData.TabIndex = 29;
@@ -327,7 +340,7 @@
             // 
             this.chkDelImage.AutoSize = true;
             this.chkDelImage.Location = new System.Drawing.Point(340, 158);
-            this.chkDelImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkDelImage.Margin = new System.Windows.Forms.Padding(2);
             this.chkDelImage.Name = "chkDelImage";
             this.chkDelImage.Size = new System.Drawing.Size(153, 17);
             this.chkDelImage.TabIndex = 16;
@@ -336,8 +349,8 @@
             // 
             // btnPath1
             // 
-            this.btnPath1.Location = new System.Drawing.Point(399, 23);
-            this.btnPath1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPath1.Location = new System.Drawing.Point(421, 23);
+            this.btnPath1.Margin = new System.Windows.Forms.Padding(2);
             this.btnPath1.Name = "btnPath1";
             this.btnPath1.Size = new System.Drawing.Size(22, 26);
             this.btnPath1.TabIndex = 19;
@@ -357,8 +370,8 @@
             // 
             // txtPathBefore
             // 
-            this.txtPathBefore.Location = new System.Drawing.Point(119, 27);
-            this.txtPathBefore.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPathBefore.Location = new System.Drawing.Point(141, 27);
+            this.txtPathBefore.Margin = new System.Windows.Forms.Padding(2);
             this.txtPathBefore.Name = "txtPathBefore";
             this.txtPathBefore.Size = new System.Drawing.Size(276, 20);
             this.txtPathBefore.TabIndex = 17;
@@ -366,7 +379,7 @@
             // txtPathShareImage
             // 
             this.txtPathShareImage.Location = new System.Drawing.Point(120, 80);
-            this.txtPathShareImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPathShareImage.Margin = new System.Windows.Forms.Padding(2);
             this.txtPathShareImage.Name = "txtPathShareImage";
             this.txtPathShareImage.Size = new System.Drawing.Size(170, 20);
             this.txtPathShareImage.TabIndex = 21;
@@ -374,8 +387,8 @@
             // 
             // btnPath
             // 
-            this.btnPath.Location = new System.Drawing.Point(399, 50);
-            this.btnPath.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPath.Location = new System.Drawing.Point(421, 50);
+            this.btnPath.Margin = new System.Windows.Forms.Padding(2);
             this.btnPath.Name = "btnPath";
             this.btnPath.Size = new System.Drawing.Size(22, 26);
             this.btnPath.TabIndex = 15;
@@ -386,7 +399,7 @@
             // btnShare
             // 
             this.btnShare.Location = new System.Drawing.Point(425, 80);
-            this.btnShare.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnShare.Margin = new System.Windows.Forms.Padding(2);
             this.btnShare.Name = "btnShare";
             this.btnShare.Size = new System.Drawing.Size(82, 41);
             this.btnShare.TabIndex = 20;
@@ -416,8 +429,8 @@
             // 
             // txtPathImage
             // 
-            this.txtPathImage.Location = new System.Drawing.Point(120, 54);
-            this.txtPathImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPathImage.Location = new System.Drawing.Point(142, 54);
+            this.txtPathImage.Margin = new System.Windows.Forms.Padding(2);
             this.txtPathImage.Name = "txtPathImage";
             this.txtPathImage.Size = new System.Drawing.Size(276, 20);
             this.txtPathImage.TabIndex = 13;
@@ -425,7 +438,7 @@
             // btnIP
             // 
             this.btnIP.Location = new System.Drawing.Point(8, 158);
-            this.btnIP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIP.Margin = new System.Windows.Forms.Padding(2);
             this.btnIP.Name = "btnIP";
             this.btnIP.Size = new System.Drawing.Size(82, 22);
             this.btnIP.TabIndex = 25;
@@ -436,7 +449,7 @@
             // txtIP
             // 
             this.txtIP.Location = new System.Drawing.Point(120, 159);
-            this.txtIP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIP.Margin = new System.Windows.Forms.Padding(2);
             this.txtIP.Name = "txtIP";
             this.txtIP.Size = new System.Drawing.Size(170, 20);
             this.txtIP.TabIndex = 23;
@@ -445,7 +458,7 @@
             // 
             this.ChkClient.AutoSize = true;
             this.ChkClient.Location = new System.Drawing.Point(24, 204);
-            this.ChkClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ChkClient.Margin = new System.Windows.Forms.Padding(2);
             this.ChkClient.Name = "ChkClient";
             this.ChkClient.Size = new System.Drawing.Size(83, 17);
             this.ChkClient.TabIndex = 27;
@@ -458,7 +471,7 @@
             // 
             this.ChkServer.AutoSize = true;
             this.ChkServer.Location = new System.Drawing.Point(24, 28);
-            this.ChkServer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ChkServer.Margin = new System.Windows.Forms.Padding(2);
             this.ChkServer.Name = "ChkServer";
             this.ChkServer.Size = new System.Drawing.Size(88, 17);
             this.ChkServer.TabIndex = 26;
@@ -469,37 +482,58 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnPathReport);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.txtPathReport);
+            this.groupBox2.Controls.Add(this.chkUse32bit);
             this.groupBox2.Controls.Add(this.chkClearInput);
             this.groupBox2.Location = new System.Drawing.Point(4, 8);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(670, 58);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "หน้าจอป้อนข้อมูล";
             // 
             // chkClearInput
             // 
             this.chkClearInput.AutoSize = true;
             this.chkClearInput.Location = new System.Drawing.Point(4, 17);
-            this.chkClearInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkClearInput.Margin = new System.Windows.Forms.Padding(2);
             this.chkClearInput.Name = "chkClearInput";
             this.chkClearInput.Size = new System.Drawing.Size(127, 17);
             this.chkClearInput.TabIndex = 0;
             this.chkClearInput.Text = "ให้ล้างข้อมูลหลังบันทึก";
             this.chkClearInput.UseVisualStyleBackColor = true;
             // 
-            // chkUse32bit
+            // btnPathReport
             // 
-            this.chkUse32bit.AutoSize = true;
-            this.chkUse32bit.Location = new System.Drawing.Point(120, 400);
-            this.chkUse32bit.Margin = new System.Windows.Forms.Padding(2);
-            this.chkUse32bit.Name = "chkUse32bit";
-            this.chkUse32bit.Size = new System.Drawing.Size(68, 17);
-            this.chkUse32bit.TabIndex = 30;
-            this.chkUse32bit.Text = "ใช้ 32 bit";
-            this.chkUse32bit.UseVisualStyleBackColor = true;
+            this.btnPathReport.Location = new System.Drawing.Point(587, 13);
+            this.btnPathReport.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPathReport.Name = "btnPathReport";
+            this.btnPathReport.Size = new System.Drawing.Size(22, 26);
+            this.btnPathReport.TabIndex = 33;
+            this.btnPathReport.Text = "...";
+            this.btnPathReport.UseVisualStyleBackColor = true;
+            this.btnPathReport.Click += new System.EventHandler(this.btnPathReport_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(170, 17);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(67, 13);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "path รายงาน";
+            // 
+            // txtPathReport
+            // 
+            this.txtPathReport.Location = new System.Drawing.Point(261, 17);
+            this.txtPathReport.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPathReport.Name = "txtPathReport";
+            this.txtPathReport.Size = new System.Drawing.Size(322, 20);
+            this.txtPathReport.TabIndex = 31;
             // 
             // FrmInitConfig
             // 
@@ -507,7 +541,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(698, 515);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmInitConfig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmInitConfig";
@@ -566,5 +600,8 @@
         private System.Windows.Forms.TextBox txtConnectShareImage;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckBox chkUse32bit;
+        private System.Windows.Forms.Button btnPathReport;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtPathReport;
     }
 }

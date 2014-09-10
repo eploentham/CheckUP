@@ -30,6 +30,7 @@ namespace Cemp.gui
             dgvView.Width = this.Width - 80 - btnAdd.Width;
             dgvView.Height = this.Height - 150;
             btnAdd.Left = dgvView.Width + 20;
+            btnPrint.Left = btnAdd.Left;
             //groupBox1.Width = this.Width - 50;
             //groupBox1.Height = this.Height = 150;
         }
@@ -113,6 +114,14 @@ namespace Cemp.gui
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             setGrd();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            String sql = "";
+            DataTable dt = cc.itgdb.selectAll();
+            FrmReport frm = new FrmReport("ItemGroupList", "รายการ กลุ่ม Parameter", "เงื่อนไข ทั้งหมด", dt, cc);
+            frm.ShowDialog(this);
         }
     }
 }

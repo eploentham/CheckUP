@@ -30,6 +30,7 @@ namespace Cemp.gui
             dgvView.Width = this.Width - 80 - btnAdd.Width;
             dgvView.Height = this.Height - 150;
             btnAdd.Left = dgvView.Width + 20;
+            btnPrint.Left = btnAdd.Left;
             //groupBox1.Width = this.Width - 50;
             //groupBox1.Height = this.Height = 150;
         }
@@ -111,6 +112,14 @@ namespace Cemp.gui
             FrmMethodAdd frm = new FrmMethodAdd("", cc);
             frm.ShowDialog(this);
             setGrd();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            String sql = "";
+            DataTable dt = cc.medb.selectAll();
+            FrmReport frm = new FrmReport("MethodList","รายการ Method", "เงื่อนไข ทั้งหมด", dt, cc);
+            frm.ShowDialog(this);
         }
     }
 }

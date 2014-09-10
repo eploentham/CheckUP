@@ -26,6 +26,7 @@ namespace Cemp.objdb
             me.NameE = "method_name_e";
             me.NameT = "method_name_t";
             me.Remark = "remark";
+            me.Sort1 = "sort1";
 
             me.table = "b_method";
             me.pkField = "method_id";
@@ -38,6 +39,7 @@ namespace Cemp.objdb
             item.NameE = dt.Rows[0][me.NameE].ToString();
             item.NameT = dt.Rows[0][me.NameT].ToString();
             item.Remark = dt.Rows[0][me.Remark].ToString();
+            item.Sort1 = dt.Rows[0][me.Sort1].ToString();
 
             return item;
         }
@@ -88,11 +90,14 @@ namespace Cemp.objdb
             p.NameE = p.NameE.Replace("''", "'");
             p.NameT = p.NameT.Replace("''", "'");
             p.Remark = p.Remark.Replace("''", "'");
-
+            if (p.Sort1.Equals(""))
+            {
+                p.Sort1 = "999";
+            }
             sql = "Insert Into " + me.table + " (" + me.pkField + "," + me.Active + "," + me.Code + "," +
-                me.NameE + "," + me.NameT + "," + me.Remark + ") " +
+                me.NameE + "," + me.NameT + "," + me.Remark + "," + me.Sort1 + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.Code + "','" +
-                p.NameE + "','" + p.NameT + "','" + p.Remark + "')";
+                p.NameE + "','" + p.NameT + "','" + p.Remark + "','" + p.Sort1 + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -114,12 +119,15 @@ namespace Cemp.objdb
             p.NameE = p.NameE.Replace("''", "'");
             p.NameT = p.NameT.Replace("''", "'");
             p.Remark = p.Remark.Replace("''", "'");
-
+            if (p.Sort1.Equals(""))
+            {
+                p.Sort1 = "999";
+            }
             sql = "Update " + me.table + " Set " + me.Code + "='" + p.Code + "', " +
                 me.NameE + "='" + p.NameE + "', " +
                 me.NameT + "='" + p.NameT + "', " +
-                me.Remark + "='" + p.Remark + "' " +
-
+                me.Remark + "='" + p.Remark + "', " +
+                me.Sort1 + "='" + p.Sort1 + "' " +
                 "Where " + me.pkField + "='" + p.Id + "'";
             try
             {

@@ -33,6 +33,7 @@ namespace Cemp.objdb
             it.MeasuringPoint = "measuring_point";
             it.MethodId = "method_id";
             it.MethodNameT = "method_name_t";
+            it.Sort1 = "sort1";
 
             it.table = "b_item";
             it.pkField = "item_id";
@@ -52,6 +53,7 @@ namespace Cemp.objdb
             item.MethodNameT = dt.Rows[0][it.MethodNameT].ToString();
             item.MethodId = dt.Rows[0][it.MethodId].ToString();
             item.MeasuringPoint = dt.Rows[0][it.MeasuringPoint].ToString();
+            item.Sort1 = dt.Rows[0][it.Sort1].ToString();
 
             return item;
         }
@@ -104,15 +106,18 @@ namespace Cemp.objdb
             p.Remark = p.Remark.Replace("''", "'");
             p.ItemGroupNameT = p.ItemGroupNameT.Replace("''", "'");
             p.MethodNameT = p.MethodNameT.Replace("''", "'");
-
+            if (p.Sort1.Equals(""))
+            {
+                p.Sort1 = "9999";
+            }
             sql = "Insert Into " + it.table + " (" + it.pkField + "," + it.Active + "," + it.Code + "," +
                 it.NameE + "," + it.NameT + "," + it.Remark + "," +
-                it.PriceCost + "," + it.PriceSale + "," + it.ItemGroupId + "," + 
-                it.ItemGroupNameT + "," + it.MethodNameT + "," + it.MethodId + ") " +
+                it.PriceCost + "," + it.PriceSale + "," + it.ItemGroupId + "," +
+                it.ItemGroupNameT + "," + it.MethodNameT + "," + it.MethodId + "," + it.Sort1 + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.Code + "','" +
                 p.NameE + "','" + p.NameT + "','" + p.Remark + "'," +
                 NumberNull1(p.PriceCost) + "," + NumberNull1(p.PriceSale) + ",'" + p.ItemGroupId + "','" +
-                p.ItemGroupNameT + "','" + p.MethodNameT + "','" + p.MethodId + "')";
+                p.ItemGroupNameT + "','" + p.MethodNameT + "','" + p.MethodId + "','" + p.Sort1 + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -136,7 +141,10 @@ namespace Cemp.objdb
             p.Remark = p.Remark.Replace("''", "'");
             p.ItemGroupNameT = p.ItemGroupNameT.Replace("''", "'");
             p.MethodNameT = p.MethodNameT.Replace("''", "'");
-
+            if (p.Sort1.Equals(""))
+            {
+                p.Sort1 = "9999";
+            }
             sql = "Update " + it.table + " Set " + it.Code + "='" + p.Code + "', " +
                 it.NameE + "='" + p.NameE + "', " +
                 it.NameT + "='" + p.NameT + "', " +
@@ -146,7 +154,8 @@ namespace Cemp.objdb
                 it.MethodNameT + "='" + p.MethodNameT + "', " +
                 it.MethodId + "='" + p.MethodId + "', " +
                 it.PriceCost + "=" + NumberNull1(p.PriceCost) + ", " +
-                it.PriceSale + "=" + NumberNull1(p.PriceSale) + " " +
+                it.PriceSale + "=" + NumberNull1(p.PriceSale) + ", " +
+                it.Sort1 + "='" + p.Sort1 + "', " +
                 "Where " + it.pkField + "='" + p.Id + "'";
             try
             {
