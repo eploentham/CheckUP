@@ -148,7 +148,7 @@ namespace Cemp
             }
             else if (e.Node.Name.ToString() == "nTest")
             {
-                FrmReport frm = new FrmReport("","","","",null);
+                FrmReport frm = new FrmReport(null);
                 showFrame(frm);
             }
             else if (e.Node.Name.ToString() == "nItemGroupView")

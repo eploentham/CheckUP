@@ -124,7 +124,8 @@ namespace Cemp.gui
         {
             String sql = "";
             DataTable dt = cc.itdb.selectAll();
-            FrmReport frm = new FrmReport("ItemList", "รายการ Parameter", "เงื่อนไข ทั้งหมด", dt, cc);
+            FrmReport frm = new FrmReport(cc);
+            frm.setReport("ItemList", "รายการ Parameter", "เงื่อนไข ทั้งหมด", dt);
             frm.ShowDialog(this);
         }
     }

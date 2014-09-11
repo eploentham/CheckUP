@@ -120,7 +120,8 @@ namespace Cemp.gui
         {
             String sql = "";
             DataTable dt = cc.itgdb.selectAll();
-            FrmReport frm = new FrmReport("ItemGroupList", "รายการ กลุ่ม Parameter", "เงื่อนไข ทั้งหมด", dt, cc);
+            FrmReport frm = new FrmReport(cc);
+            frm.setReport("ItemGroupList", "รายงานรายละเอียด Parameter Group", "เงื่อนไข ทั้งหมด", dt);
             frm.ShowDialog(this);
         }
     }

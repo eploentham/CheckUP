@@ -118,7 +118,8 @@ namespace Cemp.gui
         {
             String sql = "";
             DataTable dt = cc.medb.selectAll();
-            FrmReport frm = new FrmReport("MethodList","รายการ Method", "เงื่อนไข ทั้งหมด", dt, cc);
+            FrmReport frm = new FrmReport(cc);
+            frm.setReport("MethodList", "รายการ Method", "เงื่อนไข ทั้งหมด", dt);
             frm.ShowDialog(this);
         }
     }

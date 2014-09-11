@@ -747,8 +747,9 @@ namespace Cemp.gui
         private void btnPrint_Click(object sender, EventArgs e)
         {
             String sql = "";
-            OleDbDataAdapter da = new OleDbDataAdapter();
+            //OleDbDataAdapter da = new OleDbDataAdapter();
             DataTable dt = cc.qudb.selectPrintById1(txtQuId.Text);
+            Quotation qu = cc.qudb.selectByPk(txtQuId.Text);
             //DataTable dtqu = cc.qudb.selectPrintById(txtQuId.Text);
             //DataTable dtqui = cc.quidb.selectByQuId(txtQuId.Text);
             //DataSet ds = new DataSet();
@@ -756,7 +757,8 @@ namespace Cemp.gui
             //ds.Tables.Add(dtqui);
             //cc.conn.f
             //dat
-            FrmReport frm = new FrmReport("QuotationPrint", "รายการ Parameter", "เงื่อนไข ทั้งหมด", dt, cc);
+            FrmReport frm = new FrmReport(cc);
+            frm.setReportQuotation(qu,dt);
             frm.ShowDialog(this);
         }
 

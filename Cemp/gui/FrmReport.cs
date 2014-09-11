@@ -1,5 +1,6 @@
 ﻿using Cemp.Control;
 using Cemp.objdb;
+using Cemp.object1;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using System;
@@ -17,32 +18,24 @@ namespace Cemp
     {
         CnviControl cc;
         ConnectDB conn;
-        public FrmReport(String rptName, String reportName, String condition, String sql, CnviControl c)
+        //Quotation qu;
+        public FrmReport(CnviControl c)
         {
             InitializeComponent();
             cc = c;
             conn = cc.conn;
-            initConfig(rptName, reportName, condition, sql);
+            //initConfig(rptName, reportName, condition, sql);
         }
-        public FrmReport(String rptName, String reportName, String condition, DataTable dt, CnviControl c)
-        {
-            InitializeComponent();
-            cc = c;
-            conn = cc.conn;
-            initConfig(rptName, reportName, condition, "", dt);
-        }
-        public FrmReport(String rptName, String reportName, String condition, DataSet ds, CnviControl c)
-        {
-            InitializeComponent();
-            cc = c;
-            conn = cc.conn;
-            initConfig(rptName, reportName, condition, "", ds);
-        }
+
+        //public void setQuotation(Quotation p)
+        //{
+        //    qu = p;
+        //}
         private void initConfig(String rptName, String reportName, String condition, String sql)
         {
 
         }
-        private void initConfig(String rptName, String reportName, String condition, String sql, DataTable dt)
+        public void setReport(String rptName, String reportName, String condition, DataTable dt)
         {
             String chk = "";
             ReportDocument rpt = new ReportDocument();
@@ -113,6 +106,79 @@ namespace Cemp
                 rpt.SetParameterValue("header1", cc.cp.NameT);
                 rpt.SetParameterValue("header2", reportName);
                 rpt.SetParameterValue("header3", condition);
+
+                //if (rptName.Equals("QuotationPrint"))
+                //{
+                //    rpt.SetParameterValue("", cc.qu
+                //}
+
+                this.crystalReportViewer1.ReportSource = rpt;
+                this.crystalReportViewer1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                chk = ex.Message.ToString();
+            }
+        }
+        public void setReportQuotation(Quotation qu, DataTable dt)
+        {
+            String chk = "";
+            ReportDocument rpt = new ReportDocument();
+            try
+            {
+                rpt.Load(cc.initC.PathReport + "\\QuotationPrint.rpt");
+                rpt.SetDataSource(dt);
+                //rpt.SetDataSource(dt2);
+                //ParameterField myParam = new ParameterField();
+                //myParam.Name = "header1";
+                //myParam.
+                //rpt.SetParameterValue("header1", cc.cp.NameT);
+                //rpt.SetParameterValue("header2", reportName);
+                //rpt.SetParameterValue("header3", condition);
+
+                rpt.SetParameterValue("quoNumber", qu.QuoNumber+"-"+qu.QuoNumberCnt);
+                rpt.SetParameterValue("quoDate", qu.QuoDate);
+                rpt.SetParameterValue("contactName", qu.ContactName);
+                rpt.SetParameterValue("compName", qu.CompName);
+                rpt.SetParameterValue("compAddress1", qu.CompAddress1);
+                rpt.SetParameterValue("compAddress2", qu.CompAddress2);
+                rpt.SetParameterValue("compTaxId", qu.CompTaxId);
+                rpt.SetParameterValue("line1", qu.Line1);
+                //rpt.SetParameterValue("contactName", qu.ContactName);
+                rpt.SetParameterValue("custName", qu.CustName);
+                rpt.SetParameterValue("custAddress", qu.CustAddress);
+                rpt.SetParameterValue("custTel", qu.CustTel);
+                rpt.SetParameterValue("custFax", qu.CustFax);
+                rpt.SetParameterValue("custEmail", qu.CustEmail);
+                rpt.SetParameterValue("line2", qu.Line2);
+                rpt.SetParameterValue("staffName", qu.StaffName);
+                rpt.SetParameterValue("staffTel", qu.StaffTel);
+                rpt.SetParameterValue("staffEmail", qu.StaffEmail);
+                rpt.SetParameterValue("remark1", qu.Remark1);
+                rpt.SetParameterValue("remark2", qu.Remark2);
+                rpt.SetParameterValue("remark3", qu.Remark3);
+                rpt.SetParameterValue("line3", qu.Line3);
+                rpt.SetParameterValue("line4", qu.Line4);
+                rpt.SetParameterValue("line5", qu.Line5);
+                rpt.SetParameterValue("line6", qu.Line6);
+                rpt.SetParameterValue("staffApproveName", qu.StaffApproveName);
+                rpt.SetParameterValue("amount", qu.Amount);
+                rpt.SetParameterValue("discountPer", qu.DiscountPer);
+                rpt.SetParameterValue("discount", qu.Discount);
+                rpt.SetParameterValue("amountDiscount", qu.AmountDiscount);
+                rpt.SetParameterValue("plus1Name", qu.Plus1Name);
+                rpt.SetParameterValue("plus1", qu.Plus1);
+                rpt.SetParameterValue("total", qu.Total);
+                rpt.SetParameterValue("vatRate", qu.VatRate);
+                rpt.SetParameterValue("vat", qu.Vat);
+                rpt.SetParameterValue("netTotal", qu.NetTotal);
+                //rpt.SetParameterValue("", qu.QuoDate);
+                //rpt.SetParameterValue("", qu.QuoDate);
+                //rpt.SetParameterValue("", qu.QuoDate);
+                //rpt.SetParameterValue("", qu.QuoDate);
+                //rpt.SetParameterValue("", qu.QuoDate);
+                //rpt.SetParameterValue("", qu.QuoDate);
+
 
                 this.crystalReportViewer1.ReportSource = rpt;
                 this.crystalReportViewer1.Refresh();

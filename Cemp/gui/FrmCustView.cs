@@ -120,7 +120,8 @@ namespace Cemp.gui
         {
             String sql = "";
             DataTable dt = cc.cudb.selectAll();
-            FrmReport frm = new FrmReport("CustomerList", "รายงานรายละเอียด ลูกค้า", "เงื่อนไข ทั้งหมด", dt, cc);
+            FrmReport frm = new FrmReport(cc);
+            frm.setReport("CustomerList", "รายงานรายละเอียด ลูกค้า", "เงื่อนไข ทั้งหมด", dt);
             frm.Show(this);
         }
     }
