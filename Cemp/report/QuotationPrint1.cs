@@ -16,14 +16,14 @@ namespace Cemp.report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class QuotationPrint : ReportClass {
+    public class QuotationPrint1 : ReportClass {
         
-        public QuotationPrint() {
+        public QuotationPrint1() {
         }
         
         public override string ResourceName {
             get {
-                return "QuotationPrint.rpt";
+                return "QuotationPrint1.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Cemp.report {
         
         public override string FullResourceName {
             get {
-                return "Cemp.report.QuotationPrint.rpt";
+                return "Cemp.report.QuotationPrint1.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,25 +82,9 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[6];
+                return this.ReportDefinition.Sections[4];
             }
         }
         
@@ -130,9 +114,9 @@ namespace Cemp.report {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedQuotationPrint : Component, ICachedReport {
+    public class CachedQuotationPrint1 : Component, ICachedReport {
         
-        public CachedQuotationPrint() {
+        public CachedQuotationPrint1() {
         }
         
         [Browsable(false)]
@@ -169,7 +153,7 @@ namespace Cemp.report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            QuotationPrint rpt = new QuotationPrint();
+            QuotationPrint1 rpt = new QuotationPrint1();
             rpt.Site = this.Site;
             return rpt;
         }

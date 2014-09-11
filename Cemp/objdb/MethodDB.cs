@@ -52,6 +52,19 @@ namespace Cemp.objdb
 
             return dt;
         }
+        public String selectMax()
+        {
+            String sql = "", cnt = "999";
+            DataTable dt = new DataTable();
+            sql = "Select count(1) as cnt  From " + me.table;
+            dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                cnt = "000" + String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);
+                cnt = cnt.Substring(cnt.Length - 3); ;
+            }
+            return cnt;
+        }
         public Method selectByPk(String cuId)
         {
             Method item = new Method();
@@ -150,6 +163,10 @@ namespace Cemp.objdb
             if (item.Id == "")
             {
                 p.Active = "1";
+                if (p.Sort1.Equals(""))
+                {
+                    p.Sort1 = selectMax();
+                }
                 chk = insert(p);
             }
             else

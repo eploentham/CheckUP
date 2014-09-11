@@ -177,6 +177,32 @@ namespace Cemp.objdb
             }
             return item;
         }
+        public DataTable selectPrintById(String quId)
+        {
+            //Quotation item = new Quotation();
+            String sql = "";
+
+            sql = "Select * From " + qu.table + "  Where " + qu.pkField + "='" + quId + "'";
+                //" Where qu." + qu.Id + "='" + quId + "'";
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+            dt.TableName = qu.table;
+            return dt;
+        }
+        public DataTable selectPrintById1(String quId)
+        {
+            //Quotation item = new Quotation();
+            String sql = "";
+
+            sql = "Select qu.*,qui.* "+
+                "From " + qu.table + " as qu "+
+                "inner join t_quotation_item qui on qu.quo_id = qui.quo_id "+
+                " Where qu." + qu.Id + "='" + quId + "'";
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+
+            return dt;
+        }
         private String insert(Quotation p)
         {
             String sql = "", chk = "";

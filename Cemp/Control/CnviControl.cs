@@ -331,6 +331,21 @@ namespace Cemp.Control
                 return iSale.Value;
             }
         }
+        public ComboBox setCboItem(ComboBox c, String valueId)
+        {
+            ComboBoxItem r = new ComboBoxItem();
+            r.Text = "";
+            r.Value = "";
+            foreach (ComboBoxItem cc in c.Items)
+            {
+                if (cc.Value.Equals(valueId))
+                {
+                    c.Text = cc.Text;
+                    return c;
+                }
+            }
+            return c;
+        }
         public String getYear()
         {
             String year = "";

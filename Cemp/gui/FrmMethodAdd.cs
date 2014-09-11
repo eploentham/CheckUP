@@ -213,5 +213,20 @@ namespace Cemp.gui
         {
 
         }
+
+        private void txtSort1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtSort1_Enter(object sender, EventArgs e)
+        {
+            txtSort1.BackColor = Color.LightYellow;
+        }
+
+        private void txtSort1_Leave(object sender, EventArgs e)
+        {
+            txtSort1.BackColor = Color.White;
+        }
     }
 }

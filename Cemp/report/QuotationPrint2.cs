@@ -16,14 +16,14 @@ namespace Cemp.report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class QuotationPrint : ReportClass {
+    public class QuotationPrint2 : ReportClass {
         
-        public QuotationPrint() {
+        public QuotationPrint2() {
         }
         
         public override string ResourceName {
             get {
-                return "QuotationPrint.rpt";
+                return "QuotationPrint2.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Cemp.report {
         
         public override string FullResourceName {
             get {
-                return "Cemp.report.QuotationPrint.rpt";
+                return "Cemp.report.QuotationPrint2.rpt";
             }
             set {
                 // Do nothing
@@ -130,9 +130,9 @@ namespace Cemp.report {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedQuotationPrint : Component, ICachedReport {
+    public class CachedQuotationPrint2 : Component, ICachedReport {
         
-        public CachedQuotationPrint() {
+        public CachedQuotationPrint2() {
         }
         
         [Browsable(false)]
@@ -169,7 +169,7 @@ namespace Cemp.report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            QuotationPrint rpt = new QuotationPrint();
+            QuotationPrint2 rpt = new QuotationPrint2();
             rpt.Site = this.Site;
             return rpt;
         }

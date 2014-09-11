@@ -295,15 +295,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MethodListDS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="report\QuotationDS.cs">
+      <DependentUpon>QuotationDS.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="report\QuotationDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QuotationDS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="report\QuotationDS1.cs">
+      <DependentUpon>QuotationDS1.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\QuotationDS1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuotationDS1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="report\QuotationPrint.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QuotationPrint.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\QuotationPrint1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuotationPrint1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\QuotationPrint2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuotationPrint2.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="gui\FrmQuotationAdd1.resx">
@@ -410,6 +435,14 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>QuotationPrint.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="report\QuotationPrint1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>QuotationPrint1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\QuotationPrint2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>QuotationPrint2.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
@@ -487,6 +520,17 @@
     </None>
     <None Include="report\QuotationDS.xss">
       <DependentUpon>QuotationDS.xsd</DependentUpon>
+    </None>
+    <None Include="report\QuotationDS1.xsc">
+      <DependentUpon>QuotationDS1.xsd</DependentUpon>
+    </None>
+    <None Include="report\QuotationDS1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuotationDS1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="report\QuotationDS1.xss">
+      <DependentUpon>QuotationDS1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

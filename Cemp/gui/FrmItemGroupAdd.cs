@@ -66,13 +66,14 @@ namespace Cemp.gui
                 btnUnActive.Visible = false;
             }
         }
-        private void getMethod()
+        private void getItemGroup()
         {
             //itg.Code = txtCode.Text;
             itg.Id = txtId.Text;
             itg.NameE = txtNameE.Text;
             itg.NameT = txtNameT.Text;
             itg.Remark = txtRemark.Text;
+            itg.Sort1 = txtSort1.Text;
         }
         private void FrmItemGroupAdd_Load(object sender, EventArgs e)
         {
@@ -105,7 +106,7 @@ namespace Cemp.gui
                 //    return;
                 //}
             }
-            getMethod();
+            getItemGroup();
             //if (itg.Code.Equals(""))
             //{
             //    itg.Code = cc.medb.getMethodCode();
@@ -199,6 +200,21 @@ namespace Cemp.gui
         private void txtRemark_Leave(object sender, EventArgs e)
         {
             txtRemark.BackColor = Color.White;
+        }
+
+        private void txtSort1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtSort1_Enter(object sender, EventArgs e)
+        {
+            txtSort1.BackColor = Color.LightYellow;
+        }
+
+        private void txtSort1_Leave(object sender, EventArgs e)
+        {
+            txtSort1.BackColor = Color.White;
         }
     }
 }

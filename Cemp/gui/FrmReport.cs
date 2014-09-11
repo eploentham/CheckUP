@@ -22,7 +22,7 @@ namespace Cemp
             InitializeComponent();
             cc = c;
             conn = cc.conn;
-            initConfig(rptName, reportName, sql, null);
+            initConfig(rptName, reportName, condition, sql);
         }
         public FrmReport(String rptName, String reportName, String condition, DataTable dt, CnviControl c)
         {
@@ -31,19 +31,31 @@ namespace Cemp
             conn = cc.conn;
             initConfig(rptName, reportName, condition, "", dt);
         }
+        public FrmReport(String rptName, String reportName, String condition, DataSet ds, CnviControl c)
+        {
+            InitializeComponent();
+            cc = c;
+            conn = cc.conn;
+            initConfig(rptName, reportName, condition, "", ds);
+        }
+        private void initConfig(String rptName, String reportName, String condition, String sql)
+        {
+
+        }
         private void initConfig(String rptName, String reportName, String condition, String sql, DataTable dt)
         {
             String chk = "";
             ReportDocument rpt = new ReportDocument();
-            DataTable dt1;
-            if (!sql.Equals(""))
-            {
-                dt1 = conn.selectData(sql);
-            }
-            else
-            {
-                dt1 = dt;
-            }
+            //DataTable dt1;
+            //DataSet ds = new DataSet();
+            //if (!sql.Equals(""))
+            //{
+            //    dt1 = conn.selectData(sql);
+            //}
+            //else
+            //{
+            //    dt1 = dt;
+            //}
             
             //string directory = My.Application.Info.DirectoryPath;
             //rpt.Load(directory & "\myCrystalReport1.rpt")
@@ -66,7 +78,8 @@ namespace Cemp
             try
             {
                 rpt.Load(cc.initC.PathReport+"\\" + rptName + ".rpt");
-                rpt.SetDataSource(dt1);
+                rpt.SetDataSource(dt);
+                //rpt.SetDataSource(dt2);
                 //ParameterField myParam = new ParameterField();
                 //myParam.Name = "header1";
                 //myParam.
@@ -84,6 +97,30 @@ namespace Cemp
             
             //rpt.SetParameterValue("CustomerID", this.txtCustomerID.Text);
             
+        }
+        private void initConfig(String rptName, String reportName, String condition, String sql, DataSet ds)
+        {
+            String chk = "";
+            ReportDocument rpt = new ReportDocument();
+            try
+            {
+                rpt.Load(cc.initC.PathReport + "\\" + rptName + ".rpt");
+                rpt.SetDataSource(ds);
+                //rpt.SetDataSource(dt2);
+                //ParameterField myParam = new ParameterField();
+                //myParam.Name = "header1";
+                //myParam.
+                rpt.SetParameterValue("header1", cc.cp.NameT);
+                rpt.SetParameterValue("header2", reportName);
+                rpt.SetParameterValue("header3", condition);
+
+                this.crystalReportViewer1.ReportSource = rpt;
+                this.crystalReportViewer1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                chk = ex.Message.ToString();
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)

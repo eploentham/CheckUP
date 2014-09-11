@@ -8,6 +8,7 @@ namespace Cemp.object1
     public class QuotationItem:Persistent
     {
         public String Id = "", QuoId = "", RowNumber = "", ItemId = "", ItemDescription = "", MethodId = "", MethodDescription = "", Qty = "", PriceSale = "", Discount = "", Amount = "", Active = "",Remark="";
+        public String ItemGroupId = "", ItemGroupNameT = "", ItemGroupNameE = "", ItemGroupSort="";
         public override string ToString()
         {
             return ItemDescription;

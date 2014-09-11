@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtSort1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -45,8 +47,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtSort1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,14 +72,35 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(450, 295);
+            this.groupBox1.Size = new System.Drawing.Size(484, 295);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // txtSort1
+            // 
+            this.txtSort1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSort1.Location = new System.Drawing.Point(118, 154);
+            this.txtSort1.Name = "txtSort1";
+            this.txtSort1.Size = new System.Drawing.Size(100, 22);
+            this.txtSort1.TabIndex = 131;
+            this.txtSort1.Enter += new System.EventHandler(this.txtSort1_Enter);
+            this.txtSort1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSort1_KeyPress);
+            this.txtSort1.Leave += new System.EventHandler(this.txtSort1_Leave);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(6, 157);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 16);
+            this.label5.TabIndex = 132;
+            this.label5.Text = "การเรียงข้อมูล :";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(398, 24);
+            this.label9.Location = new System.Drawing.Point(429, 24);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 130;
@@ -88,7 +109,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(236, 24);
+            this.label8.Location = new System.Drawing.Point(267, 24);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 13);
             this.label8.TabIndex = 129;
@@ -96,7 +117,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(193, 19);
+            this.btnSearch.Location = new System.Drawing.Point(224, 19);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(37, 23);
             this.btnSearch.TabIndex = 128;
@@ -106,7 +127,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(369, 256);
+            this.btnSave.Location = new System.Drawing.Point(400, 256);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 33);
             this.btnSave.TabIndex = 121;
@@ -116,7 +137,7 @@
             // 
             // btnUnActive
             // 
-            this.btnUnActive.Location = new System.Drawing.Point(275, 210);
+            this.btnUnActive.Location = new System.Drawing.Point(306, 210);
             this.btnUnActive.Name = "btnUnActive";
             this.btnUnActive.Size = new System.Drawing.Size(106, 23);
             this.btnUnActive.TabIndex = 120;
@@ -128,7 +149,7 @@
             // 
             this.ChkUnActive.AutoSize = true;
             this.ChkUnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.ChkUnActive.Location = new System.Drawing.Point(200, 210);
+            this.ChkUnActive.Location = new System.Drawing.Point(231, 210);
             this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2);
             this.ChkUnActive.Name = "ChkUnActive";
             this.ChkUnActive.Size = new System.Drawing.Size(60, 21);
@@ -142,7 +163,7 @@
             // 
             this.chkActive.AutoSize = true;
             this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chkActive.Location = new System.Drawing.Point(75, 210);
+            this.chkActive.Location = new System.Drawing.Point(106, 210);
             this.chkActive.Margin = new System.Windows.Forms.Padding(2);
             this.chkActive.Name = "chkActive";
             this.chkActive.Size = new System.Drawing.Size(61, 21);
@@ -155,7 +176,7 @@
             // txtRemark
             // 
             this.txtRemark.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRemark.Location = new System.Drawing.Point(87, 103);
+            this.txtRemark.Location = new System.Drawing.Point(118, 103);
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(357, 22);
             this.txtRemark.TabIndex = 3;
@@ -175,7 +196,7 @@
             // txtId
             // 
             this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(309, 19);
+            this.txtId.Location = new System.Drawing.Point(340, 19);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(26, 22);
             this.txtId.TabIndex = 113;
@@ -185,7 +206,7 @@
             // txtNameE
             // 
             this.txtNameE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNameE.Location = new System.Drawing.Point(87, 75);
+            this.txtNameE.Location = new System.Drawing.Point(118, 75);
             this.txtNameE.Name = "txtNameE";
             this.txtNameE.Size = new System.Drawing.Size(357, 22);
             this.txtNameE.TabIndex = 2;
@@ -205,7 +226,7 @@
             // txtNameT
             // 
             this.txtNameT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNameT.Location = new System.Drawing.Point(87, 47);
+            this.txtNameT.Location = new System.Drawing.Point(118, 47);
             this.txtNameT.Name = "txtNameT";
             this.txtNameT.Size = new System.Drawing.Size(357, 22);
             this.txtNameT.TabIndex = 1;
@@ -225,7 +246,7 @@
             // txtCode
             // 
             this.txtCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode.Location = new System.Drawing.Point(87, 19);
+            this.txtCode.Location = new System.Drawing.Point(118, 19);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(100, 22);
             this.txtCode.TabIndex = 114;
@@ -244,29 +265,11 @@
             this.label1.TabIndex = 108;
             this.label1.Text = "รหัส :";
             // 
-            // txtSort1
-            // 
-            this.txtSort1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSort1.Location = new System.Drawing.Point(87, 154);
-            this.txtSort1.Name = "txtSort1";
-            this.txtSort1.Size = new System.Drawing.Size(100, 22);
-            this.txtSort1.TabIndex = 131;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 157);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 16);
-            this.label5.TabIndex = 132;
-            this.label5.Text = "เรียง :";
-            // 
             // FrmMethodAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 319);
+            this.ClientSize = new System.Drawing.Size(508, 319);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmMethodAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

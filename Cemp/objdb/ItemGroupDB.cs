@@ -64,6 +64,20 @@ namespace Cemp.objdb
             }
             return item;
         }
+        public String selectMax()
+        {
+            //ItemGroup item = new ItemGroup();
+            String sql = "", cnt="999";
+            DataTable dt = new DataTable();
+            sql = "Select count(1) as cnt  From " + itg.table ;
+            dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                cnt = "000" + String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);
+                cnt = cnt.Substring(cnt.Length - 3); ;
+            }
+            return cnt;
+        }
         public ItemGroup selectByNameT(String cuId)
         {
             ItemGroup item = new ItemGroup();
@@ -164,6 +178,10 @@ namespace Cemp.objdb
             if (item.Id == "")
             {
                 p.Active = "1";
+                if (p.Sort1.Equals(""))
+                {
+                    p.Sort1 = selectMax();
+                }
                 chk = insert(p);
             }
             else

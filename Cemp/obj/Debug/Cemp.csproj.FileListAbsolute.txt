@@ -62,7 +62,7 @@ D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmStaffAdd.resources
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmStaffView.resources
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.Properties.Resources.resources
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.csproj.GenerateResource.Cache
-D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.csprojResolveAssemblyReference.cache
 D:\source\CNVI\CNVI.Cemp\Cemp\bin\Debug\Cemp.exe.config
 C:\source\CNVI\CNVI.Cemp\Cemp\bin\Debug\Cemp.exe.config
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.csprojResolveAssemblyReference.cache
+D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.csprojResolveAssemblyReference.cache

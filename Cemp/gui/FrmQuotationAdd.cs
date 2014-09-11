@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,8 +17,8 @@ namespace Cemp.gui
         CnviControl cc;
         Quotation qu;
         Company cp;
-        int colRow = 0, colItem = 1, colMethod = 2, colQty = 3, colPrice = 4, colAmount = 5, colId=6, colDel=7, colItemId=8, colMethodId=9;
-        int colCnt = 10;
+        int colRow = 0, colItem = 1, colMethod = 2, colQty = 3, colPrice = 4, colAmount = 5, colId=6, colDel=7, colItemId=8, colMethodId=9, colEdit=10;
+        int colCnt = 11;
         String oldNetTotal = "";
         Boolean pageLoad = false;
         //NumberFormat fmt = NumberFormat.getCurrencyInstance();
@@ -53,7 +54,7 @@ namespace Cemp.gui
             dgvAdd.Width = this.Width - 80;
             //groupBox3.Left = dgvAdd.Width - groupBox3.Width - 50;
             btnSave.Left = dgvAdd.Width - 80;
-            btnPrint.Left = btnPrint.Width - 80;
+            btnPrint.Left = btnSave.Left;
             groupBox2.Left = this.Width - groupBox2.Width - btnSave.Width - 150;
             groupBox3.Left = groupBox2.Left;
             //groupBox1.Height = this.Height = 150;
@@ -178,8 +179,8 @@ namespace Cemp.gui
             dgvAdd.Columns[colRow].Width = 50;
             dgvAdd.Columns[colItem].Width = 150;
             dgvAdd.Columns[colMethod].Width = 120;
-            dgvAdd.Columns[colQty].Width = 80;
-            dgvAdd.Columns[colPrice].Width = 80;
+            dgvAdd.Columns[colQty].Width = 120;
+            dgvAdd.Columns[colPrice].Width = 150;
             dgvAdd.Columns[colAmount].Width = 180;
 
             dgvAdd.Columns[colRow].HeaderText = "ลำดับ";
@@ -190,6 +191,10 @@ namespace Cemp.gui
             dgvAdd.Columns[colAmount].HeaderText = "Amount";
             dgvAdd.Columns[colId].HeaderText = "  ";
 
+            dgvAdd.Columns[colQty].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvAdd.Columns[colPrice].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvAdd.Columns[colAmount].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
             dgvAdd.Columns[colId].HeaderText = "id";
             Font font = new Font("Microsoft Sans Serif", 12);
 
@@ -198,6 +203,7 @@ namespace Cemp.gui
             dgvAdd.Columns[colDel].Visible = false;
             dgvAdd.Columns[colItemId].Visible = false;
             dgvAdd.Columns[colMethodId].Visible = false;
+            dgvAdd.Columns[colEdit].Visible = false;
             //dgvAdd.Columns.Add(newColumn);
             if (dt.Rows.Count > 0)
             {
@@ -217,7 +223,7 @@ namespace Cemp.gui
                     dgvAdd[colMethodId, i].Value = dt.Rows[i][cc.quidb.qui.MethodId].ToString();
                     dgvAdd[colId, i].Value = dt.Rows[i][cc.quidb.qui.Id].ToString();
                     dgvAdd[colDel, i].Value = "";
-
+                    dgvAdd[colEdit, i].Value = "";
                     if ((i % 2) != 0)
                     {
                         dgvAdd.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
@@ -239,17 +245,17 @@ namespace Cemp.gui
                 {
                     continue;
                 }
-                amt += Double.Parse(cc.cf.NumberNull1(dgvAdd[colAmount, i].Value.ToString()));
+                amt += Double.Parse(cc.cf.NumberNull1(dgvAdd[colAmount, i].Value.ToString().Replace(",","")));
             }
             txtAmount.Text = String.Format("{0:#,###,###.00}", amt);
         }
         private void calNetTotal()
         {
             Double amt = 0, amtDis=0,total=0,netTotal=0, vat=0;
-            amt = Double.Parse(cc.cf.NumberNull1(txtAmount.Text));
-            amtDis = amt - Double.Parse(cc.cf.NumberNull1(txtDiscount.Text));
-            total = amtDis+Double.Parse(cc.cf.NumberNull1(txtPlus1.Text));
-            vat = (total * Double.Parse(cc.cf.NumberNull1(txtVatRate.Text)) / 100);
+            amt = Double.Parse(cc.cf.NumberNull1(txtAmount.Text.Replace(",", "")));
+            amtDis = amt - Double.Parse(cc.cf.NumberNull1(txtDiscount.Text.Replace(",", "")));
+            total = amtDis + Double.Parse(cc.cf.NumberNull1(txtPlus1.Text.Replace(",", "")));
+            vat = (total * Double.Parse(cc.cf.NumberNull1(txtVatRate.Text.Replace(",", ""))) / 100);
             netTotal = total + vat;
             txtAmountDiscount.Text = String.Format("{0:#,###,###.00}", amtDis);
             txtTotal.Text = String.Format("{0:#,###,###.00}", total);
@@ -346,7 +352,7 @@ namespace Cemp.gui
             {
                 for (int i = 0; i < dgvAdd.RowCount; i++)
                 {
-                    QuotationItem qui = new QuotationItem();
+                    
                     if (dgvAdd[colAmount, i].Value == null)
                     {
                         continue;
@@ -359,6 +365,9 @@ namespace Cemp.gui
                     {
                         continue;
                     }
+                    QuotationItem qui = new QuotationItem();
+                    Item it = cc.itdb.selectByPk(dgvAdd[colItemId, i].Value.ToString());
+                    ItemGroup itg = cc.itgdb.selectByPk(it.ItemGroupId);
                     qui.RowNumber = dgvAdd[colRow, i].Value.ToString();
                     qui.PriceSale = cc.cf.NumberNull1(dgvAdd[colPrice, i].Value.ToString());
                     qui.Qty = cc.cf.NumberNull1(dgvAdd[colQty, i].Value.ToString());
@@ -370,6 +379,10 @@ namespace Cemp.gui
                     qui.Id = dgvAdd[colId, i].Value.ToString();
                     qui.Active = "1";
                     qui.QuoId = quId;
+                    qui.ItemGroupId = itg.Id;
+                    qui.ItemGroupNameT = itg.NameT;
+                    qui.ItemGroupNameE = itg.NameE;
+
                     if (dgvAdd[colDel, i].Value.ToString().Equals("1"))
                     {
                         cc.quidb.VoidQuotationItem(dgvAdd[colId, i].Value.ToString());
@@ -407,37 +420,68 @@ namespace Cemp.gui
                 cboContact.Text = cu.ContactName1;
             }
         }
+        private void clearItem()
+        {
+            txtRow.Text = "";
+            txtItemQty.Text = "";
+            txtItemPrice.Text = "";
+            cboItem.Text = "";
+            txtItemAmount.Text = "";
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            int row= dgvAdd.Rows.Add(1);
-            Item it = cc.itdb.selectByPk(cc.getValueCboItem(cboItem));
+            int row = 0;
+            Item it = new Item();
+            if (txtRow.Text.Equals(""))
+            {
+                row = dgvAdd.Rows.Add(1);
+            }
+            else
+            {
+                try
+                {
+                    row = int.Parse(txtRow.Text)-1;
+                    dgvAdd.Rows[row].DefaultCellStyle.BackColor = Color.DeepPink;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ไม่พบข้อมูล ลำดับ", "Error");
+                    return;
+                }
+            }
+            it = cc.itdb.selectByPk(cc.getValueCboItem(cboItem));
             if (it.Id.Equals(""))
             {
                 return;
             }
-            dgvAdd[colRow, row].Value = (row+1);
+            dgvAdd[colRow, row].Value = (row + 1);
             dgvAdd[colItemId, row].Value = it.Id;
             dgvAdd[colMethodId, row].Value = it.MethodId;
             dgvAdd[colItem, row].Value = it.NameT;
             dgvAdd[colMethod, row].Value = it.MethodNameT;
-            dgvAdd[colQty, row].Value = txtItemQty.Text;
-            dgvAdd[colPrice, row].Value = txtItemPrice.Text;
-            dgvAdd[colAmount, row].Value = txtItemAmount.Text;
+            dgvAdd[colQty, row].Value = String.Format("{0:#,###,###.00}",txtItemQty.Text);
+            dgvAdd[colPrice, row].Value = String.Format("{0:#,###,###.00}",Double.Parse(txtItemPrice.Text));
+            dgvAdd[colAmount, row].Value = String.Format("{0:#,###,###.00}",txtItemAmount.Text);
             dgvAdd[colId, row].Value = "";
             dgvAdd[colDel, row].Value = "";
+            dgvAdd[colEdit, row].Value = "";
             calAmount();
             calNetTotal();
+
+            clearItem();
         }
 
         private void dgvAdd_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            pageLoad = true;
             txtRow.Text = dgvAdd[colRow, e.RowIndex].Value.ToString();
             txtItemPrice.Text = dgvAdd[colPrice, e.RowIndex].Value.ToString();
             txtItemQty.Text = dgvAdd[colQty, e.RowIndex].Value.ToString();
             txtItemAmount.Text = dgvAdd[colAmount, e.RowIndex].Value.ToString();
-            cboItem.Text = dgvAdd[colItem, e.RowIndex].Value.ToString();
+            cboItem.SelectedItem = cc.setCboItem(cboItem, dgvAdd[colItemId, e.RowIndex].Value.ToString());
             //cboMethod.Text = dgvAdd[colMethod, e.RowIndex].Value.ToString();
+            pageLoad = false;
         }
 
         private void txtItemPrice_Leave(object sender, EventArgs e)
@@ -695,12 +739,25 @@ namespace Cemp.gui
             {
                 Item it = cc.itdb.selectByPk(cc.getValueCboItem(cboItem));
                 txtItemPrice.Text = it.PriceSale;
+                txtItemQty.Text = "1.00";
+                calItemAmount();
             }
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-
+            String sql = "";
+            OleDbDataAdapter da = new OleDbDataAdapter();
+            DataTable dt = cc.qudb.selectPrintById1(txtQuId.Text);
+            //DataTable dtqu = cc.qudb.selectPrintById(txtQuId.Text);
+            //DataTable dtqui = cc.quidb.selectByQuId(txtQuId.Text);
+            //DataSet ds = new DataSet();
+            //ds.Tables.Add(dtqu);
+            //ds.Tables.Add(dtqui);
+            //cc.conn.f
+            //dat
+            FrmReport frm = new FrmReport("QuotationPrint", "รายการ Parameter", "เงื่อนไข ทั้งหมด", dt, cc);
+            frm.ShowDialog(this);
         }
 
     }
