@@ -223,6 +223,13 @@ namespace Cemp.objdb
             p.StaffName = p.StaffName.Replace("''", "'");
             p.StaffApproveName = p.StaffApproveName.Replace("''", "'");
 
+            p.Line1 = p.Line1.Replace("''", "'");
+            p.Line2 = p.Line2.Replace("''", "'");
+            p.Line3 = p.Line3.Replace("''", "'");
+            p.Line4 = p.Line4.Replace("''", "'");
+            p.Line5 = p.Line5.Replace("''", "'");
+            p.Line6 = p.Line6.Replace("''", "'");
+
             p.QuoNumberCnt = "1";
 
             
@@ -287,6 +294,13 @@ namespace Cemp.objdb
             p.Plus1Name = p.Plus1Name.Replace("''", "'");
             p.StaffName = p.StaffName.Replace("''", "'");
             p.StaffApproveName = p.StaffApproveName.Replace("''", "'");
+
+            p.Line1 = p.Line1.Replace("''", "'");
+            p.Line2 = p.Line2.Replace("''", "'");
+            p.Line3 = p.Line3.Replace("''", "'");
+            p.Line4 = p.Line4.Replace("''", "'");
+            p.Line5 = p.Line5.Replace("''", "'");
+            p.Line6 = p.Line6.Replace("''", "'");
 
             sql = "Update " + qu.table + " Set " + qu.Amount + "=" + NumberNull1(p.Amount) + ", " +
                 qu.AmountDiscount + "=" + NumberNull1(p.AmountDiscount) + ", " +

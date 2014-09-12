@@ -85,6 +85,7 @@
             this.txtSort1.TabIndex = 131;
             this.txtSort1.Enter += new System.EventHandler(this.txtSort1_Enter);
             this.txtSort1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSort1_KeyPress);
+            this.txtSort1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSort1_KeyUp);
             this.txtSort1.Leave += new System.EventHandler(this.txtSort1_Leave);
             // 
             // label5
@@ -181,6 +182,7 @@
             this.txtRemark.Size = new System.Drawing.Size(357, 22);
             this.txtRemark.TabIndex = 3;
             this.txtRemark.Enter += new System.EventHandler(this.txtRemark_Enter);
+            this.txtRemark.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRemark_KeyUp);
             this.txtRemark.Leave += new System.EventHandler(this.txtRemark_Leave);
             // 
             // label4
@@ -211,6 +213,7 @@
             this.txtNameE.Size = new System.Drawing.Size(357, 22);
             this.txtNameE.TabIndex = 2;
             this.txtNameE.Enter += new System.EventHandler(this.txtNameE_Enter);
+            this.txtNameE.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNameE_KeyUp);
             this.txtNameE.Leave += new System.EventHandler(this.txtNameE_Leave);
             // 
             // label3
@@ -231,6 +234,7 @@
             this.txtNameT.Size = new System.Drawing.Size(357, 22);
             this.txtNameT.TabIndex = 1;
             this.txtNameT.Enter += new System.EventHandler(this.txtNameT_Enter);
+            this.txtNameT.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNameT_KeyUp);
             this.txtNameT.Leave += new System.EventHandler(this.txtNameT_Leave);
             // 
             // label2
@@ -253,6 +257,7 @@
             this.txtCode.TabStop = false;
             this.txtCode.Enter += new System.EventHandler(this.txtCode_Enter);
             this.txtCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCode_KeyPress);
+            this.txtCode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCode_KeyUp);
             this.txtCode.Leave += new System.EventHandler(this.txtCode_Leave);
             // 
             // label1
@@ -261,9 +266,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(6, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 16);
+            this.label1.Size = new System.Drawing.Size(70, 16);
             this.label1.TabIndex = 108;
-            this.label1.Text = "รหัส :";
+            this.label1.Text = "รหัส  yyxxx:";
             // 
             // FrmMethodAdd
             // 

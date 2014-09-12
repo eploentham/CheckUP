@@ -146,6 +146,14 @@ namespace Cemp.objdb
             p.Remark = p.Remark.Replace("''", "'");
             p.ItemGroupNameE = p.ItemGroupNameE.Replace("''", "'");
             p.ItemGroupNameT = p.ItemGroupNameT.Replace("''", "'");
+            
+            //p. = p.ItemGroupNameT.Replace("''", "'");
+            //p.ItemGroupNameT = p.ItemGroupNameT.Replace("''", "'");
+            //p.ItemGroupNameT = p.ItemGroupNameT.Replace("''", "'");
+            //p.ItemGroupNameT = p.ItemGroupNameT.Replace("''", "'");
+            //p.ItemGroupNameT = p.ItemGroupNameT.Replace("''", "'");
+            //p.ItemGroupNameT = p.ItemGroupNameT.Replace("''", "'");
+
             if (p.ItemGroupSort.Equals(""))
             {
                 p.ItemGroupSort = "999";
@@ -159,7 +167,7 @@ namespace Cemp.objdb
                 p.Discount + ",'" + p.ItemDescription + "','" + p.ItemId + "','" +
                 p.MethodDescription + "','" + p.MethodId + "'," + p.PriceSale + "," +
                 p.Qty + ",'" + p.QuoId + "'," + p.RowNumber + ",'" +
-                p.Remark + "'," + p.ItemGroupNameE + "'," + p.ItemGroupNameT + "'," + p.ItemGroupSort + "'," + p.ItemGroupId + "')";
+                p.Remark + "','" + p.ItemGroupNameE + "','" + p.ItemGroupNameT + "','" + p.ItemGroupSort + "','" + p.ItemGroupId + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

@@ -30,7 +30,6 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.chkUse32bit = new System.Windows.Forms.CheckBox();
             this.gBClient = new System.Windows.Forms.GroupBox();
             this.txtConnectShareImage = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -54,7 +53,7 @@
             this.chkDelImage = new System.Windows.Forms.CheckBox();
             this.btnPath1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtPathBefore = new System.Windows.Forms.TextBox();
+            this.txtPathLogo = new System.Windows.Forms.TextBox();
             this.txtPathShareImage = new System.Windows.Forms.TextBox();
             this.btnPath = new System.Windows.Forms.Button();
             this.btnShare = new System.Windows.Forms.Button();
@@ -66,20 +65,35 @@
             this.ChkClient = new System.Windows.Forms.RadioButton();
             this.ChkServer = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.chkClearInput = new System.Windows.Forms.CheckBox();
             this.btnPathReport = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.txtPathReport = new System.Windows.Forms.TextBox();
+            this.chkUse32bit = new System.Windows.Forms.CheckBox();
+            this.chkClearInput = new System.Windows.Forms.CheckBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtQuoLine1 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtQuoLine2 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtQuoLine3 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtQuoLine4 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtQuoLine5 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtQuoLine6 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.gBClient.SuspendLayout();
             this.gBServer.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(9, 10);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -96,7 +110,7 @@
             this.groupBox3.Controls.Add(this.gBServer);
             this.groupBox3.Controls.Add(this.ChkClient);
             this.groupBox3.Controls.Add(this.ChkServer);
-            this.groupBox3.Location = new System.Drawing.Point(4, 70);
+            this.groupBox3.Location = new System.Drawing.Point(9, 325);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
@@ -104,17 +118,6 @@
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "ใช้งานหลายเครื่อง";
-            // 
-            // chkUse32bit
-            // 
-            this.chkUse32bit.AutoSize = true;
-            this.chkUse32bit.Location = new System.Drawing.Point(4, 37);
-            this.chkUse32bit.Margin = new System.Windows.Forms.Padding(2);
-            this.chkUse32bit.Name = "chkUse32bit";
-            this.chkUse32bit.Size = new System.Drawing.Size(68, 17);
-            this.chkUse32bit.TabIndex = 30;
-            this.chkUse32bit.Text = "ใช้ 32 bit";
-            this.chkUse32bit.UseVisualStyleBackColor = true;
             // 
             // gBClient
             // 
@@ -299,7 +302,7 @@
             this.gBServer.Controls.Add(this.chkDelImage);
             this.gBServer.Controls.Add(this.btnPath1);
             this.gBServer.Controls.Add(this.label6);
-            this.gBServer.Controls.Add(this.txtPathBefore);
+            this.gBServer.Controls.Add(this.txtPathLogo);
             this.gBServer.Controls.Add(this.txtPathShareImage);
             this.gBServer.Controls.Add(this.btnPath);
             this.gBServer.Controls.Add(this.btnShare);
@@ -364,17 +367,17 @@
             this.label6.Location = new System.Drawing.Point(4, 27);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 13);
+            this.label6.Size = new System.Drawing.Size(87, 13);
             this.label6.TabIndex = 18;
-            this.label6.Text = "path เก็บรูปก่อนเข้าระบบ";
+            this.label6.Text = "path เก็บรูปLogo";
             // 
-            // txtPathBefore
+            // txtPathLogo
             // 
-            this.txtPathBefore.Location = new System.Drawing.Point(141, 27);
-            this.txtPathBefore.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPathBefore.Name = "txtPathBefore";
-            this.txtPathBefore.Size = new System.Drawing.Size(276, 20);
-            this.txtPathBefore.TabIndex = 17;
+            this.txtPathLogo.Location = new System.Drawing.Point(141, 27);
+            this.txtPathLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPathLogo.Name = "txtPathLogo";
+            this.txtPathLogo.Size = new System.Drawing.Size(276, 20);
+            this.txtPathLogo.TabIndex = 17;
             // 
             // txtPathShareImage
             // 
@@ -491,20 +494,9 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(670, 58);
+            this.groupBox2.Size = new System.Drawing.Size(670, 70);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            // 
-            // chkClearInput
-            // 
-            this.chkClearInput.AutoSize = true;
-            this.chkClearInput.Location = new System.Drawing.Point(4, 17);
-            this.chkClearInput.Margin = new System.Windows.Forms.Padding(2);
-            this.chkClearInput.Name = "chkClearInput";
-            this.chkClearInput.Size = new System.Drawing.Size(127, 17);
-            this.chkClearInput.TabIndex = 0;
-            this.chkClearInput.Text = "ให้ล้างข้อมูลหลังบันทึก";
-            this.chkClearInput.UseVisualStyleBackColor = true;
             // 
             // btnPathReport
             // 
@@ -535,11 +527,163 @@
             this.txtPathReport.Size = new System.Drawing.Size(322, 20);
             this.txtPathReport.TabIndex = 31;
             // 
+            // chkUse32bit
+            // 
+            this.chkUse32bit.AutoSize = true;
+            this.chkUse32bit.Location = new System.Drawing.Point(4, 37);
+            this.chkUse32bit.Margin = new System.Windows.Forms.Padding(2);
+            this.chkUse32bit.Name = "chkUse32bit";
+            this.chkUse32bit.Size = new System.Drawing.Size(68, 17);
+            this.chkUse32bit.TabIndex = 30;
+            this.chkUse32bit.Text = "ใช้ 32 bit";
+            this.chkUse32bit.UseVisualStyleBackColor = true;
+            // 
+            // chkClearInput
+            // 
+            this.chkClearInput.AutoSize = true;
+            this.chkClearInput.Location = new System.Drawing.Point(4, 17);
+            this.chkClearInput.Margin = new System.Windows.Forms.Padding(2);
+            this.chkClearInput.Name = "chkClearInput";
+            this.chkClearInput.Size = new System.Drawing.Size(127, 17);
+            this.chkClearInput.TabIndex = 0;
+            this.chkClearInput.Text = "ให้ล้างข้อมูลหลังบันทึก";
+            this.chkClearInput.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label17);
+            this.groupBox4.Controls.Add(this.txtQuoLine6);
+            this.groupBox4.Controls.Add(this.label16);
+            this.groupBox4.Controls.Add(this.txtQuoLine5);
+            this.groupBox4.Controls.Add(this.label15);
+            this.groupBox4.Controls.Add(this.txtQuoLine4);
+            this.groupBox4.Controls.Add(this.label14);
+            this.groupBox4.Controls.Add(this.txtQuoLine3);
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.txtQuoLine2);
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Controls.Add(this.txtQuoLine1);
+            this.groupBox4.Location = new System.Drawing.Point(5, 83);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(669, 227);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "groupBox4";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(16, 34);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(82, 13);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "quotation line1 :";
+            // 
+            // txtQuoLine1
+            // 
+            this.txtQuoLine1.Location = new System.Drawing.Point(115, 31);
+            this.txtQuoLine1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuoLine1.Name = "txtQuoLine1";
+            this.txtQuoLine1.Size = new System.Drawing.Size(546, 20);
+            this.txtQuoLine1.TabIndex = 33;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(16, 58);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(82, 13);
+            this.label13.TabIndex = 36;
+            this.label13.Text = "quotation line2 :";
+            // 
+            // txtQuoLine2
+            // 
+            this.txtQuoLine2.Location = new System.Drawing.Point(115, 55);
+            this.txtQuoLine2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuoLine2.Name = "txtQuoLine2";
+            this.txtQuoLine2.Size = new System.Drawing.Size(546, 20);
+            this.txtQuoLine2.TabIndex = 35;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(16, 82);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(82, 13);
+            this.label14.TabIndex = 38;
+            this.label14.Text = "quotation line3 :";
+            // 
+            // txtQuoLine3
+            // 
+            this.txtQuoLine3.Location = new System.Drawing.Point(115, 79);
+            this.txtQuoLine3.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuoLine3.Name = "txtQuoLine3";
+            this.txtQuoLine3.Size = new System.Drawing.Size(546, 20);
+            this.txtQuoLine3.TabIndex = 37;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(16, 106);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(82, 13);
+            this.label15.TabIndex = 40;
+            this.label15.Text = "quotation line4 :";
+            // 
+            // txtQuoLine4
+            // 
+            this.txtQuoLine4.Location = new System.Drawing.Point(115, 103);
+            this.txtQuoLine4.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuoLine4.Name = "txtQuoLine4";
+            this.txtQuoLine4.Size = new System.Drawing.Size(546, 20);
+            this.txtQuoLine4.TabIndex = 39;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(16, 130);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(82, 13);
+            this.label16.TabIndex = 42;
+            this.label16.Text = "quotation line5 :";
+            // 
+            // txtQuoLine5
+            // 
+            this.txtQuoLine5.Location = new System.Drawing.Point(115, 127);
+            this.txtQuoLine5.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuoLine5.Name = "txtQuoLine5";
+            this.txtQuoLine5.Size = new System.Drawing.Size(546, 20);
+            this.txtQuoLine5.TabIndex = 41;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(16, 154);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(82, 13);
+            this.label17.TabIndex = 44;
+            this.label17.Text = "quotation line6 :";
+            // 
+            // txtQuoLine6
+            // 
+            this.txtQuoLine6.Location = new System.Drawing.Point(115, 151);
+            this.txtQuoLine6.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuoLine6.Name = "txtQuoLine6";
+            this.txtQuoLine6.Size = new System.Drawing.Size(546, 20);
+            this.txtQuoLine6.TabIndex = 43;
+            // 
             // FrmInitConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(698, 515);
+            this.ClientSize = new System.Drawing.Size(800, 757);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmInitConfig";
@@ -555,6 +699,8 @@
             this.gBServer.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -583,7 +729,7 @@
         private System.Windows.Forms.CheckBox chkDelImage;
         private System.Windows.Forms.Button btnPath1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtPathBefore;
+        private System.Windows.Forms.TextBox txtPathLogo;
         private System.Windows.Forms.Button btnShare;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtPathShareImage;
@@ -603,5 +749,18 @@
         private System.Windows.Forms.Button btnPathReport;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtPathReport;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtQuoLine4;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtQuoLine3;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtQuoLine2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtQuoLine1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtQuoLine6;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtQuoLine5;
     }
 }

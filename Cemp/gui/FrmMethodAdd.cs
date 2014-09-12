@@ -228,5 +228,50 @@ namespace Cemp.gui
         {
             txtSort1.BackColor = Color.White;
         }
+
+        private void txtCode_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtNameT.SelectAll();
+                txtNameT.Focus();
+            }
+        }
+
+        private void txtNameT_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtNameE.SelectAll();
+                txtNameE.Focus();
+            }
+        }
+
+        private void txtNameE_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtRemark.SelectAll();
+                txtRemark.Focus();
+            }
+        }
+
+        private void txtRemark_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtSort1.SelectAll();
+                txtSort1.Focus();
+            }
+        }
+
+        private void txtSort1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //txtNameE.SelectAll();
+                btnSave.Focus();
+            }
+        }
     }
 }

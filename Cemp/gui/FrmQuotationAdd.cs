@@ -73,8 +73,8 @@ namespace Cemp.gui
             //cboMethod = cc.medb.getCboMethod(cboMethod);
 
             cboContact.Text = qu.ContactName;
-            txtAmount.Text = String.Format("{0:#,###,###.00}",double.Parse(qu.Amount));
-            txtAmountDiscount.Text = String.Format("{0:#,###,###.00}",double.Parse(qu.AmountDiscount));
+            txtAmount.Text = String.Format("{0:#,###,###.00}",double.Parse(cc.cf.NumberNull1(qu.Amount)));
+            txtAmountDiscount.Text = String.Format("{0:#,###,###.00}",double.Parse(cc.cf.NumberNull1(qu.AmountDiscount)));
             txtCompAddress1.Text = qu.CompAddress1;
             txtCompAddress2.Text = qu.CompAddress2;
             txtCompTaxId.Text = qu.CompTaxId;
@@ -86,20 +86,28 @@ namespace Cemp.gui
             txtCustTel.Text = qu.CustTel;
             cboCust.Text = qu.CustName;
             txtCustId.Text = qu.CustId;
-            txtDiscount.Text = String.Format("{0:#,###,###.00}",double.Parse(qu.Discount));
-            txtNetTotal.Text = String.Format("{0:#,###,###.00}",double.Parse(qu.NetTotal));
-            txtPlus1.Text = String.Format("{0:#,###,###.00}",double.Parse(qu.Plus1));
+            txtDiscount.Text = String.Format("{0:#,###,###.00}",double.Parse(cc.cf.NumberNull1(qu.Discount)));
+            txtNetTotal.Text = String.Format("{0:#,###,###.00}",double.Parse(cc.cf.NumberNull1(qu.NetTotal)));
+            txtPlus1.Text = String.Format("{0:#,###,###.00}",double.Parse(cc.cf.NumberNull1(qu.Plus1)));
             txtQuId.Text = qu.Id;
             txtQuNumber.Text = qu.QuoNumber+"-"+qu.QuoNumberCnt;
             txtStaffEmail.Text = qu.StaffEmail;
             txtStaffTel.Text = qu.StaffTel;
             txtStaffId.Text = qu.StaffId;
             cboStaff.Text = qu.StaffName;
-            txtTotal.Text = String.Format("{0:#,###,###.00}",double.Parse(qu.Total));
-            txtVat.Text = String.Format("{0:#,###,###.00}",double.Parse(qu.Vat));
+            txtTotal.Text = String.Format("{0:#,###,###.00}",double.Parse(cc.cf.NumberNull1(qu.Total)));
+            txtVat.Text = String.Format("{0:#,###,###.00}",double.Parse(cc.cf.NumberNull1(qu.Vat)));
             txtVatRate.Text = qu.VatRate;
             cboStaffApprove.Text = qu.StaffApproveName;
             txtStaffApproveId.Text = qu.StaffApproveId;
+
+            txtLine1.Text = qu.Line1;
+            txtLine2.Text = qu.Line2;
+            txtLine3.Text = qu.Line3;
+            txtLine4.Text = qu.Line4;
+            txtLine5.Text = qu.Line5;
+            txtLine6.Text = qu.Line6;
+
             //txtVatRate.Text = qu.VatRate;
             cboRemark1.Text = qu.Remark1;
             cboRemark2.Text = qu.Remark2;
@@ -116,6 +124,13 @@ namespace Cemp.gui
                     txtCompTaxId.Text = cp.TaxId;
                     txtVatRate.Text = cp.vat;
                 }
+                txtLine1.Text = cc.initC.quoLine1;
+                txtLine2.Text = cc.initC.quoLine2;
+                txtLine3.Text = cc.initC.quoLine3;
+                txtLine4.Text = cc.initC.quoLine4;
+                txtLine5.Text = cc.initC.quoLine5;
+                txtLine6.Text = cc.initC.quoLine6;
+
                 btnPrint.Visible = false;
             }
             else
@@ -160,6 +175,13 @@ namespace Cemp.gui
             qu.Remark2 = cboRemark2.Text;
             qu.Remark3 = cboRemark3.Text;
             qu.ContactName = cboContact.Text;
+
+            qu.Line1 = txtLine1.Text;
+            qu.Line2 = txtLine2.Text;
+            qu.Line3 = txtLine3.Text;
+            qu.Line4 = txtLine4.Text;
+            qu.Line5 = txtLine5.Text;
+            qu.Line6 = txtLine6.Text;
             //qu.StatusQuo = "1";
         }
         private void setGrd(String quId)
@@ -393,6 +415,8 @@ namespace Cemp.gui
                     }
                     
                 }
+                Quotation qu1 = cc.qudb.selectByPk(quId);
+                txtQuNumber.Text = qu1.QuoNumber+"-"+qu1.QuoNumberCnt;
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 btnPrint.Visible = true;
                 //this.Dispose();

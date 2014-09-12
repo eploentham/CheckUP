@@ -81,6 +81,7 @@
             this.txtSort1.TabIndex = 136;
             this.txtSort1.Enter += new System.EventHandler(this.txtSort1_Enter);
             this.txtSort1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSort1_KeyPress);
+            this.txtSort1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSort1_KeyUp);
             this.txtSort1.Leave += new System.EventHandler(this.txtSort1_Leave);
             // 
             // label5
@@ -177,6 +178,7 @@
             this.txtRemark.Size = new System.Drawing.Size(357, 22);
             this.txtRemark.TabIndex = 124;
             this.txtRemark.Enter += new System.EventHandler(this.txtRemark_Enter);
+            this.txtRemark.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRemark_KeyUp);
             this.txtRemark.Leave += new System.EventHandler(this.txtRemark_Leave);
             // 
             // label4
@@ -207,6 +209,7 @@
             this.txtNameE.Size = new System.Drawing.Size(357, 22);
             this.txtNameE.TabIndex = 123;
             this.txtNameE.Enter += new System.EventHandler(this.txtNameE_Enter);
+            this.txtNameE.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNameE_KeyUp);
             this.txtNameE.Leave += new System.EventHandler(this.txtNameE_Leave);
             // 
             // label3
@@ -227,6 +230,7 @@
             this.txtNameT.Size = new System.Drawing.Size(357, 22);
             this.txtNameT.TabIndex = 122;
             this.txtNameT.Enter += new System.EventHandler(this.txtNameT_Enter);
+            this.txtNameT.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNameT_KeyUp);
             this.txtNameT.Leave += new System.EventHandler(this.txtNameT_Leave);
             // 
             // label2

@@ -65,8 +65,16 @@ namespace Cemp.gui
             }
 
             txtPathImage.Text = cc.initC.pathImage;
-            txtPathBefore.Text = cc.initC.pathImageBefore;
+            txtPathLogo.Text = cc.initC.pathImageLogo;
             txtPathReport.Text = cc.initC.PathReport;
+
+            txtQuoLine1.Text = cc.initC.quoLine1;
+            txtQuoLine2.Text = cc.initC.quoLine2;
+            txtQuoLine3.Text = cc.initC.quoLine3;
+            txtQuoLine4.Text = cc.initC.quoLine4;
+            txtQuoLine5.Text = cc.initC.quoLine5;
+            txtQuoLine6.Text = cc.initC.quoLine6;
+
             if (cc.initC.delImage.Equals("yes"))
             {
                 chkDelImage.Checked = true;
@@ -94,11 +102,17 @@ namespace Cemp.gui
             cc.SetClearInput(chkClearInput.Checked);
             cc.SetUse32Bit(chkUse32bit.Checked);
             cc.SetPathReport(txtPathReport.Text);
+            cc.SetQuoLine1(txtQuoLine1.Text);
+            cc.SetQuoLine2(txtQuoLine2.Text);
+            cc.SetQuoLine3(txtQuoLine3.Text);
+            cc.SetQuoLine4(txtQuoLine4.Text);
+            cc.SetQuoLine5(txtQuoLine5.Text);
+            cc.SetQuoLine6(txtQuoLine6.Text);
             if (ChkServer.Checked)
             {
                 cc.SetSetatusServer(true);
                 cc.SetPathImage(txtPathImage.Text);
-                cc.SetPathImageBefore(txtPathBefore.Text);
+                cc.SetPathImageLogo(txtPathLogo.Text);
                 cc.SetDelImage(chkDelImage.Checked);
 
                 cc.SetPathShareImage(txtPathShareImage.Text);
@@ -178,7 +192,7 @@ namespace Cemp.gui
         {
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             DialogResult result = fbd.ShowDialog();
-            txtPathBefore.Text = fbd.SelectedPath;
+            txtPathLogo.Text = fbd.SelectedPath;
         }
 
         private void btnShare_Click(object sender, EventArgs e)

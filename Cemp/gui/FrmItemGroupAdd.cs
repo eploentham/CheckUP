@@ -82,12 +82,12 @@ namespace Cemp.gui
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtNameE.Text.Equals(""))
+            if (txtNameE.Text.Trim().Equals(""))
             {
                 MessageBox.Show("ไม่ได้ป้อน Name", "ป้อนข้อมูลไม่ครบ");
                 return;
             }
-            if (txtNameT.Text.Equals(""))
+            if (txtNameT.Text.Trim().Equals(""))
             {
                 MessageBox.Show("ไม่ได้ป้อนชื่อ", "ป้อนข้อมูลไม่ครบ");
                 return;
@@ -215,6 +215,42 @@ namespace Cemp.gui
         private void txtSort1_Leave(object sender, EventArgs e)
         {
             txtSort1.BackColor = Color.White;
+        }
+
+        private void txtNameT_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtNameE.SelectAll();
+                txtNameE.Focus();
+            }
+        }
+
+        private void txtNameE_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtRemark.SelectAll();
+                txtRemark.Focus();
+            }
+        }
+
+        private void txtRemark_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtSort1.SelectAll();
+                txtSort1.Focus();
+            }
+        }
+
+        private void txtSort1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //txtRemark.SelectAll();
+                btnSave.Focus();
+            }
         }
     }
 }

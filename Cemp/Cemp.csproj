@@ -232,6 +232,7 @@
     <Compile Include="object1\InitConfig.cs" />
     <Compile Include="object1\Item.cs" />
     <Compile Include="object1\ItemGroup.cs" />
+    <Compile Include="object1\LogWriter.cs" />
     <Compile Include="object1\Method.cs" />
     <Compile Include="object1\MOU.cs" />
     <Compile Include="object1\MOUItem.cs" />

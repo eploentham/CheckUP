@@ -110,7 +110,7 @@ namespace Cemp.objdb
             String sql = "", chk = "";
             if (p.Id.Equals(""))
             {
-                p.Id = "cu" + p.getGenID();
+                p.Id = "itg" + p.getGenID();
             }
 
             if (p.Sort1.Equals(""))

@@ -260,5 +260,96 @@ namespace Cemp.gui
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
+        private void txtCode_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtNameT.SelectAll();
+                txtNameT.Focus();
+            }
+        }
+
+        private void txtNameT_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtNameE.SelectAll();
+                txtNameE.Focus();
+            }
+        }
+
+        private void txtNameE_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cboGroup.SelectAll();
+                cboGroup.Focus();
+            }
+        }
+
+        private void cboGroup_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cboMethod.SelectAll();
+                cboMethod.Focus();
+            }
+        }
+
+        private void cboMethod_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtPriceSale.SelectAll();
+                txtPriceSale.Focus();
+            }
+        }
+
+        private void txtPriceSale_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtPriceCost.SelectAll();
+                txtPriceCost.Focus();
+            }
+        }
+
+        private void txtPriceCost_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                comboBox1.SelectAll();
+                comboBox1.Focus();
+            }
+        }
+
+        private void comboBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtRemark.SelectAll();
+                txtRemark.Focus();
+            }
+        }
+
+        private void comboBox1_Enter(object sender, EventArgs e)
+        {
+            comboBox1.BackColor = Color.LightYellow;
+        }
+
+        private void comboBox1_Leave(object sender, EventArgs e)
+        {
+            comboBox1.BackColor = Color.White;
+        }
+
+        private void txtRemark_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //btnSave.SelectAll();
+                btnSave.Focus();
+            }
+        }
     }
 }

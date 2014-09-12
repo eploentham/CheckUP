@@ -238,6 +238,8 @@ namespace Cemp.gui
                 txtZipcode.Text = cc.didb.selectZipCodeByPk(label18.Text);
 
                 txtAddressT.Text = txtAddr.Text+" "+cboDistrict.Text+" "+cboAmphur.Text+" "+cboProvince.Text+" "+txtZipcode.Text;
+                txtAddressE.SelectAll();
+                txtAddressE.Focus();
             }
             else if (e.KeyCode == Keys.Down)
             {
@@ -441,6 +443,160 @@ namespace Cemp.gui
         private void txtCode_Leave(object sender, EventArgs e)
         {
             txtCode.BackColor = Color.White;
+        }
+
+        private void txtCode_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtNameT.SelectAll();
+                txtNameT.Focus();
+            }
+        }
+
+        private void txtNameT_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtNameE.SelectAll();
+                txtNameE.Focus();
+            }
+        }
+
+        private void txtNameE_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtAddr.SelectAll();
+                txtAddr.Focus();
+            }
+        }
+
+        private void txtAddr_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cboDistrict.SelectAll();
+                cboDistrict.Focus();
+            }
+        }
+
+        private void txtAddressE_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtTele.SelectAll();
+                txtTele.Focus();
+            }
+        }
+
+        private void txtTele_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                TxtFax.SelectAll();
+                TxtFax.Focus();
+            }
+        }
+
+        private void TxtFax_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtEmail.SelectAll();
+                txtEmail.Focus();
+            }
+        }
+
+        private void txtEmail_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtTaxID.SelectAll();
+                txtTaxID.Focus();
+            }
+        }
+
+        private void txtTaxID_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtRemark.SelectAll();
+                txtRemark.Focus();
+            }
+        }
+
+        private void txtRemark_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtContactName1.SelectAll();
+                txtContactName1.Focus();
+            }
+        }
+
+        private void txtContactName1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtContactName1Tel.SelectAll();
+                txtContactName1Tel.Focus();
+            }
+        }
+
+        private void txtContactName1Tel_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtContactName2.SelectAll();
+                txtContactName2.Focus();
+            }
+        }
+
+        private void txtContactName2_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtContactName2Tel.SelectAll();
+                txtContactName2Tel.Focus();
+            }
+        }
+
+        private void txtContactName2Tel_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtRemark2.SelectAll();
+                txtRemark2.Focus();
+            }
+        }
+
+        private void txtRemark2_Enter(object sender, EventArgs e)
+        {
+            txtRemark2.BackColor = Color.LightYellow;
+        }
+
+        private void txtRemark2_Leave(object sender, EventArgs e)
+        {
+            txtRemark2.BackColor = Color.White;
+        }
+
+        private void txtRemark2_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //cboDistrict.SelectAll();
+                btnSave.Focus();
+            }
+        }
+
+        private void txtAddressT_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtAddressE.SelectAll();
+                txtAddressE.Focus();
+            }
         }
     }
 }

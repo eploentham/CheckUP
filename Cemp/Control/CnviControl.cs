@@ -43,6 +43,8 @@ namespace Cemp.Control
         public InitConfig initC;
         public String PathLogo;
 
+        public LogWriter lw;
+
         public CnviControl()
         {
             initConfig();
@@ -72,6 +74,8 @@ namespace Cemp.Control
             itdb = new ItemDB(conn);
             itgdb = new ItemGroupDB(conn);
 
+            lw = new LogWriter();
+
             cp = cpdb.selectByPk();
             PathLogo = Environment.CurrentDirectory;
         }
@@ -98,22 +102,29 @@ namespace Cemp.Control
             initC.Password = iniFile.Read("password");
 
             initC.pathImage = iniFile.Read("pathimage");
-            initC.pathImageBefore = iniFile.Read("pathimagebefore");
+            initC.pathImageLogo = iniFile.Read("pathimagelogo");
             initC.delImage = iniFile.Read("delimage");
             initC.StatusServer = iniFile.Read("statusserver");
             initC.pathShareData = iniFile.Read("pathsharedata");
             initC.pathShareImage = iniFile.Read("pathshareimage");
             initC.use32Bit = iniFile.Read("use32bit");
             initC.PathReport = iniFile.Read("pathreport");
+
+            initC.quoLine1 = iniFile.Read("quotationline1");
+            initC.quoLine2 = iniFile.Read("quotationline2");
+            initC.quoLine3 = iniFile.Read("quotationline3");
+            initC.quoLine4 = iniFile.Read("quotationline4");
+            initC.quoLine5 = iniFile.Read("quotationline5");
+            initC.quoLine6 = iniFile.Read("quotationline6");
             //initC.Password = regE.getPassword();
         }
         public void SetPathImage(String path)
         {
             iniFile.Write("pathimage", path);
         }
-        public void SetPathImageBefore(String path)
+        public void SetPathImageLogo(String path)
         {
-            iniFile.Write("pathimagebefore", path);
+            iniFile.Write("pathimagelogo", path);
         }
         public void SetPathShareImage(String path)
         {
@@ -126,6 +137,30 @@ namespace Cemp.Control
         public void SetPathReport(String path)
         {
             iniFile.Write("pathreport", path);
+        }
+        public void SetQuoLine1(String path)
+        {
+            iniFile.Write("quotationline1", path);
+        }
+        public void SetQuoLine2(String path)
+        {
+            iniFile.Write("quotationline2", path);
+        }
+        public void SetQuoLine3(String path)
+        {
+            iniFile.Write("quotationline3", path);
+        }
+        public void SetQuoLine4(String path)
+        {
+            iniFile.Write("quotationline4", path);
+        }
+        public void SetQuoLine5(String path)
+        {
+            iniFile.Write("quotationline5", path);
+        }
+        public void SetQuoLine6(String path)
+        {
+            iniFile.Write("quotationline6", path);
         }
         public void SetSetatusServer(Boolean value)
         {

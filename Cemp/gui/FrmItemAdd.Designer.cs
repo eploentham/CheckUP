@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnMethodAdd = new System.Windows.Forms.Button();
             this.btnGroupAdd = new System.Windows.Forms.Button();
@@ -56,8 +58,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,6 +98,27 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(512, 247);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(37, 23);
+            this.button1.TabIndex = 134;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(108, 247);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(398, 24);
+            this.comboBox1.TabIndex = 133;
+            this.comboBox1.Enter += new System.EventHandler(this.comboBox1_Enter);
+            this.comboBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.comboBox1_KeyUp);
+            this.comboBox1.Leave += new System.EventHandler(this.comboBox1_Leave);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -137,6 +158,7 @@
             this.cboGroup.Size = new System.Drawing.Size(398, 24);
             this.cboGroup.TabIndex = 129;
             this.cboGroup.Enter += new System.EventHandler(this.cboGroup_Enter);
+            this.cboGroup.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cboGroup_KeyUp);
             this.cboGroup.Leave += new System.EventHandler(this.cboGroup_Leave);
             // 
             // label10
@@ -202,7 +224,7 @@
             this.ChkUnActive.AutoSize = true;
             this.ChkUnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.ChkUnActive.Location = new System.Drawing.Point(241, 327);
-            this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2);
             this.ChkUnActive.Name = "ChkUnActive";
             this.ChkUnActive.Size = new System.Drawing.Size(60, 21);
             this.ChkUnActive.TabIndex = 122;
@@ -215,7 +237,7 @@
             this.chkActive.AutoSize = true;
             this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.chkActive.Location = new System.Drawing.Point(116, 327);
-            this.chkActive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkActive.Margin = new System.Windows.Forms.Padding(2);
             this.chkActive.Name = "chkActive";
             this.chkActive.Size = new System.Drawing.Size(61, 21);
             this.chkActive.TabIndex = 121;
@@ -233,6 +255,7 @@
             this.txtPriceCost.TabStop = false;
             this.txtPriceCost.Enter += new System.EventHandler(this.txtPriceCost_Enter);
             this.txtPriceCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPriceCost_KeyPress);
+            this.txtPriceCost.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPriceCost_KeyUp);
             this.txtPriceCost.Leave += new System.EventHandler(this.txtPriceCost_Leave);
             // 
             // label6
@@ -254,6 +277,7 @@
             this.txtRemark.TabIndex = 115;
             this.txtRemark.TabStop = false;
             this.txtRemark.Enter += new System.EventHandler(this.txtRemark_Enter);
+            this.txtRemark.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRemark_KeyUp);
             this.txtRemark.Leave += new System.EventHandler(this.txtRemark_Leave);
             // 
             // label4
@@ -276,6 +300,7 @@
             this.txtPriceSale.TabStop = false;
             this.txtPriceSale.Enter += new System.EventHandler(this.txtPriceSale_Enter);
             this.txtPriceSale.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPriceSale_KeyPress);
+            this.txtPriceSale.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPriceSale_KeyUp);
             this.txtPriceSale.Leave += new System.EventHandler(this.txtPriceSale_Leave);
             // 
             // label5
@@ -297,6 +322,7 @@
             this.cboMethod.Size = new System.Drawing.Size(398, 24);
             this.cboMethod.TabIndex = 109;
             this.cboMethod.Enter += new System.EventHandler(this.cboMethod_Enter);
+            this.cboMethod.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cboMethod_KeyUp);
             this.cboMethod.Leave += new System.EventHandler(this.cboMethod_Leave);
             // 
             // label7
@@ -326,6 +352,7 @@
             this.txtNameE.Size = new System.Drawing.Size(398, 22);
             this.txtNameE.TabIndex = 105;
             this.txtNameE.Enter += new System.EventHandler(this.txtNameE_Enter);
+            this.txtNameE.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNameE_KeyUp);
             this.txtNameE.Leave += new System.EventHandler(this.txtNameE_Leave);
             // 
             // label3
@@ -346,6 +373,7 @@
             this.txtNameT.Size = new System.Drawing.Size(398, 22);
             this.txtNameT.TabIndex = 102;
             this.txtNameT.Enter += new System.EventHandler(this.txtNameT_Enter);
+            this.txtNameT.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNameT_KeyUp);
             this.txtNameT.Leave += new System.EventHandler(this.txtNameT_Leave);
             // 
             // label2
@@ -367,6 +395,7 @@
             this.txtCode.TabIndex = 107;
             this.txtCode.TabStop = false;
             this.txtCode.Enter += new System.EventHandler(this.txtCode_Enter);
+            this.txtCode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCode_KeyUp);
             this.txtCode.Leave += new System.EventHandler(this.txtCode_Leave);
             // 
             // label1
@@ -375,27 +404,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(6, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 16);
+            this.label1.Size = new System.Drawing.Size(70, 16);
             this.label1.TabIndex = 101;
-            this.label1.Text = "รหัส :";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(108, 247);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(398, 24);
-            this.comboBox1.TabIndex = 133;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(512, 247);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(37, 23);
-            this.button1.TabIndex = 134;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label1.Text = "รหัส  yyxxx:";
             // 
             // FrmItemAdd
             // 
@@ -403,7 +414,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 410);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmItemAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmItemAdd";

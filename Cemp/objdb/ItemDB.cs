@@ -98,7 +98,7 @@ namespace Cemp.objdb
             String sql = "", chk = "";
             if (p.Id.Equals(""))
             {
-                p.Id = "cu" + p.getGenID();
+                p.Id = "it" + p.getGenID();
             }
 
             p.NameE = p.NameE.Replace("''", "'");
@@ -241,8 +241,8 @@ namespace Cemp.objdb
             if (dt.Rows.Count > 0)
             {
                 cnt = String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);
-                cnt = "00000" + cnt;
-                cnt = cnt.Substring(cnt.Length - 5);
+                cnt = "000" + cnt;
+                cnt = cnt.Substring(cnt.Length - 3);
                 //year = getYear();
             }
             //return "me" + year + cnt;

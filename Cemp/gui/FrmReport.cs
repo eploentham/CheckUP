@@ -70,8 +70,11 @@ namespace Cemp
             //rpt.Load(Environment.CurrentDirectory + "\\report\\test.rpt");
             try
             {
+                cc.lw.WriteLog("FrmReport setReport " + cc.initC.PathReport + "\\" + rptName + ".rpt");
                 rpt.Load(cc.initC.PathReport+"\\" + rptName + ".rpt");
+                cc.lw.WriteLog("rpt.Load OK.");
                 rpt.SetDataSource(dt);
+                cc.lw.WriteLog("rpt.SetDataSource OK.");
                 //rpt.SetDataSource(dt2);
                 //ParameterField myParam = new ParameterField();
                 //myParam.Name = "header1";
@@ -79,7 +82,7 @@ namespace Cemp
                 rpt.SetParameterValue("header1", cc.cp.NameT);
                 rpt.SetParameterValue("header2", reportName);
                 rpt.SetParameterValue("header3", condition);
-
+                cc.lw.WriteLog("rpt.SetParameterValue OK.");
                 this.crystalReportViewer1.ReportSource = rpt;
                 this.crystalReportViewer1.Refresh();
             }
@@ -157,6 +160,9 @@ namespace Cemp
                 rpt.SetParameterValue("remark1", qu.Remark1);
                 rpt.SetParameterValue("remark2", qu.Remark2);
                 rpt.SetParameterValue("remark3", qu.Remark3);
+
+                rpt.SetParameterValue("line1", qu.Line1);
+                rpt.SetParameterValue("line2", qu.Line2);
                 rpt.SetParameterValue("line3", qu.Line3);
                 rpt.SetParameterValue("line4", qu.Line4);
                 rpt.SetParameterValue("line5", qu.Line5);
