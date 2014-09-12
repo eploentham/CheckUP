@@ -35,7 +35,7 @@ namespace Cemp.gui
             }
             btnUnActive.Visible = false;
             label8.Text = "";
-            //txtCode.ReadOnly = true;
+            txtCode.ReadOnly = true;
         }
         private void setControl(String meId)
         {
@@ -110,8 +110,11 @@ namespace Cemp.gui
             if (cc.medb.insertMethod(me).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
+
+                //frm.Show();
                 this.Dispose();
                 //this.Hide();
+                
             }
         }
 
@@ -195,7 +198,8 @@ namespace Cemp.gui
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            Method me = cc.medb.selectByCode(txtCode.Text);
+            txtCode.Text = txtPrefix.Text + cc.medb.selectMax();
+            txtSort1.Text = cc.medb.selectSortMax();
             //label8.Text = "รหัสซ้ำ" + me.Code + " ชื่อ " + me.NameT;
             if (!me.Code.Equals(""))
             {
@@ -271,6 +275,27 @@ namespace Cemp.gui
             {
                 //txtNameE.SelectAll();
                 btnSave.Focus();
+            }
+        }
+
+        private void txtPrefix_Enter(object sender, EventArgs e)
+        {
+            txtPrefix.BackColor = Color.LightYellow;
+        }
+
+        private void txtPrefix_Leave(object sender, EventArgs e)
+        {
+            btnSearch_Click(null, null);
+            txtPrefix.BackColor = Color.White;
+        }
+
+        private void txtPrefix_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSearch_Click(null, null);
+                txtNameT.SelectAll();
+                txtNameT.Focus();
             }
         }
     }

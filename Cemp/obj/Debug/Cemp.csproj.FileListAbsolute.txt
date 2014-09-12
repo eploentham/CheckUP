@@ -27,7 +27,6 @@ C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.Properties.Resources.resources
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.csproj.GenerateResource.Cache
 C:\source\CNVI\CNVI.Cemp\Cemp\bin\Debug\Cemp.exe
 C:\source\CNVI\CNVI.Cemp\Cemp\bin\Debug\Cemp.pdb
-C:\source\CNVI\CNVI.Cemp\Cemp\bin\Debug\itextsharp.xml
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.exe
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.pdb
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.exe

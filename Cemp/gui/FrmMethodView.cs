@@ -36,50 +36,57 @@ namespace Cemp.gui
         }
         private void setGrd()
         {
-            DataTable dt = new DataTable();
-            dt = cc.medb.selectAll();
-            dgvView.ColumnCount = colCnt;
-
-            dgvView.RowCount = dt.Rows.Count + 1;
-            dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvView.Columns[colRow].Width = 50;
-            dgvView.Columns[colCode].Width = 80;
-            dgvView.Columns[colNameT].Width = 200;
-            dgvView.Columns[colNameE].Width = 200;
-            dgvView.Columns[colRemark].Width = 200;
-
-            dgvView.Columns[colRow].HeaderText = "ลำดับ";
-            dgvView.Columns[colCode].HeaderText = "code";
-            dgvView.Columns[colNameT].HeaderText = "ชื่อ";
-            dgvView.Columns[colNameE].HeaderText = "Name";
-            dgvView.Columns[colRemark].HeaderText = "หมายเหตุ";
-
-            //dgvView.Columns[colPassword].HeaderText = "  ";
-
-            dgvView.Columns[colId].HeaderText = "id";
-            Font font = new Font("Microsoft Sans Serif", 12);
-
-            dgvView.Font = font;
-            dgvView.Columns[colId].Visible = false;
-            if (dt.Rows.Count > 0)
+            try
             {
-                for (int i = 0; i < dt.Rows.Count; i++)
+                DataTable dt = new DataTable();
+                dt = cc.medb.selectAll();
+                dgvView.ColumnCount = colCnt;
+
+                dgvView.RowCount = dt.Rows.Count + 1;
+                dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgvView.Columns[colRow].Width = 50;
+                dgvView.Columns[colCode].Width = 80;
+                dgvView.Columns[colNameT].Width = 200;
+                dgvView.Columns[colNameE].Width = 200;
+                dgvView.Columns[colRemark].Width = 200;
+
+                dgvView.Columns[colRow].HeaderText = "ลำดับ";
+                dgvView.Columns[colCode].HeaderText = "code";
+                dgvView.Columns[colNameT].HeaderText = "ชื่อ";
+                dgvView.Columns[colNameE].HeaderText = "Name";
+                dgvView.Columns[colRemark].HeaderText = "หมายเหตุ";
+
+                //dgvView.Columns[colPassword].HeaderText = "  ";
+
+                dgvView.Columns[colId].HeaderText = "id";
+                Font font = new Font("Microsoft Sans Serif", 12);
+
+                dgvView.Font = font;
+                dgvView.Columns[colId].Visible = false;
+                if (dt.Rows.Count > 0)
                 {
-                    dgvView[colRow, i].Value = (i + 1);
-                    dgvView[colCode, i].Value = dt.Rows[i][cc.medb.me.Code].ToString();
-                    dgvView[colNameT, i].Value = dt.Rows[i][cc.medb.me.NameT].ToString();
-                    dgvView[colNameE, i].Value = dt.Rows[i][cc.medb.me.NameT].ToString();
-
-                    dgvView[colRemark, i].Value = dt.Rows[i][cc.medb.me.Remark].ToString();
-                    dgvView[colId, i].Value = dt.Rows[i][cc.medb.me.Id].ToString();
-
-                    if ((i % 2) != 0)
+                    for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        dgvView.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                        dgvView[colRow, i].Value = (i + 1);
+                        dgvView[colCode, i].Value = dt.Rows[i][cc.medb.me.Code].ToString();
+                        dgvView[colNameT, i].Value = dt.Rows[i][cc.medb.me.NameT].ToString();
+                        dgvView[colNameE, i].Value = dt.Rows[i][cc.medb.me.NameT].ToString();
+
+                        dgvView[colRemark, i].Value = dt.Rows[i][cc.medb.me.Remark].ToString();
+                        dgvView[colId, i].Value = dt.Rows[i][cc.medb.me.Id].ToString();
+
+                        if ((i % 2) != 0)
+                        {
+                            dgvView.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                        }
                     }
                 }
+                dgvView.ReadOnly = true;
             }
-            dgvView.ReadOnly = true;
+            catch (Exception ex)
+            {
+            }
+            
         }
         private void FrmMethodView_Load(object sender, EventArgs e)
         {
@@ -110,7 +117,11 @@ namespace Cemp.gui
         private void btnAdd_Click(object sender, EventArgs e)
         {
             FrmMethodAdd frm = new FrmMethodAdd("", cc);
-            frm.ShowDialog(this);
+            //frm.ShowDialog(this);
+            //FrmMethodAdd frm = new FrmMethodAdd("", cc, this);
+            frm.Show();
+            //this.Hide();
+            
             setGrd();
         }
 
@@ -121,6 +132,11 @@ namespace Cemp.gui
             FrmReport frm = new FrmReport(cc);
             frm.setReport("MethodList", "รายการ Method", "เงื่อนไข ทั้งหมด", dt);
             frm.ShowDialog(this);
+        }
+
+        private void FrmMethodView_Activated(object sender, EventArgs e)
+        {
+            setGrd();
         }
     }
 }

@@ -41,51 +41,58 @@ namespace Cemp.gui
         }
         private void setGrd()
         {
-            DataTable dt = new DataTable();
-            dt = cc.itdb.selectAll();
-            dgvView.ColumnCount = colCnt;
-
-            dgvView.RowCount = dt.Rows.Count + 1;
-            dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvView.Columns[colRow].Width = 50;
-            dgvView.Columns[colNameT].Width = 200;
-            dgvView.Columns[colNameE].Width = 200;
-            dgvView.Columns[colMethod].Width = 200;
-            dgvView.Columns[colGroup].Width = 200;
-            dgvView.Columns[colRemark].Width = 200;
-
-            dgvView.Columns[colRow].HeaderText = "ลำดับ";
-            dgvView.Columns[colNameT].HeaderText = "ชื่อ";
-            dgvView.Columns[colNameE].HeaderText = "Name";
-            dgvView.Columns[colMethod].HeaderText = "วิธีการตรวจ";
-            dgvView.Columns[colGroup].HeaderText = "กลุ่ม";
-            dgvView.Columns[colRemark].HeaderText = "หมายเหตุ";
-            //dgvView.Columns[colPassword].HeaderText = "  ";
-
-            dgvView.Columns[colId].HeaderText = "id";
-            Font font = new Font("Microsoft Sans Serif", 12);
-
-            dgvView.Font = font;
-            dgvView.Columns[colId].Visible = false;
-            if (dt.Rows.Count > 0)
+            try
             {
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    dgvView[colRow, i].Value = (i + 1);
-                    dgvView[colNameT, i].Value = dt.Rows[i][cc.itdb.it.NameT].ToString();
-                    dgvView[colNameE, i].Value = dt.Rows[i][cc.itdb.it.NameE].ToString();
-                    dgvView[colMethod, i].Value = dt.Rows[i][cc.itdb.it.MethodNameT].ToString();
-                    dgvView[colGroup, i].Value = dt.Rows[i][cc.itdb.it.ItemGroupNameT].ToString();
-                    dgvView[colRemark, i].Value = dt.Rows[i][cc.itdb.it.Remark].ToString();
-                    dgvView[colId, i].Value = dt.Rows[i][cc.itdb.it.Id].ToString();
+                DataTable dt = new DataTable();
+                dt = cc.itdb.selectAll();
+                dgvView.ColumnCount = colCnt;
 
-                    if ((i % 2) != 0)
+                dgvView.RowCount = dt.Rows.Count + 1;
+                dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgvView.Columns[colRow].Width = 50;
+                dgvView.Columns[colNameT].Width = 200;
+                dgvView.Columns[colNameE].Width = 200;
+                dgvView.Columns[colMethod].Width = 200;
+                dgvView.Columns[colGroup].Width = 200;
+                dgvView.Columns[colRemark].Width = 200;
+
+                dgvView.Columns[colRow].HeaderText = "ลำดับ";
+                dgvView.Columns[colNameT].HeaderText = "ชื่อ";
+                dgvView.Columns[colNameE].HeaderText = "Name";
+                dgvView.Columns[colMethod].HeaderText = "วิธีการตรวจ";
+                dgvView.Columns[colGroup].HeaderText = "กลุ่ม";
+                dgvView.Columns[colRemark].HeaderText = "หมายเหตุ";
+                //dgvView.Columns[colPassword].HeaderText = "  ";
+
+                dgvView.Columns[colId].HeaderText = "id";
+                Font font = new Font("Microsoft Sans Serif", 12);
+
+                dgvView.Font = font;
+                dgvView.Columns[colId].Visible = false;
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        dgvView.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                        dgvView[colRow, i].Value = (i + 1);
+                        dgvView[colNameT, i].Value = dt.Rows[i][cc.itdb.it.NameT].ToString();
+                        dgvView[colNameE, i].Value = dt.Rows[i][cc.itdb.it.NameE].ToString();
+                        dgvView[colMethod, i].Value = dt.Rows[i][cc.itdb.it.MethodNameT].ToString();
+                        dgvView[colGroup, i].Value = dt.Rows[i][cc.itdb.it.ItemGroupNameT].ToString();
+                        dgvView[colRemark, i].Value = dt.Rows[i][cc.itdb.it.Remark].ToString();
+                        dgvView[colId, i].Value = dt.Rows[i][cc.itdb.it.Id].ToString();
+
+                        if ((i % 2) != 0)
+                        {
+                            dgvView.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                        }
                     }
                 }
+                dgvView.ReadOnly = true;
             }
-            dgvView.ReadOnly = true;
+            catch (Exception ex)
+            {
+            }
+            
         }
         private void FrmItemView_Load(object sender, EventArgs e)
         {
@@ -95,7 +102,8 @@ namespace Cemp.gui
         private void btnAdd_Click(object sender, EventArgs e)
         {
             FrmItemAdd frm = new FrmItemAdd("",cc);
-            frm.ShowDialog(this);
+            //frm.ShowDialog(this);
+            frm.Show();
             setGrd();
         }
 
@@ -127,6 +135,11 @@ namespace Cemp.gui
             FrmReport frm = new FrmReport(cc);
             frm.setReport("ItemList", "รายการ Parameter", "เงื่อนไข ทั้งหมด", dt);
             frm.ShowDialog(this);
+        }
+
+        private void FrmItemView_Activated(object sender, EventArgs e)
+        {
+            setGrd();
         }
     }
 }

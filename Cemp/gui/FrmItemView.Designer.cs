@@ -36,10 +36,10 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(843, 12);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd.Location = new System.Drawing.Point(632, 10);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 48);
+            this.btnAdd.Size = new System.Drawing.Size(56, 39);
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "ป้อนใหม่";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -49,20 +49,20 @@
             // 
             this.dgvView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvView.Location = new System.Drawing.Point(12, 12);
-            this.dgvView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvView.Location = new System.Drawing.Point(9, 10);
+            this.dgvView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvView.Name = "dgvView";
             this.dgvView.RowTemplate.Height = 24;
-            this.dgvView.Size = new System.Drawing.Size(816, 619);
+            this.dgvView.Size = new System.Drawing.Size(612, 503);
             this.dgvView.TabIndex = 7;
             this.dgvView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvView_CellDoubleClick);
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(843, 90);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPrint.Location = new System.Drawing.Point(632, 73);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(75, 48);
+            this.btnPrint.Size = new System.Drawing.Size(56, 39);
             this.btnPrint.TabIndex = 9;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
@@ -70,16 +70,17 @@
             // 
             // FrmItemView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 681);
+            this.ClientSize = new System.Drawing.Size(700, 553);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvView);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmItemView";
             this.Text = "FrmItemView";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.FrmItemView_Activated);
             this.Load += new System.EventHandler(this.FrmItemView_Load);
             this.Resize += new System.EventHandler(this.FrmItemView_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();

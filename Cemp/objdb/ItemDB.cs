@@ -93,6 +93,20 @@ namespace Cemp.objdb
             }
             return item;
         }
+        public String selectSortMax()
+        {
+            String sql = "";
+            int cnt = 0;
+            DataTable dt = new DataTable();
+            sql = "Select count(1) as cnt  From " + it.table;
+            dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                cnt = (100 + int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);
+                //cnt = cnt.Substring(cnt.Length - 3); ;
+            }
+            return cnt.ToString();
+        }
         private String insert(Item p)
         {
             String sql = "", chk = "";

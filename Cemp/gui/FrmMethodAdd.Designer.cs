@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtPrefix = new System.Windows.Forms.TextBox();
             this.txtSort1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -52,6 +53,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtPrefix);
             this.groupBox1.Controls.Add(this.txtSort1);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label9);
@@ -76,13 +78,24 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // txtPrefix
+            // 
+            this.txtPrefix.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrefix.Location = new System.Drawing.Point(118, 19);
+            this.txtPrefix.Name = "txtPrefix";
+            this.txtPrefix.Size = new System.Drawing.Size(42, 22);
+            this.txtPrefix.TabIndex = 0;
+            this.txtPrefix.Enter += new System.EventHandler(this.txtPrefix_Enter);
+            this.txtPrefix.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPrefix_KeyUp);
+            this.txtPrefix.Leave += new System.EventHandler(this.txtPrefix_Leave);
+            // 
             // txtSort1
             // 
             this.txtSort1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSort1.Location = new System.Drawing.Point(118, 154);
             this.txtSort1.Name = "txtSort1";
             this.txtSort1.Size = new System.Drawing.Size(100, 22);
-            this.txtSort1.TabIndex = 131;
+            this.txtSort1.TabIndex = 4;
             this.txtSort1.Enter += new System.EventHandler(this.txtSort1_Enter);
             this.txtSort1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSort1_KeyPress);
             this.txtSort1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSort1_KeyUp);
@@ -110,7 +123,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(267, 24);
+            this.label8.Location = new System.Drawing.Point(315, 24);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 13);
             this.label8.TabIndex = 129;
@@ -118,7 +131,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(224, 19);
+            this.btnSearch.Location = new System.Drawing.Point(166, 19);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(37, 23);
             this.btnSearch.TabIndex = 128;
@@ -198,7 +211,7 @@
             // txtId
             // 
             this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(340, 19);
+            this.txtId.Location = new System.Drawing.Point(388, 19);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(26, 22);
             this.txtId.TabIndex = 113;
@@ -250,7 +263,7 @@
             // txtCode
             // 
             this.txtCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode.Location = new System.Drawing.Point(118, 19);
+            this.txtCode.Location = new System.Drawing.Point(209, 19);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(100, 22);
             this.txtCode.TabIndex = 114;
@@ -307,5 +320,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSort1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtPrefix;
     }
 }

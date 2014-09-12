@@ -79,6 +79,7 @@
             this.Name = "FrmMethodView";
             this.Text = "FrmMethodView";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.FrmMethodView_Activated);
             this.Load += new System.EventHandler(this.FrmMethodView_Load);
             this.Resize += new System.EventHandler(this.FrmMethodView_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();
