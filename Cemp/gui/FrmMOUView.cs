@@ -36,7 +36,7 @@ namespace Cemp.gui
         private void setGrd()
         {
             DataTable dt = new DataTable();
-            dt = cc.modb.selectAll();
+            dt = cc.modb.selectMOUView();
             dgvView.ColumnCount = colCnt;
 
             dgvView.RowCount = dt.Rows.Count + 1;
@@ -67,20 +67,20 @@ namespace Cemp.gui
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     dgvView[colRow, i].Value = (i + 1);
-                    dgvView[colMOUNumber, i].Value = dt.Rows[i][cc.modb.mo.MOUNumber].ToString() + "-" + dt.Rows[i][cc.modb.mo.MOUNumberCnt].ToString();
+                    dgvView[colMOUNumber, i].Value = dt.Rows[i][cc.modb.mo.MOUNumber].ToString();
                     dgvView[colCustName, i].Value = dt.Rows[i][cc.modb.mo.CustName].ToString();
                     dgvView[colContactName, i].Value = dt.Rows[i][cc.modb.mo.ContactName].ToString();
-                    dgvView[colId, i].Value = dt.Rows[i][cc.modb.mo.Id].ToString();
-                    if (dt.Rows[i][cc.qudb.qu.StatusQuo].ToString().Equals("1"))
-                    {
-                        dgvView[colStaffName, i].Value = "รออนุมัติ";
-                    }
-                    else if (dt.Rows[i][cc.qudb.qu.StatusQuo].ToString().Equals("2"))
-                    {
-                        dgvView[colStaffName, i].Value = "อนุมัติแล้ว";
-                    }
+                    dgvView[colId, i].Value = "";
+                    //if (dt.Rows[i][cc.modb.mo.statusMOU].ToString().Equals("1"))
+                    //{
+                    //    dgvView[colStaffName, i].Value = "รอเก็บผล";
+                    //}
+                    //else if (dt.Rows[i][cc.modb.mo.statusMOU].ToString().Equals("2"))
+                    //{
+                    //    dgvView[colStaffName, i].Value = "เก็บผลเรียบร้อยแล้ว";
+                    //}
 
-                    dgvView[colStatusMOU, i].Value = dt.Rows[i][cc.modb.mo.statusMOU].ToString();
+                    //dgvView[colStatusMOU, i].Value = dt.Rows[i][cc.modb.mo.statusMOU].ToString();
                     if ((i % 2) != 0)
                     {
                         dgvView.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
@@ -116,7 +116,7 @@ namespace Cemp.gui
                 return;
             }
 
-            FrmMOUAdd frm = new FrmMOUAdd(dgvView[colId, e.RowIndex].Value.ToString(), cc);
+            FrmMOUAdd frm = new FrmMOUAdd(dgvView[colMOUNumber, e.RowIndex].Value.ToString(), cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             setGrd();

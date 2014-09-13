@@ -63,6 +63,7 @@ namespace Cemp.objdb
             qu.StaffApproveId = "staff_approve_id";
             qu.StaffApproveName = "staff_approve_name";
             qu.QuoNumberCnt = "quo_number_cnt";
+            qu.StatusMOU = "status_mou";
 
             qu.table = "t_quotation";
             qu.pkField = "quo_id";
@@ -112,6 +113,7 @@ namespace Cemp.objdb
             item.StaffApproveId = dt.Rows[0][qu.StaffApproveId].ToString();
             item.StaffApproveName = dt.Rows[0][qu.StaffApproveName].ToString();
             item.QuoNumberCnt = dt.Rows[0][qu.QuoNumberCnt].ToString();
+            item.StatusMOU = dt.Rows[0][qu.StatusMOU].ToString();
             return item;
         }
         public DataTable selectAll()
@@ -119,6 +121,15 @@ namespace Cemp.objdb
             String sql = "";
             DataTable dt = new DataTable();
             sql = "Select * From " + qu.table + " Where " + qu.Active + "='1'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectMOUNoQuotation()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From " + qu.table + " Where " + qu.Active + "='1' ";
             dt = conn.selectData(sql);
 
             return dt;
@@ -231,7 +242,7 @@ namespace Cemp.objdb
             p.Line6 = p.Line6.Replace("''", "'");
 
             p.QuoNumberCnt = "1";
-
+            p.StatusMOU = "1";
             
             //p.Remark = p.Remark.Replace("''", "'");
             sql = "Insert Into " + qu.table + " (" + qu.pkField + "," + qu.Amount + "," + qu.AmountDiscount + "," +
@@ -247,8 +258,8 @@ namespace Cemp.objdb
                 qu.Remark3 + "," + qu.StaffEmail + "," + qu.StaffId + "," +
                 qu.StaffName + "," + qu.StaffTel + "," + qu.StatusQuo + "," +
                 qu.Total + "," + qu.Vat + "," + qu.VatRate + "," +
-                qu.StaffApproveId + "," + qu.StaffApproveName + "," + qu.Discount + "," + 
-                qu.QuoNumberCnt + ") " +
+                qu.StaffApproveId + "," + qu.StaffApproveName + "," + qu.Discount + "," +
+                qu.QuoNumberCnt + "," + qu.StatusMOU + ") " +
                 "Values('" + p.Id + "'," + NumberNull1(p.Amount) + "," + NumberNull1(p.AmountDiscount) + ",'" +
                 p.CompAddress1 + "','" + p.CompAddress2 + "','" + p.CompId + "','" +
                 p.CompName + "','" + p.CompTaxId + "','" + p.ContactName + "','" +
@@ -262,8 +273,8 @@ namespace Cemp.objdb
                 p.Remark3 + "','" + p.StaffEmail + "','" + p.StaffId + "','" +
                 p.StaffName + "','" + p.StaffTel + "','" + p.StatusQuo + "'," +
                 NumberNull1(p.Total) + "," + NumberNull1(p.Vat) + "," + NumberNull1(p.VatRate) + ",'" +
-                p.StaffApproveId + "','" + p.StaffApproveName + "'," + NumberNull1(p.Discount) + "," + 
-                NumberNull1(p.QuoNumberCnt) + ")";
+                p.StaffApproveId + "','" + p.StaffApproveName + "'," + NumberNull1(p.Discount) + "," +
+                NumberNull1(p.QuoNumberCnt) + "','" + p.StatusMOU + ")";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

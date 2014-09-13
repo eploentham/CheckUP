@@ -88,7 +88,7 @@ namespace Cemp.objdb
             String sql = "", chk = "";
             if (p.Id.Equals(""))
             {
-                p.Id = "mo" + p.getGenID();
+                p.Id = "moi" + p.getGenID();
             }
 
             p.MethodDescription = p.MethodDescription.Replace("''", "'");
@@ -138,6 +138,7 @@ namespace Cemp.objdb
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
+                chk = p.Id;
             }
             catch (Exception ex)
             {
@@ -148,7 +149,7 @@ namespace Cemp.objdb
             }
             return chk;
         }
-        public String insertMOU(MOUItem p)
+        public String insertMOUItem(MOUItem p)
         {
             MOUItem item = new MOUItem();
             String chk = "";
@@ -170,7 +171,7 @@ namespace Cemp.objdb
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
-        public String VoidMOU(String mod)
+        public String VoidMOUItem(String mod)
         {
             String sql = "", chk = "";
 

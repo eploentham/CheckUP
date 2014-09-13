@@ -31,7 +31,7 @@ namespace Cemp.objdb
             mo.CustEmail = "cust_email";
             mo.CustFax = "cust_fax";
             mo.CustMobile = "cust_mobile";
-            mo.CustMou = "cust_mou";
+            mo.CustMou = "cust_mou_name";
             mo.CustName = "cust_name";
             mo.CustTel = "cust_tel";
             mo.Id = "mou_id";
@@ -42,7 +42,7 @@ namespace Cemp.objdb
             mo.Remark = "remark";
             mo.StaffEmail = "staff_email";
             mo.StaffId = "staff_id";
-            mo.StaffMOU = "staff_mou";
+            mo.StaffMOU = "staff_mou_name";
             mo.StaffName = "staff_name";
             mo.StaffTel = "staff_tel";
             mo.MOUNumberCnt = "mou_number_cnt";
@@ -50,6 +50,8 @@ namespace Cemp.objdb
             mo.DatePeriod = "date_period";
             mo.CustId = "cust_id";
             mo.StaffMobile = "staff_mobile";
+            mo.StaffMOUId = "staff_mou_id";
+            mo.CustMOUId = "cust_mou_id";
 
             mo.pkField = "mou_id";
             mo.table = "t_mou";
@@ -86,6 +88,8 @@ namespace Cemp.objdb
             item.DatePeriod = dt.Rows[0][mo.DatePeriod].ToString();
             item.CustId = dt.Rows[0][mo.CustId].ToString();
             item.StaffMobile = dt.Rows[0][mo.StaffMobile].ToString();
+            item.StaffMOUId = dt.Rows[0][mo.StaffMOUId].ToString();
+            item.CustMOUId = dt.Rows[0][mo.CustMOUId].ToString();
             
             return item;
         }
@@ -94,6 +98,15 @@ namespace Cemp.objdb
             String sql = "";
             DataTable dt = new DataTable();
             sql = "Select * From " + mo.table + " Where " + mo.Active + "='1'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectMOUView()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select Distinct "+mo.MOUNumber+","+mo.CustName+","+mo.ContactName+","+mo.StaffName+" From " + mo.table + " Where " + mo.Active + "='1'";
             dt = conn.selectData(sql);
 
             return dt;
@@ -125,12 +138,12 @@ namespace Cemp.objdb
 
         //    return dt;
         //}
-        public MOU selectByPk(String saleId)
+        public MOU selectByPk(String moId)
         {
             MOU item = new MOU();
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + mo.table + " Where " + mo.pkField + "='" + saleId + "'";
+            sql = "Select * From " + mo.table + " Where " + mo.pkField + "='" + moId + "'";
             dt = conn.selectData(sql);
             if (dt.Rows.Count > 0)
             {
@@ -138,19 +151,28 @@ namespace Cemp.objdb
             }
             return item;
         }
-        public MOU selectByNumber(String moId)
+        public DataTable selectByNumber(String moNumber)
         {
-            MOU item = new MOU();
             String sql = "";
 
-            sql = "Select * From " + mo.table + " Where " + mo.MOUNumber + "='" + moId + "'";
+            sql = "Select "+mo.MOUNumber+","+mo.Id+","+mo.MOUNumberCnt+" From " + mo.table + " Where " + mo.MOUNumber + "='" + moNumber + "' and "+mo.Active+"='1'";
             //dt = conn.selectData(sql);
             DataTable dt = conn.selectData(sql);
-            if (dt.Rows.Count > 0)
-            {
-                item = setData(item, conn.dt);
-            }
-            return item;
+            //if (dt.Rows.Count > 0)
+            //{
+            //    item = setData(item, conn.dt);
+            //}
+            return dt;
+        }
+        public String selectMaxByNumber(String moNumber)
+        {
+            String sql = "";
+
+            sql = "Select count(1) as cnt From " + mo.table + " Where " + mo.MOUNumber + "='" + moNumber + "' ";
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+            sql = String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);
+            return sql;
         }
         private String insert(MOU p)
         {
@@ -177,18 +199,18 @@ namespace Cemp.objdb
                 mo.Line1 + "," + mo.MOUNumber + "," + mo.QuoId + "," +
                 mo.QuoNumber + "," + mo.Remark + "," + mo.StaffEmail + "," +
                 mo.StaffId + "," + mo.StaffMOU + "," + mo.StaffName + "," +
-                mo.StaffTel + "," + mo.MOUNumberCnt + "," + mo.Remark + "," +
-                mo.statusMOU + "," + mo.DatePeriod + "," + mo.CustId + "," + mo.StaffMobile + ") " +
+                mo.StaffTel + "," + mo.MOUNumberCnt + "," + mo.StaffMobile + "," +
+                mo.statusMOU + "," + mo.DatePeriod + "," + mo.CustId + "," + mo.CustMOUId + "," + mo.StaffMOUId + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.CompAddress1 + "','" +
                 p.CompAddress2 + "','" + p.CompId + "','" + p.CompName + "','" +
                 p.CompTaxId + "','" + p.ContactName + "','" + p.CustAddress + "','" +
                 p.CustEmail + "','" + p.CustFax + "','" + p.CustMobile + "','" +
                 p.CustMou + "','" + p.CustName + "','" + p.CustTel + "','" +
-                p.Line1 + "','" + p.MOUNumber + "','" + p.QuoId + ",'" +
+                p.Line1 + "','" + p.MOUNumber + "','" + p.QuoId + "','" +
                 p.QuoNumber + "','" + p.Remark + "','" + p.StaffEmail + "','" +
                 p.StaffId + "','" + p.StaffMOU + "','" + p.StaffName + "','" +
-                p.StaffTel + "','" + p.MOUNumberCnt + "','" + p.Remark + "','" +
-                p.statusMOU + "','" + p.DatePeriod + "','" + p.CustId + "','" + p.StaffMobile + "')";
+                p.StaffTel + "'," + p.MOUNumberCnt + ",'" + p.StaffMobile + "','" +
+                p.statusMOU + "','" + p.DatePeriod + "','" + p.CustId + "','" + p.CustMOUId + "','" + p.StaffMOUId + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -217,14 +239,14 @@ namespace Cemp.objdb
             p.StaffName = p.StaffName.Replace("''", "'");
             p.Remark = p.Remark.Replace("''", "'");
 
-            sql = "Update " + mo.table + " Set " + mo.CompAddress1 + "=" + p.CompAddress1 + ", " +
-                mo.CompAddress2 + "=" + p.CompAddress2 + ", " +
+            sql = "Update " + mo.table + " Set " + mo.CompAddress1 + "='" + p.CompAddress1 + "', " +
+                mo.CompAddress2 + "='" + p.CompAddress2 + "', " +
                 mo.CompId + "='" + p.CompId + "', " +
                 mo.CompName + "='" + p.CompName + "', " +
                 mo.CompTaxId + "='" + p.CompTaxId + "', " +
                 mo.ContactName + "='" + p.ContactName + "', " +
-                mo.CustAddress + "=" + p.CustAddress + ", " +
-                mo.CustEmail + "=" + p.CustEmail + ", " +
+                mo.CustAddress + "='" + p.CustAddress + "', " +
+                mo.CustEmail + "='" + p.CustEmail + "', " +
                 mo.CustFax + "='" + p.CustFax + "', " +
                 mo.CustMobile + "='" + p.CustMobile + "', " +
                 mo.CustMou + "='" + p.CustMou + "', " +
@@ -240,15 +262,16 @@ namespace Cemp.objdb
                 mo.StaffMOU + "='" + p.StaffMOU + "', " +
                 mo.StaffName + "='" + p.StaffName + "', " +
                 mo.StaffTel + "='" + p.StaffTel + "', " +
-                mo.MOUNumberCnt + "='" + p.MOUNumberCnt + "', " +
+                mo.MOUNumberCnt + "=" + p.MOUNumberCnt + ", " +
                 mo.DatePeriod + "='" + p.DatePeriod + "', " +
-                mo.Remark + "='" + p.Remark + "', " +
+                //mo.Remark + "='" + p.Remark + "', " +
                 mo.CustId + "='" + p.CustId + "', " +
                 mo.StaffMobile + "='" + p.StaffMobile + "' " +
                 "Where " + mo.pkField + "='" + p.Id + "'";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
+                chk = p.Id;
             }
             catch (Exception ex)
             {
@@ -290,20 +313,73 @@ namespace Cemp.objdb
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
-        //public ComboBox getCboItemDescription(ComboBox c)
-        //{
-        //    ComboBoxItem item = new ComboBoxItem();
-        //    DataTable dt = selectDistinctItemDescription();
-        //    for (int i = 0; i < dt.Rows.Count; i++)
-        //    {
-        //        item = new ComboBoxItem();
-        //        item.Value = dt.Rows[i][mo.ItemDescription].ToString();
-        //        item.Text = dt.Rows[i][mo.ItemDescription].ToString();
-        //        c.Items.Add(item);
-        //        //c.Items.Add(new );
-        //    }
-        //    //c.SelectedItem = item;
-        //    return c;
-        //}
+        public ComboBox getCboMOUNumber(ComboBox c, String mouNumber)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectByNumber(mouNumber);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i][mo.Id].ToString();
+                item.Text = dt.Rows[i][mo.MOUNumber].ToString() + "-" + dt.Rows[i][mo.MOUNumberCnt].ToString();
+                c.Items.Add(item);
+                //c.Items.Add(new );
+            }
+            //c.SelectedItem = item;
+            return c;
+        }
+        public String getMOUNumber(String mouNumber)
+        {
+            String sql = "", doc = "", cnt = "", year = "";
+            String[] doc1 = mouNumber.Split('-');
+            if (!mouNumber.Equals(""))
+            {
+                if (doc[0].ToString().Length > 5)
+                {
+                    year = doc[0].ToString().Substring(2, 2);
+                }
+            }
+            else
+            {
+                year = getYear();
+            }
+            sql = "Select count(" + mo.QuoNumber + ") as cnt From " + mo.table + " Where +" + mo.MOUNumber + "='" + doc1[0] + "'";
+            DataTable dt = conn.selectData(sql);
+            if ((dt.Rows.Count > 0) && (!doc1[0].Equals("")))
+            {
+                cnt = String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);
+                doc = doc1[0];
+            }
+            else
+            {
+                //if (!System.DateTime.Now.Year.ToString().Equals(year))
+                //{
+                //year = getYear();
+                //    year = year.Substring(2);
+                //}
+                sql = "Select count(" + mo.QuoNumber + ") as cnt From " + mo.table;
+                dt = conn.selectData(sql);
+                doc = String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);
+                doc = "00000" + doc;
+                doc = doc.Substring(doc.Length - 5);
+                cnt = "1";
+                //doc = "00001";
+            }
+            return "MOU" + year + doc + "-" + cnt;
+        }
+        public String getYear()
+        {
+            String year = "";
+            if (System.DateTime.Now.Year > 2550)
+            {
+                year = System.DateTime.Now.Year.ToString().Substring(2);
+            }
+            else
+            {
+                year = String.Concat(System.DateTime.Now.Year + 543);
+            }
+            year = year.Substring(2);
+            return year;
+        }
     }
 }

@@ -55,6 +55,7 @@ namespace Cemp.gui
             //groupBox3.Left = dgvAdd.Width - groupBox3.Width - 50;
             btnSave.Left = dgvAdd.Width - 80;
             btnPrint.Left = btnSave.Left;
+            btnPrintT.Left = btnSave.Left;
             groupBox2.Left = this.Width - groupBox2.Width - btnSave.Width - 150;
             groupBox3.Left = groupBox2.Left;
             //groupBox1.Height = this.Height = 150;
