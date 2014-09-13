@@ -35,12 +35,16 @@ namespace Cemp.gui
             txtCustMobile.Text = mo.CustMobile;
             txtCustName.Text = mo.CustName;
             txtCustTel.Text = mo.CustTel;
+            txtCustMobile.Text = mo.CustMobile;
+            cboQuo.Text = "";
+            cboCustMou.Text = "";
+
             txtMOUId.Text = mo.Id;
             txtMouNumber.Text = mo.MOUNumber+"-"+mo.MOUNumberCnt;
             txtStaffEmail.Text = mo.StaffEmail;
             txtStaffMobile.Text = mo.StaffMobile;
             txtStaffTel.Text = mo.StaffTel;
-            cboQuo.Text = "";
+            
             cboStaff.Text = mo.StaffName;
             cboStaffMOU.Text = mo.StaffMOU;
 

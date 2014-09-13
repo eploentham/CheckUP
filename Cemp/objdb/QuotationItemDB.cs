@@ -148,10 +148,10 @@ namespace Cemp.objdb
             p.ItemGroupNameT = p.ItemGroupNameT.Replace("''", "'");
             
             //p. = p.ItemGroupNameT.Replace("''", "'");
-            //p.ItemGroupNameT = p.ItemGroupNameT.Replace("''", "'");
-            //p.ItemGroupNameT = p.ItemGroupNameT.Replace("''", "'");
-            //p.ItemGroupNameT = p.ItemGroupNameT.Replace("''", "'");
-            //p.ItemGroupNameT = p.ItemGroupNameT.Replace("''", "'");
+            p.PriceSale = p.PriceSale.Replace(",", "");
+            p.Qty = p.Qty.Replace(",", "");
+            p.Amount = p.Amount.Replace(",", "");
+            p.Discount = p.Discount.Replace(",", "");
             //p.ItemGroupNameT = p.ItemGroupNameT.Replace("''", "'");
 
             if (p.ItemGroupSort.Equals(""))

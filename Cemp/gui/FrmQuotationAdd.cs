@@ -101,9 +101,9 @@ namespace Cemp.gui
             cboStaffApprove.Text = qu.StaffApproveName;
             txtStaffApproveId.Text = qu.StaffApproveId;
 
-            txtLine1.Text = qu.Line1;
-            txtLine2.Text = qu.Line2;
-            txtLine3.Text = qu.Line3;
+            //txtLine1.Text = qu.Line1;
+            //txtLine2.Text = qu.Line2;
+            //txtLine3.Text = qu.Line3;
             txtLine4.Text = qu.Line4;
             txtLine5.Text = qu.Line5;
             txtLine6.Text = qu.Line6;
@@ -124,9 +124,9 @@ namespace Cemp.gui
                     txtCompTaxId.Text = cp.TaxId;
                     txtVatRate.Text = cp.vat;
                 }
-                txtLine1.Text = cc.initC.quoLine1;
-                txtLine2.Text = cc.initC.quoLine2;
-                txtLine3.Text = cc.initC.quoLine3;
+                //txtLine1.Text = cc.initC.quoLine1;
+                //txtLine2.Text = cc.initC.quoLine2;
+                //txtLine3.Text = cc.initC.quoLine3;
                 txtLine4.Text = cc.initC.quoLine4;
                 txtLine5.Text = cc.initC.quoLine5;
                 txtLine6.Text = cc.initC.quoLine6;
@@ -176,9 +176,9 @@ namespace Cemp.gui
             qu.Remark3 = cboRemark3.Text;
             qu.ContactName = cboContact.Text;
 
-            qu.Line1 = txtLine1.Text;
-            qu.Line2 = txtLine2.Text;
-            qu.Line3 = txtLine3.Text;
+            //qu.Line1 = txtLine1.Text;
+            //qu.Line2 = txtLine2.Text;
+            //qu.Line3 = txtLine3.Text;
             qu.Line4 = txtLine4.Text;
             qu.Line5 = txtLine5.Text;
             qu.Line6 = txtLine6.Text;
