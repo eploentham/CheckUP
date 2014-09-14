@@ -73,13 +73,13 @@
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cboRemark7 = new System.Windows.Forms.ComboBox();
             this.label38 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cboRemark6 = new System.Windows.Forms.ComboBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboRemark5 = new System.Windows.Forms.ComboBox();
             this.label36 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboRemark4 = new System.Windows.Forms.ComboBox();
             this.label35 = new System.Windows.Forms.Label();
             this.cboRemark3 = new System.Windows.Forms.ComboBox();
             this.cboRemark2 = new System.Windows.Forms.ComboBox();
@@ -652,13 +652,13 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.comboBox4);
+            this.groupBox4.Controls.Add(this.cboRemark7);
             this.groupBox4.Controls.Add(this.label38);
-            this.groupBox4.Controls.Add(this.comboBox3);
+            this.groupBox4.Controls.Add(this.cboRemark6);
             this.groupBox4.Controls.Add(this.label37);
-            this.groupBox4.Controls.Add(this.comboBox2);
+            this.groupBox4.Controls.Add(this.cboRemark5);
             this.groupBox4.Controls.Add(this.label36);
-            this.groupBox4.Controls.Add(this.comboBox1);
+            this.groupBox4.Controls.Add(this.cboRemark4);
             this.groupBox4.Controls.Add(this.label35);
             this.groupBox4.Controls.Add(this.cboRemark3);
             this.groupBox4.Controls.Add(this.cboRemark2);
@@ -675,15 +675,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "หมายเหตุ";
             // 
-            // comboBox4
+            // cboRemark7
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(40, 191);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(446, 25);
-            this.comboBox4.TabIndex = 38;
+            this.cboRemark7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cboRemark7.FormattingEnabled = true;
+            this.cboRemark7.Location = new System.Drawing.Point(40, 191);
+            this.cboRemark7.Margin = new System.Windows.Forms.Padding(2);
+            this.cboRemark7.Name = "cboRemark7";
+            this.cboRemark7.Size = new System.Drawing.Size(446, 25);
+            this.cboRemark7.TabIndex = 38;
             // 
             // label38
             // 
@@ -696,15 +696,15 @@
             this.label38.TabIndex = 37;
             this.label38.Text = "7 :";
             // 
-            // comboBox3
+            // cboRemark6
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(40, 162);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(446, 25);
-            this.comboBox3.TabIndex = 36;
+            this.cboRemark6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cboRemark6.FormattingEnabled = true;
+            this.cboRemark6.Location = new System.Drawing.Point(40, 162);
+            this.cboRemark6.Margin = new System.Windows.Forms.Padding(2);
+            this.cboRemark6.Name = "cboRemark6";
+            this.cboRemark6.Size = new System.Drawing.Size(446, 25);
+            this.cboRemark6.TabIndex = 36;
             // 
             // label37
             // 
@@ -717,15 +717,15 @@
             this.label37.TabIndex = 35;
             this.label37.Text = "6 :";
             // 
-            // comboBox2
+            // cboRemark5
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(40, 133);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(446, 25);
-            this.comboBox2.TabIndex = 34;
+            this.cboRemark5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cboRemark5.FormattingEnabled = true;
+            this.cboRemark5.Location = new System.Drawing.Point(40, 133);
+            this.cboRemark5.Margin = new System.Windows.Forms.Padding(2);
+            this.cboRemark5.Name = "cboRemark5";
+            this.cboRemark5.Size = new System.Drawing.Size(446, 25);
+            this.cboRemark5.TabIndex = 34;
             // 
             // label36
             // 
@@ -738,15 +738,15 @@
             this.label36.TabIndex = 33;
             this.label36.Text = "5 :";
             // 
-            // comboBox1
+            // cboRemark4
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(40, 104);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(446, 25);
-            this.comboBox1.TabIndex = 32;
+            this.cboRemark4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cboRemark4.FormattingEnabled = true;
+            this.cboRemark4.Location = new System.Drawing.Point(40, 104);
+            this.cboRemark4.Margin = new System.Windows.Forms.Padding(2);
+            this.cboRemark4.Name = "cboRemark4";
+            this.cboRemark4.Size = new System.Drawing.Size(446, 25);
+            this.cboRemark4.TabIndex = 32;
             // 
             // label35
             // 
@@ -1370,13 +1370,13 @@
         private System.Windows.Forms.TextBox txtLine4;
         private System.Windows.Forms.TextBox txtLine5;
         private System.Windows.Forms.TextBox txtLine6;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboRemark5;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboRemark4;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboRemark6;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cboRemark7;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Button btnPrintT;
         private System.Windows.Forms.TextBox txtLine2;

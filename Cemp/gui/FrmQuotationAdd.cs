@@ -70,6 +70,10 @@ namespace Cemp.gui
             cboRemark1 = cc.qudb.getCboRemark1(cboRemark1);
             cboRemark2 = cc.qudb.getCboRemark2(cboRemark2);
             cboRemark3 = cc.qudb.getCboRemark3(cboRemark3);
+            cboRemark4 = cc.qudb.getCboRemark4(cboRemark4);
+            cboRemark5 = cc.qudb.getCboRemark5(cboRemark5);
+            cboRemark6 = cc.qudb.getCboRemark6(cboRemark6);
+            cboRemark7 = cc.qudb.getCboRemark7(cboRemark7);
             cboItem = cc.itdb.getCboItemQuotation(cboItem);
             //cboMethod = cc.medb.getCboMethod(cboMethod);
 
@@ -113,6 +117,10 @@ namespace Cemp.gui
             cboRemark1.Text = qu.Remark1;
             cboRemark2.Text = qu.Remark2;
             cboRemark3.Text = qu.Remark3;
+            cboRemark4.Text = qu.Remark4;
+            cboRemark5.Text = qu.Remark5;
+            cboRemark6.Text = qu.Remark6;
+            cboRemark7.Text = qu.Remark7;
 
             if (qu.Id.Equals(""))
             {
@@ -183,6 +191,11 @@ namespace Cemp.gui
             qu.Line4 = txtLine4.Text;
             qu.Line5 = txtLine5.Text;
             qu.Line6 = txtLine6.Text;
+
+            qu.Remark4 = cboRemark4.Text;
+            qu.Remark5 = cboRemark5.Text;
+            qu.Remark6 = cboRemark6.Text;
+            qu.Remark7 = cboRemark7.Text;
             //qu.StatusQuo = "1";
         }
         private void setGrd(String quId)
@@ -817,6 +830,12 @@ namespace Cemp.gui
             qu.Remark1 = "1. " + qu.Remark1;
             qu.Remark2 = "2. " + qu.Remark2;
             qu.Remark3 = "3. " + qu.Remark3;
+            qu.Remark4 = "4. " + qu.Remark4;
+            qu.Remark5 = "5. " + qu.Remark5;
+            qu.Remark6 = "6. " + qu.Remark6;
+            qu.Remark7 = "7. " + qu.Remark7;
+            //qu.Amount = "รวมราคา " + qu.Amount;
+            //qu.Discount = "ส่วนลด " + qu.Amount;
             //DataTable dtqu = cc.qudb.selectPrintById(txtQuId.Text);
             //DataTable dtqui = cc.quidb.selectByQuId(txtQuId.Text);
             //DataSet ds = new DataSet();

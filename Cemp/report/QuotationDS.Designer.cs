@@ -299,7 +299,7 @@ namespace Cemp.report {
             
             private global::System.Data.DataColumn columndiscount;
             
-            private global::System.Data.DataColumn columnamount;
+            private global::System.Data.DataColumn columnamount1;
             
             private global::System.Data.DataColumn columnquo_item_active;
             
@@ -428,9 +428,9 @@ namespace Cemp.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn amountColumn {
+            public global::System.Data.DataColumn amount1Column {
                 get {
-                    return this.columnamount;
+                    return this.columnamount1;
                 }
             }
             
@@ -530,7 +530,7 @@ namespace Cemp.report {
                         decimal qty, 
                         decimal price_sale, 
                         decimal discount, 
-                        decimal amount, 
+                        decimal amount1, 
                         string quo_item_active, 
                         string remark, 
                         string item_group_sort, 
@@ -549,7 +549,7 @@ namespace Cemp.report {
                         qty,
                         price_sale,
                         discount,
-                        amount,
+                        amount1,
                         quo_item_active,
                         remark,
                         item_group_sort,
@@ -595,7 +595,7 @@ namespace Cemp.report {
                 this.columnqty = base.Columns["qty"];
                 this.columnprice_sale = base.Columns["price_sale"];
                 this.columndiscount = base.Columns["discount"];
-                this.columnamount = base.Columns["amount"];
+                this.columnamount1 = base.Columns["amount1"];
                 this.columnquo_item_active = base.Columns["quo_item_active"];
                 this.columnremark = base.Columns["remark"];
                 this.columnitem_group_sort = base.Columns["item_group_sort"];
@@ -627,8 +627,8 @@ namespace Cemp.report {
                 base.Columns.Add(this.columnprice_sale);
                 this.columndiscount = new global::System.Data.DataColumn("discount", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndiscount);
-                this.columnamount = new global::System.Data.DataColumn("amount", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnamount);
+                this.columnamount1 = new global::System.Data.DataColumn("amount1", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnamount1);
                 this.columnquo_item_active = new global::System.Data.DataColumn("quo_item_active", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnquo_item_active);
                 this.columnremark = new global::System.Data.DataColumn("remark", typeof(string), null, global::System.Data.MappingType.Element);
@@ -955,17 +955,17 @@ namespace Cemp.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal amount {
+            public decimal amount1 {
                 get {
                     try {
-                        return ((decimal)(this[this.tablet_quotation_item.amountColumn]));
+                        return ((decimal)(this[this.tablet_quotation_item.amount1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'amount\' in table \'t_quotation_item\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'amount1\' in table \'t_quotation_item\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablet_quotation_item.amountColumn] = value;
+                    this[this.tablet_quotation_item.amount1Column] = value;
                 }
             }
             
@@ -1175,14 +1175,14 @@ namespace Cemp.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsamountNull() {
-                return this.IsNull(this.tablet_quotation_item.amountColumn);
+            public bool Isamount1Null() {
+                return this.IsNull(this.tablet_quotation_item.amount1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetamountNull() {
-                this[this.tablet_quotation_item.amountColumn] = global::System.Convert.DBNull;
+            public void Setamount1Null() {
+                this[this.tablet_quotation_item.amount1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1427,7 +1427,7 @@ namespace Cemp.report.QuotationDSTableAdapters {
             tableMapping.ColumnMappings.Add("qty", "qty");
             tableMapping.ColumnMappings.Add("price_sale", "price_sale");
             tableMapping.ColumnMappings.Add("discount", "discount");
-            tableMapping.ColumnMappings.Add("amount", "amount");
+            tableMapping.ColumnMappings.Add("amount", "amount1");
             tableMapping.ColumnMappings.Add("quo_item_active", "quo_item_active");
             tableMapping.ColumnMappings.Add("remark", "remark");
             tableMapping.ColumnMappings.Add("item_group_sort", "item_group_sort");

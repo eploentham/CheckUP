@@ -64,6 +64,10 @@ namespace Cemp.objdb
             qu.StaffApproveName = "staff_approve_name";
             qu.QuoNumberCnt = "quo_number_cnt";
             qu.StatusMOU = "status_mou";
+            qu.Remark4 = "remark4";
+            qu.Remark5 = "remark5";
+            qu.Remark6 = "remark6";
+            qu.Remark7 = "remark7";
 
             qu.table = "t_quotation";
             qu.pkField = "quo_id";
@@ -114,6 +118,11 @@ namespace Cemp.objdb
             item.StaffApproveName = dt.Rows[0][qu.StaffApproveName].ToString();
             item.QuoNumberCnt = dt.Rows[0][qu.QuoNumberCnt].ToString();
             item.StatusMOU = dt.Rows[0][qu.StatusMOU].ToString();
+            item.Remark4 = dt.Rows[0][qu.Remark4].ToString();
+            item.Remark5 = dt.Rows[0][qu.Remark5].ToString();
+            item.Remark6 = dt.Rows[0][qu.Remark6].ToString();
+            item.Remark7 = dt.Rows[0][qu.Remark7].ToString();
+
             return item;
         }
         public DataTable selectAll()
@@ -157,6 +166,42 @@ namespace Cemp.objdb
             String sql = "";
             DataTable dt = new DataTable();
             sql = "Select Distinct " + qu.Remark3 + " From " + qu.table + " Where " + qu.Active + "='1'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectDistinctRemark4()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select Distinct " + qu.Remark4 + " From " + qu.table + " Where " + qu.Active + "='1'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectDistinctRemark5()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select Distinct " + qu.Remark5 + " From " + qu.table + " Where " + qu.Active + "='1'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectDistinctRemark6()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select Distinct " + qu.Remark6 + " From " + qu.table + " Where " + qu.Active + "='1'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectDistinctRemark7()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select Distinct " + qu.Remark7 + " From " + qu.table + " Where " + qu.Active + "='1'";
             dt = conn.selectData(sql);
 
             return dt;
@@ -241,6 +286,11 @@ namespace Cemp.objdb
             p.Line5 = p.Line5.Replace("''", "'");
             p.Line6 = p.Line6.Replace("''", "'");
 
+            p.Remark4 = p.Remark4.Replace("''", "'");
+            p.Remark5 = p.Remark5.Replace("''", "'");
+            p.Remark6 = p.Remark6.Replace("''", "'");
+            p.Remark7 = p.Remark7.Replace("''", "'");
+
             p.QuoNumberCnt = "1";
             p.StatusMOU = "1";
             
@@ -259,7 +309,7 @@ namespace Cemp.objdb
                 qu.StaffName + "," + qu.StaffTel + "," + qu.StatusQuo + "," +
                 qu.Total + "," + qu.Vat + "," + qu.VatRate + "," +
                 qu.StaffApproveId + "," + qu.StaffApproveName + "," + qu.Discount + "," +
-                qu.QuoNumberCnt + "," + qu.StatusMOU + ") " +
+                qu.QuoNumberCnt + "," + qu.StatusMOU + "," + qu.Remark4 + "," + qu.Remark5 + "," + qu.Remark6 + "," + qu.Remark7 + ") " +
                 "Values('" + p.Id + "'," + NumberNull1(p.Amount) + "," + NumberNull1(p.AmountDiscount) + ",'" +
                 p.CompAddress1 + "','" + p.CompAddress2 + "','" + p.CompId + "','" +
                 p.CompName + "','" + p.CompTaxId + "','" + p.ContactName + "','" +
@@ -274,7 +324,7 @@ namespace Cemp.objdb
                 p.StaffName + "','" + p.StaffTel + "','" + p.StatusQuo + "'," +
                 NumberNull1(p.Total) + "," + NumberNull1(p.Vat) + "," + NumberNull1(p.VatRate) + ",'" +
                 p.StaffApproveId + "','" + p.StaffApproveName + "'," + NumberNull1(p.Discount) + "," +
-                NumberNull1(p.QuoNumberCnt) + ",'" + p.StatusMOU + "')";
+                NumberNull1(p.QuoNumberCnt) + ",'" + p.StatusMOU + ",'" + p.Remark4 + ",'" + p.Remark5 + ",'" + p.Remark6 + ",'" + p.Remark7 + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -312,6 +362,11 @@ namespace Cemp.objdb
             p.Line4 = p.Line4.Replace("''", "'");
             p.Line5 = p.Line5.Replace("''", "'");
             p.Line6 = p.Line6.Replace("''", "'");
+
+            p.Remark4 = p.Remark4.Replace("''", "'");
+            p.Remark5 = p.Remark5.Replace("''", "'");
+            p.Remark6 = p.Remark6.Replace("''", "'");
+            p.Remark7 = p.Remark7.Replace("''", "'");
 
             sql = "Update " + qu.table + " Set " + qu.Amount + "=" + NumberNull1(p.Amount) + ", " +
                 qu.AmountDiscount + "=" + NumberNull1(p.AmountDiscount) + ", " +
@@ -353,7 +408,11 @@ namespace Cemp.objdb
                 qu.StaffApproveId + "='" + p.StaffApproveId + "', " +
                 qu.StaffApproveName + "='" + p.StaffApproveName + "', " +
                 qu.Discount + "=" + NumberNull1(p.Discount) + ", " +
-                qu.QuoNumberCnt + "='" + p.QuoNumberCnt + "' " +
+                qu.QuoNumberCnt + "='" + p.QuoNumberCnt + "', " +
+                qu.Remark4 + "='" + p.Remark4 + "', " +
+                qu.Remark5 + "='" + p.Remark5 + "', " +
+                qu.Remark6 + "='" + p.Remark6 + "', " +
+                qu.Remark7 + "='" + p.Remark7 + "' " +
                 "Where " + qu.pkField + "='" + p.Id + "'";
             try
             {
@@ -505,6 +564,66 @@ namespace Cemp.objdb
                 item = new ComboBoxItem();
                 item.Value = dt.Rows[i][qu.Remark3].ToString();
                 item.Text = dt.Rows[i][qu.Remark3].ToString();
+                c.Items.Add(item);
+                //c.Items.Add(new );
+            }
+            //c.SelectedItem = item;
+            return c;
+        }
+        public ComboBox getCboRemark4(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectDistinctRemark4();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i][qu.Remark4].ToString();
+                item.Text = dt.Rows[i][qu.Remark4].ToString();
+                c.Items.Add(item);
+                //c.Items.Add(new );
+            }
+            //c.SelectedItem = item;
+            return c;
+        }
+        public ComboBox getCboRemark5(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectDistinctRemark5();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i][qu.Remark5].ToString();
+                item.Text = dt.Rows[i][qu.Remark5].ToString();
+                c.Items.Add(item);
+                //c.Items.Add(new );
+            }
+            //c.SelectedItem = item;
+            return c;
+        }
+        public ComboBox getCboRemark6(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectDistinctRemark6();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i][qu.Remark6].ToString();
+                item.Text = dt.Rows[i][qu.Remark6].ToString();
+                c.Items.Add(item);
+                //c.Items.Add(new );
+            }
+            //c.SelectedItem = item;
+            return c;
+        }
+        public ComboBox getCboRemark7(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectDistinctRemark7();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i][qu.Remark7].ToString();
+                item.Text = dt.Rows[i][qu.Remark7].ToString();
                 c.Items.Add(item);
                 //c.Items.Add(new );
             }

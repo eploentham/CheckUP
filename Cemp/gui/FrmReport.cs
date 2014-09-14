@@ -160,6 +160,10 @@ namespace Cemp
                 rpt.SetParameterValue("remark1", qu.Remark1);
                 rpt.SetParameterValue("remark2", qu.Remark2);
                 rpt.SetParameterValue("remark3", qu.Remark3);
+                rpt.SetParameterValue("remark4", qu.Remark4);
+                rpt.SetParameterValue("remark5", qu.Remark5);
+                rpt.SetParameterValue("remark6", qu.Remark6);
+                rpt.SetParameterValue("remark7", qu.Remark7);
 
                 rpt.SetParameterValue("line1", qu.Line1);
                 rpt.SetParameterValue("line2", qu.Line2);
@@ -168,7 +172,7 @@ namespace Cemp
                 rpt.SetParameterValue("line5", qu.Line5);
                 rpt.SetParameterValue("line6", qu.Line6);
                 rpt.SetParameterValue("staffApproveName", qu.StaffApproveName);
-                rpt.SetParameterValue("amount1", qu.Amount);
+                rpt.SetParameterValue("amount2", qu.Amount);
                 rpt.SetParameterValue("discountPer", qu.DiscountPer);
                 rpt.SetParameterValue("discount", qu.Discount);
                 rpt.SetParameterValue("amountDiscount", qu.AmountDiscount);
@@ -178,6 +182,8 @@ namespace Cemp
                 rpt.SetParameterValue("vatRate", qu.VatRate);
                 rpt.SetParameterValue("vat", qu.Vat);
                 rpt.SetParameterValue("netTotal", qu.NetTotal);
+
+
                 //rpt.SetParameterValue("", qu.QuoDate);
                 //rpt.SetParameterValue("", qu.QuoDate);
                 //rpt.SetParameterValue("", qu.QuoDate);

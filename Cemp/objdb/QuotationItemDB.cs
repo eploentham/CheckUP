@@ -21,7 +21,7 @@ namespace Cemp.objdb
         {
             qui = new QuotationItem();
             qui.Active = "quo_item_active";
-            qui.Amount = "amount";
+            qui.Amount = "amount1";
             qui.Discount = "discount";
             qui.Id = "quo_item_id";
             qui.ItemDescription = "item_description";

@@ -332,6 +332,18 @@
       <DependentUpon>QuotationPrint2.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="report\QuotationPrint3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuotationPrint3.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\QuotationPrint4.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuotationPrint4.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="gui\FrmQuotationAdd1.resx">
       <DependentUpon>FrmQuotationAdd1.cs</DependentUpon>
     </EmbeddedResource>
@@ -443,6 +455,14 @@
     <EmbeddedResource Include="report\QuotationPrint2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>QuotationPrint2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\QuotationPrint3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>QuotationPrint3.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\QuotationPrint4.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>QuotationPrint4.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>

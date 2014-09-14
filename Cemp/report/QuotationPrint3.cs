@@ -16,14 +16,14 @@ namespace Cemp.report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class QuotationPrint : ReportClass {
+    public class QuotationPrint3 : ReportClass {
         
-        public QuotationPrint() {
+        public QuotationPrint3() {
         }
         
         public override string ResourceName {
             get {
-                return "QuotationPrint.rpt";
+                return "QuotationPrint3.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Cemp.report {
         
         public override string FullResourceName {
             get {
-                return "Cemp.report.QuotationPrint.rpt";
+                return "Cemp.report.QuotationPrint3.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,25 +82,9 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[6];
+                return this.ReportDefinition.Sections[4];
             }
         }
         
@@ -114,7 +98,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_header2 {
+        public CrystalDecisions.Shared.IParameterField Parameter_compTaxId {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -122,7 +106,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_header3 {
+        public CrystalDecisions.Shared.IParameterField Parameter_compAddress2 {
             get {
                 return this.DataDefinition.ParameterFields[2];
             }
@@ -130,7 +114,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_compName {
+        public CrystalDecisions.Shared.IParameterField Parameter_compAddress1 {
             get {
                 return this.DataDefinition.ParameterFields[3];
             }
@@ -138,7 +122,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_compAddress1 {
+        public CrystalDecisions.Shared.IParameterField Parameter_compName {
             get {
                 return this.DataDefinition.ParameterFields[4];
             }
@@ -146,7 +130,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_compAddress2 {
+        public CrystalDecisions.Shared.IParameterField Parameter_quoNumber {
             get {
                 return this.DataDefinition.ParameterFields[5];
             }
@@ -154,7 +138,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_compTaxId {
+        public CrystalDecisions.Shared.IParameterField Parameter_quoDate {
             get {
                 return this.DataDefinition.ParameterFields[6];
             }
@@ -162,7 +146,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_quoNumber {
+        public CrystalDecisions.Shared.IParameterField Parameter_contactName {
             get {
                 return this.DataDefinition.ParameterFields[7];
             }
@@ -170,7 +154,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_quoDate {
+        public CrystalDecisions.Shared.IParameterField Parameter_custName {
             get {
                 return this.DataDefinition.ParameterFields[8];
             }
@@ -178,7 +162,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_line1 {
+        public CrystalDecisions.Shared.IParameterField Parameter_custAddress {
             get {
                 return this.DataDefinition.ParameterFields[9];
             }
@@ -186,7 +170,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_contactName {
+        public CrystalDecisions.Shared.IParameterField Parameter_custTel {
             get {
                 return this.DataDefinition.ParameterFields[10];
             }
@@ -194,7 +178,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_custName {
+        public CrystalDecisions.Shared.IParameterField Parameter_staffName {
             get {
                 return this.DataDefinition.ParameterFields[11];
             }
@@ -202,7 +186,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_custAddress {
+        public CrystalDecisions.Shared.IParameterField Parameter_staffTel {
             get {
                 return this.DataDefinition.ParameterFields[12];
             }
@@ -210,7 +194,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_custTel {
+        public CrystalDecisions.Shared.IParameterField Parameter_staffEmail {
             get {
                 return this.DataDefinition.ParameterFields[13];
             }
@@ -218,7 +202,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_custFax {
+        public CrystalDecisions.Shared.IParameterField Parameter_line1 {
             get {
                 return this.DataDefinition.ParameterFields[14];
             }
@@ -226,7 +210,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_custEmail {
+        public CrystalDecisions.Shared.IParameterField Parameter_line2 {
             get {
                 return this.DataDefinition.ParameterFields[15];
             }
@@ -234,7 +218,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_line2 {
+        public CrystalDecisions.Shared.IParameterField Parameter_remark1 {
             get {
                 return this.DataDefinition.ParameterFields[16];
             }
@@ -242,7 +226,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_staffName {
+        public CrystalDecisions.Shared.IParameterField Parameter_remark2 {
             get {
                 return this.DataDefinition.ParameterFields[17];
             }
@@ -250,7 +234,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_staffTel {
+        public CrystalDecisions.Shared.IParameterField Parameter_remark3 {
             get {
                 return this.DataDefinition.ParameterFields[18];
             }
@@ -258,7 +242,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_staffEmail {
+        public CrystalDecisions.Shared.IParameterField Parameter_discountPer {
             get {
                 return this.DataDefinition.ParameterFields[19];
             }
@@ -266,7 +250,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_remark1 {
+        public CrystalDecisions.Shared.IParameterField Parameter_discount {
             get {
                 return this.DataDefinition.ParameterFields[20];
             }
@@ -274,7 +258,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_remark2 {
+        public CrystalDecisions.Shared.IParameterField Parameter_amountDiscount {
             get {
                 return this.DataDefinition.ParameterFields[21];
             }
@@ -282,7 +266,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_remark3 {
+        public CrystalDecisions.Shared.IParameterField Parameter_plus1Name {
             get {
                 return this.DataDefinition.ParameterFields[22];
             }
@@ -290,7 +274,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_line3 {
+        public CrystalDecisions.Shared.IParameterField Parameter_plus1 {
             get {
                 return this.DataDefinition.ParameterFields[23];
             }
@@ -298,7 +282,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_line4 {
+        public CrystalDecisions.Shared.IParameterField Parameter_total {
             get {
                 return this.DataDefinition.ParameterFields[24];
             }
@@ -306,7 +290,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_line5 {
+        public CrystalDecisions.Shared.IParameterField Parameter_vatRate {
             get {
                 return this.DataDefinition.ParameterFields[25];
             }
@@ -314,7 +298,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_line6 {
+        public CrystalDecisions.Shared.IParameterField Parameter_vat {
             get {
                 return this.DataDefinition.ParameterFields[26];
             }
@@ -322,7 +306,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_staffApproveName {
+        public CrystalDecisions.Shared.IParameterField Parameter_netTotal {
             get {
                 return this.DataDefinition.ParameterFields[27];
             }
@@ -330,7 +314,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_amount2 {
+        public CrystalDecisions.Shared.IParameterField Parameter_line3 {
             get {
                 return this.DataDefinition.ParameterFields[28];
             }
@@ -338,7 +322,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_discountPer {
+        public CrystalDecisions.Shared.IParameterField Parameter_line4 {
             get {
                 return this.DataDefinition.ParameterFields[29];
             }
@@ -346,7 +330,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_discount {
+        public CrystalDecisions.Shared.IParameterField Parameter_line5 {
             get {
                 return this.DataDefinition.ParameterFields[30];
             }
@@ -354,7 +338,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_amountDiscount {
+        public CrystalDecisions.Shared.IParameterField Parameter_line6 {
             get {
                 return this.DataDefinition.ParameterFields[31];
             }
@@ -362,7 +346,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_plus1Name {
+        public CrystalDecisions.Shared.IParameterField Parameter_staffApproveName {
             get {
                 return this.DataDefinition.ParameterFields[32];
             }
@@ -370,7 +354,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_plus1 {
+        public CrystalDecisions.Shared.IParameterField Parameter_custfax {
             get {
                 return this.DataDefinition.ParameterFields[33];
             }
@@ -378,129 +362,17 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_total {
+        public CrystalDecisions.Shared.IParameterField Parameter_custemail {
             get {
                 return this.DataDefinition.ParameterFields[34];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_vatRate {
-            get {
-                return this.DataDefinition.ParameterFields[35];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_vat {
-            get {
-                return this.DataDefinition.ParameterFields[36];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_netTotal {
-            get {
-                return this.DataDefinition.ParameterFields[37];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_remark4 {
-            get {
-                return this.DataDefinition.ParameterFields[38];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_remark5 {
-            get {
-                return this.DataDefinition.ParameterFields[39];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_remark6 {
-            get {
-                return this.DataDefinition.ParameterFields[40];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_remark7 {
-            get {
-                return this.DataDefinition.ParameterFields[41];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_lamount {
-            get {
-                return this.DataDefinition.ParameterFields[42];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_ldiscount {
-            get {
-                return this.DataDefinition.ParameterFields[43];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_ldiscountper {
-            get {
-                return this.DataDefinition.ParameterFields[44];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_lplus1name {
-            get {
-                return this.DataDefinition.ParameterFields[45];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_ltotal {
-            get {
-                return this.DataDefinition.ParameterFields[46];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_lnettotal {
-            get {
-                return this.DataDefinition.ParameterFields[47];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_lvat {
-            get {
-                return this.DataDefinition.ParameterFields[48];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedQuotationPrint : Component, ICachedReport {
+    public class CachedQuotationPrint3 : Component, ICachedReport {
         
-        public CachedQuotationPrint() {
+        public CachedQuotationPrint3() {
         }
         
         [Browsable(false)]
@@ -537,7 +409,7 @@ namespace Cemp.report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            QuotationPrint rpt = new QuotationPrint();
+            QuotationPrint3 rpt = new QuotationPrint3();
             rpt.Site = this.Site;
             return rpt;
         }

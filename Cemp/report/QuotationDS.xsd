@@ -150,7 +150,7 @@
               <Mapping SourceColumn="qty" DataSetColumn="qty" />
               <Mapping SourceColumn="price_sale" DataSetColumn="price_sale" />
               <Mapping SourceColumn="discount" DataSetColumn="discount" />
-              <Mapping SourceColumn="amount" DataSetColumn="amount" />
+              <Mapping SourceColumn="amount" DataSetColumn="amount1" />
               <Mapping SourceColumn="quo_item_active" DataSetColumn="quo_item_active" />
               <Mapping SourceColumn="remark" DataSetColumn="remark" />
               <Mapping SourceColumn="item_group_sort" DataSetColumn="item_group_sort" />
@@ -168,7 +168,7 @@
   <xs:element name="QuotationDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="QuotationDS" msprop:Generator_UserDSName="QuotationDS">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="t_quotation_item" msprop:Generator_TableClassName="t_quotation_itemDataTable" msprop:Generator_TableVarName="tablet_quotation_item" msprop:Generator_TablePropName="t_quotation_item" msprop:Generator_RowDeletingName="t_quotation_itemRowDeleting" msprop:Generator_RowChangingName="t_quotation_itemRowChanging" msprop:Generator_RowEvHandlerName="t_quotation_itemRowChangeEventHandler" msprop:Generator_RowDeletedName="t_quotation_itemRowDeleted" msprop:Generator_UserTableName="t_quotation_item" msprop:Generator_RowChangedName="t_quotation_itemRowChanged" msprop:Generator_RowEvArgName="t_quotation_itemRowChangeEvent" msprop:Generator_RowClassName="t_quotation_itemRow">
+        <xs:element name="t_quotation_item" msprop:Generator_TableClassName="t_quotation_itemDataTable" msprop:Generator_TableVarName="tablet_quotation_item" msprop:Generator_RowChangedName="t_quotation_itemRowChanged" msprop:Generator_TablePropName="t_quotation_item" msprop:Generator_RowDeletingName="t_quotation_itemRowDeleting" msprop:Generator_RowChangingName="t_quotation_itemRowChanging" msprop:Generator_RowEvHandlerName="t_quotation_itemRowChangeEventHandler" msprop:Generator_RowDeletedName="t_quotation_itemRowDeleted" msprop:Generator_RowClassName="t_quotation_itemRow" msprop:Generator_UserTableName="t_quotation_item" msprop:Generator_RowEvArgName="t_quotation_itemRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="quo_item_id" msprop:Generator_ColumnVarNameInTable="columnquo_item_id" msprop:Generator_ColumnPropNameInRow="quo_item_id" msprop:Generator_ColumnPropNameInTable="quo_item_idColumn" msprop:Generator_UserColumnName="quo_item_id">
@@ -217,7 +217,7 @@
               <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:decimal" minOccurs="0" />
               <xs:element name="price_sale" msprop:Generator_ColumnVarNameInTable="columnprice_sale" msprop:Generator_ColumnPropNameInRow="price_sale" msprop:Generator_ColumnPropNameInTable="price_saleColumn" msprop:Generator_UserColumnName="price_sale" type="xs:decimal" minOccurs="0" />
               <xs:element name="discount" msprop:Generator_ColumnVarNameInTable="columndiscount" msprop:Generator_ColumnPropNameInRow="discount" msprop:Generator_ColumnPropNameInTable="discountColumn" msprop:Generator_UserColumnName="discount" type="xs:decimal" minOccurs="0" />
-              <xs:element name="amount" msprop:Generator_ColumnVarNameInTable="columnamount" msprop:Generator_ColumnPropNameInRow="amount" msprop:Generator_ColumnPropNameInTable="amountColumn" msprop:Generator_UserColumnName="amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="amount1" msprop:Generator_ColumnVarNameInTable="columnamount1" msprop:Generator_ColumnPropNameInRow="amount1" msprop:Generator_ColumnPropNameInTable="amount1Column" msprop:Generator_UserColumnName="amount1" type="xs:decimal" minOccurs="0" />
               <xs:element name="quo_item_active" msprop:Generator_ColumnVarNameInTable="columnquo_item_active" msprop:Generator_ColumnPropNameInRow="quo_item_active" msprop:Generator_ColumnPropNameInTable="quo_item_activeColumn" msprop:Generator_UserColumnName="quo_item_active" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
