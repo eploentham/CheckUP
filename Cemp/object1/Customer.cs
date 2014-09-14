@@ -9,7 +9,7 @@ namespace Cemp.object1
     {
         public String Id = "", Code = "", NameT = "", NameE = "", amphurId = "", districtId = "", provinceId="", AddressT="", AddressE="", saleId = "", Active = "", saleName = "";
         public String Fax = "", Tele="", Email="", TaxId="", Remark="", Zipcode="", ContactName1="", ContactName2="", ContactName1Tel="", ContactName2Tel="";
-        public String Addr = "";
+        public String Addr = "", StatusCompany="", StatusVendor="";
         public override string ToString()
         {
             return saleName+"."+NameT;

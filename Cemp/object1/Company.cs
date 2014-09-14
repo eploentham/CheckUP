@@ -9,6 +9,6 @@ namespace Cemp.object1
     {
         public String Id = "", NameT = "", NameE = "", amphurId = "", districtId = "", provinceId = "", AddressT = "", AddressE = "";
         public String Fax = "", Tele = "", Email = "", TaxId = "", Zipcode = "", vat="", logo="", Code="";
-        public String Addr = "", WebSite="";
+        public String Addr = "", WebSite="", Spec1="";
     }
 }

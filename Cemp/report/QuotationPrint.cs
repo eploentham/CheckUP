@@ -330,7 +330,7 @@ namespace Cemp.report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_amount {
+        public CrystalDecisions.Shared.IParameterField Parameter_amount1 {
             get {
                 return this.DataDefinition.ParameterFields[28];
             }

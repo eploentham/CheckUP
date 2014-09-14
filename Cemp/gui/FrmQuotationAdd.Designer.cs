@@ -122,6 +122,7 @@
             this.txtLine5 = new System.Windows.Forms.TextBox();
             this.txtLine6 = new System.Windows.Forms.TextBox();
             this.btnPrintT = new System.Windows.Forms.Button();
+            this.txtLine2 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
@@ -143,7 +144,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(383, 136);
+            this.groupBox1.Size = new System.Drawing.Size(513, 136);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "รายละเอียด บริษัท";
@@ -154,7 +155,7 @@
             this.txtCompTaxId.Location = new System.Drawing.Point(67, 106);
             this.txtCompTaxId.Margin = new System.Windows.Forms.Padding(2);
             this.txtCompTaxId.Name = "txtCompTaxId";
-            this.txtCompTaxId.Size = new System.Drawing.Size(298, 23);
+            this.txtCompTaxId.Size = new System.Drawing.Size(442, 23);
             this.txtCompTaxId.TabIndex = 7;
             this.txtCompTaxId.Enter += new System.EventHandler(this.txtCompTaxId_Enter);
             this.txtCompTaxId.Leave += new System.EventHandler(this.txtCompTaxId_Leave);
@@ -176,7 +177,7 @@
             this.txtCompAddress2.Location = new System.Drawing.Point(67, 79);
             this.txtCompAddress2.Margin = new System.Windows.Forms.Padding(2);
             this.txtCompAddress2.Name = "txtCompAddress2";
-            this.txtCompAddress2.Size = new System.Drawing.Size(298, 23);
+            this.txtCompAddress2.Size = new System.Drawing.Size(442, 23);
             this.txtCompAddress2.TabIndex = 5;
             this.txtCompAddress2.Enter += new System.EventHandler(this.txtCompAddress2_Enter);
             this.txtCompAddress2.Leave += new System.EventHandler(this.txtCompAddress2_Leave);
@@ -198,7 +199,7 @@
             this.txtCompAddress1.Location = new System.Drawing.Point(67, 52);
             this.txtCompAddress1.Margin = new System.Windows.Forms.Padding(2);
             this.txtCompAddress1.Name = "txtCompAddress1";
-            this.txtCompAddress1.Size = new System.Drawing.Size(298, 23);
+            this.txtCompAddress1.Size = new System.Drawing.Size(442, 23);
             this.txtCompAddress1.TabIndex = 3;
             this.txtCompAddress1.Enter += new System.EventHandler(this.txtCompAddress1_Enter);
             this.txtCompAddress1.Leave += new System.EventHandler(this.txtCompAddress1_Leave);
@@ -221,7 +222,7 @@
             this.cboComp.Location = new System.Drawing.Point(67, 24);
             this.cboComp.Margin = new System.Windows.Forms.Padding(2);
             this.cboComp.Name = "cboComp";
-            this.cboComp.Size = new System.Drawing.Size(298, 25);
+            this.cboComp.Size = new System.Drawing.Size(442, 25);
             this.cboComp.TabIndex = 1;
             this.cboComp.Enter += new System.EventHandler(this.cboComp_Enter);
             this.cboComp.Leave += new System.EventHandler(this.cboComp_Leave);
@@ -261,11 +262,11 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.cboCust);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(397, 10);
+            this.groupBox2.Location = new System.Drawing.Point(542, 10);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(376, 187);
+            this.groupBox2.Size = new System.Drawing.Size(438, 187);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "รายละเอียด ลูกค้า";
@@ -276,7 +277,7 @@
             this.txtCustEmail.Location = new System.Drawing.Point(67, 153);
             this.txtCustEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustEmail.Name = "txtCustEmail";
-            this.txtCustEmail.Size = new System.Drawing.Size(298, 23);
+            this.txtCustEmail.Size = new System.Drawing.Size(367, 23);
             this.txtCustEmail.TabIndex = 13;
             this.txtCustEmail.Enter += new System.EventHandler(this.txtCustEmail_Enter);
             this.txtCustEmail.Leave += new System.EventHandler(this.txtCustEmail_Leave);
@@ -298,7 +299,7 @@
             this.txtCustFax.Location = new System.Drawing.Point(67, 126);
             this.txtCustFax.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustFax.Name = "txtCustFax";
-            this.txtCustFax.Size = new System.Drawing.Size(298, 23);
+            this.txtCustFax.Size = new System.Drawing.Size(367, 23);
             this.txtCustFax.TabIndex = 11;
             this.txtCustFax.Enter += new System.EventHandler(this.txtCustFax_Enter);
             this.txtCustFax.Leave += new System.EventHandler(this.txtCustFax_Leave);
@@ -320,7 +321,7 @@
             this.txtCustTel.Location = new System.Drawing.Point(67, 99);
             this.txtCustTel.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustTel.Name = "txtCustTel";
-            this.txtCustTel.Size = new System.Drawing.Size(298, 23);
+            this.txtCustTel.Size = new System.Drawing.Size(367, 23);
             this.txtCustTel.TabIndex = 9;
             this.txtCustTel.Enter += new System.EventHandler(this.txtCustTel_Enter);
             this.txtCustTel.Leave += new System.EventHandler(this.txtCustTel_Leave);
@@ -342,7 +343,7 @@
             this.txtCustAddress.Location = new System.Drawing.Point(67, 72);
             this.txtCustAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustAddress.Name = "txtCustAddress";
-            this.txtCustAddress.Size = new System.Drawing.Size(298, 23);
+            this.txtCustAddress.Size = new System.Drawing.Size(367, 23);
             this.txtCustAddress.TabIndex = 7;
             this.txtCustAddress.Enter += new System.EventHandler(this.txtCustAddress_Enter);
             this.txtCustAddress.Leave += new System.EventHandler(this.txtCustAddress_Leave);
@@ -365,7 +366,7 @@
             this.cboContact.Location = new System.Drawing.Point(67, 45);
             this.cboContact.Margin = new System.Windows.Forms.Padding(2);
             this.cboContact.Name = "cboContact";
-            this.cboContact.Size = new System.Drawing.Size(298, 25);
+            this.cboContact.Size = new System.Drawing.Size(367, 25);
             this.cboContact.TabIndex = 5;
             this.cboContact.Enter += new System.EventHandler(this.cboContact_Enter);
             this.cboContact.Leave += new System.EventHandler(this.cboContact_Leave);
@@ -388,7 +389,7 @@
             this.cboCust.Location = new System.Drawing.Point(67, 17);
             this.cboCust.Margin = new System.Windows.Forms.Padding(2);
             this.cboCust.Name = "cboCust";
-            this.cboCust.Size = new System.Drawing.Size(298, 25);
+            this.cboCust.Size = new System.Drawing.Size(367, 25);
             this.cboCust.TabIndex = 3;
             this.cboCust.SelectedIndexChanged += new System.EventHandler(this.cboCust_SelectedIndexChanged);
             this.cboCust.Enter += new System.EventHandler(this.cboCust_Enter);
@@ -409,7 +410,7 @@
             // 
             this.dgvAdd.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAdd.Location = new System.Drawing.Point(8, 254);
+            this.dgvAdd.Location = new System.Drawing.Point(8, 264);
             this.dgvAdd.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAdd.Name = "dgvAdd";
             this.dgvAdd.RowTemplate.Height = 24;
@@ -961,7 +962,7 @@
             // 
             this.cboItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.cboItem.FormattingEnabled = true;
-            this.cboItem.Location = new System.Drawing.Point(196, 223);
+            this.cboItem.Location = new System.Drawing.Point(196, 233);
             this.cboItem.Margin = new System.Windows.Forms.Padding(2);
             this.cboItem.Name = "cboItem";
             this.cboItem.Size = new System.Drawing.Size(342, 25);
@@ -974,7 +975,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label29.Location = new System.Drawing.Point(110, 228);
+            this.label29.Location = new System.Drawing.Point(110, 238);
             this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(82, 17);
@@ -985,7 +986,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label31.Location = new System.Drawing.Point(600, 207);
+            this.label31.Location = new System.Drawing.Point(600, 217);
             this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(27, 17);
@@ -995,7 +996,7 @@
             // txtItemQty
             // 
             this.txtItemQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtItemQty.Location = new System.Drawing.Point(588, 225);
+            this.txtItemQty.Location = new System.Drawing.Point(588, 235);
             this.txtItemQty.Margin = new System.Windows.Forms.Padding(2);
             this.txtItemQty.Name = "txtItemQty";
             this.txtItemQty.Size = new System.Drawing.Size(56, 23);
@@ -1009,7 +1010,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label32.Location = new System.Drawing.Point(665, 207);
+            this.label32.Location = new System.Drawing.Point(665, 217);
             this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(39, 17);
@@ -1019,7 +1020,7 @@
             // txtItemPrice
             // 
             this.txtItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtItemPrice.Location = new System.Drawing.Point(654, 225);
+            this.txtItemPrice.Location = new System.Drawing.Point(654, 235);
             this.txtItemPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtItemPrice.Name = "txtItemPrice";
             this.txtItemPrice.Size = new System.Drawing.Size(78, 23);
@@ -1031,7 +1032,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(842, 23);
+            this.btnSave.Location = new System.Drawing.Point(1049, 23);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(56, 29);
@@ -1042,7 +1043,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(832, 225);
+            this.btnAdd.Location = new System.Drawing.Point(832, 235);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(31, 25);
@@ -1055,7 +1056,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label33.Location = new System.Drawing.Point(751, 207);
+            this.label33.Location = new System.Drawing.Point(751, 217);
             this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(55, 17);
@@ -1065,7 +1066,7 @@
             // txtItemAmount
             // 
             this.txtItemAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtItemAmount.Location = new System.Drawing.Point(742, 225);
+            this.txtItemAmount.Location = new System.Drawing.Point(742, 235);
             this.txtItemAmount.Margin = new System.Windows.Forms.Padding(2);
             this.txtItemAmount.Name = "txtItemAmount";
             this.txtItemAmount.Size = new System.Drawing.Size(78, 23);
@@ -1076,7 +1077,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label34.Location = new System.Drawing.Point(13, 229);
+            this.label34.Location = new System.Drawing.Point(13, 239);
             this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(45, 17);
@@ -1086,7 +1087,7 @@
             // txtRow
             // 
             this.txtRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtRow.Location = new System.Drawing.Point(60, 227);
+            this.txtRow.Location = new System.Drawing.Point(60, 237);
             this.txtRow.Margin = new System.Windows.Forms.Padding(2);
             this.txtRow.Name = "txtRow";
             this.txtRow.Size = new System.Drawing.Size(42, 23);
@@ -1105,7 +1106,7 @@
             // txtCustId
             // 
             this.txtCustId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCustId.Location = new System.Drawing.Point(780, 55);
+            this.txtCustId.Location = new System.Drawing.Point(987, 55);
             this.txtCustId.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustId.Name = "txtCustId";
             this.txtCustId.Size = new System.Drawing.Size(43, 23);
@@ -1134,7 +1135,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(867, 225);
+            this.btnDel.Location = new System.Drawing.Point(867, 235);
             this.btnDel.Margin = new System.Windows.Forms.Padding(2);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(31, 25);
@@ -1145,7 +1146,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(842, 157);
+            this.btnPrint.Location = new System.Drawing.Point(1049, 157);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(56, 29);
@@ -1156,7 +1157,7 @@
             // 
             // btnItemSearch
             // 
-            this.btnItemSearch.Location = new System.Drawing.Point(542, 223);
+            this.btnItemSearch.Location = new System.Drawing.Point(542, 233);
             this.btnItemSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnItemSearch.Name = "btnItemSearch";
             this.btnItemSearch.Size = new System.Drawing.Size(31, 25);
@@ -1197,19 +1198,30 @@
             // 
             // btnPrintT
             // 
-            this.btnPrintT.Location = new System.Drawing.Point(842, 124);
+            this.btnPrintT.Location = new System.Drawing.Point(1049, 124);
             this.btnPrintT.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrintT.Name = "btnPrintT";
             this.btnPrintT.Size = new System.Drawing.Size(56, 29);
             this.btnPrintT.TabIndex = 51;
             this.btnPrintT.Text = "พิมพ์";
             this.btnPrintT.UseVisualStyleBackColor = true;
+            this.btnPrintT.Click += new System.EventHandler(this.btnPrintT_Click);
+            // 
+            // txtLine2
+            // 
+            this.txtLine2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtLine2.Location = new System.Drawing.Point(8, 201);
+            this.txtLine2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLine2.Name = "txtLine2";
+            this.txtLine2.Size = new System.Drawing.Size(565, 23);
+            this.txtLine2.TabIndex = 52;
             // 
             // FrmQuotationAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(957, 765);
+            this.ClientSize = new System.Drawing.Size(1134, 765);
+            this.Controls.Add(this.txtLine2);
             this.Controls.Add(this.btnPrintT);
             this.Controls.Add(this.txtLine6);
             this.Controls.Add(this.txtLine5);
@@ -1367,5 +1379,6 @@
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Button btnPrintT;
+        private System.Windows.Forms.TextBox txtLine2;
     }
 }

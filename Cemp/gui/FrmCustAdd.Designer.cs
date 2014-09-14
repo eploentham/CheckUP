@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.chkStatusVendor = new System.Windows.Forms.RadioButton();
+            this.chkStatusCustomer = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.chkStatusPublic = new System.Windows.Forms.RadioButton();
+            this.chkStatusCompany = new System.Windows.Forms.RadioButton();
             this.txtRemark2 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -76,10 +82,14 @@
             this.txtCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel2);
+            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.txtRemark2);
             this.groupBox1.Controls.Add(this.label21);
             this.groupBox1.Controls.Add(this.label18);
@@ -131,6 +141,76 @@
             this.groupBox1.Size = new System.Drawing.Size(844, 432);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.chkStatusVendor);
+            this.panel2.Controls.Add(this.chkStatusCustomer);
+            this.panel2.Location = new System.Drawing.Point(545, 298);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(266, 60);
+            this.panel2.TabIndex = 108;
+            // 
+            // chkStatusVendor
+            // 
+            this.chkStatusVendor.AutoSize = true;
+            this.chkStatusVendor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.chkStatusVendor.Location = new System.Drawing.Point(146, 24);
+            this.chkStatusVendor.Margin = new System.Windows.Forms.Padding(2);
+            this.chkStatusVendor.Name = "chkStatusVendor";
+            this.chkStatusVendor.Size = new System.Drawing.Size(72, 21);
+            this.chkStatusVendor.TabIndex = 108;
+            this.chkStatusVendor.TabStop = true;
+            this.chkStatusVendor.Text = "Vendor";
+            this.chkStatusVendor.UseVisualStyleBackColor = true;
+            // 
+            // chkStatusCustomer
+            // 
+            this.chkStatusCustomer.AutoSize = true;
+            this.chkStatusCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.chkStatusCustomer.Location = new System.Drawing.Point(21, 23);
+            this.chkStatusCustomer.Margin = new System.Windows.Forms.Padding(2);
+            this.chkStatusCustomer.Name = "chkStatusCustomer";
+            this.chkStatusCustomer.Size = new System.Drawing.Size(55, 21);
+            this.chkStatusCustomer.TabIndex = 107;
+            this.chkStatusCustomer.TabStop = true;
+            this.chkStatusCustomer.Text = "ลูกค้า";
+            this.chkStatusCustomer.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.chkStatusPublic);
+            this.panel1.Controls.Add(this.chkStatusCompany);
+            this.panel1.Location = new System.Drawing.Point(545, 237);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(266, 51);
+            this.panel1.TabIndex = 107;
+            // 
+            // chkStatusPublic
+            // 
+            this.chkStatusPublic.AutoSize = true;
+            this.chkStatusPublic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.chkStatusPublic.Location = new System.Drawing.Point(142, 19);
+            this.chkStatusPublic.Margin = new System.Windows.Forms.Padding(2);
+            this.chkStatusPublic.Name = "chkStatusPublic";
+            this.chkStatusPublic.Size = new System.Drawing.Size(102, 21);
+            this.chkStatusPublic.TabIndex = 106;
+            this.chkStatusPublic.TabStop = true;
+            this.chkStatusPublic.Text = "บริษัท มหาชน";
+            this.chkStatusPublic.UseVisualStyleBackColor = true;
+            // 
+            // chkStatusCompany
+            // 
+            this.chkStatusCompany.AutoSize = true;
+            this.chkStatusCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.chkStatusCompany.Location = new System.Drawing.Point(17, 19);
+            this.chkStatusCompany.Margin = new System.Windows.Forms.Padding(2);
+            this.chkStatusCompany.Name = "chkStatusCompany";
+            this.chkStatusCompany.Size = new System.Drawing.Size(87, 21);
+            this.chkStatusCompany.TabIndex = 105;
+            this.chkStatusCompany.TabStop = true;
+            this.chkStatusCompany.Text = "บริษัทจำกัด";
+            this.chkStatusCompany.UseVisualStyleBackColor = true;
             // 
             // txtRemark2
             // 
@@ -633,6 +713,10 @@
             this.Load += new System.EventHandler(this.FrmCustAdd_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -686,5 +770,11 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtRemark2;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton chkStatusVendor;
+        private System.Windows.Forms.RadioButton chkStatusCustomer;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton chkStatusPublic;
+        private System.Windows.Forms.RadioButton chkStatusCompany;
     }
 }

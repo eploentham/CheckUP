@@ -40,6 +40,7 @@ namespace Cemp.objdb
             cp.Addr = "addr";
             cp.Code = "comp_code";
             cp.WebSite = "website";
+            cp.Spec1 = "spec1";
 
             cp.pkField = "comp_id";
             cp.table = "b_company";
@@ -65,6 +66,7 @@ namespace Cemp.objdb
             item.Addr = dt.Rows[0][cp.Addr].ToString();
             item.Code = dt.Rows[0][cp.Code].ToString();
             item.WebSite = dt.Rows[0][cp.WebSite].ToString();
+            item.Spec1 = dt.Rows[0][cp.Spec1].ToString();
 
             return item;
         }
@@ -102,18 +104,20 @@ namespace Cemp.objdb
             p.NameE = p.NameE.Replace("''", "'");
             p.NameT = p.NameT.Replace("''", "'");
             p.Addr = p.Addr.Replace("''", "'");
+            p.Spec1 = p.Spec1.Replace("''", "'");
+
             sql = "Insert Into " + cp.table + " (" + cp.pkField + "," + cp.AddressE + "," + cp.AddressT + "," +
                 cp.amphurId + "," + cp.districtId + "," + cp.Email + "," +
                 cp.Fax + "," + cp.NameE + "," + cp.NameT + "," +
                 cp.provinceId + "," + cp.TaxId + "," + cp.Tele + "," +
                 cp.vat + "," + cp.Zipcode + "," + cp.WebSite + "," +
-                cp.logo + "," + cp.Addr + "," + cp.Code + ") " +
+                cp.logo + "," + cp.Addr + "," + cp.Code + "," + cp.Spec1 + ") " +
                 "Values('" + p.Id + "','" + p.AddressE + "','" + p.AddressT + "','" +
                 p.amphurId + "','" + p.districtId + "','" + p.Email + "','" +
                 p.Fax + "','" + p.NameE + "','" + p.NameT + "','" +
                 p.provinceId + "','" + p.TaxId + "','" + p.Tele + "','" +
                 p.vat + "','" + p.Zipcode + "','" + p.WebSite + "','" +
-                p.logo + "','" + p.Addr + "','" + p.Code + "')";
+                p.logo + "','" + p.Addr + "','" + p.Code + "','" + p.Spec1 + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -153,7 +157,8 @@ namespace Cemp.objdb
                 cp.Zipcode + "='" + p.Zipcode + "', " +
                 cp.WebSite + "='" + p.WebSite + "', " +
                 cp.Addr + "='" + p.Addr + "', " +
-                cp.Code + "='" + p.Code + "' " +
+                cp.Code + "='" + p.Code + "', " +
+                cp.Spec1 + "='" + p.Spec1 + "' " +
                 "Where " + cp.pkField + "='" + p.Id + "'";
             try
             {

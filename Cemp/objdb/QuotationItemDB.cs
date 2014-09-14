@@ -195,14 +195,14 @@ namespace Cemp.objdb
             {
                 p.ItemGroupSort = "999";
             }
-            sql = "Update " + qui.table + " Set " + qui.Amount + "=" + p.Amount + ", " +
+            sql = "Update " + qui.table + " Set " + qui.Amount + "=" + NumberNull1(p.Amount.Replace(",","")) + ", " +
                 qui.Discount + "=" + NumberNull1(p.Discount) + ", " +
                 qui.ItemDescription + "='" + p.ItemDescription + "', " +
                 qui.ItemId + "='" + p.ItemId + "', " +
                 qui.MethodDescription + "='" + p.MethodDescription + "', " +
                 qui.MethodId + "='" + p.MethodId + "', " +
-                qui.PriceSale + "=" + p.PriceSale + ", " +
-                qui.Qty + "=" + p.Qty + ", " +
+                qui.PriceSale + "=" + NumberNull1(p.PriceSale.Replace(",","")) + ", " +
+                qui.Qty + "=" + NumberNull1(p.Qty.Replace(",","")) + ", " +
                 qui.QuoId + "='" + p.QuoId + "', " +
                 qui.RowNumber + "='" + p.RowNumber + "', " +
                 qui.Remark + "='" + p.Remark + "', " +

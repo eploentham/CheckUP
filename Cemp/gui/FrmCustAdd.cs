@@ -72,6 +72,37 @@ namespace Cemp.gui
                 ChkUnActive.Checked = false;
                 btnUnActive.Visible = false;
             }
+            if (cu.StatusCompany.Equals("1"))
+            {
+                chkStatusCompany.Checked = true;
+                chkStatusPublic.Checked = false;
+            }
+            else if (cu.StatusCompany.Equals("2"))
+            {
+                chkStatusCompany.Checked = false;
+                chkStatusPublic.Checked = true;
+            }
+            else
+            {
+                chkStatusCompany.Checked = true;
+                chkStatusPublic.Checked = false;
+            }
+
+            if (cu.StatusVendor.Equals("1"))
+            {
+                chkStatusCustomer.Checked = true;
+                chkStatusVendor.Checked = false;
+            }
+            else if (cu.StatusVendor.Equals("2"))
+            {
+                chkStatusCustomer.Checked = false;
+                chkStatusVendor.Checked = true;
+            }
+            else
+            {
+                chkStatusCustomer.Checked = true;
+                chkStatusVendor.Checked = false;
+            }
             label18.Text = cu.districtId;
             if (label18.Text.Length > 4)
             {
@@ -103,6 +134,22 @@ namespace Cemp.gui
             cu.ContactName2 = txtContactName2.Text;
             cu.ContactName2Tel = txtContactName2Tel.Text;
             cu.Remark = txtRemark.Text;
+            if (chkStatusCompany.Checked)
+            {
+                cu.StatusCompany = "1";
+            }
+            else
+            {
+                cu.StatusCompany = "2";
+            }
+            if (chkStatusCustomer.Checked)
+            {
+                cu.StatusVendor = "1";
+            }
+            else
+            {
+                cu.StatusVendor = "2";
+            }
         }
         private void FrmCustAdd_Load(object sender, EventArgs e)
         {

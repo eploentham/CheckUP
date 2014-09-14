@@ -139,7 +139,7 @@ namespace Cemp
                 //rpt.SetParameterValue("header2", reportName);
                 //rpt.SetParameterValue("header3", condition);
 
-                rpt.SetParameterValue("quoNumber", qu.QuoNumber+"-"+qu.QuoNumberCnt);
+                rpt.SetParameterValue("quoNumber", qu.QuoNumber);
                 rpt.SetParameterValue("quoDate", qu.QuoDate);
                 rpt.SetParameterValue("contactName", qu.ContactName);
                 rpt.SetParameterValue("compName", qu.CompName);
@@ -168,7 +168,7 @@ namespace Cemp
                 rpt.SetParameterValue("line5", qu.Line5);
                 rpt.SetParameterValue("line6", qu.Line6);
                 rpt.SetParameterValue("staffApproveName", qu.StaffApproveName);
-                rpt.SetParameterValue("amount", qu.Amount);
+                rpt.SetParameterValue("amount1", qu.Amount);
                 rpt.SetParameterValue("discountPer", qu.DiscountPer);
                 rpt.SetParameterValue("discount", qu.Discount);
                 rpt.SetParameterValue("amountDiscount", qu.AmountDiscount);

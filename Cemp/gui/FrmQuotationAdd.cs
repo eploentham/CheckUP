@@ -103,7 +103,7 @@ namespace Cemp.gui
             txtStaffApproveId.Text = qu.StaffApproveId;
 
             //txtLine1.Text = qu.Line1;
-            //txtLine2.Text = qu.Line2;
+            txtLine2.Text = qu.Line2;
             //txtLine3.Text = qu.Line3;
             txtLine4.Text = qu.Line4;
             txtLine5.Text = qu.Line5;
@@ -121,12 +121,12 @@ namespace Cemp.gui
                     cboComp.Text = cp.NameT;
                     txtCompId.Text = cp.Id;
                     txtCompAddress1.Text = cp.AddressT;
-                    txtCompAddress2.Text = cp.AddressT;
-                    txtCompTaxId.Text = cp.TaxId;
+                    txtCompAddress2.Text = "TEL. "+cp.Tele+" FAX. "+cp.Fax+" Email : "+cp.Email;
+                    txtCompTaxId.Text = cp.Spec1+" เลขประจำตัวผู้เสียภาษีอากร"+cp.TaxId;
                     txtVatRate.Text = cp.vat;
                 }
                 //txtLine1.Text = cc.initC.quoLine1;
-                //txtLine2.Text = cc.initC.quoLine2;
+                txtLine2.Text = cc.initC.quoLine2;
                 //txtLine3.Text = cc.initC.quoLine3;
                 txtLine4.Text = cc.initC.quoLine4;
                 txtLine5.Text = cc.initC.quoLine5;
@@ -178,7 +178,7 @@ namespace Cemp.gui
             qu.ContactName = cboContact.Text;
 
             //qu.Line1 = txtLine1.Text;
-            //qu.Line2 = txtLine2.Text;
+            qu.Line2 = txtLine2.Text;
             //qu.Line3 = txtLine3.Text;
             qu.Line4 = txtLine4.Text;
             qu.Line5 = txtLine5.Text;
@@ -775,6 +775,18 @@ namespace Cemp.gui
             //OleDbDataAdapter da = new OleDbDataAdapter();
             DataTable dt = cc.qudb.selectPrintById1(txtQuId.Text);
             Quotation qu = cc.qudb.selectByPk(txtQuId.Text);
+            qu.ContactName = "Attn : " + qu.ContactName;
+            qu.CustAddress = "Address : " + qu.CustAddress;
+            qu.CustTel = "Telephone : " + qu.CustTel + " Email : " + qu.CustEmail;
+            qu.Line1 = "Quotation";
+            qu.QuoNumber = "No : " + qu.QuoNumber+"-"+qu.QuoNumberCnt;
+            qu.QuoDate = "Date : " + qu.QuoDate;
+            qu.StaffName = "ผู้เสนอราคา :" + qu.StaffName;
+            qu.StaffTel = "เบอร์โทร : " + qu.StaffTel;
+            qu.StaffEmail = "Email : " + qu.StaffEmail;
+            qu.Remark1 = "1. " + qu.Remark1;
+            qu.Remark2 = "2. " + qu.Remark2;
+            qu.Remark3 = "3. " + qu.Remark3;
             //DataTable dtqu = cc.qudb.selectPrintById(txtQuId.Text);
             //DataTable dtqui = cc.quidb.selectByQuId(txtQuId.Text);
             //DataSet ds = new DataSet();
@@ -784,6 +796,36 @@ namespace Cemp.gui
             //dat
             FrmReport frm = new FrmReport(cc);
             frm.setReportQuotation(qu,dt);
+            frm.ShowDialog(this);
+        }
+
+        private void btnPrintT_Click(object sender, EventArgs e)
+        {
+            String sql = "";
+            //OleDbDataAdapter da = new OleDbDataAdapter();
+            DataTable dt = cc.qudb.selectPrintById1(txtQuId.Text);
+            Quotation qu = cc.qudb.selectByPk(txtQuId.Text);
+            qu.ContactName = "เรียน : " + qu.ContactName;
+            qu.CustAddress = "ที่อยู่ : " + qu.CustAddress;
+            qu.CustTel = "เบอร์โทร : "+qu.CustTel+" Email : "+qu.CustEmail;
+            qu.Line1 = cc.initC.quoLine1;
+            qu.QuoNumber = "เลขที่ : " + qu.QuoNumber + "-" + qu.QuoNumberCnt;
+            qu.QuoDate = "วันที่ :" + qu.QuoDate;
+            qu.StaffName = "ผู้เสนอราคา :" + qu.StaffName;
+            qu.StaffTel = "เบอร์โทร : " + qu.StaffTel;
+            qu.StaffEmail = "Email : " + qu.StaffEmail;
+            qu.Remark1 = "1. " + qu.Remark1;
+            qu.Remark2 = "2. " + qu.Remark2;
+            qu.Remark3 = "3. " + qu.Remark3;
+            //DataTable dtqu = cc.qudb.selectPrintById(txtQuId.Text);
+            //DataTable dtqui = cc.quidb.selectByQuId(txtQuId.Text);
+            //DataSet ds = new DataSet();
+            //ds.Tables.Add(dtqu);
+            //ds.Tables.Add(dtqui);
+            //cc.conn.f
+            //dat
+            FrmReport frm = new FrmReport(cc);
+            frm.setReportQuotation(qu, dt);
             frm.ShowDialog(this);
         }
 

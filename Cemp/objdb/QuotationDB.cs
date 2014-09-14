@@ -274,7 +274,7 @@ namespace Cemp.objdb
                 p.StaffName + "','" + p.StaffTel + "','" + p.StatusQuo + "'," +
                 NumberNull1(p.Total) + "," + NumberNull1(p.Vat) + "," + NumberNull1(p.VatRate) + ",'" +
                 p.StaffApproveId + "','" + p.StaffApproveName + "'," + NumberNull1(p.Discount) + "," +
-                NumberNull1(p.QuoNumberCnt) + "','" + p.StatusMOU + ")";
+                NumberNull1(p.QuoNumberCnt) + ",'" + p.StatusMOU + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

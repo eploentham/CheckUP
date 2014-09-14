@@ -44,6 +44,8 @@ namespace Cemp.objdb
             cu.Tele = "tele";
             //cu.thoId = "";
             cu.Zipcode = "zipcode";
+            cu.StatusCompany = "status_company";
+            cu.StatusVendor = "status_vendor";
 
             cu.table = "b_customer";
             cu.pkField = "cust_id";
@@ -57,6 +59,7 @@ namespace Cemp.objdb
             item.AddressT = dt.Rows[0][cu.AddressT].ToString();
             item.amphurId = dt.Rows[0][cu.amphurId].ToString();
             item.Code = dt.Rows[0][cu.Code].ToString();
+
             item.ContactName1 = dt.Rows[0][cu.ContactName1].ToString();
             item.ContactName1Tel = dt.Rows[0][cu.ContactName1Tel].ToString();
             item.ContactName2 = dt.Rows[0][cu.ContactName2].ToString();
@@ -65,7 +68,19 @@ namespace Cemp.objdb
             item.Email = dt.Rows[0][cu.Email].ToString();
             item.Fax = dt.Rows[0][cu.Fax].ToString();
             item.NameE = dt.Rows[0][cu.NameE].ToString();
-            item.NameT = dt.Rows[0][cu.NameT].ToString();
+            if (dt.Rows[0][cu.StatusCompany].ToString().Equals("1"))
+            {
+                item.NameT = "บริษัท "+dt.Rows[0][cu.NameT].ToString()+" จำกัด";
+            }
+            else if (dt.Rows[0][cu.StatusCompany].ToString().Equals("2"))
+            {
+                item.NameT = dt.Rows[0][cu.NameT].ToString()+" Co., Ltd.";
+            }
+            else
+            {
+                item.NameT = dt.Rows[0][cu.NameT].ToString();
+            }
+            
             item.provinceId = dt.Rows[0][cu.provinceId].ToString();
             item.Remark = dt.Rows[0][cu.Remark].ToString();
             item.saleId = dt.Rows[0][cu.saleId].ToString();
@@ -73,6 +88,8 @@ namespace Cemp.objdb
             item.TaxId = dt.Rows[0][cu.TaxId].ToString();
             item.Tele = dt.Rows[0][cu.Tele].ToString();
             item.Zipcode = dt.Rows[0][cu.Zipcode].ToString();
+            item.StatusCompany = dt.Rows[0][cu.StatusCompany].ToString();
+            item.StatusVendor = dt.Rows[0][cu.StatusVendor].ToString();
 
             return item;
         }
@@ -146,7 +163,7 @@ namespace Cemp.objdb
                 cu.Email + "," + cu.Fax + "," + cu.NameE + "," +
                 cu.NameT + "," + cu.provinceId + "," + cu.Remark + "," +
                 cu.saleId + "," + cu.saleName + "," + cu.TaxId + "," +
-                cu.Tele + "," + cu.Zipcode + ") " +
+                cu.Tele + "," + cu.Zipcode + "," + cu.StatusCompany + "," + cu.StatusVendor + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.Addr + "','" +
                 p.AddressE + "','" + p.AddressT + "','" + p.amphurId + "','" +
                 p.Code + "','" + p.ContactName1 + "','" + p.ContactName1Tel + "','" +
@@ -154,7 +171,7 @@ namespace Cemp.objdb
                 p.Email + "','" + p.Fax + "','" + p.NameE + "','" +
                 p.NameT + "','" + p.provinceId + "','" + p.Remark + "','" +
                 p.saleId + "','" + p.saleName + "','" + p.TaxId + "','" +
-                p.Tele + "','" + p.Zipcode + "')";
+                p.Tele + "','" + p.Zipcode + "','" + p.StatusCompany + "','" + p.StatusVendor + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -204,7 +221,9 @@ namespace Cemp.objdb
                 cu.saleName + "='" + p.saleName + "', " +
                 cu.TaxId + "='" + p.TaxId + "', " +
                 cu.Tele + "='" + p.Tele + "', " +
-                cu.Zipcode + "='" + p.Zipcode + "' " +
+                cu.Zipcode + "='" + p.Zipcode + "', " +
+                cu.StatusCompany + "='" + p.StatusCompany + "', " +
+                cu.StatusVendor + "='" + p.StatusVendor + "' " +
                 
                 "Where " + cu.pkField + "='" + p.Id + "'";
             try
@@ -251,8 +270,20 @@ namespace Cemp.objdb
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 item = new ComboBoxItem();
+                if (dt.Rows[0][cu.StatusCompany].ToString().Equals("1"))
+                {
+                    item.Text = "บริษัท " + dt.Rows[0][cu.NameT].ToString() + " จำกัด";
+                }
+                else if (dt.Rows[0][cu.StatusCompany].ToString().Equals("2"))
+                {
+                    item.Text = dt.Rows[0][cu.NameT].ToString() + " Co., Ltd.";
+                }
+                else
+                {
+                    item.Text = dt.Rows[0][cu.NameT].ToString();
+                }
                 item.Value = dt.Rows[i][cu.Id].ToString();
-                item.Text = dt.Rows[i][cu.NameT].ToString();
+                //item.Text = dt.Rows[i][cu.NameT].ToString();
                 c.Items.Add(item);
                 //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
                 //c.Items.Add(new );

@@ -71,6 +71,7 @@ namespace Cemp.gui
             txtWebSite.Text = cp.WebSite;
             viewImage(cc.PathLogo + "\\" + cp.logo);
             label18.Text = cp.districtId;
+            txtSpec1.Text = cp.Spec1;
             if (label18.Text.Length > 4)
             {
                 cboDistrict = cc.didb.getCboDist1(cboDistrict, label18.Text);
@@ -99,6 +100,7 @@ namespace Cemp.gui
             cp.vat = txtVat.Text;
             cp.Zipcode = txtZipcode.Text;
             cp.WebSite = txtWebSite.Text;
+            cp.Spec1 = txtSpec1.Text;
         }
 
         private void FrmCompany_Load(object sender, EventArgs e)
