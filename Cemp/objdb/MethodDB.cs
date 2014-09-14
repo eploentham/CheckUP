@@ -27,6 +27,13 @@ namespace Cemp.objdb
             me.NameT = "method_name_t";
             me.Remark = "remark";
             me.Sort1 = "sort1";
+            me.dateCancel = "date_cancel";
+            me.dateCreate = "date_create";
+            me.dateModi = "date_modi";
+            //me.DatePlaceRecord = "date_place_record";
+            me.userCancel = "user_cancel";
+            me.userCreate = "user_create";
+            me.userModi = "user_modi";
 
             me.table = "b_method";
             me.pkField = "method_id";
@@ -40,6 +47,13 @@ namespace Cemp.objdb
             item.NameT = dt.Rows[0][me.NameT].ToString();
             item.Remark = dt.Rows[0][me.Remark].ToString();
             item.Sort1 = dt.Rows[0][me.Sort1].ToString();
+            item.dateCancel = dt.Rows[0][me.dateCancel].ToString();
+            item.dateCreate = dt.Rows[0][me.dateCreate].ToString();
+            item.dateModi = dt.Rows[0][me.dateModi].ToString();
+            //item.DatePlaceRecord = dt.Rows[0][mo.DatePlaceRecord].ToString();
+            item.userCancel = dt.Rows[0][me.userCancel].ToString();
+            item.userCreate = dt.Rows[0][me.userCreate].ToString();
+            item.userModi = dt.Rows[0][me.userModi].ToString();
 
             return item;
         }
@@ -113,7 +127,7 @@ namespace Cemp.objdb
             {
                 p.Id = "me" + p.getGenID();
             }
-
+            //p.dateCreate = p.dateGenDB;
             p.NameE = p.NameE.Replace("''", "'");
             p.NameT = p.NameT.Replace("''", "'");
             p.Remark = p.Remark.Replace("''", "'");
@@ -121,10 +135,17 @@ namespace Cemp.objdb
             {
                 p.Sort1 = "999";
             }
+            p.dateCreate = p.dateGenDB;
             sql = "Insert Into " + me.table + " (" + me.pkField + "," + me.Active + "," + me.Code + "," +
-                me.NameE + "," + me.NameT + "," + me.Remark + "," + me.Sort1 + ") " +
+                me.NameE + "," + me.NameT + "," + me.Remark + "," +
+                me.Sort1 + "," + me.dateCancel + "," + me.dateCreate + "," +
+                me.dateModi + "," + me.userCancel + "," + me.userCreate + "," +
+                me.userModi + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.Code + "','" +
-                p.NameE + "','" + p.NameT + "','" + p.Remark + "','" + p.Sort1 + "')";
+                p.NameE + "','" + p.NameT + "','" + p.Remark + "','" +
+                p.Sort1 + "','" + p.dateCancel + "'," + p.dateCreate + ",'" + 
+                p.dateModi + "','" + p.userCancel + "','" + p.userCreate + "','" + 
+                p.userModi + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -154,7 +175,9 @@ namespace Cemp.objdb
                 me.NameE + "='" + p.NameE + "', " +
                 me.NameT + "='" + p.NameT + "', " +
                 me.Remark + "='" + p.Remark + "', " +
-                me.Sort1 + "='" + p.Sort1 + "' " +
+                me.Sort1 + "='" + p.Sort1 + "', " +
+                me.userModi + "='" + p.userModi + "', " +
+                me.dateModi + "=" + p.dateGenDB + " " +
                 "Where " + me.pkField + "='" + p.Id + "'";
             try
             {
@@ -181,6 +204,7 @@ namespace Cemp.objdb
                 {
                     p.Sort1 = selectMax();
                 }
+                
                 chk = insert(p);
             }
             else

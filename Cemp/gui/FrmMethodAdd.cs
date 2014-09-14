@@ -74,6 +74,8 @@ namespace Cemp.gui
             me.NameT = txtNameT.Text;
             me.Remark = txtRemark.Text;
             me.Sort1 = txtSort1.Text;
+            me.userCreate = cc.sf.Id;
+            me.userModi = cc.sf.Id;
         }
 
         private void FrmMethodAdd_Load(object sender, EventArgs e)

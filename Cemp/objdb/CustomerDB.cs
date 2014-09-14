@@ -46,6 +46,12 @@ namespace Cemp.objdb
             cu.Zipcode = "zipcode";
             cu.StatusCompany = "status_company";
             cu.StatusVendor = "status_vendor";
+            cu.dateCancel = "date_cancel";
+            cu.dateCreate = "date_create";
+            cu.dateModi = "date_modi";
+            cu.userCancel = "user_cancel";
+            cu.userCreate = "user_create";
+            cu.userModi = "user_modi";
 
             cu.table = "b_customer";
             cu.pkField = "cust_id";
@@ -90,6 +96,12 @@ namespace Cemp.objdb
             item.Zipcode = dt.Rows[0][cu.Zipcode].ToString();
             item.StatusCompany = dt.Rows[0][cu.StatusCompany].ToString();
             item.StatusVendor = dt.Rows[0][cu.StatusVendor].ToString();
+            item.dateCancel = dt.Rows[0][cu.dateCancel].ToString();
+            item.dateCreate = dt.Rows[0][cu.dateCreate].ToString();
+            item.dateModi = dt.Rows[0][cu.dateModi].ToString();
+            item.userCancel = dt.Rows[0][cu.userCancel].ToString();
+            item.userCreate = dt.Rows[0][cu.userCreate].ToString();
+            item.userModi = dt.Rows[0][cu.userModi].ToString();
 
             return item;
         }

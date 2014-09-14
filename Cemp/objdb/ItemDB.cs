@@ -34,6 +34,12 @@ namespace Cemp.objdb
             it.MethodId = "method_id";
             it.MethodNameT = "method_name_t";
             it.Sort1 = "sort1";
+            it.dateCancel = "date_cancel";
+            it.dateCreate = "date_create";
+            it.dateModi = "date_modi";
+            it.userCancel = "user_cancel";
+            it.userCreate = "user_create";
+            it.userModi = "user_modi";
 
             it.table = "b_item";
             it.pkField = "item_id";
@@ -54,6 +60,12 @@ namespace Cemp.objdb
             item.MethodId = dt.Rows[0][it.MethodId].ToString();
             item.MeasuringPoint = dt.Rows[0][it.MeasuringPoint].ToString();
             item.Sort1 = dt.Rows[0][it.Sort1].ToString();
+            item.dateCancel = dt.Rows[0][it.dateCancel].ToString();
+            item.dateCreate = dt.Rows[0][it.dateCreate].ToString();
+            item.dateModi = dt.Rows[0][it.dateModi].ToString();
+            item.userCancel = dt.Rows[0][it.userCancel].ToString();
+            item.userCreate = dt.Rows[0][it.userCreate].ToString();
+            item.userModi = dt.Rows[0][it.userModi].ToString();
 
             return item;
         }
@@ -127,11 +139,17 @@ namespace Cemp.objdb
             sql = "Insert Into " + it.table + " (" + it.pkField + "," + it.Active + "," + it.Code + "," +
                 it.NameE + "," + it.NameT + "," + it.Remark + "," +
                 it.PriceCost + "," + it.PriceSale + "," + it.ItemGroupId + "," +
-                it.ItemGroupNameT + "," + it.MethodNameT + "," + it.MethodId + "," + it.Sort1 + ") " +
+                it.ItemGroupNameT + "," + it.MethodNameT + "," + it.MethodId + "," +
+                it.Sort1 + "," + it.dateCancel + "," + it.dateCreate + "," +
+                it.dateModi + "," + it.userCancel + "," + it.userCreate + "," +
+                it.userModi + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.Code + "','" +
                 p.NameE + "','" + p.NameT + "','" + p.Remark + "'," +
                 NumberNull1(p.PriceCost) + "," + NumberNull1(p.PriceSale) + ",'" + p.ItemGroupId + "','" +
-                p.ItemGroupNameT + "','" + p.MethodNameT + "','" + p.MethodId + "','" + p.Sort1 + "')";
+                p.ItemGroupNameT + "','" + p.MethodNameT + "','" + p.MethodId + "','" +
+                p.Sort1 + "','" +p.dateCancel + "'," + p.dateGenDB + ",'" + 
+                p.dateModi + "','" +p.userCancel + "','" + p.userCreate + "','" + 
+                p.userModi + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -170,6 +188,8 @@ namespace Cemp.objdb
                 it.PriceCost + "=" + NumberNull1(p.PriceCost) + ", " +
                 it.PriceSale + "=" + NumberNull1(p.PriceSale) + ", " +
                 it.Sort1 + "='" + p.Sort1 + "', " +
+                it.userModi + "='" + p.userModi + "'," +
+                it.dateModi + "=" + p.dateGenDB + " " +
                 "Where " + it.pkField + "='" + p.Id + "'";
             try
             {

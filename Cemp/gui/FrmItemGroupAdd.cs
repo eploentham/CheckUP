@@ -74,6 +74,8 @@ namespace Cemp.gui
             itg.NameT = txtNameT.Text;
             itg.Remark = txtRemark.Text;
             itg.Sort1 = txtSort1.Text;
+            itg.userCreate = cc.sf.Id;
+            itg.userModi = cc.sf.Id;
         }
         private void FrmItemGroupAdd_Load(object sender, EventArgs e)
         {

@@ -215,7 +215,7 @@ namespace Cemp.objdb
             p.Remark = p.Remark.Replace("''", "'");
 
             p.userCreate = p.StaffId;
-
+            p.dateCreate = p.dateGenDB;
             sql = "Insert Into " + mo.table + " (" + mo.pkField + "," + mo.Active + "," + mo.CompAddress1 + "," +
                 mo.CompAddress2 + "," + mo.CompId + "," + mo.CompName + "," +
                 mo.CompTaxId + "," + mo.ContactName + "," + mo.CustAddress + "," +
@@ -240,8 +240,8 @@ namespace Cemp.objdb
                 p.StaffId + "','" + p.StaffMOU + "','" + p.StaffName + "','" +
                 p.StaffTel + "'," + p.MOUNumberCnt + ",'" + p.StaffMobile + "','" +
                 p.statusMOU + "','" + p.DatePeriod + "','" + p.CustId + "','" +
-                p.CustMOUId + "','" + p.StaffMOUId + "','" + p.dateCancel + "','" +
-                p.dateCreate + "','" + p.dateModi + "','" + p.userCancel + "','" +
+                p.CustMOUId + "','" + p.StaffMOUId + "','" + p.dateCancel + "'," +
+                p.dateCreate + ",'" + p.dateModi + "','" + p.userCancel + "','" +
                 p.userCreate + "','" + p.userModi + "','" + p.StaffPlaceRecordId + "','" + 
                 p.StaffPlaceRecordName + "','" + p.StaffAnalysisId + "','" + p.StaffAnalysisName + "')";
             try
@@ -271,7 +271,7 @@ namespace Cemp.objdb
             p.StaffMOU = p.StaffMOU.Replace("''", "'");
             p.StaffName = p.StaffName.Replace("''", "'");
             p.Remark = p.Remark.Replace("''", "'");
-
+            p.dateModi = p.dateGenDB;
             sql = "Update " + mo.table + " Set " + mo.CompAddress1 + "='" + p.CompAddress1 + "', " +
                 mo.CompAddress2 + "='" + p.CompAddress2 + "', " +
                 mo.CompId + "='" + p.CompId + "', " +
@@ -300,7 +300,8 @@ namespace Cemp.objdb
                 //mo.Remark + "='" + p.Remark + "', " +
                 mo.CustId + "='" + p.CustId + "', " +
                 mo.StaffMobile + "='" + p.StaffMobile + "', " +
-                mo.userModi + "='" + p.userModi + "' " +
+                mo.userModi + "='" + p.userModi + "', " +
+                mo.dateModi + "=" + p.dateModi + " " +
                 "Where " + mo.pkField + "='" + p.Id + "'";
             try
             {

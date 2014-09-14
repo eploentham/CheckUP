@@ -41,6 +41,12 @@ namespace Cemp.objdb
             cp.Code = "comp_code";
             cp.WebSite = "website";
             cp.Spec1 = "spec1";
+            cp.dateCancel = "date_cancel";
+            cp.dateCreate = "date_create";
+            cp.dateModi = "date_modi";
+            cp.userCancel = "user_cancel";
+            cp.userCreate = "user_create";
+            cp.userModi = "user_modi";
 
             cp.pkField = "comp_id";
             cp.table = "b_company";
@@ -67,6 +73,12 @@ namespace Cemp.objdb
             item.Code = dt.Rows[0][cp.Code].ToString();
             item.WebSite = dt.Rows[0][cp.WebSite].ToString();
             item.Spec1 = dt.Rows[0][cp.Spec1].ToString();
+            item.dateCancel = dt.Rows[0][cp.dateCancel].ToString();
+            item.dateCreate = dt.Rows[0][cp.dateCreate].ToString();
+            item.dateModi = dt.Rows[0][cp.dateModi].ToString();
+            item.userCancel = dt.Rows[0][cp.userCancel].ToString();
+            item.userCreate = dt.Rows[0][cp.userCreate].ToString();
+            item.userModi = dt.Rows[0][cp.userModi].ToString();
 
             return item;
         }

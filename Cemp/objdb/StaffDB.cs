@@ -28,6 +28,12 @@ namespace Cemp.objdb
             sf.Active = "staff_active";
             sf.Priority = "priority";
             sf.PositionName = "position_name";
+            sf.dateCancel = "date_cancel";
+            sf.dateCreate = "date_create";
+            sf.dateModi = "date_modi";
+            sf.userCancel = "user_cancel";
+            sf.userCreate = "user_create";
+            sf.userModi = "user_modi";
 
             sf.sited = "";
             sf.table = "b_staff";
@@ -43,6 +49,12 @@ namespace Cemp.objdb
             item.Active = dt.Rows[0][sf.Active].ToString();
             item.Priority = dt.Rows[0][sf.Priority].ToString();
             item.PositionName = dt.Rows[0][sf.PositionName].ToString();
+            item.dateCancel = dt.Rows[0][sf.dateCancel].ToString();
+            item.dateCreate = dt.Rows[0][sf.dateCreate].ToString();
+            item.dateModi = dt.Rows[0][sf.dateModi].ToString();
+            item.userCancel = dt.Rows[0][sf.userCancel].ToString();
+            item.userCreate = dt.Rows[0][sf.userCreate].ToString();
+            item.userModi = dt.Rows[0][sf.userModi].ToString();
             return item;
         }
         public DataTable selectAll()

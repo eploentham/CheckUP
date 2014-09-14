@@ -83,6 +83,9 @@ namespace Cemp.gui
             it.MethodId = cc.getValueCboItem(cboMethod);
             it.ItemGroupNameT = cboGroup.Text;
             it.MethodNameT = cboMethod.Text;
+
+            it.userCreate = cc.sf.Id;
+            it.userModi = cc.sf.Id;
         }
         private void FrmItemAdd_Load(object sender, EventArgs e)
         {

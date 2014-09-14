@@ -197,6 +197,8 @@ namespace Cemp.gui
             qu.Remark6 = cboRemark6.Text;
             qu.Remark7 = cboRemark7.Text;
             //qu.StatusQuo = "1";
+            qu.userCreate = cc.sf.Id;
+            qu.userModi = cc.sf.Id;
         }
         private void setGrd(String quId)
         {

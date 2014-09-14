@@ -104,7 +104,8 @@ namespace Cemp.gui
             mo.CompName = qu.CompName;
             mo.CompTaxId = qu.CompTaxId;
             //mo.DatePeriod = txtDatePeriod.Text;
-            
+            mo.userCreate = cc.sf.Id;
+            mo.userModi = cc.sf.Id;
         }
         private void setGrd(String moId)
         {
