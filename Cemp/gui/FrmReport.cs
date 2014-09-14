@@ -182,8 +182,15 @@ namespace Cemp
                 rpt.SetParameterValue("vatRate", qu.VatRate);
                 rpt.SetParameterValue("vat", qu.Vat);
                 rpt.SetParameterValue("netTotal", qu.NetTotal);
-
-
+                rpt.SetParameterValue("lamount", "รวมราคา");
+                rpt.SetParameterValue("ldiscount", "ส่วนลด");
+                rpt.SetParameterValue("plus1name", "ค่าภาคสนาม(ค่าเดินทาง)");
+                rpt.SetParameterValue("ltotal", "รวม");
+                rpt.SetParameterValue("lvat", "ภาษีมูลค่าเพิ่ม");
+                rpt.SetParameterValue("lnettotal", "รวมทั้งสิ้น");
+                rpt.SetParameterValue("lcustapprove","อนุมัติสั่งซื้อตามราบการที่เสนอ");
+                rpt.SetParameterValue("lstaffquotation", "ผู้เสนอราคา");
+                rpt.SetParameterValue("lstaffapprove", "ขอแสดงความนับถือ");
                 //rpt.SetParameterValue("", qu.QuoDate);
                 //rpt.SetParameterValue("", qu.QuoDate);
                 //rpt.SetParameterValue("", qu.QuoDate);

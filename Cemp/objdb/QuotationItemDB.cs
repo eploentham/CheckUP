@@ -37,6 +37,13 @@ namespace Cemp.objdb
             qui.ItemGroupNameE = "item_group_name_e";
             qui.ItemGroupNameT = "item_group_name_t";
             qui.ItemGroupSort = "item_group_sort";
+            qui.dateCancel = "date_cancel";
+            qui.dateCreate = "date_create";
+            qui.dateModi = "date_modi";
+
+            qui.userCancel = "user_cancel";
+            qui.userCreate = "user_create";
+            qui.userModi = "user_modi";
 
             qui.table = "t_quotation_item";
             qui.pkField = "quo_item_id";
@@ -60,6 +67,13 @@ namespace Cemp.objdb
             item.ItemGroupNameE = dt.Rows[0][qui.ItemGroupNameE].ToString();
             item.ItemGroupNameT = dt.Rows[0][qui.ItemGroupNameT].ToString();
             item.ItemGroupSort = dt.Rows[0][qui.ItemGroupSort].ToString();
+            item.dateCancel = dt.Rows[0][qui.dateCancel].ToString();
+            item.dateCreate = dt.Rows[0][qui.dateCreate].ToString();
+            item.dateModi = dt.Rows[0][qui.dateModi].ToString();
+
+            item.userCancel = dt.Rows[0][qui.userCancel].ToString();
+            item.userCreate = dt.Rows[0][qui.userCreate].ToString();
+            item.userModi = dt.Rows[0][qui.userModi].ToString();
 
             return item;
         }

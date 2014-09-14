@@ -68,6 +68,13 @@ namespace Cemp.objdb
             qu.Remark5 = "remark5";
             qu.Remark6 = "remark6";
             qu.Remark7 = "remark7";
+            qu.dateCancel = "date_cancel";
+            qu.dateCreate = "date_create";
+            qu.dateModi = "date_modi";
+
+            qu.userCancel = "user_cancel";
+            qu.userCreate = "user_create";
+            qu.userModi = "user_modi";
 
             qu.table = "t_quotation";
             qu.pkField = "quo_id";
@@ -122,6 +129,13 @@ namespace Cemp.objdb
             item.Remark5 = dt.Rows[0][qu.Remark5].ToString();
             item.Remark6 = dt.Rows[0][qu.Remark6].ToString();
             item.Remark7 = dt.Rows[0][qu.Remark7].ToString();
+            item.dateCancel = dt.Rows[0][qu.dateCancel].ToString();
+            item.dateCreate = dt.Rows[0][qu.dateCreate].ToString();
+            item.dateModi = dt.Rows[0][qu.dateModi].ToString();
+
+            item.userCancel = dt.Rows[0][qu.userCancel].ToString();
+            item.userCreate = dt.Rows[0][qu.userCreate].ToString();
+            item.userModi = dt.Rows[0][qu.userModi].ToString();
 
             return item;
         }

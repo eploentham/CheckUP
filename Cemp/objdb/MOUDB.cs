@@ -52,6 +52,17 @@ namespace Cemp.objdb
             mo.StaffMobile = "staff_mobile";
             mo.StaffMOUId = "staff_mou_id";
             mo.CustMOUId = "cust_mou_id";
+            mo.StaffAnalysisId = "staff_analysis_id";
+            mo.StaffAnalysisName = "staff_analysis_name";
+            mo.StaffPlaceRecordId = "staff_place_record_id";
+            mo.StaffPlaceRecordName = "staff_place_record_name";
+            mo.dateCancel = "date_cancel";
+            mo.dateCreate = "date_create";
+            mo.dateModi = "date_modi";
+            mo.DatePlaceRecord = "date_place_record";
+            mo.userCancel = "user_cancel";
+            mo.userCreate = "user_create";
+            mo.userModi = "user_modi";
 
             mo.pkField = "mou_id";
             mo.table = "t_mou";
@@ -90,6 +101,17 @@ namespace Cemp.objdb
             item.StaffMobile = dt.Rows[0][mo.StaffMobile].ToString();
             item.StaffMOUId = dt.Rows[0][mo.StaffMOUId].ToString();
             item.CustMOUId = dt.Rows[0][mo.CustMOUId].ToString();
+            item.StaffAnalysisId = dt.Rows[0][mo.StaffAnalysisId].ToString();
+            item.StaffAnalysisName = dt.Rows[0][mo.StaffAnalysisName].ToString();
+            item.StaffPlaceRecordId = dt.Rows[0][mo.StaffPlaceRecordId].ToString();
+            item.StaffPlaceRecordName = dt.Rows[0][mo.StaffPlaceRecordName].ToString();
+            item.dateCancel = dt.Rows[0][mo.dateCancel].ToString();
+            item.dateCreate = dt.Rows[0][mo.dateCreate].ToString();
+            item.dateModi = dt.Rows[0][mo.dateModi].ToString();
+            item.DatePlaceRecord = dt.Rows[0][mo.DatePlaceRecord].ToString();
+            item.userCancel = dt.Rows[0][mo.userCancel].ToString();
+            item.userCreate = dt.Rows[0][mo.userCreate].ToString();
+            item.userModi = dt.Rows[0][mo.userModi].ToString();
             
             return item;
         }
@@ -191,6 +213,9 @@ namespace Cemp.objdb
             p.StaffMOU = p.StaffMOU.Replace("''", "'");
             p.StaffName = p.StaffName.Replace("''", "'");
             p.Remark = p.Remark.Replace("''", "'");
+
+            p.userCreate = p.StaffId;
+
             sql = "Insert Into " + mo.table + " (" + mo.pkField + "," + mo.Active + "," + mo.CompAddress1 + "," +
                 mo.CompAddress2 + "," + mo.CompId + "," + mo.CompName + "," +
                 mo.CompTaxId + "," + mo.ContactName + "," + mo.CustAddress + "," +
@@ -200,7 +225,11 @@ namespace Cemp.objdb
                 mo.QuoNumber + "," + mo.Remark + "," + mo.StaffEmail + "," +
                 mo.StaffId + "," + mo.StaffMOU + "," + mo.StaffName + "," +
                 mo.StaffTel + "," + mo.MOUNumberCnt + "," + mo.StaffMobile + "," +
-                mo.statusMOU + "," + mo.DatePeriod + "," + mo.CustId + "," + mo.CustMOUId + "," + mo.StaffMOUId + ") " +
+                mo.statusMOU + "," + mo.DatePeriod + "," + mo.CustId + "," +
+                mo.CustMOUId + "," + mo.StaffMOUId + "," + mo.dateCancel + "," +
+                mo.dateCreate + "," + mo.dateModi + "," + mo.userCancel + "," +
+                mo.userCreate + "," + mo.userModi + "," + mo.StaffPlaceRecordId + "," + 
+                mo.StaffPlaceRecordName + "," + mo.StaffAnalysisId + "," + mo.StaffAnalysisName + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.CompAddress1 + "','" +
                 p.CompAddress2 + "','" + p.CompId + "','" + p.CompName + "','" +
                 p.CompTaxId + "','" + p.ContactName + "','" + p.CustAddress + "','" +
@@ -210,7 +239,11 @@ namespace Cemp.objdb
                 p.QuoNumber + "','" + p.Remark + "','" + p.StaffEmail + "','" +
                 p.StaffId + "','" + p.StaffMOU + "','" + p.StaffName + "','" +
                 p.StaffTel + "'," + p.MOUNumberCnt + ",'" + p.StaffMobile + "','" +
-                p.statusMOU + "','" + p.DatePeriod + "','" + p.CustId + "','" + p.CustMOUId + "','" + p.StaffMOUId + "')";
+                p.statusMOU + "','" + p.DatePeriod + "','" + p.CustId + "','" +
+                p.CustMOUId + "','" + p.StaffMOUId + "','" + p.dateCancel + "','" +
+                p.dateCreate + "','" + p.dateModi + "','" + p.userCancel + "','" +
+                p.userCreate + "','" + p.userModi + "','" + p.StaffPlaceRecordId + "','" + 
+                p.StaffPlaceRecordName + "','" + p.StaffAnalysisId + "','" + p.StaffAnalysisName + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -266,7 +299,8 @@ namespace Cemp.objdb
                 mo.DatePeriod + "='" + p.DatePeriod + "', " +
                 //mo.Remark + "='" + p.Remark + "', " +
                 mo.CustId + "='" + p.CustId + "', " +
-                mo.StaffMobile + "='" + p.StaffMobile + "' " +
+                mo.StaffMobile + "='" + p.StaffMobile + "', " +
+                mo.userModi + "='" + p.userModi + "' " +
                 "Where " + mo.pkField + "='" + p.Id + "'";
             try
             {

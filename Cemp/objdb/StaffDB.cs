@@ -27,6 +27,8 @@ namespace Cemp.objdb
             sf.Password = "staff_password";
             sf.Active = "staff_active";
             sf.Priority = "priority";
+            sf.PositionName = "position_name";
+
             sf.sited = "";
             sf.table = "b_staff";
             sf.pkField = "staff_id";
@@ -40,6 +42,7 @@ namespace Cemp.objdb
             item.Password = dt.Rows[0][sf.Password].ToString();
             item.Active = dt.Rows[0][sf.Active].ToString();
             item.Priority = dt.Rows[0][sf.Priority].ToString();
+            item.PositionName = dt.Rows[0][sf.PositionName].ToString();
             return item;
         }
         public DataTable selectAll()
@@ -95,10 +98,12 @@ namespace Cemp.objdb
             }
             p.NameT = p.NameT.Replace("''", "'");
             p.Remark = p.Remark.Replace("''", "'");
+            p.PositionName = p.PositionName.Replace("''", "'");
+
             sql = "Insert Into " + sf.table + " (" + sf.pkField + "," + sf.NameT + "," + sf.Remark + "," +
-                sf.Active + "," + sf.Code+","+sf.Priority + ") " +
+                sf.Active + "," + sf.Code + "," + sf.Priority + "," + sf.PositionName + ") " +
                 "Values('" + p.Id + "','" + p.NameT + "','" + p.Remark + "','" +
-                p.Active + "','" + p.Code+"','"+p.Priority + "')";
+                p.Active + "','" + p.Code + "','" + p.Priority + "','" + p.PositionName + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -118,11 +123,14 @@ namespace Cemp.objdb
             String sql = "", chk = "";
 
             p.NameT = p.NameT.Replace("''", "'");
+            p.Remark = p.Remark.Replace("''", "'");
+            p.PositionName = p.PositionName.Replace("''", "'");
 
             sql = "Update " + sf.table + " Set " + sf.NameT + "='" + p.NameT + "', " +
                 sf.Remark + "='" + p.Remark + "', " +
                 sf.Code + "='" + p.Code + "', " +
-                sf.Priority + "='" + p.Priority + "' " +
+                sf.Priority + "='" + p.Priority + "', " +
+                sf.PositionName + "='" + p.PositionName + "' " +
                 "Where " + sf.pkField + "='" + p.Id + "'";
             try
             {

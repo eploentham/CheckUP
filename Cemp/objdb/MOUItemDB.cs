@@ -30,6 +30,13 @@ namespace Cemp.objdb
             moi.PlaceRecord = "place_record";
             moi.RowNumber = "row_number";
             moi.Sample = "sample";
+            moi.dateCancel = "date_cancel";
+            moi.dateCreate = "date_create";
+            moi.dateModi = "date_modi";
+            
+            moi.userCancel = "user_cancel";
+            moi.userCreate = "user_create";
+            moi.userModi = "user_modi";
 
             moi.pkField = "mou_item_id";
             moi.table = "t_mou_item";
@@ -46,6 +53,13 @@ namespace Cemp.objdb
             item.PlaceRecord = dt.Rows[0][moi.PlaceRecord].ToString();
             item.RowNumber = dt.Rows[0][moi.RowNumber].ToString();
             item.Sample = dt.Rows[0][moi.Sample].ToString();
+            item.dateCancel = dt.Rows[0][moi.dateCancel].ToString();
+            item.dateCreate = dt.Rows[0][moi.dateCreate].ToString();
+            item.dateModi = dt.Rows[0][moi.dateModi].ToString();
+
+            item.userCancel = dt.Rows[0][moi.userCancel].ToString();
+            item.userCreate = dt.Rows[0][moi.userCreate].ToString();
+            item.userModi = dt.Rows[0][moi.userModi].ToString();
 
             return item;
         }

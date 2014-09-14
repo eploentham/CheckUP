@@ -64,3 +64,4 @@ D:\source\CNVI\CNVI.Cemp\Cemp\bin\Debug\Cemp.exe.config
 C:\source\CNVI\CNVI.Cemp\Cemp\bin\Debug\Cemp.exe.config
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.csprojResolveAssemblyReference.cache
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.csprojResolveAssemblyReference.cache
+C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmMOUPlaceRecord.resources
