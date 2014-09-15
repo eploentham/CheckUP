@@ -31,6 +31,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtSpec1 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.txtWebSite = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -69,15 +71,27 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtSpec1 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtQuoLine6 = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtQuoLine5 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtQuoLine4 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtQuoLine3 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtQuoLine2 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtQuoLine1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(57, 497);
+            this.button1.Location = new System.Drawing.Point(354, 325);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -88,7 +102,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(57, 468);
+            this.button2.Location = new System.Drawing.Point(354, 296);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(117, 23);
             this.button2.TabIndex = 1;
@@ -100,6 +114,8 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtSpec1);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.txtWebSite);
@@ -145,6 +161,22 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "รายละเอียด";
+            // 
+            // txtSpec1
+            // 
+            this.txtSpec1.Location = new System.Drawing.Point(88, 400);
+            this.txtSpec1.Name = "txtSpec1";
+            this.txtSpec1.Size = new System.Drawing.Size(206, 20);
+            this.txtSpec1.TabIndex = 102;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(7, 403);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(44, 13);
+            this.label19.TabIndex = 101;
+            this.label19.Text = "Spec1 :";
             // 
             // label18
             // 
@@ -497,31 +529,143 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "รหัส :";
             // 
-            // txtSpec1
+            // groupBox4
             // 
-            this.txtSpec1.Location = new System.Drawing.Point(88, 400);
-            this.txtSpec1.Name = "txtSpec1";
-            this.txtSpec1.Size = new System.Drawing.Size(206, 20);
-            this.txtSpec1.TabIndex = 102;
+            this.groupBox4.Controls.Add(this.label20);
+            this.groupBox4.Controls.Add(this.txtQuoLine6);
+            this.groupBox4.Controls.Add(this.label21);
+            this.groupBox4.Controls.Add(this.txtQuoLine5);
+            this.groupBox4.Controls.Add(this.label22);
+            this.groupBox4.Controls.Add(this.txtQuoLine4);
+            this.groupBox4.Controls.Add(this.label23);
+            this.groupBox4.Controls.Add(this.txtQuoLine3);
+            this.groupBox4.Controls.Add(this.label24);
+            this.groupBox4.Controls.Add(this.txtQuoLine2);
+            this.groupBox4.Controls.Add(this.label25);
+            this.groupBox4.Controls.Add(this.txtQuoLine1);
+            this.groupBox4.Location = new System.Drawing.Point(622, 20);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(526, 227);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "groupBox4";
             // 
-            // label19
+            // label20
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(7, 403);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(44, 13);
-            this.label19.TabIndex = 101;
-            this.label19.Text = "Spec1 :";
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(16, 154);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(82, 13);
+            this.label20.TabIndex = 44;
+            this.label20.Text = "quotation line6 :";
+            // 
+            // txtQuoLine6
+            // 
+            this.txtQuoLine6.Location = new System.Drawing.Point(102, 151);
+            this.txtQuoLine6.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuoLine6.Name = "txtQuoLine6";
+            this.txtQuoLine6.Size = new System.Drawing.Size(419, 20);
+            this.txtQuoLine6.TabIndex = 43;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(16, 130);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(82, 13);
+            this.label21.TabIndex = 42;
+            this.label21.Text = "quotation line5 :";
+            // 
+            // txtQuoLine5
+            // 
+            this.txtQuoLine5.Location = new System.Drawing.Point(102, 127);
+            this.txtQuoLine5.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuoLine5.Name = "txtQuoLine5";
+            this.txtQuoLine5.Size = new System.Drawing.Size(419, 20);
+            this.txtQuoLine5.TabIndex = 41;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(16, 106);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(82, 13);
+            this.label22.TabIndex = 40;
+            this.label22.Text = "quotation line4 :";
+            // 
+            // txtQuoLine4
+            // 
+            this.txtQuoLine4.Location = new System.Drawing.Point(102, 103);
+            this.txtQuoLine4.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuoLine4.Name = "txtQuoLine4";
+            this.txtQuoLine4.Size = new System.Drawing.Size(419, 20);
+            this.txtQuoLine4.TabIndex = 39;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(16, 82);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(82, 13);
+            this.label23.TabIndex = 38;
+            this.label23.Text = "quotation line3 :";
+            // 
+            // txtQuoLine3
+            // 
+            this.txtQuoLine3.Location = new System.Drawing.Point(102, 79);
+            this.txtQuoLine3.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuoLine3.Name = "txtQuoLine3";
+            this.txtQuoLine3.Size = new System.Drawing.Size(419, 20);
+            this.txtQuoLine3.TabIndex = 37;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(16, 58);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(82, 13);
+            this.label24.TabIndex = 36;
+            this.label24.Text = "quotation line2 :";
+            // 
+            // txtQuoLine2
+            // 
+            this.txtQuoLine2.Location = new System.Drawing.Point(102, 55);
+            this.txtQuoLine2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuoLine2.Name = "txtQuoLine2";
+            this.txtQuoLine2.Size = new System.Drawing.Size(419, 20);
+            this.txtQuoLine2.TabIndex = 35;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(16, 34);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(82, 13);
+            this.label25.TabIndex = 34;
+            this.label25.Text = "quotation line1 :";
+            // 
+            // txtQuoLine1
+            // 
+            this.txtQuoLine1.Location = new System.Drawing.Point(102, 31);
+            this.txtQuoLine1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuoLine1.Name = "txtQuoLine1";
+            this.txtQuoLine1.Size = new System.Drawing.Size(419, 20);
+            this.txtQuoLine1.TabIndex = 33;
             // 
             // FrmCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 544);
+            this.ClientSize = new System.Drawing.Size(1200, 544);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmCompany";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCompany";
@@ -529,6 +673,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -578,5 +724,18 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtSpec1;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtQuoLine6;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtQuoLine5;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txtQuoLine4;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox txtQuoLine3;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox txtQuoLine2;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox txtQuoLine1;
     }
 }

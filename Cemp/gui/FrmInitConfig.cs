@@ -91,6 +91,7 @@ namespace Cemp.gui
             {
                 chkUse32bit.Checked = false;
             }
+            pB1.Visible = false;
         }
         private void FrmInitConfig_Load(object sender, EventArgs e)
         {
@@ -223,6 +224,96 @@ namespace Cemp.gui
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             DialogResult result = fbd.ShowDialog();
             txtPathReport.Text = fbd.SelectedPath;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            pB1.Visible = true;
+            String sql = "";
+            sql = "Select Distinct method1 From data_convert570915";
+            DataTable dt = cc.conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                pB1.Minimum = 0;
+                pB1.Maximum = dt.Rows.Count;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    Method me = new Method();
+                    String[] doc = dt.Rows[i]["method1"].ToString().Split();
+                    me.Id = "";
+                    me.Active = "1";
+                    if (doc[0].ToString().Equals("-"))
+                    {
+                        me.Code = cc.medb.selectMax();
+                    }
+                    else
+                    {
+                        //if (doc.Length > 1)
+                        //{
+                        //    if (doc[1] != null)
+                        //    {
+                        //        me.Code = doc[0].sub + doc[1] + cc.medb.selectMax();
+                        //    }
+                        //    else
+                        //    {
+                        //        me.Code = doc[0] + cc.medb.selectMax();
+                        //    }
+                        //}
+                        //else
+                        //{
+                        //    me.Code = doc[0] + cc.medb.selectMax();
+                        //}
+                        me.Code =cc.medb.selectMax();
+                        
+                    }
+                    
+                    me.dateCreate = me.dateGenDB;
+                    me.NameE = dt.Rows[i]["method1"].ToString();
+                    me.NameT = dt.Rows[i]["method1"].ToString();
+                    me.Remark = "";
+                    me.userCreate = cc.sf.Id;
+                    me.Sort1 = cc.medb.selectSortMax();
+                    cc.medb.insertMethod(me);
+                    pB1.Value = i;
+                }
+            }
+            pB1.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            pB1.Visible = true;
+            String sql = "";
+            sql = "Select * From data_convert570915";
+            DataTable dt = cc.conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                pB1.Minimum = 0;
+                pB1.Maximum = dt.Rows.Count;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    Item it = new Item();
+                    //String[] doc = dt.Rows[i]["method1"].ToString().Split();
+                    it.Id = "";
+                    it.Code = dt.Rows[i]["code"].ToString();
+                    it.dateCreate = it.dateGenDB;
+                    it.ItemGroupId = cc.itgdb.selectByNameT1(dt.Rows[i]["type1"].ToString());
+                    it.ItemGroupNameT=dt.Rows[i]["type1"].ToString();
+                    it.MeasuringPoint="";
+                    it.MethodId=cc.medb.selectByNameT1(dt.Rows[i]["method1"].ToString());
+                    it.MethodNameT = dt.Rows[i]["method1"].ToString();
+                    it.NameE = dt.Rows[i]["name1"].ToString();
+                    it.NameT = dt.Rows[i]["name1"].ToString();
+                    it.PriceCost = dt.Rows[i]["price_cost"].ToString();
+                    it.PriceSale = dt.Rows[i]["price_sale"].ToString();
+                    it.Remark = "convert 57-09-15";
+                    it.Sort1 = "";
+                    it.userCreate = cc.sf.Code;
+                    cc.itdb.insertItem(it);
+                    pB1.Value = i;
+                }
+            }
+            pB1.Visible = false;
         }
 
     }

@@ -29,6 +29,25 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtQuoLine6 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtQuoLine5 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtQuoLine4 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtQuoLine3 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtQuoLine2 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtQuoLine1 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnPathReport = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtPathReport = new System.Windows.Forms.TextBox();
+            this.chkUse32bit = new System.Windows.Forms.CheckBox();
+            this.chkClearInput = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.gBClient = new System.Windows.Forms.GroupBox();
             this.txtConnectShareImage = new System.Windows.Forms.TextBox();
@@ -64,31 +83,15 @@
             this.txtIP = new System.Windows.Forms.TextBox();
             this.ChkClient = new System.Windows.Forms.RadioButton();
             this.ChkServer = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnPathReport = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtPathReport = new System.Windows.Forms.TextBox();
-            this.chkUse32bit = new System.Windows.Forms.CheckBox();
-            this.chkClearInput = new System.Windows.Forms.CheckBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtQuoLine1 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtQuoLine2 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtQuoLine3 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtQuoLine4 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtQuoLine5 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtQuoLine6 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pB1 = new System.Windows.Forms.ProgressBar();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.gBClient.SuspendLayout();
             this.gBServer.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -103,8 +106,206 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label17);
+            this.groupBox4.Controls.Add(this.txtQuoLine6);
+            this.groupBox4.Controls.Add(this.label16);
+            this.groupBox4.Controls.Add(this.txtQuoLine5);
+            this.groupBox4.Controls.Add(this.label15);
+            this.groupBox4.Controls.Add(this.txtQuoLine4);
+            this.groupBox4.Controls.Add(this.label14);
+            this.groupBox4.Controls.Add(this.txtQuoLine3);
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.txtQuoLine2);
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Controls.Add(this.txtQuoLine1);
+            this.groupBox4.Location = new System.Drawing.Point(5, 83);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(669, 227);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "groupBox4";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(16, 154);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(82, 13);
+            this.label17.TabIndex = 44;
+            this.label17.Text = "quotation line6 :";
+            // 
+            // txtQuoLine6
+            // 
+            this.txtQuoLine6.Location = new System.Drawing.Point(115, 151);
+            this.txtQuoLine6.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuoLine6.Name = "txtQuoLine6";
+            this.txtQuoLine6.Size = new System.Drawing.Size(546, 20);
+            this.txtQuoLine6.TabIndex = 43;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(16, 130);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(82, 13);
+            this.label16.TabIndex = 42;
+            this.label16.Text = "quotation line5 :";
+            // 
+            // txtQuoLine5
+            // 
+            this.txtQuoLine5.Location = new System.Drawing.Point(115, 127);
+            this.txtQuoLine5.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuoLine5.Name = "txtQuoLine5";
+            this.txtQuoLine5.Size = new System.Drawing.Size(546, 20);
+            this.txtQuoLine5.TabIndex = 41;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(16, 106);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(82, 13);
+            this.label15.TabIndex = 40;
+            this.label15.Text = "quotation line4 :";
+            // 
+            // txtQuoLine4
+            // 
+            this.txtQuoLine4.Location = new System.Drawing.Point(115, 103);
+            this.txtQuoLine4.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuoLine4.Name = "txtQuoLine4";
+            this.txtQuoLine4.Size = new System.Drawing.Size(546, 20);
+            this.txtQuoLine4.TabIndex = 39;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(16, 82);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(82, 13);
+            this.label14.TabIndex = 38;
+            this.label14.Text = "quotation line3 :";
+            // 
+            // txtQuoLine3
+            // 
+            this.txtQuoLine3.Location = new System.Drawing.Point(115, 79);
+            this.txtQuoLine3.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuoLine3.Name = "txtQuoLine3";
+            this.txtQuoLine3.Size = new System.Drawing.Size(546, 20);
+            this.txtQuoLine3.TabIndex = 37;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(16, 58);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(82, 13);
+            this.label13.TabIndex = 36;
+            this.label13.Text = "quotation line2 :";
+            // 
+            // txtQuoLine2
+            // 
+            this.txtQuoLine2.Location = new System.Drawing.Point(115, 55);
+            this.txtQuoLine2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuoLine2.Name = "txtQuoLine2";
+            this.txtQuoLine2.Size = new System.Drawing.Size(546, 20);
+            this.txtQuoLine2.TabIndex = 35;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(16, 34);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(82, 13);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "quotation line1 :";
+            // 
+            // txtQuoLine1
+            // 
+            this.txtQuoLine1.Location = new System.Drawing.Point(115, 31);
+            this.txtQuoLine1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuoLine1.Name = "txtQuoLine1";
+            this.txtQuoLine1.Size = new System.Drawing.Size(546, 20);
+            this.txtQuoLine1.TabIndex = 33;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnPathReport);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.txtPathReport);
+            this.groupBox2.Controls.Add(this.chkUse32bit);
+            this.groupBox2.Controls.Add(this.chkClearInput);
+            this.groupBox2.Location = new System.Drawing.Point(4, 8);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(670, 70);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            // 
+            // btnPathReport
+            // 
+            this.btnPathReport.Location = new System.Drawing.Point(587, 13);
+            this.btnPathReport.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPathReport.Name = "btnPathReport";
+            this.btnPathReport.Size = new System.Drawing.Size(22, 26);
+            this.btnPathReport.TabIndex = 33;
+            this.btnPathReport.Text = "...";
+            this.btnPathReport.UseVisualStyleBackColor = true;
+            this.btnPathReport.Click += new System.EventHandler(this.btnPathReport_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(170, 17);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(67, 13);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "path รายงาน";
+            // 
+            // txtPathReport
+            // 
+            this.txtPathReport.Location = new System.Drawing.Point(261, 17);
+            this.txtPathReport.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPathReport.Name = "txtPathReport";
+            this.txtPathReport.Size = new System.Drawing.Size(322, 20);
+            this.txtPathReport.TabIndex = 31;
+            // 
+            // chkUse32bit
+            // 
+            this.chkUse32bit.AutoSize = true;
+            this.chkUse32bit.Location = new System.Drawing.Point(4, 37);
+            this.chkUse32bit.Margin = new System.Windows.Forms.Padding(2);
+            this.chkUse32bit.Name = "chkUse32bit";
+            this.chkUse32bit.Size = new System.Drawing.Size(68, 17);
+            this.chkUse32bit.TabIndex = 30;
+            this.chkUse32bit.Text = "ใช้ 32 bit";
+            this.chkUse32bit.UseVisualStyleBackColor = true;
+            // 
+            // chkClearInput
+            // 
+            this.chkClearInput.AutoSize = true;
+            this.chkClearInput.Location = new System.Drawing.Point(4, 17);
+            this.chkClearInput.Margin = new System.Windows.Forms.Padding(2);
+            this.chkClearInput.Name = "chkClearInput";
+            this.chkClearInput.Size = new System.Drawing.Size(127, 17);
+            this.chkClearInput.TabIndex = 0;
+            this.chkClearInput.Text = "ให้ล้างข้อมูลหลังบันทึก";
+            this.chkClearInput.UseVisualStyleBackColor = true;
+            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.pB1);
+            this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.gBClient);
             this.groupBox3.Controls.Add(this.btnSave);
             this.groupBox3.Controls.Add(this.gBServer);
@@ -483,200 +684,32 @@
             this.ChkServer.UseVisualStyleBackColor = true;
             this.ChkServer.Click += new System.EventHandler(this.ChkServer_Click);
             // 
-            // groupBox2
+            // button1
             // 
-            this.groupBox2.Controls.Add(this.btnPathReport);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.txtPathReport);
-            this.groupBox2.Controls.Add(this.chkUse32bit);
-            this.groupBox2.Controls.Add(this.chkClearInput);
-            this.groupBox2.Location = new System.Drawing.Point(4, 8);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(670, 70);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
+            this.button1.Location = new System.Drawing.Point(545, 221);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 23);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "Convert Method";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnPathReport
+            // pB1
             // 
-            this.btnPathReport.Location = new System.Drawing.Point(587, 13);
-            this.btnPathReport.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPathReport.Name = "btnPathReport";
-            this.btnPathReport.Size = new System.Drawing.Size(22, 26);
-            this.btnPathReport.TabIndex = 33;
-            this.btnPathReport.Text = "...";
-            this.btnPathReport.UseVisualStyleBackColor = true;
-            this.btnPathReport.Click += new System.EventHandler(this.btnPathReport_Click);
+            this.pB1.Location = new System.Drawing.Point(0, 391);
+            this.pB1.Name = "pB1";
+            this.pB1.Size = new System.Drawing.Size(665, 23);
+            this.pB1.TabIndex = 31;
             // 
-            // label11
+            // button2
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(170, 17);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(67, 13);
-            this.label11.TabIndex = 32;
-            this.label11.Text = "path รายงาน";
-            // 
-            // txtPathReport
-            // 
-            this.txtPathReport.Location = new System.Drawing.Point(261, 17);
-            this.txtPathReport.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPathReport.Name = "txtPathReport";
-            this.txtPathReport.Size = new System.Drawing.Size(322, 20);
-            this.txtPathReport.TabIndex = 31;
-            // 
-            // chkUse32bit
-            // 
-            this.chkUse32bit.AutoSize = true;
-            this.chkUse32bit.Location = new System.Drawing.Point(4, 37);
-            this.chkUse32bit.Margin = new System.Windows.Forms.Padding(2);
-            this.chkUse32bit.Name = "chkUse32bit";
-            this.chkUse32bit.Size = new System.Drawing.Size(68, 17);
-            this.chkUse32bit.TabIndex = 30;
-            this.chkUse32bit.Text = "ใช้ 32 bit";
-            this.chkUse32bit.UseVisualStyleBackColor = true;
-            // 
-            // chkClearInput
-            // 
-            this.chkClearInput.AutoSize = true;
-            this.chkClearInput.Location = new System.Drawing.Point(4, 17);
-            this.chkClearInput.Margin = new System.Windows.Forms.Padding(2);
-            this.chkClearInput.Name = "chkClearInput";
-            this.chkClearInput.Size = new System.Drawing.Size(127, 17);
-            this.chkClearInput.TabIndex = 0;
-            this.chkClearInput.Text = "ให้ล้างข้อมูลหลังบันทึก";
-            this.chkClearInput.UseVisualStyleBackColor = true;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.label17);
-            this.groupBox4.Controls.Add(this.txtQuoLine6);
-            this.groupBox4.Controls.Add(this.label16);
-            this.groupBox4.Controls.Add(this.txtQuoLine5);
-            this.groupBox4.Controls.Add(this.label15);
-            this.groupBox4.Controls.Add(this.txtQuoLine4);
-            this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.txtQuoLine3);
-            this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Controls.Add(this.txtQuoLine2);
-            this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.txtQuoLine1);
-            this.groupBox4.Location = new System.Drawing.Point(5, 83);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(669, 227);
-            this.groupBox4.TabIndex = 2;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(16, 34);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(82, 13);
-            this.label12.TabIndex = 34;
-            this.label12.Text = "quotation line1 :";
-            // 
-            // txtQuoLine1
-            // 
-            this.txtQuoLine1.Location = new System.Drawing.Point(115, 31);
-            this.txtQuoLine1.Margin = new System.Windows.Forms.Padding(2);
-            this.txtQuoLine1.Name = "txtQuoLine1";
-            this.txtQuoLine1.Size = new System.Drawing.Size(546, 20);
-            this.txtQuoLine1.TabIndex = 33;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(16, 58);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(82, 13);
-            this.label13.TabIndex = 36;
-            this.label13.Text = "quotation line2 :";
-            // 
-            // txtQuoLine2
-            // 
-            this.txtQuoLine2.Location = new System.Drawing.Point(115, 55);
-            this.txtQuoLine2.Margin = new System.Windows.Forms.Padding(2);
-            this.txtQuoLine2.Name = "txtQuoLine2";
-            this.txtQuoLine2.Size = new System.Drawing.Size(546, 20);
-            this.txtQuoLine2.TabIndex = 35;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(16, 82);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(82, 13);
-            this.label14.TabIndex = 38;
-            this.label14.Text = "quotation line3 :";
-            // 
-            // txtQuoLine3
-            // 
-            this.txtQuoLine3.Location = new System.Drawing.Point(115, 79);
-            this.txtQuoLine3.Margin = new System.Windows.Forms.Padding(2);
-            this.txtQuoLine3.Name = "txtQuoLine3";
-            this.txtQuoLine3.Size = new System.Drawing.Size(546, 20);
-            this.txtQuoLine3.TabIndex = 37;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(16, 106);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(82, 13);
-            this.label15.TabIndex = 40;
-            this.label15.Text = "quotation line4 :";
-            // 
-            // txtQuoLine4
-            // 
-            this.txtQuoLine4.Location = new System.Drawing.Point(115, 103);
-            this.txtQuoLine4.Margin = new System.Windows.Forms.Padding(2);
-            this.txtQuoLine4.Name = "txtQuoLine4";
-            this.txtQuoLine4.Size = new System.Drawing.Size(546, 20);
-            this.txtQuoLine4.TabIndex = 39;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(16, 130);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(82, 13);
-            this.label16.TabIndex = 42;
-            this.label16.Text = "quotation line5 :";
-            // 
-            // txtQuoLine5
-            // 
-            this.txtQuoLine5.Location = new System.Drawing.Point(115, 127);
-            this.txtQuoLine5.Margin = new System.Windows.Forms.Padding(2);
-            this.txtQuoLine5.Name = "txtQuoLine5";
-            this.txtQuoLine5.Size = new System.Drawing.Size(546, 20);
-            this.txtQuoLine5.TabIndex = 41;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(16, 154);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(82, 13);
-            this.label17.TabIndex = 44;
-            this.label17.Text = "quotation line6 :";
-            // 
-            // txtQuoLine6
-            // 
-            this.txtQuoLine6.Location = new System.Drawing.Point(115, 151);
-            this.txtQuoLine6.Margin = new System.Windows.Forms.Padding(2);
-            this.txtQuoLine6.Name = "txtQuoLine6";
-            this.txtQuoLine6.Size = new System.Drawing.Size(546, 20);
-            this.txtQuoLine6.TabIndex = 43;
+            this.button2.Location = new System.Drawing.Point(545, 259);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 23);
+            this.button2.TabIndex = 32;
+            this.button2.Text = "Convert Parameter";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FrmInitConfig
             // 
@@ -691,16 +724,16 @@
             this.Text = "FrmInitConfig";
             this.Load += new System.EventHandler(this.FrmInitConfig_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.gBClient.ResumeLayout(false);
             this.gBClient.PerformLayout();
             this.gBServer.ResumeLayout(false);
             this.gBServer.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -762,5 +795,8 @@
         private System.Windows.Forms.TextBox txtQuoLine6;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtQuoLine5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ProgressBar pB1;
+        private System.Windows.Forms.Button button2;
     }
 }

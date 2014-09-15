@@ -280,30 +280,30 @@ namespace Cemp.objdb
             {
                 p.Id = "qu"+p.getGenID();
             }
-            p.CompAddress1 = p.CompAddress1.Replace("''", "'");
-            p.Remark1 = p.Remark1.Replace("''", "'");
-            p.Remark2 = p.Remark2.Replace("''", "'");
-            p.Remark3 = p.Remark3.Replace("''", "'");
-            p.CompAddress2 = p.CompAddress2.Replace("''", "'");
-            p.CompName = p.CompName.Replace("''", "'");
-            p.ContactName = p.ContactName.Replace("''", "'");
-            p.CustAddress = p.CustAddress.Replace("''", "'");
-            p.CustName = p.CustName.Replace("''", "'");
-            p.Plus1Name = p.Plus1Name.Replace("''", "'");
-            p.StaffName = p.StaffName.Replace("''", "'");
-            p.StaffApproveName = p.StaffApproveName.Replace("''", "'");
+            p.CompAddress1 = p.CompAddress1.Replace("'", "''");
+            p.Remark1 = p.Remark1.Replace("'", "''");
+            p.Remark2 = p.Remark2.Replace("'", "''");
+            p.Remark3 = p.Remark3.Replace("'", "''");
+            p.CompAddress2 = p.CompAddress2.Replace("'", "''");
+            p.CompName = p.CompName.Replace("'", "''");
+            p.ContactName = p.ContactName.Replace("'", "''");
+            p.CustAddress = p.CustAddress.Replace("'", "''");
+            p.CustName = p.CustName.Replace("'", "''");
+            p.Plus1Name = p.Plus1Name.Replace("'", "''");
+            p.StaffName = p.StaffName.Replace("'", "''");
+            p.StaffApproveName = p.StaffApproveName.Replace("'", "''");
 
-            p.Line1 = p.Line1.Replace("''", "'");
-            p.Line2 = p.Line2.Replace("''", "'");
-            p.Line3 = p.Line3.Replace("''", "'");
-            p.Line4 = p.Line4.Replace("''", "'");
-            p.Line5 = p.Line5.Replace("''", "'");
-            p.Line6 = p.Line6.Replace("''", "'");
+            p.Line1 = p.Line1.Replace("'", "''");
+            p.Line2 = p.Line2.Replace("'", "''");
+            p.Line3 = p.Line3.Replace("'", "''");
+            p.Line4 = p.Line4.Replace("'", "''");
+            p.Line5 = p.Line5.Replace("'", "''");
+            p.Line6 = p.Line6.Replace("'", "''");
 
-            p.Remark4 = p.Remark4.Replace("''", "'");
-            p.Remark5 = p.Remark5.Replace("''", "'");
-            p.Remark6 = p.Remark6.Replace("''", "'");
-            p.Remark7 = p.Remark7.Replace("''", "'");
+            p.Remark4 = p.Remark4.Replace("'", "''");
+            p.Remark5 = p.Remark5.Replace("'", "''");
+            p.Remark6 = p.Remark6.Replace("'", "''");
+            p.Remark7 = p.Remark7.Replace("'", "''");
 
             p.QuoNumberCnt = "1";
             p.StatusMOU = "1";
@@ -338,7 +338,7 @@ namespace Cemp.objdb
                 p.StaffName + "','" + p.StaffTel + "','" + p.StatusQuo + "'," +
                 NumberNull1(p.Total) + "," + NumberNull1(p.Vat) + "," + NumberNull1(p.VatRate) + ",'" +
                 p.StaffApproveId + "','" + p.StaffApproveName + "'," + NumberNull1(p.Discount) + "," +
-                NumberNull1(p.QuoNumberCnt) + ",'" + p.StatusMOU + ",'" + p.Remark4 + ",'" + p.Remark5 + ",'" + p.Remark6 + ",'" + p.Remark7 + "')";
+                NumberNull1(p.QuoNumberCnt) + ",'" + p.StatusMOU + "','" + p.Remark4 + "','" + p.Remark5 + "','" + p.Remark6 + "','" + p.Remark7 + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

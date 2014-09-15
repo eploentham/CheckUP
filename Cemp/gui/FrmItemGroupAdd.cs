@@ -47,6 +47,10 @@ namespace Cemp.gui
             txtNameT.Text = itg.NameT;
             txtRemark.Text = itg.Remark;
             txtSort1.Text = itg.Sort1;
+            if (txtSort1.Text.Equals(""))
+            {
+                txtSort1.Text = cc.itgdb.selectSortMax();
+            }
             if (itg.Active.Equals("1"))
             {
                 chkActive.Checked = true;

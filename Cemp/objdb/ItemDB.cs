@@ -73,7 +73,24 @@ namespace Cemp.objdb
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + it.table + " Where " + it.Active + "='1'";
+            sql = "Select * From " + it.table + " Where " + it.Active + "='1' Order By "+it.Code;
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectByItGroupMethod(String itgId, String meId)
+        {
+            String sql = "", whereitg="", wheremeid="";
+            DataTable dt = new DataTable();
+            if (!itgId.Equals(""))
+            {
+                whereitg = " and "+it.ItemGroupNameT+" like '"+itgId+"%'";
+            }
+            if (!meId.Equals(""))
+            {
+                wheremeid = " and " + it.MethodNameT + " like '" + meId + "%'";
+            }
+            sql = "Select * From " + it.table + " Where " + it.Active + "='1'" + whereitg+wheremeid;
             dt = conn.selectData(sql);
 
             return dt;
@@ -127,11 +144,12 @@ namespace Cemp.objdb
                 p.Id = "it" + p.getGenID();
             }
 
-            p.NameE = p.NameE.Replace("''", "'");
-            p.NameT = p.NameT.Replace("''", "'");
-            p.Remark = p.Remark.Replace("''", "'");
-            p.ItemGroupNameT = p.ItemGroupNameT.Replace("''", "'");
-            p.MethodNameT = p.MethodNameT.Replace("''", "'");
+            p.NameE = p.NameE.Replace("'", "''");
+            p.NameT = p.NameT.Replace("'", "''");
+            p.Remark = p.Remark.Replace("'", "''");
+            p.ItemGroupNameT = p.ItemGroupNameT.Replace("'", "''");
+            p.MethodNameT = p.MethodNameT.Replace("'", "''");
+
             if (p.Sort1.Equals(""))
             {
                 p.Sort1 = "9999";
@@ -252,7 +270,7 @@ namespace Cemp.objdb
             {
                 item = new ComboBoxItem();
                 item.Value = dt.Rows[i][it.Id].ToString();
-                item.Text = dt.Rows[i][it.Code].ToString() + " " + dt.Rows[i][it.NameT].ToString() + " " + dt.Rows[i][it.MethodNameT].ToString();
+                item.Text = dt.Rows[i][it.Code].ToString() + " " + dt.Rows[i][it.NameT].ToString() + " [" + dt.Rows[i][it.MethodNameT].ToString()+"]";
                 c.Items.Add(item);
                 //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
                 //c.Items.Add(new );

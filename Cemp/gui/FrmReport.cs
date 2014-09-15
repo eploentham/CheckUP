@@ -89,6 +89,7 @@ namespace Cemp
             catch (Exception ex)
             {
                 chk = ex.Message.ToString();
+                cc.lw.WriteLog("rpt.SetParameterValue Error " + chk);
             }
             
             //rpt.SetParameterValue("CustomerID", this.txtCustomerID.Text);
@@ -129,8 +130,11 @@ namespace Cemp
             ReportDocument rpt = new ReportDocument();
             try
             {
+                cc.lw.WriteLog("rpt.setReportQuotation OK ");
                 rpt.Load(cc.initC.PathReport + "\\QuotationPrint.rpt");
+                cc.lw.WriteLog("rpt.setReportQuotation OK Load" + cc.initC.PathReport + "\\QuotationPrint.rpt");
                 rpt.SetDataSource(dt);
+                cc.lw.WriteLog("rpt.setReportQuotation OK SetDataSource");
                 //rpt.SetDataSource(dt2);
                 //ParameterField myParam = new ParameterField();
                 //myParam.Name = "header1";
@@ -205,6 +209,7 @@ namespace Cemp
             catch (Exception ex)
             {
                 chk = ex.Message.ToString();
+                cc.lw.WriteLog("rpt.setReportQuotation Error " + chk);
             }
         }
 

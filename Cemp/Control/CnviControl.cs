@@ -140,27 +140,33 @@ namespace Cemp.Control
         }
         public void SetQuoLine1(String path)
         {
-            iniFile.Write("quotationline1", path);
+            //iniFile.Write("quotationline1", path);
+            iniFile.WriteUniCode("quotationline1", Utf8ToUtf16(path));
         }
         public void SetQuoLine2(String path)
         {
-            iniFile.Write("quotationline2", path);
+            //iniFile.Write("quotationline2", path);
+            iniFile.WriteUniCode("quotationline2", Utf8ToUtf16(path));
         }
         public void SetQuoLine3(String path)
         {
-            iniFile.Write("quotationline3", path);
+            //iniFile.Write("quotationline3", path);
+            iniFile.WriteUniCode("quotationline3", path);
         }
         public void SetQuoLine4(String path)
         {
-            iniFile.Write("quotationline4", path);
+            //iniFile.Write("quotationline4", path);
+            iniFile.WriteUniCode("quotationline4", path);
         }
         public void SetQuoLine5(String path)
         {
-            iniFile.Write("quotationline5", path);
+            //iniFile.Write("quotationline5", path);
+            iniFile.WriteUniCode("quotationline5", path);
         }
         public void SetQuoLine6(String path)
         {
-            iniFile.Write("quotationline6", path);
+            //iniFile.Write("quotationline6", path);
+            iniFile.WriteUniCode("quotationline6", path);
         }
         public void SetSetatusServer(Boolean value)
         {
@@ -452,6 +458,17 @@ namespace Cemp.Control
                 }
             }
             return bahtTH;
+        }
+        public static string Utf8ToUtf16(string utf8String)
+        {
+            // Get UTF8 bytes by reading each byte with ANSI encoding
+            byte[] utf8Bytes = Encoding.Default.GetBytes(utf8String);
+
+            // Convert UTF8 bytes to UTF16 bytes
+            byte[] utf16Bytes = Encoding.Convert(Encoding.UTF8, Encoding.Unicode, utf8Bytes);
+
+            // Return UTF16 bytes as UTF16 string
+            return Encoding.Unicode.GetString(utf16Bytes);
         }
     }
 }

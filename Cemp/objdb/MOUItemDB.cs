@@ -105,9 +105,9 @@ namespace Cemp.objdb
                 p.Id = "moi" + p.getGenID();
             }
 
-            p.MethodDescription = p.MethodDescription.Replace("''", "'");
-            p.ItemDescription = p.ItemDescription.Replace("''", "'");
-            p.PlaceRecord = p.PlaceRecord.Replace("''", "'");
+            p.MethodDescription = p.MethodDescription.Replace("'", "''");
+            p.ItemDescription = p.ItemDescription.Replace("'", "''");
+            p.PlaceRecord = p.PlaceRecord.Replace("'", "''");
 
             sql = "Insert Into " + moi.table + " (" + moi.pkField + "," + moi.Active + "," + moi.ItemDescription + "," +
                 moi.ItemId + "," + moi.MethodDescription + "," + moi.MethodId + "," +

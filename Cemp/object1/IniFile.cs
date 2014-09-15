@@ -19,6 +19,16 @@ namespace Cemp.object1
         [DllImport("kernel32")]
         static extern int GetPrivateProfileString(string Section, string Key, string Default, StringBuilder RetVal, int Size, string FilePath);
 
+        [DllImport("KERNEL32.DLL", EntryPoint = "WritePrivateProfileStringW",
+           SetLastError = true,
+           CharSet = CharSet.Unicode, ExactSpelling = true,
+           CallingConvention = CallingConvention.StdCall)]
+        private static extern int WritePrivateProfileStringUniCode(
+                    string lpAppName,
+                    string lpKeyName,
+                    string lpString,
+                    string lpFilename);
+
         public IniFile(string IniPath = null)
         {
             Path = new FileInfo(IniPath ?? EXE + ".ini").FullName.ToString();
@@ -34,6 +44,11 @@ namespace Cemp.object1
         public void Write(string Key, string Value, string Section = null)
         {
             WritePrivateProfileString(Section ?? EXE, Key, Value, Path);
+        }
+
+        public void WriteUniCode(string Key, string Value, string Section = null)
+        {
+            WritePrivateProfileStringUniCode(Section ?? EXE, Key, Value, Path);
         }
 
         public void DeleteKey(string Key, string Section = null)

@@ -18,6 +18,7 @@ namespace Cemp.gui
         Item it;
         int colRow = 0, colNameT = 1, colNameE = 2, colMethod = 3, colGroup = 4, colRemark = 5, colId = 6;
         int colCnt = 7;
+        Boolean pageLoad = false;
         public FrmItemView(CnviControl c)
         {
             InitializeComponent();
@@ -27,8 +28,12 @@ namespace Cemp.gui
         private void initConfig()
         {
             //cc = c;
+            pageLoad = true;
             it = new Item();
-            setGrd();
+            cboItemGroup = cc.itgdb.getCboItemGroup(cboItemGroup);
+            cboMothod = cc.medb.getCboMethod(cboMothod);
+            setGrd("","");
+            pageLoad = false;
         }
         private void setResize()
         {
@@ -39,12 +44,20 @@ namespace Cemp.gui
             //groupBox1.Width = this.Width - 50;
             //groupBox1.Height = this.Height = 150;
         }
-        private void setGrd()
+        private void setGrd(String itgId, String meId)
         {
             try
             {
                 DataTable dt = new DataTable();
-                dt = cc.itdb.selectAll();
+                if (itgId.Equals("") && meId.Equals(""))
+                {
+                    dt = cc.itdb.selectAll();
+                }
+                else
+                {
+                    dt = cc.itdb.selectByItGroupMethod(itgId, meId);
+                }
+                
                 dgvView.ColumnCount = colCnt;
 
                 dgvView.RowCount = dt.Rows.Count + 1;
@@ -104,7 +117,7 @@ namespace Cemp.gui
             FrmItemAdd frm = new FrmItemAdd("",cc);
             //frm.ShowDialog(this);
             frm.Show();
-            setGrd();
+            setGrd(cboItemGroup.Text, cboMothod.Text);
         }
 
         private void FrmItemView_Resize(object sender, EventArgs e)
@@ -125,7 +138,7 @@ namespace Cemp.gui
             FrmItemAdd frm = new FrmItemAdd(dgvView[colId, e.RowIndex].Value.ToString(), cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
-            setGrd();
+            setGrd(cboItemGroup.Text, cboMothod.Text);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -139,7 +152,32 @@ namespace Cemp.gui
 
         private void FrmItemView_Activated(object sender, EventArgs e)
         {
-            setGrd();
+            if (!pageLoad)
+            {
+                setGrd(cboItemGroup.Text, cboMothod.Text);
+            }
+            
+        }
+
+        private void cboMothod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!pageLoad)
+            {
+                setGrd(cboItemGroup.Text, cboMothod.Text);
+            }
+        }
+
+        private void cboItemGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!pageLoad)
+            {
+                setGrd(cboItemGroup.Text, cboMothod.Text);
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            setGrd(cboItemGroup.Text, cboMothod.Text);
         }
     }
 }

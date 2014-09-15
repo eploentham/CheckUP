@@ -1,0 +1,20 @@
+
+Log Entry : 17:13:12 15 กันยายน 2557
+  :
+  :FrmReport setReport D:\source\CNVI\CNVI.Cemp\Cemp\report\ItemList.rpt
+-------------------------------
+
+Log Entry : 17:13:14 15 กันยายน 2557
+  :
+  :rpt.Load OK.
+-------------------------------
+
+Log Entry : 17:13:14 15 กันยายน 2557
+  :
+  :rpt.SetDataSource OK.
+-------------------------------
+
+Log Entry : 17:13:14 15 กันยายน 2557
+  :
+  :rpt.SetParameterValue OK.
+-------------------------------

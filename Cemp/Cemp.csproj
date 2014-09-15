@@ -232,6 +232,7 @@
     <Compile Include="object1\ComboBoxItem.cs" />
     <Compile Include="object1\Company.cs" />
     <Compile Include="object1\Config1.cs" />
+    <Compile Include="object1\ConfigFile.cs" />
     <Compile Include="object1\Customer.cs" />
     <Compile Include="object1\District.cs" />
     <Compile Include="object1\IniFile.cs" />

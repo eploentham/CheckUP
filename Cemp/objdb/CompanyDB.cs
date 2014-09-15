@@ -48,6 +48,13 @@ namespace Cemp.objdb
             cp.userCreate = "user_create";
             cp.userModi = "user_modi";
 
+            cp.quLine1 = "qu_line1";
+            cp.quLine2 = "qu_line2";
+            cp.quLine3 = "qu_line3";
+            cp.quLine4 = "qu_line4";
+            cp.quLine5 = "qu_line5";
+            cp.quLine6 = "qu_line6";
+
             cp.pkField = "comp_id";
             cp.table = "b_company";
         }
@@ -79,6 +86,13 @@ namespace Cemp.objdb
             item.userCancel = dt.Rows[0][cp.userCancel].ToString();
             item.userCreate = dt.Rows[0][cp.userCreate].ToString();
             item.userModi = dt.Rows[0][cp.userModi].ToString();
+
+            item.quLine1 = dt.Rows[0][cp.quLine1].ToString();
+            item.quLine2 = dt.Rows[0][cp.quLine2].ToString();
+            item.quLine3 = dt.Rows[0][cp.quLine3].ToString();
+            item.quLine4 = dt.Rows[0][cp.quLine4].ToString();
+            item.quLine5 = dt.Rows[0][cp.quLine5].ToString();
+            item.quLine6 = dt.Rows[0][cp.quLine6].ToString();
 
             return item;
         }
@@ -148,11 +162,17 @@ namespace Cemp.objdb
         {
             String sql = "", chk = "";
 
-            p.AddressE = p.AddressE.Replace("''", "'");
-            p.AddressT = p.AddressT.Replace("''", "'");
-            p.NameE = p.NameE.Replace("''", "'");
-            p.NameT = p.NameT.Replace("''", "'");
-            p.Addr = p.Addr.Replace("''", "'");
+            p.AddressE = p.AddressE.Replace("'", "''");
+            p.AddressT = p.AddressT.Replace("'", "''");
+            p.NameE = p.NameE.Replace("'", "''");
+            p.NameT = p.NameT.Replace("'", "''");
+            p.Addr = p.Addr.Replace("'", "''");
+            p.quLine1 = p.quLine1.Replace("'", "''");
+            p.quLine2 = p.quLine2.Replace("'", "''");
+            p.quLine3 = p.quLine3.Replace("'", "''");
+            p.quLine4 = p.quLine4.Replace("'", "''");
+            p.quLine5 = p.quLine5.Replace("'", "''");
+            p.quLine6 = p.quLine6.Replace("'", "''");
 
             sql = "Update " + cp.table + " Set " + cp.AddressE + "='" + p.AddressE + "', " +
                 cp.AddressT + "='" + p.AddressT + "', " +
@@ -170,7 +190,13 @@ namespace Cemp.objdb
                 cp.WebSite + "='" + p.WebSite + "', " +
                 cp.Addr + "='" + p.Addr + "', " +
                 cp.Code + "='" + p.Code + "', " +
-                cp.Spec1 + "='" + p.Spec1 + "' " +
+                cp.quLine1 + "='" + p.quLine1 + "', " +
+                cp.quLine2 + "='" + p.quLine2 + "', " +
+                cp.quLine3 + "='" + p.quLine3 + "', " +
+                cp.quLine4 + "='" + p.quLine4 + "', " +
+                cp.quLine5 + "='" + p.quLine5 + "', " +
+                cp.quLine6 + "='" + p.quLine6 + "' " +
+                
                 "Where " + cp.pkField + "='" + p.Id + "'";
             try
             {

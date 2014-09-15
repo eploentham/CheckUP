@@ -60,7 +60,7 @@ namespace Cemp.objdb
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + itg.table + " Where " + itg.Active + "='1'";
+            sql = "Select * From " + itg.table + " Where " + itg.Active + "='1' Order By "+itg.Sort1;
             dt = conn.selectData(sql);
 
             return dt;
@@ -92,6 +92,21 @@ namespace Cemp.objdb
             }
             return cnt;
         }
+
+        public String selectSortMax()
+        {
+            String sql = "";
+            int cnt = 0;
+            DataTable dt = new DataTable();
+            sql = "Select count(1) as cnt  From " + itg.table;
+            dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                cnt = (100 + int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);
+                //cnt = cnt.Substring(cnt.Length - 3); ;
+            }
+            return cnt.ToString();
+        }
         public ItemGroup selectByNameT(String cuId)
         {
             ItemGroup item = new ItemGroup();
@@ -104,6 +119,20 @@ namespace Cemp.objdb
                 item = setData(item, dt);
             }
             return item;
+        }
+        public String selectByNameT1(String cuId)
+        {
+            ItemGroup item = new ItemGroup();
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select "+itg.Id+" From " + itg.table + " Where " + itg.NameT + "='" + cuId.Replace("'","''") + "'";
+            dt = conn.selectData(sql);
+            sql = "";
+            if (dt.Rows.Count > 0)
+            {
+                sql = dt.Rows[0][itg.Id].ToString();
+            }
+            return sql;
         }
         //public ItemGroup selectByCode(String cuId)
         //{

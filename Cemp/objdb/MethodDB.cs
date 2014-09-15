@@ -61,7 +61,7 @@ namespace Cemp.objdb
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + me.table + " Where " + me.Active + "='1'";
+            sql = "Select * From " + me.table + " Where " + me.Active + "='1' Order By "+me.Sort1;
             dt = conn.selectData(sql);
 
             return dt;
@@ -119,6 +119,21 @@ namespace Cemp.objdb
                 item = setData(item, dt);
             }
             return item;
+        }
+        public String selectByNameT1(String cuId)
+        {
+            ItemGroup item = new ItemGroup();
+            String sql = "";
+            DataTable dt = new DataTable();
+
+            sql = "Select " + me.Id + " From " + me.table + " Where " + me.NameT + "='" + cuId.Replace("'","''") + "'";
+            dt = conn.selectData(sql);
+            sql = "";
+            if (dt.Rows.Count > 0)
+            {
+                sql = dt.Rows[0][me.Id].ToString();
+            }
+            return sql;
         }
         private String insert(Method p)
         {

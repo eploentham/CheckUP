@@ -72,6 +72,14 @@ namespace Cemp.gui
             viewImage(cc.PathLogo + "\\" + cp.logo);
             label18.Text = cp.districtId;
             txtSpec1.Text = cp.Spec1;
+
+            txtQuoLine1.Text = cp.quLine1;
+            txtQuoLine2.Text = cp.quLine2;
+            txtQuoLine3.Text = cp.quLine3;
+            txtQuoLine4.Text = cp.quLine4;
+            txtQuoLine5.Text = cp.quLine5;
+            txtQuoLine6.Text = cp.quLine6;
+
             if (label18.Text.Length > 4)
             {
                 cboDistrict = cc.didb.getCboDist1(cboDistrict, label18.Text);
@@ -101,6 +109,13 @@ namespace Cemp.gui
             cp.Zipcode = txtZipcode.Text;
             cp.WebSite = txtWebSite.Text;
             cp.Spec1 = txtSpec1.Text;
+
+            cp.quLine1=txtQuoLine1.Text;
+            cp.quLine2=txtQuoLine2.Text;
+            cp.quLine3=txtQuoLine3.Text;
+            cp.quLine4=txtQuoLine4.Text;
+            cp.quLine5=txtQuoLine5.Text;
+            cp.quLine6=txtQuoLine6.Text;
         }
 
         private void FrmCompany_Load(object sender, EventArgs e)
