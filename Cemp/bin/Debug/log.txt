@@ -18,3 +18,33 @@ Log Entry : 17:13:14 15 กันยายน 2557
   :
   :rpt.SetParameterValue OK.
 -------------------------------
+
+Log Entry : 21:12:42 15 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 21:12:45 15 กันยายน 2557
+  :
+  :rpt.setReportQuotation Error โหลดรายงานไม่สำเร็จ
+-------------------------------
+
+Log Entry : 21:13:25 15 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 22:17:17 15 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 22:17:19 15 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadC:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 22:17:20 15 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------

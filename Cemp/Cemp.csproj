@@ -303,6 +303,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MethodListDS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="report\MOUPrint.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MOUPrint.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\MOUPrintDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MOUPrintDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="report\MOUSamplePrint.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MOUSamplePrint.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="report\QuotationDS.cs">
       <DependentUpon>QuotationDS.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -454,6 +471,14 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>MethodList.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="report\MOUPrint.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MOUPrint.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\MOUSamplePrint.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MOUSamplePrint.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="report\QuotationPrint.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>QuotationPrint.cs</LastGenOutput>
@@ -541,6 +566,17 @@
     <None Include="report\MethodListDS.xss">
       <DependentUpon>MethodListDS.xsd</DependentUpon>
     </None>
+    <None Include="report\MOUPrintDS.xsc">
+      <DependentUpon>MOUPrintDS.xsd</DependentUpon>
+    </None>
+    <None Include="report\MOUPrintDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MOUPrintDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="report\MOUPrintDS.xss">
+      <DependentUpon>MOUPrintDS.xsd</DependentUpon>
+    </None>
     <None Include="report\QuotationDS.xsc">
       <DependentUpon>QuotationDS.xsd</DependentUpon>
     </None>
@@ -569,6 +605,11 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cemp.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

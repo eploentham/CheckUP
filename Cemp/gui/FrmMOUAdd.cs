@@ -32,18 +32,18 @@ namespace Cemp.gui
             qu = new Quotation();
             cboMOU = cc.modb.getCboMOUNumber(cboMOU, moNumber);
             cboQuo = cc.qudb.getCboQuotation(cboQuo);
+            cboStaffMOU = cc.sfdb.getCboStaff(cboStaffMOU);
+            cboStaff = cc.sfdb.getCboStaff(cboStaff);
+            cboItem = cc.itdb.getCboItemQuotation(cboItem);
+            setGrd("");
             pageLoad = false;
         }
         private void setControl(String moId)
         {
-
             mo = cc.modb.selectByPk(moId);
 
             cboMOU = cc.modb.getCboMOUNumber(cboMOU, mo.MOUNumber);
-            
-            cboStaff = cc.sfdb.getCboStaff(cboStaff);
-            cboStaffMOU = cc.sfdb.getCboStaff(cboStaffMOU);
-            cboItem = cc.itdb.getCboItemQuotation(cboItem);
+
             //cboContact = cc.cudb.getCboCustomer(cboContact);
 
             txtContactName.Text = mo.ContactName;
@@ -364,6 +364,10 @@ namespace Cemp.gui
             dgvAdd[colId, row].Value = "";
             dgvAdd[colDel, row].Value = "";
             dgvAdd[colEdit, row].Value = "";
+            if ((row % 2) != 0)
+            {
+                dgvAdd.Rows[row].DefaultCellStyle.BackColor = Color.LightSalmon;
+            }
             //calAmount();
             //calNetTotal();
 
@@ -408,6 +412,23 @@ namespace Cemp.gui
             cboItem.SelectedItem = cc.setCboItem(cboItem, dgvAdd[colItemId, e.RowIndex].Value.ToString());
             //cboMethod.Text = dgvAdd[colMethod, e.RowIndex].Value.ToString();
             pageLoad = false;
+        }
+
+        private void btnPrintMou_Click(object sender, EventArgs e)
+        {
+            String sql = "";
+            //OleDbDataAdapter da = new OleDbDataAdapter();
+            DataTable dt = cc.moidb.selectByMoId(txtMOUId.Text);
+            MOU mo = cc.modb.selectByPk(txtMOUId.Text);
+
+            FrmReport frm = new FrmReport(cc);
+            frm.setReportMOU(mo, dt);
+            frm.ShowDialog(this);
+        }
+
+        private void btnReceive_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

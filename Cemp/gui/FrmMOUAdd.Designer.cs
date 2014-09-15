@@ -462,6 +462,7 @@
             this.btnReceive.TabIndex = 51;
             this.btnReceive.Text = "พิมพ์ใบรับตัวอย่าง";
             this.btnReceive.UseVisualStyleBackColor = true;
+            this.btnReceive.Click += new System.EventHandler(this.btnReceive_Click);
             // 
             // btnPrintMou
             // 
@@ -472,6 +473,7 @@
             this.btnPrintMou.TabIndex = 50;
             this.btnPrintMou.Text = "พิมพ์ MOU";
             this.btnPrintMou.UseVisualStyleBackColor = true;
+            this.btnPrintMou.Click += new System.EventHandler(this.btnPrintMou_Click);
             // 
             // dgvAdd
             // 

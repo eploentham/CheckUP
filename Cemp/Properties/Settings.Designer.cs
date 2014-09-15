@@ -33,5 +33,15 @@ namespace Cemp.Properties {
                 return ((string)(this["CempConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\Cemp.mdb")]
+        public string CempConnectionString1 {
+            get {
+                return ((string)(this["CempConnectionString1"]));
+            }
+        }
     }
 }

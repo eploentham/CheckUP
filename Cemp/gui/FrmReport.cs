@@ -124,6 +124,29 @@ namespace Cemp
                 chk = ex.Message.ToString();
             }
         }
+        public void setReportMOU(MOU mo, DataTable dt)
+        {
+            String chk = "";
+            ReportDocument rpt = new ReportDocument();
+            try
+            {
+                cc.lw.WriteLog("rpt.setReportMOU OK ");
+                rpt.Load(cc.initC.PathReport + "\\MOUPrint.rpt");
+                rpt.SetDataSource(dt);
+                cc.lw.WriteLog("rpt.setReportMOU OK SetDataSource");
+
+                rpt.SetParameterValue("mouNumber", mo.MOUNumber);
+
+
+                this.crystalReportViewer1.ReportSource = rpt;
+                this.crystalReportViewer1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                chk = ex.Message.ToString();
+                cc.lw.WriteLog("rpt.setReportMOU Error " + chk);
+            }
+        }
         public void setReportQuotation(Quotation qu, DataTable dt)
         {
             String chk = "";

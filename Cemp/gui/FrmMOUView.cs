@@ -43,7 +43,7 @@ namespace Cemp.gui
             dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvView.Columns[colRow].Width = 50;
             dgvView.Columns[colMOUNumber].Width = 150;
-            dgvView.Columns[colCustName].Width = 150;
+            dgvView.Columns[colCustName].Width = 250;
             dgvView.Columns[colContactName].Width = 120;
             dgvView.Columns[colId].Width = 80;
             dgvView.Columns[colStatusMOU].Width = 80;
@@ -87,6 +87,7 @@ namespace Cemp.gui
                     }
                 }
             }
+            dgvView.ReadOnly = true;
         }
         private void FrmMOUView_Load(object sender, EventArgs e)
         {
