@@ -34,6 +34,11 @@ namespace Cemp.objdb
             sf.userCancel = "user_cancel";
             sf.userCreate = "user_create";
             sf.userModi = "user_modi";
+            sf.Mobile = "mobile";
+            sf.Tele = "tele";
+            sf.Email = "email";
+            sf.Fax = "fax";
+            sf.PositionId = "position_id";
 
             sf.sited = "";
             sf.table = "b_staff";
@@ -55,6 +60,12 @@ namespace Cemp.objdb
             item.userCancel = dt.Rows[0][sf.userCancel].ToString();
             item.userCreate = dt.Rows[0][sf.userCreate].ToString();
             item.userModi = dt.Rows[0][sf.userModi].ToString();
+            item.Tele = dt.Rows[0][sf.Tele].ToString();
+            item.Fax = dt.Rows[0][sf.Fax].ToString();
+            item.Email = dt.Rows[0][sf.Email].ToString();
+            item.Mobile = dt.Rows[0][sf.Mobile].ToString();
+            item.PositionId = dt.Rows[0][sf.PositionId].ToString();
+
             return item;
         }
         public DataTable selectAll()
@@ -62,6 +73,15 @@ namespace Cemp.objdb
             String sql = "";
             DataTable dt = new DataTable();
             sql = "Select * From " + sf.table + " Where " + sf.Active + "='1'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectPositionAll()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From f_position Where position_active='1'";
             dt = conn.selectData(sql);
 
             return dt;
@@ -113,9 +133,13 @@ namespace Cemp.objdb
             p.PositionName = p.PositionName.Replace("''", "'");
 
             sql = "Insert Into " + sf.table + " (" + sf.pkField + "," + sf.NameT + "," + sf.Remark + "," +
-                sf.Active + "," + sf.Code + "," + sf.Priority + "," + sf.PositionName + ") " +
+                sf.Active + "," + sf.Code + "," + sf.Priority + "," + 
+                sf.PositionName + "," + sf.Tele + "," + sf.Fax + "," +
+                sf.Email + "," + sf.Mobile + "," + sf.PositionId + ") " +
                 "Values('" + p.Id + "','" + p.NameT + "','" + p.Remark + "','" +
-                p.Active + "','" + p.Code + "','" + p.Priority + "','" + p.PositionName + "')";
+                p.Active + "','" + p.Code + "','" + p.Priority + "','" + 
+                p.PositionName + "','" + p.Tele + "','" + p.Fax + "','" +
+                p.Email + "','" + p.Mobile + "','" + p.PositionId + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -142,7 +166,12 @@ namespace Cemp.objdb
                 sf.Remark + "='" + p.Remark + "', " +
                 sf.Code + "='" + p.Code + "', " +
                 sf.Priority + "='" + p.Priority + "', " +
-                sf.PositionName + "='" + p.PositionName + "' " +
+                sf.PositionName + "='" + p.PositionName + "', " +
+                sf.Tele + "='" + p.Tele + "', " +
+                sf.Fax + "='" + p.Fax + "', " +
+                sf.Email + "='" + p.Email + "', " +
+                sf.Mobile + "='" + p.Mobile + "', " +
+                sf.PositionId + "='" + p.PositionId + "'  " +
                 "Where " + sf.pkField + "='" + p.Id + "'";
             try
             {
@@ -213,6 +242,21 @@ namespace Cemp.objdb
             }
 
             c.SelectedItem = se;
+            return c;
+        }
+        public ComboBox getCboPosition(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectPositionAll();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i]["position_id"].ToString();
+                item.Text = dt.Rows[i]["position_name_t"].ToString();
+                c.Items.Add(item);
+                //c.Items.Add(new );
+            }
+            //c.SelectedItem = item;
             return c;
         }
         public String VoidStaff(String sfId)

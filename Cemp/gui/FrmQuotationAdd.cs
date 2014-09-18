@@ -49,6 +49,10 @@ namespace Cemp.gui
             txtTotal.ReadOnly = true;
             txtNetTotal.ReadOnly = true;
             txtAmountCost.ReadOnly = true;
+            if (cc.initC.HideCostQuotation.Equals("yes"))
+            {
+                txtAmountCost.Visible = true;
+            }
         }
         private void setResize()
         {
@@ -176,18 +180,19 @@ namespace Cemp.gui
             qu.QuoNumber = txtQuNumber.Text;
             qu.StaffEmail = txtStaffEmail.Text;
             qu.StaffTel = txtStaffTel.Text;
-            qu.StaffId = txtStaffId.Text;
+            qu.StaffId = cc.getValueCboItem(cboStaff);
             qu.StaffName = cboStaff.Text;
             qu.Total = txtTotal.Text.Replace(",","");
             qu.Vat = txtVat.Text.Replace(",", "");
             qu.VatRate = txtVatRate.Text;
             qu.StaffApproveName = cboStaffApprove.Text;
-            qu.StaffApproveId = txtStaffApproveId.Text;
+            qu.StaffApproveId = cc.getValueCboItem(cboStaffApprove);
             qu.Active = "1";
             qu.Remark1 = cboRemark1.Text;
             qu.Remark2 = cboRemark2.Text;
             qu.Remark3 = cboRemark3.Text;
             qu.ContactName = cboContact.Text;
+            qu.QuoDate = cc.cf.datetoDB(dtpDateQu.Value);
 
             //qu.Line1 = txtLine1.Text;
             qu.Line2 = txtLine2.Text;
@@ -247,6 +252,10 @@ namespace Cemp.gui
             dgvAdd.Columns[colItemId].Visible = false;
             dgvAdd.Columns[colMethodId].Visible = false;
             dgvAdd.Columns[colEdit].Visible = false;
+            if (cc.initC.HideCostQuotation.Equals("yes"))
+            {
+                dgvAdd.Columns[colPriceCost].Visible = false;
+            }
             //dgvAdd.Columns.Add(newColumn);
             if (dt.Rows.Count > 0)
             {
@@ -260,7 +269,7 @@ namespace Cemp.gui
                     dgvAdd[colItem, i].Value = dt.Rows[i][cc.quidb.qui.ItemDescription].ToString();
                     dgvAdd[colMethod, i].Value = dt.Rows[i][cc.quidb.qui.MethodDescription].ToString();
                     dgvAdd[colQty, i].Value = dt.Rows[i][cc.quidb.qui.Qty].ToString();
-                    dgvAdd[colPriceCost, i].Value = String.Format("{0:#,###,###.00}", dt.Rows[i][cc.quidb.qui.PriceSale]);
+                    dgvAdd[colPriceCost, i].Value = String.Format("{0:#,###,###.00}", dt.Rows[i][cc.quidb.qui.PriceCost]);
                     dgvAdd[colPriceSale, i].Value = String.Format("{0:#,###,###.00}", dt.Rows[i][cc.quidb.qui.PriceSale]);
                     dgvAdd[colAmount, i].Value = String.Format("{0:#,###,###.00}", dt.Rows[i][cc.quidb.qui.Amount]);
                     dgvAdd[colItemId, i].Value = dt.Rows[i][cc.quidb.qui.ItemId].ToString();
@@ -289,9 +298,12 @@ namespace Cemp.gui
                 {
                     continue;
                 }
-                amt += Double.Parse(cc.cf.NumberNull1(dgvAdd[colAmount, i].Value.ToString().Replace(",","")));
-                amtCost += (Double.Parse(cc.cf.NumberNull1(dgvAdd[colPriceCost, i].Value.ToString().Replace(",", ""))) * 
-                    Double.Parse(cc.cf.NumberNull1(dgvAdd[colQty, i].Value.ToString().Replace(",", ""))));
+                if (!dgvAdd[colDel, i].Value.ToString().Equals("1"))
+                {
+                    amt += Double.Parse(cc.cf.NumberNull1(dgvAdd[colAmount, i].Value.ToString().Replace(",", "")));
+                    amtCost += (Double.Parse(cc.cf.NumberNull1(dgvAdd[colPriceCost, i].Value.ToString().Replace(",", ""))) *
+                        Double.Parse(cc.cf.NumberNull1(dgvAdd[colQty, i].Value.ToString().Replace(",", ""))));
+                }
             }
             txtAmount.Text = String.Format("{0:#,###,###.00}", amt);
             txtAmountCost.Text = String.Format("{0:#,###,###.00}", amtCost);
@@ -308,6 +320,38 @@ namespace Cemp.gui
             txtTotal.Text = String.Format("{0:#,###,###.00}", total);
             txtVat.Text = String.Format("{0:#,###,###.00}", vat);
             txtNetTotal.Text = String.Format("{0:#,###,###.00}", netTotal);
+        }
+        protected override bool ProcessCmdKey(ref Message message, Keys keys)
+        {
+            switch (keys)
+            {
+                case Keys.F1:
+                    // ... Process Shift+Ctrl+Alt+B ...
+                    //Cursor cursor = Cursor.Current;
+                    //Cursor.Current = Cursors.WaitCursor;
+                    //btnSave.Enabled = false;
+                    ////saveLotto();
+                    ////row = 0;
+                    //btnSave.Enabled = true;
+                    //Cursor.Current = cursor;
+                    FrmItemSearch frm = new FrmItemSearch(cc);
+                    frm.ShowDialog(this);
+                    txtRow.Text = "";
+                    //cboItem.Text = cc.itSearch.Code + " " + cc.itSearch.NameT + "[" + cc.itSearch.MethodNameT+"]";
+                    txtItemPrice.Text = cc.itSearch.PriceSale;
+                    txtPriceCost.Text = cc.itSearch.PriceCost;
+                    txtItemQty.Text = "1.00";
+                    calItemAmount();
+                    setItemtoGrd(cc.itSearch.Id, getRow());
+                    //calItemAmount();
+                    //btnAdd_Click(null,null);
+                    return true; // signal that we've processed this key
+                //case Keys.Insert:
+                //    //txtInputFocus();
+                //    return true;
+            }
+            // run base implementation
+            return base.ProcessCmdKey(ref message, keys);
         }
         private void FrmQuotationAdd_Load(object sender, EventArgs e)
         {
@@ -429,6 +473,7 @@ namespace Cemp.gui
                     qui.ItemGroupId = itg.Id;
                     qui.ItemGroupNameT = itg.NameT;
                     qui.ItemGroupNameE = itg.NameE;
+                    qui.ItemGroupSort = itg.Sort1;
                     qui.PriceCost = cc.cf.NumberNull1(dgvAdd[colPriceCost, i].Value.ToString());
 
                     if (dgvAdd[colDel, i].Value.ToString().Equals("1"))
@@ -443,6 +488,7 @@ namespace Cemp.gui
                 }
                 Quotation qu1 = cc.qudb.selectByPk(quId);
                 txtQuNumber.Text = qu1.QuoNumber+"-"+qu1.QuoNumberCnt;
+                txtQuId.Text = quId;
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 btnPrint.Visible = true;
                 //this.Dispose();
@@ -475,32 +521,14 @@ namespace Cemp.gui
             txtRow.Text = "";
             txtItemQty.Text = "";
             txtItemPrice.Text = "";
+            txtPriceCost.Text = "";
             cboItem.Text = "";
             txtItemAmount.Text = "";
         }
-
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void setItemtoGrd(String itId, int row)
         {
-            int row = 0;
             Item it = new Item();
-            if (txtRow.Text.Equals(""))
-            {
-                row = dgvAdd.Rows.Add(1);
-            }
-            else
-            {
-                try
-                {
-                    row = int.Parse(txtRow.Text)-1;
-                    dgvAdd.Rows[row].DefaultCellStyle.BackColor = Color.DeepPink;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("ไม่พบข้อมูล ลำดับ", "Error");
-                    return;
-                }
-            }
-            it = cc.itdb.selectByPk(cc.getValueCboItem(cboItem));
+            it = cc.itdb.selectByPk(itId);
             if (it.Id.Equals(""))
             {
                 return;
@@ -510,10 +538,10 @@ namespace Cemp.gui
             dgvAdd[colMethodId, row].Value = it.MethodId;
             dgvAdd[colItem, row].Value = it.NameT;
             dgvAdd[colMethod, row].Value = it.MethodNameT;
-            dgvAdd[colQty, row].Value = String.Format("{0:#,###,###.00}",txtItemQty.Text);
-            dgvAdd[colPriceSale, row].Value = String.Format("{0:#,###,###.00}",Double.Parse(txtItemPrice.Text));
+            dgvAdd[colQty, row].Value = String.Format("{0:#,###,###.00}", txtItemQty.Text);
+            dgvAdd[colPriceSale, row].Value = String.Format("{0:#,###,###.00}", Double.Parse(txtItemPrice.Text));
             dgvAdd[colPriceCost, row].Value = String.Format("{0:#,###,###.00}", Double.Parse(txtPriceCost.Text));
-            dgvAdd[colAmount, row].Value = String.Format("{0:#,###,###.00}",txtItemAmount.Text);
+            dgvAdd[colAmount, row].Value = String.Format("{0:#,###,###.00}", txtItemAmount.Text);
             dgvAdd[colId, row].Value = "";
             dgvAdd[colDel, row].Value = "";
             dgvAdd[colEdit, row].Value = "";
@@ -521,11 +549,40 @@ namespace Cemp.gui
             {
                 dgvAdd.Rows[row].DefaultCellStyle.BackColor = Color.LightSalmon;
             }
-
+            dgvAdd.FirstDisplayedScrollingRowIndex = row;
             calAmount();
             calNetTotal();
 
             clearItem();
+        }
+        private int getRow()
+        {
+            int row = 0;
+
+            if (txtRow.Text.Equals(""))
+            {
+                row = dgvAdd.Rows.Add(1);
+            }
+            else
+            {
+                try
+                {
+                    row = int.Parse(txtRow.Text) - 1;
+                    dgvAdd.Rows[row].DefaultCellStyle.BackColor = Color.DeepPink;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ไม่พบข้อมูล ลำดับ", "Error");
+                    //return;
+                }
+            }
+            return row;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+            setItemtoGrd(cc.getValueCboItem(cboItem), getRow());
         }
 
         private void dgvAdd_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -555,6 +612,8 @@ namespace Cemp.gui
             }
             dgvAdd[colDel, (int.Parse(txtRow.Text)-1)].Value = "1";
             dgvAdd.Rows[(int.Parse(txtRow.Text)-1)].DefaultCellStyle.BackColor = Color.DarkGray;
+            calAmount();
+            calNetTotal();
         }
 
         private void txtDiscount_Leave(object sender, EventArgs e)
@@ -794,6 +853,7 @@ namespace Cemp.gui
         {
             if (!pageLoad)
             {
+                //cboItem.DropDownStyle = ComboBoxStyle.
                 Item it = cc.itdb.selectByPk(cc.getValueCboItem(cboItem));
                 txtItemPrice.Text = it.PriceSale;
                 txtPriceCost.Text = it.PriceCost;
@@ -836,12 +896,12 @@ namespace Cemp.gui
         {
             String sql = "";
             //OleDbDataAdapter da = new OleDbDataAdapter();
-            DataTable dt = cc.qudb.selectPrintById1(txtQuId.Text);
+            DataTable dt = cc.quidb.selectByQuId(txtQuId.Text);
             Quotation qu = cc.qudb.selectByPk(txtQuId.Text);
             qu.ContactName = "เรียน : " + qu.ContactName;
             qu.CustAddress = "ที่อยู่ : " + qu.CustAddress;
             qu.CustTel = "เบอร์โทร : "+qu.CustTel+" Email : "+qu.CustEmail;
-            qu.Line1 = cc.initC.quoLine1;
+            qu.Line1 = cc.cp.quLine1;
             qu.QuoNumber = "เลขที่ : " + qu.QuoNumber + "-" + qu.QuoNumberCnt;
             qu.QuoDate = "วันที่ :" + qu.QuoDate;
             qu.StaffName = "ผู้เสนอราคา :" + qu.StaffName;
@@ -854,6 +914,7 @@ namespace Cemp.gui
             qu.Remark5 = "5. " + qu.Remark5;
             qu.Remark6 = "6. " + qu.Remark6;
             qu.Remark7 = "7. " + qu.Remark7;
+            qu.ThaiBaht = cc.ThaiBaht(qu.NetTotal);
             //qu.Amount = "รวมราคา " + qu.Amount;
             //qu.Discount = "ส่วนลด " + qu.Amount;
             //DataTable dtqu = cc.qudb.selectPrintById(txtQuId.Text);
@@ -866,6 +927,16 @@ namespace Cemp.gui
             FrmReport frm = new FrmReport(cc);
             frm.setReportQuotation(qu, dt);
             frm.ShowDialog(this);
+        }
+
+        private void cboStaff_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!pageLoad)
+            {
+                Staff sf = cc.sfdb.selectByPk(cc.getValueCboItem(cboStaff));
+                txtStaffEmail.Text = sf.Email;
+                txtStaffTel.Text = sf.Tele;
+            }
         }
 
     }

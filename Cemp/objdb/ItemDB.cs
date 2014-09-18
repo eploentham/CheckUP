@@ -40,6 +40,7 @@ namespace Cemp.objdb
             it.userCancel = "user_cancel";
             it.userCreate = "user_create";
             it.userModi = "user_modi";
+            it.PriceCostReal = "price_cost_real";
 
             it.table = "b_item";
             it.pkField = "item_id";
@@ -66,6 +67,7 @@ namespace Cemp.objdb
             item.userCancel = dt.Rows[0][it.userCancel].ToString();
             item.userCreate = dt.Rows[0][it.userCreate].ToString();
             item.userModi = dt.Rows[0][it.userModi].ToString();
+            item.PriceCostReal = dt.Rows[0][it.PriceCostReal].ToString();
 
             return item;
         }
@@ -91,6 +93,37 @@ namespace Cemp.objdb
                 wheremeid = " and " + it.MethodNameT + " like '" + meId + "%'";
             }
             sql = "Select * From " + it.table + " Where " + it.Active + "='1'" + whereitg+wheremeid;
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectByItGroupMethod(String nameT,String itgId, String meId)
+        {
+            String sql = "", whereitg = "", wheremeid = "", whereitnamet = "";
+            DataTable dt = new DataTable();
+            if (!nameT.Equals(""))
+            {
+                whereitnamet = " (" + it.NameT + " like '" + nameT + "%' or "+it.Code+" like '"+nameT+"%') ";
+            }
+            if (!itgId.Equals(""))
+            {
+                whereitg = " and " + it.ItemGroupNameT + " like '" + itgId + "%'";
+            }
+            if (!meId.Equals(""))
+            {
+                wheremeid = " and " + it.MethodNameT + " like '" + meId + "%'";
+            }
+            if (nameT.Equals(""))
+            {
+                whereitg = whereitg.Replace("and", "");
+            }
+            if (nameT.Equals("") && itgId.Equals(""))
+            {
+                wheremeid = wheremeid.Replace("and", "");
+            }
+            sql = "Select " + it.Id + "," + it.Code + "," + it.NameT + "," + it.NameE + "," + it.ItemGroupNameT + "," + it.MethodNameT + "," + it.Active + "," + it.Remark + "," + it.PriceSale + 
+                " From " + it.table + 
+                " Where " + whereitnamet + whereitg + wheremeid+" Order By "+it.Code;
             dt = conn.selectData(sql);
 
             return dt;
@@ -160,14 +193,14 @@ namespace Cemp.objdb
                 it.ItemGroupNameT + "," + it.MethodNameT + "," + it.MethodId + "," +
                 it.Sort1 + "," + it.dateCancel + "," + it.dateCreate + "," +
                 it.dateModi + "," + it.userCancel + "," + it.userCreate + "," +
-                it.userModi + ") " +
+                it.userModi + "," + it.PriceCostReal + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.Code + "','" +
                 p.NameE + "','" + p.NameT + "','" + p.Remark + "'," +
                 NumberNull1(p.PriceCost) + "," + NumberNull1(p.PriceSale) + ",'" + p.ItemGroupId + "','" +
                 p.ItemGroupNameT + "','" + p.MethodNameT + "','" + p.MethodId + "','" +
                 p.Sort1 + "','" +p.dateCancel + "'," + p.dateGenDB + ",'" + 
-                p.dateModi + "','" +p.userCancel + "','" + p.userCreate + "','" + 
-                p.userModi + "')";
+                p.dateModi + "','" +p.userCancel + "','" + p.userCreate + "','" +
+                p.userModi + "'," + NumberNull1(p.PriceCostReal) + ")";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -207,7 +240,8 @@ namespace Cemp.objdb
                 it.PriceSale + "=" + NumberNull1(p.PriceSale) + ", " +
                 it.Sort1 + "='" + p.Sort1 + "', " +
                 it.userModi + "='" + p.userModi + "'," +
-                it.dateModi + "=" + p.dateGenDB + " " +
+                it.dateModi + "=" + p.dateGenDB + ", " +
+                it.PriceCostReal + "=" + NumberNull1(p.PriceCostReal) + ", " +
                 "Where " + it.pkField + "='" + p.Id + "'";
             try
             {

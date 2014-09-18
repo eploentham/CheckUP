@@ -38,6 +38,14 @@ namespace Cemp.objdb
             moi.userCreate = "user_create";
             moi.userModi = "user_modi";
 
+            moi.ItemGroupId = "item_group_id";
+            moi.ItemGroupNameE = "item_group_name_e";
+            moi.ItemGroupNameT = "item_group_name_t";
+            moi.ItemGroupSort = "item_group_sort";
+            moi.DatePlaceRecord = "date_place_record";
+
+            moi.MOUNumber = "mou_number";
+            moi.MOUNumberCnt = "mou_number_cnt";
             moi.pkField = "mou_item_id";
             moi.table = "t_mou_item";
         }
@@ -60,6 +68,15 @@ namespace Cemp.objdb
             item.userCancel = dt.Rows[0][moi.userCancel].ToString();
             item.userCreate = dt.Rows[0][moi.userCreate].ToString();
             item.userModi = dt.Rows[0][moi.userModi].ToString();
+
+            item.ItemGroupId = dt.Rows[0][moi.ItemGroupId].ToString();
+            item.ItemGroupNameE = dt.Rows[0][moi.ItemGroupNameE].ToString();
+            item.ItemGroupNameT = dt.Rows[0][moi.ItemGroupNameT].ToString();
+            item.ItemGroupSort = dt.Rows[0][moi.ItemGroupSort].ToString();
+
+            item.DatePlaceRecord = dt.Rows[0][moi.DatePlaceRecord].ToString();
+            item.MOUNumber = dt.Rows[0][moi.MOUNumber].ToString();
+            item.MOUNumberCnt = dt.Rows[0][moi.MOUNumberCnt].ToString();
 
             return item;
         }
@@ -108,15 +125,19 @@ namespace Cemp.objdb
             p.MethodDescription = p.MethodDescription.Replace("'", "''");
             p.ItemDescription = p.ItemDescription.Replace("'", "''");
             p.PlaceRecord = p.PlaceRecord.Replace("'", "''");
+            p.ItemGroupNameE = p.ItemGroupNameE.Replace("'", "''");
+            p.ItemGroupNameT = p.ItemGroupNameT.Replace("'", "''");
 
             sql = "Insert Into " + moi.table + " (" + moi.pkField + "," + moi.Active + "," + moi.ItemDescription + "," +
                 moi.ItemId + "," + moi.MethodDescription + "," + moi.MethodId + "," +
                 moi.MOUId + "," + moi.PlaceRecord + "," + moi.RowNumber + "," +
-                moi.Sample + ") " +
+                moi.Sample + "," + moi.ItemGroupNameE + "," + moi.ItemGroupNameT + "," +
+                moi.ItemGroupSort + "," + moi.ItemGroupId + "," + moi.DatePlaceRecord + "," + moi.MOUNumber + "," + moi.MOUNumberCnt + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.ItemDescription + "','" +
                 p.ItemId + "','" + p.MethodDescription + "','" + p.MethodId + "','" +
                 p.MOUId + "','" + p.PlaceRecord + "','" + p.RowNumber + "','" +
-                p.Sample + "')";
+                p.Sample + "','" + p.ItemGroupNameE + "','" + p.ItemGroupNameT + "','" +
+                p.ItemGroupSort + "','" + p.ItemGroupId + "','" + p.DatePlaceRecord + "','" + p.MOUNumber + "'," + p.MOUNumberCnt + ")";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -138,6 +159,8 @@ namespace Cemp.objdb
             p.MethodDescription = p.MethodDescription.Replace("''", "'");
             p.ItemDescription = p.ItemDescription.Replace("''", "'");
             p.PlaceRecord = p.PlaceRecord.Replace("''", "'");
+            p.ItemGroupNameE = p.ItemGroupNameE.Replace("'", "''");
+            p.ItemGroupNameT = p.ItemGroupNameT.Replace("'", "''");
 
             sql = "Update " + moi.table + " Set " + moi.ItemDescription + "='" + p.ItemDescription + "', " +
                 moi.ItemId + "='" + p.ItemId + "', " +
@@ -146,8 +169,14 @@ namespace Cemp.objdb
                 moi.MOUId + "='" + p.MOUId + "', " +
                 moi.PlaceRecord + "='" + p.PlaceRecord + "', " +
                 moi.RowNumber + "=" + p.RowNumber + ", " +
-                moi.Sample + "='" + p.Sample + "' " +
-
+                moi.Sample + "='" + p.Sample + "', " +
+                moi.ItemGroupNameE + "='" + p.ItemGroupNameE + "', " +
+                moi.ItemGroupNameT + "='" + p.ItemGroupNameT + "', " +
+                moi.ItemGroupSort + "='" + p.ItemGroupSort + "', " +
+                moi.ItemGroupId + "='" + p.ItemGroupId + "', " +
+                moi.DatePlaceRecord + "='" + p.DatePlaceRecord + "', " +
+                moi.MOUNumber + "='" + p.MOUNumber + "', " +
+                moi.MOUNumberCnt + "=" + p.MOUNumberCnt + " " +
                 "Where " + moi.pkField + "='" + p.Id + "'";
             try
             {

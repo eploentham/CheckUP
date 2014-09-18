@@ -8,6 +8,7 @@ namespace Cemp.object1
     public class MOUItem:Persistent
     {
         public String Id = "", MOUId = "", RowNumber = "", ItemId = "", ItemDescription = "", MethodId = "", MethodDescription = "", Sample = "", PlaceRecord = "", Active="";
-        public String dateCreate = "", dateModi = "", dateCancel = "", userCreate = "", userModi = "", userCancel = "";
+        public String dateCreate = "", dateModi = "", dateCancel = "", userCreate = "", userModi = "", userCancel = "", ItemGroupId = "", ItemGroupNameT = "", ItemGroupNameE = "", ItemGroupSort = "";
+        public String DatePlaceRecord = "", MOUNumber = "", MOUNumberCnt = "";
     }
 }

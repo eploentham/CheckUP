@@ -80,6 +80,11 @@ namespace Cemp.gui
             txtQuoLine5.Text = cp.quLine5;
             txtQuoLine6.Text = cp.quLine6;
 
+            txtMOULine1.Text = cp.mouLine1;
+            txtMOULine2.Text = cp.mouLine2;
+            txtMOULine3.Text = cp.mouLine3;
+            txtMOULine4.Text = cp.mouLine4;
+
             if (label18.Text.Length > 4)
             {
                 cboDistrict = cc.didb.getCboDist1(cboDistrict, label18.Text);
@@ -116,6 +121,11 @@ namespace Cemp.gui
             cp.quLine4=txtQuoLine4.Text;
             cp.quLine5=txtQuoLine5.Text;
             cp.quLine6=txtQuoLine6.Text;
+
+            cp.mouLine1 = txtMOULine1.Text;
+            cp.mouLine2 = txtMOULine2.Text;
+            cp.mouLine3 = txtMOULine3.Text;
+            cp.mouLine4 = txtMOULine4.Text;
         }
 
         private void FrmCompany_Load(object sender, EventArgs e)

@@ -26,6 +26,7 @@ namespace Cemp.gui
         {
             cc = new CnviControl();
             s = new Staff();
+            cboPosition = cc.sfdb.getCboPosition(cboPosition);
             setControl(sfId);
         }
         public void setControl(String sfId)
@@ -35,6 +36,12 @@ namespace Cemp.gui
             txtStaffCode.Text = s.Code;
             txtStaffName.Text = s.NameT;
             txtStaffRemark.Text = s.Remark;
+            txtTel.Text = s.Tele;
+            txtFax.Text = s.Fax;
+            txtEmail.Text = s.Email;
+            cboPosition.Text = s.PositionName;
+            txtMobile.Text = s.Mobile;
+
 
             if (s.Active.Equals("1") || sfId.Equals(""))
             {
@@ -66,6 +73,13 @@ namespace Cemp.gui
             s.Code = txtStaffCode.Text;
             s.NameT = txtStaffName.Text;
             s.Remark = txtStaffRemark.Text;
+            s.Tele = txtTel.Text;
+            s.Fax = txtFax.Text;
+            s.Email = txtEmail.Text;
+            s.PositionName = cboPosition.Text;
+            s.PositionId = cc.getValueCboItem(cboPosition);
+            s.Mobile = txtMobile.Text;
+            
             if (chkInput.Checked)
             {
                 s.Priority = "1";

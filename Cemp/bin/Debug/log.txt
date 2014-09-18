@@ -48,3 +48,853 @@ Log Entry : 22:17:20 15 กันยายน 2557
   :
   :rpt.setReportQuotation OK SetDataSource
 -------------------------------
+
+Log Entry : 9:39:59 16 กันยายน 2557
+  :
+  :FrmReport setReport C:\source\CNVI\CNVI.Cemp\Cemp\report\ItemList.rpt
+-------------------------------
+
+Log Entry : 9:40:00 16 กันยายน 2557
+  :
+  :rpt.SetParameterValue Error โหลดรายงานไม่สำเร็จ
+-------------------------------
+
+Log Entry : 9:40:18 16 กันยายน 2557
+  :
+  :FrmReport setReport D:\source\CNVI\CNVI.Cemp\Cemp\report\ItemList.rpt
+-------------------------------
+
+Log Entry : 9:40:18 16 กันยายน 2557
+  :
+  :rpt.Load OK.
+-------------------------------
+
+Log Entry : 9:40:18 16 กันยายน 2557
+  :
+  :rpt.SetDataSource OK.
+-------------------------------
+
+Log Entry : 9:40:18 16 กันยายน 2557
+  :
+  :rpt.SetParameterValue OK.
+-------------------------------
+
+Log Entry : 9:45:16 16 กันยายน 2557
+  :
+  :FrmReport setReport D:\source\CNVI\CNVI.Cemp\Cemp\report\ItemList.rpt
+-------------------------------
+
+Log Entry : 9:45:16 16 กันยายน 2557
+  :
+  :rpt.Load OK.
+-------------------------------
+
+Log Entry : 9:45:16 16 กันยายน 2557
+  :
+  :rpt.SetDataSource OK.
+-------------------------------
+
+Log Entry : 9:45:16 16 กันยายน 2557
+  :
+  :rpt.SetParameterValue OK.
+-------------------------------
+
+Log Entry : 9:45:54 16 กันยายน 2557
+  :
+  :FrmReport setReport D:\source\CNVI\CNVI.Cemp\Cemp\report\ItemList.rpt
+-------------------------------
+
+Log Entry : 9:45:54 16 กันยายน 2557
+  :
+  :rpt.Load OK.
+-------------------------------
+
+Log Entry : 9:45:54 16 กันยายน 2557
+  :
+  :rpt.SetDataSource OK.
+-------------------------------
+
+Log Entry : 9:45:54 16 กันยายน 2557
+  :
+  :rpt.SetParameterValue OK.
+-------------------------------
+
+Log Entry : 10:37:08 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK 
+-------------------------------
+
+Log Entry : 10:37:09 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK SetDataSource
+-------------------------------
+
+Log Entry : 10:39:18 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK 
+-------------------------------
+
+Log Entry : 10:39:19 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK SetDataSource
+-------------------------------
+
+Log Entry : 10:56:30 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK 
+-------------------------------
+
+Log Entry : 10:56:30 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK SetDataSource
+-------------------------------
+
+Log Entry : 10:57:12 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK 
+-------------------------------
+
+Log Entry : 10:57:13 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK SetDataSource
+-------------------------------
+
+Log Entry : 10:57:41 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK 
+-------------------------------
+
+Log Entry : 10:57:42 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK SetDataSource
+-------------------------------
+
+Log Entry : 14:20:12 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 14:20:14 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 14:20:15 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 14:20:15 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation Error The types of the parameter field and parameter field current values are not compatible.
+-------------------------------
+
+Log Entry : 14:23:21 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 14:23:21 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 14:23:21 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 14:58:39 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 14:58:42 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 14:58:42 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 15:03:02 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 15:03:02 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 15:03:02 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 15:04:58 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 15:04:59 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 15:04:59 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 15:05:40 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 15:05:40 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 15:05:41 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 15:06:35 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 15:06:35 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 15:06:35 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 15:11:38 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 15:11:39 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 15:11:39 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 15:12:20 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 15:12:21 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 15:12:21 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 15:17:50 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 15:17:51 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 15:17:51 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 15:18:47 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 15:18:47 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 15:18:48 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 16:46:43 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK 
+-------------------------------
+
+Log Entry : 16:46:45 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK SetDataSource
+-------------------------------
+
+Log Entry : 17:08:21 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK 
+-------------------------------
+
+Log Entry : 17:08:21 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK SetDataSource
+-------------------------------
+
+Log Entry : 17:34:06 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK 
+-------------------------------
+
+Log Entry : 17:34:06 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK SetDataSource
+-------------------------------
+
+Log Entry : 17:39:19 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK 
+-------------------------------
+
+Log Entry : 17:39:19 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK SetDataSource
+-------------------------------
+
+Log Entry : 17:42:46 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK 
+-------------------------------
+
+Log Entry : 17:42:46 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK SetDataSource
+-------------------------------
+
+Log Entry : 21:53:31 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK 
+-------------------------------
+
+Log Entry : 21:53:32 16 กันยายน 2557
+  :
+  :rpt.setReportMOU OK SetDataSource
+-------------------------------
+
+Log Entry : 21:53:32 16 กันยายน 2557
+  :
+  :rpt.setReportMOU Error ดัชนีไม่ถูกต้อง (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+-------------------------------
+
+Log Entry : 21:54:20 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK 
+-------------------------------
+
+Log Entry : 21:54:21 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK SetDataSource
+-------------------------------
+
+Log Entry : 21:54:21 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint Error ดัชนีไม่ถูกต้อง (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+-------------------------------
+
+Log Entry : 21:54:41 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK 
+-------------------------------
+
+Log Entry : 21:54:43 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK SetDataSource
+-------------------------------
+
+Log Entry : 21:57:18 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK 
+-------------------------------
+
+Log Entry : 21:57:19 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK SetDataSource
+-------------------------------
+
+Log Entry : 22:12:12 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK 
+-------------------------------
+
+Log Entry : 22:12:13 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK SetDataSource
+-------------------------------
+
+Log Entry : 22:13:18 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint Error ดัชนีไม่ถูกต้อง (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+-------------------------------
+
+Log Entry : 22:13:29 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK 
+-------------------------------
+
+Log Entry : 22:13:29 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK SetDataSource
+-------------------------------
+
+Log Entry : 22:14:57 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK 
+-------------------------------
+
+Log Entry : 22:14:57 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK SetDataSource
+-------------------------------
+
+Log Entry : 22:14:58 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint Error ดัชนีไม่ถูกต้อง (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+-------------------------------
+
+Log Entry : 22:15:10 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK 
+-------------------------------
+
+Log Entry : 22:15:11 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK SetDataSource
+-------------------------------
+
+Log Entry : 22:17:13 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK 
+-------------------------------
+
+Log Entry : 22:17:13 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK SetDataSource
+-------------------------------
+
+Log Entry : 22:17:24 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK 
+-------------------------------
+
+Log Entry : 22:17:24 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK SetDataSource
+-------------------------------
+
+Log Entry : 22:18:00 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK 
+-------------------------------
+
+Log Entry : 22:18:00 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK SetDataSource
+-------------------------------
+
+Log Entry : 22:24:29 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK 
+-------------------------------
+
+Log Entry : 22:24:30 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK SetDataSource
+-------------------------------
+
+Log Entry : 22:57:16 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK 
+-------------------------------
+
+Log Entry : 22:57:16 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK SetDataSource
+-------------------------------
+
+Log Entry : 23:07:29 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK 
+-------------------------------
+
+Log Entry : 23:07:29 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK SetDataSource
+-------------------------------
+
+Log Entry : 23:08:15 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK 
+-------------------------------
+
+Log Entry : 23:08:15 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK SetDataSource
+-------------------------------
+
+Log Entry : 23:08:52 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK 
+-------------------------------
+
+Log Entry : 23:08:52 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK SetDataSource
+-------------------------------
+
+Log Entry : 23:09:05 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK 
+-------------------------------
+
+Log Entry : 23:09:05 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK SetDataSource
+-------------------------------
+
+Log Entry : 23:12:12 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK 
+-------------------------------
+
+Log Entry : 23:12:12 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK SetDataSource
+-------------------------------
+
+Log Entry : 23:12:19 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK 
+-------------------------------
+
+Log Entry : 23:12:19 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK SetDataSource
+-------------------------------
+
+Log Entry : 23:12:25 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK 
+-------------------------------
+
+Log Entry : 23:12:25 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK SetDataSource
+-------------------------------
+
+Log Entry : 23:12:33 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK 
+-------------------------------
+
+Log Entry : 23:12:33 16 กันยายน 2557
+  :
+  :rpt.setReportMOUSamplePrint OK SetDataSource
+-------------------------------
+
+Log Entry : 23:17:39 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 23:17:39 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 23:17:39 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 23:17:40 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation Error The types of the parameter field and parameter field current values are not compatible.
+-------------------------------
+
+Log Entry : 23:18:03 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 23:18:04 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 23:18:04 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 23:18:22 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation Error The types of the parameter field and parameter field current values are not compatible.
+-------------------------------
+
+Log Entry : 23:18:26 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 23:18:26 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 23:18:26 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 23:19:46 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 23:19:47 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 23:19:47 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 23:20:30 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 23:20:31 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 23:20:31 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 23:21:18 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 23:21:19 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 23:21:19 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 23:21:19 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation Error The types of the parameter field and parameter field current values are not compatible.
+-------------------------------
+
+Log Entry : 23:21:26 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 23:21:26 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 23:21:26 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 23:21:26 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation Error The types of the parameter field and parameter field current values are not compatible.
+-------------------------------
+
+Log Entry : 23:21:34 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 23:21:34 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 23:21:34 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 23:22:16 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 23:22:17 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 23:22:17 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 23:24:08 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 23:24:08 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 23:24:08 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 23:24:44 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 23:24:44 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 23:24:44 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 23:25:52 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK 
+-------------------------------
+
+Log Entry : 23:25:53 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+-------------------------------
+
+Log Entry : 23:25:53 16 กันยายน 2557
+  :
+  :rpt.setReportQuotation OK SetDataSource
+-------------------------------
+
+Log Entry : 11:30:31 17 กันยายน 2557
+  :
+  :FrmItemSearch.setGrd Error 
+-------------------------------
+
+Log Entry : 11:30:50 17 กันยายน 2557
+  :
+  :FrmItemSearch.setGrd Error 
+-------------------------------
+
+Log Entry : 11:33:35 17 กันยายน 2557
+  :
+  :FrmItemSearch.setGrd Error 
+-------------------------------
+
+Log Entry : 11:35:49 17 กันยายน 2557
+  :
+  :FrmItemSearch.setGrd Error 
+-------------------------------
+
+Log Entry : 11:48:56 17 กันยายน 2557
+  :
+  :FrmItemSearch.setGrd Error 
+-------------------------------
+
+Log Entry : 11:50:25 17 กันยายน 2557
+  :
+  :FrmItemSearch.setGrd Error 
+-------------------------------
+
+Log Entry : 11:54:14 17 กันยายน 2557
+  :
+  :FrmItemSearch.setGrd Error 
+-------------------------------
+
+Log Entry : 11:54:48 17 กันยายน 2557
+  :
+  :FrmItemSearch.setGrd Error 
+-------------------------------
+
+Log Entry : 11:54:51 17 กันยายน 2557
+  :
+  :FrmItemSearch.setGrd Error 
+-------------------------------
+
+Log Entry : 11:54:55 17 กันยายน 2557
+  :
+  :FrmItemSearch.setGrd Error 
+-------------------------------
+
+Log Entry : 11:54:58 17 กันยายน 2557
+  :
+  :FrmItemSearch.setGrd Error 
+-------------------------------
+
+Log Entry : 11:55:29 17 กันยายน 2557
+  :
+  :FrmItemSearch.setGrd Error 
+-------------------------------
+
+Log Entry : 11:58:43 17 กันยายน 2557
+  :
+  :FrmItemSearch.setGrd Error 
+-------------------------------
+
+Log Entry : 11:58:51 17 กันยายน 2557
+  :
+  :FrmItemSearch.setGrd Error 
+-------------------------------
+
+Log Entry : 11:58:59 17 กันยายน 2557
+  :
+  :FrmItemSearch.setGrd Error 
+-------------------------------
+
+Log Entry : 12:07:15 17 กันยายน 2557
+  :
+  :FrmItemSearch.setGrd Error 
+-------------------------------

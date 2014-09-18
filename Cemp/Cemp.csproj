@@ -58,6 +58,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Control\CnviControl.cs" />
+    <Compile Include="gui\FrmItemSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmItemSearch.Designer.cs">
+      <DependentUpon>FrmItemSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmMOUAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmMOUAdd.Designer.cs">
+      <DependentUpon>FrmMOUAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmMOUAdd1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmMOUAdd1.Designer.cs">
+      <DependentUpon>FrmMOUAdd1.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmMOUPlaceRecord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,12 +165,6 @@
     </Compile>
     <Compile Include="gui\FrmMethodView.Designer.cs">
       <DependentUpon>FrmMethodView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="gui\FrmMOUAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="gui\FrmMOUAdd.Designer.cs">
-      <DependentUpon>FrmMOUAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="gui\FrmMOUView.cs">
       <SubType>Form</SubType>
@@ -344,30 +356,15 @@
       <DependentUpon>QuotationPrint.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="report\QuotationPrint1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuotationPrint1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="report\QuotationPrint2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuotationPrint2.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="report\QuotationPrint3.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuotationPrint3.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="report\QuotationPrint4.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuotationPrint4.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
+    <EmbeddedResource Include="gui\FrmItemSearch.resx">
+      <DependentUpon>FrmItemSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmMOUAdd.resx">
+      <DependentUpon>FrmMOUAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmMOUAdd1.resx">
+      <DependentUpon>FrmMOUAdd1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmMOUPlaceRecord.resx">
       <DependentUpon>FrmMOUPlaceRecord.cs</DependentUpon>
     </EmbeddedResource>
@@ -412,9 +409,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmMethodView.resx">
       <DependentUpon>FrmMethodView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="gui\FrmMOUAdd.resx">
-      <DependentUpon>FrmMOUAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmMOUView.resx">
       <DependentUpon>FrmMOUView.cs</DependentUpon>
@@ -482,22 +476,6 @@
     <EmbeddedResource Include="report\QuotationPrint.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>QuotationPrint.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="report\QuotationPrint1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>QuotationPrint1.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="report\QuotationPrint2.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>QuotationPrint2.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="report\QuotationPrint3.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>QuotationPrint3.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="report\QuotationPrint4.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>QuotationPrint4.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>

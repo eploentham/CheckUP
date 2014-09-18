@@ -293,6 +293,14 @@ namespace Cemp.report {
             
             private global::System.Data.DataColumn columnmethod_description;
             
+            private global::System.Data.DataColumn columnitem_group_sort;
+            
+            private global::System.Data.DataColumn columnitem_group_id;
+            
+            private global::System.Data.DataColumn columnitem_group_name_t;
+            
+            private global::System.Data.DataColumn columnitem_group_name_e;
+            
             private global::System.Data.DataColumn columnsample;
             
             private global::System.Data.DataColumn columnplace_record;
@@ -401,6 +409,38 @@ namespace Cemp.report {
             public global::System.Data.DataColumn method_descriptionColumn {
                 get {
                     return this.columnmethod_description;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn item_group_sortColumn {
+                get {
+                    return this.columnitem_group_sort;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn item_group_idColumn {
+                get {
+                    return this.columnitem_group_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn item_group_name_tColumn {
+                get {
+                    return this.columnitem_group_name_t;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn item_group_name_eColumn {
+                get {
+                    return this.columnitem_group_name_e;
                 }
             }
             
@@ -537,6 +577,10 @@ namespace Cemp.report {
                         string item_description, 
                         string method_id, 
                         string method_description, 
+                        string item_group_sort, 
+                        string item_group_id, 
+                        string item_group_name_t, 
+                        string item_group_name_e, 
                         string sample, 
                         string place_record, 
                         string mou_item_active, 
@@ -557,6 +601,10 @@ namespace Cemp.report {
                         item_description,
                         method_id,
                         method_description,
+                        item_group_sort,
+                        item_group_id,
+                        item_group_name_t,
+                        item_group_name_e,
                         sample,
                         place_record,
                         mou_item_active,
@@ -604,6 +652,10 @@ namespace Cemp.report {
                 this.columnitem_description = base.Columns["item_description"];
                 this.columnmethod_id = base.Columns["method_id"];
                 this.columnmethod_description = base.Columns["method_description"];
+                this.columnitem_group_sort = base.Columns["item_group_sort"];
+                this.columnitem_group_id = base.Columns["item_group_id"];
+                this.columnitem_group_name_t = base.Columns["item_group_name_t"];
+                this.columnitem_group_name_e = base.Columns["item_group_name_e"];
                 this.columnsample = base.Columns["sample"];
                 this.columnplace_record = base.Columns["place_record"];
                 this.columnmou_item_active = base.Columns["mou_item_active"];
@@ -634,6 +686,14 @@ namespace Cemp.report {
                 base.Columns.Add(this.columnmethod_id);
                 this.columnmethod_description = new global::System.Data.DataColumn("method_description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmethod_description);
+                this.columnitem_group_sort = new global::System.Data.DataColumn("item_group_sort", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitem_group_sort);
+                this.columnitem_group_id = new global::System.Data.DataColumn("item_group_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitem_group_id);
+                this.columnitem_group_name_t = new global::System.Data.DataColumn("item_group_name_t", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitem_group_name_t);
+                this.columnitem_group_name_e = new global::System.Data.DataColumn("item_group_name_e", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitem_group_name_e);
                 this.columnsample = new global::System.Data.DataColumn("sample", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsample);
                 this.columnplace_record = new global::System.Data.DataColumn("place_record", typeof(string), null, global::System.Data.MappingType.Element);
@@ -666,6 +726,10 @@ namespace Cemp.report {
                 this.columnitem_description.MaxLength = 255;
                 this.columnmethod_id.MaxLength = 255;
                 this.columnmethod_description.MaxLength = 255;
+                this.columnitem_group_sort.MaxLength = 255;
+                this.columnitem_group_id.MaxLength = 255;
+                this.columnitem_group_name_t.MaxLength = 255;
+                this.columnitem_group_name_e.MaxLength = 255;
                 this.columnsample.MaxLength = 255;
                 this.columnplace_record.MaxLength = 255;
                 this.columnmou_item_active.MaxLength = 255;
@@ -926,6 +990,70 @@ namespace Cemp.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string item_group_sort {
+                get {
+                    try {
+                        return ((string)(this[this.tablet_mou_item.item_group_sortColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'item_group_sort\' in table \'t_mou_item\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablet_mou_item.item_group_sortColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string item_group_id {
+                get {
+                    try {
+                        return ((string)(this[this.tablet_mou_item.item_group_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'item_group_id\' in table \'t_mou_item\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablet_mou_item.item_group_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string item_group_name_t {
+                get {
+                    try {
+                        return ((string)(this[this.tablet_mou_item.item_group_name_tColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'item_group_name_t\' in table \'t_mou_item\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablet_mou_item.item_group_name_tColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string item_group_name_e {
+                get {
+                    try {
+                        return ((string)(this[this.tablet_mou_item.item_group_name_eColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'item_group_name_e\' in table \'t_mou_item\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablet_mou_item.item_group_name_eColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string sample {
                 get {
                     try {
@@ -1170,6 +1298,54 @@ namespace Cemp.report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setmethod_descriptionNull() {
                 this[this.tablet_mou_item.method_descriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isitem_group_sortNull() {
+                return this.IsNull(this.tablet_mou_item.item_group_sortColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setitem_group_sortNull() {
+                this[this.tablet_mou_item.item_group_sortColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isitem_group_idNull() {
+                return this.IsNull(this.tablet_mou_item.item_group_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setitem_group_idNull() {
+                this[this.tablet_mou_item.item_group_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isitem_group_name_tNull() {
+                return this.IsNull(this.tablet_mou_item.item_group_name_tColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setitem_group_name_tNull() {
+                this[this.tablet_mou_item.item_group_name_tColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isitem_group_name_eNull() {
+                return this.IsNull(this.tablet_mou_item.item_group_name_eColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setitem_group_name_eNull() {
+                this[this.tablet_mou_item.item_group_name_eColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1471,6 +1647,10 @@ namespace Cemp.report.MOUPrintDSTableAdapters {
             tableMapping.ColumnMappings.Add("item_description", "item_description");
             tableMapping.ColumnMappings.Add("method_id", "method_id");
             tableMapping.ColumnMappings.Add("method_description", "method_description");
+            tableMapping.ColumnMappings.Add("item_group_sort", "item_group_sort");
+            tableMapping.ColumnMappings.Add("item_group_id", "item_group_id");
+            tableMapping.ColumnMappings.Add("item_group_name_t", "item_group_name_t");
+            tableMapping.ColumnMappings.Add("item_group_name_e", "item_group_name_e");
             tableMapping.ColumnMappings.Add("sample", "sample");
             tableMapping.ColumnMappings.Add("place_record", "place_record");
             tableMapping.ColumnMappings.Add("mou_item_active", "mou_item_active");
@@ -1485,7 +1665,7 @@ namespace Cemp.report.MOUPrintDSTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `t_mou_item` WHERE ((`mou_item_id` = ?) AND ((? = 1 AND `mou_id` IS NULL) OR (`mou_id` = ?)) AND ((? = 1 AND `row_number` IS NULL) OR (`row_number` = ?)) AND ((? = 1 AND `item_id` IS NULL) OR (`item_id` = ?)) AND ((? = 1 AND `item_description` IS NULL) OR (`item_description` = ?)) AND ((? = 1 AND `method_id` IS NULL) OR (`method_id` = ?)) AND ((? = 1 AND `method_description` IS NULL) OR (`method_description` = ?)) AND ((? = 1 AND `sample` IS NULL) OR (`sample` = ?)) AND ((? = 1 AND `place_record` IS NULL) OR (`place_record` = ?)) AND ((? = 1 AND `mou_item_active` IS NULL) OR (`mou_item_active` = ?)) AND ((? = 1 AND `date_create` IS NULL) OR (`date_create` = ?)) AND ((? = 1 AND `date_modi` IS NULL) OR (`date_modi` = ?)) AND ((? = 1 AND `date_cancel` IS NULL) OR (`date_cancel` = ?)) AND ((? = 1 AND `user_create` IS NULL) OR (`user_create` = ?)) AND ((? = 1 AND `user_modi` IS NULL) OR (`user_modi` = ?)) AND ((? = 1 AND `user_cancel` IS NULL) OR (`user_cancel` = ?)) AND ((? = 1 AND `remark` IS NULL) OR (`remark` = ?)) AND ((? = 1 AND `status_sample` IS NULL) OR (`status_sample` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `t_mou_item` WHERE ((`mou_item_id` = ?) AND ((? = 1 AND `mou_id` IS NULL) OR (`mou_id` = ?)) AND ((? = 1 AND `row_number` IS NULL) OR (`row_number` = ?)) AND ((? = 1 AND `item_id` IS NULL) OR (`item_id` = ?)) AND ((? = 1 AND `item_description` IS NULL) OR (`item_description` = ?)) AND ((? = 1 AND `method_id` IS NULL) OR (`method_id` = ?)) AND ((? = 1 AND `method_description` IS NULL) OR (`method_description` = ?)) AND ((? = 1 AND `item_group_sort` IS NULL) OR (`item_group_sort` = ?)) AND ((? = 1 AND `item_group_id` IS NULL) OR (`item_group_id` = ?)) AND ((? = 1 AND `item_group_name_t` IS NULL) OR (`item_group_name_t` = ?)) AND ((? = 1 AND `item_group_name_e` IS NULL) OR (`item_group_name_e` = ?)) AND ((? = 1 AND `sample` IS NULL) OR (`sample` = ?)) AND ((? = 1 AND `place_record` IS NULL) OR (`place_record` = ?)) AND ((? = 1 AND `mou_item_active` IS NULL) OR (`mou_item_active` = ?)) AND ((? = 1 AND `date_create` IS NULL) OR (`date_create` = ?)) AND ((? = 1 AND `date_modi` IS NULL) OR (`date_modi` = ?)) AND ((? = 1 AND `date_cancel` IS NULL) OR (`date_cancel` = ?)) AND ((? = 1 AND `user_create` IS NULL) OR (`user_create` = ?)) AND ((? = 1 AND `user_modi` IS NULL) OR (`user_modi` = ?)) AND ((? = 1 AND `user_cancel` IS NULL) OR (`user_cancel` = ?)) AND ((? = 1 AND `remark` IS NULL) OR (`remark` = ?)) AND ((? = 1 AND `status_sample` IS NULL) OR (`status_sample` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mou_item_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_item_id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mou_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_id", global::System.Data.DataRowVersion.Original, true, null));
@@ -1500,6 +1680,14 @@ namespace Cemp.report.MOUPrintDSTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_method_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "method_id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_method_description", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "method_description", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_method_description", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "method_description", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_item_group_sort", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_sort", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_item_group_sort", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_sort", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_item_group_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_id", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_item_group_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_item_group_name_t", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_t", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_item_group_name_t", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_t", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_item_group_name_e", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_e", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_item_group_name_e", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_e", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_sample", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sample", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_sample", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sample", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_place_record", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "place_record", global::System.Data.DataRowVersion.Original, true, null));
@@ -1524,7 +1712,7 @@ namespace Cemp.report.MOUPrintDSTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_status_sample", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "status_sample", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO `t_mou_item` (`mou_item_id`, `mou_id`, `row_number`, `item_id`, `item_description`, `method_id`, `method_description`, `sample`, `place_record`, `mou_item_active`, `date_create`, `date_modi`, `date_cancel`, `user_create`, `user_modi`, `user_cancel`, `remark`, `status_sample`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `t_mou_item` (`mou_item_id`, `mou_id`, `row_number`, `item_id`, `item_description`, `method_id`, `method_description`, `item_group_sort`, `item_group_id`, `item_group_name_t`, `item_group_name_e`, `sample`, `place_record`, `mou_item_active`, `date_create`, `date_modi`, `date_cancel`, `user_create`, `user_modi`, `user_cancel`, `remark`, `status_sample`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mou_item_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_item_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mou_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_id", global::System.Data.DataRowVersion.Current, false, null));
@@ -1533,6 +1721,10 @@ namespace Cemp.report.MOUPrintDSTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_description", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_description", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("method_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "method_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("method_description", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "method_description", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_group_sort", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_sort", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_group_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_group_name_t", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_t", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_group_name_e", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_e", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("sample", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sample", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("place_record", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "place_record", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mou_item_active", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_item_active", global::System.Data.DataRowVersion.Current, false, null));
@@ -1546,7 +1738,29 @@ namespace Cemp.report.MOUPrintDSTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("status_sample", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "status_sample", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `t_mou_item` SET `mou_item_id` = ?, `mou_id` = ?, `row_number` = ?, `item_id` = ?, `item_description` = ?, `method_id` = ?, `method_description` = ?, `sample` = ?, `place_record` = ?, `mou_item_active` = ?, `date_create` = ?, `date_modi` = ?, `date_cancel` = ?, `user_create` = ?, `user_modi` = ?, `user_cancel` = ?, `remark` = ?, `status_sample` = ? WHERE ((`mou_item_id` = ?) AND ((? = 1 AND `mou_id` IS NULL) OR (`mou_id` = ?)) AND ((? = 1 AND `row_number` IS NULL) OR (`row_number` = ?)) AND ((? = 1 AND `item_id` IS NULL) OR (`item_id` = ?)) AND ((? = 1 AND `item_description` IS NULL) OR (`item_description` = ?)) AND ((? = 1 AND `method_id` IS NULL) OR (`method_id` = ?)) AND ((? = 1 AND `method_description` IS NULL) OR (`method_description` = ?)) AND ((? = 1 AND `sample` IS NULL) OR (`sample` = ?)) AND ((? = 1 AND `place_record` IS NULL) OR (`place_record` = ?)) AND ((? = 1 AND `mou_item_active` IS NULL) OR (`mou_item_active` = ?)) AND ((? = 1 AND `date_create` IS NULL) OR (`date_create` = ?)) AND ((? = 1 AND `date_modi` IS NULL) OR (`date_modi` = ?)) AND ((? = 1 AND `date_cancel` IS NULL) OR (`date_cancel` = ?)) AND ((? = 1 AND `user_create` IS NULL) OR (`user_create` = ?)) AND ((? = 1 AND `user_modi` IS NULL) OR (`user_modi` = ?)) AND ((? = 1 AND `user_cancel` IS NULL) OR (`user_cancel` = ?)) AND ((? = 1 AND `remark` IS NULL) OR (`remark` = ?)) AND ((? = 1 AND `status_sample` IS NULL) OR (`status_sample` = ?)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `t_mou_item` SET `mou_item_id` = ?, `mou_id` = ?, `row_number` = ?, `item_" +
+                "id` = ?, `item_description` = ?, `method_id` = ?, `method_description` = ?, `ite" +
+                "m_group_sort` = ?, `item_group_id` = ?, `item_group_name_t` = ?, `item_group_nam" +
+                "e_e` = ?, `sample` = ?, `place_record` = ?, `mou_item_active` = ?, `date_create`" +
+                " = ?, `date_modi` = ?, `date_cancel` = ?, `user_create` = ?, `user_modi` = ?, `u" +
+                "ser_cancel` = ?, `remark` = ?, `status_sample` = ? WHERE ((`mou_item_id` = ?) AN" +
+                "D ((? = 1 AND `mou_id` IS NULL) OR (`mou_id` = ?)) AND ((? = 1 AND `row_number` " +
+                "IS NULL) OR (`row_number` = ?)) AND ((? = 1 AND `item_id` IS NULL) OR (`item_id`" +
+                " = ?)) AND ((? = 1 AND `item_description` IS NULL) OR (`item_description` = ?)) " +
+                "AND ((? = 1 AND `method_id` IS NULL) OR (`method_id` = ?)) AND ((? = 1 AND `meth" +
+                "od_description` IS NULL) OR (`method_description` = ?)) AND ((? = 1 AND `item_gr" +
+                "oup_sort` IS NULL) OR (`item_group_sort` = ?)) AND ((? = 1 AND `item_group_id` I" +
+                "S NULL) OR (`item_group_id` = ?)) AND ((? = 1 AND `item_group_name_t` IS NULL) O" +
+                "R (`item_group_name_t` = ?)) AND ((? = 1 AND `item_group_name_e` IS NULL) OR (`i" +
+                "tem_group_name_e` = ?)) AND ((? = 1 AND `sample` IS NULL) OR (`sample` = ?)) AND" +
+                " ((? = 1 AND `place_record` IS NULL) OR (`place_record` = ?)) AND ((? = 1 AND `m" +
+                "ou_item_active` IS NULL) OR (`mou_item_active` = ?)) AND ((? = 1 AND `date_creat" +
+                "e` IS NULL) OR (`date_create` = ?)) AND ((? = 1 AND `date_modi` IS NULL) OR (`da" +
+                "te_modi` = ?)) AND ((? = 1 AND `date_cancel` IS NULL) OR (`date_cancel` = ?)) AN" +
+                "D ((? = 1 AND `user_create` IS NULL) OR (`user_create` = ?)) AND ((? = 1 AND `us" +
+                "er_modi` IS NULL) OR (`user_modi` = ?)) AND ((? = 1 AND `user_cancel` IS NULL) O" +
+                "R (`user_cancel` = ?)) AND ((? = 1 AND `remark` IS NULL) OR (`remark` = ?)) AND " +
+                "((? = 1 AND `status_sample` IS NULL) OR (`status_sample` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mou_item_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_item_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mou_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_id", global::System.Data.DataRowVersion.Current, false, null));
@@ -1555,6 +1769,10 @@ namespace Cemp.report.MOUPrintDSTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_description", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_description", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("method_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "method_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("method_description", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "method_description", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_group_sort", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_sort", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_group_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_group_name_t", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_t", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_group_name_e", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_e", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("sample", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sample", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("place_record", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "place_record", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mou_item_active", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_item_active", global::System.Data.DataRowVersion.Current, false, null));
@@ -1579,6 +1797,14 @@ namespace Cemp.report.MOUPrintDSTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_method_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "method_id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_method_description", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "method_description", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_method_description", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "method_description", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_item_group_sort", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_sort", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_item_group_sort", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_sort", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_item_group_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_id", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_item_group_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_item_group_name_t", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_t", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_item_group_name_t", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_t", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_item_group_name_e", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_e", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_item_group_name_e", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_e", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_sample", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sample", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_sample", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sample", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_place_record", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "place_record", global::System.Data.DataRowVersion.Original, true, null));
@@ -1616,10 +1842,7 @@ namespace Cemp.report.MOUPrintDSTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT mou_item_id, mou_id, row_number, item_id, item_description, method_id, met" +
-                "hod_description, sample, place_record, mou_item_active, date_create, date_modi, " +
-                "date_cancel, user_create, user_modi, user_cancel, remark, status_sample FROM t_m" +
-                "ou_item";
+            this._commandCollection[0].CommandText = @"SELECT mou_item_id, mou_id, row_number, item_id, item_description, method_id, method_description, item_group_sort, item_group_id, item_group_name_t, item_group_name_e, sample, place_record, mou_item_active, date_create, date_modi, date_cancel, user_create, user_modi, user_cancel, remark, status_sample FROM t_mou_item";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1688,6 +1911,10 @@ namespace Cemp.report.MOUPrintDSTableAdapters {
                     string Original_item_description, 
                     string Original_method_id, 
                     string Original_method_description, 
+                    string Original_item_group_sort, 
+                    string Original_item_group_id, 
+                    string Original_item_group_name_t, 
+                    string Original_item_group_name_e, 
                     string Original_sample, 
                     string Original_place_record, 
                     string Original_mou_item_active, 
@@ -1753,93 +1980,125 @@ namespace Cemp.report.MOUPrintDSTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_method_description));
             }
-            if ((Original_sample == null)) {
+            if ((Original_item_group_sort == null)) {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_sample));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_item_group_sort));
             }
-            if ((Original_place_record == null)) {
+            if ((Original_item_group_id == null)) {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_place_record));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_item_group_id));
             }
-            if ((Original_mou_item_active == null)) {
+            if ((Original_item_group_name_t == null)) {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_mou_item_active));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_item_group_name_t));
             }
-            if ((Original_date_create == null)) {
+            if ((Original_item_group_name_e == null)) {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_date_create));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_item_group_name_e));
             }
-            if ((Original_date_modi == null)) {
+            if ((Original_sample == null)) {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_date_modi));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_sample));
             }
-            if ((Original_date_cancel == null)) {
+            if ((Original_place_record == null)) {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_date_cancel));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_place_record));
             }
-            if ((Original_user_create == null)) {
+            if ((Original_mou_item_active == null)) {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_user_create));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_mou_item_active));
             }
-            if ((Original_user_modi == null)) {
+            if ((Original_date_create == null)) {
                 this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_user_modi));
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_date_create));
             }
-            if ((Original_user_cancel == null)) {
+            if ((Original_date_modi == null)) {
                 this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_user_cancel));
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_date_modi));
             }
-            if ((Original_remark == null)) {
+            if ((Original_date_cancel == null)) {
                 this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_remark));
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_date_cancel));
             }
-            if ((Original_status_sample == null)) {
+            if ((Original_user_create == null)) {
                 this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[34].Value = ((string)(Original_status_sample));
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((string)(Original_user_create));
+            }
+            if ((Original_user_modi == null)) {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[36].Value = ((string)(Original_user_modi));
+            }
+            if ((Original_user_cancel == null)) {
+                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[38].Value = ((string)(Original_user_cancel));
+            }
+            if ((Original_remark == null)) {
+                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[40].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[40].Value = ((string)(Original_remark));
+            }
+            if ((Original_status_sample == null)) {
+                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[42].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[42].Value = ((string)(Original_status_sample));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1869,6 +2128,10 @@ namespace Cemp.report.MOUPrintDSTableAdapters {
                     string item_description, 
                     string method_id, 
                     string method_description, 
+                    string item_group_sort, 
+                    string item_group_id, 
+                    string item_group_name_t, 
+                    string item_group_name_e, 
                     string sample, 
                     string place_record, 
                     string mou_item_active, 
@@ -1922,71 +2185,95 @@ namespace Cemp.report.MOUPrintDSTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((string)(method_description));
             }
-            if ((sample == null)) {
+            if ((item_group_sort == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(sample));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(item_group_sort));
             }
-            if ((place_record == null)) {
+            if ((item_group_id == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(place_record));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(item_group_id));
             }
-            if ((mou_item_active == null)) {
+            if ((item_group_name_t == null)) {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(mou_item_active));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(item_group_name_t));
             }
-            if ((date_create == null)) {
+            if ((item_group_name_e == null)) {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(date_create));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(item_group_name_e));
             }
-            if ((date_modi == null)) {
+            if ((sample == null)) {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(date_modi));
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(sample));
             }
-            if ((date_cancel == null)) {
+            if ((place_record == null)) {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(date_cancel));
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(place_record));
             }
-            if ((user_create == null)) {
+            if ((mou_item_active == null)) {
                 this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(user_create));
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(mou_item_active));
             }
-            if ((user_modi == null)) {
+            if ((date_create == null)) {
                 this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(user_modi));
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(date_create));
             }
-            if ((user_cancel == null)) {
+            if ((date_modi == null)) {
                 this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(user_cancel));
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(date_modi));
             }
-            if ((remark == null)) {
+            if ((date_cancel == null)) {
                 this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(remark));
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(date_cancel));
             }
-            if ((status_sample == null)) {
+            if ((user_create == null)) {
                 this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(status_sample));
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(user_create));
+            }
+            if ((user_modi == null)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(user_modi));
+            }
+            if ((user_cancel == null)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(user_cancel));
+            }
+            if ((remark == null)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(remark));
+            }
+            if ((status_sample == null)) {
+                this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(status_sample));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2016,6 +2303,10 @@ namespace Cemp.report.MOUPrintDSTableAdapters {
                     string item_description, 
                     string method_id, 
                     string method_description, 
+                    string item_group_sort, 
+                    string item_group_id, 
+                    string item_group_name_t, 
+                    string item_group_name_e, 
                     string sample, 
                     string place_record, 
                     string mou_item_active, 
@@ -2034,6 +2325,10 @@ namespace Cemp.report.MOUPrintDSTableAdapters {
                     string Original_item_description, 
                     string Original_method_id, 
                     string Original_method_description, 
+                    string Original_item_group_sort, 
+                    string Original_item_group_id, 
+                    string Original_item_group_name_t, 
+                    string Original_item_group_name_e, 
                     string Original_sample, 
                     string Original_place_record, 
                     string Original_mou_item_active, 
@@ -2087,213 +2382,269 @@ namespace Cemp.report.MOUPrintDSTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(method_description));
             }
-            if ((sample == null)) {
+            if ((item_group_sort == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(sample));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(item_group_sort));
             }
-            if ((place_record == null)) {
+            if ((item_group_id == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(place_record));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(item_group_id));
             }
-            if ((mou_item_active == null)) {
+            if ((item_group_name_t == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(mou_item_active));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(item_group_name_t));
             }
-            if ((date_create == null)) {
+            if ((item_group_name_e == null)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(date_create));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(item_group_name_e));
             }
-            if ((date_modi == null)) {
+            if ((sample == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(date_modi));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(sample));
             }
-            if ((date_cancel == null)) {
+            if ((place_record == null)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(date_cancel));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(place_record));
             }
-            if ((user_create == null)) {
+            if ((mou_item_active == null)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(user_create));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(mou_item_active));
             }
-            if ((user_modi == null)) {
+            if ((date_create == null)) {
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(user_modi));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(date_create));
             }
-            if ((user_cancel == null)) {
+            if ((date_modi == null)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(user_cancel));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(date_modi));
             }
-            if ((remark == null)) {
+            if ((date_cancel == null)) {
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(remark));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(date_cancel));
             }
-            if ((status_sample == null)) {
+            if ((user_create == null)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(status_sample));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(user_create));
+            }
+            if ((user_modi == null)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(user_modi));
+            }
+            if ((user_cancel == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(user_cancel));
+            }
+            if ((remark == null)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(remark));
+            }
+            if ((status_sample == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(status_sample));
             }
             if ((Original_mou_item_id == null)) {
                 throw new global::System.ArgumentNullException("Original_mou_item_id");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_mou_item_id));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_mou_item_id));
             }
             if ((Original_mou_id == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_mou_id));
-            }
-            if ((Original_row_number.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_row_number.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            if ((Original_item_id == null)) {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_item_id));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_mou_id));
             }
-            if ((Original_item_description == null)) {
+            if ((Original_row_number.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(Original_row_number.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_item_description));
-            }
-            if ((Original_method_id == null)) {
+            if ((Original_item_id == null)) {
                 this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_method_id));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_item_id));
             }
-            if ((Original_method_description == null)) {
+            if ((Original_item_description == null)) {
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_method_description));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_item_description));
             }
-            if ((Original_sample == null)) {
+            if ((Original_method_id == null)) {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_sample));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_method_id));
             }
-            if ((Original_place_record == null)) {
+            if ((Original_method_description == null)) {
                 this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_place_record));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_method_description));
             }
-            if ((Original_mou_item_active == null)) {
+            if ((Original_item_group_sort == null)) {
                 this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_mou_item_active));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_item_group_sort));
             }
-            if ((Original_date_create == null)) {
+            if ((Original_item_group_id == null)) {
                 this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_date_create));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_item_group_id));
             }
-            if ((Original_date_modi == null)) {
+            if ((Original_item_group_name_t == null)) {
                 this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_date_modi));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_item_group_name_t));
             }
-            if ((Original_date_cancel == null)) {
+            if ((Original_item_group_name_e == null)) {
                 this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_date_cancel));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_item_group_name_e));
             }
-            if ((Original_user_create == null)) {
+            if ((Original_sample == null)) {
                 this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_user_create));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_sample));
             }
-            if ((Original_user_modi == null)) {
+            if ((Original_place_record == null)) {
                 this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_user_modi));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_place_record));
             }
-            if ((Original_user_cancel == null)) {
+            if ((Original_mou_item_active == null)) {
                 this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(Original_user_cancel));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(Original_mou_item_active));
             }
-            if ((Original_remark == null)) {
+            if ((Original_date_create == null)) {
                 this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_remark));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_date_create));
             }
-            if ((Original_status_sample == null)) {
+            if ((Original_date_modi == null)) {
                 this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_status_sample));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_date_modi));
+            }
+            if ((Original_date_cancel == null)) {
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((string)(Original_date_cancel));
+            }
+            if ((Original_user_create == null)) {
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((string)(Original_user_create));
+            }
+            if ((Original_user_modi == null)) {
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((string)(Original_user_modi));
+            }
+            if ((Original_user_cancel == null)) {
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((string)(Original_user_cancel));
+            }
+            if ((Original_remark == null)) {
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((string)(Original_remark));
+            }
+            if ((Original_status_sample == null)) {
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((string)(Original_status_sample));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2322,6 +2673,10 @@ namespace Cemp.report.MOUPrintDSTableAdapters {
                     string item_description, 
                     string method_id, 
                     string method_description, 
+                    string item_group_sort, 
+                    string item_group_id, 
+                    string item_group_name_t, 
+                    string item_group_name_e, 
                     string sample, 
                     string place_record, 
                     string mou_item_active, 
@@ -2340,6 +2695,10 @@ namespace Cemp.report.MOUPrintDSTableAdapters {
                     string Original_item_description, 
                     string Original_method_id, 
                     string Original_method_description, 
+                    string Original_item_group_sort, 
+                    string Original_item_group_id, 
+                    string Original_item_group_name_t, 
+                    string Original_item_group_name_e, 
                     string Original_sample, 
                     string Original_place_record, 
                     string Original_mou_item_active, 
@@ -2351,7 +2710,7 @@ namespace Cemp.report.MOUPrintDSTableAdapters {
                     string Original_user_cancel, 
                     string Original_remark, 
                     string Original_status_sample) {
-            return this.Update(Original_mou_item_id, mou_id, row_number, item_id, item_description, method_id, method_description, sample, place_record, mou_item_active, date_create, date_modi, date_cancel, user_create, user_modi, user_cancel, remark, status_sample, Original_mou_item_id, Original_mou_id, Original_row_number, Original_item_id, Original_item_description, Original_method_id, Original_method_description, Original_sample, Original_place_record, Original_mou_item_active, Original_date_create, Original_date_modi, Original_date_cancel, Original_user_create, Original_user_modi, Original_user_cancel, Original_remark, Original_status_sample);
+            return this.Update(Original_mou_item_id, mou_id, row_number, item_id, item_description, method_id, method_description, item_group_sort, item_group_id, item_group_name_t, item_group_name_e, sample, place_record, mou_item_active, date_create, date_modi, date_cancel, user_create, user_modi, user_cancel, remark, status_sample, Original_mou_item_id, Original_mou_id, Original_row_number, Original_item_id, Original_item_description, Original_method_id, Original_method_description, Original_item_group_sort, Original_item_group_id, Original_item_group_name_t, Original_item_group_name_e, Original_sample, Original_place_record, Original_mou_item_active, Original_date_create, Original_date_modi, Original_date_cancel, Original_user_create, Original_user_modi, Original_user_cancel, Original_remark, Original_status_sample);
         }
     }
     

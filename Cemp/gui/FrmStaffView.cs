@@ -24,13 +24,14 @@ namespace Cemp.gui
         {
             InitializeComponent();
             initConfig(c);
-            setControl();
+            
         }
         private void initConfig( CnviControl c)
         {
             cc = c;
             //dt = lc.selectStaffAll();
-
+            setControl();
+            dgvView.ReadOnly = true;
         }
         private void setResize()
         {

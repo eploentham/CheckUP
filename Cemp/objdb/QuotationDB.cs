@@ -143,7 +143,7 @@ namespace Cemp.objdb
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + qu.table + " Where " + qu.Active + "='1'";
+            sql = "Select * From " + qu.table + " Where " + qu.Active + "='1' Order By " + qu.QuoNumber + " desc," + qu.QuoNumberCnt + " desc";
             dt = conn.selectData(sql);
 
             return dt;
@@ -473,7 +473,7 @@ namespace Cemp.objdb
             {
                 item = new ComboBoxItem();
                 item.Value = dt.Rows[i][qu.Id].ToString();
-                item.Text = dt.Rows[i][qu.QuoNumber].ToString();
+                item.Text = dt.Rows[i][qu.QuoNumber].ToString() + "-" + dt.Rows[i][qu.QuoNumberCnt].ToString();
                 c.Items.Add(item);
                 //c.Items.Add(new );
             }

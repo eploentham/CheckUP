@@ -55,6 +55,11 @@ namespace Cemp.objdb
             cp.quLine5 = "qu_line5";
             cp.quLine6 = "qu_line6";
 
+            cp.mouLine1 = "mou_line1";
+            cp.mouLine2 = "mou_line2";
+            cp.mouLine3 = "mou_line3";
+            cp.mouLine4 = "mou_line4";
+
             cp.pkField = "comp_id";
             cp.table = "b_company";
         }
@@ -93,6 +98,11 @@ namespace Cemp.objdb
             item.quLine4 = dt.Rows[0][cp.quLine4].ToString();
             item.quLine5 = dt.Rows[0][cp.quLine5].ToString();
             item.quLine6 = dt.Rows[0][cp.quLine6].ToString();
+
+            item.mouLine1 = dt.Rows[0][cp.mouLine1].ToString();
+            item.mouLine2 = dt.Rows[0][cp.mouLine2].ToString();
+            item.mouLine3 = dt.Rows[0][cp.mouLine3].ToString();
+            item.mouLine4 = dt.Rows[0][cp.mouLine4].ToString();
 
             return item;
         }
@@ -174,6 +184,11 @@ namespace Cemp.objdb
             p.quLine5 = p.quLine5.Replace("'", "''");
             p.quLine6 = p.quLine6.Replace("'", "''");
 
+            p.mouLine1 = p.mouLine1.Replace("'", "''");
+            p.mouLine2 = p.mouLine2.Replace("'", "''");
+            p.mouLine3 = p.mouLine3.Replace("'", "''");
+            p.mouLine4 = p.mouLine4.Replace("'", "''");
+
             sql = "Update " + cp.table + " Set " + cp.AddressE + "='" + p.AddressE + "', " +
                 cp.AddressT + "='" + p.AddressT + "', " +
                 cp.amphurId + "='" + p.amphurId + "', " +
@@ -195,7 +210,11 @@ namespace Cemp.objdb
                 cp.quLine3 + "='" + p.quLine3 + "', " +
                 cp.quLine4 + "='" + p.quLine4 + "', " +
                 cp.quLine5 + "='" + p.quLine5 + "', " +
-                cp.quLine6 + "='" + p.quLine6 + "' " +
+                cp.quLine6 + "='" + p.quLine6 + "', " +
+                cp.mouLine1 + "='" + p.mouLine1 + "', " +
+                cp.mouLine2 + "='" + p.mouLine2 + "', " +
+                cp.mouLine3 + "='" + p.mouLine3 + "', " +
+                cp.mouLine4 + "='" + p.mouLine4 + "' " +
                 
                 "Where " + cp.pkField + "='" + p.Id + "'";
             try

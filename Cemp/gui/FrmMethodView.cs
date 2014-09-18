@@ -15,6 +15,7 @@ namespace Cemp.gui
         CnviControl cc;
         int colRow = 0, colCode=1, colNameT = 2, colNameE = 3, colRemark = 4, colId = 5;
         int colCnt = 6;
+        DataTable dt = new DataTable();
         public FrmMethodView(CnviControl c)
         {
             InitializeComponent();
@@ -38,7 +39,6 @@ namespace Cemp.gui
         {
             try
             {
-                DataTable dt = new DataTable();
                 dt = cc.medb.selectAll();
                 dgvView.ColumnCount = colCnt;
 
@@ -128,7 +128,7 @@ namespace Cemp.gui
         private void btnPrint_Click(object sender, EventArgs e)
         {
             String sql = "";
-            DataTable dt = cc.medb.selectAll();
+            //DataTable dt = cc.medb.selectAll();
             FrmReport frm = new FrmReport(cc);
             frm.setReport("MethodList", "รายการ Method", "เงื่อนไข ทั้งหมด", dt);
             frm.ShowDialog(this);

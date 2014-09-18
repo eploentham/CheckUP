@@ -49,6 +49,9 @@
             this.chkUse32bit = new System.Windows.Forms.CheckBox();
             this.chkClearInput = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pB1 = new System.Windows.Forms.ProgressBar();
+            this.button1 = new System.Windows.Forms.Button();
             this.gBClient = new System.Windows.Forms.GroupBox();
             this.txtConnectShareImage = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -83,9 +86,7 @@
             this.txtIP = new System.Windows.Forms.TextBox();
             this.ChkClient = new System.Windows.Forms.RadioButton();
             this.ChkServer = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pB1 = new System.Windows.Forms.ProgressBar();
-            this.button2 = new System.Windows.Forms.Button();
+            this.chkHideCostQuotation = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -108,6 +109,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.chkHideCostQuotation);
             this.groupBox4.Controls.Add(this.label17);
             this.groupBox4.Controls.Add(this.txtQuoLine6);
             this.groupBox4.Controls.Add(this.label16);
@@ -319,6 +321,33 @@
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "ใช้งานหลายเครื่อง";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(545, 259);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 23);
+            this.button2.TabIndex = 32;
+            this.button2.Text = "Convert Parameter";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // pB1
+            // 
+            this.pB1.Location = new System.Drawing.Point(0, 391);
+            this.pB1.Name = "pB1";
+            this.pB1.Size = new System.Drawing.Size(665, 23);
+            this.pB1.TabIndex = 31;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(545, 221);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 23);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "Convert Method";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // gBClient
             // 
@@ -684,32 +713,16 @@
             this.ChkServer.UseVisualStyleBackColor = true;
             this.ChkServer.Click += new System.EventHandler(this.ChkServer_Click);
             // 
-            // button1
+            // chkHideCostQuotation
             // 
-            this.button1.Location = new System.Drawing.Point(545, 221);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 23);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Convert Method";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pB1
-            // 
-            this.pB1.Location = new System.Drawing.Point(0, 391);
-            this.pB1.Name = "pB1";
-            this.pB1.Size = new System.Drawing.Size(665, 23);
-            this.pB1.TabIndex = 31;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(545, 259);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 23);
-            this.button2.TabIndex = 32;
-            this.button2.Text = "Convert Parameter";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.chkHideCostQuotation.AutoSize = true;
+            this.chkHideCostQuotation.Location = new System.Drawing.Point(115, 186);
+            this.chkHideCostQuotation.Margin = new System.Windows.Forms.Padding(2);
+            this.chkHideCostQuotation.Name = "chkHideCostQuotation";
+            this.chkHideCostQuotation.Size = new System.Drawing.Size(134, 17);
+            this.chkHideCostQuotation.TabIndex = 45;
+            this.chkHideCostQuotation.Text = "ซ่อนราคาทุน Quotation";
+            this.chkHideCostQuotation.UseVisualStyleBackColor = true;
             // 
             // FrmInitConfig
             // 
@@ -798,5 +811,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ProgressBar pB1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.CheckBox chkHideCostQuotation;
     }
 }

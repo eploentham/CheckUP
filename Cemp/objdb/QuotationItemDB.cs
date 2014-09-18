@@ -107,7 +107,7 @@ namespace Cemp.objdb
             //QuotationItem item = new QuotationItem();
             String sql = "";
 
-            sql = "Select * From " + qui.table + " Where " + qui.QuoId + "='" + quId + "' and " + qui.Active + "='1' ";
+            sql = "Select * From " + qui.table + " Where " + qui.QuoId + "='" + quId + "' and " + qui.Active + "='1' Order By "+qui.RowNumber;
             //dt = conn.selectData(sql);
             DataTable dt = conn.selectData(sql);
 

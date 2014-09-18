@@ -124,6 +124,57 @@ namespace Cemp
                 chk = ex.Message.ToString();
             }
         }
+        public void setReportMOUSamplePrint(MOU mo, DataTable dt)
+        {
+            String chk = "";
+            ReportDocument rpt = new ReportDocument();
+            try
+            {
+                cc.lw.WriteLog("rpt.setReportMOUSamplePrint OK ");
+                rpt.Load(cc.initC.PathReport + "\\MOUSamplePrint.rpt");
+                rpt.SetDataSource(dt);
+                cc.lw.WriteLog("rpt.setReportMOUSamplePrint OK SetDataSource");
+
+                rpt.SetParameterValue("compName", mo.CompName);
+                rpt.SetParameterValue("compAddress1", mo.CompAddress1);
+                rpt.SetParameterValue("compAddress2", mo.CompAddress2);
+                rpt.SetParameterValue("compTaxId", mo.CompTaxId);
+
+                rpt.SetParameterValue("custName", mo.CustName);
+                rpt.SetParameterValue("custAddress", mo.CustAddress);
+                rpt.SetParameterValue("custTel", mo.CustTel);
+                //rpt.SetParameterValue("custFax", mo.CustFax);
+                rpt.SetParameterValue("custEmail", mo.CustEmail);
+
+                rpt.SetParameterValue("mouNumber", mo.MOUNumber);
+                rpt.SetParameterValue("dateperiod", "เก็บตัวอย่างระหว่างวันที่ : " + mo.DatePeriod);
+                rpt.SetParameterValue("staffmouname", mo.StaffMOUName);
+                //rpt.SetParameterValue("staffName", mo.StaffName);
+                rpt.SetParameterValue("staffTel", mo.StaffMOUTel);
+                rpt.SetParameterValue("staffEmail", mo.StaffMOUEmail);
+
+                rpt.SetParameterValue("contactName", mo.ContactName);
+
+                rpt.SetParameterValue("line1", mo.Line1);
+                //rpt.SetParameterValue("contactName", qu.ContactName);
+
+                rpt.SetParameterValue("line2", mo.StaffPlaceRecordPosition);
+                rpt.SetParameterValue("staffplacerecordname", mo.StaffPlaceRecordName);
+                rpt.SetParameterValue("line3", "ลูกค้า/ผู้ประสานงาน/ผู้รัลผิดชอบการตรวจ");
+                rpt.SetParameterValue("staffanalysis", "ผู้รับตัวอย่างเข้าวิเคราะห์ : "+mo.StaffAnalysisName);
+                rpt.SetParameterValue("lstaffplacerecord", "ผู้เก็บตัวอย่าง : "+mo.StaffPlaceRecordName);
+                rpt.SetParameterValue("dateplacerecord","วันที่ "+ mo.DatePlaceRecord);
+
+
+                this.crystalReportViewer1.ReportSource = rpt;
+                this.crystalReportViewer1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                chk = ex.Message.ToString();
+                cc.lw.WriteLog("rpt.setReportMOUSamplePrint Error " + chk);
+            }
+        }
         public void setReportMOU(MOU mo, DataTable dt)
         {
             String chk = "";
@@ -135,8 +186,32 @@ namespace Cemp
                 rpt.SetDataSource(dt);
                 cc.lw.WriteLog("rpt.setReportMOU OK SetDataSource");
 
-                rpt.SetParameterValue("mouNumber", mo.MOUNumber);
+                rpt.SetParameterValue("compName", mo.CompName);
+                rpt.SetParameterValue("compAddress1", mo.CompAddress1);
+                rpt.SetParameterValue("compAddress2", mo.CompAddress2);
+                rpt.SetParameterValue("compTaxId", mo.CompTaxId);
 
+                rpt.SetParameterValue("custName", mo.CustName);
+                rpt.SetParameterValue("custAddress", mo.CustAddress);
+                rpt.SetParameterValue("custTel", mo.CustTel);
+                //rpt.SetParameterValue("custFax", mo.CustFax);
+                rpt.SetParameterValue("custEmail", mo.CustEmail);
+
+                rpt.SetParameterValue("mouNumber", mo.MOUNumber);
+                rpt.SetParameterValue("dateperiod", "เก็บตัวอย่างระหว่างวันที่ : " + mo.DatePlaceRecord);
+                rpt.SetParameterValue("staffmouname", mo.StaffMOUName);
+                //rpt.SetParameterValue("staffName", mo.StaffName);
+                rpt.SetParameterValue("staffTel", mo.StaffMOUTel);
+                rpt.SetParameterValue("staffEmail", mo.StaffMOUEmail);
+
+                rpt.SetParameterValue("contactName", mo.ContactName);
+                
+                rpt.SetParameterValue("line1", mo.Line1);
+                //rpt.SetParameterValue("contactName", qu.ContactName);
+
+                rpt.SetParameterValue("line2", mo.StaffPlaceRecordPosition);
+                rpt.SetParameterValue("staffplacerecordname", mo.StaffPlaceRecordName);
+                rpt.SetParameterValue("line3", "ลูกค้า/ผู้ประสานงาน/ผู้รัลผิดชอบการตรวจ");
 
                 this.crystalReportViewer1.ReportSource = rpt;
                 this.crystalReportViewer1.Refresh();
@@ -218,6 +293,7 @@ namespace Cemp
                 rpt.SetParameterValue("lcustapprove","อนุมัติสั่งซื้อตามราบการที่เสนอ");
                 rpt.SetParameterValue("lstaffquotation", "ผู้เสนอราคา");
                 rpt.SetParameterValue("lstaffapprove", "ขอแสดงความนับถือ");
+                rpt.SetParameterValue("thaibaht", qu.ThaiBaht);
                 //rpt.SetParameterValue("", qu.QuoDate);
                 //rpt.SetParameterValue("", qu.QuoDate);
                 //rpt.SetParameterValue("", qu.QuoDate);

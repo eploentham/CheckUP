@@ -1,6 +1,6 @@
 ﻿namespace Cemp.gui
 {
-    partial class FrmMOUAdd
+    partial class FrmMOUAdd1
     {
         /// <summary>
         /// Required designer variable.
@@ -669,12 +669,12 @@
             this.Controls.Add(this.dgvAdd);
             this.Controls.Add(this.groupBox2);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "FrmMOUAdd";
+            this.Name = "FrmMOUAdd1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmMOUAdd";
+            this.Text = "FrmMOUAdd1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmMOUAdd_Load);
-            this.Resize += new System.EventHandler(this.FrmMOUAdd_Resize);
+            this.Load += new System.EventHandler(this.FrmMOUAdd1_Load);
+            this.Resize += new System.EventHandler(this.FrmMOUAdd1_Resize);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox21.ResumeLayout(false);

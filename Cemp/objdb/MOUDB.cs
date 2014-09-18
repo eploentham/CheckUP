@@ -40,16 +40,16 @@ namespace Cemp.objdb
             mo.QuoId = "quo_id";
             mo.QuoNumber = "quo_number";
             mo.Remark = "remark";
-            mo.StaffEmail = "staff_email";
-            mo.StaffId = "staff_id";
-            mo.StaffMOU = "staff_mou_name";
-            mo.StaffName = "staff_name";
-            mo.StaffTel = "staff_tel";
+            mo.StaffMOUEmail = "staff_mou_email";
+            mo.StaffQuoId = "staff_quo_id";
+            mo.StaffMOUName = "staff_mou_name";
+            mo.StaffQuoName = "staff_quo_name";
+            mo.StaffMOUTel = "staff_mou_tel";
             mo.MOUNumberCnt = "mou_number_cnt";
             mo.statusMOU = "status_mou";
             mo.DatePeriod = "date_period";
             mo.CustId = "cust_id";
-            mo.StaffMobile = "staff_mobile";
+            mo.StaffMOUMobile = "staff_mou_mobile";
             mo.StaffMOUId = "staff_mou_id";
             mo.CustMOUId = "cust_mou_id";
             mo.StaffAnalysisId = "staff_analysis_id";
@@ -63,6 +63,8 @@ namespace Cemp.objdb
             mo.userCancel = "user_cancel";
             mo.userCreate = "user_create";
             mo.userModi = "user_modi";
+            mo.StaffPlaceRecordPosition = "staff_place_record_position";
+            mo.StatusReceiveSample = "status_receive_sample";
 
             mo.pkField = "mou_id";
             mo.table = "t_mou";
@@ -89,16 +91,16 @@ namespace Cemp.objdb
             item.QuoId = dt.Rows[0][mo.QuoId].ToString();
             item.QuoNumber = dt.Rows[0][mo.QuoNumber].ToString();
             item.Remark = dt.Rows[0][mo.Remark].ToString();
-            item.StaffEmail = dt.Rows[0][mo.StaffEmail].ToString();
-            item.StaffId = dt.Rows[0][mo.StaffId].ToString();
-            item.StaffMOU = dt.Rows[0][mo.StaffMOU].ToString();
-            item.StaffName = dt.Rows[0][mo.StaffName].ToString();
-            item.StaffTel = dt.Rows[0][mo.StaffTel].ToString();
+            item.StaffMOUEmail = dt.Rows[0][mo.StaffMOUEmail].ToString();
+            item.StaffQuoId = dt.Rows[0][mo.StaffQuoId].ToString();
+            item.StaffMOUName = dt.Rows[0][mo.StaffMOUName].ToString();
+            item.StaffQuoName = dt.Rows[0][mo.StaffQuoName].ToString();
+            item.StaffMOUTel = dt.Rows[0][mo.StaffMOUTel].ToString();
             item.MOUNumberCnt = dt.Rows[0][mo.MOUNumberCnt].ToString();
             item.statusMOU = dt.Rows[0][mo.statusMOU].ToString();
             item.DatePeriod = dt.Rows[0][mo.DatePeriod].ToString();
             item.CustId = dt.Rows[0][mo.CustId].ToString();
-            item.StaffMobile = dt.Rows[0][mo.StaffMobile].ToString();
+            item.StaffMOUMobile = dt.Rows[0][mo.StaffMOUMobile].ToString();
             item.StaffMOUId = dt.Rows[0][mo.StaffMOUId].ToString();
             item.CustMOUId = dt.Rows[0][mo.CustMOUId].ToString();
             item.StaffAnalysisId = dt.Rows[0][mo.StaffAnalysisId].ToString();
@@ -112,6 +114,8 @@ namespace Cemp.objdb
             item.userCancel = dt.Rows[0][mo.userCancel].ToString();
             item.userCreate = dt.Rows[0][mo.userCreate].ToString();
             item.userModi = dt.Rows[0][mo.userModi].ToString();
+            item.StaffPlaceRecordPosition = dt.Rows[0][mo.StaffPlaceRecordPosition].ToString();
+            item.StatusReceiveSample = dt.Rows[0][mo.StatusReceiveSample].ToString();
             
             return item;
         }
@@ -128,7 +132,7 @@ namespace Cemp.objdb
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select Distinct "+mo.MOUNumber+","+mo.CustName+","+mo.ContactName+","+mo.StaffName+" From " + mo.table + " Where " + mo.Active + "='1'";
+            sql = "Select Distinct "+mo.MOUNumber+","+mo.CustName+","+mo.ContactName+","+mo.StaffQuoName+" From " + mo.table + " Where " + mo.Active + "='1'";
             dt = conn.selectData(sql);
 
             return dt;
@@ -186,6 +190,16 @@ namespace Cemp.objdb
             //}
             return dt;
         }
+        public String selectQuoNumberByNumber(String moNumber)
+        {
+            String sql = "";
+
+            sql = "Select " + mo.QuoNumber + " From " + mo.table + " Where " + mo.MOUNumber + "='" + moNumber + "' ";
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+            sql = dt.Rows[0][mo.QuoNumber].ToString();
+            return sql;
+        }
         public String selectMaxByNumber(String moNumber)
         {
             String sql = "";
@@ -210,40 +224,46 @@ namespace Cemp.objdb
             p.ContactName = p.ContactName.Replace("''", "'");
             p.CustAddress = p.CustAddress.Replace("''", "'");
             p.CustName = p.CustName.Replace("''", "'");
-            p.StaffMOU = p.StaffMOU.Replace("''", "'");
-            p.StaffName = p.StaffName.Replace("''", "'");
+            p.StaffMOUName = p.StaffMOUName.Replace("''", "'");
+            p.StaffQuoName = p.StaffQuoName.Replace("''", "'");
             p.Remark = p.Remark.Replace("''", "'");
+            p.StaffAnalysisName = p.StaffAnalysisName.Replace("''", "'");
+            p.StaffPlaceRecordName = p.StaffPlaceRecordName.Replace("''", "'");
+            p.StaffPlaceRecordPosition = p.StaffPlaceRecordPosition.Replace("''", "'");
 
-            p.userCreate = p.StaffId;
+            p.userCreate = p.StaffQuoId;
             p.dateCreate = p.dateGenDB;
+            p.StatusReceiveSample = "0";
             sql = "Insert Into " + mo.table + " (" + mo.pkField + "," + mo.Active + "," + mo.CompAddress1 + "," +
                 mo.CompAddress2 + "," + mo.CompId + "," + mo.CompName + "," +
                 mo.CompTaxId + "," + mo.ContactName + "," + mo.CustAddress + "," +
                 mo.CustEmail + "," + mo.CustFax + "," + mo.CustMobile + "," +
                 mo.CustMou + "," + mo.CustName + "," + mo.CustTel + "," +
                 mo.Line1 + "," + mo.MOUNumber + "," + mo.QuoId + "," +
-                mo.QuoNumber + "," + mo.Remark + "," + mo.StaffEmail + "," +
-                mo.StaffId + "," + mo.StaffMOU + "," + mo.StaffName + "," +
-                mo.StaffTel + "," + mo.MOUNumberCnt + "," + mo.StaffMobile + "," +
+                mo.QuoNumber + "," + mo.Remark + "," + mo.StaffMOUEmail + "," +
+                mo.StaffQuoId + "," + mo.StaffMOUName + "," + mo.StaffQuoName + "," +
+                mo.StaffMOUTel + "," + mo.MOUNumberCnt + "," + mo.StaffMOUMobile + "," +
                 mo.statusMOU + "," + mo.DatePeriod + "," + mo.CustId + "," +
                 mo.CustMOUId + "," + mo.StaffMOUId + "," + mo.dateCancel + "," +
                 mo.dateCreate + "," + mo.dateModi + "," + mo.userCancel + "," +
-                mo.userCreate + "," + mo.userModi + "," + mo.StaffPlaceRecordId + "," + 
-                mo.StaffPlaceRecordName + "," + mo.StaffAnalysisId + "," + mo.StaffAnalysisName + ") " +
+                mo.userCreate + "," + mo.userModi + "," + mo.StaffPlaceRecordId + "," +
+                mo.StaffPlaceRecordName + "," + mo.StaffAnalysisId + "," + mo.StaffAnalysisName + "," + 
+                mo.StaffPlaceRecordPosition + "," + mo.StatusReceiveSample + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.CompAddress1 + "','" +
                 p.CompAddress2 + "','" + p.CompId + "','" + p.CompName + "','" +
                 p.CompTaxId + "','" + p.ContactName + "','" + p.CustAddress + "','" +
                 p.CustEmail + "','" + p.CustFax + "','" + p.CustMobile + "','" +
                 p.CustMou + "','" + p.CustName + "','" + p.CustTel + "','" +
                 p.Line1 + "','" + p.MOUNumber + "','" + p.QuoId + "','" +
-                p.QuoNumber + "','" + p.Remark + "','" + p.StaffEmail + "','" +
-                p.StaffId + "','" + p.StaffMOU + "','" + p.StaffName + "','" +
-                p.StaffTel + "'," + p.MOUNumberCnt + ",'" + p.StaffMobile + "','" +
+                p.QuoNumber + "','" + p.Remark + "','" + p.StaffMOUEmail + "','" +
+                p.StaffQuoId + "','" + p.StaffMOUName + "','" + p.StaffQuoName + "','" +
+                p.StaffMOUTel + "'," + p.MOUNumberCnt + ",'" + p.StaffMOUMobile + "','" +
                 p.statusMOU + "','" + p.DatePeriod + "','" + p.CustId + "','" +
                 p.CustMOUId + "','" + p.StaffMOUId + "','" + p.dateCancel + "'," +
                 p.dateCreate + ",'" + p.dateModi + "','" + p.userCancel + "','" +
-                p.userCreate + "','" + p.userModi + "','" + p.StaffPlaceRecordId + "','" + 
-                p.StaffPlaceRecordName + "','" + p.StaffAnalysisId + "','" + p.StaffAnalysisName + "')";
+                p.userCreate + "','" + p.userModi + "','" + p.StaffPlaceRecordId + "','" +
+                p.StaffPlaceRecordName + "','" + p.StaffAnalysisId + "','" + p.StaffAnalysisName + "','" + 
+                p.StaffPlaceRecordPosition + "','" + p.StatusReceiveSample + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -268,10 +288,13 @@ namespace Cemp.objdb
             p.ContactName = p.ContactName.Replace("''", "'");
             p.CustAddress = p.CustAddress.Replace("''", "'");
             p.CustName = p.CustName.Replace("''", "'");
-            p.StaffMOU = p.StaffMOU.Replace("''", "'");
-            p.StaffName = p.StaffName.Replace("''", "'");
+            p.StaffMOUName = p.StaffMOUName.Replace("''", "'");
+            p.StaffQuoName = p.StaffQuoName.Replace("''", "'");
             p.Remark = p.Remark.Replace("''", "'");
-            p.dateModi = p.dateGenDB;
+            p.StaffPlaceRecordPosition = p.StaffPlaceRecordPosition.Replace("''", "'");
+            p.StaffPlaceRecordName = p.StaffPlaceRecordName.Replace("''", "'");
+
+            //p.dateModi = p.dateGenDB;
             sql = "Update " + mo.table + " Set " + mo.CompAddress1 + "='" + p.CompAddress1 + "', " +
                 mo.CompAddress2 + "='" + p.CompAddress2 + "', " +
                 mo.CompId + "='" + p.CompId + "', " +
@@ -290,18 +313,22 @@ namespace Cemp.objdb
                 mo.QuoId + "='" + p.QuoId + "', " +
                 mo.QuoNumber + "='" + p.QuoNumber + "', " +
                 mo.Remark + "='" + p.Remark + "', " +
-                mo.StaffEmail + "='" + p.StaffEmail + "', " +
-                mo.StaffId + "='" + p.StaffId + "', " +
-                mo.StaffMOU + "='" + p.StaffMOU + "', " +
-                mo.StaffName + "='" + p.StaffName + "', " +
-                mo.StaffTel + "='" + p.StaffTel + "', " +
+                mo.StaffMOUEmail + "='" + p.StaffMOUEmail + "', " +
+                mo.StaffQuoId + "='" + p.StaffQuoId + "', " +
+                mo.StaffMOUName + "='" + p.StaffMOUName + "', " +
+                mo.StaffMOUId + "='" + p.StaffMOUId + "', " +
+                mo.StaffQuoName + "='" + p.StaffQuoName + "', " +
+                mo.StaffMOUTel + "='" + p.StaffMOUTel + "', " +
                 mo.MOUNumberCnt + "=" + p.MOUNumberCnt + ", " +
                 mo.DatePeriod + "='" + p.DatePeriod + "', " +
                 //mo.Remark + "='" + p.Remark + "', " +
                 mo.CustId + "='" + p.CustId + "', " +
-                mo.StaffMobile + "='" + p.StaffMobile + "', " +
+                mo.StaffMOUMobile + "='" + p.StaffMOUMobile + "', " +
                 mo.userModi + "='" + p.userModi + "', " +
-                mo.dateModi + "=" + p.dateModi + " " +
+                mo.dateModi + "=" + p.dateGenDB + ", " +
+                mo.StaffPlaceRecordPosition + "='" + p.StaffPlaceRecordPosition + "', " +
+                mo.StaffPlaceRecordName + "='" + p.StaffPlaceRecordName + "', " +
+                mo.StaffPlaceRecordId + "='" + p.StaffPlaceRecordId + "' " +
                 "Where " + mo.pkField + "='" + p.Id + "'";
             try
             {
@@ -345,6 +372,20 @@ namespace Cemp.objdb
 
             sql = "Update " + mo.table + " Set " + mo.Active + "='3' " +
                 "Where " + mo.pkField + "='" + mod + "'";
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
+        public String updateMOUPlaceRecord(String moId, String sfPlaceRecordId, String sfPlaceRecordName, String sfAnalysisId, String sfAnalysisName, String datePlaceRecord)
+        {
+            String sql = "", chk = "";
+
+            sql = "Update " + mo.table + " Set " + mo.StaffPlaceRecordId + "='" + sfPlaceRecordId + "', " +
+                mo.StaffPlaceRecordName + "='" + sfPlaceRecordName.Replace("'","''") + "', " +
+                mo.StaffAnalysisId + "='" + sfAnalysisId + "', " +
+                mo.StaffAnalysisName + "='" + sfAnalysisName.Replace("'", "''") + "', " +
+                mo.StatusReceiveSample+"='1', "+
+                mo.DatePlaceRecord + "='" + datePlaceRecord + "' " +
+                "Where " + mo.pkField + "='" + moId + "'";
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
@@ -401,6 +442,32 @@ namespace Cemp.objdb
                 //doc = "00001";
             }
             return "MOU" + year + doc + "-" + cnt;
+        }
+        public String getMOUMaxNumber(String mouNumber)
+        {
+            String sql = "", doc = "", year = "";
+            String[] doc1 = mouNumber.Split('-');
+            if (!mouNumber.Equals(""))
+            {
+                if (doc[0].ToString().Length > 5)
+                {
+                    year = doc[0].ToString().Substring(2, 2);
+                }
+            }
+            else
+            {
+                year = getYear();
+            }
+
+            sql = "Select count(" + mo.QuoNumber + ") as cnt From " + mo.table;
+            DataTable dt = conn.selectData(sql);
+            doc = String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);
+            doc = "00000" + doc;
+            doc = doc.Substring(doc.Length - 5);
+            //cnt = "1";
+            //doc = "00001";
+
+            return "MOU" + year + doc;
         }
         public String getYear()
         {

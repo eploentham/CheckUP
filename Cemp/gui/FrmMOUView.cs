@@ -43,8 +43,8 @@ namespace Cemp.gui
             dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvView.Columns[colRow].Width = 50;
             dgvView.Columns[colMOUNumber].Width = 150;
-            dgvView.Columns[colCustName].Width = 250;
-            dgvView.Columns[colContactName].Width = 120;
+            dgvView.Columns[colCustName].Width = 350;
+            dgvView.Columns[colContactName].Width = 350;
             dgvView.Columns[colId].Width = 80;
             dgvView.Columns[colStatusMOU].Width = 80;
             dgvView.Columns[colStaffName].Width = 180;
@@ -96,7 +96,7 @@ namespace Cemp.gui
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            FrmMOUAdd frm = new FrmMOUAdd("",cc);
+            FrmMOUAdd frm = new FrmMOUAdd("",true,cc);
             frm.ShowDialog(this);
             setGrd();
         }
@@ -117,7 +117,7 @@ namespace Cemp.gui
                 return;
             }
 
-            FrmMOUAdd frm = new FrmMOUAdd(dgvView[colMOUNumber, e.RowIndex].Value.ToString(), cc);
+            FrmMOUAdd frm = new FrmMOUAdd(dgvView[colMOUNumber, e.RowIndex].Value.ToString(),false, cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             setGrd();

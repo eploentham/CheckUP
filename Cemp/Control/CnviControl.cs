@@ -38,6 +38,7 @@ namespace Cemp.Control
 
         public Staff sf;
         public Company cp;
+        public Item itSearch;
 
         private IniFile iniFile;
         public InitConfig initC;
@@ -57,6 +58,7 @@ namespace Cemp.Control
             cf = new Config1();
 
             sf = new Staff();
+            itSearch = new Item();
             
             conn = new ConnectDB(initC);
 
@@ -116,6 +118,8 @@ namespace Cemp.Control
             initC.quoLine4 = iniFile.Read("quotationline4");
             initC.quoLine5 = iniFile.Read("quotationline5");
             initC.quoLine6 = iniFile.Read("quotationline6");
+
+            initC.HideCostQuotation = iniFile.Read("hidecostquotation");
             //initC.Password = regE.getPassword();
         }
         public void SetPathImage(String path)
@@ -167,6 +171,17 @@ namespace Cemp.Control
         {
             //iniFile.Write("quotationline6", path);
             iniFile.WriteUniCode("quotationline6", path);
+        }
+        public void SetHideCostQuotation(Boolean value)
+        {
+            if (value)
+            {
+                iniFile.Write("hidecostquotation", "yes");
+            }
+            else
+            {
+                iniFile.Write("hidecostquotation", "no");
+            }
         }
         public void SetSetatusServer(Boolean value)
         {
@@ -401,7 +416,7 @@ namespace Cemp.Control
             year = year.Substring(2);
             return year;
         }
-        public static string ThaiBaht(string txt)
+        public String ThaiBaht(string txt)
         {
             string bahtTxt, n, bahtTH = "";
             double amount;

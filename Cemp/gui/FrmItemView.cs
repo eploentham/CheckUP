@@ -19,6 +19,7 @@ namespace Cemp.gui
         int colRow = 0, colNameT = 1, colNameE = 2, colMethod = 3, colGroup = 4, colRemark = 5, colId = 6;
         int colCnt = 7;
         Boolean pageLoad = false;
+        DataTable dt = new DataTable();
         public FrmItemView(CnviControl c)
         {
             InitializeComponent();
@@ -48,7 +49,6 @@ namespace Cemp.gui
         {
             try
             {
-                DataTable dt = new DataTable();
                 if (itgId.Equals("") && meId.Equals(""))
                 {
                     dt = cc.itdb.selectAll();
@@ -144,7 +144,7 @@ namespace Cemp.gui
         private void btnPrint_Click(object sender, EventArgs e)
         {
             String sql = "";
-            DataTable dt = cc.itdb.selectAll();
+            //DataTable dt = cc.itdb.selectAll();
             FrmReport frm = new FrmReport(cc);
             frm.setReport("ItemList", "รายการ Parameter", "เงื่อนไข ทั้งหมด", dt);
             frm.ShowDialog(this);

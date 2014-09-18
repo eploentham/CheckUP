@@ -91,6 +91,14 @@ namespace Cemp.gui
             {
                 chkUse32bit.Checked = false;
             }
+            if (cc.initC.HideCostQuotation.Equals("yes"))
+            {
+                chkHideCostQuotation.Checked = true;
+            }
+            else
+            {
+                chkHideCostQuotation.Checked = false;
+            }
             pB1.Visible = false;
         }
         private void FrmInitConfig_Load(object sender, EventArgs e)
@@ -109,6 +117,7 @@ namespace Cemp.gui
             cc.SetQuoLine4(txtQuoLine4.Text);
             cc.SetQuoLine5(txtQuoLine5.Text);
             cc.SetQuoLine6(txtQuoLine6.Text);
+            cc.SetHideCostQuotation(chkHideCostQuotation.Checked);
             if (ChkServer.Checked)
             {
                 cc.SetSetatusServer(true);

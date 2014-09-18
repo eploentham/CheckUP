@@ -15,6 +15,7 @@ namespace Cemp.gui
         CnviControl cc;
         int colRow = 0, colCode = 1, colNameT = 2, colNameE = 3, colRemark = 4, colId = 5;
         int colCnt = 6;
+        DataTable dt = new DataTable();
         public FrmItemGroupView(CnviControl c)
         {
             InitializeComponent();
@@ -36,7 +37,6 @@ namespace Cemp.gui
         }
         private void setGrd()
         {
-            DataTable dt = new DataTable();
             dt = cc.itgdb.selectAll();
             dgvView.ColumnCount = colCnt;
 
@@ -119,7 +119,7 @@ namespace Cemp.gui
         private void btnPrint_Click(object sender, EventArgs e)
         {
             String sql = "";
-            DataTable dt = cc.itgdb.selectAll();
+            //DataTable dt = cc.itgdb.selectAll();
             FrmReport frm = new FrmReport(cc);
             frm.setReport("ItemGroupList", "รายงานรายละเอียด Parameter Group", "เงื่อนไข ทั้งหมด", dt);
             frm.ShowDialog(this);

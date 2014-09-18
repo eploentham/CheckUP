@@ -84,9 +84,19 @@
             this.txtQuoLine2 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.txtQuoLine1 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.txtMOULine4 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txtMOULine3 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtMOULine2 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.txtMOULine1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
             this.groupBox4.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -545,15 +555,15 @@
             this.groupBox4.Controls.Add(this.txtQuoLine1);
             this.groupBox4.Location = new System.Drawing.Point(622, 20);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(526, 227);
+            this.groupBox4.Size = new System.Drawing.Size(526, 174);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
+            this.groupBox4.Text = "Quotation";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(16, 154);
+            this.label20.Location = new System.Drawing.Point(16, 144);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(82, 13);
@@ -562,7 +572,7 @@
             // 
             // txtQuoLine6
             // 
-            this.txtQuoLine6.Location = new System.Drawing.Point(102, 151);
+            this.txtQuoLine6.Location = new System.Drawing.Point(102, 141);
             this.txtQuoLine6.Margin = new System.Windows.Forms.Padding(2);
             this.txtQuoLine6.Name = "txtQuoLine6";
             this.txtQuoLine6.Size = new System.Drawing.Size(419, 20);
@@ -571,7 +581,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(16, 130);
+            this.label21.Location = new System.Drawing.Point(16, 120);
             this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(82, 13);
@@ -580,7 +590,7 @@
             // 
             // txtQuoLine5
             // 
-            this.txtQuoLine5.Location = new System.Drawing.Point(102, 127);
+            this.txtQuoLine5.Location = new System.Drawing.Point(102, 117);
             this.txtQuoLine5.Margin = new System.Windows.Forms.Padding(2);
             this.txtQuoLine5.Name = "txtQuoLine5";
             this.txtQuoLine5.Size = new System.Drawing.Size(419, 20);
@@ -589,7 +599,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(16, 106);
+            this.label22.Location = new System.Drawing.Point(16, 96);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(82, 13);
@@ -598,7 +608,7 @@
             // 
             // txtQuoLine4
             // 
-            this.txtQuoLine4.Location = new System.Drawing.Point(102, 103);
+            this.txtQuoLine4.Location = new System.Drawing.Point(102, 93);
             this.txtQuoLine4.Margin = new System.Windows.Forms.Padding(2);
             this.txtQuoLine4.Name = "txtQuoLine4";
             this.txtQuoLine4.Size = new System.Drawing.Size(419, 20);
@@ -607,7 +617,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(16, 82);
+            this.label23.Location = new System.Drawing.Point(16, 72);
             this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(82, 13);
@@ -616,7 +626,7 @@
             // 
             // txtQuoLine3
             // 
-            this.txtQuoLine3.Location = new System.Drawing.Point(102, 79);
+            this.txtQuoLine3.Location = new System.Drawing.Point(102, 69);
             this.txtQuoLine3.Margin = new System.Windows.Forms.Padding(2);
             this.txtQuoLine3.Name = "txtQuoLine3";
             this.txtQuoLine3.Size = new System.Drawing.Size(419, 20);
@@ -625,7 +635,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(16, 58);
+            this.label24.Location = new System.Drawing.Point(16, 48);
             this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(82, 13);
@@ -634,7 +644,7 @@
             // 
             // txtQuoLine2
             // 
-            this.txtQuoLine2.Location = new System.Drawing.Point(102, 55);
+            this.txtQuoLine2.Location = new System.Drawing.Point(102, 45);
             this.txtQuoLine2.Margin = new System.Windows.Forms.Padding(2);
             this.txtQuoLine2.Name = "txtQuoLine2";
             this.txtQuoLine2.Size = new System.Drawing.Size(419, 20);
@@ -643,7 +653,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(16, 34);
+            this.label25.Location = new System.Drawing.Point(16, 24);
             this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(82, 13);
@@ -652,17 +662,107 @@
             // 
             // txtQuoLine1
             // 
-            this.txtQuoLine1.Location = new System.Drawing.Point(102, 31);
+            this.txtQuoLine1.Location = new System.Drawing.Point(102, 21);
             this.txtQuoLine1.Margin = new System.Windows.Forms.Padding(2);
             this.txtQuoLine1.Name = "txtQuoLine1";
             this.txtQuoLine1.Size = new System.Drawing.Size(419, 20);
             this.txtQuoLine1.TabIndex = 33;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label28);
+            this.groupBox2.Controls.Add(this.txtMOULine4);
+            this.groupBox2.Controls.Add(this.label29);
+            this.groupBox2.Controls.Add(this.txtMOULine3);
+            this.groupBox2.Controls.Add(this.label30);
+            this.groupBox2.Controls.Add(this.txtMOULine2);
+            this.groupBox2.Controls.Add(this.label31);
+            this.groupBox2.Controls.Add(this.txtMOULine1);
+            this.groupBox2.Location = new System.Drawing.Point(622, 206);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(526, 125);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "ข้อตกลง";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(16, 96);
+            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(35, 13);
+            this.label28.TabIndex = 40;
+            this.label28.Text = "line4 :";
+            // 
+            // txtMOULine4
+            // 
+            this.txtMOULine4.Location = new System.Drawing.Point(102, 93);
+            this.txtMOULine4.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMOULine4.Name = "txtMOULine4";
+            this.txtMOULine4.Size = new System.Drawing.Size(419, 20);
+            this.txtMOULine4.TabIndex = 39;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(16, 72);
+            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(35, 13);
+            this.label29.TabIndex = 38;
+            this.label29.Text = "line3 :";
+            // 
+            // txtMOULine3
+            // 
+            this.txtMOULine3.Location = new System.Drawing.Point(102, 69);
+            this.txtMOULine3.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMOULine3.Name = "txtMOULine3";
+            this.txtMOULine3.Size = new System.Drawing.Size(419, 20);
+            this.txtMOULine3.TabIndex = 37;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(16, 48);
+            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(35, 13);
+            this.label30.TabIndex = 36;
+            this.label30.Text = "line2 :";
+            // 
+            // txtMOULine2
+            // 
+            this.txtMOULine2.Location = new System.Drawing.Point(102, 45);
+            this.txtMOULine2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMOULine2.Name = "txtMOULine2";
+            this.txtMOULine2.Size = new System.Drawing.Size(419, 20);
+            this.txtMOULine2.TabIndex = 35;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(16, 24);
+            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(35, 13);
+            this.label31.TabIndex = 34;
+            this.label31.Text = "line1 :";
+            // 
+            // txtMOULine1
+            // 
+            this.txtMOULine1.Location = new System.Drawing.Point(102, 21);
+            this.txtMOULine1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMOULine1.Name = "txtMOULine1";
+            this.txtMOULine1.Size = new System.Drawing.Size(419, 20);
+            this.txtMOULine1.TabIndex = 33;
             // 
             // FrmCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 544);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -675,6 +775,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -737,5 +839,14 @@
         private System.Windows.Forms.TextBox txtQuoLine2;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox txtQuoLine1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox txtMOULine4;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox txtMOULine3;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txtMOULine2;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox txtMOULine1;
     }
 }

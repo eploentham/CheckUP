@@ -45,8 +45,8 @@ namespace Cemp.gui
             dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvView.Columns[colRow].Width = 50;
             dgvView.Columns[colQuoNumber].Width = 150;
-            dgvView.Columns[colCustName].Width = 150;
-            dgvView.Columns[colContactName].Width = 120;
+            dgvView.Columns[colCustName].Width = 350;
+            dgvView.Columns[colContactName].Width = 200;
             dgvView.Columns[colId].Width = 80;
             dgvView.Columns[colStatusQuo].Width = 80;
             dgvView.Columns[colStaffName].Width = 180;
@@ -73,16 +73,17 @@ namespace Cemp.gui
                     dgvView[colCustName, i].Value = dt.Rows[i][cc.qudb.qu.CustName].ToString();
                     dgvView[colContactName, i].Value = dt.Rows[i][cc.qudb.qu.ContactName].ToString();
                     dgvView[colId, i].Value = dt.Rows[i][cc.qudb.qu.Id].ToString();
+                    dgvView[colStaffName, i].Value = dt.Rows[i][cc.qudb.qu.StaffName].ToString();
                     if (dt.Rows[i][cc.qudb.qu.StatusQuo].ToString().Equals("1"))
                     {
-                        dgvView[colStaffName, i].Value = "รออนุมัติ";
+                        dgvView[colStatusQuo, i].Value = "รออนุมัติ";
                     }
                     else if (dt.Rows[i][cc.qudb.qu.StatusQuo].ToString().Equals("2"))
                     {
-                        dgvView[colStaffName, i].Value = "อนุมัติแล้ว";
+                        dgvView[colStatusQuo, i].Value = "อนุมัติแล้ว";
                     }
 
-                    dgvView[colStatusQuo, i].Value = dt.Rows[i][cc.qudb.qu.StatusQuo].ToString();
+                    //dgvView[colStatusQuo, i].Value = dt.Rows[i][cc.qudb.qu.StatusQuo].ToString();
                     if ((i % 2) != 0)
                     {
                         dgvView.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;

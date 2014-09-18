@@ -12,5 +12,6 @@ namespace Cemp.object1
         public String Addr = "", WebSite="", Spec1="";
         public String dateCreate = "", dateModi = "", dateCancel = "", userCreate = "", userModi = "", userCancel = "";
         public String quLine1 = "", quLine2 = "", quLine3 = "", quLine4 = "", quLine5 = "", quLine6 = "";
+        public String mouLine1 = "", mouLine2 = "", mouLine3 = "", mouLine4 = "";
     }
 }
