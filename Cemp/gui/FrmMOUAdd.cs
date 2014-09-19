@@ -17,8 +17,8 @@ namespace Cemp.gui
         MOU mo;
         Quotation qu;
         Staff sf;
-        int colRow = 0, colItem = 1, colMethod = 2, colSample = 3, colPlace = 4, colDatePlaceRecord=5, colMOUNumber=6, colId = 7, colDel =8, colItemId = 9, colMethodId = 10, colEdit = 11;
-        int colCnt = 12;
+        int colRow = 0, colItem = 1, colMethod = 2, colSample = 3, colPlace = 4, colDatePlaceRecord=5, colMOUNumber=6, colId = 7, colDel =8, colItemId = 9, colMethodId = 10, colEdit = 11, colMOUNumberCnt=12;
+        int colCnt = 13;
         Boolean pageLoad = false, mouNew = false, MOUSplit = false;
         DateTimePicker cellDateTimePicker = new DateTimePicker();
         //DataGridView dgv;
@@ -180,7 +180,7 @@ namespace Cemp.gui
             dgvAdd.Columns[colMethodId].Visible = false;
             dgvAdd.Columns[colEdit].Visible = false;
             dgvAdd.Columns[colMOUNumber].Visible = false;
-            //dgvAdd.Columns[colEdit].Visible = false;
+            dgvAdd.Columns[colMOUNumberCnt].Visible = false;
         }
         private void setGrd(String moId)
         {
@@ -374,13 +374,83 @@ namespace Cemp.gui
                     {
                         continue;
                     }
+                    String sRow = "", sItem = "", sMethod = "", sSample = "", sPlace = "", sDatePlaceRecord = "", sMOUNumber = "", sId = "", sDel = "", sItemId = "", sMethodId = "", sEdit = "";
+                    String sRow1 = "", sItem1 = "", sMethod1 = "", sSample1 = "", sPlace1 = "", sDatePlaceRecord1 = "", sMOUNumber1 = "", sId1 = "", sDel1 = "", sItemId1 = "", sMethodId1 = "", sEdit1= "";
                     datePlaceRecordTemp = cc.cf.datetoDB(dgvAdd[colDatePlaceRecord, (j + 1)].Value);
                     if (int.Parse(cc.cf.datetoDB(dgvAdd[colDatePlaceRecord, j].Value).Replace("-", "")) > int.Parse(datePlaceRecordTemp.Replace("-", "")))
                     {
-                        tmp = dgvAdd[colDatePlaceRecord, (j + 1)].Value.ToString();
+                        sRow1 = dgvAdd[colRow, (j + 1)].Value.ToString();
+                        sItem1 = dgvAdd[colItem, (j + 1)].Value.ToString();
+                        sMethod1 = dgvAdd[colMethod, (j + 1)].Value.ToString();
+                        sSample1 = dgvAdd[colSample, (j + 1)].Value.ToString();
+                        sPlace1 = dgvAdd[colPlace, (j + 1)].Value.ToString();
+                        sDatePlaceRecord1 = dgvAdd[colDatePlaceRecord, (j + 1)].Value.ToString();
+                        sMOUNumber1 = dgvAdd[colMOUNumber, (j + 1)].Value.ToString();
+                        sId1 = dgvAdd[colId, (j + 1)].Value.ToString();
+                        sDel1 = dgvAdd[colDel, (j + 1)].Value.ToString();
+                        sItemId1 = dgvAdd[colItemId, (j + 1)].Value.ToString();
+                        sMethodId1 = dgvAdd[colMethodId, (j + 1)].Value.ToString();
+                        sEdit1 = dgvAdd[colEdit, (j + 1)].Value.ToString();
+
+                        dgvAdd[colRow, (j + 1)].Value = dgvAdd[colRow, j].Value.ToString();
+                        dgvAdd[colItem, (j + 1)].Value = dgvAdd[colItem, j].Value.ToString();
+                        dgvAdd[colMethod, (j + 1)].Value = dgvAdd[colMethod, j].Value.ToString();
+                        dgvAdd[colSample, (j + 1)].Value = dgvAdd[colSample, j].Value.ToString();
+                        dgvAdd[colPlace, (j + 1)].Value = dgvAdd[colPlace, j].Value.ToString();
                         dgvAdd[colDatePlaceRecord, (j + 1)].Value = dgvAdd[colDatePlaceRecord, j].Value.ToString();
-                        dgvAdd[colDatePlaceRecord, j].Value = tmp;
+                        dgvAdd[colMOUNumber, (j + 1)].Value = dgvAdd[colMOUNumber, j].Value.ToString();
+                        dgvAdd[colId, (j + 1)].Value = dgvAdd[colId, j].Value.ToString();
+                        dgvAdd[colDel, (j + 1)].Value = dgvAdd[colDel, j].Value.ToString();
+                        dgvAdd[colItemId, (j + 1)].Value = dgvAdd[colItemId, j].Value.ToString();
+                        dgvAdd[colMethodId, (j + 1)].Value = dgvAdd[colMethodId, j].Value.ToString();
+                        dgvAdd[colEdit, (j + 1)].Value = dgvAdd[colEdit, j].Value.ToString();
+
+                        dgvAdd[colRow, (j)].Value = sRow1;
+                        dgvAdd[colItem, (j)].Value = sItem1;
+                        dgvAdd[colMethod, (j)].Value = sMethod1;
+                        dgvAdd[colSample, (j)].Value = sSample1;
+                        dgvAdd[colPlace, (j)].Value = sPlace1;
+                        dgvAdd[colDatePlaceRecord, (j)].Value = sDatePlaceRecord1;
+                        dgvAdd[colMOUNumber, (j)].Value = sMOUNumber1;
+                        dgvAdd[colId, (j)].Value = sId1;
+                        dgvAdd[colDel, (j)].Value = sDel1;
+                        dgvAdd[colItemId, (j)].Value = sItemId1;
+                        dgvAdd[colMethodId, (j)].Value = sMethodId1;
+                        dgvAdd[colEdit, (j)].Value = sEdit1;
+                        //dgvAdd[colDatePlaceRecord, (j + 1)].Value = dgvAdd[colDatePlaceRecord, j].Value.ToString();
                     }
+
+                    //datePlaceRecordTemp = cc.cf.datetoDB(dgvAdd[colDatePlaceRecord, (j + 1)].Value);
+                    //if (int.Parse(cc.cf.datetoDB(dgvAdd[colDatePlaceRecord, j].Value).Replace("-", "")) > int.Parse(datePlaceRecordTemp.Replace("-", "")))
+                    //{
+                    //    tmp = dgvAdd[colDatePlaceRecord, (j + 1)].Value.ToString();
+                    //    dgvAdd[colDatePlaceRecord, (j + 1)].Value = dgvAdd[colDatePlaceRecord, j].Value.ToString();
+                    //    dgvAdd[colDatePlaceRecord, j].Value = tmp;
+                    //}
+                }
+            }
+        }
+        private void setMOUNumberCnt()
+        {
+            for (int i = 0; i < dgvAdd.RowCount; i++)
+            {
+                dgvAdd[colMOUNumberCnt, i].Value = "1";
+            }
+            for (int i = 0; i < dgvAdd.RowCount; i++)
+            {
+                String cnt = "",datePlaceRecordOld="";
+                if (i ==0)
+                {
+                    continue;
+                }
+                if (dgvAdd[colDatePlaceRecord, i].Value==null)
+                {
+                    continue;
+                }
+                datePlaceRecordOld = dgvAdd[colDatePlaceRecord, (i - 1)].Value.ToString();
+                if (!dgvAdd[colDatePlaceRecord, i].Value.ToString().Equals(datePlaceRecordOld))
+                {
+                    dgvAdd[colMOUNumberCnt, i].Value = int.Parse(dgvAdd[colMOUNumberCnt, i].Value.ToString());
                 }
             }
 
@@ -422,7 +492,8 @@ namespace Cemp.gui
             }
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
-            //SortGrdDatePlaceRecord();
+            SortGrdDatePlaceRecord();
+            setMOUNumberCnt();
             getMOU();
             //if (mo.Id.Equals("") && (!MOUSplit))
             if (mouNew)
@@ -459,8 +530,10 @@ namespace Cemp.gui
                         continue;
                     }
                     MOUItem moi = new MOUItem();
-                    moi.RowNumber = dgvAdd[colRow, i].Value.ToString();
-                    row = int.Parse(moi.RowNumber);
+                    //moi.RowNumber = dgvAdd[colRow, i].Value.ToString();
+                    //row = int.Parse(moi.RowNumber);
+                    row = i;
+                    moi.RowNumber = String.Concat(i+1);
                     if (MOUSplit)
                     {
                         moi.Id = "";
@@ -487,7 +560,7 @@ namespace Cemp.gui
                     moi.ItemGroupNameT = itg.NameT;
                     moi.ItemGroupNameE = itg.NameE;
                     moi.ItemGroupSort = itg.Sort1;
-                    moi.MOUNumberCnt = "0";
+                    moi.MOUNumberCnt = dgvAdd[colMOUNumberCnt, i].Value.ToString();
 
                     //for (int j = 0; j<dgvAdd.RowCount - 1; j++)
                     //{

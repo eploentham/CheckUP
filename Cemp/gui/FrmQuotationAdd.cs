@@ -20,12 +20,13 @@ namespace Cemp.gui
         int colRow = 0, colItem = 1, colMethod = 2, colQty = 3, colPriceCost=4, colPriceSale = 5, colAmount = 6, colId=7, colDel=8, colItemId=9, colMethodId=10, colEdit=11;
         int colCnt = 12;
         String oldNetTotal = "";
-        Boolean pageLoad = false;
+        Boolean pageLoad = false, flagViewCost=false;
         //NumberFormat fmt = NumberFormat.getCurrencyInstance();
-        public FrmQuotationAdd(String quId, CnviControl c)
+        public FrmQuotationAdd(String quId, Boolean flagViewCost1, CnviControl c)
         {
             InitializeComponent();
             cc = c;
+            flagViewCost=flagViewCost1;
             initConfig(quId);
         }
         private void initConfig(String quId)
@@ -49,10 +50,9 @@ namespace Cemp.gui
             txtTotal.ReadOnly = true;
             txtNetTotal.ReadOnly = true;
             txtAmountCost.ReadOnly = true;
-            if (cc.initC.HideCostQuotation.Equals("yes"))
-            {
-                txtAmountCost.Visible = true;
-            }
+
+            txtAmountCost.Visible = flagViewCost;
+
         }
         private void setResize()
         {
@@ -252,10 +252,9 @@ namespace Cemp.gui
             dgvAdd.Columns[colItemId].Visible = false;
             dgvAdd.Columns[colMethodId].Visible = false;
             dgvAdd.Columns[colEdit].Visible = false;
-            if (cc.initC.HideCostQuotation.Equals("yes"))
-            {
-                dgvAdd.Columns[colPriceCost].Visible = false;
-            }
+
+            dgvAdd.Columns[colPriceCost].Visible = flagViewCost;
+
             //dgvAdd.Columns.Add(newColumn);
             if (dt.Rows.Count > 0)
             {

@@ -108,7 +108,7 @@ namespace Cemp.objdb
             //MOUItem item = new MOUItem();
             String sql = "";
 
-            sql = "Select * From " + moi.table + " Where " + moi.MOUId + "='" + moId + "'";
+            sql = "Select * From " + moi.table + " Where " + moi.MOUId + "='" + moId + "' Order By "+moi.RowNumber;
             //dt = conn.selectData(sql);
             DataTable dt = conn.selectData(sql);
 
