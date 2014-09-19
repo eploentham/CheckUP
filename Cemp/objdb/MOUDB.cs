@@ -177,6 +177,19 @@ namespace Cemp.objdb
             }
             return item;
         }
+        public MOU selectByNumber1(String moNumber)
+        {
+            MOU item = new MOU();
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From " + mo.table + " Where " + mo.MOUNumber + "='" + moNumber + "'";
+            dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                item = setData(item, dt);
+            }
+            return item;
+        }
         public DataTable selectByNumber(String moNumber)
         {
             String sql = "";

@@ -64,21 +64,21 @@
             this.btnReceive = new System.Windows.Forms.Button();
             this.btnPrintMou = new System.Windows.Forms.Button();
             this.dgvAdd = new System.Windows.Forms.DataGridView();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.label34 = new System.Windows.Forms.Label();
-            this.txtRow = new System.Windows.Forms.TextBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.label32 = new System.Windows.Forms.Label();
-            this.txtPlaceRecord = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.txtSample = new System.Windows.Forms.TextBox();
-            this.cboItem = new System.Windows.Forms.ComboBox();
-            this.label29 = new System.Windows.Forms.Label();
             this.cboStaffPlaceRecord = new System.Windows.Forms.ComboBox();
             this.CustMou = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtStaffPlaceRecordPosition = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.cboItem = new System.Windows.Forms.ComboBox();
+            this.txtSample = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.txtPlaceRecord = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.txtRow = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.btnDel = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
@@ -479,118 +479,14 @@
             // 
             this.dgvAdd.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAdd.Location = new System.Drawing.Point(11, 283);
+            this.dgvAdd.Location = new System.Drawing.Point(11, 285);
             this.dgvAdd.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAdd.Name = "dgvAdd";
             this.dgvAdd.RowTemplate.Height = 24;
-            this.dgvAdd.Size = new System.Drawing.Size(888, 334);
+            this.dgvAdd.Size = new System.Drawing.Size(888, 332);
             this.dgvAdd.TabIndex = 3;
             this.dgvAdd.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvAdd_CellBeginEdit);
             this.dgvAdd.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdd_CellDoubleClick);
-            // 
-            // btnDel
-            // 
-            this.btnDel.Location = new System.Drawing.Point(912, 256);
-            this.btnDel.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(31, 25);
-            this.btnDel.TabIndex = 54;
-            this.btnDel.Text = "-";
-            this.btnDel.UseVisualStyleBackColor = true;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label34.Location = new System.Drawing.Point(8, 256);
-            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(45, 17);
-            this.label34.TabIndex = 53;
-            this.label34.Text = "ลำดับ :";
-            // 
-            // txtRow
-            // 
-            this.txtRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtRow.Location = new System.Drawing.Point(55, 254);
-            this.txtRow.Margin = new System.Windows.Forms.Padding(2);
-            this.txtRow.Name = "txtRow";
-            this.txtRow.Size = new System.Drawing.Size(42, 23);
-            this.txtRow.TabIndex = 52;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(877, 256);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(31, 25);
-            this.btnAdd.TabIndex = 43;
-            this.btnAdd.Text = "+";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label32.Location = new System.Drawing.Point(666, 238);
-            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(105, 17);
-            this.label32.TabIndex = 51;
-            this.label32.Text = "สถายที่เก็บตัวอย่าง";
-            // 
-            // txtPlaceRecord
-            // 
-            this.txtPlaceRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtPlaceRecord.Location = new System.Drawing.Point(622, 256);
-            this.txtPlaceRecord.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPlaceRecord.Name = "txtPlaceRecord";
-            this.txtPlaceRecord.Size = new System.Drawing.Size(250, 23);
-            this.txtPlaceRecord.TabIndex = 50;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label31.Location = new System.Drawing.Point(563, 237);
-            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(55, 17);
-            this.label31.TabIndex = 49;
-            this.label31.Text = "Sample";
-            // 
-            // txtSample
-            // 
-            this.txtSample.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtSample.Location = new System.Drawing.Point(562, 256);
-            this.txtSample.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSample.Name = "txtSample";
-            this.txtSample.Size = new System.Drawing.Size(56, 23);
-            this.txtSample.TabIndex = 48;
-            // 
-            // cboItem
-            // 
-            this.cboItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.cboItem.FormattingEnabled = true;
-            this.cboItem.Location = new System.Drawing.Point(188, 253);
-            this.cboItem.Margin = new System.Windows.Forms.Padding(2);
-            this.cboItem.Name = "cboItem";
-            this.cboItem.Size = new System.Drawing.Size(368, 25);
-            this.cboItem.TabIndex = 45;
-            this.cboItem.SelectedIndexChanged += new System.EventHandler(this.cboItem_SelectedIndexChanged);
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label29.Location = new System.Drawing.Point(100, 256);
-            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(82, 17);
-            this.label29.TabIndex = 44;
-            this.label29.Text = "Parameter :";
             // 
             // cboStaffPlaceRecord
             // 
@@ -643,11 +539,115 @@
             this.txtStaffPlaceRecordPosition.Size = new System.Drawing.Size(278, 23);
             this.txtStaffPlaceRecordPosition.TabIndex = 60;
             // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label29.Location = new System.Drawing.Point(100, 256);
+            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(82, 17);
+            this.label29.TabIndex = 44;
+            this.label29.Text = "Parameter :";
+            // 
+            // cboItem
+            // 
+            this.cboItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cboItem.FormattingEnabled = true;
+            this.cboItem.Location = new System.Drawing.Point(188, 253);
+            this.cboItem.Margin = new System.Windows.Forms.Padding(2);
+            this.cboItem.Name = "cboItem";
+            this.cboItem.Size = new System.Drawing.Size(368, 25);
+            this.cboItem.TabIndex = 45;
+            this.cboItem.SelectedIndexChanged += new System.EventHandler(this.cboItem_SelectedIndexChanged);
+            // 
+            // txtSample
+            // 
+            this.txtSample.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtSample.Location = new System.Drawing.Point(562, 256);
+            this.txtSample.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSample.Name = "txtSample";
+            this.txtSample.Size = new System.Drawing.Size(56, 23);
+            this.txtSample.TabIndex = 48;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label31.Location = new System.Drawing.Point(563, 237);
+            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(55, 17);
+            this.label31.TabIndex = 49;
+            this.label31.Text = "Sample";
+            // 
+            // txtPlaceRecord
+            // 
+            this.txtPlaceRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtPlaceRecord.Location = new System.Drawing.Point(622, 256);
+            this.txtPlaceRecord.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPlaceRecord.Name = "txtPlaceRecord";
+            this.txtPlaceRecord.Size = new System.Drawing.Size(250, 23);
+            this.txtPlaceRecord.TabIndex = 50;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label32.Location = new System.Drawing.Point(666, 238);
+            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(105, 17);
+            this.label32.TabIndex = 51;
+            this.label32.Text = "สถายที่เก็บตัวอย่าง";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(877, 256);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(31, 25);
+            this.btnAdd.TabIndex = 43;
+            this.btnAdd.Text = "+";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // txtRow
+            // 
+            this.txtRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtRow.Location = new System.Drawing.Point(55, 254);
+            this.txtRow.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRow.Name = "txtRow";
+            this.txtRow.Size = new System.Drawing.Size(42, 23);
+            this.txtRow.TabIndex = 52;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label34.Location = new System.Drawing.Point(8, 256);
+            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(45, 17);
+            this.label34.TabIndex = 53;
+            this.label34.Text = "ลำดับ :";
+            // 
+            // btnDel
+            // 
+            this.btnDel.Location = new System.Drawing.Point(912, 256);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(31, 25);
+            this.btnDel.TabIndex = 54;
+            this.btnDel.Text = "-";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
             // FrmMOUAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1267, 765);
+            this.ClientSize = new System.Drawing.Size(1267, 741);
             this.Controls.Add(this.txtStaffPlaceRecordPosition);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.CustMou);
@@ -716,16 +716,6 @@
         private System.Windows.Forms.Button btnReceive;
         private System.Windows.Forms.Button btnPrintMou;
         private System.Windows.Forms.ComboBox cboQuo;
-        private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox txtRow;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox txtPlaceRecord;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox txtSample;
-        private System.Windows.Forms.ComboBox cboItem;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox txtCustName;
         private System.Windows.Forms.ComboBox cboStaffPlaceRecord;
         private System.Windows.Forms.ComboBox CustMou;
@@ -738,5 +728,15 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnMOUAdd;
         private System.Windows.Forms.TextBox txtStaffPlaceRecordPosition;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.ComboBox cboItem;
+        private System.Windows.Forms.TextBox txtSample;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox txtPlaceRecord;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.TextBox txtRow;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Button btnDel;
     }
 }

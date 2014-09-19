@@ -43,11 +43,11 @@ namespace Cemp.gui
             mo = new MOU();
             qu = new Quotation();
             sf = new Staff();
-            cboMOU = cc.modb.getCboMOUNumber(cboMOU, moNumber);
+            cboMOU = cc.moidb.getCboMOUNumber(cboMOU, moNumber);
             cboQuo = cc.qudb.getCboQuotation(cboQuo);
             cboStaffPlaceRecord = cc.sfdb.getCboStaff(cboStaffPlaceRecord);
             cboStaffMOU = cc.sfdb.getCboStaff(cboStaffMOU);
-            cboItem = cc.itdb.getCboItemQuotation(cboItem);
+            //cboItem = cc.itdb.getCboItemQuotation(cboItem);
             txtStaffPlaceRecordPosition.Text = "เจ้าหน้าที่ผู้ทำการเก็บตัวอย่าง";
             setControl("");
             if (!moNumber.Equals(""))
@@ -58,15 +58,55 @@ namespace Cemp.gui
             }
             pageLoad = false;
         }
+        private void HideMOU()
+        {
+            label16.Visible = false;
+            label9.Visible = false;
+            btnMOUAdd.Visible = false;
+            cboMOU.Visible = false;
+            txtMouNumber.Visible = false;
+            label5.Visible = false;
+        }
+        private void ShowMOU()
+        {
+            label16.Visible = true;
+            label9.Visible = true;
+            btnMOUAdd.Visible = true;
+            cboMOU.Visible = true;
+            label5.Visible = true;
+
+            txtMouNumber.Enabled = true;
+            label1.Enabled = false;
+            cboQuo.Enabled = false;
+            label2.Enabled = false;
+            txtCustName.Enabled = false;
+
+        }
         void cellDateTimePickerValueChanged(object sender, EventArgs e)
         {
             dgvAdd.CurrentCell.Value = cellDateTimePicker.Value.ToString("dd/MM/yyyy");
             cellDateTimePicker.Visible = false;
         }
-        private void setControl(String moId)
+        private void setControl(String moNumber)
         {
             pageLoad = true;
-            mo = cc.modb.selectByPk(moId);
+            if (mouNew)
+            {
+                HideMOU();
+            }
+            else
+            {
+                ShowMOU();
+            }
+            if (moNumber.Equals(""))
+            {
+                return;
+            }
+            if (moNumber.IndexOf("-")<=0)
+            {
+                return;
+            }
+            mo = cc.modb.selectByNumber1(moNumber.Substring(0,moNumber.IndexOf("-")));
 
             //cboMOU = cc.modb.getCboMOUNumber(cboMOU, mo.MOUNumber);
 
@@ -98,7 +138,7 @@ namespace Cemp.gui
             cboStaffPlaceRecord.Text = mo.StaffPlaceRecordName;
             CustMou.Text = mo.CustMou;
 
-            setGrd(mo.Id);
+            setGrd(moNumber);
             pageLoad = false;
         }
         private void getMOU()
@@ -182,10 +222,10 @@ namespace Cemp.gui
             dgvAdd.Columns[colMOUNumber].Visible = false;
             dgvAdd.Columns[colMOUNumberCnt].Visible = false;
         }
-        private void setGrd(String moId)
+        private void setGrd(String moNumber)
         {
             setGrd();
-            DataTable dt = cc.moidb.selectByMoId(moId);
+            DataTable dt = cc.moidb.selectByMoNumber(moNumber);
             //DataGridViewComboBoxColumn newColumn = new DataGridViewComboBoxColumn();
             //newColumn.Name = "abc";
             //newColumn.DataSource = new string[] { "a", "b", "c" };
@@ -212,7 +252,7 @@ namespace Cemp.gui
                     dgvAdd[colItemId, i].Value = dt.Rows[i][cc.moidb.moi.ItemId].ToString();
                     dgvAdd[colMethodId, i].Value = dt.Rows[i][cc.moidb.moi.MethodId].ToString();
                     dgvAdd[colId, i].Value = dt.Rows[i][cc.moidb.moi.Id].ToString();
-                    dgvAdd[colDatePlaceRecord, i].Value = dt.Rows[i][cc.moidb.moi.DatePlaceRecord].ToString();
+                    dgvAdd[colDatePlaceRecord, i].Value = cc.cf.dateDBtoShow(dt.Rows[i][cc.moidb.moi.DatePlaceRecord].ToString());
                     dgvAdd[colMOUNumber, i].Value = dt.Rows[i][cc.moidb.moi.MOUNumber].ToString() + "-" + dt.Rows[i][cc.moidb.moi.MOUNumber].ToString();
                     dgvAdd[colDel, i].Value = "";
                     dgvAdd[colEdit, i].Value = "";
@@ -344,7 +384,7 @@ namespace Cemp.gui
 
         private void cboQuo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!pageLoad)
+            if (!pageLoad && mouNew)
             {
                 Cursor cursor = Cursor.Current;
                 Cursor.Current = Cursors.WaitCursor;
@@ -432,13 +472,14 @@ namespace Cemp.gui
         }
         private void setMOUNumberCnt()
         {
+            int cnt = 1;
             for (int i = 0; i < dgvAdd.RowCount; i++)
             {
-                dgvAdd[colMOUNumberCnt, i].Value = "1";
+                dgvAdd[colMOUNumberCnt, i].Value = cnt;
             }
             for (int i = 0; i < dgvAdd.RowCount; i++)
             {
-                String cnt = "",datePlaceRecordOld="";
+                String datePlaceRecordOld="";
                 if (i ==0)
                 {
                     continue;
@@ -450,8 +491,9 @@ namespace Cemp.gui
                 datePlaceRecordOld = dgvAdd[colDatePlaceRecord, (i - 1)].Value.ToString();
                 if (!dgvAdd[colDatePlaceRecord, i].Value.ToString().Equals(datePlaceRecordOld))
                 {
-                    dgvAdd[colMOUNumberCnt, i].Value = int.Parse(dgvAdd[colMOUNumberCnt, i].Value.ToString());
+                    cnt++;                    
                 }
+                dgvAdd[colMOUNumberCnt, i].Value = cnt;
             }
 
         }
@@ -561,7 +603,7 @@ namespace Cemp.gui
                     moi.ItemGroupNameE = itg.NameE;
                     moi.ItemGroupSort = itg.Sort1;
                     moi.MOUNumberCnt = dgvAdd[colMOUNumberCnt, i].Value.ToString();
-
+                    moi.MOUNumber = mo.MOUNumber;
                     //for (int j = 0; j<dgvAdd.RowCount - 1; j++)
                     //{
                     //    datePlaceRecordTemp = dgvAdd[colDatePlaceRecord, (j+1)].Value.ToString();
@@ -680,6 +722,10 @@ namespace Cemp.gui
         private void dgvAdd_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             pageLoad = true;
+            if (dgvAdd[colRow, e.RowIndex].Value == null)
+            {
+                return;
+            }
             txtRow.Text = dgvAdd[colRow, e.RowIndex].Value.ToString();
             txtPlaceRecord.Text = dgvAdd[colPlace, e.RowIndex].Value.ToString();
             txtSample.Text = dgvAdd[colSample, e.RowIndex].Value.ToString();

@@ -114,6 +114,26 @@ namespace Cemp.objdb
 
             return dt;
         }
+        public DataTable selectByMoNumber(String moNumber)
+        {
+            //MOUItem item = new MOUItem();
+            String sql = "", cnt="", number="";
+            if (moNumber.IndexOf("-") <= 0)
+            {
+                cnt = "";
+            }
+            else
+            {
+                number = moNumber.Substring(0, moNumber.IndexOf("-"));
+                cnt = moNumber.Substring(moNumber.IndexOf("-"));
+                cnt = cnt.Replace("-","");
+            }
+            sql = "Select * From " + moi.table + " Where " + moi.MOUNumber + "='" + number +"' and "+ moi.MOUNumberCnt + "=" + cnt + " Order By " + moi.RowNumber;
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+
+            return dt;
+        }
         private String insert(MOUItem p)
         {
             String sql = "", chk = "";
@@ -222,6 +242,34 @@ namespace Cemp.objdb
                 "Where " + moi.pkField + "='" + mod + "'";
             chk = conn.ExecuteNonQuery(sql);
             return chk;
+        }
+        public DataTable selectByNumber(String moNumber)
+        {
+            String sql = "";
+
+            sql = "Select Distinct " + moi.MOUNumberCnt + " as cnt From " + moi.table + " Where " + moi.MOUNumber + "='" + moNumber + "' and " + moi.Active + "='1'";
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+            //if (dt.Rows.Count > 0)
+            //{
+            //    item = setData(item, conn.dt);
+            //}
+            return dt;
+        }
+        public ComboBox getCboMOUNumber(ComboBox c, String mouNumber)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectByNumber(mouNumber);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = mouNumber + "-" + dt.Rows[i]["cnt"].ToString();
+                item.Text = mouNumber + "-" + dt.Rows[i]["cnt"].ToString();
+                c.Items.Add(item);
+                //c.Items.Add(new );
+            }
+            //c.SelectedItem = item;
+            return c;
         }
     }
 }
