@@ -17,8 +17,8 @@ namespace Cemp.gui
         MOU mo;
         Quotation qu;
         Staff sf;
-        int colRow = 0, colItem = 1, colMethod = 2, colSample = 3, colPlace = 4, colDatePlaceRecord=5, colMOUNumber=6, colId = 7, colDel =8, colItemId = 9, colMethodId = 10, colEdit = 11, colMOUNumberCnt=12;
-        int colCnt = 13;
+        int colRow = 0, colItem = 1, colMethod = 2, colSample = 3, colPlace = 4, colDatePlaceRecord=5, colMOUNumber=6, colId = 7, colDel =8, colItemId = 9, colMethodId = 10, colEdit = 11, colMOUNumberCnt=12, colDatePlaceRecord1=13;
+        int colCnt = 14;
         Boolean pageLoad = false, mouNew = false, MOUSplit = false;
         DateTimePicker cellDateTimePicker = new DateTimePicker();
         //DataGridView dgv;
@@ -66,6 +66,7 @@ namespace Cemp.gui
             cboMOU.Visible = false;
             txtMouNumber.Visible = false;
             label5.Visible = false;
+            txtDatePeriod.Visible = false;
         }
         private void ShowMOU()
         {
@@ -74,6 +75,7 @@ namespace Cemp.gui
             btnMOUAdd.Visible = true;
             cboMOU.Visible = true;
             label5.Visible = true;
+            txtDatePeriod.Visible = true;
 
             txtMouNumber.Enabled = true;
             label1.Enabled = false;
@@ -100,6 +102,7 @@ namespace Cemp.gui
             }
             if (moNumber.Equals(""))
             {
+                txtMouNumber.Text = "-";
                 return;
             }
             if (moNumber.IndexOf("-")<=0)
@@ -252,7 +255,8 @@ namespace Cemp.gui
                     dgvAdd[colItemId, i].Value = dt.Rows[i][cc.moidb.moi.ItemId].ToString();
                     dgvAdd[colMethodId, i].Value = dt.Rows[i][cc.moidb.moi.MethodId].ToString();
                     dgvAdd[colId, i].Value = dt.Rows[i][cc.moidb.moi.Id].ToString();
-                    dgvAdd[colDatePlaceRecord, i].Value = cc.cf.dateDBtoShow(dt.Rows[i][cc.moidb.moi.DatePlaceRecord].ToString());
+                    dgvAdd[colDatePlaceRecord, i].Value = cc.cf.dateDBtoShow1(dt.Rows[i][cc.moidb.moi.DatePlaceRecord].ToString());
+                    dgvAdd[colDatePlaceRecord1, i].Value = cc.cf.dateDBtoShow1(dt.Rows[i][cc.moidb.moi.DatePlaceRecord].ToString());
                     dgvAdd[colMOUNumber, i].Value = dt.Rows[i][cc.moidb.moi.MOUNumber].ToString() + "-" + dt.Rows[i][cc.moidb.moi.MOUNumber].ToString();
                     dgvAdd[colDel, i].Value = "";
                     dgvAdd[colEdit, i].Value = "";
@@ -534,8 +538,12 @@ namespace Cemp.gui
             }
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
-            SortGrdDatePlaceRecord();
-            setMOUNumberCnt();
+            if (mouNew)
+            {
+                SortGrdDatePlaceRecord();
+                setMOUNumberCnt();
+            }
+            
             getMOU();
             //if (mo.Id.Equals("") && (!MOUSplit))
             if (mouNew)
@@ -604,6 +612,10 @@ namespace Cemp.gui
                     moi.ItemGroupSort = itg.Sort1;
                     moi.MOUNumberCnt = dgvAdd[colMOUNumberCnt, i].Value.ToString();
                     moi.MOUNumber = mo.MOUNumber;
+                    if (!dgvAdd[colDatePlaceRecord, i].Value.ToString().Equals(dgvAdd[colDatePlaceRecord1, i].Value.ToString()))
+                    {
+                        moi.MOUNumberCnt = cc.moidb.selectCntByMoNumber(moi.MOUNumber, dgvAdd[colDatePlaceRecord, i].Value.ToString());
+                    }
                     //for (int j = 0; j<dgvAdd.RowCount - 1; j++)
                     //{
                     //    datePlaceRecordTemp = dgvAdd[colDatePlaceRecord, (j+1)].Value.ToString();
@@ -621,7 +633,6 @@ namespace Cemp.gui
                     {
                         cc.moidb.insertMOUItem(moi);
                     }
-
                 }
                 MOU mo1 = cc.modb.selectByPk(moId);
                 txtMouNumber.Text = mo1.MOUNumber + "-" + mo1.MOUNumberCnt;
@@ -640,6 +651,7 @@ namespace Cemp.gui
                 Cursor cursor = Cursor.Current;
                 Cursor.Current = Cursors.WaitCursor;
                 setControl(cc.getValueCboItem(cboMOU));
+                cellDateTimePicker.Visible = false;
                 mouNew=false;
                 Cursor.Current = cursor;
             }
@@ -775,7 +787,7 @@ namespace Cemp.gui
                 cellDateTimePicker.Width = tempRect.Width;
                 try
                 {
-                    cellDateTimePicker.Value = DateTime.Parse(dgvAdd.CurrentCell.Value.ToString());
+                    cellDateTimePicker.Value = DateTime.Parse(cc.cf.datetoDB1(dgvAdd.CurrentCell.Value.ToString()));
                 }
                 catch
                 {

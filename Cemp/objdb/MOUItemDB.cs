@@ -134,6 +134,26 @@ namespace Cemp.objdb
 
             return dt;
         }
+        public String selectCntByMoNumber(String moNumber, String datePlaceRecord)
+        {
+            //MOUItem item = new MOUItem();
+            String sql = "", cnt = "", number = "";
+
+            sql = "Select " + moi.MOUNumberCnt + " From " + moi.table + " Where " + moi.MOUNumber + "='" + number + "' and " + moi.DatePlaceRecord + "='" + datePlaceRecord+"'";
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                number = dt.Rows[0][moi.MOUNumberCnt].ToString();
+            }
+            else
+            {
+                sql = "Select max(" + moi.MOUNumberCnt + ") as cnt From " + moi.table + " Where " + moi.MOUNumber + "='" + number + "' and " + moi.DatePlaceRecord + "='" + datePlaceRecord + "'";
+                dt = conn.selectData(sql);
+                number = String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString())+1);
+            }
+            return number;
+        }
         private String insert(MOUItem p)
         {
             String sql = "", chk = "";

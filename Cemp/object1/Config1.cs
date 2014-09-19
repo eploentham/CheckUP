@@ -214,11 +214,45 @@ namespace Cemp.object1
                 return ex.Message;
             }
         }
+        public String datetoDB1(String dt)
+        {
+            //DateTime dt1 = new DateTime();
+            try
+            {
+                if (dt == null)
+                {
+                    return dt;
+                }
+                else if (dt == "")
+                {
+                    return "";
+                }
+                else
+                {
+                    return String.Concat(int.Parse(dt.Substring(6))+543) + "-" + dt.Substring(3, 2) + "-" + dt.Substring(0, 2);
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
         public String dateDBtoShow(String dt)
         {
             if (dt != "")
             {
                 return dt.Substring(8,2)+"-"+dt.Substring(5,2) + "-" + String.Concat(Int16.Parse(dt.Substring(0, 4))+543);
+            }
+            else
+            {
+                return dt;
+            }
+        }
+        public String dateDBtoShow1(String dt)
+        {
+            if (dt != "")
+            {
+                return dt.Substring(8, 2) + "-" + dt.Substring(5, 2) + "-" + dt.Substring(0, 4);
             }
             else
             {
