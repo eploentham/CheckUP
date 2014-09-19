@@ -139,7 +139,7 @@ namespace Cemp.objdb
             //MOUItem item = new MOUItem();
             String sql = "", cnt = "", number = "";
 
-            sql = "Select " + moi.MOUNumberCnt + " From " + moi.table + " Where " + moi.MOUNumber + "='" + number + "' and " + moi.DatePlaceRecord + "='" + datePlaceRecord+"'";
+            sql = "Select " + moi.MOUNumberCnt + " From " + moi.table + " Where " + moi.MOUNumber + "='" + moNumber + "' and " + moi.DatePlaceRecord + "='" + datePlaceRecord + "'";
             //dt = conn.selectData(sql);
             DataTable dt = conn.selectData(sql);
             if (dt.Rows.Count > 0)
@@ -148,9 +148,9 @@ namespace Cemp.objdb
             }
             else
             {
-                sql = "Select max(" + moi.MOUNumberCnt + ") as cnt From " + moi.table + " Where " + moi.MOUNumber + "='" + number + "' and " + moi.DatePlaceRecord + "='" + datePlaceRecord + "'";
+                sql = "Select max(" + moi.MOUNumberCnt + ") as cnt From " + moi.table + " Where " + moi.MOUNumber + "='" + moNumber + "' ";
                 dt = conn.selectData(sql);
-                number = String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString())+1);
+                number = String.Concat(int.Parse(NumberNull1(dt.Rows[0]["cnt"].ToString())) + 1);
             }
             return number;
         }
@@ -290,6 +290,17 @@ namespace Cemp.objdb
             }
             //c.SelectedItem = item;
             return c;
+        }
+        private String NumberNull1(String o)
+        {
+            if (o.Equals(""))
+            {
+                return "0";
+            }
+            else
+            {
+                return o;
+            }
         }
     }
 }

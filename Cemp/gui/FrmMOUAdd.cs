@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -21,6 +22,7 @@ namespace Cemp.gui
         int colCnt = 14;
         Boolean pageLoad = false, mouNew = false, MOUSplit = false;
         DateTimePicker cellDateTimePicker = new DateTimePicker();
+        DateTimeFormatInfo df;
         //DataGridView dgv;
         
         public FrmMOUAdd(String moNumber, Boolean flagNew, CnviControl c)
@@ -32,10 +34,12 @@ namespace Cemp.gui
         private void initConfig(String moNumber, CnviControl c)
         {
             pageLoad = true;
+            //df = new CultureInfo("en-US").DateTimeFormat;
             cellDateTimePicker.ValueChanged += new EventHandler(cellDateTimePickerValueChanged);
             cellDateTimePicker.Visible = false;
             cellDateTimePicker.CustomFormat = "dd/MM/yyyy";
             cellDateTimePicker.Format = DateTimePickerFormat.Custom;
+            //cellDateTimePicker.Value.GetDateTimeFormats(df);
             dgvAdd.Controls.Add(cellDateTimePicker);
             //dgv = new DataGridView();
 
@@ -60,22 +64,22 @@ namespace Cemp.gui
         }
         private void HideMOU()
         {
-            label16.Visible = false;
-            label9.Visible = false;
-            btnMOUAdd.Visible = false;
-            cboMOU.Visible = false;
-            txtMouNumber.Visible = false;
-            label5.Visible = false;
-            txtDatePeriod.Visible = false;
+            label16.Enabled = false;
+            label9.Enabled = false;
+            btnMOUAdd.Enabled = false;
+            cboMOU.Enabled = false;
+            txtMouNumber.Enabled = false;
+            label5.Enabled = false;
+            txtDatePeriod.Enabled = false;
         }
         private void ShowMOU()
         {
-            label16.Visible = true;
-            label9.Visible = true;
-            btnMOUAdd.Visible = true;
-            cboMOU.Visible = true;
-            label5.Visible = true;
-            txtDatePeriod.Visible = true;
+            label16.Enabled = true;
+            label9.Enabled = true;
+            btnMOUAdd.Enabled = true;
+            cboMOU.Enabled = true;
+            label5.Enabled = true;
+            txtDatePeriod.Enabled = true;
 
             txtMouNumber.Enabled = true;
             label1.Enabled = false;
@@ -224,6 +228,12 @@ namespace Cemp.gui
             dgvAdd.Columns[colEdit].Visible = false;
             dgvAdd.Columns[colMOUNumber].Visible = false;
             dgvAdd.Columns[colMOUNumberCnt].Visible = false;
+            dgvAdd.Columns[colDatePlaceRecord1].Visible = false;
+
+            dgvAdd.Columns[colSample].ReadOnly = true;
+            dgvAdd.Columns[colMethod].ReadOnly = true;
+            dgvAdd.Columns[colItem].ReadOnly = true;
+            dgvAdd.Columns[colRow].ReadOnly = true;
         }
         private void setGrd(String moNumber)
         {
@@ -257,7 +267,8 @@ namespace Cemp.gui
                     dgvAdd[colId, i].Value = dt.Rows[i][cc.moidb.moi.Id].ToString();
                     dgvAdd[colDatePlaceRecord, i].Value = cc.cf.dateDBtoShow1(dt.Rows[i][cc.moidb.moi.DatePlaceRecord].ToString());
                     dgvAdd[colDatePlaceRecord1, i].Value = cc.cf.dateDBtoShow1(dt.Rows[i][cc.moidb.moi.DatePlaceRecord].ToString());
-                    dgvAdd[colMOUNumber, i].Value = dt.Rows[i][cc.moidb.moi.MOUNumber].ToString() + "-" + dt.Rows[i][cc.moidb.moi.MOUNumber].ToString();
+                    dgvAdd[colMOUNumber, i].Value = dt.Rows[i][cc.moidb.moi.MOUNumber].ToString();
+                    dgvAdd[colMOUNumberCnt, i].Value = dt.Rows[i][cc.moidb.moi.MOUNumberCnt].ToString();
                     dgvAdd[colDel, i].Value = "";
                     dgvAdd[colEdit, i].Value = "";
                     if ((i % 2) != 0)
@@ -605,16 +616,16 @@ namespace Cemp.gui
                     moi.PlaceRecord = dgvAdd[colPlace, i].Value.ToString();
                     moi.Sample = dgvAdd[colSample, i].Value.ToString();
                     moi.DatePlaceRecord = dgvAdd[colDatePlaceRecord, i].Value.ToString();
-                    moi.DatePlaceRecord = cc.cf.datetoDB(moi.DatePlaceRecord);
+                    moi.DatePlaceRecord = cc.cf.datetoDB1(moi.DatePlaceRecord);
                     moi.ItemGroupId = itg.Id;
                     moi.ItemGroupNameT = itg.NameT;
                     moi.ItemGroupNameE = itg.NameE;
                     moi.ItemGroupSort = itg.Sort1;
                     moi.MOUNumberCnt = dgvAdd[colMOUNumberCnt, i].Value.ToString();
                     moi.MOUNumber = mo.MOUNumber;
-                    if (!dgvAdd[colDatePlaceRecord, i].Value.ToString().Equals(dgvAdd[colDatePlaceRecord1, i].Value.ToString()))
+                    if ((!mouNew)&&(!dgvAdd[colDatePlaceRecord, i].Value.ToString().Equals(dgvAdd[colDatePlaceRecord1, i].Value.ToString())))
                     {
-                        moi.MOUNumberCnt = cc.moidb.selectCntByMoNumber(moi.MOUNumber, dgvAdd[colDatePlaceRecord, i].Value.ToString());
+                        moi.MOUNumberCnt = cc.moidb.selectCntByMoNumber(moi.MOUNumber, cc.cf.datetoDB1( dgvAdd[colDatePlaceRecord, i].Value.ToString()));
                     }
                     //for (int j = 0; j<dgvAdd.RowCount - 1; j++)
                     //{
@@ -795,6 +806,11 @@ namespace Cemp.gui
                 }
                 cellDateTimePicker.Visible = true;
             }
+        }
+
+        private void dgvAdd_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            cellDateTimePicker.Visible = false;
         }
     }
 }

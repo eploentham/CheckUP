@@ -229,7 +229,32 @@ namespace Cemp.object1
                 }
                 else
                 {
-                    return String.Concat(int.Parse(dt.Substring(6))+543) + "-" + dt.Substring(3, 2) + "-" + dt.Substring(0, 2);
+                    //return String.Concat(int.Parse(dt.Substring(6))+543) + "-" + dt.Substring(3, 2) + "-" + dt.Substring(0, 2);
+                    return dt.Substring(6) + "-" + dt.Substring(3, 2) + "-" + dt.Substring(0, 2);
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+        public String datetoDB2(String dt)
+        {
+            //DateTime dt1 = new DateTime();
+            try
+            {
+                if (dt == null)
+                {
+                    return dt;
+                }
+                else if (dt == "")
+                {
+                    return "";
+                }
+                else
+                {
+                    return String.Concat(int.Parse(dt.Substring(6)) + 543) + "-" + dt.Substring(3, 2) + "-" + dt.Substring(0, 2);
+                    //return dt.Substring(6) + "-" + dt.Substring(3, 2) + "-" + dt.Substring(0, 2);
                 }
             }
             catch (Exception ex)

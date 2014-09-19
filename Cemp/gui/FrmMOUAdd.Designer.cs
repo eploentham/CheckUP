@@ -487,6 +487,7 @@
             this.dgvAdd.TabIndex = 3;
             this.dgvAdd.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvAdd_CellBeginEdit);
             this.dgvAdd.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdd_CellDoubleClick);
+            this.dgvAdd.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdd_CellLeave);
             // 
             // cboStaffPlaceRecord
             // 
