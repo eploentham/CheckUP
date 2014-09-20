@@ -58,6 +58,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Control\CnviControl.cs" />
+    <Compile Include="gui\FrmBillAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmBillAdd.Designer.cs">
+      <DependentUpon>FrmBillAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmBillView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmBillView.Designer.cs">
+      <DependentUpon>FrmBillView.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmItemSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -360,6 +372,12 @@
       <DependentUpon>QuotationPrint.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="gui\FrmBillAdd.resx">
+      <DependentUpon>FrmBillAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmBillView.resx">
+      <DependentUpon>FrmBillView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmItemSearch.resx">
       <DependentUpon>FrmItemSearch.cs</DependentUpon>
     </EmbeddedResource>

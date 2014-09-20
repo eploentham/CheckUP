@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cemp.Control;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,9 +12,17 @@ namespace Cemp.gui
 {
     public partial class FrmBillView : Form
     {
-        public FrmBillView()
+        CnviControl cc;
+        int colRow = 0, colBillNumber = 1, colCustName = 2, colBillDate = 3, colRemark = 4, colId = 5;
+        int colCnt = 6;
+        public FrmBillView(CnviControl c)
         {
             InitializeComponent();
+        }
+
+        private void FrmBillView_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

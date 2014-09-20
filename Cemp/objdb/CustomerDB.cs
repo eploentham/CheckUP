@@ -52,6 +52,7 @@ namespace Cemp.objdb
             cu.userCancel = "user_cancel";
             cu.userCreate = "user_create";
             cu.userModi = "user_modi";
+            cu.Remark2 = "remark2";
 
             cu.table = "b_customer";
             cu.pkField = "cust_id";
@@ -102,6 +103,7 @@ namespace Cemp.objdb
             item.userCancel = dt.Rows[0][cu.userCancel].ToString();
             item.userCreate = dt.Rows[0][cu.userCreate].ToString();
             item.userModi = dt.Rows[0][cu.userModi].ToString();
+            item.Remark2 = dt.Rows[0][cu.Remark2].ToString();
 
             return item;
         }
@@ -158,16 +160,18 @@ namespace Cemp.objdb
                 p.Id = "cu"+p.getGenID();
             }
 
-            p.Addr = p.Addr.Replace("''", "'");
-            p.AddressE = p.AddressE.Replace("''", "'");
-            p.AddressT = p.AddressT.Replace("''", "'");
-            p.AddressE = p.AddressE.Replace("''", "'");
-            p.ContactName1 = p.ContactName1.Replace("''", "'");
-            p.ContactName2 = p.ContactName2.Replace("''", "'");
-            p.NameE = p.NameE.Replace("''", "'");
-            p.NameT = p.NameT.Replace("''", "'");
-            p.Remark = p.Remark.Replace("''", "'");
-            p.saleName = p.saleName.Replace("''", "'");
+            p.Addr = p.Addr.Replace("'", "''");
+            p.AddressE = p.AddressE.Replace("'", "''");
+            p.AddressT = p.AddressT.Replace("'", "''");
+            p.AddressE = p.AddressE.Replace("'", "''");
+            p.ContactName1 = p.ContactName1.Replace("'", "''");
+            p.ContactName2 = p.ContactName2.Replace("'", "''");
+            p.NameE = p.NameE.Replace("'", "''");
+            p.NameT = p.NameT.Replace("'", "''");
+            p.Remark = p.Remark.Replace("'", "''");
+            p.saleName = p.saleName.Replace("'", "''");
+            p.Remark2 = p.Remark2.Replace("'", "''");
+
             sql = "Insert Into " + cu.table + " (" + cu.pkField + "," + cu.Active + "," + cu.Addr + "," +
                 cu.AddressE + "," + cu.AddressT + "," + cu.amphurId + "," +
                 cu.Code + "," + cu.ContactName1 + "," + cu.ContactName1Tel + "," +
@@ -175,7 +179,7 @@ namespace Cemp.objdb
                 cu.Email + "," + cu.Fax + "," + cu.NameE + "," +
                 cu.NameT + "," + cu.provinceId + "," + cu.Remark + "," +
                 cu.saleId + "," + cu.saleName + "," + cu.TaxId + "," +
-                cu.Tele + "," + cu.Zipcode + "," + cu.StatusCompany + "," + cu.StatusVendor + ") " +
+                cu.Tele + "," + cu.Zipcode + "," + cu.StatusCompany + "," + cu.StatusVendor + "," + cu.Remark2 + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.Addr + "','" +
                 p.AddressE + "','" + p.AddressT + "','" + p.amphurId + "','" +
                 p.Code + "','" + p.ContactName1 + "','" + p.ContactName1Tel + "','" +
@@ -183,7 +187,7 @@ namespace Cemp.objdb
                 p.Email + "','" + p.Fax + "','" + p.NameE + "','" +
                 p.NameT + "','" + p.provinceId + "','" + p.Remark + "','" +
                 p.saleId + "','" + p.saleName + "','" + p.TaxId + "','" +
-                p.Tele + "','" + p.Zipcode + "','" + p.StatusCompany + "','" + p.StatusVendor + "')";
+                p.Tele + "','" + p.Zipcode + "','" + p.StatusCompany + "','" + p.StatusVendor + "','" + p.Remark2 + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -202,16 +206,17 @@ namespace Cemp.objdb
         {
             String sql = "", chk = "";
 
-            p.Addr = p.Addr.Replace("''", "'");
-            p.AddressE = p.AddressE.Replace("''", "'");
-            p.AddressT = p.AddressT.Replace("''", "'");
-            p.AddressE = p.AddressE.Replace("''", "'");
-            p.ContactName1 = p.ContactName1.Replace("''", "'");
-            p.ContactName2 = p.ContactName2.Replace("''", "'");
-            p.NameE = p.NameE.Replace("''", "'");
-            p.NameT = p.NameT.Replace("''", "'");
-            p.Remark = p.Remark.Replace("''", "'");
-            p.saleName = p.saleName.Replace("''", "'");
+            p.Addr = p.Addr.Replace("'", "''");
+            p.AddressE = p.AddressE.Replace("'", "''");
+            p.AddressT = p.AddressT.Replace("'", "''");
+            p.AddressE = p.AddressE.Replace("'", "''");
+            p.ContactName1 = p.ContactName1.Replace("'", "''");
+            p.ContactName2 = p.ContactName2.Replace("'", "''");
+            p.NameE = p.NameE.Replace("'", "''");
+            p.NameT = p.NameT.Replace("'", "''");
+            p.Remark = p.Remark.Replace("'", "''");
+            p.saleName = p.saleName.Replace("'", "''");
+            p.Remark2 = p.Remark2.Replace("'", "''");
 
             sql = "Update " + cu.table + " Set " + cu.Addr + "='" + p.Addr + "', " +
                 cu.AddressE + "='" + p.AddressE + "', " +
@@ -235,7 +240,8 @@ namespace Cemp.objdb
                 cu.Tele + "='" + p.Tele + "', " +
                 cu.Zipcode + "='" + p.Zipcode + "', " +
                 cu.StatusCompany + "='" + p.StatusCompany + "', " +
-                cu.StatusVendor + "='" + p.StatusVendor + "' " +
+                cu.StatusVendor + "='" + p.StatusVendor + "', " +
+                cu.Remark2 + "='" + p.Remark2 + "' " +
                 
                 "Where " + cu.pkField + "='" + p.Id + "'";
             try
