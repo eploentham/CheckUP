@@ -18,10 +18,18 @@ namespace Cemp.gui
         public FrmBillView(CnviControl c)
         {
             InitializeComponent();
+            cc = c;
         }
 
         private void FrmBillView_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FrmBillAdd frm = new FrmBillAdd(cc);
+            frm.ShowDialog(this);
 
         }
     }

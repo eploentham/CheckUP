@@ -31,6 +31,8 @@ namespace Cemp.gui
         }
         private void initConfig(String quId)
         {
+            //String ll = System.DateTime.Now.ToShortDateString() + " " + System.DateTime.Now.ToShortTimeString();
+            //cc.lw.WriteLog("FrmQuotationAdd initConfig Start");
             pageLoad = true;
             //cc = c;
             qu = new Quotation();
@@ -50,9 +52,10 @@ namespace Cemp.gui
             txtTotal.ReadOnly = true;
             txtNetTotal.ReadOnly = true;
             txtAmountCost.ReadOnly = true;
-
+            //String lll = System.DateTime.Now.ToShortDateString() + " " + System.DateTime.Now.ToShortTimeString();
             txtAmountCost.Visible = flagViewCost;
-
+            
+            //cc.lw.WriteLog("FrmQuotationAdd initConfig End " + ll + " " + System.DateTime.Now.ToShortDateString() + " " + System.DateTime.Now.ToShortTimeString());
         }
         private void setResize()
         {
@@ -503,9 +506,9 @@ namespace Cemp.gui
 
         private void cboCust_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Customer cu = new Customer();
             if (!pageLoad)
             {
+                Customer cu = new Customer();
                 cu = cc.cudb.selectByPk(cc.getValueCboItem(cboCust));
                 txtCustId.Text = cu.Id;
                 txtCustAddress.Text = cu.AddressT;
@@ -935,6 +938,40 @@ namespace Cemp.gui
                 Staff sf = cc.sfdb.selectByPk(cc.getValueCboItem(cboStaff));
                 txtStaffEmail.Text = sf.Email;
                 txtStaffTel.Text = sf.Tele;
+            }
+        }
+        private void mnuCost_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(dgvView.SelectedRows[0].Index.ToString(), "aaa");
+            if (dgvAdd.SelectedRows[0].Index == -1)
+            {
+                return;
+            }
+            if (dgvAdd[colId, dgvAdd.SelectedRows[0].Index].Value == null)
+            {
+                return;
+            }
+
+            //FrmQuotationAdd frm = new FrmQuotationAdd(dgvAdd[colId, dgvAdd.SelectedRows[0].Index].Value.ToString(), true, cc);
+            //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
+            //frm.ShowDialog(this);
+            setGrd(txtQuId.Text);
+        }
+        private void dgvAdd_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (cc.sf.Priority.Equals("1"))
+            {
+                return;
+            }
+            if (e.Button == MouseButtons.Right)
+            {
+                ContextMenu m = new ContextMenu();
+                //m.MenuItems.Add(new MenuItem(" ดูข้อมูลต้นทุน"));
+                m.MenuItems.Add(" ดูข้อมูลต้นทุน", new EventHandler(mnuCost_Click));
+                int currentMouseOverRow = dgvAdd.HitTest(e.X, e.Y).RowIndex;
+
+                m.Show(dgvAdd, new Point(e.X, e.Y));
+
             }
         }
 

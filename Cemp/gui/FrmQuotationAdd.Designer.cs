@@ -422,6 +422,7 @@
             this.dgvAdd.Size = new System.Drawing.Size(839, 265);
             this.dgvAdd.TabIndex = 2;
             this.dgvAdd.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdd_CellDoubleClick);
+            this.dgvAdd.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvAdd_CellMouseClick);
             // 
             // groupBox3
             // 
@@ -1279,7 +1280,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1134, 886);
+            this.ClientSize = new System.Drawing.Size(1134, 773);
             this.Controls.Add(this.label40);
             this.Controls.Add(this.txtPriceCost);
             this.Controls.Add(this.label39);

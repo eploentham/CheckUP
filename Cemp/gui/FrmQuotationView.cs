@@ -156,46 +156,6 @@ namespace Cemp.gui
                 int currentMouseOverRow = dgvView.HitTest(e.X, e.Y).RowIndex;
                 
                 m.Show(dgvView, new Point(e.X, e.Y));
-
-
-
-                //ContextMenuStrip mnu = new ContextMenuStrip();
-                //ToolStripMenuItem mnuCopy = new ToolStripMenuItem("Copy");
-
-                //mnuCopy.Click += new EventHandler(mnuCopy_Click);
-                //mnu.Items.AddRange(new ToolStripItem[] { mnuCopy });
-                ////Assign to datagridview
-                //dgvView.ContextMenuStrip = mnu;
-
-
-
-                //m.MenuItems.Add(new MenuItem("Copy"));
-                //m.MenuItems.Add(new MenuItem("Paste"));
-                
-
-                //if (currentMouseOverRow >= 0)
-                //{
-                //    m.MenuItems.Add(new MenuItem(string.Format("Do something to row {0}", currentMouseOverRow.ToString())));
-                //}
-
-
-                //var ht = dgvView.HitTest(e.X, e.Y);
-
-                ////Checks for correct column index
-                //if (ht.ColumnIndex == 3 && ht.RowIndex != -1)
-                //{
-                //    //Create the ContextStripMenu for Creating the PO Sub Form
-                //    ContextMenuStrip Menu = new ContextMenuStrip();
-                //    ToolStripMenuItem MenuOpenPO = new ToolStripMenuItem("Open PO");
-                //    //MenuOpenPO.MouseDown += new MouseEventHandler(MenuOpenPO_Click);
-                //    Menu.Items.AddRange(new ToolStripItem[] { MenuOpenPO });
-
-                //    //Assign created context menu strip to the DataGridView
-                //    dgvView.ContextMenuStrip = Menu;
-                //}
-
-                //else
-                //    dgvView.ContextMenuStrip = null;
             }
         }
     }

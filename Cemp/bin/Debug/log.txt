@@ -898,3 +898,13 @@ Log Entry : 12:07:15 17 กันยายน 2557
   :
   :FrmItemSearch.setGrd Error 
 -------------------------------
+20/9/2557 15:13
+  :rpt.FrmQuotationAdd initConfig Start20/9/2557 15:13
+  :rpt.FrmQuotationAdd initConfig End20/9/2557 15:15->rpt.FrmQuotationAdd initConfig Start
+20/9/2557 15:15->rpt.FrmQuotationAdd initConfig End
+20/9/2557 15:16->FrmQuotationAdd initConfig Start
+20/9/2557 15:16->FrmQuotationAdd initConfig End
+20/9/2557 15:17->FrmQuotationAdd initConfig Start
+20/9/2557 15:17->FrmQuotationAdd initConfig End
+20/9/2557 15:19->FrmQuotationAdd initConfig End 20/9/2557 20/9/2557
+20/9/2557 15:20->FrmQuotationAdd initConfig End 20/9/2557 15:20 20/9/2557 15:20

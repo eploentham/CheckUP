@@ -34,7 +34,6 @@
             this.cboQuo = new System.Windows.Forms.ComboBox();
             this.txtCustEmail = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtCustMobile = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCustTel = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -79,6 +78,7 @@
             this.txtRow = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.btnDel = new System.Windows.Forms.Button();
+            this.txtCustMobile = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
@@ -105,7 +105,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(407, 220);
+            this.groupBox2.Size = new System.Drawing.Size(555, 195);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "รายละเอียด ลูกค้า";
@@ -143,7 +143,7 @@
             // txtCustEmail
             // 
             this.txtCustEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCustEmail.Location = new System.Drawing.Point(98, 188);
+            this.txtCustEmail.Location = new System.Drawing.Point(98, 162);
             this.txtCustEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustEmail.Name = "txtCustEmail";
             this.txtCustEmail.Size = new System.Drawing.Size(298, 23);
@@ -153,27 +153,18 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label10.Location = new System.Drawing.Point(8, 191);
+            this.label10.Location = new System.Drawing.Point(8, 165);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(50, 17);
             this.label10.TabIndex = 36;
             this.label10.Text = "Email :";
             // 
-            // txtCustMobile
-            // 
-            this.txtCustMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCustMobile.Location = new System.Drawing.Point(98, 162);
-            this.txtCustMobile.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCustMobile.Name = "txtCustMobile";
-            this.txtCustMobile.Size = new System.Drawing.Size(298, 23);
-            this.txtCustMobile.TabIndex = 35;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label4.Location = new System.Drawing.Point(8, 164);
+            this.label4.Location = new System.Drawing.Point(301, 139);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 17);
@@ -186,7 +177,7 @@
             this.txtCustTel.Location = new System.Drawing.Point(98, 135);
             this.txtCustTel.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustTel.Name = "txtCustTel";
-            this.txtCustTel.Size = new System.Drawing.Size(298, 23);
+            this.txtCustTel.Size = new System.Drawing.Size(199, 23);
             this.txtCustTel.TabIndex = 33;
             // 
             // label8
@@ -455,7 +446,7 @@
             // 
             // btnReceive
             // 
-            this.btnReceive.Location = new System.Drawing.Point(936, 167);
+            this.btnReceive.Location = new System.Drawing.Point(1061, 167);
             this.btnReceive.Margin = new System.Windows.Forms.Padding(2);
             this.btnReceive.Name = "btnReceive";
             this.btnReceive.Size = new System.Drawing.Size(81, 39);
@@ -466,7 +457,7 @@
             // 
             // btnPrintMou
             // 
-            this.btnPrintMou.Location = new System.Drawing.Point(936, 103);
+            this.btnPrintMou.Location = new System.Drawing.Point(1061, 103);
             this.btnPrintMou.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrintMou.Name = "btnPrintMou";
             this.btnPrintMou.Size = new System.Drawing.Size(81, 39);
@@ -522,7 +513,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(936, 28);
+            this.btnSave.Location = new System.Drawing.Point(1061, 28);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(81, 39);
@@ -644,6 +635,15 @@
             this.btnDel.UseVisualStyleBackColor = true;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
+            // txtCustMobile
+            // 
+            this.txtCustMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCustMobile.Location = new System.Drawing.Point(351, 137);
+            this.txtCustMobile.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCustMobile.Name = "txtCustMobile";
+            this.txtCustMobile.Size = new System.Drawing.Size(199, 23);
+            this.txtCustMobile.TabIndex = 35;
+            // 
             // FrmMOUAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -695,7 +695,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCustAddress;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtCustMobile;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCustTel;
         private System.Windows.Forms.Label label8;
@@ -739,5 +738,6 @@
         private System.Windows.Forms.TextBox txtRow;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.TextBox txtCustMobile;
     }
 }

@@ -12,6 +12,7 @@ namespace Cemp.object1
         public String DatePeriod = "", StaffQuoId = "", StaffQuoName = "", StaffMOUTel = "", StaffMOUEmail = "", StaffMOUName = "", CustMou = "", MOUNumberCnt="";
         public String statusMOU = "", CustId="", StaffMOUMobile="", StaffMOUId="", CustMOUId="", StaffPlaceRecordId="", StaffPlaceRecordName="", StaffAnalysisId="", StaffAnalysisName="";
         public String dateCreate = "", dateModi = "", dateCancel = "", userCreate = "", userModi = "", userCancel = "", DatePlaceRecord = "", StaffPlaceRecordPosition="", StatusReceiveSample="";
+        public String StatusBill = "", MOUDate="";
         public override string ToString()
         {
             return MOUNumber;

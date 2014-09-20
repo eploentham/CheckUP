@@ -89,6 +89,7 @@
             this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "ป้อนใหม่";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // FrmBillView
             // 

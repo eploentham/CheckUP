@@ -48,7 +48,7 @@ namespace Cemp
             tv1.Nodes.Add("nQuoConfirmView", "Confirm Quotation");
             tv1.Nodes.Add("nMOUView", "พิมพ์ ใบMOU และใบรับตัวอย่าง");
             tv1.Nodes.Add("nInputResult", "ป้อนผลตัวอย่าง");
-            tv1.Nodes.Add("nBillNoteView", "พิมพ์ Bill Note");
+            tv1.Nodes.Add("nBillView", "พิมพ์ Bill Note");
             tv1.Nodes.Add("nRewardAdd", "ป้อนรางวัล");
             //}
             //if (sf.Priority.Equals("2") || sf.Priority.Equals("3"))
@@ -116,9 +116,9 @@ namespace Cemp
                 FrmResultView frm = new FrmResultView(sf.Id, cc);
                 showFrame(frm);
             }
-            else if (e.Node.Name.ToString() == "nBillNoteView")
+            else if (e.Node.Name.ToString() == "nBillView")
             {
-                FrmPassword frm = new FrmPassword(sf.Id);
+                FrmBillView frm = new FrmBillView(cc);
                 showFrame(frm);
             }
             else if (e.Node.Name.ToString() == "nCompany")
