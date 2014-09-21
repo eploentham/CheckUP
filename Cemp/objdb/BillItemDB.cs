@@ -31,7 +31,7 @@ namespace Cemp.objdb
             bii.Remark = "remark";
 
             bii.pkField = "bill_item_id";
-            bii.table = "";
+            bii.table = "t_bill_item";
         }
         private BillItem setData(BillItem item, DataTable dt)
         {
@@ -84,7 +84,7 @@ namespace Cemp.objdb
             String sql = "", chk = "";
             if (p.Id.Equals(""))
             {
-                p.Id = "cu" + p.getGenID();
+                p.Id = "bii" + p.getGenID();
             }
 
             //p.CustAddress = p.CustAddress.Replace("'", "''");
@@ -94,7 +94,7 @@ namespace Cemp.objdb
             sql = "Insert Into " + bii.table + " (" + bii.pkField + "," + bii.Active + "," + bii.Amount + "," +
                 bii.BillId + "," + bii.MOUId + "," + bii.MOUNumber + "," +
                 bii.QuoId + "," + bii.QuoNumber + "," + bii.Remark + ") " +
-                "Values('" + p.Id + "','" + p.Active + "'," + NumberNull1(p.Amount) + ",'" +
+                "Values('" + p.Id + "','" + p.Active + "'," + NumberNull1(p.Amount.Replace(",", "")) + ",'" +
                 p.BillId + "','" + p.MOUId + "','" + p.MOUNumber + "','" +
                 p.QuoId + "','" + p.QuoNumber + "','" + p.Remark  + "')";
             try

@@ -208,7 +208,8 @@ namespace Cemp.gui
             Double amt = 0, total=0, nettotal=0;
             amt = double.Parse(cc.cf.NumberNull1(txtAmount.Text));
             total = amt - double.Parse(cc.cf.NumberNull1(txtDiscount.Text));
-            txtVat.Text = String.Format("{0:#,###,###.00}",(total * double.Parse(cc.cf.NumberNull1(txtVatRate.Text))));
+            txtTotal.Text = String.Format("{0:#,###,###.00}", total);
+            txtVat.Text = String.Format("{0:#,###,###.00}",(total * double.Parse(cc.cf.NumberNull1(txtVatRate.Text))/100));
             txtNetTotal.Text = String.Format("{0:#,###,###.00}",(total+double.Parse(cc.cf.NumberNull1(txtVat.Text))));
         }
         private void FrmBillAdd_Load(object sender, EventArgs e)
@@ -248,7 +249,11 @@ namespace Cemp.gui
             {
                 return;
             }
-            if (dgvView[colAdd, e.RowIndex].Value.ToString().Equals("1"))
+            if (dgvView[colAdd, e.RowIndex].Value==null)
+            {
+                return;
+            }
+            if (dgvView[colMOUNumber, e.RowIndex].Value.ToString().Equals("1"))
             {
                 return;
             }
@@ -273,8 +278,6 @@ namespace Cemp.gui
             {
                 MessageBox.Show("dgvView_CellDoubleClick " + ex.Message, "Error");
             }
-            
-
             Cursor.Current = cursor;
             //dgvView.Enabled = true;
         }
@@ -287,12 +290,18 @@ namespace Cemp.gui
                 MessageBox.Show("ไม่มี ลูกค้า/ผู้ประสานงาน/ผู้รัลผิดชอบการตรวจ", "ป้อนข้อมูลไม่ครบ");
                 return;
             }
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             getBill();
             biId = cc.bidb.insertBill(bi);
             if (biId.Length >= 1)
             {
                 for (int i = 0; i < dgvAdd.RowCount; i++)
                 {
+                    if (dgvAdd[colMOUNumber, i].Value == null)
+                    {
+                        continue;
+                    }
                     BillItem bii = new BillItem();
                     MOU mo = new MOU();
                     mo = cc.modb.selectByNumber1(dgvAdd[colMOUNumber, i].Value.ToString());
@@ -309,7 +318,9 @@ namespace Cemp.gui
                     cc.biidb.insertBillItem(bii);
 
                 }
+                MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
             }
+            Cursor.Current = cursor;
         }
     }
 }

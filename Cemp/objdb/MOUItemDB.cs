@@ -183,7 +183,7 @@ namespace Cemp.objdb
                 moi.MOUId + "," + moi.PlaceRecord + "," + moi.RowNumber + "," +
                 moi.Sample + "," + moi.ItemGroupNameE + "," + moi.ItemGroupNameT + "," +
                 moi.ItemGroupSort + "," + moi.ItemGroupId + "," + moi.DatePlaceRecord + "," +
-                moi.MOUNumber + "," + moi.MOUNumberCnt + "," + p.PriceCost + "," + 
+                moi.MOUNumber + "," + moi.MOUNumberCnt + "," + moi.PriceCost + "," + 
                 moi.PriceSale + "," + moi.Amount + "," + moi.Discount + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.ItemDescription + "','" +
                 p.ItemId + "','" + p.MethodDescription + "','" + p.MethodId + "','" +
@@ -191,7 +191,7 @@ namespace Cemp.objdb
                 p.Sample + "','" + p.ItemGroupNameE + "','" + p.ItemGroupNameT + "','" +
                 p.ItemGroupSort + "','" + p.ItemGroupId + "','" + p.DatePlaceRecord + "','" +
                 p.MOUNumber + "'," + p.MOUNumberCnt + "," + NumberNull1(p.PriceCost) + "," + 
-                NumberNull1(p.PriceSale) + "," + NumberNull1(p.Amount) + "'," + NumberNull1(p.Discount) + ")";
+                NumberNull1(p.PriceSale) + "," + NumberNull1(p.Amount) + "," + NumberNull1(p.Discount) + ")";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

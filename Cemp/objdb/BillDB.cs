@@ -144,7 +144,7 @@ namespace Cemp.objdb
             String sql = "", chk = "";
             if (p.Id.Equals(""))
             {
-                p.Id = "cu" + p.getGenID();
+                p.Id = "bi" + p.getGenID();
             }
 
             p.CustAddress = p.CustAddress.Replace("'", "''");
@@ -158,15 +158,17 @@ namespace Cemp.objdb
                 bi.dateCancel + "," + bi.dateModi + "," + bi.Discount + "," +
                 bi.DiscountPer + "," + bi.Nettotal + "," + bi.Remark + "," +
                 bi.Total + "," + bi.userCancel + "," + bi.userCreate + "," +
-                bi.userModi + "," + bi.Vat + "," + bi.VatRate + "," + bi.dateCreate + "," + bi.StatusBill + ") " +
-                "Values('" + p.Id + "','" + p.Active + "'," + NumberNull1(p.Amount) + "," +
-                NumberNull1(p.AmountDiscount) + ",'" + p.BillDate + "','" + p.BillNumber + "','" +
+                bi.userModi + "," + bi.Vat + "," + bi.VatRate + "," + 
+                bi.dateCreate + "," + bi.StatusBill + ") " +
+                "Values('" + p.Id + "','" + p.Active + "'," + NumberNull1(p.Amount.Replace(",", "")) + "," +
+                NumberNull1(p.AmountDiscount.Replace(",", "")) + ",'" + p.BillDate + "','" + p.BillNumber + "','" +
                 p.CustAddress + "','" + p.CustEmail + "','" + p.CustFax + "','" +
                 p.CustId + "','" + p.CustName + "','" + p.CustTel + "','" +
-                p.dateCancel + "','" + p.dateModi + "'," + NumberNull1(p.Discount) + "," +
-                NumberNull1(p.DiscountPer) + "," + NumberNull1(p.Nettotal) + ",'" + p.Remark + "'," +
-                NumberNull1(p.Total) + ",'" + p.userCancel + "','" + p.userCreate + "','" +
-                p.userModi + "'," + NumberNull1(p.Vat) + "," + NumberNull1(p.VatRate) + "," + p.dateGenDB + ",'" + p.StatusBill + "')";
+                p.dateCancel + "','" + p.dateModi + "'," + NumberNull1(p.Discount.Replace(",","")) + "," +
+                NumberNull1(p.DiscountPer.Replace(",", "")) + "," + NumberNull1(p.Nettotal.Replace(",", "")) + ",'" + p.Remark + "'," +
+                NumberNull1(p.Total.Replace(",", "")) + ",'" + p.userCancel + "','" + p.userCreate + "','" +
+                p.userModi + "'," + NumberNull1(p.Vat.Replace(",", "")) + "," + NumberNull1(p.VatRate.Replace(",", "")) + "," + 
+                p.dateGenDB + ",'" + p.StatusBill + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

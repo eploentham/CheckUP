@@ -20,7 +20,7 @@ namespace Cemp.gui
         Staff sf;
         int colRow = 0, colItem = 1, colMethod = 2, colSample = 3, colPlace = 4, colDatePlaceRecord=5, colMOUNumber=6, colId = 7, colDel =8, colItemId = 9, colMethodId = 10, colEdit = 11, colMOUNumberCnt=12, colDatePlaceRecord1=13;
         //int colPriceSale = 14, colPriceCost = 15, colAmount = 16, colDiscount = 17;
-        int colCnt = 18;
+        int colCnt = 14;
         Boolean pageLoad = false, mouNew = false, MOUSplit = false;
         DateTimePicker cellDateTimePicker = new DateTimePicker();
         DateTimeFormatInfo df;
