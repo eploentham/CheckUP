@@ -46,6 +46,7 @@
             this.dgvView.RowTemplate.Height = 24;
             this.dgvView.Size = new System.Drawing.Size(612, 503);
             this.dgvView.TabIndex = 8;
+            this.dgvView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvView_CellDoubleClick);
             // 
             // chkMOU
             // 
@@ -105,6 +106,7 @@
             this.Text = "FrmBillView";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmBillView_Load);
+            this.Resize += new System.EventHandler(this.FrmBillView_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

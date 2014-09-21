@@ -19,7 +19,8 @@ namespace Cemp.gui
         Quotation qu;
         Staff sf;
         int colRow = 0, colItem = 1, colMethod = 2, colSample = 3, colPlace = 4, colDatePlaceRecord=5, colMOUNumber=6, colId = 7, colDel =8, colItemId = 9, colMethodId = 10, colEdit = 11, colMOUNumberCnt=12, colDatePlaceRecord1=13;
-        int colCnt = 14;
+        //int colPriceSale = 14, colPriceCost = 15, colAmount = 16, colDiscount = 17;
+        int colCnt = 18;
         Boolean pageLoad = false, mouNew = false, MOUSplit = false;
         DateTimePicker cellDateTimePicker = new DateTimePicker();
         DateTimeFormatInfo df;
@@ -229,6 +230,10 @@ namespace Cemp.gui
             dgvAdd.Columns[colMOUNumber].Visible = false;
             dgvAdd.Columns[colMOUNumberCnt].Visible = false;
             dgvAdd.Columns[colDatePlaceRecord1].Visible = false;
+            //dgvAdd.Columns[colPriceCost].Visible = false;
+            //dgvAdd.Columns[colPriceSale].Visible = false;
+            //dgvAdd.Columns[colAmount].Visible = false;
+            //dgvAdd.Columns[colDiscount].Visible = false;
 
             dgvAdd.Columns[colSample].ReadOnly = true;
             dgvAdd.Columns[colMethod].ReadOnly = true;
@@ -348,6 +353,10 @@ namespace Cemp.gui
             dgvAdd[colMOUNumber, row].Value = "";
             dgvAdd[colDel, row].Value = "";
             dgvAdd[colEdit, row].Value = "";
+            //dgvAdd[colPriceSale, row].Value = priceSale;
+            //dgvAdd[colPriceCost, row].Value = priceCost;
+            //dgvAdd[colAmount, row].Value = amount;
+            //dgvAdd[colDiscount, row].Value = discount;
         }
         private void setMOUNew(String quId)
         {
@@ -431,6 +440,7 @@ namespace Cemp.gui
                     }
                     String sRow = "", sItem = "", sMethod = "", sSample = "", sPlace = "", sDatePlaceRecord = "", sMOUNumber = "", sId = "", sDel = "", sItemId = "", sMethodId = "", sEdit = "";
                     String sRow1 = "", sItem1 = "", sMethod1 = "", sSample1 = "", sPlace1 = "", sDatePlaceRecord1 = "", sMOUNumber1 = "", sId1 = "", sDel1 = "", sItemId1 = "", sMethodId1 = "", sEdit1= "";
+                    String pricesale = "", pricecost = "", amount = "", discount = "";
                     datePlaceRecordTemp = cc.cf.datetoDB(dgvAdd[colDatePlaceRecord, (j + 1)].Value);
                     if (int.Parse(cc.cf.datetoDB(dgvAdd[colDatePlaceRecord, j].Value).Replace("-", "")) > int.Parse(datePlaceRecordTemp.Replace("-", "")))
                     {
@@ -446,6 +456,10 @@ namespace Cemp.gui
                         sItemId1 = dgvAdd[colItemId, (j + 1)].Value.ToString();
                         sMethodId1 = dgvAdd[colMethodId, (j + 1)].Value.ToString();
                         sEdit1 = dgvAdd[colEdit, (j + 1)].Value.ToString();
+                        //pricesale = dgvAdd[colPriceSale, (j + 1)].Value.ToString();
+                        //pricecost = dgvAdd[colPriceCost, (j + 1)].Value.ToString();
+                        //amount = dgvAdd[colAmount, (j + 1)].Value.ToString();
+                        //discount = dgvAdd[colDiscount, (j + 1)].Value.ToString();
 
                         dgvAdd[colRow, (j + 1)].Value = dgvAdd[colRow, j].Value.ToString();
                         dgvAdd[colItem, (j + 1)].Value = dgvAdd[colItem, j].Value.ToString();
@@ -459,6 +473,10 @@ namespace Cemp.gui
                         dgvAdd[colItemId, (j + 1)].Value = dgvAdd[colItemId, j].Value.ToString();
                         dgvAdd[colMethodId, (j + 1)].Value = dgvAdd[colMethodId, j].Value.ToString();
                         dgvAdd[colEdit, (j + 1)].Value = dgvAdd[colEdit, j].Value.ToString();
+                        //dgvAdd[colPriceCost, (j + 1)].Value = dgvAdd[colPriceCost, j].Value.ToString();
+                        //dgvAdd[colPriceSale, (j + 1)].Value = dgvAdd[colPriceSale, j].Value.ToString();
+                        //dgvAdd[colAmount, (j + 1)].Value = dgvAdd[colAmount, j].Value.ToString();
+                        //dgvAdd[colDiscount, (j + 1)].Value = dgvAdd[colDiscount, j].Value.ToString();
 
                         dgvAdd[colRow, (j)].Value = sRow1;
                         dgvAdd[colItem, (j)].Value = sItem1;
@@ -472,6 +490,11 @@ namespace Cemp.gui
                         dgvAdd[colItemId, (j)].Value = sItemId1;
                         dgvAdd[colMethodId, (j)].Value = sMethodId1;
                         dgvAdd[colEdit, (j)].Value = sEdit1;
+                        //dgvAdd[colPriceCost, (j)].Value = pricecost;
+                        //dgvAdd[colPriceSale, (j)].Value = pricesale;
+                        //dgvAdd[colAmount, (j)].Value = amount;
+                        //dgvAdd[colDiscount, (j)].Value = discount;
+
                         //dgvAdd[colDatePlaceRecord, (j + 1)].Value = dgvAdd[colDatePlaceRecord, j].Value.ToString();
                     }
 
@@ -623,6 +646,10 @@ namespace Cemp.gui
                     moi.ItemGroupSort = itg.Sort1;
                     moi.MOUNumberCnt = dgvAdd[colMOUNumberCnt, i].Value.ToString();
                     moi.MOUNumber = mo.MOUNumber;
+                    moi.PriceCost = cc.cf.NumberNull1(it.PriceCost);
+                    moi.PriceSale = cc.cf.NumberNull1(it.PriceSale);
+                    moi.Discount = "0";
+                    moi.Amount = String.Concat(Double.Parse(moi.PriceSale) * int.Parse(moi.Sample));
                     if ((!mouNew)&&(!dgvAdd[colDatePlaceRecord, i].Value.ToString().Equals(dgvAdd[colDatePlaceRecord1, i].Value.ToString())))
                     {
                         moi.MOUNumberCnt = cc.moidb.selectCntByMoNumber(moi.MOUNumber, cc.cf.datetoDB1( dgvAdd[colDatePlaceRecord, i].Value.ToString()));

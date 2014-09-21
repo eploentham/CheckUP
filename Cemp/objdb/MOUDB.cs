@@ -232,11 +232,19 @@ namespace Cemp.objdb
             String sql = "";
             if (cuId.Equals(""))
             {
-                sql = "Select * From " + mo.table + " Where " + mo.Active + "='1' and "+mo.StatusBill+"= '1'";
+                sql = "Select mo." + mo.MOUNumber + "," + mo.MOUDate + "," + mo.CustName + ",mo." + mo.Remark + ",mo." + mo.Id + ", sum(moi.amount1) as amount1, count(1) as cnt " +
+                    " From " + mo.table + " as mo inner join t_mou_item as moi on mo." + mo.Id + "=moi.mou_id "+
+                    "Where mo." + mo.Active + "='1' and mo." + mo.StatusBill + "= '1' and moi.mou_item_active='1' "+
+                    "Group By mo." + mo.MOUNumber + "," + mo.MOUDate + ",mo." + mo.Remark + "," + mo.CustName+ ",mo." + mo.Id+
+                    " Order By mo."+mo.MOUNumber;
             }
             else
             {
-                sql = "Select " + mo.MOUNumber + " From " + mo.table + " Where " + mo.Active + "='1' and " + mo.CustId + "='" + cuId + "' and " + mo.StatusBill + "= '1'";
+                sql = "Select mo." + mo.MOUNumber + "," + mo.MOUDate + "," + mo.CustName + ",mo." + mo.Remark + ",mo." + mo.Id + ", sum(moi.amount1) as amount1, count(1) as cnt " +
+                    " From " + mo.table + " as mo inner join t_mou_item as moi on mo." + mo.Id + "=moi.mou_id " +
+                    "Where mo." + mo.Active + "='1' and mo." + mo.CustId + "='" + cuId + "' and mo." + mo.StatusBill + "= '1' and moi.mou_item_active='1' "+
+                    "Group By mo." + mo.MOUNumber + "," + mo.MOUDate + ",mo." + mo.Remark + "," + mo.CustName+ ",mo." + mo.Id+
+                    " Order By mo." + mo.MOUNumber;
             }
             //sql = "Select " + mo.MOUNumber + " From " + mo.table + " Where " + mo.Active + "='1' and "+mo.CustId+"='"+cuId+"'";
             //dt = conn.selectData(sql);

@@ -35,6 +35,8 @@ namespace Cemp.Control
         public MOUItemDB moidb;
         public ItemDB itdb;
         public ItemGroupDB itgdb;
+        public BillDB bidb;
+        public BillItemDB biidb;
 
         public Staff sf;
         public Company cp;
@@ -75,6 +77,8 @@ namespace Cemp.Control
             moidb = new MOUItemDB(conn);
             itdb = new ItemDB(conn);
             itgdb = new ItemGroupDB(conn);
+            bidb = new BillDB(conn);
+            biidb = new BillItemDB(conn);
 
             lw = new LogWriter();
 

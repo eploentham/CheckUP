@@ -141,7 +141,7 @@ namespace Cemp.objdb
             }
             return chk;
         }
-        public String insertBill(BillItem p)
+        public String insertBillItem(BillItem p)
         {
             BillItem item = new BillItem();
             String chk = "";
