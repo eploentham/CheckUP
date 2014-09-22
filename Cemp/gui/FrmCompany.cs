@@ -85,6 +85,8 @@ namespace Cemp.gui
             txtMOULine3.Text = cp.mouLine3;
             txtMOULine4.Text = cp.mouLine4;
 
+            txtInvDuePeriod.Text = cp.InvDuePeriod;
+
             if (label18.Text.Length > 4)
             {
                 cboDistrict = cc.didb.getCboDist1(cboDistrict, label18.Text);
@@ -126,6 +128,8 @@ namespace Cemp.gui
             cp.mouLine2 = txtMOULine2.Text;
             cp.mouLine3 = txtMOULine3.Text;
             cp.mouLine4 = txtMOULine4.Text;
+
+            cp.InvDuePeriod = txtInvDuePeriod.Text;
         }
 
         private void FrmCompany_Load(object sender, EventArgs e)

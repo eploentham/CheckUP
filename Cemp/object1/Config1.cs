@@ -198,7 +198,7 @@ namespace Cemp.object1
                 else
                 {
                     dt1 = DateTime.Parse(dt.ToString());
-                    if (dt1.Year <= 1500)
+                    if (dt1.Year <= 2500)
                     {
                         return String.Concat((dt1.Year+543), "-") + dt1.Month.ToString("00") + "-" + dt1.Day.ToString("00");
                     }

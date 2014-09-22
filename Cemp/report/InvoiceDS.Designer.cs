@@ -20,17 +20,17 @@ namespace Cemp.report {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("BillingDS")]
+    [global::System.Xml.Serialization.XmlRootAttribute("InvoiceDS")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class BillingDS : global::System.Data.DataSet {
+    public partial class InvoiceDS : global::System.Data.DataSet {
         
-        private t_bill_itemDataTable tablet_bill_item;
+        private t_invoice_itemDataTable tablet_invoice_item;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public BillingDS() {
+        public InvoiceDS() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Cemp.report {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected BillingDS(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected InvoiceDS(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Cemp.report {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["t_bill_item"] != null)) {
-                    base.Tables.Add(new t_bill_itemDataTable(ds.Tables["t_bill_item"]));
+                if ((ds.Tables["t_invoice_item"] != null)) {
+                    base.Tables.Add(new t_invoice_itemDataTable(ds.Tables["t_invoice_item"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Cemp.report {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public t_bill_itemDataTable t_bill_item {
+        public t_invoice_itemDataTable t_invoice_item {
             get {
-                return this.tablet_bill_item;
+                return this.tablet_invoice_item;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Cemp.report {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            BillingDS cln = ((BillingDS)(base.Clone()));
+            InvoiceDS cln = ((InvoiceDS)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Cemp.report {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["t_bill_item"] != null)) {
-                    base.Tables.Add(new t_bill_itemDataTable(ds.Tables["t_bill_item"]));
+                if ((ds.Tables["t_invoice_item"] != null)) {
+                    base.Tables.Add(new t_invoice_itemDataTable(ds.Tables["t_invoice_item"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Cemp.report {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablet_bill_item = ((t_bill_itemDataTable)(base.Tables["t_bill_item"]));
+            this.tablet_invoice_item = ((t_invoice_itemDataTable)(base.Tables["t_invoice_item"]));
             if ((initTable == true)) {
-                if ((this.tablet_bill_item != null)) {
-                    this.tablet_bill_item.InitVars();
+                if ((this.tablet_invoice_item != null)) {
+                    this.tablet_invoice_item.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Cemp.report {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "BillingDS";
+            this.DataSetName = "InvoiceDS";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/BillingDS.xsd";
+            this.Namespace = "http://tempuri.org/InvoiceDS.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablet_bill_item = new t_bill_itemDataTable();
-            base.Tables.Add(this.tablet_bill_item);
+            this.tablet_invoice_item = new t_invoice_itemDataTable();
+            base.Tables.Add(this.tablet_invoice_item);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializet_bill_item() {
+        private bool ShouldSerializet_invoice_item() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Cemp.report {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            BillingDS ds = new BillingDS();
+            InvoiceDS ds = new InvoiceDS();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,18 +270,18 @@ namespace Cemp.report {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void t_bill_itemRowChangeEventHandler(object sender, t_bill_itemRowChangeEvent e);
+        public delegate void t_invoice_itemRowChangeEventHandler(object sender, t_invoice_itemRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class t_bill_itemDataTable : global::System.Data.TypedTableBase<t_bill_itemRow> {
+        public partial class t_invoice_itemDataTable : global::System.Data.TypedTableBase<t_invoice_itemRow> {
             
-            private global::System.Data.DataColumn columnbill_item_id;
+            private global::System.Data.DataColumn columninv_item_id;
             
-            private global::System.Data.DataColumn columnbill_id;
+            private global::System.Data.DataColumn columninv_id;
             
             private global::System.Data.DataColumn columnmou_id;
             
@@ -291,16 +291,18 @@ namespace Cemp.report {
             
             private global::System.Data.DataColumn columnquo_number;
             
-            private global::System.Data.DataColumn columnbill_item_active;
+            private global::System.Data.DataColumn columninv_item_active;
             
             private global::System.Data.DataColumn columnremark;
             
             private global::System.Data.DataColumn columnamount;
             
+            private global::System.Data.DataColumn columnmou_name;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public t_bill_itemDataTable() {
-                this.TableName = "t_bill_item";
+            public t_invoice_itemDataTable() {
+                this.TableName = "t_invoice_item";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -308,7 +310,7 @@ namespace Cemp.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal t_bill_itemDataTable(global::System.Data.DataTable table) {
+            internal t_invoice_itemDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -325,24 +327,24 @@ namespace Cemp.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected t_bill_itemDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected t_invoice_itemDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn bill_item_idColumn {
+            public global::System.Data.DataColumn inv_item_idColumn {
                 get {
-                    return this.columnbill_item_id;
+                    return this.columninv_item_id;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn bill_idColumn {
+            public global::System.Data.DataColumn inv_idColumn {
                 get {
-                    return this.columnbill_id;
+                    return this.columninv_id;
                 }
             }
             
@@ -380,9 +382,9 @@ namespace Cemp.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn bill_item_activeColumn {
+            public global::System.Data.DataColumn inv_item_activeColumn {
                 get {
-                    return this.columnbill_item_active;
+                    return this.columninv_item_active;
                 }
             }
             
@@ -404,6 +406,14 @@ namespace Cemp.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn mou_nameColumn {
+                get {
+                    return this.columnmou_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -413,60 +423,61 @@ namespace Cemp.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public t_bill_itemRow this[int index] {
+            public t_invoice_itemRow this[int index] {
                 get {
-                    return ((t_bill_itemRow)(this.Rows[index]));
+                    return ((t_invoice_itemRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event t_bill_itemRowChangeEventHandler t_bill_itemRowChanging;
+            public event t_invoice_itemRowChangeEventHandler t_invoice_itemRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event t_bill_itemRowChangeEventHandler t_bill_itemRowChanged;
+            public event t_invoice_itemRowChangeEventHandler t_invoice_itemRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event t_bill_itemRowChangeEventHandler t_bill_itemRowDeleting;
+            public event t_invoice_itemRowChangeEventHandler t_invoice_itemRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event t_bill_itemRowChangeEventHandler t_bill_itemRowDeleted;
+            public event t_invoice_itemRowChangeEventHandler t_invoice_itemRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Addt_bill_itemRow(t_bill_itemRow row) {
+            public void Addt_invoice_itemRow(t_invoice_itemRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public t_bill_itemRow Addt_bill_itemRow(string bill_item_id, string bill_id, string mou_id, string mou_number, string quo_id, string quo_number, string bill_item_active, string remark, decimal amount) {
-                t_bill_itemRow rowt_bill_itemRow = ((t_bill_itemRow)(this.NewRow()));
+            public t_invoice_itemRow Addt_invoice_itemRow(string inv_item_id, string inv_id, string mou_id, string mou_number, string quo_id, string quo_number, string inv_item_active, string remark, decimal amount, string mou_name) {
+                t_invoice_itemRow rowt_invoice_itemRow = ((t_invoice_itemRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        bill_item_id,
-                        bill_id,
+                        inv_item_id,
+                        inv_id,
                         mou_id,
                         mou_number,
                         quo_id,
                         quo_number,
-                        bill_item_active,
+                        inv_item_active,
                         remark,
-                        amount};
-                rowt_bill_itemRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowt_bill_itemRow);
-                return rowt_bill_itemRow;
+                        amount,
+                        mou_name};
+                rowt_invoice_itemRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowt_invoice_itemRow);
+                return rowt_invoice_itemRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public t_bill_itemRow FindBybill_item_id(string bill_item_id) {
-                return ((t_bill_itemRow)(this.Rows.Find(new object[] {
-                            bill_item_id})));
+            public t_invoice_itemRow FindByinv_item_id(string inv_item_id) {
+                return ((t_invoice_itemRow)(this.Rows.Find(new object[] {
+                            inv_item_id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                t_bill_itemDataTable cln = ((t_bill_itemDataTable)(base.Clone()));
+                t_invoice_itemDataTable cln = ((t_invoice_itemDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -474,30 +485,31 @@ namespace Cemp.report {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new t_bill_itemDataTable();
+                return new t_invoice_itemDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnbill_item_id = base.Columns["bill_item_id"];
-                this.columnbill_id = base.Columns["bill_id"];
+                this.columninv_item_id = base.Columns["inv_item_id"];
+                this.columninv_id = base.Columns["inv_id"];
                 this.columnmou_id = base.Columns["mou_id"];
                 this.columnmou_number = base.Columns["mou_number"];
                 this.columnquo_id = base.Columns["quo_id"];
                 this.columnquo_number = base.Columns["quo_number"];
-                this.columnbill_item_active = base.Columns["bill_item_active"];
+                this.columninv_item_active = base.Columns["inv_item_active"];
                 this.columnremark = base.Columns["remark"];
                 this.columnamount = base.Columns["amount"];
+                this.columnmou_name = base.Columns["mou_name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnbill_item_id = new global::System.Data.DataColumn("bill_item_id", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbill_item_id);
-                this.columnbill_id = new global::System.Data.DataColumn("bill_id", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbill_id);
+                this.columninv_item_id = new global::System.Data.DataColumn("inv_item_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninv_item_id);
+                this.columninv_id = new global::System.Data.DataColumn("inv_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninv_id);
                 this.columnmou_id = new global::System.Data.DataColumn("mou_id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmou_id);
                 this.columnmou_number = new global::System.Data.DataColumn("mou_number", typeof(string), null, global::System.Data.MappingType.Element);
@@ -506,50 +518,53 @@ namespace Cemp.report {
                 base.Columns.Add(this.columnquo_id);
                 this.columnquo_number = new global::System.Data.DataColumn("quo_number", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnquo_number);
-                this.columnbill_item_active = new global::System.Data.DataColumn("bill_item_active", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbill_item_active);
+                this.columninv_item_active = new global::System.Data.DataColumn("inv_item_active", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninv_item_active);
                 this.columnremark = new global::System.Data.DataColumn("remark", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnremark);
                 this.columnamount = new global::System.Data.DataColumn("amount", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnamount);
+                this.columnmou_name = new global::System.Data.DataColumn("mou_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmou_name);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnbill_item_id}, true));
-                this.columnbill_item_id.AllowDBNull = false;
-                this.columnbill_item_id.Unique = true;
-                this.columnbill_item_id.MaxLength = 255;
-                this.columnbill_id.MaxLength = 255;
+                                this.columninv_item_id}, true));
+                this.columninv_item_id.AllowDBNull = false;
+                this.columninv_item_id.Unique = true;
+                this.columninv_item_id.MaxLength = 255;
+                this.columninv_id.MaxLength = 255;
                 this.columnmou_id.MaxLength = 255;
                 this.columnmou_number.MaxLength = 255;
                 this.columnquo_id.MaxLength = 255;
                 this.columnquo_number.MaxLength = 255;
-                this.columnbill_item_active.MaxLength = 255;
+                this.columninv_item_active.MaxLength = 255;
                 this.columnremark.MaxLength = 255;
+                this.columnmou_name.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public t_bill_itemRow Newt_bill_itemRow() {
-                return ((t_bill_itemRow)(this.NewRow()));
+            public t_invoice_itemRow Newt_invoice_itemRow() {
+                return ((t_invoice_itemRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new t_bill_itemRow(builder);
+                return new t_invoice_itemRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(t_bill_itemRow);
+                return typeof(t_invoice_itemRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.t_bill_itemRowChanged != null)) {
-                    this.t_bill_itemRowChanged(this, new t_bill_itemRowChangeEvent(((t_bill_itemRow)(e.Row)), e.Action));
+                if ((this.t_invoice_itemRowChanged != null)) {
+                    this.t_invoice_itemRowChanged(this, new t_invoice_itemRowChangeEvent(((t_invoice_itemRow)(e.Row)), e.Action));
                 }
             }
             
@@ -557,8 +572,8 @@ namespace Cemp.report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.t_bill_itemRowChanging != null)) {
-                    this.t_bill_itemRowChanging(this, new t_bill_itemRowChangeEvent(((t_bill_itemRow)(e.Row)), e.Action));
+                if ((this.t_invoice_itemRowChanging != null)) {
+                    this.t_invoice_itemRowChanging(this, new t_invoice_itemRowChangeEvent(((t_invoice_itemRow)(e.Row)), e.Action));
                 }
             }
             
@@ -566,8 +581,8 @@ namespace Cemp.report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.t_bill_itemRowDeleted != null)) {
-                    this.t_bill_itemRowDeleted(this, new t_bill_itemRowChangeEvent(((t_bill_itemRow)(e.Row)), e.Action));
+                if ((this.t_invoice_itemRowDeleted != null)) {
+                    this.t_invoice_itemRowDeleted(this, new t_invoice_itemRowChangeEvent(((t_invoice_itemRow)(e.Row)), e.Action));
                 }
             }
             
@@ -575,14 +590,14 @@ namespace Cemp.report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.t_bill_itemRowDeleting != null)) {
-                    this.t_bill_itemRowDeleting(this, new t_bill_itemRowChangeEvent(((t_bill_itemRow)(e.Row)), e.Action));
+                if ((this.t_invoice_itemRowDeleting != null)) {
+                    this.t_invoice_itemRowDeleting(this, new t_invoice_itemRowChangeEvent(((t_invoice_itemRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Removet_bill_itemRow(t_bill_itemRow row) {
+            public void Removet_invoice_itemRow(t_invoice_itemRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -591,7 +606,7 @@ namespace Cemp.report {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BillingDS ds = new BillingDS();
+                InvoiceDS ds = new InvoiceDS();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -609,7 +624,7 @@ namespace Cemp.report {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "t_bill_itemDataTable";
+                attribute2.FixedValue = "t_invoice_itemDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -653,41 +668,41 @@ namespace Cemp.report {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class t_bill_itemRow : global::System.Data.DataRow {
+        public partial class t_invoice_itemRow : global::System.Data.DataRow {
             
-            private t_bill_itemDataTable tablet_bill_item;
+            private t_invoice_itemDataTable tablet_invoice_item;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal t_bill_itemRow(global::System.Data.DataRowBuilder rb) : 
+            internal t_invoice_itemRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablet_bill_item = ((t_bill_itemDataTable)(this.Table));
+                this.tablet_invoice_item = ((t_invoice_itemDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string bill_item_id {
+            public string inv_item_id {
                 get {
-                    return ((string)(this[this.tablet_bill_item.bill_item_idColumn]));
+                    return ((string)(this[this.tablet_invoice_item.inv_item_idColumn]));
                 }
                 set {
-                    this[this.tablet_bill_item.bill_item_idColumn] = value;
+                    this[this.tablet_invoice_item.inv_item_idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string bill_id {
+            public string inv_id {
                 get {
                     try {
-                        return ((string)(this[this.tablet_bill_item.bill_idColumn]));
+                        return ((string)(this[this.tablet_invoice_item.inv_idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'bill_id\' in table \'t_bill_item\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'inv_id\' in table \'t_invoice_item\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablet_bill_item.bill_idColumn] = value;
+                    this[this.tablet_invoice_item.inv_idColumn] = value;
                 }
             }
             
@@ -696,14 +711,14 @@ namespace Cemp.report {
             public string mou_id {
                 get {
                     try {
-                        return ((string)(this[this.tablet_bill_item.mou_idColumn]));
+                        return ((string)(this[this.tablet_invoice_item.mou_idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'mou_id\' in table \'t_bill_item\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'mou_id\' in table \'t_invoice_item\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablet_bill_item.mou_idColumn] = value;
+                    this[this.tablet_invoice_item.mou_idColumn] = value;
                 }
             }
             
@@ -712,14 +727,14 @@ namespace Cemp.report {
             public string mou_number {
                 get {
                     try {
-                        return ((string)(this[this.tablet_bill_item.mou_numberColumn]));
+                        return ((string)(this[this.tablet_invoice_item.mou_numberColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'mou_number\' in table \'t_bill_item\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'mou_number\' in table \'t_invoice_item\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablet_bill_item.mou_numberColumn] = value;
+                    this[this.tablet_invoice_item.mou_numberColumn] = value;
                 }
             }
             
@@ -728,14 +743,14 @@ namespace Cemp.report {
             public string quo_id {
                 get {
                     try {
-                        return ((string)(this[this.tablet_bill_item.quo_idColumn]));
+                        return ((string)(this[this.tablet_invoice_item.quo_idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'quo_id\' in table \'t_bill_item\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'quo_id\' in table \'t_invoice_item\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablet_bill_item.quo_idColumn] = value;
+                    this[this.tablet_invoice_item.quo_idColumn] = value;
                 }
             }
             
@@ -744,30 +759,30 @@ namespace Cemp.report {
             public string quo_number {
                 get {
                     try {
-                        return ((string)(this[this.tablet_bill_item.quo_numberColumn]));
+                        return ((string)(this[this.tablet_invoice_item.quo_numberColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'quo_number\' in table \'t_bill_item\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'quo_number\' in table \'t_invoice_item\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablet_bill_item.quo_numberColumn] = value;
+                    this[this.tablet_invoice_item.quo_numberColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string bill_item_active {
+            public string inv_item_active {
                 get {
                     try {
-                        return ((string)(this[this.tablet_bill_item.bill_item_activeColumn]));
+                        return ((string)(this[this.tablet_invoice_item.inv_item_activeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'bill_item_active\' in table \'t_bill_item\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'inv_item_active\' in table \'t_invoice_item\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablet_bill_item.bill_item_activeColumn] = value;
+                    this[this.tablet_invoice_item.inv_item_activeColumn] = value;
                 }
             }
             
@@ -776,14 +791,14 @@ namespace Cemp.report {
             public string remark {
                 get {
                     try {
-                        return ((string)(this[this.tablet_bill_item.remarkColumn]));
+                        return ((string)(this[this.tablet_invoice_item.remarkColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'remark\' in table \'t_bill_item\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'remark\' in table \'t_invoice_item\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablet_bill_item.remarkColumn] = value;
+                    this[this.tablet_invoice_item.remarkColumn] = value;
                 }
             }
             
@@ -792,111 +807,139 @@ namespace Cemp.report {
             public decimal amount {
                 get {
                     try {
-                        return ((decimal)(this[this.tablet_bill_item.amountColumn]));
+                        return ((decimal)(this[this.tablet_invoice_item.amountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'amount\' in table \'t_bill_item\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'amount\' in table \'t_invoice_item\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablet_bill_item.amountColumn] = value;
+                    this[this.tablet_invoice_item.amountColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isbill_idNull() {
-                return this.IsNull(this.tablet_bill_item.bill_idColumn);
+            public string mou_name {
+                get {
+                    try {
+                        return ((string)(this[this.tablet_invoice_item.mou_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'mou_name\' in table \'t_invoice_item\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablet_invoice_item.mou_nameColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setbill_idNull() {
-                this[this.tablet_bill_item.bill_idColumn] = global::System.Convert.DBNull;
+            public bool Isinv_idNull() {
+                return this.IsNull(this.tablet_invoice_item.inv_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setinv_idNull() {
+                this[this.tablet_invoice_item.inv_idColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Ismou_idNull() {
-                return this.IsNull(this.tablet_bill_item.mou_idColumn);
+                return this.IsNull(this.tablet_invoice_item.mou_idColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setmou_idNull() {
-                this[this.tablet_bill_item.mou_idColumn] = global::System.Convert.DBNull;
+                this[this.tablet_invoice_item.mou_idColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Ismou_numberNull() {
-                return this.IsNull(this.tablet_bill_item.mou_numberColumn);
+                return this.IsNull(this.tablet_invoice_item.mou_numberColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setmou_numberNull() {
-                this[this.tablet_bill_item.mou_numberColumn] = global::System.Convert.DBNull;
+                this[this.tablet_invoice_item.mou_numberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isquo_idNull() {
-                return this.IsNull(this.tablet_bill_item.quo_idColumn);
+                return this.IsNull(this.tablet_invoice_item.quo_idColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setquo_idNull() {
-                this[this.tablet_bill_item.quo_idColumn] = global::System.Convert.DBNull;
+                this[this.tablet_invoice_item.quo_idColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isquo_numberNull() {
-                return this.IsNull(this.tablet_bill_item.quo_numberColumn);
+                return this.IsNull(this.tablet_invoice_item.quo_numberColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setquo_numberNull() {
-                this[this.tablet_bill_item.quo_numberColumn] = global::System.Convert.DBNull;
+                this[this.tablet_invoice_item.quo_numberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isbill_item_activeNull() {
-                return this.IsNull(this.tablet_bill_item.bill_item_activeColumn);
+            public bool Isinv_item_activeNull() {
+                return this.IsNull(this.tablet_invoice_item.inv_item_activeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setbill_item_activeNull() {
-                this[this.tablet_bill_item.bill_item_activeColumn] = global::System.Convert.DBNull;
+            public void Setinv_item_activeNull() {
+                this[this.tablet_invoice_item.inv_item_activeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsremarkNull() {
-                return this.IsNull(this.tablet_bill_item.remarkColumn);
+                return this.IsNull(this.tablet_invoice_item.remarkColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetremarkNull() {
-                this[this.tablet_bill_item.remarkColumn] = global::System.Convert.DBNull;
+                this[this.tablet_invoice_item.remarkColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsamountNull() {
-                return this.IsNull(this.tablet_bill_item.amountColumn);
+                return this.IsNull(this.tablet_invoice_item.amountColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetamountNull() {
-                this[this.tablet_bill_item.amountColumn] = global::System.Convert.DBNull;
+                this[this.tablet_invoice_item.amountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ismou_nameNull() {
+                return this.IsNull(this.tablet_invoice_item.mou_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setmou_nameNull() {
+                this[this.tablet_invoice_item.mou_nameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -904,22 +947,22 @@ namespace Cemp.report {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class t_bill_itemRowChangeEvent : global::System.EventArgs {
+        public class t_invoice_itemRowChangeEvent : global::System.EventArgs {
             
-            private t_bill_itemRow eventRow;
+            private t_invoice_itemRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public t_bill_itemRowChangeEvent(t_bill_itemRow row, global::System.Data.DataRowAction action) {
+            public t_invoice_itemRowChangeEvent(t_invoice_itemRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public t_bill_itemRow Row {
+            public t_invoice_itemRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -935,7 +978,7 @@ namespace Cemp.report {
         }
     }
 }
-namespace Cemp.report.BillingDSTableAdapters {
+namespace Cemp.report.InvoiceDSTableAdapters {
     
     
     /// <summary>
@@ -947,7 +990,7 @@ namespace Cemp.report.BillingDSTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class t_bill_itemTableAdapter : global::System.ComponentModel.Component {
+    public partial class t_invoice_itemTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
         
@@ -961,7 +1004,7 @@ namespace Cemp.report.BillingDSTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public t_bill_itemTableAdapter() {
+        public t_invoice_itemTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1058,24 +1101,25 @@ namespace Cemp.report.BillingDSTableAdapters {
             this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "t_bill_item";
-            tableMapping.ColumnMappings.Add("bill_item_id", "bill_item_id");
-            tableMapping.ColumnMappings.Add("bill_id", "bill_id");
+            tableMapping.DataSetTable = "t_invoice_item";
+            tableMapping.ColumnMappings.Add("inv_item_id", "inv_item_id");
+            tableMapping.ColumnMappings.Add("inv_id", "inv_id");
             tableMapping.ColumnMappings.Add("mou_id", "mou_id");
             tableMapping.ColumnMappings.Add("mou_number", "mou_number");
             tableMapping.ColumnMappings.Add("quo_id", "quo_id");
             tableMapping.ColumnMappings.Add("quo_number", "quo_number");
-            tableMapping.ColumnMappings.Add("bill_item_active", "bill_item_active");
+            tableMapping.ColumnMappings.Add("inv_item_active", "inv_item_active");
             tableMapping.ColumnMappings.Add("remark", "remark");
             tableMapping.ColumnMappings.Add("amount", "amount");
+            tableMapping.ColumnMappings.Add("mou_name", "mou_name");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `t_bill_item` WHERE ((`bill_item_id` = ?) AND ((? = 1 AND `bill_id` IS NULL) OR (`bill_id` = ?)) AND ((? = 1 AND `mou_id` IS NULL) OR (`mou_id` = ?)) AND ((? = 1 AND `mou_number` IS NULL) OR (`mou_number` = ?)) AND ((? = 1 AND `quo_id` IS NULL) OR (`quo_id` = ?)) AND ((? = 1 AND `quo_number` IS NULL) OR (`quo_number` = ?)) AND ((? = 1 AND `bill_item_active` IS NULL) OR (`bill_item_active` = ?)) AND ((? = 1 AND `remark` IS NULL) OR (`remark` = ?)) AND ((? = 1 AND `amount` IS NULL) OR (`amount` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `t_invoice_item` WHERE ((`inv_item_id` = ?) AND ((? = 1 AND `inv_id` IS NULL) OR (`inv_id` = ?)) AND ((? = 1 AND `mou_id` IS NULL) OR (`mou_id` = ?)) AND ((? = 1 AND `mou_number` IS NULL) OR (`mou_number` = ?)) AND ((? = 1 AND `quo_id` IS NULL) OR (`quo_id` = ?)) AND ((? = 1 AND `quo_number` IS NULL) OR (`quo_number` = ?)) AND ((? = 1 AND `inv_item_active` IS NULL) OR (`inv_item_active` = ?)) AND ((? = 1 AND `remark` IS NULL) OR (`remark` = ?)) AND ((? = 1 AND `amount` IS NULL) OR (`amount` = ?)) AND ((? = 1 AND `mou_name` IS NULL) OR (`mou_name` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_bill_item_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "bill_item_id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_bill_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "bill_id", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_bill_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "bill_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_inv_item_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "inv_item_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_inv_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "inv_id", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_inv_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "inv_id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mou_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_id", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mou_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mou_number", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_number", global::System.Data.DataRowVersion.Original, true, null));
@@ -1084,43 +1128,47 @@ namespace Cemp.report.BillingDSTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_quo_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_quo_number", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_number", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_quo_number", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_number", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_bill_item_active", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "bill_item_active", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_bill_item_active", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "bill_item_active", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_inv_item_active", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "inv_item_active", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_inv_item_active", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "inv_item_active", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_remark", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "remark", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_remark", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "remark", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_amount", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "amount", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_amount", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "amount", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mou_name", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_name", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mou_name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_name", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `t_bill_item` (`bill_item_id`, `bill_id`, `mou_id`, `mou_number`, `qu" +
-                "o_id`, `quo_number`, `bill_item_active`, `remark`, `amount`) VALUES (?, ?, ?, ?," +
-                " ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `t_invoice_item` (`inv_item_id`, `inv_id`, `mou_id`, `mou_number`, `q" +
+                "uo_id`, `quo_number`, `inv_item_active`, `remark`, `amount`, `mou_name`) VALUES " +
+                "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("bill_item_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "bill_item_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("bill_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "bill_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("inv_item_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "inv_item_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("inv_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "inv_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mou_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mou_number", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_number", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("quo_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("quo_number", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_number", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("bill_item_active", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "bill_item_active", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("inv_item_active", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "inv_item_active", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("remark", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "remark", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("amount", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "amount", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mou_name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_name", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `t_bill_item` SET `bill_item_id` = ?, `bill_id` = ?, `mou_id` = ?, `mou_number` = ?, `quo_id` = ?, `quo_number` = ?, `bill_item_active` = ?, `remark` = ?, `amount` = ? WHERE ((`bill_item_id` = ?) AND ((? = 1 AND `bill_id` IS NULL) OR (`bill_id` = ?)) AND ((? = 1 AND `mou_id` IS NULL) OR (`mou_id` = ?)) AND ((? = 1 AND `mou_number` IS NULL) OR (`mou_number` = ?)) AND ((? = 1 AND `quo_id` IS NULL) OR (`quo_id` = ?)) AND ((? = 1 AND `quo_number` IS NULL) OR (`quo_number` = ?)) AND ((? = 1 AND `bill_item_active` IS NULL) OR (`bill_item_active` = ?)) AND ((? = 1 AND `remark` IS NULL) OR (`remark` = ?)) AND ((? = 1 AND `amount` IS NULL) OR (`amount` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `t_invoice_item` SET `inv_item_id` = ?, `inv_id` = ?, `mou_id` = ?, `mou_number` = ?, `quo_id` = ?, `quo_number` = ?, `inv_item_active` = ?, `remark` = ?, `amount` = ?, `mou_name` = ? WHERE ((`inv_item_id` = ?) AND ((? = 1 AND `inv_id` IS NULL) OR (`inv_id` = ?)) AND ((? = 1 AND `mou_id` IS NULL) OR (`mou_id` = ?)) AND ((? = 1 AND `mou_number` IS NULL) OR (`mou_number` = ?)) AND ((? = 1 AND `quo_id` IS NULL) OR (`quo_id` = ?)) AND ((? = 1 AND `quo_number` IS NULL) OR (`quo_number` = ?)) AND ((? = 1 AND `inv_item_active` IS NULL) OR (`inv_item_active` = ?)) AND ((? = 1 AND `remark` IS NULL) OR (`remark` = ?)) AND ((? = 1 AND `amount` IS NULL) OR (`amount` = ?)) AND ((? = 1 AND `mou_name` IS NULL) OR (`mou_name` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("bill_item_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "bill_item_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("bill_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "bill_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("inv_item_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "inv_item_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("inv_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "inv_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mou_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mou_number", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_number", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("quo_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("quo_number", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_number", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("bill_item_active", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "bill_item_active", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("inv_item_active", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "inv_item_active", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("remark", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "remark", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("amount", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "amount", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_bill_item_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "bill_item_id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_bill_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "bill_id", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_bill_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "bill_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("mou_name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_name", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_inv_item_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "inv_item_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_inv_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "inv_id", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_inv_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "inv_id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mou_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_id", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mou_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mou_number", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_number", global::System.Data.DataRowVersion.Original, true, null));
@@ -1129,12 +1177,14 @@ namespace Cemp.report.BillingDSTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_quo_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_quo_number", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_number", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_quo_number", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_number", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_bill_item_active", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "bill_item_active", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_bill_item_active", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "bill_item_active", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_inv_item_active", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "inv_item_active", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_inv_item_active", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "inv_item_active", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_remark", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "remark", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_remark", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "remark", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_amount", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "amount", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_amount", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "amount", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_mou_name", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_name", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_mou_name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mou_name", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1150,8 +1200,8 @@ namespace Cemp.report.BillingDSTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT bill_item_id, bill_id, mou_id, mou_number, quo_id, quo_number, bill_item_a" +
-                "ctive, remark, amount FROM t_bill_item";
+            this._commandCollection[0].CommandText = "SELECT inv_item_id, inv_id, mou_id, mou_number, quo_id, quo_number, inv_item_acti" +
+                "ve, remark, amount, mou_name FROM t_invoice_item";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1159,7 +1209,7 @@ namespace Cemp.report.BillingDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BillingDS.t_bill_itemDataTable dataTable) {
+        public virtual int Fill(InvoiceDS.t_invoice_itemDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1172,9 +1222,9 @@ namespace Cemp.report.BillingDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BillingDS.t_bill_itemDataTable GetData() {
+        public virtual InvoiceDS.t_invoice_itemDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BillingDS.t_bill_itemDataTable dataTable = new BillingDS.t_bill_itemDataTable();
+            InvoiceDS.t_invoice_itemDataTable dataTable = new InvoiceDS.t_invoice_itemDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1182,15 +1232,15 @@ namespace Cemp.report.BillingDSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BillingDS.t_bill_itemDataTable dataTable) {
+        public virtual int Update(InvoiceDS.t_invoice_itemDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BillingDS dataSet) {
-            return this.Adapter.Update(dataSet, "t_bill_item");
+        public virtual int Update(InvoiceDS dataSet) {
+            return this.Adapter.Update(dataSet, "t_invoice_item");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1212,20 +1262,20 @@ namespace Cemp.report.BillingDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_bill_item_id, string Original_bill_id, string Original_mou_id, string Original_mou_number, string Original_quo_id, string Original_quo_number, string Original_bill_item_active, string Original_remark, global::System.Nullable<decimal> Original_amount) {
-            if ((Original_bill_item_id == null)) {
-                throw new global::System.ArgumentNullException("Original_bill_item_id");
+        public virtual int Delete(string Original_inv_item_id, string Original_inv_id, string Original_mou_id, string Original_mou_number, string Original_quo_id, string Original_quo_number, string Original_inv_item_active, string Original_remark, global::System.Nullable<decimal> Original_amount, string Original_mou_name) {
+            if ((Original_inv_item_id == null)) {
+                throw new global::System.ArgumentNullException("Original_inv_item_id");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_bill_item_id));
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_inv_item_id));
             }
-            if ((Original_bill_id == null)) {
+            if ((Original_inv_id == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_bill_id));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_inv_id));
             }
             if ((Original_mou_id == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
@@ -1259,13 +1309,13 @@ namespace Cemp.report.BillingDSTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_quo_number));
             }
-            if ((Original_bill_item_active == null)) {
+            if ((Original_inv_item_active == null)) {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_bill_item_active));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_inv_item_active));
             }
             if ((Original_remark == null)) {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
@@ -1282,6 +1332,14 @@ namespace Cemp.report.BillingDSTableAdapters {
             else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_mou_name == null)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_mou_name));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1303,18 +1361,18 @@ namespace Cemp.report.BillingDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string bill_item_id, string bill_id, string mou_id, string mou_number, string quo_id, string quo_number, string bill_item_active, string remark, global::System.Nullable<decimal> amount) {
-            if ((bill_item_id == null)) {
-                throw new global::System.ArgumentNullException("bill_item_id");
+        public virtual int Insert(string inv_item_id, string inv_id, string mou_id, string mou_number, string quo_id, string quo_number, string inv_item_active, string remark, global::System.Nullable<decimal> amount, string mou_name) {
+            if ((inv_item_id == null)) {
+                throw new global::System.ArgumentNullException("inv_item_id");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(bill_item_id));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(inv_item_id));
             }
-            if ((bill_id == null)) {
+            if ((inv_id == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(bill_id));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(inv_id));
             }
             if ((mou_id == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
@@ -1340,11 +1398,11 @@ namespace Cemp.report.BillingDSTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((string)(quo_number));
             }
-            if ((bill_item_active == null)) {
+            if ((inv_item_active == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(bill_item_active));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(inv_item_active));
             }
             if ((remark == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
@@ -1357,6 +1415,12 @@ namespace Cemp.report.BillingDSTableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((mou_name == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(mou_name));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1379,35 +1443,37 @@ namespace Cemp.report.BillingDSTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    string bill_item_id, 
-                    string bill_id, 
+                    string inv_item_id, 
+                    string inv_id, 
                     string mou_id, 
                     string mou_number, 
                     string quo_id, 
                     string quo_number, 
-                    string bill_item_active, 
+                    string inv_item_active, 
                     string remark, 
                     global::System.Nullable<decimal> amount, 
-                    string Original_bill_item_id, 
-                    string Original_bill_id, 
+                    string mou_name, 
+                    string Original_inv_item_id, 
+                    string Original_inv_id, 
                     string Original_mou_id, 
                     string Original_mou_number, 
                     string Original_quo_id, 
                     string Original_quo_number, 
-                    string Original_bill_item_active, 
+                    string Original_inv_item_active, 
                     string Original_remark, 
-                    global::System.Nullable<decimal> Original_amount) {
-            if ((bill_item_id == null)) {
-                throw new global::System.ArgumentNullException("bill_item_id");
+                    global::System.Nullable<decimal> Original_amount, 
+                    string Original_mou_name) {
+            if ((inv_item_id == null)) {
+                throw new global::System.ArgumentNullException("inv_item_id");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(bill_item_id));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(inv_item_id));
             }
-            if ((bill_id == null)) {
+            if ((inv_id == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(bill_id));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(inv_id));
             }
             if ((mou_id == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
@@ -1433,11 +1499,11 @@ namespace Cemp.report.BillingDSTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(quo_number));
             }
-            if ((bill_item_active == null)) {
+            if ((inv_item_active == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(bill_item_active));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(inv_item_active));
             }
             if ((remark == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
@@ -1451,75 +1517,89 @@ namespace Cemp.report.BillingDSTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Original_bill_item_id == null)) {
-                throw new global::System.ArgumentNullException("Original_bill_item_id");
+            if ((mou_name == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_bill_item_id));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(mou_name));
             }
-            if ((Original_bill_id == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            if ((Original_inv_item_id == null)) {
+                throw new global::System.ArgumentNullException("Original_inv_item_id");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_bill_id));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_inv_item_id));
+            }
+            if ((Original_inv_id == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_inv_id));
             }
             if ((Original_mou_id == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_mou_id));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_mou_id));
             }
             if ((Original_mou_number == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_mou_number));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_mou_number));
             }
             if ((Original_quo_id == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_quo_id));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_quo_id));
             }
             if ((Original_quo_number == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_quo_number));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_quo_number));
             }
-            if ((Original_bill_item_active == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            if ((Original_inv_item_active == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_bill_item_active));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_inv_item_active));
             }
             if ((Original_remark == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_remark));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_remark));
             }
             if ((Original_amount.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((decimal)(Original_amount.Value));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((decimal)(Original_amount.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            if ((Original_mou_name == null)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_mou_name));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1542,24 +1622,26 @@ namespace Cemp.report.BillingDSTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    string bill_id, 
+                    string inv_id, 
                     string mou_id, 
                     string mou_number, 
                     string quo_id, 
                     string quo_number, 
-                    string bill_item_active, 
+                    string inv_item_active, 
                     string remark, 
                     global::System.Nullable<decimal> amount, 
-                    string Original_bill_item_id, 
-                    string Original_bill_id, 
+                    string mou_name, 
+                    string Original_inv_item_id, 
+                    string Original_inv_id, 
                     string Original_mou_id, 
                     string Original_mou_number, 
                     string Original_quo_id, 
                     string Original_quo_number, 
-                    string Original_bill_item_active, 
+                    string Original_inv_item_active, 
                     string Original_remark, 
-                    global::System.Nullable<decimal> Original_amount) {
-            return this.Update(Original_bill_item_id, bill_id, mou_id, mou_number, quo_id, quo_number, bill_item_active, remark, amount, Original_bill_item_id, Original_bill_id, Original_mou_id, Original_mou_number, Original_quo_id, Original_quo_number, Original_bill_item_active, Original_remark, Original_amount);
+                    global::System.Nullable<decimal> Original_amount, 
+                    string Original_mou_name) {
+            return this.Update(Original_inv_item_id, inv_id, mou_id, mou_number, quo_id, quo_number, inv_item_active, remark, amount, mou_name, Original_inv_item_id, Original_inv_id, Original_mou_id, Original_mou_number, Original_quo_id, Original_quo_number, Original_inv_item_active, Original_remark, Original_amount, Original_mou_name);
         }
     }
     
@@ -1575,7 +1657,7 @@ namespace Cemp.report.BillingDSTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private t_bill_itemTableAdapter _t_bill_itemTableAdapter;
+        private t_invoice_itemTableAdapter _t_invoice_itemTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1597,12 +1679,12 @@ namespace Cemp.report.BillingDSTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public t_bill_itemTableAdapter t_bill_itemTableAdapter {
+        public t_invoice_itemTableAdapter t_invoice_itemTableAdapter {
             get {
-                return this._t_bill_itemTableAdapter;
+                return this._t_invoice_itemTableAdapter;
             }
             set {
-                this._t_bill_itemTableAdapter = value;
+                this._t_invoice_itemTableAdapter = value;
             }
         }
         
@@ -1625,9 +1707,9 @@ namespace Cemp.report.BillingDSTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._t_bill_itemTableAdapter != null) 
-                            && (this._t_bill_itemTableAdapter.Connection != null))) {
-                    return this._t_bill_itemTableAdapter.Connection;
+                if (((this._t_invoice_itemTableAdapter != null) 
+                            && (this._t_invoice_itemTableAdapter.Connection != null))) {
+                    return this._t_invoice_itemTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1642,7 +1724,7 @@ namespace Cemp.report.BillingDSTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._t_bill_itemTableAdapter != null)) {
+                if ((this._t_invoice_itemTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1654,14 +1736,14 @@ namespace Cemp.report.BillingDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(BillingDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(InvoiceDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._t_bill_itemTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.t_bill_item.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._t_invoice_itemTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.t_invoice_item.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._t_bill_itemTableAdapter.Update(updatedRows));
+                    result = (result + this._t_invoice_itemTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1673,13 +1755,13 @@ namespace Cemp.report.BillingDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(BillingDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(InvoiceDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._t_bill_itemTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.t_bill_item.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._t_invoice_itemTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.t_invoice_item.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._t_bill_itemTableAdapter.Update(addedRows));
+                    result = (result + this._t_invoice_itemTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1691,13 +1773,13 @@ namespace Cemp.report.BillingDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(BillingDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(InvoiceDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._t_bill_itemTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.t_bill_item.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._t_invoice_itemTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.t_invoice_item.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._t_bill_itemTableAdapter.Update(deletedRows));
+                    result = (result + this._t_invoice_itemTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1733,15 +1815,15 @@ namespace Cemp.report.BillingDSTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(BillingDS dataSet) {
+        public virtual int UpdateAll(InvoiceDS dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._t_bill_itemTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._t_bill_itemTableAdapter.Connection) == false))) {
+            if (((this._t_invoice_itemTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._t_invoice_itemTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1777,13 +1859,13 @@ namespace Cemp.report.BillingDSTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._t_bill_itemTableAdapter != null)) {
-                    revertConnections.Add(this._t_bill_itemTableAdapter, this._t_bill_itemTableAdapter.Connection);
-                    this._t_bill_itemTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._t_bill_itemTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._t_bill_itemTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._t_bill_itemTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._t_bill_itemTableAdapter.Adapter);
+                if ((this._t_invoice_itemTableAdapter != null)) {
+                    revertConnections.Add(this._t_invoice_itemTableAdapter, this._t_invoice_itemTableAdapter.Connection);
+                    this._t_invoice_itemTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._t_invoice_itemTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._t_invoice_itemTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._t_invoice_itemTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._t_invoice_itemTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1844,9 +1926,9 @@ namespace Cemp.report.BillingDSTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._t_bill_itemTableAdapter != null)) {
-                    this._t_bill_itemTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._t_bill_itemTableAdapter]));
-                    this._t_bill_itemTableAdapter.Transaction = null;
+                if ((this._t_invoice_itemTableAdapter != null)) {
+                    this._t_invoice_itemTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._t_invoice_itemTableAdapter]));
+                    this._t_invoice_itemTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

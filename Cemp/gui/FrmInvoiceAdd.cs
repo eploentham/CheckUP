@@ -11,39 +11,111 @@ using System.Windows.Forms;
 
 namespace Cemp.gui
 {
-    public partial class FrmBillAdd : Form
+    public partial class FrmInvoiceAdd : Form
     {
         CnviControl cc;
-        Bill bi;
+        Invoice bi;
         Boolean pageLoad, biNew = false;
         int colRow = 0, colRow1=1, colMOUDate = 2,colCustName=3, colMOUNumber = 4, colSample=5, colNetTotal = 6, colRemark=7,colMOUId=8, colAdd=9;
         int colCnt = 10;
-        public FrmBillAdd(String biId, Boolean flagNew,CnviControl c)
+        int colAddRow = 0, colAddMOUNumber = 1, colAddAmount = 3, colAddMOUName = 2;
+        public FrmInvoiceAdd(String biId, Boolean flagNew,CnviControl c)
         {
             InitializeComponent();
             cc = c;
             biNew = flagNew;
-            initConfig();
+            initConfig(biId);
         }
-        private void initConfig()
+        private void initConfig(String biId)
         {
             pageLoad = true;
-            bi = new Bill();
-            setControl();
-            setGrdView("");
-            setGrdAdd();
+            bi = new Invoice();
+            setControl(biId);
+            
+            //setGrdAdd();
             if (!biNew)
             {
+                
                 dgvView.Visible = false;
+                groupBox1.Visible = true;
+            }
+            else
+            {
+                setGrdView("");
+                setGrdAdd();
+                groupBox1.Visible =true;
+                chkActive.Checked = true;
+                btnUnActive.Visible = false;
+                dtpDateInv.Value = DateTime.Now;
             }
             pageLoad = false;
         }
-        private void setControl()
+        private void setControl(String biId)
         {
             cboCust = cc.cudb.getCboCustomer(cboCust);
             txtVatRate.Text = cc.cp.vat;
+            txtInvDuePeriod.Text = cc.cp.InvDuePeriod;
             dgvView.ReadOnly = true;
             dgvAdd.ReadOnly = true;
+
+            bi = cc.invdb.selectByPk(biId);
+            cboCust.Text = bi.CustName;
+            txtCustAddress.Text = bi.CustAddress;
+            txtCustTel.Text = bi.CustTel;
+            txtCustFax.Text = bi.CustFax;
+            txtCustEmail.Text = bi.CustEmail;
+
+            txtAmount.Text = bi.Amount;
+            txtDiscount.Text = bi.Discount;
+            txtDiscountPer.Text = bi.DiscountPer;
+            txtTotal.Text = bi.Total;
+            txtVat.Text = bi.Vat;
+            txtVatRate.Text = bi.VatRate;
+            txtNetTotal.Text = bi.Nettotal;
+            txtInvDuePeriod.Text = bi.InvDuePeriod;
+            txtInvId.Text = bi.Id;
+            txtInvNumber.Text = bi.InvNumber;
+            
+            txtInvRemark.Text = bi.Remark;
+            if (!biNew)
+            {
+                chkActive.Checked = true;
+                groupBox1.Visible = true;
+                dtpDateInv.Value = DateTime.Parse(bi.InvDate);
+                setGrdAddInvItem(biId);
+            }
+            //cboContact.Text = bi.c
+        }
+        private void setGrdAddInvItem(String biId)
+        {
+            int colMOUnumber = 1, colAmount = 2;
+            groupBox1.Visible = true;
+            dgvAdd.Rows.Clear();
+            dgvAdd.ColumnCount = 0;
+            DataTable dt = cc.invidb.selectByInvId(biId);
+            dgvAdd.ColumnCount = 4;
+            dgvAdd.Columns[colAddRow].HeaderText = "ลำดับ";
+            dgvAdd.Columns[colAddMOUNumber].HeaderText = "เลขที่ข้อตกลง";
+            dgvAdd.Columns[colAddAmount].HeaderText = "มูลค่าทั้งหมด";
+            dgvAdd.Columns[colAddMOUName].HeaderText = "รายการ";
+            dgvAdd.RowCount = 1;
+            dgvAdd.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvAdd.Columns[colAddRow].Width = 50;
+            dgvAdd.Columns[colAddMOUNumber].Width = 120;
+            dgvAdd.Columns[colAddAmount].Width = 120;
+            dgvAdd.Columns[colAddMOUName].Width = 200;
+            dgvAdd.RowCount = dt.Rows.Count;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dgvAdd[colAddRow, i].Value = (i + 1);
+                dgvAdd[colAddMOUName, i].Value = dt.Rows[i][cc.invidb.invi.MOUName].ToString();
+                dgvAdd[colAddMOUNumber, i].Value = dt.Rows[i][cc.invidb.invi.MOUNumber].ToString();
+                dgvAdd[colAddAmount, i].Value = String.Format("{0:#,###,###.00}", dt.Rows[i][cc.invidb.invi.Amount]);
+
+            }
+            Font font = new Font("Microsoft Sans Serif", 12);
+
+            dgvAdd.Font = font;
         }
         private void setGrdAdd()
         {
@@ -83,7 +155,7 @@ namespace Cemp.gui
         {
             DataTable dt;
 
-            dt = cc.modb.selectByNoBilling("");
+            dt = cc.modb.selectByNoBilling(cuId);
             
             dgvView.ColumnCount = colCnt;
             dgvView.Rows.Clear();
@@ -145,7 +217,7 @@ namespace Cemp.gui
             groupBox2.Left = this.Width - groupBox2.Width - btnSave.Width - 150;
             
             btnSave.Left = groupBox2.Left + groupBox2.Width + 20;
-            btnPrintMou.Left = btnSave.Left;
+            btnPrintInv.Left = btnSave.Left;
             if (biNew)
             {
                 dgvAdd.Left = dgvView.Width + 20;
@@ -158,7 +230,8 @@ namespace Cemp.gui
             dgvAdd.Width = (this.Width - dgvAdd.Left-50);
             groupBox3.Left = dgvAdd.Left + dgvAdd.Width - groupBox3.Width;
             groupBox3.Top = groupBox2.Height+dgvAdd.Height + 20;
-            //groupBox1.Height = this.Height = 150;
+            groupBox1.Top = groupBox3.Top;
+            groupBox1.Left = groupBox3.Left - groupBox1.Width - 20;
         }
         private void getBill()
         {
@@ -166,8 +239,8 @@ namespace Cemp.gui
             bi.Active = "1";
             bi.Amount = txtAmount.Text;
             bi.AmountDiscount = txtDiscount.Text;
-            bi.BillDate = "";
-            bi.BillNumber = "";
+            bi.InvDate = "";
+            bi.InvNumber = "";
             bi.CustAddress = txtCustAddress.Text;
             bi.CustEmail = txtCustEmail.Text;
             bi.CustFax = txtCustFax.Text;
@@ -175,15 +248,15 @@ namespace Cemp.gui
             bi.CustName = cboCust.Text;
             bi.CustTel = txtCustTel.Text;
             bi.Discount = txtDiscount.Text;
-            bi.DiscountPer = "0";
+            bi.DiscountPer = txtDiscountPer.Text;
             bi.Id = "";
             bi.Nettotal = txtNetTotal.Text;
-            bi.Remark = "";
-            bi.StatusBill = "1";
+            bi.Remark = txtInvRemark.Text;
+            bi.StatusInv = "1";
             bi.Total = txtTotal.Text;
             bi.Vat = txtVat.Text;
             bi.VatRate = txtVatRate.Text;
-
+            bi.InvDate = cc.cf.datetoDB( dtpDateInv.Value);
         }
         private void calAmount()
         {
@@ -212,10 +285,6 @@ namespace Cemp.gui
             txtVat.Text = String.Format("{0:#,###,###.00}",(total * double.Parse(cc.cf.NumberNull1(txtVatRate.Text))/100));
             txtNetTotal.Text = String.Format("{0:#,###,###.00}",(total+double.Parse(cc.cf.NumberNull1(txtVat.Text))));
         }
-        private void FrmBillAdd_Load(object sender, EventArgs e)
-        {
-            
-        }
 
         private void cboCust_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -228,13 +297,13 @@ namespace Cemp.gui
                 txtCustEmail.Text = cu.Email;
                 txtCustFax.Text = cu.Fax;
                 txtCustTel.Text = cu.Tele;
-                cboContact.Text = cu.ContactName1;
+                //cboContact.Text = cu.ContactName1;
                 setGrdView(cu.Id);
                 dgvAdd.Rows.Clear();
             }
         }
 
-        private void FrmBillAdd_Resize(object sender, EventArgs e)
+        private void FrmInvoiceAdd_Resize(object sender, EventArgs e)
         {
             setResize();
         }
@@ -293,7 +362,8 @@ namespace Cemp.gui
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
             getBill();
-            biId = cc.bidb.insertBill(bi);
+            bi.InvNumber = cc.invdb.getInvMaxNumber();
+            biId = cc.invdb.insertBill(bi);
             if (biId.Length >= 1)
             {
                 for (int i = 0; i < dgvAdd.RowCount; i++)
@@ -302,12 +372,12 @@ namespace Cemp.gui
                     {
                         continue;
                     }
-                    BillItem bii = new BillItem();
+                    InvoiceItem bii = new InvoiceItem();
                     MOU mo = new MOU();
                     mo = cc.modb.selectByNumber1(dgvAdd[colMOUNumber, i].Value.ToString());
                     bii.Active = "1";
                     bii.Amount = dgvAdd[colNetTotal, i].Value.ToString();
-                    bii.BillId = biId;
+                    bii.InvId = biId;
                     bii.Id = "";
                     bii.MOUId = mo.Id;
                     bii.MOUNumber = dgvAdd[colMOUNumber, i].Value.ToString();
@@ -315,11 +385,95 @@ namespace Cemp.gui
                     bii.QuoNumber = mo.QuoNumber;
                     bii.Remark = "";
 
-                    cc.biidb.insertBillItem(bii);
+                    cc.invidb.insertBillItem(bii);
 
                 }
+                Invoice inv1 = cc.invdb.selectByPk(biId);
+                txtInvId.Text = biId;
+                txtInvNumber.Text = inv1.InvNumber;
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
             }
+            Cursor.Current = cursor;
+        }
+
+        private void FrmInvoiceAdd_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkActive_Click(object sender, EventArgs e)
+        {
+            if (chkActive.Checked)
+            {
+                btnUnActive.Visible = false;
+
+                cboCust.Enabled = true;
+                txtCustAddress.Enabled = true;
+                txtCustTel.Enabled = true;
+                txtCustFax.Enabled = true;
+                txtCustEmail.Enabled = true;
+                dgvView.Enabled = true;
+                dgvAdd.Enabled = true;
+                txtAmount.Enabled = true;
+                txtDiscount.Enabled = true;
+                txtDiscountPer.Enabled = true;
+                txtTotal.Enabled = true;
+                //chkActive.Checked = true;
+                //ChkUnActive.Checked = true;
+                txtVatRate.Enabled = true;
+                txtDiscountPer.Enabled = true;
+            }
+        }
+
+        private void ChkUnActive_Click(object sender, EventArgs e)
+        {
+            btnUnActive.Visible = true;
+            //chkActive.Checked = true;
+            //ChkUnActive.Checked = true;
+
+            //groupBox3.Enabled = false;
+            //groupBox2.Enabled = false;
+            //groupBox1.Enabled = false;
+            dgvView.Enabled = false;
+            dgvAdd.Enabled = false;
+            //chkActive.Enabled = true;
+            cboCust.Enabled = false;
+            txtCustAddress.Enabled = false;
+            txtCustTel.Enabled = false;
+            txtCustFax.Enabled = false;
+            txtCustEmail.Enabled = false;
+
+            txtAmount.Enabled = false;
+            txtDiscount.Enabled = false;
+            txtDiscountPer.Enabled = false;
+            txtTotal.Enabled = false;
+            txtVatRate.Enabled = false;
+            txtDiscountPer.Enabled = false;
+        }
+
+        private void btnPrintInv_Click(object sender, EventArgs e)
+        {
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
+            String sql = "";
+            //OleDbDataAdapter da = new OleDbDataAdapter();
+            DataTable dt = cc.moidb.selectByMoId(txtInvId.Text);
+            Invoice inv = cc.invdb.selectByPk(txtInvId.Text);
+            //inv.CustName = inv.ContactName;
+            //inv.CustAddress = "ที่อยู่ :   " + inv.CustAddress;
+            //inv.CustTel = "เบอร์โทร : " + inv.CustTel + " Mobile : " + inv.CustMobile;
+            //inv.CustEmail = " Email : " + inv.CustEmail;
+            //inv.Line1 = cc.cp.mouLine1;
+            //inv.QuoNumber = "เลขที่ : " + inv.MOUNumber + "-" + inv.MOUNumberCnt;
+            //inv.DatePeriod = "วันที่ :  " + inv.DatePeriod;
+            //inv.StaffQuoName = "ผู้เสนอราคา :  " + inv.StaffQuoName;
+            //inv.StaffMOUTel = "เบอร์โทร : " + inv.StaffMOUTel + " Mobile : " + inv.StaffMOUMobile;
+            //inv.StaffMOUEmail = "Email : " + inv.StaffMOUEmail;
+            //inv.MOUNumber = "เลขที่ : " + inv.MOUNumber + "-" + inv.MOUNumberCnt;
+
+            FrmReport frm = new FrmReport(cc);
+            frm.setReportInvoice(inv, dt);
+            frm.ShowDialog(this);
             Cursor.Current = cursor;
         }
     }

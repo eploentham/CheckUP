@@ -54,6 +54,7 @@ namespace Cemp.gui
             cboStaffMOU = cc.sfdb.getCboStaff(cboStaffMOU);
             //cboItem = cc.itdb.getCboItemQuotation(cboItem);
             txtStaffPlaceRecordPosition.Text = "เจ้าหน้าที่ผู้ทำการเก็บตัวอย่าง";
+            
             setControl("");
             if (!moNumber.Equals(""))
             {
@@ -66,23 +67,23 @@ namespace Cemp.gui
         private void HideMOU()
         {
             label16.Enabled = false;
-            label9.Enabled = false;
+            //label9.Enabled = false;
             btnMOUAdd.Enabled = false;
             cboMOU.Enabled = false;
-            txtMouNumber.Enabled = false;
-            label5.Enabled = false;
-            txtDatePeriod.Enabled = false;
+            //txtMouNumber.Enabled = false;
+            //label5.Enabled = false;
+            //txtDatePeriod.Enabled = false;
         }
         private void ShowMOU()
         {
             label16.Enabled = true;
-            label9.Enabled = true;
+            //label9.Enabled = true;
             btnMOUAdd.Enabled = true;
             cboMOU.Enabled = true;
-            label5.Enabled = true;
-            txtDatePeriod.Enabled = true;
+            //label5.Enabled = true;
+            //txtDatePeriod.Enabled = true;
 
-            txtMouNumber.Enabled = true;
+            //txtMouNumber.Enabled = true;
             label1.Enabled = false;
             cboQuo.Enabled = false;
             label2.Enabled = false;
@@ -107,7 +108,7 @@ namespace Cemp.gui
             }
             if (moNumber.Equals(""))
             {
-                txtMouNumber.Text = "-";
+                //txtMouNumber.Text = "-";
                 return;
             }
             if (moNumber.IndexOf("-")<=0)
@@ -119,7 +120,7 @@ namespace Cemp.gui
             //cboMOU = cc.modb.getCboMOUNumber(cboMOU, mo.MOUNumber);
 
             //cboContact = cc.cudb.getCboCustomer(cboContact);
-
+            dtpDateMOU.Format = DateTimePickerFormat.Short;
             txtContactName.Text = mo.ContactName;
             txtCustAddress.Text = mo.CustAddress;
             txtCustEmail.Text = mo.CustEmail;
@@ -132,11 +133,11 @@ namespace Cemp.gui
             CustMou.Text = "";
 
             txtMOUId.Text = mo.Id;
-            txtMouNumber.Text = mo.MOUNumber+"-"+mo.MOUNumberCnt;
+            //txtMouNumber.Text = mo.MOUNumber+"-"+mo.MOUNumberCnt;
             txtStaffMOUEmail.Text = mo.StaffMOUEmail;
             txtStaffMOUMobile.Text = mo.StaffMOUMobile;
             txtStaffMOUTel.Text = mo.StaffMOUTel;
-            txtDatePeriod.Text = mo.DatePeriod;
+            //txtDatePeriod.Text = mo.DatePeriod;
             if (!mo.StaffPlaceRecordPosition.Equals(""))
             {
                 txtStaffPlaceRecordPosition.Text = mo.StaffPlaceRecordPosition;
@@ -145,7 +146,7 @@ namespace Cemp.gui
             cboStaffMOU.Text = mo.StaffQuoName;
             cboStaffPlaceRecord.Text = mo.StaffPlaceRecordName;
             CustMou.Text = mo.CustMou;
-
+            txtMOUName.Text = mo.MOUName;
             setGrd(moNumber);
             pageLoad = false;
         }
@@ -164,8 +165,8 @@ namespace Cemp.gui
             //it.ItemGroupId = cc.getValueCboItem(cboGroup);
 
             mo.Id = txtMOUId.Text;
-            mo.MOUNumber = txtMouNumber.Text;
-            mo.DatePeriod = txtDatePeriod.Text;
+            mo.MOUNumber = cboMOU.Text;
+            //mo.DatePeriod = txtDatePeriod.Text;
             mo.StaffMOUName = cboStaffMOU.Text;
             mo.StaffMOUId = cc.getValueCboItem(cboStaffPlaceRecord);
             mo.StaffMOUEmail = txtStaffMOUEmail.Text;
@@ -176,7 +177,7 @@ namespace Cemp.gui
             mo.StaffPlaceRecordId = cc.getValueCboItem(cboStaffPlaceRecord);
             mo.StaffPlaceRecordName = cboStaffPlaceRecord.Text;
             mo.StaffPlaceRecordPosition = txtStaffPlaceRecordPosition.Text;
-
+            mo.MOUDate = cc.cf.datetoDB(dtpDateMOU.Value);
             mo.CustMou = CustMou.Text;
             mo.Active = "1";
 
@@ -189,6 +190,7 @@ namespace Cemp.gui
             //mo.DatePeriod = txtDatePeriod.Text;
             mo.userCreate = cc.sf.Id;
             mo.userModi = cc.sf.Id;
+            mo.MOUName = txtMOUName.Text;
         }
         private void setGrd()
         {
@@ -306,7 +308,7 @@ namespace Cemp.gui
         {
             MOUSplit = true;
             txtCustName.ReadOnly = true;
-            txtMouNumber.ReadOnly = true;
+            //txtMouNumber.ReadOnly = true;
             cboMOU.Enabled = false;
             cboQuo.Enabled = false;
 
@@ -315,7 +317,7 @@ namespace Cemp.gui
         {
             MOUSplit = false;
             txtCustName.ReadOnly = false;
-            txtMouNumber.ReadOnly = false;
+            //txtMouNumber.ReadOnly = false;
             cboMOU.Enabled = true;
             cboQuo.Enabled = true;
         }
@@ -540,7 +542,7 @@ namespace Cemp.gui
         {
             String moId = "", datePlaceRecordTemp="";
             int rowOld = 0, row = 0;
-            if (txtMouNumber.Text.Equals(""))
+            if (cboMOU.Text.Equals("") && !mouNew)
             {
                 MessageBox.Show("ไม่มีเลขที่ MOU", "ป้อนข้อมูลไม่ครบ");
                 return;
@@ -673,8 +675,9 @@ namespace Cemp.gui
                     }
                 }
                 MOU mo1 = cc.modb.selectByPk(moId);
-                txtMouNumber.Text = mo1.MOUNumber + "-" + mo1.MOUNumberCnt;
-
+                //txtMouNumber.Text = mo1.MOUNumber + "-" + mo1.MOUNumberCnt;
+                cboMOU = cc.moidb.getCboMOUNumber(cboMOU, mo1.MOUNumber);
+                cboMOU.Text = mo1.MOUNumber + "-" + mo1.MOUNumberCnt;
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 btnPrintMou.Visible = true;
                 UnLockSplit();

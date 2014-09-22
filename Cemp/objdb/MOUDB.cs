@@ -67,6 +67,7 @@ namespace Cemp.objdb
             mo.StatusReceiveSample = "status_receive_sample";
             mo.StatusBill = "status_bill";
             mo.MOUDate = "mou_date";
+            mo.MOUName = "mou_name";
 
             mo.pkField = "mou_id";
             mo.table = "t_mou";
@@ -120,6 +121,7 @@ namespace Cemp.objdb
             item.StatusReceiveSample = dt.Rows[0][mo.StatusReceiveSample].ToString();
             item.StatusBill = dt.Rows[0][mo.StatusBill].ToString();
             item.MOUDate = dt.Rows[0][mo.MOUDate].ToString();
+            item.MOUName = dt.Rows[0][mo.MOUName].ToString();
             
             return item;
         }
@@ -282,6 +284,7 @@ namespace Cemp.objdb
             p.StaffAnalysisName = p.StaffAnalysisName.Replace("''", "'");
             p.StaffPlaceRecordName = p.StaffPlaceRecordName.Replace("''", "'");
             p.StaffPlaceRecordPosition = p.StaffPlaceRecordPosition.Replace("''", "'");
+            p.MOUName = p.MOUName.Replace("''", "'");
 
             p.userCreate = p.StaffQuoId;
             p.dateCreate = p.dateGenDB;
@@ -301,7 +304,7 @@ namespace Cemp.objdb
                 mo.dateCreate + "," + mo.dateModi + "," + mo.userCancel + "," +
                 mo.userCreate + "," + mo.userModi + "," + mo.StaffPlaceRecordId + "," +
                 mo.StaffPlaceRecordName + "," + mo.StaffAnalysisId + "," + mo.StaffAnalysisName + "," +
-                mo.StaffPlaceRecordPosition + "," + mo.StatusReceiveSample + "," + mo.StatusBill + ") " +
+                mo.StaffPlaceRecordPosition + "," + mo.StatusReceiveSample + "," + mo.StatusBill + "," + mo.MOUName + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.CompAddress1 + "','" +
                 p.CompAddress2 + "','" + p.CompId + "','" + p.CompName + "','" +
                 p.CompTaxId + "','" + p.ContactName + "','" + p.CustAddress + "','" +
@@ -316,7 +319,7 @@ namespace Cemp.objdb
                 p.dateCreate + ",'" + p.dateModi + "','" + p.userCancel + "','" +
                 p.userCreate + "','" + p.userModi + "','" + p.StaffPlaceRecordId + "','" +
                 p.StaffPlaceRecordName + "','" + p.StaffAnalysisId + "','" + p.StaffAnalysisName + "','" +
-                p.StaffPlaceRecordPosition + "','" + p.StatusReceiveSample + "','" + p.StatusBill + "')";
+                p.StaffPlaceRecordPosition + "','" + p.StatusReceiveSample + "','" + p.StatusBill + "','" + p.MOUName + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -346,6 +349,7 @@ namespace Cemp.objdb
             p.Remark = p.Remark.Replace("''", "'");
             p.StaffPlaceRecordPosition = p.StaffPlaceRecordPosition.Replace("''", "'");
             p.StaffPlaceRecordName = p.StaffPlaceRecordName.Replace("''", "'");
+            p.MOUName = p.MOUName.Replace("''", "'");
 
             //p.dateModi = p.dateGenDB;
             sql = "Update " + mo.table + " Set " + mo.CompAddress1 + "='" + p.CompAddress1 + "', " +
@@ -381,7 +385,8 @@ namespace Cemp.objdb
                 mo.dateModi + "=" + p.dateGenDB + ", " +
                 mo.StaffPlaceRecordPosition + "='" + p.StaffPlaceRecordPosition + "', " +
                 mo.StaffPlaceRecordName + "='" + p.StaffPlaceRecordName + "', " +
-                mo.StaffPlaceRecordId + "='" + p.StaffPlaceRecordId + "' " +
+                mo.StaffPlaceRecordId + "='" + p.StaffPlaceRecordId + "', " +
+                mo.MOUName + "='" + p.MOUName + "' " +
                 "Where " + mo.pkField + "='" + p.Id + "'";
             try
             {

@@ -118,7 +118,7 @@ namespace Cemp
             }
             else if (e.Node.Name.ToString() == "nBillView")
             {
-                FrmBillView frm = new FrmBillView(cc);
+                FrmInvoiceView frm = new FrmInvoiceView(cc);
                 showFrame(frm);
             }
             else if (e.Node.Name.ToString() == "nCompany")

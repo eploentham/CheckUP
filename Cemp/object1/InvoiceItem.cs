@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Cemp.object1
 {
-    public class BillItem:Persistent
+    public class InvoiceItem:Persistent
     {
-        public String Id = "", BillId = "", MOUId = "", MOUNumber = "", QuoId = "", QuoNumber = "", Active = "", Remark = "", Amount = "";
+        public String Id = "", InvId = "", MOUId = "", MOUNumber = "", QuoId = "", QuoNumber = "", Active = "", Remark = "", Amount = "", MOUName="";
         public override string ToString()
         {
             return Id;

@@ -1,6 +1,6 @@
 ﻿namespace Cemp.gui
 {
-    partial class FrmBillView
+    partial class FrmInvoiceView
     {
         /// <summary>
         /// Required designer variable.
@@ -58,6 +58,7 @@
             this.chkMOU.TabStop = true;
             this.chkMOU.Text = "MOU ที่พร้อมทำBill";
             this.chkMOU.UseVisualStyleBackColor = true;
+            this.chkMOU.Click += new System.EventHandler(this.chkMOU_Click);
             // 
             // chkBillStatus2
             // 
@@ -69,6 +70,7 @@
             this.chkBillStatus2.TabStop = true;
             this.chkBillStatus2.Text = "วางบิลแล้ว แต่ยังไม่ถึงกำหนดรับCheque";
             this.chkBillStatus2.UseVisualStyleBackColor = true;
+            this.chkBillStatus2.Click += new System.EventHandler(this.chkBillStatus2_Click);
             // 
             // chkOverDue
             // 
@@ -80,6 +82,7 @@
             this.chkOverDue.TabStop = true;
             this.chkOverDue.Text = "ค้างชำระ";
             this.chkOverDue.UseVisualStyleBackColor = true;
+            this.chkOverDue.Click += new System.EventHandler(this.chkOverDue_Click);
             // 
             // btnAdd
             // 
@@ -92,7 +95,7 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // FrmBillView
+            // FrmInvoiceView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -102,11 +105,11 @@
             this.Controls.Add(this.chkMOU);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvView);
-            this.Name = "FrmBillView";
+            this.Name = "FrmInvoiceView";
             this.Text = "FrmBillView";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmBillView_Load);
-            this.Resize += new System.EventHandler(this.FrmBillView_Resize);
+            this.Load += new System.EventHandler(this.FrmInvoiceView_Load);
+            this.Resize += new System.EventHandler(this.FrmInvoiceView_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

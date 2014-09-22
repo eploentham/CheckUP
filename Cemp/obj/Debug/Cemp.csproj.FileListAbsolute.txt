@@ -74,5 +74,5 @@ C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmItemSearch.resources
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmMOUAdd1.resources
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmBillAdd.resources
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmBillView.resources
-D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmBillAdd.resources
-D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmBillView.resources
+D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmInvoiceAdd.resources
+D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmInvoiceView.resources

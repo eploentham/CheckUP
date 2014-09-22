@@ -15,5 +15,10 @@ namespace Cemp.gui
         {
             InitializeComponent();
         }
+
+        private void FrmResultAdd_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

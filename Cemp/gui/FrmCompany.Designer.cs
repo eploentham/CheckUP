@@ -93,10 +93,15 @@
             this.txtMOULine2 = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.txtMOULine1 = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txtInvDuePeriod = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -757,11 +762,52 @@
             this.txtMOULine1.Size = new System.Drawing.Size(419, 20);
             this.txtMOULine1.TabIndex = 33;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label27);
+            this.groupBox3.Controls.Add(this.label26);
+            this.groupBox3.Controls.Add(this.txtInvDuePeriod);
+            this.groupBox3.Location = new System.Drawing.Point(622, 337);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(526, 100);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "groupBox3";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(16, 26);
+            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(108, 13);
+            this.label26.TabIndex = 36;
+            this.label26.Text = "เงื่อนไขการชำระเงิน :";
+            // 
+            // txtInvDuePeriod
+            // 
+            this.txtInvDuePeriod.Location = new System.Drawing.Point(151, 23);
+            this.txtInvDuePeriod.Margin = new System.Windows.Forms.Padding(2);
+            this.txtInvDuePeriod.Name = "txtInvDuePeriod";
+            this.txtInvDuePeriod.Size = new System.Drawing.Size(57, 20);
+            this.txtInvDuePeriod.TabIndex = 35;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(221, 26);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(21, 13);
+            this.label27.TabIndex = 37;
+            this.label27.Text = "วัน";
+            // 
             // FrmCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 544);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
@@ -777,6 +823,8 @@
             this.groupBox4.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -848,5 +896,9 @@
         private System.Windows.Forms.TextBox txtMOULine2;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox txtMOULine1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox txtInvDuePeriod;
     }
 }

@@ -5,14 +5,14 @@ using System.Text;
 
 namespace Cemp.object1
 {
-    public class Bill:Persistent
+    public class Invoice:Persistent
     {
-        public String Id = "", BillNumber = "", Active = "", Remark = "", BillDate = "", CustId = "", CustName = "", CustAddress = "", CustTel = "", CustFax = "", CustEmail = "";
+        public String Id = "", InvNumber = "", Active = "", Remark = "", InvDate = "", CustId = "", CustName = "", CustAddress = "", CustTel = "", CustFax = "", CustEmail = "";
         public String Amount = "", DiscountPer = "", Discount = "", AmountDiscount = "", Total = "", VatRate = "", Vat = "", Nettotal = "", dateCreate = "", dateModi = "", dateCancel = "", userCreate = "", userModi = "", userCancel = "";
-        public String StatusBill = "";
+        public String StatusInv = "", InvDuePeriod = "", CustRemark2 = "";
         public override string ToString()
         {
-            return BillNumber;
+            return InvNumber;
         }
     }
 }

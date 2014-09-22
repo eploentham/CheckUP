@@ -59,6 +59,7 @@ namespace Cemp.objdb
             cp.mouLine2 = "mou_line2";
             cp.mouLine3 = "mou_line3";
             cp.mouLine4 = "mou_line4";
+            cp.InvDuePeriod = "invoice_due_period";
 
             cp.pkField = "comp_id";
             cp.table = "b_company";
@@ -103,6 +104,7 @@ namespace Cemp.objdb
             item.mouLine2 = dt.Rows[0][cp.mouLine2].ToString();
             item.mouLine3 = dt.Rows[0][cp.mouLine3].ToString();
             item.mouLine4 = dt.Rows[0][cp.mouLine4].ToString();
+            item.InvDuePeriod = dt.Rows[0][cp.InvDuePeriod].ToString();
 
             return item;
         }
@@ -147,13 +149,13 @@ namespace Cemp.objdb
                 cp.Fax + "," + cp.NameE + "," + cp.NameT + "," +
                 cp.provinceId + "," + cp.TaxId + "," + cp.Tele + "," +
                 cp.vat + "," + cp.Zipcode + "," + cp.WebSite + "," +
-                cp.logo + "," + cp.Addr + "," + cp.Code + "," + cp.Spec1 + ") " +
+                cp.logo + "," + cp.Addr + "," + cp.Code + "," + cp.Spec1 + "," + cp.InvDuePeriod + ") " +
                 "Values('" + p.Id + "','" + p.AddressE + "','" + p.AddressT + "','" +
                 p.amphurId + "','" + p.districtId + "','" + p.Email + "','" +
                 p.Fax + "','" + p.NameE + "','" + p.NameT + "','" +
                 p.provinceId + "','" + p.TaxId + "','" + p.Tele + "','" +
                 p.vat + "','" + p.Zipcode + "','" + p.WebSite + "','" +
-                p.logo + "','" + p.Addr + "','" + p.Code + "','" + p.Spec1 + "')";
+                p.logo + "','" + p.Addr + "','" + p.Code + "','" + p.Spec1 + "','" + p.InvDuePeriod + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -161,7 +163,7 @@ namespace Cemp.objdb
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex.ToString(), "insert Sale");
+                MessageBox.Show("Error " + ex.ToString(), "insert Company");
             }
             finally
             {
@@ -214,8 +216,8 @@ namespace Cemp.objdb
                 cp.mouLine1 + "='" + p.mouLine1 + "', " +
                 cp.mouLine2 + "='" + p.mouLine2 + "', " +
                 cp.mouLine3 + "='" + p.mouLine3 + "', " +
-                cp.mouLine4 + "='" + p.mouLine4 + "' " +
-                
+                cp.mouLine4 + "='" + p.mouLine4 + "', " +
+                cp.InvDuePeriod + "='" + p.InvDuePeriod + "' " +
                 "Where " + cp.pkField + "='" + p.Id + "'";
             try
             {
@@ -223,7 +225,7 @@ namespace Cemp.objdb
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex.ToString(), "update Sale");
+                MessageBox.Show("Error " + ex.ToString(), "update Company");
             }
             finally
             {

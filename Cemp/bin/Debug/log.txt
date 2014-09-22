@@ -908,3 +908,18 @@ Log Entry : 12:07:15 17 กันยายน 2557
 20/9/2557 15:17->FrmQuotationAdd initConfig End
 20/9/2557 15:19->FrmQuotationAdd initConfig End 20/9/2557 20/9/2557
 20/9/2557 15:20->FrmQuotationAdd initConfig End 20/9/2557 15:20 20/9/2557 15:20
+22/9/2557 19:38->rpt.setReportMOU OK 
+22/9/2557 19:38->rpt.setReportInvoice OK SetDataSource
+22/9/2557 19:39->rpt.setReportMOU OK 
+22/9/2557 19:39->rpt.setReportInvoice OK SetDataSource
+22/9/2557 19:39->rpt.setReportInvoice Error ดัชนีไม่ถูกต้อง (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+22/9/2557 19:40->rpt.setReportMOU OK 
+22/9/2557 19:40->rpt.setReportInvoice OK SetDataSource
+22/9/2557 19:41->rpt.setReportMOU OK 
+22/9/2557 19:41->rpt.setReportInvoice OK SetDataSource
+22/9/2557 19:42->rpt.setReportMOU OK 
+22/9/2557 19:42->rpt.setReportInvoice OK SetDataSource
+22/9/2557 20:06->rpt.setReportMOU OK 
+22/9/2557 20:06->rpt.setReportInvoice OK SetDataSource
+22/9/2557 20:07->rpt.setReportMOU OK 
+22/9/2557 20:07->rpt.setReportInvoice OK SetDataSource

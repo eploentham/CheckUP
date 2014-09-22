@@ -34,6 +34,7 @@
             this.cboQuo = new System.Windows.Forms.ComboBox();
             this.txtCustEmail = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.txtCustMobile = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCustTel = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -55,11 +56,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtStaffMOUTel = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtMouNumber = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtDatePeriod = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnReceive = new System.Windows.Forms.Button();
             this.btnPrintMou = new System.Windows.Forms.Button();
             this.dgvAdd = new System.Windows.Forms.DataGridView();
@@ -78,7 +75,10 @@
             this.txtRow = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.btnDel = new System.Windows.Forms.Button();
-            this.txtCustMobile = new System.Windows.Forms.TextBox();
+            this.dtpDateMOU = new System.Windows.Forms.DateTimePicker();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtMOUName = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
@@ -101,7 +101,7 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(502, 11);
+            this.groupBox2.Location = new System.Drawing.Point(552, 11);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
@@ -159,6 +159,15 @@
             this.label10.Size = new System.Drawing.Size(50, 17);
             this.label10.TabIndex = 36;
             this.label10.Text = "Email :";
+            // 
+            // txtCustMobile
+            // 
+            this.txtCustMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCustMobile.Location = new System.Drawing.Point(351, 137);
+            this.txtCustMobile.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCustMobile.Name = "txtCustMobile";
+            this.txtCustMobile.Size = new System.Drawing.Size(199, 23);
+            this.txtCustMobile.TabIndex = 35;
             // 
             // label4
             // 
@@ -266,16 +275,12 @@
             this.groupBox21.Controls.Add(this.label12);
             this.groupBox21.Controls.Add(this.txtStaffMOUTel);
             this.groupBox21.Controls.Add(this.label13);
-            this.groupBox21.Controls.Add(this.txtMouNumber);
-            this.groupBox21.Controls.Add(this.label9);
             this.groupBox21.Controls.Add(this.label6);
-            this.groupBox21.Controls.Add(this.txtDatePeriod);
-            this.groupBox21.Controls.Add(this.label5);
             this.groupBox21.Location = new System.Drawing.Point(11, 11);
             this.groupBox21.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox21.Name = "groupBox21";
             this.groupBox21.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox21.Size = new System.Drawing.Size(476, 220);
+            this.groupBox21.Size = new System.Drawing.Size(537, 160);
             this.groupBox21.TabIndex = 2;
             this.groupBox21.TabStop = false;
             this.groupBox21.Text = "บริษัท";
@@ -317,7 +322,7 @@
             // 
             this.cboStaffMOU.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.cboStaffMOU.FormattingEnabled = true;
-            this.cboStaffMOU.Location = new System.Drawing.Point(150, 106);
+            this.cboStaffMOU.Location = new System.Drawing.Point(150, 43);
             this.cboStaffMOU.Margin = new System.Windows.Forms.Padding(2);
             this.cboStaffMOU.Name = "cboStaffMOU";
             this.cboStaffMOU.Size = new System.Drawing.Size(298, 25);
@@ -326,7 +331,7 @@
             // txtMOUId
             // 
             this.txtMOUId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtMOUId.Location = new System.Drawing.Point(88, 190);
+            this.txtMOUId.Location = new System.Drawing.Point(88, 127);
             this.txtMOUId.Margin = new System.Windows.Forms.Padding(2);
             this.txtMOUId.Name = "txtMOUId";
             this.txtMOUId.Size = new System.Drawing.Size(38, 23);
@@ -336,7 +341,7 @@
             // txtStaffMOUEmail
             // 
             this.txtStaffMOUEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtStaffMOUEmail.Location = new System.Drawing.Point(150, 190);
+            this.txtStaffMOUEmail.Location = new System.Drawing.Point(150, 127);
             this.txtStaffMOUEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtStaffMOUEmail.Name = "txtStaffMOUEmail";
             this.txtStaffMOUEmail.Size = new System.Drawing.Size(298, 23);
@@ -346,7 +351,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label11.Location = new System.Drawing.Point(4, 193);
+            this.label11.Location = new System.Drawing.Point(4, 130);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(50, 17);
@@ -356,17 +361,17 @@
             // txtStaffMOUMobile
             // 
             this.txtStaffMOUMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtStaffMOUMobile.Location = new System.Drawing.Point(150, 163);
+            this.txtStaffMOUMobile.Location = new System.Drawing.Point(150, 100);
             this.txtStaffMOUMobile.Margin = new System.Windows.Forms.Padding(2);
             this.txtStaffMOUMobile.Name = "txtStaffMOUMobile";
-            this.txtStaffMOUMobile.Size = new System.Drawing.Size(298, 23);
+            this.txtStaffMOUMobile.Size = new System.Drawing.Size(229, 23);
             this.txtStaffMOUMobile.TabIndex = 47;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label12.Location = new System.Drawing.Point(4, 166);
+            this.label12.Location = new System.Drawing.Point(4, 103);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(46, 17);
@@ -376,77 +381,37 @@
             // txtStaffMOUTel
             // 
             this.txtStaffMOUTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtStaffMOUTel.Location = new System.Drawing.Point(150, 137);
+            this.txtStaffMOUTel.Location = new System.Drawing.Point(150, 74);
             this.txtStaffMOUTel.Margin = new System.Windows.Forms.Padding(2);
             this.txtStaffMOUTel.Name = "txtStaffMOUTel";
-            this.txtStaffMOUTel.Size = new System.Drawing.Size(298, 23);
+            this.txtStaffMOUTel.Size = new System.Drawing.Size(229, 23);
             this.txtStaffMOUTel.TabIndex = 45;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label13.Location = new System.Drawing.Point(4, 139);
+            this.label13.Location = new System.Drawing.Point(4, 76);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(37, 17);
             this.label13.TabIndex = 44;
             this.label13.Text = "โทร :";
             // 
-            // txtMouNumber
-            // 
-            this.txtMouNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtMouNumber.Location = new System.Drawing.Point(150, 43);
-            this.txtMouNumber.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMouNumber.Name = "txtMouNumber";
-            this.txtMouNumber.Size = new System.Drawing.Size(134, 23);
-            this.txtMouNumber.TabIndex = 43;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label9.Location = new System.Drawing.Point(4, 46);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(43, 17);
-            this.label9.TabIndex = 42;
-            this.label9.Text = "เลขที่ :";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label6.Location = new System.Drawing.Point(4, 112);
+            this.label6.Location = new System.Drawing.Point(4, 49);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(122, 17);
             this.label6.TabIndex = 40;
             this.label6.Text = "ผู้รับผิดชอบข้อตกลง :";
             // 
-            // txtDatePeriod
-            // 
-            this.txtDatePeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtDatePeriod.Location = new System.Drawing.Point(150, 78);
-            this.txtDatePeriod.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDatePeriod.Name = "txtDatePeriod";
-            this.txtDatePeriod.Size = new System.Drawing.Size(278, 23);
-            this.txtDatePeriod.TabIndex = 39;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label5.Location = new System.Drawing.Point(4, 80);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(142, 17);
-            this.label5.TabIndex = 38;
-            this.label5.Text = "เก็บตัวอย่างระหว่างวันที่ :";
-            // 
             // btnReceive
             // 
-            this.btnReceive.Location = new System.Drawing.Point(1061, 167);
+            this.btnReceive.Location = new System.Drawing.Point(1111, 167);
             this.btnReceive.Margin = new System.Windows.Forms.Padding(2);
             this.btnReceive.Name = "btnReceive";
             this.btnReceive.Size = new System.Drawing.Size(81, 39);
@@ -457,7 +422,7 @@
             // 
             // btnPrintMou
             // 
-            this.btnPrintMou.Location = new System.Drawing.Point(1061, 103);
+            this.btnPrintMou.Location = new System.Drawing.Point(1111, 103);
             this.btnPrintMou.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrintMou.Name = "btnPrintMou";
             this.btnPrintMou.Size = new System.Drawing.Size(81, 39);
@@ -513,7 +478,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(1061, 28);
+            this.btnSave.Location = new System.Drawing.Point(1111, 28);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(81, 39);
@@ -635,20 +600,55 @@
             this.btnDel.UseVisualStyleBackColor = true;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
-            // txtCustMobile
+            // dtpDateMOU
             // 
-            this.txtCustMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCustMobile.Location = new System.Drawing.Point(351, 137);
-            this.txtCustMobile.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCustMobile.Name = "txtCustMobile";
-            this.txtCustMobile.Size = new System.Drawing.Size(199, 23);
-            this.txtCustMobile.TabIndex = 35;
+            this.dtpDateMOU.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dtpDateMOU.Location = new System.Drawing.Point(161, 176);
+            this.dtpDateMOU.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpDateMOU.Name = "dtpDateMOU";
+            this.dtpDateMOU.Size = new System.Drawing.Size(106, 23);
+            this.dtpDateMOU.TabIndex = 62;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label27.Location = new System.Drawing.Point(11, 179);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(117, 17);
+            this.label27.TabIndex = 61;
+            this.label27.Text = "วันที่ในใบ invoice :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label5.Location = new System.Drawing.Point(11, 206);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(134, 17);
+            this.label5.TabIndex = 63;
+            this.label5.Text = "รายการในใบ invoice :";
+            // 
+            // txtMOUName
+            // 
+            this.txtMOUName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtMOUName.Location = new System.Drawing.Point(161, 203);
+            this.txtMOUName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMOUName.Name = "txtMOUName";
+            this.txtMOUName.Size = new System.Drawing.Size(387, 23);
+            this.txtMOUName.TabIndex = 64;
             // 
             // FrmMOUAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1267, 741);
+            this.Controls.Add(this.txtMOUName);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.dtpDateMOU);
+            this.Controls.Add(this.label27);
             this.Controls.Add(this.txtStaffPlaceRecordPosition);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.CustMou);
@@ -701,11 +701,7 @@
         private System.Windows.Forms.TextBox txtCustEmail;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox21;
-        private System.Windows.Forms.TextBox txtMouNumber;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtDatePeriod;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtStaffMOUEmail;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtStaffMOUMobile;
@@ -739,5 +735,9 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.TextBox txtCustMobile;
+        private System.Windows.Forms.DateTimePicker dtpDateMOU;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtMOUName;
     }
 }

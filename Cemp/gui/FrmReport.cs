@@ -124,6 +124,53 @@ namespace Cemp
                 chk = ex.Message.ToString();
             }
         }
+        public void setReportInvoice(Invoice inv, DataTable dt)
+        {
+            String chk = "";
+            ReportDocument rpt = new ReportDocument();
+            try
+            {
+                cc.lw.WriteLog("rpt.setReportMOU OK ");
+                rpt.Load(cc.initC.PathReport + "\\InvoicePrint.rpt");
+                rpt.SetDataSource(dt);
+                cc.lw.WriteLog("rpt.setReportInvoice OK SetDataSource");
+
+                //rpt.SetParameterValue("compName", inv.CompName);
+                //rpt.SetParameterValue("compAddress1", inv.CompAddress1);
+                //rpt.SetParameterValue("compAddress2", inv.CompAddress2);
+                rpt.SetParameterValue("taxid", cc.cp.TaxId);
+
+                rpt.SetParameterValue("custname", inv.CustName);
+                rpt.SetParameterValue("custaddress1", inv.CustAddress);
+                rpt.SetParameterValue("custaddress2", inv.CustTel);
+                rpt.SetParameterValue("invdate", cc.cf.dateDBtoShow1(inv.InvDate));
+                rpt.SetParameterValue("discount", inv.Discount);
+
+                rpt.SetParameterValue("invnumber", inv.InvNumber);
+                rpt.SetParameterValue("dueperiod", inv.InvDuePeriod);
+                rpt.SetParameterValue("datedueperiod", inv.InvDuePeriod);
+                //rpt.SetParameterValue("duedate", "");
+                rpt.SetParameterValue("amount", inv.Amount);
+                rpt.SetParameterValue("total", inv.Total);
+
+                rpt.SetParameterValue("vatrate", inv.VatRate);
+
+                rpt.SetParameterValue("nettotal", inv.Nettotal);
+                //rpt.SetParameterValue("contactName", qu.ContactName);
+
+                //rpt.SetParameterValue("line2", inv.StaffPlaceRecordPosition);
+                //rpt.SetParameterValue("staffplacerecordname", inv.StaffPlaceRecordName);
+                //rpt.SetParameterValue("line3", "ลูกค้า/ผู้ประสานงาน/ผู้รัลผิดชอบการตรวจ");
+
+                this.crystalReportViewer1.ReportSource = rpt;
+                this.crystalReportViewer1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                chk = ex.Message.ToString();
+                cc.lw.WriteLog("rpt.setReportInvoice Error " + chk);
+            }
+        }
         public void setReportMOUSamplePrint(MOU mo, DataTable dt)
         {
             String chk = "";

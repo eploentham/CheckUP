@@ -8,43 +8,45 @@ using System.Windows.Forms;
 
 namespace Cemp.objdb
 {
-    public class BillItemDB
+    public class InvoiceItemDB
     {
         ConnectDB conn;
-        public BillItem bii;
-        public BillItemDB(ConnectDB c)
+        public InvoiceItem invi;
+        public InvoiceItemDB(ConnectDB c)
         {
             conn = c;
             initConfig();
         }
         private void initConfig()
         {
-            bii = new BillItem();
-            bii.Active = "bill_item_active";
-            bii.Amount = "amount";
-            bii.BillId = "bill_id";
-            bii.Id = "bill_item_id";
-            bii.MOUId = "mou_id";
-            bii.MOUNumber = "mou_number";
-            bii.QuoId = "quo_id";
-            bii.QuoNumber = "quo_number";
-            bii.Remark = "remark";
+            invi = new InvoiceItem();
+            invi.Active = "inv_item_active";
+            invi.Amount = "amount";
+            invi.InvId = "inv_id";
+            invi.Id = "inv_item_id";
+            invi.MOUId = "mou_id";
+            invi.MOUNumber = "mou_number";
+            invi.QuoId = "quo_id";
+            invi.QuoNumber = "quo_number";
+            invi.Remark = "remark";
+            invi.MOUName = "mou_name";
 
-            bii.pkField = "bill_item_id";
-            bii.table = "t_bill_item";
+            invi.pkField = "inv_item_id";
+            invi.table = "t_invoice_item";
         }
-        private BillItem setData(BillItem item, DataTable dt)
+        private InvoiceItem setData(InvoiceItem item, DataTable dt)
         {
-            item.Id = dt.Rows[0][bii.Id].ToString();
-            item.Active = dt.Rows[0][bii.Active].ToString();
-            item.Amount = dt.Rows[0][bii.Amount].ToString();
-            item.BillId = dt.Rows[0][bii.BillId].ToString();
-            item.MOUId = dt.Rows[0][bii.MOUId].ToString();
-            item.MOUNumber = dt.Rows[0][bii.MOUNumber].ToString();
-            item.QuoId = dt.Rows[0][bii.QuoId].ToString();
+            item.Id = dt.Rows[0][invi.Id].ToString();
+            item.Active = dt.Rows[0][invi.Active].ToString();
+            item.Amount = dt.Rows[0][invi.Amount].ToString();
+            item.InvId = dt.Rows[0][invi.InvId].ToString();
+            item.MOUId = dt.Rows[0][invi.MOUId].ToString();
+            item.MOUNumber = dt.Rows[0][invi.MOUNumber].ToString();
+            item.QuoId = dt.Rows[0][invi.QuoId].ToString();
 
-            item.QuoNumber = dt.Rows[0][bii.QuoNumber].ToString();
-            item.Remark = dt.Rows[0][bii.Remark].ToString();
+            item.QuoNumber = dt.Rows[0][invi.QuoNumber].ToString();
+            item.Remark = dt.Rows[0][invi.Remark].ToString();
+            item.MOUName = dt.Rows[0][invi.MOUName].ToString();
 
             return item;
         }
@@ -52,26 +54,26 @@ namespace Cemp.objdb
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + bii.table + " Where " + bii.Active + "='1'";
+            sql = "Select * From " + invi.table + " Where " + invi.Active + "='1'";
             dt = conn.selectData(sql);
 
             return dt;
         }
-        public DataTable selectByBillId(String biId)
+        public DataTable selectByInvId(String biId)
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + bii.table + " Where " + bii.BillId + "='" + biId + "' Where "+bii.Active+"='1'";
+            sql = "Select * From " + invi.table + " Where " + invi.InvId + "='" + biId + "' and "+invi.Active+"='1'";
             dt = conn.selectData(sql);
 
             return dt;
         }
-        public BillItem selectByPk(String biId)
+        public InvoiceItem selectByPk(String biId)
         {
-            BillItem item = new BillItem();
+            InvoiceItem item = new InvoiceItem();
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + bii.table + " Where " + bii.pkField + "='" + biId + "'";
+            sql = "Select * From " + invi.table + " Where " + invi.pkField + "='" + biId + "'";
             dt = conn.selectData(sql);
             if (dt.Rows.Count > 0)
             {
@@ -79,7 +81,7 @@ namespace Cemp.objdb
             }
             return item;
         }
-        private String insert(BillItem p)
+        private String insert(InvoiceItem p)
         {
             String sql = "", chk = "";
             if (p.Id.Equals(""))
@@ -88,15 +90,15 @@ namespace Cemp.objdb
             }
 
             //p.CustAddress = p.CustAddress.Replace("'", "''");
-            //p.CustName = p.CustName.Replace("'", "''");
+            p.MOUName = p.MOUName.Replace("'", "''");
             p.Remark = p.Remark.Replace("'", "''");
 
-            sql = "Insert Into " + bii.table + " (" + bii.pkField + "," + bii.Active + "," + bii.Amount + "," +
-                bii.BillId + "," + bii.MOUId + "," + bii.MOUNumber + "," +
-                bii.QuoId + "," + bii.QuoNumber + "," + bii.Remark + ") " +
+            sql = "Insert Into " + invi.table + " (" + invi.pkField + "," + invi.Active + "," + invi.Amount + "," +
+                invi.InvId + "," + invi.MOUId + "," + invi.MOUNumber + "," +
+                invi.QuoId + "," + invi.QuoNumber + "," + invi.Remark + "," + invi.MOUName + ") " +
                 "Values('" + p.Id + "','" + p.Active + "'," + NumberNull1(p.Amount.Replace(",", "")) + ",'" +
-                p.BillId + "','" + p.MOUId + "','" + p.MOUNumber + "','" +
-                p.QuoId + "','" + p.QuoNumber + "','" + p.Remark  + "')";
+                p.InvId + "','" + p.MOUId + "','" + p.MOUNumber + "','" +
+                p.QuoId + "','" + p.QuoNumber + "','" + p.Remark + "','" + p.MOUName + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -111,7 +113,7 @@ namespace Cemp.objdb
             }
             return chk;
         }
-        private String update(BillItem p)
+        private String update(InvoiceItem p)
         {
             String sql = "", chk = "";
 
@@ -119,15 +121,15 @@ namespace Cemp.objdb
             //p.CustName = p.CustName.Replace("'", "''");
             p.Remark = p.Remark.Replace("'", "''");
 
-            sql = "Update " + bii.table + " Set " + bii.Amount + "=" + p.Amount + ", " +
-                bii.BillId + "='" + p.BillId + "', " +
-                bii.MOUId + "='" + p.MOUId + "', " +
-                bii.MOUNumber + "='" + p.MOUNumber + "', " +
-                bii.QuoId + "='" + p.QuoId + "', " +
-                bii.QuoNumber + "='" + p.QuoNumber + "', " +
-                bii.Remark + "='" + p.Remark + "', " +
-                
-                "Where " + bii.pkField + "='" + p.Id + "'";
+            sql = "Update " + invi.table + " Set " + invi.Amount + "=" + p.Amount + ", " +
+                invi.InvId + "='" + p.InvId + "', " +
+                invi.MOUId + "='" + p.MOUId + "', " +
+                invi.MOUNumber + "='" + p.MOUNumber + "', " +
+                invi.QuoId + "='" + p.QuoId + "', " +
+                invi.QuoNumber + "='" + p.QuoNumber + "', " +
+                invi.Remark + "='" + p.Remark + "', " +
+                invi.MOUName + "='" + p.MOUName + "' " +
+                "Where " + invi.pkField + "='" + p.Id + "'";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -141,9 +143,9 @@ namespace Cemp.objdb
             }
             return chk;
         }
-        public String insertBillItem(BillItem p)
+        public String insertBillItem(InvoiceItem p)
         {
-            BillItem item = new BillItem();
+            InvoiceItem item = new InvoiceItem();
             String chk = "";
             item = selectByPk(p.Id);
             if (item.Id == "")
@@ -160,7 +162,7 @@ namespace Cemp.objdb
         public String deleteAll()
         {
             String sql = "", chk = "";
-            sql = "Delete From " + bii.table;
+            sql = "Delete From " + invi.table;
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
@@ -183,11 +185,11 @@ namespace Cemp.objdb
         //    }
         //    return c;
         //}
-        public String VoidBillItem(String saleId)
+        public String VoidInvoiceItem(String saleId)
         {
             String sql = "", chk = "";
-            sql = "Update " + bii.table + " Set " + bii.Active + "='3' " +
-                "Where " + bii.pkField + "='" + saleId + "'";
+            sql = "Update " + invi.table + " Set " + invi.Active + "='3' " +
+                "Where " + invi.pkField + "='" + saleId + "'";
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
