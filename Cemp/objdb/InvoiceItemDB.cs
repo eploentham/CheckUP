@@ -30,6 +30,7 @@ namespace Cemp.objdb
             invi.QuoNumber = "quo_number";
             invi.Remark = "remark";
             invi.MOUName = "mou_name";
+            invi.RowNumber = "row_number";
 
             invi.pkField = "inv_item_id";
             invi.table = "t_invoice_item";
@@ -47,6 +48,7 @@ namespace Cemp.objdb
             item.QuoNumber = dt.Rows[0][invi.QuoNumber].ToString();
             item.Remark = dt.Rows[0][invi.Remark].ToString();
             item.MOUName = dt.Rows[0][invi.MOUName].ToString();
+            item.RowNumber = dt.Rows[0][invi.RowNumber].ToString();
 
             return item;
         }
@@ -95,10 +97,10 @@ namespace Cemp.objdb
 
             sql = "Insert Into " + invi.table + " (" + invi.pkField + "," + invi.Active + "," + invi.Amount + "," +
                 invi.InvId + "," + invi.MOUId + "," + invi.MOUNumber + "," +
-                invi.QuoId + "," + invi.QuoNumber + "," + invi.Remark + "," + invi.MOUName + ") " +
+                invi.QuoId + "," + invi.QuoNumber + "," + invi.Remark + "," + invi.MOUName + "," + invi.RowNumber + ") " +
                 "Values('" + p.Id + "','" + p.Active + "'," + NumberNull1(p.Amount.Replace(",", "")) + ",'" +
                 p.InvId + "','" + p.MOUId + "','" + p.MOUNumber + "','" +
-                p.QuoId + "','" + p.QuoNumber + "','" + p.Remark + "','" + p.MOUName + "')";
+                p.QuoId + "','" + p.QuoNumber + "','" + p.Remark + "','" + p.MOUName + "'," + NumberNull1(p.RowNumber) + ")";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -128,7 +130,8 @@ namespace Cemp.objdb
                 invi.QuoId + "='" + p.QuoId + "', " +
                 invi.QuoNumber + "='" + p.QuoNumber + "', " +
                 invi.Remark + "='" + p.Remark + "', " +
-                invi.MOUName + "='" + p.MOUName + "' " +
+                invi.MOUName + "='" + p.MOUName + "', " +
+                invi.RowNumber + "=" + p.RowNumber + " " +
                 "Where " + invi.pkField + "='" + p.Id + "'";
             try
             {

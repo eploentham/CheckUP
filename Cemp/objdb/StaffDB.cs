@@ -128,9 +128,9 @@ namespace Cemp.objdb
             {
                 p.Id = "sf"+p.getGenID();
             }
-            p.NameT = p.NameT.Replace("''", "'");
-            p.Remark = p.Remark.Replace("''", "'");
-            p.PositionName = p.PositionName.Replace("''", "'");
+            p.NameT = p.NameT.Replace("'", "''");
+            p.Remark = p.Remark.Replace("'", "''");
+            p.PositionName = p.PositionName.Replace("'", "''");
 
             sql = "Insert Into " + sf.table + " (" + sf.pkField + "," + sf.NameT + "," + sf.Remark + "," +
                 sf.Active + "," + sf.Code + "," + sf.Priority + "," + 
@@ -158,9 +158,9 @@ namespace Cemp.objdb
         {
             String sql = "", chk = "";
 
-            p.NameT = p.NameT.Replace("''", "'");
-            p.Remark = p.Remark.Replace("''", "'");
-            p.PositionName = p.PositionName.Replace("''", "'");
+            p.NameT = p.NameT.Replace("'", "''");
+            p.Remark = p.Remark.Replace("'", "''");
+            p.PositionName = p.PositionName.Replace("'", "''");
 
             sql = "Update " + sf.table + " Set " + sf.NameT + "='" + p.NameT + "', " +
                 sf.Remark + "='" + p.Remark + "', " +

@@ -13,6 +13,7 @@ namespace Cemp.gui
     public partial class FrmResultView : Form
     {
         CnviControl cc;
+        int colRow = 0, colCustName = 1;
         public FrmResultView(String sfId, CnviControl c)
         {
             InitializeComponent();
@@ -48,7 +49,7 @@ namespace Cemp.gui
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            FrmResultAdd frm = new FrmResultAdd();
+            FrmResultAdd frm = new FrmResultAdd("",cc);
             frm.ShowDialog(this);
             setGrd();
         }

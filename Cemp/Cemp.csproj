@@ -253,6 +253,8 @@
     <Compile Include="objdb\ProvinceDB.cs" />
     <Compile Include="objdb\QuotationDB.cs" />
     <Compile Include="objdb\QuotationItemDB.cs" />
+    <Compile Include="objdb\ResultDB.cs" />
+    <Compile Include="objdb\ResultItemDB.cs" />
     <Compile Include="objdb\StaffDB.cs" />
     <Compile Include="object1\Amphur.cs" />
     <Compile Include="object1\Invoice.cs" />
@@ -275,6 +277,8 @@
     <Compile Include="object1\Province.cs" />
     <Compile Include="object1\Quotation.cs" />
     <Compile Include="object1\QuotationItem.cs" />
+    <Compile Include="object1\Result.cs" />
+    <Compile Include="object1\ResultItem.cs" />
     <Compile Include="object1\Staff.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
