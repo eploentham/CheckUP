@@ -1,6 +1,6 @@
 ﻿namespace Cemp.gui
 {
-    partial class FrmMOUAdd
+    partial class FrmMOUAdd2
     {
         /// <summary>
         /// Required designer variable.
@@ -79,8 +79,6 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtMOUName = new System.Windows.Forms.TextBox();
-            this.cboDocType = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
@@ -443,9 +441,9 @@
             this.dgvAdd.RowTemplate.Height = 24;
             this.dgvAdd.Size = new System.Drawing.Size(888, 332);
             this.dgvAdd.TabIndex = 3;
-            //this.dgvAdd.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvAdd_CellBeginEdit);
+            this.dgvAdd.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvAdd_CellBeginEdit);
             this.dgvAdd.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdd_CellDoubleClick);
-            //this.dgvAdd.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdd_CellLeave);
+            this.dgvAdd.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdd_CellLeave);
             // 
             // cboStaffPlaceRecord
             // 
@@ -642,34 +640,11 @@
             this.txtMOUName.Size = new System.Drawing.Size(387, 23);
             this.txtMOUName.TabIndex = 64;
             // 
-            // cboDocType
-            // 
-            this.cboDocType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.cboDocType.FormattingEnabled = true;
-            this.cboDocType.Location = new System.Drawing.Point(472, 174);
-            this.cboDocType.Margin = new System.Windows.Forms.Padding(2);
-            this.cboDocType.Name = "cboDocType";
-            this.cboDocType.Size = new System.Drawing.Size(76, 25);
-            this.cboDocType.TabIndex = 65;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label9.Location = new System.Drawing.Point(371, 179);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 17);
-            this.label9.TabIndex = 66;
-            this.label9.Text = "Doc Type :";
-            // 
             // FrmMOUAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1267, 741);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.cboDocType);
             this.Controls.Add(this.txtMOUName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dtpDateMOU);
@@ -699,8 +674,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMOUAdd";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmMOUAdd_Load);
-            this.Resize += new System.EventHandler(this.FrmMOUAdd_Resize);
+            this.Load += new System.EventHandler(this.FrmMOUAdd2_Load);
+            this.Resize += new System.EventHandler(this.FrmMOUAdd2_Resize);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox21.ResumeLayout(false);
@@ -764,7 +739,5 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtMOUName;
-        private System.Windows.Forms.ComboBox cboDocType;
-        private System.Windows.Forms.Label label9;
     }
 }

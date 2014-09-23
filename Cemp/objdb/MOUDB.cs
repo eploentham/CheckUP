@@ -510,6 +510,32 @@ namespace Cemp.objdb
             }
             return "MOU" + year + doc + "-" + cnt;
         }
+        public String getMOUMaxNumber(String prefix,String mouNumber)
+        {
+            String sql = "", doc = "", year = "";
+            String[] doc1 = mouNumber.Split('-');
+            if (!mouNumber.Equals(""))
+            {
+                if (doc[0].ToString().Length > 5)
+                {
+                    year = doc[0].ToString().Substring(2, 2);
+                }
+            }
+            else
+            {
+                year = getYear();
+            }
+
+            sql = "Select count(" + mo.QuoNumber + ") as cnt From " + mo.table;
+            DataTable dt = conn.selectData(sql);
+            doc = String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);
+            doc = "00000" + doc;
+            doc = doc.Substring(doc.Length - 5);
+            //cnt = "1";
+            //doc = "00001";
+
+            return prefix + year + doc;
+        }
         public String getMOUMaxNumber(String mouNumber)
         {
             String sql = "", doc = "", year = "";

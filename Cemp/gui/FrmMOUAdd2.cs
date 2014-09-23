@@ -12,21 +12,21 @@ using System.Windows.Forms;
 
 namespace Cemp.gui
 {
-    public partial class FrmMOUAdd : Form
+    public partial class FrmMOUAdd2 : Form
     {
         CnviControl cc;
         MOU mo;
         Quotation qu;
         Staff sf;
-        int colRow = 0, colItem = 1, colMethod = 2, colSample = 3, colPlace = 5, colDatePlaceRecord=4, colMOUNumber=6, colId = 7, colDel =8, colItemId = 9, colMethodId = 10, colEdit = 11, colMOUNumberCnt=12, colDatePlaceRecord1=13;
+        int colRow = 0, colItem = 1, colMethod = 2, colSample = 3, colPlace = 4, colDatePlaceRecord=5, colMOUNumber=6, colId = 7, colDel =8, colItemId = 9, colMethodId = 10, colEdit = 11, colMOUNumberCnt=12, colDatePlaceRecord1=13;
         //int colPriceSale = 14, colPriceCost = 15, colAmount = 16, colDiscount = 17;
         int colCnt = 14;
         Boolean pageLoad = false, mouNew = false, MOUSplit = false;
-        //DateTimePicker cellDateTimePicker = new DateTimePicker();
+        DateTimePicker cellDateTimePicker = new DateTimePicker();
         DateTimeFormatInfo df;
         //DataGridView dgv;
         
-        public FrmMOUAdd(String moNumber, Boolean flagNew, CnviControl c)
+        public FrmMOUAdd2(String moNumber, Boolean flagNew, CnviControl c)
         {
             mouNew = flagNew;
             InitializeComponent();
@@ -36,12 +36,12 @@ namespace Cemp.gui
         {
             pageLoad = true;
             //df = new CultureInfo("en-US").DateTimeFormat;
-            //cellDateTimePicker.ValueChanged += new EventHandler(cellDateTimePickerValueChanged);
-            //cellDateTimePicker.Visible = false;
-            //cellDateTimePicker.CustomFormat = "dd/MM/yyyy";
-            //cellDateTimePicker.Format = DateTimePickerFormat.Custom;
+            cellDateTimePicker.ValueChanged += new EventHandler(cellDateTimePickerValueChanged);
+            cellDateTimePicker.Visible = false;
+            cellDateTimePicker.CustomFormat = "dd/MM/yyyy";
+            cellDateTimePicker.Format = DateTimePickerFormat.Custom;
             //cellDateTimePicker.Value.GetDateTimeFormats(df);
-            //dgvAdd.Controls.Add(cellDateTimePicker);
+            dgvAdd.Controls.Add(cellDateTimePicker);
             //dgv = new DataGridView();
 
             cc = c;
@@ -52,7 +52,7 @@ namespace Cemp.gui
             cboQuo = cc.qudb.getCboQuotation(cboQuo);
             cboStaffPlaceRecord = cc.sfdb.getCboStaff(cboStaffPlaceRecord);
             cboStaffMOU = cc.sfdb.getCboStaff(cboStaffMOU);
-            cboDocType = cc.docdb.getCboDocType(cboDocType,"mou");
+            //cboItem = cc.itdb.getCboItemQuotation(cboItem);
             txtStaffPlaceRecordPosition.Text = "เจ้าหน้าที่ผู้ทำการเก็บตัวอย่าง";
             
             setControl("");
@@ -90,11 +90,11 @@ namespace Cemp.gui
             txtCustName.Enabled = false;
 
         }
-        //void cellDateTimePickerValueChanged(object sender, EventArgs e)
-        //{
-        //    dgvAdd.CurrentCell.Value = cellDateTimePicker.Value.ToString("dd/MM/yyyy");
-        //    cellDateTimePicker.Visible = false;
-        //}
+        void cellDateTimePickerValueChanged(object sender, EventArgs e)
+        {
+            dgvAdd.CurrentCell.Value = cellDateTimePicker.Value.ToString("dd/MM/yyyy");
+            cellDateTimePicker.Visible = false;
+        }
         private void setControl(String moNumber)
         {
             pageLoad = true;
@@ -197,7 +197,7 @@ namespace Cemp.gui
             dgvAdd.ColumnCount = colCnt;
 
             dgvAdd.RowCount = 1;
-            dgvAdd.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            dgvAdd.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvAdd.Columns[colRow].Width = 50;
             dgvAdd.Columns[colItem].Width = 350;
             dgvAdd.Columns[colMethod].Width = 350;
@@ -211,7 +211,7 @@ namespace Cemp.gui
             dgvAdd.Columns[colMethod].HeaderText = "Method";
             dgvAdd.Columns[colSample].HeaderText = "Sample";
             //dgvAdd.Columns[colPrice].HeaderText = "Price";
-            dgvAdd.Columns[colPlace].HeaderText = "สถานที่เก็บตัวอย่าง";
+            dgvAdd.Columns[colPlace].HeaderText = "สถายที่เก็บตัวอย่าง";
             dgvAdd.Columns[colDatePlaceRecord].HeaderText = "วันที่เก็บตัวอย่าง";
             dgvAdd.Columns[colMOUNumber].HeaderText = "เลขที่";
             dgvAdd.Columns[colId].HeaderText = "  ";
@@ -403,7 +403,7 @@ namespace Cemp.gui
             }
             
         }
-        private void FrmMOUAdd_Load(object sender, EventArgs e)
+        private void FrmMOUAdd2_Load(object sender, EventArgs e)
         {
 
         }
@@ -420,7 +420,7 @@ namespace Cemp.gui
             }
         }
 
-        private void FrmMOUAdd_Resize(object sender, EventArgs e)
+        private void FrmMOUAdd2_Resize(object sender, EventArgs e)
         {
             setResize();
         }
@@ -572,11 +572,6 @@ namespace Cemp.gui
                 MessageBox.Show("ไม่มี เจ้าหน้าที่ผู้ทำการเก็บตัวอย่าง ", "ป้อนข้อมูลไม่ครบ");
                 return;
             }
-            if (cboDocType.Text.Equals(""))
-            {
-                MessageBox.Show("ไม่มี Doc Type ", "ป้อนข้อมูลไม่ครบ");
-                return;
-            }
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
             if (mouNew)
@@ -589,8 +584,7 @@ namespace Cemp.gui
             //if (mo.Id.Equals("") && (!MOUSplit))
             if (mouNew)
             {
-
-                mo.MOUNumber = cc.modb.getMOUMaxNumber(cc.getValueCboItem(cboDocType),"");
+                mo.MOUNumber = cc.modb.getMOUMaxNumber("");
                 //String[] doc1 = mo.MOUNumber.Split('-');
                 //mo.MOUNumber = doc1[0];
                 mo.MOUNumberCnt = "1";
@@ -698,7 +692,7 @@ namespace Cemp.gui
                 Cursor cursor = Cursor.Current;
                 Cursor.Current = Cursors.WaitCursor;
                 setControl(cc.getValueCboItem(cboMOU));
-                //cellDateTimePicker.Visible = false;
+                cellDateTimePicker.Visible = false;
                 mouNew=false;
                 Cursor.Current = cursor;
             }
@@ -824,29 +818,29 @@ namespace Cemp.gui
 
         }
 
-        //private void dgvAdd_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
-        //{
-        //    //int index = dgvAdd.CurrentCell.ColumnIndex;
-        //    if (dgvAdd.CurrentCell.ColumnIndex==colDatePlaceRecord)
-        //    {
-        //        Rectangle tempRect = this.dgvAdd.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
-        //        cellDateTimePicker.Location = tempRect.Location;
-        //        cellDateTimePicker.Width = tempRect.Width;
-        //        try
-        //        {
-        //            cellDateTimePicker.Value = DateTime.Parse(cc.cf.datetoDB1(dgvAdd.CurrentCell.Value.ToString()));
-        //        }
-        //        catch
-        //        {
-        //            cellDateTimePicker.Value = DateTime.Now;
-        //        }
-        //        cellDateTimePicker.Visible = true;
-        //    }
-        //}
+        private void dgvAdd_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            //int index = dgvAdd.CurrentCell.ColumnIndex;
+            if (dgvAdd.CurrentCell.ColumnIndex==colDatePlaceRecord)
+            {
+                Rectangle tempRect = this.dgvAdd.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
+                cellDateTimePicker.Location = tempRect.Location;
+                cellDateTimePicker.Width = tempRect.Width;
+                try
+                {
+                    cellDateTimePicker.Value = DateTime.Parse(cc.cf.datetoDB1(dgvAdd.CurrentCell.Value.ToString()));
+                }
+                catch
+                {
+                    cellDateTimePicker.Value = DateTime.Now;
+                }
+                cellDateTimePicker.Visible = true;
+            }
+        }
 
-        //private void dgvAdd_CellLeave(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    cellDateTimePicker.Visible = false;
-        //}
+        private void dgvAdd_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            cellDateTimePicker.Visible = false;
+        }
     }
 }

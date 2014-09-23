@@ -39,6 +39,7 @@ namespace Cemp.Control
         public InvoiceItemDB invidb;
         public ResultDB rsdb;
         public ResultItemDB rsidb;
+        public DocTypeDB docdb;
 
         public Staff sf;
         public Company cp;
@@ -83,6 +84,7 @@ namespace Cemp.Control
             invidb = new InvoiceItemDB(conn);
             rsdb = new ResultDB(conn);
             rsidb = new ResultItemDB(conn);
+            docdb = new DocTypeDB(conn);
 
             lw = new LogWriter();
 

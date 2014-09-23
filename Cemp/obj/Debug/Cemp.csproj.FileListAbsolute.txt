@@ -75,3 +75,4 @@ D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmInvoiceAdd.resources
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmInvoiceView.resources
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmInvoiceAdd.resources
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmInvoiceView.resources
+C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmMOUAdd2.resources
