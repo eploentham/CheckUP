@@ -29,6 +29,7 @@ namespace Cemp.objdb
             rs.MeasureDate = "measure_date";
             rs.Measurement = "measurement";
             rs.MethodMeasure = "method_measure";
+            rs.Summary = "summary";
 
             rs.pkField = "result_id";
             rs.table = "t_result";
@@ -44,6 +45,7 @@ namespace Cemp.objdb
             item.MeasureDate = dt.Rows[0][rs.MeasureDate].ToString();
             item.Measurement = dt.Rows[0][rs.Measurement].ToString();
             item.MethodMeasure = dt.Rows[0][rs.MethodMeasure].ToString();
+            item.Summary = dt.Rows[0][rs.Summary].ToString();
             
             return item;
         }
@@ -82,13 +84,14 @@ namespace Cemp.objdb
             p.Machinery = p.Machinery.Replace("'", "'");
             p.Measurement = p.Measurement.Replace("'", "''");
             p.MethodMeasure = p.MethodMeasure.Replace("'", "''");
+            p.Summary = p.Summary.Replace("'", "''");
 
             sql = "Insert Into " + rs.table + " (" + rs.pkField + "," + rs.Active + "," + rs.CustAddressT + "," +
                 rs.CustId + "," + rs.CustNameT + "," + rs.Machinery + "," +
-                rs.MeasureDate + "," + rs.Measurement + "," + rs.MethodMeasure + ") " +
+                rs.MeasureDate + "," + rs.Measurement + "," + rs.MethodMeasure + "," + rs.Summary + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.CustAddressT + "','" +
                 p.CustId + "','" + p.CustNameT + "','" + p.Machinery + "','" +
-                p.MeasureDate + "','" + p.Measurement + "','" + p.MethodMeasure  + "')";
+                p.MeasureDate + "','" + p.Measurement + "','" + p.MethodMeasure + "','" + p.Summary + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -112,6 +115,7 @@ namespace Cemp.objdb
             p.Machinery = p.Machinery.Replace("'", "'");
             p.Measurement = p.Measurement.Replace("'", "''");
             p.MethodMeasure = p.MethodMeasure.Replace("'", "''");
+            p.Summary = p.Summary.Replace("'", "''");
 
             sql = "Update " + rs.table + " Set " + rs.CustAddressT + "='" + p.CustAddressT + "', " +
                 rs.CustId + "='" + p.CustId + "', " +
@@ -119,12 +123,14 @@ namespace Cemp.objdb
                 rs.Machinery + "='" + p.Machinery + "', " +
                 rs.MeasureDate + "='" + p.MeasureDate + "', " +
                 rs.Measurement + "='" + p.Measurement + "', " +
-                rs.MethodMeasure + "='" + p.MethodMeasure + "' " +
+                rs.MethodMeasure + "='" + p.MethodMeasure + "', " +
+                rs.Summary + "='" + p.Summary + "' " +
 
                 "Where " + rs.pkField + "='" + p.Id + "'";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
+                chk = p.Id;
             }
             catch (Exception ex)
             {

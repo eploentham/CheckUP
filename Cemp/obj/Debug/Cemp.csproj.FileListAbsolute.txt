@@ -68,7 +68,6 @@ D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmMOUPlaceRecord.resources
 C:\source\CNVI\CNVI.Cemp\Cemp\bin\Debug\Cemp.mdb
 D:\source\CNVI\CNVI.Cemp\Cemp\bin\Debug\Cemp.mdb
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmItemSearch.resources
-D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.csprojResolveAssemblyReference.cache
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmMOUAdd1.resources
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmItemSearch.resources
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmMOUAdd1.resources

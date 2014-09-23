@@ -214,6 +214,10 @@ namespace Cemp.object1
                 return ex.Message;
             }
         }
+        public String datetoDB(DateTime dt)
+        {
+            return dt.Year.ToString() + "-" + dt.Month.ToString("00") + "-" + dt.Day.ToString("00");
+        }
         public String datetoDB1(String dt)
         {
             //DateTime dt1 = new DateTime();

@@ -30,6 +30,9 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtResultId = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.dgvResult = new System.Windows.Forms.DataGridView();
             this.txtMachinery = new System.Windows.Forms.RichTextBox();
             this.cboMachinery = new System.Windows.Forms.ComboBox();
@@ -47,9 +50,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtSummary = new System.Windows.Forms.RichTextBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnPrintMou = new System.Windows.Forms.Button();
-            this.txtResultId = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             this.SuspendLayout();
@@ -68,14 +68,10 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtResultId);
-            this.groupBox1.Controls.Add(this.btnSave);
-            this.groupBox1.Controls.Add(this.btnPrintMou);
-            this.groupBox1.Controls.Add(this.dgvResult);
             this.groupBox1.Controls.Add(this.txtMachinery);
             this.groupBox1.Controls.Add(this.cboMachinery);
             this.groupBox1.Controls.Add(this.cboCust);
             this.groupBox1.Controls.Add(this.dtpDateResult);
-            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtMeasurement);
             this.groupBox1.Controls.Add(this.cboMesaurement);
             this.groupBox1.Controls.Add(this.label6);
@@ -90,19 +86,51 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(1066, 546);
+            this.groupBox1.Size = new System.Drawing.Size(570, 546);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
+            // 
+            // txtResultId
+            // 
+            this.txtResultId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtResultId.Location = new System.Drawing.Point(455, 74);
+            this.txtResultId.Margin = new System.Windows.Forms.Padding(2);
+            this.txtResultId.Name = "txtResultId";
+            this.txtResultId.Size = new System.Drawing.Size(38, 23);
+            this.txtResultId.TabIndex = 136;
+            this.txtResultId.Visible = false;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(978, 14);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(81, 39);
+            this.btnSave.TabIndex = 135;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(1124, 14);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(81, 39);
+            this.btnPrint.TabIndex = 134;
+            this.btnPrint.Text = "พิมพ์ Result";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // dgvResult
             // 
             this.dgvResult.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResult.Location = new System.Drawing.Point(556, 47);
+            this.dgvResult.Location = new System.Drawing.Point(583, 57);
             this.dgvResult.Margin = new System.Windows.Forms.Padding(2);
             this.dgvResult.Name = "dgvResult";
             this.dgvResult.RowTemplate.Height = 24;
-            this.dgvResult.Size = new System.Drawing.Size(506, 488);
+            this.dgvResult.Size = new System.Drawing.Size(714, 461);
             this.dgvResult.TabIndex = 133;
             // 
             // txtMachinery
@@ -148,7 +176,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label7.Location = new System.Drawing.Point(569, 21);
+            this.label7.Location = new System.Drawing.Point(583, 36);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 17);
@@ -263,54 +291,28 @@
             this.txtSummary.Location = new System.Drawing.Point(122, 573);
             this.txtSummary.Margin = new System.Windows.Forms.Padding(2);
             this.txtSummary.Name = "txtSummary";
-            this.txtSummary.Size = new System.Drawing.Size(950, 99);
+            this.txtSummary.Size = new System.Drawing.Size(457, 99);
             this.txtSummary.TabIndex = 51;
             this.txtSummary.Text = "";
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(303, 496);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(81, 39);
-            this.btnSave.TabIndex = 135;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnPrintMou
-            // 
-            this.btnPrintMou.Location = new System.Drawing.Point(449, 496);
-            this.btnPrintMou.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPrintMou.Name = "btnPrintMou";
-            this.btnPrintMou.Size = new System.Drawing.Size(81, 39);
-            this.btnPrintMou.TabIndex = 134;
-            this.btnPrintMou.Text = "พิมพ์ MOU";
-            this.btnPrintMou.UseVisualStyleBackColor = true;
-            // 
-            // txtResultId
-            // 
-            this.txtResultId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtResultId.Location = new System.Drawing.Point(455, 74);
-            this.txtResultId.Margin = new System.Windows.Forms.Padding(2);
-            this.txtResultId.Name = "txtResultId";
-            this.txtResultId.Size = new System.Drawing.Size(38, 23);
-            this.txtResultId.TabIndex = 136;
-            this.txtResultId.Visible = false;
             // 
             // FrmResultAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 682);
+            this.ClientSize = new System.Drawing.Size(1308, 682);
             this.Controls.Add(this.txtSummary);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label8);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.dgvResult);
+            this.Controls.Add(this.label7);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmResultAdd";
             this.Text = "FrmResultAdd";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmResultAdd_Load);
+            this.Resize += new System.EventHandler(this.FrmResultAdd_Resize);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).EndInit();
@@ -341,7 +343,7 @@
         private System.Windows.Forms.ComboBox cboMachinery;
         private System.Windows.Forms.DataGridView dgvResult;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnPrintMou;
+        private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.TextBox txtResultId;
     }
 }

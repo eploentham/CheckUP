@@ -13,7 +13,8 @@ namespace Cemp.gui
     public partial class FrmResultView : Form
     {
         CnviControl cc;
-        int colRow = 0, colCustName = 1;
+        int colRow = 0, colCustName = 1, colDate=2, colId=3;
+        int colCnt = 4;
         public FrmResultView(String sfId, CnviControl c)
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace Cemp.gui
         private void initConfig(String sfId, CnviControl c)
         {
             cc = c;
+            dgvView.ReadOnly = true;
             setGrd();
         }
         private void setResize()
@@ -34,7 +36,39 @@ namespace Cemp.gui
         }
         private void setGrd()
         {
+            DataTable dt = cc.rsdb.selectAll();
+            dgvView.ColumnCount = colCnt;
 
+            dgvView.RowCount = dt.Rows.Count + 1;
+            dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvView.Columns[colRow].Width = 50;
+            dgvView.Columns[colCustName].Width = 300;
+            dgvView.Columns[colDate].Width = 120;
+
+            dgvView.Columns[colRow].HeaderText = "ลำดับ";
+            dgvView.Columns[colCustName].HeaderText = "code";
+            dgvView.Columns[colDate].HeaderText = "วันที่ออกผล";
+
+
+            dgvView.Columns[colId].HeaderText = "id";
+            Font font = new Font("Microsoft Sans Serif", 12);
+
+            dgvView.Font = font;
+            dgvView.Columns[colId].Visible = false;
+            if (dt.Rows.Count > 0)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    dgvView[colRow, i].Value = (i + 1);
+                    dgvView[colCustName, i].Value = dt.Rows[i][cc.rsdb.rs.CustNameT].ToString();
+                    dgvView[colDate, i].Value = dt.Rows[i][cc.rsdb.rs.MeasureDate].ToString();
+                    dgvView[colId, i].Value = dt.Rows[i][cc.rsdb.rs.Id].ToString();
+                    if ((i % 2) != 0)
+                    {
+                        dgvView.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                    }
+                }
+            }
         }
 
         private void FrmResultView_Load(object sender, EventArgs e)
@@ -52,6 +86,24 @@ namespace Cemp.gui
             FrmResultAdd frm = new FrmResultAdd("",cc);
             frm.ShowDialog(this);
             setGrd();
+        }
+
+        private void dgvView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            if (dgvView[colId, e.RowIndex].Value == null)
+            {
+                return;
+            }
+
+            FrmResultAdd frm = new FrmResultAdd(dgvView[colId, e.RowIndex].Value.ToString(), cc);
+            //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
+            frm.ShowDialog(this);
+            setGrd();
+
         }
     }
 }

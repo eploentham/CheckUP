@@ -30,6 +30,7 @@ namespace Cemp.gui
         {
             pageLoad = true;
             bi = new Invoice();
+            dtpDateInv.Format = DateTimePickerFormat.Short;
             setControl(biId);
             
             //setGrdAdd();
@@ -256,7 +257,7 @@ namespace Cemp.gui
             bi.Total = txtTotal.Text;
             bi.Vat = txtVat.Text;
             bi.VatRate = txtVatRate.Text;
-            bi.InvDate = cc.cf.datetoDB( dtpDateInv.Value);
+            bi.InvDate = cc.cf.datetoDB(dtpDateInv.Value);
         }
         private void calAmount()
         {
@@ -345,7 +346,8 @@ namespace Cemp.gui
             }
             catch (Exception ex)
             {
-                MessageBox.Show("dgvView_CellDoubleClick " + ex.Message, "Error");
+                cc.lw.WriteLog("Error FrmInvoiceAdd dgvView_CellDoubleClick " + ex.Message);
+                MessageBox.Show(" " + ex.Message, "Error FrmInvoiceAdd dgvView_CellDoubleClick");
             }
             Cursor.Current = cursor;
             //dgvView.Enabled = true;
@@ -366,28 +368,38 @@ namespace Cemp.gui
             biId = cc.invdb.insertBill(bi);
             if (biId.Length >= 1)
             {
-                for (int i = 0; i < dgvAdd.RowCount; i++)
+                try
                 {
-                    if (dgvAdd[colMOUNumber, i].Value == null)
+                    for (int i = 0; i < dgvAdd.RowCount; i++)
                     {
-                        continue;
+                        if (dgvAdd[colMOUNumber, i].Value == null)
+                        {
+                            continue;
+                        }
+                        InvoiceItem bii = new InvoiceItem();
+                        MOU mo = new MOU();
+                        mo = cc.modb.selectByNumber1(dgvAdd[colMOUNumber, i].Value.ToString());
+                        bii.Active = "1";
+                        bii.Amount = dgvAdd[colNetTotal, i].Value.ToString();
+                        bii.InvId = biId;
+                        bii.Id = "";
+                        bii.MOUId = mo.Id;
+                        bii.MOUNumber = dgvAdd[colMOUNumber, i].Value.ToString();
+                        bii.QuoId = mo.QuoId;
+                        bii.QuoNumber = mo.QuoNumber;
+                        bii.Remark = "";
+
+                        cc.invidb.insertBillItem(bii);
+
                     }
-                    InvoiceItem bii = new InvoiceItem();
-                    MOU mo = new MOU();
-                    mo = cc.modb.selectByNumber1(dgvAdd[colMOUNumber, i].Value.ToString());
-                    bii.Active = "1";
-                    bii.Amount = dgvAdd[colNetTotal, i].Value.ToString();
-                    bii.InvId = biId;
-                    bii.Id = "";
-                    bii.MOUId = mo.Id;
-                    bii.MOUNumber = dgvAdd[colMOUNumber, i].Value.ToString();
-                    bii.QuoId = mo.QuoId;
-                    bii.QuoNumber = mo.QuoNumber;
-                    bii.Remark = "";
-
-                    cc.invidb.insertBillItem(bii);
-
                 }
+                catch (Exception ex)
+                {
+                    cc.lw.WriteLog("Error FrmInvoiceAdd btnSave_Click " + ex.Message);
+                    MessageBox.Show("" + ex.Message, "Error FrmInvoiceAdd btnSave_Click");
+                    return;
+                }
+                
                 Invoice inv1 = cc.invdb.selectByPk(biId);
                 txtInvId.Text = biId;
                 txtInvNumber.Text = inv1.InvNumber;

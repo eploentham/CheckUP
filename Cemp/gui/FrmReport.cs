@@ -124,13 +124,62 @@ namespace Cemp
                 chk = ex.Message.ToString();
             }
         }
+        public void setReportResult(Result rs, DataTable dt)
+        {
+            String chk = "";
+            ReportDocument rpt = new ReportDocument();
+            try
+            {
+                cc.lw.WriteLog("rpt.setReportResult OK ");
+                rpt.Load(cc.initC.PathReport + "\\ResultPrint.rpt");
+                rpt.SetDataSource(dt);
+                cc.lw.WriteLog("rpt.setReportResult OK SetDataSource");
+
+                rpt.SetParameterValue("compName", cc.cp.NameT);
+                rpt.SetParameterValue("compAddress1", cc.cp.AddressT);
+                rpt.SetParameterValue("compAddress2", "Tel "+cc.cp.Tele+" FAX "+cc.cp.Fax+" Email "+cc.cp.Email);
+                rpt.SetParameterValue("taxid", cc.cp.TaxId);
+
+                rpt.SetParameterValue("custName", rs.CustNameT);
+                rpt.SetParameterValue("custAddress", rs.CustAddressT);
+                rpt.SetParameterValue("machinery", rs.Machinery);
+                rpt.SetParameterValue("measurecompany", cc.cp.NameT);
+                rpt.SetParameterValue("methodmeasure", rs.MethodMeasure);
+
+                rpt.SetParameterValue("summary", rs.Summary);
+                rpt.SetParameterValue("line1", cc.cp.quLine1);
+                rpt.SetParameterValue("line2", cc.cp.quLine1);
+                rpt.SetParameterValue("line3", cc.cp.quLine1);
+                //rpt.SetParameterValue("datedueperiod", rs.InvDuePeriod);
+                ////rpt.SetParameterValue("duedate", "");
+                //rpt.SetParameterValue("amount", rs.Amount);
+                //rpt.SetParameterValue("total", rs.Total);
+
+                //rpt.SetParameterValue("vatrate", rs.VatRate);
+
+                //rpt.SetParameterValue("nettotal", rs.Nettotal);
+                //rpt.SetParameterValue("contactName", qu.ContactName);
+
+                //rpt.SetParameterValue("line2", inv.StaffPlaceRecordPosition);
+                //rpt.SetParameterValue("staffplacerecordname", inv.StaffPlaceRecordName);
+                //rpt.SetParameterValue("line3", "ลูกค้า/ผู้ประสานงาน/ผู้รัลผิดชอบการตรวจ");
+
+                this.crystalReportViewer1.ReportSource = rpt;
+                this.crystalReportViewer1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                chk = ex.Message.ToString();
+                cc.lw.WriteLog("rpt.setReportResult Error " + chk);
+            }
+        }
         public void setReportInvoice(Invoice inv, DataTable dt)
         {
             String chk = "";
             ReportDocument rpt = new ReportDocument();
             try
             {
-                cc.lw.WriteLog("rpt.setReportMOU OK ");
+                cc.lw.WriteLog("rpt.setReportInvoice OK ");
                 rpt.Load(cc.initC.PathReport + "\\InvoicePrint.rpt");
                 rpt.SetDataSource(dt);
                 cc.lw.WriteLog("rpt.setReportInvoice OK SetDataSource");

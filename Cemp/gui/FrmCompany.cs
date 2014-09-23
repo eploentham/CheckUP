@@ -85,6 +85,13 @@ namespace Cemp.gui
             txtMOULine3.Text = cp.mouLine3;
             txtMOULine4.Text = cp.mouLine4;
 
+            txtRsLine1.Text = cp.rsLine1;
+            txtRsLine2.Text = cp.rsLine2;
+            txtRsLine3.Text = cp.rsLine3;
+            txtRsLine4.Text = cp.rsLine4;
+            txtRsLine5.Text = cp.rsLine5;
+            txtRsLine6.Text = cp.rsLine6;
+
             txtInvDuePeriod.Text = cp.InvDuePeriod;
 
             if (label18.Text.Length > 4)
@@ -128,6 +135,13 @@ namespace Cemp.gui
             cp.mouLine2 = txtMOULine2.Text;
             cp.mouLine3 = txtMOULine3.Text;
             cp.mouLine4 = txtMOULine4.Text;
+
+            cp.rsLine1 = txtRsLine1.Text;
+            cp.rsLine2 = txtRsLine2.Text;
+            cp.rsLine3 = txtRsLine3.Text;
+            cp.rsLine4 = txtRsLine4.Text;
+            cp.rsLine5 = txtRsLine5.Text;
+            cp.rsLine6 = txtRsLine6.Text;
 
             cp.InvDuePeriod = txtInvDuePeriod.Text;
         }

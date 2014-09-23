@@ -923,3 +923,8 @@ Log Entry : 12:07:15 17 กันยายน 2557
 22/9/2557 20:06->rpt.setReportInvoice OK SetDataSource
 22/9/2557 20:07->rpt.setReportMOU OK 
 22/9/2557 20:07->rpt.setReportInvoice OK SetDataSource
+23/9/2557 10:18->rpt.setReportResult OK 
+23/9/2557 10:18->rpt.setReportResult OK SetDataSource
+23/9/2557 10:18->rpt.setReportResult OK 
+23/9/2557 10:18->rpt.setReportResult OK SetDataSource
+23/9/2557 15:05->Error FrmResultAdd btnSave_Click Object reference not set to an instance of an object.

@@ -49,7 +49,7 @@ namespace Cemp
             tv1.Nodes.Add("nMOUView", "พิมพ์ ใบMOU และใบรับตัวอย่าง");
             tv1.Nodes.Add("nInputResult", "ป้อนผลตัวอย่าง");
             tv1.Nodes.Add("nBillView", "พิมพ์ Bill Note");
-            tv1.Nodes.Add("nRewardAdd", "ป้อนรางวัล");
+            //tv1.Nodes.Add("nRewardAdd", "ป้อนรางวัล");
             //}
             //if (sf.Priority.Equals("2") || sf.Priority.Equals("3"))
             //{

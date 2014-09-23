@@ -94,14 +94,28 @@
             this.label31 = new System.Windows.Forms.Label();
             this.txtMOULine1 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.txtInvDuePeriod = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.txtRsLine6 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.txtRsLine5 = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.txtRsLine4 = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.txtRsLine3 = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.txtRsLine2 = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.txtRsLine1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -558,7 +572,7 @@
             this.groupBox4.Controls.Add(this.txtQuoLine2);
             this.groupBox4.Controls.Add(this.label25);
             this.groupBox4.Controls.Add(this.txtQuoLine1);
-            this.groupBox4.Location = new System.Drawing.Point(622, 20);
+            this.groupBox4.Location = new System.Drawing.Point(622, 12);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(526, 174);
             this.groupBox4.TabIndex = 3;
@@ -767,12 +781,22 @@
             this.groupBox3.Controls.Add(this.label27);
             this.groupBox3.Controls.Add(this.label26);
             this.groupBox3.Controls.Add(this.txtInvDuePeriod);
-            this.groupBox3.Location = new System.Drawing.Point(622, 337);
+            this.groupBox3.Location = new System.Drawing.Point(622, 557);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(526, 100);
+            this.groupBox3.Size = new System.Drawing.Size(526, 65);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "groupBox3";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(221, 26);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(21, 13);
+            this.label27.TabIndex = 37;
+            this.label27.Text = "วัน";
             // 
             // label26
             // 
@@ -792,21 +816,141 @@
             this.txtInvDuePeriod.Size = new System.Drawing.Size(57, 20);
             this.txtInvDuePeriod.TabIndex = 35;
             // 
-            // label27
+            // groupBox5
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(221, 26);
-            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(21, 13);
-            this.label27.TabIndex = 37;
-            this.label27.Text = "วัน";
+            this.groupBox5.Controls.Add(this.label32);
+            this.groupBox5.Controls.Add(this.txtRsLine6);
+            this.groupBox5.Controls.Add(this.label33);
+            this.groupBox5.Controls.Add(this.txtRsLine5);
+            this.groupBox5.Controls.Add(this.label34);
+            this.groupBox5.Controls.Add(this.txtRsLine4);
+            this.groupBox5.Controls.Add(this.label35);
+            this.groupBox5.Controls.Add(this.txtRsLine3);
+            this.groupBox5.Controls.Add(this.label36);
+            this.groupBox5.Controls.Add(this.txtRsLine2);
+            this.groupBox5.Controls.Add(this.label37);
+            this.groupBox5.Controls.Add(this.txtRsLine1);
+            this.groupBox5.Location = new System.Drawing.Point(622, 337);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(526, 174);
+            this.groupBox5.TabIndex = 6;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Result";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(16, 144);
+            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(35, 13);
+            this.label32.TabIndex = 44;
+            this.label32.Text = "line6 :";
+            // 
+            // txtRsLine6
+            // 
+            this.txtRsLine6.Location = new System.Drawing.Point(102, 141);
+            this.txtRsLine6.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRsLine6.Name = "txtRsLine6";
+            this.txtRsLine6.Size = new System.Drawing.Size(419, 20);
+            this.txtRsLine6.TabIndex = 43;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(16, 120);
+            this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(35, 13);
+            this.label33.TabIndex = 42;
+            this.label33.Text = "line5 :";
+            // 
+            // txtRsLine5
+            // 
+            this.txtRsLine5.Location = new System.Drawing.Point(102, 117);
+            this.txtRsLine5.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRsLine5.Name = "txtRsLine5";
+            this.txtRsLine5.Size = new System.Drawing.Size(419, 20);
+            this.txtRsLine5.TabIndex = 41;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(16, 96);
+            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(35, 13);
+            this.label34.TabIndex = 40;
+            this.label34.Text = "line4 :";
+            // 
+            // txtRsLine4
+            // 
+            this.txtRsLine4.Location = new System.Drawing.Point(102, 93);
+            this.txtRsLine4.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRsLine4.Name = "txtRsLine4";
+            this.txtRsLine4.Size = new System.Drawing.Size(419, 20);
+            this.txtRsLine4.TabIndex = 39;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(16, 72);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(35, 13);
+            this.label35.TabIndex = 38;
+            this.label35.Text = "line3 :";
+            // 
+            // txtRsLine3
+            // 
+            this.txtRsLine3.Location = new System.Drawing.Point(102, 69);
+            this.txtRsLine3.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRsLine3.Name = "txtRsLine3";
+            this.txtRsLine3.Size = new System.Drawing.Size(419, 20);
+            this.txtRsLine3.TabIndex = 37;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(16, 48);
+            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(35, 13);
+            this.label36.TabIndex = 36;
+            this.label36.Text = "line2 :";
+            // 
+            // txtRsLine2
+            // 
+            this.txtRsLine2.Location = new System.Drawing.Point(102, 45);
+            this.txtRsLine2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRsLine2.Name = "txtRsLine2";
+            this.txtRsLine2.Size = new System.Drawing.Size(419, 20);
+            this.txtRsLine2.TabIndex = 35;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(16, 24);
+            this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(35, 13);
+            this.label37.TabIndex = 34;
+            this.label37.Text = "line1 :";
+            // 
+            // txtRsLine1
+            // 
+            this.txtRsLine1.Location = new System.Drawing.Point(102, 21);
+            this.txtRsLine1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRsLine1.Name = "txtRsLine1";
+            this.txtRsLine1.Size = new System.Drawing.Size(419, 20);
+            this.txtRsLine1.TabIndex = 33;
             // 
             // FrmCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 544);
+            this.ClientSize = new System.Drawing.Size(1200, 634);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox4);
@@ -825,6 +969,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -900,5 +1046,18 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txtInvDuePeriod;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox txtRsLine6;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox txtRsLine5;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox txtRsLine4;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox txtRsLine3;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox txtRsLine2;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox txtRsLine1;
     }
 }

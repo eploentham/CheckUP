@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtInvId = new System.Windows.Forms.TextBox();
             this.txtCustEmail = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtCustFax = new System.Windows.Forms.TextBox();
@@ -63,6 +64,8 @@
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.txtInvNumber = new System.Windows.Forms.TextBox();
             this.txtInvRemark = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpDateInv = new System.Windows.Forms.DateTimePicker();
@@ -70,9 +73,6 @@
             this.btnUnActive = new System.Windows.Forms.Button();
             this.ChkUnActive = new System.Windows.Forms.RadioButton();
             this.chkActive = new System.Windows.Forms.RadioButton();
-            this.txtInvId = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.txtInvNumber = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
@@ -101,6 +101,16 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "รายละเอียด ลูกค้า";
+            // 
+            // txtInvId
+            // 
+            this.txtInvId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtInvId.Location = new System.Drawing.Point(443, 17);
+            this.txtInvId.Margin = new System.Windows.Forms.Padding(2);
+            this.txtInvId.Name = "txtInvId";
+            this.txtInvId.Size = new System.Drawing.Size(38, 23);
+            this.txtInvId.TabIndex = 53;
+            this.txtInvId.Visible = false;
             // 
             // txtCustEmail
             // 
@@ -477,11 +487,31 @@
             this.groupBox1.Controls.Add(this.btnUnActive);
             this.groupBox1.Controls.Add(this.ChkUnActive);
             this.groupBox1.Controls.Add(this.chkActive);
-            this.groupBox1.Location = new System.Drawing.Point(377, 519);
+            this.groupBox1.Location = new System.Drawing.Point(531, 519);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(438, 157);
+            this.groupBox1.Size = new System.Drawing.Size(284, 157);
             this.groupBox1.TabIndex = 63;
             this.groupBox1.TabStop = false;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label28.Location = new System.Drawing.Point(5, 22);
+            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(43, 17);
+            this.label28.TabIndex = 132;
+            this.label28.Text = "เลขที่ :";
+            // 
+            // txtInvNumber
+            // 
+            this.txtInvNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtInvNumber.Location = new System.Drawing.Point(84, 19);
+            this.txtInvNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.txtInvNumber.Name = "txtInvNumber";
+            this.txtInvNumber.Size = new System.Drawing.Size(138, 23);
+            this.txtInvNumber.TabIndex = 131;
             // 
             // txtInvRemark
             // 
@@ -489,7 +519,7 @@
             this.txtInvRemark.Location = new System.Drawing.Point(84, 75);
             this.txtInvRemark.Margin = new System.Windows.Forms.Padding(2);
             this.txtInvRemark.Name = "txtInvRemark";
-            this.txtInvRemark.Size = new System.Drawing.Size(343, 23);
+            this.txtInvRemark.Size = new System.Drawing.Size(139, 23);
             this.txtInvRemark.TabIndex = 130;
             // 
             // label3
@@ -525,7 +555,7 @@
             // 
             // btnUnActive
             // 
-            this.btnUnActive.Location = new System.Drawing.Point(240, 124);
+            this.btnUnActive.Location = new System.Drawing.Point(168, 124);
             this.btnUnActive.Name = "btnUnActive";
             this.btnUnActive.Size = new System.Drawing.Size(103, 23);
             this.btnUnActive.TabIndex = 126;
@@ -536,7 +566,7 @@
             // 
             this.ChkUnActive.AutoSize = true;
             this.ChkUnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.ChkUnActive.Location = new System.Drawing.Point(163, 124);
+            this.ChkUnActive.Location = new System.Drawing.Point(91, 124);
             this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2);
             this.ChkUnActive.Name = "ChkUnActive";
             this.ChkUnActive.Size = new System.Drawing.Size(60, 21);
@@ -550,7 +580,7 @@
             // 
             this.chkActive.AutoSize = true;
             this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chkActive.Location = new System.Drawing.Point(38, 124);
+            this.chkActive.Location = new System.Drawing.Point(14, 124);
             this.chkActive.Margin = new System.Windows.Forms.Padding(2);
             this.chkActive.Name = "chkActive";
             this.chkActive.Size = new System.Drawing.Size(61, 21);
@@ -559,36 +589,6 @@
             this.chkActive.Text = "ใช้งาน";
             this.chkActive.UseVisualStyleBackColor = true;
             this.chkActive.Click += new System.EventHandler(this.chkActive_Click);
-            // 
-            // txtInvId
-            // 
-            this.txtInvId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtInvId.Location = new System.Drawing.Point(443, 17);
-            this.txtInvId.Margin = new System.Windows.Forms.Padding(2);
-            this.txtInvId.Name = "txtInvId";
-            this.txtInvId.Size = new System.Drawing.Size(38, 23);
-            this.txtInvId.TabIndex = 53;
-            this.txtInvId.Visible = false;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label28.Location = new System.Drawing.Point(5, 22);
-            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(43, 17);
-            this.label28.TabIndex = 132;
-            this.label28.Text = "เลขที่ :";
-            // 
-            // txtInvNumber
-            // 
-            this.txtInvNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtInvNumber.Location = new System.Drawing.Point(84, 19);
-            this.txtInvNumber.Margin = new System.Windows.Forms.Padding(2);
-            this.txtInvNumber.Name = "txtInvNumber";
-            this.txtInvNumber.Size = new System.Drawing.Size(138, 23);
-            this.txtInvNumber.TabIndex = 131;
             // 
             // FrmInvoiceAdd
             // 

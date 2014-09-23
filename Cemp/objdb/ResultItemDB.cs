@@ -83,7 +83,7 @@ namespace Cemp.objdb
             String sql = "", chk = "";
             if (p.Id.Equals(""))
             {
-                p.Id = "rs" + p.getGenID();
+                p.Id = "rsi" + p.getGenID();
             }
             p.PlaceMeasure = p.PlaceMeasure.Replace("'", "''");
             p.ResultValue = p.ResultValue.Replace("'", "''");

@@ -61,6 +61,13 @@ namespace Cemp.objdb
             cp.mouLine4 = "mou_line4";
             cp.InvDuePeriod = "invoice_due_period";
 
+            cp.rsLine1 = "rs_line1";
+            cp.rsLine2 = "rs_line2";
+            cp.rsLine3 = "rs_line3";
+            cp.rsLine4 = "rs_line4";
+            cp.rsLine5 = "rs_line5";
+            cp.rsLine6 = "rs_line6";
+
             cp.pkField = "comp_id";
             cp.table = "b_company";
         }
@@ -105,6 +112,13 @@ namespace Cemp.objdb
             item.mouLine3 = dt.Rows[0][cp.mouLine3].ToString();
             item.mouLine4 = dt.Rows[0][cp.mouLine4].ToString();
             item.InvDuePeriod = dt.Rows[0][cp.InvDuePeriod].ToString();
+
+            item.rsLine1 = dt.Rows[0][cp.rsLine1].ToString();
+            item.rsLine2 = dt.Rows[0][cp.rsLine2].ToString();
+            item.rsLine3 = dt.Rows[0][cp.rsLine3].ToString();
+            item.rsLine4 = dt.Rows[0][cp.rsLine4].ToString();
+            item.rsLine5 = dt.Rows[0][cp.rsLine5].ToString();
+            item.rsLine6 = dt.Rows[0][cp.rsLine6].ToString();
 
             return item;
         }
@@ -191,6 +205,13 @@ namespace Cemp.objdb
             p.mouLine3 = p.mouLine3.Replace("'", "''");
             p.mouLine4 = p.mouLine4.Replace("'", "''");
 
+            p.rsLine1 = p.rsLine1.Replace("'", "''");
+            p.rsLine2 = p.rsLine2.Replace("'", "''");
+            p.rsLine3 = p.rsLine3.Replace("'", "''");
+            p.rsLine4 = p.rsLine4.Replace("'", "''");
+            p.rsLine5 = p.rsLine5.Replace("'", "''");
+            p.rsLine6 = p.rsLine6.Replace("'", "''");
+
             sql = "Update " + cp.table + " Set " + cp.AddressE + "='" + p.AddressE + "', " +
                 cp.AddressT + "='" + p.AddressT + "', " +
                 cp.amphurId + "='" + p.amphurId + "', " +
@@ -217,7 +238,13 @@ namespace Cemp.objdb
                 cp.mouLine2 + "='" + p.mouLine2 + "', " +
                 cp.mouLine3 + "='" + p.mouLine3 + "', " +
                 cp.mouLine4 + "='" + p.mouLine4 + "', " +
-                cp.InvDuePeriod + "='" + p.InvDuePeriod + "' " +
+                cp.InvDuePeriod + "='" + p.InvDuePeriod + "', " +
+                cp.rsLine1 + "='" + p.rsLine1 + "', " +
+                cp.rsLine2 + "='" + p.rsLine2 + "', " +
+                cp.rsLine3 + "='" + p.rsLine3 + "', " +
+                cp.rsLine4 + "='" + p.rsLine4 + "', " +
+                cp.rsLine5 + "='" + p.rsLine5 + "', " +
+                cp.rsLine6 + "='" + p.rsLine6 + "' " +
                 "Where " + cp.pkField + "='" + p.Id + "'";
             try
             {

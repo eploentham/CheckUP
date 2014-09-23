@@ -387,6 +387,17 @@
       <DependentUpon>QuotationPrint.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="report\ResultDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResultDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="report\ResultPrint.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResultPrint.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="gui\FrmInvoiceAdd.resx">
       <DependentUpon>FrmInvoiceAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -518,6 +529,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>QuotationPrint.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="report\ResultPrint.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResultPrint.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
@@ -628,6 +643,17 @@
     </None>
     <None Include="report\QuotationDS1.xss">
       <DependentUpon>QuotationDS1.xsd</DependentUpon>
+    </None>
+    <None Include="report\ResultDS.xsc">
+      <DependentUpon>ResultDS.xsd</DependentUpon>
+    </None>
+    <None Include="report\ResultDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ResultDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="report\ResultDS.xss">
+      <DependentUpon>ResultDS.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
