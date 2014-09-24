@@ -131,6 +131,15 @@ namespace Cemp.gui
             cboRemark5.Text = qu.Remark5;
             cboRemark6.Text = qu.Remark6;
             cboRemark7.Text = qu.Remark7;
+            try
+            {
+                dtpDateQu.Value = DateTime.Parse(cc.cf.dateDBtoShow1(qu.QuoDate));
+            }
+            catch (Exception ex)
+            {
+                dtpDateQu.Value = DateTime.Parse(cc.cf.dateDBtoShow(qu.QuoDate));
+            }
+            
 
             if (qu.Id.Equals(""))
             {

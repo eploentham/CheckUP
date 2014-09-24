@@ -39,7 +39,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtpPlaceRecord = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.dgvAdd = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -56,7 +58,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(563, 403);
+            this.groupBox1.Size = new System.Drawing.Size(1057, 144);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "เก็บตัวอย่าง";
@@ -64,7 +66,7 @@
             // txtMouNumber
             // 
             this.txtMouNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtMouNumber.Location = new System.Drawing.Point(176, 50);
+            this.txtMouNumber.Location = new System.Drawing.Point(161, 18);
             this.txtMouNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtMouNumber.Name = "txtMouNumber";
             this.txtMouNumber.Size = new System.Drawing.Size(134, 23);
@@ -74,7 +76,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label9.Location = new System.Drawing.Point(31, 53);
+            this.label9.Location = new System.Drawing.Point(16, 21);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(43, 17);
@@ -83,7 +85,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(432, 34);
+            this.btnSave.Location = new System.Drawing.Point(604, 34);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(81, 39);
@@ -94,7 +96,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(432, 143);
+            this.btnPrint.Location = new System.Drawing.Point(733, 34);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(81, 39);
@@ -107,7 +109,7 @@
             // 
             this.cboStaffAnalysis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.cboStaffAnalysis.FormattingEnabled = true;
-            this.cboStaffAnalysis.Location = new System.Drawing.Point(176, 214);
+            this.cboStaffAnalysis.Location = new System.Drawing.Point(161, 104);
             this.cboStaffAnalysis.Name = "cboStaffAnalysis";
             this.cboStaffAnalysis.Size = new System.Drawing.Size(231, 24);
             this.cboStaffAnalysis.TabIndex = 5;
@@ -116,7 +118,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label3.Location = new System.Drawing.Point(31, 217);
+            this.label3.Location = new System.Drawing.Point(16, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 16);
             this.label3.TabIndex = 4;
@@ -126,7 +128,7 @@
             // 
             this.cboStaffPlaceRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.cboStaffPlaceRecord.FormattingEnabled = true;
-            this.cboStaffPlaceRecord.Location = new System.Drawing.Point(176, 158);
+            this.cboStaffPlaceRecord.Location = new System.Drawing.Point(161, 74);
             this.cboStaffPlaceRecord.Name = "cboStaffPlaceRecord";
             this.cboStaffPlaceRecord.Size = new System.Drawing.Size(231, 24);
             this.cboStaffPlaceRecord.TabIndex = 3;
@@ -135,7 +137,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label2.Location = new System.Drawing.Point(31, 106);
+            this.label2.Location = new System.Drawing.Point(16, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 16);
             this.label2.TabIndex = 2;
@@ -144,7 +146,7 @@
             // dtpPlaceRecord
             // 
             this.dtpPlaceRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dtpPlaceRecord.Location = new System.Drawing.Point(176, 100);
+            this.dtpPlaceRecord.Location = new System.Drawing.Point(161, 46);
             this.dtpPlaceRecord.Name = "dtpPlaceRecord";
             this.dtpPlaceRecord.Size = new System.Drawing.Size(200, 22);
             this.dtpPlaceRecord.TabIndex = 1;
@@ -153,24 +155,38 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label1.Location = new System.Drawing.Point(31, 161);
+            this.label1.Location = new System.Drawing.Point(16, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "เจ้าหน้าที่ผู้เก็บตัวอย่าง :";
             // 
+            // dgvAdd
+            // 
+            this.dgvAdd.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAdd.Location = new System.Drawing.Point(12, 220);
+            this.dgvAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvAdd.Name = "dgvAdd";
+            this.dgvAdd.RowTemplate.Height = 24;
+            this.dgvAdd.Size = new System.Drawing.Size(1058, 387);
+            this.dgvAdd.TabIndex = 4;
+            // 
             // FrmMOUPlaceRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(587, 427);
+            this.ClientSize = new System.Drawing.Size(1081, 793);
+            this.Controls.Add(this.dgvAdd);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmMOUPlaceRecord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMOUPlaceRecord";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMOUPlaceRecord_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -188,5 +204,6 @@
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.TextBox txtMouNumber;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView dgvAdd;
     }
 }

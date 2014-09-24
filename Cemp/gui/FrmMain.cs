@@ -46,7 +46,8 @@ namespace Cemp
             //{
             tv1.Nodes.Add("nQuotationView", "พิมพ์ Quotation");
             tv1.Nodes.Add("nQuoConfirmView", "Confirm Quotation");
-            tv1.Nodes.Add("nMOUView", "พิมพ์ ใบMOU และใบรับตัวอย่าง");
+            tv1.Nodes.Add("nMOUView", "พิมพ์ ใบจ้อตกลง");
+            //tv1.Nodes.Add("nMOUPlaceRecord", "พิมพ์ ใบรับตัวอย่าง");
             tv1.Nodes.Add("nInputResult", "ป้อนผลตัวอย่าง");
             tv1.Nodes.Add("nBillView", "พิมพ์ Bill Note");
             //tv1.Nodes.Add("nRewardAdd", "ป้อนรางวัล");
@@ -156,9 +157,9 @@ namespace Cemp
                 FrmItemGroupView frm = new FrmItemGroupView(cc);
                 showFrame(frm);
             }
-            //else if (e.Node.Name.ToString() == "nThooDefault")
+            //else if (e.Node.Name.ToString() == "nMOUPlaceRecord")
             //{
-            //    FrmThooDefault frm = new FrmThooDefault(sf.Code);
+            //    FrmMOUPlaceRecord frm = new FrmMOUPlaceRecord(cc);
             //    showFrame(frm);
             //}
             else if (e.Node.Name.ToString() == "nInitConfig")

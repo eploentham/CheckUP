@@ -148,7 +148,14 @@ namespace Cemp.gui
             {
                 txtStaffPlaceRecordPosition.Text = mo.StaffPlaceRecordPosition;
             }
-            
+            try
+            {
+                dtpDateMOU.Value = DateTime.Parse(cc.cf.dateDBtoShow1(mo.MOUDate));
+            }
+            catch (Exception ex)
+            {
+                dtpDateMOU.Value = DateTime.Parse(cc.cf.dateDBtoShow(mo.MOUDate));
+            }
             cboStaffMOU.Text = mo.StaffQuoName;
             cboStaffPlaceRecord.Text = mo.StaffPlaceRecordName;
             CustMou.Text = mo.CustMou;
