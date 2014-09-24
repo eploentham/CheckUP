@@ -17,8 +17,8 @@ namespace Cemp.gui
         CnviControl cc;
         Quotation qu;
         Company cp;
-        int colRow = 0, colItem = 1, colMethod = 2, colQty = 3, colPriceCost=4, colPriceSale = 5, colAmount = 6, colId=7, colDel=8, colItemId=9, colMethodId=10, colEdit=11;
-        int colCnt = 12;
+        int colRow = 0, colItemCode=1, colItem = 2, colMethod = 3, colQty = 4, colPriceCost=5, colPriceSale = 6, colAmount = 7, colId=8, colDel=9, colItemId=10, colMethodId=11, colEdit=12;
+        int colCnt = 13;
         String oldNetTotal = "";
         Boolean pageLoad = false, flagViewCost=false;
         //NumberFormat fmt = NumberFormat.getCurrencyInstance();
@@ -160,6 +160,8 @@ namespace Cemp.gui
             txtQuNumber.ReadOnly = true;
             txtPriceCost.ReadOnly = true;
             oldNetTotal = qu.NetTotal;
+            btnUnActive.Visible = false;
+            chkActive.Checked = true;
         }
         private void getQuotation()
         {
@@ -234,6 +236,7 @@ namespace Cemp.gui
             dgvAdd.Columns[colAmount].Width = 180;
 
             dgvAdd.Columns[colRow].HeaderText = "ลำดับ";
+            dgvAdd.Columns[colItemCode].HeaderText = "CODE";
             dgvAdd.Columns[colItem].HeaderText = "Parameter";
             dgvAdd.Columns[colMethod].HeaderText = "Method";
             dgvAdd.Columns[colQty].HeaderText = "QTY";
@@ -257,6 +260,7 @@ namespace Cemp.gui
             dgvAdd.Columns[colEdit].Visible = false;
 
             dgvAdd.Columns[colPriceCost].Visible = flagViewCost;
+            dgvAdd.Columns[colItemCode].ReadOnly = true;
 
             //dgvAdd.Columns.Add(newColumn);
             if (dt.Rows.Count > 0)
@@ -268,6 +272,7 @@ namespace Cemp.gui
                     //cell.DataSource = newColumn;
 
                     dgvAdd[colRow, i].Value = (i + 1);
+                    dgvAdd[colItemCode, i].Value = dt.Rows[i][cc.quidb.qui.ItemCode].ToString();
                     dgvAdd[colItem, i].Value = dt.Rows[i][cc.quidb.qui.ItemDescription].ToString();
                     dgvAdd[colMethod, i].Value = dt.Rows[i][cc.quidb.qui.MethodDescription].ToString();
                     dgvAdd[colQty, i].Value = dt.Rows[i][cc.quidb.qui.Qty].ToString();
@@ -462,6 +467,7 @@ namespace Cemp.gui
                     Item it = cc.itdb.selectByPk(dgvAdd[colItemId, i].Value.ToString());
                     ItemGroup itg = cc.itgdb.selectByPk(it.ItemGroupId);
                     qui.RowNumber = dgvAdd[colRow, i].Value.ToString();
+                    qui.ItemCode = it.Code;
                     qui.PriceSale = cc.cf.NumberNull1(dgvAdd[colPriceSale, i].Value.ToString());
                     qui.Qty = cc.cf.NumberNull1(dgvAdd[colQty, i].Value.ToString());
                     qui.Amount = cc.cf.NumberNull1(dgvAdd[colAmount, i].Value.ToString());
@@ -536,6 +542,7 @@ namespace Cemp.gui
                 return;
             }
             dgvAdd[colRow, row].Value = (row + 1);
+            dgvAdd[colItemCode, row].Value = it.Code;
             dgvAdd[colItemId, row].Value = it.Id;
             dgvAdd[colMethodId, row].Value = it.MethodId;
             dgvAdd[colItem, row].Value = it.NameT;
@@ -972,6 +979,22 @@ namespace Cemp.gui
 
                 m.Show(dgvAdd, new Point(e.X, e.Y));
 
+            }
+        }
+
+        private void chkActive_Click(object sender, EventArgs e)
+        {
+            if (chkActive.Checked)
+            {
+                btnUnActive.Visible = false;
+            }
+        }
+
+        private void ChkUnActive_Click(object sender, EventArgs e)
+        {
+            if (ChkUnActive.Checked)
+            {
+                btnUnActive.Visible = true;
             }
         }
 

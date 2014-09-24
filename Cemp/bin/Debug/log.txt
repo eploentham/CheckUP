@@ -928,3 +928,35 @@ Log Entry : 12:07:15 17 กันยายน 2557
 23/9/2557 10:18->rpt.setReportResult OK 
 23/9/2557 10:18->rpt.setReportResult OK SetDataSource
 23/9/2557 15:05->Error FrmResultAdd btnSave_Click Object reference not set to an instance of an object.
+24/9/2557 12:20->rpt.setReportQuotation OK 
+24/9/2557 12:20->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+24/9/2557 12:20->rpt.setReportQuotation OK SetDataSource
+24/9/2557 12:28->rpt.setReportQuotation OK 
+24/9/2557 12:28->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+24/9/2557 12:28->rpt.setReportQuotation OK SetDataSource
+24/9/2557 12:29->rpt.setReportQuotation OK 
+24/9/2557 12:29->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+24/9/2557 12:29->rpt.setReportQuotation OK SetDataSource
+24/9/2557 12:30->rpt.setReportMOU OK 
+24/9/2557 12:30->rpt.setReportMOU OK SetDataSource
+24/9/2557 12:30->rpt.setReportQuotation OK 
+24/9/2557 12:30->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+24/9/2557 12:30->rpt.setReportQuotation OK SetDataSource
+24/9/2557 12:31->rpt.setReportQuotation OK 
+24/9/2557 12:31->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+24/9/2557 12:31->rpt.setReportQuotation OK SetDataSource
+24/9/2557 12:33->rpt.setReportQuotation OK 
+24/9/2557 12:33->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+24/9/2557 12:33->rpt.setReportQuotation OK SetDataSource
+24/9/2557 12:35->rpt.setReportQuotation OK 
+24/9/2557 12:35->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+24/9/2557 12:35->rpt.setReportQuotation OK SetDataSource
+24/9/2557 12:36->rpt.setReportQuotation OK 
+24/9/2557 12:36->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+24/9/2557 12:36->rpt.setReportQuotation OK SetDataSource
+24/9/2557 12:40->rpt.setReportQuotation OK 
+24/9/2557 12:40->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+24/9/2557 12:40->rpt.setReportQuotation OK SetDataSource
+24/9/2557 12:41->rpt.setReportQuotation OK 
+24/9/2557 12:41->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+24/9/2557 12:41->rpt.setReportQuotation OK SetDataSource

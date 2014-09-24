@@ -299,6 +299,42 @@ namespace Cemp.object1
                 return dt;
             }
         }
+        public String dateInputMOU(String dt)
+        {
+            if (dt != "")
+            {
+                String tmp = "";
+                tmp = dt.Replace("/","-");
+                String[] tmp1 = tmp.Split('-');
+                if (tmp1.Length == 3)
+                {
+                    tmp = tmp1[2] + tmp1[1] + tmp1[0];
+                }
+                return tmp;
+            }
+            else
+            {
+                return dt;
+            }
+        }
+        public String dateShowMOU(String dt)
+        {
+            if (dt != "")
+            {
+                String tmp = "";
+                tmp = dt.Replace("/", "-");
+                String[] tmp1 = tmp.Split('-');
+                if (tmp1.Length == 3)
+                {
+                    tmp = tmp1[2]+"-" + tmp1[1]+"-" + tmp1[0];
+                }
+                return tmp;
+            }
+            else
+            {
+                return dt;
+            }
+        }
         public String ObjectNull(object o)
         {
             if (o == null)

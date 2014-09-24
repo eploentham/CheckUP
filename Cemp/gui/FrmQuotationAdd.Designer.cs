@@ -128,6 +128,9 @@
             this.label39 = new System.Windows.Forms.Label();
             this.txtPriceCost = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
+            this.btnUnActive = new System.Windows.Forms.Button();
+            this.ChkUnActive = new System.Windows.Forms.RadioButton();
+            this.chkActive = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
@@ -1276,11 +1279,51 @@
             this.label40.TabIndex = 56;
             this.label40.Text = "Cost";
             // 
+            // btnUnActive
+            // 
+            this.btnUnActive.Location = new System.Drawing.Point(1032, 779);
+            this.btnUnActive.Name = "btnUnActive";
+            this.btnUnActive.Size = new System.Drawing.Size(86, 23);
+            this.btnUnActive.TabIndex = 66;
+            this.btnUnActive.Text = "ยกเลิกการใช้งาน";
+            this.btnUnActive.UseVisualStyleBackColor = true;
+            // 
+            // ChkUnActive
+            // 
+            this.ChkUnActive.AutoSize = true;
+            this.ChkUnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.ChkUnActive.Location = new System.Drawing.Point(970, 779);
+            this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2);
+            this.ChkUnActive.Name = "ChkUnActive";
+            this.ChkUnActive.Size = new System.Drawing.Size(60, 21);
+            this.ChkUnActive.TabIndex = 65;
+            this.ChkUnActive.TabStop = true;
+            this.ChkUnActive.Text = "ยกเลิก";
+            this.ChkUnActive.UseVisualStyleBackColor = true;
+            this.ChkUnActive.Click += new System.EventHandler(this.ChkUnActive_Click);
+            // 
+            // chkActive
+            // 
+            this.chkActive.AutoSize = true;
+            this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.chkActive.Location = new System.Drawing.Point(897, 779);
+            this.chkActive.Margin = new System.Windows.Forms.Padding(2);
+            this.chkActive.Name = "chkActive";
+            this.chkActive.Size = new System.Drawing.Size(61, 21);
+            this.chkActive.TabIndex = 64;
+            this.chkActive.TabStop = true;
+            this.chkActive.Text = "ใช้งาน";
+            this.chkActive.UseVisualStyleBackColor = true;
+            this.chkActive.Click += new System.EventHandler(this.chkActive_Click);
+            // 
             // FrmQuotationAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1134, 773);
+            this.ClientSize = new System.Drawing.Size(1186, 832);
+            this.Controls.Add(this.btnUnActive);
+            this.Controls.Add(this.ChkUnActive);
+            this.Controls.Add(this.chkActive);
             this.Controls.Add(this.label40);
             this.Controls.Add(this.txtPriceCost);
             this.Controls.Add(this.label39);
@@ -1449,5 +1492,8 @@
         private System.Windows.Forms.TextBox txtPriceCost;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.TextBox txtAmountCost;
+        private System.Windows.Forms.Button btnUnActive;
+        private System.Windows.Forms.RadioButton ChkUnActive;
+        private System.Windows.Forms.RadioButton chkActive;
     }
 }

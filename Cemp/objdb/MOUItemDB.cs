@@ -124,6 +124,20 @@ namespace Cemp.objdb
 
             return dt;
         }
+        public DataTable selectDatePlaceByNumber(String moNumber)
+        {
+            String sql = "";
+            sql = "Select Distinct " + moi.DatePlaceRecord + "  From " + moi.table + " Where " + moi.MOUNumber + "='" + moNumber + "' and " + moi.Active + "='1'";
+            DataTable dt = conn.selectData(sql);
+            return dt;
+        }
+        public DataTable selectPlaceByNumber(String moNumber)
+        {
+            String sql = "";
+            sql = "Select Distinct " + moi.PlaceRecord + "  From " + moi.table + " Where " + moi.MOUNumber + "='" + moNumber + "' and " + moi.Active + "='1'";
+            DataTable dt = conn.selectData(sql);
+            return dt;
+        }
         public DataTable selectByMoNumber(String moNumber)
         {
             //MOUItem item = new MOUItem();

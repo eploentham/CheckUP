@@ -76,3 +76,5 @@ D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmInvoiceView.resources
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmInvoiceAdd.resources
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmInvoiceView.resources
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmMOUAdd2.resources
+D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.csprojResolveAssemblyReference.cache
+D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmMOUAdd2.resources

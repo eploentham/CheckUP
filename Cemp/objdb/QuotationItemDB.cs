@@ -46,6 +46,8 @@ namespace Cemp.objdb
             qui.userModi = "user_modi";
             qui.PriceCost = "price_cost";
 
+            qui.ItemCode = "item_code";
+
             qui.table = "t_quotation_item";
             qui.pkField = "quo_item_id";
         }
@@ -77,6 +79,8 @@ namespace Cemp.objdb
             item.userModi = dt.Rows[0][qui.userModi].ToString();
 
             item.PriceCost = dt.Rows[0][qui.PriceCost].ToString();
+
+            item.ItemCode = dt.Rows[0][qui.ItemCode].ToString();
 
             return item;
         }
@@ -138,30 +142,16 @@ namespace Cemp.objdb
             {
                 p.Id = "qui"+p.getGenID();
             }
-            if (p.Discount.Equals(""))
-            {
-                p.Discount = "0";
-            }
-            if (p.Qty.Equals(""))
-            {
-                p.Qty = "0";
-            }
-            if (p.PriceSale.Equals(""))
-            {
-                p.PriceSale = "0";
-            }
-            if (p.PriceCost.Equals(""))
-            {
-                p.PriceCost = "0";
-            }
-            if (p.Amount.Equals(""))
-            {
-                p.Amount = "0";
-            }
-            if (p.RowNumber.Equals(""))
-            {
-                p.RowNumber = "0";
-            }
+
+            //p.Discount = NumberNull1(p.Discount);
+            //p.Qty = NumberNull1(p.Qty);
+            //p.PriceSale = NumberNull1(p.PriceSale);
+            //p.PriceCost = NumberNull1(p.PriceCost);
+            //p.Amount = NumberNull1(p.Amount);
+            //p.RowNumber = NumberNull1(p.RowNumber);
+            //p.Discount = NumberNull1(p.Discount);
+            //p.Discount = NumberNull1(p.Discount);
+
             p.ItemDescription = p.ItemDescription.Replace("'", "''");
             p.MethodDescription = p.MethodDescription.Replace("'", "''");
             p.Remark = p.Remark.Replace("'", "''");
@@ -169,11 +159,11 @@ namespace Cemp.objdb
             p.ItemGroupNameT = p.ItemGroupNameT.Replace("'", "''");
             
             //p. = p.ItemGroupNameT.Replace("''", "'");
-            p.PriceSale = p.PriceSale.Replace(",", "");
-            p.PriceCost = p.PriceCost.Replace(",", "");
-            p.Qty = p.Qty.Replace(",", "");
-            p.Amount = p.Amount.Replace(",", "");
-            p.Discount = p.Discount.Replace(",", "");
+            //p.PriceSale = p.PriceSale.Replace(",", "");
+            //p.PriceCost = p.PriceCost.Replace(",", "");
+            //p.Qty = p.Qty.Replace(",", "");
+            //p.Amount = p.Amount.Replace(",", "");
+            //p.Discount = p.Discount.Replace(",", "");
             //p.ItemGroupNameT = p.ItemGroupNameT.Replace("''", "'");
 
             if (p.ItemGroupSort.Equals(""))
@@ -185,13 +175,13 @@ namespace Cemp.objdb
                 qui.MethodDescription + "," + qui.MethodId + "," + qui.PriceSale + "," +
                 qui.Qty + "," + qui.QuoId + "," + qui.RowNumber + "," +
                 qui.Remark + "," + qui.ItemGroupNameE + "," + qui.ItemGroupNameT + "," +
-                qui.ItemGroupSort + "," + qui.ItemGroupId + "," + qui.PriceCost + ") " +
-                "Values('" + p.Id + "','" + p.Active + "'," + p.Amount + "," +
-                p.Discount + ",'" + p.ItemDescription + "','" + p.ItemId + "','" +
-                p.MethodDescription + "','" + p.MethodId + "'," + p.PriceSale + "," +
-                p.Qty + ",'" + p.QuoId + "'," + p.RowNumber + ",'" +
+                qui.ItemGroupSort + "," + qui.ItemGroupId + "," + qui.PriceCost + "," + qui.ItemCode + ") " +
+                "Values('" + p.Id + "','" + p.Active + "'," + NumberNull1(p.Amount.Replace(",", "")) + "," +
+                NumberNull1(p.Discount.Replace(",", "")) + ",'" + p.ItemDescription + "','" + p.ItemId + "','" +
+                p.MethodDescription + "','" + p.MethodId + "'," + NumberNull1(p.PriceSale.Replace(",", "")) + "," +
+                NumberNull1(p.Qty.Replace(",", "")) + ",'" + p.QuoId + "'," + NumberNull1(p.RowNumber) + ",'" +
                 p.Remark + "','" + p.ItemGroupNameE + "','" + p.ItemGroupNameT + "','" +
-                p.ItemGroupSort + "','" + p.ItemGroupId + "'," + p.PriceCost + ")";
+                p.ItemGroupSort + "','" + p.ItemGroupId + "'," + NumberNull1(p.PriceCost.Replace(",", "")) + ",'" + p.ItemCode + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -216,17 +206,17 @@ namespace Cemp.objdb
             p.ItemGroupNameE = p.ItemGroupNameE.Replace("'", "'");
             p.ItemGroupNameT = p.ItemGroupNameT.Replace("'", "'");
 
-            p.PriceSale = p.PriceSale.Replace(",", "");
-            p.PriceCost = p.PriceCost.Replace(",", "");
-            p.Qty = p.Qty.Replace(",", "");
-            p.Amount = p.Amount.Replace(",", "");
-            p.Discount = p.Discount.Replace(",", "");
+            //p.PriceSale = p.PriceSale.Replace(",", "");
+            //p.PriceCost = p.PriceCost.Replace(",", "");
+            //p.Qty = p.Qty.Replace(",", "");
+            //p.Amount = p.Amount.Replace(",", "");
+            //p.Discount = p.Discount.Replace(",", "");
             if (p.ItemGroupSort.Equals(""))
             {
                 p.ItemGroupSort = "999";
             }
             sql = "Update " + qui.table + " Set " + qui.Amount + "=" + NumberNull1(p.Amount.Replace(",","")) + ", " +
-                qui.Discount + "=" + NumberNull1(p.Discount) + ", " +
+                qui.Discount + "=" + NumberNull1(p.Discount.Replace(",", "")) + ", " +
                 qui.ItemDescription + "='" + p.ItemDescription + "', " +
                 qui.ItemId + "='" + p.ItemId + "', " +
                 qui.MethodDescription + "='" + p.MethodDescription + "', " +
@@ -234,13 +224,14 @@ namespace Cemp.objdb
                 qui.PriceSale + "=" + NumberNull1(p.PriceSale.Replace(",","")) + ", " +
                 qui.Qty + "=" + NumberNull1(p.Qty.Replace(",","")) + ", " +
                 qui.QuoId + "='" + p.QuoId + "', " +
-                qui.RowNumber + "='" + p.RowNumber + "', " +
+                qui.RowNumber + "='" + NumberNull1(p.RowNumber) + "', " +
                 qui.Remark + "='" + p.Remark + "', " +
                 qui.ItemGroupNameE + "='" + p.ItemGroupNameE + "', " +
                 qui.ItemGroupNameT + "='" + p.ItemGroupNameT + "', " +
                 qui.ItemGroupSort + "='" + p.ItemGroupSort + "', " +
                 qui.ItemGroupId + "='" + p.ItemGroupId + "', " +
-                qui.PriceCost + "=" + p.PriceCost + " " +
+                qui.PriceCost + "=" + NumberNull1(p.PriceCost.Replace(",", "")) + ", " +
+                qui.ItemCode + "='" + p.ItemCode + "' " +
                 
                 "Where " + qui.pkField + "='" + p.Id + "'";
             try

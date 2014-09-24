@@ -287,6 +287,8 @@ namespace Cemp.report {
             
             private global::System.Data.DataColumn columnitem_id;
             
+            private global::System.Data.DataColumn columnitem_code;
+            
             private global::System.Data.DataColumn columnitem_description;
             
             private global::System.Data.DataColumn columnitem_method_id;
@@ -294,6 +296,8 @@ namespace Cemp.report {
             private global::System.Data.DataColumn columnitem_method_description;
             
             private global::System.Data.DataColumn columnqty;
+            
+            private global::System.Data.DataColumn columnprice_cost;
             
             private global::System.Data.DataColumn columnprice_sale;
             
@@ -312,6 +316,18 @@ namespace Cemp.report {
             private global::System.Data.DataColumn columnitem_group_name_t;
             
             private global::System.Data.DataColumn columnitem_group_name_e;
+            
+            private global::System.Data.DataColumn columndate_create;
+            
+            private global::System.Data.DataColumn columndate_modi;
+            
+            private global::System.Data.DataColumn columndate_cancel;
+            
+            private global::System.Data.DataColumn columnuser_create;
+            
+            private global::System.Data.DataColumn columnuser_modi;
+            
+            private global::System.Data.DataColumn columnuser_cancel;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -380,6 +396,14 @@ namespace Cemp.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn item_codeColumn {
+                get {
+                    return this.columnitem_code;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn item_descriptionColumn {
                 get {
                     return this.columnitem_description;
@@ -407,6 +431,14 @@ namespace Cemp.report {
             public global::System.Data.DataColumn qtyColumn {
                 get {
                     return this.columnqty;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn price_costColumn {
+                get {
+                    return this.columnprice_cost;
                 }
             }
             
@@ -484,6 +516,54 @@ namespace Cemp.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn date_createColumn {
+                get {
+                    return this.columndate_create;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn date_modiColumn {
+                get {
+                    return this.columndate_modi;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn date_cancelColumn {
+                get {
+                    return this.columndate_cancel;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn user_createColumn {
+                get {
+                    return this.columnuser_create;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn user_modiColumn {
+                get {
+                    return this.columnuser_modi;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn user_cancelColumn {
+                get {
+                    return this.columnuser_cancel;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -524,10 +604,12 @@ namespace Cemp.report {
                         string quo_id, 
                         decimal row_number, 
                         string item_id, 
+                        string item_code, 
                         string item_description, 
                         string item_method_id, 
                         string item_method_description, 
                         decimal qty, 
+                        decimal price_cost, 
                         decimal price_sale, 
                         decimal discount, 
                         decimal amount1, 
@@ -536,17 +618,25 @@ namespace Cemp.report {
                         string item_group_sort, 
                         string item_group_id, 
                         string item_group_name_t, 
-                        string item_group_name_e) {
+                        string item_group_name_e, 
+                        string date_create, 
+                        string date_modi, 
+                        string date_cancel, 
+                        string user_create, 
+                        string user_modi, 
+                        string user_cancel) {
                 t_quotation_itemRow rowt_quotation_itemRow = ((t_quotation_itemRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         quo_item_id,
                         quo_id,
                         row_number,
                         item_id,
+                        item_code,
                         item_description,
                         item_method_id,
                         item_method_description,
                         qty,
+                        price_cost,
                         price_sale,
                         discount,
                         amount1,
@@ -555,7 +645,13 @@ namespace Cemp.report {
                         item_group_sort,
                         item_group_id,
                         item_group_name_t,
-                        item_group_name_e};
+                        item_group_name_e,
+                        date_create,
+                        date_modi,
+                        date_cancel,
+                        user_create,
+                        user_modi,
+                        user_cancel};
                 rowt_quotation_itemRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowt_quotation_itemRow);
                 return rowt_quotation_itemRow;
@@ -589,10 +685,12 @@ namespace Cemp.report {
                 this.columnquo_id = base.Columns["quo_id"];
                 this.columnrow_number = base.Columns["row_number"];
                 this.columnitem_id = base.Columns["item_id"];
+                this.columnitem_code = base.Columns["item_code"];
                 this.columnitem_description = base.Columns["item_description"];
                 this.columnitem_method_id = base.Columns["item_method_id"];
                 this.columnitem_method_description = base.Columns["item_method_description"];
                 this.columnqty = base.Columns["qty"];
+                this.columnprice_cost = base.Columns["price_cost"];
                 this.columnprice_sale = base.Columns["price_sale"];
                 this.columndiscount = base.Columns["discount"];
                 this.columnamount1 = base.Columns["amount1"];
@@ -602,6 +700,12 @@ namespace Cemp.report {
                 this.columnitem_group_id = base.Columns["item_group_id"];
                 this.columnitem_group_name_t = base.Columns["item_group_name_t"];
                 this.columnitem_group_name_e = base.Columns["item_group_name_e"];
+                this.columndate_create = base.Columns["date_create"];
+                this.columndate_modi = base.Columns["date_modi"];
+                this.columndate_cancel = base.Columns["date_cancel"];
+                this.columnuser_create = base.Columns["user_create"];
+                this.columnuser_modi = base.Columns["user_modi"];
+                this.columnuser_cancel = base.Columns["user_cancel"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -615,6 +719,8 @@ namespace Cemp.report {
                 base.Columns.Add(this.columnrow_number);
                 this.columnitem_id = new global::System.Data.DataColumn("item_id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnitem_id);
+                this.columnitem_code = new global::System.Data.DataColumn("item_code", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitem_code);
                 this.columnitem_description = new global::System.Data.DataColumn("item_description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnitem_description);
                 this.columnitem_method_id = new global::System.Data.DataColumn("item_method_id", typeof(string), null, global::System.Data.MappingType.Element);
@@ -623,6 +729,8 @@ namespace Cemp.report {
                 base.Columns.Add(this.columnitem_method_description);
                 this.columnqty = new global::System.Data.DataColumn("qty", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnqty);
+                this.columnprice_cost = new global::System.Data.DataColumn("price_cost", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprice_cost);
                 this.columnprice_sale = new global::System.Data.DataColumn("price_sale", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprice_sale);
                 this.columndiscount = new global::System.Data.DataColumn("discount", typeof(decimal), null, global::System.Data.MappingType.Element);
@@ -641,6 +749,18 @@ namespace Cemp.report {
                 base.Columns.Add(this.columnitem_group_name_t);
                 this.columnitem_group_name_e = new global::System.Data.DataColumn("item_group_name_e", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnitem_group_name_e);
+                this.columndate_create = new global::System.Data.DataColumn("date_create", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndate_create);
+                this.columndate_modi = new global::System.Data.DataColumn("date_modi", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndate_modi);
+                this.columndate_cancel = new global::System.Data.DataColumn("date_cancel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndate_cancel);
+                this.columnuser_create = new global::System.Data.DataColumn("user_create", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnuser_create);
+                this.columnuser_modi = new global::System.Data.DataColumn("user_modi", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnuser_modi);
+                this.columnuser_cancel = new global::System.Data.DataColumn("user_cancel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnuser_cancel);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnquo_item_id}, true));
                 this.columnquo_item_id.AllowDBNull = false;
@@ -648,6 +768,7 @@ namespace Cemp.report {
                 this.columnquo_item_id.MaxLength = 255;
                 this.columnquo_id.MaxLength = 255;
                 this.columnitem_id.MaxLength = 255;
+                this.columnitem_code.MaxLength = 255;
                 this.columnitem_description.MaxLength = 255;
                 this.columnitem_method_id.MaxLength = 255;
                 this.columnitem_method_description.MaxLength = 255;
@@ -657,6 +778,12 @@ namespace Cemp.report {
                 this.columnitem_group_id.MaxLength = 255;
                 this.columnitem_group_name_t.MaxLength = 255;
                 this.columnitem_group_name_e.MaxLength = 255;
+                this.columndate_create.MaxLength = 255;
+                this.columndate_modi.MaxLength = 255;
+                this.columndate_cancel.MaxLength = 255;
+                this.columnuser_create.MaxLength = 255;
+                this.columnuser_modi.MaxLength = 255;
+                this.columnuser_cancel.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -858,6 +985,22 @@ namespace Cemp.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string item_code {
+                get {
+                    try {
+                        return ((string)(this[this.tablet_quotation_item.item_codeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'item_code\' in table \'t_quotation_item\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablet_quotation_item.item_codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string item_description {
                 get {
                     try {
@@ -918,6 +1061,22 @@ namespace Cemp.report {
                 }
                 set {
                     this[this.tablet_quotation_item.qtyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal price_cost {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablet_quotation_item.price_costColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'price_cost\' in table \'t_quotation_item\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablet_quotation_item.price_costColumn] = value;
                 }
             }
             
@@ -1067,6 +1226,102 @@ namespace Cemp.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string date_create {
+                get {
+                    try {
+                        return ((string)(this[this.tablet_quotation_item.date_createColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'date_create\' in table \'t_quotation_item\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablet_quotation_item.date_createColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string date_modi {
+                get {
+                    try {
+                        return ((string)(this[this.tablet_quotation_item.date_modiColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'date_modi\' in table \'t_quotation_item\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablet_quotation_item.date_modiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string date_cancel {
+                get {
+                    try {
+                        return ((string)(this[this.tablet_quotation_item.date_cancelColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'date_cancel\' in table \'t_quotation_item\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablet_quotation_item.date_cancelColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string user_create {
+                get {
+                    try {
+                        return ((string)(this[this.tablet_quotation_item.user_createColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'user_create\' in table \'t_quotation_item\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablet_quotation_item.user_createColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string user_modi {
+                get {
+                    try {
+                        return ((string)(this[this.tablet_quotation_item.user_modiColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'user_modi\' in table \'t_quotation_item\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablet_quotation_item.user_modiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string user_cancel {
+                get {
+                    try {
+                        return ((string)(this[this.tablet_quotation_item.user_cancelColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'user_cancel\' in table \'t_quotation_item\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablet_quotation_item.user_cancelColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isquo_idNull() {
                 return this.IsNull(this.tablet_quotation_item.quo_idColumn);
             }
@@ -1099,6 +1354,18 @@ namespace Cemp.report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setitem_idNull() {
                 this[this.tablet_quotation_item.item_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isitem_codeNull() {
+                return this.IsNull(this.tablet_quotation_item.item_codeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setitem_codeNull() {
+                this[this.tablet_quotation_item.item_codeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1147,6 +1414,18 @@ namespace Cemp.report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetqtyNull() {
                 this[this.tablet_quotation_item.qtyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isprice_costNull() {
+                return this.IsNull(this.tablet_quotation_item.price_costColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setprice_costNull() {
+                this[this.tablet_quotation_item.price_costColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1255,6 +1534,78 @@ namespace Cemp.report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setitem_group_name_eNull() {
                 this[this.tablet_quotation_item.item_group_name_eColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isdate_createNull() {
+                return this.IsNull(this.tablet_quotation_item.date_createColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setdate_createNull() {
+                this[this.tablet_quotation_item.date_createColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isdate_modiNull() {
+                return this.IsNull(this.tablet_quotation_item.date_modiColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setdate_modiNull() {
+                this[this.tablet_quotation_item.date_modiColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isdate_cancelNull() {
+                return this.IsNull(this.tablet_quotation_item.date_cancelColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setdate_cancelNull() {
+                this[this.tablet_quotation_item.date_cancelColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isuser_createNull() {
+                return this.IsNull(this.tablet_quotation_item.user_createColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setuser_createNull() {
+                this[this.tablet_quotation_item.user_createColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isuser_modiNull() {
+                return this.IsNull(this.tablet_quotation_item.user_modiColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setuser_modiNull() {
+                this[this.tablet_quotation_item.user_modiColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isuser_cancelNull() {
+                return this.IsNull(this.tablet_quotation_item.user_cancelColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setuser_cancelNull() {
+                this[this.tablet_quotation_item.user_cancelColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1421,23 +1772,50 @@ namespace Cemp.report.QuotationDSTableAdapters {
             tableMapping.ColumnMappings.Add("quo_id", "quo_id");
             tableMapping.ColumnMappings.Add("row_number", "row_number");
             tableMapping.ColumnMappings.Add("item_id", "item_id");
+            tableMapping.ColumnMappings.Add("item_code", "item_code");
             tableMapping.ColumnMappings.Add("item_description", "item_description");
             tableMapping.ColumnMappings.Add("item_method_id", "item_method_id");
             tableMapping.ColumnMappings.Add("item_method_description", "item_method_description");
             tableMapping.ColumnMappings.Add("qty", "qty");
+            tableMapping.ColumnMappings.Add("price_cost", "price_cost");
             tableMapping.ColumnMappings.Add("price_sale", "price_sale");
             tableMapping.ColumnMappings.Add("discount", "discount");
-            tableMapping.ColumnMappings.Add("amount", "amount1");
+            tableMapping.ColumnMappings.Add("amount1", "amount1");
             tableMapping.ColumnMappings.Add("quo_item_active", "quo_item_active");
             tableMapping.ColumnMappings.Add("remark", "remark");
             tableMapping.ColumnMappings.Add("item_group_sort", "item_group_sort");
             tableMapping.ColumnMappings.Add("item_group_id", "item_group_id");
             tableMapping.ColumnMappings.Add("item_group_name_t", "item_group_name_t");
             tableMapping.ColumnMappings.Add("item_group_name_e", "item_group_name_e");
+            tableMapping.ColumnMappings.Add("date_create", "date_create");
+            tableMapping.ColumnMappings.Add("date_modi", "date_modi");
+            tableMapping.ColumnMappings.Add("date_cancel", "date_cancel");
+            tableMapping.ColumnMappings.Add("user_create", "user_create");
+            tableMapping.ColumnMappings.Add("user_modi", "user_modi");
+            tableMapping.ColumnMappings.Add("user_cancel", "user_cancel");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `t_quotation_item` WHERE ((`quo_item_id` = ?) AND ((? = 1 AND `quo_id` IS NULL) OR (`quo_id` = ?)) AND ((? = 1 AND `row_number` IS NULL) OR (`row_number` = ?)) AND ((? = 1 AND `item_id` IS NULL) OR (`item_id` = ?)) AND ((? = 1 AND `item_description` IS NULL) OR (`item_description` = ?)) AND ((? = 1 AND `item_method_id` IS NULL) OR (`item_method_id` = ?)) AND ((? = 1 AND `item_method_description` IS NULL) OR (`item_method_description` = ?)) AND ((? = 1 AND `qty` IS NULL) OR (`qty` = ?)) AND ((? = 1 AND `price_sale` IS NULL) OR (`price_sale` = ?)) AND ((? = 1 AND `discount` IS NULL) OR (`discount` = ?)) AND ((? = 1 AND `amount` IS NULL) OR (`amount` = ?)) AND ((? = 1 AND `quo_item_active` IS NULL) OR (`quo_item_active` = ?)) AND ((? = 1 AND `remark` IS NULL) OR (`remark` = ?)) AND ((? = 1 AND `item_group_sort` IS NULL) OR (`item_group_sort` = ?)) AND ((? = 1 AND `item_group_id` IS NULL) OR (`item_group_id` = ?)) AND ((? = 1 AND `item_group_name_t` IS NULL) OR (`item_group_name_t` = ?)) AND ((? = 1 AND `item_group_name_e` IS NULL) OR (`item_group_name_e` = ?)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `t_quotation_item` WHERE ((`quo_item_id` = ?) AND ((? = 1 AND `quo_id" +
+                "` IS NULL) OR (`quo_id` = ?)) AND ((? = 1 AND `row_number` IS NULL) OR (`row_num" +
+                "ber` = ?)) AND ((? = 1 AND `item_id` IS NULL) OR (`item_id` = ?)) AND ((? = 1 AN" +
+                "D `item_code` IS NULL) OR (`item_code` = ?)) AND ((? = 1 AND `item_description` " +
+                "IS NULL) OR (`item_description` = ?)) AND ((? = 1 AND `item_method_id` IS NULL) " +
+                "OR (`item_method_id` = ?)) AND ((? = 1 AND `item_method_description` IS NULL) OR" +
+                " (`item_method_description` = ?)) AND ((? = 1 AND `qty` IS NULL) OR (`qty` = ?))" +
+                " AND ((? = 1 AND `price_cost` IS NULL) OR (`price_cost` = ?)) AND ((? = 1 AND `p" +
+                "rice_sale` IS NULL) OR (`price_sale` = ?)) AND ((? = 1 AND `discount` IS NULL) O" +
+                "R (`discount` = ?)) AND ((? = 1 AND `amount1` IS NULL) OR (`amount1` = ?)) AND (" +
+                "(? = 1 AND `quo_item_active` IS NULL) OR (`quo_item_active` = ?)) AND ((? = 1 AN" +
+                "D `remark` IS NULL) OR (`remark` = ?)) AND ((? = 1 AND `item_group_sort` IS NULL" +
+                ") OR (`item_group_sort` = ?)) AND ((? = 1 AND `item_group_id` IS NULL) OR (`item" +
+                "_group_id` = ?)) AND ((? = 1 AND `item_group_name_t` IS NULL) OR (`item_group_na" +
+                "me_t` = ?)) AND ((? = 1 AND `item_group_name_e` IS NULL) OR (`item_group_name_e`" +
+                " = ?)) AND ((? = 1 AND `date_create` IS NULL) OR (`date_create` = ?)) AND ((? = " +
+                "1 AND `date_modi` IS NULL) OR (`date_modi` = ?)) AND ((? = 1 AND `date_cancel` I" +
+                "S NULL) OR (`date_cancel` = ?)) AND ((? = 1 AND `user_create` IS NULL) OR (`user" +
+                "_create` = ?)) AND ((? = 1 AND `user_modi` IS NULL) OR (`user_modi` = ?)) AND ((" +
+                "? = 1 AND `user_cancel` IS NULL) OR (`user_cancel` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_quo_item_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_item_id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_quo_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_id", global::System.Data.DataRowVersion.Original, true, null));
@@ -1446,6 +1824,8 @@ namespace Cemp.report.QuotationDSTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_row_number", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "row_number", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_item_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_id", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_item_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_item_code", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_code", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_item_code", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_code", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_item_description", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_description", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_item_description", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_description", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_item_method_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_method_id", global::System.Data.DataRowVersion.Original, true, null));
@@ -1454,12 +1834,14 @@ namespace Cemp.report.QuotationDSTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_item_method_description", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_method_description", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_qty", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "qty", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_qty", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "qty", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_price_cost", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "price_cost", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_price_cost", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "price_cost", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_price_sale", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "price_sale", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_price_sale", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "price_sale", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_discount", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "discount", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_discount", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "discount", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_amount", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "amount", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_amount", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "amount", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_amount1", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "amount1", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_amount1", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "amount1", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_quo_item_active", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_item_active", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_quo_item_active", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_item_active", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_remark", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "remark", global::System.Data.DataRowVersion.Original, true, null));
@@ -1472,48 +1854,101 @@ namespace Cemp.report.QuotationDSTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_item_group_name_t", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_t", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_item_group_name_e", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_e", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_item_group_name_e", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_e", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_date_create", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_create", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_date_create", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_create", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_date_modi", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_modi", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_date_modi", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_modi", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_date_cancel", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_cancel", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_date_cancel", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_cancel", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_user_create", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "user_create", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_user_create", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "user_create", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_user_modi", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "user_modi", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_user_modi", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "user_modi", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_user_cancel", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "user_cancel", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_user_cancel", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "user_cancel", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO `t_quotation_item` (`quo_item_id`, `quo_id`, `row_number`, `item_id`, `item_description`, `item_method_id`, `item_method_description`, `qty`, `price_sale`, `discount`, `amount`, `quo_item_active`, `remark`, `item_group_sort`, `item_group_id`, `item_group_name_t`, `item_group_name_e`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `t_quotation_item` (`quo_item_id`, `quo_id`, `row_number`, `item_id`, `item_code`, `item_description`, `item_method_id`, `item_method_description`, `qty`, `price_cost`, `price_sale`, `discount`, `amount1`, `quo_item_active`, `remark`, `item_group_sort`, `item_group_id`, `item_group_name_t`, `item_group_name_e`, `date_create`, `date_modi`, `date_cancel`, `user_create`, `user_modi`, `user_cancel`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("quo_item_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_item_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("quo_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("row_number", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "row_number", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_code", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_code", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_description", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_description", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_method_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_method_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_method_description", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_method_description", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("qty", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "qty", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("price_cost", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "price_cost", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("price_sale", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "price_sale", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("discount", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "discount", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("amount", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "amount", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("amount1", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "amount1", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("quo_item_active", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_item_active", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("remark", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "remark", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_group_sort", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_sort", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_group_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_group_name_t", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_t", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_group_name_e", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_e", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("date_create", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_create", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("date_modi", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_modi", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("date_cancel", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_cancel", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("user_create", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "user_create", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("user_modi", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "user_modi", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("user_cancel", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "user_cancel", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `t_quotation_item` SET `quo_item_id` = ?, `quo_id` = ?, `row_number` = ?, `item_id` = ?, `item_description` = ?, `item_method_id` = ?, `item_method_description` = ?, `qty` = ?, `price_sale` = ?, `discount` = ?, `amount` = ?, `quo_item_active` = ?, `remark` = ?, `item_group_sort` = ?, `item_group_id` = ?, `item_group_name_t` = ?, `item_group_name_e` = ? WHERE ((`quo_item_id` = ?) AND ((? = 1 AND `quo_id` IS NULL) OR (`quo_id` = ?)) AND ((? = 1 AND `row_number` IS NULL) OR (`row_number` = ?)) AND ((? = 1 AND `item_id` IS NULL) OR (`item_id` = ?)) AND ((? = 1 AND `item_description` IS NULL) OR (`item_description` = ?)) AND ((? = 1 AND `item_method_id` IS NULL) OR (`item_method_id` = ?)) AND ((? = 1 AND `item_method_description` IS NULL) OR (`item_method_description` = ?)) AND ((? = 1 AND `qty` IS NULL) OR (`qty` = ?)) AND ((? = 1 AND `price_sale` IS NULL) OR (`price_sale` = ?)) AND ((? = 1 AND `discount` IS NULL) OR (`discount` = ?)) AND ((? = 1 AND `amount` IS NULL) OR (`amount` = ?)) AND ((? = 1 AND `quo_item_active` IS NULL) OR (`quo_item_active` = ?)) AND ((? = 1 AND `remark` IS NULL) OR (`remark` = ?)) AND ((? = 1 AND `item_group_sort` IS NULL) OR (`item_group_sort` = ?)) AND ((? = 1 AND `item_group_id` IS NULL) OR (`item_group_id` = ?)) AND ((? = 1 AND `item_group_name_t` IS NULL) OR (`item_group_name_t` = ?)) AND ((? = 1 AND `item_group_name_e` IS NULL) OR (`item_group_name_e` = ?)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `t_quotation_item` SET `quo_item_id` = ?, `quo_id` = ?, `row_number` = ?, " +
+                "`item_id` = ?, `item_code` = ?, `item_description` = ?, `item_method_id` = ?, `i" +
+                "tem_method_description` = ?, `qty` = ?, `price_cost` = ?, `price_sale` = ?, `dis" +
+                "count` = ?, `amount1` = ?, `quo_item_active` = ?, `remark` = ?, `item_group_sort" +
+                "` = ?, `item_group_id` = ?, `item_group_name_t` = ?, `item_group_name_e` = ?, `d" +
+                "ate_create` = ?, `date_modi` = ?, `date_cancel` = ?, `user_create` = ?, `user_mo" +
+                "di` = ?, `user_cancel` = ? WHERE ((`quo_item_id` = ?) AND ((? = 1 AND `quo_id` I" +
+                "S NULL) OR (`quo_id` = ?)) AND ((? = 1 AND `row_number` IS NULL) OR (`row_number" +
+                "` = ?)) AND ((? = 1 AND `item_id` IS NULL) OR (`item_id` = ?)) AND ((? = 1 AND `" +
+                "item_code` IS NULL) OR (`item_code` = ?)) AND ((? = 1 AND `item_description` IS " +
+                "NULL) OR (`item_description` = ?)) AND ((? = 1 AND `item_method_id` IS NULL) OR " +
+                "(`item_method_id` = ?)) AND ((? = 1 AND `item_method_description` IS NULL) OR (`" +
+                "item_method_description` = ?)) AND ((? = 1 AND `qty` IS NULL) OR (`qty` = ?)) AN" +
+                "D ((? = 1 AND `price_cost` IS NULL) OR (`price_cost` = ?)) AND ((? = 1 AND `pric" +
+                "e_sale` IS NULL) OR (`price_sale` = ?)) AND ((? = 1 AND `discount` IS NULL) OR (" +
+                "`discount` = ?)) AND ((? = 1 AND `amount1` IS NULL) OR (`amount1` = ?)) AND ((? " +
+                "= 1 AND `quo_item_active` IS NULL) OR (`quo_item_active` = ?)) AND ((? = 1 AND `" +
+                "remark` IS NULL) OR (`remark` = ?)) AND ((? = 1 AND `item_group_sort` IS NULL) O" +
+                "R (`item_group_sort` = ?)) AND ((? = 1 AND `item_group_id` IS NULL) OR (`item_gr" +
+                "oup_id` = ?)) AND ((? = 1 AND `item_group_name_t` IS NULL) OR (`item_group_name_" +
+                "t` = ?)) AND ((? = 1 AND `item_group_name_e` IS NULL) OR (`item_group_name_e` = " +
+                "?)) AND ((? = 1 AND `date_create` IS NULL) OR (`date_create` = ?)) AND ((? = 1 A" +
+                "ND `date_modi` IS NULL) OR (`date_modi` = ?)) AND ((? = 1 AND `date_cancel` IS N" +
+                "ULL) OR (`date_cancel` = ?)) AND ((? = 1 AND `user_create` IS NULL) OR (`user_cr" +
+                "eate` = ?)) AND ((? = 1 AND `user_modi` IS NULL) OR (`user_modi` = ?)) AND ((? =" +
+                " 1 AND `user_cancel` IS NULL) OR (`user_cancel` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("quo_item_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_item_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("quo_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("row_number", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "row_number", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_code", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_code", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_description", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_description", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_method_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_method_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_method_description", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_method_description", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("qty", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "qty", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("price_cost", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "price_cost", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("price_sale", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "price_sale", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("discount", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "discount", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("amount", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "amount", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("amount1", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "amount1", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("quo_item_active", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_item_active", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("remark", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "remark", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_group_sort", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_sort", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_group_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_group_name_t", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_t", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("item_group_name_e", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_e", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("date_create", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_create", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("date_modi", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_modi", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("date_cancel", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_cancel", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("user_create", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "user_create", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("user_modi", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "user_modi", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("user_cancel", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "user_cancel", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_quo_item_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_item_id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_quo_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_id", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_quo_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_id", global::System.Data.DataRowVersion.Original, false, null));
@@ -1521,6 +1956,8 @@ namespace Cemp.report.QuotationDSTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_row_number", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "row_number", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_item_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_id", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_item_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_item_code", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_code", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_item_code", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_code", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_item_description", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_description", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_item_description", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_description", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_item_method_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_method_id", global::System.Data.DataRowVersion.Original, true, null));
@@ -1529,12 +1966,14 @@ namespace Cemp.report.QuotationDSTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_item_method_description", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_method_description", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_qty", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "qty", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_qty", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "qty", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_price_cost", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "price_cost", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_price_cost", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "price_cost", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_price_sale", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "price_sale", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_price_sale", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "price_sale", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_discount", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "discount", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_discount", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "discount", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_amount", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "amount", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_amount", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "amount", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_amount1", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "amount1", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_amount1", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(18)), ((byte)(2)), "amount1", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_quo_item_active", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_item_active", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_quo_item_active", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "quo_item_active", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_remark", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "remark", global::System.Data.DataRowVersion.Original, true, null));
@@ -1547,6 +1986,18 @@ namespace Cemp.report.QuotationDSTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_item_group_name_t", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_t", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_item_group_name_e", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_e", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_item_group_name_e", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "item_group_name_e", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_date_create", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_create", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_date_create", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_create", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_date_modi", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_modi", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_date_modi", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_modi", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_date_cancel", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_cancel", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_date_cancel", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "date_cancel", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_user_create", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "user_create", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_user_create", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "user_create", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_user_modi", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "user_modi", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_user_modi", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "user_modi", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_user_cancel", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "user_cancel", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_user_cancel", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "user_cancel", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1562,7 +2013,7 @@ namespace Cemp.report.QuotationDSTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT quo_item_id, quo_id, row_number, item_id, item_description, item_method_id, item_method_description, qty, price_sale, discount, amount, quo_item_active, remark, item_group_sort, item_group_id, item_group_name_t, item_group_name_e FROM t_quotation_item";
+            this._commandCollection[0].CommandText = @"SELECT quo_item_id, quo_id, row_number, item_id, item_code, item_description, item_method_id, item_method_description, qty, price_cost, price_sale, discount, amount1, quo_item_active, remark, item_group_sort, item_group_id, item_group_name_t, item_group_name_e, date_create, date_modi, date_cancel, user_create, user_modi, user_cancel FROM t_quotation_item";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1628,19 +2079,27 @@ namespace Cemp.report.QuotationDSTableAdapters {
                     string Original_quo_id, 
                     global::System.Nullable<decimal> Original_row_number, 
                     string Original_item_id, 
+                    string Original_item_code, 
                     string Original_item_description, 
                     string Original_item_method_id, 
                     string Original_item_method_description, 
                     global::System.Nullable<decimal> Original_qty, 
+                    global::System.Nullable<decimal> Original_price_cost, 
                     global::System.Nullable<decimal> Original_price_sale, 
                     global::System.Nullable<decimal> Original_discount, 
-                    global::System.Nullable<decimal> Original_amount, 
+                    global::System.Nullable<decimal> Original_amount1, 
                     string Original_quo_item_active, 
                     string Original_remark, 
                     string Original_item_group_sort, 
                     string Original_item_group_id, 
                     string Original_item_group_name_t, 
-                    string Original_item_group_name_e) {
+                    string Original_item_group_name_e, 
+                    string Original_date_create, 
+                    string Original_date_modi, 
+                    string Original_date_cancel, 
+                    string Original_user_create, 
+                    string Original_user_modi, 
+                    string Original_user_cancel) {
             if ((Original_quo_item_id == null)) {
                 throw new global::System.ArgumentNullException("Original_quo_item_id");
             }
@@ -1671,109 +2130,173 @@ namespace Cemp.report.QuotationDSTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_item_id));
             }
-            if ((Original_item_description == null)) {
+            if ((Original_item_code == null)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_item_description));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_item_code));
             }
-            if ((Original_item_method_id == null)) {
+            if ((Original_item_description == null)) {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_item_method_id));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_item_description));
             }
-            if ((Original_item_method_description == null)) {
+            if ((Original_item_method_id == null)) {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_item_method_description));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_item_method_id));
             }
-            if ((Original_qty.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((decimal)(Original_qty.Value));
-            }
-            else {
+            if ((Original_item_method_description == null)) {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Original_price_sale.HasValue == true)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_item_method_description));
+            }
+            if ((Original_qty.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((decimal)(Original_price_sale.Value));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((decimal)(Original_qty.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((Original_discount.HasValue == true)) {
+            if ((Original_price_cost.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((decimal)(Original_discount.Value));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((decimal)(Original_price_cost.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((Original_amount.HasValue == true)) {
+            if ((Original_price_sale.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((decimal)(Original_amount.Value));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((decimal)(Original_price_sale.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            if ((Original_quo_item_active == null)) {
+            if ((Original_discount.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((decimal)(Original_discount.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_quo_item_active));
+            if ((Original_amount1.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((decimal)(Original_amount1.Value));
             }
-            if ((Original_remark == null)) {
+            else {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_remark));
-            }
-            if ((Original_item_group_sort == null)) {
+            if ((Original_quo_item_active == null)) {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_item_group_sort));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_quo_item_active));
             }
-            if ((Original_item_group_id == null)) {
+            if ((Original_remark == null)) {
                 this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_item_group_id));
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_remark));
             }
-            if ((Original_item_group_name_t == null)) {
+            if ((Original_item_group_sort == null)) {
                 this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_item_group_name_t));
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_item_group_sort));
             }
-            if ((Original_item_group_name_e == null)) {
+            if ((Original_item_group_id == null)) {
                 this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_item_group_name_e));
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_item_group_id));
+            }
+            if ((Original_item_group_name_t == null)) {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((string)(Original_item_group_name_t));
+            }
+            if ((Original_item_group_name_e == null)) {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[36].Value = ((string)(Original_item_group_name_e));
+            }
+            if ((Original_date_create == null)) {
+                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[38].Value = ((string)(Original_date_create));
+            }
+            if ((Original_date_modi == null)) {
+                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[40].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[40].Value = ((string)(Original_date_modi));
+            }
+            if ((Original_date_cancel == null)) {
+                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[42].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[42].Value = ((string)(Original_date_cancel));
+            }
+            if ((Original_user_create == null)) {
+                this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[44].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[44].Value = ((string)(Original_user_create));
+            }
+            if ((Original_user_modi == null)) {
+                this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[46].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[46].Value = ((string)(Original_user_modi));
+            }
+            if ((Original_user_cancel == null)) {
+                this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[48].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[48].Value = ((string)(Original_user_cancel));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1800,19 +2323,27 @@ namespace Cemp.report.QuotationDSTableAdapters {
                     string quo_id, 
                     global::System.Nullable<decimal> row_number, 
                     string item_id, 
+                    string item_code, 
                     string item_description, 
                     string item_method_id, 
                     string item_method_description, 
                     global::System.Nullable<decimal> qty, 
+                    global::System.Nullable<decimal> price_cost, 
                     global::System.Nullable<decimal> price_sale, 
                     global::System.Nullable<decimal> discount, 
-                    global::System.Nullable<decimal> amount, 
+                    global::System.Nullable<decimal> amount1, 
                     string quo_item_active, 
                     string remark, 
                     string item_group_sort, 
                     string item_group_id, 
                     string item_group_name_t, 
-                    string item_group_name_e) {
+                    string item_group_name_e, 
+                    string date_create, 
+                    string date_modi, 
+                    string date_cancel, 
+                    string user_create, 
+                    string user_modi, 
+                    string user_cancel) {
             if ((quo_item_id == null)) {
                 throw new global::System.ArgumentNullException("quo_item_id");
             }
@@ -1837,83 +2368,131 @@ namespace Cemp.report.QuotationDSTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(item_id));
             }
-            if ((item_description == null)) {
+            if ((item_code == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(item_description));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(item_code));
             }
-            if ((item_method_id == null)) {
+            if ((item_description == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(item_method_id));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(item_description));
             }
-            if ((item_method_description == null)) {
+            if ((item_method_id == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(item_method_description));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(item_method_id));
             }
-            if ((qty.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((decimal)(qty.Value));
-            }
-            else {
+            if ((item_method_description == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((price_sale.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((decimal)(price_sale.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(item_method_description));
+            }
+            if ((qty.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((decimal)(qty.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((discount.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((decimal)(discount.Value));
+            if ((price_cost.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((decimal)(price_cost.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((amount.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((decimal)(amount.Value));
+            if ((price_sale.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((decimal)(price_sale.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((quo_item_active == null)) {
+            if ((discount.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((decimal)(discount.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(quo_item_active));
+            if ((amount1.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((decimal)(amount1.Value));
             }
-            if ((remark == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(remark));
-            }
-            if ((item_group_sort == null)) {
+            if ((quo_item_active == null)) {
                 this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(item_group_sort));
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(quo_item_active));
             }
-            if ((item_group_id == null)) {
+            if ((remark == null)) {
                 this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(item_group_id));
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(remark));
             }
-            if ((item_group_name_t == null)) {
+            if ((item_group_sort == null)) {
                 this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(item_group_name_t));
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(item_group_sort));
             }
-            if ((item_group_name_e == null)) {
+            if ((item_group_id == null)) {
                 this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(item_group_name_e));
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(item_group_id));
+            }
+            if ((item_group_name_t == null)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(item_group_name_t));
+            }
+            if ((item_group_name_e == null)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(item_group_name_e));
+            }
+            if ((date_create == null)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(date_create));
+            }
+            if ((date_modi == null)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(date_modi));
+            }
+            if ((date_cancel == null)) {
+                this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(date_cancel));
+            }
+            if ((user_create == null)) {
+                this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(user_create));
+            }
+            if ((user_modi == null)) {
+                this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(user_modi));
+            }
+            if ((user_cancel == null)) {
+                this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(user_cancel));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1940,36 +2519,52 @@ namespace Cemp.report.QuotationDSTableAdapters {
                     string quo_id, 
                     global::System.Nullable<decimal> row_number, 
                     string item_id, 
+                    string item_code, 
                     string item_description, 
                     string item_method_id, 
                     string item_method_description, 
                     global::System.Nullable<decimal> qty, 
+                    global::System.Nullable<decimal> price_cost, 
                     global::System.Nullable<decimal> price_sale, 
                     global::System.Nullable<decimal> discount, 
-                    global::System.Nullable<decimal> amount, 
+                    global::System.Nullable<decimal> amount1, 
                     string quo_item_active, 
                     string remark, 
                     string item_group_sort, 
                     string item_group_id, 
                     string item_group_name_t, 
                     string item_group_name_e, 
+                    string date_create, 
+                    string date_modi, 
+                    string date_cancel, 
+                    string user_create, 
+                    string user_modi, 
+                    string user_cancel, 
                     string Original_quo_item_id, 
                     string Original_quo_id, 
                     global::System.Nullable<decimal> Original_row_number, 
                     string Original_item_id, 
+                    string Original_item_code, 
                     string Original_item_description, 
                     string Original_item_method_id, 
                     string Original_item_method_description, 
                     global::System.Nullable<decimal> Original_qty, 
+                    global::System.Nullable<decimal> Original_price_cost, 
                     global::System.Nullable<decimal> Original_price_sale, 
                     global::System.Nullable<decimal> Original_discount, 
-                    global::System.Nullable<decimal> Original_amount, 
+                    global::System.Nullable<decimal> Original_amount1, 
                     string Original_quo_item_active, 
                     string Original_remark, 
                     string Original_item_group_sort, 
                     string Original_item_group_id, 
                     string Original_item_group_name_t, 
-                    string Original_item_group_name_e) {
+                    string Original_item_group_name_e, 
+                    string Original_date_create, 
+                    string Original_date_modi, 
+                    string Original_date_cancel, 
+                    string Original_user_create, 
+                    string Original_user_modi, 
+                    string Original_user_cancel) {
             if ((quo_item_id == null)) {
                 throw new global::System.ArgumentNullException("quo_item_id");
             }
@@ -1994,217 +2589,329 @@ namespace Cemp.report.QuotationDSTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(item_id));
             }
-            if ((item_description == null)) {
+            if ((item_code == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(item_description));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(item_code));
             }
-            if ((item_method_id == null)) {
+            if ((item_description == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(item_method_id));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(item_description));
             }
-            if ((item_method_description == null)) {
+            if ((item_method_id == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(item_method_description));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(item_method_id));
             }
-            if ((qty.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(qty.Value));
-            }
-            else {
+            if ((item_method_description == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((price_sale.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(price_sale.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(item_method_description));
+            }
+            if ((qty.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(qty.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((discount.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(discount.Value));
+            if ((price_cost.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(price_cost.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((amount.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(amount.Value));
+            if ((price_sale.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(price_sale.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((quo_item_active == null)) {
+            if ((discount.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(discount.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(quo_item_active));
+            if ((amount1.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(amount1.Value));
             }
-            if ((remark == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(remark));
-            }
-            if ((item_group_sort == null)) {
+            if ((quo_item_active == null)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(item_group_sort));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(quo_item_active));
             }
-            if ((item_group_id == null)) {
+            if ((remark == null)) {
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(item_group_id));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(remark));
             }
-            if ((item_group_name_t == null)) {
+            if ((item_group_sort == null)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(item_group_name_t));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(item_group_sort));
             }
-            if ((item_group_name_e == null)) {
+            if ((item_group_id == null)) {
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(item_group_name_e));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(item_group_id));
+            }
+            if ((item_group_name_t == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(item_group_name_t));
+            }
+            if ((item_group_name_e == null)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(item_group_name_e));
+            }
+            if ((date_create == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(date_create));
+            }
+            if ((date_modi == null)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(date_modi));
+            }
+            if ((date_cancel == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(date_cancel));
+            }
+            if ((user_create == null)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(user_create));
+            }
+            if ((user_modi == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(user_modi));
+            }
+            if ((user_cancel == null)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(user_cancel));
             }
             if ((Original_quo_item_id == null)) {
                 throw new global::System.ArgumentNullException("Original_quo_item_id");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_quo_item_id));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_quo_item_id));
             }
             if ((Original_quo_id == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_quo_id));
-            }
-            if ((Original_row_number.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((decimal)(Original_row_number.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            if ((Original_item_id == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_item_id));
-            }
-            if ((Original_item_description == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_item_description));
-            }
-            if ((Original_item_method_id == null)) {
                 this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_item_method_id));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_quo_id));
             }
-            if ((Original_item_method_description == null)) {
+            if ((Original_row_number.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((decimal)(Original_row_number.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_item_method_description));
-            }
-            if ((Original_qty.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((decimal)(Original_qty.Value));
-            }
-            else {
+            if ((Original_item_id == null)) {
                 this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
-            if ((Original_price_sale.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((decimal)(Original_price_sale.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_item_id));
+            }
+            if ((Original_item_code == null)) {
                 this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
-            if ((Original_discount.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((decimal)(Original_discount.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_item_code));
+            }
+            if ((Original_item_description == null)) {
                 this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
-            if ((Original_amount.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((decimal)(Original_amount.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_item_description));
+            }
+            if ((Original_item_method_id == null)) {
                 this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
-            if ((Original_quo_item_active == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_item_method_id));
+            }
+            if ((Original_item_method_description == null)) {
                 this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_quo_item_active));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_item_method_description));
             }
-            if ((Original_remark == null)) {
+            if ((Original_qty.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((decimal)(Original_qty.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_remark));
+            if ((Original_price_cost.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((decimal)(Original_price_cost.Value));
             }
-            if ((Original_item_group_sort == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_item_group_sort));
+            if ((Original_price_sale.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((decimal)(Original_price_sale.Value));
             }
-            if ((Original_item_group_id == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(Original_item_group_id));
+            if ((Original_discount.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((decimal)(Original_discount.Value));
             }
-            if ((Original_item_group_name_t == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(Original_item_group_name_t));
+            if ((Original_amount1.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((decimal)(Original_amount1.Value));
             }
-            if ((Original_item_group_name_e == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
             }
+            if ((Original_quo_item_active == null)) {
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
+            }
             else {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(Original_item_group_name_e));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((string)(Original_quo_item_active));
+            }
+            if ((Original_remark == null)) {
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((string)(Original_remark));
+            }
+            if ((Original_item_group_sort == null)) {
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((string)(Original_item_group_sort));
+            }
+            if ((Original_item_group_id == null)) {
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((string)(Original_item_group_id));
+            }
+            if ((Original_item_group_name_t == null)) {
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[59].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((string)(Original_item_group_name_t));
+            }
+            if ((Original_item_group_name_e == null)) {
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[61].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((string)(Original_item_group_name_e));
+            }
+            if ((Original_date_create == null)) {
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[63].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((string)(Original_date_create));
+            }
+            if ((Original_date_modi == null)) {
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[65].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((string)(Original_date_modi));
+            }
+            if ((Original_date_cancel == null)) {
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[67].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((string)(Original_date_cancel));
+            }
+            if ((Original_user_create == null)) {
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[69].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((string)(Original_user_create));
+            }
+            if ((Original_user_modi == null)) {
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[71].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((string)(Original_user_modi));
+            }
+            if ((Original_user_cancel == null)) {
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[73].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((string)(Original_user_cancel));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2230,37 +2937,53 @@ namespace Cemp.report.QuotationDSTableAdapters {
                     string quo_id, 
                     global::System.Nullable<decimal> row_number, 
                     string item_id, 
+                    string item_code, 
                     string item_description, 
                     string item_method_id, 
                     string item_method_description, 
                     global::System.Nullable<decimal> qty, 
+                    global::System.Nullable<decimal> price_cost, 
                     global::System.Nullable<decimal> price_sale, 
                     global::System.Nullable<decimal> discount, 
-                    global::System.Nullable<decimal> amount, 
+                    global::System.Nullable<decimal> amount1, 
                     string quo_item_active, 
                     string remark, 
                     string item_group_sort, 
                     string item_group_id, 
                     string item_group_name_t, 
                     string item_group_name_e, 
+                    string date_create, 
+                    string date_modi, 
+                    string date_cancel, 
+                    string user_create, 
+                    string user_modi, 
+                    string user_cancel, 
                     string Original_quo_item_id, 
                     string Original_quo_id, 
                     global::System.Nullable<decimal> Original_row_number, 
                     string Original_item_id, 
+                    string Original_item_code, 
                     string Original_item_description, 
                     string Original_item_method_id, 
                     string Original_item_method_description, 
                     global::System.Nullable<decimal> Original_qty, 
+                    global::System.Nullable<decimal> Original_price_cost, 
                     global::System.Nullable<decimal> Original_price_sale, 
                     global::System.Nullable<decimal> Original_discount, 
-                    global::System.Nullable<decimal> Original_amount, 
+                    global::System.Nullable<decimal> Original_amount1, 
                     string Original_quo_item_active, 
                     string Original_remark, 
                     string Original_item_group_sort, 
                     string Original_item_group_id, 
                     string Original_item_group_name_t, 
-                    string Original_item_group_name_e) {
-            return this.Update(Original_quo_item_id, quo_id, row_number, item_id, item_description, item_method_id, item_method_description, qty, price_sale, discount, amount, quo_item_active, remark, item_group_sort, item_group_id, item_group_name_t, item_group_name_e, Original_quo_item_id, Original_quo_id, Original_row_number, Original_item_id, Original_item_description, Original_item_method_id, Original_item_method_description, Original_qty, Original_price_sale, Original_discount, Original_amount, Original_quo_item_active, Original_remark, Original_item_group_sort, Original_item_group_id, Original_item_group_name_t, Original_item_group_name_e);
+                    string Original_item_group_name_e, 
+                    string Original_date_create, 
+                    string Original_date_modi, 
+                    string Original_date_cancel, 
+                    string Original_user_create, 
+                    string Original_user_modi, 
+                    string Original_user_cancel) {
+            return this.Update(Original_quo_item_id, quo_id, row_number, item_id, item_code, item_description, item_method_id, item_method_description, qty, price_cost, price_sale, discount, amount1, quo_item_active, remark, item_group_sort, item_group_id, item_group_name_t, item_group_name_e, date_create, date_modi, date_cancel, user_create, user_modi, user_cancel, Original_quo_item_id, Original_quo_id, Original_row_number, Original_item_id, Original_item_code, Original_item_description, Original_item_method_id, Original_item_method_description, Original_qty, Original_price_cost, Original_price_sale, Original_discount, Original_amount1, Original_quo_item_active, Original_remark, Original_item_group_sort, Original_item_group_id, Original_item_group_name_t, Original_item_group_name_e, Original_date_create, Original_date_modi, Original_date_cancel, Original_user_create, Original_user_modi, Original_user_cancel);
         }
     }
     
