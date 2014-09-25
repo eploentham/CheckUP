@@ -133,7 +133,15 @@ namespace Cemp.gui
             cboRemark7.Text = qu.Remark7;
             try
             {
-                dtpDateQu.Value = DateTime.Parse(cc.cf.dateDBtoShow1(qu.QuoDate));
+                if (!qu.QuoDate.Equals(""))
+                {
+                    dtpDateQu.Value = DateTime.Parse(cc.cf.dateDBtoShow1(qu.QuoDate));
+                }
+                else
+                {
+                    dtpDateQu.Value = DateTime.Now;
+                }
+                
             }
             catch (Exception ex)
             {
@@ -300,6 +308,16 @@ namespace Cemp.gui
                 }
             }
         }
+        private void calDiscount()
+        {
+            Double amt = 0, disCountPer=0, discount=0;
+            amt = Double.Parse(cc.cf.NumberNull1(txtAmount.Text.Replace(",", "")));
+            disCountPer = Double.Parse(cc.cf.NumberNull1(txtDiscountPer.Text.Replace(",", "")));
+            discount = (amt * disCountPer) / 100;
+            txtDiscount.Text = String.Format("{0:#,###,###.00}", discount);
+
+            calNetTotal();
+        }
         private void calAmount()
         {
             Double amt = 0, amtCost=0;
@@ -326,12 +344,13 @@ namespace Cemp.gui
         }
         private void calNetTotal()
         {
-            Double amt = 0, amtDis=0,total=0,netTotal=0, vat=0;
+            Double amt = 0, amtDis=0,total=0,netTotal=0, vat=0, plus=0;
             amt = Double.Parse(cc.cf.NumberNull1(txtAmount.Text.Replace(",", "")));
             amtDis = amt - Double.Parse(cc.cf.NumberNull1(txtDiscount.Text.Replace(",", "")));
             total = amtDis + Double.Parse(cc.cf.NumberNull1(txtPlus1.Text.Replace(",", "")));
             vat = (total * Double.Parse(cc.cf.NumberNull1(txtVatRate.Text.Replace(",", ""))) / 100);
             netTotal = total + vat;
+            txtPlus1.Text = String.Format("{0:#,###,###.00}", Double.Parse(cc.cf.NumberNull1(txtPlus1.Text)));
             txtAmountDiscount.Text = String.Format("{0:#,###,###.00}", amtDis);
             txtTotal.Text = String.Format("{0:#,###,###.00}", total);
             txtVat.Text = String.Format("{0:#,###,###.00}", vat);
@@ -596,6 +615,7 @@ namespace Cemp.gui
             }
             return row;
         }
+        
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -606,6 +626,10 @@ namespace Cemp.gui
         private void dgvAdd_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             pageLoad = true;
+            if (dgvAdd[colRow, e.RowIndex].Value == null)
+            {
+                return;
+            }
             txtRow.Text = dgvAdd[colRow, e.RowIndex].Value.ToString();
             txtItemPrice.Text = dgvAdd[colPriceSale, e.RowIndex].Value.ToString();
             txtItemQty.Text = dgvAdd[colQty, e.RowIndex].Value.ToString();
@@ -996,14 +1020,100 @@ namespace Cemp.gui
             if (chkActive.Checked)
             {
                 btnUnActive.Visible = false;
+                setEnable(true);
             }
         }
-
         private void ChkUnActive_Click(object sender, EventArgs e)
         {
             if (ChkUnActive.Checked)
             {
                 btnUnActive.Visible = true;
+                setEnable(false);
+
+            }
+        }
+        private void setEnable(Boolean enable1)
+        {
+            cboComp.Enabled = enable1;
+            cboCust.Enabled = enable1;
+            cboStaff.Enabled = enable1;
+            cboStaffApprove.Enabled = enable1;
+            cboRemark1.Enabled = enable1;
+            cboRemark2.Enabled = enable1;
+            cboRemark3.Enabled = enable1;
+            cboRemark4.Enabled = enable1;
+            cboRemark5.Enabled = enable1;
+            cboRemark6.Enabled = enable1;
+            cboRemark7.Enabled = enable1;
+            cboItem.Enabled = enable1;
+            cboItemGroup.Enabled = enable1;
+            cboContact.Enabled = enable1;
+            txtAmount.Enabled = enable1;
+            txtAmountDiscount.Enabled = enable1;
+            txtCompAddress1.Enabled = enable1;
+            txtCompAddress2.Enabled = enable1;
+            txtCompTaxId.Enabled = enable1;
+            //txtCompId.Enabled = enable1;
+            cboComp.Enabled = enable1;
+            txtCustAddress.Enabled = enable1;
+            txtCustEmail.Enabled = enable1;
+            txtCustFax.Enabled = enable1;
+            txtCustTel.Enabled = enable1;
+            cboCust.Enabled = enable1;
+            txtCustId.Enabled = enable1;
+            txtDiscount.Enabled = enable1;
+            txtNetTotal.Enabled = enable1;
+            txtPlus1.Enabled = enable1;
+            //txtQuId.Text = qu.Id;
+            txtQuNumber.Enabled = enable1;
+            txtStaffEmail.Enabled = enable1;
+            txtStaffTel.Enabled = enable1;
+            txtStaffId.Enabled = enable1;
+            cboStaff.Enabled = enable1;
+            txtTotal.Enabled = enable1;
+            txtVat.Enabled = enable1;
+            txtVatRate.Enabled = enable1;
+            cboStaffApprove.Enabled = enable1;
+            txtStaffApproveId.Enabled = enable1;
+
+            txtLine2.Enabled = enable1;
+            txtLine4.Enabled = enable1;
+            txtLine5.Enabled = enable1;
+            txtLine6.Enabled = enable1;
+
+            //txtVatRate.Text = qu.VatRate;
+            cboRemark1.Enabled = enable1;
+            cboRemark2.Enabled = enable1;
+            cboRemark3.Enabled = enable1;
+            cboRemark4.Enabled = enable1;
+            cboRemark5.Enabled = enable1;
+            cboRemark6.Enabled = enable1;
+            cboRemark7.Enabled = enable1;
+
+            dtpDateQu.Enabled = enable1;
+            txtDiscountPer.Enabled = enable1;
+            btnPrint.Enabled = enable1;
+            dgvAdd.Enabled = enable1;
+            txtItemQty.Enabled = enable1;
+            txtItemPrice.Enabled = enable1;
+        }        
+
+        private void txtDiscountPer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtDiscountPer_Leave(object sender, EventArgs e)
+        {
+            calDiscount();
+        }
+
+        private void btnUnActive_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("ต้องการยกเลิก", "ยกเลิก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                cc.qudb.VoidQuotation(txtQuId.Text);
+                this.Dispose();
             }
         }
 

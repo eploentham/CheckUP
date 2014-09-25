@@ -132,12 +132,8 @@ namespace Cemp.gui
         }
         private void dgvView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Item it = cc.itdb.selectByPk(dgvView[colId, e.RowIndex].Value.ToString());
-            if (!it.Id.Equals(""))
-            {
-                cc.itSearch = it;
-                this.Dispose();
-            }
+            txtQty.SelectAll();
+            txtQty.Focus();
         }
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
@@ -166,6 +162,30 @@ namespace Cemp.gui
         private void cboMethod_SelectedIndexChanged(object sender, EventArgs e)
         {
             setGrd();
+        }
+
+        private void txtQty_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Item it = cc.itdb.selectByPk(dgvView[colId, dgvView.CurrentCell.RowIndex].Value.ToString());
+                if (!it.Id.Equals("") && (!txtQty.Text.Equals("")))
+                {
+                    if (txtQty.Text.Equals("0"))
+                    {
+                        MessageBox.Show("จำนวนต้องมากกว่า 0", "");
+                        return;
+                    }
+                    cc.itSearch = it;
+                    cc.itSearch.userCancel = txtQty.Text;
+                    this.Dispose();
+                }
+            }
+        }
+
+        private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
     }

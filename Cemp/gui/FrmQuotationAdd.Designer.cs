@@ -55,7 +55,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtAmountCost = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDiscountPer = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.txtVatRate = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -431,7 +431,7 @@
             // 
             this.groupBox3.Controls.Add(this.txtAmountCost);
             this.groupBox3.Controls.Add(this.label30);
-            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.txtDiscountPer);
             this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Controls.Add(this.txtVatRate);
             this.groupBox3.Controls.Add(this.label21);
@@ -479,14 +479,16 @@
             this.label30.TabIndex = 38;
             this.label30.Text = "%";
             // 
-            // textBox1
+            // txtDiscountPer
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox1.Location = new System.Drawing.Point(107, 44);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(43, 23);
-            this.textBox1.TabIndex = 37;
+            this.txtDiscountPer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtDiscountPer.Location = new System.Drawing.Point(107, 44);
+            this.txtDiscountPer.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDiscountPer.Name = "txtDiscountPer";
+            this.txtDiscountPer.Size = new System.Drawing.Size(43, 23);
+            this.txtDiscountPer.TabIndex = 37;
+            this.txtDiscountPer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscountPer_KeyPress);
+            this.txtDiscountPer.Leave += new System.EventHandler(this.txtDiscountPer_Leave);
             // 
             // label22
             // 
@@ -1287,6 +1289,7 @@
             this.btnUnActive.TabIndex = 66;
             this.btnUnActive.Text = "ยกเลิกการใช้งาน";
             this.btnUnActive.UseVisualStyleBackColor = true;
+            this.btnUnActive.Click += new System.EventHandler(this.btnUnActive_Click);
             // 
             // ChkUnActive
             // 
@@ -1472,7 +1475,7 @@
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnItemSearch;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDiscountPer;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox txtLine4;
         private System.Windows.Forms.TextBox txtLine5;

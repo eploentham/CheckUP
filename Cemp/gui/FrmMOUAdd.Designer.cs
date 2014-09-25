@@ -576,6 +576,7 @@
             this.btnUnActive.TabIndex = 63;
             this.btnUnActive.Text = "ยกเลิกการใช้งาน";
             this.btnUnActive.UseVisualStyleBackColor = true;
+            this.btnUnActive.Click += new System.EventHandler(this.btnUnActive_Click);
             // 
             // ChkUnActive
             // 
@@ -589,6 +590,7 @@
             this.ChkUnActive.TabStop = true;
             this.ChkUnActive.Text = "ยกเลิก";
             this.ChkUnActive.UseVisualStyleBackColor = true;
+            this.ChkUnActive.Click += new System.EventHandler(this.ChkUnActive_Click);
             // 
             // chkActive
             // 
@@ -602,6 +604,7 @@
             this.chkActive.TabStop = true;
             this.chkActive.Text = "ใช้งาน";
             this.chkActive.UseVisualStyleBackColor = true;
+            this.chkActive.Click += new System.EventHandler(this.chkActive_Click);
             // 
             // FrmMOUAdd
             // 

@@ -150,7 +150,15 @@ namespace Cemp.gui
             }
             try
             {
-                dtpDateMOU.Value = DateTime.Parse(cc.cf.dateDBtoShow1(mo.MOUDate));
+                if (!mo.MOUDate.Equals(""))
+                {
+                    dtpDateMOU.Value = DateTime.Parse(cc.cf.dateDBtoShow1(mo.MOUDate));
+                }
+                else
+                {
+                    dtpDateMOU.Value = DateTime.Now;
+                }
+                
             }
             catch (Exception ex)
             {
@@ -974,6 +982,67 @@ namespace Cemp.gui
                 }
                 
                 //m.Show(dgvAdd, new Point(xOffset, yOffset));
+            }
+        }
+        private void setEnable(Boolean enable1)
+        {
+            dtpDateMOU.Enabled = enable1;
+            txtContactName.Enabled = enable1;
+            txtCustAddress.Enabled = enable1;
+            txtCustEmail.Enabled = enable1;
+            txtCustId.Enabled = enable1;
+            txtCustMobile.Enabled = enable1;
+            txtCustName.Enabled = enable1;
+            txtCustTel.Enabled = enable1;
+            txtCustMobile.Enabled = enable1;
+            cboQuo.Enabled = enable1;
+            CustMou.Enabled = enable1;
+            cboDocType.Enabled = enable1;
+
+            //txtMOUId.Text = mo.Id;
+            //txtMouNumber.Text = mo.MOUNumber+"-"+mo.MOUNumberCnt;
+            txtStaffMOUEmail.Enabled = enable1;
+            txtStaffMOUMobile.Enabled = enable1;
+            txtStaffMOUTel.Enabled = enable1;
+
+            txtStaffPlaceRecordPosition.Enabled = enable1;
+
+            dtpDateMOU.Enabled = enable1;
+
+            cboStaffMOU.Enabled = enable1;
+            cboStaffPlaceRecord.Enabled = enable1;
+            CustMou.Enabled = enable1;
+            txtMOUName.Enabled = enable1;
+            cboMOU.Enabled = enable1;
+            btnSave.Enabled = enable1;
+            btnPrintMou.Enabled = enable1;
+            btnReceive.Enabled = enable1;
+        }
+        private void chkActive_Click(object sender, EventArgs e)
+        {
+            if (chkActive.Checked)
+            {
+                btnUnActive.Visible = false;
+                setEnable(true);
+            }
+        }
+
+        private void ChkUnActive_Click(object sender, EventArgs e)
+        {
+            if (ChkUnActive.Checked)
+            {
+                btnUnActive.Visible = true;
+                setEnable(false);
+
+            }
+        }
+
+        private void btnUnActive_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("ต้องการยกเลิก", "ยกเลิก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                cc.modb.VoidMOU(txtMOUId.Text);
+                this.Dispose();
             }
         }
 

@@ -46,7 +46,7 @@ namespace Cemp
             //{
             tv1.Nodes.Add("nQuotationView", "พิมพ์ Quotation");
             tv1.Nodes.Add("nQuoConfirmView", "Confirm Quotation");
-            tv1.Nodes.Add("nMOUView", "พิมพ์ ใบจ้อตกลง");
+            tv1.Nodes.Add("nMOUView", "พิมพ์ ใบข้อตกลง");
             //tv1.Nodes.Add("nMOUPlaceRecord", "พิมพ์ ใบรับตัวอย่าง");
             tv1.Nodes.Add("nInputResult", "ป้อนผลตัวอย่าง");
             tv1.Nodes.Add("nBillView", "พิมพ์ Bill Note");
