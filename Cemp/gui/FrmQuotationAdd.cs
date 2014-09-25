@@ -375,7 +375,7 @@ namespace Cemp.gui
                     //cboItem.Text = cc.itSearch.Code + " " + cc.itSearch.NameT + "[" + cc.itSearch.MethodNameT+"]";
                     txtItemPrice.Text = cc.itSearch.PriceSale;
                     txtPriceCost.Text = cc.itSearch.PriceCost;
-                    txtItemQty.Text = "1.00";
+                    txtItemQty.Text = cc.itSearch.userCancel;
                     calItemAmount();
                     setItemtoGrd(cc.itSearch.Id, getRow());
                     //calItemAmount();

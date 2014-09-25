@@ -48,6 +48,8 @@ namespace Cemp.objdb
             inv.StatusInv = "status_inv";
             inv.InvDuePeriod = "invoice_due_period";
             inv.CustRemark2 = "cust_remark2";
+            inv.Plus1 = "plus1";
+            inv.Plus1Name = "plus1name";
 
             inv.pkField = "inv_id";
             inv.table = "t_invoice";
@@ -96,6 +98,8 @@ namespace Cemp.objdb
             item.dateCreate = dt.Rows[0][inv.dateCreate].ToString();
             item.InvDuePeriod = dt.Rows[0][inv.InvDuePeriod].ToString();
             item.CustRemark2 = dt.Rows[0][inv.CustRemark2].ToString();
+            item.Plus1 = dt.Rows[0][inv.Plus1].ToString();
+            item.Plus1Name = dt.Rows[0][inv.Plus1Name].ToString();
 
             return item;
         }
@@ -174,6 +178,7 @@ namespace Cemp.objdb
             p.Remark = p.Remark.Replace("'", "''");
             p.CustRemark2 = p.CustRemark2.Replace("'", "''");
             p.StatusInv = "1";
+            p.Plus1Name = p.Plus1Name.Replace("'", "''");
             sql = "Insert Into " + inv.table + " (" + inv.pkField + "," + inv.Active + "," + inv.Amount + "," +
                 inv.AmountDiscount + "," + inv.InvDate + "," + inv.InvNumber + "," +
                 inv.CustAddress + "," + inv.CustEmail + "," + inv.CustFax + "," +
@@ -182,7 +187,8 @@ namespace Cemp.objdb
                 inv.DiscountPer + "," + inv.Nettotal + "," + inv.Remark + "," +
                 inv.Total + "," + inv.userCancel + "," + inv.userCreate + "," +
                 inv.userModi + "," + inv.Vat + "," + inv.VatRate + "," +
-                inv.dateCreate + "," + inv.StatusInv + "," + inv.InvDuePeriod + "," + inv.CustRemark2 + ") " +
+                inv.dateCreate + "," + inv.StatusInv + "," + inv.InvDuePeriod + "," + 
+                inv.CustRemark2 + "," + inv.Plus1Name + "," + inv.Plus1 + ") " +
                 "Values('" + p.Id + "','" + p.Active + "'," + NumberNull1(p.Amount.Replace(",", "")) + "," +
                 NumberNull1(p.AmountDiscount.Replace(",", "")) + ",'" + p.InvDate + "','" + p.InvNumber + "','" +
                 p.CustAddress + "','" + p.CustEmail + "','" + p.CustFax + "','" +
@@ -191,7 +197,8 @@ namespace Cemp.objdb
                 NumberNull1(p.DiscountPer.Replace(",", "")) + "," + NumberNull1(p.Nettotal.Replace(",", "")) + ",'" + p.Remark + "'," +
                 NumberNull1(p.Total.Replace(",", "")) + ",'" + p.userCancel + "','" + p.userCreate + "','" +
                 p.userModi + "'," + NumberNull1(p.Vat.Replace(",", "")) + "," + NumberNull1(p.VatRate.Replace(",", "")) + "," +
-                p.dateGenDB + ",'" + p.StatusInv + "','" + p.InvDuePeriod + "','" + p.CustRemark2 + "')";
+                p.dateGenDB + ",'" + p.StatusInv + "','" + p.InvDuePeriod + "','" +
+                p.CustRemark2 + "','" + p.Plus1Name + "'," + NumberNull1(p.Plus1.Replace(",", "")) + ")";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -214,8 +221,9 @@ namespace Cemp.objdb
             p.CustName = p.CustName.Replace("'", "''");
             p.Remark = p.Remark.Replace("'", "''");
             p.CustRemark2 = p.CustRemark2.Replace("'", "''");
-            sql = "Update " + inv.table + " Set " + inv.Amount + "=" + p.Amount + ", " +
-                inv.AmountDiscount + "=" + p.AmountDiscount + ", " +
+            p.Plus1Name = p.Plus1Name.Replace("'", "''");
+            sql = "Update " + inv.table + " Set " + inv.Amount + "=" + NumberNull1(p.Amount.Replace(",", "")) + ", " +
+                inv.AmountDiscount + "=" + NumberNull1(p.AmountDiscount.Replace(",", "")) + ", " +
                 inv.InvDate + "='" + p.InvDate + "', " +
                 inv.InvNumber + "='" + p.InvNumber + "', " +
                 inv.CustAddress + "='" + p.CustAddress + "', " +
@@ -225,17 +233,18 @@ namespace Cemp.objdb
                 inv.CustName + "='" + p.CustName + "', " +
                 inv.CustTel + "='" + p.CustTel + "', " +
                 inv.dateModi + "=" + p.dateGenDB + ", " +
-                inv.Discount + "=" + p.Discount + ", " +
-                inv.DiscountPer + "=" + p.DiscountPer + ", " +
-                inv.Nettotal + "=" + p.Nettotal + ", " +
+                inv.Discount + "=" + NumberNull1(p.Discount.Replace(",", "")) + ", " +
+                inv.DiscountPer + "=" + NumberNull1(p.DiscountPer.Replace(",", "")) + ", " +
+                inv.Nettotal + "=" + NumberNull1(p.Nettotal.Replace(",", "")) + ", " +
                 inv.Remark + "='" + p.Remark + "', " +
                 inv.Total + "=" + p.Total + ", " +
                 inv.userModi + "='" + p.userModi + "', " +
-                inv.Vat + "=" + p.Vat + ", " +
-                inv.VatRate + "=" + p.VatRate + ", " +
+                inv.Vat + "=" + NumberNull1(p.Vat.Replace(",", "")) + ", " +
+                inv.VatRate + "=" + NumberNull1(p.VatRate.Replace(",", "")) + ", " +
                 inv.InvDuePeriod + "='" + p.InvDuePeriod + "', " +
                 inv.CustRemark2 + "='" + p.CustRemark2 + "' " +
-
+                inv.Plus1Name + "='" + p.Plus1Name + "' " +
+                inv.Plus1 + "='" + NumberNull1(p.Plus1.Replace(",", "")) + "' " +
                 "Where " + inv.pkField + "='" + p.Id + "'";
             try
             {

@@ -83,6 +83,22 @@ namespace Cemp.gui
                 chkActive.Checked = true;
                 groupBox1.Visible = true;
                 dtpDateInv.Value = DateTime.Parse(bi.InvDate);
+                try
+                {
+                    if (!bi.InvDate.Equals(""))
+                    {
+                        dtpDateInv.Value = DateTime.Parse(cc.cf.dateDBtoShow1(qu.QuoDate));
+                    }
+                    else
+                    {
+                        dtpDateInv.Value = DateTime.Now;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    dtpDateInv.Value = DateTime.Parse(cc.cf.dateDBtoShow(qu.QuoDate));
+                }
                 setGrdAddInvItem(biId);
             }
             //cboContact.Text = bi.c

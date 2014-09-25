@@ -80,7 +80,7 @@ namespace Cemp.gui
                     dgvView[colId, i].Value = dt.Rows[i][cc.sfdb.sf.Id].ToString();
                     if (dt.Rows[i][cc.sfdb.sf.Priority].ToString().Equals("1"))
                     {
-                        dgvView[colPriority, i].Value = "ป้อนรางวัลอย่างเดียว";
+                        dgvView[colPriority, i].Value = "ป้อนข้อมูลอย่างเดียว";
                     }
                     else if (dt.Rows[i][cc.sfdb.sf.Priority].ToString().Equals("2"))
                     {

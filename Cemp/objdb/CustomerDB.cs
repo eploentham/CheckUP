@@ -171,6 +171,8 @@ namespace Cemp.objdb
             p.Remark = p.Remark.Replace("'", "''");
             p.saleName = p.saleName.Replace("'", "''");
             p.Remark2 = p.Remark2.Replace("'", "''");
+            p.NameT = p.NameT.Replace("บริษัท", "");
+            p.NameT = p.NameT.Replace("จำกัด", "");
 
             sql = "Insert Into " + cu.table + " (" + cu.pkField + "," + cu.Active + "," + cu.Addr + "," +
                 cu.AddressE + "," + cu.AddressT + "," + cu.amphurId + "," +
@@ -184,8 +186,8 @@ namespace Cemp.objdb
                 p.AddressE + "','" + p.AddressT + "','" + p.amphurId + "','" +
                 p.Code + "','" + p.ContactName1 + "','" + p.ContactName1Tel + "','" +
                 p.ContactName2 + "','" + p.ContactName2Tel + "','" + p.districtId + "','" +
-                p.Email + "','" + p.Fax + "','" + p.NameE + "','" +
-                p.NameT + "','" + p.provinceId + "','" + p.Remark + "','" +
+                p.Email + "','" + p.Fax + "','" + p.NameE.Replace("Co., Ltd.", "").Trim() + "','" +
+                p.NameT.Trim() + "','" + p.provinceId + "','" + p.Remark + "','" +
                 p.saleId + "','" + p.saleName + "','" + p.TaxId + "','" +
                 p.Tele + "','" + p.Zipcode + "','" + p.StatusCompany + "','" + p.StatusVendor + "','" + p.Remark2 + "')";
             try
@@ -217,7 +219,9 @@ namespace Cemp.objdb
             p.Remark = p.Remark.Replace("'", "''");
             p.saleName = p.saleName.Replace("'", "''");
             p.Remark2 = p.Remark2.Replace("'", "''");
-
+            p.NameT = p.NameT.Replace("บริษัท", "");
+            p.NameT = p.NameT.Replace("จำกัด", "");
+            p.NameE = p.NameE.Replace("Co., Ltd.", "");
             sql = "Update " + cu.table + " Set " + cu.Addr + "='" + p.Addr + "', " +
                 cu.AddressE + "='" + p.AddressE + "', " +
                 cu.AddressT + "='" + p.AddressT + "', " +
@@ -230,8 +234,8 @@ namespace Cemp.objdb
                 cu.districtId + "='" + p.districtId + "', " +
                 cu.Email + "='" + p.Email + "', " +
                 cu.Fax + "='" + p.Fax + "', " +
-                cu.NameE + "='" + p.NameE + "', " +
-                cu.NameT + "='" + p.NameT + "', " +
+                cu.NameE + "='" + p.NameE.Trim() + "', " +
+                cu.NameT + "='" + p.NameT.Trim() + "', " +
                 cu.provinceId + "='" + p.provinceId + "', " +
                 cu.Remark + "='" + p.Remark + "', " +
                 cu.saleId + "='" + p.saleId + "', " +
