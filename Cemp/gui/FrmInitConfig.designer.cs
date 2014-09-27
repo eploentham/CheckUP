@@ -30,6 +30,7 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.chkHideCostQuotation = new System.Windows.Forms.CheckBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtQuoLine6 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -70,23 +71,22 @@
             this.btnTest = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.gBServer = new System.Windows.Forms.GroupBox();
-            this.txtPathShareData = new System.Windows.Forms.TextBox();
+            this.txtNameShareData = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.chkDelImage = new System.Windows.Forms.CheckBox();
-            this.btnPath1 = new System.Windows.Forms.Button();
+            this.btnPathImage = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtPathLogo = new System.Windows.Forms.TextBox();
+            this.txtPathImage = new System.Windows.Forms.TextBox();
             this.txtPathShareImage = new System.Windows.Forms.TextBox();
-            this.btnPath = new System.Windows.Forms.Button();
+            this.btnPathData = new System.Windows.Forms.Button();
             this.btnShare = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtPathImage = new System.Windows.Forms.TextBox();
+            this.txtPathData = new System.Windows.Forms.TextBox();
             this.btnIP = new System.Windows.Forms.Button();
             this.txtIP = new System.Windows.Forms.TextBox();
             this.ChkClient = new System.Windows.Forms.RadioButton();
             this.ChkServer = new System.Windows.Forms.RadioButton();
-            this.chkHideCostQuotation = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -128,6 +128,17 @@
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "groupBox4";
+            // 
+            // chkHideCostQuotation
+            // 
+            this.chkHideCostQuotation.AutoSize = true;
+            this.chkHideCostQuotation.Location = new System.Drawing.Point(115, 186);
+            this.chkHideCostQuotation.Margin = new System.Windows.Forms.Padding(2);
+            this.chkHideCostQuotation.Name = "chkHideCostQuotation";
+            this.chkHideCostQuotation.Size = new System.Drawing.Size(134, 17);
+            this.chkHideCostQuotation.TabIndex = 45;
+            this.chkHideCostQuotation.Text = "ซ่อนราคาทุน Quotation";
+            this.chkHideCostQuotation.UseVisualStyleBackColor = true;
             // 
             // label17
             // 
@@ -527,18 +538,18 @@
             // 
             // gBServer
             // 
-            this.gBServer.Controls.Add(this.txtPathShareData);
+            this.gBServer.Controls.Add(this.txtNameShareData);
             this.gBServer.Controls.Add(this.label9);
             this.gBServer.Controls.Add(this.chkDelImage);
-            this.gBServer.Controls.Add(this.btnPath1);
+            this.gBServer.Controls.Add(this.btnPathImage);
             this.gBServer.Controls.Add(this.label6);
-            this.gBServer.Controls.Add(this.txtPathLogo);
+            this.gBServer.Controls.Add(this.txtPathImage);
             this.gBServer.Controls.Add(this.txtPathShareImage);
-            this.gBServer.Controls.Add(this.btnPath);
+            this.gBServer.Controls.Add(this.btnPathData);
             this.gBServer.Controls.Add(this.btnShare);
             this.gBServer.Controls.Add(this.label5);
             this.gBServer.Controls.Add(this.label7);
-            this.gBServer.Controls.Add(this.txtPathImage);
+            this.gBServer.Controls.Add(this.txtPathData);
             this.gBServer.Controls.Add(this.btnIP);
             this.gBServer.Controls.Add(this.txtIP);
             this.gBServer.Location = new System.Drawing.Point(120, 17);
@@ -550,24 +561,24 @@
             this.gBServer.TabStop = false;
             this.gBServer.Text = "Server";
             // 
-            // txtPathShareData
+            // txtNameShareData
             // 
-            this.txtPathShareData.Location = new System.Drawing.Point(120, 126);
-            this.txtPathShareData.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPathShareData.Name = "txtPathShareData";
-            this.txtPathShareData.Size = new System.Drawing.Size(170, 20);
-            this.txtPathShareData.TabIndex = 29;
-            this.txtPathShareData.Text = "lottory_data";
+            this.txtNameShareData.Location = new System.Drawing.Point(120, 104);
+            this.txtNameShareData.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNameShareData.Name = "txtNameShareData";
+            this.txtNameShareData.Size = new System.Drawing.Size(170, 20);
+            this.txtNameShareData.TabIndex = 29;
+            this.txtNameShareData.Text = "lottory_data";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(5, 128);
+            this.label9.Location = new System.Drawing.Point(5, 106);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(87, 13);
+            this.label9.Size = new System.Drawing.Size(92, 13);
             this.label9.TabIndex = 30;
-            this.label9.Text = "path share data :";
+            this.label9.Text = "name share data :";
             // 
             // chkDelImage
             // 
@@ -580,16 +591,16 @@
             this.chkDelImage.Text = "เมื่อนำรูปเข้าระบบ ให้ลบรูป";
             this.chkDelImage.UseVisualStyleBackColor = true;
             // 
-            // btnPath1
+            // btnPathImage
             // 
-            this.btnPath1.Location = new System.Drawing.Point(421, 23);
-            this.btnPath1.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPath1.Name = "btnPath1";
-            this.btnPath1.Size = new System.Drawing.Size(22, 26);
-            this.btnPath1.TabIndex = 19;
-            this.btnPath1.Text = "...";
-            this.btnPath1.UseVisualStyleBackColor = true;
-            this.btnPath1.Click += new System.EventHandler(this.btnPath1_Click);
+            this.btnPathImage.Location = new System.Drawing.Point(421, 23);
+            this.btnPathImage.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPathImage.Name = "btnPathImage";
+            this.btnPathImage.Size = new System.Drawing.Size(22, 26);
+            this.btnPathImage.TabIndex = 19;
+            this.btnPathImage.Text = "...";
+            this.btnPathImage.UseVisualStyleBackColor = true;
+            this.btnPathImage.Click += new System.EventHandler(this.btnPath1_Click);
             // 
             // label6
             // 
@@ -597,17 +608,17 @@
             this.label6.Location = new System.Drawing.Point(4, 27);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 13);
+            this.label6.Size = new System.Drawing.Size(63, 13);
             this.label6.TabIndex = 18;
-            this.label6.Text = "path เก็บรูปLogo";
+            this.label6.Text = "path เก็บรูป";
             // 
-            // txtPathLogo
+            // txtPathImage
             // 
-            this.txtPathLogo.Location = new System.Drawing.Point(141, 27);
-            this.txtPathLogo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPathLogo.Name = "txtPathLogo";
-            this.txtPathLogo.Size = new System.Drawing.Size(276, 20);
-            this.txtPathLogo.TabIndex = 17;
+            this.txtPathImage.Location = new System.Drawing.Point(120, 27);
+            this.txtPathImage.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPathImage.Name = "txtPathImage";
+            this.txtPathImage.Size = new System.Drawing.Size(297, 20);
+            this.txtPathImage.TabIndex = 17;
             // 
             // txtPathShareImage
             // 
@@ -618,16 +629,16 @@
             this.txtPathShareImage.TabIndex = 21;
             this.txtPathShareImage.Text = "lottory_image";
             // 
-            // btnPath
+            // btnPathData
             // 
-            this.btnPath.Location = new System.Drawing.Point(421, 50);
-            this.btnPath.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPath.Name = "btnPath";
-            this.btnPath.Size = new System.Drawing.Size(22, 26);
-            this.btnPath.TabIndex = 15;
-            this.btnPath.Text = "...";
-            this.btnPath.UseVisualStyleBackColor = true;
-            this.btnPath.Click += new System.EventHandler(this.btnPath_Click);
+            this.btnPathData.Location = new System.Drawing.Point(421, 50);
+            this.btnPathData.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPathData.Name = "btnPathData";
+            this.btnPathData.Size = new System.Drawing.Size(22, 26);
+            this.btnPathData.TabIndex = 15;
+            this.btnPathData.Text = "...";
+            this.btnPathData.UseVisualStyleBackColor = true;
+            this.btnPathData.Click += new System.EventHandler(this.btnPath_Click);
             // 
             // btnShare
             // 
@@ -646,9 +657,9 @@
             this.label5.Location = new System.Drawing.Point(5, 56);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 13);
+            this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 14;
-            this.label5.Text = "path เก็บรูป :";
+            this.label5.Text = "path data :";
             // 
             // label7
             // 
@@ -656,17 +667,17 @@
             this.label7.Location = new System.Drawing.Point(5, 83);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 13);
+            this.label7.Size = new System.Drawing.Size(84, 13);
             this.label7.TabIndex = 22;
-            this.label7.Text = "path share pic :";
+            this.label7.Text = "name share รูป :";
             // 
-            // txtPathImage
+            // txtPathData
             // 
-            this.txtPathImage.Location = new System.Drawing.Point(142, 54);
-            this.txtPathImage.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPathImage.Name = "txtPathImage";
-            this.txtPathImage.Size = new System.Drawing.Size(276, 20);
-            this.txtPathImage.TabIndex = 13;
+            this.txtPathData.Location = new System.Drawing.Point(120, 54);
+            this.txtPathData.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPathData.Name = "txtPathData";
+            this.txtPathData.Size = new System.Drawing.Size(298, 20);
+            this.txtPathData.TabIndex = 13;
             // 
             // btnIP
             // 
@@ -712,17 +723,6 @@
             this.ChkServer.Text = "เครื่อง Server";
             this.ChkServer.UseVisualStyleBackColor = true;
             this.ChkServer.Click += new System.EventHandler(this.ChkServer_Click);
-            // 
-            // chkHideCostQuotation
-            // 
-            this.chkHideCostQuotation.AutoSize = true;
-            this.chkHideCostQuotation.Location = new System.Drawing.Point(115, 186);
-            this.chkHideCostQuotation.Margin = new System.Windows.Forms.Padding(2);
-            this.chkHideCostQuotation.Name = "chkHideCostQuotation";
-            this.chkHideCostQuotation.Size = new System.Drawing.Size(134, 17);
-            this.chkHideCostQuotation.TabIndex = 45;
-            this.chkHideCostQuotation.Text = "ซ่อนราคาทุน Quotation";
-            this.chkHideCostQuotation.UseVisualStyleBackColor = true;
             // 
             // FrmInitConfig
             // 
@@ -770,12 +770,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDatabase;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtPathImage;
-        private System.Windows.Forms.Button btnPath;
+        private System.Windows.Forms.TextBox txtPathData;
+        private System.Windows.Forms.Button btnPathData;
         private System.Windows.Forms.CheckBox chkDelImage;
-        private System.Windows.Forms.Button btnPath1;
+        private System.Windows.Forms.Button btnPathImage;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtPathLogo;
+        private System.Windows.Forms.TextBox txtPathImage;
         private System.Windows.Forms.Button btnShare;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtPathShareImage;
@@ -785,7 +785,7 @@
         private System.Windows.Forms.RadioButton ChkServer;
         private System.Windows.Forms.GroupBox gBServer;
         private System.Windows.Forms.GroupBox gBClient;
-        private System.Windows.Forms.TextBox txtPathShareData;
+        private System.Windows.Forms.TextBox txtNameShareData;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtConnectShareData;
         private System.Windows.Forms.Label label8;

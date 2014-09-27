@@ -57,39 +57,48 @@ namespace Cemp.Control
         }        
         private void initConfig()
         {
-            iniFile = new IniFile(Environment.CurrentDirectory + "\\" + Application.ProductName + ".ini");
-            initC = new InitConfig();
-            GetConfig();
-            cf = new Config1();
+            try
+            {
+                iniFile = new IniFile(Environment.CurrentDirectory + "\\" + Application.ProductName + ".ini");
+                initC = new InitConfig();
+                GetConfig();
+                cf = new Config1();
 
-            sf = new Staff();
-            itSearch = new Item();
+                sf = new Staff();
+                itSearch = new Item();
+
+                conn = new ConnectDB(initC);
+
+                sfdb = new StaffDB(conn);
+                didb = new DistrictDB(conn);
+                amdb = new AmphurDB(conn);
+                prdb = new ProvinceDB(conn);
+                cpdb = new CompanyDB(conn);
+                cudb = new CustomerDB(conn);
+                medb = new MethodDB(conn);
+                qudb = new QuotationDB(conn);
+                quidb = new QuotationItemDB(conn);
+                modb = new MOUDB(conn);
+                moidb = new MOUItemDB(conn);
+                itdb = new ItemDB(conn);
+                itgdb = new ItemGroupDB(conn);
+                invdb = new InvoiceDB(conn);
+                invidb = new InvoiceItemDB(conn);
+                rsdb = new ResultDB(conn);
+                rsidb = new ResultItemDB(conn);
+                docdb = new DocTypeDB(conn);
+
+                lw = new LogWriter();
+
+                cp = cpdb.selectByPk();
+                PathLogo = Environment.CurrentDirectory;
+            }
+            catch (Exception ex)
+            {
+                //lw.WriteLog("CnviControl.initConfig Error " + ex.Message);
+                MessageBox.Show(""+ex.Message, "Error");
+            }
             
-            conn = new ConnectDB(initC);
-
-            sfdb = new StaffDB(conn);
-            didb = new DistrictDB(conn);
-            amdb = new AmphurDB(conn);
-            prdb = new ProvinceDB(conn);
-            cpdb = new CompanyDB(conn);
-            cudb = new CustomerDB(conn);
-            medb = new MethodDB(conn);
-            qudb = new QuotationDB(conn);
-            quidb = new QuotationItemDB(conn);
-            modb = new MOUDB(conn);
-            moidb = new MOUItemDB(conn);
-            itdb = new ItemDB(conn);
-            itgdb = new ItemGroupDB(conn);
-            invdb = new InvoiceDB(conn);
-            invidb = new InvoiceItemDB(conn);
-            rsdb = new ResultDB(conn);
-            rsidb = new ResultItemDB(conn);
-            docdb = new DocTypeDB(conn);
-
-            lw = new LogWriter();
-
-            cp = cpdb.selectByPk();
-            PathLogo = Environment.CurrentDirectory;
         }
         public String getTextCboItem(ComboBox c, String valueId)
         {
@@ -113,14 +122,16 @@ namespace Cemp.Control
             initC.User = iniFile.Read("username");
             initC.Password = iniFile.Read("password");
 
-            initC.pathImage = iniFile.Read("pathimage");
+            initC.PathData = iniFile.Read("pathimage");
             initC.pathImageLogo = iniFile.Read("pathimagelogo");
             initC.delImage = iniFile.Read("delimage");
             initC.StatusServer = iniFile.Read("statusserver");
-            initC.pathShareData = iniFile.Read("pathsharedata");
+            initC.NameShareData = iniFile.Read("namesharedata");
             initC.pathShareImage = iniFile.Read("pathshareimage");
             initC.use32Bit = iniFile.Read("use32bit");
             initC.PathReport = iniFile.Read("pathreport");
+            initC.ConnectShareData = iniFile.Read("connectsharedata");
+            initC.IPServer = iniFile.Read("ipserver");
 
             initC.quoLine1 = iniFile.Read("quotationline1");
             initC.quoLine2 = iniFile.Read("quotationline2");
@@ -140,17 +151,29 @@ namespace Cemp.Control
         {
             iniFile.Write("pathimagelogo", path);
         }
+        public void SetConnectShareImage(String path)
+        {
+            iniFile.Write("connectshareimage", path);
+        }
+        public void SetConnectShareData(String path)
+        {
+            iniFile.Write("connectsharedata", path);
+        }
+        public void SetNameShareData(String path)
+        {
+            iniFile.Write("namesharedata", path);
+        }
         public void SetPathShareImage(String path)
         {
             iniFile.Write("pathshareimage", path);
         }
-        public void SetPathShareData(String path)
-        {
-            iniFile.Write("pathsharedata", path);
-        }
         public void SetPathReport(String path)
         {
             iniFile.Write("pathreport", path);
+        }
+        public void SetIPServer(String path)
+        {
+            iniFile.Write("ipserver", path);
         }
         public void SetQuoLine1(String path)
         {
@@ -381,7 +404,14 @@ namespace Cemp.Control
             string localIP = "";
             host = Dns.GetHostEntry(Dns.GetHostName());
             IPAddress[] addr = host.AddressList;
-            return addr[addr.Length - 1].ToString();
+            for (int i = 0; i < addr.Length; i++)
+            {
+                if (addr[i].AddressFamily.ToString().ToLower().Equals("internetwork"))
+                {
+                    localIP = addr[i].ToString();
+                }
+            }
+            return localIP;
             //return localIP;
         }
         public String getValueCboItem(ComboBox c)

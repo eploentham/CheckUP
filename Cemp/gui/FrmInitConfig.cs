@@ -49,6 +49,7 @@ namespace Cemp.gui
                 txtHost.Visible = true;
                 txtPwd.Visible = true;
                 txtUser.Visible = true;
+                
             }
             else
             {
@@ -59,22 +60,23 @@ namespace Cemp.gui
 
                 chkConnectServer.Checked = false;
                 txtDatabase.Visible = false;
-                txtHost.Visible = false;
+                txtHost.Visible = true;
                 txtPwd.Visible = false;
                 txtUser.Visible = false;
             }
-
-            txtPathImage.Text = cc.initC.pathImage;
-            txtPathLogo.Text = cc.initC.pathImageLogo;
+            txtIP.Text = cc.initC.IPServer;
+            txtPathData.Text = cc.initC.PathData;
+            txtPathImage.Text = cc.initC.pathImageLogo;
             txtPathReport.Text = cc.initC.PathReport;
-
+            txtNameShareData.Text = cc.initC.NameShareData;
             txtQuoLine1.Text = cc.initC.quoLine1;
             txtQuoLine2.Text = cc.initC.quoLine2;
             txtQuoLine3.Text = cc.initC.quoLine3;
             txtQuoLine4.Text = cc.initC.quoLine4;
             txtQuoLine5.Text = cc.initC.quoLine5;
             txtQuoLine6.Text = cc.initC.quoLine6;
-
+            txtHost.Text = cc.initC.IPServer;
+            txtConnectShareData.Text = cc.initC.ConnectShareData;
             if (cc.initC.delImage.Equals("yes"))
             {
                 chkDelImage.Checked = true;
@@ -121,23 +123,25 @@ namespace Cemp.gui
             if (ChkServer.Checked)
             {
                 cc.SetSetatusServer(true);
-                cc.SetPathImage(txtPathImage.Text);
-                cc.SetPathImageLogo(txtPathLogo.Text);
+                cc.SetPathImage(txtPathData.Text);
+                cc.SetPathImageLogo(txtPathImage.Text);
                 cc.SetDelImage(chkDelImage.Checked);
 
                 cc.SetPathShareImage(txtPathShareImage.Text);
-                cc.SetPathShareData(txtPathShareData.Text);
+                cc.SetNameShareData(txtNameShareData.Text);
+                cc.SetIPServer(txtIP.Text);
+                
             }
             else
             {
                 cc.SetSetatusServer(false);
                 cc.SetConnectServer(chkConnectServer.Checked, txtHost.Text, txtUser.Text, txtPwd.Text);
                 //lc.SetPathImage(txtPathImage.Text);
-
+                cc.SetIPServer(txtHost.Text);
                 cc.SetPathShareImage(txtConnectShareData.Text);
-                cc.SetPathShareData(txtConnectShareImage.Text);
-            }
+                cc.SetConnectShareData(txtConnectShareData.Text);
 
+            }
             cc.GetConfig();
         }
 
@@ -195,20 +199,20 @@ namespace Cemp.gui
             //}
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             DialogResult result = fbd.ShowDialog();
-            txtPathImage.Text = fbd.SelectedPath;
+            txtPathData.Text = fbd.SelectedPath;
         }
 
         private void btnPath1_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             DialogResult result = fbd.ShowDialog();
-            txtPathLogo.Text = fbd.SelectedPath;
+            txtPathImage.Text = fbd.SelectedPath;
         }
 
         private void btnShare_Click(object sender, EventArgs e)
         {
-            cc.CreateSharedFolder(txtPathImage.Text, txtPathShareImage.Text, txtPathShareImage.Text);
-            cc.CreateSharedFolder(Environment.CurrentDirectory + "\\Database\\", txtPathShareData.Text, txtPathShareData.Text);
+            cc.CreateSharedFolder(txtPathData.Text, txtNameShareData.Text, txtNameShareData.Text);
+            //cc.CreateSharedFolder(Environment.CurrentDirectory + "\\Database\\", txtPathShareData.Text, txtPathShareData.Text);
         }
 
         private void btnIP_Click(object sender, EventArgs e)

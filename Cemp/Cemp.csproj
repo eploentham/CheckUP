@@ -100,6 +100,12 @@
     <Compile Include="gui\FrmMOUPlaceRecord.Designer.cs">
       <DependentUpon>FrmMOUPlaceRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmPOView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmPOView.Designer.cs">
+      <DependentUpon>FrmPOView.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmQuotationAdd1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -426,6 +432,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmMOUPlaceRecord.resx">
       <DependentUpon>FrmMOUPlaceRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmPOView.resx">
+      <DependentUpon>FrmPOView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmQuotationAdd1.resx">
       <DependentUpon>FrmQuotationAdd1.cs</DependentUpon>

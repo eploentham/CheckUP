@@ -87,7 +87,7 @@ namespace Cemp.gui
                 {
                     if (!bi.InvDate.Equals(""))
                     {
-                        dtpDateInv.Value = DateTime.Parse(cc.cf.dateDBtoShow1(qu.QuoDate));
+                        dtpDateInv.Value = DateTime.Parse(cc.cf.dateDBtoShow1(bi.InvDate));
                     }
                     else
                     {
@@ -97,7 +97,7 @@ namespace Cemp.gui
                 }
                 catch (Exception ex)
                 {
-                    dtpDateInv.Value = DateTime.Parse(cc.cf.dateDBtoShow(qu.QuoDate));
+                    dtpDateInv.Value = DateTime.Parse(cc.cf.dateDBtoShow(bi.InvDate));
                 }
                 setGrdAddInvItem(biId);
             }

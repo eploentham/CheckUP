@@ -279,12 +279,27 @@ namespace Cemp.gui
         {
             if ((e.KeyCode == Keys.Enter) && (keyDistrict))
             {
-                cboDistrict = cc.didb.getCboDist1(cboDistrict, label18.Text);
-                cboAmphur = cc.amdb.getCboAmphur1(cboAmphur, label18.Text.Substring(0, 4));
-                cboProvince = cc.prdb.getCboProv1(cboProvince, label18.Text.Substring(0, 2));
-                txtZipcode.Text = cc.didb.selectZipCodeByPk(label18.Text);
-
-                txtAddressT.Text = txtAddr.Text+" "+cboDistrict.Text+" "+cboAmphur.Text+" "+cboProvince.Text+" "+txtZipcode.Text;
+                try
+                {
+                    cboDistrict = cc.didb.getCboDist1(cboDistrict, label18.Text);
+                    cboAmphur = cc.amdb.getCboAmphur1(cboAmphur, label18.Text.Substring(0, 4));
+                    cboProvince = cc.prdb.getCboProv1(cboProvince, label18.Text.Substring(0, 2));
+                    txtZipcode.Text = cc.didb.selectZipCodeByPk(label18.Text);
+                    if (cboProvince.SelectedValue.ToString().Equals("10"))
+                    {
+                        txtAddressT.Text = txtAddr.Text + " แขวง " + cboDistrict.Text + " เขต " + cboAmphur.Text + " จังหวัด " + cboProvince.Text + " รหัสไปรษณีย์ " + txtZipcode.Text;
+                    }
+                    else
+                    {
+                        txtAddressT.Text = txtAddr.Text + " อำเภอ " + cboDistrict.Text + " ตำบล " + cboAmphur.Text + " จังหวัด " + cboProvince.Text + " รหัสไปรษณีย์ " + txtZipcode.Text;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    cc.lw.WriteLog("FrmCustAdd.cboDistrict_KeyUp Error " + ex.Message);
+                }
+                
+                
                 txtAddressE.SelectAll();
                 txtAddressE.Focus();
             }
