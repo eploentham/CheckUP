@@ -9,6 +9,7 @@ namespace Cemp.object1
     {
         public String Id = "", MOUId = "", RowNumber = "", ItemId = "", ItemDescription = "", MethodId = "", MethodDescription = "", Sample = "", PlaceRecord = "", Active="";
         public String dateCreate = "", dateModi = "", dateCancel = "", userCreate = "", userModi = "", userCancel = "", ItemGroupId = "", ItemGroupNameT = "", ItemGroupNameE = "", ItemGroupSort = "";
-        public String DatePlaceRecord = "", MOUNumber = "", MOUNumberCnt = "", PriceSale = "", Discount = "", Amount = "", PriceCost = "";
+        public String DatePlaceRecord = "", MOUNumber = "", MOUNumberCnt = "", PriceSale = "", Discount = "", Amount = "", PriceCost = "", MOUNumberMain="";
+        public String ItemType = "";
     }
 }

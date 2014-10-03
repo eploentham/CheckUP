@@ -8,38 +8,40 @@ using System.Windows.Forms;
 
 namespace Cemp.objdb
 {
-    public class DocTypeDB
+    public class ItemTypeDB
     {
         ConnectDB conn;
-        public DocType doc;
-        public DocTypeDB(ConnectDB c)
+        public DocType ity;
+        public ItemTypeDB(ConnectDB c)
         {
             conn = c;
             initConfig();
         }
         private void initConfig()
         {
-            doc = new DocType();
-            doc.Active = "doc_active";
-            doc.docModule = "doc_module";
-            doc.docType = "doc_type";
-            doc.docValue = "doc_value";
-            doc.PreFix = "doc_prefix";
-            doc.Remark = "remark";
-            doc.Id = "doc_id";
+            ity = new DocType();
+            ity.Active = "doc_active";
+            ity.docModule = "doc_module";
+            ity.docType = "doc_type";
+            ity.docValue = "doc_value";
+            ity.PreFix = "doc_prefix";
+            ity.Remark = "remark";
+            ity.Id = "doc_id";
+            
 
-            doc.pkField = "doc_id";
-            doc.table = "b_doc_prefix";
+            ity.pkField = "doc_id";
+            ity.table = "b_doc_prefix";
         }
         private DocType setData(DocType item, DataTable dt)
         {
-            item.Active = dt.Rows[0][doc.Active].ToString();
-            item.docModule = dt.Rows[0][doc.docModule].ToString();
-            item.docType = dt.Rows[0][doc.docType].ToString();
-            item.docValue = dt.Rows[0][doc.docValue].ToString();
-            item.PreFix = dt.Rows[0][doc.PreFix].ToString();
-            item.Remark = dt.Rows[0][doc.Remark].ToString();
-            item.Id = dt.Rows[0][doc.Id].ToString();
+            item.Active = dt.Rows[0][ity.Active].ToString();
+            item.docModule = dt.Rows[0][ity.docModule].ToString();
+            item.docType = dt.Rows[0][ity.docType].ToString();
+            item.docValue = dt.Rows[0][ity.docValue].ToString();
+            item.PreFix = dt.Rows[0][ity.PreFix].ToString();
+            item.Remark = dt.Rows[0][ity.Remark].ToString();
+            item.Id = dt.Rows[0][ity.Id].ToString();
+            //item.ItemType = dt.Rows[0][ity.ItemType].ToString();
             //item.PositionName = dt.Rows[0][dt.PositionName].ToString();
 
 
@@ -49,7 +51,7 @@ namespace Cemp.objdb
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + doc.table + " Where " + doc.Active + "='1'";
+            sql = "Select * From " + ity.table + " Where " + ity.Active + "='1'";
             dt = conn.selectData(sql);
 
             return dt;
@@ -60,7 +62,7 @@ namespace Cemp.objdb
             DocType item = new DocType();
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + doc.table + " Where " + doc.pkField + "='" + saleId + "'";
+            sql = "Select * From " + ity.table + " Where " + ity.pkField + "='" + saleId + "'";
             dt = conn.selectData(sql);
             if (dt.Rows.Count > 0)
             {
@@ -73,7 +75,7 @@ namespace Cemp.objdb
             //DocType item = new DocType();
             String sql = "";
 
-            sql = "Select * From " + doc.table + " Where " + doc.docModule + "='" + dtId + "' and " + doc.Active + "='1' ";
+            sql = "Select * From " + ity.table + " Where " + ity.docModule + "='" + dtId + "' and " + ity.Active + "='1' ";
             //dt = conn.selectData(sql);
             DataTable dt = conn.selectData(sql);
 
@@ -84,11 +86,11 @@ namespace Cemp.objdb
             //DocType item = new DocType();
             String sql = "";
 
-            sql = "Select "+doc.PreFix+" From " + doc.table + " Where " + doc.docModule + "='" + docModule + "' and " + doc.docType + "='" + docType + "' ";
+            sql = "Select "+ity.PreFix+" From " + ity.table + " Where " + ity.docModule + "='" + docModule + "' and " + ity.docType + "='" + docType + "' ";
             //dt = conn.selectData(sql);
             DataTable dt = conn.selectData(sql);
 
-            return dt.Rows[0][doc.PreFix].ToString();
+            return dt.Rows[0][ity.PreFix].ToString();
         }
         private String insert(DocType p)
         {
@@ -99,9 +101,9 @@ namespace Cemp.objdb
             }
             p.Remark = p.Remark.Replace("'", "''");
 
-            sql = "Insert Into " + doc.table + " (" + doc.pkField + "," + doc.Active + "," + doc.docModule + "," +
-                doc.docType + "," + doc.docValue + "," + doc.PreFix + "," +
-                doc.Remark + ") " +
+            sql = "Insert Into " + ity.table + " (" + ity.pkField + "," + ity.Active + "," + ity.docModule + "," +
+                ity.docType + "," + ity.docValue + "," + ity.PreFix + "," +
+                ity.Remark + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.docModule + "','" +
                 p.docType + "','" + p.docValue + "','" + p.PreFix + "','" +
                 p.Remark + "')";
@@ -125,12 +127,12 @@ namespace Cemp.objdb
 
             p.Remark = p.Remark.Replace("'", "''");
 
-            sql = "Update " + doc.table + " Set " + doc.docModule + "='" + p.docModule + "', " +
-                doc.docType + "='" + p.docType + "', " +
-                doc.PreFix + "='" + p.PreFix + "', " +
-                doc.Remark + "='" + p.Remark + "' " +
+            sql = "Update " + ity.table + " Set " + ity.docModule + "='" + p.docModule + "', " +
+                ity.docType + "='" + p.docType + "', " +
+                ity.PreFix + "='" + p.PreFix + "', " +
+                ity.Remark + "='" + p.Remark + "' " +
 
-                "Where " + doc.pkField + "='" + p.Id + "'";
+                "Where " + ity.pkField + "='" + p.Id + "'";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -162,7 +164,7 @@ namespace Cemp.objdb
         public String deleteAll()
         {
             String sql = "", chk = "";
-            sql = "Delete From " + doc.table;
+            sql = "Delete From " + ity.table;
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
@@ -173,8 +175,8 @@ namespace Cemp.objdb
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 item = new ComboBoxItem();
-                item.Value = dt.Rows[i][doc.PreFix].ToString();
-                item.Text = dt.Rows[i][doc.docType].ToString();
+                item.Value = dt.Rows[i][ity.PreFix].ToString();
+                item.Text = dt.Rows[i][ity.docType].ToString();
                 c.Items.Add(item);
                 //c.Items.Add(new );
             }

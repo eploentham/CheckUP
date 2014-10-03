@@ -81,7 +81,7 @@ namespace Cemp.gui
             CustMou.Text = "";
 
             txtMOUId.Text = mo.Id;
-            txtMouNumber.Text = mo.MOUNumber+"-"+mo.MOUNumberCnt;
+            txtMouNumber.Text = mo.MOUNumberMain+"-"+mo.MOUNumberCnt;
             txtStaffMOUEmail.Text = mo.StaffMOUEmail;
             txtStaffMOUMobile.Text = mo.StaffMOUMobile;
             txtStaffMOUTel.Text = mo.StaffMOUTel;
@@ -113,7 +113,7 @@ namespace Cemp.gui
             //it.ItemGroupId = cc.getValueCboItem(cboGroup);
 
             mo.Id = txtMOUId.Text;
-            mo.MOUNumber = txtMouNumber.Text;
+            mo.MOUNumberMain = txtMouNumber.Text;
             mo.DatePeriod = txtDatePeriod.Text;
             mo.StaffMOUName = cboStaffMOU.Text;
             mo.StaffMOUId = cc.getValueCboItem(cboStaffPlaceRecord);
@@ -324,22 +324,22 @@ namespace Cemp.gui
             getMOU();
             if (mo.Id.Equals("") && (!MOUSplit))
             {
-                mo.MOUNumber = cc.modb.getMOUNumber("");
-                String[] doc1 = mo.MOUNumber.Split('-');
-                mo.MOUNumber = doc1[0];
+                mo.MOUNumberMain = cc.modb.getMOUNumber("");
+                String[] doc1 = mo.MOUNumberMain.Split('-');
+                mo.MOUNumberMain = doc1[0];
                 mo.MOUNumberCnt = doc1[1];
             }
             else if (MOUSplit)
             {
-                String[] doc1 = mo.MOUNumber.Split('-');
-                mo.MOUNumber = doc1[0];
-                mo.MOUNumberCnt = cc.modb.selectMaxByNumber(mo.MOUNumber);
+                String[] doc1 = mo.MOUNumberMain.Split('-');
+                mo.MOUNumberMain = doc1[0];
+                mo.MOUNumberCnt = cc.modb.selectMaxByNumber(mo.MOUNumberMain);
                 mo.Id = "";
             }
             else
             {
-                String[] doc1 = mo.MOUNumber.Split('-');
-                mo.MOUNumber = doc1[0];
+                String[] doc1 = mo.MOUNumberMain.Split('-');
+                mo.MOUNumberMain = doc1[0];
                 mo.MOUNumberCnt = doc1[1];
             }
             moId = cc.modb.insertMOU(mo);
@@ -392,7 +392,7 @@ namespace Cemp.gui
                     }
                 }
                 MOU mo1 = cc.modb.selectByPk(moId);
-                txtMouNumber.Text = mo1.MOUNumber + "-" + mo1.MOUNumberCnt;
+                txtMouNumber.Text = mo1.MOUNumberMain + "-" + mo1.MOUNumberCnt;
 
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 btnPrintMou.Visible = true;
@@ -510,12 +510,12 @@ namespace Cemp.gui
             mo.CustTel = "เบอร์โทร : " + mo.CustTel + " Mobile : " + mo.CustMobile;
             mo.CustEmail = " Email : " + mo.CustEmail;
             mo.Line1 = cc.cp.mouLine1;
-            mo.QuoNumber = "เลขที่ : " + mo.MOUNumber + "-" + mo.MOUNumberCnt;
+            mo.QuoNumber = "เลขที่ : " + mo.MOUNumberMain + "-" + mo.MOUNumberCnt;
             mo.DatePeriod = "วันที่ :  " + mo.DatePeriod;
             mo.StaffQuoName = "ผู้เสนอราคา :  " + mo.StaffQuoName;
             mo.StaffMOUTel = "เบอร์โทร : " + mo.StaffMOUTel + " Mobile : " + mo.StaffMOUMobile;
             mo.StaffMOUEmail = "Email : " + mo.StaffMOUEmail;
-            mo.MOUNumber = "เลขที่ : " + mo.MOUNumber + "-" + mo.MOUNumberCnt;
+            mo.MOUNumberMain = "เลขที่ : " + mo.MOUNumberMain + "-" + mo.MOUNumberCnt;
 
             FrmReport frm = new FrmReport(cc);
             frm.setReportMOU(mo, dt);

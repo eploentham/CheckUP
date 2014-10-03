@@ -41,6 +41,7 @@ namespace Cemp.objdb
             it.userCreate = "user_create";
             it.userModi = "user_modi";
             it.PriceCostReal = "price_cost_real";
+            it.ItemType = "item_type";
 
             it.table = "b_item";
             it.pkField = "item_id";
@@ -68,6 +69,7 @@ namespace Cemp.objdb
             item.userCreate = dt.Rows[0][it.userCreate].ToString();
             item.userModi = dt.Rows[0][it.userModi].ToString();
             item.PriceCostReal = dt.Rows[0][it.PriceCostReal].ToString();
+            item.ItemType = dt.Rows[0][it.ItemType].ToString();
 
             return item;
         }
@@ -193,14 +195,14 @@ namespace Cemp.objdb
                 it.ItemGroupNameT + "," + it.MethodNameT + "," + it.MethodId + "," +
                 it.Sort1 + "," + it.dateCancel + "," + it.dateCreate + "," +
                 it.dateModi + "," + it.userCancel + "," + it.userCreate + "," +
-                it.userModi + "," + it.PriceCostReal + ") " +
+                it.userModi + "," + it.PriceCostReal + "," + it.ItemType + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.Code + "','" +
                 p.NameE + "','" + p.NameT + "','" + p.Remark + "'," +
                 NumberNull1(p.PriceCost) + "," + NumberNull1(p.PriceSale) + ",'" + p.ItemGroupId + "','" +
                 p.ItemGroupNameT + "','" + p.MethodNameT + "','" + p.MethodId + "','" +
                 p.Sort1 + "','" +p.dateCancel + "'," + p.dateGenDB + ",'" + 
                 p.dateModi + "','" +p.userCancel + "','" + p.userCreate + "','" +
-                p.userModi + "'," + NumberNull1(p.PriceCostReal) + ")";
+                p.userModi + "'," + NumberNull1(p.PriceCostReal) + "','" + p.ItemType + ")";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -242,6 +244,7 @@ namespace Cemp.objdb
                 it.userModi + "='" + p.userModi + "'," +
                 it.dateModi + "=" + p.dateGenDB + ", " +
                 it.PriceCostReal + "=" + NumberNull1(p.PriceCostReal) + ", " +
+                it.ItemType + "='" + p.ItemType + "' " +
                 "Where " + it.pkField + "='" + p.Id + "'";
             try
             {

@@ -28,7 +28,7 @@ namespace Cemp.gui
             cc = c;
             mo = new MOU();
             mo = cc.modb.selectByPk(moId);
-            txtMouNumber.Text = mo.MOUNumber+"-"+mo.MOUNumberCnt;
+            txtMouNumber.Text = mo.MOUNumberMain+"-"+mo.MOUNumberCnt;
             //qu = new Quotation();
             //cboMOU = cc.modb.getCboMOUNumber(cboMOU, moNumber);
             //cboQuo = cc.qudb.getCboQuotation(cboQuo);
@@ -69,12 +69,12 @@ namespace Cemp.gui
             mo.CustTel = "เบอร์โทร : " + mo.CustTel + " Mobile : " + mo.CustMobile;
             mo.CustEmail = " Email : " + mo.CustEmail;
             mo.Line1 = cc.cp.mouLine1;
-            mo.QuoNumber = "เลขที่ : " + mo.MOUNumber + "-" + mo.MOUNumberCnt;
+            mo.QuoNumber = "เลขที่ : " + mo.MOUNumberMain + "-" + mo.MOUNumberCnt;
             mo.DatePeriod = "วันที่ :  " + mo.DatePeriod;
             mo.StaffQuoName = "ผู้เสนอราคา :  " + mo.StaffQuoName;
             mo.StaffMOUTel = "เบอร์โทร : " + mo.StaffMOUTel + " Mobile : " + mo.StaffMOUMobile;
             mo.StaffMOUEmail = "Email : " + mo.StaffMOUEmail;
-            mo.MOUNumber = "เลขที่ : " + mo.MOUNumber + "-" + mo.MOUNumberCnt;
+            mo.MOUNumberMain = "เลขที่ : " + mo.MOUNumberMain + "-" + mo.MOUNumberCnt;
             mo.StaffMOUName = "ผู้รับผิดชอบข้อตกลง : "+mo.StaffMOUName;
 
             FrmReport frm = new FrmReport(cc);

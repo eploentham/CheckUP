@@ -36,7 +36,7 @@ namespace Cemp.objdb
             mo.CustTel = "cust_tel";
             mo.Id = "mou_id";
             mo.Line1 = "line1";
-            mo.MOUNumber = "mou_number";
+            mo.MOUNumberMain = "mou_number_main";
             mo.QuoId = "quo_id";
             mo.QuoNumber = "quo_number";
             mo.Remark = "remark";
@@ -91,7 +91,7 @@ namespace Cemp.objdb
             item.CustTel = dt.Rows[0][mo.CustTel].ToString();
             item.Id = dt.Rows[0][mo.Id].ToString();
             item.Line1 = dt.Rows[0][mo.Line1].ToString();
-            item.MOUNumber = dt.Rows[0][mo.MOUNumber].ToString();
+            item.MOUNumberMain = dt.Rows[0][mo.MOUNumberMain].ToString();
             item.QuoId = dt.Rows[0][mo.QuoId].ToString();
             item.QuoNumber = dt.Rows[0][mo.QuoNumber].ToString();
             item.Remark = dt.Rows[0][mo.Remark].ToString();
@@ -140,7 +140,7 @@ namespace Cemp.objdb
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select Distinct "+mo.MOUNumber+","+mo.CustName+","+mo.ContactName+","+mo.StaffQuoName+" From " + mo.table + " Where " + mo.Active + "='1'";
+            sql = "Select Distinct "+mo.MOUNumberMain+","+mo.CustName+","+mo.ContactName+","+mo.StaffQuoName+" From " + mo.table + " Where " + mo.Active + "='1'";
             dt = conn.selectData(sql);
 
             return dt;
@@ -190,7 +190,7 @@ namespace Cemp.objdb
             MOU item = new MOU();
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + mo.table + " Where " + mo.MOUNumber + "='" + moNumber + "'";
+            sql = "Select * From " + mo.table + " Where " + mo.MOUNumberMain + "='" + moNumber + "'";
             dt = conn.selectData(sql);
             if (dt.Rows.Count > 0)
             {
@@ -202,7 +202,7 @@ namespace Cemp.objdb
         {
             String sql = "";
 
-            sql = "Select "+mo.MOUNumber+","+mo.Id+","+mo.MOUNumberCnt+" From " + mo.table + " Where " + mo.MOUNumber + "='" + moNumber + "' and "+mo.Active+"='1'";
+            sql = "Select "+mo.MOUNumberMain+","+mo.Id+","+mo.MOUNumberCnt+" From " + mo.table + " Where " + mo.MOUNumberMain + "='" + moNumber + "' and "+mo.Active+"='1'";
             //dt = conn.selectData(sql);
             DataTable dt = conn.selectData(sql);
             //if (dt.Rows.Count > 0)
@@ -216,7 +216,7 @@ namespace Cemp.objdb
         {
             String sql = "";
 
-            sql = "Select " + mo.QuoNumber + " From " + mo.table + " Where " + mo.MOUNumber + "='" + moNumber + "' ";
+            sql = "Select " + mo.QuoNumber + " From " + mo.table + " Where " + mo.MOUNumberMain + "='" + moNumber + "' ";
             //dt = conn.selectData(sql);
             DataTable dt = conn.selectData(sql);
             sql = dt.Rows[0][mo.QuoNumber].ToString();
@@ -237,19 +237,19 @@ namespace Cemp.objdb
             String sql = "";
             if (cuId.Equals(""))
             {
-                sql = "Select mo." + mo.MOUNumber + "," + mo.MOUDate + "," + mo.CustName + ",mo." + mo.Remark + ",mo." + mo.Id + ", sum(moi.amount1) as amount1, count(1) as cnt " +
+                sql = "Select mo." + mo.MOUNumberMain + "," + mo.MOUDate + "," + mo.CustName + ",mo." + mo.Remark + ",mo." + mo.Id + ", sum(moi.amount1) as amount1, count(1) as cnt " +
                     " From " + mo.table + " as mo inner join t_mou_item as moi on mo." + mo.Id + "=moi.mou_id "+
                     "Where mo." + mo.Active + "='1' and mo." + mo.StatusBill + "= '1' and moi.mou_item_active='1' "+
-                    "Group By mo." + mo.MOUNumber + "," + mo.MOUDate + ",mo." + mo.Remark + "," + mo.CustName+ ",mo." + mo.Id+
-                    " Order By mo."+mo.MOUNumber;
+                    "Group By mo." + mo.MOUNumberMain + "," + mo.MOUDate + ",mo." + mo.Remark + "," + mo.CustName+ ",mo." + mo.Id+
+                    " Order By mo."+mo.MOUNumberMain;
             }
             else
             {
-                sql = "Select mo." + mo.MOUNumber + "," + mo.MOUDate + "," + mo.CustName + ",mo." + mo.Remark + ",mo." + mo.Id + ", sum(moi.amount1) as amount1, count(1) as cnt " +
+                sql = "Select mo." + mo.MOUNumberMain + "," + mo.MOUDate + "," + mo.CustName + ",mo." + mo.Remark + ",mo." + mo.Id + ", sum(moi.amount1) as amount1, count(1) as cnt " +
                     " From " + mo.table + " as mo inner join t_mou_item as moi on mo." + mo.Id + "=moi.mou_id " +
                     "Where mo." + mo.Active + "='1' and mo." + mo.CustId + "='" + cuId + "' and mo." + mo.StatusBill + "= '1' and moi.mou_item_active='1' "+
-                    "Group By mo." + mo.MOUNumber + "," + mo.MOUDate + ",mo." + mo.Remark + "," + mo.CustName+ ",mo." + mo.Id+
-                    " Order By mo." + mo.MOUNumber;
+                    "Group By mo." + mo.MOUNumberMain + "," + mo.MOUDate + ",mo." + mo.Remark + "," + mo.CustName+ ",mo." + mo.Id+
+                    " Order By mo." + mo.MOUNumberMain;
             }
             //sql = "Select " + mo.MOUNumber + " From " + mo.table + " Where " + mo.Active + "='1' and "+mo.CustId+"='"+cuId+"'";
             //dt = conn.selectData(sql);
@@ -261,7 +261,7 @@ namespace Cemp.objdb
         {
             String sql = "";
 
-            sql = "Select count(1) as cnt From " + mo.table + " Where " + mo.MOUNumber + "='" + moNumber + "' ";
+            sql = "Select count(1) as cnt From " + mo.table + " Where " + mo.MOUNumberMain + "='" + moNumber + "' ";
             //dt = conn.selectData(sql);
             DataTable dt = conn.selectData(sql);
             sql = String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);
@@ -298,7 +298,7 @@ namespace Cemp.objdb
                 mo.CompTaxId + "," + mo.ContactName + "," + mo.CustAddress + "," +
                 mo.CustEmail + "," + mo.CustFax + "," + mo.CustMobile + "," +
                 mo.CustMou + "," + mo.CustName + "," + mo.CustTel + "," +
-                mo.Line1 + "," + mo.MOUNumber + "," + mo.QuoId + "," +
+                mo.Line1 + "," + mo.MOUNumberMain + "," + mo.QuoId + "," +
                 mo.QuoNumber + "," + mo.Remark + "," + mo.StaffMOUEmail + "," +
                 mo.StaffQuoId + "," + mo.StaffMOUName + "," + mo.StaffQuoName + "," +
                 mo.StaffMOUTel + "," + mo.MOUNumberCnt + "," + mo.StaffMOUMobile + "," +
@@ -313,7 +313,7 @@ namespace Cemp.objdb
                 p.CompTaxId + "','" + p.ContactName + "','" + p.CustAddress + "','" +
                 p.CustEmail + "','" + p.CustFax + "','" + p.CustMobile + "','" +
                 p.CustMou + "','" + p.CustName + "','" + p.CustTel + "','" +
-                p.Line1 + "','" + p.MOUNumber + "','" + p.QuoId + "','" +
+                p.Line1 + "','" + p.MOUNumberMain + "','" + p.QuoId + "','" +
                 p.QuoNumber + "','" + p.Remark + "','" + p.StaffMOUEmail + "','" +
                 p.StaffQuoId + "','" + p.StaffMOUName + "','" + p.StaffQuoName + "','" +
                 p.StaffMOUTel + "'," + p.MOUNumberCnt + ",'" + p.StaffMOUMobile + "','" +
@@ -369,7 +369,7 @@ namespace Cemp.objdb
                 mo.CustName + "='" + p.CustName + "', " +
                 mo.CustTel + "='" + p.CustTel + "', " +
                 mo.Line1 + "='" + p.Line1 + "', " +
-                mo.MOUNumber + "='" + p.MOUNumber + "', " +
+                mo.MOUNumberMain + "='" + p.MOUNumberMain + "', " +
                 mo.QuoId + "='" + p.QuoId + "', " +
                 mo.QuoNumber + "='" + p.QuoNumber + "', " +
                 mo.Remark + "='" + p.Remark + "', " +
@@ -467,7 +467,7 @@ namespace Cemp.objdb
             {
                 item = new ComboBoxItem();
                 item.Value = dt.Rows[i][mo.Id].ToString();
-                item.Text = dt.Rows[i][mo.MOUNumber].ToString() + "-" + dt.Rows[i][mo.MOUNumberCnt].ToString();
+                item.Text = dt.Rows[i][mo.MOUNumberMain].ToString() + "-" + dt.Rows[i][mo.MOUNumberCnt].ToString();
                 c.Items.Add(item);
                 //c.Items.Add(new );
             }
@@ -489,7 +489,7 @@ namespace Cemp.objdb
             {
                 year = getYear();
             }
-            sql = "Select count(" + mo.QuoNumber + ") as cnt From " + mo.table + " Where +" + mo.MOUNumber + "='" + doc1[0] + "'";
+            sql = "Select count(" + mo.QuoNumber + ") as cnt From " + mo.table + " Where +" + mo.MOUNumberMain + "='" + doc1[0] + "'";
             DataTable dt = conn.selectData(sql);
             if ((dt.Rows.Count > 0) && (!doc1[0].Equals("")))
             {

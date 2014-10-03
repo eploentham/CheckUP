@@ -51,6 +51,9 @@ namespace Cemp.objdb
             moi.Amount = "amount1";
             moi.Discount = "discount";
 
+            moi.MOUNumberMain = "mou_number_main";
+            moi.ItemType = "item_type";
+
             moi.pkField = "mou_item_id";
             moi.table = "t_mou_item";
         }
@@ -87,6 +90,9 @@ namespace Cemp.objdb
             item.PriceCost = dt.Rows[0][moi.PriceCost].ToString();
             item.Amount = dt.Rows[0][moi.Amount].ToString();
             item.Discount = dt.Rows[0][moi.Discount].ToString();
+
+            item.MOUNumberMain = dt.Rows[0][moi.MOUNumberMain].ToString();
+            item.ItemType = dt.Rows[0][moi.ItemType].ToString();
 
             return item;
         }
@@ -197,15 +203,15 @@ namespace Cemp.objdb
                 moi.MOUId + "," + moi.PlaceRecord + "," + moi.RowNumber + "," +
                 moi.Sample + "," + moi.ItemGroupNameE + "," + moi.ItemGroupNameT + "," +
                 moi.ItemGroupSort + "," + moi.ItemGroupId + "," + moi.DatePlaceRecord + "," +
-                moi.MOUNumber + "," + moi.MOUNumberCnt + "," + moi.PriceCost + "," + 
-                moi.PriceSale + "," + moi.Amount + "," + moi.Discount + ") " +
+                moi.MOUNumber + "," + moi.MOUNumberCnt + "," + moi.PriceCost + "," +
+                moi.PriceSale + "," + moi.Amount + "," + moi.Discount + "," + moi.MOUNumberMain + "," + moi.ItemType + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.ItemDescription + "','" +
                 p.ItemId + "','" + p.MethodDescription + "','" + p.MethodId + "','" +
                 p.MOUId + "','" + p.PlaceRecord + "','" + p.RowNumber + "','" +
                 p.Sample + "','" + p.ItemGroupNameE + "','" + p.ItemGroupNameT + "','" +
                 p.ItemGroupSort + "','" + p.ItemGroupId + "','" + p.DatePlaceRecord + "','" +
-                p.MOUNumber + "'," + p.MOUNumberCnt + "," + NumberNull1(p.PriceCost) + "," + 
-                NumberNull1(p.PriceSale) + "," + NumberNull1(p.Amount) + "," + NumberNull1(p.Discount) + ")";
+                p.MOUNumber + "'," + p.MOUNumberCnt + "," + NumberNull1(p.PriceCost) + "," +
+                NumberNull1(p.PriceSale) + "," + NumberNull1(p.Amount) + "," + NumberNull1(p.Discount) + ",'" + p.MOUNumberMain + "','" + p.ItemType + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -244,9 +250,9 @@ namespace Cemp.objdb
                 moi.ItemGroupId + "='" + p.ItemGroupId + "', " +
                 moi.DatePlaceRecord + "='" + p.DatePlaceRecord + "', " +
                 moi.MOUNumber + "='" + p.MOUNumber + "', " +
-                moi.MOUNumberCnt + "=" + p.MOUNumberCnt + " " +
-                //moi.PriceCost + "=" + p.PriceCost + ", " +
-                //moi.PriceSale + "=" + p.PriceSale + ", " +
+                moi.MOUNumberCnt + "=" + p.MOUNumberCnt + ", " +
+                moi.MOUNumberMain + "='" + p.MOUNumberMain + "', " +
+                moi.ItemType + "='" + p.ItemType + "' " +
                 //moi.Amount + "=" + p.Amount + ", " +
                 //moi.Discount + "=" + p.Discount + " " +
                 "Where " + moi.pkField + "='" + p.Id + "'";

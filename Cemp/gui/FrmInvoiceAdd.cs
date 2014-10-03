@@ -211,7 +211,7 @@ namespace Cemp.gui
                 {
                     dgvView[colRow, i].Value = (i + 1);
                     dgvView[colMOUId, i].Value = dt.Rows[i][cc.modb.mo.Id].ToString();
-                    dgvView[colMOUNumber, i].Value = dt.Rows[i][cc.modb.mo.MOUNumber].ToString();
+                    dgvView[colMOUNumber, i].Value = dt.Rows[i][cc.modb.mo.MOUNumberMain].ToString();
                     dgvView[colMOUDate, i].Value = dt.Rows[i][cc.modb.mo.MOUDate].ToString();
                     dgvView[colCustName, i].Value = dt.Rows[i][cc.modb.mo.CustName].ToString();
                     dgvView[colNetTotal, i].Value = String.Format("{0:#,###,###.00}", dt.Rows[i]["amount1"]);

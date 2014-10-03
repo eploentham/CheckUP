@@ -100,6 +100,12 @@
     <Compile Include="gui\FrmMOUPlaceRecord.Designer.cs">
       <DependentUpon>FrmMOUPlaceRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmPOAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmPOAdd.Designer.cs">
+      <DependentUpon>FrmPOAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmPOView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,7 +257,7 @@
       <DependentUpon>FrmStaffView.cs</DependentUpon>
     </Compile>
     <Compile Include="objdb\AmphurDB.cs" />
-    <Compile Include="objdb\DocTypeDB.cs" />
+    <Compile Include="objdb\ItemTypeDB.cs" />
     <Compile Include="objdb\InvoiceDB.cs" />
     <Compile Include="objdb\InvoiceItemDB.cs" />
     <Compile Include="objdb\CompanyDB.cs" />
@@ -263,6 +269,8 @@
     <Compile Include="objdb\MethodDB.cs" />
     <Compile Include="objdb\MOUDB.cs" />
     <Compile Include="objdb\MOUItemDB.cs" />
+    <Compile Include="objdb\PODB.cs" />
+    <Compile Include="objdb\POItemDB.cs" />
     <Compile Include="objdb\ProvinceDB.cs" />
     <Compile Include="objdb\QuotationDB.cs" />
     <Compile Include="objdb\QuotationItemDB.cs" />
@@ -288,6 +296,8 @@
     <Compile Include="object1\MOU.cs" />
     <Compile Include="object1\MOUItem.cs" />
     <Compile Include="object1\Persistent.cs" />
+    <Compile Include="object1\PO.cs" />
+    <Compile Include="object1\POItem.cs" />
     <Compile Include="object1\Province.cs" />
     <Compile Include="object1\Quotation.cs" />
     <Compile Include="object1\QuotationItem.cs" />
@@ -432,6 +442,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmMOUPlaceRecord.resx">
       <DependentUpon>FrmMOUPlaceRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmPOAdd.resx">
+      <DependentUpon>FrmPOAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmPOView.resx">
       <DependentUpon>FrmPOView.cs</DependentUpon>
@@ -681,11 +694,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Cemp.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

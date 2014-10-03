@@ -242,7 +242,7 @@ namespace Cemp
                 //rpt.SetParameterValue("custFax", mo.CustFax);
                 rpt.SetParameterValue("custEmail", mo.CustEmail);
 
-                rpt.SetParameterValue("mouNumber", mo.MOUNumber);
+                rpt.SetParameterValue("mouNumber", mo.MOUNumberMain);
                 rpt.SetParameterValue("dateperiod", "เก็บตัวอย่างระหว่างวันที่ : " + mo.DatePeriod);
                 rpt.SetParameterValue("staffmouname", mo.StaffMOUName);
                 //rpt.SetParameterValue("staffName", mo.StaffName);
@@ -293,7 +293,7 @@ namespace Cemp
                 //rpt.SetParameterValue("custFax", mo.CustFax);
                 rpt.SetParameterValue("custEmail", mo.CustEmail);
 
-                rpt.SetParameterValue("mouNumber", mo.MOUNumber);
+                rpt.SetParameterValue("mouNumber", mo.MOUNumberMain);
                 rpt.SetParameterValue("dateperiod", "เก็บตัวอย่างระหว่างวันที่ : " + mo.DatePlaceRecord);
                 rpt.SetParameterValue("staffmouname", mo.StaffMOUName);
                 //rpt.SetParameterValue("staffName", mo.StaffName);

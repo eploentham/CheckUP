@@ -67,7 +67,7 @@ namespace Cemp.gui
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     dgvView[colRow, i].Value = (i + 1);
-                    dgvView[colMOUNumber, i].Value = dt.Rows[i][cc.modb.mo.MOUNumber].ToString();
+                    dgvView[colMOUNumber, i].Value = dt.Rows[i][cc.modb.mo.MOUNumberMain].ToString();
                     dgvView[colCustName, i].Value = dt.Rows[i][cc.modb.mo.CustName].ToString();
                     dgvView[colContactName, i].Value = dt.Rows[i][cc.modb.mo.ContactName].ToString();
                     dgvView[colId, i].Value = "";

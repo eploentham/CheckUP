@@ -75,6 +75,8 @@
             this.btnUnActive = new System.Windows.Forms.Button();
             this.ChkUnActive = new System.Windows.Forms.RadioButton();
             this.chkActive = new System.Windows.Forms.RadioButton();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtMOUNumber = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
@@ -98,7 +100,7 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(552, 11);
+            this.groupBox2.Location = new System.Drawing.Point(592, 11);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
@@ -261,6 +263,8 @@
             // 
             // groupBox21
             // 
+            this.groupBox21.Controls.Add(this.txtMOUNumber);
+            this.groupBox21.Controls.Add(this.label14);
             this.groupBox21.Controls.Add(this.btnMOUAdd);
             this.groupBox21.Controls.Add(this.cboMOU);
             this.groupBox21.Controls.Add(this.label16);
@@ -277,14 +281,14 @@
             this.groupBox21.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox21.Name = "groupBox21";
             this.groupBox21.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox21.Size = new System.Drawing.Size(537, 160);
+            this.groupBox21.Size = new System.Drawing.Size(577, 160);
             this.groupBox21.TabIndex = 2;
             this.groupBox21.TabStop = false;
             this.groupBox21.Text = "บริษัท";
             // 
             // btnMOUAdd
             // 
-            this.btnMOUAdd.Location = new System.Drawing.Point(115, 14);
+            this.btnMOUAdd.Location = new System.Drawing.Point(115, 40);
             this.btnMOUAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnMOUAdd.Name = "btnMOUAdd";
             this.btnMOUAdd.Size = new System.Drawing.Size(31, 25);
@@ -297,7 +301,7 @@
             // 
             this.cboMOU.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.cboMOU.FormattingEnabled = true;
-            this.cboMOU.Location = new System.Drawing.Point(150, 14);
+            this.cboMOU.Location = new System.Drawing.Point(150, 40);
             this.cboMOU.Margin = new System.Windows.Forms.Padding(2);
             this.cboMOU.Name = "cboMOU";
             this.cboMOU.Size = new System.Drawing.Size(298, 25);
@@ -308,18 +312,18 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label16.Location = new System.Drawing.Point(4, 17);
+            this.label16.Location = new System.Drawing.Point(4, 43);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(52, 17);
             this.label16.TabIndex = 55;
-            this.label16.Text = "MUO  :";
+            this.label16.Text = "MOU  :";
             // 
             // cboStaffMOU
             // 
             this.cboStaffMOU.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.cboStaffMOU.FormattingEnabled = true;
-            this.cboStaffMOU.Location = new System.Drawing.Point(150, 43);
+            this.cboStaffMOU.Location = new System.Drawing.Point(150, 69);
             this.cboStaffMOU.Margin = new System.Windows.Forms.Padding(2);
             this.cboStaffMOU.Name = "cboStaffMOU";
             this.cboStaffMOU.Size = new System.Drawing.Size(298, 25);
@@ -358,17 +362,17 @@
             // txtStaffMOUMobile
             // 
             this.txtStaffMOUMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtStaffMOUMobile.Location = new System.Drawing.Point(150, 100);
+            this.txtStaffMOUMobile.Location = new System.Drawing.Point(393, 100);
             this.txtStaffMOUMobile.Margin = new System.Windows.Forms.Padding(2);
             this.txtStaffMOUMobile.Name = "txtStaffMOUMobile";
-            this.txtStaffMOUMobile.Size = new System.Drawing.Size(229, 23);
+            this.txtStaffMOUMobile.Size = new System.Drawing.Size(179, 23);
             this.txtStaffMOUMobile.TabIndex = 47;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label12.Location = new System.Drawing.Point(4, 103);
+            this.label12.Location = new System.Drawing.Point(343, 103);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(46, 17);
@@ -378,17 +382,17 @@
             // txtStaffMOUTel
             // 
             this.txtStaffMOUTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtStaffMOUTel.Location = new System.Drawing.Point(150, 74);
+            this.txtStaffMOUTel.Location = new System.Drawing.Point(150, 100);
             this.txtStaffMOUTel.Margin = new System.Windows.Forms.Padding(2);
             this.txtStaffMOUTel.Name = "txtStaffMOUTel";
-            this.txtStaffMOUTel.Size = new System.Drawing.Size(229, 23);
+            this.txtStaffMOUTel.Size = new System.Drawing.Size(179, 23);
             this.txtStaffMOUTel.TabIndex = 45;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label13.Location = new System.Drawing.Point(4, 76);
+            this.label13.Location = new System.Drawing.Point(4, 102);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(37, 17);
@@ -399,7 +403,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label6.Location = new System.Drawing.Point(4, 49);
+            this.label6.Location = new System.Drawing.Point(4, 75);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(122, 17);
@@ -408,7 +412,7 @@
             // 
             // btnReceive
             // 
-            this.btnReceive.Location = new System.Drawing.Point(1111, 167);
+            this.btnReceive.Location = new System.Drawing.Point(1160, 167);
             this.btnReceive.Margin = new System.Windows.Forms.Padding(2);
             this.btnReceive.Name = "btnReceive";
             this.btnReceive.Size = new System.Drawing.Size(81, 39);
@@ -419,7 +423,7 @@
             // 
             // btnPrintMou
             // 
-            this.btnPrintMou.Location = new System.Drawing.Point(1111, 103);
+            this.btnPrintMou.Location = new System.Drawing.Point(1160, 103);
             this.btnPrintMou.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrintMou.Name = "btnPrintMou";
             this.btnPrintMou.Size = new System.Drawing.Size(81, 39);
@@ -475,7 +479,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(1111, 28);
+            this.btnSave.Location = new System.Drawing.Point(1160, 28);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(81, 39);
@@ -606,6 +610,26 @@
             this.chkActive.UseVisualStyleBackColor = true;
             this.chkActive.Click += new System.EventHandler(this.chkActive_Click);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label14.Location = new System.Drawing.Point(4, 17);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(52, 17);
+            this.label14.TabIndex = 58;
+            this.label14.Text = "MOU  :";
+            // 
+            // txtMOUNumber
+            // 
+            this.txtMOUNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtMOUNumber.Location = new System.Drawing.Point(150, 13);
+            this.txtMOUNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMOUNumber.Name = "txtMOUNumber";
+            this.txtMOUNumber.Size = new System.Drawing.Size(179, 23);
+            this.txtMOUNumber.TabIndex = 59;
+            // 
             // FrmMOUAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -692,5 +716,7 @@
         private System.Windows.Forms.Button btnUnActive;
         private System.Windows.Forms.RadioButton ChkUnActive;
         private System.Windows.Forms.RadioButton chkActive;
+        private System.Windows.Forms.TextBox txtMOUNumber;
+        private System.Windows.Forms.Label label14;
     }
 }

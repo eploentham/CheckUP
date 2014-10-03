@@ -47,6 +47,7 @@ namespace Cemp.objdb
             qui.PriceCost = "price_cost";
 
             qui.ItemCode = "item_code";
+            qui.ItemType = "item_type";
 
             qui.table = "t_quotation_item";
             qui.pkField = "quo_item_id";
@@ -81,6 +82,7 @@ namespace Cemp.objdb
             item.PriceCost = dt.Rows[0][qui.PriceCost].ToString();
 
             item.ItemCode = dt.Rows[0][qui.ItemCode].ToString();
+            item.ItemType = dt.Rows[0][qui.ItemType].ToString();
 
             return item;
         }
@@ -175,13 +177,13 @@ namespace Cemp.objdb
                 qui.MethodDescription + "," + qui.MethodId + "," + qui.PriceSale + "," +
                 qui.Qty + "," + qui.QuoId + "," + qui.RowNumber + "," +
                 qui.Remark + "," + qui.ItemGroupNameE + "," + qui.ItemGroupNameT + "," +
-                qui.ItemGroupSort + "," + qui.ItemGroupId + "," + qui.PriceCost + "," + qui.ItemCode + ") " +
+                qui.ItemGroupSort + "," + qui.ItemGroupId + "," + qui.PriceCost + "," + qui.ItemCode + "," + qui.ItemType + ") " +
                 "Values('" + p.Id + "','" + p.Active + "'," + NumberNull1(p.Amount.Replace(",", "")) + "," +
                 NumberNull1(p.Discount.Replace(",", "")) + ",'" + p.ItemDescription + "','" + p.ItemId + "','" +
                 p.MethodDescription + "','" + p.MethodId + "'," + NumberNull1(p.PriceSale.Replace(",", "")) + "," +
                 NumberNull1(p.Qty.Replace(",", "")) + ",'" + p.QuoId + "'," + NumberNull1(p.RowNumber) + ",'" +
                 p.Remark + "','" + p.ItemGroupNameE + "','" + p.ItemGroupNameT + "','" +
-                p.ItemGroupSort + "','" + p.ItemGroupId + "'," + NumberNull1(p.PriceCost.Replace(",", "")) + ",'" + p.ItemCode + "')";
+                p.ItemGroupSort + "','" + p.ItemGroupId + "'," + NumberNull1(p.PriceCost.Replace(",", "")) + ",'" + p.ItemCode + ",'" + p.ItemType + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -231,8 +233,9 @@ namespace Cemp.objdb
                 qui.ItemGroupSort + "='" + p.ItemGroupSort + "', " +
                 qui.ItemGroupId + "='" + p.ItemGroupId + "', " +
                 qui.PriceCost + "=" + NumberNull1(p.PriceCost.Replace(",", "")) + ", " +
-                qui.ItemCode + "='" + p.ItemCode + "' " +
-                
+                qui.ItemCode + "='" + p.ItemCode + "', " +
+                qui.ItemGroupId + "='" + p.ItemGroupId + "', " +
+                qui.ItemType + "='" + p.ItemType + "' " +
                 "Where " + qui.pkField + "='" + p.Id + "'";
             try
             {
