@@ -8,10 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-using Cemp.object1;
+using CheckUP.object1;
 using MySql.Data.MySqlClient;
 
-namespace Cemp.objdb
+namespace CheckUP.objdb
 {
     public class ConnectDB
     {

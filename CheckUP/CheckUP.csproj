@@ -32,8 +32,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 6.8.3\Assemblies\v4.5\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,11 +56,72 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\CheckControl.cs" />
     <Compile Include="gui\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="gui\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmCompany.designer.cs">
+      <DependentUpon>FrmCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmCustAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmCustAdd.designer.cs">
+      <DependentUpon>FrmCustAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmCustView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmCustView.designer.cs">
+      <DependentUpon>FrmCustView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmInitConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmInitConfig.designer.cs">
+      <DependentUpon>FrmInitConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmLogin.designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmMain.designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmPassword.designer.cs">
+      <DependentUpon>FrmPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmReport.designer.cs">
+      <DependentUpon>FrmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmStaffAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmStaffAdd.designer.cs">
+      <DependentUpon>FrmStaffAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmStaffView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmStaffView.designer.cs">
+      <DependentUpon>FrmStaffView.cs</DependentUpon>
     </Compile>
     <Compile Include="objdb\AmphurDB.cs" />
     <Compile Include="objdb\CompanyDB.cs" />
@@ -59,11 +132,14 @@
     <Compile Include="objdb\ProvinceDB.cs" />
     <Compile Include="objdb\StaffDB.cs" />
     <Compile Include="object1\Amphur.cs" />
+    <Compile Include="object1\ComboBoxItem.cs" />
     <Compile Include="object1\Company.cs" />
     <Compile Include="object1\Config1.cs" />
     <Compile Include="object1\CustCheckUpPatient.cs" />
     <Compile Include="object1\Customer.cs" />
     <Compile Include="object1\District.cs" />
+    <Compile Include="object1\IniFile.cs" />
+    <Compile Include="object1\InitConfig.cs" />
     <Compile Include="object1\LogWriter.cs" />
     <Compile Include="object1\Persistent.cs" />
     <Compile Include="object1\Province.cs" />
@@ -72,6 +148,36 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="gui\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmCompany.resx">
+      <DependentUpon>FrmCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmCustAdd.resx">
+      <DependentUpon>FrmCustAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmCustView.resx">
+      <DependentUpon>FrmCustView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmInitConfig.resx">
+      <DependentUpon>FrmInitConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmPassword.resx">
+      <DependentUpon>FrmPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmReport.resx">
+      <DependentUpon>FrmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmStaffAdd.resx">
+      <DependentUpon>FrmStaffAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmStaffView.resx">
+      <DependentUpon>FrmStaffView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -96,7 +202,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Control\" />
     <Folder Include="report\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

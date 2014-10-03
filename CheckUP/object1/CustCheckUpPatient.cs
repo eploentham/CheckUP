@@ -141,13 +141,13 @@ namespace CheckUP.object1
     public String cholesterolSummary="";
     public String cholesterolSuggess="";
     public String statusCholes="";
-    public String statusHbsag="";
+    public String StatusHbsag="";
     public String hbsagSuggess="";
     public String hbsagSummary="";
     public String cbcRbc="";
     public String cbcMch="";
     public String cbcMchc="";
-    public String mkcupActive="";
+    public String Active="";
     public String eyeBio="";
     public String amphetamineSummary="";
     public String amphetamineSuggess="";

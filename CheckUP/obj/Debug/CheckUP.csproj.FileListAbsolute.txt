@@ -7,3 +7,13 @@ D:\source\CheckUP\CheckUP\obj\Debug\CheckUP.Properties.Resources.resources
 D:\source\CheckUP\CheckUP\obj\Debug\CheckUP.csproj.GenerateResource.Cache
 D:\source\CheckUP\CheckUP\obj\Debug\CheckUP.exe
 D:\source\CheckUP\CheckUP\obj\Debug\CheckUP.pdb
+D:\source\CheckUP\CheckUP\obj\Debug\Cemp.gui.FrmCompany.resources
+D:\source\CheckUP\CheckUP\obj\Debug\Cemp.gui.FrmCustAdd.resources
+D:\source\CheckUP\CheckUP\obj\Debug\Cemp.gui.FrmCustView.resources
+D:\source\CheckUP\CheckUP\obj\Debug\CheckUP.gui.FrmInitConfig.resources
+D:\source\CheckUP\CheckUP\obj\Debug\Cemp.gui.FrmLogin.resources
+D:\source\CheckUP\CheckUP\obj\Debug\Cemp.gui.FrmStaffAdd.resources
+D:\source\CheckUP\CheckUP\obj\Debug\Cemp.gui.FrmStaffView.resources
+D:\source\CheckUP\CheckUP\obj\Debug\Cemp.FrmMain.resources
+D:\source\CheckUP\CheckUP\obj\Debug\Cemp.FrmReport.resources
+D:\source\CheckUP\CheckUP\obj\Debug\Cemp.gui.FrmPassword.resources

@@ -1,4 +1,5 @@
-﻿using CheckUP.object1;
+﻿using CheckUP.objdb;
+using CheckUP.object1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,12 @@ namespace CheckUP.objdb
 {
     public class CustCheckUpPatientDB
     {
+        ConnectDB conn;
         public CustCheckUpPatient ccp;
+        public CustCheckUpPatientDB(ConnectDB c)
+        {
+            conn = c;
+        }
         private String insert(CustCheckUpPatient p) {
         String sql = "", chk = "";
             if (p.Id.Equals(""))
@@ -17,192 +23,190 @@ namespace CheckUP.objdb
                 p.Id = "po" + p.getGenID();
             }
             try {
-    //            Connection conn = config1.getConnectionBangna();
-    //            Statement st = conn.createStatement();
-                //mkcup = getMarketingTCheckupPatientByPK(st,"", p.getMarketingCheckupPatientId(),"");
+    //            Connection conn = config1.getConnectionBangna;
+    //            Statement st = conn.createStatement;
+                //ccp = getMarketingTCheckupPatientByPK(st,"", p.getMarketingCheckupPatientId,"");
                 p.departmentName=p.departmentName.Replace("'", "''");
                 p.patientFullname = p.patientFullname.Replace("'", "''");
                 p.sectionName = p.sectionName.Replace("'", "''");
                 p.summaryPhysicalExam = p.summaryPhysicalExam.Replace("'", "''");
-                p.xrayChestExam = p.getXrayChestExam.Replace("'", "''");
-                p.XrayChestExam = (config1.StringNull(p.getXrayChestExam()).Replace("'", "''"));
-                p.XrayChestExam = (config1.StringNull(p.getXrayChestExam()).Replace("'", "''"));
-                if (mkcup.getMarketingCheckupPatientId().equals("")) {
-                    max = getMaxRowMarketingTCheckupPatient(st);
-                    sql = "Insert Into " + mkcup.getMarketingTCheckupPatient()+ "(" 
-                        + mkcup.getFMarketingCheckupPatientId() + ", " + mkcup.getFAmphetamine() + ", "
-                        + mkcup.getFAntiHiv() + "," + mkcup.getFAudiogramExam() + ","
-                        + mkcup.getFAudiogram1000Left() + "," + mkcup.getFAudiogram1000Right() + ","
-                        + mkcup.getFAudiogram2000Left() + "," + mkcup.getFAudiogram2000Right() + ","
-                        + mkcup.getFAudiogram3000Left() + "," + mkcup.getFAudiogram3000Right() + ","
+                p.xrayChestExam = p.xrayChestExam.Replace("'", "''");
+                //p.xrayChestExam = p.xrayChestExam.Replace("'", "''"));
+                //p.xrayChestExam = p.xrayChestExam.Replace("'", "''"));
 
-                        + mkcup.getFAudiogram4000Left() + "," + mkcup.getFAudiogram4000Right() + ","
-                        + mkcup.getFAudiogram6000Left() + "," + mkcup.getFAudiogram6000Right() + ","
-                        + mkcup.getFAudiogram8000Left() + "," + mkcup.getFAudiogram8000Right() + ","
-                        + mkcup.getFAudiogram500Left() + "," + mkcup.getFAudiogram500Right() + ","
-                        + mkcup.getFAudiogramSummaryLeft() + "," + mkcup.getFAudiogramSummaryRight() + ","
+                    //max = getMaxRowMarketingTCheckupPatient(st);
+            sql = "Insert Into " + ccp.table+ "(" 
+                + ccp.Id + ", " + ccp.amphetamine + ", "
+                + ccp.antiHiv + "," + ccp.audiogramExam + ","
+                + ccp.audiogram1000Left + "," + ccp.audiogram1000Right + ","
+                + ccp.audiogram2000Left + "," + ccp.audiogram2000Right + ","
+                + ccp.audiogram3000Left + "," + ccp.audiogram3000Right + ","
 
-                        + mkcup.getFCa125() + "," + mkcup.getFCa153() + ","
-                        + mkcup.getFCa199() + "," + mkcup.getFCaAfp() + ","
-                        + mkcup.getFCaCea() + "," + mkcup.getFCaHcg() + ","
-                        + mkcup.getFCalcium() + "," + mkcup.getFCaPsa() + ","
-                        + mkcup.getFCbcBasophil() + "," + mkcup.getFCbcEosinophil() + ","
+                + ccp.audiogram4000Left + "," + ccp.audiogram4000Rightt + ","
+                + ccp.audiogram6000Left + "," + ccp.audiogram6000Right + ","
+                + ccp.audiogram8000Left + "," + ccp.audiogram8000Right + ","
+                + ccp.audiogram500Left + "," + ccp.audiogram500Right + ","
+                + ccp.audiogramSummaryLeft + "," + ccp.audiogramSummaryRight + ","
 
-                        + mkcup.getFCbcHb() + "," + mkcup.getFCbcHct() + ","
-                        + mkcup.getFCbcLymphocyte() + "," + mkcup.getFCbcMonocyte() + ","
-                        + mkcup.getFCbcNeutrophil() + "," + mkcup.getFCbcPlateletCount() + ","
-                        + mkcup.getFCbcRbcMorpholog() + "," + mkcup.getFCbcWbc() + ","
-                        + mkcup.getFCholesterol() + "," + mkcup.getFDepartmentName() + ","
+                + ccp.ca125 + "," + ccp.ca125 + ","
+                + ccp.ca199 + "," + ccp.caAfp + ","
+                + ccp.caCea + "," + ccp.caHcg + ","
+                + ccp.calcium + "," + ccp.caPsa + ","
+                + ccp.cbcBasophil + "," + ccp.cbcEosinophil + ","
 
-                        + mkcup.getFDisscusExam() + "," + mkcup.getFEkgExam() + ","
-                        + mkcup.getFUrineEpithelium() + "," + mkcup.getFEyesExam() + ","
-                        + mkcup.getFFPatientBloodGroupId() + "," + mkcup.getFFSexId() + ","
-                        + mkcup.getFHbsab() + "," + mkcup.getFHbsag() + ","
-                        + mkcup.getFHdl() + "," + mkcup.getFKidneyBun() + ","
+                + ccp.cbcHb + "," + ccp.cbcHct + ","
+                + ccp.cbcLymphocyte + "," + ccp.cbcMonocyte + ","
+                + ccp.cbcNeutrophil + "," + ccp.cbcPlateletCount + ","
+                + ccp.cbcRbcMorpholog + "," + ccp.cbcWbc + ","
+                + ccp.cholesterol + "," + ccp.departmentName + ","
 
-                        + mkcup.getFKidneyCreatinine() + "," + mkcup.getFLdl() + ","
-                        + mkcup.getFLiverAlp() + "," + mkcup.getFLiverSgot() + ","
-                        + mkcup.getFLiverSgpt() + "," + mkcup.getFMarketingCheckupId() + ","
-                        + mkcup.getFXrayChestExam() + "," + mkcup.getFOpticalExamLeft() + ","
-                        + mkcup.getFOpticalExamRight() + "," + mkcup.getFPatientAge() + ","
+                + ccp.disscusExam + "," + ccp.ekgExam + ","
+                + ccp.urineEpithelium + "," + ccp.eyesExam + ","
+                + ccp.fPatientBloodGroupId + "," + ccp.fSexId + ","
+                + ccp.hbsab + "," + ccp.hbsag + ","
+                + ccp.hdl + "," + ccp.kidneyBun + ","
 
-                        + mkcup.getFPatientFullname() + "," + mkcup.getFXrayChestSummary()+","
-                        + mkcup.getFPatientHeight() + "," + mkcup.getFPatientNumber() + ","
-                        + mkcup.getFPatientPulse() + "," + mkcup.getFPatientWeight() + ","
-                        + mkcup.getFPid() + "," + mkcup.getFSectionName() + ","
-                        + mkcup.getFStoolExamAppearance() + ","+ mkcup.getFTChecklistId()+","
+                + ccp.kidneyCreatinine + "," + ccp.ldl + ","
+                + ccp.liverAlp + "," + ccp.liverSgot + ","
+                + ccp.liverSgpt + "," + ccp.CustCheckupId + ","
+                + ccp.xrayChestExam + "," + ccp.opticalExamLeft + ","
+                + ccp.opticalExamRight + "," + ccp.patientAge + ","
 
-                        + mkcup.getFStoolExamColor() + "," + mkcup.getFStoolExamParasite() + ","
-                        + mkcup.getFStoolExamRbc() + "," + mkcup.getFStoolExamWbc() + ","
-                        + mkcup.getFSugar() + "," + mkcup.getFSuggestExam() + ","
-                        + mkcup.getFSugarDiagnosis() + "," + mkcup.getFSugarSuggess() + ","
-                        + mkcup.getFSugarSummary() + ","//+mkcup.getFCbcSummary()+","
+                + ccp.patientFullname + "," + ccp.xrayChestSummary+","
+                + ccp.patientHeight + "," + ccp.patientNumber + ","
+                + ccp.patientPulse + "," + ccp.patientWeight + ","
+                + ccp.pid + "," + ccp.sectionName + ","
+                + ccp.stoolExamAppearance + "," + ccp.ChecklistId + ","
 
-                        + mkcup.getFThyroidT3()+ "," + mkcup.getFThyroidT4() + ","
-                        + mkcup.getFThyroidTsh() + "," + mkcup.getFToxicologyBenzene() + ","
-                        + mkcup.getFToxicologyLead() + "," + mkcup.getFToxicologyMercury() + ","
-                        + mkcup.getFToxicologyXylene() + "," + mkcup.getFTriglyceride() + ","
-                        + mkcup.getFUricAcid() + "," + mkcup.getFUrineAppearance() + ","
+                + ccp.stoolExamColor + "," + ccp.stoolExamParasite + ","
+                + ccp.stoolExamRbc + "," + ccp.stoolExamWbc + ","
+                + ccp.sugar + "," + ccp.suggestExam + ","
+                + ccp.sugarDiagnosis + "," + ccp.sugarSuggess + ","
+                + ccp.sugarSummary + ","//+ccp.CbcSummary+","
 
-                        + mkcup.getFUrineBacteria() + "," + mkcup.getFUrineBlood() + ","
-                        + mkcup.getFUrineKetone() + "," + mkcup.getFUrineColor() + ","
-                        + mkcup.getFUrinePh() + "," + mkcup.getFUrineProtein() + ","
-                        + mkcup.getFUrineRbc() + "," + mkcup.getFUrineSpGr() + ","
-                        + mkcup.getFUrineSugar() + "," + mkcup.getFUrineWbc() + ","
+                + ccp.thyroidT3+ "," + ccp.thyroidT4 + ","
+                + ccp.thyroidTsh + "," + ccp.toxicologyBenzene + ","
+                + ccp.toxicologyLead + "," + ccp.toxicologyMercury + ","
+                + ccp.toxicologyXylene + "," + ccp.triglyceride + ","
+                + ccp.uricAcid + "," + ccp.urineAppearance + ","
 
-                        + mkcup.getFLungFev1Meas() + "," + mkcup.getFLungFev1Per() + ","
-                        + mkcup.getFLungFev1Predic() + "," + mkcup.getFLungFvcMeas() + ","
-                        + mkcup.getFLungFvcPer() + "," + mkcup.getFLungFvcPredic() + ","
-                        + mkcup.getFLungPerFev1() + "," + mkcup.getFLungSuggess() + ","
-                        + mkcup.getFLungSummary() + "," +mkcup.getFUrineSummary()+","
+                + ccp.urineBacteria + "," + ccp.urineBlood + ","
+                + ccp.urineKetone + "," + ccp.urineColor + ","
+                + ccp.urinePh + "," + ccp.urineProtein + ","
+                + ccp.urineRbc + "," + ccp.urineSpGr + ","
+                + ccp.urineSugar + "," + ccp.urineWbc + ","
 
-                        + mkcup.getFCbcSummary() + "," +mkcup.getFSummaryPhysicalExam()+","
-                        + mkcup.getFVdrl() + "," + mkcup.getFVisitHn() + ","
-                        + mkcup.getFRowNumber()+","+mkcup.getFCbcMcv()+","
-                            + mkcup.getFStickerQty()+","+mkcup.getFStatusCbc()+","
-                            + mkcup.getFStatusFbs()+","+mkcup.getFStatusUa()+","
-                            + mkcup.getFStatusPe()+","+mkcup.getFStatusXray()+","
-                            + mkcup.getFStatusStool()+","+mkcup.getFStoolExamSummary()+","
-                            + mkcup.getFCholesterolSuggess()+","+mkcup.getFCholesterolSummary()+","
-                            + mkcup.getFCbcMch()+","+mkcup.getFCbcMchc()+","
-                            + mkcup.getFHbsAgSuggess()+","+mkcup.getFHbsAgSummary()+","
-                            + mkcup.getFStatusCholes()+","+mkcup.getFStatusHbsAg()+","
-                            + mkcup.getFCbcRbc()+","+mkcup.getFMkcupActive()+","
-                            + mkcup.getFEyeBio()+","+mkcup.getFAmphetamineSuggess()+","
-                            + mkcup.getFAmphetamineSummary()+","+mkcup.getFAntiHivSuggess()+","
-                            + mkcup.getFAntiHivSummary()+","+mkcup.getFStatusAmphetamine()+","
-                            + mkcup.getFStatusAntiHiv()+","+mkcup.getFStatusVisit()+") "
-                        + "Values('" + max + "','" + p.getAmphetamine() + "','"
-                        + p.getAntiHiv() + "','" + p.getAudiogramExam() + "','"
-                        + p.getAudiogram1000Left() + "','" + p.getAudiogram1000Right() + "','"
-                        + p.getAudiogram2000Left() + "','" + p.getAudiogram2000Right() + "','"
-                        + p.getAudiogram3000Left() + "','" + p.getAudiogram3000Right() + "','"
+                + ccp.lungFev1Meas + "," + ccp.lungFev1Per + ","
+                + ccp.lungFev1Predic + "," + ccp.lungFvcMeas + ","
+                + ccp.lungFvcPer + "," + ccp.lungFvcPredic + ","
+                + ccp.lungPerFev1 + "," + ccp.lungSuggess + ","
+                + ccp.lungSummary + "," +ccp.urineSummary+","
 
-                        + p.getAudiogram4000Left() + "','" + p.getAudiogram4000Rightt() + "','"
-                        + p.getAudiogram6000Left() + "','" + p.getAudiogram6000Right() + "','"
-                        + p.getAudiogram8000Left() + "','" + p.getAudiogram8000Right() + "','"
-                        + p.getAudiogram500Left() + "','" + p.getAudiogram500Right() + "','"
-                        + p.getAudiogramSummaryLeft() + "','" + p.getAudiogramSummaryRight() + "','"
+                + ccp.cbcSummary + "," +ccp.summaryPhysicalExam+","
+                + ccp.vdrl + "," + ccp.visitHn + ","
+                + ccp.rowNumber+","+ccp.cbcMcv+","
+                    + ccp.stickerQty+","+ccp.statusCbc+","
+                    + ccp.statusFbs+","+ccp.statusUa+","
+                    + ccp.statusPe+","+ccp.statusXray+","
+                    + ccp.statusStool+","+ccp.stoolExamSummary+","
+                    + ccp.cholesterolSuggess+","+ccp.cholesterolSummary+","
+                    + ccp.cbcMch+","+ccp.cbcMchc+","
+                    + ccp.hbsagSuggess+","+ccp.hbsagSummary+","
+                    + ccp.statusCholes+","+ccp.StatusHbsag+","
+                    + ccp.cbcRbc+","+ccp.Active+","
+                    + ccp.eyeBio+","+ccp.amphetamineSuggess+","
+                    + ccp.amphetamineSummary+","+ccp.antiHivSuggess+","
+                    + ccp.antiHivSummary+","+ccp.statusAmphetamine+","
+                    + ccp.statusAntiHiv+","+ccp.statusVisit+") "
+                + "Values('" + p.Id + "','" + p.amphetamine + "','"
+                + p.antiHiv + "','" + p.audiogramExam + "','"
+                + p.audiogram1000Left + "','" + p.audiogram1000Right + "','"
+                + p.audiogram2000Left + "','" + p.audiogram2000Right + "','"
+                + p.audiogram3000Left + "','" + p.audiogram3000Right + "','"
 
-                        + p.getCa125() + "','" + p.getCa153() + "','"
-                        + p.getCa199() + "','" + p.getCaAfp() + "','"
-                        + p.getCaCea() + "','" + p.getCaHcg() + "','"
-                        + p.getCalcium() + "','" + p.getCaPsa() + "','"
-                        + p.getCbcBasophil() + "','" + p.getCbcEosinophil() + "','"
+                + p.audiogram4000Left + "','" + p.audiogram4000Rightt + "','"
+                + p.audiogram6000Left + "','" + p.audiogram6000Right + "','"
+                + p.audiogram8000Left + "','" + p.audiogram8000Right + "','"
+                + p.audiogram500Left + "','" + p.audiogram500Right + "','"
+                + p.audiogramSummaryLeft + "','" + p.audiogramSummaryRight + "','"
 
-                        + p.getCbcHb() + "','" + p.getCbcHct() + "','"
-                        + p.getCbcLymphocyte() + "','" + p.getCbcMonocyte() + "','"
-                        + p.getCbcNeutrophil() + "','" + p.getCbcPlateletCount() + "','"
-                        + p.getCbcRbcMorpholog() + "','" + p.getCbcWbc() + "','"
-                        + p.getCholesterol() + "','" + p.getDepartmentName() + "','"
+                + p.ca125 + "','" + p.ca125 + "','"
+                + p.ca199 + "','" + p.caAfp + "','"
+                + p.caCea + "','" + p.caHcg + "','"
+                + p.calcium + "','" + p.caPsa + "','"
+                + p.cbcBasophil + "','" + p.cbcEosinophil + "','"
 
-                        + p.getDisscusExam() + "','" + p.getEkgExam() + "','"
-                        + p.getUrineEpithelium() + "','" + p.getEyesExam() + "','"
-                        + p.getFPatientBloodGroupId() + "','" + p.getFSexId() + "','"
-                        + p.getHbsab() + "','" + p.getHbsag() + "','"
-                        + p.getHdl() + "','" + p.getKidneyBun() + "','"
+                + p.cbcHb + "','" + p.cbcHct + "','"
+                + p.cbcLymphocyte + "','" + p.cbcMonocyte + "','"
+                + p.cbcNeutrophil + "','" + p.cbcPlateletCount + "','"
+                + p.cbcRbcMorpholog + "','" + p.cbcWbc + "','"
+                + p.cholesterol + "','" + p.departmentName + "','"
 
-                        + p.getKidneyCreatinine() + "','" + p.getLdl() + "','"
-                        + p.getLiverAlp() + "','" + p.getLiverSgot() + "','"
-                        + p.getLiverSgpt() + "','" + p.getMarketingCheckupId() + "','"
-                        + p.getXrayChestExam() + "','" + p.getOpticalExamLeft() + "','"
-                        + p.getOpticalExamRight() + "','" + p.getPatientAge() + "','"
+                + p.disscusExam + "','" + p.ekgExam + "','"
+                + p.urineEpithelium + "','" + p.eyesExam + "','"
+                + p.fPatientBloodGroupId + "','" + p.fSexId + "','"
+                + p.hbsab + "','" + p.hbsag + "','"
+                + p.hdl + "','" + p.kidneyBun + "','"
 
-                        + p.getPatientFullname() + "','" + p.getXrayChestSummary()+"','"
-                        + p.getPatientHeight() + "','" + p.getPatientNumber() + "','"
-                        + p.getPatientPulse() + "','" + p.getPatientWeight() + "','"
-                        + p.getPid() + "','" + p.getSectionName() + "','"
-                        + p.getStoolExamAppearance() + "','"+ p.getTChecklistId()+"','"
+                + p.kidneyCreatinine + "','" + p.ldl + "','"
+                + p.liverAlp + "','" + p.liverSgot + "','"
+                + p.liverSgpt + "','" + p.CustCheckupId + "','"
+                + p.xrayChestExam + "','" + p.opticalExamLeft + "','"
+                + p.opticalExamRight + "','" + p.patientAge + "','"
 
-                        + p.getStoolExamColor() + "','" + p.getStoolExamParasite() + "','"
-                        + p.getStoolExamRbc() + "','" + p.getStoolExamWbc() + "','"
-                        + p.getSugar() + "','" + p.getSuggestExam() + "','"
-                        + p.getSugarDiagnosis() + "','" + p.getSugarSuggess() + "','"
-                        + p.getSugarSummary() + "','"//+p.getCbcSummary()+"','"
+                + p.patientFullname + "','" + p.xrayChestSummary + "','"
+                + p.patientHeight + "','" + p.patientNumber + "','"
+                + p.patientPulse + "','" + p.patientWeight + "','"
+                + p.pid + "','" + p.sectionName + "','"
+                + p.stoolExamAppearance + "','" + p.ChecklistId + "','"
 
-                        + p.getThyroidT3()+ "','" + p.getThyroidT4() + "','"
-                        + p.getThyroidTsh() + "','" + p.getToxicologyBenzene() + "','"
-                        + p.getToxicologyLead() + "','" + p.getToxicologyMercury() + "','"
-                        + p.getToxicologyXylene() + "','" + p.getTriglyceride() + "','"
-                        + p.getUricAcid() + "','" + p.getUrineAppearance() + "','"
+                + p.stoolExamColor + "','" + p.stoolExamParasite + "','"
+                + p.stoolExamRbc + "','" + p.stoolExamWbc + "','"
+                + p.sugar + "','" + p.suggestExam + "','"
+                + p.sugarDiagnosis + "','" + p.sugarSuggess + "','"
+                + p.sugarSummary + "','"//+p.getCbcSummary+"','"
 
-                        + p.getUrineBacteria() + "','" + p.getUrineBlood() + "','"
-                        + p.getUrineKetone() + "','" + p.getUrineColor() + "','"
-                        + p.getUrinePh() + "','" + p.getUrineProtein() + "','"
-                        + p.getUrineRbc() + "','" + p.getUrineSpGr() + "','"
-                        + p.getUrineSugar() + "','" + p.getUrineWbc() + "','"
+                + p.thyroidT3 + "','" + p.thyroidT4 + "','"
+                + p.thyroidTsh + "','" + p.toxicologyBenzene + "','"
+                + p.toxicologyLead + "','" + p.toxicologyMercury + "','"
+                + p.toxicologyXylene + "','" + p.triglyceride + "','"
+                + p.uricAcid + "','" + p.urineAppearance + "','"
 
-                        + p.getLungFev1Meas() + "','" + p.getLungFev1Per() + "','"
-                        + p.getLungFev1Predic() + "','" + p.getLungFvcMeas() + "','"
-                        + p.getLungFvcPer() + "','" + p.getLungFvcPredic() + "','"
-                        + p.getLungPerFev1() + "','" + p.getLungSuggess() + "','"
-                        + p.getLungSummary() + "','" +p.getUrineSummary()+"','"
+                + p.urineBacteria + "','" + p.urineBlood + "','"
+                + p.urineKetone + "','" + p.urineColor + "','"
+                + p.urinePh + "','" + p.urineProtein + "','"
+                + p.urineRbc + "','" + p.urineSpGr + "','"
+                + p.urineSugar + "','" + p.urineWbc + "','"
 
-                        + p.getCbcSummary() + "','" +p.getSummaryPhysicalExam()+"','"
-                        + p.getVdrl() + "','" + p.getVisitHn() + "',"
-                        + p.getRowNumber()+",'"+p.getCbcMcv()+"','"
-                            + p.getStickerQty()+"','"+p.getStatusCbc()+"','"
-                            + p.getStatusFbs()+"','"+p.getStatusUa()+"','"
-                            + p.getStatusPe()+"','"+p.getStatusXray()+"','"
-                            + p.getStatusStool()+"','"+p.getStoolExamSummary()+"','"
-                            + p.getCholestorolSuggess()+"','"+p.getCholesterolSummary()+"','"
-                            + p.getCbcMch()+"','"+p.getCbcMchc()+"','"
-                            + p.getHbsAgSuggess()+"','"+p.getHbsAgSummary()+"','"
-                            + p.getStatusCholes()+"','"+p.getStatusHbsAg()+"','"
-                            + p.getCbcRbc()+"','"+p.getMkcupActive()+"','"
-                            + p.getEyeBio()+"','"+p.getAmphetamineSuggess()+"','"
-                            + p.getAmphetamineSummary()+"','"+p.getAntiHivSuggess()+"','"
-                            + p.getAntiHivSummary()+"','"+p.getStatusAmphetamine()+"','"
-                            + p.getStatusAntiHiv()+"','"+p.getStatusVisit()+"') ";
-                }else{
-                }
-                chk = st.executeUpdate(sql);
-    //            conn.close();
+                + p.lungFev1Meas + "','" + p.lungFev1Per + "','"
+                + p.lungFev1Predic + "','" + p.lungFvcMeas + "','"
+                + p.lungFvcPer + "','" + p.lungFvcPredic + "','"
+                + p.lungPerFev1 + "','" + p.lungSuggess + "','"
+                + p.lungSummary + "','" + p.urineSummary + "','"
+
+                + p.cbcSummary + "','" + p.summaryPhysicalExam + "','"
+                + p.vdrl + "','" + p.visitHn + "',"
+                + p.rowNumber + ",'" + p.cbcMcv + "','"
+                    + p.stickerQty + "','" + p.statusCbc + "','"
+                    + p.statusFbs + "','" + p.statusUa + "','"
+                    + p.statusPe + "','" + p.statusXray + "','"
+                    + p.statusStool + "','" + p.stoolExamSummary + "','"
+                    + p.cholesterolSuggess + "','" + p.cholesterolSummary + "','"
+                    + p.cbcMch + "','" + p.cbcMchc + "','"
+                    + p.hbsagSuggess + "','" + p.hbsagSummary + "','"
+                    + p.statusCholes + "','" + p.StatusHbsag + "','"
+                    + p.cbcRbc + "','" + p.Active + "','"
+                    + p.eyeBio + "','" + p.amphetamineSuggess + "','"
+                    + p.amphetamineSummary + "','" + p.antiHivSuggess + "','"
+                    + p.antiHivSummary + "','" + p.statusAmphetamine + "','"
+                    + p.statusAntiHiv + "','" + p.statusVisit + "') ";
+            chk = conn.ExecuteNonQuery(sql);
+    //            conn.close;
             } catch (Exception ex) {
-                //Logger.getLogger(MarketingTCheckupDB.class.getName()).log(Level.SEVERE, null, ex);
-                //max = ex.getMessage();
+                //Logger.getLogger(MarketingTCheckupDB.class.getName).log(Level.SEVERE, null, ex);
+                //max = ex.getMessage;
             }
-            return max;
+            return p.Id;
         }
     }
 }

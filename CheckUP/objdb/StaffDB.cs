@@ -1,4 +1,4 @@
-﻿using Cemp.object1;
+﻿using CheckUP.object1;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Cemp.objdb
+namespace CheckUP.objdb
 {
     public class StaffDB
     {
