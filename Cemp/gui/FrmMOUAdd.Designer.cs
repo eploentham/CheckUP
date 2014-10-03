@@ -45,6 +45,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox21 = new System.Windows.Forms.GroupBox();
+            this.txtMOUNumber = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.btnMOUAdd = new System.Windows.Forms.Button();
             this.cboMOU = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -75,8 +77,6 @@
             this.btnUnActive = new System.Windows.Forms.Button();
             this.ChkUnActive = new System.Windows.Forms.RadioButton();
             this.chkActive = new System.Windows.Forms.RadioButton();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtMOUNumber = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
@@ -286,6 +286,26 @@
             this.groupBox21.TabStop = false;
             this.groupBox21.Text = "บริษัท";
             // 
+            // txtMOUNumber
+            // 
+            this.txtMOUNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtMOUNumber.Location = new System.Drawing.Point(150, 13);
+            this.txtMOUNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMOUNumber.Name = "txtMOUNumber";
+            this.txtMOUNumber.Size = new System.Drawing.Size(179, 23);
+            this.txtMOUNumber.TabIndex = 59;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label14.Location = new System.Drawing.Point(4, 17);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(52, 17);
+            this.label14.TabIndex = 58;
+            this.label14.Text = "MOU  :";
+            // 
             // btnMOUAdd
             // 
             this.btnMOUAdd.Location = new System.Drawing.Point(115, 40);
@@ -442,6 +462,7 @@
             this.dgvAdd.RowTemplate.Height = 24;
             this.dgvAdd.Size = new System.Drawing.Size(888, 387);
             this.dgvAdd.TabIndex = 3;
+            this.dgvAdd.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvAdd_CellBeginEdit);
             this.dgvAdd.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdd_CellDoubleClick);
             this.dgvAdd.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdd_CellEndEdit);
             this.dgvAdd.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvAdd_CellMouseClick);
@@ -609,26 +630,6 @@
             this.chkActive.Text = "ใช้งาน";
             this.chkActive.UseVisualStyleBackColor = true;
             this.chkActive.Click += new System.EventHandler(this.chkActive_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label14.Location = new System.Drawing.Point(4, 17);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(52, 17);
-            this.label14.TabIndex = 58;
-            this.label14.Text = "MOU  :";
-            // 
-            // txtMOUNumber
-            // 
-            this.txtMOUNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtMOUNumber.Location = new System.Drawing.Point(150, 13);
-            this.txtMOUNumber.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMOUNumber.Name = "txtMOUNumber";
-            this.txtMOUNumber.Size = new System.Drawing.Size(179, 23);
-            this.txtMOUNumber.TabIndex = 59;
             // 
             // FrmMOUAdd
             // 

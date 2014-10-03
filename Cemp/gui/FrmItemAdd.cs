@@ -47,6 +47,7 @@ namespace Cemp.gui
             txtRemark.Text = it.Remark;
             txtPriceCost.Text = it.PriceCost;
             txtPriceSale.Text = it.PriceSale;
+            txtPriceCostReal.Text = it.PriceCostReal;
             if (it.Active.Equals("1"))
             {
                 chkActive.Checked = true;
@@ -79,6 +80,7 @@ namespace Cemp.gui
             it.Remark = txtRemark.Text;
             it.PriceSale = txtPriceSale.Text;
             it.PriceCost = txtPriceCost.Text;
+            it.PriceCostReal = txtPriceCostReal.Text;
             it.ItemGroupId = cc.getValueCboItem(cboGroup);
             it.MethodId = cc.getValueCboItem(cboMethod);
             it.ItemGroupNameT = cboGroup.Text;
@@ -322,12 +324,12 @@ namespace Cemp.gui
         {
             if (e.KeyCode == Keys.Enter)
             {
-                comboBox1.SelectAll();
-                comboBox1.Focus();
+                txtPriceCostReal.SelectAll();
+                txtPriceCostReal.Focus();
             }
         }
 
-        private void comboBox1_KeyUp(object sender, KeyEventArgs e)
+        private void cboCustPO_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -336,14 +338,14 @@ namespace Cemp.gui
             }
         }
 
-        private void comboBox1_Enter(object sender, EventArgs e)
+        private void cboCustPO_Enter(object sender, EventArgs e)
         {
-            comboBox1.BackColor = Color.LightYellow;
+            cboCustPO.BackColor = Color.LightYellow;
         }
 
-        private void comboBox1_Leave(object sender, EventArgs e)
+        private void cboCustPO_Leave(object sender, EventArgs e)
         {
-            comboBox1.BackColor = Color.White;
+            cboCustPO.BackColor = Color.White;
         }
 
         private void txtRemark_KeyUp(object sender, KeyEventArgs e)
@@ -352,6 +354,30 @@ namespace Cemp.gui
             {
                 //btnSave.SelectAll();
                 btnSave.Focus();
+            }
+        }
+
+        private void txtPriceCostReal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && !(e.KeyChar == 46);
+        }
+
+        private void txtPriceCostReal_Enter(object sender, EventArgs e)
+        {
+            txtPriceCostReal.BackColor = Color.LightYellow;
+        }
+
+        private void txtPriceCostReal_Leave(object sender, EventArgs e)
+        {
+            txtPriceCostReal.BackColor = Color.White;
+        }
+
+        private void txtPriceCostReal_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cboCustPO.SelectAll();
+                cboCustPO.Focus();
             }
         }
     }

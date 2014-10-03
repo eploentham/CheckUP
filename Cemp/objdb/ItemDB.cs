@@ -202,7 +202,7 @@ namespace Cemp.objdb
                 p.ItemGroupNameT + "','" + p.MethodNameT + "','" + p.MethodId + "','" +
                 p.Sort1 + "','" +p.dateCancel + "'," + p.dateGenDB + ",'" + 
                 p.dateModi + "','" +p.userCancel + "','" + p.userCreate + "','" +
-                p.userModi + "'," + NumberNull1(p.PriceCostReal) + "','" + p.ItemType + ")";
+                p.userModi + "'," + NumberNull1(p.PriceCostReal) + ",'" + p.ItemType + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

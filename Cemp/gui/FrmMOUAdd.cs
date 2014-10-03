@@ -18,12 +18,14 @@ namespace Cemp.gui
         MOU mo;
         Quotation qu;
         Staff sf;
-        int colRow = 0, colItem = 1, colMethod = 2, colSample = 3, colPlace = 5, colDatePlaceRecord=4, colMOUNumber=6, colId = 7, colDel =8, colItemId = 9, colMethodId = 10, colEdit = 11, colMOUNumberCnt=12, colDatePlaceRecord1=13;
+        int colRow = 0, colItem = 1, colMethod = 2, colSample = 3, colPlace = 5, colDatePlaceRecord=4, colMOUNumber=6, colId = 7, colDel =8, colItemId = 9, colMethodId = 10;
+        int colEdit = 11, colMOUNumberCnt=12, colDatePlaceRecord1=13, colItemType=14;
         //int colPriceSale = 14, colPriceCost = 15, colAmount = 16, colDiscount = 17;
-        int colCnt = 14;
+        int colCnt = 15;
         int row = 0;
         Boolean pageLoad = false, mouNew = false, MOUSplit = false;
         //DateTimePicker cellDateTimePicker = new DateTimePicker();
+        ComboBox cbo = new ComboBox();
         DateTimeFormatInfo df;
         List<String> ldate;
         List<String> lplace;
@@ -44,8 +46,9 @@ namespace Cemp.gui
             //cellDateTimePicker.CustomFormat = "dd/MM/yyyy";
             //cellDateTimePicker.Format = DateTimePickerFormat.Custom;
             //cellDateTimePicker.Value.GetDateTimeFormats(df);
-            //dgvAdd.Controls.Add(cellDateTimePicker);
+            dgvAdd.Controls.Add(cbo);
             //dgv = new DataGridView();
+            cbo.SelectedValueChanged += new EventHandler(cboValueChanged);
             ldate = new List<string>();
             lplace = new List<string>();
             cc = c;
@@ -58,7 +61,7 @@ namespace Cemp.gui
             cboStaffMOU = cc.sfdb.getCboStaff(cboStaffMOU);
             cboDocType = cc.itydb.getCboDocType(cboDocType,"mou");
             txtStaffPlaceRecordPosition.Text = "เจ้าหน้าที่ผู้ทำการเก็บตัวอย่าง";
-            
+            cbo = cc.itydb.getCboDocType(cbo, "mou");
             setControl("");
             if (!moNumber.Equals(""))
             {
@@ -97,9 +100,14 @@ namespace Cemp.gui
         }
         //void cellDateTimePickerValueChanged(object sender, EventArgs e)
         //{
-        //    dgvAdd.CurrentCell.Value = cellDateTimePicker.Value.ToString("dd/MM/yyyy");
+        //    dgvAdd.CurrentCell.Value = cellDateTimePicker.Value.ToString("dd/MM/yyyy");cboValueChanged
         //    cellDateTimePicker.Visible = false;
         //}
+        void cboValueChanged(object sender, EventArgs e)
+        {
+            dgvAdd.CurrentCell.Value = cbo.Text;
+            cbo.Visible = false;
+        }
         private void setControl(String moNumber)
         {
             pageLoad = true;
@@ -234,7 +242,7 @@ namespace Cemp.gui
             dgvAdd.Columns[colItem].HeaderText = "Parameter";
             dgvAdd.Columns[colMethod].HeaderText = "Method";
             dgvAdd.Columns[colSample].HeaderText = "Sample";
-            //dgvAdd.Columns[colPrice].HeaderText = "Price";
+            dgvAdd.Columns[colItemType].HeaderText = "Type";
             dgvAdd.Columns[colPlace].HeaderText = "สถานที่เก็บตัวอย่าง";
             dgvAdd.Columns[colDatePlaceRecord].HeaderText = "วันที่เก็บตัวอย่าง";
             dgvAdd.Columns[colMOUNumber].HeaderText = "เลขที่";
@@ -290,7 +298,7 @@ namespace Cemp.gui
                     dgvAdd[colItem, i].Value = dt.Rows[i][cc.moidb.moi.ItemDescription].ToString();
                     dgvAdd[colMethod, i].Value = dt.Rows[i][cc.moidb.moi.MethodDescription].ToString();
                     dgvAdd[colSample, i].Value = dt.Rows[i][cc.moidb.moi.Sample].ToString();
-                    //dgvAdd[colPrice, i].Value = String.Format("{0:#,###,###.00}", dt.Rows[i][cc.quidb.qui.PriceSale]);
+                    dgvAdd[colItemType, i].Value = dt.Rows[i][cc.moidb.moi.ItemType].ToString();
                     dgvAdd[colPlace, i].Value = dt.Rows[i][cc.moidb.moi.PlaceRecord].ToString();
                     dgvAdd[colItemId, i].Value = dt.Rows[i][cc.moidb.moi.ItemId].ToString();
                     dgvAdd[colMethodId, i].Value = dt.Rows[i][cc.moidb.moi.MethodId].ToString();
@@ -585,6 +593,32 @@ namespace Cemp.gui
                 dgvAdd[colMOUNumberCnt, i].Value = cnt;
             }
         }
+        private Boolean ChkGrd1()
+        {
+            Boolean chk = false;
+            for (int i = 0; i < dgvAdd.RowCount; i++)
+            {
+                if (dgvAdd[colItem, i].Value == null)
+                {
+                    continue;
+                }
+                if ((dgvAdd[colDatePlaceRecord, i].Value==null) ||(dgvAdd[colDatePlaceRecord, i].Value.ToString().Equals("")))
+                {
+                    //DataGridViewRow row = dgvAdd.Rows[i];
+                    //row.Cells[colDatePlaceRecord].Style.BackColor = Color.Red;
+                    dgvAdd.Rows[i].Cells[colDatePlaceRecord].Style.BackColor = Color.Red;
+                    chk = true;
+                }
+                if ((dgvAdd[colItemType, i].Value == null) || (dgvAdd[colItemType, i].Value.ToString().Equals("")))
+                {
+                    //DataGridViewRow row = dgvAdd.Rows[i];
+                    //row.Cells[colDatePlaceRecord].Style.BackColor = Color.Red;
+                    dgvAdd.Rows[i].Cells[colItemType].Style.BackColor = Color.Red;
+                    chk = true;
+                }
+            }
+            return chk;
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             String moId = "", datePlaceRecordTemp="";
@@ -619,9 +653,13 @@ namespace Cemp.gui
                 MessageBox.Show("ไม่มี เจ้าหน้าที่ผู้ทำการเก็บตัวอย่าง ", "ป้อนข้อมูลไม่ครบ");
                 return;
             }
-            if (cboDocType.Text.Equals(""))
+            //if (cboDocType.Text.Equals(""))
+            //{
+            //    MessageBox.Show("ไม่มี Doc Type ", "ป้อนข้อมูลไม่ครบ");
+            //    return;
+            //}
+            if (ChkGrd1())
             {
-                MessageBox.Show("ไม่มี Doc Type ", "ป้อนข้อมูลไม่ครบ");
                 return;
             }
             Cursor cursor = Cursor.Current;
@@ -701,7 +739,7 @@ namespace Cemp.gui
                     moi.ItemGroupNameE = itg.NameE;
                     moi.ItemGroupSort = itg.Sort1;
                     moi.MOUNumberCnt = dgvAdd[colMOUNumberCnt, i].Value.ToString();
-                    moi.MOUNumber = mo.MOUNumberMain;
+                    moi.MOUNumberMain = mo.MOUNumberMain;
                     moi.PriceCost = cc.cf.NumberNull1(it.PriceCost);
                     moi.PriceSale = cc.cf.NumberNull1(it.PriceSale);
                     moi.Discount = "0";
@@ -889,6 +927,15 @@ namespace Cemp.gui
                     //dgvAdd.CurrentCell.f
                 }
                 setLDate(dgvAdd.CurrentCell.Value.ToString());
+                if ((e.RowIndex % 2) != 0)
+                {
+                    dgvAdd[colDatePlaceRecord, e.RowIndex].Style.BackColor = Color.LightSalmon;
+                }
+                else
+                {
+                    dgvAdd[colDatePlaceRecord, e.RowIndex].Style.BackColor = Color.White;
+                }
+                
             }
             else if (e.ColumnIndex == colPlace)
             {
@@ -942,7 +989,14 @@ namespace Cemp.gui
             //}
             MenuItem m = (MenuItem)(sender);
             dgvAdd.CurrentCell.Value = m.Text;
-            
+            if ((dgvAdd.CurrentCell.RowIndex % 2) != 0)
+            {
+                dgvAdd[colDatePlaceRecord, dgvAdd.CurrentCell.RowIndex].Style.BackColor = Color.LightSalmon;
+            }
+            else
+            {
+                dgvAdd[colDatePlaceRecord, dgvAdd.CurrentCell.RowIndex].Style.BackColor = Color.White;
+            }
             //FrmQuotationAdd frm = new FrmQuotationAdd(dgvAdd[dgvAdd, dgvView.SelectedRows[0].Index].Value.ToString(), true, cc);
             ////frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             //frm.ShowDialog(this);
@@ -1046,29 +1100,29 @@ namespace Cemp.gui
             }
         }
 
-        //private void dgvAdd_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
-        //{
-        //    //int index = dgvAdd.CurrentCell.ColumnIndex;
-        //    if (dgvAdd.CurrentCell.ColumnIndex==colDatePlaceRecord)
-        //    {
-        //        Rectangle tempRect = this.dgvAdd.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
-        //        cellDateTimePicker.Location = tempRect.Location;
-        //        cellDateTimePicker.Width = tempRect.Width;
-        //        try
-        //        {
-        //            cellDateTimePicker.Value = DateTime.Parse(cc.cf.datetoDB1(dgvAdd.CurrentCell.Value.ToString()));
-        //        }
-        //        catch
-        //        {
-        //            cellDateTimePicker.Value = DateTime.Now;
-        //        }
-        //        cellDateTimePicker.Visible = true;
-        //    }
-        //}
+        private void dgvAdd_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            //int index = dgvAdd.CurrentCell.ColumnIndex;
+            if (dgvAdd.CurrentCell.ColumnIndex == colItemType)
+            {
+                Rectangle tempRect = this.dgvAdd.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
+                cbo.Location = tempRect.Location;
+                cbo.Width = tempRect.Width;
+                try
+                {
+                    //cbo.Text = "11";
+                }
+                catch
+                {
+                    cbo.Text = "22";
+                }
+                cbo.Visible = true;
+            }
+        }
 
-        //private void dgvAdd_CellLeave(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    cellDateTimePicker.Visible = false;
-        //}
+        private void dgvAdd_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            cbo.Visible = false;
+        }
     }
 }
