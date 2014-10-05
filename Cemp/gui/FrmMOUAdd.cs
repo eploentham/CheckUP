@@ -30,7 +30,7 @@ namespace Cemp.gui
         List<String> ldate;
         List<String> lplace;
         //DataGridView dgv;
-        
+        String editItemTypeOld = "";
         public FrmMOUAdd(String moNumber, Boolean flagNew, CnviControl c)
         {
             mouNew = flagNew;
@@ -55,6 +55,7 @@ namespace Cemp.gui
             mo = new MOU();
             qu = new Quotation();
             sf = new Staff();
+            txtMOUNumber.Text = moNumber;
             cboMOU = cc.moidb.getCboMOUNumberMain(cboMOU, moNumber);
             cboQuo = cc.qudb.getCboQuotation(cboQuo);
             cboStaffPlaceRecord = cc.sfdb.getCboStaff(cboStaffPlaceRecord);
@@ -62,6 +63,7 @@ namespace Cemp.gui
             cboDocType = cc.itydb.getCboDocType(cboDocType,"mou");
             txtStaffPlaceRecordPosition.Text = "เจ้าหน้าที่ผู้ทำการเก็บตัวอย่าง";
             cbo = cc.itydb.getCboDocType(cbo, "mou");
+            cbo.Visible = false;
             setControl("");
             if (!moNumber.Equals(""))
             {
@@ -108,7 +110,7 @@ namespace Cemp.gui
             dgvAdd.CurrentCell.Value = cbo.Text;
             cbo.Visible = false;
         }
-        private void setControl(String moNumber)
+        private void setControl(String moNumberMain)
         {
             pageLoad = true;
             if (mouNew)
@@ -119,16 +121,18 @@ namespace Cemp.gui
             {
                 ShowMOU();
             }
-            if (moNumber.Equals(""))
+            if (moNumberMain.Equals(""))
             {
+                pageLoad = false;
                 //txtMouNumber.Text = "-";
                 return;
             }
-            if (moNumber.IndexOf("-")<=0)
-            {
-                return;
-            }
-            mo = cc.modb.selectByNumber1(moNumber.Substring(0,moNumber.IndexOf("-")));
+            //if (moNumberMain.IndexOf("-")<=0)
+            //{
+            //    pageLoad = false;
+            //    return;
+            //}
+            mo = cc.modb.selectByNumber1(moNumberMain);
 
             //cboMOU = cc.moidb.getCboMOUNumberMain(cboMOU, mo.MOUNumberMain);
 
@@ -178,7 +182,7 @@ namespace Cemp.gui
             txtMOUName.Text = mo.MOUName;
             chkActive.Checked =true;
             btnUnActive.Visible = false;
-            setGrd(moNumber);
+            setGrd(cc.getValueCboItem(cboMOU));
             pageLoad = false;
         }
         private void getMOU()
@@ -621,8 +625,9 @@ namespace Cemp.gui
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            String moId = "", datePlaceRecordTemp="";
+            String moId = "", datePlaceRecordTemp="", ity="";
             int rowOld = 0, row = 0;
+            Boolean chkEdit = false;
             if (cboMOU.Text.Equals("") && !mouNew)
             {
                 MessageBox.Show("ไม่มีเลขที่ MOU", "ป้อนข้อมูลไม่ครบ");
@@ -745,6 +750,12 @@ namespace Cemp.gui
                     moi.Discount = "0";
                     moi.Amount = String.Concat(Double.Parse(moi.PriceSale) * int.Parse(moi.Sample));
                     moi.ItemType = dgvAdd[colItemType, i].Value.ToString();
+                    moi.MOUNumber = cboMOU.Text;
+                    if (dgvAdd[colEdit, i].Value.Equals("1"))
+                    {
+                        chkEdit = true;
+                        ity = moi.ItemType;
+                    }
                     //if ((!mouNew)&&(!dgvAdd[colDatePlaceRecord, i].Value.ToString().Equals(dgvAdd[colDatePlaceRecord1, i].Value.ToString())))
                     //{
                     //    moi.MOUNumberCnt = cc.moidb.selectCntByMoNumber(moi.MOUNumber, cc.cf.datetoDB1( dgvAdd[colDatePlaceRecord, i].Value.ToString()));
@@ -767,7 +778,15 @@ namespace Cemp.gui
                         cc.moidb.insertMOUItem(moi);
                     }
                 }
-                cc.moidb.UpdateMOUNumber(moId, cc.cboIty);
+                if (mouNew)
+                {
+                    cc.moidb.UpdateMOUNumber(moId, cc.cboIty);
+                }
+                else if(chkEdit)
+                {
+                    cc.moidb.UpdateMaxMOUNumber(moId, ity);
+                }
+                
                 MOU mo1 = cc.modb.selectByPk(moId);
                 txtMOUNumber.Text = mo1.MOUNumberMain;
                 cboMOU = cc.moidb.getCboMOUNumberMain(cboMOU, mo1.MOUNumberMain);
@@ -785,7 +804,8 @@ namespace Cemp.gui
             {
                 Cursor cursor = Cursor.Current;
                 Cursor.Current = Cursors.WaitCursor;
-                setControl(cc.getValueCboItem(cboMOU));
+                //setControl(cc.getValueCboItem(cboMOU));
+                setControl(txtMOUNumber.Text);
                 //cellDateTimePicker.Visible = false;
                 mouNew=false;
                 Cursor.Current = cursor;
@@ -962,6 +982,11 @@ namespace Cemp.gui
                 {
                     dgvAdd[colItemType, e.RowIndex].Style.BackColor = Color.White;
                 }
+                if ((dgvAdd[colItemType, e.RowIndex].Value!=null) && (!editItemTypeOld.Equals(dgvAdd[colItemType, e.RowIndex].Value.ToString())))
+                {
+                    dgvAdd[colEdit, e.RowIndex].Value = "1";
+                    dgvAdd[colRow, e.RowIndex].Style.BackColor = Color.Olive;
+                }
             }
         }
         private void setLDate(String input1)
@@ -1123,6 +1148,15 @@ namespace Cemp.gui
             //int index = dgvAdd.CurrentCell.ColumnIndex;
             if (dgvAdd.CurrentCell.ColumnIndex == colItemType)
             {
+                if (dgvAdd[colItemType, e.RowIndex].Value != null)
+                {
+                    editItemTypeOld = dgvAdd[colItemType, e.RowIndex].Value.ToString();
+                }
+                else
+                {
+                    editItemTypeOld = "";
+                }
+                
                 Rectangle tempRect = this.dgvAdd.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
                 cbo.Location = tempRect.Location;
                 cbo.Width = tempRect.Width;

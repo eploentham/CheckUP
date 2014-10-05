@@ -193,11 +193,21 @@ namespace Cemp.objdb
             DataTable dt = conn.selectData(sql);
             return dt;
         }
-        public String selectMaxByMoNumberMain(String ity)
+        public String selectMaxByMoNumber(String ity)
         {
             //MOUItem item = new MOUItem();
             String sql = "", cnt = "", number = "";
             sql = "Select max("+moi.MOUNumber+") as cnt From " + moi.table + " Where " + moi.ItemType + "='" + ity + "' ";
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+
+            return dt.Rows[0]["cnt"].ToString();
+        }
+        public String selectMaxByMoNumber1(String moId,String ity)
+        {
+            //MOUItem item = new MOUItem();
+            String sql = "", cnt = "", number = "";
+            sql = "Select max(" + moi.MOUNumber + ") as cnt From " + moi.table + " Where " + moi.ItemType + "='" + ity + "' and "+moi.MOUId+"='"+moId+"'";
             //dt = conn.selectData(sql);
             DataTable dt = conn.selectData(sql);
 
@@ -414,7 +424,7 @@ namespace Cemp.objdb
                 {
                     ity = dt.Rows[i][moi.ItemType].ToString();
                     doc = getValueCboItem(cboity, ity);
-                    max = selectMaxByMoNumberMain(ity);
+                    max = selectMaxByMoNumber(ity);
                     if (max.Equals(""))
                     {
                         max = "00";
@@ -422,6 +432,23 @@ namespace Cemp.objdb
                     UpdateMOUNumber1(MOUNumberMain, ity, doc, (int.Parse(NumberNull1(max.Substring(2))) + 1));
                 }
             }
+        }
+        public void UpdateMaxMOUNumber(String moId, String ity)
+        {
+            String max = "", sql="";
+            max = selectMaxByMoNumber1(moId,ity);
+            if (max.Equals(""))
+            {
+                max = "00";
+            }
+            max = String.Concat(int.Parse(max.Substring(max.Length-2)) + 1);
+            sql = "Update " + moi.table + " " +
+                "Set " + moi.MOUNumberCnt + "='" + max+"' " +
+                " Where " + moi.MOUId + "='" + moId + "' and " + moi.ItemType + "='" + ity + "'";
+            //dt = conn.selectData(sql);
+            conn.ExecuteNonQuery(sql);
+            //UpdateMOUNumber1(MOUNumber, ity, doc, (int.Parse(NumberNull1(max.Substring(2))) + 1));
+
         }
         public String getValueCboItem(ComboBox c, String text)
         {
