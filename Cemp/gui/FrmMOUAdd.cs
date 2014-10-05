@@ -55,7 +55,7 @@ namespace Cemp.gui
             mo = new MOU();
             qu = new Quotation();
             sf = new Staff();
-            cboMOU = cc.moidb.getCboMOUNumber(cboMOU, moNumber);
+            cboMOU = cc.moidb.getCboMOUNumberMain(cboMOU, moNumber);
             cboQuo = cc.qudb.getCboQuotation(cboQuo);
             cboStaffPlaceRecord = cc.sfdb.getCboStaff(cboStaffPlaceRecord);
             cboStaffMOU = cc.sfdb.getCboStaff(cboStaffMOU);
@@ -130,7 +130,7 @@ namespace Cemp.gui
             }
             mo = cc.modb.selectByNumber1(moNumber.Substring(0,moNumber.IndexOf("-")));
 
-            //cboMOU = cc.modb.getCboMOUNumber(cboMOU, mo.MOUNumber);
+            //cboMOU = cc.moidb.getCboMOUNumberMain(cboMOU, mo.MOUNumberMain);
 
             //cboContact = cc.cudb.getCboCustomer(cboContact);
             dtpDateMOU.Format = DateTimePickerFormat.Short;
@@ -744,10 +744,11 @@ namespace Cemp.gui
                     moi.PriceSale = cc.cf.NumberNull1(it.PriceSale);
                     moi.Discount = "0";
                     moi.Amount = String.Concat(Double.Parse(moi.PriceSale) * int.Parse(moi.Sample));
-                    if ((!mouNew)&&(!dgvAdd[colDatePlaceRecord, i].Value.ToString().Equals(dgvAdd[colDatePlaceRecord1, i].Value.ToString())))
-                    {
-                        moi.MOUNumberCnt = cc.moidb.selectCntByMoNumber(moi.MOUNumber, cc.cf.datetoDB1( dgvAdd[colDatePlaceRecord, i].Value.ToString()));
-                    }
+                    moi.ItemType = dgvAdd[colItemType, i].Value.ToString();
+                    //if ((!mouNew)&&(!dgvAdd[colDatePlaceRecord, i].Value.ToString().Equals(dgvAdd[colDatePlaceRecord1, i].Value.ToString())))
+                    //{
+                    //    moi.MOUNumberCnt = cc.moidb.selectCntByMoNumber(moi.MOUNumber, cc.cf.datetoDB1( dgvAdd[colDatePlaceRecord, i].Value.ToString()));
+                    //}
                     //for (int j = 0; j<dgvAdd.RowCount - 1; j++)
                     //{
                     //    datePlaceRecordTemp = dgvAdd[colDatePlaceRecord, (j+1)].Value.ToString();
@@ -766,10 +767,11 @@ namespace Cemp.gui
                         cc.moidb.insertMOUItem(moi);
                     }
                 }
+                cc.moidb.UpdateMOUNumber(moId, cc.cboIty);
                 MOU mo1 = cc.modb.selectByPk(moId);
-                //txtMouNumber.Text = mo1.MOUNumber + "-" + mo1.MOUNumberCnt;
-                cboMOU = cc.moidb.getCboMOUNumber(cboMOU, mo1.MOUNumberMain);
-                cboMOU.Text = mo1.MOUNumberMain + "-" + mo1.MOUNumberCnt;
+                txtMOUNumber.Text = mo1.MOUNumberMain;
+                cboMOU = cc.moidb.getCboMOUNumberMain(cboMOU, mo1.MOUNumberMain);
+                //cboMOU.Text = mo1.MOUNumberMain + "-" + mo1.MOUNumberCnt;
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 btnPrintMou.Visible = true;
                 UnLockSplit();
@@ -944,6 +946,22 @@ namespace Cemp.gui
                     return;
                 }
                 setLPace(dgvAdd.CurrentCell.Value.ToString());
+            }
+            else if (e.ColumnIndex == colItemType)
+            {
+                if ((dgvAdd.CurrentCell.Value.ToString().Equals("")))
+                {
+                    return;
+                }
+                row = dgvAdd.CurrentCell.RowIndex;
+                if ((e.RowIndex % 2) != 0)
+                {
+                    dgvAdd[colItemType, e.RowIndex].Style.BackColor = Color.LightSalmon;
+                }
+                else
+                {
+                    dgvAdd[colItemType, e.RowIndex].Style.BackColor = Color.White;
+                }
             }
         }
         private void setLDate(String input1)

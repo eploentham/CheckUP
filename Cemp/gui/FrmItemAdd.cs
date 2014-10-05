@@ -70,6 +70,10 @@ namespace Cemp.gui
             cboGroup = cc.itgdb.getCboItemGroup(cboGroup);
             cboMethod.Text = it.MethodNameT;
             cboGroup.Text = it.ItemGroupNameT;
+            cc.CloneItemType(cboDocType);
+            cboDocType.Text = it.ItemType;
+            cboCustPO = cc.cudb.getCboVendor(cboCustPO);
+            cboCustPO.Text = it.CustNameT;
         }
         private void getItem()
         {
@@ -88,6 +92,9 @@ namespace Cemp.gui
 
             it.userCreate = cc.sf.Id;
             it.userModi = cc.sf.Id;
+            it.ItemType = cboDocType.Text;
+            it.CustId = cc.getValueCboItem(cboCustPO);
+            it.CustNameT = cboCustPO.Text;
         }
         private void FrmItemAdd_Load(object sender, EventArgs e)
         {
@@ -306,8 +313,8 @@ namespace Cemp.gui
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtPriceSale.SelectAll();
-                txtPriceSale.Focus();
+                cboDocType.SelectAll();
+                cboDocType.Focus();
             }
         }
 
@@ -378,6 +385,25 @@ namespace Cemp.gui
             {
                 cboCustPO.SelectAll();
                 cboCustPO.Focus();
+            }
+        }
+
+        private void cboDocType_Enter(object sender, EventArgs e)
+        {
+            cboDocType.BackColor = Color.LightYellow;
+        }
+
+        private void cboDocType_Leave(object sender, EventArgs e)
+        {
+            cboDocType.BackColor = Color.White;
+        }
+
+        private void cboDocType_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtPriceSale.SelectAll();
+                txtPriceSale.Focus();
             }
         }
     }

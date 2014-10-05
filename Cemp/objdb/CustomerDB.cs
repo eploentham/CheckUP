@@ -116,6 +116,15 @@ namespace Cemp.objdb
 
             return dt;
         }
+        public DataTable selectVendorAll()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From " + cu.table + " Where " + cu.Active + "='1' and "+cu.StatusVendor+"='2'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
         public DataTable selectCustomerList()
         {
             String sql = "";
@@ -288,6 +297,34 @@ namespace Cemp.objdb
         {
             ComboBoxItem item = new ComboBoxItem();
             DataTable dt = selectAll();
+            //String aaa = "";
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                if (dt.Rows[0][cu.StatusCompany].ToString().Equals("1"))
+                {
+                    item.Text = "บริษัท " + dt.Rows[0][cu.NameT].ToString() + " จำกัด";
+                }
+                else if (dt.Rows[0][cu.StatusCompany].ToString().Equals("2"))
+                {
+                    item.Text = dt.Rows[0][cu.NameT].ToString() + " Co., Ltd.";
+                }
+                else
+                {
+                    item.Text = dt.Rows[0][cu.NameT].ToString();
+                }
+                item.Value = dt.Rows[i][cu.Id].ToString();
+                //item.Text = dt.Rows[i][cu.NameT].ToString();
+                c.Items.Add(item);
+                //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
+                //c.Items.Add(new );
+            }
+            return c;
+        }
+        public ComboBox getCboVendor(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectVendorAll();
             //String aaa = "";
             for (int i = 0; i < dt.Rows.Count; i++)
             {

@@ -36,12 +36,14 @@
             this.cboMothod = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cboDocType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(1011, 10);
+            this.btnAdd.Location = new System.Drawing.Point(1122, 10);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(56, 39);
@@ -64,7 +66,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(1011, 73);
+            this.btnPrint.Location = new System.Drawing.Point(1122, 73);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(56, 39);
@@ -79,9 +81,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label1.Location = new System.Drawing.Point(24, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 16);
+            this.label1.Size = new System.Drawing.Size(30, 16);
             this.label1.TabIndex = 10;
-            this.label1.Text = "กลุ่ม Type";
+            this.label1.Text = "กลุ่ม ";
             // 
             // cboItemGroup
             // 
@@ -115,7 +117,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(931, 13);
+            this.btnSearch.Location = new System.Drawing.Point(1073, 13);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(45, 23);
@@ -124,11 +126,35 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label13.Location = new System.Drawing.Point(932, 16);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(48, 17);
+            this.label13.TabIndex = 140;
+            this.label13.Text = "Type :";
+            // 
+            // cboDocType
+            // 
+            this.cboDocType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cboDocType.FormattingEnabled = true;
+            this.cboDocType.Location = new System.Drawing.Point(984, 13);
+            this.cboDocType.Margin = new System.Windows.Forms.Padding(2);
+            this.cboDocType.Name = "cboDocType";
+            this.cboDocType.Size = new System.Drawing.Size(76, 25);
+            this.cboDocType.TabIndex = 139;
+            this.cboDocType.SelectedIndexChanged += new System.EventHandler(this.cboDocType_SelectedIndexChanged);
+            // 
             // FrmItemView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1078, 553);
+            this.ClientSize = new System.Drawing.Size(1211, 553);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.cboDocType);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.cboMothod);
             this.Controls.Add(this.label2);
@@ -160,5 +186,7 @@
         private System.Windows.Forms.ComboBox cboMothod;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cboDocType;
     }
 }

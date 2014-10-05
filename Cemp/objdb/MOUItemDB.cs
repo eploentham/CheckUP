@@ -184,6 +184,25 @@ namespace Cemp.objdb
             }
             return number;
         }
+        public DataTable selectDistinctByMoId(String moId)
+        {
+            //MOUItem item = new MOUItem();
+            String sql = "", cnt = "", number = "";
+            sql = "Select " + moi.ItemType + " From " + moi.table + " Where " + moi.MOUId + "='" + moId + "' Group By " + moi.ItemType;
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+            return dt;
+        }
+        public String selectMaxByMoNumberMain(String ity)
+        {
+            //MOUItem item = new MOUItem();
+            String sql = "", cnt = "", number = "";
+            sql = "Select max("+moi.MOUNumber+") as cnt From " + moi.table + " Where " + moi.ItemType + "='" + ity + "' ";
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+
+            return dt.Rows[0]["cnt"].ToString();
+        }
         private String insert(MOUItem p)
         {
             String sql = "", chk = "";
@@ -204,14 +223,16 @@ namespace Cemp.objdb
                 moi.Sample + "," + moi.ItemGroupNameE + "," + moi.ItemGroupNameT + "," +
                 moi.ItemGroupSort + "," + moi.ItemGroupId + "," + moi.DatePlaceRecord + "," +
                 moi.MOUNumber + "," + moi.MOUNumberCnt + "," + moi.PriceCost + "," +
-                moi.PriceSale + "," + moi.Amount + "," + moi.Discount + "," + moi.MOUNumberMain + "," + moi.ItemType + ") " +
+                moi.PriceSale + "," + moi.Amount + "," + moi.Discount + "," + 
+                moi.MOUNumberMain + "," + moi.ItemType + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.ItemDescription + "','" +
                 p.ItemId + "','" + p.MethodDescription + "','" + p.MethodId + "','" +
                 p.MOUId + "','" + p.PlaceRecord + "','" + p.RowNumber + "','" +
                 p.Sample + "','" + p.ItemGroupNameE + "','" + p.ItemGroupNameT + "','" +
                 p.ItemGroupSort + "','" + p.ItemGroupId + "','" + p.DatePlaceRecord + "','" +
                 p.MOUNumber + "'," + p.MOUNumberCnt + "," + NumberNull1(p.PriceCost) + "," +
-                NumberNull1(p.PriceSale) + "," + NumberNull1(p.Amount) + "," + NumberNull1(p.Discount) + ",'" + p.MOUNumberMain + "','" + p.ItemType + "')";
+                NumberNull1(p.PriceSale) + "," + NumberNull1(p.Amount) + "," + NumberNull1(p.Discount) + ",'" + 
+                p.MOUNumberMain + "','" + p.ItemType + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -329,6 +350,34 @@ namespace Cemp.objdb
             //c.SelectedItem = item;
             return c;
         }
+        public DataTable selectByNumberMain(String moNumber)
+        {
+            String sql = "";
+
+            sql = "Select Distinct " + moi.MOUNumber + " as num, "+moi.MOUNumberCnt+" as cnt From " + moi.table + " Where " + moi.MOUNumberMain + "='" + moNumber + "' and " + moi.Active + "='1'";
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+            //if (dt.Rows.Count > 0)
+            //{
+            //    item = setData(item, conn.dt);
+            //}
+            return dt;
+        }
+        public ComboBox getCboMOUNumberMain(ComboBox c, String mouNumber)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectByNumberMain(mouNumber);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i]["num"].ToString() + "-" + dt.Rows[i]["cnt"].ToString();
+                item.Text = dt.Rows[i]["num"].ToString() + "-" + dt.Rows[i]["cnt"].ToString();
+                c.Items.Add(item);
+                //c.Items.Add(new );
+            }
+            //c.SelectedItem = item;
+            return c;
+        }
         private String NumberNull1(String o)
         {
             if (o.Equals(""))
@@ -339,6 +388,54 @@ namespace Cemp.objdb
             {
                 return o;
             }
+        }
+        private String UpdateMOUNumber1(String moId, String ity, String doc1, int max)
+        {
+            //MOUItem item = new MOUItem();
+            String sql = "", cnt = "", doc = "";
+            doc = "00000"+max.ToString();
+            doc = doc1 + doc.Substring(doc.Length - 5);
+            sql = "Update " + moi.table + " "+
+                "Set " + moi.MOUNumber + "='" + doc + "', " +
+                moi.MOUNumberCnt+"=1"+
+                " Where " + moi.MOUId + "='" + moId + "' and "+moi.ItemType+"='"+ity+"'";
+            //dt = conn.selectData(sql);
+            conn.ExecuteNonQuery(sql);
+
+            return "";
+        }
+        public void UpdateMOUNumber(String MOUNumberMain, ComboBox cboity)
+        {
+            String ity = "", max="", doc="";
+            DataTable dt = selectDistinctByMoId(MOUNumberMain);
+            if (dt.Rows.Count > 0)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    ity = dt.Rows[i][moi.ItemType].ToString();
+                    doc = getValueCboItem(cboity, ity);
+                    max = selectMaxByMoNumberMain(ity);
+                    if (max.Equals(""))
+                    {
+                        max = "00";
+                    }
+                    UpdateMOUNumber1(MOUNumberMain, ity, doc, (int.Parse(NumberNull1(max.Substring(2))) + 1));
+                }
+            }
+        }
+        public String getValueCboItem(ComboBox c, String text)
+        {
+            ComboBoxItem r = new ComboBoxItem();
+            r.Text = "";
+            r.Value = "";
+            foreach (ComboBoxItem cc in c.Items)
+            {
+                if (cc.Text.Equals(text))
+                {
+                    r = cc;
+                }
+            }
+            return r.Value;
         }
     }
 }

@@ -16,8 +16,8 @@ namespace Cemp.gui
     {
         CnviControl cc;
         Item it;
-        int colRow = 0, colNameT = 1, colNameE = 2, colMethod = 3, colGroup = 4, colRemark = 5, colId = 6;
-        int colCnt = 7;
+        int colRow = 0, colNameT = 1, colNameE = 2, colMethod = 3, colGroup = 4, colType=5, colVendor=6, colRemark = 7, colId = 8;
+        int colCnt = 9;
         Boolean pageLoad = false;
         DataTable dt = new DataTable();
         public FrmItemView(CnviControl c)
@@ -33,7 +33,8 @@ namespace Cemp.gui
             it = new Item();
             cboItemGroup = cc.itgdb.getCboItemGroup(cboItemGroup);
             cboMothod = cc.medb.getCboMethod(cboMothod);
-            setGrd("","");
+            cboDocType = cc.itydb.getCboDocType(cboDocType, "mou");
+            setGrd("","","");
             pageLoad = false;
         }
         private void setResize()
@@ -45,17 +46,17 @@ namespace Cemp.gui
             //groupBox1.Width = this.Width - 50;
             //groupBox1.Height = this.Height = 150;
         }
-        private void setGrd(String itgId, String meId)
+        private void setGrd(String itgId, String meId, String ITyId)
         {
             try
             {
-                if (itgId.Equals("") && meId.Equals(""))
+                if (itgId.Equals("") && meId.Equals("") && ITyId.Equals(""))
                 {
                     dt = cc.itdb.selectAll();
                 }
                 else
                 {
-                    dt = cc.itdb.selectByItGroupMethod(itgId, meId);
+                    dt = cc.itdb.selectByItGroupMethodType(itgId, meId, ITyId);
                 }
                 
                 dgvView.ColumnCount = colCnt;
@@ -66,8 +67,10 @@ namespace Cemp.gui
                 dgvView.Columns[colNameT].Width = 200;
                 dgvView.Columns[colNameE].Width = 200;
                 dgvView.Columns[colMethod].Width = 200;
-                dgvView.Columns[colGroup].Width = 200;
+                dgvView.Columns[colGroup].Width = 240;
                 dgvView.Columns[colRemark].Width = 200;
+                dgvView.Columns[colType].Width = 80;
+                dgvView.Columns[colVendor].Width = 150;
 
                 dgvView.Columns[colRow].HeaderText = "ลำดับ";
                 dgvView.Columns[colNameT].HeaderText = "ชื่อ";
@@ -75,7 +78,8 @@ namespace Cemp.gui
                 dgvView.Columns[colMethod].HeaderText = "วิธีการตรวจ";
                 dgvView.Columns[colGroup].HeaderText = "กลุ่ม";
                 dgvView.Columns[colRemark].HeaderText = "หมายเหตุ";
-                //dgvView.Columns[colPassword].HeaderText = "  ";
+                dgvView.Columns[colType].HeaderText = "TYPE";
+                dgvView.Columns[colVendor].HeaderText = "Vendor";
 
                 dgvView.Columns[colId].HeaderText = "id";
                 Font font = new Font("Microsoft Sans Serif", 12);
@@ -93,7 +97,8 @@ namespace Cemp.gui
                         dgvView[colGroup, i].Value = dt.Rows[i][cc.itdb.it.ItemGroupNameT].ToString();
                         dgvView[colRemark, i].Value = dt.Rows[i][cc.itdb.it.Remark].ToString();
                         dgvView[colId, i].Value = dt.Rows[i][cc.itdb.it.Id].ToString();
-
+                        dgvView[colType, i].Value = dt.Rows[i][cc.itdb.it.ItemType].ToString();
+                        dgvView[colVendor, i].Value = dt.Rows[i][cc.itdb.it.CustNameT].ToString();
                         if ((i % 2) != 0)
                         {
                             dgvView.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
@@ -117,7 +122,7 @@ namespace Cemp.gui
             FrmItemAdd frm = new FrmItemAdd("",cc);
             //frm.ShowDialog(this);
             frm.Show();
-            setGrd(cboItemGroup.Text, cboMothod.Text);
+            setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text);
         }
 
         private void FrmItemView_Resize(object sender, EventArgs e)
@@ -138,7 +143,7 @@ namespace Cemp.gui
             FrmItemAdd frm = new FrmItemAdd(dgvView[colId, e.RowIndex].Value.ToString(), cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
-            setGrd(cboItemGroup.Text, cboMothod.Text);
+            setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -154,7 +159,7 @@ namespace Cemp.gui
         {
             if (!pageLoad)
             {
-                setGrd(cboItemGroup.Text, cboMothod.Text);
+                setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text);
             }
             
         }
@@ -163,7 +168,7 @@ namespace Cemp.gui
         {
             if (!pageLoad)
             {
-                setGrd(cboItemGroup.Text, cboMothod.Text);
+                setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text);
             }
         }
 
@@ -171,13 +176,21 @@ namespace Cemp.gui
         {
             if (!pageLoad)
             {
-                setGrd(cboItemGroup.Text, cboMothod.Text);
+                setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text);
             }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            setGrd(cboItemGroup.Text, cboMothod.Text);
+            setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text);
+        }
+
+        private void cboDocType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!pageLoad)
+            {
+                setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text);
+            }
         }
     }
 }

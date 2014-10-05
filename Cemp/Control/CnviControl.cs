@@ -50,6 +50,7 @@ namespace Cemp.Control
         public String PathLogo;
 
         public LogWriter lw;
+        public ComboBox cboIty;
 
         public CnviControl()
         {
@@ -91,6 +92,8 @@ namespace Cemp.Control
                 lw = new LogWriter();
 
                 cp = cpdb.selectByPk();
+                cboIty = new ComboBox();
+                cboIty = itydb.getCboDocType(cboIty,"mou");
                 PathLogo = Environment.CurrentDirectory;
             }
             catch (Exception ex)
@@ -99,6 +102,15 @@ namespace Cemp.Control
                 MessageBox.Show(""+ex.Message, "Error");
             }
             
+        }
+        public void CloneItemType(ComboBox c)
+        {
+            //ComboBox cbo=new ComboBox();
+            foreach (ComboBoxItem cc in cboIty.Items)
+            {
+                c.Items.Add(cc);
+            }
+            //return cbo;
         }
         public String getTextCboItem(ComboBox c, String valueId)
         {
