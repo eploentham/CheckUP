@@ -183,7 +183,7 @@ namespace Cemp.objdb
                 p.MethodDescription + "','" + p.MethodId + "'," + NumberNull1(p.PriceSale.Replace(",", "")) + "," +
                 NumberNull1(p.Qty.Replace(",", "")) + ",'" + p.QuoId + "'," + NumberNull1(p.RowNumber) + ",'" +
                 p.Remark + "','" + p.ItemGroupNameE + "','" + p.ItemGroupNameT + "','" +
-                p.ItemGroupSort + "','" + p.ItemGroupId + "'," + NumberNull1(p.PriceCost.Replace(",", "")) + ",'" + p.ItemCode + ",'" + p.ItemType + "')";
+                p.ItemGroupSort + "','" + p.ItemGroupId + "'," + NumberNull1(p.PriceCost.Replace(",", "")) + ",'" + p.ItemCode + "','" + p.ItemType + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -234,7 +234,7 @@ namespace Cemp.objdb
                 qui.ItemGroupId + "='" + p.ItemGroupId + "', " +
                 qui.PriceCost + "=" + NumberNull1(p.PriceCost.Replace(",", "")) + ", " +
                 qui.ItemCode + "='" + p.ItemCode + "', " +
-                qui.ItemGroupId + "='" + p.ItemGroupId + "', " +
+                //qui.ItemGroupId + "='" + p.ItemGroupId + "', " +
                 qui.ItemType + "='" + p.ItemType + "' " +
                 "Where " + qui.pkField + "='" + p.Id + "'";
             try

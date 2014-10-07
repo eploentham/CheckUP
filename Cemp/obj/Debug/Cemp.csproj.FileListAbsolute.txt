@@ -34,7 +34,6 @@ D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.pdb
 D:\source\CNVI\CNVI.Cemp\Cemp\bin\Debug\Cemp.exe
 D:\source\CNVI\CNVI.Cemp\Cemp\bin\Debug\Cemp.pdb
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmQuotationAdd1.resources
-D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmItemGroupAdd.resources
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmItemGroupView.resources
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.FrmReport.resources
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmCompany.resources
@@ -79,3 +78,7 @@ D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmMOUAdd2.resources
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.csprojResolveAssemblyReference.cache
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmPOView.resources
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmPOAdd.resources
+D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmPOItemSearch.resources
+D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmAnalysisView.resources
+D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmAnalysisAdd.resources
+D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmItemGroupAdd.resources

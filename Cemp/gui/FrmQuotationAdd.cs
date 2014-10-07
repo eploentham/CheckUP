@@ -39,6 +39,10 @@ namespace Cemp.gui
             cp = cc.cpdb.selectByPk();
             txtVatRate.Text = cp.vat;
             dtpDateQu.Format = DateTimePickerFormat.Short;
+            cboComp = cc.cpdb.getCboCompany(cboComp);
+            cboCust = cc.cudb.getCboCustomer(cboCust);
+            cboStaff = cc.sfdb.getCboStaff(cboStaff);
+            cboStaffApprove = cc.sfdb.getCboStaff(cboStaffApprove);
             setControl(quId);
             setGrd(quId);
             pageLoad = false;
@@ -54,7 +58,6 @@ namespace Cemp.gui
             txtAmountCost.ReadOnly = true;
             //String lll = System.DateTime.Now.ToShortDateString() + " " + System.DateTime.Now.ToShortTimeString();
             txtAmountCost.Visible = flagViewCost;
-            
             //cc.lw.WriteLog("FrmQuotationAdd initConfig End " + ll + " " + System.DateTime.Now.ToShortDateString() + " " + System.DateTime.Now.ToShortTimeString());
         }
         private void setResize()
@@ -71,10 +74,7 @@ namespace Cemp.gui
         private void setControl(String quId)
         {
             qu = cc.qudb.selectByPk(quId);
-            cboComp = cc.cpdb.getCboCustomer(cboComp);
-            cboCust = cc.cudb.getCboCustomer(cboCust);
-            cboStaff = cc.sfdb.getCboStaff(cboStaff);
-            cboStaffApprove = cc.sfdb.getCboStaff(cboStaffApprove);
+            
             cboRemark1 = cc.qudb.getCboRemark1(cboRemark1);
             cboRemark2 = cc.qudb.getCboRemark2(cboRemark2);
             cboRemark3 = cc.qudb.getCboRemark3(cboRemark3);
@@ -400,6 +400,7 @@ namespace Cemp.gui
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            Boolean chkdel = false;
             String quId = "";
             if (txtQuNumber.Text.Equals(""))
             {
@@ -511,21 +512,28 @@ namespace Cemp.gui
                     qui.ItemGroupNameE = itg.NameE;
                     qui.ItemGroupSort = itg.Sort1;
                     qui.PriceCost = cc.cf.NumberNull1(dgvAdd[colPriceCost, i].Value.ToString());
-
+                    qui.ItemType = it.ItemType;
                     if (dgvAdd[colDel, i].Value.ToString().Equals("1"))
                     {
                         cc.quidb.VoidQuotationItem(dgvAdd[colId, i].Value.ToString());
+                        chkdel = true;
                     }
                     else
                     {
                         cc.quidb.insertQuotationItem(qui);
                     }
-                    
                 }
                 Quotation qu1 = cc.qudb.selectByPk(quId);
                 txtQuNumber.Text = qu1.QuoNumber+"-"+qu1.QuoNumberCnt;
                 txtQuId.Text = quId;
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
+                if (chkdel)
+                {
+                    delGrdDelete();
+                    calAmount();
+                    calNetTotal();
+                }
+                
                 btnPrint.Visible = true;
                 //this.Dispose();
                 //this.Hide();
@@ -615,7 +623,21 @@ namespace Cemp.gui
             }
             return row;
         }
-        
+        private void delGrdDelete()
+        {
+            for (int i = 0; i < dgvAdd.Rows.Count; i++)
+            {
+                if (dgvAdd[colDel, i].Value == null)
+                {
+                    continue;
+                }
+                if (dgvAdd[colDel, i].Value.ToString().Equals("1"))
+                {
+                    dgvAdd.Rows.RemoveAt(i);
+                    i--;
+                }
+            }
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -901,6 +923,8 @@ namespace Cemp.gui
                 txtPriceCost.Text = it.PriceCost;
                 txtItemQty.Text = "1.00";
                 calItemAmount();
+                txtItemQty.SelectAll();
+                txtItemQty.Focus();
             }
         }
 
@@ -1114,6 +1138,14 @@ namespace Cemp.gui
             {
                 cc.qudb.VoidQuotation(txtQuId.Text);
                 this.Dispose();
+            }
+        }
+
+        private void txtItemQty_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                setItemtoGrd(cc.getValueCboItem(cboItem), getRow());
             }
         }
 

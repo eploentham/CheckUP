@@ -48,16 +48,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cboComp = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtpDateQu = new System.Windows.Forms.DateTimePicker();
+            this.dtpDatePo = new System.Windows.Forms.DateTimePicker();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.txtQuNumber = new System.Windows.Forms.TextBox();
+            this.txtPONumber = new System.Windows.Forms.TextBox();
             this.dgvAdd = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cboRemark5 = new System.Windows.Forms.ComboBox();
             this.label36 = new System.Windows.Forms.Label();
             this.cboRemark4 = new System.Windows.Forms.ComboBox();
+            this.btnUnActive = new System.Windows.Forms.Button();
+            this.ChkUnActive = new System.Windows.Forms.RadioButton();
             this.label35 = new System.Windows.Forms.Label();
+            this.chkActive = new System.Windows.Forms.RadioButton();
             this.cboRemark3 = new System.Windows.Forms.ComboBox();
             this.cboRemark2 = new System.Windows.Forms.ComboBox();
             this.cboRemark1 = new System.Windows.Forms.ComboBox();
@@ -81,12 +84,13 @@
             this.label11 = new System.Windows.Forms.Label();
             this.cboStaffApprove = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.btnUnActive = new System.Windows.Forms.Button();
-            this.ChkUnActive = new System.Windows.Forms.RadioButton();
-            this.chkActive = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnSearchQu = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.btnPrintT = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
@@ -106,19 +110,19 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.cboCust);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(559, 40);
+            this.groupBox2.Location = new System.Drawing.Point(553, 11);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(503, 135);
+            this.groupBox2.Size = new System.Drawing.Size(516, 135);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "รายละเอียด ลูกค้า";
+            this.groupBox2.Text = "รายละเอียด Vendor";
             // 
             // txtCustEmail
             // 
             this.txtCustEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCustEmail.Location = new System.Drawing.Point(67, 103);
+            this.txtCustEmail.Location = new System.Drawing.Point(74, 103);
             this.txtCustEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustEmail.Name = "txtCustEmail";
             this.txtCustEmail.Size = new System.Drawing.Size(432, 23);
@@ -128,7 +132,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label10.Location = new System.Drawing.Point(12, 105);
+            this.label10.Location = new System.Drawing.Point(7, 105);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(50, 17);
@@ -138,7 +142,7 @@
             // txtCustFax
             // 
             this.txtCustFax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCustFax.Location = new System.Drawing.Point(317, 72);
+            this.txtCustFax.Location = new System.Drawing.Point(324, 72);
             this.txtCustFax.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustFax.Name = "txtCustFax";
             this.txtCustFax.Size = new System.Drawing.Size(182, 23);
@@ -148,7 +152,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label9.Location = new System.Drawing.Point(270, 76);
+            this.label9.Location = new System.Drawing.Point(277, 76);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 17);
@@ -158,7 +162,7 @@
             // txtCustTel
             // 
             this.txtCustTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCustTel.Location = new System.Drawing.Point(67, 73);
+            this.txtCustTel.Location = new System.Drawing.Point(74, 73);
             this.txtCustTel.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustTel.Name = "txtCustTel";
             this.txtCustTel.Size = new System.Drawing.Size(199, 23);
@@ -168,7 +172,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label8.Location = new System.Drawing.Point(12, 75);
+            this.label8.Location = new System.Drawing.Point(7, 75);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(37, 17);
@@ -178,7 +182,7 @@
             // txtCustAddress
             // 
             this.txtCustAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCustAddress.Location = new System.Drawing.Point(67, 46);
+            this.txtCustAddress.Location = new System.Drawing.Point(74, 46);
             this.txtCustAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustAddress.Name = "txtCustAddress";
             this.txtCustAddress.Size = new System.Drawing.Size(432, 23);
@@ -188,7 +192,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label7.Location = new System.Drawing.Point(12, 49);
+            this.label7.Location = new System.Drawing.Point(7, 49);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 17);
@@ -199,22 +203,23 @@
             // 
             this.cboCust.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.cboCust.FormattingEnabled = true;
-            this.cboCust.Location = new System.Drawing.Point(67, 17);
+            this.cboCust.Location = new System.Drawing.Point(74, 17);
             this.cboCust.Margin = new System.Windows.Forms.Padding(2);
             this.cboCust.Name = "cboCust";
             this.cboCust.Size = new System.Drawing.Size(367, 25);
             this.cboCust.TabIndex = 3;
+            this.cboCust.SelectedIndexChanged += new System.EventHandler(this.cboCust_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label5.Location = new System.Drawing.Point(12, 20);
+            this.label5.Location = new System.Drawing.Point(7, 20);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 17);
+            this.label5.Size = new System.Drawing.Size(60, 17);
             this.label5.TabIndex = 2;
-            this.label5.Text = "ลูกค้า :";
+            this.label5.Text = "vendor :";
             // 
             // groupBox1
             // 
@@ -316,14 +321,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "บริษัท :";
             // 
-            // dtpDateQu
+            // dtpDatePo
             // 
-            this.dtpDateQu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dtpDateQu.Location = new System.Drawing.Point(416, 11);
-            this.dtpDateQu.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpDateQu.Name = "dtpDateQu";
-            this.dtpDateQu.Size = new System.Drawing.Size(106, 23);
-            this.dtpDateQu.TabIndex = 29;
+            this.dtpDatePo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dtpDatePo.Location = new System.Drawing.Point(416, 11);
+            this.dtpDatePo.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpDatePo.Name = "dtpDatePo";
+            this.dtpDatePo.Size = new System.Drawing.Size(106, 23);
+            this.dtpDatePo.TabIndex = 29;
             // 
             // label27
             // 
@@ -347,14 +352,14 @@
             this.label28.TabIndex = 27;
             this.label28.Text = "เลขที่ :";
             // 
-            // txtQuNumber
+            // txtPONumber
             // 
-            this.txtQuNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtQuNumber.Location = new System.Drawing.Point(78, 11);
-            this.txtQuNumber.Margin = new System.Windows.Forms.Padding(2);
-            this.txtQuNumber.Name = "txtQuNumber";
-            this.txtQuNumber.Size = new System.Drawing.Size(138, 23);
-            this.txtQuNumber.TabIndex = 26;
+            this.txtPONumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtPONumber.Location = new System.Drawing.Point(78, 11);
+            this.txtPONumber.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPONumber.Name = "txtPONumber";
+            this.txtPONumber.Size = new System.Drawing.Size(138, 23);
+            this.txtPONumber.TabIndex = 26;
             // 
             // dgvAdd
             // 
@@ -366,13 +371,21 @@
             this.dgvAdd.RowTemplate.Height = 24;
             this.dgvAdd.Size = new System.Drawing.Size(839, 309);
             this.dgvAdd.TabIndex = 30;
+            this.dgvAdd.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvAdd_CellBeginEdit);
+            this.dgvAdd.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdd_CellEndEdit);
+            this.dgvAdd.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdd_CellEnter);
+            this.dgvAdd.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdd_CellLeave);
+            this.dgvAdd.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvAdd_CellValidating);
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.cboRemark5);
             this.groupBox4.Controls.Add(this.label36);
             this.groupBox4.Controls.Add(this.cboRemark4);
+            this.groupBox4.Controls.Add(this.btnUnActive);
+            this.groupBox4.Controls.Add(this.ChkUnActive);
             this.groupBox4.Controls.Add(this.label35);
+            this.groupBox4.Controls.Add(this.chkActive);
             this.groupBox4.Controls.Add(this.cboRemark3);
             this.groupBox4.Controls.Add(this.cboRemark2);
             this.groupBox4.Controls.Add(this.cboRemark1);
@@ -383,7 +396,7 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(490, 171);
+            this.groupBox4.Size = new System.Drawing.Size(490, 218);
             this.groupBox4.TabIndex = 31;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "หมายเหตุ";
@@ -419,6 +432,28 @@
             this.cboRemark4.Size = new System.Drawing.Size(446, 25);
             this.cboRemark4.TabIndex = 32;
             // 
+            // btnUnActive
+            // 
+            this.btnUnActive.Location = new System.Drawing.Point(399, 176);
+            this.btnUnActive.Name = "btnUnActive";
+            this.btnUnActive.Size = new System.Drawing.Size(86, 23);
+            this.btnUnActive.TabIndex = 69;
+            this.btnUnActive.Text = "ยกเลิกการใช้งาน";
+            this.btnUnActive.UseVisualStyleBackColor = true;
+            // 
+            // ChkUnActive
+            // 
+            this.ChkUnActive.AutoSize = true;
+            this.ChkUnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.ChkUnActive.Location = new System.Drawing.Point(337, 176);
+            this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2);
+            this.ChkUnActive.Name = "ChkUnActive";
+            this.ChkUnActive.Size = new System.Drawing.Size(60, 21);
+            this.ChkUnActive.TabIndex = 68;
+            this.ChkUnActive.TabStop = true;
+            this.ChkUnActive.Text = "ยกเลิก";
+            this.ChkUnActive.UseVisualStyleBackColor = true;
+            // 
             // label35
             // 
             this.label35.AutoSize = true;
@@ -429,6 +464,19 @@
             this.label35.Size = new System.Drawing.Size(24, 17);
             this.label35.TabIndex = 31;
             this.label35.Text = "4 :";
+            // 
+            // chkActive
+            // 
+            this.chkActive.AutoSize = true;
+            this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.chkActive.Location = new System.Drawing.Point(264, 176);
+            this.chkActive.Margin = new System.Windows.Forms.Padding(2);
+            this.chkActive.Name = "chkActive";
+            this.chkActive.Size = new System.Drawing.Size(61, 21);
+            this.chkActive.TabIndex = 67;
+            this.chkActive.TabStop = true;
+            this.chkActive.Text = "ใช้งาน";
+            this.chkActive.UseVisualStyleBackColor = true;
             // 
             // cboRemark3
             // 
@@ -655,9 +703,9 @@
             this.label11.Location = new System.Drawing.Point(587, 653);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(78, 17);
+            this.label11.Size = new System.Drawing.Size(53, 17);
             this.label11.TabIndex = 35;
-            this.label11.Text = "ผู้เสนอราคา :";
+            this.label11.Text = "ผู้จัดทำ :";
             // 
             // cboStaffApprove
             // 
@@ -676,85 +724,102 @@
             this.label26.Location = new System.Drawing.Point(587, 706);
             this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(124, 17);
+            this.label26.Size = new System.Drawing.Size(56, 17);
             this.label26.TabIndex = 33;
-            this.label26.Text = "ผู้อนุมัติใบเสนอราคา :";
-            // 
-            // btnUnActive
-            // 
-            this.btnUnActive.Location = new System.Drawing.Point(400, 706);
-            this.btnUnActive.Name = "btnUnActive";
-            this.btnUnActive.Size = new System.Drawing.Size(86, 23);
-            this.btnUnActive.TabIndex = 69;
-            this.btnUnActive.Text = "ยกเลิกการใช้งาน";
-            this.btnUnActive.UseVisualStyleBackColor = true;
-            // 
-            // ChkUnActive
-            // 
-            this.ChkUnActive.AutoSize = true;
-            this.ChkUnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.ChkUnActive.Location = new System.Drawing.Point(338, 706);
-            this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2);
-            this.ChkUnActive.Name = "ChkUnActive";
-            this.ChkUnActive.Size = new System.Drawing.Size(60, 21);
-            this.ChkUnActive.TabIndex = 68;
-            this.ChkUnActive.TabStop = true;
-            this.ChkUnActive.Text = "ยกเลิก";
-            this.ChkUnActive.UseVisualStyleBackColor = true;
-            // 
-            // chkActive
-            // 
-            this.chkActive.AutoSize = true;
-            this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chkActive.Location = new System.Drawing.Point(265, 706);
-            this.chkActive.Margin = new System.Windows.Forms.Padding(2);
-            this.chkActive.Name = "chkActive";
-            this.chkActive.Size = new System.Drawing.Size(61, 21);
-            this.chkActive.TabIndex = 67;
-            this.chkActive.TabStop = true;
-            this.chkActive.Text = "ใช้งาน";
-            this.chkActive.UseVisualStyleBackColor = true;
+            this.label26.Text = "ผู้อนุมัติ :";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label6.Location = new System.Drawing.Point(563, 14);
+            this.label6.Location = new System.Drawing.Point(560, 155);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(156, 17);
+            this.label6.Size = new System.Drawing.Size(73, 17);
             this.label6.TabIndex = 70;
-            this.label6.Text = "ดึงข้อมูลจากข้อตกลง เลขที่ :";
+            this.label6.Text = "ดึงข้อมูลจาก";
             // 
-            // button1
+            // btnSearchQu
             // 
-            this.button1.Location = new System.Drawing.Point(910, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(34, 23);
-            this.button1.TabIndex = 71;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSearchQu.Location = new System.Drawing.Point(921, 151);
+            this.btnSearchQu.Name = "btnSearchQu";
+            this.btnSearchQu.Size = new System.Drawing.Size(34, 23);
+            this.btnSearchQu.TabIndex = 71;
+            this.btnSearchQu.Text = "...";
+            this.btnSearchQu.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // radioButton1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox1.Location = new System.Drawing.Point(723, 13);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(182, 23);
-            this.textBox1.TabIndex = 72;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.radioButton1.Location = new System.Drawing.Point(722, 153);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(94, 21);
+            this.radioButton1.TabIndex = 74;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "ใบเสนอราคา";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.radioButton2.Location = new System.Drawing.Point(650, 153);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(68, 21);
+            this.radioButton2.TabIndex = 73;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "ใบสั่งซื้อ";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.radioButton3.Location = new System.Drawing.Point(820, 153);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(84, 21);
+            this.radioButton3.TabIndex = 75;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "ใบข้อตกลง";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // btnPrintT
+            // 
+            this.btnPrintT.Location = new System.Drawing.Point(1073, 101);
+            this.btnPrintT.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPrintT.Name = "btnPrintT";
+            this.btnPrintT.Size = new System.Drawing.Size(56, 29);
+            this.btnPrintT.TabIndex = 76;
+            this.btnPrintT.Text = "พิมพ์";
+            this.btnPrintT.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(1073, 14);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(56, 29);
+            this.btnSave.TabIndex = 77;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FrmPOAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1115, 772);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1159, 772);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnPrintT);
+            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.btnSearchQu);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.btnUnActive);
-            this.Controls.Add(this.ChkUnActive);
-            this.Controls.Add(this.chkActive);
             this.Controls.Add(this.txtStaffTel);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.cboStaff);
@@ -764,15 +829,18 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.dgvAdd);
-            this.Controls.Add(this.dtpDateQu);
+            this.Controls.Add(this.dtpDatePo);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label28);
-            this.Controls.Add(this.txtQuNumber);
+            this.Controls.Add(this.txtPONumber);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "FrmPOAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPOAdd";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmPOAdd_Load);
+            this.Resize += new System.EventHandler(this.FrmPOAdd_Resize);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -809,10 +877,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboComp;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dtpDateQu;
+        private System.Windows.Forms.DateTimePicker dtpDatePo;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox txtQuNumber;
+        private System.Windows.Forms.TextBox txtPONumber;
         private System.Windows.Forms.DataGridView dgvAdd;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ComboBox cboRemark5;
@@ -846,7 +914,11 @@
         private System.Windows.Forms.RadioButton ChkUnActive;
         private System.Windows.Forms.RadioButton chkActive;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnSearchQu;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.Button btnPrintT;
+        private System.Windows.Forms.Button btnSave;
     }
 }

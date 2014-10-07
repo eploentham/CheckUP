@@ -960,3 +960,12 @@ Log Entry : 12:07:15 17 กันยายน 2557
 24/9/2557 12:41->rpt.setReportQuotation OK 
 24/9/2557 12:41->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
 24/9/2557 12:41->rpt.setReportQuotation OK SetDataSource
+7/10/2557 16:26->FrmCustAdd.cboDistrict_KeyUp Error Object reference not set to an instance of an object.
+7/10/2557 16:26->FrmCustAdd.cboDistrict_KeyUp Error Object reference not set to an instance of an object.
+7/10/2557 16:27->FrmCustAdd.cboDistrict_KeyUp Error Index and length must refer to a location within the string.
+Parameter name: length
+7/10/2557 16:27->FrmCustAdd.cboDistrict_KeyUp Error Index and length must refer to a location within the string.
+Parameter name: length
+7/10/2557 16:27->FrmCustAdd.cboDistrict_KeyUp Error Index and length must refer to a location within the string.
+Parameter name: length
+7/10/2557 16:27->FrmCustAdd.cboDistrict_KeyUp Error Object reference not set to an instance of an object.

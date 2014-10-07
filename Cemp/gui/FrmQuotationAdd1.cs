@@ -57,7 +57,7 @@ namespace Cemp.gui
         private void setControl(String quId)
         {
             qu = cc.qudb.selectByPk(quId);
-            cboComp = cc.cpdb.getCboCustomer(cboComp);
+            cboComp = cc.cpdb.getCboCompany(cboComp);
             cboCust = cc.cudb.getCboCustomer(cboCust);
             cboStaff = cc.sfdb.getCboStaff(cboStaff);
             cboStaffApprove = cc.sfdb.getCboStaff(cboStaffApprove);

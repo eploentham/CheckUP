@@ -1027,6 +1027,7 @@
             this.txtItemQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtItemQty.Enter += new System.EventHandler(this.txtItemQty_Enter);
             this.txtItemQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemQty_KeyPress);
+            this.txtItemQty.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtItemQty_KeyUp);
             this.txtItemQty.Leave += new System.EventHandler(this.txtItemQty_Leave);
             // 
             // label32

@@ -282,7 +282,7 @@ namespace Cemp.objdb
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
-        public ComboBox getCboCustomer(ComboBox c)
+        public ComboBox getCboCompany(ComboBox c)
         {
             ComboBoxItem item = new ComboBoxItem();
             DataTable dt = selectAll();

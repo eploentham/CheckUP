@@ -502,18 +502,20 @@ namespace Cemp.objdb
         }
         public String getQuoNumber(String quoNumber)
         {
-            String sql = "", doc="", cnt="",year="";
+            String sql = "", doc="", cnt="",year="", month="";
             String[] doc1 = quoNumber.Split('-');
             if (!quoNumber.Equals(""))
             {
                 if (doc[0].ToString().Length > 5)
                 {
-                    year = doc[0].ToString().Substring(2, 2);
+                    year = doc[0].ToString().Substring(1, 2);
+                    month = doc[0].ToString().Substring(3, 2);
                 }
             }
             else
             {
                 year = getYear();
+                month = System.DateTime.Now.Month.ToString("00");
             }
             sql = "Select count("+qu.QuoNumber+") as cnt From "+qu.table+" Where +"+qu.QuoNumber+"='"+doc1[0]+"'";
             DataTable dt = conn.selectData(sql);
@@ -532,12 +534,12 @@ namespace Cemp.objdb
                 sql = "Select count(" + qu.QuoNumber + ") as cnt From " + qu.table ;
                 dt = conn.selectData(sql);
                 doc = String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);
-                doc = "00000" + doc;
-                doc = doc.Substring(doc.Length - 5);
+                doc = "000" + doc;
+                doc = doc.Substring(doc.Length - 3);
                 cnt = "1";
                 //doc = "00001";
             }
-            return "QUO"+year+doc+"-"+cnt;
+            return "Q" + year + month + doc + "-" + cnt;
         }
         public ComboBox getCboRemark1(ComboBox c)
         {

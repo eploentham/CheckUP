@@ -40,6 +40,9 @@ namespace Cemp.Control
         public ResultDB rsdb;
         public ResultItemDB rsidb;
         public ItemTypeDB itydb;
+        public PODB podb;
+        public POItemDB poidb;
+        public AnalysisDB andb;
 
         public Staff sf;
         public Company cp;
@@ -88,6 +91,9 @@ namespace Cemp.Control
                 rsdb = new ResultDB(conn);
                 rsidb = new ResultItemDB(conn);
                 itydb = new ItemTypeDB(conn);
+                podb = new PODB(conn);
+                poidb = new POItemDB(conn);
+                andb = new AnalysisDB(conn);
 
                 lw = new LogWriter();
 

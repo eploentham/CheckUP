@@ -280,8 +280,8 @@ namespace Cemp.objdb
                 moi.ItemGroupSort + "='" + p.ItemGroupSort + "', " +
                 moi.ItemGroupId + "='" + p.ItemGroupId + "', " +
                 moi.DatePlaceRecord + "='" + p.DatePlaceRecord + "', " +
-                moi.MOUNumber + "='" + p.MOUNumber + "', " +
-                moi.MOUNumberCnt + "=" + p.MOUNumberCnt + ", " +
+                //moi.MOUNumber + "='" + p.MOUNumber + "', " +
+                //moi.MOUNumberCnt + "=" + p.MOUNumberCnt + ", " +
                 moi.MOUNumberMain + "='" + p.MOUNumberMain + "', " +
                 moi.ItemType + "='" + p.ItemType + "' " +
                 //moi.Amount + "=" + p.Amount + ", " +
@@ -377,6 +377,7 @@ namespace Cemp.objdb
         {
             ComboBoxItem item = new ComboBoxItem();
             DataTable dt = selectByNumberMain(mouNumber);
+            c.Items.Clear();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 item = new ComboBoxItem();
@@ -429,24 +430,43 @@ namespace Cemp.objdb
                     {
                         max = "00";
                     }
+                    else if(max.Length>2)
+                    {
+                        max = max.Substring(2);
+                    }
+                    
+                    if (max.IndexOf("-")>0)
+                    {
+                        max = max.Substring(0,max.IndexOf("-"));
+                    }
                     UpdateMOUNumber1(MOUNumberMain, ity, doc, (int.Parse(NumberNull1(max.Substring(2))) + 1));
                 }
             }
         }
-        public void UpdateMaxMOUNumber(String moId, String ity)
+        public void UpdateMaxMOUNumber(String moId, String moNumber, String ity)
         {
-            String max = "", sql="";
-            max = selectMaxByMoNumber1(moId,ity);
+            String max = "", sql="", mo1="";
+            //max = selectMaxByMoNumber1(moId,ity);            
+            if (moNumber.IndexOf("-") > 0)
+            {
+                mo1 = moNumber.Substring(0, moNumber.IndexOf("-"));
+                max = moNumber.Substring(moNumber.IndexOf("-"));
+                max = max.Replace("-", "");
+            }
+            else
+            {
+                mo1 = moNumber;
+            }
             if (max.Equals(""))
             {
                 max = "00";
             }
-            max = String.Concat(int.Parse(max.Substring(max.Length-2)) + 1);
+            max = String.Concat(int.Parse(max) + 1);
             sql = "Update " + moi.table + " " +
                 "Set " + moi.MOUNumberCnt + "='" + max+"' " +
-                " Where " + moi.MOUId + "='" + moId + "' and " + moi.ItemType + "='" + ity + "'";
+                " Where " + moi.MOUId + "='" + moId + "' and " + moi.ItemType + "='" + ity + "' and " + moi.MOUNumber + "='" + mo1 + "'";
             //dt = conn.selectData(sql);
-            conn.ExecuteNonQuery(sql);
+            sql = conn.ExecuteNonQuery(sql);
             //UpdateMOUNumber1(MOUNumber, ity, doc, (int.Parse(NumberNull1(max.Substring(2))) + 1));
 
         }

@@ -29,8 +29,9 @@ namespace Cemp.gui
         DateTimeFormatInfo df;
         List<String> ldate;
         List<String> lplace;
+        List<String> ltype;
         //DataGridView dgv;
-        String editItemTypeOld = "";
+        String editItemTypeOld = "", editPlaceOld="", editDateOld="";
         public FrmMOUAdd(String moNumber, Boolean flagNew, CnviControl c)
         {
             mouNew = flagNew;
@@ -51,6 +52,7 @@ namespace Cemp.gui
             cbo.SelectedValueChanged += new EventHandler(cboValueChanged);
             ldate = new List<string>();
             lplace = new List<string>();
+            ltype = new List<string>();
             cc = c;
             mo = new MOU();
             qu = new Quotation();
@@ -200,7 +202,7 @@ namespace Cemp.gui
             //it.ItemGroupId = cc.getValueCboItem(cboGroup);
 
             mo.Id = txtMOUId.Text;
-            mo.MOUNumberMain = cboMOU.Text;
+            mo.MOUNumberMain = txtMOUNumber.Text;
             //mo.DatePeriod = txtDatePeriod.Text;
             mo.StaffMOUName = cboStaffMOU.Text;
             mo.StaffMOUId = cc.getValueCboItem(cboStaffPlaceRecord);
@@ -342,6 +344,15 @@ namespace Cemp.gui
                 lplace.Add(dt.Rows[i][cc.moidb.moi.PlaceRecord].ToString());
             }
         }
+        private void setLType1(String moNumber)
+        {
+            ltype.Clear();
+            DataTable dt = cc.moidb.selectPlaceByNumber(moNumber);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                ltype.Add(dt.Rows[i][cc.moidb.moi.ItemType].ToString());
+            }
+        }
         private void setResize()
         {
             dgvAdd.Width = this.Width - 80;
@@ -400,7 +411,7 @@ namespace Cemp.gui
             txtStaffMOUMobile.Text = sf.Mobile;
             txtStaffMOUTel.Text = sf.Tele;
         }
-        private void setGrdRow(String itId, String itDescription,String meId, String meDescription)
+        private void setGrdRow(String itId, String itDescription,String meId, String meDescription, String ity)
         {
             int row = dgvAdd.Rows.Add();
             dgvAdd[colRow, row].Value = (row + 1);
@@ -415,7 +426,7 @@ namespace Cemp.gui
             dgvAdd[colMOUNumber, row].Value = "";
             dgvAdd[colDel, row].Value = "";
             dgvAdd[colEdit, row].Value = "";
-            //dgvAdd[colPriceSale, row].Value = priceSale;
+            dgvAdd[colItemType, row].Value = ity;
             //dgvAdd[colPriceCost, row].Value = priceCost;
             //dgvAdd[colAmount, row].Value = amount;
             //dgvAdd[colDiscount, row].Value = discount;
@@ -441,7 +452,7 @@ namespace Cemp.gui
                         for (int j = 0; j < sample; j++)
                         {
                             setGrdRow(dt.Rows[i][cc.quidb.qui.ItemId].ToString(), dt.Rows[i][cc.quidb.qui.ItemDescription].ToString(),
-                            dt.Rows[i][cc.quidb.qui.MethodId].ToString(), dt.Rows[i][cc.quidb.qui.MethodDescription].ToString());
+                            dt.Rows[i][cc.quidb.qui.MethodId].ToString(), dt.Rows[i][cc.quidb.qui.MethodDescription].ToString(), dt.Rows[i][cc.quidb.qui.ItemType].ToString());
                         }
                     }
                     setGrdColor();
@@ -673,8 +684,7 @@ namespace Cemp.gui
             {
                 SortGrdDatePlaceRecord();
                 setMOUNumberCnt();
-            }
-            
+            }            
             getMOU();
             //if (mo.Id.Equals("") && (!MOUSplit))
             if (mouNew)
@@ -750,7 +760,11 @@ namespace Cemp.gui
                     moi.Discount = "0";
                     moi.Amount = String.Concat(Double.Parse(moi.PriceSale) * int.Parse(moi.Sample));
                     moi.ItemType = dgvAdd[colItemType, i].Value.ToString();
-                    moi.MOUNumber = cboMOU.Text;
+                    //if (cboMOU.Text.IndexOf("-"))
+                    //{
+                    //    moi.MOUNumber = cboMOU.Text;
+                    //}
+                    
                     if (dgvAdd[colEdit, i].Value.Equals("1"))
                     {
                         chkEdit = true;
@@ -784,7 +798,7 @@ namespace Cemp.gui
                 }
                 else if(chkEdit)
                 {
-                    cc.moidb.UpdateMaxMOUNumber(moId, ity);
+                    cc.moidb.UpdateMaxMOUNumber(moId, cboMOU.Text, ity);
                 }
                 
                 MOU mo1 = cc.modb.selectByPk(moId);
@@ -957,19 +971,42 @@ namespace Cemp.gui
                 {
                     dgvAdd[colDatePlaceRecord, e.RowIndex].Style.BackColor = Color.White;
                 }
-                
+                if (!mouNew)
+                {
+                    if ((dgvAdd[colDatePlaceRecord, e.RowIndex].Value != null) && (!editDateOld.Equals(dgvAdd[colDatePlaceRecord, e.RowIndex].Value.ToString())))
+                    {
+                        dgvAdd[colEdit, e.RowIndex].Value = "1";
+                        dgvAdd[colRow, e.RowIndex].Style.BackColor = Color.Olive;
+                    }
+                }
             }
             else if (e.ColumnIndex == colPlace)
             {
-                if ((dgvAdd.CurrentCell.Value.ToString().Equals("")))
+                if (dgvAdd.CurrentCell.Value == null)
+                {
+                    return;
+                }
+                if (dgvAdd.CurrentCell.Value.ToString().Equals(""))
                 {
                     return;
                 }
                 setLPace(dgvAdd.CurrentCell.Value.ToString());
+                if (!mouNew)
+                {
+                    if ((dgvAdd[colPlace, e.RowIndex].Value != null) && (!editPlaceOld.Equals(dgvAdd[colPlace, e.RowIndex].Value.ToString())))
+                    {
+                        dgvAdd[colEdit, e.RowIndex].Value = "1";
+                        dgvAdd[colRow, e.RowIndex].Style.BackColor = Color.Olive;
+                    }
+                }
             }
             else if (e.ColumnIndex == colItemType)
             {
-                if ((dgvAdd.CurrentCell.Value.ToString().Equals("")))
+                if (dgvAdd.CurrentCell.Value==null)
+                {
+                    return;
+                }
+                if (dgvAdd.CurrentCell.Value.ToString().Equals(""))
                 {
                     return;
                 }
@@ -982,10 +1019,14 @@ namespace Cemp.gui
                 {
                     dgvAdd[colItemType, e.RowIndex].Style.BackColor = Color.White;
                 }
+                setLType(dgvAdd.CurrentCell.Value.ToString());
                 if ((dgvAdd[colItemType, e.RowIndex].Value!=null) && (!editItemTypeOld.Equals(dgvAdd[colItemType, e.RowIndex].Value.ToString())))
                 {
-                    dgvAdd[colEdit, e.RowIndex].Value = "1";
-                    dgvAdd[colRow, e.RowIndex].Style.BackColor = Color.Olive;
+                    if (!mouNew)
+                    {
+                        dgvAdd[colEdit, e.RowIndex].Value = "1";
+                        dgvAdd[colRow, e.RowIndex].Style.BackColor = Color.Olive;
+                    }
                 }
             }
         }
@@ -1017,6 +1058,21 @@ namespace Cemp.gui
             if (!chk && (!input1.Equals("")))
             {
                 lplace.Add(input1);
+            }
+        }
+        private void setLType(String input1)
+        {
+            Boolean chk = false;
+            for (int i = 0; i < ltype.Count; i++)
+            {
+                if (ltype[i].Equals(input1))
+                {
+                    chk = true;
+                }
+            }
+            if (!chk && (!input1.Equals("")))
+            {
+                ltype.Add(input1);
             }
         }
         private void mnuCost_Click(object sender, EventArgs e)
@@ -1077,7 +1133,20 @@ namespace Cemp.gui
 
                     m.Show(dgvAdd, new Point(Cursor.Position.X - 80, Cursor.Position.Y - 250));
                 }
-                
+                else if (e.ColumnIndex == colItemType)
+                {
+                    ContextMenu m = new ContextMenu();
+                    //m.MenuItems.Add(new MenuItem(" ดูข้อมูลต้นทุน"));
+                    for (int i = 0; i < ltype.Count; i++)
+                    {
+                        m.MenuItems.Add(ltype[i], new EventHandler(mnuCost_Click));
+                    }
+                    int xOffset = Cursor.Position.X - this.Location.X;
+                    int yOffset = Cursor.Position.Y - this.Location.Y;
+                    int currentMouseOverRow = dgvAdd.HitTest(Cursor.Position.X, Cursor.Position.Y).RowIndex;
+
+                    m.Show(dgvAdd, new Point(Cursor.Position.X - 80, Cursor.Position.Y - 250));
+                }
                 //m.Show(dgvAdd, new Point(xOffset, yOffset));
             }
         }
@@ -1146,6 +1215,9 @@ namespace Cemp.gui
         private void dgvAdd_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             //int index = dgvAdd.CurrentCell.ColumnIndex;
+            editItemTypeOld = "";
+            editPlaceOld = "";
+            editDateOld = "";
             if (dgvAdd.CurrentCell.ColumnIndex == colItemType)
             {
                 if (dgvAdd[colItemType, e.RowIndex].Value != null)
@@ -1169,6 +1241,14 @@ namespace Cemp.gui
                     cbo.Text = "22";
                 }
                 cbo.Visible = true;
+            }
+            else if ((dgvAdd.CurrentCell.ColumnIndex == colPlace) && (dgvAdd[colPlace, e.RowIndex].Value != null))
+            {
+                editPlaceOld = dgvAdd[colPlace, e.RowIndex].Value.ToString();
+            }
+            else if ((dgvAdd.CurrentCell.ColumnIndex == colDatePlaceRecord) && (dgvAdd[colDatePlaceRecord, e.RowIndex].Value != null))
+            {
+                editDateOld = dgvAdd[colDatePlaceRecord, e.RowIndex].Value.ToString();
             }
         }
 

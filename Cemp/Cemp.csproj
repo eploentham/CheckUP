@@ -58,6 +58,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Control\CnviControl.cs" />
+    <Compile Include="gui\FrmAnalysisAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmAnalysisAdd.Designer.cs">
+      <DependentUpon>FrmAnalysisAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmAnalysisView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmAnalysisView.Designer.cs">
+      <DependentUpon>FrmAnalysisView.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmInvoiceAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +81,18 @@
     </Compile>
     <Compile Include="gui\FrmInvoiceView.Designer.cs">
       <DependentUpon>FrmInvoiceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmItemGroupAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmItemGroupAdd.Designer.cs">
+      <DependentUpon>FrmItemGroupAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmItemGroupView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmItemGroupView.Designer.cs">
+      <DependentUpon>FrmItemGroupView.cs</DependentUpon>
     </Compile>
     <Compile Include="gui\FrmItemSearch.cs">
       <SubType>Form</SubType>
@@ -106,6 +130,12 @@
     <Compile Include="gui\FrmPOAdd.Designer.cs">
       <DependentUpon>FrmPOAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmPOItemSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmPOItemSearch.Designer.cs">
+      <DependentUpon>FrmPOItemSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmPOView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,18 +147,6 @@
     </Compile>
     <Compile Include="gui\FrmQuotationAdd1.Designer.cs">
       <DependentUpon>FrmQuotationAdd1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="gui\FrmItemGroupAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="gui\FrmItemGroupAdd.Designer.cs">
-      <DependentUpon>FrmItemGroupAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="gui\FrmItemGroupView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="gui\FrmItemGroupView.Designer.cs">
-      <DependentUpon>FrmItemGroupView.cs</DependentUpon>
     </Compile>
     <Compile Include="gui\FrmReport.cs">
       <SubType>Form</SubType>
@@ -257,6 +275,7 @@
       <DependentUpon>FrmStaffView.cs</DependentUpon>
     </Compile>
     <Compile Include="objdb\AmphurDB.cs" />
+    <Compile Include="objdb\AnalysisDB.cs" />
     <Compile Include="objdb\ItemTypeDB.cs" />
     <Compile Include="objdb\InvoiceDB.cs" />
     <Compile Include="objdb\InvoiceItemDB.cs" />
@@ -278,6 +297,7 @@
     <Compile Include="objdb\ResultItemDB.cs" />
     <Compile Include="objdb\StaffDB.cs" />
     <Compile Include="object1\Amphur.cs" />
+    <Compile Include="object1\Analysis.cs" />
     <Compile Include="object1\DocType.cs" />
     <Compile Include="object1\Invoice.cs" />
     <Compile Include="object1\InvoiceItem.cs" />
@@ -422,11 +442,23 @@
       <DependentUpon>ResultPrint.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="gui\FrmAnalysisAdd.resx">
+      <DependentUpon>FrmAnalysisAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmAnalysisView.resx">
+      <DependentUpon>FrmAnalysisView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmInvoiceAdd.resx">
       <DependentUpon>FrmInvoiceAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmInvoiceView.resx">
       <DependentUpon>FrmInvoiceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmItemGroupAdd.resx">
+      <DependentUpon>FrmItemGroupAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmItemGroupView.resx">
+      <DependentUpon>FrmItemGroupView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmItemSearch.resx">
       <DependentUpon>FrmItemSearch.cs</DependentUpon>
@@ -446,17 +478,14 @@
     <EmbeddedResource Include="gui\FrmPOAdd.resx">
       <DependentUpon>FrmPOAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmPOItemSearch.resx">
+      <DependentUpon>FrmPOItemSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmPOView.resx">
       <DependentUpon>FrmPOView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmQuotationAdd1.resx">
       <DependentUpon>FrmQuotationAdd1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="gui\FrmItemGroupAdd.resx">
-      <DependentUpon>FrmItemGroupAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="gui\FrmItemGroupView.resx">
-      <DependentUpon>FrmItemGroupView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmReport.resx">
       <DependentUpon>FrmReport.cs</DependentUpon>

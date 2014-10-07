@@ -69,7 +69,15 @@ namespace Cemp.objdb
 
             return dt;
         }
+        public DataTable selectByName(String name)
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From " + poi.table + " Where " + poi.Active + "='1' and "+poi.ItemNameT+"='"+name+"%'";
+            dt = conn.selectData(sql);
 
+            return dt;
+        }
         public POItem selectByPk(String saleId)
         {
             POItem item = new POItem();

@@ -168,7 +168,7 @@ namespace Cemp.gui
 
         private void btnGroupAdd_Click(object sender, EventArgs e)
         {
-            FrmItemGroupAdd frm = new FrmItemGroupAdd("",cc);
+            FrmAnalysisAdd frm = new FrmAnalysisAdd("",cc);
             frm.ShowDialog(this);
             //cboMethod = cc.medb.getCboMethod(cboMethod);
             cboGroup = cc.itgdb.getCboItemGroup(cboGroup);

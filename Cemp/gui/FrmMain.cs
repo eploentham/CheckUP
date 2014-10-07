@@ -50,6 +50,7 @@ namespace Cemp
             //tv1.Nodes.Add("nMOUPlaceRecord", "พิมพ์ ใบรับตัวอย่าง");
             tv1.Nodes.Add("nInputResult", "ป้อนผลตัวอย่าง");
             tv1.Nodes.Add("nBillView", "พิมพ์ Bill Note");
+            tv1.Nodes.Add("nPOView", "พิมพ์ ใบสั่งซื้อ");
             //tv1.Nodes.Add("nRewardAdd", "ป้อนรางวัล");
             //}
             //if (sf.Priority.Equals("2") || sf.Priority.Equals("3"))
@@ -65,6 +66,7 @@ namespace Cemp
             tv1.Nodes["nInitConfig"].Nodes.Add("nItemView", "สร้างรายการ Parameter");
             tv1.Nodes["nInitConfig"].Nodes.Add("nMethodView", "สร้างรายการ Method");
             tv1.Nodes["nInitConfig"].Nodes.Add("nItemGroupView", "สร้าง Parameter Group");
+            tv1.Nodes["nInitConfig"].Nodes.Add("nAnalysisView", "สร้างรายการ Analysis");
             tv1.Nodes["nInitConfig"].Nodes.Add("nCustomerView", "สร้าง ลูกค้า");
             tv1.Nodes["nInitConfig"].Nodes.Add("nStaffView", "สร้าง พนักงาน");
 
@@ -157,14 +159,19 @@ namespace Cemp
                 FrmItemGroupView frm = new FrmItemGroupView(cc);
                 showFrame(frm);
             }
-            //else if (e.Node.Name.ToString() == "nMOUPlaceRecord")
-            //{
-            //    FrmMOUPlaceRecord frm = new FrmMOUPlaceRecord(cc);
-            //    showFrame(frm);
-            //}
+            else if (e.Node.Name.ToString() == "nPOView")
+            {
+                FrmPOView frm = new FrmPOView(cc);
+                showFrame(frm);
+            }
             else if (e.Node.Name.ToString() == "nInitConfig")
             {
                 FrmInitConfig frm = new FrmInitConfig(sf.Code, cc);
+                showFrame(frm);
+            }
+            else if (e.Node.Name.ToString() == "nAnalysisView")
+            {
+                FrmAnalysisView frm = new FrmAnalysisView(cc);
                 showFrame(frm);
             }
             //else if (e.Node.Name.ToString() == "nInputImage")

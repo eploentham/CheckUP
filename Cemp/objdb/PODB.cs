@@ -47,6 +47,7 @@ namespace Cemp.objdb
             po.UserCancel = "user_cancel";
             po.UserCreate = "user_create";
             po.UserModi = "user_modi";
+            po.PONumberCnt = "po_number_cnt";
 
             po.pkField = "po_id";
             po.table = "t_po";
@@ -80,7 +81,7 @@ namespace Cemp.objdb
             item.UserCancel = dt.Rows[0][po.UserCancel].ToString();
             item.UserCreate = dt.Rows[0][po.UserCreate].ToString();
             item.UserModi = dt.Rows[0][po.UserModi].ToString();
-
+            item.PONumberCnt = dt.Rows[0][po.PONumberCnt].ToString();
 
             return item;
         }
@@ -120,7 +121,7 @@ namespace Cemp.objdb
             p.SfName = p.SfName.Replace("'", "''");
             //p.MethodMeasure = p.MethodMeasure.Replace("'", "''");
             //p.Summary = p.Summary.Replace("'", "''");
-
+            p.PONumberCnt = "1";
             sql = "Insert Into " + po.table + " (" + po.pkField + "," + po.Active + "," + po.ContactName + "," +
                 po.CpId + "," + po.CpNameT + "," + po.CuFax + "," +
                 po.CuId + "," + po.CuNametT + "," + po.CustEmail + "," +
@@ -128,8 +129,8 @@ namespace Cemp.objdb
                 po.DateModi + "," + po.PODate + "," + po.PODurPeriod + "," +
                 po.PONumber + "," + po.QuId + "," + po.QuNumber + "," + 
                 po.SfEmail + "," + po.SfId + "," + po.SfName + "," +
-                po.SfTel + "," + po.StatusApprove + "," + po.StatusPO + "," + 
-                po.UserCancel + "," + po.UserCreate + "," + po.UserModi + ") " +
+                po.SfTel + "," + po.StatusApprove + "," + po.StatusPO + "," +
+                po.UserCancel + "," + po.UserCreate + "," + po.UserModi + "," + po.PONumberCnt + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.ContactName + "','" +
                 p.CpId + "','" + p.CpNameT + "','" + p.CuFax + "','" +
                 p.CuId + "','" + p.CuNametT + "','" + p.CustEmail + "','" +
@@ -137,8 +138,8 @@ namespace Cemp.objdb
                 p.DateModi + "','" + p.PODate + "','" + p.PODurPeriod + "','" +
                 p.PONumber + "','" + p.QuId + "','" + p.QuNumber + "','" + 
                 p.SfEmail + "','" + p.SfId + "','" + p.SfName + "','" +
-                p.SfTel + "','" + p.StatusApprove + "','" + p.StatusPO + "','" + 
-                p.UserCancel + "','" + p.UserCreate + "','" + p.UserModi + "')";
+                p.SfTel + "','" + p.StatusApprove + "','" + p.StatusPO + "','" +
+                p.UserCancel + "','" + p.UserCreate + "','" + p.UserModi + "'," + p.PONumberCnt + ")";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -182,7 +183,7 @@ namespace Cemp.objdb
                 po.SfTel + "='" + p.SfTel + "', " +
                 po.StatusApprove + "='" + p.StatusApprove + "', " +
                 po.StatusPO + "='" + p.StatusPO + "', " +
-                //po.UserCancel + "='" + p.UserCancel + "', " +
+                po.PONumberCnt + "=" + p.PONumberCnt + ", " +
                 po.UserModi + "='" + p.UserModi + "' " +
                 //po.MethodMeasure + "='" + p.MethodMeasure + "', " +
                 //po.Summary + "='" + p.Summary + "' " +

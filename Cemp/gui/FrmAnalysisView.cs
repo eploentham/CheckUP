@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace Cemp.gui
 {
-    public partial class FrmItemGroupView : Form
+    public partial class FrmAnalysisView : Form
     {
         CnviControl cc;
         int colRow = 0, colCode = 1, colNameT = 2, colNameE = 3, colRemark = 4, colId = 5;
         int colCnt = 6;
         DataTable dt = new DataTable();
-        public FrmItemGroupView(CnviControl c)
+        public FrmAnalysisView(CnviControl c)
         {
             InitializeComponent();
             initConfig(c);
@@ -37,7 +37,7 @@ namespace Cemp.gui
         }
         private void setGrd()
         {
-            dt = cc.itgdb.selectAll();
+            dt = cc.andb.selectAll();
             dgvView.ColumnCount = colCnt;
 
             dgvView.RowCount = dt.Rows.Count + 1;
@@ -102,14 +102,15 @@ namespace Cemp.gui
             {
                 return;
             }
-            FrmItemGroupAdd frm = new FrmItemGroupAdd(dgvView[colId, e.RowIndex].Value.ToString(), cc);
+            FrmAnalysisAdd frm = new FrmAnalysisAdd(dgvView[colId, e.RowIndex].Value.ToString(), cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             setGrd();
         }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            FrmItemGroupAdd frm = new FrmItemGroupAdd("", cc);
+            FrmAnalysisAdd frm = new FrmAnalysisAdd("", cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             setGrd();
