@@ -219,7 +219,7 @@ namespace Cemp.objdb
             }
             return chk;
         }
-        public String insertItemGroup(Analysis p)
+        public String insertAnalysis(Analysis p)
         {
             Analysis item = new Analysis();
             String chk = "";
@@ -246,7 +246,7 @@ namespace Cemp.objdb
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
-        public ComboBox getCboItemGroup(ComboBox c)
+        public ComboBox getCboAnalysis(ComboBox c)
         {
             ComboBoxItem item = new ComboBoxItem();
             DataTable dt = selectAll();
@@ -263,7 +263,7 @@ namespace Cemp.objdb
             }
             return c;
         }
-        public String VoidItemGroup(String saleId)
+        public String VoidAnalysis(String saleId)
         {
             String sql = "", chk = "";
             sql = "Update " + an.table + " Set " + an.Active + "='3' " +

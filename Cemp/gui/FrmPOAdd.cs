@@ -72,6 +72,30 @@ namespace Cemp.gui
                 btnPrintT.Visible = true;
             }
         }
+        private void getPO()
+        {
+            po.Active = "";
+            po.ContactName = "";
+            po.CpId = cc.getValueCboItem(cboComp);
+            po.CpNameT = cboComp.Text;
+            po.CuFax = txtCustFax.Text;
+            po.CuId = cc.getValueCboItem(cboCust);
+            po.CuNametT = cboCust.Text;
+            po.CustEmail = txtCustEmail.Text;
+            po.CuTel = txtCustTel.Text;
+            po.Id = txtPOId.Text;
+            po.PODate = "";
+            po.PODurPeriod = "";
+            po.PONumber = txtPONumber.Text;
+            po.PONumberCnt = "";
+            po.QuId = "";
+            po.QuNumber = "";
+            po.SfEmail = "";
+            po.SfId = cc.getValueCboItem(cboStaff);
+            po.SfName = cboStaff.Text;
+            po.SfTel = txtStaffTel.Text;
+            
+        }
         private void setGrd()
         {
             dgvAdd.ColumnCount = colCnt;
@@ -261,7 +285,83 @@ namespace Cemp.gui
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            Boolean chkdel = false;
+            String quId = "";
+            //if (txtQuNumber.Text.Equals(""))
+            //{
+            //    MessageBox.Show("ไม่มีเลขที่ Quotation", "ป้อนข้อมูลไม่ครบ");
+            //    return;
+            //}
+            if (cboComp.Text.Equals(""))
+            {
+                MessageBox.Show("ไม่มี ชื่อบริษัท", "ป้อนข้อมูลไม่ครบ");
+                return;
+            }
+            if (cboCust.Text.Equals(""))
+            {
+                MessageBox.Show("ไม่มี ชื่อลูกค้า", "ป้อนข้อมูลไม่ครบ");
+                return;
+            }
+            //if (cboContact.Text.Equals(""))
+            //{
+            //    MessageBox.Show("ไม่มี ชื่อผู้ติดต่อ", "ป้อนข้อมูลไม่ครบ");
+            //    return;
+            //}
+            if (cboStaff.Text.Equals(""))
+            {
+                MessageBox.Show("ไม่มี ชื่อผู้เสนอราคา", "ป้อนข้อมูลไม่ครบ");
+                return;
+            }
+            if (cboStaffApprove.Text.Equals(""))
+            {
+                MessageBox.Show("ไม่มี ชื่อผู้อนุมัติ", "ป้อนข้อมูลไม่ครบ");
+                return;
+            }
+            //if (txtStaffCode.Text.Equals(""))
+            //{
+            //    MessageBox.Show("ไม่ได้ป้อนรหัส", "ป้อนข้อมูลไม่ครบ");
+            //    return;
+            //}
+            //if (txtQuNumber.Text.Equals(""))
+            //{
+            //    qu = cc.qudb.selectByNumber(txtQuNumber.Text);
+            //    if (!qu.Id.Equals(""))
+            //    {
+            //        MessageBox.Show("ป้อนรหัสซ้ำ\nรหัส " + qu.QuoNumber + " ชื่อ " + s.NameT, "รหัสซ้ำ");
+            //        return;
+            //    }
+            //    if (!s.Code.Equals(""))
+            //    {
+            //        MessageBox.Show("ป้อนชื่อซ้ำ\nรหัส " + s.Code + " ชื่อ " + s.NameT, "ชื่อซ้ำ");
+            //        return;
+            //    }
+            //}
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
+            getPO();
+            if (po.Id.Equals(""))
+            {
+                //po.PONumber = cc.podb.getQuoNumber("");
+                //String[] doc1 = qu.QuoNumber.Split('-');
+                //qu.QuoNumber = doc1[0];
+                //qu.QuoNumberCnt = doc1[1];
+            }
+            else
+            {
+                //String[] doc1 = qu.QuoNumber.Split('-');
+                //qu.QuoNumber = doc1[0];
+                //if (qu.NetTotal.Equals(oldNetTotal))
+                //{
+                //    qu.QuoNumberCnt = doc1[1];
+                //}
+                //else
+                //{
+                //    qu.QuoNumberCnt = String.Concat(int.Parse(doc1[1]) + 1);
+                //}
+            }
+            quId = cc.podb.insertPO(po);
 
+            Cursor.Current = cursor;
         }
 
         private void dgvAdd_CellLeave(object sender, DataGridViewCellEventArgs e)

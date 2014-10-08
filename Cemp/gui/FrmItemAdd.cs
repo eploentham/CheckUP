@@ -68,12 +68,14 @@ namespace Cemp.gui
             }
             cboMethod = cc.medb.getCboMethod(cboMethod);
             cboGroup = cc.itgdb.getCboItemGroup(cboGroup);
+            cboAnalysis = cc.andb.getCboAnalysis(cboAnalysis);
             cboMethod.Text = it.MethodNameT;
             cboGroup.Text = it.ItemGroupNameT;
+            cboAnalysis.Text = it.AnalysisNameT;
             cc.CloneItemType(cboDocType);
             cboDocType.Text = it.ItemType;
             cboCustPO = cc.cudb.getCboVendor(cboCustPO);
-            cboCustPO.Text = it.CustNameT;
+            cboCustPO.Text = cc.getVendorNamet(it.CustId);
         }
         private void getItem()
         {
@@ -95,6 +97,8 @@ namespace Cemp.gui
             it.ItemType = cboDocType.Text;
             it.CustId = cc.getValueCboItem(cboCustPO);
             it.CustNameT = cboCustPO.Text;
+            it.AnalysisId = cc.getValueCboItem(cboAnalysis);
+            it.AnalysisNameT = cboAnalysis.Text;
         }
         private void FrmItemAdd_Load(object sender, EventArgs e)
         {
@@ -156,9 +160,12 @@ namespace Cemp.gui
 
             if (!it.Code.Equals(""))
             {
-                label8.Text = "รหัสซ้ำ" + it.Code + " ชื่อ " + it.NameT;
-                MessageBox.Show("ป้อนรหัสซ้ำ\nรหัส " + it.Code + " ชื่อ " + it.NameT, "รหัสซ้ำ");
-                return;
+                if (!txtId.Text.Equals(it.Id))
+                {
+                    label8.Text = "รหัสซ้ำ" + it.Code + " ชื่อ " + it.NameT;
+                    MessageBox.Show("ป้อนรหัสซ้ำ\nรหัส " + it.Code + " ชื่อ " + it.NameT, "รหัสซ้ำ");
+                    return;
+                }
             }
             else
             {
@@ -405,6 +412,13 @@ namespace Cemp.gui
                 txtPriceSale.SelectAll();
                 txtPriceSale.Focus();
             }
+        }
+
+        private void btnAnalysisAdd_Click(object sender, EventArgs e)
+        {
+            FrmAnalysisAdd frm = new FrmAnalysisAdd("", cc);
+            frm.ShowDialog(this);
+            cboAnalysis = cc.andb.getCboAnalysis(cboAnalysis);
         }
     }
 }

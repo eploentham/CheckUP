@@ -68,11 +68,11 @@ namespace Cemp.gui
                 {
                     dgvView[colRow, i].Value = (i + 1);
                     //dgvView[colCode, i].Value = dt.Rows[i][cc.itgdb.itg.Code].ToString();
-                    dgvView[colNameT, i].Value = dt.Rows[i][cc.itgdb.itg.NameT].ToString();
-                    dgvView[colNameE, i].Value = dt.Rows[i][cc.itgdb.itg.NameE].ToString();
+                    dgvView[colNameT, i].Value = dt.Rows[i][cc.andb.an.NameT].ToString();
+                    dgvView[colNameE, i].Value = dt.Rows[i][cc.andb.an.NameE].ToString();
 
-                    dgvView[colRemark, i].Value = dt.Rows[i][cc.itgdb.itg.Remark].ToString();
-                    dgvView[colId, i].Value = dt.Rows[i][cc.itgdb.itg.Id].ToString();
+                    dgvView[colRemark, i].Value = dt.Rows[i][cc.andb.an.Remark].ToString();
+                    dgvView[colId, i].Value = dt.Rows[i][cc.andb.an.Id].ToString();
 
                     if ((i % 2) != 0)
                     {

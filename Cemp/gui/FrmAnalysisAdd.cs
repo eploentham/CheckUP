@@ -14,7 +14,7 @@ namespace Cemp.gui
     public partial class FrmAnalysisAdd : Form
     {
         CnviControl cc;
-        ItemGroup itg;
+        Analysis an;
         public FrmAnalysisAdd(String itgId, CnviControl c)
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace Cemp.gui
         private void initConfig(String itgId, CnviControl c)
         {
             cc = c;
-            itg = new ItemGroup();
+            an = new Analysis();
             setControl(itgId);
             //if (itgId.Equals(""))
             //{
@@ -38,20 +38,20 @@ namespace Cemp.gui
             label8.Text = "";
             //txtCode.ReadOnly = true;
         }
-        private void setControl(String itgId)
+        private void setControl(String anId)
         {
-            itg = cc.itgdb.selectByPk(itgId);
+            an = cc.andb.selectByPk(anId);
             //txtCode.Text = itg.Code;
-            txtId.Text = itg.Id;
-            txtNameE.Text = itg.NameE;
-            txtNameT.Text = itg.NameT;
-            txtRemark.Text = itg.Remark;
-            txtSort1.Text = itg.Sort1;
+            txtId.Text = an.Id;
+            txtNameE.Text = an.NameE;
+            txtNameT.Text = an.NameT;
+            txtRemark.Text = an.Remark;
+            txtSort1.Text = an.Sort1;
             if (txtSort1.Text.Equals(""))
             {
                 txtSort1.Text = cc.itgdb.selectSortMax();
             }
-            if (itg.Active.Equals("1"))
+            if (an.Active.Equals("1"))
             {
                 chkActive.Checked = true;
                 ChkUnActive.Checked = false;
@@ -63,7 +63,7 @@ namespace Cemp.gui
                 ChkUnActive.Checked = true;
                 btnUnActive.Visible = true;
             }
-            if (itg.Active.Equals(""))
+            if (an.Active.Equals(""))
             {
                 chkActive.Checked = true;
                 ChkUnActive.Checked = false;
@@ -73,13 +73,13 @@ namespace Cemp.gui
         private void getItemGroup()
         {
             //itg.Code = txtCode.Text;
-            itg.Id = txtId.Text;
-            itg.NameE = txtNameE.Text;
-            itg.NameT = txtNameT.Text;
-            itg.Remark = txtRemark.Text;
-            itg.Sort1 = txtSort1.Text;
-            itg.userCreate = cc.sf.Id;
-            itg.userModi = cc.sf.Id;
+            an.Id = txtId.Text;
+            an.NameE = txtNameE.Text;
+            an.NameT = txtNameT.Text;
+            an.Remark = txtRemark.Text;
+            an.Sort1 = txtSort1.Text;
+            an.userCreate = cc.sf.Id;
+            an.userModi = cc.sf.Id;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace Cemp.gui
             //{
             //    itg.Code = cc.medb.getMethodCode();
             //}
-            if (cc.itgdb.insertItemGroup(itg).Length >= 1)
+            if (cc.andb.insertAnalysis(an).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 this.Dispose();
@@ -160,12 +160,19 @@ namespace Cemp.gui
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            ItemGroup itg = cc.itgdb.selectByNameT(txtNameT.Text);
+            //if (txtId.Text.Equals(""))
+            //{
+
+            //}
+            Analysis itg = cc.andb.selectByNameT(txtNameT.Text);
             if (!itg.NameT.Equals(""))
             {
-                label8.Text = "ชื่อซ้ำ" + itg.NameT + " ชื่อ " + itg.NameE;
-                MessageBox.Show("ป้อนชื่อซ้ำ\nชื่อ " + itg.NameT + " Name " + itg.NameE, "ชื่อซ้ำ");
-                return;
+                if (!txtId.Text.Equals(itg.Id))
+                {
+                    label8.Text = "ชื่อซ้ำ" + itg.NameT + " ชื่อ " + itg.NameE;
+                    MessageBox.Show("ป้อนชื่อซ้ำ\nชื่อ " + itg.NameT + " Name " + itg.NameE, "ชื่อซ้ำ");
+                    return;
+                }                
             }
             else
             {

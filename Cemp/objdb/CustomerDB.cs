@@ -125,6 +125,15 @@ namespace Cemp.objdb
 
             return dt;
         }
+        public DataTable selectCustomerAll()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From " + cu.table + " Where " + cu.Active + "='1' and " + cu.StatusVendor + "='1'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
         public DataTable selectCustomerList()
         {
             String sql = "";
@@ -160,6 +169,35 @@ namespace Cemp.objdb
                 item = setData(item, conn.dt);
             }
             return item;
+        }
+        public Customer selectByNameT(String cuId)
+        {
+            Customer item = new Customer();
+            String sql = "";
+
+            sql = "Select * From " + cu.table + " Where " + cu.NameT + "='" + cuId + "' and " + cu.Active + "='1' ";
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                item = setData(item, conn.dt);
+            }
+            return item;
+        }
+        public String selectIdByNameT(String cuId)
+        {
+            Customer item = new Customer();
+            String sql = "", id="";
+
+            sql = "Select * From " + cu.table + " Where " + cu.NameT + "='" + cuId + "' and " + cu.Active + "='1' ";
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                id = dt.Rows[0][cu.Id].ToString();
+            }
+            
+            return id;
         }
         private String insert(Customer p)
         {
@@ -293,25 +331,26 @@ namespace Cemp.objdb
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
+        
         public ComboBox getCboCustomer(ComboBox c)
         {
             ComboBoxItem item = new ComboBoxItem();
-            DataTable dt = selectAll();
+            DataTable dt = selectCustomerAll();
             //String aaa = "";
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 item = new ComboBoxItem();
                 if (dt.Rows[0][cu.StatusCompany].ToString().Equals("1"))
                 {
-                    item.Text = "บริษัท " + dt.Rows[0][cu.NameT].ToString() + " จำกัด";
+                    item.Text = "บริษัท " + dt.Rows[i][cu.NameT].ToString() + " จำกัด";
                 }
-                else if (dt.Rows[0][cu.StatusCompany].ToString().Equals("2"))
+                else if (dt.Rows[i][cu.StatusCompany].ToString().Equals("2"))
                 {
-                    item.Text = dt.Rows[0][cu.NameT].ToString() + " Co., Ltd.";
+                    item.Text = dt.Rows[i][cu.NameT].ToString() + " Co., Ltd.";
                 }
                 else
                 {
-                    item.Text = dt.Rows[0][cu.NameT].ToString();
+                    item.Text = dt.Rows[i][cu.NameT].ToString();
                 }
                 item.Value = dt.Rows[i][cu.Id].ToString();
                 //item.Text = dt.Rows[i][cu.NameT].ToString();
@@ -331,15 +370,15 @@ namespace Cemp.objdb
                 item = new ComboBoxItem();
                 if (dt.Rows[0][cu.StatusCompany].ToString().Equals("1"))
                 {
-                    item.Text = "บริษัท " + dt.Rows[0][cu.NameT].ToString() + " จำกัด";
+                    item.Text = "บริษัท " + dt.Rows[i][cu.NameT].ToString() + " จำกัด";
                 }
-                else if (dt.Rows[0][cu.StatusCompany].ToString().Equals("2"))
+                else if (dt.Rows[i][cu.StatusCompany].ToString().Equals("2"))
                 {
-                    item.Text = dt.Rows[0][cu.NameT].ToString() + " Co., Ltd.";
+                    item.Text = dt.Rows[i][cu.NameT].ToString() + " Co., Ltd.";
                 }
                 else
                 {
-                    item.Text = dt.Rows[0][cu.NameT].ToString();
+                    item.Text = dt.Rows[i][cu.NameT].ToString();
                 }
                 item.Value = dt.Rows[i][cu.Id].ToString();
                 //item.Text = dt.Rows[i][cu.NameT].ToString();

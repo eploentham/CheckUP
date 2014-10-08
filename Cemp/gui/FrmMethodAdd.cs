@@ -205,9 +205,12 @@ namespace Cemp.gui
             //label8.Text = "รหัสซ้ำ" + me.Code + " ชื่อ " + me.NameT;
             if (!me.Code.Equals(""))
             {
-                label8.Text = "รหัสซ้ำ" + me.Code + " ชื่อ " + me.NameT;
-                MessageBox.Show("ป้อนรหัสซ้ำ\nรหัส " + me.Code + " ชื่อ " + me.NameT, "รหัสซ้ำ");
-                return;
+                if (!txtId.Text.Equals(me.Id))
+                {
+                    label8.Text = "รหัสซ้ำ" + me.Code + " ชื่อ " + me.NameT;
+                    MessageBox.Show("ป้อนรหัสซ้ำ\nรหัส " + me.Code + " ชื่อ " + me.NameT, "รหัสซ้ำ");
+                    return;
+                }
             }
             else
             {

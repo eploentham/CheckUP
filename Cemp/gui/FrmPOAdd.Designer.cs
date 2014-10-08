@@ -91,6 +91,7 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.btnPrintT = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.txtPOId = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
@@ -808,11 +809,22 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // txtPOId
+            // 
+            this.txtPOId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtPOId.Location = new System.Drawing.Point(259, 13);
+            this.txtPOId.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPOId.Name = "txtPOId";
+            this.txtPOId.Size = new System.Drawing.Size(38, 23);
+            this.txtPOId.TabIndex = 78;
+            this.txtPOId.Visible = false;
+            // 
             // FrmPOAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1159, 772);
+            this.Controls.Add(this.txtPOId);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnPrintT);
             this.Controls.Add(this.radioButton3);
@@ -920,5 +932,6 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.Button btnPrintT;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox txtPOId;
     }
 }

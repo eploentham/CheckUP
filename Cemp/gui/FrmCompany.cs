@@ -302,6 +302,10 @@ namespace Cemp.gui
                 cboProvince = cc.prdb.getCboProv1(cboProvince, label18.Text.Substring(0, 2));
                 txtZipcode.Text = cc.didb.selectZipCodeByPk(label18.Text);
             }
+            else if ((e.KeyCode == Keys.Back) || (e.KeyCode == Keys.Delete))
+            {
+                keyDistrict = false;
+            }
             else if (e.KeyCode == Keys.Down)
             {
                 keyDistrict = true;

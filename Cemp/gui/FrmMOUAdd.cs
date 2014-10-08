@@ -410,6 +410,7 @@ namespace Cemp.gui
             txtStaffMOUEmail.Text = sf.Email;
             txtStaffMOUMobile.Text = sf.Mobile;
             txtStaffMOUTel.Text = sf.Tele;
+            chkActive.Checked = true;
         }
         private void setGrdRow(String itId, String itDescription,String meId, String meDescription, String ity)
         {
@@ -441,6 +442,7 @@ namespace Cemp.gui
             {
                 if (dt.Rows.Count > 0)
                 {
+                    dgvAdd.Rows.Clear();
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         Double sample = 0;

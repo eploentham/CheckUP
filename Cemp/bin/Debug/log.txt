@@ -969,3 +969,8 @@ Parameter name: length
 7/10/2557 16:27->FrmCustAdd.cboDistrict_KeyUp Error Index and length must refer to a location within the string.
 Parameter name: length
 7/10/2557 16:27->FrmCustAdd.cboDistrict_KeyUp Error Object reference not set to an instance of an object.
+8/10/2557 8:46->FrmCustAdd.cboDistrict_KeyUp Error Object reference not set to an instance of an object.
+8/10/2557 8:47->FrmCustAdd.cboDistrict_KeyUp Error Object reference not set to an instance of an object.
+8/10/2557 8:47->FrmCustAdd.cboDistrict_KeyUp Error Object reference not set to an instance of an object.
+8/10/2557 8:47->FrmCustAdd.cboDistrict_KeyUp Error Index and length must refer to a location within the string.
+Parameter name: length

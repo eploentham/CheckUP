@@ -143,9 +143,9 @@ namespace Cemp.objdb
                 p.Id = "me" + p.getGenID();
             }
             //p.dateCreate = p.dateGenDB;
-            p.NameE = p.NameE.Replace("''", "'");
-            p.NameT = p.NameT.Replace("''", "'");
-            p.Remark = p.Remark.Replace("''", "'");
+            p.NameE = p.NameE.Replace("'", "''");
+            p.NameT = p.NameT.Replace("'", "''");
+            p.Remark = p.Remark.Replace("'", "''");
             if (p.Sort1.Equals(""))
             {
                 p.Sort1 = "999";
@@ -179,9 +179,9 @@ namespace Cemp.objdb
         {
             String sql = "", chk = "";
 
-            p.NameE = p.NameE.Replace("''", "'");
-            p.NameT = p.NameT.Replace("''", "'");
-            p.Remark = p.Remark.Replace("''", "'");
+            p.NameE = p.NameE.Replace("'", "''");
+            p.NameT = p.NameT.Replace("'", "''");
+            p.Remark = p.Remark.Replace("'", "''");
             if (p.Sort1.Equals(""))
             {
                 p.Sort1 = "999";

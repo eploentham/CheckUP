@@ -167,9 +167,12 @@ namespace Cemp.gui
             ItemGroup itg = cc.itgdb.selectByNameT(txtNameT.Text);
             if (!itg.NameT.Equals(""))
             {
-                label8.Text = "ชื่อซ้ำ" + itg.NameT + " ชื่อ " + itg.NameE;
-                MessageBox.Show("ป้อนชื่อซ้ำ\nชื่อ " + itg.NameT + " Name " + itg.NameE, "ชื่อซ้ำ");
-                return;
+                if (!txtId.Text.Equals(itg.Id))
+                {
+                    label8.Text = "ชื่อซ้ำ" + itg.NameT + " ชื่อ " + itg.NameE;
+                    MessageBox.Show("ป้อนชื่อซ้ำ\nชื่อ " + itg.NameT + " Name " + itg.NameE, "ชื่อซ้ำ");
+                    return;
+                }                
             }
             else
             {

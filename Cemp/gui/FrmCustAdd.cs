@@ -285,7 +285,7 @@ namespace Cemp.gui
                     cboAmphur = cc.amdb.getCboAmphur1(cboAmphur, label18.Text.Substring(0, 4));
                     cboProvince = cc.prdb.getCboProv1(cboProvince, label18.Text.Substring(0, 2));
                     txtZipcode.Text = cc.didb.selectZipCodeByPk(label18.Text);
-                    if (cboProvince.SelectedValue.ToString().Equals("10"))
+                    if (cc.getValueCboItem(cboProvince).Equals("10"))
                     {
                         txtAddressT.Text = txtAddr.Text + " แขวง " + cboDistrict.Text + " เขต " + cboAmphur.Text + " จังหวัด " + cboProvince.Text + " รหัสไปรษณีย์ " + txtZipcode.Text;
                     }
@@ -302,6 +302,10 @@ namespace Cemp.gui
                 
                 txtAddressE.SelectAll();
                 txtAddressE.Focus();
+            }
+            else if ((e.KeyCode == Keys.Back) ||(e.KeyCode==Keys.Delete))
+            {
+                keyDistrict = false;
             }
             else if (e.KeyCode == Keys.Down)
             {

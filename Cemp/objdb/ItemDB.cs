@@ -44,6 +44,8 @@ namespace Cemp.objdb
             it.ItemType = "item_type";
             it.CustId = "cust_id";
             it.CustNameT = "cust_name_t";
+            it.AnalysisId = "analysis_id";
+            it.AnalysisNameT = "analysis_name_t";
 
             it.table = "b_item";
             it.pkField = "item_id";
@@ -75,6 +77,9 @@ namespace Cemp.objdb
 
             item.CustId = dt.Rows[0][it.CustId].ToString();
             item.CustNameT = dt.Rows[0][it.CustNameT].ToString();
+
+            item.AnalysisId = dt.Rows[0][it.AnalysisId].ToString();
+            item.AnalysisNameT = dt.Rows[0][it.AnalysisNameT].ToString();
 
             return item;
         }
@@ -194,7 +199,7 @@ namespace Cemp.objdb
             p.ItemGroupNameT = p.ItemGroupNameT.Replace("'", "''");
             p.MethodNameT = p.MethodNameT.Replace("'", "''");
             p.CustNameT = p.CustNameT.Replace("'", "''");
-
+            p.AnalysisNameT = p.AnalysisNameT.Replace("'", "''");
             if (p.Sort1.Equals(""))
             {
                 p.Sort1 = "9999";
@@ -205,14 +210,18 @@ namespace Cemp.objdb
                 it.ItemGroupNameT + "," + it.MethodNameT + "," + it.MethodId + "," +
                 it.Sort1 + "," + it.dateCancel + "," + it.dateCreate + "," +
                 it.dateModi + "," + it.userCancel + "," + it.userCreate + "," +
-                it.userModi + "," + it.PriceCostReal + "," + it.ItemType + "," + it.CustNameT + "," + it.CustId + ") " +
+                it.userModi + "," + it.PriceCostReal + "," + it.ItemType + "," + 
+                it.CustNameT + "," + it.CustId + "," + it.AnalysisId + "," + 
+                it.AnalysisNameT + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.Code + "','" +
                 p.NameE + "','" + p.NameT + "','" + p.Remark + "'," +
                 NumberNull1(p.PriceCost) + "," + NumberNull1(p.PriceSale) + ",'" + p.ItemGroupId + "','" +
                 p.ItemGroupNameT + "','" + p.MethodNameT + "','" + p.MethodId + "','" +
                 p.Sort1 + "','" +p.dateCancel + "'," + p.dateGenDB + ",'" + 
                 p.dateModi + "','" +p.userCancel + "','" + p.userCreate + "','" +
-                p.userModi + "'," + NumberNull1(p.PriceCostReal) + ",'" + p.ItemType + "','" + p.CustNameT + "','" + p.CustId + "')";
+                p.userModi + "'," + NumberNull1(p.PriceCostReal) + ",'" + p.ItemType + "','" + 
+                p.CustNameT + "','" + p.CustId + "','" + p.AnalysisId + "','" + 
+                p.AnalysisNameT + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -237,6 +246,7 @@ namespace Cemp.objdb
             p.ItemGroupNameT = p.ItemGroupNameT.Replace("''", "'");
             p.MethodNameT = p.MethodNameT.Replace("''", "'");
             p.CustNameT = p.CustNameT.Replace("'", "''");
+            p.AnalysisNameT = p.AnalysisNameT.Replace("'", "''");
             if (p.Sort1.Equals(""))
             {
                 p.Sort1 = "9999";
@@ -257,7 +267,9 @@ namespace Cemp.objdb
                 it.PriceCostReal + "=" + NumberNull1(p.PriceCostReal) + ", " +
                 it.ItemType + "='" + p.ItemType + "', " +
                 it.CustNameT + "='" + p.CustNameT + "', " +
-                it.CustId + "='" + p.CustId + "' " +
+                it.CustId + "='" + p.CustId + "', " +
+                it.AnalysisId + "='" + p.AnalysisId + "', " +
+                it.AnalysisNameT + "='" + p.AnalysisNameT + "' " +
                 "Where " + it.pkField + "='" + p.Id + "'";
             try
             {

@@ -243,7 +243,7 @@ namespace Cemp.gui
         {
             pB1.Visible = true;
             String sql = "";
-            sql = "Select Distinct method1 From data_convert570915";
+            sql = "Select Distinct method1 From data_convert571008";
             DataTable dt = cc.conn.selectData(sql);
             if (dt.Rows.Count > 0)
             {
@@ -297,7 +297,7 @@ namespace Cemp.gui
         {
             pB1.Visible = true;
             String sql = "";
-            sql = "Select * From data_convert570915";
+            sql = "Select * From data_convert571008";
             DataTable dt = cc.conn.selectData(sql);
             if (dt.Rows.Count > 0)
             {
@@ -310,17 +310,21 @@ namespace Cemp.gui
                     it.Id = "";
                     it.Code = dt.Rows[i]["code"].ToString();
                     it.dateCreate = it.dateGenDB;
-                    it.ItemGroupId = cc.itgdb.selectByNameT1(dt.Rows[i]["type1"].ToString());
-                    it.ItemGroupNameT=dt.Rows[i]["type1"].ToString();
+                    //it.ItemGroupId = cc.itgdb.selectByNameT1(dt.Rows[i]["group1"].ToString());
+                    //it.ItemGroupNameT=dt.Rows[i]["group1"].ToString();
                     it.MeasuringPoint="";
                     it.MethodId=cc.medb.selectByNameT1(dt.Rows[i]["method1"].ToString());
                     it.MethodNameT = dt.Rows[i]["method1"].ToString();
                     it.NameE = dt.Rows[i]["name1"].ToString();
                     it.NameT = dt.Rows[i]["name1"].ToString();
-                    it.PriceCost = dt.Rows[i]["price_cost"].ToString();
+                    it.PriceCost = dt.Rows[i]["sub_price"].ToString();
                     it.PriceSale = dt.Rows[i]["price_sale"].ToString();
-                    it.Remark = "convert 57-09-15";
+                    it.Remark = "convert 57-10-08";
+                    it.ItemType = dt.Rows[i]["type1"].ToString().ToUpper();
                     it.Sort1 = "";
+                    //it.CustId = cc.getValueCboVendor(dt.Rows[i]["sub_name"].ToString());
+                    it.CustId = cc.cudb.selectIdByNameT(dt.Rows[i]["sub_name"].ToString());
+                    it.CustNameT = dt.Rows[i]["sub_name"].ToString();
                     it.userCreate = cc.sf.Code;
                     cc.itdb.insertItem(it);
                     pB1.Value = i;

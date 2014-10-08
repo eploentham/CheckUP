@@ -54,6 +54,9 @@ namespace Cemp.Control
 
         public LogWriter lw;
         public ComboBox cboIty;
+        public ComboBox cbocu, cbove;
+        public ComboBox cboIt;
+        public List<Customer> lcu;
 
         public CnviControl()
         {
@@ -99,7 +102,13 @@ namespace Cemp.Control
 
                 cp = cpdb.selectByPk();
                 cboIty = new ComboBox();
+                cbocu = new ComboBox();
+                cbove = new ComboBox();
                 cboIty = itydb.getCboDocType(cboIty,"mou");
+                cbocu = cudb.getCboCustomer(cbocu);
+                cbove = cudb.getCboVendor(cbove);
+
+
                 PathLogo = Environment.CurrentDirectory;
             }
             catch (Exception ex)
@@ -131,6 +140,30 @@ namespace Cemp.Control
                 }
             }
             return r.Text;
+        }
+        public String getCustNamet(String cuId)
+        {
+            String chk = "";
+            foreach (ComboBoxItem cc in cbocu.Items)
+            {
+                if (cc.Value.Equals(cuId))
+                {
+                    chk = cc.Text;
+                }
+            }
+            return chk;
+        }
+        public String getVendorNamet(String cuId)
+        {
+            String chk = "";
+            foreach (ComboBoxItem cc in cbove.Items)
+            {
+                if (cc.Value.Equals(cuId))
+                {
+                    chk = cc.Text;
+                }
+            }
+            return chk;
         }
         public void GetConfig()
         {
@@ -444,6 +477,18 @@ namespace Cemp.Control
             {
                 return iSale.Value;
             }
+        }
+        public String getValueCboVendor(String txt)
+        {
+            String chk = "";
+            foreach (ComboBoxItem cc in cbove.Items)
+            {
+                if (cc.Text.Equals(txt))
+                {
+                    chk = cc.Value;
+                }
+            }
+            return chk;
         }
         public ComboBox setCboItem(ComboBox c, String valueId)
         {

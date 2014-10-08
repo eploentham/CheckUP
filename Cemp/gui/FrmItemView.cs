@@ -16,8 +16,8 @@ namespace Cemp.gui
     {
         CnviControl cc;
         Item it;
-        int colRow = 0, colNameT = 1, colNameE = 2, colMethod = 3, colGroup = 4, colType=5, colVendor=6, colRemark = 7, colId = 8;
-        int colCnt = 9;
+        int colRow = 0, colNameT = 1, colNameE = 2, colMethod = 4, colGroup = 3, colType=5, colVendor=6, colAnalysis=7, colRemark = 8, colId = 9;
+        int colCnt = 10;
         Boolean pageLoad = false;
         DataTable dt = new DataTable();
         public FrmItemView(CnviControl c)
@@ -71,15 +71,17 @@ namespace Cemp.gui
                 dgvView.Columns[colRemark].Width = 200;
                 dgvView.Columns[colType].Width = 80;
                 dgvView.Columns[colVendor].Width = 150;
+                dgvView.Columns[colAnalysis].Width = 150;
 
                 dgvView.Columns[colRow].HeaderText = "ลำดับ";
                 dgvView.Columns[colNameT].HeaderText = "ชื่อ";
                 dgvView.Columns[colNameE].HeaderText = "Name";
-                dgvView.Columns[colMethod].HeaderText = "วิธีการตรวจ";
+                dgvView.Columns[colMethod].HeaderText = "Method";
                 dgvView.Columns[colGroup].HeaderText = "กลุ่ม";
                 dgvView.Columns[colRemark].HeaderText = "หมายเหตุ";
                 dgvView.Columns[colType].HeaderText = "TYPE";
                 dgvView.Columns[colVendor].HeaderText = "Vendor";
+                dgvView.Columns[colAnalysis].HeaderText = "Analysis";
 
                 dgvView.Columns[colId].HeaderText = "id";
                 Font font = new Font("Microsoft Sans Serif", 12);
@@ -99,6 +101,7 @@ namespace Cemp.gui
                         dgvView[colId, i].Value = dt.Rows[i][cc.itdb.it.Id].ToString();
                         dgvView[colType, i].Value = dt.Rows[i][cc.itdb.it.ItemType].ToString();
                         dgvView[colVendor, i].Value = dt.Rows[i][cc.itdb.it.CustNameT].ToString();
+                        dgvView[colAnalysis, i].Value = dt.Rows[i][cc.itdb.it.AnalysisNameT].ToString();
                         if ((i % 2) != 0)
                         {
                             dgvView.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
