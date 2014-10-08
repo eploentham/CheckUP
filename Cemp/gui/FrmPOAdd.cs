@@ -42,6 +42,7 @@ namespace Cemp.gui
             
             setControl(poId);
             setGrd();
+            btnUnActive.Visible = false;
         }
         private void setControl(String poId)
         {
@@ -64,17 +65,19 @@ namespace Cemp.gui
                 //txtLine4.Text = cc.cp.quLine4;
                 //txtLine5.Text = cc.cp.quLine5;
                 //txtLine6.Text = cc.cp.quLine6;
-
+                
                 btnPrintT.Visible = false;
             }
             else
             {
+                
                 btnPrintT.Visible = true;
             }
+            chkActive.Checked = true;
         }
         private void getPO()
         {
-            po.Active = "";
+            po.Active = "1";
             po.ContactName = "";
             po.CpId = cc.getValueCboItem(cboComp);
             po.CpNameT = cboComp.Text;
@@ -103,11 +106,11 @@ namespace Cemp.gui
             dgvAdd.RowCount = 1;
             dgvAdd.SelectionMode = DataGridViewSelectionMode.CellSelect;
             dgvAdd.Columns[colRow].Width = 50;
-            dgvAdd.Columns[colItem].Width = 350;
-            dgvAdd.Columns[colDesc].Width = 350;
+            dgvAdd.Columns[colItem].Width = 80;
+            dgvAdd.Columns[colDesc].Width = 300;
             dgvAdd.Columns[colPrice].Width = 80;
             dgvAdd.Columns[colQty].Width = 80;
-            dgvAdd.Columns[colRemark].Width = 350;
+            dgvAdd.Columns[colRemark].Width = 150;
             dgvAdd.Columns[colId].Width = 120;
             dgvAdd.Columns[colAmt].Width = 100;
 
@@ -242,6 +245,13 @@ namespace Cemp.gui
         {
             row = dgvAdd.Rows.Add();
             dgvAdd[colDel, row].Value = "";
+            dgvAdd[colId, row].Value = "";
+            dgvAdd[colItem, row].Value = "";
+            dgvAdd[colDesc, row].Value = "";
+            dgvAdd[colRemark, row].Value = "";
+            dgvAdd[colQty, row].Value = "";
+            dgvAdd[colPrice, row].Value = "";
+            dgvAdd[colAmt, row].Value = "";
             dgvAdd[colRow, row].Value = (row + 1);
             if ((row % 2) != 0)
             {
@@ -400,38 +410,46 @@ namespace Cemp.gui
 
         private void dgvAdd_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == colItem)
+            try
             {
-                dgvAdd.Rows[e.RowIndex].Cells[colDesc].Selected = true;
-                dgvAdd.CurrentCell = dgvAdd[colDesc, e.RowIndex];
-                //dgvAdd.BeginEdit(true);
+                if (e.ColumnIndex == colItem)
+                {
+                    dgvAdd.Rows[e.RowIndex].Cells[colDesc].Selected = true;
+                    dgvAdd.CurrentCell = dgvAdd[colDesc, e.RowIndex];
+                    //dgvAdd.BeginEdit(true);
+                }
+                else if (e.ColumnIndex == colDesc)
+                {
+                    dgvAdd.Rows[e.RowIndex].Cells[colPrice].Selected = true;
+                    dgvAdd.CurrentCell = dgvAdd.Rows[e.RowIndex].Cells[colPrice];
+                }
+                else if (e.ColumnIndex == colPrice)
+                {
+                    dgvAdd.Rows[e.RowIndex].Cells[colQty].Selected = true;
+                    dgvAdd.CurrentCell = dgvAdd.Rows[e.RowIndex].Cells[colQty];
+                }
+                else if (e.ColumnIndex == colQty)
+                {
+                    //dgvAdd.Rows[e.RowIndex].Cells[colRemark].Selected = true;
+                    //dgvAdd.CurrentCell = dgvAdd.Rows[e.RowIndex].Cells[colRemark];
+                    calAmount(e.RowIndex);
+                    calAmount();
+                    DgvAddRow();
+                    dgvAdd.Rows[row].Cells[colItem].Selected = true;
+                    dgvAdd.CurrentCell = dgvAdd.Rows[row].Cells[colItem];
+                }
+                else if (e.ColumnIndex == colRemark)
+                {
+                    //row = dgvAdd.Rows.Add();
+                    //dgvAdd.Rows[row].Cells[colItem].Selected = true;
+                    //dgvAdd.CurrentCell = dgvAdd.Rows[row].Cells[colItem];
+                }
             }
-            else if (e.ColumnIndex == colDesc)
+            catch (Exception ex)
             {
-                dgvAdd.Rows[e.RowIndex].Cells[colPrice].Selected = true;
-                dgvAdd.CurrentCell = dgvAdd.Rows[e.RowIndex].Cells[colPrice];
+
             }
-            else if (e.ColumnIndex == colPrice)
-            {
-                dgvAdd.Rows[e.RowIndex].Cells[colQty].Selected = true;
-                dgvAdd.CurrentCell = dgvAdd.Rows[e.RowIndex].Cells[colQty];
-            }
-            else if (e.ColumnIndex == colQty)
-            {
-                //dgvAdd.Rows[e.RowIndex].Cells[colRemark].Selected = true;
-                //dgvAdd.CurrentCell = dgvAdd.Rows[e.RowIndex].Cells[colRemark];
-                calAmount(e.RowIndex);
-                calAmount();
-                DgvAddRow();
-                dgvAdd.Rows[row].Cells[colItem].Selected = true;
-                dgvAdd.CurrentCell = dgvAdd.Rows[row].Cells[colItem];
-            }
-            else if (e.ColumnIndex == colRemark)
-            {
-                //row = dgvAdd.Rows.Add();
-                //dgvAdd.Rows[row].Cells[colItem].Selected = true;
-                //dgvAdd.CurrentCell = dgvAdd.Rows[row].Cells[colItem];
-            }
+            
         }
 
         private void FrmPOAdd_Resize(object sender, EventArgs e)

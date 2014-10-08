@@ -15,6 +15,7 @@ namespace Cemp.objdb
         public POItemDB(ConnectDB c)
         {
             conn = c;
+            initConfig();
         }
         private void initConfig()
         {
@@ -38,7 +39,7 @@ namespace Cemp.objdb
             poi.RowNumber = "row_number";
 
             poi.pkField = "po_item_id";
-            poi.table = "";
+            poi.table = "t_po_item";
         }
         private POItem setData(POItem item, DataTable dt)
         {
@@ -116,9 +117,9 @@ namespace Cemp.objdb
                 "Values('" + p.Id + "','" + p.Active + "','" + p.DateCancel + "'," +
                 p.dateGenDB + ",'" + p.DateModi + "'," + p.ItemAmount + ",'" +
                 p.ItemId + "','" + p.ItemNameT + "'," + p.ItemPrice + "," +
-                p.ItemQty + ",'" + p.POId + "'," + p.Remark + ",'" +
+                p.ItemQty + ",'" + p.POId + "','" + p.Remark + "','" +
                 p.UserCancel + "','" + p.UserCreate + "','" + p.UserModi + "','" + 
-                p.ItemType + "'," + NumberNull1(poi.RowNumber) + ")";
+                p.ItemType + "'," + NumberNull1(p.RowNumber) + ")";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

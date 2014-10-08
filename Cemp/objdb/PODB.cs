@@ -135,11 +135,11 @@ namespace Cemp.objdb
                 p.CpId + "','" + p.CpNameT + "','" + p.CuFax + "','" +
                 p.CuId + "','" + p.CuNametT + "','" + p.CustEmail + "','" +
                 p.CuTel + "','" + p.DateCancel + "'," + p.dateGenDB + ",'" +
-                p.DateModi + "','" + p.PODate + "','" + p.PODurPeriod + "','" +
+                p.DateModi + "','" + p.PODate + "','" + NumberNull1(p.PODurPeriod) + "','" +
                 p.PONumber + "','" + p.QuId + "','" + p.QuNumber + "','" + 
                 p.SfEmail + "','" + p.SfId + "','" + p.SfName + "','" +
                 p.SfTel + "','" + p.StatusApprove + "','" + p.StatusPO + "','" +
-                p.UserCancel + "','" + p.UserCreate + "','" + p.UserModi + "'," + p.PONumberCnt + ")";
+                p.UserCancel + "','" + p.UserCreate + "','" + p.UserModi + "'," + NumberNull1(p.PONumberCnt) + ")";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -249,6 +249,17 @@ namespace Cemp.objdb
             }
             year = year.Substring(2);
             return year;
+        }
+        private String NumberNull1(String o)
+        {
+            if (o.Equals(""))
+            {
+                return "0";
+            }
+            else
+            {
+                return o;
+            }
         }
     }
 }

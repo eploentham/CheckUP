@@ -14,7 +14,7 @@ namespace Cemp.gui
     {
         CnviControl cc;
         int colCnt = 7;
-        int colRow = 0, colMOUNumber = 1, colCustName = 2, colContactName = 3, colId = 4, colStaffName = 5, colStatusMOU = 6;
+        int colRow = 0, colPONumber = 1, colCustName = 2, colDuePeriod = 3, colId = 4, colStaffName = 5, colStatusMOU = 6;
         public FrmPOView(CnviControl c)
         {
             InitializeComponent();
@@ -37,25 +37,25 @@ namespace Cemp.gui
         private void setGrd()
         {
             DataTable dt = new DataTable();
-            dt = cc.modb.selectMOUView();
+            dt = cc.podb.selectAll();
             dgvView.ColumnCount = colCnt;
 
             dgvView.RowCount = dt.Rows.Count + 1;
             dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvView.Columns[colRow].Width = 50;
-            dgvView.Columns[colMOUNumber].Width = 150;
+            dgvView.Columns[colPONumber].Width = 150;
             dgvView.Columns[colCustName].Width = 350;
-            dgvView.Columns[colContactName].Width = 350;
+            dgvView.Columns[colDuePeriod].Width = 350;
             dgvView.Columns[colId].Width = 80;
             dgvView.Columns[colStatusMOU].Width = 80;
             dgvView.Columns[colStaffName].Width = 180;
 
             dgvView.Columns[colRow].HeaderText = "ลำดับ";
-            dgvView.Columns[colMOUNumber].HeaderText = "เลขที่";
+            dgvView.Columns[colPONumber].HeaderText = "เลขที่";
             dgvView.Columns[colCustName].HeaderText = "ชื่อลูกค้า";
-            dgvView.Columns[colContactName].HeaderText = "ชื่อผู้ติดต่อ";
+            dgvView.Columns[colDuePeriod].HeaderText = "ระยะเวลา";
             dgvView.Columns[colId].HeaderText = "id";
-            dgvView.Columns[colStaffName].HeaderText = "ผู้รับผิดชอบข้อตกลง";
+            dgvView.Columns[colStaffName].HeaderText = "";
             dgvView.Columns[colStatusMOU].HeaderText = "สถานะ";
 
             dgvView.Columns[colId].HeaderText = "id";
@@ -68,9 +68,9 @@ namespace Cemp.gui
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     dgvView[colRow, i].Value = (i + 1);
-                    dgvView[colMOUNumber, i].Value = dt.Rows[i][cc.modb.mo.MOUNumberMain].ToString();
-                    dgvView[colCustName, i].Value = dt.Rows[i][cc.modb.mo.CustName].ToString();
-                    dgvView[colContactName, i].Value = dt.Rows[i][cc.modb.mo.ContactName].ToString();
+                    dgvView[colPONumber, i].Value = dt.Rows[i][cc.podb.po.PONumber].ToString();
+                    dgvView[colCustName, i].Value = dt.Rows[i][cc.podb.po.CuNametT].ToString();
+                    dgvView[colDuePeriod, i].Value = dt.Rows[i][cc.podb.po.PODurPeriod].ToString();
                     dgvView[colId, i].Value = "";
                     //if (dt.Rows[i][cc.modb.mo.statusMOU].ToString().Equals("1"))
                     //{
@@ -111,7 +111,7 @@ namespace Cemp.gui
                 return;
             }
 
-            FrmPOAdd frm = new FrmPOAdd(dgvView[colMOUNumber, e.RowIndex].Value.ToString(),  cc);
+            FrmPOAdd frm = new FrmPOAdd(dgvView[colPONumber, e.RowIndex].Value.ToString(),  cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             setGrd();
