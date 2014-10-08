@@ -35,6 +35,7 @@ namespace Cemp.objdb
             poi.UserCreate = "user_create";
             poi.UserModi = "user_modi";
             poi.ItemType = "item_type";
+            poi.RowNumber = "row_number";
 
             poi.pkField = "po_item_id";
             poi.table = "";
@@ -57,6 +58,7 @@ namespace Cemp.objdb
             item.UserCreate = dt.Rows[0][poi.UserCreate].ToString();
             item.UserModi = dt.Rows[0][poi.UserModi].ToString();
             item.ItemType = dt.Rows[0][poi.ItemType].ToString();
+            item.RowNumber = dt.Rows[0][poi.RowNumber].ToString();
 
             return item;
         }
@@ -109,12 +111,14 @@ namespace Cemp.objdb
                 poi.DateCreate + "," + poi.DateModi + "," + poi.ItemAmount + "," +
                 poi.ItemId + "," + poi.ItemNameT + "," + poi.ItemPrice + "," +
                 poi.ItemQty + "," + poi.POId + "," + poi.Remark + "," +
-                poi.UserCancel + "," + poi.UserCreate + "," + poi.UserModi + "," + poi.ItemType + ") " +
+                poi.UserCancel + "," + poi.UserCreate + "," + poi.UserModi + "," + 
+                poi.ItemType + "," + poi.RowNumber + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.DateCancel + "'," +
                 p.dateGenDB + ",'" + p.DateModi + "'," + p.ItemAmount + ",'" +
                 p.ItemId + "','" + p.ItemNameT + "'," + p.ItemPrice + "," +
                 p.ItemQty + ",'" + p.POId + "'," + p.Remark + ",'" +
-                p.UserCancel + "','" + p.UserCreate + "','" + p.UserModi + "','" + p.ItemType + "')";
+                p.UserCancel + "','" + p.UserCreate + "','" + p.UserModi + "','" + 
+                p.ItemType + "'," + NumberNull1(poi.RowNumber) + ")";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -145,7 +149,8 @@ namespace Cemp.objdb
                 poi.POId + "='" + p.POId + "', " +
                 poi.Remark + "='" + p.Remark + "', " +
                 poi.UserModi + "='" + p.UserModi + "', " +
-                poi.ItemType + "='" + p.ItemType + "' " +
+                poi.ItemType + "='" + p.ItemType + "', " +
+                poi.RowNumber + "=" + p.RowNumber + " " +
                 "Where " + poi.pkField + "='" + p.Id + "'";
             try
             {
@@ -182,6 +187,17 @@ namespace Cemp.objdb
             sql = "Delete From " + poi.table;
             chk = conn.ExecuteNonQuery(sql);
             return chk;
+        }
+        private String NumberNull1(String o)
+        {
+            if (o.Equals(""))
+            {
+                return "0";
+            }
+            else
+            {
+                return o;
+            }
         }
     }
 }

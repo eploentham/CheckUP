@@ -286,7 +286,7 @@ namespace Cemp.gui
         private void btnSave_Click(object sender, EventArgs e)
         {
             Boolean chkdel = false;
-            String quId = "";
+            String poId = "";
             //if (txtQuNumber.Text.Equals(""))
             //{
             //    MessageBox.Show("ไม่มีเลขที่ Quotation", "ป้อนข้อมูลไม่ครบ");
@@ -341,10 +341,10 @@ namespace Cemp.gui
             getPO();
             if (po.Id.Equals(""))
             {
-                //po.PONumber = cc.podb.getQuoNumber("");
+                po.PONumber = cc.podb.getPONumber();
                 //String[] doc1 = qu.QuoNumber.Split('-');
                 //qu.QuoNumber = doc1[0];
-                //qu.QuoNumberCnt = doc1[1];
+                po.PONumberCnt = "1";
             }
             else
             {
@@ -356,11 +356,40 @@ namespace Cemp.gui
                 //}
                 //else
                 //{
-                //    qu.QuoNumberCnt = String.Concat(int.Parse(doc1[1]) + 1);
+                po.PONumberCnt = String.Concat(int.Parse(po.PONumberCnt) + 1);
                 //}
             }
-            quId = cc.podb.insertPO(po);
-
+            poId = cc.podb.insertPO(po);
+            if (poId.Length >= 1)
+            {
+                for (int i = 0; i < dgvAdd.RowCount; i++)
+                {
+                    if (dgvAdd[colAmt, i].Value == null)
+                    {
+                        continue;
+                    }
+                    if (dgvAdd[colAmt, i].Value.ToString().Equals(""))
+                    {
+                        continue;
+                    }
+                    if (dgvAdd[colDesc, i].Value.ToString().Equals(""))
+                    {
+                        continue;
+                    }
+                    POItem poi = new POItem();
+                    poi.RowNumber = dgvAdd[colRow, i].Value.ToString();
+                    poi.Active = "1";
+                    poi.Id = dgvAdd[colId, i].Value.ToString();
+                    poi.ItemAmount = dgvAdd[colAmt, i].Value.ToString();
+                    poi.ItemId = dgvAdd[colItem, i].Value.ToString();
+                    poi.ItemNameT=dgvAdd[colItem, i].Value.ToString();
+                    poi.ItemPrice = dgvAdd[colPrice, i].Value.ToString();
+                    poi.ItemQty = dgvAdd[colQty, i].Value.ToString(); ;
+                    poi.Remark = dgvAdd[colRemark, i].Value.ToString();
+                    poi.POId = poId;
+                    cc.poidb.insertPOItem(poi);
+                }
+            }
             Cursor.Current = cursor;
         }
 

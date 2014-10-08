@@ -81,3 +81,4 @@ D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmPOItemSearch.resources
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmAnalysisView.resources
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmAnalysisAdd.resources
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmItemGroupAdd.resources
+D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.csprojResolveAssemblyReference.cache

@@ -225,5 +225,30 @@ namespace Cemp.objdb
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
+        public String getPONumber()
+        {
+            String sql = "", year = "", doc="";
+            year = getYear();
+            sql = "Select count(1) as cnt From " + po.table + " ";
+            DataTable dt = conn.selectData(sql);
+            doc = String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);
+            doc = "00000" + doc;
+            doc = doc.Substring(0, doc.Length - 5);
+            return "PO"+year + doc;
+        }
+        public String getYear()
+        {
+            String year = "";
+            if (System.DateTime.Now.Year > 2550)
+            {
+                year = System.DateTime.Now.Year.ToString().Substring(2);
+            }
+            else
+            {
+                year = String.Concat(System.DateTime.Now.Year + 543);
+            }
+            year = year.Substring(2);
+            return year;
+        }
     }
 }
