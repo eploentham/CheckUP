@@ -63,6 +63,7 @@ namespace Cemp.objdb
             po.NetTotal = "nettotal";
             po.SfApproveId = "staff_approve_id";
             po.SfApproveName = "staff_approve_name";
+            po.line1 = "line1";
 
             po.pkField = "po_id";
             po.table = "t_po";
@@ -114,6 +115,7 @@ namespace Cemp.objdb
             item.NetTotal = dt.Rows[0][po.NetTotal].ToString();
             item.SfApproveId = dt.Rows[0][po.SfApproveId].ToString();
             item.SfApproveName = dt.Rows[0][po.SfApproveName].ToString();
+            item.line1 = dt.Rows[0][po.line1].ToString();
 
             return item;
         }
@@ -173,8 +175,8 @@ namespace Cemp.objdb
                 po.Remark3 + "," + po.Remark4 + "," + po.Remark5 + "," + 
                 po.CuAddressT + "," + po.CpAddress1 + "," + po.CpAddress2 + "," +
                 po.CpTaxId + "," + po.Amt + "," + po.VatRate + "," + 
-                po.Vat + "," + po.NetTotal + "," + po.SfApproveId + "," + 
-                po.SfApproveName + ") " +
+                po.Vat + "," + po.NetTotal + "," + po.SfApproveId + "," +
+                po.SfApproveName + "," + po.line1 + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.ContactName + "','" +
                 p.CpId + "','" + p.CpNameT + "','" + p.CuFax + "','" +
                 p.CuId + "','" + p.CuNametT + "','" + p.CustEmail + "','" +
@@ -188,8 +190,8 @@ namespace Cemp.objdb
                 p.Remark3 + "','" + p.Remark4 + "','" + p.Remark5 + "','" +
                 p.CuAddressT + "','" + p.CpAddress1 + "','" + p.CpAddress2 + "','" +
                 p.CpTaxId + "'," + NumberNull1(p.Amt) + "," + NumberNull1(p.VatRate) + "," +
-                NumberNull1(p.Vat) + "," + NumberNull1(p.NetTotal) + ",'" + p.SfApproveId + "','" + 
-                p.SfApproveName + "')";
+                NumberNull1(p.Vat) + "," + NumberNull1(p.NetTotal) + ",'" + p.SfApproveId + "','" +
+                p.SfApproveName + "','" + p.line1 + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -257,8 +259,8 @@ namespace Cemp.objdb
                 po.Vat + "=" + NumberNull1(p.Vat) + ", " +
                 po.NetTotal + "=" + NumberNull1(p.NetTotal) + ", " +
                 po.SfApproveId + "='" + p.SfApproveId + "', " +
-                po.SfApproveName + "='" + p.SfApproveName + "' " +
-                //po.DateModi + "='" + p.dateGenDB + "' " +
+                po.SfApproveName + "='" + p.SfApproveName + "', " +
+                po.line1 + "='" + p.line1 + "' " +
                 "Where " + po.pkField + "='" + p.Id + "'";
             try
             {

@@ -407,6 +407,17 @@
       <DependentUpon>MOUSamplePrint.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="report\PODS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PODS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="report\POPrint.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POPrint.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="report\QuotationDS.cs">
       <DependentUpon>QuotationDS.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -587,6 +598,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>MOUSamplePrint.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="report\POPrint.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>POPrint.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="report\QuotationPrint.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>QuotationPrint.cs</LastGenOutput>
@@ -683,6 +698,17 @@
     </None>
     <None Include="report\MOUPrintDS.xss">
       <DependentUpon>MOUPrintDS.xsd</DependentUpon>
+    </None>
+    <None Include="report\PODS.xsc">
+      <DependentUpon>PODS.xsd</DependentUpon>
+    </None>
+    <None Include="report\PODS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PODS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="report\PODS.xss">
+      <DependentUpon>PODS.xsd</DependentUpon>
     </None>
     <None Include="report\QuotationDS.xsc">
       <DependentUpon>QuotationDS.xsd</DependentUpon>
