@@ -797,6 +797,7 @@
             this.btnPrintT.TabIndex = 76;
             this.btnPrintT.Text = "พิมพ์";
             this.btnPrintT.UseVisualStyleBackColor = true;
+            this.btnPrintT.Click += new System.EventHandler(this.btnPrintT_Click);
             // 
             // btnSave
             // 

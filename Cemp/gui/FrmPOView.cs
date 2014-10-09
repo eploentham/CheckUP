@@ -71,7 +71,7 @@ namespace Cemp.gui
                     dgvView[colPONumber, i].Value = dt.Rows[i][cc.podb.po.PONumber].ToString();
                     dgvView[colCustName, i].Value = dt.Rows[i][cc.podb.po.CuNametT].ToString();
                     dgvView[colDuePeriod, i].Value = dt.Rows[i][cc.podb.po.PODurPeriod].ToString();
-                    dgvView[colId, i].Value = "";
+                    dgvView[colId, i].Value = dt.Rows[i][cc.podb.po.Id].ToString();
                     //if (dt.Rows[i][cc.modb.mo.statusMOU].ToString().Equals("1"))
                     //{
                     //    dgvView[colStaffName, i].Value = "รอเก็บผล";
@@ -111,7 +111,7 @@ namespace Cemp.gui
                 return;
             }
 
-            FrmPOAdd frm = new FrmPOAdd(dgvView[colPONumber, e.RowIndex].Value.ToString(),  cc);
+            FrmPOAdd frm = new FrmPOAdd(dgvView[colId, e.RowIndex].Value.ToString(),  cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             setGrd();

@@ -39,9 +39,14 @@ namespace Cemp.gui
             cboCust = cc.cudb.getCboVendor(cboCust);
             cboStaff = cc.sfdb.getCboStaff(cboStaff);
             cboStaffApprove = cc.sfdb.getCboStaff(cboStaffApprove);
-            
-            setControl(poId);
+            cboRemark1 = cc.podb.getCboRemark1(cboRemark1);
+            cboRemark2 = cc.podb.getCboRemark2(cboRemark2);
+            cboRemark3 = cc.podb.getCboRemark3(cboRemark3);
+            cboRemark4 = cc.podb.getCboRemark4(cboRemark4);
+            cboRemark5 = cc.podb.getCboRemark5(cboRemark5);
             setGrd();
+            setControl(poId);
+            
             btnUnActive.Visible = false;
         }
         private void setControl(String poId)
@@ -70,7 +75,34 @@ namespace Cemp.gui
             }
             else
             {
-                
+                txtPONumber.Text = po.PONumber + "-" + po.PONumberCnt;
+                cboComp.Text = po.CpNameT;
+                txtCompAddress1.Text = po.CpAddress1;
+                txtCompAddress2.Text = po.CpAddress2;
+                txtCompTaxId.Text = po.CpTaxId;
+                txtCompTaxId.Text = po.CpTaxId;
+
+                cboCust.Text = po.CuNametT;
+                txtCustAddress.Text = po.CuAddressT;
+                txtCustEmail.Text = po.CustEmail;
+                txtCustFax.Text = po.CuFax;
+                txtCustTel.Text = po.CuTel;
+
+                txtAmount.Text = String.Format("{0:#,###,###.00}", double.Parse(cc.cf.NumberNull1(po.Amt)));
+                txtVat.Text = String.Format("{0:#,###,###.00}", double.Parse(cc.cf.NumberNull1(po.Vat)));
+                txtVatRate.Text = String.Format("{0:#,###,###.00}", double.Parse(cc.cf.NumberNull1(po.VatRate)));
+                txtNetTotal.Text = String.Format("{0:#,###,###.00}", double.Parse(cc.cf.NumberNull1(po.NetTotal)));
+                cboStaffApprove.Text = po.SfApproveName;
+                cboStaff.Text = po.SfName;
+                txtStaffTel.Text = po.SfTel;
+
+                cboRemark1.Text = po.Remark1;
+                cboRemark2.Text = po.Remark2;
+                cboRemark3.Text = po.Remark3;
+                cboRemark4.Text = po.Remark4;
+                cboRemark5.Text = po.Remark5;
+
+                setGrd(poId);
                 btnPrintT.Visible = true;
             }
             chkActive.Checked = true;
@@ -81,11 +113,16 @@ namespace Cemp.gui
             po.ContactName = "";
             po.CpId = cc.getValueCboItem(cboComp);
             po.CpNameT = cboComp.Text;
+            po.CpAddress1 = txtCompAddress1.Text;
+            po.CpAddress2 = txtCompAddress2.Text;
+            po.CpTaxId = txtCompTaxId.Text;
+
             po.CuFax = txtCustFax.Text;
             po.CuId = cc.getValueCboItem(cboCust);
             po.CuNametT = cboCust.Text;
             po.CustEmail = txtCustEmail.Text;
             po.CuTel = txtCustTel.Text;
+            po.CuAddressT = txtCustAddress.Text;
             po.Id = txtPOId.Text;
             po.PODate = "";
             po.PODurPeriod = "";
@@ -93,11 +130,24 @@ namespace Cemp.gui
             po.PONumberCnt = "";
             po.QuId = "";
             po.QuNumber = "";
+
             po.SfEmail = "";
             po.SfId = cc.getValueCboItem(cboStaff);
             po.SfName = cboStaff.Text;
             po.SfTel = txtStaffTel.Text;
-            
+            po.SfApproveId = cc.getValueCboItem(cboStaffApprove);
+            po.SfApproveName = cboStaffApprove.Text;
+
+            po.Remark1 = cboRemark1.Text;
+            po.Remark2 = cboRemark2.Text;
+            po.Remark3 = cboRemark3.Text;
+            po.Remark4 = cboRemark4.Text;
+            po.Remark5 = cboRemark5.Text;
+
+            po.Amt = txtAmount.Text.Replace(",","");
+            po.VatRate = txtVatRate.Text.Replace(",", "");
+            po.Vat = txtVat.Text.Replace(",", "");
+            po.NetTotal = txtNetTotal.Text.Replace(",", "");
         }
         private void setGrd()
         {
@@ -145,10 +195,10 @@ namespace Cemp.gui
             dgvAdd.Rows[row].Cells[colItem].Selected = true;
             dgvAdd.CurrentCell = dgvAdd.Rows[row].Cells[colItem];
         }
-        private void setGrd(String moNumber)
+        private void setGrd(String poId)
         {
             setGrd();
-            DataTable dt = cc.moidb.selectByMoNumber(moNumber);
+            DataTable dt = cc.poidb.selectByPoId(poId);
 
             //DataTable dt = new DataTable();
             //dt = cc.sfdb.selectAll();
@@ -162,12 +212,12 @@ namespace Cemp.gui
                     //DataGridViewComboBoxCell cell = (DataGridViewComboBoxCell)(dgvAdd.Rows[i].Cells[colItem]);
                     //cell.DataSource = newColumn;
                     dgvAdd[colRow, i].Value = (i + 1);
-                    //dgvAdd[colItem, i].Value = dt.Rows[i][cc.moidb.moi.ItemDescription].ToString();
-                    //dgvAdd[colMethod, i].Value = dt.Rows[i][cc.moidb.moi.MethodDescription].ToString();
-                    //dgvAdd[colSample, i].Value = dt.Rows[i][cc.moidb.moi.Sample].ToString();
-                    //dgvAdd[colItemType, i].Value = dt.Rows[i][cc.moidb.moi.ItemType].ToString();
-                    //dgvAdd[colPlace, i].Value = dt.Rows[i][cc.moidb.moi.PlaceRecord].ToString();
-                    //dgvAdd[colItemId, i].Value = dt.Rows[i][cc.moidb.moi.ItemId].ToString();
+                    dgvAdd[colItem, i].Value = dt.Rows[i][cc.poidb.poi.ItemId].ToString();
+                    dgvAdd[colDesc, i].Value = dt.Rows[i][cc.poidb.poi.ItemNameT].ToString();
+                    dgvAdd[colPrice, i].Value = dt.Rows[i][cc.poidb.poi.ItemPrice].ToString();
+                    dgvAdd[colQty, i].Value = dt.Rows[i][cc.poidb.poi.ItemQty].ToString();
+                    dgvAdd[colRemark, i].Value = dt.Rows[i][cc.poidb.poi.Remark].ToString();
+                    dgvAdd[colAmt, i].Value = dt.Rows[i][cc.poidb.poi.ItemAmount].ToString();
                     //dgvAdd[colMethodId, i].Value = dt.Rows[i][cc.moidb.moi.MethodId].ToString();
                     //dgvAdd[colId, i].Value = dt.Rows[i][cc.moidb.moi.Id].ToString();
 
@@ -212,6 +262,20 @@ namespace Cemp.gui
         {
             dgvAdd[colAmt, row].Value = String.Format("{0:#,###,###.00}", (Double.Parse(dgvAdd[colPrice, row].Value.ToString()) * Double.Parse(dgvAdd[colQty, row].Value.ToString())));
             //txtItemAmount.Text = String.Concat(Double.Parse(cc.cf.NumberNull1(txtItemQty.Text)) * Double.Parse(cc.cf.NumberNull1(txtItemPrice.Text)));
+        }
+        private void calNetTotal()
+        {
+            Double amt = 0, amtDis = 0, total = 0, netTotal = 0, vat = 0, plus = 0;
+            amt = Double.Parse(cc.cf.NumberNull1(txtAmount.Text.Replace(",", "")));
+            //amtDis = amt - Double.Parse(cc.cf.NumberNull1(txtDiscount.Text.Replace(",", "")));
+            //total = amtDis + Double.Parse(cc.cf.NumberNull1(txtPlus1.Text.Replace(",", "")));
+            vat = (amt * Double.Parse(cc.cf.NumberNull1(txtVatRate.Text.Replace(",", ""))) / 100);
+            netTotal = amt + vat;
+            //txtPlus1.Text = String.Format("{0:#,###,###.00}", Double.Parse(cc.cf.NumberNull1(txtPlus1.Text)));
+            //txtAmountDiscount.Text = String.Format("{0:#,###,###.00}", amtDis);
+            //txtTotal.Text = String.Format("{0:#,###,###.00}", total);
+            txtVat.Text = String.Format("{0:#,###,###.00}", vat);
+            txtNetTotal.Text = String.Format("{0:#,###,###.00}", netTotal);
         }
         private void calAmount()
         {
@@ -390,15 +454,19 @@ namespace Cemp.gui
                     poi.RowNumber = dgvAdd[colRow, i].Value.ToString();
                     poi.Active = "1";
                     poi.Id = dgvAdd[colId, i].Value.ToString();
-                    poi.ItemAmount = dgvAdd[colAmt, i].Value.ToString();
+                    poi.ItemAmount = dgvAdd[colAmt, i].Value.ToString().Replace(",", "");
                     poi.ItemId = dgvAdd[colItem, i].Value.ToString();
-                    poi.ItemNameT=dgvAdd[colItem, i].Value.ToString();
-                    poi.ItemPrice = dgvAdd[colPrice, i].Value.ToString();
-                    poi.ItemQty = dgvAdd[colQty, i].Value.ToString(); ;
+                    poi.ItemNameT=dgvAdd[colDesc, i].Value.ToString();
+                    poi.ItemPrice = dgvAdd[colPrice, i].Value.ToString().Replace(",", "");
+                    poi.ItemQty = dgvAdd[colQty, i].Value.ToString().Replace(",","");
                     poi.Remark = dgvAdd[colRemark, i].Value.ToString();
                     poi.POId = poId;
                     cc.poidb.insertPOItem(poi);
                 }
+                PO po1 = cc.podb.selectByPk(poId);
+                txtPONumber.Text = po1.PONumber + "-" + po1.PONumberCnt;
+                txtPOId.Text = poId;
+                MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
             }
             Cursor.Current = cursor;
         }
@@ -434,6 +502,7 @@ namespace Cemp.gui
                     //dgvAdd.CurrentCell = dgvAdd.Rows[e.RowIndex].Cells[colRemark];
                     calAmount(e.RowIndex);
                     calAmount();
+                    calNetTotal();
                     DgvAddRow();
                     dgvAdd.Rows[row].Cells[colItem].Selected = true;
                     dgvAdd.CurrentCell = dgvAdd.Rows[row].Cells[colItem];
@@ -503,6 +572,43 @@ namespace Cemp.gui
                     // the input is numeric 
                 }
             }
+        }
+
+        private void btnPrintT_Click(object sender, EventArgs e)
+        {
+            //String sql = "";
+            ////OleDbDataAdapter da = new OleDbDataAdapter();
+            //DataTable dt = cc.quidb.selectByQuId(txtPOId.Text);
+            //PO po = cc.podb.selectByPk(txtPOId.Text);
+            //po.ContactName = "เรียน : " + po.ContactName;
+            //po.CustAddress = "ที่อยู่ : " + po.CustAddress;
+            //po.CustTel = "เบอร์โทร : " + po.CustTel + " Email : " + po.CustEmail;
+            //po.Line1 = cc.cp.quLine1;
+            //po.PONumber = "เลขที่ : " + po.QuoNumber + "-" + po.QuoNumberCnt;
+            //po.QuoDate = "วันที่ :" + po.QuoDate;
+            //po.SfNameT = "ผู้เสนอราคา :" + po.StaffName;
+            //po.StaffTel = "เบอร์โทร : " + po.StaffTel;
+            //po.StaffEmail = "Email : " + po.StaffEmail;
+            //po.Remark1 = "1. " + po.Remark1;
+            //po.Remark2 = "2. " + po.Remark2;
+            //po.Remark3 = "3. " + po.Remark3;
+            //po.Remark4 = "4. " + po.Remark4;
+            //po.Remark5 = "5. " + po.Remark5;
+            //po.Remark6 = "6. " + po.Remark6;
+            //po.Remark7 = "7. " + po.Remark7;
+            //po.ThaiBaht = cc.ThaiBaht(po.NetTotal);
+            ////qu.Amount = "รวมราคา " + qu.Amount;
+            ////qu.Discount = "ส่วนลด " + qu.Amount;
+            ////DataTable dtqu = cc.qudb.selectPrintById(txtQuId.Text);
+            ////DataTable dtqui = cc.quidb.selectByQuId(txtQuId.Text);
+            ////DataSet ds = new DataSet();
+            ////ds.Tables.Add(dtqu);
+            ////ds.Tables.Add(dtqui);
+            ////cc.conn.f
+            ////dat
+            //FrmReport frm = new FrmReport(cc);
+            //frm.setReportQuotation(po, dt);
+            //frm.ShowDialog(this);
         }
     }
 }

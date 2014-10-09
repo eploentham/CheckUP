@@ -48,6 +48,21 @@ namespace Cemp.objdb
             po.UserCreate = "user_create";
             po.UserModi = "user_modi";
             po.PONumberCnt = "po_number_cnt";
+            po.Remark1 = "remark1";
+            po.Remark2 = "remark2";
+            po.Remark3 = "remark3";
+            po.Remark4 = "remark4";
+            po.Remark5 = "remark5";
+            po.CuAddressT = "cust_address";
+            po.CpAddress1 = "comp_address1";
+            po.CpAddress2 = "comp_address2";
+            po.CpTaxId = "comp_tax_id";
+            po.Amt = "amount";
+            po.Vat = "vat";
+            po.VatRate = "vat_rate";
+            po.NetTotal = "nettotal";
+            po.SfApproveId = "staff_approve_id";
+            po.SfApproveName = "staff_approve_name";
 
             po.pkField = "po_id";
             po.table = "t_po";
@@ -82,6 +97,23 @@ namespace Cemp.objdb
             item.UserCreate = dt.Rows[0][po.UserCreate].ToString();
             item.UserModi = dt.Rows[0][po.UserModi].ToString();
             item.PONumberCnt = dt.Rows[0][po.PONumberCnt].ToString();
+
+            item.Remark1 = dt.Rows[0][po.Remark1].ToString();
+            item.Remark2 = dt.Rows[0][po.Remark2].ToString();
+            item.Remark3 = dt.Rows[0][po.Remark3].ToString();
+            item.Remark4 = dt.Rows[0][po.Remark4].ToString();
+            item.Remark5 = dt.Rows[0][po.Remark5].ToString();
+
+            item.CuAddressT = dt.Rows[0][po.CuAddressT].ToString();
+            item.CpAddress1 = dt.Rows[0][po.CpAddress1].ToString();
+            item.CpAddress2 = dt.Rows[0][po.CpAddress2].ToString();
+            item.CpTaxId = dt.Rows[0][po.CpTaxId].ToString();
+            item.Amt = dt.Rows[0][po.Amt].ToString();
+            item.Vat = dt.Rows[0][po.Vat].ToString();
+            item.VatRate = dt.Rows[0][po.VatRate].ToString();
+            item.NetTotal = dt.Rows[0][po.NetTotal].ToString();
+            item.SfApproveId = dt.Rows[0][po.SfApproveId].ToString();
+            item.SfApproveName = dt.Rows[0][po.SfApproveName].ToString();
 
             return item;
         }
@@ -119,8 +151,14 @@ namespace Cemp.objdb
             p.CpNameT = p.CpNameT.Replace("'", "''");
             p.CuNametT = p.CuNametT.Replace("'", "'");
             p.SfName = p.SfName.Replace("'", "''");
-            //p.MethodMeasure = p.MethodMeasure.Replace("'", "''");
-            //p.Summary = p.Summary.Replace("'", "''");
+            p.Remark1 = p.Remark1.Replace("'", "''");
+            p.Remark2 = p.Remark2.Replace("'", "''");
+            p.Remark3 = p.Remark3.Replace("'", "''");
+            p.Remark4 = p.Remark4.Replace("'", "''");
+            p.Remark5 = p.Remark5.Replace("'", "''");
+            p.CuAddressT = p.CuAddressT.Replace("'", "''");
+            p.CpAddress1 = p.CpAddress1.Replace("'", "''");
+            p.CpAddress2 = p.CpAddress2.Replace("'", "''");
             p.PONumberCnt = "1";
             sql = "Insert Into " + po.table + " (" + po.pkField + "," + po.Active + "," + po.ContactName + "," +
                 po.CpId + "," + po.CpNameT + "," + po.CuFax + "," +
@@ -130,7 +168,13 @@ namespace Cemp.objdb
                 po.PONumber + "," + po.QuId + "," + po.QuNumber + "," + 
                 po.SfEmail + "," + po.SfId + "," + po.SfName + "," +
                 po.SfTel + "," + po.StatusApprove + "," + po.StatusPO + "," +
-                po.UserCancel + "," + po.UserCreate + "," + po.UserModi + "," + po.PONumberCnt + ") " +
+                po.UserCancel + "," + po.UserCreate + "," + po.UserModi + "," +
+                po.PONumberCnt + "," + po.Remark1 + "," + po.Remark2 + "," +
+                po.Remark3 + "," + po.Remark4 + "," + po.Remark5 + "," + 
+                po.CuAddressT + "," + po.CpAddress1 + "," + po.CpAddress2 + "," +
+                po.CpTaxId + "," + po.Amt + "," + po.VatRate + "," + 
+                po.Vat + "," + po.NetTotal + "," + po.SfApproveId + "," + 
+                po.SfApproveName + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.ContactName + "','" +
                 p.CpId + "','" + p.CpNameT + "','" + p.CuFax + "','" +
                 p.CuId + "','" + p.CuNametT + "','" + p.CustEmail + "','" +
@@ -139,7 +183,13 @@ namespace Cemp.objdb
                 p.PONumber + "','" + p.QuId + "','" + p.QuNumber + "','" + 
                 p.SfEmail + "','" + p.SfId + "','" + p.SfName + "','" +
                 p.SfTel + "','" + p.StatusApprove + "','" + p.StatusPO + "','" +
-                p.UserCancel + "','" + p.UserCreate + "','" + p.UserModi + "'," + NumberNull1(p.PONumberCnt) + ")";
+                p.UserCancel + "','" + p.UserCreate + "','" + p.UserModi + "'," +
+                NumberNull1(p.PONumberCnt) + ",'" + p.Remark1 + "','" + p.Remark2 + "','" +
+                p.Remark3 + "','" + p.Remark4 + "','" + p.Remark5 + "','" +
+                p.CuAddressT + "','" + p.CpAddress1 + "','" + p.CpAddress2 + "','" +
+                p.CpTaxId + "'," + NumberNull1(p.Amt) + "," + NumberNull1(p.VatRate) + "," +
+                NumberNull1(p.Vat) + "," + NumberNull1(p.NetTotal) + ",'" + p.SfApproveId + "','" + 
+                p.SfApproveName + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -162,6 +212,14 @@ namespace Cemp.objdb
             p.CpNameT = p.CpNameT.Replace("'", "''");
             p.CuNametT = p.CuNametT.Replace("'", "'");
             p.SfName = p.SfName.Replace("'", "''");
+            p.Remark1 = p.Remark1.Replace("'", "''");
+            p.Remark2 = p.Remark2.Replace("'", "''");
+            p.Remark3 = p.Remark3.Replace("'", "''");
+            p.Remark4 = p.Remark4.Replace("'", "''");
+            p.Remark5 = p.Remark5.Replace("'", "''");
+            p.CuAddressT = p.CuAddressT.Replace("'", "''");
+            p.CpAddress1 = p.CpAddress1.Replace("'", "''");
+            p.CpAddress2 = p.CpAddress2.Replace("'", "''");
 
             sql = "Update " + po.table + " Set " + po.ContactName + "='" + p.ContactName + "', " +
                 po.CpId + "='" + p.CpId + "', " +
@@ -184,10 +242,23 @@ namespace Cemp.objdb
                 po.StatusApprove + "='" + p.StatusApprove + "', " +
                 po.StatusPO + "='" + p.StatusPO + "', " +
                 po.PONumberCnt + "=" + p.PONumberCnt + ", " +
-                po.UserModi + "='" + p.UserModi + "' " +
-                //po.MethodMeasure + "='" + p.MethodMeasure + "', " +
-                //po.Summary + "='" + p.Summary + "' " +
-
+                po.UserModi + "=" + p.UserModi + ", " +
+                po.Remark1 + "='" + p.Remark1 + "', " +
+                po.Remark2 + "='" + p.Remark2 + "', " +
+                po.Remark3 + "='" + p.Remark3 + "', " +
+                po.Remark4 + "='" + p.Remark4 + "', " +
+                po.Remark5 + "='" + p.Remark5 + "', " +
+                po.CuAddressT + "='" + p.CuAddressT + "', " +
+                po.CpAddress1 + "='" + p.CpAddress1 + "', " +
+                po.CpAddress2 + "='" + p.CpAddress2 + "', " +
+                po.CpTaxId + "='" + p.CpTaxId + "', " +
+                po.Amt + "=" + NumberNull1(p.Amt) + ", " +
+                po.VatRate + "=" + NumberNull1(p.VatRate) + ", " +
+                po.Vat + "=" + NumberNull1(p.Vat) + ", " +
+                po.NetTotal + "=" + NumberNull1(p.NetTotal) + ", " +
+                po.SfApproveId + "='" + p.SfApproveId + "', " +
+                po.SfApproveName + "='" + p.SfApproveName + "' " +
+                //po.DateModi + "='" + p.dateGenDB + "' " +
                 "Where " + po.pkField + "='" + p.Id + "'";
             try
             {
@@ -233,7 +304,7 @@ namespace Cemp.objdb
             DataTable dt = conn.selectData(sql);
             doc = String.Concat(int.Parse(dt.Rows[0]["cnt"].ToString()) + 1);
             doc = "00000" + doc;
-            doc = doc.Substring(0, doc.Length - 5);
+            doc = doc.Substring(doc.Length - 5);
             return "PO"+year + doc;
         }
         public String getYear()
@@ -260,6 +331,126 @@ namespace Cemp.objdb
             {
                 return o;
             }
+        }
+        public DataTable selectDistinctRemark1()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select Distinct " + po.Remark1 + " From " + po.table + " Where " + po.Active + "='1'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public ComboBox getCboRemark1(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectDistinctRemark1();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i][po.Remark1].ToString();
+                item.Text = dt.Rows[i][po.Remark1].ToString();
+                c.Items.Add(item);
+                //c.Items.Add(new );
+            }
+            //c.SelectedItem = item;
+            return c;
+        }
+        public DataTable selectDistinctRemark2()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select Distinct " + po.Remark2 + " From " + po.table + " Where " + po.Active + "='1'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public ComboBox getCboRemark2(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectDistinctRemark2();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i][po.Remark2].ToString();
+                item.Text = dt.Rows[i][po.Remark2].ToString();
+                c.Items.Add(item);
+                //c.Items.Add(new );
+            }
+            //c.SelectedItem = item;
+            return c;
+        }
+        public DataTable selectDistinctRemark3()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select Distinct " + po.Remark3 + " From " + po.table + " Where " + po.Active + "='1'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public ComboBox getCboRemark3(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectDistinctRemark3();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i][po.Remark3].ToString();
+                item.Text = dt.Rows[i][po.Remark3].ToString();
+                c.Items.Add(item);
+                //c.Items.Add(new );
+            }
+            //c.SelectedItem = item;
+            return c;
+        }
+        public DataTable selectDistinctRemark4()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select Distinct " + po.Remark4 + " From " + po.table + " Where " + po.Active + "='1'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public ComboBox getCboRemark4(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectDistinctRemark4();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i][po.Remark4].ToString();
+                item.Text = dt.Rows[i][po.Remark4].ToString();
+                c.Items.Add(item);
+                //c.Items.Add(new );
+            }
+            //c.SelectedItem = item;
+            return c;
+        }
+        public DataTable selectDistinctRemark5()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select Distinct " + po.Remark5 + " From " + po.table + " Where " + po.Active + "='1'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public ComboBox getCboRemark5(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectDistinctRemark5();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i][po.Remark5].ToString();
+                item.Text = dt.Rows[i][po.Remark5].ToString();
+                c.Items.Add(item);
+                //c.Items.Add(new );
+            }
+            //c.SelectedItem = item;
+            return c;
         }
     }
 }

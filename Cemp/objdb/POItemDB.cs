@@ -94,6 +94,15 @@ namespace Cemp.objdb
             }
             return item;
         }
+        public DataTable selectByPoId(String name)
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From " + poi.table + " Where " + poi.Active + "='1' and " + poi.POId + "='" + name + "'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
         private String insert(POItem p)
         {
             String sql = "", chk = "";
