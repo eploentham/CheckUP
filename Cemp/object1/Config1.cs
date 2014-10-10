@@ -218,6 +218,28 @@ namespace Cemp.object1
         {
             return dt.Year.ToString() + "-" + dt.Month.ToString("00") + "-" + dt.Day.ToString("00");
         }
+        public String datetoDBChk25(DateTime dt)
+        {
+            if (dt.Year <= 2500)
+            {
+                return String.Concat((dt.Year + 543), "-") + dt.Month.ToString("00") + "-" + dt.Day.ToString("00");
+            }
+            else
+            {
+                return dt.Year.ToString() + "-" + dt.Month.ToString("00") + "-" + dt.Day.ToString("00");
+            }
+        }
+        public String datetoDBChk25(String dt)
+        {
+            if (int.Parse(dt.Substring(6)) >= 2500)
+            {
+                return String.Concat((int.Parse(dt.Substring(6)) - 543), "-") + dt.Substring(3, 2) + "-" + dt.Substring(0, 2);
+            }
+            else
+            {
+                return dt.Substring(6) + "-" + dt.Substring(3, 2) + "-" + dt.Substring(0, 2);
+            }
+        }
         public String datetoDB1(String dt)
         {
             //DateTime dt1 = new DateTime();

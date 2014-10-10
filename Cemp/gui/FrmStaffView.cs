@@ -75,7 +75,7 @@ namespace Cemp.gui
                 {
                     dgvView[colRow, i].Value = (i + 1);
                     dgvView[colCode, i].Value = dt.Rows[i][cc.sfdb.sf.Code].ToString();
-                    dgvView[colName, i].Value = dt.Rows[i][cc.sfdb.sf.NameT].ToString();
+                    dgvView[colName, i].Value = dt.Rows[i][cc.sfdb.sf.Prefix].ToString()+" "+dt.Rows[i][cc.sfdb.sf.NameT].ToString();
                     dgvView[colRemark, i].Value = dt.Rows[i][cc.sfdb.sf.Remark].ToString();
                     dgvView[colId, i].Value = dt.Rows[i][cc.sfdb.sf.Id].ToString();
                     if (dt.Rows[i][cc.sfdb.sf.Priority].ToString().Equals("1"))

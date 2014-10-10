@@ -26,14 +26,14 @@ namespace Cemp.objdb
             po.CpNameT = "comp_name_t";
             po.CuFax = "cust_fax";
             po.CuId = "cust_id";
-            po.CuNametT = "cust_name_t";
-            po.CustEmail = "cust_email";
+            po.CuNameT = "cust_name_t";
+            po.CuEmail = "cust_email";
             po.CuTel = "cust_tel";
             po.DateCancel = "date_cancel";
             po.DateCreate = "date_create";
             po.DateModi = "date_modi";
             po.PODate = "po_date";
-            po.PODurPeriod = "po_due_period";
+            po.PODuePeriod = "po_due_period";
             po.Id = "po_id";
             po.PONumber = "po_number";
             po.QuId = "quo_id";
@@ -63,7 +63,8 @@ namespace Cemp.objdb
             po.NetTotal = "nettotal";
             po.SfApproveId = "staff_approve_id";
             po.SfApproveName = "staff_approve_name";
-            po.line1 = "line1";
+            po.Line1 = "line1";
+            po.PODueDate = "po_due_date";
 
             po.pkField = "po_id";
             po.table = "t_po";
@@ -76,14 +77,14 @@ namespace Cemp.objdb
             item.CpNameT = dt.Rows[0][po.CpNameT].ToString();
             item.CuFax = dt.Rows[0][po.CuFax].ToString();
             item.CuId = dt.Rows[0][po.CuId].ToString();
-            item.CuNametT = dt.Rows[0][po.CuNametT].ToString();
-            item.CustEmail = dt.Rows[0][po.CustEmail].ToString();
+            item.CuNameT = dt.Rows[0][po.CuNameT].ToString();
+            item.CuEmail = dt.Rows[0][po.CuEmail].ToString();
             item.CuTel = dt.Rows[0][po.CuTel].ToString();
             item.DateCancel = dt.Rows[0][po.DateCancel].ToString();
             item.DateCreate = dt.Rows[0][po.DateCreate].ToString();
             item.DateModi = dt.Rows[0][po.DateModi].ToString();
             item.PODate = dt.Rows[0][po.PODate].ToString();
-            item.PODurPeriod = dt.Rows[0][po.PODurPeriod].ToString();
+            item.PODuePeriod = dt.Rows[0][po.PODuePeriod].ToString();
             item.Id = dt.Rows[0][po.Id].ToString();
             item.PONumber = dt.Rows[0][po.PONumber].ToString();
             item.QuId = dt.Rows[0][po.QuId].ToString();
@@ -115,7 +116,9 @@ namespace Cemp.objdb
             item.NetTotal = dt.Rows[0][po.NetTotal].ToString();
             item.SfApproveId = dt.Rows[0][po.SfApproveId].ToString();
             item.SfApproveName = dt.Rows[0][po.SfApproveName].ToString();
-            item.line1 = dt.Rows[0][po.line1].ToString();
+            item.Line1 = dt.Rows[0][po.Line1].ToString();
+
+            item.PODueDate = dt.Rows[0][po.PODueDate].ToString();
 
             return item;
         }
@@ -151,7 +154,7 @@ namespace Cemp.objdb
             }
             p.ContactName = p.ContactName.Replace("'", "''");
             p.CpNameT = p.CpNameT.Replace("'", "''");
-            p.CuNametT = p.CuNametT.Replace("'", "'");
+            p.CuNameT = p.CuNameT.Replace("'", "'");
             p.SfName = p.SfName.Replace("'", "''");
             p.Remark1 = p.Remark1.Replace("'", "''");
             p.Remark2 = p.Remark2.Replace("'", "''");
@@ -164,9 +167,9 @@ namespace Cemp.objdb
             p.PONumberCnt = "1";
             sql = "Insert Into " + po.table + " (" + po.pkField + "," + po.Active + "," + po.ContactName + "," +
                 po.CpId + "," + po.CpNameT + "," + po.CuFax + "," +
-                po.CuId + "," + po.CuNametT + "," + po.CustEmail + "," +
+                po.CuId + "," + po.CuNameT + "," + po.CuEmail + "," +
                 po.CuTel + "," + po.DateCancel + "," + po.DateCreate + "," +
-                po.DateModi + "," + po.PODate + "," + po.PODurPeriod + "," +
+                po.DateModi + "," + po.PODate + "," + po.PODuePeriod + "," +
                 po.PONumber + "," + po.QuId + "," + po.QuNumber + "," + 
                 po.SfEmail + "," + po.SfId + "," + po.SfName + "," +
                 po.SfTel + "," + po.StatusApprove + "," + po.StatusPO + "," +
@@ -176,12 +179,12 @@ namespace Cemp.objdb
                 po.CuAddressT + "," + po.CpAddress1 + "," + po.CpAddress2 + "," +
                 po.CpTaxId + "," + po.Amt + "," + po.VatRate + "," + 
                 po.Vat + "," + po.NetTotal + "," + po.SfApproveId + "," +
-                po.SfApproveName + "," + po.line1 + ") " +
+                po.SfApproveName + "," + po.Line1 + "," + po.PODueDate + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.ContactName + "','" +
                 p.CpId + "','" + p.CpNameT + "','" + p.CuFax + "','" +
-                p.CuId + "','" + p.CuNametT + "','" + p.CustEmail + "','" +
+                p.CuId + "','" + p.CuNameT + "','" + p.CuEmail + "','" +
                 p.CuTel + "','" + p.DateCancel + "'," + p.dateGenDB + ",'" +
-                p.DateModi + "','" + p.PODate + "','" + NumberNull1(p.PODurPeriod) + "','" +
+                p.DateModi + "','" + p.PODate + "','" + NumberNull1(p.PODuePeriod) + "','" +
                 p.PONumber + "','" + p.QuId + "','" + p.QuNumber + "','" + 
                 p.SfEmail + "','" + p.SfId + "','" + p.SfName + "','" +
                 p.SfTel + "','" + p.StatusApprove + "','" + p.StatusPO + "','" +
@@ -191,7 +194,7 @@ namespace Cemp.objdb
                 p.CuAddressT + "','" + p.CpAddress1 + "','" + p.CpAddress2 + "','" +
                 p.CpTaxId + "'," + NumberNull1(p.Amt) + "," + NumberNull1(p.VatRate) + "," +
                 NumberNull1(p.Vat) + "," + NumberNull1(p.NetTotal) + ",'" + p.SfApproveId + "','" +
-                p.SfApproveName + "','" + p.line1 + "')";
+                p.SfApproveName + "','" + p.Line1 + "','" + p.PODueDate + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -212,7 +215,7 @@ namespace Cemp.objdb
 
             p.ContactName = p.ContactName.Replace("'", "''");
             p.CpNameT = p.CpNameT.Replace("'", "''");
-            p.CuNametT = p.CuNametT.Replace("'", "'");
+            p.CuNameT = p.CuNameT.Replace("'", "'");
             p.SfName = p.SfName.Replace("'", "''");
             p.Remark1 = p.Remark1.Replace("'", "''");
             p.Remark2 = p.Remark2.Replace("'", "''");
@@ -228,12 +231,12 @@ namespace Cemp.objdb
                 po.CpNameT + "='" + p.CpNameT + "', " +
                 po.CuFax + "='" + p.CuFax + "', " +
                 po.CuId + "='" + p.CuId + "', " +
-                po.CuNametT + "='" + p.CuNametT + "', " +
-                po.CustEmail + "='" + p.CustEmail + "', " +
+                po.CuNameT + "='" + p.CuNameT + "', " +
+                po.CuEmail + "='" + p.CuEmail + "', " +
                 po.CuTel + "='" + p.CuTel + "', " +
                 po.DateModi + "=" + p.dateGenDB + ", " +
                 po.PODate + "='" + p.PODate + "', " +
-                po.PODurPeriod + "='" + p.PODurPeriod + "', " +
+                po.PODuePeriod + "=" + NumberNull1(p.PODuePeriod) + ", " +
                 po.PONumber + "='" + p.PONumber + "', " +
                 po.QuId + "='" + p.QuId + "', " +
                 po.QuNumber + "='" + p.QuNumber + "', " +
@@ -244,7 +247,7 @@ namespace Cemp.objdb
                 po.StatusApprove + "='" + p.StatusApprove + "', " +
                 po.StatusPO + "='" + p.StatusPO + "', " +
                 po.PONumberCnt + "=" + p.PONumberCnt + ", " +
-                po.UserModi + "=" + p.UserModi + ", " +
+                //po.UserModi + "=" + p.dateGenDB + ", " +
                 po.Remark1 + "='" + p.Remark1 + "', " +
                 po.Remark2 + "='" + p.Remark2 + "', " +
                 po.Remark3 + "='" + p.Remark3 + "', " +
@@ -260,7 +263,8 @@ namespace Cemp.objdb
                 po.NetTotal + "=" + NumberNull1(p.NetTotal) + ", " +
                 po.SfApproveId + "='" + p.SfApproveId + "', " +
                 po.SfApproveName + "='" + p.SfApproveName + "', " +
-                po.line1 + "='" + p.line1 + "' " +
+                po.Line1 + "='" + p.Line1 + "', " +
+                po.PODueDate + "='" + p.PODueDate + "' " +
                 "Where " + po.pkField + "='" + p.Id + "'";
             try
             {

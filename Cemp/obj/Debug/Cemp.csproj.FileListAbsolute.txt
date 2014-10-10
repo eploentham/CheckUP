@@ -86,3 +86,10 @@ C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmAnalysisView.resources
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmPOAdd.resources
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmPOItemSearch.resources
 C:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmPOView.resources
+D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmAP.resources
+D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmAR.resources
+D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmBankAdd.resources
+D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmBankView.resources
+D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmCompanyBank.resources
+D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmStaffPrefixAdd.resources
+D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmStaffPrefixView.resources

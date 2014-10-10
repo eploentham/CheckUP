@@ -53,6 +53,7 @@ namespace Cemp.objdb
             cu.userCreate = "user_create";
             cu.userModi = "user_modi";
             cu.Remark2 = "remark2";
+            cu.PODuePeriod = "po_due_period";
 
             cu.table = "b_customer";
             cu.pkField = "cust_id";
@@ -104,6 +105,7 @@ namespace Cemp.objdb
             item.userCreate = dt.Rows[0][cu.userCreate].ToString();
             item.userModi = dt.Rows[0][cu.userModi].ToString();
             item.Remark2 = dt.Rows[0][cu.Remark2].ToString();
+            item.PODuePeriod = dt.Rows[0][cu.PODuePeriod].ToString();
 
             return item;
         }
@@ -228,7 +230,10 @@ namespace Cemp.objdb
                 cu.Email + "," + cu.Fax + "," + cu.NameE + "," +
                 cu.NameT + "," + cu.provinceId + "," + cu.Remark + "," +
                 cu.saleId + "," + cu.saleName + "," + cu.TaxId + "," +
-                cu.Tele + "," + cu.Zipcode + "," + cu.StatusCompany + "," + cu.StatusVendor + "," + cu.Remark2 + ") " +
+                cu.Tele + "," + cu.Zipcode + "," + cu.StatusCompany + "," +
+                cu.StatusVendor + "," + cu.Remark2 + "," + cu.PODuePeriod + "," +
+                cu.dateCreate + "," + cu.dateModi + "," + cu.dateCancel + "," + 
+                cu.userCancel + "," + cu.userCreate + "," + cu.userModi + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.Addr + "','" +
                 p.AddressE + "','" + p.AddressT + "','" + p.amphurId + "','" +
                 p.Code + "','" + p.ContactName1 + "','" + p.ContactName1Tel + "','" +
@@ -236,7 +241,10 @@ namespace Cemp.objdb
                 p.Email + "','" + p.Fax + "','" + p.NameE.Replace("Co., Ltd.", "").Trim() + "','" +
                 p.NameT.Trim() + "','" + p.provinceId + "','" + p.Remark + "','" +
                 p.saleId + "','" + p.saleName + "','" + p.TaxId + "','" +
-                p.Tele + "','" + p.Zipcode + "','" + p.StatusCompany + "','" + p.StatusVendor + "','" + p.Remark2 + "')";
+                p.Tele + "','" + p.Zipcode + "','" + p.StatusCompany + "','" +
+                p.StatusVendor + "','" + p.Remark2 + "'," + NumberNull1(p.PODuePeriod) + "," +
+                p.dateGenDB + ",'" + p.dateModi + "','" + p.dateCancel + "','" + 
+                p.userCancel + "','" + p.userCreate + "','" + p.userModi + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -292,7 +300,9 @@ namespace Cemp.objdb
                 cu.Zipcode + "='" + p.Zipcode + "', " +
                 cu.StatusCompany + "='" + p.StatusCompany + "', " +
                 cu.StatusVendor + "='" + p.StatusVendor + "', " +
-                cu.Remark2 + "='" + p.Remark2 + "' " +
+                cu.Remark2 + "='" + p.Remark2 + "', " +
+                cu.PODuePeriod + "=" + NumberNull1(p.PODuePeriod) + ", " +
+                cu.dateModi + "=" + p.dateGenDB + " " +
                 
                 "Where " + cu.pkField + "='" + p.Id + "'";
             try
@@ -391,7 +401,7 @@ namespace Cemp.objdb
         public String VoidCustomer(String saleId)
         {
             String sql = "", chk = "";
-            sql = "Update " + cu.table + " Set " + cu.Active + "='3' " +
+            sql = "Update " + cu.table + " Set " + cu.Active + "='3', " + cu.dateCancel + "=" + cu.dateGenDB + " " +
                 "Where " + cu.pkField + "='" + saleId + "'";
             chk = conn.ExecuteNonQuery(sql);
             return chk;
@@ -422,6 +432,17 @@ namespace Cemp.objdb
                 sql = "00001";
             }
             return "CU" + year + sql;
+        }
+        private String NumberNull1(String o)
+        {
+            if (o.Equals(""))
+            {
+                return "0";
+            }
+            else
+            {
+                return o;
+            }
         }
     }
 }

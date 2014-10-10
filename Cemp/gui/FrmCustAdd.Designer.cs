@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.nuDDuePeriod = new System.Windows.Forms.NumericUpDown();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.chkStatusVendor = new System.Windows.Forms.RadioButton();
             this.chkStatusCustomer = new System.Windows.Forms.RadioButton();
@@ -82,12 +85,16 @@
             this.txtCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nuDDuePeriod)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.nuDDuePeriod);
+            this.groupBox1.Controls.Add(this.label22);
+            this.groupBox1.Controls.Add(this.label23);
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.txtRemark2);
@@ -142,6 +149,41 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // nuDDuePeriod
+            // 
+            this.nuDDuePeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.nuDDuePeriod.Location = new System.Drawing.Point(746, 369);
+            this.nuDDuePeriod.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.nuDDuePeriod.Name = "nuDDuePeriod";
+            this.nuDDuePeriod.Size = new System.Drawing.Size(63, 26);
+            this.nuDDuePeriod.TabIndex = 111;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label22.Location = new System.Drawing.Point(814, 373);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(24, 17);
+            this.label22.TabIndex = 110;
+            this.label22.Text = "วัน";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label23.Location = new System.Drawing.Point(620, 373);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(105, 17);
+            this.label23.TabIndex = 109;
+            this.label23.Text = "ระยะเวลา credit :";
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.chkStatusVendor);
@@ -163,6 +205,7 @@
             this.chkStatusVendor.TabStop = true;
             this.chkStatusVendor.Text = "Vendor";
             this.chkStatusVendor.UseVisualStyleBackColor = true;
+            this.chkStatusVendor.Click += new System.EventHandler(this.chkStatusVendor_Click);
             // 
             // chkStatusCustomer
             // 
@@ -176,6 +219,7 @@
             this.chkStatusCustomer.TabStop = true;
             this.chkStatusCustomer.Text = "ลูกค้า";
             this.chkStatusCustomer.UseVisualStyleBackColor = true;
+            this.chkStatusCustomer.Click += new System.EventHandler(this.chkStatusCustomer_Click);
             // 
             // panel1
             // 
@@ -345,7 +389,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(762, 389);
+            this.btnSave.Location = new System.Drawing.Point(827, 441);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 33);
             this.btnSave.TabIndex = 23;
@@ -713,6 +757,7 @@
             this.Load += new System.EventHandler(this.FrmCustAdd_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nuDDuePeriod)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -776,5 +821,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton chkStatusPublic;
         private System.Windows.Forms.RadioButton chkStatusCompany;
+        private System.Windows.Forms.NumericUpDown nuDDuePeriod;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
     }
 }

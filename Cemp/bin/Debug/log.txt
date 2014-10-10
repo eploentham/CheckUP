@@ -974,3 +974,10 @@ Parameter name: length
 8/10/2557 8:47->FrmCustAdd.cboDistrict_KeyUp Error Object reference not set to an instance of an object.
 8/10/2557 8:47->FrmCustAdd.cboDistrict_KeyUp Error Index and length must refer to a location within the string.
 Parameter name: length
+10/10/2557 12:25->rpt.setReportPO OK 
+10/10/2557 12:25->rpt.setReportPO OK SetDataSource
+10/10/2557 12:25->rpt.setReportPO Error ดัชนีไม่ถูกต้อง (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+10/10/2557 12:25->rpt.setReportPO OK 
+10/10/2557 12:25->rpt.setReportPO OK SetDataSource
+10/10/2557 12:28->rpt.setReportPO OK 
+10/10/2557 12:28->rpt.setReportPO OK SetDataSource

@@ -13,8 +13,8 @@ namespace Cemp.gui
     public partial class FrmPOView : Form
     {
         CnviControl cc;
-        int colCnt = 7;
-        int colRow = 0, colPONumber = 1, colCustName = 2, colDuePeriod = 3, colId = 4, colStaffName = 5, colStatusMOU = 6;
+        int colCnt = 8;
+        int colRow = 0, colPONumber = 1, colCustName = 2, colDuePeriod = 3, colDueDate=4, colId = 5, colStaffName = 6, colStatusMOU = 7;
         public FrmPOView(CnviControl c)
         {
             InitializeComponent();
@@ -45,8 +45,8 @@ namespace Cemp.gui
             dgvView.Columns[colRow].Width = 50;
             dgvView.Columns[colPONumber].Width = 150;
             dgvView.Columns[colCustName].Width = 350;
-            dgvView.Columns[colDuePeriod].Width = 350;
-            dgvView.Columns[colId].Width = 80;
+            dgvView.Columns[colDuePeriod].Width = 100;
+            dgvView.Columns[colDueDate].Width = 140;
             dgvView.Columns[colStatusMOU].Width = 80;
             dgvView.Columns[colStaffName].Width = 180;
 
@@ -54,6 +54,7 @@ namespace Cemp.gui
             dgvView.Columns[colPONumber].HeaderText = "เลขที่";
             dgvView.Columns[colCustName].HeaderText = "ชื่อลูกค้า";
             dgvView.Columns[colDuePeriod].HeaderText = "ระยะเวลา";
+            dgvView.Columns[colDueDate].HeaderText = "วันที่ครบกำหนด";
             dgvView.Columns[colId].HeaderText = "id";
             dgvView.Columns[colStaffName].HeaderText = "";
             dgvView.Columns[colStatusMOU].HeaderText = "สถานะ";
@@ -69,9 +70,10 @@ namespace Cemp.gui
                 {
                     dgvView[colRow, i].Value = (i + 1);
                     dgvView[colPONumber, i].Value = dt.Rows[i][cc.podb.po.PONumber].ToString();
-                    dgvView[colCustName, i].Value = dt.Rows[i][cc.podb.po.CuNametT].ToString();
-                    dgvView[colDuePeriod, i].Value = dt.Rows[i][cc.podb.po.PODurPeriod].ToString();
+                    dgvView[colCustName, i].Value = dt.Rows[i][cc.podb.po.CuNameT].ToString();
+                    dgvView[colDuePeriod, i].Value = dt.Rows[i][cc.podb.po.PODuePeriod].ToString();
                     dgvView[colId, i].Value = dt.Rows[i][cc.podb.po.Id].ToString();
+                    dgvView[colDueDate, i].Value = cc.cf.dateDBtoShow(dt.Rows[i][cc.podb.po.PODueDate].ToString());
                     //if (dt.Rows[i][cc.modb.mo.statusMOU].ToString().Equals("1"))
                     //{
                     //    dgvView[colStaffName, i].Value = "รอเก็บผล";

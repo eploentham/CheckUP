@@ -51,7 +51,8 @@ namespace Cemp
             tv1.Nodes.Add("nInputResult", "ป้อนผลตัวอย่าง");
             tv1.Nodes.Add("nBillView", "พิมพ์ Bill Note");
             tv1.Nodes.Add("nPOView", "พิมพ์ ใบสั่งซื้อ");
-            //tv1.Nodes.Add("nRewardAdd", "ป้อนรางวัล");
+            tv1.Nodes.Add("nAPView", "หน้าจอ บริหารเจ้าหนี้");
+            tv1.Nodes.Add("nARView", "หน้าจอ บริหารลูกหนี้");
             //}
             //if (sf.Priority.Equals("2") || sf.Priority.Equals("3"))
             //{
@@ -71,8 +72,9 @@ namespace Cemp
             tv1.Nodes["nInitConfig"].Nodes.Add("nStaffView", "สร้าง พนักงาน");
 
             tv1.Nodes["nInitConfig"].Nodes.Add("nCompany", "ข้อมูลบริษัท");
-            //    tv1.Nodes["nInitConfig"].Nodes.Add("nRateView", "สร้างอัตรา");
+            tv1.Nodes["nInitConfig"].Nodes.Add("nCpBankView", "ข้อมูลสมุดบัญชีธนาคาร");
             tv1.Nodes["nInitConfig"].Nodes.Add("nPassword", "เปลี่ยนรหัสผ่าน");
+            tv1.Nodes["nInitConfig"].Nodes.Add("nBankView", "ข้อมูลธนาคาร");
             tv1.Nodes["nInitConfig"].Nodes.Add("nTest", "Test ");
             tv1.Nodes["nInitConfig"].Nodes.Add("nInitConfig", "กำหนดค่าโปรแกรม");
             //}
@@ -174,16 +176,26 @@ namespace Cemp
                 FrmAnalysisView frm = new FrmAnalysisView(cc);
                 showFrame(frm);
             }
-            //else if (e.Node.Name.ToString() == "nInputImage")
-            //{
-            //    FrmInputImage frm = new FrmInputImage(sf.Code, lc);
-            //    showFrame(frm);
-            //}
-            //else if (e.Node.Name.ToString() == "nLottoImage")
-            //{
-            //    FrmLottoImage frm = new FrmLottoImage(sf.Code, lc);
-            //    showFrame(frm);
-            //}
+            else if (e.Node.Name.ToString() == "nAPView")
+            {
+                FrmAP frm = new FrmAP();
+                showFrame(frm);
+            }
+            else if (e.Node.Name.ToString() == "nARView")
+            {
+                FrmAR frm = new FrmAR();
+                showFrame(frm);
+            }
+            else if (e.Node.Name.ToString() == "nCpBankView")
+            {
+                FrmAR frm = new FrmAR();
+                showFrame(frm);
+            }
+            else if (e.Node.Name.ToString() == "nBankView")
+            {
+                FrmAR frm = new FrmAR();
+                showFrame(frm);
+            }
         }
     }
 }

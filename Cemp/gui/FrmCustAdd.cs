@@ -54,6 +54,12 @@ namespace Cemp.gui
             txtContactName2.Text = cu.ContactName2;
             txtContactName2Tel.Text = cu.ContactName2Tel;
             txtRemark.Text = cu.Remark;
+            nuDDuePeriod.Value = int.Parse(cc.cf.NumberNull1(cu.PODuePeriod));
+
+            if (nuDDuePeriod.Value == 0)
+            {
+                nuDDuePeriod.Value = int.Parse(cc.cf.NumberNull1(cc.cp.PODuePeriod));
+            }
             if (cu.Active.Equals("1"))
             {
                 chkActive.Checked = true;
@@ -92,16 +98,19 @@ namespace Cemp.gui
             {
                 chkStatusCustomer.Checked = true;
                 chkStatusVendor.Checked = false;
+                setStatusVendor(false);
             }
             else if (cu.StatusVendor.Equals("2"))
             {
                 chkStatusCustomer.Checked = false;
                 chkStatusVendor.Checked = true;
+                setStatusVendor(true);
             }
             else
             {
                 chkStatusCustomer.Checked = true;
                 chkStatusVendor.Checked = false;
+                setStatusVendor(false);
             }
             label18.Text = cu.districtId;
             if (label18.Text.Length > 4)
@@ -112,6 +121,13 @@ namespace Cemp.gui
             }
             
         }
+        private void setStatusVendor(Boolean chk)
+        {
+            label23.Visible = chk;
+            nuDDuePeriod.Visible = chk;
+            label22.Visible = chk;
+        }
+        
         private void getCustomer()
         {
             cu.Id = txtId.Text;
@@ -134,6 +150,7 @@ namespace Cemp.gui
             cu.ContactName2 = txtContactName2.Text;
             cu.ContactName2Tel = txtContactName2Tel.Text;
             cu.Remark = txtRemark.Text;
+            cu.PODuePeriod = nuDDuePeriod.Value.ToString();
             if (chkStatusCompany.Checked)
             {
                 cu.StatusCompany = "1";
@@ -663,6 +680,16 @@ namespace Cemp.gui
                 txtAddressE.SelectAll();
                 txtAddressE.Focus();
             }
+        }
+
+        private void chkStatusVendor_Click(object sender, EventArgs e)
+        {
+            setStatusVendor(true);
+        }
+
+        private void chkStatusCustomer_Click(object sender, EventArgs e)
+        {
+            setStatusVendor(false);
         }
     }
 }

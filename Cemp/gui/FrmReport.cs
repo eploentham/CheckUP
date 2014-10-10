@@ -124,6 +124,55 @@ namespace Cemp
                 chk = ex.Message.ToString();
             }
         }
+        public void setReportPO(PO po, DataTable dt)
+        {
+            String chk = "";
+            ReportDocument rpt = new ReportDocument();
+            try
+            {
+                cc.lw.WriteLog("rpt.setReportPO OK ");
+                rpt.Load(cc.initC.PathReport + "\\POPrint.rpt");
+                rpt.SetDataSource(dt);
+                cc.lw.WriteLog("rpt.setReportPO OK SetDataSource");
+
+                rpt.SetParameterValue("compName", cc.cp.NameT);
+                rpt.SetParameterValue("compAddress1", cc.cp.AddressT);
+                rpt.SetParameterValue("compAddress2", "Tel " + cc.cp.Tele + " FAX " + cc.cp.Fax + " Email " + cc.cp.Email);
+                rpt.SetParameterValue("comptaxid", cc.cp.TaxId);
+
+                rpt.SetParameterValue("custName", po.CuNameT);
+                rpt.SetParameterValue("custAddress", po.CuAddressT);
+                //rpt.SetParameterValue("machinery", po.Machinery);
+                //rpt.SetParameterValue("measurecompany", cc.cp.NameT);
+                //rpt.SetParameterValue("methodmeasure", po.MethodMeasure);
+
+                //rpt.SetParameterValue("summary", po.Summary);
+                rpt.SetParameterValue("line1", cc.cp.quLine1);
+                //rpt.SetParameterValue("line2", cc.cp.quLine1);
+                //rpt.SetParameterValue("line3", cc.cp.quLine1);
+                //rpt.SetParameterValue("datedueperiod", rs.InvDuePeriod);
+                ////rpt.SetParameterValue("duedate", "");
+                rpt.SetParameterValue("amount", po.Amt);
+                //rpt.SetParameterValue("total", rs.Total);
+
+                //rpt.SetParameterValue("vatrate", rs.VatRate);
+
+                rpt.SetParameterValue("nettotal", po.NetTotal);
+                //rpt.SetParameterValue("contactName", qu.ContactName);
+
+                //rpt.SetParameterValue("line2", inv.StaffPlaceRecordPosition);
+                //rpt.SetParameterValue("staffplacerecordname", inv.StaffPlaceRecordName);
+                //rpt.SetParameterValue("line3", "ลูกค้า/ผู้ประสานงาน/ผู้รัลผิดชอบการตรวจ");
+
+                this.crystalReportViewer1.ReportSource = rpt;
+                this.crystalReportViewer1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                chk = ex.Message.ToString();
+                cc.lw.WriteLog("rpt.setReportPO Error " + chk);
+            }
+        }
         public void setReportResult(Result rs, DataTable dt)
         {
             String chk = "";
@@ -370,6 +419,7 @@ namespace Cemp
                 rpt.SetParameterValue("line5", qu.Line5);
                 rpt.SetParameterValue("line6", qu.Line6);
                 rpt.SetParameterValue("staffApproveName", qu.StaffApproveName);
+                
                 rpt.SetParameterValue("amount2", qu.Amount);
                 rpt.SetParameterValue("discountPer", qu.DiscountPer);
                 rpt.SetParameterValue("discount", qu.Discount);
@@ -384,19 +434,20 @@ namespace Cemp
                 rpt.SetParameterValue("ldiscount", "ส่วนลด");
                 rpt.SetParameterValue("plus1name", "ค่าภาคสนาม(ค่าเดินทาง)");
                 rpt.SetParameterValue("ltotal", "รวม");
-                rpt.SetParameterValue("lvat", "ภาษีมูลค่าเพิ่ม");
+                rpt.SetParameterValue("lvat", "ภาษีมูลค่าเพิ่ม "+qu.VatRate+"%");
                 rpt.SetParameterValue("lnettotal", "รวมทั้งสิ้น");
                 rpt.SetParameterValue("lcustapprove","อนุมัติสั่งซื้อตามราบการที่เสนอ");
                 rpt.SetParameterValue("lstaffquotation", "ผู้เสนอราคา");
                 rpt.SetParameterValue("lstaffapprove", "ขอแสดงความนับถือ");
                 rpt.SetParameterValue("thaibaht", qu.ThaiBaht);
+                rpt.SetParameterValue("staffApproveposition", cc.sfdb.selectPositionByPk(qu.StaffApproveId));
+                rpt.SetParameterValue("staffposition", cc.sfdb.selectPositionByPk(qu.StaffId));
                 //rpt.SetParameterValue("", qu.QuoDate);
                 //rpt.SetParameterValue("", qu.QuoDate);
                 //rpt.SetParameterValue("", qu.QuoDate);
                 //rpt.SetParameterValue("", qu.QuoDate);
                 //rpt.SetParameterValue("", qu.QuoDate);
                 //rpt.SetParameterValue("", qu.QuoDate);
-
 
                 this.crystalReportViewer1.ReportSource = rpt;
                 this.crystalReportViewer1.Refresh();

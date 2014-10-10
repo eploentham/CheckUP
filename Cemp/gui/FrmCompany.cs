@@ -92,6 +92,9 @@ namespace Cemp.gui
             txtRsLine5.Text = cp.rsLine5;
             txtRsLine6.Text = cp.rsLine6;
 
+            txtPOLine1.Text = cp.poLine1;
+            nuDDuePeriod.Value = int.Parse(cc.cf.NumberNull1(cp.PODuePeriod));
+
             txtInvDuePeriod.Text = cp.InvDuePeriod;
 
             if (label18.Text.Length > 4)
@@ -142,6 +145,9 @@ namespace Cemp.gui
             cp.rsLine4 = txtRsLine4.Text;
             cp.rsLine5 = txtRsLine5.Text;
             cp.rsLine6 = txtRsLine6.Text;
+
+            cp.poLine1 = txtPOLine1.Text;
+            cp.PODuePeriod = nuDDuePeriod.Value.ToString();
 
             cp.InvDuePeriod = txtInvDuePeriod.Text;
         }

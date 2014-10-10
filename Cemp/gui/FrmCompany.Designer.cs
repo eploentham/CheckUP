@@ -94,6 +94,8 @@
             this.label31 = new System.Windows.Forms.Label();
             this.txtMOULine1 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.txtInvLine1 = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.txtInvDuePeriod = new System.Windows.Forms.TextBox();
@@ -110,12 +112,20 @@
             this.txtRsLine2 = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.txtRsLine1 = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.txtPOLine1 = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.nuDDuePeriod = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nuDDuePeriod)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -778,15 +788,35 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label38);
+            this.groupBox3.Controls.Add(this.txtInvLine1);
             this.groupBox3.Controls.Add(this.label27);
             this.groupBox3.Controls.Add(this.label26);
             this.groupBox3.Controls.Add(this.txtInvDuePeriod);
-            this.groupBox3.Location = new System.Drawing.Point(622, 557);
+            this.groupBox3.Location = new System.Drawing.Point(622, 517);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(526, 65);
+            this.groupBox3.Size = new System.Drawing.Size(526, 79);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.groupBox3.Text = "Invoice";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(16, 57);
+            this.label38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(35, 13);
+            this.label38.TabIndex = 39;
+            this.label38.Text = "line1 :";
+            // 
+            // txtInvLine1
+            // 
+            this.txtInvLine1.Location = new System.Drawing.Point(102, 54);
+            this.txtInvLine1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtInvLine1.Name = "txtInvLine1";
+            this.txtInvLine1.Size = new System.Drawing.Size(419, 20);
+            this.txtInvLine1.TabIndex = 38;
             // 
             // label27
             // 
@@ -945,11 +975,77 @@
             this.txtRsLine1.Size = new System.Drawing.Size(419, 20);
             this.txtRsLine1.TabIndex = 33;
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.nuDDuePeriod);
+            this.groupBox6.Controls.Add(this.label39);
+            this.groupBox6.Controls.Add(this.txtPOLine1);
+            this.groupBox6.Controls.Add(this.label40);
+            this.groupBox6.Controls.Add(this.label41);
+            this.groupBox6.Location = new System.Drawing.Point(12, 481);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(526, 79);
+            this.groupBox6.TabIndex = 7;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "PO";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(16, 57);
+            this.label39.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(35, 13);
+            this.label39.TabIndex = 39;
+            this.label39.Text = "line1 :";
+            // 
+            // txtPOLine1
+            // 
+            this.txtPOLine1.Location = new System.Drawing.Point(102, 54);
+            this.txtPOLine1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPOLine1.Name = "txtPOLine1";
+            this.txtPOLine1.Size = new System.Drawing.Size(419, 20);
+            this.txtPOLine1.TabIndex = 38;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(221, 26);
+            this.label40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(21, 13);
+            this.label40.TabIndex = 37;
+            this.label40.Text = "วัน";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(16, 26);
+            this.label41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(122, 13);
+            this.label41.TabIndex = 36;
+            this.label41.Text = "default ระยะเวลา credit :";
+            // 
+            // nuDDuePeriod
+            // 
+            this.nuDDuePeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.nuDDuePeriod.Location = new System.Drawing.Point(153, 19);
+            this.nuDDuePeriod.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.nuDDuePeriod.Name = "nuDDuePeriod";
+            this.nuDDuePeriod.Size = new System.Drawing.Size(63, 20);
+            this.nuDDuePeriod.TabIndex = 112;
+            // 
             // FrmCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 634);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -971,6 +1067,9 @@
             this.groupBox3.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nuDDuePeriod)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1059,5 +1158,13 @@
         private System.Windows.Forms.TextBox txtRsLine2;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.TextBox txtRsLine1;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TextBox txtInvLine1;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox txtPOLine1;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.NumericUpDown nuDDuePeriod;
     }
 }

@@ -39,6 +39,7 @@ namespace Cemp.objdb
             sf.Email = "email";
             sf.Fax = "fax";
             sf.PositionId = "position_id";
+            sf.Prefix = "prefix";
 
             sf.sited = "";
             sf.table = "b_staff";
@@ -65,6 +66,7 @@ namespace Cemp.objdb
             item.Email = dt.Rows[0][sf.Email].ToString();
             item.Mobile = dt.Rows[0][sf.Mobile].ToString();
             item.PositionId = dt.Rows[0][sf.PositionId].ToString();
+            item.Prefix = dt.Rows[0][sf.Prefix].ToString();
 
             return item;
         }
@@ -98,6 +100,19 @@ namespace Cemp.objdb
                 item = setData(item, dt);
             }
             return item;
+        }
+        public String selectPositionByPk(String sfId)
+        {
+            Staff item = new Staff();
+            String sql = "", posi="";
+            DataTable dt = new DataTable();
+            sql = "Select "+sf.PositionName+" From " + sf.table + " Where " + sf.pkField + "='" + sfId + "'";
+            dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                posi = dt.Rows[0][sf.PositionName].ToString();
+            }
+            return posi;
         }
         public Staff selectByCode(String sfId)
         {            
@@ -135,11 +150,11 @@ namespace Cemp.objdb
             sql = "Insert Into " + sf.table + " (" + sf.pkField + "," + sf.NameT + "," + sf.Remark + "," +
                 sf.Active + "," + sf.Code + "," + sf.Priority + "," + 
                 sf.PositionName + "," + sf.Tele + "," + sf.Fax + "," +
-                sf.Email + "," + sf.Mobile + "," + sf.PositionId + ") " +
+                sf.Email + "," + sf.Mobile + "," + sf.PositionId + "," + sf.Prefix + ") " +
                 "Values('" + p.Id + "','" + p.NameT + "','" + p.Remark + "','" +
                 p.Active + "','" + p.Code + "','" + p.Priority + "','" + 
                 p.PositionName + "','" + p.Tele + "','" + p.Fax + "','" +
-                p.Email + "','" + p.Mobile + "','" + p.PositionId + "')";
+                p.Email + "','" + p.Mobile + "','" + p.PositionId + "','" + p.Prefix + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -171,7 +186,8 @@ namespace Cemp.objdb
                 sf.Fax + "='" + p.Fax + "', " +
                 sf.Email + "='" + p.Email + "', " +
                 sf.Mobile + "='" + p.Mobile + "', " +
-                sf.PositionId + "='" + p.PositionId + "'  " +
+                sf.PositionId + "='" + p.PositionId + "',  " +
+                sf.Prefix + "='" + p.Prefix + "'  " +
                 "Where " + sf.pkField + "='" + p.Id + "'";
             try
             {
@@ -256,6 +272,29 @@ namespace Cemp.objdb
                 c.Items.Add(item);
                 //c.Items.Add(new );
             }
+            //c.SelectedItem = item;
+            return c;
+        }
+        public ComboBox getCboPrefix(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            //DataTable dt = selectPositionAll();
+            //for (int i = 0; i < dt.Rows.Count; i++)
+            //{
+                item = new ComboBoxItem();
+                item.Value = "นาย";
+                item.Text = "นาย";
+                c.Items.Add(item);
+                item = new ComboBoxItem();
+                item.Value = "นาง";
+                item.Text = "นาง";
+                c.Items.Add(item);
+                item = new ComboBoxItem();
+                item.Value = "น.ส.";
+                item.Text = "น.ส.";
+                c.Items.Add(item);
+                //c.Items.Add(new );
+            //}
             //c.SelectedItem = item;
             return c;
         }

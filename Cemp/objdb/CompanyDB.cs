@@ -68,6 +68,9 @@ namespace Cemp.objdb
             cp.rsLine5 = "rs_line5";
             cp.rsLine6 = "rs_line6";
 
+            cp.poLine1 = "po_line1";
+            cp.PODuePeriod = "po_due_period";
+
             cp.pkField = "comp_id";
             cp.table = "b_company";
         }
@@ -119,6 +122,9 @@ namespace Cemp.objdb
             item.rsLine4 = dt.Rows[0][cp.rsLine4].ToString();
             item.rsLine5 = dt.Rows[0][cp.rsLine5].ToString();
             item.rsLine6 = dt.Rows[0][cp.rsLine6].ToString();
+
+            item.poLine1 = dt.Rows[0][cp.poLine1].ToString();
+            item.PODuePeriod = dt.Rows[0][cp.PODuePeriod].ToString();
 
             return item;
         }
@@ -212,6 +218,8 @@ namespace Cemp.objdb
             p.rsLine5 = p.rsLine5.Replace("'", "''");
             p.rsLine6 = p.rsLine6.Replace("'", "''");
 
+            p.poLine1 = p.poLine1.Replace("'", "''");
+
             sql = "Update " + cp.table + " Set " + cp.AddressE + "='" + p.AddressE + "', " +
                 cp.AddressT + "='" + p.AddressT + "', " +
                 cp.amphurId + "='" + p.amphurId + "', " +
@@ -244,7 +252,10 @@ namespace Cemp.objdb
                 cp.rsLine3 + "='" + p.rsLine3 + "', " +
                 cp.rsLine4 + "='" + p.rsLine4 + "', " +
                 cp.rsLine5 + "='" + p.rsLine5 + "', " +
-                cp.rsLine6 + "='" + p.rsLine6 + "' " +
+                cp.rsLine6 + "='" + p.rsLine6 + "', " +
+                cp.poLine1 + "='" + p.poLine1 + "', " +
+                cp.PODuePeriod + "=" + NumberNull1(p.PODuePeriod) + " " +
+
                 "Where " + cp.pkField + "='" + p.Id + "'";
             try
             {
@@ -297,6 +308,17 @@ namespace Cemp.objdb
                 //c.Items.Add(new );
             }
             return c;
+        }
+        private String NumberNull1(String o)
+        {
+            if (o.Equals(""))
+            {
+                return "0";
+            }
+            else
+            {
+                return o;
+            }
         }
     }
 }

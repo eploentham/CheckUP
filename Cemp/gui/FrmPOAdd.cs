@@ -35,6 +35,8 @@ namespace Cemp.gui
             txtVat.ReadOnly = true;
             txtAmount.ReadOnly = true;
             txtNetTotal.ReadOnly = true;
+            txtDueDate.ReadOnly = true;
+            dtpDatePO.Format = DateTimePickerFormat.Short;
             cboComp = cc.cpdb.getCboCompany(cboComp);
             cboCust = cc.cudb.getCboVendor(cboCust);
             cboStaff = cc.sfdb.getCboStaff(cboStaff);
@@ -59,9 +61,9 @@ namespace Cemp.gui
                 {
                     cboComp.Text = cp.NameT;
                     //txtCompId.Text = cp.Id;
-                    txtCompAddress1.Text = cp.AddressT;
-                    txtCompAddress2.Text = "TEL. " + cp.Tele + " FAX. " + cp.Fax + " Email : " + cp.Email;
-                    txtCompTaxId.Text = cp.Spec1 + " เลขประจำตัวผู้เสียภาษีอากร" + cp.TaxId;
+                    txtCpAddress1.Text = cp.AddressT;
+                    txtCpAddress2.Text = "TEL. " + cp.Tele + " FAX. " + cp.Fax + " Email : " + cp.Email;
+                    txtCpTaxId.Text = cp.Spec1 + " เลขประจำตัวผู้เสียภาษีอากร" + cp.TaxId;
                     txtVatRate.Text = cp.vat;
                 }
                 //txtLine1.Text = cc.initC.quoLine1;
@@ -70,21 +72,23 @@ namespace Cemp.gui
                 //txtLine4.Text = cc.cp.quLine4;
                 //txtLine5.Text = cc.cp.quLine5;
                 //txtLine6.Text = cc.cp.quLine6;
-                
+
+                nuDDuePeriod.Value = 30;
                 btnPrintT.Visible = false;
             }
             else
             {
+                txtPOId.Text = po.Id;
                 txtPONumber.Text = po.PONumber + "-" + po.PONumberCnt;
                 cboComp.Text = po.CpNameT;
-                txtCompAddress1.Text = po.CpAddress1;
-                txtCompAddress2.Text = po.CpAddress2;
-                txtCompTaxId.Text = po.CpTaxId;
-                txtCompTaxId.Text = po.CpTaxId;
+                txtCpAddress1.Text = po.CpAddress1;
+                txtCpAddress2.Text = po.CpAddress2;
+                txtCpTaxId.Text = po.CpTaxId;
+                txtCpTaxId.Text = po.CpTaxId;
 
-                cboCust.Text = po.CuNametT;
+                cboCust.Text = po.CuNameT;
                 txtCustAddress.Text = po.CuAddressT;
-                txtCustEmail.Text = po.CustEmail;
+                txtCustEmail.Text = po.CuEmail;
                 txtCustFax.Text = po.CuFax;
                 txtCustTel.Text = po.CuTel;
 
@@ -102,34 +106,66 @@ namespace Cemp.gui
                 cboRemark4.Text = po.Remark4;
                 cboRemark5.Text = po.Remark5;
 
+                txtDueDate.Text = cc.cf.dateDBtoShow(po.PODueDate);
+                nuDDuePeriod.Value = int.Parse(po.PODuePeriod);
+
                 setGrd(poId);
                 btnPrintT.Visible = true;
             }
+            try
+            {
+                if (!po.PODate.Equals(""))
+                {
+                    dtpDatePO.Value = DateTime.Parse(cc.cf.dateDBtoShow1(po.PODate));
+                }
+                else
+                {
+                    dtpDatePO.Value = DateTime.Now;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                dtpDatePO.Value = DateTime.Parse(cc.cf.dateDBtoShow(po.PODate));
+            }
             chkActive.Checked = true;
         }
-        private void getPO()
+        private Boolean getPO()
         {
+            Boolean chk = true; ;
             po.Active = "1";
             po.ContactName = "";
             po.CpId = cc.getValueCboItem(cboComp);
             po.CpNameT = cboComp.Text;
-            po.CpAddress1 = txtCompAddress1.Text;
-            po.CpAddress2 = txtCompAddress2.Text;
-            po.CpTaxId = txtCompTaxId.Text;
+            po.CpAddress1 = txtCpAddress1.Text;
+            po.CpAddress2 = txtCpAddress2.Text;
+            po.CpTaxId = txtCpTaxId.Text;
 
             po.CuFax = txtCustFax.Text;
             po.CuId = cc.getValueCboItem(cboCust);
-            po.CuNametT = cboCust.Text;
-            po.CustEmail = txtCustEmail.Text;
+            po.CuNameT = cboCust.Text;
+            po.CuEmail = txtCustEmail.Text;
             po.CuTel = txtCustTel.Text;
             po.CuAddressT = txtCustAddress.Text;
             po.Id = txtPOId.Text;
             po.PODate = "";
-            po.PODurPeriod = "";
+            po.PODate = cc.cf.datetoDB(dtpDatePO.Value);
+            po.PODuePeriod = "";
             po.PONumber = txtPONumber.Text;
             po.PONumberCnt = "";
             po.QuId = "";
             po.QuNumber = "";
+
+            String[] doc1 = txtPONumber.Text.Split('-');
+            if (doc1.Length > 1)
+            {
+                po.PONumber = doc1[0];
+                po.PONumberCnt = doc1[1];
+            }
+            else
+            {
+                chk = false;
+            }            
 
             po.SfEmail = "";
             po.SfId = cc.getValueCboItem(cboStaff);
@@ -148,6 +184,10 @@ namespace Cemp.gui
             po.VatRate = txtVatRate.Text.Replace(",", "");
             po.Vat = txtVat.Text.Replace(",", "");
             po.NetTotal = txtNetTotal.Text.Replace(",", "");
+
+            po.PODuePeriod = nuDDuePeriod.Value.ToString();
+            po.PODueDate = cc.cf.datetoDBChk25(txtDueDate.Text);
+            return chk;
         }
         private void setGrd()
         {
@@ -183,7 +223,7 @@ namespace Cemp.gui
 
             dgvAdd.Font = font;
             dgvAdd.Columns[colId].Visible = false;
-            //dgvAdd.Columns[colDel].Visible = false;
+            dgvAdd.Columns[colDel].Visible = false;
 
             //dgvAdd.Columns[colSample].ReadOnly = true;
             //dgvAdd.Columns[colMethod].ReadOnly = true;
@@ -219,7 +259,7 @@ namespace Cemp.gui
                     dgvAdd[colRemark, i].Value = dt.Rows[i][cc.poidb.poi.Remark].ToString();
                     dgvAdd[colAmt, i].Value = dt.Rows[i][cc.poidb.poi.ItemAmount].ToString();
                     //dgvAdd[colMethodId, i].Value = dt.Rows[i][cc.moidb.moi.MethodId].ToString();
-                    //dgvAdd[colId, i].Value = dt.Rows[i][cc.moidb.moi.Id].ToString();
+                    dgvAdd[colId, i].Value = dt.Rows[i][cc.poidb.poi.Id].ToString();
 
                     if ((i % 2) != 0)
                     {
@@ -322,6 +362,15 @@ namespace Cemp.gui
                 dgvAdd.Rows[row].DefaultCellStyle.BackColor = Color.LightSalmon;
             }
         }
+        private void setDueDate()
+        {
+            DateTimePicker dp = new DateTimePicker();
+            dp.Format = DateTimePickerFormat.Short;
+            dp.Value = dtpDatePO.Value;
+            dp.Value = dp.Value.AddDays(int.Parse(nuDDuePeriod.Value.ToString()));
+            //txtDueDate.Text = cc.cf.dateDBtoShow(dp.Value.Day.ToString("00") + "-" + dp.Value.Month.ToString("00") + "-" + dp.Value.Year);
+            txtDueDate.Text = cc.cf.dateDBtoShow25(cc.cf.datetoDBChk25(dp.Value));
+        }
         private void FrmPOAdd_Load(object sender, EventArgs e)
         {
 
@@ -338,6 +387,8 @@ namespace Cemp.gui
                 txtCustEmail.Text = cu.Email;
                 txtCustFax.Text = cu.Fax;
                 txtCustTel.Text = cu.Tele;
+                nuDDuePeriod.Value = int.Parse(cc.cf.NumberNull1(cu.PODuePeriod));
+                //setDueDate();
                 //cboContact.Text = cu.ContactName1;
             }
         }
@@ -412,7 +463,11 @@ namespace Cemp.gui
             //}
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
-            getPO();
+            if (!getPO())
+            {
+                MessageBox.Show("get Object PO ไม่ได้", "Error");
+                return;
+            }
             if (po.Id.Equals(""))
             {
                 po.PONumber = cc.podb.getPONumber();
@@ -422,7 +477,7 @@ namespace Cemp.gui
             }
             else
             {
-                //String[] doc1 = qu.QuoNumber.Split('-');
+                //String[] doc1 = po.PONumber.Split('-');
                 //qu.QuoNumber = doc1[0];
                 //if (qu.NetTotal.Equals(oldNetTotal))
                 //{
@@ -576,24 +631,24 @@ namespace Cemp.gui
 
         private void btnPrintT_Click(object sender, EventArgs e)
         {
-            //String sql = "";
-            ////OleDbDataAdapter da = new OleDbDataAdapter();
-            //DataTable dt = cc.quidb.selectByQuId(txtPOId.Text);
-            //PO po = cc.podb.selectByPk(txtPOId.Text);
+            String sql = "";
+            //OleDbDataAdapter da = new OleDbDataAdapter();
+            DataTable dt = cc.poidb.selectByPoId(txtPOId.Text);
+            PO po = cc.podb.selectByPk(txtPOId.Text);
             //po.ContactName = "เรียน : " + po.ContactName;
-            //po.CustAddress = "ที่อยู่ : " + po.CustAddress;
-            //po.CustTel = "เบอร์โทร : " + po.CustTel + " Email : " + po.CustEmail;
-            //po.Line1 = cc.cp.quLine1;
-            //po.PONumber = "เลขที่ : " + po.QuoNumber + "-" + po.QuoNumberCnt;
+            po.CuAddressT = "ที่อยู่ : " + po.CuAddressT;
+            po.CuTel = "เบอร์โทร : " + po.CuTel + " Email : " + po.CuEmail;
+            po.Line1 = cc.cp.poLine1;
+            po.PONumber = "เลขที่ : " + po.PONumber + "-" + po.PONumberCnt;
             //po.QuoDate = "วันที่ :" + po.QuoDate;
             //po.SfNameT = "ผู้เสนอราคา :" + po.StaffName;
             //po.StaffTel = "เบอร์โทร : " + po.StaffTel;
             //po.StaffEmail = "Email : " + po.StaffEmail;
-            //po.Remark1 = "1. " + po.Remark1;
-            //po.Remark2 = "2. " + po.Remark2;
-            //po.Remark3 = "3. " + po.Remark3;
-            //po.Remark4 = "4. " + po.Remark4;
-            //po.Remark5 = "5. " + po.Remark5;
+            po.Remark1 = "1. " + po.Remark1;
+            po.Remark2 = "2. " + po.Remark2;
+            po.Remark3 = "3. " + po.Remark3;
+            po.Remark4 = "4. " + po.Remark4;
+            po.Remark5 = "5. " + po.Remark5;
             //po.Remark6 = "6. " + po.Remark6;
             //po.Remark7 = "7. " + po.Remark7;
             //po.ThaiBaht = cc.ThaiBaht(po.NetTotal);
@@ -606,9 +661,19 @@ namespace Cemp.gui
             ////ds.Tables.Add(dtqui);
             ////cc.conn.f
             ////dat
-            //FrmReport frm = new FrmReport(cc);
-            //frm.setReportQuotation(po, dt);
-            //frm.ShowDialog(this);
+            FrmReport frm = new FrmReport(cc);
+            frm.setReportPO(po, dt);
+            frm.ShowDialog(this);
+        }
+
+        private void nuDDuePeriod_ValueChanged(object sender, EventArgs e)
+        {
+            setDueDate();
+        }
+
+        private void dtpDatePO_ValueChanged(object sender, EventArgs e)
+        {
+            setDueDate();
         }
     }
 }

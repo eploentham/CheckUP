@@ -220,7 +220,7 @@ namespace Cemp.gui
             qu.Line2 = txtLine2.Text;
             //qu.Line3 = txtLine3.Text;
             qu.Line4 = txtLine4.Text;
-            qu.Line5 = txtLine5.Text;
+            qu.Line5 = "Enail : "+txtLine5.Text;
             qu.Line6 = txtLine6.Text;
 
             qu.Remark4 = cboRemark4.Text;
@@ -973,13 +973,36 @@ namespace Cemp.gui
             qu.StaffName = "ผู้เสนอราคา :" + qu.StaffName;
             qu.StaffTel = "เบอร์โทร : " + qu.StaffTel;
             qu.StaffEmail = "Email : " + qu.StaffEmail;
-            qu.Remark1 = "1. " + qu.Remark1;
-            qu.Remark2 = "2. " + qu.Remark2;
-            qu.Remark3 = "3. " + qu.Remark3;
-            qu.Remark4 = "4. " + qu.Remark4;
-            qu.Remark5 = "5. " + qu.Remark5;
-            qu.Remark6 = "6. " + qu.Remark6;
-            qu.Remark7 = "7. " + qu.Remark7;
+            if (!qu.Remark1.Equals(""))
+            {
+                qu.Remark1 = "1. " + qu.Remark1;
+            }
+            if (!qu.Remark2.Equals(""))
+            {
+                qu.Remark2 = "2. " + qu.Remark2;
+            }
+            if (!qu.Remark3.Equals(""))
+            {
+                qu.Remark3 = "3. " + qu.Remark3;
+            }
+            if (!qu.Remark4.Equals(""))
+            {
+                qu.Remark4 = "4. " + qu.Remark4;
+            }
+            if (!qu.Remark5.Equals(""))
+            {
+                qu.Remark5 = "5. " + qu.Remark5;
+            }
+            if (!qu.Remark6.Equals(""))
+            {
+                qu.Remark6 = "6. " + qu.Remark6;
+            }
+            if (!qu.Remark7.Equals(""))
+            {
+                qu.Remark7 = "7. " + qu.Remark7;
+            }
+         
+           
             qu.ThaiBaht = cc.ThaiBaht(qu.NetTotal);
             //qu.Amount = "รวมราคา " + qu.Amount;
             //qu.Discount = "ส่วนลด " + qu.Amount;

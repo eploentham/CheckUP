@@ -13,8 +13,8 @@ namespace Cemp.gui
     public partial class FrmCustView : Form
     {
         CnviControl cc;
-        int colRow = 0, colNameT = 1, colAddr = 2, colTel = 3, colFax=4, colRemark=5, colId=6;
-        int colCnt = 7;
+        int colRow = 0, colNameT = 1, colAddr = 2, colTel = 3, colFax=4, colRemark=5, colId=6, colStatusVendor=7, colVendor=8;
+        int colCnt = 9;
         public FrmCustView(CnviControl c)
         {
             InitializeComponent();
@@ -43,11 +43,12 @@ namespace Cemp.gui
             dgvView.RowCount = dt.Rows.Count + 1;
             dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvView.Columns[colRow].Width = 50;
-            dgvView.Columns[colNameT].Width = 150;
-            dgvView.Columns[colAddr].Width = 200;
-            dgvView.Columns[colTel].Width = 80;
-            dgvView.Columns[colFax].Width = 80;
+            dgvView.Columns[colNameT].Width = 250;
+            dgvView.Columns[colAddr].Width = 300;
+            dgvView.Columns[colTel].Width = 150;
+            dgvView.Columns[colFax].Width = 150;
             dgvView.Columns[colRemark].Width = 180;
+            dgvView.Columns[colVendor].Width = 180;
 
             dgvView.Columns[colRow].HeaderText = "ลำดับ";
             dgvView.Columns[colNameT].HeaderText = "ชื่อ";
@@ -55,13 +56,14 @@ namespace Cemp.gui
             dgvView.Columns[colTel].HeaderText = "เบอร์";
             dgvView.Columns[colFax].HeaderText = "Fax";
             dgvView.Columns[colRemark].HeaderText = "หมายเหตุ";
-            //dgvView.Columns[colPassword].HeaderText = "  ";
+            dgvView.Columns[colVendor].HeaderText = "  ";
 
             dgvView.Columns[colId].HeaderText = "id";
             Font font = new Font("Microsoft Sans Serif", 12);
 
             dgvView.Font = font;
             dgvView.Columns[colId].Visible = false;
+            dgvView.Columns[colStatusVendor].Visible = false;
             if (dt.Rows.Count > 0)
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
@@ -73,7 +75,15 @@ namespace Cemp.gui
                     dgvView[colFax, i].Value = dt.Rows[i][cc.cudb.cu.Fax].ToString();
                     dgvView[colRemark, i].Value = dt.Rows[i][cc.cudb.cu.Remark].ToString();
                     dgvView[colId, i].Value = dt.Rows[i][cc.cudb.cu.Id].ToString();
-
+                    dgvView[colStatusVendor, i].Value = dt.Rows[i][cc.cudb.cu.StatusVendor].ToString();
+                    if (dt.Rows[i][cc.cudb.cu.StatusVendor].ToString().Equals("2"))
+                    {
+                        dgvView[colVendor, i].Value = "Vendor";
+                    }
+                    else
+                    {
+                        dgvView[colVendor, i].Value = "Customer";
+                    }
                     if ((i % 2) != 0)
                     {
                         dgvView.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
