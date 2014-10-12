@@ -23,6 +23,8 @@ namespace Cemp.gui
         Company cp;
         OpenFileDialog ofd;
         Boolean pageLoad = false, keyDistrict = false;
+        CompanyBank cob;
+        int colCobId = 0, colCobBankNameT = 1, colCobBranch = 2, colCobAccNumber = 3, colCobRemark = 4, colCobCnt=5;
         //Staff sf;
         public FrmCompany(CnviControl c)
         {
@@ -35,10 +37,12 @@ namespace Cemp.gui
             cc = c;
             //sf = cc.sfdb.selectByPk(sfId);
             cp = new Company();
+            cob = new CompanyBank();
             ofd = new OpenFileDialog();
             setControl();
             txtCode.ReadOnly = true;
             pageLoad = false;
+            cboCobBank = cc.bandb.getCbobank(cboCobBank);
             //txtNameT.Focus();
         }
         private void setResize()
@@ -103,7 +107,7 @@ namespace Cemp.gui
                 cboAmphur = cc.amdb.getCboAmphur1(cboAmphur, label18.Text.Substring(0, 4));
                 cboProvince = cc.prdb.getCboProv1(cboProvince, label18.Text.Substring(0, 2));
             }
-            
+            setGrdCob();
         }
         private void getCompany()
         {
@@ -151,7 +155,44 @@ namespace Cemp.gui
 
             cp.InvDuePeriod = txtInvDuePeriod.Text;
         }
-
+        private void setCompanyBank(String cobId)
+        {
+            cob = cc.cobdb.selectByPk(cobId);
+            txtAccNumber.Text = cob.AccNumber;
+            cboCobBank.Text = cob.NameT;
+            txtBankBranch.Text = cob.Branch;
+            txtBankRemark.Text = cob.Remark;
+            txtCobId.Text = cob.Id;
+            if (cob.Active.Equals(""))
+            {
+                chkCobActive.Checked = true;
+                ChkCobUnActive.Checked = false;
+                btnUnActive.Visible = false;
+            }
+            else
+            {
+                ChkCobUnActive.Checked = true;
+                chkCobActive.Checked = false;
+                btnUnActive.Visible = true;
+            }
+        }
+        private void getCompanyBank()
+        {
+            cob.AccNumber = txtAccNumber.Text;
+            if (chkCobActive.Checked)
+            {
+                cob.Active = "1";
+            }
+            else if (ChkCobUnActive.Checked)
+            {
+                cob.Active = "3";
+            }
+            cob.Branch = txtBankBranch.Text;
+            cob.Id = txtCobId.Text;
+            cob.NameT = cboCobBank.Text;
+            cob.Remark = txtBankRemark.Text;
+            
+        }
         private void FrmCompany_Load(object sender, EventArgs e)
         {
             //txtNameT.Focus();
@@ -582,6 +623,89 @@ namespace Cemp.gui
             {
                 e.Handled = false;
             }
+        }
+
+        private void dgvView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            if (dgvView[colCobId, e.RowIndex].Value == null)
+            {
+                return;
+            }
+            setCompanyBank(dgvView[colCobId, e.RowIndex].Value.ToString());
+            //FrmBankAdd frm = new FrmBankAdd(dgvView[colCobId, e.RowIndex].Value.ToString(), cc);
+            ////frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
+            //frm.ShowDialog(this);
+            //setGrd();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            txtCobId.Text = "";
+        }
+
+        private void btnBankSave_Click(object sender, EventArgs e)
+        {
+            getCompanyBank();
+            //cc.cobdb.insertCompanyBany(cob);
+            if (cc.cobdb.insertCompanyBany(cob).Length >= 1)
+            {
+                setGrdCob();
+                MessageBox.Show("บันทึกข้อมูลBank เรียบร้อย", "บันทึกข้อมูล");
+                //this.Dispose();
+                //this.Hide();
+            }
+        }
+        private void setGrdCob()
+        {
+            DataTable dt = cc.cobdb.selectAll();
+            dgvView.ColumnCount = colCobCnt;
+
+            dgvView.RowCount = dt.Rows.Count + 1;
+            dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            //dgvView.Columns[colRow].Width = 50;
+            dgvView.Columns[colCobBankNameT].Width = 80;
+            dgvView.Columns[colCobBranch].Width = 200;
+            dgvView.Columns[colCobAccNumber].Width = 200;
+            dgvView.Columns[colCobRemark].Width = 200;
+
+            dgvView.Columns[colCobBankNameT].HeaderText = "ธนาคาร";
+            dgvView.Columns[colCobBranch].HeaderText = "สาขา";
+            dgvView.Columns[colCobAccNumber].HeaderText = "เลขที่บัญชี";
+            dgvView.Columns[colCobRemark].HeaderText = "หมายเหตุ";
+            //dgvView.Columns[colRemark].HeaderText = "หมายเหตุ";
+
+            //dgvView.Columns[colPassword].HeaderText = "  ";
+
+            dgvView.Columns[colCobId].HeaderText = "id";
+            System.Drawing.Font font = new System.Drawing.Font("Microsoft Sans Serif", 12);
+
+            dgvView.Font = font;
+            dgvView.Columns[colCobId].Visible = false;
+            //dgvView.Columns[colCode].Visible = false;
+            //dgvView.Columns[colRemark].Visible = false;
+            if (dt.Rows.Count > 0)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    //dgvView[colRow, i].Value = (i + 1);
+                    dgvView[colCobBankNameT, i].Value = dt.Rows[i][cc.cobdb.cob.NameT].ToString();
+                    dgvView[colCobBranch, i].Value = dt.Rows[i][cc.cobdb.cob.Branch].ToString();
+                    dgvView[colCobAccNumber, i].Value = dt.Rows[i][cc.cobdb.cob.AccNumber].ToString();
+
+                    dgvView[colCobRemark, i].Value = dt.Rows[i][cc.cobdb.cob.Remark].ToString();
+                    dgvView[colCobId, i].Value = dt.Rows[i][cc.cobdb.cob.Id].ToString();
+
+                    if ((i % 2) != 0)
+                    {
+                        dgvView.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                    }
+                }
+            }
+            dgvView.ReadOnly = true;
         }
     }
 }

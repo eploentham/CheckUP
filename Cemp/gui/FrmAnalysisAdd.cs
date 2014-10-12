@@ -40,7 +40,7 @@ namespace Cemp.gui
         }
         private void setControl(String anId)
         {
-            an = cc.andb.selectByPk(anId);
+            an = cc.anadb.selectByPk(anId);
             //txtCode.Text = itg.Code;
             txtId.Text = an.Id;
             txtNameE.Text = an.NameE;
@@ -70,7 +70,7 @@ namespace Cemp.gui
                 btnUnActive.Visible = false;
             }
         }
-        private void getItemGroup()
+        private void getAnalysis()
         {
             //itg.Code = txtCode.Text;
             an.Id = txtId.Text;
@@ -108,12 +108,12 @@ namespace Cemp.gui
                 //    return;
                 //}
             }
-            getItemGroup();
+            getAnalysis();
             //if (itg.Code.Equals(""))
             //{
             //    itg.Code = cc.medb.getMethodCode();
             //}
-            if (cc.andb.insertAnalysis(an).Length >= 1)
+            if (cc.anadb.insertAnalysis(an).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 this.Dispose();
@@ -164,7 +164,7 @@ namespace Cemp.gui
             //{
 
             //}
-            Analysis itg = cc.andb.selectByNameT(txtNameT.Text);
+            Analysis itg = cc.anadb.selectByNameT(txtNameT.Text);
             if (!itg.NameT.Equals(""))
             {
                 if (!txtId.Text.Equals(itg.Id))
@@ -260,6 +260,11 @@ namespace Cemp.gui
                 //txtRemark.SelectAll();
                 btnSave.Focus();
             }
+        }
+
+        private void FrmAnalysisAdd_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

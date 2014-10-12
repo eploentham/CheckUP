@@ -68,7 +68,7 @@ namespace Cemp.gui
             }
             cboMethod = cc.medb.getCboMethod(cboMethod);
             cboGroup = cc.itgdb.getCboItemGroup(cboGroup);
-            cboAnalysis = cc.andb.getCboAnalysis(cboAnalysis);
+            cboAnalysis = cc.anadb.getCboAnalysis(cboAnalysis);
             cboMethod.Text = it.MethodNameT;
             cboGroup.Text = it.ItemGroupNameT;
             cboAnalysis.Text = it.AnalysisNameT;
@@ -418,7 +418,7 @@ namespace Cemp.gui
         {
             FrmAnalysisAdd frm = new FrmAnalysisAdd("", cc);
             frm.ShowDialog(this);
-            cboAnalysis = cc.andb.getCboAnalysis(cboAnalysis);
+            cboAnalysis = cc.anadb.getCboAnalysis(cboAnalysis);
         }
     }
 }

@@ -20,10 +20,11 @@ namespace Cemp.objdb
         private void initConfig()
         {
             pre = new Prefix();
-            pre.Active = "";
+            pre.Active = "prefix_active";
             pre.Id = "prefix_id";
             pre.NameE = "prefix_name_e";
             pre.NameT = "prefix_name_t";
+            //pre.Active = "";
 
             pre.pkField = "prefix_id";
             pre.table = "b_prefix";
@@ -114,7 +115,7 @@ namespace Cemp.objdb
             }
             return chk;
         }
-        public String insertPrefix(Prefix p)
+        public String insertBank(Prefix p)
         {
             Prefix item = new Prefix();
             String chk = "";
@@ -128,6 +129,22 @@ namespace Cemp.objdb
                 chk = update(p);
             }
             return chk;
+        }
+        public ComboBox getCboPrefix(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectAll();
+            //String aaa = "";
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i][pre.Id].ToString();
+                item.Text = dt.Rows[i][pre.NameT].ToString();
+                c.Items.Add(item);
+                //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
+                //c.Items.Add(new );
+            }
+            return c;
         }
     }
 }

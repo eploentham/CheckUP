@@ -660,5 +660,14 @@ namespace Cemp.objdb
             year = year.Substring(2);
             return year;
         }
+        public String updateQuoNumberCnt(String quId, String quoNumberCnt)
+        {
+            String sql = "", chk = "";
+
+            sql = "Update " + qu.table + " Set " + qu.QuoNumberCnt + "=" + quoNumberCnt + " " +
+                "Where " + qu.pkField + "='" + quId + "'";
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
     }
 }

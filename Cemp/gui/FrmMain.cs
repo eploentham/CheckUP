@@ -75,7 +75,7 @@ namespace Cemp
             tv1.Nodes["nInitConfig"].Nodes.Add("nCpBankView", "ข้อมูลสมุดบัญชีธนาคาร");
             tv1.Nodes["nInitConfig"].Nodes.Add("nPassword", "เปลี่ยนรหัสผ่าน");
             tv1.Nodes["nInitConfig"].Nodes.Add("nBankView", "ข้อมูลธนาคาร");
-            tv1.Nodes["nInitConfig"].Nodes.Add("nTest", "Test ");
+            tv1.Nodes["nInitConfig"].Nodes.Add("nPrefixView", "คำนำหน้าชื่อ");
             tv1.Nodes["nInitConfig"].Nodes.Add("nInitConfig", "กำหนดค่าโปรแกรม");
             //}
 
@@ -193,7 +193,12 @@ namespace Cemp
             }
             else if (e.Node.Name.ToString() == "nBankView")
             {
-                FrmAR frm = new FrmAR();
+                FrmBankView frm = new FrmBankView(cc);
+                showFrame(frm);
+            }
+            else if (e.Node.Name.ToString() == "nPrefixView")
+            {
+                FrmStaffPrefixView frm = new FrmStaffPrefixView(cc);
                 showFrame(frm);
             }
         }

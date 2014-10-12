@@ -252,7 +252,7 @@
             this.Name = "FrmAnalysisAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAnalysisAdd";
-            //this.Load += new System.EventHandler(this.FrmItemGroupAdd_Load);
+            this.Load += new System.EventHandler(this.FrmAnalysisAdd_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

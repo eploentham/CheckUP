@@ -37,7 +37,7 @@ namespace Cemp.gui
         }
         private void setGrd()
         {
-            dt = cc.andb.selectAll();
+            dt = cc.anadb.selectAll();
             dgvView.ColumnCount = colCnt;
 
             dgvView.RowCount = dt.Rows.Count + 1;
@@ -68,11 +68,11 @@ namespace Cemp.gui
                 {
                     dgvView[colRow, i].Value = (i + 1);
                     //dgvView[colCode, i].Value = dt.Rows[i][cc.itgdb.itg.Code].ToString();
-                    dgvView[colNameT, i].Value = dt.Rows[i][cc.andb.an.NameT].ToString();
-                    dgvView[colNameE, i].Value = dt.Rows[i][cc.andb.an.NameE].ToString();
+                    dgvView[colNameT, i].Value = dt.Rows[i][cc.anadb.an.NameT].ToString();
+                    dgvView[colNameE, i].Value = dt.Rows[i][cc.anadb.an.NameE].ToString();
 
-                    dgvView[colRemark, i].Value = dt.Rows[i][cc.andb.an.Remark].ToString();
-                    dgvView[colId, i].Value = dt.Rows[i][cc.andb.an.Id].ToString();
+                    dgvView[colRemark, i].Value = dt.Rows[i][cc.anadb.an.Remark].ToString();
+                    dgvView[colId, i].Value = dt.Rows[i][cc.anadb.an.Id].ToString();
 
                     if ((i % 2) != 0)
                     {

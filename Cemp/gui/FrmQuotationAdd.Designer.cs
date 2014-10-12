@@ -131,6 +131,7 @@
             this.btnUnActive = new System.Windows.Forms.Button();
             this.ChkUnActive = new System.Windows.Forms.RadioButton();
             this.chkActive = new System.Windows.Forms.RadioButton();
+            this.btnDoc = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
@@ -1320,11 +1321,23 @@
             this.chkActive.UseVisualStyleBackColor = true;
             this.chkActive.Click += new System.EventHandler(this.chkActive_Click);
             // 
+            // btnDoc
+            // 
+            this.btnDoc.Location = new System.Drawing.Point(1049, 58);
+            this.btnDoc.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDoc.Name = "btnDoc";
+            this.btnDoc.Size = new System.Drawing.Size(56, 29);
+            this.btnDoc.TabIndex = 67;
+            this.btnDoc.Text = "run doc";
+            this.btnDoc.UseVisualStyleBackColor = true;
+            this.btnDoc.Click += new System.EventHandler(this.btnDoc_Click);
+            // 
             // FrmQuotationAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1186, 832);
+            this.Controls.Add(this.btnDoc);
             this.Controls.Add(this.btnUnActive);
             this.Controls.Add(this.ChkUnActive);
             this.Controls.Add(this.chkActive);
@@ -1499,5 +1512,6 @@
         private System.Windows.Forms.Button btnUnActive;
         private System.Windows.Forms.RadioButton ChkUnActive;
         private System.Windows.Forms.RadioButton chkActive;
+        private System.Windows.Forms.Button btnDoc;
     }
 }

@@ -17,8 +17,8 @@ namespace Cemp.gui
     {
         CnviControl cc;
         DataTable dt;
-        int colCnt = 7;
-        int colRow = 0, colName = 2, colRemark = 3, colId=4, colCode=1, colPassword=6, colPriority=5;
+        int colCnt = 8;
+        int colRow = 0, colName = 2, colRemark = 3, colId=4, colCode=1, colPassword=7, colPriority=5, colPosition=6;
 
         public FrmStaffView(CnviControl c)
         {
@@ -35,10 +35,10 @@ namespace Cemp.gui
         }
         private void setResize()
         {
-            dgvView.Width = this.Width - 50;
-            dgvView.Height = this.Height - 150;
-
-            groupBox1.Width = this.Width - 50;
+            dgvView.Width = this.Width - 100;
+            dgvView.Height = this.Height - 200;
+            btnSfAdd.Left = dgvView.Width +10;
+            groupBox1.Width = this.Width - 150;
             //groupBox1.Height = this.Height = 150;
         }
         public void setControl()
@@ -50,11 +50,12 @@ namespace Cemp.gui
             dgvView.RowCount = dt.Rows.Count + 1;
             dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvView.Columns[colRow].Width = 50;
-            dgvView.Columns[colName].Width = 150;
-            dgvView.Columns[colRemark].Width = 120;
+            dgvView.Columns[colName].Width = 250;
+            dgvView.Columns[colRemark].Width = 220;
             dgvView.Columns[colId].Width = 80;
             dgvView.Columns[colPassword].Width = 80;
             dgvView.Columns[colPriority].Width = 180;
+            dgvView.Columns[colPosition].Width = 180;
 
             dgvView.Columns[colRow].HeaderText = "ลำดับ";
             dgvView.Columns[colCode].HeaderText = "code";
@@ -62,6 +63,7 @@ namespace Cemp.gui
             dgvView.Columns[colRemark].HeaderText = "หมายเหตุ";
             dgvView.Columns[colId].HeaderText = "id";
             dgvView.Columns[colPriority].HeaderText = "สิทธิใช้งาน";
+            dgvView.Columns[colPosition].HeaderText = "ตำแหน่ง";
             dgvView.Columns[colPassword].HeaderText = "  ";
 
             dgvView.Columns[colId].HeaderText = "id";
@@ -78,6 +80,7 @@ namespace Cemp.gui
                     dgvView[colName, i].Value = dt.Rows[i][cc.sfdb.sf.Prefix].ToString()+" "+dt.Rows[i][cc.sfdb.sf.NameT].ToString();
                     dgvView[colRemark, i].Value = dt.Rows[i][cc.sfdb.sf.Remark].ToString();
                     dgvView[colId, i].Value = dt.Rows[i][cc.sfdb.sf.Id].ToString();
+                    dgvView[colPosition, i].Value = dt.Rows[i][cc.sfdb.sf.PositionName].ToString();
                     if (dt.Rows[i][cc.sfdb.sf.Priority].ToString().Equals("1"))
                     {
                         dgvView[colPriority, i].Value = "ป้อนข้อมูลอย่างเดียว";
@@ -133,6 +136,11 @@ namespace Cemp.gui
                 frm.ShowDialog(this);
                 setControl();
             }
+        }
+
+        private void FrmStaffView_Resize(object sender, EventArgs e)
+        {
+            setResize();
         }
     }
 }

@@ -71,6 +71,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txtQuoLine6 = new System.Windows.Forms.TextBox();
@@ -84,6 +86,7 @@
             this.txtQuoLine2 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.txtQuoLine1 = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label28 = new System.Windows.Forms.Label();
             this.txtMOULine4 = new System.Windows.Forms.TextBox();
@@ -93,12 +96,7 @@
             this.txtMOULine2 = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.txtMOULine1 = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.txtInvLine1 = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.txtInvDuePeriod = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label32 = new System.Windows.Forms.Label();
             this.txtRsLine6 = new System.Windows.Forms.TextBox();
@@ -112,20 +110,52 @@
             this.txtRsLine2 = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.txtRsLine1 = new System.Windows.Forms.TextBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.txtInvLine1 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txtInvDuePeriod = new System.Windows.Forms.TextBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.nuDDuePeriod = new System.Windows.Forms.NumericUpDown();
             this.label39 = new System.Windows.Forms.Label();
             this.txtPOLine1 = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
-            this.nuDDuePeriod = new System.Windows.Forms.NumericUpDown();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.txtCobId = new System.Windows.Forms.TextBox();
+            this.txtAccNumber = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.btnBankSave = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnUnActive = new System.Windows.Forms.Button();
+            this.ChkCobUnActive = new System.Windows.Forms.RadioButton();
+            this.chkCobActive = new System.Windows.Forms.RadioButton();
+            this.txtBankRemark = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.txtBankBranch = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.cboCobBank = new System.Windows.Forms.ComboBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.dgvView = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuDDuePeriod)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -568,6 +598,31 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "รหัส :";
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Location = new System.Drawing.Point(622, 12);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(574, 458);
+            this.tabControl1.TabIndex = 8;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.groupBox4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(566, 432);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Quotation";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.label20);
@@ -582,10 +637,10 @@
             this.groupBox4.Controls.Add(this.txtQuoLine2);
             this.groupBox4.Controls.Add(this.label25);
             this.groupBox4.Controls.Add(this.txtQuoLine1);
-            this.groupBox4.Location = new System.Drawing.Point(622, 12);
+            this.groupBox4.Location = new System.Drawing.Point(14, 16);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(526, 174);
-            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Quotation";
             // 
@@ -697,6 +752,17 @@
             this.txtQuoLine1.Size = new System.Drawing.Size(419, 20);
             this.txtQuoLine1.TabIndex = 33;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(566, 432);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "ข้อตกลง";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label28);
@@ -707,10 +773,10 @@
             this.groupBox2.Controls.Add(this.txtMOULine2);
             this.groupBox2.Controls.Add(this.label31);
             this.groupBox2.Controls.Add(this.txtMOULine1);
-            this.groupBox2.Location = new System.Drawing.Point(622, 206);
+            this.groupBox2.Location = new System.Drawing.Point(23, 19);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(526, 125);
-            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ข้อตกลง";
             // 
@@ -786,65 +852,16 @@
             this.txtMOULine1.Size = new System.Drawing.Size(419, 20);
             this.txtMOULine1.TabIndex = 33;
             // 
-            // groupBox3
+            // tabPage3
             // 
-            this.groupBox3.Controls.Add(this.label38);
-            this.groupBox3.Controls.Add(this.txtInvLine1);
-            this.groupBox3.Controls.Add(this.label27);
-            this.groupBox3.Controls.Add(this.label26);
-            this.groupBox3.Controls.Add(this.txtInvDuePeriod);
-            this.groupBox3.Location = new System.Drawing.Point(622, 517);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(526, 79);
-            this.groupBox3.TabIndex = 5;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Invoice";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(16, 57);
-            this.label38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(35, 13);
-            this.label38.TabIndex = 39;
-            this.label38.Text = "line1 :";
-            // 
-            // txtInvLine1
-            // 
-            this.txtInvLine1.Location = new System.Drawing.Point(102, 54);
-            this.txtInvLine1.Margin = new System.Windows.Forms.Padding(2);
-            this.txtInvLine1.Name = "txtInvLine1";
-            this.txtInvLine1.Size = new System.Drawing.Size(419, 20);
-            this.txtInvLine1.TabIndex = 38;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(221, 26);
-            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(21, 13);
-            this.label27.TabIndex = 37;
-            this.label27.Text = "วัน";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(16, 26);
-            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(108, 13);
-            this.label26.TabIndex = 36;
-            this.label26.Text = "เงื่อนไขการชำระเงิน :";
-            // 
-            // txtInvDuePeriod
-            // 
-            this.txtInvDuePeriod.Location = new System.Drawing.Point(151, 23);
-            this.txtInvDuePeriod.Margin = new System.Windows.Forms.Padding(2);
-            this.txtInvDuePeriod.Name = "txtInvDuePeriod";
-            this.txtInvDuePeriod.Size = new System.Drawing.Size(57, 20);
-            this.txtInvDuePeriod.TabIndex = 35;
+            this.tabPage3.Controls.Add(this.groupBox5);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(566, 432);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "ใบรับตัวอย่าง";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
@@ -860,10 +877,10 @@
             this.groupBox5.Controls.Add(this.txtRsLine2);
             this.groupBox5.Controls.Add(this.label37);
             this.groupBox5.Controls.Add(this.txtRsLine1);
-            this.groupBox5.Location = new System.Drawing.Point(622, 337);
+            this.groupBox5.Location = new System.Drawing.Point(23, 21);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(526, 174);
-            this.groupBox5.TabIndex = 6;
+            this.groupBox5.TabIndex = 7;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Result";
             // 
@@ -975,6 +992,88 @@
             this.txtRsLine1.Size = new System.Drawing.Size(419, 20);
             this.txtRsLine1.TabIndex = 33;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.groupBox3);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(566, 432);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Invoice";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label38);
+            this.groupBox3.Controls.Add(this.txtInvLine1);
+            this.groupBox3.Controls.Add(this.label27);
+            this.groupBox3.Controls.Add(this.label26);
+            this.groupBox3.Controls.Add(this.txtInvDuePeriod);
+            this.groupBox3.Location = new System.Drawing.Point(23, 19);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(526, 79);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Invoice";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(16, 57);
+            this.label38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(35, 13);
+            this.label38.TabIndex = 39;
+            this.label38.Text = "line1 :";
+            // 
+            // txtInvLine1
+            // 
+            this.txtInvLine1.Location = new System.Drawing.Point(102, 54);
+            this.txtInvLine1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtInvLine1.Name = "txtInvLine1";
+            this.txtInvLine1.Size = new System.Drawing.Size(419, 20);
+            this.txtInvLine1.TabIndex = 38;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(221, 26);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(21, 13);
+            this.label27.TabIndex = 37;
+            this.label27.Text = "วัน";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(16, 26);
+            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(108, 13);
+            this.label26.TabIndex = 36;
+            this.label26.Text = "เงื่อนไขการชำระเงิน :";
+            // 
+            // txtInvDuePeriod
+            // 
+            this.txtInvDuePeriod.Location = new System.Drawing.Point(151, 23);
+            this.txtInvDuePeriod.Margin = new System.Windows.Forms.Padding(2);
+            this.txtInvDuePeriod.Name = "txtInvDuePeriod";
+            this.txtInvDuePeriod.Size = new System.Drawing.Size(57, 20);
+            this.txtInvDuePeriod.TabIndex = 35;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.groupBox6);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(566, 432);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "PO";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.nuDDuePeriod);
@@ -982,12 +1081,25 @@
             this.groupBox6.Controls.Add(this.txtPOLine1);
             this.groupBox6.Controls.Add(this.label40);
             this.groupBox6.Controls.Add(this.label41);
-            this.groupBox6.Location = new System.Drawing.Point(12, 481);
+            this.groupBox6.Location = new System.Drawing.Point(23, 19);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(526, 79);
-            this.groupBox6.TabIndex = 7;
+            this.groupBox6.TabIndex = 8;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "PO";
+            // 
+            // nuDDuePeriod
+            // 
+            this.nuDDuePeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.nuDDuePeriod.Location = new System.Drawing.Point(153, 19);
+            this.nuDDuePeriod.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.nuDDuePeriod.Name = "nuDDuePeriod";
+            this.nuDDuePeriod.Size = new System.Drawing.Size(63, 20);
+            this.nuDDuePeriod.TabIndex = 112;
             // 
             // label39
             // 
@@ -1027,29 +1139,197 @@
             this.label41.TabIndex = 36;
             this.label41.Text = "default ระยะเวลา credit :";
             // 
-            // nuDDuePeriod
+            // tabPage6
             // 
-            this.nuDDuePeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.nuDDuePeriod.Location = new System.Drawing.Point(153, 19);
-            this.nuDDuePeriod.Maximum = new decimal(new int[] {
-            300,
-            0,
-            0,
-            0});
-            this.nuDDuePeriod.Name = "nuDDuePeriod";
-            this.nuDDuePeriod.Size = new System.Drawing.Size(63, 20);
-            this.nuDDuePeriod.TabIndex = 112;
+            this.tabPage6.Controls.Add(this.txtCobId);
+            this.tabPage6.Controls.Add(this.txtAccNumber);
+            this.tabPage6.Controls.Add(this.label45);
+            this.tabPage6.Controls.Add(this.btnBankSave);
+            this.tabPage6.Controls.Add(this.btnAdd);
+            this.tabPage6.Controls.Add(this.btnUnActive);
+            this.tabPage6.Controls.Add(this.ChkCobUnActive);
+            this.tabPage6.Controls.Add(this.chkCobActive);
+            this.tabPage6.Controls.Add(this.txtBankRemark);
+            this.tabPage6.Controls.Add(this.label44);
+            this.tabPage6.Controls.Add(this.txtBankBranch);
+            this.tabPage6.Controls.Add(this.label43);
+            this.tabPage6.Controls.Add(this.cboCobBank);
+            this.tabPage6.Controls.Add(this.label42);
+            this.tabPage6.Controls.Add(this.dgvView);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(566, 432);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Bank";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // txtCobId
+            // 
+            this.txtCobId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCobId.Location = new System.Drawing.Point(407, 43);
+            this.txtCobId.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCobId.Name = "txtCobId";
+            this.txtCobId.Size = new System.Drawing.Size(33, 23);
+            this.txtCobId.TabIndex = 72;
+            this.txtCobId.Visible = false;
+            // 
+            // txtAccNumber
+            // 
+            this.txtAccNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAccNumber.Location = new System.Drawing.Point(105, 67);
+            this.txtAccNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAccNumber.Name = "txtAccNumber";
+            this.txtAccNumber.Size = new System.Drawing.Size(298, 23);
+            this.txtAccNumber.TabIndex = 71;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label45.Location = new System.Drawing.Point(15, 68);
+            this.label45.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(69, 17);
+            this.label45.TabIndex = 70;
+            this.label45.Text = "เลขที่บัญชี :";
+            // 
+            // btnBankSave
+            // 
+            this.btnBankSave.Location = new System.Drawing.Point(505, 86);
+            this.btnBankSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBankSave.Name = "btnBankSave";
+            this.btnBankSave.Size = new System.Drawing.Size(56, 29);
+            this.btnBankSave.TabIndex = 69;
+            this.btnBankSave.Text = "Save";
+            this.btnBankSave.UseVisualStyleBackColor = true;
+            this.btnBankSave.Click += new System.EventHandler(this.btnBankSave_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(428, 14);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(31, 25);
+            this.btnAdd.TabIndex = 67;
+            this.btnAdd.Text = "+";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnUnActive
+            // 
+            this.btnUnActive.Location = new System.Drawing.Point(272, 133);
+            this.btnUnActive.Name = "btnUnActive";
+            this.btnUnActive.Size = new System.Drawing.Size(86, 23);
+            this.btnUnActive.TabIndex = 66;
+            this.btnUnActive.Text = "ยกเลิกการใช้งาน";
+            this.btnUnActive.UseVisualStyleBackColor = true;
+            // 
+            // ChkCobUnActive
+            // 
+            this.ChkCobUnActive.AutoSize = true;
+            this.ChkCobUnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.ChkCobUnActive.Location = new System.Drawing.Point(190, 133);
+            this.ChkCobUnActive.Margin = new System.Windows.Forms.Padding(2);
+            this.ChkCobUnActive.Name = "ChkCobUnActive";
+            this.ChkCobUnActive.Size = new System.Drawing.Size(60, 21);
+            this.ChkCobUnActive.TabIndex = 65;
+            this.ChkCobUnActive.TabStop = true;
+            this.ChkCobUnActive.Text = "ยกเลิก";
+            this.ChkCobUnActive.UseVisualStyleBackColor = true;
+            // 
+            // chkCobActive
+            // 
+            this.chkCobActive.AutoSize = true;
+            this.chkCobActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.chkCobActive.Location = new System.Drawing.Point(106, 133);
+            this.chkCobActive.Margin = new System.Windows.Forms.Padding(2);
+            this.chkCobActive.Name = "chkCobActive";
+            this.chkCobActive.Size = new System.Drawing.Size(61, 21);
+            this.chkCobActive.TabIndex = 64;
+            this.chkCobActive.TabStop = true;
+            this.chkCobActive.Text = "ใช้งาน";
+            this.chkCobActive.UseVisualStyleBackColor = true;
+            // 
+            // txtBankRemark
+            // 
+            this.txtBankRemark.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtBankRemark.Location = new System.Drawing.Point(105, 94);
+            this.txtBankRemark.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBankRemark.Name = "txtBankRemark";
+            this.txtBankRemark.Size = new System.Drawing.Size(298, 23);
+            this.txtBankRemark.TabIndex = 41;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label44.Location = new System.Drawing.Point(15, 95);
+            this.label44.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(67, 17);
+            this.label44.TabIndex = 40;
+            this.label44.Text = "หมายเหตุ :";
+            // 
+            // txtBankBranch
+            // 
+            this.txtBankBranch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtBankBranch.Location = new System.Drawing.Point(105, 40);
+            this.txtBankBranch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBankBranch.Name = "txtBankBranch";
+            this.txtBankBranch.Size = new System.Drawing.Size(298, 23);
+            this.txtBankBranch.TabIndex = 42;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label43.Location = new System.Drawing.Point(15, 41);
+            this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(43, 17);
+            this.label43.TabIndex = 41;
+            this.label43.Text = "สาขา :";
+            // 
+            // cboCobBank
+            // 
+            this.cboCobBank.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cboCobBank.FormattingEnabled = true;
+            this.cboCobBank.Location = new System.Drawing.Point(105, 11);
+            this.cboCobBank.Margin = new System.Windows.Forms.Padding(2);
+            this.cboCobBank.Name = "cboCobBank";
+            this.cboCobBank.Size = new System.Drawing.Size(298, 25);
+            this.cboCobBank.TabIndex = 40;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label42.Location = new System.Drawing.Point(15, 14);
+            this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(48, 17);
+            this.label42.TabIndex = 39;
+            this.label42.Text = "Bank :";
+            // 
+            // dgvView
+            // 
+            this.dgvView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvView.Location = new System.Drawing.Point(5, 169);
+            this.dgvView.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvView.Name = "dgvView";
+            this.dgvView.RowTemplate.Height = 24;
+            this.dgvView.Size = new System.Drawing.Size(556, 258);
+            this.dgvView.TabIndex = 16;
+            this.dgvView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvView_CellDoubleClick);
             // 
             // FrmCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 634);
-            this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox4);
+            this.ClientSize = new System.Drawing.Size(1214, 493);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmCompany";
@@ -1059,17 +1339,26 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuDDuePeriod)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1119,6 +1408,8 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtSpec1;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtQuoLine6;
@@ -1132,6 +1423,7 @@
         private System.Windows.Forms.TextBox txtQuoLine2;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox txtQuoLine1;
+        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox txtMOULine4;
@@ -1141,10 +1433,7 @@
         private System.Windows.Forms.TextBox txtMOULine2;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox txtMOULine1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox txtInvDuePeriod;
+        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox txtRsLine6;
@@ -1158,13 +1447,35 @@
         private System.Windows.Forms.TextBox txtRsLine2;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.TextBox txtRsLine1;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.TextBox txtInvLine1;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox txtInvDuePeriod;
+        private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.NumericUpDown nuDDuePeriod;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.TextBox txtPOLine1;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.NumericUpDown nuDDuePeriod;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.DataGridView dgvView;
+        private System.Windows.Forms.ComboBox cboCobBank;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox txtBankBranch;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox txtBankRemark;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Button btnUnActive;
+        private System.Windows.Forms.RadioButton ChkCobUnActive;
+        private System.Windows.Forms.RadioButton chkCobActive;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnBankSave;
+        private System.Windows.Forms.TextBox txtAccNumber;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.TextBox txtCobId;
     }
 }

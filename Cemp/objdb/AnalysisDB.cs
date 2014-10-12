@@ -160,9 +160,9 @@ namespace Cemp.objdb
             {
                 p.Sort1 = "999";
             }
-            p.NameE = p.NameE.Replace("''", "'");
-            p.NameT = p.NameT.Replace("''", "'");
-            p.Remark = p.Remark.Replace("''", "'");
+            p.NameE = p.NameE.Replace("'", "''");
+            p.NameT = p.NameT.Replace("'", "''");
+            p.Remark = p.Remark.Replace("'", "''");
 
             sql = "Insert Into " + an.table + " (" + an.pkField + "," + an.Active + "," + an.NameE + "," +
                 an.NameT + "," + an.Remark + "," + an.Sort1 + "," + 
@@ -190,9 +190,9 @@ namespace Cemp.objdb
         {
             String sql = "", chk = "";
 
-            p.NameE = p.NameE.Replace("''", "'");
-            p.NameT = p.NameT.Replace("''", "'");
-            p.Remark = p.Remark.Replace("''", "'");
+            p.NameE = p.NameE.Replace("'", "''");
+            p.NameT = p.NameT.Replace("'", "''");
+            p.Remark = p.Remark.Replace("'", "''");
             if (p.Sort1.Equals(""))
             {
                 p.Sort1 = "999";

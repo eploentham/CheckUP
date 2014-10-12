@@ -42,7 +42,10 @@ namespace Cemp.Control
         public ItemTypeDB itydb;
         public PODB podb;
         public POItemDB poidb;
-        public AnalysisDB andb;
+        public AnalysisDB anadb;
+        public PrefixDB predb;
+        public BankDB bandb;
+        public CompanyBankDB cobdb;
 
         public Staff sf;
         public Company cp;
@@ -96,7 +99,10 @@ namespace Cemp.Control
                 itydb = new ItemTypeDB(conn);
                 podb = new PODB(conn);
                 poidb = new POItemDB(conn);
-                andb = new AnalysisDB(conn);
+                anadb = new AnalysisDB(conn);
+                predb = new PrefixDB(conn);
+                bandb = new BankDB(conn);
+                cobdb = new CompanyBankDB(conn);
 
                 lw = new LogWriter();
 

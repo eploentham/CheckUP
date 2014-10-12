@@ -463,16 +463,16 @@ namespace Cemp.gui
             }
             else
             {
-                String[] doc1 = qu.QuoNumber.Split('-');
-                qu.QuoNumber = doc1[0];
-                if (qu.NetTotal.Equals(oldNetTotal))
-                {
-                    qu.QuoNumberCnt = doc1[1];
-                }
-                else
-                {
-                    qu.QuoNumberCnt = String.Concat(int.Parse(doc1[1])+1);
-                }
+                //String[] doc1 = qu.QuoNumber.Split('-');
+                //qu.QuoNumber = doc1[0];
+                //if (qu.NetTotal.Equals(oldNetTotal))
+                //{
+                //    qu.QuoNumberCnt = doc1[1];
+                //}
+                //else
+                //{
+                //    qu.QuoNumberCnt = String.Concat(int.Parse(doc1[1])+1);
+                //}
             }
             quId = cc.qudb.insertQuotation(qu);
             if (quId.Length >= 1)
@@ -1169,6 +1169,25 @@ namespace Cemp.gui
             if (e.KeyCode == Keys.Enter)
             {
                 setItemtoGrd(cc.getValueCboItem(cboItem), getRow());
+            }
+        }
+
+        private void btnDoc_Click(object sender, EventArgs e)
+        {
+            String[] doc1 =txtQuNumber.Text.Split('-');
+            qu.QuoNumber = doc1[0];
+            if (qu.NetTotal.Equals(oldNetTotal))
+            {
+                qu.QuoNumberCnt = doc1[1];
+            }
+            else
+            {
+                qu.QuoNumberCnt = String.Concat(int.Parse(doc1[1]) + 1);
+            }
+            if (cc.qudb.updateQuoNumberCnt(txtQuId.Text, qu.QuoNumberCnt).Equals("1"))
+            {
+                txtQuNumber.Text = qu.QuoNumber + "-" + qu.QuoNumberCnt;
+                MessageBox.Show("update เลขที่เอกสารเรียบร้อย", "เลขที่เอกสาร");
             }
         }
 

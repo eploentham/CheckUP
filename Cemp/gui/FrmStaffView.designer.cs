@@ -38,9 +38,11 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvView);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(9, 10);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1004, 714);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(753, 580);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -48,18 +50,20 @@
             // 
             this.dgvView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvView.Location = new System.Drawing.Point(6, 21);
+            this.dgvView.Location = new System.Drawing.Point(4, 17);
+            this.dgvView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvView.Name = "dgvView";
             this.dgvView.RowTemplate.Height = 24;
-            this.dgvView.Size = new System.Drawing.Size(992, 687);
+            this.dgvView.Size = new System.Drawing.Size(744, 558);
             this.dgvView.TabIndex = 0;
             this.dgvView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvView_CellDoubleClick);
             // 
             // btnSfAdd
             // 
-            this.btnSfAdd.Location = new System.Drawing.Point(1022, 33);
+            this.btnSfAdd.Location = new System.Drawing.Point(766, 27);
+            this.btnSfAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSfAdd.Name = "btnSfAdd";
-            this.btnSfAdd.Size = new System.Drawing.Size(75, 48);
+            this.btnSfAdd.Size = new System.Drawing.Size(56, 39);
             this.btnSfAdd.TabIndex = 2;
             this.btnSfAdd.Text = "ป้อนใหม่";
             this.btnSfAdd.UseVisualStyleBackColor = true;
@@ -67,16 +71,18 @@
             // 
             // FrmStaffView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1109, 745);
+            this.ClientSize = new System.Drawing.Size(832, 605);
             this.Controls.Add(this.btnSfAdd);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmStaffView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmStaffView";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmStaffView_Load);
+            this.Resize += new System.EventHandler(this.FrmStaffView_Resize);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();
             this.ResumeLayout(false);

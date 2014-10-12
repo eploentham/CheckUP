@@ -7,6 +7,6 @@ namespace Cemp.object1
 {
     public class CompanyBank:Persistent
     {
-        String Id = "", NameT = "", Branch = "", Active = "", AccNUmber = "", Remark = "";
+        public String Id = "", NameT = "", Branch = "", Active = "", AccNumber = "", Remark = "";
     }
 }

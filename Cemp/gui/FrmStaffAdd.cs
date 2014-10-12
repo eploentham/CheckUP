@@ -27,7 +27,7 @@ namespace Cemp.gui
             cc = new CnviControl();
             s = new Staff();
             cboPosition = cc.sfdb.getCboPosition(cboPosition);
-            cboPrefix = cc.sfdb.getCboPrefix(cboPrefix);
+            cboPrefix = cc.predb.getCboPrefix(cboPrefix);
             label9.Text = "";
             setControl(sfId);
         }
@@ -193,10 +193,13 @@ namespace Cemp.gui
             s = cc.sfdb.selectByCode(txtStaffCode.Text);
             if (!s.Code.Equals(""))
             {
-                MessageBox.Show("ป้อนรหัสซ้ำ\nรหัส " + s.Code + " ชื่อ " + s.NameT, "รหัสซ้ำ");
-                label9.Text = "รหัสซ้ำ";
-                txtStaffCode.BackColor = Color.Red;
-                return;
+                if (!txtStaffId.Text.Equals(s.Id))
+                {
+                    MessageBox.Show("ป้อนรหัสซ้ำ\nรหัส " + s.Code + " ชื่อ " + s.NameT, "รหัสซ้ำ");
+                    label9.Text = "รหัสซ้ำ";
+                    txtStaffCode.BackColor = Color.Red;
+                    return;
+                }
             }
             else
             {

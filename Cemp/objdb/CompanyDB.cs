@@ -157,12 +157,12 @@ namespace Cemp.objdb
             {
                 p.Id = "cp"+p.getGenID();
             }
-            p.AddressE = p.AddressE.Replace("''", "'");
-            p.AddressT = p.AddressT.Replace("''", "'");
-            p.NameE = p.NameE.Replace("''", "'");
-            p.NameT = p.NameT.Replace("''", "'");
-            p.Addr = p.Addr.Replace("''", "'");
-            p.Spec1 = p.Spec1.Replace("''", "'");
+            p.AddressE = p.AddressE.Replace("'", "''");
+            p.AddressT = p.AddressT.Replace("'", "''");
+            p.NameE = p.NameE.Replace("'", "''");
+            p.NameT = p.NameT.Replace("'", "''");
+            p.Addr = p.Addr.Replace("'", "''");
+            p.Spec1 = p.Spec1.Replace("'", "''");
 
             sql = "Insert Into " + cp.table + " (" + cp.pkField + "," + cp.AddressE + "," + cp.AddressT + "," +
                 cp.amphurId + "," + cp.districtId + "," + cp.Email + "," +
