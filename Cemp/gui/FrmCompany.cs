@@ -43,6 +43,8 @@ namespace Cemp.gui
             txtCode.ReadOnly = true;
             pageLoad = false;
             cboCobBank = cc.bandb.getCbobank(cboCobBank);
+            btnCobUnActive.Visible = false;
+            chkCobActive.Checked = true;
             //txtNameT.Focus();
         }
         private void setResize()
@@ -163,17 +165,17 @@ namespace Cemp.gui
             txtBankBranch.Text = cob.Branch;
             txtBankRemark.Text = cob.Remark;
             txtCobId.Text = cob.Id;
-            if (cob.Active.Equals(""))
+            if (cob.Active.Equals("1"))
             {
                 chkCobActive.Checked = true;
                 ChkCobUnActive.Checked = false;
-                btnUnActive.Visible = false;
+                btnCobUnActive.Visible = false;
             }
             else
             {
                 ChkCobUnActive.Checked = true;
                 chkCobActive.Checked = false;
-                btnUnActive.Visible = true;
+                btnCobUnActive.Visible = true;
             }
         }
         private void getCompanyBank()
@@ -645,6 +647,10 @@ namespace Cemp.gui
         private void btnAdd_Click(object sender, EventArgs e)
         {
             txtCobId.Text = "";
+            cboCobBank.Text = "";
+            txtBankBranch.Text = "";
+            txtBankRemark.Text = "";
+            txtAccNumber.Text = "";
         }
 
         private void btnBankSave_Click(object sender, EventArgs e)
@@ -667,9 +673,9 @@ namespace Cemp.gui
             dgvView.RowCount = dt.Rows.Count + 1;
             dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             //dgvView.Columns[colRow].Width = 50;
-            dgvView.Columns[colCobBankNameT].Width = 80;
-            dgvView.Columns[colCobBranch].Width = 200;
-            dgvView.Columns[colCobAccNumber].Width = 200;
+            dgvView.Columns[colCobBankNameT].Width = 150;
+            dgvView.Columns[colCobBranch].Width = 150;
+            dgvView.Columns[colCobAccNumber].Width = 150;
             dgvView.Columns[colCobRemark].Width = 200;
 
             dgvView.Columns[colCobBankNameT].HeaderText = "ธนาคาร";
@@ -706,6 +712,39 @@ namespace Cemp.gui
                 }
             }
             dgvView.ReadOnly = true;
+        }
+
+        private void btnCobUnActive_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("ต้องการยกเลิก", "ยกเลิก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                cc.cobdb.VoidCompanyBany(txtCobId.Text);
+                setGrdCob();
+                cboCobBank.Enabled = true;
+                txtBankBranch.Enabled = true;
+                txtAccNumber.Enabled = true;
+                txtBankRemark.Enabled = true;
+                btnAdd_Click(null, null);
+                //this.Dispose();
+            }
+        }
+
+        private void ChkCobUnActive_Click(object sender, EventArgs e)
+        {
+            btnCobUnActive.Visible = true;
+            cboCobBank.Enabled = false;
+            txtBankBranch.Enabled = false;
+            txtAccNumber.Enabled = false;
+            txtBankRemark.Enabled = false;
+        }
+
+        private void chkCobActive_Click(object sender, EventArgs e)
+        {
+            btnCobUnActive.Visible = false;
+            cboCobBank.Enabled = true;
+            txtBankBranch.Enabled = true;
+            txtAccNumber.Enabled = true;
+            txtBankRemark.Enabled = true;
         }
     }
 }

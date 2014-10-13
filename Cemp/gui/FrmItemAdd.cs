@@ -107,7 +107,11 @@ namespace Cemp.gui
 
         private void btnUnActive_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("ต้องการยกเลิก", "ยกเลิก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                cc.itdb.VoidItem(txtId.Text);
+                this.Dispose();
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)

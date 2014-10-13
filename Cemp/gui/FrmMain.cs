@@ -72,7 +72,7 @@ namespace Cemp
             tv1.Nodes["nInitConfig"].Nodes.Add("nStaffView", "สร้าง พนักงาน");
 
             tv1.Nodes["nInitConfig"].Nodes.Add("nCompany", "ข้อมูลบริษัท");
-            tv1.Nodes["nInitConfig"].Nodes.Add("nCpBankView", "ข้อมูลสมุดบัญชีธนาคาร");
+            //tv1.Nodes["nInitConfig"].Nodes.Add("nCpBankView", "ข้อมูลสมุดบัญชีธนาคาร");
             tv1.Nodes["nInitConfig"].Nodes.Add("nPassword", "เปลี่ยนรหัสผ่าน");
             tv1.Nodes["nInitConfig"].Nodes.Add("nBankView", "ข้อมูลธนาคาร");
             tv1.Nodes["nInitConfig"].Nodes.Add("nPrefixView", "คำนำหน้าชื่อ");

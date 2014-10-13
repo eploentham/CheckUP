@@ -232,7 +232,7 @@ namespace Cemp.objdb
             {
                 item = new ComboBoxItem();
                 item.Value = dt.Rows[i][sf.Id].ToString();
-                item.Text = dt.Rows[i][sf.NameT].ToString();
+                item.Text = dt.Rows[i][sf.Prefix].ToString()+" "+dt.Rows[i][sf.NameT].ToString();
                 c.Items.Add(item);
                 //c.Items.Add(new );
             }

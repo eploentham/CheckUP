@@ -109,7 +109,7 @@ namespace Cemp.objdb
             sql = "Insert Into " + cob.table + " (" + cob.pkField + "," + cob.AccNumber + "," + cob.Active + "," +
                 cob.Branch + "," + cob.NameT + "," + cob.Remark + ") " +
                 "Values('" + p.Id + "','" + p.AccNumber + "','" + p.Active + "','" +
-                p.Branch + p.NameT + "','" + p.Remark + "','" + "')";
+                p.Branch + "','"+ p.NameT + "','" + p.Remark  + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

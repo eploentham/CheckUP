@@ -65,6 +65,7 @@ namespace Cemp.gui
             dgvAdd.Width = this.Width - 80;
             //groupBox3.Left = dgvAdd.Width - groupBox3.Width - 50;
             btnSave.Left = dgvAdd.Width - 80;
+            btnDoc.Left = btnSave.Left;
             btnPrint.Left = btnSave.Left;
             btnPrintT.Left = btnSave.Left;
             groupBox2.Left = this.Width - groupBox2.Width - btnSave.Width - 150;
@@ -463,11 +464,11 @@ namespace Cemp.gui
             }
             else
             {
-                //String[] doc1 = qu.QuoNumber.Split('-');
-                //qu.QuoNumber = doc1[0];
+                String[] doc1 = qu.QuoNumber.Split('-');
+                qu.QuoNumber = doc1[0];
                 //if (qu.NetTotal.Equals(oldNetTotal))
                 //{
-                //    qu.QuoNumberCnt = doc1[1];
+                qu.QuoNumberCnt = doc1[1];
                 //}
                 //else
                 //{
@@ -1176,20 +1177,19 @@ namespace Cemp.gui
         {
             String[] doc1 =txtQuNumber.Text.Split('-');
             qu.QuoNumber = doc1[0];
-            if (qu.NetTotal.Equals(oldNetTotal))
-            {
-                qu.QuoNumberCnt = doc1[1];
-            }
-            else
-            {
+            //if (qu.NetTotal.Equals(oldNetTotal))
+            //{
+            //    qu.QuoNumberCnt = doc1[1];
+            //}
+            //else
+            //{
                 qu.QuoNumberCnt = String.Concat(int.Parse(doc1[1]) + 1);
-            }
+            //}
             if (cc.qudb.updateQuoNumberCnt(txtQuId.Text, qu.QuoNumberCnt).Equals("1"))
             {
                 txtQuNumber.Text = qu.QuoNumber + "-" + qu.QuoNumberCnt;
                 MessageBox.Show("update เลขที่เอกสารเรียบร้อย", "เลขที่เอกสาร");
             }
         }
-
     }
 }

@@ -130,7 +130,7 @@
             this.label45 = new System.Windows.Forms.Label();
             this.btnBankSave = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnUnActive = new System.Windows.Forms.Button();
+            this.btnCobUnActive = new System.Windows.Forms.Button();
             this.ChkCobUnActive = new System.Windows.Forms.RadioButton();
             this.chkCobActive = new System.Windows.Forms.RadioButton();
             this.txtBankRemark = new System.Windows.Forms.TextBox();
@@ -226,7 +226,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(604, 450);
+            this.groupBox1.Size = new System.Drawing.Size(604, 569);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "รายละเอียด";
@@ -609,7 +609,7 @@
             this.tabControl1.Location = new System.Drawing.Point(622, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(574, 458);
+            this.tabControl1.Size = new System.Drawing.Size(679, 569);
             this.tabControl1.TabIndex = 8;
             // 
             // tabPage1
@@ -618,7 +618,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(566, 432);
+            this.tabPage1.Size = new System.Drawing.Size(671, 432);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Quotation";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1146,7 +1146,7 @@
             this.tabPage6.Controls.Add(this.label45);
             this.tabPage6.Controls.Add(this.btnBankSave);
             this.tabPage6.Controls.Add(this.btnAdd);
-            this.tabPage6.Controls.Add(this.btnUnActive);
+            this.tabPage6.Controls.Add(this.btnCobUnActive);
             this.tabPage6.Controls.Add(this.ChkCobUnActive);
             this.tabPage6.Controls.Add(this.chkCobActive);
             this.tabPage6.Controls.Add(this.txtBankRemark);
@@ -1159,7 +1159,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(566, 432);
+            this.tabPage6.Size = new System.Drawing.Size(671, 543);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Bank";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1216,14 +1216,15 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnUnActive
+            // btnCobUnActive
             // 
-            this.btnUnActive.Location = new System.Drawing.Point(272, 133);
-            this.btnUnActive.Name = "btnUnActive";
-            this.btnUnActive.Size = new System.Drawing.Size(86, 23);
-            this.btnUnActive.TabIndex = 66;
-            this.btnUnActive.Text = "ยกเลิกการใช้งาน";
-            this.btnUnActive.UseVisualStyleBackColor = true;
+            this.btnCobUnActive.Location = new System.Drawing.Point(272, 133);
+            this.btnCobUnActive.Name = "btnCobUnActive";
+            this.btnCobUnActive.Size = new System.Drawing.Size(86, 23);
+            this.btnCobUnActive.TabIndex = 66;
+            this.btnCobUnActive.Text = "ยกเลิกการใช้งาน";
+            this.btnCobUnActive.UseVisualStyleBackColor = true;
+            this.btnCobUnActive.Click += new System.EventHandler(this.btnCobUnActive_Click);
             // 
             // ChkCobUnActive
             // 
@@ -1237,6 +1238,7 @@
             this.ChkCobUnActive.TabStop = true;
             this.ChkCobUnActive.Text = "ยกเลิก";
             this.ChkCobUnActive.UseVisualStyleBackColor = true;
+            this.ChkCobUnActive.Click += new System.EventHandler(this.ChkCobUnActive_Click);
             // 
             // chkCobActive
             // 
@@ -1250,6 +1252,7 @@
             this.chkCobActive.TabStop = true;
             this.chkCobActive.Text = "ใช้งาน";
             this.chkCobActive.UseVisualStyleBackColor = true;
+            this.chkCobActive.Click += new System.EventHandler(this.chkCobActive_Click);
             // 
             // txtBankRemark
             // 
@@ -1320,7 +1323,7 @@
             this.dgvView.Margin = new System.Windows.Forms.Padding(2);
             this.dgvView.Name = "dgvView";
             this.dgvView.RowTemplate.Height = 24;
-            this.dgvView.Size = new System.Drawing.Size(556, 258);
+            this.dgvView.Size = new System.Drawing.Size(661, 369);
             this.dgvView.TabIndex = 16;
             this.dgvView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvView_CellDoubleClick);
             // 
@@ -1328,7 +1331,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1214, 493);
+            this.ClientSize = new System.Drawing.Size(1313, 593);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -1469,7 +1472,7 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox txtBankRemark;
         private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Button btnUnActive;
+        private System.Windows.Forms.Button btnCobUnActive;
         private System.Windows.Forms.RadioButton ChkCobUnActive;
         private System.Windows.Forms.RadioButton chkCobActive;
         private System.Windows.Forms.Button btnAdd;
