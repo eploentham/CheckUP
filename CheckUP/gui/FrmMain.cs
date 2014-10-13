@@ -46,11 +46,11 @@ namespace Cemp
             //if (sf.Priority.Equals("1") || sf.Priority.Equals("3"))
             //{
             tv1.Nodes.Add("nQuotationView", "พิมพ์ Quotation");
-            tv1.Nodes.Add("nQuoConfirmView", "Confirm Quotation");
-            tv1.Nodes.Add("nMOUView", "พิมพ์ ใบข้อตกลง");
+            //tv1.Nodes.Add("nQuoConfirmView", "Confirm Quotation");
+            //tv1.Nodes.Add("nMOUView", "พิมพ์ ใบข้อตกลง");
             //tv1.Nodes.Add("nMOUPlaceRecord", "พิมพ์ ใบรับตัวอย่าง");
-            tv1.Nodes.Add("nInputResult", "ป้อนผลตัวอย่าง");
-            tv1.Nodes.Add("nBillView", "พิมพ์ Bill Note");
+            //tv1.Nodes.Add("nInputResult", "ป้อนผลตัวอย่าง");
+            //tv1.Nodes.Add("nBillView", "พิมพ์ Bill Note");
             //tv1.Nodes.Add("nRewardAdd", "ป้อนรางวัล");
             //}
             //if (sf.Priority.Equals("2") || sf.Priority.Equals("3"))
@@ -63,9 +63,9 @@ namespace Cemp
             //if (sf.Priority.Equals("3"))
             //{
             tv1.Nodes.Add("nInitConfig", "กำหนดค่าโปรแกรม");
-            tv1.Nodes["nInitConfig"].Nodes.Add("nItemView", "สร้างรายการ Parameter");
-            tv1.Nodes["nInitConfig"].Nodes.Add("nMethodView", "สร้างรายการ Method");
-            tv1.Nodes["nInitConfig"].Nodes.Add("nItemGroupView", "สร้าง Parameter Group");
+            //tv1.Nodes["nInitConfig"].Nodes.Add("nItemView", "สร้างรายการ Parameter");
+            //tv1.Nodes["nInitConfig"].Nodes.Add("nMethodView", "สร้างรายการ Method");
+            //tv1.Nodes["nInitConfig"].Nodes.Add("nItemGroupView", "สร้าง Parameter Group");
             tv1.Nodes["nInitConfig"].Nodes.Add("nCustomerView", "สร้าง ลูกค้า");
             tv1.Nodes["nInitConfig"].Nodes.Add("nStaffView", "สร้าง พนักงาน");
 
