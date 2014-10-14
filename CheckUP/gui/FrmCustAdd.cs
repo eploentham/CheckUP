@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Cemp.gui
+namespace CheckUP.gui
 {
     public partial class FrmCustAdd : Form
     {

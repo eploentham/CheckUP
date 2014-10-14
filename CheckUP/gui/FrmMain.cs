@@ -1,4 +1,4 @@
-﻿using Cemp.gui;
+﻿using CheckUP.gui;
 using CheckUP.Control;
 using CheckUP.gui;
 using CheckUP.object1;
@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Cemp
+namespace CheckUP
 {
     public partial class FrmMain : Form
     {
@@ -45,7 +45,7 @@ namespace Cemp
 
             //if (sf.Priority.Equals("1") || sf.Priority.Equals("3"))
             //{
-            tv1.Nodes.Add("nQuotationView", "พิมพ์ Quotation");
+            tv1.Nodes.Add("nCheckUPView", "พิมพ์ใบตรวจสุขภาพ");
             //tv1.Nodes.Add("nQuoConfirmView", "Confirm Quotation");
             //tv1.Nodes.Add("nMOUView", "พิมพ์ ใบข้อตกลง");
             //tv1.Nodes.Add("nMOUPlaceRecord", "พิมพ์ ใบรับตัวอย่าง");
@@ -98,11 +98,11 @@ namespace Cemp
 
         private void tv1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            //if (e.Node.Name.ToString() == "nQuotationView")
-            //{
-            //    FrmQuotationView frm = new FrmQuotationView(sf.Id,cc);
-            //    showFrame(frm);
-            //}
+            if (e.Node.Name.ToString() == "nCheckUPView")
+            {
+                FrmCheckUPView frm = new FrmCheckUPView(cc);
+                showFrame(frm);
+            }
             //else if (e.Node.Name.ToString() == "nQuoConfirmView")
             //{
             //    FrmQuoConfirmView frm = new FrmQuoConfirmView(sf.Id, cc);

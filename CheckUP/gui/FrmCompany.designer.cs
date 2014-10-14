@@ -1,4 +1,4 @@
-﻿namespace Cemp.gui
+﻿namespace CheckUP.gui
 {
     partial class FrmCompany
     {

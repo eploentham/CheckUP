@@ -15,7 +15,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 
-namespace Cemp.gui
+namespace CheckUP.gui
 {
     public partial class FrmCompany : Form
     {

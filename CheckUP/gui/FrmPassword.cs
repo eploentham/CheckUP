@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cemp.gui
+namespace CheckUP.gui
 {
     public partial class FrmPassword : Form
     {

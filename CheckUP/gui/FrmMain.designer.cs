@@ -1,4 +1,4 @@
-﻿namespace Cemp
+﻿namespace CheckUP
 {
     partial class FrmMain
     {

@@ -1,6 +1,5 @@
 ﻿using CheckUP.Control;
 using CheckUP.gui;
-using CheckUP.object1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,26 +10,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CheckUP.gui
+namespace CheckUP
 {
-    public partial class FrmStaffView : Form
+    public partial class FrmCheckUPView : Form
     {
         CheckControl cc;
-        DataTable dt;
         int colCnt = 7;
-        int colRow = 0, colName = 2, colRemark = 3, colId=4, colCode=1, colPassword=6, colPriority=5;
-
-        public FrmStaffView(CheckControl c)
+        int colRow = 0, colName = 2, colRemark = 3, colId = 4, colCode = 1, colPassword = 6, colPriority = 5;
+        public FrmCheckUPView(CheckControl c)
         {
             InitializeComponent();
-            initConfig(c);
-            
-        }
-        private void initConfig( CheckControl c)
-        {
             cc = c;
+            initConfig();
+        }
+        private void initConfig()
+        {
             //dt = lc.selectStaffAll();
-            setControl();
+            setGrd();
             dgvView.ReadOnly = true;
         }
         private void setResize()
@@ -38,10 +34,10 @@ namespace CheckUP.gui
             dgvView.Width = this.Width - 50;
             dgvView.Height = this.Height - 150;
 
-            groupBox1.Width = this.Width - 50;
+            //groupBox1.Width = this.Width - 50;
             //groupBox1.Height = this.Height = 150;
         }
-        public void setControl()
+        public void setGrd()
         {
             DataTable dt = new DataTable();
             dt = cc.sfdb.selectAll();
@@ -98,41 +94,17 @@ namespace CheckUP.gui
                 }
             }
         }
-        private void FrmStaffView_Load(object sender, EventArgs e)
+        private void FrmCheckUPView_Load(object sender, EventArgs e)
         {
 
         }
 
         private void btnSfAdd_Click(object sender, EventArgs e)
         {
-            FrmStaffAdd frm = new FrmStaffAdd("",cc);
+            FrmCheckUPAdd frm = new FrmCheckUPAdd(cc);
             //frm.setControl("");
             frm.ShowDialog(this);
-            setControl();
-        }
-
-        private void dgvView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex == -1)
-            {
-                return;
-            }
-            if (dgvView[colId, e.RowIndex].Value == null)
-            {
-                return;
-            }
-            if (e.ColumnIndex == colPassword)
-            {
-                FrmPassword frm = new FrmPassword(dgvView[colId, e.RowIndex].Value.ToString());
-                frm.ShowDialog(this);
-            }
-            else
-            {
-                FrmStaffAdd frm = new FrmStaffAdd(dgvView[colId, e.RowIndex].Value.ToString(),cc);
-                //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
-                frm.ShowDialog(this);
-                setControl();
-            }
+            setGrd();
         }
     }
 }

@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Cemp
+namespace CheckUP
 {
     public partial class FrmReport : Form
     {
