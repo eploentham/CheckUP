@@ -14,6 +14,8 @@ namespace CheckUP.gui
     public partial class FrmCheckUPAdd : Form
     {
         CheckControl cc;
+        CustCheckUp cuc;
+
         int tabSum = 0, tabPE=1, tabXRay=2, tabCBC=3, tabFBS=4, tabUA=5,tabTri=6, tabCho=7, tabSgot=8, tabBun=9, tabUric=10;
         int tabCnt = 11;
 
@@ -47,14 +49,18 @@ namespace CheckUP.gui
         int colSgotCnt = 7;
 
         Font font = new Font("Microsoft Sans Serif", 12);
-        public FrmCheckUPAdd(CheckControl c)
+        Boolean flagNew=false;
+        String fileName = "";
+        public FrmCheckUPAdd(Boolean flagnew,CheckControl c)
         {
             InitializeComponent();
             cc = c;
+            flagNew = flagnew;
             iniConfig();
         }
         private void iniConfig()
         {
+            cuc = new CustCheckUp();
             tC.TabPages[tabSum].Text = "Summary";
             tC.TabPages[tabPE].Text = "PE";
             tC.TabPages[tabXRay].Text = "X-Ray";
@@ -66,11 +72,23 @@ namespace CheckUP.gui
             tC.TabPages[tabBun].Text = "BUN Creatine";
             tC.TabPages[tabUric].Text = "Uric acid";
             //tC.TabPages[tabCho].Text = "Cholesterol";
+            pB1.Visible = false;
+            if (flagNew)
+            {
+                btnImport.Text = "นำเข้ารายชื่อ";
+                btnExcel.Enabled = true;
+                btnImport.Enabled = false;
+            }
+            else
+            {
+                btnImport.Text = "บันทึก";
+                btnExcel.Enabled = false;
+            }
 
             tC.Font = font;
             cboCust = cc.cudb.getCboCustomer(cboCust);
             //tC.TabPages[tabCho].Text = "Cholesterol";
-
+            
             setGrdSum();
             setGrdPE();
             setGrdXray();
@@ -425,43 +443,60 @@ namespace CheckUP.gui
             dgvCho.Font = font;
             //dgvSum.Columns[colPEId].Visible = false;
         }
-        private void setControl()
+        private void setControl(String cucId)
         {
-
+            cuc = cc.cucdb.selectByPk(cucId);
+            txtDescription.Text = cuc.Description;
+            cboCust.Text = cuc.CustNameT;
+            txtId.Text = cuc.Id;
         }
-        private void FrmCheckUPAdd_Load(object sender, EventArgs e)
+        private void getCustCheckUp()
         {
-
+            cuc.Active = "1";
+            cuc.CheckUpDate = "";
+            cuc.CntEmployee = "";
+            cuc.Description = txtDescription.Text;
+            cuc.YearId = "";
         }
-
-        private void FrmCheckUPAdd_Resize(object sender, EventArgs e)
+        private void ImportExcel()
         {
-            setResize();
-        }
-
-        private void btnCust_Click(object sender, EventArgs e)
-        {
-            FrmCustAdd frm = new FrmCustAdd("",cc);
-            frm.ShowDialog(this);
-            cboCust = cc.cudb.getCboCustomer(cboCust);
-        }
-
-        private void btnImport_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.ShowDialog();
+            pB1.Visible = true;
+            //OpenFileDialog ofd = new OpenFileDialog();
+            //ofd.ShowDialog();
             //Microsoft.Office.Interop.Excel.Application excelapp = new Microsoft.Office.Interop.Excel.Application();
             //Microsoft.Office.Interop.Excel._Workbook workbook = (Microsoft.Office.Interop.Excel._Workbook)(excelapp.Workbooks.Add(Type.Missing));
             //Microsoft.Office.Interop.Excel._Worksheet worksheet = (Microsoft.Office.Interop.Excel._Worksheet)workbook.ActiveSheet;
             //object misval = System.Reflection.Missing.Value;
+            if (!System.IO.File.Exists(fileName))
+            {
+                pB1.Visible = false;
+                return;
+            }
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
-            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileName);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
             String prefix = "", firstName = "", lastName = "";
             int rowCount = xlRange.Rows.Count;
             int colCount = xlRange.Columns.Count;
 
+
+            if (cboCust.Text.Equals(""))
+            {
+                pB1.Visible = false;
+                MessageBox.Show("ไม่ได้ป้อนชื่อ", "ป้อนข้อมูลไม่ครบ");
+                return;
+            }
+
+            getCustCheckUp();
+            if (cc.cucdb.insertCustCheckUp(cuc).Length < 1)
+            {
+                pB1.Visible = false;
+                MessageBox.Show("ไม่สามารถบันทึกข้อมูลได้ ", "Error ");
+                return;
+            }
+
+            pB1.Maximum = rowCount;
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
             {
                 CustCheckUpPatient ccp = new CustCheckUpPatient();
@@ -485,6 +520,7 @@ namespace CheckUP.gui
                 else
                 {
                     firstName = "";
+                    continue;
                 }
                 if (xlRange.Cells[i, 3].Value2 != null)
                 {
@@ -494,16 +530,111 @@ namespace CheckUP.gui
                 {
                     lastName = "";
                 }
-                ccp.patientFullname = prefix +" "+ firstName +" "+ lastName;
-                ccp.rowNumber = int.Parse(xlRange.Cells[i, 1].Value2.ToString());
-                ccp.patientAge = xlRange.Cells[i, 4].Value2.ToString();
-                cc.ccdb.InsertCustCheckUpPatient(ccp);
+                if (xlRange.Cells[i, 1].Value2 != null)
+                {
+                    ccp.rowNumber = xlRange.Cells[i, 1].Value2.ToString();
+                }
+                else
+                {
+                    ccp.rowNumber = "";
+                }
+                if (xlRange.Cells[i, 4].Value2 != null)
+                {
+                    ccp.patientAge = xlRange.Cells[i, 4].Value2.ToString();
+                }
+                else
+                {
+
+                }
+                ccp.patientFullname = prefix + " " + firstName + " " + lastName;
+
+
+                cc.ccpdb.InsertCustCheckUpPatient(ccp);
+                pB1.Value = i;
                 //for (int j = 1; j <= colCount; j++)
                 //{
                 //    MessageBox.Show(xlRange.Cells[i, j].Value2.ToString());
                 //}
 
             }
+            pB1.Visible = false;
+        }
+        private void FrmCheckUPAdd_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmCheckUPAdd_Resize(object sender, EventArgs e)
+        {
+            setResize();
+        }
+
+        private void btnCust_Click(object sender, EventArgs e)
+        {
+            FrmCustAdd frm = new FrmCustAdd("",cc);
+            frm.ShowDialog(this);
+            cboCust = cc.cudb.getCboCustomer(cboCust);
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            if (flagNew)
+            {
+                ImportExcel();
+            }
+            else
+            {
+
+            }
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.ShowDialog();
+            //Microsoft.Office.Interop.Excel.Application excelapp = new Microsoft.Office.Interop.Excel.Application();
+            //Microsoft.Office.Interop.Excel._Workbook workbook = (Microsoft.Office.Interop.Excel._Workbook)(excelapp.Workbooks.Add(Type.Missing));
+            //Microsoft.Office.Interop.Excel._Worksheet worksheet = (Microsoft.Office.Interop.Excel._Worksheet)workbook.ActiveSheet;
+            //object misval = System.Reflection.Missing.Value;
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+            fileName = ofd.FileName;
+            btnImport.Enabled = true;
+        }
+
+        private void ChkUnActive_Click(object sender, EventArgs e)
+        {
+            if (chkActive.Checked)
+            {
+                btnUnActive.Visible = false;
+
+                //txtId.Enabled = true;
+                //txtCode.Enabled = true;
+                //txtAddr.Enabled = true;
+                //txtAddressE.Enabled = true;
+                //txtAddressT.Enabled = true;
+                //txtEmail.Enabled = true;
+                //TxtFax.Enabled = true;
+                //txtNameE.Enabled = true;
+                //txtNameT.Enabled = true;
+                //txtTaxID.Enabled = true;
+                //txtTele.Enabled = true;
+                //txtZipcode.Enabled = true;
+                //cboAmphur.Enabled = true;
+                //cboDistrict.Enabled = true;
+                //cboProvince.Enabled = true;
+                //txtContactName1.Enabled = true;
+                //txtContactName1Tel.Enabled = true;
+                //txtContactName2.Enabled = true;
+                //txtContactName2Tel.Enabled = true;
+            }
+        }
+
+        private void chkActive_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

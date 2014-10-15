@@ -101,7 +101,7 @@ namespace CheckUP
 
         private void btnSfAdd_Click(object sender, EventArgs e)
         {
-            FrmCheckUPAdd frm = new FrmCheckUPAdd(cc);
+            FrmCheckUPAdd frm = new FrmCheckUPAdd(true,cc);
             //frm.setControl("");
             frm.ShowDialog(this);
             setGrd();

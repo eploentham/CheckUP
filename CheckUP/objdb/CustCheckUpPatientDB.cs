@@ -22,222 +22,232 @@ namespace CheckUP.objdb
         {
             ccp = new CustCheckUpPatient();
             ccp.Id="patient_id";
-            ccp.CustCheckupId="cust_checkup_id";    
+            ccp.CustCheckUpId="cust_checkup_id";    
             ccp.ChecklistId="t_checklist_id";    
-            ccp.visitHn="visit_hn";    
-            ccp.patientFullname="";    
-            ccp.patientAge="";    
-            ccp.departmentName="";    
-            ccp.pid="";    
-            ccp.patientNumber="";    
-            ccp.sectionName="";    
-            ccp.vitalsign="";    
-            ccp.patientHeight="";    
-            ccp.patientPulse="";    
-            ccp.patientWeight="";    
-            ccp.opticalExamLeft="";    
-            ccp.opticalExamRight="";    
-            ccp.fSexId="";    
-            ccp.summaryPhysicalExam="";    
-            ccp.stoolExamColor="";
-            ccp.stoolExamAppearance="";
-            ccp.stoolExamWbc="";
-            ccp.stoolExamRbc="";
-            ccp.stoolExamParasite="";
-            ccp.toxicologyLead="";
-            ccp.toxicologyMercury="";
-            ccp.toxicologyBenzene="";
-            ccp.toxicologyXylene="";
-            ccp.audiogram500Left="";
-            ccp.audiogram1000Left="";
-            ccp.audiogram2000Left="";
-            ccp.audiogram3000Left="";
-            ccp.audiogram4000Left="";
-            ccp.audiogram6000Left="";
-            ccp.audiogram8000Left="";
-            ccp.audiogramSummaryLeft="";
-            ccp.audiogram500Right="";
-            ccp.audiogram1000Right="";
-            ccp.audiogram2000Right="";
-            ccp.audiogram3000Right="";
-            ccp.audiogram4000Rightt="";
-            ccp.audiogram6000Right="";
-            ccp.audiogram8000Right="";
-            ccp.audiogramSummaryRight="";
-            ccp.audiogramExam="";
-            ccp.xrayChestExam="";
-            ccp.xrayChestSummary="";
-            ccp.eyesExam="";
-            ccp.ekgExam="";
-            ccp.caAfp="";
-            ccp.caCea="";
-            ccp.caPsa="";
-            ccp.caHcg="";
-            ccp.ca153="";
-            ccp.ca125="";
-            ccp.ca199="";
-            ccp.thyroidT3="";
-            ccp.thyroidT4="";
-            ccp.thyroidTsh="";
-            ccp.fPatientBloodGroupId="";
-            ccp.vdrl="";
-            ccp.antiHiv="";
-            ccp.hbsag="";
-            ccp.hbsab="";
-            ccp.amphetamine="";
-            ccp.disscusExam="";
-            ccp.suggestExam="";
-            ccp.sugar="";
-            ccp.sugarDiagnosis="";
-            ccp.sugarSummary="";
-            ccp.sugarSuggess="";
-            ccp.kidneyBun="";
-            ccp.kidneyCreatinine="";
-            ccp.liverSgot="";
-            ccp.liverSgpt="";
-            ccp.liverAlp="";
-            ccp.uricAcid="";
-            ccp.cholesterol="";
-            ccp.triglyceride="";
-            ccp.hdl="";
-            ccp.ldl="";
-            ccp.calcium="";
-            ccp.cbcHb="";
-            ccp.cbcHct="";
-            ccp.cbcWbc="";
-            ccp.cbcNeutrophil="";
-            ccp.cbcLymphocyte="";
-            ccp.cbcEosinophil="";
-            ccp.cbcMonocyte="";
-            ccp.cbcBasophil="";
-            ccp.cbcPlateletCount="";
-            ccp.cbcRbcMorpholog="";
-            ccp.cbcSummary="";
-            ccp.urineColor="";
-            ccp.urineAppearance="";
-            ccp.urinePh="";
-            ccp.urineSpGr="";
-            ccp.urineSugar="";
-            ccp.urineProtein="";
-            ccp.urineBlood="";
-            ccp.urineKetone="";
-            ccp.urineBacteria="";
-            ccp.urineWbc="";
-            ccp.urineRbc="";
-            ccp.urineEpithelium="";
-            ccp.urineSummary="";
-            ccp.lungFvcPredic="";
-            ccp.lungFvcMeas="";
-            ccp.lungFvcPer="";
-            ccp.lungFev1Predic="";
-            ccp.lungFev1Meas="";
-            ccp.lungFev1Per="";
-            ccp.lungPerFev1="";
-            ccp.lungSummary="";
-            ccp.lungSuggess="";
-            ccp.statusName="";
+            ccp.visitHn="visit_hn";
+            ccp.patientFullname = "patient_fullname";
+            ccp.patientAge = "patient_age";
+            ccp.departmentName = "department_name";
+            ccp.pid = "pid";
+            ccp.patientNumber = "patient_number";
+            ccp.sectionName = "section_name";
+            ccp.vitalsign = "vitalsign";
+            ccp.patientHeight = "patient_height";
+            ccp.patientPulse = "patient_pulse";
+            ccp.patientWeight = "patient_weight";
+            ccp.opticalExamLeft = "optical_exam_left";
+            ccp.opticalExamRight = "optical_exam_right";
+            ccp.fSexId = "f_sex_id";
+            ccp.summaryPhysicalExam = "summary_physical_exam";
+            ccp.stoolExamColor = "stool_exam_color";
+            ccp.stoolExamAppearance = "stool_exam_appearance";
+            ccp.stoolExamWbc = "stool_exam_wbc";
+            ccp.stoolExamRbc = "stool_exam_rbc";
+            ccp.stoolExamParasite = "stool_exam_parasite";
+            ccp.toxicologyLead = "toxicology_lead";
+            ccp.toxicologyMercury = "toxicology_mercury";
+            ccp.toxicologyBenzene = "toxicology_benzene";
+            ccp.toxicologyXylene = "toxicology_xylene";
+            ccp.audiogram500Left = "audiogram_500_left";
+            ccp.audiogram1000Left = "audiogram_1000_left";
+            ccp.audiogram2000Left = "audiogram_2000_left";
+            ccp.audiogram3000Left = "audiogram_3000_left";
+            ccp.audiogram4000Left = "audiogram_4000_left";
+            ccp.audiogram6000Left = "audiogram_6000_left";
+            ccp.audiogram8000Left = "audiogram_8000_left";
+            ccp.audiogramSummaryLeft = "audiogram_summary_left";
+            ccp.audiogram500Right = "audiogram_500_right";
+            ccp.audiogram1000Right = "audiogram_1000_right";
+            ccp.audiogram2000Right = "audiogram_2000_right";
+            ccp.audiogram3000Right = "audiogram_3000_right";
+            ccp.audiogram4000Rightt = "audiogram_4000_rightt";
+            ccp.audiogram6000Right = "audiogram_6000_right";
+            ccp.audiogram8000Right = "audiogram_8000_right";
+            ccp.audiogramSummaryRight = "audiogram_summary_right";
+            ccp.audiogramExam = "audiogram_exam";
+            ccp.xrayChestExam = "xray_chest_exam";
+            ccp.xrayChestSummary = "xray_chest_summary";
+            ccp.eyesExam = "eyes_exam";
+            ccp.ekgExam = "ekg_exam";
+            ccp.caAfp = "ca_afp";
+            ccp.caCea = "ca_cea";
+            ccp.caPsa = "ca_psa";
+            ccp.caHcg = "ca_hcg";
+            ccp.ca153 = "ca_153";
+            ccp.ca125 = "ca_125";
+            ccp.ca199 = "ca_19_9";
+            ccp.thyroidT3 = "thyroid_t3";
+            ccp.thyroidT4 = "thyroid_t4";
+            ccp.thyroidTsh = "thyroid_tsh";
+            ccp.fPatientBloodGroupId = "f_patient_blood_group_id";
+            ccp.vdrl = "vdrl";
+            ccp.antiHiv = "anti_hiv";
+            ccp.hbsag = "hbsag";
+            ccp.hbsab = "hbsab";
+            ccp.amphetamine = "amphetamine";
+            ccp.disscusExam = "disscus_exam";
+            ccp.suggestExam = "suggest_exam";
+            ccp.sugar = "sugar";
+            ccp.sugarDiagnosis = "sugar_diagnosis";
+            ccp.sugarSummary = "sugar_summary";
+            ccp.sugarSuggess = "sugar_suggess";
+            ccp.kidneyBun = "kidney_bun";
+            ccp.kidneyCreatinine = "kidney_creatinine";
+            ccp.liverSgot = "liver_sgot";
+            ccp.liverSgpt = "liver_sgpt";
+            ccp.liverAlp = "liver_alp";
+            ccp.uricAcid = "uric_acid";
+            ccp.cholesterol = "cholesterol";
+            ccp.triglyceride = "triglyceride";
+            ccp.hdl = "hdl";
+            ccp.ldl = "ldl";
+            ccp.calcium = "calcium";
+            ccp.cbcMcv = "cbc_mcv";
+            ccp.cbcHb = "cbc_hb";
+            ccp.cbcHct = "cbc_hct";
+            ccp.cbcWbc = "cbc_wbc";
+            ccp.cbcNeutrophil = "cbc_neutrophil";
+            ccp.cbcLymphocyte = "cbc_lymphocyte";
+            ccp.cbcEosinophil = "cbc_eosinophil";
+            ccp.cbcMonocyte = "cbc_monocyte";
+            ccp.cbcBasophil = "cbc_basophil";
+            ccp.cbcPlateletCount = "cbc_platelet_count";
+            ccp.cbcRbcMorpholog = "cbc_rbc_morpholog";
+            ccp.cbcSummary = "cbc_summary";
+            ccp.urineColor = "urine_color";
+            ccp.urineAppearance = "urine_appearance";
+            ccp.urinePh = "urine_ph";
+            ccp.urineSpGr = "urine_sp_gr";
+            ccp.urineSugar = "urine_sugar";
+            ccp.urineProtein = "urine_protein";
+            ccp.urineBlood = "urine_blood";
+            ccp.urineKetone = "urine_ketone";
+            ccp.urineBacteria = "urine_bacteria";
+            ccp.urineWbc = "urine_wbc";
+            ccp.urineRbc = "urine_rbc";
+            ccp.urineEpithelium = "urine_epithelium";
+            ccp.urineSummary = "urine_summary";
+            ccp.lungFvcPredic = "lung_fvc_predic";
+            ccp.lungFvcMeas = "lung_fvc_meas";
+            ccp.lungFvcPer = "lung_fvc_per";
+            ccp.lungFev1Predic = "lung_fev1_predic";
+            ccp.lungFev1Meas = "lung_fev1_meas";
+            ccp.lungFev1Per = "lung_fev1_per";
+            ccp.lungPerFev1 = "lung_per_fev1";
+            ccp.lungSummary = "lung_summary";
+            ccp.lungSuggess = "lung_suggess";
+            ccp.statusName = "status_name";
             ccp.rowNumber="row_number";
-            ccp.cbcMcv="";
-            ccp.toxicologyToluene="";
-            ccp.thyroidRubellaLgg="";
-            ccp.billirubin="";
-            ccp.toxicologyThinner="";
-            ccp.toxicologyAlcohol="";
-            ccp.stickerQty="";
-            ccp.statusCbc="";
-            ccp.statusUa="";
-            ccp.statusFbs="";
-            ccp.statusPe="";
-            ccp.statusXray="";
-            ccp.statusStool="";
-            ccp.stoolExamSummary="";
-            ccp.cholesterolSummary="";
-            ccp.cholesterolSuggess="";
-            ccp.statusCholes="";
-            ccp.StatusHbsag="";
-            ccp.hbsagSuggess="";
-            ccp.hbsagSummary="";
-            ccp.cbcRbc="";
-            ccp.cbcMch="";
-            ccp.cbcMchc="";
-            ccp.Active="";
-            ccp.eyeBio="";
-            ccp.amphetamineSummary="";
-            ccp.amphetamineSuggess="";
-            ccp.statusAmphetamine="";
-            ccp.antiHivSummary="";
-            ccp.antiHivSuggess="";
-            ccp.statusAntiHiv="";
-            ccp.statusUricAcid="";
-            ccp.uricAcidSuggess="";
-            ccp.uricAcidSummary="";
-            ccp.statusVisit="";
-            ccp.visitComment="";
-            ccp.bmi="";
-            ccp.caFt3="";
-            ccp.hbtyping="";
-            ccp.toxicologyHexane="";
-            ccp.toxicologyMethanol="";
-            ccp.toxicologyMek="";
-            ccp.toxicologyAcetone="";
-            ccp.antiHbc="";
+            //ccp.cbcMcv="";
+            ccp.toxicologyToluene = "toxicology_toluene";
+            ccp.thyroidRubellaLgg = "thyroid_rubella_lgg";
+            ccp.billirubin = "billirubin";
+            ccp.toxicologyThinner = "toxicology_thinner";
+            ccp.toxicologyAlcohol = "toxicology_alcohol";
+            ccp.stickerQty = "sticker_qty";
+            ccp.statusCbc = "status_cbc";
+            ccp.statusUa = "status_ua";
+            ccp.statusFbs = "status_fbs";
+            ccp.statusPe = "status_pe";
+            ccp.statusXray = "status_xray";
+            ccp.statusStool = "status_stool";
+            ccp.statusAntiHiv = "status_anti_hiv";
+            ccp.statusUricAcid = "status_uric_acid";
+            ccp.statusAmphetamine = "status_amphetamine";
+            ccp.statusVisit = "status_visit";
+            ccp.statusCholes = "status_choles";
+            ccp.StatusHbsag = "status_hbsag";
+
+            ccp.stoolExamSummary = "stool_exam_summary";
+            ccp.cholesterolSummary = "cholesterol_summary";
+            ccp.cholesterolSuggess = "cholesterol_suggess";
+
+            ccp.hbsagSuggess = "hbsag_suggess";
+            ccp.hbsagSummary = "hbsag_summary";
+            ccp.cbcRbc = "cbc_rbc";
+            ccp.cbcMch = "cbc_mch";
+            ccp.cbcMchc = "cbc_mchc";
+            ccp.Active = "cust_checkup_patient_active";
+            ccp.eyeBio = "eye_bio";
+            ccp.amphetamineSummary = "amphetamine_summary";
+            ccp.amphetamineSuggess = "amphetamine_suggess";
+
+            ccp.antiHivSummary = "anti_hiv_summary";
+            ccp.antiHivSuggess = "anti_hiv_suggess";
+            //ccp.eyesExam = "";
+            ccp.uricAcidSuggess = "uric_acid_suggess";
+            ccp.uricAcidSummary = "uric_acid_summary";
+
+            ccp.visitComment = "visit_comment";
+            ccp.bmi = "bmi";
+            ccp.antiHbc = "anti_hbc";
+            ccp.caFt3 = "ca_ft3";
+            ccp.hbtyping = "hbtyping";
+            ccp.toxicologyHexane = "toxicology_hexane";
+            ccp.toxicologyMethanol = "toxicology_methanol";
+            ccp.toxicologyMek = "toxicology_mek";
+            ccp.toxicologyAcetone = "toxicology_acetone";
+            //ccp.antiHbc="";
             ccp.eyeLeft = "";
             ccp.eyeRight = "";
-            ccp.opticalLeftAngle="";
-            ccp.opticalRightAngle="";
-            ccp.cbcMcvOld="";
-            ccp.cbcHbOld="";
-            ccp.cbcHctOld="";
-            ccp.cbcWbcOld="";
-            ccp.cbcNeutrophilOld="";
-            ccp.cbcLymphocyteOld="";
-            ccp.cbcEosinophilOld="";
-            ccp.cbcMonocyteOld="";
-            ccp.cbcBasophilOld="";
-            ccp.cbcPlateletCountOld="";
-            ccp.cbcRbcMorphologOld="";
-            ccp.cbcSummaryOld="";
-            ccp.cbcRbcOld="";
-            ccp.cbcMchcOld="";
-            ccp.cbcMchOld="";
-            ccp.sugarOld="";
-            ccp.kidneyBunOld="";
-            ccp.kidneyCreatinineOld="";
-            ccp.liverSgotOld="";
-            ccp.liverSgptOld="";
-            ccp.liverAlpOld="";
-            ccp.uricAcidOld="";
-            ccp.cholesterolOld="";
-            ccp.triglycerideOld="";
-            ccp.hdlOld="";
-            ccp.ldlOld="";
-            ccp.toxicologyLeadOld="";
-            ccp.toxicologyMercuryOld="";
-            ccp.toxicologyBenzeneOld="";
-            ccp.toxicologyXyleneOld="";
-            ccp.toxicologyThinnerOld="";
-            ccp.toxicologyAlcoholOld="";
-            ccp.toxicologyHexaneOld="";
-            ccp.toxicologyMethanolOld="";
-            ccp.toxicologyMekOld="";
-            ccp.toxicologyAcetoneOld="";
-            ccp.toxicologyTolueneOld="";
-            ccp.urineLeu="";
-            ccp.urineOther="";
-            ccp.cultureStool="";
-            ccp.cultureUrine="";
-            ccp.cultureBacteria="";
-            ccp.cultureSputum="";
-            ccp.marketingCheckupPatientOldId="";
-            ccp.thyroidFt3="";
-            ccp.thyroidFt4="";
-            ccp.amylase="";
-            ccp.totalProtein="";
-            ccp.albumin="";
-            ccp.globulin="";
-            ccp.albuminGlobulin="";
-            ccp.directBillirubin="";
-            ccp.colorBlindness="";
+            ccp.opticalLeftAngle = "optical_left_angle";
+            ccp.opticalRightAngle = "optical_right_angle";
+            ccp.cbcMcvOld = "cbc_mcv_old";
+            ccp.cbcHbOld = "cbc_hb_old";
+            ccp.cbcHctOld = "cbc_hct_old";
+            ccp.cbcWbcOld = "cbc_wbc_old";
+            ccp.cbcNeutrophilOld = "cbc_neutrophil_old";
+            ccp.cbcLymphocyteOld = "cbc_lymphocyte_old";
+            ccp.cbcEosinophilOld = "cbc_eosinophil_old";
+            ccp.cbcMonocyteOld = "cbc_monocyte_old";
+            ccp.cbcBasophilOld = "cbc_basophil_old";
+            ccp.cbcPlateletCountOld = "cbc_platelet_count_old";
+            ccp.cbcRbcMorphologOld = "cbc_rbc_morpholog_old";
+            ccp.cbcSummaryOld = "cbc_summary_old";
+            ccp.cbcRbcOld = "cbc_rbc_old";
+            ccp.cbcMchcOld = "cbc_mchc_old";
+            ccp.cbcMchOld = "cbc_mch_old";
+            ccp.sugarOld = "sugar_old";
+            ccp.kidneyBunOld = "kidney_bun_old";
+            ccp.kidneyCreatinineOld = "kidney_creatinine_old";
+            ccp.liverSgotOld = "liver_sgot_old";
+            ccp.liverSgptOld = "liver_sgpt_old";
+            ccp.liverAlpOld = "liver_alp_old";
+            ccp.uricAcidOld = "uric_acid_old";
+            ccp.cholesterolOld = "cholesterol_old";
+            ccp.triglycerideOld = "triglyceride_old";
+            ccp.hdlOld = "hdl_old";
+            ccp.ldlOld = "ldl_old";
+            ccp.toxicologyLeadOld = "toxicology_lead_old";
+            ccp.toxicologyMercuryOld = "toxicology_mercury_old";
+            ccp.toxicologyBenzeneOld = "toxicology_benzene_old";
+            ccp.toxicologyXyleneOld = "toxicology_xylene_old";
+            ccp.toxicologyThinnerOld = "toxicology_thinner_old";
+            ccp.toxicologyAlcoholOld = "toxicology_alcohol_old";
+            ccp.toxicologyHexaneOld = "toxicology_hexane_old";
+            ccp.toxicologyMethanolOld = "toxicology_methanol_old";
+            ccp.toxicologyMekOld = "toxicology_mek_old";
+            ccp.toxicologyAcetoneOld = "toxicology_acetone_old";
+            ccp.toxicologyTolueneOld = "toxicology_toluene_old";
+            ccp.urineLeu = "urine_leu";
+            ccp.urineOther = "urine_other";
+            ccp.cultureStool = "culture_stool";
+            ccp.cultureUrine = "culture_urine";
+            ccp.cultureBacteria = "culture_bacteria";
+            ccp.cultureSputum = "culture_sputum";
+            ccp.marketingCheckupPatientOldId = "marketing_checkup_patient_old_id";
+            ccp.thyroidFt3 = "thyroid_ft3";
+            ccp.thyroidFt4 = "thyroid_ft4";
+            ccp.amylase = "amylase";
+            ccp.totalProtein = "total_protein";
+            ccp.albumin = "albumin";
+            ccp.globulin = "globulin";
+            ccp.albuminGlobulin = "albumin_globulin";
+            ccp.directBillirubin = "direct_billirubin";
+            ccp.colorBlindness = "color_blindness";
+
+            ccp.pkField = "patient_id";
+            ccp.table = "t_cust_checkup_patient";
         }
         public String selectByPk1(String cuId)
         {
@@ -253,7 +263,7 @@ namespace CheckUP.objdb
             return chk;
         }
         private String insert(CustCheckUpPatient p) {
-        String sql = "", chk = "";
+            String sql = "", chk = "";
             if (p.Id.Equals(""))
             {
                 p.Id = "cc" + p.getGenID();
@@ -284,7 +294,7 @@ namespace CheckUP.objdb
                 + ccp.audiogram500Left + "," + ccp.audiogram500Right + ","
                 + ccp.audiogramSummaryLeft + "," + ccp.audiogramSummaryRight + ","
 
-                + ccp.ca125 + "," + ccp.ca125 + ","
+                + ccp.ca125 + "," //+ ccp.ca125 + ","
                 + ccp.ca199 + "," + ccp.caAfp + ","
                 + ccp.caCea + "," + ccp.caHcg + ","
                 + ccp.calcium + "," + ccp.caPsa + ","
@@ -304,7 +314,7 @@ namespace CheckUP.objdb
 
                 + ccp.kidneyCreatinine + "," + ccp.ldl + ","
                 + ccp.liverAlp + "," + ccp.liverSgot + ","
-                + ccp.liverSgpt + "," + ccp.CustCheckupId + ","
+                + ccp.liverSgpt + "," + ccp.CustCheckUpId + ","
                 + ccp.xrayChestExam + "," + ccp.opticalExamLeft + ","
                 + ccp.opticalExamRight + "," + ccp.patientAge + ","
 
@@ -366,7 +376,7 @@ namespace CheckUP.objdb
                 + p.audiogram500Left + "','" + p.audiogram500Right + "','"
                 + p.audiogramSummaryLeft + "','" + p.audiogramSummaryRight + "','"
 
-                + p.ca125 + "','" + p.ca125 + "','"
+                + p.ca125 + "','" //+ p.ca125 + "','"
                 + p.ca199 + "','" + p.caAfp + "','"
                 + p.caCea + "','" + p.caHcg + "','"
                 + p.calcium + "','" + p.caPsa + "','"
@@ -386,7 +396,7 @@ namespace CheckUP.objdb
 
                 + p.kidneyCreatinine + "','" + p.ldl + "','"
                 + p.liverAlp + "','" + p.liverSgot + "','"
-                + p.liverSgpt + "','" + p.CustCheckupId + "','"
+                + p.liverSgpt + "','" + p.CustCheckUpId + "','"
                 + p.xrayChestExam + "','" + p.opticalExamLeft + "','"
                 + p.opticalExamRight + "','" + p.patientAge + "','"
 
@@ -453,7 +463,7 @@ namespace CheckUP.objdb
         //{
 
         //}
-        ccp.InsertCustCheckUpPatient(CustCheckUpPatient p)
+        public String InsertCustCheckUpPatient(CustCheckUpPatient p)
         {
             //CustCheckUpPatient item = new CustCheckUpPatient();
             String chk = "", id="";

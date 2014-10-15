@@ -55,10 +55,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnImport = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpCheckUpDate = new System.Windows.Forms.DateTimePicker();
             this.btnCust = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.nmDRow = new System.Windows.Forms.NumericUpDown();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnExcel = new System.Windows.Forms.Button();
+            this.btnUnActive = new System.Windows.Forms.Button();
+            this.ChkUnActive = new System.Windows.Forms.RadioButton();
+            this.chkActive = new System.Windows.Forms.RadioButton();
+            this.pB1 = new System.Windows.Forms.ProgressBar();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -98,10 +106,10 @@
             this.tC.Controls.Add(this.tabPage9);
             this.tC.Controls.Add(this.tabPage10);
             this.tC.Controls.Add(this.tabPage11);
-            this.tC.Location = new System.Drawing.Point(12, 73);
+            this.tC.Location = new System.Drawing.Point(12, 79);
             this.tC.Name = "tC";
             this.tC.SelectedIndex = 0;
-            this.tC.Size = new System.Drawing.Size(869, 629);
+            this.tC.Size = new System.Drawing.Size(869, 623);
             this.tC.TabIndex = 1;
             // 
             // tabPage4
@@ -110,7 +118,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(861, 603);
+            this.tabPage4.Size = new System.Drawing.Size(861, 597);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "S";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -350,7 +358,7 @@
             // 
             this.cboCust.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.cboCust.FormattingEnabled = true;
-            this.cboCust.Location = new System.Drawing.Point(72, 21);
+            this.cboCust.Location = new System.Drawing.Point(90, 21);
             this.cboCust.Name = "cboCust";
             this.cboCust.Size = new System.Drawing.Size(256, 24);
             this.cboCust.TabIndex = 3;
@@ -359,7 +367,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label1.Location = new System.Drawing.Point(18, 24);
+            this.label1.Location = new System.Drawing.Point(19, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 16);
             this.label1.TabIndex = 2;
@@ -368,7 +376,7 @@
             // btnImport
             // 
             this.btnImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnImport.Location = new System.Drawing.Point(703, 21);
+            this.btnImport.Location = new System.Drawing.Point(1035, 15);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(86, 34);
             this.btnImport.TabIndex = 4;
@@ -380,24 +388,24 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label2.Location = new System.Drawing.Point(472, 30);
+            this.label2.Location = new System.Drawing.Point(432, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 16);
             this.label2.TabIndex = 5;
             this.label2.Text = "วันที่ออกตรวจ :";
             // 
-            // dateTimePicker1
+            // dtpCheckUpDate
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(556, 25);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(125, 22);
-            this.dateTimePicker1.TabIndex = 6;
+            this.dtpCheckUpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dtpCheckUpDate.Location = new System.Drawing.Point(516, 25);
+            this.dtpCheckUpDate.Name = "dtpCheckUpDate";
+            this.dtpCheckUpDate.Size = new System.Drawing.Size(125, 22);
+            this.dtpCheckUpDate.TabIndex = 6;
             // 
             // btnCust
             // 
             this.btnCust.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnCust.Location = new System.Drawing.Point(334, 21);
+            this.btnCust.Location = new System.Drawing.Point(352, 21);
             this.btnCust.Name = "btnCust";
             this.btnCust.Size = new System.Drawing.Size(40, 28);
             this.btnCust.TabIndex = 7;
@@ -409,7 +417,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label3.Location = new System.Drawing.Point(799, 29);
+            this.label3.Location = new System.Drawing.Point(778, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 8;
@@ -417,7 +425,7 @@
             // 
             // nmDRow
             // 
-            this.nmDRow.Location = new System.Drawing.Point(873, 27);
+            this.nmDRow.Location = new System.Drawing.Point(852, 22);
             this.nmDRow.Name = "nmDRow";
             this.nmDRow.Size = new System.Drawing.Size(46, 20);
             this.nmDRow.TabIndex = 9;
@@ -427,15 +435,103 @@
             0,
             0});
             // 
+            // txtId
+            // 
+            this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(398, 24);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(22, 22);
+            this.txtId.TabIndex = 55;
+            this.txtId.Visible = false;
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(90, 51);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(256, 22);
+            this.txtDescription.TabIndex = 56;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(19, 55);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 16);
+            this.label4.TabIndex = 57;
+            this.label4.Text = "รายละเอียด :";
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnExcel.Location = new System.Drawing.Point(682, 15);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(86, 34);
+            this.btnExcel.TabIndex = 58;
+            this.btnExcel.Text = "Excel";
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
+            // btnUnActive
+            // 
+            this.btnUnActive.Location = new System.Drawing.Point(992, 52);
+            this.btnUnActive.Name = "btnUnActive";
+            this.btnUnActive.Size = new System.Drawing.Size(86, 23);
+            this.btnUnActive.TabIndex = 67;
+            this.btnUnActive.Text = "ยกเลิกการใช้งาน";
+            this.btnUnActive.UseVisualStyleBackColor = true;
+            // 
+            // ChkUnActive
+            // 
+            this.ChkUnActive.AutoSize = true;
+            this.ChkUnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.ChkUnActive.Location = new System.Drawing.Point(905, 51);
+            this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2);
+            this.ChkUnActive.Name = "ChkUnActive";
+            this.ChkUnActive.Size = new System.Drawing.Size(60, 21);
+            this.ChkUnActive.TabIndex = 66;
+            this.ChkUnActive.TabStop = true;
+            this.ChkUnActive.Text = "ยกเลิก";
+            this.ChkUnActive.UseVisualStyleBackColor = true;
+            // 
+            // chkActive
+            // 
+            this.chkActive.AutoSize = true;
+            this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.chkActive.Location = new System.Drawing.Point(780, 51);
+            this.chkActive.Margin = new System.Windows.Forms.Padding(2);
+            this.chkActive.Name = "chkActive";
+            this.chkActive.Size = new System.Drawing.Size(61, 21);
+            this.chkActive.TabIndex = 65;
+            this.chkActive.TabStop = true;
+            this.chkActive.Text = "ใช้งาน";
+            this.chkActive.UseVisualStyleBackColor = true;
+            // 
+            // pB1
+            // 
+            this.pB1.Location = new System.Drawing.Point(905, 21);
+            this.pB1.Name = "pB1";
+            this.pB1.Size = new System.Drawing.Size(124, 23);
+            this.pB1.TabIndex = 68;
+            // 
             // FrmCheckUPAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1055, 714);
+            this.ClientSize = new System.Drawing.Size(1208, 714);
+            this.Controls.Add(this.pB1);
+            this.Controls.Add(this.btnUnActive);
+            this.Controls.Add(this.ChkUnActive);
+            this.Controls.Add(this.chkActive);
+            this.Controls.Add(this.btnExcel);
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.nmDRow);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCust);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpCheckUpDate);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnImport);
             this.Controls.Add(this.cboCust);
@@ -484,7 +580,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpCheckUpDate;
         private System.Windows.Forms.DataGridView dgvPE;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -508,6 +604,14 @@
         private System.Windows.Forms.Button btnCust;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown nmDRow;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.Button btnUnActive;
+        private System.Windows.Forms.RadioButton ChkUnActive;
+        private System.Windows.Forms.RadioButton chkActive;
+        private System.Windows.Forms.ProgressBar pB1;
 
     }
 }

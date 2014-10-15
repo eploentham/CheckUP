@@ -292,17 +292,17 @@ namespace CheckUP.objdb
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 item = new ComboBoxItem();
-                if (dt.Rows[0][cu.StatusCompany].ToString().Equals("1"))
+                if (dt.Rows[i][cu.StatusCompany].ToString().Equals("1"))
                 {
-                    item.Text = "บริษัท " + dt.Rows[0][cu.NameT].ToString() + " จำกัด";
+                    item.Text = "บริษัท " + dt.Rows[i][cu.NameT].ToString() + " จำกัด";
                 }
-                else if (dt.Rows[0][cu.StatusCompany].ToString().Equals("2"))
+                else if (dt.Rows[i][cu.StatusCompany].ToString().Equals("2"))
                 {
-                    item.Text = dt.Rows[0][cu.NameT].ToString() + " Co., Ltd.";
+                    item.Text = dt.Rows[i][cu.NameT].ToString() + " Co., Ltd.";
                 }
                 else
                 {
-                    item.Text = dt.Rows[0][cu.NameT].ToString();
+                    item.Text = dt.Rows[i][cu.NameT].ToString();
                 }
                 item.Value = dt.Rows[i][cu.Id].ToString();
                 //item.Text = dt.Rows[i][cu.NameT].ToString();

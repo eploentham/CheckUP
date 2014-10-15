@@ -28,8 +28,8 @@ namespace CheckUP.Control
         public ProvinceDB prdb;
         public CompanyDB cpdb;
         public CustomerDB cudb;
-        public CustCheckUpPatientDB ccdb;
-        //public QuotationDB qudb;
+        public CustCheckUpPatientDB ccpdb;
+        public CustCheckUpDB cucdb;
         //public QuotationItemDB quidb;
         //public MOUDB modb;
         //public MOUItemDB moidb;
@@ -75,8 +75,8 @@ namespace CheckUP.Control
                 prdb = new ProvinceDB(conn);
                 cpdb = new CompanyDB(conn);
                 cudb = new CustomerDB(conn);
-                ccdb = new CustCheckUpPatientDB(conn);
-                //qudb = new QuotationDB(conn);
+                ccpdb = new CustCheckUpPatientDB(conn);
+                cucdb = new CustCheckUpDB(conn);
                 //quidb = new QuotationItemDB(conn);
                 //modb = new MOUDB(conn);
                 //moidb = new MOUItemDB(conn);

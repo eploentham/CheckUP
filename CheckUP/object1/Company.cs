@@ -14,5 +14,9 @@ namespace CheckUP.object1
         public String quLine1 = "", quLine2 = "", quLine3 = "", quLine4 = "", quLine5 = "", quLine6 = "";
         public String mouLine1 = "", mouLine2 = "", mouLine3 = "", mouLine4 = "", InvDuePeriod="";
         public String rsLine1 = "", rsLine2 = "", rsLine3 = "", rsLine4 = "", rsLine5 = "", rsLine6 = "";
+        public override String ToString()
+        {
+            return NameT;
+        }
     }
 }

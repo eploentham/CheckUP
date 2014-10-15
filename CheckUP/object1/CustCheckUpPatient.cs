@@ -9,7 +9,7 @@ namespace CheckUP.object1
     public class CustCheckUpPatient:Persistent
     {
     public String Id="";
-    public String CustCheckupId="";    
+    public String CustCheckUpId="";    
     public String ChecklistId="";    
     public String visitHn="";    
     public String patientFullname="";    
@@ -123,7 +123,7 @@ namespace CheckUP.object1
     public String lungSummary="";
     public String lungSuggess="";
     public String statusName="";
-    public Double rowNumber=0.0;
+    public String rowNumber = "";
     public String cbcMcv="";
     public String toxicologyToluene="";
     public String thyroidRubellaLgg="";
@@ -225,5 +225,9 @@ namespace CheckUP.object1
     public String albuminGlobulin="";
     public String directBillirubin="";
     public String colorBlindness="";
+    public override String ToString()
+    {
+        return patientFullname;
+    }
     }
 }
