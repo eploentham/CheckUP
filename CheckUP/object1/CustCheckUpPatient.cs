@@ -80,9 +80,13 @@ namespace CheckUP.object1
     public String sugarSuggess="";
     public String kidneyBun="";
     public String kidneyCreatinine="";
+    public String kidneyResult = "";
+    public String kidneySummary = "";
     public String liverSgot="";
     public String liverSgpt="";
     public String liverAlp="";
+    public String liverResult = "";
+    public String liverSummary = "";
     public String uricAcid="";
     public String cholesterol="";
     public String triglyceride="";

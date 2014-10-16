@@ -48,10 +48,17 @@ namespace CheckUP.gui
         int colSgotRow = 0, colSgotId = 1, colSgotName = 2, colSgotValue = 3, colSgotSgptValue = 4, colSgotResult=5, coLSgotSummary = 6;
         int colSgotCnt = 7;
 
+        int colBunRow = 0, colBunId = 1, colBunName = 2, colBunValue = 3, colBunCreatinineValue = 4, colBunResult = 5, coLBunSummary = 6;
+        int colBunCnt = 7;
+
+        int colUricRow = 0, colUricId = 1, colUricName = 2, colUricValue = 3, colUricResult = 4, coLUricSummary = 5;
+        int colUricCnt = 6;
+
         Font font = new Font("Microsoft Sans Serif", 12);
         Boolean flagNew=false;
         String fileName = "", fileNamePE = "", fileNameFBS = "", fileNameXray = "", fileNameCBC = "", fileNameUA = "", fileNameTri = "", fileNameCho = "";
-        DataTable dtAll ;
+        String fileNameSgot = "", fileNameBun = "", fileNameUric = "";
+        DataTable dtAll;
         OpenFileDialog ofd = new OpenFileDialog();
         object misValue = System.Reflection.Missing.Value;
         public FrmCheckUPAdd(String cucId,Boolean flagnew,CheckControl c)
@@ -85,6 +92,9 @@ namespace CheckUP.gui
             btnTriImport.Enabled = false;
             btnChoImport.Enabled = false;
             btnFBSImport.Enabled = false;
+            btnUricImport.Enabled = false;
+            btnSgotImport.Enabled = false;
+            btnBunImport.Enabled = false;
             if (flagNew)
             {
                 btnImport.Text = "นำเข้ารายชื่อ";
@@ -109,12 +119,19 @@ namespace CheckUP.gui
             setGrdUA();
             setGrdTri();
             setGrdCho();
+            setGrdSgot();
+            setGrdBun();
+            setGrdUric();
             setGrdPE(cucId);
             setGrdXray(cucId);
             setGrdFBS(cucId);
             setGrdCBC(cucId);
             setGrdUA(cucId);
             setGrdTri(cucId);
+            setGrdCholes(cucId);
+            setGrdSgot(cucId);
+            setGrdBun(cucId);
+            setGrdUric(cucId);
         }
 
         private void setResize()
@@ -348,7 +365,7 @@ namespace CheckUP.gui
             //Font font = new Font("Microsoft Sans Serif", 12);
 
             dgvCBC.Font = font;
-            dgvCBC.Columns[colUAId].Visible = false;
+            dgvCBC.Columns[colCBCId].Visible = false;
         }
         private void setGrdUA()
         {
@@ -409,16 +426,16 @@ namespace CheckUP.gui
 
             dgvTri.Columns[colTriRow].HeaderText = "ลำดับ";
             dgvTri.Columns[colTriId].HeaderText = "code";
-            dgvTri.Columns[colTriName].HeaderText = "ชื่อ";
-            dgvTri.Columns[colTriValue].HeaderText = "หมายเหตุ";
-            dgvTri.Columns[colTriResult].HeaderText = "id";
-            dgvTri.Columns[coLTriSummary].HeaderText = "id";
+            dgvTri.Columns[colTriName].HeaderText = "ชื่อ นามสกุล";
+            dgvTri.Columns[colTriValue].HeaderText = "ค่า";
+            dgvTri.Columns[colTriResult].HeaderText = "ผล";
+            dgvTri.Columns[coLTriSummary].HeaderText = "สรุปผลตรวจ";
 
             //dgvSum.Columns[colPEId].HeaderText = "id";
             //Font font = new Font("Microsoft Sans Serif", 12);
 
             dgvTri.Font = font;
-            //dgvSum.Columns[colPEId].Visible = false;
+            dgvTri.Columns[colTriId].Visible = false;
         }
         private void setGrdCho()
         {
@@ -435,42 +452,98 @@ namespace CheckUP.gui
 
             dgvCho.Columns[colChoRow].HeaderText = "ลำดับ";
             dgvCho.Columns[colChoId].HeaderText = "code";
-            dgvCho.Columns[colChoName].HeaderText = "ชื่อ";
-            dgvCho.Columns[colChoValue].HeaderText = "หมายเหตุ";
-            dgvCho.Columns[colChoResult].HeaderText = "id";
-            dgvCho.Columns[coLChoSummary].HeaderText = "id";
+            dgvCho.Columns[colChoName].HeaderText = "ชื่อ นามสกุล";
+            dgvCho.Columns[colChoValue].HeaderText = "ค่า";
+            dgvCho.Columns[colChoResult].HeaderText = "ผล";
+            dgvCho.Columns[coLChoSummary].HeaderText = "สรุปผลตรวจ";
 
             //dgvSum.Columns[colPEId].HeaderText = "id";
             //Font font = new Font("Microsoft Sans Serif", 12);
 
             dgvCho.Font = font;
-            //dgvSum.Columns[colPEId].Visible = false;
+            dgvCho.Columns[colChoId].Visible = false;
         }
         private void setGrdSgot()
         {
-            dgvCho.ColumnCount = colChoCnt;
-            dgvCho.Rows.Clear();
-            dgvCho.RowCount = 1;
-            dgvCho.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCho.Columns[colChoRow].Width = 50;
-            dgvCho.Columns[colChoId].Width = 150;
-            dgvCho.Columns[colChoName].Width = 120;
-            dgvCho.Columns[colChoValue].Width = 80;
-            dgvCho.Columns[colChoResult].Width = 80;
-            dgvCho.Columns[coLChoSummary].Width = 80;
+            dgvSgot.ColumnCount = colSgotCnt;
+            dgvSgot.Rows.Clear();
+            dgvSgot.RowCount = 1;
+            dgvSgot.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvSgot.Columns[colSgotRow].Width = 50;
+            dgvSgot.Columns[colSgotId].Width = 150;
+            dgvSgot.Columns[colSgotName].Width = 250;
+            dgvSgot.Columns[colSgotValue].Width = 80;
+            dgvSgot.Columns[colSgotSgptValue].Width = 80;
+            dgvSgot.Columns[colSgotResult].Width = 180;
+            dgvSgot.Columns[coLSgotSummary].Width = 180;
 
-            dgvCho.Columns[colChoRow].HeaderText = "ลำดับ";
-            dgvCho.Columns[colChoId].HeaderText = "code";
-            dgvCho.Columns[colChoName].HeaderText = "ชื่อ";
-            dgvCho.Columns[colChoValue].HeaderText = "หมายเหตุ";
-            dgvCho.Columns[colChoResult].HeaderText = "id";
-            dgvCho.Columns[coLChoSummary].HeaderText = "id";
+            dgvSgot.Columns[colSgotRow].HeaderText = "ลำดับ";
+            dgvSgot.Columns[colSgotId].HeaderText = "code";
+            dgvSgot.Columns[colSgotName].HeaderText = "ชื่อ นามสกุล";
+            dgvSgot.Columns[colSgotValue].HeaderText = "SGOT";
+            dgvSgot.Columns[colSgotSgptValue].HeaderText = "SGPT";
+            dgvSgot.Columns[colSgotResult].HeaderText = "ผล";
+            dgvSgot.Columns[coLSgotSummary].HeaderText = "สรุปผลตรวจ";
 
             //dgvSum.Columns[colPEId].HeaderText = "id";
             //Font font = new Font("Microsoft Sans Serif", 12);
 
-            dgvCho.Font = font;
-            //dgvSum.Columns[colPEId].Visible = false;
+            dgvSgot.Font = font;
+            dgvSgot.Columns[colSgotId].Visible = false;
+        }
+        private void setGrdBun()
+        {
+            dgvBun.ColumnCount = colBunCnt;
+            dgvBun.Rows.Clear();
+            dgvBun.RowCount = 1;
+            dgvBun.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvBun.Columns[colBunRow].Width = 50;
+            dgvBun.Columns[colBunId].Width = 150;
+            dgvBun.Columns[colBunName].Width = 250;
+            dgvBun.Columns[colBunValue].Width = 80;
+            dgvBun.Columns[colBunCreatinineValue].Width = 80;
+            dgvBun.Columns[colBunResult].Width = 180;
+            dgvBun.Columns[coLBunSummary].Width = 180;
+
+            dgvBun.Columns[colBunRow].HeaderText = "ลำดับ";
+            dgvBun.Columns[colBunId].HeaderText = "code";
+            dgvBun.Columns[colBunName].HeaderText = "ชื่อ นามสกุล";
+            dgvBun.Columns[colBunValue].HeaderText = "BUN";
+            dgvBun.Columns[colBunCreatinineValue].HeaderText = "Creatinine";
+            dgvBun.Columns[colBunResult].HeaderText = "ผล";
+            dgvBun.Columns[coLBunSummary].HeaderText = "สรุปผลตรวจ";
+
+            //dgvSum.Columns[colPEId].HeaderText = "id";
+            //Font font = new Font("Microsoft Sans Serif", 12);
+
+            dgvBun.Font = font;
+            dgvBun.Columns[colBunId].Visible = false;
+        }
+        private void setGrdUric()
+        {
+            dgvUric.ColumnCount = colUricCnt;
+            dgvUric.Rows.Clear();
+            dgvUric.RowCount = 1;
+            dgvUric.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvUric.Columns[colUricRow].Width = 50;
+            dgvUric.Columns[colUricId].Width = 150;
+            dgvUric.Columns[colUricName].Width = 250;
+            dgvUric.Columns[colUricValue].Width = 80;
+            dgvUric.Columns[colUricResult].Width = 180;
+            dgvUric.Columns[coLUricSummary].Width = 180;
+
+            dgvUric.Columns[colUricRow].HeaderText = "ลำดับ";
+            dgvUric.Columns[colUricId].HeaderText = "code";
+            dgvUric.Columns[colUricName].HeaderText = "ชื่อ นามสกุล";
+            dgvUric.Columns[colUricValue].HeaderText = "ค่า";
+            dgvUric.Columns[colUricResult].HeaderText = "ผล";
+            dgvUric.Columns[coLUricSummary].HeaderText = "สรุปผลตรวจ";
+
+            //dgvSum.Columns[colPEId].HeaderText = "id";
+            //Font font = new Font("Microsoft Sans Serif", 12);
+
+            dgvUric.Font = font;
+            dgvUric.Columns[colUricId].Visible = false;
         }
         private void setControl(String cucId)
         {
@@ -692,6 +765,136 @@ namespace CheckUP.gui
                     if ((i % 2) != 0)
                     {
                         dgvTri.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                    }
+                }
+            }
+            //dgvView.ReadOnly = true;
+        }
+        private void setGrdCholes(String cucId)
+        {
+            DataTable dt;
+            dgvCho.Rows.Clear();
+            if (flagNew)
+            {
+                dt = cc.ccpdb.selectAllByCucId(cucId);
+            }
+            else
+            {
+                dt = dtAll;
+            }
+
+            if (dt.Rows.Count > 0)
+            {
+                dgvCho.RowCount = dt.Rows.Count;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    dgvCho[colChoRow, i].Value = (i + 1);
+                    dgvCho[colChoName, i].Value = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
+                    dgvCho[colChoValue, i].Value = dt.Rows[i][cc.ccpdb.ccp.cholesterol].ToString();
+                    dgvCho[colChoResult, i].Value = dt.Rows[i][cc.ccpdb.ccp.cholesterolSuggess].ToString();
+                    dgvCho[coLChoSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.cholesterolSummary].ToString();
+                    dgvCho[colChoId, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    if ((i % 2) != 0)
+                    {
+                        dgvCho.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                    }
+                }
+            }
+            //dgvView.ReadOnly = true;
+        }
+        private void setGrdSgot(String cucId)
+        {
+            DataTable dt;
+            dgvSgot.Rows.Clear();
+            if (flagNew)
+            {
+                dt = cc.ccpdb.selectAllByCucId(cucId);
+            }
+            else
+            {
+                dt = dtAll;
+            }
+
+            if (dt.Rows.Count > 0)
+            {
+                dgvSgot.RowCount = dt.Rows.Count;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    dgvSgot[colSgotRow, i].Value = (i + 1);
+                    dgvSgot[colSgotName, i].Value = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
+                    dgvSgot[colSgotValue, i].Value = dt.Rows[i][cc.ccpdb.ccp.liverSgot].ToString();
+                    dgvSgot[colSgotSgptValue, i].Value = dt.Rows[i][cc.ccpdb.ccp.liverSgpt].ToString();
+                    dgvSgot[colSgotResult, i].Value = dt.Rows[i][cc.ccpdb.ccp.liverResult].ToString();
+                    dgvSgot[coLSgotSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.liverSummary].ToString();
+                    dgvSgot[colSgotId, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    if ((i % 2) != 0)
+                    {
+                        dgvSgot.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                    }
+                }
+            }
+            //dgvView.ReadOnly = true;
+        }
+        private void setGrdBun(String cucId)
+        {
+            DataTable dt;
+            dgvBun.Rows.Clear();
+            if (flagNew)
+            {
+                dt = cc.ccpdb.selectAllByCucId(cucId);
+            }
+            else
+            {
+                dt = dtAll;
+            }
+
+            if (dt.Rows.Count > 0)
+            {
+                dgvBun.RowCount = dt.Rows.Count;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    dgvBun[colBunRow, i].Value = (i + 1);
+                    dgvBun[colBunName, i].Value = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
+                    dgvBun[colBunValue, i].Value = dt.Rows[i][cc.ccpdb.ccp.kidneyBun].ToString();
+                    dgvBun[colBunCreatinineValue, i].Value = dt.Rows[i][cc.ccpdb.ccp.kidneyCreatinine].ToString();
+                    dgvBun[colBunResult, i].Value = dt.Rows[i][cc.ccpdb.ccp.kidneyResult].ToString();
+                    dgvBun[coLBunSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.kidneySummary].ToString();
+                    dgvBun[colBunId, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    if ((i % 2) != 0)
+                    {
+                        dgvBun.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                    }
+                }
+            }
+            //dgvView.ReadOnly = true;
+        }
+        private void setGrdUric(String cucId)
+        {
+            DataTable dt;
+            dgvUric.Rows.Clear();
+            if (flagNew)
+            {
+                dt = cc.ccpdb.selectAllByCucId(cucId);
+            }
+            else
+            {
+                dt = dtAll;
+            }
+
+            if (dt.Rows.Count > 0)
+            {
+                dgvUric.RowCount = dt.Rows.Count;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    dgvUric[colUricRow, i].Value = (i + 1);
+                    dgvUric[colUricName, i].Value = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
+                    dgvUric[colUricValue, i].Value = dt.Rows[i][cc.ccpdb.ccp.uricAcid].ToString();
+                    dgvUric[colUricResult, i].Value = dt.Rows[i][cc.ccpdb.ccp.uricAcidSuggess].ToString();
+                    dgvUric[coLUricSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.uricAcidSummary].ToString();
+                    dgvUric[colUricId, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    if ((i % 2) != 0)
+                    {
+                        dgvUric.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
                     }
                 }
             }
@@ -1543,7 +1746,279 @@ namespace CheckUP.gui
 
         private void btnChoImport_Click(object sender, EventArgs e)
         {
+            String rowNumber = "", chk = "", result = "", summary = "", value = "";
 
+            pB1.Visible = true;
+            pB1.Minimum = 0;
+
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameCho);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+            int rowCount = xlRange.Rows.Count;
+            pB1.Maximum = rowCount;
+            xlApp.Visible = false;
+            for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
+            {
+                //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
+                if (xlRange.Cells[i, 1].Value2 != null)
+                {
+                    rowNumber = xlRange.Cells[i, 1].Value2.ToString();
+                }
+                else
+                {
+                    rowNumber = "";
+                }
+                if (xlRange.Cells[i, 5].Value2 != null)
+                {
+                    value = xlRange.Cells[i, 5].Value2.ToString();
+                }
+                else
+                {
+                    value = "";
+                }
+                if (xlRange.Cells[i, 6].Value2 != null)
+                {
+                    result = xlRange.Cells[i, 6].Value2.ToString();
+                }
+                else
+                {
+                    result = "";
+                }
+                if (xlRange.Cells[i, 7].Value2 != null)
+                {
+                    summary = xlRange.Cells[i, 7].Value2.ToString();
+                }
+                else
+                {
+                    summary = "";
+                }
+
+                chk = cc.ccpdb.UpdateCholes(rowNumber, txtId.Text, value, result, summary);
+                pB1.Value = i;
+            }
+            xlWorkbook.Close(true, misValue, misValue);
+            xlApp.Quit();
+            pB1.Visible = false;
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
+            setGrdCholes(txtId.Text);
+        }
+
+        private void btnSgotExcel_Click(object sender, EventArgs e)
+        {
+            ofd.ShowDialog();
+            fileNameSgot = ofd.FileName;
+            btnSgotImport.Enabled = true;
+        }
+
+        private void btnBunExcel_Click(object sender, EventArgs e)
+        {
+            ofd.ShowDialog();
+            fileNameBun = ofd.FileName;
+            btnBunImport.Enabled = true;
+        }
+
+        private void btnUricExcel_Click(object sender, EventArgs e)
+        {
+            ofd.ShowDialog();
+            fileNameUric = ofd.FileName;
+            btnUricImport.Enabled = true;
+        }
+
+        private void btnSgotImport_Click(object sender, EventArgs e)
+        {
+            String rowNumber = "", chk = "", result = "", summary = "", sgot = "", sgpt="";
+
+            pB1.Visible = true;
+            pB1.Minimum = 0;
+
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameSgot);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+            int rowCount = xlRange.Rows.Count;
+            pB1.Maximum = rowCount;
+            xlApp.Visible = false;
+            for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
+            {
+                //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
+                if (xlRange.Cells[i, 1].Value2 != null)
+                {
+                    rowNumber = xlRange.Cells[i, 1].Value2.ToString();
+                }
+                else
+                {
+                    rowNumber = "";
+                }
+                if (xlRange.Cells[i, 5].Value2 != null)
+                {
+                    sgot = xlRange.Cells[i, 5].Value2.ToString();
+                }
+                else
+                {
+                    sgot = "";
+                }
+                if (xlRange.Cells[i, 6].Value2 != null)
+                {
+                    sgpt = xlRange.Cells[i, 6].Value2.ToString();
+                }
+                else
+                {
+                    sgpt = "";
+                }
+                if (xlRange.Cells[i, 7].Value2 != null)
+                {
+                    result = xlRange.Cells[i, 7].Value2.ToString();
+                }
+                else
+                {
+                    result = "";
+                }
+                if (xlRange.Cells[i, 8].Value2 != null)
+                {
+                    summary = xlRange.Cells[i, 8].Value2.ToString();
+                }
+                else
+                {
+                    summary = "";
+                }
+
+                chk = cc.ccpdb.UpdateSgot(rowNumber, txtId.Text, sgot, sgpt, result, summary);
+                pB1.Value = i;
+            }
+            xlWorkbook.Close(true, misValue, misValue);
+            xlApp.Quit();
+            pB1.Visible = false;
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
+            setGrdSgot(txtId.Text);
+        }
+
+        private void btnBunImport_Click(object sender, EventArgs e)
+        {
+            String rowNumber = "", chk = "", result = "", summary = "", bun = "", creatinine = "";
+
+            pB1.Visible = true;
+            pB1.Minimum = 0;
+
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameBun);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+            int rowCount = xlRange.Rows.Count;
+            pB1.Maximum = rowCount;
+            xlApp.Visible = false;
+            for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
+            {
+                //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
+                if (xlRange.Cells[i, 1].Value2 != null)
+                {
+                    rowNumber = xlRange.Cells[i, 1].Value2.ToString();
+                }
+                else
+                {
+                    rowNumber = "";
+                }
+                if (xlRange.Cells[i, 5].Value2 != null)
+                {
+                    bun = xlRange.Cells[i, 5].Value2.ToString();
+                }
+                else
+                {
+                    bun = "";
+                }
+                if (xlRange.Cells[i, 6].Value2 != null)
+                {
+                    creatinine = xlRange.Cells[i, 6].Value2.ToString();
+                }
+                else
+                {
+                    creatinine = "";
+                }
+                if (xlRange.Cells[i, 7].Value2 != null)
+                {
+                    result = xlRange.Cells[i, 7].Value2.ToString();
+                }
+                else
+                {
+                    result = "";
+                }
+                if (xlRange.Cells[i, 8].Value2 != null)
+                {
+                    summary = xlRange.Cells[i, 8].Value2.ToString();
+                }
+                else
+                {
+                    summary = "";
+                }
+
+                chk = cc.ccpdb.UpdateBun(rowNumber, txtId.Text, bun, creatinine, result, summary);
+                pB1.Value = i;
+            }
+            xlWorkbook.Close(true, misValue, misValue);
+            xlApp.Quit();
+            pB1.Visible = false;
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
+            setGrdBun(txtId.Text);
+        }
+
+        private void btnUricImport_Click(object sender, EventArgs e)
+        {
+            String rowNumber = "", chk = "", result = "", summary = "", value = "";
+
+            pB1.Visible = true;
+            pB1.Minimum = 0;
+
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameUric);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+            int rowCount = xlRange.Rows.Count;
+            pB1.Maximum = rowCount;
+            xlApp.Visible = false;
+            for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
+            {
+                //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
+                if (xlRange.Cells[i, 1].Value2 != null)
+                {
+                    rowNumber = xlRange.Cells[i, 1].Value2.ToString();
+                }
+                else
+                {
+                    rowNumber = "";
+                }
+                if (xlRange.Cells[i, 5].Value2 != null)
+                {
+                    value = xlRange.Cells[i, 5].Value2.ToString();
+                }
+                else
+                {
+                    value = "";
+                }
+                if (xlRange.Cells[i, 6].Value2 != null)
+                {
+                    result = xlRange.Cells[i, 6].Value2.ToString();
+                }
+                else
+                {
+                    result = "";
+                }
+                if (xlRange.Cells[i, 7].Value2 != null)
+                {
+                    summary = xlRange.Cells[i, 7].Value2.ToString();
+                }
+                else
+                {
+                    summary = "";
+                }
+
+                chk = cc.ccpdb.UpdateUric(rowNumber, txtId.Text, value, result, summary);
+                pB1.Value = i;
+            }
+            xlWorkbook.Close(true, misValue, misValue);
+            xlApp.Quit();
+            pB1.Visible = false;
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
+            setGrdUric(txtId.Text);
         }
     }
 }

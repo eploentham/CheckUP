@@ -93,9 +93,13 @@ namespace CheckUP.objdb
             ccp.sugarSuggess = "sugar_suggess";
             ccp.kidneyBun = "kidney_bun";
             ccp.kidneyCreatinine = "kidney_creatinine";
+            ccp.kidneyResult = "kidney_result";
+            ccp.kidneySummary = "kidney_summary";
             ccp.liverSgot = "liver_sgot";
             ccp.liverSgpt = "liver_sgpt";
             ccp.liverAlp = "liver_alp";
+            ccp.liverResult = "liver_result";
+            ccp.liverSummary = "liver_summary";
             ccp.uricAcid = "uric_acid";
             ccp.cholesterol = "cholesterol";
             ccp.triglyceride = "triglyceride";
@@ -386,7 +390,9 @@ namespace CheckUP.objdb
                     + ccp.amphetamineSummary+","+ccp.antiHivSuggess+","
                     + ccp.antiHivSummary+","+ccp.statusAmphetamine+","
                     + ccp.statusAntiHiv+","+ccp.statusVisit+","+
-                    ccp.triglycerideResult + "," + ccp.triglycerideSummary + ") "
+                    ccp.triglycerideResult + "," + ccp.triglycerideSummary +","+
+                    ccp.liverResult + "," + ccp.liverSummary +","+
+                    ccp.kidneyResult + "," + ccp.kidneySummary + ") "
                 + "Values('" + p.Id + "','" + p.amphetamine + "','"
                 + p.antiHiv + "','" + p.audiogramExam + "','"
                 + p.audiogram1000Left + "','" + p.audiogram1000Right + "','"
@@ -469,7 +475,9 @@ namespace CheckUP.objdb
                     + p.amphetamineSummary + "','" + p.antiHivSuggess + "','"
                     + p.antiHivSummary + "','" + p.statusAmphetamine + "','"
                     + p.statusAntiHiv + "','" + p.statusVisit + "','"+
-                    p.triglycerideResult + "','" + p.triglycerideSummary + "') ";
+                    p.triglycerideResult + "','" + p.triglycerideSummary + "','" +
+                    p.liverResult + "','" + p.liverSummary + "','" +
+                    p.kidneyResult + "','" + p.kidneySummary + "') ";
             chk = conn.ExecuteNonQuery(sql);
     //            conn.close;
             } catch (Exception ex) {
@@ -633,6 +641,78 @@ namespace CheckUP.objdb
                 ccp.triglycerideResult + "='" + result + "', " +
                 ccp.triglycerideSummary + "='" + summary + "' " +
                 //ccp.sugarSuggess + "='" + suggess + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk = "";
+        }
+        public String UpdateCholes(String rowNumber, String cucId, String value, String result, String summary)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.cholesterol + "='" + value + "'," +
+                ccp.cholesterolSuggess + "='" + result + "', " +
+                ccp.cholesterolSummary + "='" + summary + "' " +
+                    //ccp.sugarSuggess + "='" + suggess + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk = "";
+        }
+        public String UpdateSgot(String rowNumber, String cucId, String sgot, String sgpt, String result, String summary)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.liverSgot + "='" + sgot + "'," +
+                ccp.liverResult + "='" + result + "', " +
+                ccp.liverSummary + "='" + summary + "', " +
+                ccp.liverSgpt + "='" + sgpt + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk = "";
+        }
+        public String UpdateBun(String rowNumber, String cucId, String bun, String creatinine, String result, String summary)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.kidneyBun + "='" + bun + "'," +
+                ccp.kidneyResult + "='" + result + "', " +
+                ccp.kidneySummary + "='" + summary + "', " +
+                ccp.kidneyCreatinine + "='" + creatinine + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk = "";
+        }
+        public String UpdateUric(String rowNumber, String cucId, String value, String result, String summary)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.uricAcid + "='" + value + "'," +
+                ccp.uricAcidSuggess + "='" + result + "', " +
+                ccp.uricAcidSummary + "='" + summary + "' " +
+                    //ccp.sugarSuggess + "='" + suggess + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql); ;
             }
