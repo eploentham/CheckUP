@@ -18,3 +18,4 @@ D:\source\CheckUP\CheckUP\obj\Debug\CheckUP.gui.FrmPassword.resources
 D:\source\CheckUP\CheckUP\obj\Debug\CheckUP.FrmReport.resources
 D:\source\CheckUP\CheckUP\obj\Debug\CheckUP.gui.FrmStaffAdd.resources
 D:\source\CheckUP\CheckUP\obj\Debug\CheckUP.gui.FrmStaffView.resources
+D:\source\CheckUP\CheckUP\obj\Debug\CheckUP.gui.FrmExcelInit.resources

@@ -106,7 +106,7 @@ namespace CheckUP.objdb
             String sql = "", chk = "";
             if (p.Id.Equals(""))
             {
-                p.Id = "cu" + p.getGenID();
+                p.Id = "cuc" + p.getGenID();
             }
 
             p.Description = p.Description.Replace("'", "''");

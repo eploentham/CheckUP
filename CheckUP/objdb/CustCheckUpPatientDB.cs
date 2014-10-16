@@ -127,6 +127,7 @@ namespace CheckUP.objdb
             ccp.urineRbc = "urine_rbc";
             ccp.urineEpithelium = "urine_epithelium";
             ccp.urineSummary = "urine_summary";
+            ccp.urineResult = "urine_result";
             ccp.lungFvcPredic = "lung_fvc_predic";
             ccp.lungFvcMeas = "lung_fvc_meas";
             ccp.lungFvcPer = "lung_fvc_per";
@@ -207,6 +208,7 @@ namespace CheckUP.objdb
             ccp.cbcRbcOld = "cbc_rbc_old";
             ccp.cbcMchcOld = "cbc_mchc_old";
             ccp.cbcMchOld = "cbc_mch_old";
+            ccp.cbcPlateletSmear = "cbc_platelet_smear";
             ccp.sugarOld = "sugar_old";
             ccp.kidneyBunOld = "kidney_bun_old";
             ccp.kidneyCreatinineOld = "kidney_creatinine_old";
@@ -262,11 +264,29 @@ namespace CheckUP.objdb
             }
             return chk;
         }
+        public DataTable selectAllByCucId(String cucId)
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From " + ccp.table + " Where " + ccp.Active + "='1' and "+ccp.CustCheckUpId+" = '"+cucId+"'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectPEByCucId(String cucId)
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From " + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
         private String insert(CustCheckUpPatient p) {
             String sql = "", chk = "";
             if (p.Id.Equals(""))
             {
-                p.Id = "cc" + p.getGenID();
+                p.Id = "ccp" + p.getGenID();
             }
             try {
     //            Connection conn = config1.getConnectionBangna;
@@ -294,7 +314,7 @@ namespace CheckUP.objdb
                 + ccp.audiogram500Left + "," + ccp.audiogram500Right + ","
                 + ccp.audiogramSummaryLeft + "," + ccp.audiogramSummaryRight + ","
 
-                + ccp.ca125 + "," //+ ccp.ca125 + ","
+                + ccp.ca125 + "," + ccp.cbcPlateletSmear + ","
                 + ccp.ca199 + "," + ccp.caAfp + ","
                 + ccp.caCea + "," + ccp.caHcg + ","
                 + ccp.calcium + "," + ccp.caPsa + ","
@@ -328,7 +348,7 @@ namespace CheckUP.objdb
                 + ccp.stoolExamRbc + "," + ccp.stoolExamWbc + ","
                 + ccp.sugar + "," + ccp.suggestExam + ","
                 + ccp.sugarDiagnosis + "," + ccp.sugarSuggess + ","
-                + ccp.sugarSummary + ","//+ccp.CbcSummary+","
+                + ccp.sugarSummary + ","+ccp.urineResult+","
 
                 + ccp.thyroidT3+ "," + ccp.thyroidT4 + ","
                 + ccp.thyroidTsh + "," + ccp.toxicologyBenzene + ","
@@ -376,7 +396,7 @@ namespace CheckUP.objdb
                 + p.audiogram500Left + "','" + p.audiogram500Right + "','"
                 + p.audiogramSummaryLeft + "','" + p.audiogramSummaryRight + "','"
 
-                + p.ca125 + "','" //+ p.ca125 + "','"
+                + p.ca125 + "','" + p.cbcPlateletSmear + "','"
                 + p.ca199 + "','" + p.caAfp + "','"
                 + p.caCea + "','" + p.caHcg + "','"
                 + p.calcium + "','" + p.caPsa + "','"
@@ -410,7 +430,7 @@ namespace CheckUP.objdb
                 + p.stoolExamRbc + "','" + p.stoolExamWbc + "','"
                 + p.sugar + "','" + p.suggestExam + "','"
                 + p.sugarDiagnosis + "','" + p.sugarSuggess + "','"
-                + p.sugarSummary + "','"//+p.getCbcSummary+"','"
+                + p.sugarSummary + "','"+p.urineResult+"','"
 
                 + p.thyroidT3 + "','" + p.thyroidT4 + "','"
                 + p.thyroidTsh + "','" + p.toxicologyBenzene + "','"
@@ -478,6 +498,145 @@ namespace CheckUP.objdb
                 chk = update(p);
             }
             return chk;
+        }
+        public String InsertCustCheckUpPatient1(CustCheckUpPatient p)
+        {
+            //CustCheckUpPatient item = new CustCheckUpPatient();
+            String chk = "", id = "";
+            chk = insert(p);
+            return chk;
+        }
+        public String UpdatePE(String rowNumber, String cucId, String vitalSign, String height, String weight, String bmi, String pulse, String result, String summary)
+        {
+            String chk = "", sql="";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.vitalsign + "='" + vitalSign + "', " +
+                ccp.patientHeight + "='" + height + "'," +
+                ccp.patientWeight + "='" + weight + "'," +
+                ccp.bmi + "='" + bmi + "'," +
+                ccp.patientPulse + "='" + pulse + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql);
+            } catch (Exception ex) {
+                //Logger.getLogger(MarketingTCheckupDB.class.getName).log(Level.SEVERE, null, ex);
+                //max = ex.getMessage;
+            }
+            
+            return chk = "";
+        }
+        public String UpdateXray(String rowNumber, String cucId, String result, String summary)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update "+ccp.table+" Set "+ccp.xrayChestExam+"='"+result+"',"+
+                ccp.xrayChestSummary+"='"+summary+"' "+
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql);;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk = "";
+        }
+        public String UpdateFBS(String rowNumber, String cucId, String value, String result, String summary, String suggess)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.sugar + "='" + value + "'," +
+                ccp.sugarDiagnosis + "='" + result + "', " +
+                ccp.sugarSummary + "='" + summary + "', " +
+                ccp.sugarSuggess + "='" + suggess + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk = "";
+        }
+        public String UpdateCBC(String rowNumber, String cucId, String Basophil, String Eosinophil, String Hb, String Hct, String Lymphocyte,
+            String Mch, String Mchc, String Mcv, String Monocyte, String Neutrophil, String PlateletCount, String Rbc, String RbcMorpholog, 
+            String Summary, String Wbc, String PlateletSmear)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.cbcBasophil + "='" + Basophil + "'," +
+                ccp.cbcEosinophil + "='" + Eosinophil + "', " +
+                ccp.cbcHb + "='" + Hb + "', " +
+                ccp.cbcHct + "='" + Hct + "', " +
+                ccp.cbcLymphocyte + "='" + Lymphocyte + "', " +
+                ccp.cbcMch + "='" + Mch + "', " +
+                ccp.cbcMchc + "='" + Mchc + "', " +
+                ccp.cbcMcv + "='" + Mcv + "', " +
+                ccp.cbcMonocyte + "='" + Monocyte + "', " +
+                ccp.cbcNeutrophil + "='" + Neutrophil + "', " +
+                ccp.cbcPlateletCount + "='" + PlateletCount + "', " +
+                ccp.cbcPlateletSmear + "='" + PlateletSmear + "', " +
+                ccp.cbcRbc + "='" + Rbc + "', " +
+                ccp.cbcRbcMorpholog + "='" + RbcMorpholog + "', " +
+                ccp.cbcSummary + "='" + Summary + "', " +
+                ccp.cbcWbc + "='" + Wbc + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk = "";
+        }
+        public String UpdateUA(String rowNumber, String cucId, String Color, String Appe, String Sugar, String spgr, String pH,
+            String Protein, String Wbc, String Rbc, String Epi, String Bact, String Result,String Summary)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.urineColor + "='" + Color + "'," +
+                ccp.urineAppearance + "='" + Appe + "', " +
+                ccp.urineSugar + "='" + Sugar + "', " +
+                ccp.urineSpGr + "='" + spgr + "', " +
+                ccp.urinePh + "='" + pH + "', " +
+                ccp.urineProtein + "='" + Protein + "', " +
+                ccp.urineWbc + "='" + Wbc + "', " +
+                ccp.urineRbc + "='" + Rbc + "', " +
+                ccp.urineEpithelium + "='" + Epi + "', " +
+                ccp.urineBacteria + "='" + Bact + "', " +
+                ccp.urineSummary + "='" + Result + "', " +                
+                ccp.urineRbc + "='" + Rbc + "', " +
+                ccp.urineSummary + "='" + Summary + "', " +
+                ccp.urineResult + "='" + Result + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk = "";
+        }
+        public String UpdateTrigly(String rowNumber, String cucId, String value, String result, String summary)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.triglyceride + "='" + value + "'," +
+                ccp.sugarDiagnosis + "='" + result + "', " +
+                ccp.sugarSummary + "='" + summary + "' " +
+                //ccp.sugarSuggess + "='" + suggess + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk = "";
         }
     }
 }

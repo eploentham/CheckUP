@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.dgvView = new System.Windows.Forms.DataGridView();
-            this.btnSfAdd = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,29 +43,31 @@
             this.dgvView.RowTemplate.Height = 24;
             this.dgvView.Size = new System.Drawing.Size(744, 558);
             this.dgvView.TabIndex = 1;
+            this.dgvView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvView_CellDoubleClick);
             // 
-            // btnSfAdd
+            // btnAdd
             // 
-            this.btnSfAdd.Location = new System.Drawing.Point(769, 11);
-            this.btnSfAdd.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSfAdd.Name = "btnSfAdd";
-            this.btnSfAdd.Size = new System.Drawing.Size(56, 39);
-            this.btnSfAdd.TabIndex = 3;
-            this.btnSfAdd.Text = "ป้อนใหม่";
-            this.btnSfAdd.UseVisualStyleBackColor = true;
-            this.btnSfAdd.Click += new System.EventHandler(this.btnSfAdd_Click);
+            this.btnAdd.Location = new System.Drawing.Point(769, 11);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(56, 39);
+            this.btnAdd.TabIndex = 3;
+            this.btnAdd.Text = "ป้อนใหม่";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // FrmCheckUPView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 590);
-            this.Controls.Add(this.btnSfAdd);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvView);
             this.Name = "FrmCheckUPView";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmCheckUPView_Load);
+            this.Resize += new System.EventHandler(this.FrmCheckUPView_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();
             this.ResumeLayout(false);
 
@@ -74,7 +76,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvView;
-        private System.Windows.Forms.Button btnSfAdd;
+        private System.Windows.Forms.Button btnAdd;
 
     }
 }

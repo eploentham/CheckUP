@@ -16,7 +16,7 @@ namespace CheckUP
     {
         CheckControl cc;
         int colCnt = 7;
-        int colRow = 0, colName = 2, colRemark = 3, colId = 4, colCode = 1, colPassword = 6, colPriority = 5;
+        int colRow = 0, colDesc = 2, colRemark = 3, colId = 4, colCustNameT = 1, colCheckUpDate = 6, colPriority = 5;
         public FrmCheckUPView(CheckControl c)
         {
             InitializeComponent();
@@ -31,34 +31,34 @@ namespace CheckUP
         }
         private void setResize()
         {
-            dgvView.Width = this.Width - 50;
+            dgvView.Width = this.Width - 80 - btnAdd.Width;
             dgvView.Height = this.Height - 150;
-
+            btnAdd.Left = dgvView.Width + 20;
             //groupBox1.Width = this.Width - 50;
             //groupBox1.Height = this.Height = 150;
         }
         public void setGrd()
         {
             DataTable dt = new DataTable();
-            dt = cc.sfdb.selectAll();
+            dt = cc.cucdb.selectAll();
             dgvView.ColumnCount = colCnt;
 
             dgvView.RowCount = dt.Rows.Count + 1;
             dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvView.Columns[colRow].Width = 50;
-            dgvView.Columns[colName].Width = 150;
+            dgvView.Columns[colDesc].Width = 150;
             dgvView.Columns[colRemark].Width = 120;
             dgvView.Columns[colId].Width = 80;
-            dgvView.Columns[colPassword].Width = 80;
+            dgvView.Columns[colCheckUpDate].Width = 80;
             dgvView.Columns[colPriority].Width = 180;
 
             dgvView.Columns[colRow].HeaderText = "ลำดับ";
-            dgvView.Columns[colCode].HeaderText = "code";
-            dgvView.Columns[colName].HeaderText = "ชื่อ";
+            dgvView.Columns[colCustNameT].HeaderText = "code";
+            dgvView.Columns[colDesc].HeaderText = "ชื่อ";
             dgvView.Columns[colRemark].HeaderText = "หมายเหตุ";
             dgvView.Columns[colId].HeaderText = "id";
             dgvView.Columns[colPriority].HeaderText = "สิทธิใช้งาน";
-            dgvView.Columns[colPassword].HeaderText = "  ";
+            dgvView.Columns[colCheckUpDate].HeaderText = "  ";
 
             dgvView.Columns[colId].HeaderText = "id";
             Font font = new Font("Microsoft Sans Serif", 12);
@@ -70,23 +70,12 @@ namespace CheckUP
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     dgvView[colRow, i].Value = (i + 1);
-                    dgvView[colCode, i].Value = dt.Rows[i][cc.sfdb.sf.Code].ToString();
-                    dgvView[colName, i].Value = dt.Rows[i][cc.sfdb.sf.NameT].ToString();
-                    dgvView[colRemark, i].Value = dt.Rows[i][cc.sfdb.sf.Remark].ToString();
-                    dgvView[colId, i].Value = dt.Rows[i][cc.sfdb.sf.Id].ToString();
-                    if (dt.Rows[i][cc.sfdb.sf.Priority].ToString().Equals("1"))
-                    {
-                        dgvView[colPriority, i].Value = "ป้อนข้อมูลอย่างเดียว";
-                    }
-                    else if (dt.Rows[i][cc.sfdb.sf.Priority].ToString().Equals("2"))
-                    {
-                        dgvView[colPriority, i].Value = "ตรวจสอบข้อมูลอย่างเดียว";
-                    }
-                    else if (dt.Rows[i][cc.sfdb.sf.Priority].ToString().Equals("3"))
-                    {
-                        dgvView[colPriority, i].Value = "ทุกหน้าจอ";
-                    }
-                    dgvView[colPassword, i].Value = "รหัสผ่าน";
+                    dgvView[colCustNameT, i].Value = dt.Rows[i][cc.cucdb.cuc.CustNameT].ToString();
+                    dgvView[colDesc, i].Value = dt.Rows[i][cc.cucdb.cuc.Description].ToString();
+                    dgvView[colRemark, i].Value = dt.Rows[i][cc.cucdb.cuc.Remark].ToString();
+                    dgvView[colId, i].Value = dt.Rows[i][cc.cucdb.cuc.Id].ToString();
+
+                    dgvView[colCheckUpDate, i].Value = dt.Rows[i][cc.cucdb.cuc.CheckUpDate].ToString();
                     if ((i % 2) != 0)
                     {
                         dgvView.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
@@ -99,12 +88,36 @@ namespace CheckUP
 
         }
 
-        private void btnSfAdd_Click(object sender, EventArgs e)
+        private void FrmCheckUPView_Resize(object sender, EventArgs e)
         {
-            FrmCheckUPAdd frm = new FrmCheckUPAdd(true,cc);
+            setResize();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FrmCheckUPAdd frm = new FrmCheckUPAdd("",true, cc);
             //frm.setControl("");
             frm.ShowDialog(this);
             setGrd();
+        }
+
+        private void dgvView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            if (dgvView[colId, e.RowIndex].Value == null)
+            {
+                return;
+            }
+            //if (e.ColumnIndex == colId)
+            //{
+            FrmCheckUPAdd frm = new FrmCheckUPAdd(dgvView[colId, e.RowIndex].Value.ToString(), false, cc);
+            //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
+            frm.ShowDialog(this);
+            setGrd();
+            //}            
         }
     }
 }

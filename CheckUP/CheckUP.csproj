@@ -88,6 +88,12 @@
     <Compile Include="gui\FrmCustView.designer.cs">
       <DependentUpon>FrmCustView.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmExcelInit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmExcelInit.Designer.cs">
+      <DependentUpon>FrmExcelInit.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmInitConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmCustView.resx">
       <DependentUpon>FrmCustView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmExcelInit.resx">
+      <DependentUpon>FrmExcelInit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmInitConfig.resx">
       <DependentUpon>FrmInitConfig.cs</DependentUpon>
