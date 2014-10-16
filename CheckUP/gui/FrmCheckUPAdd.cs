@@ -53,6 +53,7 @@ namespace CheckUP.gui
         String fileName = "", fileNamePE = "", fileNameFBS = "", fileNameXray = "", fileNameCBC = "", fileNameUA = "", fileNameTri = "", fileNameCho = "";
         DataTable dtAll ;
         OpenFileDialog ofd = new OpenFileDialog();
+        object misValue = System.Reflection.Missing.Value;
         public FrmCheckUPAdd(String cucId,Boolean flagnew,CheckControl c)
         {
             InitializeComponent();
@@ -71,6 +72,7 @@ namespace CheckUP.gui
             tC.TabPages[tabFBS].Text = "FBS";
             tC.TabPages[tabUA].Text = "UA";
             tC.TabPages[tabTri].Text = "Triglyceride";
+            tC.TabPages[tabCho].Text = "Choles";
             tC.TabPages[tabSgot].Text = "SGOT/SGPT";
             tC.TabPages[tabBun].Text = "BUN Creatine";
             tC.TabPages[tabUric].Text = "Uric acid";
@@ -111,6 +113,8 @@ namespace CheckUP.gui
             setGrdXray(cucId);
             setGrdFBS(cucId);
             setGrdCBC(cucId);
+            setGrdUA(cucId);
+            setGrdTri(cucId);
         }
 
         private void setResize()
@@ -258,7 +262,7 @@ namespace CheckUP.gui
             dgvXRay.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvXRay.Columns[colXrayRow].Width = 50;
             dgvXRay.Columns[colXrayId].Width = 250;
-            dgvXRay.Columns[colXrayName].Width = 150;
+            dgvXRay.Columns[colXrayName].Width = 250;
             dgvXRay.Columns[colXrayResult].Width = 180;
             dgvXRay.Columns[coLXraySummary].Width = 180;            
 
@@ -282,7 +286,7 @@ namespace CheckUP.gui
             dgvFBS.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvFBS.Columns[colFBSRow].Width = 50;
             dgvFBS.Columns[colFBSId].Width = 250;
-            dgvFBS.Columns[colFBSName].Width = 120;
+            dgvFBS.Columns[colFBSName].Width = 250;
             dgvFBS.Columns[colFBSValue].Width = 80;
             dgvFBS.Columns[colFBSResult].Width = 180;
             dgvFBS.Columns[coLFBSSummary].Width = 180;
@@ -308,20 +312,20 @@ namespace CheckUP.gui
             dgvCBC.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCBC.Columns[colCBCRow].Width = 50;
             dgvCBC.Columns[colCBCId].Width = 150;
-            dgvCBC.Columns[colCBCName].Width = 120;
+            dgvCBC.Columns[colCBCName].Width = 250;
             dgvCBC.Columns[colCBCWBC].Width = 80;
             dgvCBC.Columns[colCBCRBC].Width = 80;
-            dgvCBC.Columns[colCBCHb].Width = 180;
-            dgvCBC.Columns[colCBCHct].Width = 180;
-            dgvCBC.Columns[colCBCNeu].Width = 180;
-            dgvCBC.Columns[colCBCLy].Width = 180;
-            dgvCBC.Columns[colCBCMono].Width = 180;
-            dgvCBC.Columns[colCBCEo].Width = 180;
-            dgvCBC.Columns[colCBCBa].Width = 180;
-            dgvCBC.Columns[colCBCPlt_c].Width = 180;
-            dgvCBC.Columns[colCBCPlt_s].Width = 180;
-            dgvCBC.Columns[colCBCRBC_mo].Width = 180;
-            dgvCBC.Columns[colCBCSummary].Width = 180;
+            dgvCBC.Columns[colCBCHb].Width = 80;
+            dgvCBC.Columns[colCBCHct].Width = 80;
+            dgvCBC.Columns[colCBCNeu].Width = 80;
+            dgvCBC.Columns[colCBCLy].Width = 80;
+            dgvCBC.Columns[colCBCMono].Width = 80;
+            dgvCBC.Columns[colCBCEo].Width = 80;
+            dgvCBC.Columns[colCBCBa].Width = 80;
+            dgvCBC.Columns[colCBCPlt_c].Width = 150;
+            dgvCBC.Columns[colCBCPlt_s].Width = 150;
+            dgvCBC.Columns[colCBCRBC_mo].Width = 150;
+            dgvCBC.Columns[colCBCSummary].Width = 200;
 
             dgvCBC.Columns[colCBCRow].HeaderText = "ลำดับ";
             dgvCBC.Columns[colCBCId].HeaderText = "code";
@@ -398,10 +402,10 @@ namespace CheckUP.gui
             dgvTri.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvTri.Columns[colTriRow].Width = 50;
             dgvTri.Columns[colTriId].Width = 150;
-            dgvTri.Columns[colTriName].Width = 120;
+            dgvTri.Columns[colTriName].Width = 250;
             dgvTri.Columns[colTriValue].Width = 80;
-            dgvTri.Columns[colTriResult].Width = 80;
-            dgvTri.Columns[coLTriSummary].Width = 80;
+            dgvTri.Columns[colTriResult].Width = 180;
+            dgvTri.Columns[coLTriSummary].Width = 180;
 
             dgvTri.Columns[colTriRow].HeaderText = "ลำดับ";
             dgvTri.Columns[colTriId].HeaderText = "code";
@@ -424,10 +428,10 @@ namespace CheckUP.gui
             dgvCho.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCho.Columns[colChoRow].Width = 50;
             dgvCho.Columns[colChoId].Width = 150;
-            dgvCho.Columns[colChoName].Width = 120;
+            dgvCho.Columns[colChoName].Width =250;
             dgvCho.Columns[colChoValue].Width = 80;
-            dgvCho.Columns[colChoResult].Width = 80;
-            dgvCho.Columns[coLChoSummary].Width = 80;
+            dgvCho.Columns[colChoResult].Width = 180;
+            dgvCho.Columns[coLChoSummary].Width = 180;
 
             dgvCho.Columns[colChoRow].HeaderText = "ลำดับ";
             dgvCho.Columns[colChoId].HeaderText = "code";
@@ -656,6 +660,38 @@ namespace CheckUP.gui
                     if ((i % 2) != 0)
                     {
                         dgvUA.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                    }
+                }
+            }
+            //dgvView.ReadOnly = true;
+        }
+        private void setGrdTri(String cucId)
+        {
+            DataTable dt;
+            dgvTri.Rows.Clear();
+            if (flagNew)
+            {
+                dt = cc.ccpdb.selectAllByCucId(cucId);
+            }
+            else
+            {
+                dt = dtAll;
+            }
+
+            if (dt.Rows.Count > 0)
+            {
+                dgvTri.RowCount = dt.Rows.Count;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    dgvTri[colTriRow, i].Value = (i + 1);
+                    dgvTri[colTriName, i].Value = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
+                    dgvTri[colTriValue, i].Value = dt.Rows[i][cc.ccpdb.ccp.triglyceride].ToString();
+                    dgvTri[colTriResult, i].Value = dt.Rows[i][cc.ccpdb.ccp.triglycerideResult].ToString();
+                    dgvTri[coLTriSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.triglycerideSummary].ToString();
+                    dgvTri[colTriId, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    if ((i % 2) != 0)
+                    {
+                        dgvTri.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
                     }
                 }
             }
@@ -957,6 +993,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
             int rowCount = xlRange.Rows.Count;
             pB1.Maximum = rowCount;
+            xlApp.Visible = false;
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
@@ -1011,6 +1048,8 @@ namespace CheckUP.gui
                 chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, vitalSign, height, weight, bmi, pulse, result, summary);
                 pB1.Value = i;
             }
+            xlWorkbook.Close(true, misValue, misValue);
+            xlApp.Quit();
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdPE(txtId.Text);
@@ -1029,6 +1068,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
             int rowCount = xlRange.Rows.Count;
             pB1.Maximum = rowCount;
+            xlApp.Visible = false;
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
@@ -1060,6 +1100,8 @@ namespace CheckUP.gui
                 chk = cc.ccpdb.UpdateXray(rowNumber, txtId.Text, result, summary);
                 pB1.Value = i;
             }
+            xlWorkbook.Close(true, misValue, misValue);
+            xlApp.Quit();
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdXray(txtId.Text);
@@ -1078,6 +1120,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
             int rowCount = xlRange.Rows.Count;
             pB1.Maximum = rowCount;
+            xlApp.Visible = false;
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
@@ -1117,6 +1160,8 @@ namespace CheckUP.gui
                 chk = cc.ccpdb.UpdateFBS(rowNumber, txtId.Text, value, result, summary, "");
                 pB1.Value = i;
             }
+            xlWorkbook.Close(true, misValue, misValue);
+            xlApp.Quit();
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdFBS(txtId.Text);
@@ -1135,6 +1180,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
             int rowCount = xlRange.Rows.Count;
             pB1.Maximum = rowCount;
+            xlApp.Visible = false;
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
@@ -1262,6 +1308,8 @@ namespace CheckUP.gui
                 chk = cc.ccpdb.UpdateCBC(rowNumber, txtId.Text, bas, eos, hb, hct, lym, mch, mchc, mvc, mono, neu, plaC, rbc, rbcmono, summary, wbc, plaS);
                 pB1.Value = i;
             }
+            xlWorkbook.Close(true, misValue, misValue);
+            xlApp.Quit();
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdCBC(txtId.Text);
@@ -1280,6 +1328,8 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
             int rowCount = xlRange.Rows.Count;
             pB1.Maximum = rowCount;
+            xlApp.Visible = false;
+            //xlWorkbook.
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
@@ -1407,9 +1457,93 @@ namespace CheckUP.gui
                 chk = cc.ccpdb.UpdateUA(rowNumber, txtId.Text, Color, Appe, Sugar, spgr, pH, Protein, Wbc, Rbc, Epi, Bact, Result, Summary);
                 pB1.Value = i;
             }
+            xlWorkbook.Close(true, misValue, misValue);
+            xlApp.Quit();
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdUA(txtId.Text);
+        }
+
+        private void btnTriImport_Click(object sender, EventArgs e)
+        {
+            String rowNumber = "", chk = "", result = "", summary = "", value = "";
+
+            pB1.Visible = true;
+            pB1.Minimum = 0;
+
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameTri);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+            int rowCount = xlRange.Rows.Count;
+            pB1.Maximum = rowCount;
+            xlApp.Visible = false;
+            for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
+            {
+                //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
+                if (xlRange.Cells[i, 1].Value2 != null)
+                {
+                    rowNumber = xlRange.Cells[i, 1].Value2.ToString();
+                }
+                else
+                {
+                    rowNumber = "";
+                }
+                if (xlRange.Cells[i, 5].Value2 != null)
+                {
+                    value = xlRange.Cells[i, 5].Value2.ToString();
+                }
+                else
+                {
+                    value = "";
+                }
+                if (xlRange.Cells[i, 6].Value2 != null)
+                {
+                    result = xlRange.Cells[i, 6].Value2.ToString();
+                }
+                else
+                {
+                    result = "";
+                }
+                if (xlRange.Cells[i, 7].Value2 != null)
+                {
+                    summary = xlRange.Cells[i, 7].Value2.ToString();
+                }
+                else
+                {
+                    summary = "";
+                }
+
+                chk = cc.ccpdb.UpdateTrigly(rowNumber, txtId.Text, value, result, summary);
+                pB1.Value = i;
+            }
+            xlWorkbook.Close(true, misValue, misValue);
+            xlApp.Quit();
+            pB1.Visible = false;
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
+            setGrdTri(txtId.Text);
+        }
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Unable to release the Object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+
+        private void btnChoImport_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -99,6 +99,8 @@ namespace CheckUP.objdb
             ccp.uricAcid = "uric_acid";
             ccp.cholesterol = "cholesterol";
             ccp.triglyceride = "triglyceride";
+            ccp.triglycerideResult = "triglyceride_result";
+            ccp.triglycerideSummary = "triglyceride_summary";
             ccp.hdl = "hdl";
             ccp.ldl = "ldl";
             ccp.calcium = "calcium";
@@ -383,7 +385,8 @@ namespace CheckUP.objdb
                     + ccp.eyeBio+","+ccp.amphetamineSuggess+","
                     + ccp.amphetamineSummary+","+ccp.antiHivSuggess+","
                     + ccp.antiHivSummary+","+ccp.statusAmphetamine+","
-                    + ccp.statusAntiHiv+","+ccp.statusVisit+") "
+                    + ccp.statusAntiHiv+","+ccp.statusVisit+","+
+                    ccp.triglycerideResult + "," + ccp.triglycerideSummary + ") "
                 + "Values('" + p.Id + "','" + p.amphetamine + "','"
                 + p.antiHiv + "','" + p.audiogramExam + "','"
                 + p.audiogram1000Left + "','" + p.audiogram1000Right + "','"
@@ -465,7 +468,8 @@ namespace CheckUP.objdb
                     + p.eyeBio + "','" + p.amphetamineSuggess + "','"
                     + p.amphetamineSummary + "','" + p.antiHivSuggess + "','"
                     + p.antiHivSummary + "','" + p.statusAmphetamine + "','"
-                    + p.statusAntiHiv + "','" + p.statusVisit + "') ";
+                    + p.statusAntiHiv + "','" + p.statusVisit + "','"+
+                    p.triglycerideResult + "','" + p.triglycerideSummary + "') ";
             chk = conn.ExecuteNonQuery(sql);
     //            conn.close;
             } catch (Exception ex) {
@@ -607,8 +611,8 @@ namespace CheckUP.objdb
                 ccp.urineRbc + "='" + Rbc + "', " +
                 ccp.urineEpithelium + "='" + Epi + "', " +
                 ccp.urineBacteria + "='" + Bact + "', " +
-                ccp.urineSummary + "='" + Result + "', " +                
-                ccp.urineRbc + "='" + Rbc + "', " +
+                //ccp.urineSummary + "='" + Result + "', " +                
+                //ccp.urineRbc + "='" + Rbc + "', " +
                 ccp.urineSummary + "='" + Summary + "', " +
                 ccp.urineResult + "='" + Result + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
@@ -626,8 +630,8 @@ namespace CheckUP.objdb
             try
             {
                 sql = "Update " + ccp.table + " Set " + ccp.triglyceride + "='" + value + "'," +
-                ccp.sugarDiagnosis + "='" + result + "', " +
-                ccp.sugarSummary + "='" + summary + "' " +
+                ccp.triglycerideResult + "='" + result + "', " +
+                ccp.triglycerideSummary + "='" + summary + "' " +
                 //ccp.sugarSuggess + "='" + suggess + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql); ;

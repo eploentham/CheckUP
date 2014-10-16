@@ -342,6 +342,7 @@
             this.btnChoImport.TabIndex = 106;
             this.btnChoImport.Text = "นำเข้า Chol";
             this.btnChoImport.UseVisualStyleBackColor = true;
+            this.btnChoImport.Click += new System.EventHandler(this.btnChoImport_Click);
             // 
             // label53
             // 
@@ -483,6 +484,7 @@
             this.btnTriImport.TabIndex = 91;
             this.btnTriImport.Text = "นำเข้า Tri";
             this.btnTriImport.UseVisualStyleBackColor = true;
+            this.btnTriImport.Click += new System.EventHandler(this.btnTriImport_Click);
             // 
             // label45
             // 

@@ -86,6 +86,8 @@ namespace CheckUP.object1
     public String uricAcid="";
     public String cholesterol="";
     public String triglyceride="";
+    public String triglycerideResult = "";
+    public String triglycerideSummary = "";
     public String hdl="";
     public String ldl="";
     public String calcium="";

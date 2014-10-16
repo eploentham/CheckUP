@@ -46,10 +46,11 @@ namespace CheckUP
             dgvView.RowCount = dt.Rows.Count + 1;
             dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvView.Columns[colRow].Width = 50;
+            dgvView.Columns[colCustNameT].Width = 250;
             dgvView.Columns[colDesc].Width = 150;
             dgvView.Columns[colRemark].Width = 120;
             dgvView.Columns[colId].Width = 80;
-            dgvView.Columns[colCheckUpDate].Width = 80;
+            dgvView.Columns[colCheckUpDate].Width = 120;
             dgvView.Columns[colPriority].Width = 180;
 
             dgvView.Columns[colRow].HeaderText = "ลำดับ";
