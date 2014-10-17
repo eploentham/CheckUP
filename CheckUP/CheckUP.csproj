@@ -14,7 +14,7 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -143,7 +143,9 @@
     <Compile Include="objdb\CustCheckUpPatientDB.cs" />
     <Compile Include="objdb\CustomerDB.cs" />
     <Compile Include="objdb\DistrictDB.cs" />
+    <Compile Include="objdb\ExcelInitDB.cs" />
     <Compile Include="objdb\ProvinceDB.cs" />
+    <Compile Include="objdb\RCheckUpDB.cs" />
     <Compile Include="objdb\StaffDB.cs" />
     <Compile Include="object1\Amphur.cs" />
     <Compile Include="object1\ComboBoxItem.cs" />
@@ -153,14 +155,22 @@
     <Compile Include="object1\CustCheckUpPatient.cs" />
     <Compile Include="object1\Customer.cs" />
     <Compile Include="object1\District.cs" />
+    <Compile Include="object1\ExcelInit.cs" />
     <Compile Include="object1\IniFile.cs" />
     <Compile Include="object1\InitConfig.cs" />
     <Compile Include="object1\LogWriter.cs" />
     <Compile Include="object1\Persistent.cs" />
     <Compile Include="object1\Province.cs" />
+    <Compile Include="object1\RCheckUp.cs" />
     <Compile Include="object1\Staff.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="report\CheckUpPrint.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckUpPrint.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="gui\FrmCheckUPAdd.resx">
       <DependentUpon>FrmCheckUPAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +220,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="report\CheckUpPrint.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CheckUpPrint.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -223,8 +237,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="report\" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -2020,5 +2020,11 @@ namespace CheckUP.gui
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdUric(txtId.Text);
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            FrmExcelInit frm = new FrmExcelInit(cc);
+            frm.ShowDialog(this);
+        }
     }
 }

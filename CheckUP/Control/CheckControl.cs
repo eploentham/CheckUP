@@ -54,7 +54,7 @@ namespace CheckUP.Control
         public CheckControl()
         {
             initConfig();
-        }        
+        }
         private void initConfig()
         {
             try
