@@ -35,54 +35,97 @@ namespace CheckUP.gui
             tC.TabPages[tabBun].Text = "BUN Creatine";
             tC.TabPages[tabUric].Text = "Uric acid";
 
-            label15.Left = label3.Left;
-            label16.Left = label3.Left;
-            label17.Left = label3.Left;
-            label18.Left = label3.Left;
-            label19.Left = label3.Left;
-            label20.Left = label3.Left;
-            label21.Left = label3.Left;
-            label22.Left = label3.Left;
-            label23.Left = label3.Left;
-            label24.Left = label3.Left;
+            lbPE.Left = label3.Left;
+            lbXRay.Left = label3.Left;
+            lbCBC.Left = label3.Left;
+            lbFBS.Left = label3.Left;
+            lbUA.Left = label3.Left;
+            lbTri.Left = label3.Left;
+            lbCho.Left = label3.Left;
+            lbSgot.Left = label3.Left;
+            lbBun.Left = label3.Left;
+            lbUric.Left = label3.Left;
 
-            label15.Top = label3.Top;
-            label16.Top = label3.Top;
-            label17.Top = label3.Top;
-            label18.Top = label3.Top;
-            label19.Top = label3.Top;
-            label20.Top = label3.Top;
-            label21.Top = label3.Top;
-            label22.Top = label3.Top;
-            label23.Top = label3.Top;
-            label24.Top = label3.Top;
+            lbPE.Top = label3.Top;
+            lbXRay.Top = label3.Top;
+            lbCBC.Top = label3.Top;
+            lbFBS.Top = label3.Top;
+            lbUA.Top = label3.Top;
+            lbTri.Top = label3.Top;
+            lbCho.Top = label3.Top;
+            lbSgot.Top = label3.Top;
+            lbBun.Top = label3.Top;
+            lbUric.Top = label3.Top;
 
-            nmDRow15.Left = nmDRow.Left;
-            nmDRow16.Left = nmDRow.Left;
-            nmDRow17.Left = nmDRow.Left;
-            nmDRow18.Left = nmDRow.Left;
-            nmDRow19.Left = nmDRow.Left;
-            nmDRow20.Left = nmDRow.Left;
-            nmDRow21.Left = nmDRow.Left;
-            nmDRow22.Left = nmDRow.Left;
-            nmDRow23.Left = nmDRow.Left;
-            nmDRow24.Left = nmDRow.Left;
+            nmDPERow.Left = nmDRow.Left;
+            nmDXRayRow.Left = nmDRow.Left;
+            nmDNoRow.Left = nmDRow.Left;
+            nmDFBSRow.Left = nmDRow.Left;
+            nmDUARow.Left = nmDRow.Left;
+            nmDTriRow.Left = nmDRow.Left;
+            nmDChoRow.Left = nmDRow.Left;
+            nmDSgotRow.Left = nmDRow.Left;
+            nmDBunRow.Left = nmDRow.Left;
+            nmDUricRow.Left = nmDRow.Left;
 
-            nmDRow15.Top = nmDRow.Top;
-            nmDRow16.Top = nmDRow.Top;
-            nmDRow17.Top = nmDRow.Top;
-            nmDRow18.Top = nmDRow.Top;
-            nmDRow19.Top = nmDRow.Top;
-            nmDRow20.Top = nmDRow.Top;
-            nmDRow21.Top = nmDRow.Top;
-            nmDRow22.Top = nmDRow.Top;
-            nmDRow23.Top = nmDRow.Top;
-            nmDRow24.Top = nmDRow.Top;
+            nmDPERow.Top = nmDRow.Top;
+            nmDXRayRow.Top = nmDRow.Top;
+            nmDNoRow.Top = nmDRow.Top;
+            nmDFBSRow.Top = nmDRow.Top;
+            nmDUARow.Top = nmDRow.Top;
+            nmDTriRow.Top = nmDRow.Top;
+            nmDChoRow.Top = nmDRow.Top;
+            nmDSgotRow.Top = nmDRow.Top;
+            nmDBunRow.Top = nmDRow.Top;
+            nmDUricRow.Top = nmDRow.Top;
 
+            lbXRayNo.Top = lbPENo.Top;
+            lbCBCNo.Top = lbPENo.Top;
+            lbUANo.Top = lbPENo.Top;
+            lbFBSNo.Top = lbPENo.Top;
+            lbTriNo.Top = lbPENo.Top;
+            lbChoNo.Top = lbPENo.Top;
+            lbBunNo.Top = lbPENo.Top;
+            lbSgotNo.Top = lbPENo.Top;
+            lbUricNo.Top = lbPENo.Top;
+            //lbXRayNo.Top = lbPENo.Top;
+            lbXRayNo.Left = lbPENo.Left;
+            lbCBCNo.Left = lbPENo.Left;
+            lbUANo.Left = lbPENo.Left;
+            lbFBSNo.Left = lbPENo.Left;
+            lbTriNo.Left = lbPENo.Left;
+            lbChoNo.Left = lbPENo.Left;
+            lbBunNo.Left = lbPENo.Left;
+            lbSgotNo.Left = lbPENo.Left;
+            lbUricNo.Left = lbPENo.Left;
+
+            nmDXRayNo.Top = nmDPENo.Top;
+            nmDCBCNo.Top = nmDPENo.Top;
+            nmDUANo.Top = nmDPENo.Top;
+            nmDFBSNo.Top = nmDPENo.Top;
+            nmDTriNo.Top = nmDPENo.Top;
+            nmDChoNo.Top = nmDPENo.Top;
+            nmDBunNo.Top = nmDPENo.Top;
+            nmDSgotNo.Top = nmDPENo.Top;
+            nmDUricNo.Top = nmDPENo.Top;
+            nmDXRayNo.Left = nmDPENo.Left;
+            nmDCBCNo.Left = nmDPENo.Left;
+            nmDUANo.Left = nmDPENo.Left;
+            nmDFBSNo.Left = nmDPENo.Left;
+            nmDTriNo.Left = nmDPENo.Left;
+            nmDChoNo.Left = nmDPENo.Left;
+            nmDBunNo.Left = nmDPENo.Left;
+            nmDSgotNo.Left = nmDPENo.Left;
+            nmDUricNo.Left = nmDPENo.Left;
 
         }
 
         private void FrmExcelInit_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPrefixExcel_Click(object sender, EventArgs e)
         {
 
         }
