@@ -31,7 +31,7 @@ namespace CheckUP.Control
         public CustCheckUpPatientDB ccpdb;
         public CustCheckUpDB cucdb;
         public ExcelInitDB eidb;
-        //public MOUDB modb;
+        public RCheckUpDB rcdb;
         //public MOUItemDB moidb;
         //public ItemDB itdb;
         //public ItemGroupDB itgdb;
@@ -78,7 +78,7 @@ namespace CheckUP.Control
                 ccpdb = new CustCheckUpPatientDB(conn);
                 cucdb = new CustCheckUpDB(conn);
                 eidb = new ExcelInitDB(conn);
-                //modb = new MOUDB(conn);
+                rcdb = new RCheckUpDB(conn);
                 //moidb = new MOUItemDB(conn);
                 //itdb = new ItemDB(conn);
                 //itgdb = new ItemGroupDB(conn);

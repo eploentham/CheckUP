@@ -64,6 +64,12 @@
     <Compile Include="gui\FrmCheckUPAdd.Designer.cs">
       <DependentUpon>FrmCheckUPAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmCheckUpEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmCheckUpEdit.Designer.cs">
+      <DependentUpon>FrmCheckUpEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmCheckUPView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </Compile>
     <EmbeddedResource Include="gui\FrmCheckUPAdd.resx">
       <DependentUpon>FrmCheckUPAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmCheckUpEdit.resx">
+      <DependentUpon>FrmCheckUpEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmCheckUPView.resx">
       <DependentUpon>FrmCheckUPView.cs</DependentUpon>

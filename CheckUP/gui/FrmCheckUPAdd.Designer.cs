@@ -2247,12 +2247,13 @@
             this.btnPrint.TabIndex = 69;
             this.btnPrint.Text = "พิมพ์";
             this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // FrmCheckUPAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1208, 714);
+            this.ClientSize = new System.Drawing.Size(1243, 714);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.pB1);
             this.Controls.Add(this.btnUnActive);

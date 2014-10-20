@@ -33,6 +33,7 @@ namespace CheckUP.objdb
             rcu.LTypeLab = "l_type_lab";
             rcu.Remark = "remark";
             rcu.StatusLab = "status_lab";
+            rcu.Sort1 = "sort1";
 
             rcu.pkField = "id";
             rcu.table = "r_checkup";
@@ -99,11 +100,11 @@ namespace CheckUP.objdb
             sql = "Insert Into " + rcu.table + " (" + rcu.pkField + "," + rcu.LabGroup + "," + rcu.LabName + "," +
                 rcu.LabNormal + "," + rcu.LabResult + "," + rcu.LInter + "," +
                 rcu.LInterAbnormal + "," + rcu.LInterNormal + "," + rcu.LNormal + "," +
-                rcu.lResult + "," + rcu.LTypeLab + "," + rcu.Remark + "," + rcu.StatusLab + ") " +
+                rcu.lResult + "," + rcu.LTypeLab + "," + rcu.Remark + "," + rcu.StatusLab + "," + rcu.Sort1 + ") " +
                 "Values('" + p.Id + "','" + p.LabGroup + "','" + p.LabName + "','" +
                 p.LabNormal + "','" + p.LabResult + "','" + p.LInter + "','" +
                 p.LInterAbnormal + "','" + p.LInterNormal + "','" + p.LNormal + "','" +
-                p.lResult + "','" + p.LTypeLab + "','" + p.Remark + "','" + p.StatusLab + "')";
+                p.lResult + "','" + p.LTypeLab + "','" + p.Remark + "','" + p.StatusLab + "','" + p.Sort1 + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

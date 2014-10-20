@@ -58,6 +58,7 @@ namespace CheckUP.gui
         Boolean flagNew=false;
         String fileName = "", fileNamePE = "", fileNameFBS = "", fileNameXray = "", fileNameCBC = "", fileNameUA = "", fileNameTri = "", fileNameCho = "";
         String fileNameSgot = "", fileNameBun = "", fileNameUric = "";
+        //String cucId = "";
         DataTable dtAll;
         OpenFileDialog ofd = new OpenFileDialog();
         object misValue = System.Reflection.Missing.Value;
@@ -71,6 +72,7 @@ namespace CheckUP.gui
         private void iniConfig(String cucId)
         {
             cuc = new CustCheckUp();
+            cuc.Id = cucId;
             dtAll = cc.ccpdb.selectAllByCucId(cucId);
             tC.TabPages[tabSum].Text = "Summary";
             tC.TabPages[tabPE].Text = "PE";
@@ -2025,6 +2027,32 @@ namespace CheckUP.gui
         {
             FrmExcelInit frm = new FrmExcelInit(cc);
             frm.ShowDialog(this);
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            cc.rcdb.deleteAll();
+            dtAll = cc.ccpdb.selectAllByCucId(cuc.Id);
+            for (int i = 0; i < dtAll.Rows.Count; i++)
+            {
+                RCheckUp rc = new RCheckUp();
+                rc.Id = "";
+                rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
+                rc.LabName = "Hb";
+                rc.LabNormal = "12-16 gm%";
+                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcHb].ToString();
+                rc.LInter = "การแปรผล";
+                rc.LInterAbnormal = "ปกติ";
+                rc.LInterNormal = "ผิดปกติ";
+                rc.LNormal = "ค่าปกติ";
+                rc.lResult = "ผลการตรวจ";
+                rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
+                rc.Remark = "";
+                rc.StatusLab = "cbc";
+                rc.Sort1 = "1010";
+                cc.rcdb.insertRCheckUp(rc);
+
+            }
         }
     }
 }

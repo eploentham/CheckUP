@@ -314,7 +314,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateCholes(String id, String Cholesteral, String ChoNo, String ChoResult, String ChoRow, String Chosummary)
+        public String updateCholes(String Cholesteral, String ChoNo, String ChoResult, String ChoRow, String Chosummary)
         {
             String sql = "", chk = "";
 
@@ -326,9 +326,7 @@ namespace CheckUP.objdb
                 ei.ChoNo + "='" + ChoNo + "', " +
                 ei.ChoResult + "='" + ChoResult + "', " +
                 ei.ChoRow + "='" + ChoRow + "', " +
-                ei.Chosummary + "='" + Chosummary + "' " +
-                //ei.BunSummary + "='" + bunSummary + "' " +
-                "Where " + ei.pkField + "='" + id + "'";
+                ei.Chosummary + "='" + Chosummary + "' " ;
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

@@ -80,29 +80,53 @@ namespace CheckUP.gui
             nmDUARow.Value = int.Parse(cc.cf.NumberNull1(ei.UARow));
             nmDUANo.Value = int.Parse(cc.cf.NumberNull1(ei.UANo));
             nmDUAAppe.Value = int.Parse(cc.cf.NumberNull1(ei.UAAppe));
+            nmDUABact.Value = int.Parse(cc.cf.NumberNull1(ei.UABact));
+            nmDUAColor.Value = int.Parse(cc.cf.NumberNull1(ei.UAColor));
+            nmDUAEpi.Value = int.Parse(cc.cf.NumberNull1(ei.UAEpi));
+            nmDUApH.Value = int.Parse(cc.cf.NumberNull1(ei.UApH));
+            nmDUAProtein.Value = int.Parse(cc.cf.NumberNull1(ei.UAProtein));
+            nmDUARBC.Value = int.Parse(cc.cf.NumberNull1(ei.UARBC));
+            nmDUAResult.Value = int.Parse(cc.cf.NumberNull1(ei.UAResult));
+            nmDUASpgr.Value = int.Parse(cc.cf.NumberNull1(ei.UASpgr));
+            nmDUASugar.Value = int.Parse(cc.cf.NumberNull1(ei.UASugar));
+            nmDUASummary.Value = int.Parse(cc.cf.NumberNull1(ei.UASummary));
+            nmDUAWBC.Value = int.Parse(cc.cf.NumberNull1(ei.UAWBC));
 
             nmDTriRow.Value = int.Parse(cc.cf.NumberNull1(ei.TriRow));
             nmDTriNo.Value = int.Parse(cc.cf.NumberNull1(ei.TriNo));
+            nmDTriResult.Value = int.Parse(cc.cf.NumberNull1(ei.TriResult));
+            nmDTriSummary.Value = int.Parse(cc.cf.NumberNull1(ei.TriSummary));
+            nmDTriValue.Value = int.Parse(cc.cf.NumberNull1(ei.Triglyceride));
 
-            nmDChoRow.Value = int.Parse(cc.cf.NumberNull1(ei.ChoRow));
             nmDChoNo.Value = int.Parse(cc.cf.NumberNull1(ei.ChoNo));
+            nmDChoResult.Value = int.Parse(cc.cf.NumberNull1(ei.ChoResult));
+            nmDChoRow.Value = int.Parse(cc.cf.NumberNull1(ei.ChoRow));
+            nmDChoSummary.Value = int.Parse(cc.cf.NumberNull1(ei.Chosummary));
+            nmDChoValue.Value = int.Parse(cc.cf.NumberNull1(ei.Cholesteral));
 
             nmDSgotRow.Value = int.Parse(cc.cf.NumberNull1(ei.SgotRow));
             nmDSgotNo.Value = int.Parse(cc.cf.NumberNull1(ei.SgotNo));
+            nmDSgotResult.Value = int.Parse(cc.cf.NumberNull1(ei.SgotResult));
+            nmDSgotSgptValue.Value = int.Parse(cc.cf.NumberNull1(ei.Sgpt));
+            nmDSgotSummary.Value = int.Parse(cc.cf.NumberNull1(ei.SgptSummary));
+            nmDSgotvalue.Value = int.Parse(cc.cf.NumberNull1(ei.Sgot));
 
             nmDBunRow.Value = int.Parse(cc.cf.NumberNull1(ei.BunRow));
             nmDBunNo.Value = int.Parse(cc.cf.NumberNull1(ei.BunNo));
-
+            nmDBunCreatinine.Value = int.Parse(cc.cf.NumberNull1(ei.BunCreatinine));
+            nmDBunResult.Value = int.Parse(cc.cf.NumberNull1(ei.BunResult));
+            nmDBunSummary.Value = int.Parse(cc.cf.NumberNull1(ei.BunSummary));
+            nmDBunValue.Value = int.Parse(cc.cf.NumberNull1(ei.Bun));
+            
             nmDUricRow.Value = int.Parse(cc.cf.NumberNull1(ei.UricRow));
             nmDUricNo.Value = int.Parse(cc.cf.NumberNull1(ei.UricNo));
+            nmDUricResult.Value = int.Parse(cc.cf.NumberNull1(ei.UricResult));
+            nmDUricSummary.Value = int.Parse(cc.cf.NumberNull1(ei.UricSummary));
+            nmDUricValue.Value = int.Parse(cc.cf.NumberNull1(ei.UricAcid));
+
             
             
-            
-            
-            
-            
-            
-            
+
 
             lbPE.Left = label3.Left;
             lbXRay.Left = label3.Left;
@@ -188,7 +212,415 @@ namespace CheckUP.gui
             nmDUricNo.Left = nmDPENo.Left;
 
         }
+        private void SaveSgot()
+        {
+            String No = "", sgot = "", sgpt = "", result = "", summary = "";
+            ofd.ShowDialog();
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
 
+            if (xlRange.Cells[nmDSgotRow.Value, nmDSgotNo.Value].Value2 != null)
+            {
+                No = xlRange.Cells[nmDSgotRow.Value, nmDSgotNo.Value].Value2.ToString();
+            }
+            else
+            {
+                No = "";
+            }
+            No = No.Trim();
+            if (xlRange.Cells[nmDSgotRow.Value, nmDSgotvalue.Value].Value2 != null)
+            {
+                sgot = xlRange.Cells[nmDSgotRow.Value, nmDSgotvalue.Value].Value2.ToString();
+            }
+            else
+            {
+                sgot = "";
+            }
+            sgot = sgot.Trim();
+            if (xlRange.Cells[nmDSgotRow.Value, nmDSgotSgptValue.Value].Value2 != null)
+            {
+                sgpt = xlRange.Cells[nmDSgotRow.Value, nmDSgotSgptValue.Value].Value2.ToString();
+            }
+            else
+            {
+                sgpt = "";
+            }
+            sgpt = sgpt.Trim();
+            if (xlRange.Cells[nmDSgotRow.Value, nmDSgotResult.Value].Value2 != null)
+            {
+                result = xlRange.Cells[nmDSgotRow.Value, nmDSgotResult.Value].Value2.ToString();
+            }
+            else
+            {
+                result = "";
+            }
+            result = result.Trim();
+            if (xlRange.Cells[nmDSgotRow.Value, nmDSgotSummary.Value].Value2 != null)
+            {
+                summary = xlRange.Cells[nmDSgotRow.Value, nmDSgotSummary.Value].Value2.ToString();
+            }
+            else
+            {
+                summary = "";
+            }
+            summary = summary.Trim();
+            txtSgotTest.Text = "ลำดับ " + No + " sgot " + sgot + " sgpt " + sgpt + " result " + result + " summary " + summary;
+            if (cc.eidb.updateSgot(nmDSgotvalue.Value.ToString(), nmDSgotNo.Value.ToString(), nmDSgotResult.Value.ToString(), nmDSgotRow.Value.ToString(), nmDSgotSgptValue.Value.ToString(), nmDSgotSummary.Value.ToString()).Length >= 1)
+            {
+                MessageBox.Show("บันทึกข้อมูล Sgot เรียบร้อย", "บันทึกข้อมูล");
+            }
+        }
+        private void SaveBun()
+        {
+            String No = "", bun = "", creatinine = "", result = "", summary = "";
+            ofd.ShowDialog();
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+
+            if (xlRange.Cells[nmDBunRow.Value, nmDBunNo.Value].Value2 != null)
+            {
+                No = xlRange.Cells[nmDBunRow.Value, nmDBunNo.Value].Value2.ToString();
+            }
+            else
+            {
+                No = "";
+            }
+            No = No.Trim();
+            if (xlRange.Cells[nmDBunRow.Value, nmDBunValue.Value].Value2 != null)
+            {
+                bun = xlRange.Cells[nmDBunRow.Value, nmDBunValue.Value].Value2.ToString();
+            }
+            else
+            {
+                bun = "";
+            }
+            bun = bun.Trim();
+            if (xlRange.Cells[nmDBunRow.Value, nmDBunCreatinine.Value].Value2 != null)
+            {
+                creatinine = xlRange.Cells[nmDBunRow.Value, nmDBunCreatinine.Value].Value2.ToString();
+            }
+            else
+            {
+                creatinine = "";
+            }
+            creatinine = creatinine.Trim();
+            if (xlRange.Cells[nmDBunRow.Value, nmDBunResult.Value].Value2 != null)
+            {
+                result = xlRange.Cells[nmDBunRow.Value, nmDBunResult.Value].Value2.ToString();
+            }
+            else
+            {
+                result = "";
+            }
+            result = result.Trim();
+            if (xlRange.Cells[nmDBunRow.Value, nmDBunSummary.Value].Value2 != null)
+            {
+                summary = xlRange.Cells[nmDBunRow.Value, nmDBunSummary.Value].Value2.ToString();
+            }
+            else
+            {
+                summary = "";
+            }
+            summary = summary.Trim();
+            txtSgotTest.Text = "ลำดับ " + No + " bun " + bun + " sgpt " + creatinine + " result " + result + " summary " + summary;
+            if (cc.eidb.updateBun(nmDBunValue.Value.ToString(), nmDBunNo.Value.ToString(), nmDBunResult.Value.ToString(), nmDBunRow.Value.ToString(), nmDBunCreatinine.Value.ToString(), nmDBunSummary.Value.ToString()).Length >= 1)
+            {
+                MessageBox.Show("บันทึกข้อมูล BUN เรียบร้อย", "บันทึกข้อมูล");
+            }
+        }
+        private void SaveUric()
+        {
+            String No = "", uric = "", result = "", summary = "";
+            ofd.ShowDialog();
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+
+            if (xlRange.Cells[nmDUricRow.Value, nmDUricNo.Value].Value2 != null)
+            {
+                No = xlRange.Cells[nmDUricRow.Value, nmDUricNo.Value].Value2.ToString();
+            }
+            else
+            {
+                No = "";
+            }
+            No = No.Trim();
+            if (xlRange.Cells[nmDUricRow.Value, nmDUricValue.Value].Value2 != null)
+            {
+                uric = xlRange.Cells[nmDUricRow.Value, nmDUricValue.Value].Value2.ToString();
+            }
+            else
+            {
+                uric = "";
+            }
+            uric = uric.Trim();
+            if (xlRange.Cells[nmDUricRow.Value, nmDUricResult.Value].Value2 != null)
+            {
+                result = xlRange.Cells[nmDUricRow.Value, nmDUricResult.Value].Value2.ToString();
+            }
+            else
+            {
+                result = "";
+            }
+            result = result.Trim();
+            if (xlRange.Cells[nmDUricRow.Value, nmDUricSummary.Value].Value2 != null)
+            {
+                summary = xlRange.Cells[nmDUricRow.Value, nmDUricSummary.Value].Value2.ToString();
+            }
+            else
+            {
+                summary = "";
+            }
+            summary = summary.Trim();
+            txtTriTest.Text = "ลำดับ " + No + " Uric " + uric + " result " + result + " summary " + summary;
+            if (cc.eidb.updateTrig(nmDUricValue.Value.ToString(), nmDUricNo.Value.ToString(), nmDUricResult.Value.ToString(), nmDUricRow.Value.ToString(), nmDUricSummary.Value.ToString()).Length >= 1)
+            {
+                MessageBox.Show("บันทึกข้อมูล Uric Acid เรียบร้อย", "บันทึกข้อมูล");
+            }
+        }
+        private void SaveCholes()
+        {
+            String No = "", cho = "", result = "", summary = "";
+            ofd.ShowDialog();
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+
+            if (xlRange.Cells[nmDChoRow.Value, nmDChoNo.Value].Value2 != null)
+            {
+                No = xlRange.Cells[nmDChoRow.Value, nmDChoNo.Value].Value2.ToString();
+            }
+            else
+            {
+                No = "";
+            }
+            No = No.Trim();
+            if (xlRange.Cells[nmDChoRow.Value, nmDChoValue.Value].Value2 != null)
+            {
+                cho = xlRange.Cells[nmDChoRow.Value, nmDChoValue.Value].Value2.ToString();
+            }
+            else
+            {
+                cho = "";
+            }
+            cho = cho.Trim();
+            if (xlRange.Cells[nmDChoRow.Value, nmDChoResult.Value].Value2 != null)
+            {
+                result = xlRange.Cells[nmDChoRow.Value, nmDChoResult.Value].Value2.ToString();
+            }
+            else
+            {
+                result = "";
+            }
+            result = result.Trim();
+            if (xlRange.Cells[nmDChoRow.Value, nmDChoSummary.Value].Value2 != null)
+            {
+                summary = xlRange.Cells[nmDChoRow.Value, nmDChoSummary.Value].Value2.ToString();
+            }
+            else
+            {
+                summary = "";
+            }
+            summary = summary.Trim();
+            txtChoTest.Text = "ลำดับ " + No + " choles " + cho + " result " + result + " summary " + summary;
+            if (cc.eidb.updateCholes(nmDChoValue.Value.ToString(), nmDChoNo.Value.ToString(), nmDChoResult.Value.ToString(), nmDChoRow.Value.ToString(), nmDChoSummary.Value.ToString()).Length >= 1)
+            {
+                MessageBox.Show("บันทึกข้อมูล Choles เรียบร้อย", "บันทึกข้อมูล");
+            }
+        }
+        private void SaveTrig()
+        {
+            String No = "", tri = "", result = "", summary = "";
+            ofd.ShowDialog();
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+
+            if (xlRange.Cells[nmDTriRow.Value, nmDTriNo.Value].Value2 != null)
+            {
+                No = xlRange.Cells[nmDTriRow.Value, nmDTriNo.Value].Value2.ToString();
+            }
+            else
+            {
+                No = "";
+            }
+            No = No.Trim();
+            if (xlRange.Cells[nmDTriRow.Value, nmDTriValue.Value].Value2 != null)
+            {
+                tri = xlRange.Cells[nmDTriRow.Value, nmDTriValue.Value].Value2.ToString();
+            }
+            else
+            {
+                tri = "";
+            }
+            tri = tri.Trim();
+            if (xlRange.Cells[nmDTriRow.Value, nmDTriResult.Value].Value2 != null)
+            {
+                result = xlRange.Cells[nmDTriRow.Value, nmDTriResult.Value].Value2.ToString();
+            }
+            else
+            {
+                result = "";
+            }
+            result = result.Trim();
+            if (xlRange.Cells[nmDTriRow.Value, nmDTriSummary.Value].Value2 != null)
+            {
+                summary = xlRange.Cells[nmDTriRow.Value, nmDTriSummary.Value].Value2.ToString();
+            }
+            else
+            {
+                summary = "";
+            }
+            summary = summary.Trim();
+            txtTriTest.Text = "ลำดับ " + No + " Trig " + tri + " result " + result + " summary " + summary;
+            if (cc.eidb.updateTrig(nmDTriValue.Value.ToString(), nmDTriNo.Value.ToString(), nmDTriResult.Value.ToString(), nmDTriRow.Value.ToString(), nmDTriSummary.Value.ToString()).Length >= 1)
+            {
+                MessageBox.Show("บันทึกข้อมูล Trig เรียบร้อย", "บันทึกข้อมูล");
+            }
+        }
+        private void SaveUA()
+        {
+            String No = "", color = "", appe = "", sugar = "", spgr = "", pH = "", protein = "", wbc = "", rbc = "", epi = "", bact = "", result = "", rbcmono = "", summary = "";
+            ofd.ShowDialog();
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+
+            if (xlRange.Cells[nmDUARow.Value, nmDUANo.Value].Value2 != null)
+            {
+                No = xlRange.Cells[nmDUARow.Value, nmDUANo.Value].Value2.ToString();
+            }
+            else
+            {
+                No = "";
+            }
+            No = No.Trim();
+            if (xlRange.Cells[nmDUARow.Value, nmDUAColor.Value].Value2 != null)
+            {
+                color = xlRange.Cells[nmDUARow.Value, nmDUAColor.Value].Value2.ToString();
+            }
+            else
+            {
+                color = "";
+            }
+            color = color.Trim();
+            if (xlRange.Cells[nmDUARow.Value, nmDUAAppe.Value].Value2 != null)
+            {
+                appe = xlRange.Cells[nmDUARow.Value, nmDUAAppe.Value].Value2.ToString();
+            }
+            else
+            {
+                appe = "";
+            }
+            appe = appe.Trim();
+            if (xlRange.Cells[nmDUARow.Value, nmDUASugar.Value].Value2 != null)
+            {
+                sugar = xlRange.Cells[nmDUARow.Value, nmDUASugar.Value].Value2.ToString();
+            }
+            else
+            {
+                sugar = "";
+            }
+            sugar = sugar.Trim();
+            if (xlRange.Cells[nmDUARow.Value, nmDUASpgr.Value].Value2 != null)
+            {
+                spgr = xlRange.Cells[nmDUARow.Value, nmDUASpgr.Value].Value2.ToString();
+            }
+            else
+            {
+                spgr = "";
+            }
+            spgr = spgr.Trim();
+            if (xlRange.Cells[nmDUARow.Value, nmDUApH.Value].Value2 != null)
+            {
+                pH = xlRange.Cells[nmDUARow.Value, nmDUApH.Value].Value2.ToString();
+            }
+            else
+            {
+                pH = "";
+            }
+            pH = pH.Trim();
+            if (xlRange.Cells[nmDUARow.Value, nmDUAProtein.Value].Value2 != null)
+            {
+                protein = xlRange.Cells[nmDUARow.Value, nmDUAProtein.Value].Value2.ToString();
+            }
+            else
+            {
+                protein = "";
+            }
+            protein = protein.Trim();
+            if (xlRange.Cells[nmDUARow.Value, nmDUAWBC.Value].Value2 != null)
+            {
+                wbc = xlRange.Cells[nmDUARow.Value, nmDUAWBC.Value].Value2.ToString();
+            }
+            else
+            {
+                wbc = "";
+            }
+            wbc = wbc.Trim();
+            if (xlRange.Cells[nmDUARow.Value, nmDUARBC.Value].Value2 != null)
+            {
+                rbc = xlRange.Cells[nmDUARow.Value, nmDUARBC.Value].Value2.ToString();
+            }
+            else
+            {
+                rbc = "";
+            }
+            rbc = rbc.Trim();
+            if (xlRange.Cells[nmDUARow.Value, nmDUAEpi.Value].Value2 != null)
+            {
+                epi = xlRange.Cells[nmDUARow.Value, nmDUAEpi.Value].Value2.ToString();
+            }
+            else
+            {
+                epi = "";
+            }
+            epi = epi.Trim();
+            if (xlRange.Cells[nmDUARow.Value, nmDUABact.Value].Value2 != null)
+            {
+                bact = xlRange.Cells[nmDUARow.Value, nmDUABact.Value].Value2.ToString();
+            }
+            else
+            {
+                bact = "";
+            }
+            bact = bact.Trim();
+            if (xlRange.Cells[nmDUARow.Value, nmDUAResult.Value].Value2 != null)
+            {
+                result = xlRange.Cells[nmDUARow.Value, nmDUAResult.Value].Value2.ToString();
+            }
+            else
+            {
+                result = "";
+            }
+            result = result.Trim();
+
+            if (xlRange.Cells[nmDUARow.Value, nmDUASummary.Value].Value2 != null)
+            {
+                summary = xlRange.Cells[nmDUARow.Value, nmDUASummary.Value].Value2.ToString();
+            }
+            else
+            {
+                summary = "";
+            }
+            summary = summary.Trim();
+            txtUATest.Text = "ลำดับ " + No + " color " + color + " spgr " + spgr + " sugar " + sugar + " appe " + appe + " protein " + protein + " pH " + pH + " wbc " + wbc +
+                " rbc " + rbc + " epi " + epi + " bact " + bact + " result " + result + " rbcmono " + rbcmono + " Summary " + summary;
+            if (cc.eidb.updateUA(nmDUAAppe.Value.ToString(), nmDUABact.Value.ToString(), nmDUAColor.Value.ToString(), nmDUAEpi.Value.ToString(),
+                nmDUANo.Value.ToString(), nmDUApH.Value.ToString(), nmDUAProtein.Value.ToString(), nmDUARBC.Value.ToString(), nmDUAResult.Value.ToString(), nmDUARow.Value.ToString(),
+                nmDUASpgr.Value.ToString(), nmDUASugar.Value.ToString(), nmDUASummary.Value.ToString(), nmDUAWBC.Value.ToString()).Length >= 1)
+            {
+                MessageBox.Show("บันทึกข้อมูล UA เรียบร้อย", "บันทึกข้อมูล");
+            }
+        }
         private void FrmExcelInit_Load(object sender, EventArgs e)
         {
 
@@ -708,417 +1140,32 @@ namespace CheckUP.gui
 
         private void btnUAExcel_Click(object sender, EventArgs e)
         {
-            String No = "", color = "", appe = "", sugar = "", spgr = "", pH = "", protein = "", wbc = "", rbc = "", epi = "", bact = "", result = "", rbcmono = "", summary = "";
-            ofd.ShowDialog();
-            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
-            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
-            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-
-            if (xlRange.Cells[nmDUARow.Value, nmDUANo.Value].Value2 != null)
-            {
-                No = xlRange.Cells[nmDUARow.Value, nmDUANo.Value].Value2.ToString();
-            }
-            else
-            {
-                No = "";
-            }
-            No = No.Trim();
-            if (xlRange.Cells[nmDUARow.Value, nmDUAColor.Value].Value2 != null)
-            {
-                color = xlRange.Cells[nmDUARow.Value, nmDUAColor.Value].Value2.ToString();
-            }
-            else
-            {
-                color = "";
-            }
-            color = color.Trim();
-            if (xlRange.Cells[nmDUARow.Value, nmDUAAppe.Value].Value2 != null)
-            {
-                appe = xlRange.Cells[nmDUARow.Value, nmDUAAppe.Value].Value2.ToString();
-            }
-            else
-            {
-                appe = "";
-            }
-            appe = appe.Trim();
-            if (xlRange.Cells[nmDUARow.Value, nmDUASugar.Value].Value2 != null)
-            {
-                sugar = xlRange.Cells[nmDUARow.Value, nmDUASugar.Value].Value2.ToString();
-            }
-            else
-            {
-                sugar = "";
-            }
-            sugar = sugar.Trim();
-            if (xlRange.Cells[nmDUARow.Value, nmDUASpgr.Value].Value2 != null)
-            {
-                spgr = xlRange.Cells[nmDUARow.Value, nmDUASpgr.Value].Value2.ToString();
-            }
-            else
-            {
-                spgr = "";
-            }
-            spgr = spgr.Trim();
-            if (xlRange.Cells[nmDUARow.Value, nmDUApH.Value].Value2 != null)
-            {
-                pH = xlRange.Cells[nmDUARow.Value, nmDUApH.Value].Value2.ToString();
-            }
-            else
-            {
-                pH = "";
-            }
-            pH = pH.Trim();
-            if (xlRange.Cells[nmDUARow.Value, nmDUAProtein.Value].Value2 != null)
-            {
-                protein = xlRange.Cells[nmDUARow.Value, nmDUAProtein.Value].Value2.ToString();
-            }
-            else
-            {
-                protein = "";
-            }
-            protein = protein.Trim();
-            if (xlRange.Cells[nmDUARow.Value, nmDUAWBC.Value].Value2 != null)
-            {
-                wbc = xlRange.Cells[nmDUARow.Value, nmDUAWBC.Value].Value2.ToString();
-            }
-            else
-            {
-                wbc = "";
-            }
-            wbc = wbc.Trim();
-            if (xlRange.Cells[nmDUARow.Value, nmDUARBC.Value].Value2 != null)
-            {
-                rbc = xlRange.Cells[nmDUARow.Value, nmDUARBC.Value].Value2.ToString();
-            }
-            else
-            {
-                rbc = "";
-            }
-            rbc = rbc.Trim();
-            if (xlRange.Cells[nmDUARow.Value, nmDUAEpi.Value].Value2 != null)
-            {
-                epi = xlRange.Cells[nmDUARow.Value, nmDUAEpi.Value].Value2.ToString();
-            }
-            else
-            {
-                epi = "";
-            }
-            epi = epi.Trim();
-            if (xlRange.Cells[nmDUARow.Value, nmDUABact.Value].Value2 != null)
-            {
-                bact = xlRange.Cells[nmDUARow.Value, nmDUABact.Value].Value2.ToString();
-            }
-            else
-            {
-                bact = "";
-            }
-            bact = bact.Trim();
-            if (xlRange.Cells[nmDUARow.Value, nmDUAResult.Value].Value2 != null)
-            {
-                result = xlRange.Cells[nmDUARow.Value, nmDUAResult.Value].Value2.ToString();
-            }
-            else
-            {
-                result = "";
-            }
-            result = result.Trim();
-
-            if (xlRange.Cells[nmDUARow.Value, nmDUASummary.Value].Value2 != null)
-            {
-                summary = xlRange.Cells[nmDUARow.Value, nmDUASummary.Value].Value2.ToString();
-            }
-            else
-            {
-                summary = "";
-            }
-            summary = summary.Trim();
-            txtUATest.Text = "ลำดับ " + No + " color " + color + " spgr " + spgr + " sugar " + sugar + " appe " + appe + " protein " + protein + " pH " + pH + " wbc " + wbc +
-                " rbc " + rbc + " epi " + epi + " bact " + bact + " result " + result + " rbcmono " + rbcmono + " Summary " + summary;
-            if (cc.eidb.updateUA(nmDUAAppe.Value.ToString(), nmDUABact.Value.ToString(), nmDUAColor.Value.ToString(), nmDUAEpi.Value.ToString(),
-                nmDUANo.Value.ToString(), nmDUApH.Value.ToString(), nmDUAProtein.Value.ToString(), nmDUARBC.Value.ToString(), nmDUAResult.Value.ToString(), nmDUARow.Value.ToString(),
-                nmDUASpgr.Value.ToString(), nmDUASugar.Value.ToString(), nmDUASummary.Value.ToString(), nmDUAWBC.Value.ToString()).Length >= 1)
-            {
-                MessageBox.Show("บันทึกข้อมูล UA เรียบร้อย", "บันทึกข้อมูล");
-            }
+            SaveUA();
         }
 
         private void btnTriExcel_Click(object sender, EventArgs e)
         {
-            String No = "", tri = "", result = "", summary = "";
-            ofd.ShowDialog();
-            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
-            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
-            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-
-            if (xlRange.Cells[nmDTriRow.Value, nmDTriNo.Value].Value2 != null)
-            {
-                No = xlRange.Cells[nmDTriRow.Value, nmDTriNo.Value].Value2.ToString();
-            }
-            else
-            {
-                No = "";
-            }
-            No = No.Trim();
-            if (xlRange.Cells[nmDTriRow.Value, nmDTriValue.Value].Value2 != null)
-            {
-                tri = xlRange.Cells[nmDTriRow.Value, nmDTriValue.Value].Value2.ToString();
-            }
-            else
-            {
-                tri = "";
-            }
-            tri = tri.Trim();
-            if (xlRange.Cells[nmDTriRow.Value, nmDTriResult.Value].Value2 != null)
-            {
-                result = xlRange.Cells[nmDTriRow.Value, nmDTriResult.Value].Value2.ToString();
-            }
-            else
-            {
-                result = "";
-            }
-            result = result.Trim();
-            if (xlRange.Cells[nmDTriRow.Value, nmDTriSummary.Value].Value2 != null)
-            {
-                summary = xlRange.Cells[nmDTriRow.Value, nmDTriSummary.Value].Value2.ToString();
-            }
-            else
-            {
-                summary = "";
-            }
-            summary = summary.Trim();
-            txtTriTest.Text = "ลำดับ " + No + " Trig " + tri + " result " + result + " summary " + summary;
-            if (cc.eidb.updateTrig(nmDTriValue.Value.ToString(), nmDTriNo.Value.ToString(), nmDTriResult.Value.ToString(), nmDTriRow.Value.ToString(), nmDTriSummary.Value.ToString()).Length >= 1)
-            {
-                MessageBox.Show("บันทึกข้อมูล Trig เรียบร้อย", "บันทึกข้อมูล");
-            }
+            SaveTrig();
         }
 
         private void btnChoExcel_Click(object sender, EventArgs e)
         {
-            String No = "", cho = "", result = "", summary = "";
-            ofd.ShowDialog();
-            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
-            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
-            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-
-            if (xlRange.Cells[nmDChoRow.Value, nmDChoNo.Value].Value2 != null)
-            {
-                No = xlRange.Cells[nmDChoRow.Value, nmDChoNo.Value].Value2.ToString();
-            }
-            else
-            {
-                No = "";
-            }
-            No = No.Trim();
-            if (xlRange.Cells[nmDChoRow.Value, nmDChoValue.Value].Value2 != null)
-            {
-                cho = xlRange.Cells[nmDChoRow.Value, nmDChoValue.Value].Value2.ToString();
-            }
-            else
-            {
-                cho = "";
-            }
-            cho = cho.Trim();
-            if (xlRange.Cells[nmDChoRow.Value, nmDChoResult.Value].Value2 != null)
-            {
-                result = xlRange.Cells[nmDChoRow.Value, nmDChoResult.Value].Value2.ToString();
-            }
-            else
-            {
-                result = "";
-            }
-            result = result.Trim();
-            if (xlRange.Cells[nmDChoRow.Value, nmDChoSummary.Value].Value2 != null)
-            {
-                summary = xlRange.Cells[nmDChoRow.Value, nmDChoSummary.Value].Value2.ToString();
-            }
-            else
-            {
-                summary = "";
-            }
-            summary = summary.Trim();
-            txtChoTest.Text = "ลำดับ " + No + " choles " + cho + " result " + result + " summary " + summary;
-            if (cc.eidb.updateTrig(nmDChoValue.Value.ToString(), nmDChoNo.Value.ToString(), nmDChoResult.Value.ToString(), nmDChoRow.Value.ToString(), nmDChoSummary.Value.ToString()).Length >= 1)
-            {
-                MessageBox.Show("บันทึกข้อมูล Choles เรียบร้อย", "บันทึกข้อมูล");
-            }
+            SaveCholes();
         }
 
         private void btnSgotExcel_Click(object sender, EventArgs e)
         {
-            String No = "", sgot = "", sgpt="", result = "", summary = "";
-            ofd.ShowDialog();
-            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
-            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
-            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-
-            if (xlRange.Cells[nmDSgotRow.Value, nmDSgotNo.Value].Value2 != null)
-            {
-                No = xlRange.Cells[nmDSgotRow.Value, nmDSgotNo.Value].Value2.ToString();
-            }
-            else
-            {
-                No = "";
-            }
-            No = No.Trim();
-            if (xlRange.Cells[nmDSgotRow.Value, nmDSgotvalue.Value].Value2 != null)
-            {
-                sgot = xlRange.Cells[nmDSgotRow.Value, nmDSgotvalue.Value].Value2.ToString();
-            }
-            else
-            {
-                sgot = "";
-            }
-            sgot = sgot.Trim();
-            if (xlRange.Cells[nmDSgotRow.Value, nmDSgotSgptValue.Value].Value2 != null)
-            {
-                sgpt = xlRange.Cells[nmDSgotRow.Value, nmDSgotSgptValue.Value].Value2.ToString();
-            }
-            else
-            {
-                sgpt = "";
-            }
-            sgpt = sgpt.Trim();
-            if (xlRange.Cells[nmDSgotRow.Value, nmDSgotResult.Value].Value2 != null)
-            {
-                result = xlRange.Cells[nmDSgotRow.Value, nmDSgotResult.Value].Value2.ToString();
-            }
-            else
-            {
-                result = "";
-            }
-            result = result.Trim();
-            if (xlRange.Cells[nmDSgotRow.Value, nmDSgotSummary.Value].Value2 != null)
-            {
-                summary = xlRange.Cells[nmDSgotRow.Value, nmDSgotSummary.Value].Value2.ToString();
-            }
-            else
-            {
-                summary = "";
-            }
-            summary = summary.Trim();
-            txtSgotTest.Text = "ลำดับ " + No + " sgot " + sgot + " sgpt " + sgpt + " result " + result + " summary " + summary;
-            if (cc.eidb.updateSgot(nmDSgotvalue.Value.ToString(), nmDSgotNo.Value.ToString(), nmDSgotResult.Value.ToString(), nmDSgotRow.Value.ToString(), nmDSgotSgptValue.Value.ToString(), nmDSgotSummary.Value.ToString()).Length >= 1)
-            {
-                MessageBox.Show("บันทึกข้อมูล Sgot เรียบร้อย", "บันทึกข้อมูล");
-            }
+            SaveSgot();
         }
 
         private void btnBunExcel_Click(object sender, EventArgs e)
         {
-            String No = "", bun = "", creatinine = "", result = "", summary = "";
-            ofd.ShowDialog();
-            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
-            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
-            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-
-            if (xlRange.Cells[nmDBunRow.Value, nmDBunNo.Value].Value2 != null)
-            {
-                No = xlRange.Cells[nmDBunRow.Value, nmDBunNo.Value].Value2.ToString();
-            }
-            else
-            {
-                No = "";
-            }
-            No = No.Trim();
-            if (xlRange.Cells[nmDBunRow.Value, nmDBunValue.Value].Value2 != null)
-            {
-                bun = xlRange.Cells[nmDBunRow.Value, nmDBunValue.Value].Value2.ToString();
-            }
-            else
-            {
-                bun = "";
-            }
-            bun = bun.Trim();
-            if (xlRange.Cells[nmDBunRow.Value, nmDBunCreatinine.Value].Value2 != null)
-            {
-                creatinine = xlRange.Cells[nmDBunRow.Value, nmDBunCreatinine.Value].Value2.ToString();
-            }
-            else
-            {
-                creatinine = "";
-            }
-            creatinine = creatinine.Trim();
-            if (xlRange.Cells[nmDBunRow.Value, nmDBunResult.Value].Value2 != null)
-            {
-                result = xlRange.Cells[nmDBunRow.Value, nmDBunResult.Value].Value2.ToString();
-            }
-            else
-            {
-                result = "";
-            }
-            result = result.Trim();
-            if (xlRange.Cells[nmDBunRow.Value, nmDBunSummary.Value].Value2 != null)
-            {
-                summary = xlRange.Cells[nmDBunRow.Value, nmDBunSummary.Value].Value2.ToString();
-            }
-            else
-            {
-                summary = "";
-            }
-            summary = summary.Trim();
-            txtSgotTest.Text = "ลำดับ " + No + " bun " + bun + " sgpt " + creatinine + " result " + result + " summary " + summary;
-            if (cc.eidb.updateBun(nmDBunValue.Value.ToString(), nmDBunNo.Value.ToString(), nmDBunResult.Value.ToString(), nmDBunRow.Value.ToString(), nmDBunCreatinine.Value.ToString(), nmDBunSummary.Value.ToString()).Length >= 1)
-            {
-                MessageBox.Show("บันทึกข้อมูล BUN เรียบร้อย", "บันทึกข้อมูล");
-            }
+            SaveBun();
         }
 
         private void btnUricExcel_Click(object sender, EventArgs e)
         {
-            String No = "", uric = "", result = "", summary = "";
-            ofd.ShowDialog();
-            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
-            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
-            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-
-            if (xlRange.Cells[nmDUricRow.Value, nmDUricNo.Value].Value2 != null)
-            {
-                No = xlRange.Cells[nmDUricRow.Value, nmDUricNo.Value].Value2.ToString();
-            }
-            else
-            {
-                No = "";
-            }
-            No = No.Trim();
-            if (xlRange.Cells[nmDUricRow.Value, nmDUricValue.Value].Value2 != null)
-            {
-                uric = xlRange.Cells[nmDUricRow.Value, nmDUricValue.Value].Value2.ToString();
-            }
-            else
-            {
-                uric = "";
-            }
-            uric = uric.Trim();
-            if (xlRange.Cells[nmDUricRow.Value, nmDUricResult.Value].Value2 != null)
-            {
-                result = xlRange.Cells[nmDUricRow.Value, nmDUricResult.Value].Value2.ToString();
-            }
-            else
-            {
-                result = "";
-            }
-            result = result.Trim();
-            if (xlRange.Cells[nmDUricRow.Value, nmDUricSummary.Value].Value2 != null)
-            {
-                summary = xlRange.Cells[nmDUricRow.Value, nmDUricSummary.Value].Value2.ToString();
-            }
-            else
-            {
-                summary = "";
-            }
-            summary = summary.Trim();
-            txtTriTest.Text = "ลำดับ " + No + " Uric " + uric + " result " + result + " summary " + summary;
-            if (cc.eidb.updateTrig(nmDUricValue.Value.ToString(), nmDUricNo.Value.ToString(), nmDUricResult.Value.ToString(), nmDUricRow.Value.ToString(), nmDUricSummary.Value.ToString()).Length >= 1)
-            {
-                MessageBox.Show("บันทึกข้อมูล Uric Acid เรียบร้อย", "บันทึกข้อมูล");
-            }
+            SaveUric();
         }
     }
 }
