@@ -30,7 +30,7 @@ namespace CheckUP.Control
         public CustomerDB cudb;
         public CustCheckUpPatientDB ccpdb;
         public CustCheckUpDB cucdb;
-        //public QuotationItemDB quidb;
+        public ExcelInitDB eidb;
         //public MOUDB modb;
         //public MOUItemDB moidb;
         //public ItemDB itdb;
@@ -77,7 +77,7 @@ namespace CheckUP.Control
                 cudb = new CustomerDB(conn);
                 ccpdb = new CustCheckUpPatientDB(conn);
                 cucdb = new CustCheckUpDB(conn);
-                //quidb = new QuotationItemDB(conn);
+                eidb = new ExcelInitDB(conn);
                 //modb = new MOUDB(conn);
                 //moidb = new MOUItemDB(conn);
                 //itdb = new ItemDB(conn);

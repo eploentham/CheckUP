@@ -71,7 +71,7 @@ namespace CheckUP
 
             tv1.Nodes["nInitConfig"].Nodes.Add("nCompany", "ข้อมูลบริษัท");
             //    tv1.Nodes["nInitConfig"].Nodes.Add("nRateView", "สร้างอัตรา");
-            tv1.Nodes["nInitConfig"].Nodes.Add("nPassword", "เปลี่ยนรหัสผ่าน");
+            tv1.Nodes["nInitConfig"].Nodes.Add("nExcelInit", "Excel");
             tv1.Nodes["nInitConfig"].Nodes.Add("nTest", "Test ");
             tv1.Nodes["nInitConfig"].Nodes.Add("nInitConfig", "กำหนดค่าโปรแกรม");
             //}
@@ -103,11 +103,11 @@ namespace CheckUP
                 FrmCheckUPView frm = new FrmCheckUPView(cc);
                 showFrame(frm);
             }
-            //else if (e.Node.Name.ToString() == "nQuoConfirmView")
-            //{
-            //    FrmQuoConfirmView frm = new FrmQuoConfirmView(sf.Id, cc);
-            //    showFrame(frm);
-            //}
+            else if (e.Node.Name.ToString() == "nExcelInit")
+            {
+                FrmExcelInit frm = new FrmExcelInit(cc);
+                showFrame(frm);
+            }
             //else if (e.Node.Name.ToString() == "nMOUView")
             //{
             //    FrmMOUView frm = new FrmMOUView(cc);

@@ -7,10 +7,11 @@ namespace CheckUP.object1
 {
     public class ExcelInit:Persistent
     {
+        public String Id = "";
         public String SfRow = "", SfStatusName = "", SfANo = "", SfAPrefix = "", SfAFirstName = "", SfALastName = "", SfAAge = "", SfBNo = "", SfBPrefix = "", SfBFullName = "", SfBAge = "";
-        public String SfCNo = "", SfCFullName = "", SfCAge = "";
+        public String SfCNo = "", SfCFullName = "", SfCAge = "", Active="";
         
-        public String PERow = "", PENo="", PEAge="", PEWeght="", PEHeight="", PEBMI="", PEVitalSign="", PEPulse="", PEResult="", PESummary="";
+        public String PERow = "", PENo="", PEAge="", PEWeight="", PEHeight="", PEBMI="", PEVitalSign="", PEPulse="", PEResult="", PESummary="";
 
         public String XrayRow = "", XrayNo = "", Xray = "", XraySummary = "";
 

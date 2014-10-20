@@ -61,7 +61,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label14 = new System.Windows.Forms.Label();
             this.txtPrefixTest = new System.Windows.Forms.TextBox();
-            this.btnPrefixExcel = new System.Windows.Forms.Button();
+            this.btnSfExcel = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label33 = new System.Windows.Forms.Label();
             this.txtPETest = new System.Windows.Forms.TextBox();
@@ -88,8 +88,8 @@
             this.nmDPERow = new System.Windows.Forms.NumericUpDown();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label44 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtXRayTest = new System.Windows.Forms.TextBox();
+            this.btnXRayExcel = new System.Windows.Forms.Button();
             this.label35 = new System.Windows.Forms.Label();
             this.nmDXRaySummary = new System.Windows.Forms.NumericUpDown();
             this.label36 = new System.Windows.Forms.Label();
@@ -113,7 +113,7 @@
             this.txtCBCTest = new System.Windows.Forms.TextBox();
             this.btnCBCExcel = new System.Windows.Forms.Button();
             this.label34 = new System.Windows.Forms.Label();
-            this.nmDEos = new System.Windows.Forms.NumericUpDown();
+            this.nmDCBCEos = new System.Windows.Forms.NumericUpDown();
             this.label37 = new System.Windows.Forms.Label();
             this.nmDCBCMono = new System.Windows.Forms.NumericUpDown();
             this.label38 = new System.Windows.Forms.Label();
@@ -131,7 +131,7 @@
             this.lbCBCNo = new System.Windows.Forms.Label();
             this.nmDCBCNo = new System.Windows.Forms.NumericUpDown();
             this.lbCBC = new System.Windows.Forms.Label();
-            this.nmDNoRow = new System.Windows.Forms.NumericUpDown();
+            this.nmDCBCRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label66 = new System.Windows.Forms.Label();
             this.txtFBSTest = new System.Windows.Forms.TextBox();
@@ -289,7 +289,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCPltS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCPltC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCBact)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDEos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCEos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCLy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCNeu)).BeginInit();
@@ -298,7 +298,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCRBC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCWBC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDNoRow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCRow)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDFBSResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDFBSSummary)).BeginInit();
@@ -699,7 +699,7 @@
             // 
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.txtPrefixTest);
-            this.tabPage1.Controls.Add(this.btnPrefixExcel);
+            this.tabPage1.Controls.Add(this.btnSfExcel);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.nmDCAge);
             this.tabPage1.Controls.Add(this.nmDRow);
@@ -740,7 +740,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(654, 140);
+            this.label14.Location = new System.Drawing.Point(6, 280);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(80, 13);
             this.label14.TabIndex = 61;
@@ -748,21 +748,21 @@
             // 
             // txtPrefixTest
             // 
-            this.txtPrefixTest.Location = new System.Drawing.Point(654, 159);
+            this.txtPrefixTest.Location = new System.Drawing.Point(6, 296);
             this.txtPrefixTest.Name = "txtPrefixTest";
-            this.txtPrefixTest.Size = new System.Drawing.Size(247, 20);
+            this.txtPrefixTest.Size = new System.Drawing.Size(908, 20);
             this.txtPrefixTest.TabIndex = 60;
             // 
-            // btnPrefixExcel
+            // btnSfExcel
             // 
-            this.btnPrefixExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnPrefixExcel.Location = new System.Drawing.Point(654, 85);
-            this.btnPrefixExcel.Name = "btnPrefixExcel";
-            this.btnPrefixExcel.Size = new System.Drawing.Size(86, 34);
-            this.btnPrefixExcel.TabIndex = 59;
-            this.btnPrefixExcel.Text = "ทดสอบ Excel";
-            this.btnPrefixExcel.UseVisualStyleBackColor = true;
-            this.btnPrefixExcel.Click += new System.EventHandler(this.btnPrefixExcel_Click);
+            this.btnSfExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnSfExcel.Location = new System.Drawing.Point(828, 256);
+            this.btnSfExcel.Name = "btnSfExcel";
+            this.btnSfExcel.Size = new System.Drawing.Size(86, 34);
+            this.btnSfExcel.TabIndex = 59;
+            this.btnSfExcel.Text = "ทดสอบ Excel";
+            this.btnSfExcel.UseVisualStyleBackColor = true;
+            this.btnSfExcel.Click += new System.EventHandler(this.btnSfExcel_Click);
             // 
             // tabPage2
             // 
@@ -800,7 +800,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(667, 277);
+            this.label33.Location = new System.Drawing.Point(6, 277);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(80, 13);
             this.label33.TabIndex = 64;
@@ -808,20 +808,21 @@
             // 
             // txtPETest
             // 
-            this.txtPETest.Location = new System.Drawing.Point(667, 296);
+            this.txtPETest.Location = new System.Drawing.Point(6, 296);
             this.txtPETest.Name = "txtPETest";
-            this.txtPETest.Size = new System.Drawing.Size(247, 20);
+            this.txtPETest.Size = new System.Drawing.Size(908, 20);
             this.txtPETest.TabIndex = 63;
             // 
             // btnPEExcel
             // 
             this.btnPEExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnPEExcel.Location = new System.Drawing.Point(667, 222);
+            this.btnPEExcel.Location = new System.Drawing.Point(828, 256);
             this.btnPEExcel.Name = "btnPEExcel";
             this.btnPEExcel.Size = new System.Drawing.Size(86, 34);
             this.btnPEExcel.TabIndex = 62;
             this.btnPEExcel.Text = "ทดสอบ Excel";
             this.btnPEExcel.UseVisualStyleBackColor = true;
+            this.btnPEExcel.Click += new System.EventHandler(this.btnPEExcel_Click);
             // 
             // label32
             // 
@@ -1046,8 +1047,8 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.label44);
-            this.tabPage3.Controls.Add(this.textBox3);
-            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.txtXRayTest);
+            this.tabPage3.Controls.Add(this.btnXRayExcel);
             this.tabPage3.Controls.Add(this.label35);
             this.tabPage3.Controls.Add(this.nmDXRaySummary);
             this.tabPage3.Controls.Add(this.label36);
@@ -1067,28 +1068,29 @@
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(667, 277);
+            this.label44.Location = new System.Drawing.Point(12, 280);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(80, 13);
             this.label44.TabIndex = 67;
             this.label44.Text = "ข้อมูลจากการดึง";
             // 
-            // textBox3
+            // txtXRayTest
             // 
-            this.textBox3.Location = new System.Drawing.Point(667, 296);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(247, 20);
-            this.textBox3.TabIndex = 66;
+            this.txtXRayTest.Location = new System.Drawing.Point(15, 296);
+            this.txtXRayTest.Name = "txtXRayTest";
+            this.txtXRayTest.Size = new System.Drawing.Size(899, 20);
+            this.txtXRayTest.TabIndex = 66;
             // 
-            // button2
+            // btnXRayExcel
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button2.Location = new System.Drawing.Point(667, 222);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 34);
-            this.button2.TabIndex = 65;
-            this.button2.Text = "ทดสอบ Excel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnXRayExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnXRayExcel.Location = new System.Drawing.Point(828, 238);
+            this.btnXRayExcel.Name = "btnXRayExcel";
+            this.btnXRayExcel.Size = new System.Drawing.Size(86, 34);
+            this.btnXRayExcel.TabIndex = 65;
+            this.btnXRayExcel.Text = "ทดสอบ Excel";
+            this.btnXRayExcel.UseVisualStyleBackColor = true;
+            this.btnXRayExcel.Click += new System.EventHandler(this.btnXRayExcel_Click);
             // 
             // label35
             // 
@@ -1194,7 +1196,7 @@
             this.tabPage4.Controls.Add(this.txtCBCTest);
             this.tabPage4.Controls.Add(this.btnCBCExcel);
             this.tabPage4.Controls.Add(this.label34);
-            this.tabPage4.Controls.Add(this.nmDEos);
+            this.tabPage4.Controls.Add(this.nmDCBCEos);
             this.tabPage4.Controls.Add(this.label37);
             this.tabPage4.Controls.Add(this.nmDCBCMono);
             this.tabPage4.Controls.Add(this.label38);
@@ -1212,7 +1214,7 @@
             this.tabPage4.Controls.Add(this.lbCBCNo);
             this.tabPage4.Controls.Add(this.nmDCBCNo);
             this.tabPage4.Controls.Add(this.lbCBC);
-            this.tabPage4.Controls.Add(this.nmDNoRow);
+            this.tabPage4.Controls.Add(this.nmDCBCRow);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -1334,7 +1336,7 @@
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(667, 277);
+            this.label45.Location = new System.Drawing.Point(6, 280);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(80, 13);
             this.label45.TabIndex = 67;
@@ -1342,20 +1344,21 @@
             // 
             // txtCBCTest
             // 
-            this.txtCBCTest.Location = new System.Drawing.Point(667, 296);
+            this.txtCBCTest.Location = new System.Drawing.Point(6, 296);
             this.txtCBCTest.Name = "txtCBCTest";
-            this.txtCBCTest.Size = new System.Drawing.Size(247, 20);
+            this.txtCBCTest.Size = new System.Drawing.Size(908, 20);
             this.txtCBCTest.TabIndex = 66;
             // 
             // btnCBCExcel
             // 
             this.btnCBCExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnCBCExcel.Location = new System.Drawing.Point(667, 222);
+            this.btnCBCExcel.Location = new System.Drawing.Point(828, 245);
             this.btnCBCExcel.Name = "btnCBCExcel";
             this.btnCBCExcel.Size = new System.Drawing.Size(86, 34);
             this.btnCBCExcel.TabIndex = 65;
             this.btnCBCExcel.Text = "ทดสอบ Excel";
             this.btnCBCExcel.UseVisualStyleBackColor = true;
+            this.btnCBCExcel.Click += new System.EventHandler(this.btnCBCExcel_Click);
             // 
             // label34
             // 
@@ -1367,13 +1370,13 @@
             this.label34.TabIndex = 46;
             this.label34.Text = "Eos  :";
             // 
-            // nmDEos
+            // nmDCBCEos
             // 
-            this.nmDEos.Location = new System.Drawing.Point(672, 113);
-            this.nmDEos.Name = "nmDEos";
-            this.nmDEos.Size = new System.Drawing.Size(46, 20);
-            this.nmDEos.TabIndex = 47;
-            this.nmDEos.Value = new decimal(new int[] {
+            this.nmDCBCEos.Location = new System.Drawing.Point(672, 113);
+            this.nmDCBCEos.Name = "nmDCBCEos";
+            this.nmDCBCEos.Size = new System.Drawing.Size(46, 20);
+            this.nmDCBCEos.TabIndex = 47;
+            this.nmDCBCEos.Value = new decimal(new int[] {
             5,
             0,
             0,
@@ -1565,13 +1568,13 @@
             this.lbCBC.TabIndex = 12;
             this.lbCBC.Text = "row เริ่มต้น :";
             // 
-            // nmDNoRow
+            // nmDCBCRow
             // 
-            this.nmDNoRow.Location = new System.Drawing.Point(157, 34);
-            this.nmDNoRow.Name = "nmDNoRow";
-            this.nmDNoRow.Size = new System.Drawing.Size(46, 20);
-            this.nmDNoRow.TabIndex = 13;
-            this.nmDNoRow.Value = new decimal(new int[] {
+            this.nmDCBCRow.Location = new System.Drawing.Point(157, 34);
+            this.nmDCBCRow.Name = "nmDCBCRow";
+            this.nmDCBCRow.Size = new System.Drawing.Size(46, 20);
+            this.nmDCBCRow.TabIndex = 13;
+            this.nmDCBCRow.Value = new decimal(new int[] {
             5,
             0,
             0,
@@ -1603,7 +1606,7 @@
             // label66
             // 
             this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(667, 277);
+            this.label66.Location = new System.Drawing.Point(6, 280);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(80, 13);
             this.label66.TabIndex = 70;
@@ -1611,20 +1614,21 @@
             // 
             // txtFBSTest
             // 
-            this.txtFBSTest.Location = new System.Drawing.Point(667, 296);
+            this.txtFBSTest.Location = new System.Drawing.Point(6, 296);
             this.txtFBSTest.Name = "txtFBSTest";
-            this.txtFBSTest.Size = new System.Drawing.Size(247, 20);
+            this.txtFBSTest.Size = new System.Drawing.Size(908, 20);
             this.txtFBSTest.TabIndex = 69;
             // 
             // btnFBSExcel
             // 
             this.btnFBSExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnFBSExcel.Location = new System.Drawing.Point(667, 222);
+            this.btnFBSExcel.Location = new System.Drawing.Point(828, 246);
             this.btnFBSExcel.Name = "btnFBSExcel";
             this.btnFBSExcel.Size = new System.Drawing.Size(86, 34);
             this.btnFBSExcel.TabIndex = 68;
             this.btnFBSExcel.Text = "ทดสอบ Excel";
             this.btnFBSExcel.UseVisualStyleBackColor = true;
+            this.btnFBSExcel.Click += new System.EventHandler(this.btnFBSExcel_Click);
             // 
             // label53
             // 
@@ -1780,7 +1784,7 @@
             // label67
             // 
             this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(667, 277);
+            this.label67.Location = new System.Drawing.Point(6, 280);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(80, 13);
             this.label67.TabIndex = 74;
@@ -1788,20 +1792,21 @@
             // 
             // txtUATest
             // 
-            this.txtUATest.Location = new System.Drawing.Point(667, 296);
+            this.txtUATest.Location = new System.Drawing.Point(6, 296);
             this.txtUATest.Name = "txtUATest";
-            this.txtUATest.Size = new System.Drawing.Size(247, 20);
+            this.txtUATest.Size = new System.Drawing.Size(908, 20);
             this.txtUATest.TabIndex = 73;
             // 
             // btnUAExcel
             // 
             this.btnUAExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnUAExcel.Location = new System.Drawing.Point(667, 222);
+            this.btnUAExcel.Location = new System.Drawing.Point(828, 245);
             this.btnUAExcel.Name = "btnUAExcel";
             this.btnUAExcel.Size = new System.Drawing.Size(86, 34);
             this.btnUAExcel.TabIndex = 72;
             this.btnUAExcel.Text = "ทดสอบ Excel";
             this.btnUAExcel.UseVisualStyleBackColor = true;
+            this.btnUAExcel.Click += new System.EventHandler(this.btnUAExcel_Click);
             // 
             // label65
             // 
@@ -2137,7 +2142,7 @@
             // label85
             // 
             this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(663, 273);
+            this.label85.Location = new System.Drawing.Point(9, 276);
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(80, 13);
             this.label85.TabIndex = 77;
@@ -2145,20 +2150,21 @@
             // 
             // txtTriTest
             // 
-            this.txtTriTest.Location = new System.Drawing.Point(663, 292);
+            this.txtTriTest.Location = new System.Drawing.Point(6, 292);
             this.txtTriTest.Name = "txtTriTest";
-            this.txtTriTest.Size = new System.Drawing.Size(247, 20);
+            this.txtTriTest.Size = new System.Drawing.Size(904, 20);
             this.txtTriTest.TabIndex = 76;
             // 
             // btnTriExcel
             // 
             this.btnTriExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnTriExcel.Location = new System.Drawing.Point(663, 218);
+            this.btnTriExcel.Location = new System.Drawing.Point(831, 252);
             this.btnTriExcel.Name = "btnTriExcel";
             this.btnTriExcel.Size = new System.Drawing.Size(86, 34);
             this.btnTriExcel.TabIndex = 75;
             this.btnTriExcel.Text = "ทดสอบ Excel";
             this.btnTriExcel.UseVisualStyleBackColor = true;
+            this.btnTriExcel.Click += new System.EventHandler(this.btnTriExcel_Click);
             // 
             // label68
             // 
@@ -2296,7 +2302,7 @@
             // label86
             // 
             this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(659, 271);
+            this.label86.Location = new System.Drawing.Point(6, 274);
             this.label86.Name = "label86";
             this.label86.Size = new System.Drawing.Size(80, 13);
             this.label86.TabIndex = 80;
@@ -2304,26 +2310,27 @@
             // 
             // txtChoTest
             // 
-            this.txtChoTest.Location = new System.Drawing.Point(659, 290);
+            this.txtChoTest.Location = new System.Drawing.Point(6, 290);
             this.txtChoTest.Name = "txtChoTest";
-            this.txtChoTest.Size = new System.Drawing.Size(247, 20);
+            this.txtChoTest.Size = new System.Drawing.Size(900, 20);
             this.txtChoTest.TabIndex = 79;
             // 
             // btnChoExcel
             // 
             this.btnChoExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnChoExcel.Location = new System.Drawing.Point(659, 216);
+            this.btnChoExcel.Location = new System.Drawing.Point(828, 250);
             this.btnChoExcel.Name = "btnChoExcel";
             this.btnChoExcel.Size = new System.Drawing.Size(86, 34);
             this.btnChoExcel.TabIndex = 78;
             this.btnChoExcel.Text = "ทดสอบ Excel";
             this.btnChoExcel.UseVisualStyleBackColor = true;
+            this.btnChoExcel.Click += new System.EventHandler(this.btnChoExcel_Click);
             // 
             // label71
             // 
             this.label71.AutoSize = true;
             this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label71.Location = new System.Drawing.Point(234, 86);
+            this.label71.Location = new System.Drawing.Point(227, 86);
             this.label71.Name = "label71";
             this.label71.Size = new System.Drawing.Size(72, 16);
             this.label71.TabIndex = 42;
@@ -2367,7 +2374,7 @@
             // 
             this.label73.AutoSize = true;
             this.label73.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label73.Location = new System.Drawing.Point(135, 86);
+            this.label73.Location = new System.Drawing.Point(128, 86);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(76, 16);
             this.label73.TabIndex = 38;
@@ -2457,7 +2464,7 @@
             // label87
             // 
             this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(660, 270);
+            this.label87.Location = new System.Drawing.Point(6, 273);
             this.label87.Name = "label87";
             this.label87.Size = new System.Drawing.Size(80, 13);
             this.label87.TabIndex = 80;
@@ -2465,20 +2472,21 @@
             // 
             // txtSgotTest
             // 
-            this.txtSgotTest.Location = new System.Drawing.Point(660, 289);
+            this.txtSgotTest.Location = new System.Drawing.Point(6, 289);
             this.txtSgotTest.Name = "txtSgotTest";
-            this.txtSgotTest.Size = new System.Drawing.Size(247, 20);
+            this.txtSgotTest.Size = new System.Drawing.Size(901, 20);
             this.txtSgotTest.TabIndex = 79;
             // 
             // btnSgotExcel
             // 
             this.btnSgotExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnSgotExcel.Location = new System.Drawing.Point(660, 215);
+            this.btnSgotExcel.Location = new System.Drawing.Point(828, 249);
             this.btnSgotExcel.Name = "btnSgotExcel";
             this.btnSgotExcel.Size = new System.Drawing.Size(86, 34);
             this.btnSgotExcel.TabIndex = 78;
             this.btnSgotExcel.Text = "ทดสอบ Excel";
             this.btnSgotExcel.UseVisualStyleBackColor = true;
+            this.btnSgotExcel.Click += new System.EventHandler(this.btnSgotExcel_Click);
             // 
             // label77
             // 
@@ -2506,7 +2514,7 @@
             // 
             this.label74.AutoSize = true;
             this.label74.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label74.Location = new System.Drawing.Point(335, 96);
+            this.label74.Location = new System.Drawing.Point(328, 96);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(72, 16);
             this.label74.TabIndex = 48;
@@ -2640,7 +2648,7 @@
             // label88
             // 
             this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(662, 271);
+            this.label88.Location = new System.Drawing.Point(6, 274);
             this.label88.Name = "label88";
             this.label88.Size = new System.Drawing.Size(80, 13);
             this.label88.TabIndex = 80;
@@ -2648,20 +2656,21 @@
             // 
             // txtBunTest
             // 
-            this.txtBunTest.Location = new System.Drawing.Point(662, 290);
+            this.txtBunTest.Location = new System.Drawing.Point(6, 290);
             this.txtBunTest.Name = "txtBunTest";
-            this.txtBunTest.Size = new System.Drawing.Size(247, 20);
+            this.txtBunTest.Size = new System.Drawing.Size(903, 20);
             this.txtBunTest.TabIndex = 79;
             // 
             // btnBunExcel
             // 
             this.btnBunExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnBunExcel.Location = new System.Drawing.Point(662, 216);
+            this.btnBunExcel.Location = new System.Drawing.Point(828, 250);
             this.btnBunExcel.Name = "btnBunExcel";
             this.btnBunExcel.Size = new System.Drawing.Size(86, 34);
             this.btnBunExcel.TabIndex = 78;
             this.btnBunExcel.Text = "ทดสอบ Excel";
             this.btnBunExcel.UseVisualStyleBackColor = true;
+            this.btnBunExcel.Click += new System.EventHandler(this.btnBunExcel_Click);
             // 
             // label78
             // 
@@ -2821,7 +2830,7 @@
             // label89
             // 
             this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(662, 269);
+            this.label89.Location = new System.Drawing.Point(6, 272);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(80, 13);
             this.label89.TabIndex = 80;
@@ -2829,20 +2838,21 @@
             // 
             // txtUricTest
             // 
-            this.txtUricTest.Location = new System.Drawing.Point(662, 288);
+            this.txtUricTest.Location = new System.Drawing.Point(6, 288);
             this.txtUricTest.Name = "txtUricTest";
-            this.txtUricTest.Size = new System.Drawing.Size(247, 20);
+            this.txtUricTest.Size = new System.Drawing.Size(903, 20);
             this.txtUricTest.TabIndex = 79;
             // 
             // btnUricExcel
             // 
             this.btnUricExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnUricExcel.Location = new System.Drawing.Point(662, 214);
+            this.btnUricExcel.Location = new System.Drawing.Point(828, 239);
             this.btnUricExcel.Name = "btnUricExcel";
             this.btnUricExcel.Size = new System.Drawing.Size(86, 34);
             this.btnUricExcel.TabIndex = 78;
             this.btnUricExcel.Text = "ทดสอบ Excel";
             this.btnUricExcel.UseVisualStyleBackColor = true;
+            this.btnUricExcel.Click += new System.EventHandler(this.btnUricExcel_Click);
             // 
             // label82
             // 
@@ -2958,7 +2968,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(964, 378);
+            this.ClientSize = new System.Drawing.Size(958, 378);
             this.Controls.Add(this.tC);
             this.Name = "FrmExcelInit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -3005,7 +3015,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCPltS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCPltC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCBact)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDEos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCEos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCLy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCNeu)).EndInit();
@@ -3014,7 +3024,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCRBC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCWBC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDNoRow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCRow)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDFBSResult)).EndInit();
@@ -3114,7 +3124,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button btnPrefixExcel;
+        private System.Windows.Forms.Button btnSfExcel;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtPrefixTest;
         private System.Windows.Forms.TabPage tabPage4;
@@ -3130,7 +3140,7 @@
         private System.Windows.Forms.Label lbXRay;
         private System.Windows.Forms.NumericUpDown nmDXRayRow;
         private System.Windows.Forms.Label lbCBC;
-        private System.Windows.Forms.NumericUpDown nmDNoRow;
+        private System.Windows.Forms.NumericUpDown nmDCBCRow;
         private System.Windows.Forms.Label lbFBS;
         private System.Windows.Forms.NumericUpDown nmDFBSRow;
         private System.Windows.Forms.Label lbUA;
@@ -3189,7 +3199,7 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.NumericUpDown nmDXRayValue;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.NumericUpDown nmDEos;
+        private System.Windows.Forms.NumericUpDown nmDCBCEos;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.NumericUpDown nmDCBCMono;
         private System.Windows.Forms.Label label38;
@@ -3205,8 +3215,8 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.NumericUpDown nmDCBCWBC;
         private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtXRayTest;
+        private System.Windows.Forms.Button btnXRayExcel;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.TextBox txtCBCTest;
         private System.Windows.Forms.Button btnCBCExcel;
