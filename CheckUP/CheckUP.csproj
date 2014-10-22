@@ -171,10 +171,31 @@
     <Compile Include="object1\Staff.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="report\CheckUpDS.cs">
+      <DependentUpon>CheckUpDS.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\CheckUpDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckUpDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="report\CheckUpPrint.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckUpPrint.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\CheckUpPrint1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckUpPrint1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\CheckUpPrint2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckUpPrint2.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="gui\FrmCheckUPAdd.resx">
@@ -233,6 +254,14 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CheckUpPrint.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="report\CheckUpPrint1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CheckUpPrint1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\CheckUpPrint2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CheckUpPrint2.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -242,6 +271,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="report\CheckUpDS.xsc">
+      <DependentUpon>CheckUpDS.xsd</DependentUpon>
+    </None>
+    <None Include="report\CheckUpDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CheckUpDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="report\CheckUpDS.xss">
+      <DependentUpon>CheckUpDS.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

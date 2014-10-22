@@ -39,4 +39,5 @@ C:\source\CheckUP\CheckUP\obj\Debug\CheckUP.gui.FrmStaffAdd.resources
 C:\source\CheckUP\CheckUP\obj\Debug\CheckUP.gui.FrmStaffView.resources
 C:\source\CheckUP\CheckUP\obj\Debug\CheckUP.Properties.Resources.resources
 C:\source\CheckUP\CheckUP\obj\Debug\CheckUP.csproj.GenerateResource.Cache
+D:\source\CheckUP\CheckUP\obj\Debug\CheckUP.gui.FrmCheckUpEdit.resources
 D:\source\CheckUP\CheckUP\obj\Debug\CheckUP.csprojResolveAssemblyReference.cache

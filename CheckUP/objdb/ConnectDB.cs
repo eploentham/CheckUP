@@ -522,7 +522,8 @@ namespace CheckUP.objdb
             }
             else
             {
-                connMainHIS.Close();
+                //connMainHIS.Close();
+                _mainConnection.Close();
             }
         }
     }

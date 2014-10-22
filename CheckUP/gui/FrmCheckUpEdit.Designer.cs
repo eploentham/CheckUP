@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tC = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -41,38 +41,38 @@
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.btnExcel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCustName = new System.Windows.Forms.TextBox();
+            this.txtFullName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtRowNumber = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
+            this.tC.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tC
             // 
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Controls.Add(this.tabPage7);
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage8);
-            this.tabControl1.Controls.Add(this.tabPage9);
-            this.tabControl1.Controls.Add(this.tabPage10);
-            this.tabControl1.Location = new System.Drawing.Point(12, 129);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1158, 444);
-            this.tabControl1.TabIndex = 0;
+            this.tC.Controls.Add(this.tabPage2);
+            this.tC.Controls.Add(this.tabPage3);
+            this.tC.Controls.Add(this.tabPage4);
+            this.tC.Controls.Add(this.tabPage5);
+            this.tC.Controls.Add(this.tabPage6);
+            this.tC.Controls.Add(this.tabPage7);
+            this.tC.Controls.Add(this.tabPage1);
+            this.tC.Controls.Add(this.tabPage8);
+            this.tC.Controls.Add(this.tabPage9);
+            this.tC.Controls.Add(this.tabPage10);
+            this.tC.Location = new System.Drawing.Point(12, 106);
+            this.tC.Name = "tC";
+            this.tC.SelectedIndex = 0;
+            this.tC.Size = new System.Drawing.Size(1158, 467);
+            this.tC.TabIndex = 0;
             // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1150, 418);
+            this.tabPage2.Size = new System.Drawing.Size(1150, 441);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -186,19 +186,19 @@
             this.label1.TabIndex = 60;
             this.label1.Text = "บริษัท :";
             // 
-            // textBox1
+            // txtCustName
             // 
-            this.textBox1.Location = new System.Drawing.Point(113, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(231, 20);
-            this.textBox1.TabIndex = 61;
+            this.txtCustName.Location = new System.Drawing.Point(113, 28);
+            this.txtCustName.Name = "txtCustName";
+            this.txtCustName.Size = new System.Drawing.Size(307, 20);
+            this.txtCustName.TabIndex = 61;
             // 
-            // textBox2
+            // txtFullName
             // 
-            this.textBox2.Location = new System.Drawing.Point(113, 54);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(231, 20);
-            this.textBox2.TabIndex = 63;
+            this.txtFullName.Location = new System.Drawing.Point(113, 54);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(307, 20);
+            this.txtFullName.TabIndex = 63;
             // 
             // label2
             // 
@@ -209,12 +209,12 @@
             this.label2.TabIndex = 62;
             this.label2.Text = "ชื่อ-นามสกุล :";
             // 
-            // textBox3
+            // txtRowNumber
             // 
-            this.textBox3.Location = new System.Drawing.Point(113, 80);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(59, 20);
-            this.textBox3.TabIndex = 65;
+            this.txtRowNumber.Location = new System.Drawing.Point(113, 80);
+            this.txtRowNumber.Name = "txtRowNumber";
+            this.txtRowNumber.Size = new System.Drawing.Size(59, 20);
+            this.txtRowNumber.TabIndex = 65;
             // 
             // label3
             // 
@@ -230,19 +230,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 595);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtRowNumber);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtFullName);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCustName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExcel);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tC);
             this.Name = "FrmCheckUpEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCheckUpEdit";
             this.Load += new System.EventHandler(this.FrmCheckUpEdit_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.tC.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,7 +250,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tC;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
@@ -263,10 +263,10 @@
         private System.Windows.Forms.TabPage tabPage10;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCustName;
+        private System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtRowNumber;
         private System.Windows.Forms.Label label3;
     }
 }

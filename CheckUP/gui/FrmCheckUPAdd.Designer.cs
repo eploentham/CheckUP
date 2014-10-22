@@ -30,6 +30,8 @@
         {
             this.tC = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label86 = new System.Windows.Forms.Label();
+            this.label85 = new System.Windows.Forms.Label();
             this.btnUricImport = new System.Windows.Forms.Button();
             this.label77 = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
@@ -181,6 +183,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvSum = new System.Windows.Forms.DataGridView();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.label88 = new System.Windows.Forms.Label();
+            this.label87 = new System.Windows.Forms.Label();
+            this.nmDPrintFirst = new System.Windows.Forms.NumericUpDown();
+            this.nmDPrintEnd = new System.Windows.Forms.NumericUpDown();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dgvPE = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -217,10 +225,12 @@
             this.ChkUnActive = new System.Windows.Forms.RadioButton();
             this.chkActive = new System.Windows.Forms.RadioButton();
             this.pB1 = new System.Windows.Forms.ProgressBar();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
+            this.tabPage12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDPrintFirst)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDPrintEnd)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPE)).BeginInit();
             this.tabPage1.SuspendLayout();
@@ -247,6 +257,7 @@
             // tC
             // 
             this.tC.Controls.Add(this.tabPage4);
+            this.tC.Controls.Add(this.tabPage12);
             this.tC.Controls.Add(this.tabPage3);
             this.tC.Controls.Add(this.tabPage1);
             this.tC.Controls.Add(this.tabPage2);
@@ -265,6 +276,8 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label86);
+            this.tabPage4.Controls.Add(this.label85);
             this.tabPage4.Controls.Add(this.btnUricImport);
             this.tabPage4.Controls.Add(this.label77);
             this.tabPage4.Controls.Add(this.label78);
@@ -421,8 +434,28 @@
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(861, 597);
             this.tabPage4.TabIndex = 0;
-            this.tabPage4.Text = "S";
+            this.tabPage4.Text = "Summary";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label86.Location = new System.Drawing.Point(139, 161);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(57, 16);
+            this.label86.TabIndex = 153;
+            this.label86.Text = "2. XRay ";
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label85.Location = new System.Drawing.Point(139, 107);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(57, 16);
+            this.label85.TabIndex = 152;
+            this.label85.Text = "2. XRay ";
             // 
             // btnUricImport
             // 
@@ -1856,6 +1889,76 @@
             this.dgvSum.TabIndex = 1;
             this.dgvSum.Visible = false;
             // 
+            // tabPage12
+            // 
+            this.tabPage12.Controls.Add(this.label88);
+            this.tabPage12.Controls.Add(this.label87);
+            this.tabPage12.Controls.Add(this.nmDPrintFirst);
+            this.tabPage12.Controls.Add(this.nmDPrintEnd);
+            this.tabPage12.Controls.Add(this.btnPrint);
+            this.tabPage12.Location = new System.Drawing.Point(4, 22);
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage12.Size = new System.Drawing.Size(861, 597);
+            this.tabPage12.TabIndex = 1;
+            this.tabPage12.Text = "Print";
+            this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label88.Location = new System.Drawing.Point(243, 93);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(59, 16);
+            this.label88.TabIndex = 73;
+            this.label88.Text = "ถึงลำดับที่ :";
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label87.Location = new System.Drawing.Point(55, 93);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(80, 16);
+            this.label87.TabIndex = 72;
+            this.label87.Text = "เริ่มต้น ลำดับที่ :";
+            // 
+            // nmDPrintFirst
+            // 
+            this.nmDPrintFirst.Location = new System.Drawing.Point(162, 89);
+            this.nmDPrintFirst.Name = "nmDPrintFirst";
+            this.nmDPrintFirst.Size = new System.Drawing.Size(46, 20);
+            this.nmDPrintFirst.TabIndex = 70;
+            this.nmDPrintFirst.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // nmDPrintEnd
+            // 
+            this.nmDPrintEnd.Location = new System.Drawing.Point(317, 89);
+            this.nmDPrintEnd.Name = "nmDPrintEnd";
+            this.nmDPrintEnd.Size = new System.Drawing.Size(46, 20);
+            this.nmDPrintEnd.TabIndex = 71;
+            this.nmDPrintEnd.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnPrint.Location = new System.Drawing.Point(419, 80);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(152, 34);
+            this.btnPrint.TabIndex = 69;
+            this.btnPrint.Text = " พิมพ์";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.dgvPE);
@@ -1863,7 +1966,7 @@
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(861, 597);
-            this.tabPage3.TabIndex = 1;
+            this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage2";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
@@ -1877,6 +1980,7 @@
             this.dgvPE.RowTemplate.Height = 24;
             this.dgvPE.Size = new System.Drawing.Size(851, 593);
             this.dgvPE.TabIndex = 2;
+            this.dgvPE.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPE_CellDoubleClick);
             // 
             // tabPage1
             // 
@@ -1885,7 +1989,7 @@
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(861, 597);
-            this.tabPage1.TabIndex = 2;
+            this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -1899,6 +2003,7 @@
             this.dgvXRay.RowTemplate.Height = 24;
             this.dgvXRay.Size = new System.Drawing.Size(851, 593);
             this.dgvXRay.TabIndex = 2;
+            this.dgvXRay.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvXRay_CellDoubleClick);
             // 
             // tabPage2
             // 
@@ -1907,7 +2012,7 @@
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(861, 597);
-            this.tabPage2.TabIndex = 3;
+            this.tabPage2.TabIndex = 4;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -1929,7 +2034,7 @@
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(861, 597);
-            this.tabPage5.TabIndex = 4;
+            this.tabPage5.TabIndex = 5;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
@@ -1951,7 +2056,7 @@
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(861, 597);
-            this.tabPage6.TabIndex = 5;
+            this.tabPage6.TabIndex = 6;
             this.tabPage6.Text = "tabPage6";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
@@ -1973,7 +2078,7 @@
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage7.Size = new System.Drawing.Size(861, 597);
-            this.tabPage7.TabIndex = 6;
+            this.tabPage7.TabIndex = 7;
             this.tabPage7.Text = "tabPage7";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
@@ -1995,7 +2100,7 @@
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage8.Size = new System.Drawing.Size(861, 597);
-            this.tabPage8.TabIndex = 7;
+            this.tabPage8.TabIndex = 8;
             this.tabPage8.Text = "tabPage8";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
@@ -2017,7 +2122,7 @@
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage9.Size = new System.Drawing.Size(861, 597);
-            this.tabPage9.TabIndex = 8;
+            this.tabPage9.TabIndex = 9;
             this.tabPage9.Text = "tabPage9";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
@@ -2039,7 +2144,7 @@
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage10.Size = new System.Drawing.Size(861, 597);
-            this.tabPage10.TabIndex = 9;
+            this.tabPage10.TabIndex = 10;
             this.tabPage10.Text = "tabPage10";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
@@ -2061,7 +2166,7 @@
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage11.Size = new System.Drawing.Size(861, 597);
-            this.tabPage11.TabIndex = 10;
+            this.tabPage11.TabIndex = 11;
             this.tabPage11.Text = "tabPage11";
             this.tabPage11.UseVisualStyleBackColor = true;
             // 
@@ -2238,23 +2343,11 @@
             this.pB1.Size = new System.Drawing.Size(124, 23);
             this.pB1.TabIndex = 68;
             // 
-            // btnPrint
-            // 
-            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnPrint.Location = new System.Drawing.Point(1127, 15);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(86, 34);
-            this.btnPrint.TabIndex = 69;
-            this.btnPrint.Text = "พิมพ์";
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
             // FrmCheckUPAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1243, 714);
-            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.pB1);
             this.Controls.Add(this.btnUnActive);
             this.Controls.Add(this.ChkUnActive);
@@ -2281,6 +2374,10 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).EndInit();
+            this.tabPage12.ResumeLayout(false);
+            this.tabPage12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDPrintFirst)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDPrintEnd)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPE)).EndInit();
             this.tabPage1.ResumeLayout(false);
@@ -2499,6 +2596,13 @@
         private System.Windows.Forms.Label label83;
         private System.Windows.Forms.Label label84;
         private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.TabPage tabPage12;
+        private System.Windows.Forms.NumericUpDown nmDPrintFirst;
+        private System.Windows.Forms.NumericUpDown nmDPrintEnd;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.Label label87;
 
     }
 }

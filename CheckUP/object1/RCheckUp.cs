@@ -9,5 +9,6 @@ namespace CheckUP.object1
     {
         public String Id = "", LTypeLab = "", LNormal = "", lResult = "", LInter = "", LInterNormal = "", LInterAbnormal = "";
         public String LabGroup = "", LabName = "", LabNormal = "", LabResult = "", StatusLab = "", Remark = "", Sort1="";
+        public String FullName = "", RowNumber = "", CheckUpDate = "", Age = "", Height = "", Weight = "", BMI = "", Pulse = "", VitalSign = "", PESummary = "";
     }
 }

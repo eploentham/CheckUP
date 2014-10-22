@@ -1,0 +1,111 @@
+21/10/2557 13:56->rpt.setReportQuotation OK 
+21/10/2557 13:56->rpt.setReportQuotation OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+21/10/2557 13:56->rpt.setReportQuotation Error Failed to load database information.Error in File CheckUpPrint {E1D8ECE4-3197-4FB0-90CA-EA3642020015}.rpt:
+Failed to load database information.
+21/10/2557 13:57->rpt.setReportQuotation OK 
+21/10/2557 13:57->rpt.setReportQuotation OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+21/10/2557 13:57->rpt.setReportQuotation Error Failed to load database information.Error in File CheckUpPrint {401A2800-7094-4CB4-876A-D6660F7F81ED}.rpt:
+Failed to load database information.
+21/10/2557 13:59->rpt.setReportQuotation OK 
+21/10/2557 13:59->rpt.setReportQuotation OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+21/10/2557 13:59->rpt.setReportQuotation Error Failed to load database information.Error in File CheckUpPrint {74C7C1D8-3C84-4271-B8AA-6C5C91A6EA04}.rpt:
+Failed to load database information.
+21/10/2557 13:59->rpt.setReportQuotation OK 
+21/10/2557 13:59->rpt.setReportQuotation OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+21/10/2557 14:02->rpt.setReportCheckUp OK 
+21/10/2557 14:02->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+21/10/2557 14:12->rpt.setReportCheckUp OK 
+21/10/2557 14:12->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+21/10/2557 14:16->rpt.setReportCheckUp OK 
+21/10/2557 14:16->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+21/10/2557 14:17->rpt.setReportCheckUp OK 
+21/10/2557 14:17->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+21/10/2557 14:23->rpt.setReportCheckUp OK 
+21/10/2557 14:23->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint1.rpt
+21/10/2557 14:23->rpt.setReportCheckUp Error Failed to load database information.Error in File CheckUpPrint1 {474389EE-E1AA-46E0-9EEF-5D857648CCB1}.rpt:
+Failed to load database information.
+21/10/2557 14:25->rpt.setReportCheckUp OK 
+21/10/2557 14:25->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint1.rpt
+21/10/2557 14:25->rpt.setReportCheckUp Error Failed to load database information.Error in File CheckUpPrint1 {135E0C0A-EAF3-4FD9-81D6-A7D2E921C17D}.rpt:
+Failed to load database information.
+21/10/2557 14:32->rpt.setReportCheckUp OK 
+21/10/2557 14:32->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint1.rpt
+21/10/2557 14:32->rpt.setReportCheckUp Error Failed to load database information.Error in File CheckUpPrint1 {7A23AEA8-B5C0-4922-B454-17C4FDF3895E}.rpt:
+Failed to load database information.
+21/10/2557 14:32->rpt.setReportCheckUp OK 
+21/10/2557 14:32->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint1.rpt
+21/10/2557 14:37->rpt.setReportCheckUp OK 
+21/10/2557 14:37->rpt.setReportCheckUp Error โหลดรายงานไม่สำเร็จ
+21/10/2557 14:37->rpt.setReportCheckUp OK 
+21/10/2557 14:38->rpt.setReportCheckUp OK 
+21/10/2557 14:38->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint1.rpt
+21/10/2557 14:38->rpt.setReportCheckUp Error Failed to load database information.Error in File CheckUpPrint {53019D51-5F3C-42CE-968D-108BA280C9A2}.rpt:
+Failed to load database information.
+21/10/2557 14:46->rpt.setReportCheckUp OK 
+21/10/2557 14:46->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint1.rpt
+21/10/2557 14:46->rpt.setReportCheckUp Error Failed to load database information.Error in File CheckUpPrint {D4DD74EA-504D-4314-8F1F-BDBC00E427AC}.rpt:
+Failed to load database information.
+21/10/2557 15:03->rpt.setReportCheckUp OK 
+21/10/2557 15:03->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint1.rpt
+21/10/2557 15:03->rpt.setReportCheckUp OK SetDataSource
+21/10/2557 15:04->rpt.setReportCheckUp OK 
+21/10/2557 15:04->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint1.rpt
+21/10/2557 15:04->rpt.setReportCheckUp OK SetDataSource
+21/10/2557 15:05->rpt.setReportCheckUp OK 
+21/10/2557 15:05->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint1.rpt
+21/10/2557 15:05->rpt.setReportCheckUp OK SetDataSource
+21/10/2557 15:10->rpt.setReportCheckUp OK 
+21/10/2557 15:10->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+21/10/2557 15:10->rpt.setReportCheckUp Error Failed to load database information.Error in File CheckUpPrint {6776BE0A-DAED-4845-A901-517C9EF6B2F5}.rpt:
+Failed to load database information.
+21/10/2557 15:18->rpt.setReportCheckUp OK 
+21/10/2557 15:18->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+21/10/2557 15:18->rpt.setReportCheckUp OK SetDataSource
+21/10/2557 15:19->rpt.setReportCheckUp OK 
+21/10/2557 15:19->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+21/10/2557 15:19->rpt.setReportCheckUp OK SetDataSource
+21/10/2557 15:46->rpt.setReportCheckUp OK 
+21/10/2557 15:46->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+21/10/2557 15:46->rpt.setReportCheckUp OK SetDataSource
+21/10/2557 15:49->rpt.setReportCheckUp OK 
+21/10/2557 15:49->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+21/10/2557 15:49->rpt.setReportCheckUp OK SetDataSource
+21/10/2557 15:53->rpt.setReportCheckUp OK 
+21/10/2557 15:53->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+21/10/2557 15:53->rpt.setReportCheckUp OK SetDataSource
+21/10/2557 16:02->rpt.setReportCheckUp OK 
+21/10/2557 16:02->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+21/10/2557 16:02->rpt.setReportCheckUp OK SetDataSource
+22/10/2557 8:33->FrmCheckUPAdd.btnPrint_Click 01 
+22/10/2557 8:33->FrmCheckUPAdd.btnPrint_Click 02 
+22/10/2557 8:33->FrmCheckUPAdd.btnPrint_Click 03 
+22/10/2557 8:33->rpt.setReportCheckUp OK 
+22/10/2557 8:33->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+22/10/2557 8:33->rpt.setReportCheckUp OK SetDataSource
+22/10/2557 8:34->FrmCheckUPAdd.btnPrint_Click 01 
+22/10/2557 8:34->FrmCheckUPAdd.btnPrint_Click 02 
+22/10/2557 8:34->FrmCheckUPAdd.btnPrint_Click 03 
+22/10/2557 8:34->FrmCheckUPAdd.btnPrint_Click 01 
+22/10/2557 8:34->FrmCheckUPAdd.btnPrint_Click 02 
+22/10/2557 8:34->FrmCheckUPAdd.btnPrint_Click 03 
+22/10/2557 8:35->rpt.setReportCheckUp OK 
+22/10/2557 8:35->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+22/10/2557 8:35->rpt.setReportCheckUp OK SetDataSource
+22/10/2557 8:37->FrmCheckUPAdd.btnPrint_Click 01 
+22/10/2557 8:37->FrmCheckUPAdd.btnPrint_Click 02 
+22/10/2557 8:37->FrmCheckUPAdd.btnPrint_Click 03 
+22/10/2557 8:37->rpt.setReportCheckUp OK 
+22/10/2557 8:37->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+22/10/2557 8:37->rpt.setReportCheckUp OK SetDataSource
+22/10/2557 8:48->FrmCheckUPAdd.btnPrint_Click 01 
+22/10/2557 8:48->FrmCheckUPAdd.btnPrint_Click 02 
+22/10/2557 8:48->FrmCheckUPAdd.btnPrint_Click 03 
+22/10/2557 8:49->rpt.setReportCheckUp OK 
+22/10/2557 8:49->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+22/10/2557 8:49->rpt.setReportCheckUp OK SetDataSource
+22/10/2557 8:49->FrmCheckUPAdd.btnPrint_Click 01 
+22/10/2557 8:49->FrmCheckUPAdd.btnPrint_Click 02 
+22/10/2557 8:49->FrmCheckUPAdd.btnPrint_Click 03 
+22/10/2557 8:49->rpt.setReportCheckUp OK 
+22/10/2557 8:49->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+22/10/2557 8:49->rpt.setReportCheckUp OK SetDataSource

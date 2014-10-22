@@ -82,6 +82,7 @@ namespace CheckUP.object1
     public String kidneyCreatinine="";
     public String kidneyResult = "";
     public String kidneySummary = "";
+
     public String liverSgot="";
     public String liverSgpt="";
     public String liverAlp="";
@@ -94,6 +95,7 @@ namespace CheckUP.object1
     public String triglycerideSummary = "";
     public String hdl="";
     public String ldl="";
+
     public String calcium="";
     public String cbcHb="";
     public String cbcHct="";
@@ -109,6 +111,7 @@ namespace CheckUP.object1
     public String cbcMch = "";
     public String cbcMchc = "";
     public String cbcPlateletSmear = "";
+
     public String urineColor="";
     public String urineAppearance="";
     public String urinePh="";
@@ -123,6 +126,7 @@ namespace CheckUP.object1
     public String urineEpithelium="";
     public String urineSummary="";
     public String urineResult = "";
+
     public String lungFvcPredic="";
     public String lungFvcMeas="";
     public String lungFvcPer="";

@@ -318,26 +318,26 @@ namespace CheckUP
         //        cc.lw.WriteLog("rpt.setReportMOU Error " + chk);
         //    }
         //}
-        //public void setReportQuotation(Quotation qu, DataTable dt)
-        //{
-        //    String chk = "";
-        //    ReportDocument rpt = new ReportDocument();
-        //    try
-        //    {
-        //        cc.lw.WriteLog("rpt.setReportQuotation OK ");
-        //        rpt.Load(cc.initC.PathReport + "\\QuotationPrint.rpt");
-        //        cc.lw.WriteLog("rpt.setReportQuotation OK Load" + cc.initC.PathReport + "\\QuotationPrint.rpt");
-        //        rpt.SetDataSource(dt);
-        //        cc.lw.WriteLog("rpt.setReportQuotation OK SetDataSource");
+        public void setReportCheckUp(CustCheckUp cuc, DataTable dt)
+        {
+            String chk = "";
+            ReportDocument rpt = new ReportDocument();
+            try
+            {
+                cc.lw.WriteLog("rpt.setReportCheckUp OK ");
+                rpt.Load(cc.initC.PathReport + "\\CheckUpPrint.rpt");
+                cc.lw.WriteLog("rpt.setReportCheckUp OK Load" + cc.initC.PathReport + "\\CheckUpPrint.rpt");
+                rpt.SetDataSource(dt);
+                cc.lw.WriteLog("rpt.setReportCheckUp OK SetDataSource");
         //        //rpt.SetDataSource(dt2);
         //        //ParameterField myParam = new ParameterField();
         //        //myParam.Name = "header1";
         //        //myParam.
-        //        //rpt.SetParameterValue("header1", cc.cp.NameT);
-        //        //rpt.SetParameterValue("header2", reportName);
-        //        //rpt.SetParameterValue("header3", condition);
+                rpt.SetParameterValue("line1", "ผลตรวจสุขภาพประจำปี 2557");
+                rpt.SetParameterValue("compName", "โรงพบาบาล บางนา5");
+                rpt.SetParameterValue("compAddress", "55 หมู่4 ");
 
-        //        rpt.SetParameterValue("quoNumber", qu.QuoNumber);
+                rpt.SetParameterValue("custName", "Test Company");
         //        rpt.SetParameterValue("quoDate", qu.QuoDate);
         //        rpt.SetParameterValue("contactName", qu.ContactName);
         //        rpt.SetParameterValue("compName", qu.CompName);
@@ -396,17 +396,16 @@ namespace CheckUP
         //        //rpt.SetParameterValue("", qu.QuoDate);
         //        //rpt.SetParameterValue("", qu.QuoDate);
         //        //rpt.SetParameterValue("", qu.QuoDate);
-
-
-        //        this.crystalReportViewer1.ReportSource = rpt;
-        //        this.crystalReportViewer1.Refresh();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        chk = ex.Message.ToString();
-        //        cc.lw.WriteLog("rpt.setReportQuotation Error " + chk);
-        //    }
-        //}
+                
+                this.crystalReportViewer1.ReportSource = rpt;
+                this.crystalReportViewer1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                chk = ex.Message.ToString();
+                cc.lw.WriteLog("rpt.setReportCheckUp Error " + chk);
+            }
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {

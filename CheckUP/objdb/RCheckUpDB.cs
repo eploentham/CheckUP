@@ -10,7 +10,7 @@ namespace CheckUP.objdb
 {
     public class RCheckUpDB
     {
-        ConnectDB conn;
+        public ConnectDB conn;
         public RCheckUp rcu;
         public RCheckUpDB(ConnectDB c)
         {
@@ -34,9 +34,28 @@ namespace CheckUP.objdb
             rcu.Remark = "remark";
             rcu.StatusLab = "status_lab";
             rcu.Sort1 = "sort1";
+            rcu.Age = "age";
+            rcu.BMI = "bmi";
+            rcu.CheckUpDate = "checkup_date";
+            rcu.FullName = "full_name";
+            rcu.Height = "height";
+            rcu.PESummary = "pe_summary";
+            rcu.Pulse = "pulse";
+            rcu.RowNumber = "row_number";
+            rcu.VitalSign = "vitalsign";
+            rcu.Weight = "weight";
 
             rcu.pkField = "id";
             rcu.table = "r_checkup";
+        }
+        public DataTable selectAll()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From " + rcu.table + " ";
+            dt = conn.selectData(sql);
+
+            return dt;
         }
         //private RCheckUp setData(RCheckUp item, DataTable dt)
         //{
@@ -80,34 +99,49 @@ namespace CheckUP.objdb
         //}
         private String insert(RCheckUp p)
         {
+            StringBuilder sql1 = new StringBuilder();
             String sql = "", chk = "";
             if (p.Id.Equals(""))
             {
                 p.Id = "rcu" + p.getGenID();
             }
-            p.LabGroup = p.LabGroup.Replace("'", "''");
-            p.LabName = p.LabName.Replace("'", "''");
-            p.LabNormal = p.LabNormal.Replace("'", "''");
-            p.LabResult = p.LabResult.Replace("'", "''");
-            p.LInter = p.LInter.Replace("'", "''");
-            p.LInterAbnormal = p.LInterAbnormal.Replace("'", "''");
-            p.LInterNormal = p.LInterNormal.Replace("'", "''");
-            p.LNormal = p.LNormal.Replace("'", "''");
-            p.lResult = p.lResult.Replace("'", "''");
-            p.LTypeLab = p.LTypeLab.Replace("'", "''");
-            p.Remark = p.Remark.Replace("'", "''");
+            //p.LabGroup = p.LabGroup.Replace("'", "''");
+            //p.LabName = p.LabName.Replace("'", "''");
+            //p.LabNormal = p.LabNormal.Replace("'", "''");
+            //p.LabResult = p.LabResult.Replace("'", "''");
+            //p.LInter = p.LInter.Replace("'", "''");
+            //p.LInterAbnormal = p.LInterAbnormal.Replace("'", "''");
+            //p.LInterNormal = p.LInterNormal.Replace("'", "''");
+            //p.LNormal = p.LNormal.Replace("'", "''");
+            //p.lResult = p.lResult.Replace("'", "''");
+            //p.LTypeLab = p.LTypeLab.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
 
-            sql = "Insert Into " + rcu.table + " (" + rcu.pkField + "," + rcu.LabGroup + "," + rcu.LabName + "," +
-                rcu.LabNormal + "," + rcu.LabResult + "," + rcu.LInter + "," +
-                rcu.LInterAbnormal + "," + rcu.LInterNormal + "," + rcu.LNormal + "," +
-                rcu.lResult + "," + rcu.LTypeLab + "," + rcu.Remark + "," + rcu.StatusLab + "," + rcu.Sort1 + ") " +
-                "Values('" + p.Id + "','" + p.LabGroup + "','" + p.LabName + "','" +
-                p.LabNormal + "','" + p.LabResult + "','" + p.LInter + "','" +
-                p.LInterAbnormal + "','" + p.LInterNormal + "','" + p.LNormal + "','" +
-                p.lResult + "','" + p.LTypeLab + "','" + p.Remark + "','" + p.StatusLab + "','" + p.Sort1 + "')";
+            //sql = "Insert Into " + rcu.table + " (" + rcu.pkField + "," + rcu.LabGroup + "," + rcu.LabName + "," +
+            //    rcu.LabNormal + "," + rcu.LabResult + "," + rcu.LInter + "," +
+            //    rcu.LInterAbnormal + "," + rcu.LInterNormal + "," + rcu.LNormal + "," +
+            //    rcu.lResult + "," + rcu.LTypeLab + "," + rcu.Remark + "," + rcu.StatusLab + "," + rcu.Sort1 + ") " +
+            //    "Values('" + p.Id + "','" + p.LabGroup + "','" + p.LabName + "','" +
+            //    p.LabNormal + "','" + p.LabResult + "','" + p.LInter + "','" +
+            //    p.LInterAbnormal + "','" + p.LInterNormal + "','" + p.LNormal + "','" +
+            //    p.lResult + "','" + p.LTypeLab + "','" + p.Remark + "','" + p.StatusLab + "','" + p.Sort1 + "')";
+            sql1.Append("Insert Into ").Append(rcu.table).Append(" (").Append(rcu.pkField).Append(",").Append(rcu.LabGroup).Append(",").Append(rcu.LabName).Append(",").Append(
+                rcu.LabNormal).Append("," ).Append(rcu.LabResult).Append(",").Append(rcu.LInter).Append(",").Append(
+                rcu.LInterAbnormal).Append(",").Append(rcu.LInterNormal).Append("," ).Append(rcu.LNormal).Append(",").Append(
+                rcu.lResult).Append(",").Append(rcu.LTypeLab).Append(",").Append(rcu.Remark).Append(",").Append(rcu.StatusLab).Append(",").Append(rcu.Sort1).Append(",").Append(
+                rcu.FullName).Append(",").Append(rcu.RowNumber).Append(",").Append(rcu.Age).Append(",").Append(rcu.Height).Append(",").Append(
+                rcu.Weight).Append(",").Append(rcu.BMI).Append(",").Append(rcu.Pulse).Append(",").Append(
+                rcu.VitalSign).Append(") ").Append(
+                "Values('").Append(p.Id).Append("','" ).Append(p.LabGroup).Append("','").Append(p.LabName).Append("','").Append(
+                p.LabNormal).Append("','").Append(p.LabResult).Append("','").Append(p.LInter).Append("','").Append(
+                p.LInterAbnormal).Append("','").Append(p.LInterNormal).Append( "','").Append(p.LNormal).Append("','").Append(
+                p.lResult).Append("','").Append(p.LTypeLab).Append("','").Append(p.Remark).Append("','").Append(p.StatusLab).Append("','").Append(p.Sort1).Append("','").Append(
+                p.FullName).Append("',").Append(NumberNull1(p.RowNumber)).Append(",'").Append(p.Age).Append("','").Append(p.Height).Append("','").Append(
+                p.Weight).Append("','").Append(p.BMI).Append("','").Append(p.Pulse).Append("','").Append(
+                p.VitalSign).Append("')");
             try
             {
-                chk = conn.ExecuteNonQuery(sql);
+                chk = conn.ExecuteNonQueryNoClose(sql1.ToString());
                 chk = p.Id;
             }
             catch (Exception ex)
@@ -140,6 +174,17 @@ namespace CheckUP.objdb
             sql = "Delete From " + rcu.table;
             chk = conn.ExecuteNonQuery(sql);
             return chk;
+        }
+        private String NumberNull1(String o)
+        {
+            if (o.Equals(""))
+            {
+                return "0";
+            }
+            else
+            {
+                return o;
+            }
         }
     }
 }
