@@ -15,8 +15,8 @@ namespace CheckUP.gui
     {
         CheckControl cc;
         CustCheckUp cuc;
-        int tabSum = 0, tabPrint = 1, tabPE = 2, tabXRay = 3, tabCBC = 4, tabFBS = 5, tabUA = 6, tabTri = 7, tabCho = 8, tabSgot = 9, tabBun = 10, tabUric = 11;
-        int tabCnt = 12;
+        int tabSum = 0, tabPE = 1, tabXRay = 2, tabCBC = 3, tabFBS = 4, tabUA = 5, tabTri = 6, tabCho = 7, tabSgot = 8, tabBun = 9, tabUric = 10;
+        int tabCnt = 11;
 
         public FrmCheckUpEdit(String ccpId,CheckControl c)
         {
@@ -39,11 +39,16 @@ namespace CheckUP.gui
             tC.TabPages[tabSgot].Text = "SGOT/SGPT";
             tC.TabPages[tabBun].Text = "BUN Creatine";
             tC.TabPages[tabUric].Text = "Uric acid";
-            tC.TabPages[tabPrint].Text = "Print";
+            //tC.TabPages[tabPrint].Text = "Print";
 
         }
 
         private void FrmCheckUpEdit_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCBCExcel_Click(object sender, EventArgs e)
         {
 
         }
