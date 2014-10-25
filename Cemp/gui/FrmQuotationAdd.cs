@@ -23,11 +23,13 @@ namespace Cemp.gui
         Boolean pageLoad = false, flagViewCost=false;
         //NumberFormat fmt = NumberFormat.getCurrencyInstance();
         public FrmQuotationAdd(String quId, Boolean flagViewCost1, CnviControl c)
-        {
+        {            
             InitializeComponent();
+            label41.Text = System.DateTime.Now.ToLongTimeString();
             cc = c;
             flagViewCost=flagViewCost1;
             initConfig(quId);
+            label42.Text = System.DateTime.Now.ToLongTimeString();
         }
         private void initConfig(String quId)
         {
@@ -221,7 +223,7 @@ namespace Cemp.gui
             qu.Line2 = txtLine2.Text;
             //qu.Line3 = txtLine3.Text;
             qu.Line4 = txtLine4.Text;
-            qu.Line5 = "Enail : "+txtLine5.Text;
+            qu.Line5 = txtLine5.Text;
             qu.Line6 = txtLine6.Text;
 
             qu.Remark4 = cboRemark4.Text;
@@ -242,6 +244,7 @@ namespace Cemp.gui
 
             //DataTable dt = new DataTable();
             //dt = cc.sfdb.selectAll();
+            dgvAdd.Rows.Clear();
             dgvAdd.ColumnCount = colCnt;
 
             dgvAdd.RowCount = dt.Rows.Count + 1;
@@ -493,6 +496,10 @@ namespace Cemp.gui
                     {
                         continue;
                     }
+                    if (dgvAdd[colEdit, i].Value.ToString().Equals(""))
+                    {
+                        continue;
+                    }
                     QuotationItem qui = new QuotationItem();
                     Item it = cc.itdb.selectByPk(dgvAdd[colItemId, i].Value.ToString());
                     ItemGroup itg = cc.itgdb.selectByPk(it.ItemGroupId);
@@ -528,12 +535,13 @@ namespace Cemp.gui
                 txtQuNumber.Text = qu1.QuoNumber+"-"+qu1.QuoNumberCnt;
                 txtQuId.Text = quId;
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
-                if (chkdel)
-                {
-                    delGrdDelete();
-                    calAmount();
-                    calNetTotal();
-                }
+                setGrd(quId);
+                //if (chkdel)
+                //{
+                //    delGrdDelete();
+                //    calAmount();
+                //    calNetTotal();
+                //}
                 
                 btnPrint.Visible = true;
                 //this.Dispose();
@@ -590,7 +598,7 @@ namespace Cemp.gui
             dgvAdd[colAmount, row].Value = String.Format("{0:#,###,###.00}", txtItemAmount.Text);
             dgvAdd[colId, row].Value = "";
             dgvAdd[colDel, row].Value = "";
-            dgvAdd[colEdit, row].Value = "";
+            dgvAdd[colEdit, row].Value = "1";
             if ((row % 2) != 0)
             {
                 dgvAdd.Rows[row].DefaultCellStyle.BackColor = Color.LightSalmon;
@@ -642,7 +650,6 @@ namespace Cemp.gui
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
             setItemtoGrd(cc.getValueCboItem(cboItem), getRow());
         }
 
@@ -967,13 +974,16 @@ namespace Cemp.gui
             Quotation qu = cc.qudb.selectByPk(txtQuId.Text);
             qu.ContactName = "เรียน : " + qu.ContactName;
             qu.CustAddress = "ที่อยู่ : " + qu.CustAddress;
-            qu.CustTel = "เบอร์โทร : "+qu.CustTel+" Email : "+qu.CustEmail;
+            qu.CustTel = "เบอร์โทร : " + qu.CustTel + " Fax : " + qu.CustFax + " Email : " + qu.CustEmail;
             qu.Line1 = cc.cp.quLine1;
             qu.QuoNumber = "เลขที่ : " + qu.QuoNumber + "-" + qu.QuoNumberCnt;
-            qu.QuoDate = "วันที่ :" + qu.QuoDate;
-            qu.StaffName = "ผู้เสนอราคา :" + qu.StaffName;
+            qu.QuoDate = "วันที่ :" + cc.cf.dateDBtoShow(qu.QuoDate);
+
+            qu.StaffName = "ผู้เสนอราคา ( " + qu.StaffName+" )";
             qu.StaffTel = "เบอร์โทร : " + qu.StaffTel;
             qu.StaffEmail = "Email : " + qu.StaffEmail;
+            qu.Line4=qu.Line4;
+            qu.Line5 = "Email : " + qu.Line5;
             if (!qu.Remark1.Equals(""))
             {
                 qu.Remark1 = "1. " + qu.Remark1;
@@ -1169,6 +1179,7 @@ namespace Cemp.gui
         {
             if (e.KeyCode == Keys.Enter)
             {
+                calItemAmount();
                 setItemtoGrd(cc.getValueCboItem(cboItem), getRow());
             }
         }

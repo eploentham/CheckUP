@@ -92,9 +92,9 @@ namespace Cemp.objdb
 
             return dt;
         }
-        public DataTable selectByItGroupMethodType(String itgId, String meId, String ityId)
+        public DataTable selectByItGroupMethodType(String itgId, String meId, String ityId, String itName)
         {
-            String sql = "", whereitg="", wheremeid="", whereityid="";
+            String sql = "", whereitg = "", wheremeid = "", whereityid = "", whereitName = "";
             DataTable dt = new DataTable();
             if (!itgId.Equals(""))
             {
@@ -108,7 +108,11 @@ namespace Cemp.objdb
             {
                 whereityid = " and " + it.ItemType + " like '" + ityId + "%'";
             }
-            sql = "Select * From " + it.table + " Where " + it.Active + "='1'" + whereitg + wheremeid + whereityid;
+            if (!itName.Equals(""))
+            {
+                whereitName = " and " + it.NameT + " like '" + itName + "%'";
+            }
+            sql = "Select * From " + it.table + " Where " + it.Active + "='1'" + whereitg + wheremeid + whereityid + whereitName;
             dt = conn.selectData(sql);
 
             return dt;

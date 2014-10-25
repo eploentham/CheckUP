@@ -16,7 +16,7 @@ namespace Cemp.gui
     {
         CnviControl cc;
         Item it;
-        int colRow = 0, colNameT = 1, colNameE = 2, colMethod = 4, colGroup = 3, colType=5, colVendor=6, colAnalysis=7, colRemark = 8, colId = 9;
+        int colRow = 0, colNameT = 1, colNameE = 2, colMethod = 5, colGroup = 4, colType=6, colVendor=7, colAnalysis=3, colRemark = 8, colId = 9;
         int colCnt = 10;
         Boolean pageLoad = false;
         DataTable dt = new DataTable();
@@ -34,7 +34,7 @@ namespace Cemp.gui
             cboItemGroup = cc.itgdb.getCboItemGroup(cboItemGroup);
             cboMothod = cc.medb.getCboMethod(cboMothod);
             cboDocType = cc.itydb.getCboDocType(cboDocType, "mou");
-            setGrd("","","");
+            setGrd("","","","");
             pageLoad = false;
         }
         private void setResize()
@@ -46,17 +46,17 @@ namespace Cemp.gui
             //groupBox1.Width = this.Width - 50;
             //groupBox1.Height = this.Height = 150;
         }
-        private void setGrd(String itgId, String meId, String ITyId)
+        private void setGrd(String itgId, String meId, String ITyId, String ITName)
         {
             try
             {
-                if (itgId.Equals("") && meId.Equals("") && ITyId.Equals(""))
+                if (itgId.Equals("") && meId.Equals("") && ITyId.Equals("") && ITName.Equals(""))
                 {
                     dt = cc.itdb.selectAll();
                 }
                 else
                 {
-                    dt = cc.itdb.selectByItGroupMethodType(itgId, meId, ITyId);
+                    dt = cc.itdb.selectByItGroupMethodType(itgId, meId, ITyId, ITName);
                 }
                 
                 dgvView.ColumnCount = colCnt;
@@ -125,7 +125,7 @@ namespace Cemp.gui
             FrmItemAdd frm = new FrmItemAdd("",cc);
             //frm.ShowDialog(this);
             frm.Show();
-            setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text);
+            setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text, txtSearch.Text);
         }
 
         private void FrmItemView_Resize(object sender, EventArgs e)
@@ -146,7 +146,7 @@ namespace Cemp.gui
             FrmItemAdd frm = new FrmItemAdd(dgvView[colId, e.RowIndex].Value.ToString(), cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
-            setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text);
+            setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text, txtSearch.Text);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -162,7 +162,7 @@ namespace Cemp.gui
         {
             if (!pageLoad)
             {
-                setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text);
+                setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text, txtSearch.Text);
             }
             
         }
@@ -171,7 +171,7 @@ namespace Cemp.gui
         {
             if (!pageLoad)
             {
-                setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text);
+                setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text, txtSearch.Text);
             }
         }
 
@@ -179,21 +179,63 @@ namespace Cemp.gui
         {
             if (!pageLoad)
             {
-                setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text);
+                setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text, txtSearch.Text);
             }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text);
+            setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text, txtSearch.Text);
         }
 
         private void cboDocType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!pageLoad)
             {
-                setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text);
+                setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text, txtSearch.Text);
             }
+        }
+
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtSearch.Text.Length >= 0)
+            {
+                setGrd(cboItemGroup.Text, cboMothod.Text, cboDocType.Text, txtSearch.Text);
+            }
+        }
+        protected override bool ProcessCmdKey(ref Message message, Keys keys)
+        {
+            switch (keys)
+            {
+                case Keys.F1:
+                    txtSearch.SelectAll();
+                    txtSearch.Focus();
+                    // ... Process Shift+Ctrl+Alt+B ...
+                    //Cursor cursor = Cursor.Current;
+                    //Cursor.Current = Cursors.WaitCursor;
+                    //btnSave.Enabled = false;
+                    ////saveLotto();
+                    ////row = 0;
+                    //btnSave.Enabled = true;
+                    //Cursor.Current = cursor;
+                    //FrmItemSearch frm = new FrmItemSearch(cc);
+                    //frm.ShowDialog(this);
+                    //txtRow.Text = "";
+                    ////cboItem.Text = cc.itSearch.Code + " " + cc.itSearch.NameT + "[" + cc.itSearch.MethodNameT+"]";
+                    //txtItemPrice.Text = cc.itSearch.PriceSale;
+                    //txtPriceCost.Text = cc.itSearch.PriceCost;
+                    //txtItemQty.Text = cc.itSearch.userCancel;
+                    //calItemAmount();
+                    //setItemtoGrd(cc.itSearch.Id, getRow());
+                    //calItemAmount();
+                    //btnAdd_Click(null,null);
+                    return true; // signal that we've processed this key
+                //case Keys.Insert:
+                //    //txtInputFocus();
+                //    return true;
+            }
+            // run base implementation
+            return base.ProcessCmdKey(ref message, keys);
         }
     }
 }

@@ -981,3 +981,25 @@ Parameter name: length
 10/10/2557 12:25->rpt.setReportPO OK SetDataSource
 10/10/2557 12:28->rpt.setReportPO OK 
 10/10/2557 12:28->rpt.setReportPO OK SetDataSource
+21/10/2557 14:14->rpt.setReportQuotation OK 
+21/10/2557 14:14->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+21/10/2557 14:14->rpt.setReportQuotation OK SetDataSource
+24/10/2557 15:27->rpt.setReportQuotation OK 
+24/10/2557 15:27->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+24/10/2557 15:27->rpt.setReportQuotation OK SetDataSource
+24/10/2557 15:27->rpt.setReportQuotation Error The types of the parameter field and parameter field current values are not compatible.
+24/10/2557 15:28->rpt.setReportQuotation OK 
+24/10/2557 15:28->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+24/10/2557 15:28->rpt.setReportQuotation OK SetDataSource
+24/10/2557 15:40->rpt.setReportQuotation OK 
+24/10/2557 15:40->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+24/10/2557 15:40->rpt.setReportQuotation OK SetDataSource
+24/10/2557 16:11->rpt.setReportQuotation OK 
+24/10/2557 16:12->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+24/10/2557 16:12->rpt.setReportQuotation OK SetDataSource
+24/10/2557 16:14->rpt.setReportQuotation OK 
+24/10/2557 16:14->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+24/10/2557 16:14->rpt.setReportQuotation OK SetDataSource
+24/10/2557 16:21->rpt.setReportQuotation OK 
+24/10/2557 16:21->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+24/10/2557 16:21->rpt.setReportQuotation OK SetDataSource

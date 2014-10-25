@@ -132,6 +132,8 @@
             this.ChkUnActive = new System.Windows.Forms.RadioButton();
             this.chkActive = new System.Windows.Forms.RadioButton();
             this.btnDoc = new System.Windows.Forms.Button();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
@@ -1332,11 +1334,31 @@
             this.btnDoc.UseVisualStyleBackColor = true;
             this.btnDoc.Click += new System.EventHandler(this.btnDoc_Click);
             // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(609, 188);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(41, 13);
+            this.label41.TabIndex = 68;
+            this.label41.Text = "label41";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(792, 188);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(41, 13);
+            this.label42.TabIndex = 69;
+            this.label42.Text = "label42";
+            // 
             // FrmQuotationAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1186, 832);
+            this.Controls.Add(this.label42);
+            this.Controls.Add(this.label41);
             this.Controls.Add(this.btnDoc);
             this.Controls.Add(this.btnUnActive);
             this.Controls.Add(this.ChkUnActive);
@@ -1513,5 +1535,7 @@
         private System.Windows.Forms.RadioButton ChkUnActive;
         private System.Windows.Forms.RadioButton chkActive;
         private System.Windows.Forms.Button btnDoc;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label42;
     }
 }

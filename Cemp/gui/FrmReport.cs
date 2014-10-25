@@ -418,14 +418,41 @@ namespace Cemp
                 rpt.SetParameterValue("line4", qu.Line4);
                 rpt.SetParameterValue("line5", qu.Line5);
                 rpt.SetParameterValue("line6", qu.Line6);
-                rpt.SetParameterValue("staffApproveName", qu.StaffApproveName);
+                rpt.SetParameterValue("staffApproveName", "( "+qu.StaffApproveName+" )");
                 
                 rpt.SetParameterValue("amount2", qu.Amount);
+
                 rpt.SetParameterValue("discountPer", qu.DiscountPer);
-                rpt.SetParameterValue("discount", qu.Discount);
+
+                if (qu.Discount.Equals("0.00"))
+                {
+                    rpt.SetParameterValue("discount", "");
+                    rpt.SetParameterValue("discountPer", "");
+                }
+                else if (qu.Discount.Equals("0"))
+                {
+                    rpt.SetParameterValue("discount", "");
+                    rpt.SetParameterValue("discountPer", "");
+                }
+                else
+                {
+                    //String.Format("{0:#,###,###.00}", double.Parse(cc.cf.NumberNull1(qu.Plus1)));
+                    rpt.SetParameterValue("discount", String.Format("{0:#,###,###.00}", double.Parse(cc.cf.NumberNull1(qu.Discount))));
+                    rpt.SetParameterValue("discountPer", String.Format("{0:#,###,###.00}", double.Parse(cc.cf.NumberNull1(qu.DiscountPer))));
+                }
+
+                
                 rpt.SetParameterValue("amountDiscount", qu.AmountDiscount);
                 rpt.SetParameterValue("plus1Name", qu.Plus1Name);
-                rpt.SetParameterValue("plus1", qu.Plus1);
+                if (qu.Plus1.Equals("0.00"))
+                {
+                    rpt.SetParameterValue("plus1", "");
+                }
+                else
+                {
+                    rpt.SetParameterValue("plus1", String.Format("{0:#,###,###.00}", double.Parse(cc.cf.NumberNull1(qu.Plus1))));
+                }
+                
                 rpt.SetParameterValue("total", qu.Total);
                 rpt.SetParameterValue("vatRate", qu.VatRate);
                 rpt.SetParameterValue("vat", qu.Vat);
@@ -433,10 +460,10 @@ namespace Cemp
                 rpt.SetParameterValue("lamount", "รวมราคา");
                 rpt.SetParameterValue("ldiscount", "ส่วนลด");
                 rpt.SetParameterValue("plus1name", "ค่าภาคสนาม(ค่าเดินทาง)");
-                rpt.SetParameterValue("ltotal", "รวม");
+                rpt.SetParameterValue("ltotal", "รวมราคา");
                 rpt.SetParameterValue("lvat", "ภาษีมูลค่าเพิ่ม "+qu.VatRate+"%");
-                rpt.SetParameterValue("lnettotal", "รวมทั้งสิ้น");
-                rpt.SetParameterValue("lcustapprove","อนุมัติสั่งซื้อตามราบการที่เสนอ");
+                rpt.SetParameterValue("lnettotal", "ราคารวมทั้งสิ้น");
+                rpt.SetParameterValue("lcustapprove","อนุมัติสั่งซื้อตามรายการที่เสนอ");
                 rpt.SetParameterValue("lstaffquotation", "ผู้เสนอราคา");
                 rpt.SetParameterValue("lstaffapprove", "ขอแสดงความนับถือ");
                 rpt.SetParameterValue("thaibaht", qu.ThaiBaht);
