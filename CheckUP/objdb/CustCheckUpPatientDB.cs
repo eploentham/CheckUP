@@ -270,6 +270,15 @@ namespace CheckUP.objdb
             }
             return chk;
         }
+        public DataTable selectByPk(String ccpId)
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From " + ccp.table + " Where " + ccp.Id + " = '" + ccpId + "'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
         public DataTable selectAllByCucId(String cucId)
         {
             String sql = "";
