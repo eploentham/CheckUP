@@ -283,7 +283,7 @@ namespace CheckUP.objdb
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + ccp.table + " Where " + ccp.Active + "='1' and "+ccp.CustCheckUpId+" = '"+cucId+"'";
+            sql = "Select * From " + ccp.table + " Where " + ccp.Active + "='1' and "+ccp.CustCheckUpId+" = '"+cucId+"' Order By "+ccp.rowNumber;
             dt = conn.selectData(sql);
 
             return dt;
@@ -529,7 +529,7 @@ namespace CheckUP.objdb
         }
         public String UpdatePE(String rowNumber, String cucId, String vitalSign, String height, String weight, String bmi, String pulse, String result, String summary)
         {
-            String chk = "", sql="";
+            String chk = "", sql = "";
             try
             {
                 sql = "Update " + ccp.table + " Set " + ccp.vitalsign + "='" + vitalSign + "', " +
@@ -537,6 +537,29 @@ namespace CheckUP.objdb
                 ccp.patientWeight + "='" + weight + "'," +
                 ccp.bmi + "='" + bmi + "'," +
                 ccp.patientPulse + "='" + pulse + "' " +
+                //ccp.patientAge + "='" + age + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                //Logger.getLogger(MarketingTCheckupDB.class.getName).log(Level.SEVERE, null, ex);
+                //max = ex.getMessage;
+            }
+
+            return chk;
+        }
+        public String UpdatePE(String rowNumber, String cucId, String age, String vitalSign, String height, String weight, String bmi, String pulse, String result, String summary)
+        {
+            String chk = "", sql="";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.vitalsign + "='" + vitalSign + "', " +
+                ccp.patientHeight + "='" + height + "'," +
+                ccp.patientWeight + "='" + weight + "'," +
+                ccp.bmi + "='" + bmi + "'," +
+                ccp.patientPulse + "='" + pulse + "', " +
+                ccp.patientAge + "='" + age + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             } catch (Exception ex) {
@@ -544,7 +567,7 @@ namespace CheckUP.objdb
                 //max = ex.getMessage;
             }
             
-            return chk = "";
+            return chk;
         }
         public String UpdateXray(String rowNumber, String cucId, String result, String summary)
         {
@@ -560,7 +583,7 @@ namespace CheckUP.objdb
             {
 
             }
-            return chk = "";
+            return chk;
         }
         public String UpdateFBS(String rowNumber, String cucId, String value, String result, String summary, String suggess)
         {
@@ -578,7 +601,7 @@ namespace CheckUP.objdb
             {
 
             }
-            return chk = "";
+            return chk;
         }
         public String UpdateCBC(String rowNumber, String cucId, String Basophil, String Eosinophil, String Hb, String Hct, String Lymphocyte,
             String Mch, String Mchc, String Mcv, String Monocyte, String Neutrophil, String PlateletCount, String Rbc, String RbcMorpholog, 
@@ -610,7 +633,7 @@ namespace CheckUP.objdb
             {
 
             }
-            return chk = "";
+            return chk;
         }
         public String UpdateUA(String rowNumber, String cucId, String Color, String Appe, String Sugar, String spgr, String pH,
             String Protein, String Wbc, String Rbc, String Epi, String Bact, String Result,String Summary)
@@ -639,7 +662,7 @@ namespace CheckUP.objdb
             {
 
             }
-            return chk = "";
+            return chk;
         }
         public String UpdateTrigly(String rowNumber, String cucId, String value, String result, String summary)
         {
@@ -657,7 +680,7 @@ namespace CheckUP.objdb
             {
 
             }
-            return chk = "";
+            return chk;
         }
         public String UpdateCholes(String rowNumber, String cucId, String value, String result, String summary)
         {
@@ -675,9 +698,9 @@ namespace CheckUP.objdb
             {
 
             }
-            return chk = "";
+            return chk;
         }
-        public String UpdateSgot(String rowNumber, String cucId, String sgot, String sgpt, String result, String summary)
+        public String UpdateSgot(String rowNumber, String cucId, String sgot, String sgpt, String alt, String result, String summary)
         {
             String chk = "", sql = "";
             try
@@ -685,7 +708,8 @@ namespace CheckUP.objdb
                 sql = "Update " + ccp.table + " Set " + ccp.liverSgot + "='" + sgot + "'," +
                 ccp.liverResult + "='" + result + "', " +
                 ccp.liverSummary + "='" + summary + "', " +
-                ccp.liverSgpt + "='" + sgpt + "' " +
+                ccp.liverAlp + "='" + sgpt + "', " +
+                ccp.liverSgpt + "='" + alt + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql); ;
             }
@@ -693,7 +717,7 @@ namespace CheckUP.objdb
             {
 
             }
-            return chk = "";
+            return chk;
         }
         public String UpdateBun(String rowNumber, String cucId, String bun, String creatinine, String result, String summary)
         {
@@ -711,7 +735,7 @@ namespace CheckUP.objdb
             {
 
             }
-            return chk = "";
+            return chk;
         }
         public String UpdateUric(String rowNumber, String cucId, String value, String result, String summary)
         {
@@ -729,7 +753,7 @@ namespace CheckUP.objdb
             {
 
             }
-            return chk = "";
+            return chk;
         }
     }
 }

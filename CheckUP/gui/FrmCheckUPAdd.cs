@@ -1889,7 +1889,7 @@ namespace CheckUP.gui
                     summary = "";
                 }
 
-                chk = cc.ccpdb.UpdateSgot(rowNumber, txtId.Text, sgot, sgpt, result, summary);
+                chk = cc.ccpdb.UpdateSgot(rowNumber, txtId.Text, sgot, sgpt,"", result, summary);
                 pB1.Value = i;
             }
             xlWorkbook.Close(true, misValue, misValue);

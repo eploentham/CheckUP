@@ -16,7 +16,7 @@ namespace CheckUP.gui
         CheckControl cc;
         CustCheckUp cuc;
         CustCheckUpPatient ccp;
-        DataTable dtccp;
+        DataTable dtccp, dtccpvn;
         int tabSum = 0, tabPE = 1, tabXRay = 2, tabCBC = 3, tabFBS = 4, tabUA = 5, tabTri = 6, tabCho = 7, tabSgot = 8, tabBun = 9, tabUric = 10;
         int tabCnt = 11;
 
@@ -24,12 +24,13 @@ namespace CheckUP.gui
         {
             InitializeComponent();
             cc = c;
+            initConfig(ccpId);
         }
         private void initConfig(String ccpId)
         {
             cuc = new CustCheckUp();
             ccp = new CustCheckUpPatient();
-            
+            dtccpvn = cc.ccpvndb.selectByPk();
 
             tC.TabPages[tabSum].Text = "Summary";
             tC.TabPages[tabPE].Text = "PE";
@@ -42,15 +43,19 @@ namespace CheckUP.gui
             tC.TabPages[tabSgot].Text = "SGOT/SGPT";
             tC.TabPages[tabBun].Text = "BUN Creatine";
             tC.TabPages[tabUric].Text = "Uric acid";
+            tC.TabPages[tabPE].Focus();
             //tC.TabPages[tabPrint].Text = "Print";
             setControl(ccpId);
         }
         private void setControl(String ccpId)
         {
             dtccp = cc.ccpdb.selectByPk(ccpId);
+            cuc.Id = dtccp.Rows[0][cc.ccpdb.ccp.CustCheckUpId].ToString();
+            cuc = cc.cucdb.selectByPk(cuc.Id);
+            txtCustName.Text = cuc.CustNameT;
 
             txtFullName.Text = dtccp.Rows[0][cc.ccpdb.ccp.patientFullname].ToString();
-            txtCustName.Text = dtccp.Rows[0][cc.ccpdb.ccp.patientFullname].ToString();
+            //txtCustName.Text = dtccp.Rows[0][cc.ccpdb.ccp.patientFullname].ToString();
             txtRowNumber.Text = dtccp.Rows[0][cc.ccpdb.ccp.rowNumber].ToString();
 
             txtBunCreatinineValue.Text = dtccp.Rows[0][cc.ccpdb.ccp.kidneyCreatinine].ToString();
@@ -79,6 +84,8 @@ namespace CheckUP.gui
             txtPESummary.Text = "";
             txtPEVitalSign.Text = dtccp.Rows[0][cc.ccpdb.ccp.vitalsign].ToString();
             txtPEWeight.Text = dtccp.Rows[0][cc.ccpdb.ccp.patientWeight].ToString();
+            nmDPEAge.Value = int.Parse(cc.cf.NumberNull1(dtccp.Rows[0][cc.ccpdb.ccp.patientAge].ToString()));
+            txtAge.Text  = dtccp.Rows[0][cc.ccpdb.ccp.patientAge].ToString();
 
             txtXRayResult.Text = dtccp.Rows[0][cc.ccpdb.ccp.xrayChestExam].ToString();
             txtXRaySummary.Text = dtccp.Rows[0][cc.ccpdb.ccp.xrayChestSummary].ToString();
@@ -135,6 +142,102 @@ namespace CheckUP.gui
         private void btnCBCExcel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSavePE_Click(object sender, EventArgs e)
+        {
+
+            String chk = cc.ccpdb.UpdatePE(txtRowNumber.Text, cuc.Id,int.Parse(nmDPEAge.Value.ToString()).ToString(), txtPEVitalSign.Text, txtPEHeight.Text, txtPEWeight.Text, 
+                txtPEBMI.Text, txtPEPulse.Text, txtPEResult.Text, txtPESummary.Text);
+            if (chk.Equals("1"))
+            {
+                MessageBox.Show("บันทึกข้อมูล PE เรียบร้อย", "บันทึกข้อมูล");
+            }
+        }
+
+        private void btnXraySave_Click(object sender, EventArgs e)
+        {
+            String chk = cc.ccpdb.UpdateXray(txtRowNumber.Text, cuc.Id, txtXRayResult.Text, txtXRaySummary.Text);
+            if (chk.Equals("1"))
+            {
+                MessageBox.Show("บันทึกข้อมูล Xray เรียบร้อย", "บันทึกข้อมูล");
+            }
+        }
+
+        private void btnCBCSave_Click(object sender, EventArgs e)
+        {
+            String chk = cc.ccpdb.UpdateCBC(txtRowNumber.Text, cuc.Id, txtCBCBact.Text, txtCBCEos.Text, txtCBCHb.Text, txtCBCHct.Text, 
+                txtCBCLy.Text, txtCBCMch.Text, txtCBCMchc.Text, txtCBCMcv.Text, txtCBCMono.Text, txtCBCNeu.Text, txtCBCPltC.Text, txtCBCRbc.Text, 
+                txtCBCRbcMono.Text, txtCBCSummary.Text, txtCBCWbc.Text, txtCBCPltS.Text);
+            if (chk.Equals("1"))
+            {
+                MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
+            }
+        }
+
+        private void btnFBSSave_Click(object sender, EventArgs e)
+        {
+            String chk = cc.ccpdb.UpdateFBS(txtRowNumber.Text, cuc.Id, txtFBSValue.Text, txtFBSResult.Text, txtFBSSummary.Text, "");
+            if (chk.Equals("1"))
+            {
+                MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
+            }
+        }
+
+        private void btnUASave_Click(object sender, EventArgs e)
+        {
+            String chk = cc.ccpdb.UpdateUA(txtRowNumber.Text, cuc.Id, txtUAColor.Text, txtUAAppe.Text, txtUASugar.Text, 
+                txtUASpgr.Text, txtUApH.Text, txtUAProtein.Text, txtUAWBC.Text, txtUARbc.Text, txtUAEpi.Text, txtUABact.Text, 
+                txtUAResult.Text, txtUASpgr.Text);
+            if (chk.Equals("1"))
+            {
+                MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
+            }
+        }
+
+        private void btnTriSave_Click(object sender, EventArgs e)
+        {
+            String chk = cc.ccpdb.UpdateTrigly(txtRowNumber.Text, cuc.Id, txtTriValue.Text, txtTriResult.Text, txtTriSummary.Text);
+            if (chk.Equals("1"))
+            {
+                MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
+            }
+        }
+
+        private void btnChoSave_Click(object sender, EventArgs e)
+        {
+            String chk = cc.ccpdb.UpdateCholes(txtRowNumber.Text, cuc.Id, txtChoValue.Text, txtChoResult.Text, txtChoSummary.Text);
+            if (chk.Equals("1"))
+            {
+                MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
+            }
+        }
+
+        private void btnSgotSave_Click(object sender, EventArgs e)
+        {
+            String chk = cc.ccpdb.UpdateSgot(txtRowNumber.Text, cuc.Id, txtSgotValue.Text, txtSgotSgptValue.Text,"", txtSgotResult.Text, txtSgotSummary.Text);
+            if (chk.Equals("1"))
+            {
+                MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
+            }
+        }
+
+        private void btnBunSave_Click(object sender, EventArgs e)
+        {
+            String chk = cc.ccpdb.UpdateBun(txtRowNumber.Text, cuc.Id, txtBunValue.Text, txtBunCreatinineValue.Text, txtBunResult.Text, txtBunSummary.Text);
+            if (chk.Equals("1"))
+            {
+                MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
+            }
+        }
+
+        private void btnUricSave_Click(object sender, EventArgs e)
+        {
+            String chk = cc.ccpdb.UpdateUric(txtRowNumber.Text, cuc.Id, txtUricValue.Text, txtUricResult.Text, txtUricSummary.Text);
+            if (chk.Equals("1"))
+            {
+                MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
+            }
         }
     }
 }
