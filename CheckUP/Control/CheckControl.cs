@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Management;
+using System.Data;
 
 namespace CheckUP.Control
 {
@@ -50,7 +51,7 @@ namespace CheckUP.Control
         public String PathLogo;
 
         public LogWriter lw;
-
+        public DataTable dtccpvn;
         public CheckControl()
         {
             initConfig();
@@ -92,6 +93,7 @@ namespace CheckUP.Control
 
                 cp = cpdb.selectByPk();
                 PathLogo = Environment.CurrentDirectory;
+                dtccpvn = ccpvndb.selectByPk();
             }
             catch (Exception ex)
             {

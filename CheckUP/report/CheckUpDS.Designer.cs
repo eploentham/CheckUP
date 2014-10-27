@@ -327,6 +327,8 @@ namespace CheckUP.report {
             
             private global::System.Data.DataColumn columnsort1;
             
+            private global::System.Data.DataColumn columnsort2;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public r_checkupDataTable() {
@@ -554,6 +556,14 @@ namespace CheckUP.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn sort2Column {
+                get {
+                    return this.columnsort2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -613,7 +623,8 @@ namespace CheckUP.report {
                         string lab_result, 
                         string status_lab, 
                         string remark, 
-                        string sort1) {
+                        string sort1, 
+                        string sort2) {
                 r_checkupRow rowr_checkupRow = ((r_checkupRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -639,7 +650,8 @@ namespace CheckUP.report {
                         lab_result,
                         status_lab,
                         remark,
-                        sort1};
+                        sort1,
+                        sort2};
                 rowr_checkupRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowr_checkupRow);
                 return rowr_checkupRow;
@@ -693,6 +705,7 @@ namespace CheckUP.report {
                 this.columnstatus_lab = base.Columns["status_lab"];
                 this.columnremark = base.Columns["remark"];
                 this.columnsort1 = base.Columns["sort1"];
+                this.columnsort2 = base.Columns["sort2"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -746,6 +759,8 @@ namespace CheckUP.report {
                 base.Columns.Add(this.columnremark);
                 this.columnsort1 = new global::System.Data.DataColumn("sort1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsort1);
+                this.columnsort2 = new global::System.Data.DataColumn("sort2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsort2);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AllowDBNull = false;
@@ -773,6 +788,7 @@ namespace CheckUP.report {
                 this.columnstatus_lab.MaxLength = 255;
                 this.columnremark.MaxLength = 255;
                 this.columnsort1.MaxLength = 255;
+                this.columnsort2.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1294,6 +1310,22 @@ namespace CheckUP.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string sort2 {
+                get {
+                    try {
+                        return ((string)(this[this.tabler_checkup.sort2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sort2\' in table \'r_checkup\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabler_checkup.sort2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isrow_numberNull() {
                 return this.IsNull(this.tabler_checkup.row_numberColumn);
             }
@@ -1567,6 +1599,18 @@ namespace CheckUP.report {
             public void Setsort1Null() {
                 this[this.tabler_checkup.sort1Column] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Issort2Null() {
+                return this.IsNull(this.tabler_checkup.sort2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setsort2Null() {
+                this[this.tabler_checkup.sort2Column] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1752,10 +1796,11 @@ namespace CheckUP.report.CheckUpDSTableAdapters {
             tableMapping.ColumnMappings.Add("status_lab", "status_lab");
             tableMapping.ColumnMappings.Add("remark", "remark");
             tableMapping.ColumnMappings.Add("sort1", "sort1");
+            tableMapping.ColumnMappings.Add("sort2", "sort2");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `r_checkup` WHERE ((`id` = ?) AND ((? = 1 AND `row_number` IS NULL) OR (`row_number` = ?)) AND ((? = 1 AND `full_name` IS NULL) OR (`full_name` = ?)) AND ((? = 1 AND `checkup_date` IS NULL) OR (`checkup_date` = ?)) AND ((? = 1 AND `age` IS NULL) OR (`age` = ?)) AND ((? = 1 AND `height` IS NULL) OR (`height` = ?)) AND ((? = 1 AND `weight` IS NULL) OR (`weight` = ?)) AND ((? = 1 AND `bmi` IS NULL) OR (`bmi` = ?)) AND ((? = 1 AND `pulse` IS NULL) OR (`pulse` = ?)) AND ((? = 1 AND `vitalsign` IS NULL) OR (`vitalsign` = ?)) AND ((? = 1 AND `pe_summary` IS NULL) OR (`pe_summary` = ?)) AND ((? = 1 AND `l_type_lab` IS NULL) OR (`l_type_lab` = ?)) AND ((? = 1 AND `l_normal` IS NULL) OR (`l_normal` = ?)) AND ((? = 1 AND `l_result` IS NULL) OR (`l_result` = ?)) AND ((? = 1 AND `l_inter` IS NULL) OR (`l_inter` = ?)) AND ((? = 1 AND `l_inter_normal` IS NULL) OR (`l_inter_normal` = ?)) AND ((? = 1 AND `l_inter_abnormal` IS NULL) OR (`l_inter_abnormal` = ?)) AND ((? = 1 AND `lab_group` IS NULL) OR (`lab_group` = ?)) AND ((? = 1 AND `lab_name` IS NULL) OR (`lab_name` = ?)) AND ((? = 1 AND `lab_normal` IS NULL) OR (`lab_normal` = ?)) AND ((? = 1 AND `lab_result` IS NULL) OR (`lab_result` = ?)) AND ((? = 1 AND `status_lab` IS NULL) OR (`status_lab` = ?)) AND ((? = 1 AND `remark` IS NULL) OR (`remark` = ?)) AND ((? = 1 AND `sort1` IS NULL) OR (`sort1` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `r_checkup` WHERE ((`id` = ?) AND ((? = 1 AND `row_number` IS NULL) OR (`row_number` = ?)) AND ((? = 1 AND `full_name` IS NULL) OR (`full_name` = ?)) AND ((? = 1 AND `checkup_date` IS NULL) OR (`checkup_date` = ?)) AND ((? = 1 AND `age` IS NULL) OR (`age` = ?)) AND ((? = 1 AND `height` IS NULL) OR (`height` = ?)) AND ((? = 1 AND `weight` IS NULL) OR (`weight` = ?)) AND ((? = 1 AND `bmi` IS NULL) OR (`bmi` = ?)) AND ((? = 1 AND `pulse` IS NULL) OR (`pulse` = ?)) AND ((? = 1 AND `vitalsign` IS NULL) OR (`vitalsign` = ?)) AND ((? = 1 AND `pe_summary` IS NULL) OR (`pe_summary` = ?)) AND ((? = 1 AND `l_type_lab` IS NULL) OR (`l_type_lab` = ?)) AND ((? = 1 AND `l_normal` IS NULL) OR (`l_normal` = ?)) AND ((? = 1 AND `l_result` IS NULL) OR (`l_result` = ?)) AND ((? = 1 AND `l_inter` IS NULL) OR (`l_inter` = ?)) AND ((? = 1 AND `l_inter_normal` IS NULL) OR (`l_inter_normal` = ?)) AND ((? = 1 AND `l_inter_abnormal` IS NULL) OR (`l_inter_abnormal` = ?)) AND ((? = 1 AND `lab_group` IS NULL) OR (`lab_group` = ?)) AND ((? = 1 AND `lab_name` IS NULL) OR (`lab_name` = ?)) AND ((? = 1 AND `lab_normal` IS NULL) OR (`lab_normal` = ?)) AND ((? = 1 AND `lab_result` IS NULL) OR (`lab_result` = ?)) AND ((? = 1 AND `status_lab` IS NULL) OR (`status_lab` = ?)) AND ((? = 1 AND `remark` IS NULL) OR (`remark` = ?)) AND ((? = 1 AND `sort1` IS NULL) OR (`sort1` = ?)) AND ((? = 1 AND `sort2` IS NULL) OR (`sort2` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_row_number", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "row_number", global::System.Data.DataRowVersion.Original, true, null));
@@ -1804,9 +1849,11 @@ namespace CheckUP.report.CheckUpDSTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_remark", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "remark", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_sort1", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sort1", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_sort1", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sort1", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_sort2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sort2", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_sort2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sort2", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO `r_checkup` (`id`, `row_number`, `full_name`, `checkup_date`, `age`, `height`, `weight`, `bmi`, `pulse`, `vitalsign`, `pe_summary`, `l_type_lab`, `l_normal`, `l_result`, `l_inter`, `l_inter_normal`, `l_inter_abnormal`, `lab_group`, `lab_name`, `lab_normal`, `lab_result`, `status_lab`, `remark`, `sort1`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `r_checkup` (`id`, `row_number`, `full_name`, `checkup_date`, `age`, `height`, `weight`, `bmi`, `pulse`, `vitalsign`, `pe_summary`, `l_type_lab`, `l_normal`, `l_result`, `l_inter`, `l_inter_normal`, `l_inter_abnormal`, `lab_group`, `lab_name`, `lab_normal`, `lab_result`, `status_lab`, `remark`, `sort1`, `sort2`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("row_number", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "row_number", global::System.Data.DataRowVersion.Current, false, null));
@@ -1832,6 +1879,7 @@ namespace CheckUP.report.CheckUpDSTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("status_lab", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "status_lab", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("remark", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "remark", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("sort1", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sort1", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("sort2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sort2", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE `r_checkup` SET `id` = ?, `row_number` = ?, `full_name` = ?, `checkup_date" +
@@ -1839,23 +1887,24 @@ namespace CheckUP.report.CheckUpDSTableAdapters {
                 "` = ?, `pe_summary` = ?, `l_type_lab` = ?, `l_normal` = ?, `l_result` = ?, `l_in" +
                 "ter` = ?, `l_inter_normal` = ?, `l_inter_abnormal` = ?, `lab_group` = ?, `lab_na" +
                 "me` = ?, `lab_normal` = ?, `lab_result` = ?, `status_lab` = ?, `remark` = ?, `so" +
-                "rt1` = ? WHERE ((`id` = ?) AND ((? = 1 AND `row_number` IS NULL) OR (`row_number" +
-                "` = ?)) AND ((? = 1 AND `full_name` IS NULL) OR (`full_name` = ?)) AND ((? = 1 A" +
-                "ND `checkup_date` IS NULL) OR (`checkup_date` = ?)) AND ((? = 1 AND `age` IS NUL" +
-                "L) OR (`age` = ?)) AND ((? = 1 AND `height` IS NULL) OR (`height` = ?)) AND ((? " +
-                "= 1 AND `weight` IS NULL) OR (`weight` = ?)) AND ((? = 1 AND `bmi` IS NULL) OR (" +
-                "`bmi` = ?)) AND ((? = 1 AND `pulse` IS NULL) OR (`pulse` = ?)) AND ((? = 1 AND `" +
-                "vitalsign` IS NULL) OR (`vitalsign` = ?)) AND ((? = 1 AND `pe_summary` IS NULL) " +
-                "OR (`pe_summary` = ?)) AND ((? = 1 AND `l_type_lab` IS NULL) OR (`l_type_lab` = " +
-                "?)) AND ((? = 1 AND `l_normal` IS NULL) OR (`l_normal` = ?)) AND ((? = 1 AND `l_" +
-                "result` IS NULL) OR (`l_result` = ?)) AND ((? = 1 AND `l_inter` IS NULL) OR (`l_" +
-                "inter` = ?)) AND ((? = 1 AND `l_inter_normal` IS NULL) OR (`l_inter_normal` = ?)" +
-                ") AND ((? = 1 AND `l_inter_abnormal` IS NULL) OR (`l_inter_abnormal` = ?)) AND (" +
-                "(? = 1 AND `lab_group` IS NULL) OR (`lab_group` = ?)) AND ((? = 1 AND `lab_name`" +
-                " IS NULL) OR (`lab_name` = ?)) AND ((? = 1 AND `lab_normal` IS NULL) OR (`lab_no" +
-                "rmal` = ?)) AND ((? = 1 AND `lab_result` IS NULL) OR (`lab_result` = ?)) AND ((?" +
-                " = 1 AND `status_lab` IS NULL) OR (`status_lab` = ?)) AND ((? = 1 AND `remark` I" +
-                "S NULL) OR (`remark` = ?)) AND ((? = 1 AND `sort1` IS NULL) OR (`sort1` = ?)))";
+                "rt1` = ?, `sort2` = ? WHERE ((`id` = ?) AND ((? = 1 AND `row_number` IS NULL) OR" +
+                " (`row_number` = ?)) AND ((? = 1 AND `full_name` IS NULL) OR (`full_name` = ?)) " +
+                "AND ((? = 1 AND `checkup_date` IS NULL) OR (`checkup_date` = ?)) AND ((? = 1 AND" +
+                " `age` IS NULL) OR (`age` = ?)) AND ((? = 1 AND `height` IS NULL) OR (`height` =" +
+                " ?)) AND ((? = 1 AND `weight` IS NULL) OR (`weight` = ?)) AND ((? = 1 AND `bmi` " +
+                "IS NULL) OR (`bmi` = ?)) AND ((? = 1 AND `pulse` IS NULL) OR (`pulse` = ?)) AND " +
+                "((? = 1 AND `vitalsign` IS NULL) OR (`vitalsign` = ?)) AND ((? = 1 AND `pe_summa" +
+                "ry` IS NULL) OR (`pe_summary` = ?)) AND ((? = 1 AND `l_type_lab` IS NULL) OR (`l" +
+                "_type_lab` = ?)) AND ((? = 1 AND `l_normal` IS NULL) OR (`l_normal` = ?)) AND ((" +
+                "? = 1 AND `l_result` IS NULL) OR (`l_result` = ?)) AND ((? = 1 AND `l_inter` IS " +
+                "NULL) OR (`l_inter` = ?)) AND ((? = 1 AND `l_inter_normal` IS NULL) OR (`l_inter" +
+                "_normal` = ?)) AND ((? = 1 AND `l_inter_abnormal` IS NULL) OR (`l_inter_abnormal" +
+                "` = ?)) AND ((? = 1 AND `lab_group` IS NULL) OR (`lab_group` = ?)) AND ((? = 1 A" +
+                "ND `lab_name` IS NULL) OR (`lab_name` = ?)) AND ((? = 1 AND `lab_normal` IS NULL" +
+                ") OR (`lab_normal` = ?)) AND ((? = 1 AND `lab_result` IS NULL) OR (`lab_result` " +
+                "= ?)) AND ((? = 1 AND `status_lab` IS NULL) OR (`status_lab` = ?)) AND ((? = 1 A" +
+                "ND `remark` IS NULL) OR (`remark` = ?)) AND ((? = 1 AND `sort1` IS NULL) OR (`so" +
+                "rt1` = ?)) AND ((? = 1 AND `sort2` IS NULL) OR (`sort2` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("row_number", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "row_number", global::System.Data.DataRowVersion.Current, false, null));
@@ -1881,6 +1930,7 @@ namespace CheckUP.report.CheckUpDSTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("status_lab", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "status_lab", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("remark", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "remark", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("sort1", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sort1", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("sort2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sort2", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_id", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_row_number", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "row_number", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_row_number", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "row_number", global::System.Data.DataRowVersion.Original, false, null));
@@ -1928,6 +1978,8 @@ namespace CheckUP.report.CheckUpDSTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_remark", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "remark", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_sort1", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sort1", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_sort1", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sort1", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_sort2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sort2", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_sort2", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "sort2", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1943,7 +1995,7 @@ namespace CheckUP.report.CheckUpDSTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT id, row_number, full_name, checkup_date, age, height, weight, bmi, pulse, vitalsign, pe_summary, l_type_lab, l_normal, l_result, l_inter, l_inter_normal, l_inter_abnormal, lab_group, lab_name, lab_normal, lab_result, status_lab, remark, sort1 FROM r_checkup";
+            this._commandCollection[0].CommandText = @"SELECT id, row_number, full_name, checkup_date, age, height, weight, bmi, pulse, vitalsign, pe_summary, l_type_lab, l_normal, l_result, l_inter, l_inter_normal, l_inter_abnormal, lab_group, lab_name, lab_normal, lab_result, status_lab, remark, sort1, sort2 FROM r_checkup";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2028,7 +2080,8 @@ namespace CheckUP.report.CheckUpDSTableAdapters {
                     string Original_lab_result, 
                     string Original_status_lab, 
                     string Original_remark, 
-                    string Original_sort1) {
+                    string Original_sort1, 
+                    string Original_sort2) {
             if ((Original_id == null)) {
                 throw new global::System.ArgumentNullException("Original_id");
             }
@@ -2219,6 +2272,14 @@ namespace CheckUP.report.CheckUpDSTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[46].Value = ((string)(Original_sort1));
             }
+            if ((Original_sort2 == null)) {
+                this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[48].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[48].Value = ((string)(Original_sort2));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2263,7 +2324,8 @@ namespace CheckUP.report.CheckUpDSTableAdapters {
                     string lab_result, 
                     string status_lab, 
                     string remark, 
-                    string sort1) {
+                    string sort1, 
+                    string sort2) {
             if ((id == null)) {
                 throw new global::System.ArgumentNullException("id");
             }
@@ -2408,6 +2470,12 @@ namespace CheckUP.report.CheckUpDSTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[23].Value = ((string)(sort1));
             }
+            if ((sort2 == null)) {
+                this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(sort2));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2453,6 +2521,7 @@ namespace CheckUP.report.CheckUpDSTableAdapters {
                     string status_lab, 
                     string remark, 
                     string sort1, 
+                    string sort2, 
                     string Original_id, 
                     global::System.Nullable<int> Original_row_number, 
                     string Original_full_name, 
@@ -2476,7 +2545,8 @@ namespace CheckUP.report.CheckUpDSTableAdapters {
                     string Original_lab_result, 
                     string Original_status_lab, 
                     string Original_remark, 
-                    string Original_sort1) {
+                    string Original_sort1, 
+                    string Original_sort2) {
             if ((id == null)) {
                 throw new global::System.ArgumentNullException("id");
             }
@@ -2621,195 +2691,209 @@ namespace CheckUP.report.CheckUpDSTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(sort1));
             }
+            if ((sort2 == null)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(sort2));
+            }
             if ((Original_id == null)) {
                 throw new global::System.ArgumentNullException("Original_id");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_id));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_id));
             }
             if ((Original_row_number.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(Original_row_number.Value));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(Original_row_number.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             if ((Original_full_name == null)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_full_name));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_full_name));
             }
             if ((Original_checkup_date == null)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_checkup_date));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_checkup_date));
             }
             if ((Original_age == null)) {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_age));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_age));
             }
             if ((Original_height == null)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_height));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_height));
             }
             if ((Original_weight == null)) {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_weight));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_weight));
             }
             if ((Original_bmi == null)) {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_bmi));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_bmi));
             }
             if ((Original_pulse == null)) {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_pulse));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_pulse));
             }
             if ((Original_vitalsign == null)) {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_vitalsign));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_vitalsign));
             }
             if ((Original_pe_summary == null)) {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_pe_summary));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(Original_pe_summary));
             }
             if ((Original_l_type_lab == null)) {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_l_type_lab));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(Original_l_type_lab));
             }
             if ((Original_l_normal == null)) {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(Original_l_normal));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(Original_l_normal));
             }
             if ((Original_l_result == null)) {
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_l_result));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((string)(Original_l_result));
             }
             if ((Original_l_inter == null)) {
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_l_inter));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((string)(Original_l_inter));
             }
             if ((Original_l_inter_normal == null)) {
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((string)(Original_l_inter_normal));
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((string)(Original_l_inter_normal));
             }
             if ((Original_l_inter_abnormal == null)) {
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((string)(Original_l_inter_abnormal));
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((string)(Original_l_inter_abnormal));
             }
             if ((Original_lab_group == null)) {
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[59].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((string)(Original_lab_group));
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((string)(Original_lab_group));
             }
             if ((Original_lab_name == null)) {
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[61].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((string)(Original_lab_name));
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((string)(Original_lab_name));
             }
             if ((Original_lab_normal == null)) {
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[63].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((string)(Original_lab_normal));
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((string)(Original_lab_normal));
             }
             if ((Original_lab_result == null)) {
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[65].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((string)(Original_lab_result));
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((string)(Original_lab_result));
             }
             if ((Original_status_lab == null)) {
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[67].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((string)(Original_status_lab));
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((string)(Original_status_lab));
             }
             if ((Original_remark == null)) {
-                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[68].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[69].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((string)(Original_remark));
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((string)(Original_remark));
             }
             if ((Original_sort1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[70].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[71].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((string)(Original_sort1));
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((string)(Original_sort1));
+            }
+            if ((Original_sort2 == null)) {
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[73].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((string)(Original_sort2));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2855,6 +2939,7 @@ namespace CheckUP.report.CheckUpDSTableAdapters {
                     string status_lab, 
                     string remark, 
                     string sort1, 
+                    string sort2, 
                     string Original_id, 
                     global::System.Nullable<int> Original_row_number, 
                     string Original_full_name, 
@@ -2878,8 +2963,9 @@ namespace CheckUP.report.CheckUpDSTableAdapters {
                     string Original_lab_result, 
                     string Original_status_lab, 
                     string Original_remark, 
-                    string Original_sort1) {
-            return this.Update(Original_id, row_number, full_name, checkup_date, age, height, weight, bmi, pulse, vitalsign, pe_summary, l_type_lab, l_normal, l_result, l_inter, l_inter_normal, l_inter_abnormal, lab_group, lab_name, lab_normal, lab_result, status_lab, remark, sort1, Original_id, Original_row_number, Original_full_name, Original_checkup_date, Original_age, Original_height, Original_weight, Original_bmi, Original_pulse, Original_vitalsign, Original_pe_summary, Original_l_type_lab, Original_l_normal, Original_l_result, Original_l_inter, Original_l_inter_normal, Original_l_inter_abnormal, Original_lab_group, Original_lab_name, Original_lab_normal, Original_lab_result, Original_status_lab, Original_remark, Original_sort1);
+                    string Original_sort1, 
+                    string Original_sort2) {
+            return this.Update(Original_id, row_number, full_name, checkup_date, age, height, weight, bmi, pulse, vitalsign, pe_summary, l_type_lab, l_normal, l_result, l_inter, l_inter_normal, l_inter_abnormal, lab_group, lab_name, lab_normal, lab_result, status_lab, remark, sort1, sort2, Original_id, Original_row_number, Original_full_name, Original_checkup_date, Original_age, Original_height, Original_weight, Original_bmi, Original_pulse, Original_vitalsign, Original_pe_summary, Original_l_type_lab, Original_l_normal, Original_l_result, Original_l_inter, Original_l_inter_normal, Original_l_inter_abnormal, Original_lab_group, Original_lab_name, Original_lab_normal, Original_lab_result, Original_status_lab, Original_remark, Original_sort1, Original_sort2);
         }
     }
     

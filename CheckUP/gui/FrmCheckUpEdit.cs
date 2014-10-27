@@ -16,7 +16,7 @@ namespace CheckUP.gui
         CheckControl cc;
         CustCheckUp cuc;
         CustCheckUpPatient ccp;
-        DataTable dtccp, dtccpvn;
+        DataTable dtccp;
         int tabSum = 0, tabPE = 1, tabXRay = 2, tabCBC = 3, tabFBS = 4, tabUA = 5, tabTri = 6, tabCho = 7, tabSgot = 8, tabBun = 9, tabUric = 10;
         int tabCnt = 11;
 
@@ -30,7 +30,7 @@ namespace CheckUP.gui
         {
             cuc = new CustCheckUp();
             ccp = new CustCheckUpPatient();
-            dtccpvn = cc.ccpvndb.selectByPk();
+            cc.dtccpvn = cc.ccpvndb.selectByPk();
 
             tC.TabPages[tabSum].Text = "Summary";
             tC.TabPages[tabPE].Text = "PE";
@@ -132,6 +132,56 @@ namespace CheckUP.gui
             txtUricValue.Text = dtccp.Rows[0][cc.ccpdb.ccp.uricAcid].ToString();
             txtUricResult.Text = dtccp.Rows[0][cc.ccpdb.ccp.uricAcidSuggess].ToString();
             txtUricSummary.Text = dtccp.Rows[0][cc.ccpdb.ccp.uricAcidSummary].ToString();
+
+            txtCBCBactNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.cbcBasophil].ToString();
+            txtCBCEosNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.cbcEosinophil].ToString();
+            txtCBCHbNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.cbcHb].ToString();
+            txtCBCHctNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.cbcHct].ToString();
+            txtCBCLyNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.cbcLymphocyte].ToString();
+            txtCBCMonoNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.cbcMonocyte].ToString();
+            txtCBCNeuNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.cbcNeutrophil].ToString();
+            txtCBCPltCNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.cbcPlateletCount].ToString();
+            txtCBCRbcNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.cbcRbc].ToString();
+            txtCBCRbcMonoNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.cbcRbcMorpholog].ToString();
+            //txtCBCSummary.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.cbcSummary].ToString();
+            txtCBCWbcNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.cbcWbc].ToString();
+            txtCBCPltSNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.cbcPlateletSmear].ToString();
+
+            txtBunCreatinineNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.kidneyCreatinine].ToString();
+            //txtBunResultNormal.Text = dtccp.Rows[0][cc.ccpdb.ccp.kidneyResult].ToString();
+            //txtBunSummary.Text = dtccp.Rows[0][cc.ccpdb.ccp.kidneySummary].ToString();
+            txtBunNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.kidneyBun].ToString();
+
+            txtFBSNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.sugar].ToString();
+
+            txtUAAppeNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.urineAppearance].ToString();
+            txtUABactNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.urineBacteria].ToString();
+            txtUAColorNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.urineColor].ToString();
+            txtUAEpiNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.urineEpithelium].ToString();
+            txtUApHNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.urinePh].ToString();
+            txtUAProteinNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.urineProtein].ToString();
+            txtUARbcNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.urineRbc].ToString();
+            //txtUAResult.Text = dtccp.Rows[0][cc.ccpdb.ccp.urineResult].ToString();
+            txtUASpgrNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.urineSpGr].ToString();
+            txtUASugarNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.urineSugar].ToString();
+            //txtUASummary.Text = dtccp.Rows[0][cc.ccpdb.ccp.urineSummary].ToString();
+            txtUAWBCNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.urineWbc].ToString();
+            txtUALeuNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.urineLeu].ToString();
+            txtUAKetoneNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.urineKetone].ToString();
+            txtUABloodNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.urineBlood].ToString();
+
+            txtTriNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.triglyceride].ToString();
+
+            txtChoNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.cholesterol].ToString();
+
+            txtSgotNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.liverSgot].ToString();
+            txtSgotSgptNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.liverSgpt].ToString();
+            //txtSgotResult.Text = dtccp.Rows[0][cc.ccpdb.ccp.liverResult].ToString();
+            //txtSgotSummary.Text = dtccp.Rows[0][cc.ccpdb.ccp.liverSummary].ToString();
+            txtSgotALTNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.liverAlp].ToString();
+
+            txtUricNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.uricAcid].ToString();
+
         }
 
         private void FrmCheckUpEdit_Load(object sender, EventArgs e)
