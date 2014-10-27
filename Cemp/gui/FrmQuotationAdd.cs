@@ -683,6 +683,7 @@ namespace Cemp.gui
                 return;
             }
             dgvAdd[colDel, (int.Parse(txtRow.Text)-1)].Value = "1";
+            dgvAdd[colEdit, (int.Parse(txtRow.Text) - 1)].Value = "1";
             dgvAdd.Rows[(int.Parse(txtRow.Text)-1)].DefaultCellStyle.BackColor = Color.DarkGray;
             calAmount();
             calNetTotal();

@@ -426,12 +426,12 @@ namespace Cemp
 
                 if (qu.Discount.Equals("0.00"))
                 {
-                    rpt.SetParameterValue("discount", "");
+                    rpt.SetParameterValue("discount", "-");
                     rpt.SetParameterValue("discountPer", "");
                 }
                 else if (qu.Discount.Equals("0"))
                 {
-                    rpt.SetParameterValue("discount", "");
+                    rpt.SetParameterValue("discount", "-");
                     rpt.SetParameterValue("discountPer", "");
                 }
                 else
@@ -469,7 +469,7 @@ namespace Cemp
                 rpt.SetParameterValue("thaibaht", qu.ThaiBaht);
                 rpt.SetParameterValue("staffApproveposition", cc.sfdb.selectPositionByPk(qu.StaffApproveId));
                 rpt.SetParameterValue("staffposition", cc.sfdb.selectPositionByPk(qu.StaffId));
-                //rpt.SetParameterValue("", qu.QuoDate);
+                rpt.SetParameterValue("lamountdiscount", "ราคาหลังหักส่วนลด");
                 //rpt.SetParameterValue("", qu.QuoDate);
                 //rpt.SetParameterValue("", qu.QuoDate);
                 //rpt.SetParameterValue("", qu.QuoDate);
