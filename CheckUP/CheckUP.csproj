@@ -183,10 +183,10 @@
       <DependentUpon>CheckUpDS.xsd</DependentUpon>
     </Compile>
     <Compile Include="report\CheckUpPrint.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>CheckUpPrint.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="report\CheckUpPrint1.cs">
       <AutoGen>True</AutoGen>

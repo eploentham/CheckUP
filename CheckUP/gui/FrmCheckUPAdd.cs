@@ -2710,9 +2710,7 @@ namespace CheckUP.gui
             pB1.Visible = false;
             cc.rcdb.conn.CloseConnection();
             label86.Text = System.DateTime.Now.ToShortTimeString();
-
-
-
+            
 
             DataTable dt = new DataTable();
             dt = cc.rcdb.selectAll();

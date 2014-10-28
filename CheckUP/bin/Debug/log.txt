@@ -152,3 +152,183 @@ Failed to load database information.
 27/10/2557 16:43->rpt.setReportCheckUp OK 
 27/10/2557 16:43->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
 27/10/2557 16:43->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:04->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:04->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:04->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:04->rpt.setReportCheckUp OK 
+28/10/2557 9:04->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:04->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:05->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:05->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:05->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:05->rpt.setReportCheckUp OK 
+28/10/2557 9:05->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:05->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:05->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:05->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:05->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:05->rpt.setReportCheckUp OK 
+28/10/2557 9:05->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:05->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:06->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:06->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:06->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:06->rpt.setReportCheckUp OK 
+28/10/2557 9:06->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:06->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:06->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:06->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:06->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:06->rpt.setReportCheckUp OK 
+28/10/2557 9:06->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:06->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:08->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:08->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:08->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:08->rpt.setReportCheckUp OK 
+28/10/2557 9:08->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:08->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:08->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:08->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:08->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:08->rpt.setReportCheckUp OK 
+28/10/2557 9:08->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:08->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:09->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:09->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:09->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:09->rpt.setReportCheckUp OK 
+28/10/2557 9:09->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:09->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:11->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:11->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:11->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:11->rpt.setReportCheckUp OK 
+28/10/2557 9:11->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:11->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:12->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:12->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:12->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:12->rpt.setReportCheckUp OK 
+28/10/2557 9:12->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:12->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:14->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:14->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:14->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:14->rpt.setReportCheckUp OK 
+28/10/2557 9:14->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:14->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:16->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:16->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:16->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:16->rpt.setReportCheckUp OK 
+28/10/2557 9:16->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:16->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:18->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:18->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:18->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:18->rpt.setReportCheckUp OK 
+28/10/2557 9:18->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:18->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:19->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:19->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:19->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:19->rpt.setReportCheckUp OK 
+28/10/2557 9:19->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:19->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:19->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:19->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:19->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:19->rpt.setReportCheckUp OK 
+28/10/2557 9:19->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:19->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:21->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:21->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:21->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:21->rpt.setReportCheckUp OK 
+28/10/2557 9:21->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:21->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:22->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:22->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:22->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:22->rpt.setReportCheckUp OK 
+28/10/2557 9:22->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:22->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:23->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:23->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:23->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:23->rpt.setReportCheckUp OK 
+28/10/2557 9:23->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:23->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:24->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:24->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:24->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:24->rpt.setReportCheckUp OK 
+28/10/2557 9:24->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:24->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:51->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:51->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:51->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:51->rpt.setReportCheckUp OK 
+28/10/2557 9:51->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:51->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:55->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:55->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:55->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:55->rpt.setReportCheckUp OK 
+28/10/2557 9:55->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:55->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:56->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:56->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:56->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:56->rpt.setReportCheckUp OK 
+28/10/2557 9:56->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:56->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 9:58->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 9:58->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 9:58->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 9:58->rpt.setReportCheckUp OK 
+28/10/2557 9:58->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 9:58->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 10:02->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 10:02->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 10:02->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 10:03->rpt.setReportCheckUp OK 
+28/10/2557 10:03->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 10:03->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 10:09->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 10:09->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 10:09->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 10:10->rpt.setReportCheckUp OK 
+28/10/2557 10:10->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 10:10->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 10:41->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 10:41->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 10:41->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 10:41->rpt.setReportCheckUp OK 
+28/10/2557 10:41->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 10:41->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 10:44->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 10:44->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 10:44->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 10:44->rpt.setReportCheckUp OK 
+28/10/2557 10:44->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 10:44->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 10:44->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 10:44->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 10:44->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 10:44->rpt.setReportCheckUp OK 
+28/10/2557 10:44->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 10:44->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 10:46->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 10:46->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 10:46->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 10:46->rpt.setReportCheckUp OK 
+28/10/2557 10:46->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 10:46->rpt.setReportCheckUp OK SetDataSource
+28/10/2557 15:37->FrmCheckUPAdd.btnPrint_Click 01 
+28/10/2557 15:37->FrmCheckUPAdd.btnPrint_Click 02 
+28/10/2557 15:37->FrmCheckUPAdd.btnPrint_Click 03 
+28/10/2557 15:38->rpt.setReportCheckUp OK 
+28/10/2557 15:38->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+28/10/2557 15:38->rpt.setReportCheckUp OK SetDataSource
