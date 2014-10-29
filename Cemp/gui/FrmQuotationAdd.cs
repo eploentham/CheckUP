@@ -565,7 +565,7 @@ namespace Cemp.gui
                 txtCustAddress.Text = cu.AddressT;
                 txtCustEmail.Text = cu.Email;
                 txtCustFax.Text = cu.Fax;
-                txtCustTel.Text = cu.Tele;
+                txtCustTel.Text = cu.Tele+" , "+cu.Mobile;
                 cboContact.Text = cu.ContactName1;
             }
         }

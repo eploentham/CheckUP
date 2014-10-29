@@ -155,7 +155,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(513, 125);
+            this.groupBox1.Size = new System.Drawing.Size(587, 125);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "รายละเอียด บริษัท";
@@ -188,7 +188,7 @@
             this.txtCompAddress2.Location = new System.Drawing.Point(67, 73);
             this.txtCompAddress2.Margin = new System.Windows.Forms.Padding(2);
             this.txtCompAddress2.Name = "txtCompAddress2";
-            this.txtCompAddress2.Size = new System.Drawing.Size(442, 23);
+            this.txtCompAddress2.Size = new System.Drawing.Size(516, 23);
             this.txtCompAddress2.TabIndex = 5;
             this.txtCompAddress2.Enter += new System.EventHandler(this.txtCompAddress2_Enter);
             this.txtCompAddress2.Leave += new System.EventHandler(this.txtCompAddress2_Leave);
@@ -210,7 +210,7 @@
             this.txtCompAddress1.Location = new System.Drawing.Point(67, 46);
             this.txtCompAddress1.Margin = new System.Windows.Forms.Padding(2);
             this.txtCompAddress1.Name = "txtCompAddress1";
-            this.txtCompAddress1.Size = new System.Drawing.Size(442, 23);
+            this.txtCompAddress1.Size = new System.Drawing.Size(516, 23);
             this.txtCompAddress1.TabIndex = 3;
             this.txtCompAddress1.Enter += new System.EventHandler(this.txtCompAddress1_Enter);
             this.txtCompAddress1.Leave += new System.EventHandler(this.txtCompAddress1_Leave);
@@ -233,7 +233,7 @@
             this.cboComp.Location = new System.Drawing.Point(67, 18);
             this.cboComp.Margin = new System.Windows.Forms.Padding(2);
             this.cboComp.Name = "cboComp";
-            this.cboComp.Size = new System.Drawing.Size(442, 25);
+            this.cboComp.Size = new System.Drawing.Size(516, 25);
             this.cboComp.TabIndex = 1;
             this.cboComp.Enter += new System.EventHandler(this.cboComp_Enter);
             this.cboComp.Leave += new System.EventHandler(this.cboComp_Leave);
@@ -273,11 +273,11 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.cboCust);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(542, 10);
+            this.groupBox2.Location = new System.Drawing.Point(600, 10);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(503, 166);
+            this.groupBox2.Size = new System.Drawing.Size(568, 166);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "รายละเอียด ลูกค้า";
@@ -288,7 +288,7 @@
             this.txtCustEmail.Location = new System.Drawing.Point(67, 129);
             this.txtCustEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustEmail.Name = "txtCustEmail";
-            this.txtCustEmail.Size = new System.Drawing.Size(432, 23);
+            this.txtCustEmail.Size = new System.Drawing.Size(495, 23);
             this.txtCustEmail.TabIndex = 13;
             this.txtCustEmail.Enter += new System.EventHandler(this.txtCustEmail_Enter);
             this.txtCustEmail.Leave += new System.EventHandler(this.txtCustEmail_Leave);
@@ -307,7 +307,7 @@
             // txtCustFax
             // 
             this.txtCustFax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCustFax.Location = new System.Drawing.Point(317, 98);
+            this.txtCustFax.Location = new System.Drawing.Point(380, 98);
             this.txtCustFax.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustFax.Name = "txtCustFax";
             this.txtCustFax.Size = new System.Drawing.Size(182, 23);
@@ -319,7 +319,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label9.Location = new System.Drawing.Point(270, 102);
+            this.label9.Location = new System.Drawing.Point(333, 102);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 17);
@@ -332,7 +332,7 @@
             this.txtCustTel.Location = new System.Drawing.Point(67, 99);
             this.txtCustTel.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustTel.Name = "txtCustTel";
-            this.txtCustTel.Size = new System.Drawing.Size(199, 23);
+            this.txtCustTel.Size = new System.Drawing.Size(262, 23);
             this.txtCustTel.TabIndex = 9;
             this.txtCustTel.Enter += new System.EventHandler(this.txtCustTel_Enter);
             this.txtCustTel.Leave += new System.EventHandler(this.txtCustTel_Leave);
@@ -354,7 +354,7 @@
             this.txtCustAddress.Location = new System.Drawing.Point(67, 72);
             this.txtCustAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustAddress.Name = "txtCustAddress";
-            this.txtCustAddress.Size = new System.Drawing.Size(432, 23);
+            this.txtCustAddress.Size = new System.Drawing.Size(495, 23);
             this.txtCustAddress.TabIndex = 7;
             this.txtCustAddress.Enter += new System.EventHandler(this.txtCustAddress_Enter);
             this.txtCustAddress.Leave += new System.EventHandler(this.txtCustAddress_Leave);
@@ -1059,7 +1059,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(1049, 23);
+            this.btnSave.Location = new System.Drawing.Point(1172, 23);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(56, 29);
@@ -1173,7 +1173,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(1049, 157);
+            this.btnPrint.Location = new System.Drawing.Point(1172, 157);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(56, 29);
@@ -1225,7 +1225,7 @@
             // 
             // btnPrintT
             // 
-            this.btnPrintT.Location = new System.Drawing.Point(1049, 124);
+            this.btnPrintT.Location = new System.Drawing.Point(1172, 124);
             this.btnPrintT.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrintT.Name = "btnPrintT";
             this.btnPrintT.Size = new System.Drawing.Size(56, 29);
@@ -1325,7 +1325,7 @@
             // 
             // btnDoc
             // 
-            this.btnDoc.Location = new System.Drawing.Point(1049, 58);
+            this.btnDoc.Location = new System.Drawing.Point(1172, 58);
             this.btnDoc.Margin = new System.Windows.Forms.Padding(2);
             this.btnDoc.Name = "btnDoc";
             this.btnDoc.Size = new System.Drawing.Size(56, 29);
@@ -1356,7 +1356,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1186, 832);
+            this.ClientSize = new System.Drawing.Size(1284, 832);
             this.Controls.Add(this.label42);
             this.Controls.Add(this.label41);
             this.Controls.Add(this.btnDoc);

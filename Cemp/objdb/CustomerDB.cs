@@ -42,7 +42,7 @@ namespace Cemp.objdb
             cu.saleName = "sale_name_t";
             cu.TaxId = "tax_id";
             cu.Tele = "tele";
-            //cu.thoId = "";
+            cu.Mobile = "mobile";
             cu.Zipcode = "zipcode";
             cu.StatusCompany = "status_company";
             cu.StatusVendor = "status_vendor";
@@ -82,7 +82,7 @@ namespace Cemp.objdb
             }
             else if (dt.Rows[0][cu.StatusCompany].ToString().Equals("2"))
             {
-                item.NameT = dt.Rows[0][cu.NameT].ToString()+" Co., Ltd.";
+                item.NameT = "บริษัท " + dt.Rows[0][cu.NameT].ToString() + " จำกัด (มหาชน)";
             }
             else
             {
@@ -106,6 +106,7 @@ namespace Cemp.objdb
             item.userModi = dt.Rows[0][cu.userModi].ToString();
             item.Remark2 = dt.Rows[0][cu.Remark2].ToString();
             item.PODuePeriod = dt.Rows[0][cu.PODuePeriod].ToString();
+            item.Mobile = dt.Rows[0][cu.Mobile].ToString();
 
             return item;
         }
@@ -222,6 +223,9 @@ namespace Cemp.objdb
             p.Remark2 = p.Remark2.Replace("'", "''");
             p.NameT = p.NameT.Replace("บริษัท", "");
             p.NameT = p.NameT.Replace("จำกัด", "");
+            p.NameT = p.NameT.Replace("(มหาชน)", "");
+            p.NameE = p.NameE.Replace("Co., Ltd.", "");
+            p.NameT = p.NameT.Trim();
 
             sql = "Insert Into " + cu.table + " (" + cu.pkField + "," + cu.Active + "," + cu.Addr + "," +
                 cu.AddressE + "," + cu.AddressT + "," + cu.amphurId + "," +
@@ -232,8 +236,8 @@ namespace Cemp.objdb
                 cu.saleId + "," + cu.saleName + "," + cu.TaxId + "," +
                 cu.Tele + "," + cu.Zipcode + "," + cu.StatusCompany + "," +
                 cu.StatusVendor + "," + cu.Remark2 + "," + cu.PODuePeriod + "," +
-                cu.dateCreate + "," + cu.dateModi + "," + cu.dateCancel + "," + 
-                cu.userCancel + "," + cu.userCreate + "," + cu.userModi + ") " +
+                cu.dateCreate + "," + cu.dateModi + "," + cu.dateCancel + "," +
+                cu.userCancel + "," + cu.userCreate + "," + cu.userModi + "," + cu.Mobile + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.Addr + "','" +
                 p.AddressE + "','" + p.AddressT + "','" + p.amphurId + "','" +
                 p.Code + "','" + p.ContactName1 + "','" + p.ContactName1Tel + "','" +
@@ -243,8 +247,8 @@ namespace Cemp.objdb
                 p.saleId + "','" + p.saleName + "','" + p.TaxId + "','" +
                 p.Tele + "','" + p.Zipcode + "','" + p.StatusCompany + "','" +
                 p.StatusVendor + "','" + p.Remark2 + "'," + NumberNull1(p.PODuePeriod) + "," +
-                p.dateGenDB + ",'" + p.dateModi + "','" + p.dateCancel + "','" + 
-                p.userCancel + "','" + p.userCreate + "','" + p.userModi + "')";
+                p.dateGenDB + ",'" + p.dateModi + "','" + p.dateCancel + "','" +
+                p.userCancel + "','" + p.userCreate + "','" + p.userModi + "','" + p.Mobile + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -277,6 +281,8 @@ namespace Cemp.objdb
             p.NameT = p.NameT.Replace("บริษัท", "");
             p.NameT = p.NameT.Replace("จำกัด", "");
             p.NameE = p.NameE.Replace("Co., Ltd.", "");
+            p.NameT = p.NameT.Replace("(มหาชน)", "");
+            p.NameT = p.NameT.Trim();
             sql = "Update " + cu.table + " Set " + cu.Addr + "='" + p.Addr + "', " +
                 cu.AddressE + "='" + p.AddressE + "', " +
                 cu.AddressT + "='" + p.AddressT + "', " +
@@ -302,8 +308,8 @@ namespace Cemp.objdb
                 cu.StatusVendor + "='" + p.StatusVendor + "', " +
                 cu.Remark2 + "='" + p.Remark2 + "', " +
                 cu.PODuePeriod + "=" + NumberNull1(p.PODuePeriod) + ", " +
-                cu.dateModi + "=" + p.dateGenDB + " " +
-                
+                cu.dateModi + "=" + p.dateGenDB + ", " +
+                cu.Mobile + "='" + p.Mobile + "' " +
                 "Where " + cu.pkField + "='" + p.Id + "'";
             try
             {
@@ -350,13 +356,13 @@ namespace Cemp.objdb
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 item = new ComboBoxItem();
-                if (dt.Rows[0][cu.StatusCompany].ToString().Equals("1"))
+                if (dt.Rows[i][cu.StatusCompany].ToString().Equals("1"))
                 {
                     item.Text = "บริษัท " + dt.Rows[i][cu.NameT].ToString() + " จำกัด";
                 }
                 else if (dt.Rows[i][cu.StatusCompany].ToString().Equals("2"))
                 {
-                    item.Text = dt.Rows[i][cu.NameT].ToString() + " Co., Ltd.";
+                    item.Text = "บริษัท " + dt.Rows[i][cu.NameT].ToString() + " จำกัด (มหาชน)";
                 }
                 else
                 {
@@ -378,13 +384,13 @@ namespace Cemp.objdb
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 item = new ComboBoxItem();
-                if (dt.Rows[0][cu.StatusCompany].ToString().Equals("1"))
+                if (dt.Rows[i][cu.StatusCompany].ToString().Equals("1"))
                 {
                     item.Text = "บริษัท " + dt.Rows[i][cu.NameT].ToString() + " จำกัด";
                 }
                 else if (dt.Rows[i][cu.StatusCompany].ToString().Equals("2"))
                 {
-                    item.Text = dt.Rows[i][cu.NameT].ToString() + " Co., Ltd.";
+                    item.Text = "บริษัท " + dt.Rows[i][cu.NameT].ToString() + " จำกัด (มหาชน)";
                 }
                 else
                 {

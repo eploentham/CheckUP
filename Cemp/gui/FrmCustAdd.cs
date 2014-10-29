@@ -46,7 +46,7 @@ namespace Cemp.gui
             txtTaxID.Text = cu.TaxId;
             txtTele.Text = cu.Tele;
             txtZipcode.Text = cu.Zipcode;
-            //cboAmphur.SelectedItem = cu.amphurId;
+            txtMobile.Text = cu.Mobile;
             //cboDistrict.SelectedItem = cu.districtId;
             //cboProvince.SelectedItem = cu.provinceId;
             txtContactName1.Text = cu.ContactName1;
@@ -167,6 +167,7 @@ namespace Cemp.gui
             {
                 cu.StatusVendor = "2";
             }
+            cu.Mobile = txtMobile.Text;
         }
         private void FrmCustAdd_Load(object sender, EventArgs e)
         {

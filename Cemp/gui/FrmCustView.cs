@@ -43,8 +43,8 @@ namespace Cemp.gui
             dgvView.RowCount = dt.Rows.Count + 1;
             dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvView.Columns[colRow].Width = 50;
-            dgvView.Columns[colNameT].Width = 250;
-            dgvView.Columns[colAddr].Width = 300;
+            dgvView.Columns[colNameT].Width = 350;
+            dgvView.Columns[colAddr].Width = 350;
             dgvView.Columns[colTel].Width = 150;
             dgvView.Columns[colFax].Width = 150;
             dgvView.Columns[colRemark].Width = 180;
@@ -69,7 +69,19 @@ namespace Cemp.gui
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     dgvView[colRow, i].Value = (i + 1);
-                    dgvView[colNameT, i].Value = dt.Rows[i][cc.cudb.cu.NameT].ToString();
+                    if (dt.Rows[i][cc.cudb.cu.StatusCompany].ToString().Equals("1"))
+                    {
+                        dgvView[colNameT, i].Value = "บริษัท " + dt.Rows[i][cc.cudb.cu.NameT].ToString() + " จำกัด";
+                    }
+                    else if (dt.Rows[i][cc.cudb.cu.StatusCompany].ToString().Equals("2"))
+                    {
+                        dgvView[colNameT, i].Value = "บริษัท " + dt.Rows[i][cc.cudb.cu.NameT].ToString() + " จำกัด (มหาชน)";
+                    }
+                    else
+                    {
+                        dgvView[colNameT, i].Value = dt.Rows[i][cc.cudb.cu.NameT].ToString();
+                    }
+                    //dgvView[colNameT, i].Value = dt.Rows[i][cc.cudb.cu.NameT].ToString();
                     dgvView[colAddr, i].Value = dt.Rows[i][cc.cudb.cu.AddressT].ToString();
                     dgvView[colTel, i].Value = dt.Rows[i][cc.cudb.cu.Tele].ToString();
                     dgvView[colFax, i].Value = dt.Rows[i][cc.cudb.cu.Fax].ToString();

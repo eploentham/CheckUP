@@ -422,7 +422,15 @@ namespace Cemp
                 
                 rpt.SetParameterValue("amount2", qu.Amount);
 
-                rpt.SetParameterValue("discountPer", qu.DiscountPer);
+                if (qu.DiscountPer.Equals(".00") || qu.DiscountPer.Equals("0.00"))
+                {
+                    rpt.SetParameterValue("discountPer","");
+                }
+                else
+                {
+                    rpt.SetParameterValue("discountPer", qu.DiscountPer);
+                }
+                
 
                 if (qu.Discount.Equals("0.00"))
                 {

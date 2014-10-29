@@ -1078,3 +1078,21 @@ Parameter name: length
 27/10/2557 17:50->rpt.setReportQuotation OK 
 27/10/2557 17:50->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
 27/10/2557 17:50->rpt.setReportQuotation OK SetDataSource
+29/10/2557 19:27->rpt.setReportQuotation OK 
+29/10/2557 19:27->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+29/10/2557 19:27->rpt.setReportQuotation OK SetDataSource
+29/10/2557 19:30->rpt.setReportQuotation OK 
+29/10/2557 19:30->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+29/10/2557 19:30->rpt.setReportQuotation OK SetDataSource
+29/10/2557 19:30->rpt.setReportQuotation OK 
+29/10/2557 19:30->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+29/10/2557 19:30->rpt.setReportQuotation OK SetDataSource
+29/10/2557 19:39->rpt.setReportQuotation OK 
+29/10/2557 19:39->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+29/10/2557 19:39->rpt.setReportQuotation OK SetDataSource
+29/10/2557 19:43->rpt.setReportQuotation OK 
+29/10/2557 19:43->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+29/10/2557 19:43->rpt.setReportQuotation OK SetDataSource
+29/10/2557 19:46->rpt.setReportQuotation OK 
+29/10/2557 19:46->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+29/10/2557 19:46->rpt.setReportQuotation OK SetDataSource

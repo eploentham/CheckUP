@@ -485,9 +485,15 @@
       <DependentUpon>QuotationDS1.xsd</DependentUpon>
     </Compile>
     <Compile Include="report\QuotationPrint.cs">
+      <DependentUpon>QuotationPrint.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="report\QuotationPrint1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QuotationPrint.rpt</DependentUpon>
+      <DependentUpon>QuotationPrint1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="report\ResultDS.Designer.cs">
@@ -674,6 +680,10 @@
     <EmbeddedResource Include="report\QuotationPrint.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>QuotationPrint.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\QuotationPrint1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>QuotationPrint1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="report\ResultPrint.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

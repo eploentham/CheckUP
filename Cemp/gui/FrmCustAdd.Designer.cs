@@ -84,6 +84,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtMobile = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuDDuePeriod)).BeginInit();
             this.panel2.SuspendLayout();
@@ -92,6 +94,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtMobile);
+            this.groupBox1.Controls.Add(this.label24);
             this.groupBox1.Controls.Add(this.nuDDuePeriod);
             this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.label23);
@@ -145,7 +149,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(918, 492);
+            this.groupBox1.Size = new System.Drawing.Size(918, 557);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -327,7 +331,7 @@
             // txtRemark
             // 
             this.txtRemark.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRemark.Location = new System.Drawing.Point(109, 446);
+            this.txtRemark.Location = new System.Drawing.Point(109, 475);
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(639, 22);
             this.txtRemark.TabIndex = 14;
@@ -339,7 +343,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(14, 449);
+            this.label4.Location = new System.Drawing.Point(14, 478);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 16);
             this.label4.TabIndex = 60;
@@ -472,7 +476,7 @@
             // txtTaxID
             // 
             this.txtTaxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaxID.Location = new System.Drawing.Point(109, 419);
+            this.txtTaxID.Location = new System.Drawing.Point(109, 448);
             this.txtTaxID.Name = "txtTaxID";
             this.txtTaxID.Size = new System.Drawing.Size(206, 22);
             this.txtTaxID.TabIndex = 13;
@@ -484,7 +488,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(14, 421);
+            this.label14.Location = new System.Drawing.Point(14, 450);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(53, 16);
             this.label14.TabIndex = 46;
@@ -493,7 +497,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(109, 393);
+            this.txtEmail.Location = new System.Drawing.Point(109, 422);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(206, 22);
             this.txtEmail.TabIndex = 12;
@@ -505,7 +509,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(14, 395);
+            this.label13.Location = new System.Drawing.Point(14, 424);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(48, 16);
             this.label13.TabIndex = 44;
@@ -514,7 +518,7 @@
             // TxtFax
             // 
             this.TxtFax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFax.Location = new System.Drawing.Point(109, 367);
+            this.TxtFax.Location = new System.Drawing.Point(109, 396);
             this.TxtFax.Name = "TxtFax";
             this.TxtFax.Size = new System.Drawing.Size(206, 22);
             this.TxtFax.TabIndex = 11;
@@ -526,7 +530,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(14, 369);
+            this.label12.Location = new System.Drawing.Point(14, 398);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(36, 16);
             this.label12.TabIndex = 42;
@@ -744,11 +748,29 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "รหัส :";
             // 
+            // txtMobile
+            // 
+            this.txtMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMobile.Location = new System.Drawing.Point(109, 369);
+            this.txtMobile.Name = "txtMobile";
+            this.txtMobile.Size = new System.Drawing.Size(206, 22);
+            this.txtMobile.TabIndex = 112;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(14, 371);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(55, 16);
+            this.label24.TabIndex = 113;
+            this.label24.Text = "Mobile :";
+            // 
             // FrmCustAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 516);
+            this.ClientSize = new System.Drawing.Size(942, 581);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmCustAdd";
@@ -824,5 +846,7 @@
         private System.Windows.Forms.NumericUpDown nuDDuePeriod;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox txtMobile;
+        private System.Windows.Forms.Label label24;
     }
 }
