@@ -49,6 +49,8 @@ namespace CheckUP.objdb
             ei.ChoResult = "cho_result";
             ei.ChoRow = "cho_row";
             ei.Chosummary = "cho_summary";
+            ei.ChoHDL = "hdl";
+            ei.ChoLDL = "ldl";
 
             ei.FBS = "fbs_value";
             ei.FBSNo = "fbs_no";
@@ -66,6 +68,7 @@ namespace CheckUP.objdb
             ei.PESummary = "pe_summary";
             ei.PEVitalSign = "pe_vitalsign";
             ei.PEWeight = "pe_weight";
+            ei.PEBloodGroup = "";
 
             ei.SfAAge = "sf_a_age";
             ei.SfAFirstName = "sf_a_first_name";
@@ -88,6 +91,7 @@ namespace CheckUP.objdb
             ei.SgotRow = "sgot_row";
             ei.Sgpt = "sgot_sgpt_value";
             ei.SgptSummary = "sgot_summary";
+            ei.SgotALP = "sgot_alt_vaule";
 
             ei.Triglyceride = "tri_value";
             ei.TriNo = "tri_no";
@@ -121,6 +125,15 @@ namespace CheckUP.objdb
             ei.XrayRow = "xray_row";
             ei.XraySummary = "xray_summary";
             ei.Active = "active";
+
+            ei.Other1Amphetamine = "other1_amphetamine";
+            ei.Other1AntiHIV = "other1_antihiv";
+            ei.Other1Calcium = "other1_calcium";
+            ei.Other1HBsAb = "other1_hbsab";
+            ei.Other1HBsAg = "other1_hbsag";
+            ei.Other1No = "other1_no";
+            ei.Other1Row = "other1_row";
+            ei.Other1VDRL = "other1_vdrl";
 
             ei.pkField = "id";
             ei.table = "b_excel_init";
@@ -156,6 +169,8 @@ namespace CheckUP.objdb
             item.ChoResult = dt.Rows[0][ei.ChoResult].ToString();
             item.ChoRow = dt.Rows[0][ei.ChoRow].ToString();
             item.Chosummary = dt.Rows[0][ei.Chosummary].ToString();
+            item.ChoHDL = dt.Rows[0][ei.ChoHDL].ToString();
+            item.ChoLDL = dt.Rows[0][ei.ChoLDL].ToString();
 
             item.FBS = dt.Rows[0][ei.FBS].ToString();
             item.FBSNo = dt.Rows[0][ei.FBSNo].ToString();
@@ -173,6 +188,8 @@ namespace CheckUP.objdb
             item.PESummary = dt.Rows[0][ei.PESummary].ToString();
             item.PEVitalSign = dt.Rows[0][ei.PEVitalSign].ToString();
             item.PEWeight = dt.Rows[0][ei.PEWeight].ToString();
+
+            //item.SfStatusName = dt.Rows[0][ei.SfStatusName].ToString();
 
             item.SfAAge = dt.Rows[0][ei.SfAAge].ToString();
             item.SfAFirstName = dt.Rows[0][ei.SfAFirstName].ToString();
@@ -195,6 +212,7 @@ namespace CheckUP.objdb
             item.SgotRow = dt.Rows[0][ei.SgotRow].ToString();
             item.Sgpt = dt.Rows[0][ei.Sgpt].ToString();
             item.SgptSummary = dt.Rows[0][ei.SgptSummary].ToString();
+            item.SgotALP = dt.Rows[0][ei.SgotALP].ToString();
 
             item.Triglyceride = dt.Rows[0][ei.Triglyceride].ToString();
             item.TriNo = dt.Rows[0][ei.TriNo].ToString();
@@ -227,6 +245,15 @@ namespace CheckUP.objdb
             item.XrayNo = dt.Rows[0][ei.XrayNo].ToString();
             item.XrayRow = dt.Rows[0][ei.XrayRow].ToString();
             item.XraySummary = dt.Rows[0][ei.XraySummary].ToString();
+
+            item.Other1Amphetamine = dt.Rows[0][ei.Other1Amphetamine].ToString();
+            item.Other1AntiHIV = dt.Rows[0][ei.Other1AntiHIV].ToString();
+            item.Other1Calcium = dt.Rows[0][ei.Other1Calcium].ToString();
+            item.Other1HBsAb = dt.Rows[0][ei.Other1HBsAb].ToString();
+            item.Other1HBsAg = dt.Rows[0][ei.Other1HBsAg].ToString();
+            item.Other1No = dt.Rows[0][ei.Other1No].ToString();
+            item.Other1Row = dt.Rows[0][ei.Other1Row].ToString();
+            item.Other1VDRL = dt.Rows[0][ei.Other1VDRL].ToString();
 
             item.Active = dt.Rows[0][ei.Active].ToString();
             return item;
@@ -314,7 +341,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateCholes(String Cholesteral, String ChoNo, String ChoResult, String ChoRow, String Chosummary)
+        public String updateCholes(String Cholesteral, String ChoNo, String ChoResult, String ChoRow, String Chosummary, String ChoLDL, String ChoHDL)
         {
             String sql = "", chk = "";
 
@@ -326,7 +353,9 @@ namespace CheckUP.objdb
                 ei.ChoNo + "='" + ChoNo + "', " +
                 ei.ChoResult + "='" + ChoResult + "', " +
                 ei.ChoRow + "='" + ChoRow + "', " +
-                ei.Chosummary + "='" + Chosummary + "' " ;
+                ei.Chosummary + "='" + Chosummary + "', "+
+                ei.ChoHDL + "='" + ChoLDL + "', " +
+                ei.ChoLDL + "='" + ChoHDL + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -362,8 +391,8 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updatePE( String PENo, String PERow, String PEAge, String PEBMI, String PEHeight, String PEWeight,  String PEPulse, String PEVitalSign, String PEResult,
-             String PESummary)
+        public String updatePE( String PENo, String PERow, String PEAge, String PEBMI, String PEHeight, String PEWeight,  String PEPulse, 
+            String PEVitalSign, String PEResult, String PESummary, String PEBloodGroup)
         {
             String sql = "", chk = "";
 
@@ -380,7 +409,8 @@ namespace CheckUP.objdb
                 ei.PERow + "='" + PERow + "', " +
                 ei.PESummary + "='" + PESummary + "', " +
                 ei.PEVitalSign + "='" + PEVitalSign + "', " +
-                ei.PEWeight + "='" + PEWeight + "' " ;
+                ei.PEWeight + "='" + PEWeight + "' " +
+                ei.PEBloodGroup + "='" + PEBloodGroup + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -641,6 +671,35 @@ namespace CheckUP.objdb
             catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex.ToString(), "update updateXray");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateOther1(String Amphetamine, String AntiHIV, String Calcium, String HBsAb, String HBsAg, String No, String Row, String VDRL)
+        {
+            String sql = "", chk = "";
+
+            //p.NameT = p.NameT.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+            //p.PositionName = p.PositionName.Replace("'", "''");
+
+            sql = "Update " + ei.table + " Set " + ei.Other1Amphetamine + "='" + Amphetamine + "', " +
+                ei.Other1AntiHIV + "='" + AntiHIV + "', " +
+                ei.Other1Calcium + "='" + Calcium + "', " +
+                ei.Other1HBsAb + "='" + HBsAb + "', " +
+                ei.Other1HBsAg + "='" + HBsAg + "', " +
+                ei.Other1No + "='" + No + "', " +
+                ei.Other1Row + "='" + Row + "' " +
+                ei.Other1VDRL + "='" + VDRL + "' ";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateOther1");
             }
             finally
             {

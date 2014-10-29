@@ -14,8 +14,8 @@ namespace CheckUP.gui
     public partial class FrmExcelInit : Form
     {
         CheckControl cc;
-        int tabSum = 0, tabPE = 1, tabXRay = 2, tabCBC = 3, tabFBS = 4, tabUA = 5, tabTri = 6, tabCho = 7, tabSgot = 8, tabBun = 9, tabUric = 10;
-        int tabCnt = 11;
+        int tabSum = 0, tabPE = 1, tabXRay = 2, tabCBC = 3, tabFBS = 4, tabUA = 5, tabTri = 6, tabCho = 7, tabSgot = 8, tabBun = 9, tabUric = 10, tabOther1=11;
+        int tabCnt = 12;
         OpenFileDialog ofd = new OpenFileDialog();
         ExcelInit ei;
         public FrmExcelInit(CheckControl c)
@@ -37,7 +37,20 @@ namespace CheckUP.gui
             tC.TabPages[tabCho].Text = "Choles";
             tC.TabPages[tabSgot].Text = "SGOT/SGPT";
             tC.TabPages[tabBun].Text = "BUN Creatine";
-            tC.TabPages[tabUric].Text = "Uric acid";
+            tC.TabPages[tabUric].Text = "Uric Acid";
+            tC.TabPages[tabOther1].Text = "Other1";
+            if (ei.SfStatusName.Equals("A"))
+            {
+                chkA.Checked = true;
+            }
+            else if (ei.SfStatusName.Equals("B"))
+            {
+                chkB.Checked = true;
+            }
+            else if (ei.SfStatusName.Equals("C"))
+            {
+                chkC.Checked = true;
+            }
 
             nmDPERow.Value = int.Parse(cc.cf.NumberNull1(ei.PERow));
             nmDPENo.Value = int.Parse(cc.cf.NumberNull1(ei.PENo));
@@ -49,6 +62,7 @@ namespace CheckUP.gui
             nmDPESummary.Value = int.Parse(cc.cf.NumberNull1(ei.PESummary));
             nmDPEVi.Value = int.Parse(cc.cf.NumberNull1(ei.PEVitalSign));
             nmDPEWeight.Value = int.Parse(cc.cf.NumberNull1(ei.PEWeight));
+            nmDPEBloodGroup.Value = int.Parse(cc.cf.NumberNull1(ei.PEBloodGroup));
 
             nmDXRayRow.Value = int.Parse(cc.cf.NumberNull1(ei.XrayRow));
             nmDXRayNo.Value = int.Parse(cc.cf.NumberNull1(ei.XrayNo));
@@ -103,6 +117,8 @@ namespace CheckUP.gui
             nmDChoRow.Value = int.Parse(cc.cf.NumberNull1(ei.ChoRow));
             nmDChoSummary.Value = int.Parse(cc.cf.NumberNull1(ei.Chosummary));
             nmDChoValue.Value = int.Parse(cc.cf.NumberNull1(ei.Cholesteral));
+            nmDChoLDL.Value = int.Parse(cc.cf.NumberNull1(ei.ChoLDL));
+            nmDChoHDL.Value = int.Parse(cc.cf.NumberNull1(ei.ChoHDL));
 
             nmDSgotRow.Value = int.Parse(cc.cf.NumberNull1(ei.SgotRow));
             nmDSgotNo.Value = int.Parse(cc.cf.NumberNull1(ei.SgotNo));
@@ -110,6 +126,7 @@ namespace CheckUP.gui
             nmDSgotSgptValue.Value = int.Parse(cc.cf.NumberNull1(ei.Sgpt));
             nmDSgotSummary.Value = int.Parse(cc.cf.NumberNull1(ei.SgptSummary));
             nmDSgotvalue.Value = int.Parse(cc.cf.NumberNull1(ei.Sgot));
+            nmDSgotALPValue.Value = int.Parse(cc.cf.NumberNull1(ei.SgotALP));
 
             nmDBunRow.Value = int.Parse(cc.cf.NumberNull1(ei.BunRow));
             nmDBunNo.Value = int.Parse(cc.cf.NumberNull1(ei.BunNo));
@@ -124,7 +141,7 @@ namespace CheckUP.gui
             nmDUricSummary.Value = int.Parse(cc.cf.NumberNull1(ei.UricSummary));
             nmDUricValue.Value = int.Parse(cc.cf.NumberNull1(ei.UricAcid));
 
-            
+            nmDOther1HBsAb.Value = int.Parse(cc.cf.NumberNull1(ei.CBCHb));
             
 
 
@@ -385,7 +402,7 @@ namespace CheckUP.gui
         }
         private void SaveCholes()
         {
-            String No = "", cho = "", result = "", summary = "";
+            String No = "", cho = "", result = "", summary = "", ldl="", hdl="";
             ofd.ShowDialog();
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
@@ -410,6 +427,26 @@ namespace CheckUP.gui
                 cho = "";
             }
             cho = cho.Trim();
+
+            if (xlRange.Cells[nmDChoRow.Value, nmDChoLDL.Value].Value2 != null)
+            {
+                ldl = xlRange.Cells[nmDChoRow.Value, nmDChoLDL.Value].Value2.ToString();
+            }
+            else
+            {
+                ldl = "";
+            }
+            ldl = ldl.Trim();
+            if (xlRange.Cells[nmDChoRow.Value, nmDChoHDL.Value].Value2 != null)
+            {
+                hdl = xlRange.Cells[nmDChoRow.Value, nmDChoHDL.Value].Value2.ToString();
+            }
+            else
+            {
+                hdl = "";
+            }
+            hdl = hdl.Trim();
+
             if (xlRange.Cells[nmDChoRow.Value, nmDChoResult.Value].Value2 != null)
             {
                 result = xlRange.Cells[nmDChoRow.Value, nmDChoResult.Value].Value2.ToString();
@@ -428,8 +465,9 @@ namespace CheckUP.gui
                 summary = "";
             }
             summary = summary.Trim();
-            txtChoTest.Text = "ลำดับ " + No + " choles " + cho + " result " + result + " summary " + summary;
-            if (cc.eidb.updateCholes(nmDChoValue.Value.ToString(), nmDChoNo.Value.ToString(), nmDChoResult.Value.ToString(), nmDChoRow.Value.ToString(), nmDChoSummary.Value.ToString()).Length >= 1)
+            txtChoTest.Text = "ลำดับ " + No + " choles " + cho + " LDL " + ldl + " HDL " + hdl + " result " + result + " summary " + summary;
+            if (cc.eidb.updateCholes(nmDChoValue.Value.ToString(), nmDChoNo.Value.ToString(), nmDChoResult.Value.ToString(), nmDChoRow.Value.ToString(),
+                nmDChoSummary.Value.ToString(), nmDChoLDL.Value.ToString(), nmDChoHDL.Value.ToString()).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล Choles เรียบร้อย", "บันทึกข้อมูล");
             }
@@ -628,7 +666,7 @@ namespace CheckUP.gui
 
         private void btnSfExcel_Click(object sender, EventArgs e)
         {
-            String prefix = "", No="", FirstName="", LastName="", Age="", FullName="", AllName="";
+            String prefix = "", No="", FirstName="", LastName="", Age="", FullName="", AllName="", StatusSf="";
             if ((!chkA.Checked) &&(!chkB.Checked)&&(!chkC.Checked))
             {
                 MessageBox.Show("เลือกประเภทคำนำหน้าชื่อ ", "เลือกข้อมูล");
@@ -651,6 +689,7 @@ namespace CheckUP.gui
 
             if (chkA.Checked)
             {
+                StatusSf = "A";
                 if (xlRange.Cells[nmDRow.Value, nmDARow.Value].Value2 != null)
                 {
                     No = xlRange.Cells[nmDRow.Value, nmDARow.Value].Value2.ToString();
@@ -705,6 +744,7 @@ namespace CheckUP.gui
             }
             else if (chkB.Checked)
             {
+                StatusSf = "B";
                 if (xlRange.Cells[nmDRow.Value, nmDBRow.Value].Value2 != null)
                 {
                     No = xlRange.Cells[nmDRow.Value, nmDBRow.Value].Value2.ToString();
@@ -758,6 +798,7 @@ namespace CheckUP.gui
             }
             else if (chkC.Checked)
             {
+                StatusSf = "C";
                 if (xlRange.Cells[nmDRow.Value, nmDCRow.Value].Value2 != null)
                 {
                     No = xlRange.Cells[nmDRow.Value, nmDCRow.Value].Value2.ToString();
@@ -801,7 +842,7 @@ namespace CheckUP.gui
 
         private void btnPEExcel_Click(object sender, EventArgs e)
         {
-            String No = "", age="", bmi="", height="", weight="", pulse="", vi="", result="", summary="";
+            String No = "", age="", bmi="", height="", weight="", pulse="", vi="", result="", summary="", bloodGroup="";
             ofd.ShowDialog();
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
@@ -862,6 +903,17 @@ namespace CheckUP.gui
                 pulse = "";
             }
             pulse = pulse.Trim();
+
+            if (xlRange.Cells[nmDPERow.Value, nmDPEBloodGroup.Value].Value2 != null)
+            {
+                bloodGroup = xlRange.Cells[nmDPERow.Value, nmDPEBloodGroup.Value].Value2.ToString();
+            }
+            else
+            {
+                bloodGroup = "";
+            }
+            bloodGroup = bloodGroup.Trim();
+
             if (xlRange.Cells[nmDPERow.Value, nmDPEVi.Value].Value2 != null)
             {
                 vi = xlRange.Cells[nmDPERow.Value, nmDPEVi.Value].Value2.ToString();
@@ -889,10 +941,11 @@ namespace CheckUP.gui
                 summary = "";
             }
             summary = summary.Trim();
-            txtPETest.Text = "ลำดับ " + No + " อายุ " + age + " น้ำหนัก " + weight + " ส่วนสูง " + height + " BMI " + bmi + " VitalSign " + vi + " Pulse " + pulse + " Result " + result + " Summary " + summary;
+            txtPETest.Text = "ลำดับ " + No + " อายุ " + age + " น้ำหนัก " + weight + " ส่วนสูง " + height + " BMI " + bmi + " VitalSign " + vi + " Pulse " + pulse +
+                " Blood Group " + bloodGroup + " Result " + result + " Summary " + summary;
             if (cc.eidb.updatePE(nmDPENo.Value.ToString(), nmDPERow.Value.ToString(), nmDPEAge.Value.ToString(), nmDPEBMI.Value.ToString(),
-                nmDPEHeight.Value.ToString(), nmDPEWeight.Value.ToString(), nmDPEPulse.Value.ToString(), nmDPEVi.Value.ToString(), nmDPEResult.Value.ToString(), 
-                nmDPESummary.Value.ToString()).Length >= 1)
+                nmDPEHeight.Value.ToString(), nmDPEWeight.Value.ToString(), nmDPEPulse.Value.ToString(), nmDPEVi.Value.ToString(), nmDPEResult.Value.ToString(),
+                nmDPESummary.Value.ToString(), nmDPEBloodGroup.Value.ToString()).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล PE เรียบร้อย", "บันทึกข้อมูล");
             }
@@ -1166,6 +1219,11 @@ namespace CheckUP.gui
         private void btnUricExcel_Click(object sender, EventArgs e)
         {
             SaveUric();
+        }
+
+        private void btnOther1Excel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

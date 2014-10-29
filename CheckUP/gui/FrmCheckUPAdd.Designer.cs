@@ -209,6 +209,11 @@
             this.dgvBun = new System.Windows.Forms.DataGridView();
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.dgvUric = new System.Windows.Forms.DataGridView();
+            this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.tabPage17 = new System.Windows.Forms.TabPage();
             this.cboCust = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnImport = new System.Windows.Forms.Button();
@@ -225,6 +230,22 @@
             this.ChkUnActive = new System.Windows.Forms.RadioButton();
             this.chkActive = new System.Windows.Forms.RadioButton();
             this.pB1 = new System.Windows.Forms.ProgressBar();
+            this.dgvOther1 = new System.Windows.Forms.DataGridView();
+            this.btnOtherImport = new System.Windows.Forms.Button();
+            this.label89 = new System.Windows.Forms.Label();
+            this.label90 = new System.Windows.Forms.Label();
+            this.btnOther1Excel = new System.Windows.Forms.Button();
+            this.textBox51 = new System.Windows.Forms.TextBox();
+            this.textBox52 = new System.Windows.Forms.TextBox();
+            this.textBox53 = new System.Windows.Forms.TextBox();
+            this.textBox54 = new System.Windows.Forms.TextBox();
+            this.textBox55 = new System.Windows.Forms.TextBox();
+            this.label91 = new System.Windows.Forms.Label();
+            this.label92 = new System.Windows.Forms.Label();
+            this.label93 = new System.Windows.Forms.Label();
+            this.label94 = new System.Windows.Forms.Label();
+            this.label95 = new System.Windows.Forms.Label();
+            this.label96 = new System.Windows.Forms.Label();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -251,7 +272,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBun)).BeginInit();
             this.tabPage11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUric)).BeginInit();
+            this.tabPage13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOther1)).BeginInit();
             this.SuspendLayout();
             // 
             // tC
@@ -268,14 +291,34 @@
             this.tC.Controls.Add(this.tabPage9);
             this.tC.Controls.Add(this.tabPage10);
             this.tC.Controls.Add(this.tabPage11);
+            this.tC.Controls.Add(this.tabPage13);
+            this.tC.Controls.Add(this.tabPage14);
+            this.tC.Controls.Add(this.tabPage15);
+            this.tC.Controls.Add(this.tabPage16);
+            this.tC.Controls.Add(this.tabPage17);
             this.tC.Location = new System.Drawing.Point(12, 79);
             this.tC.Name = "tC";
             this.tC.SelectedIndex = 0;
-            this.tC.Size = new System.Drawing.Size(869, 623);
+            this.tC.Size = new System.Drawing.Size(973, 692);
             this.tC.TabIndex = 1;
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.btnOtherImport);
+            this.tabPage4.Controls.Add(this.label89);
+            this.tabPage4.Controls.Add(this.label90);
+            this.tabPage4.Controls.Add(this.btnOther1Excel);
+            this.tabPage4.Controls.Add(this.textBox51);
+            this.tabPage4.Controls.Add(this.textBox52);
+            this.tabPage4.Controls.Add(this.textBox53);
+            this.tabPage4.Controls.Add(this.textBox54);
+            this.tabPage4.Controls.Add(this.textBox55);
+            this.tabPage4.Controls.Add(this.label91);
+            this.tabPage4.Controls.Add(this.label92);
+            this.tabPage4.Controls.Add(this.label93);
+            this.tabPage4.Controls.Add(this.label94);
+            this.tabPage4.Controls.Add(this.label95);
+            this.tabPage4.Controls.Add(this.label96);
             this.tabPage4.Controls.Add(this.label86);
             this.tabPage4.Controls.Add(this.label85);
             this.tabPage4.Controls.Add(this.btnUricImport);
@@ -432,7 +475,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(861, 597);
+            this.tabPage4.Size = new System.Drawing.Size(965, 666);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Summary";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1899,7 +1942,7 @@
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage12.Size = new System.Drawing.Size(861, 597);
+            this.tabPage12.Size = new System.Drawing.Size(965, 597);
             this.tabPage12.TabIndex = 1;
             this.tabPage12.Text = "Print";
             this.tabPage12.UseVisualStyleBackColor = true;
@@ -1965,7 +2008,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(861, 597);
+            this.tabPage3.Size = new System.Drawing.Size(965, 597);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage2";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1988,7 +2031,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(861, 597);
+            this.tabPage1.Size = new System.Drawing.Size(965, 597);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -2011,7 +2054,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(861, 597);
+            this.tabPage2.Size = new System.Drawing.Size(965, 597);
             this.tabPage2.TabIndex = 4;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -2026,6 +2069,7 @@
             this.dgvCBC.RowTemplate.Height = 24;
             this.dgvCBC.Size = new System.Drawing.Size(851, 593);
             this.dgvCBC.TabIndex = 2;
+            this.dgvCBC.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCBC_CellDoubleClick);
             // 
             // tabPage5
             // 
@@ -2033,7 +2077,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(861, 597);
+            this.tabPage5.Size = new System.Drawing.Size(965, 597);
             this.tabPage5.TabIndex = 5;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -2048,6 +2092,7 @@
             this.dgvFBS.RowTemplate.Height = 24;
             this.dgvFBS.Size = new System.Drawing.Size(851, 593);
             this.dgvFBS.TabIndex = 2;
+            this.dgvFBS.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFBS_CellDoubleClick);
             // 
             // tabPage6
             // 
@@ -2055,7 +2100,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(861, 597);
+            this.tabPage6.Size = new System.Drawing.Size(965, 597);
             this.tabPage6.TabIndex = 6;
             this.tabPage6.Text = "tabPage6";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -2070,6 +2115,7 @@
             this.dgvUA.RowTemplate.Height = 24;
             this.dgvUA.Size = new System.Drawing.Size(851, 593);
             this.dgvUA.TabIndex = 2;
+            this.dgvUA.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUA_CellDoubleClick);
             // 
             // tabPage7
             // 
@@ -2077,7 +2123,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(861, 597);
+            this.tabPage7.Size = new System.Drawing.Size(965, 597);
             this.tabPage7.TabIndex = 7;
             this.tabPage7.Text = "tabPage7";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -2092,6 +2138,7 @@
             this.dgvTri.RowTemplate.Height = 24;
             this.dgvTri.Size = new System.Drawing.Size(851, 593);
             this.dgvTri.TabIndex = 2;
+            this.dgvTri.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTri_CellDoubleClick);
             // 
             // tabPage8
             // 
@@ -2099,7 +2146,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(861, 597);
+            this.tabPage8.Size = new System.Drawing.Size(965, 597);
             this.tabPage8.TabIndex = 8;
             this.tabPage8.Text = "tabPage8";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -2114,6 +2161,7 @@
             this.dgvCho.RowTemplate.Height = 24;
             this.dgvCho.Size = new System.Drawing.Size(851, 593);
             this.dgvCho.TabIndex = 2;
+            this.dgvCho.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCho_CellDoubleClick);
             // 
             // tabPage9
             // 
@@ -2121,7 +2169,7 @@
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(861, 597);
+            this.tabPage9.Size = new System.Drawing.Size(965, 597);
             this.tabPage9.TabIndex = 9;
             this.tabPage9.Text = "tabPage9";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -2136,6 +2184,7 @@
             this.dgvSgot.RowTemplate.Height = 24;
             this.dgvSgot.Size = new System.Drawing.Size(851, 593);
             this.dgvSgot.TabIndex = 3;
+            this.dgvSgot.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSgot_CellDoubleClick);
             // 
             // tabPage10
             // 
@@ -2143,7 +2192,7 @@
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(861, 597);
+            this.tabPage10.Size = new System.Drawing.Size(965, 597);
             this.tabPage10.TabIndex = 10;
             this.tabPage10.Text = "tabPage10";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -2158,6 +2207,7 @@
             this.dgvBun.RowTemplate.Height = 24;
             this.dgvBun.Size = new System.Drawing.Size(851, 593);
             this.dgvBun.TabIndex = 3;
+            this.dgvBun.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBun_CellDoubleClick);
             // 
             // tabPage11
             // 
@@ -2165,7 +2215,7 @@
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage11.Size = new System.Drawing.Size(861, 597);
+            this.tabPage11.Size = new System.Drawing.Size(965, 597);
             this.tabPage11.TabIndex = 11;
             this.tabPage11.Text = "tabPage11";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -2180,6 +2230,58 @@
             this.dgvUric.RowTemplate.Height = 24;
             this.dgvUric.Size = new System.Drawing.Size(851, 593);
             this.dgvUric.TabIndex = 3;
+            this.dgvUric.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUric_CellDoubleClick);
+            // 
+            // tabPage13
+            // 
+            this.tabPage13.Controls.Add(this.dgvOther1);
+            this.tabPage13.Location = new System.Drawing.Point(4, 22);
+            this.tabPage13.Name = "tabPage13";
+            this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage13.Size = new System.Drawing.Size(965, 597);
+            this.tabPage13.TabIndex = 12;
+            this.tabPage13.Text = "tabPage13";
+            this.tabPage13.UseVisualStyleBackColor = true;
+            // 
+            // tabPage14
+            // 
+            this.tabPage14.Location = new System.Drawing.Point(4, 22);
+            this.tabPage14.Name = "tabPage14";
+            this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage14.Size = new System.Drawing.Size(965, 597);
+            this.tabPage14.TabIndex = 13;
+            this.tabPage14.Text = "tabPage14";
+            this.tabPage14.UseVisualStyleBackColor = true;
+            // 
+            // tabPage15
+            // 
+            this.tabPage15.Location = new System.Drawing.Point(4, 22);
+            this.tabPage15.Name = "tabPage15";
+            this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage15.Size = new System.Drawing.Size(965, 597);
+            this.tabPage15.TabIndex = 14;
+            this.tabPage15.Text = "tabPage15";
+            this.tabPage15.UseVisualStyleBackColor = true;
+            // 
+            // tabPage16
+            // 
+            this.tabPage16.Location = new System.Drawing.Point(4, 22);
+            this.tabPage16.Name = "tabPage16";
+            this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage16.Size = new System.Drawing.Size(965, 597);
+            this.tabPage16.TabIndex = 15;
+            this.tabPage16.Text = "tabPage16";
+            this.tabPage16.UseVisualStyleBackColor = true;
+            // 
+            // tabPage17
+            // 
+            this.tabPage17.Location = new System.Drawing.Point(4, 22);
+            this.tabPage17.Name = "tabPage17";
+            this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage17.Size = new System.Drawing.Size(965, 597);
+            this.tabPage17.TabIndex = 16;
+            this.tabPage17.Text = "tabPage17";
+            this.tabPage17.UseVisualStyleBackColor = true;
             // 
             // cboCust
             // 
@@ -2343,11 +2445,163 @@
             this.pB1.Size = new System.Drawing.Size(124, 23);
             this.pB1.TabIndex = 68;
             // 
+            // dgvOther1
+            // 
+            this.dgvOther1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvOther1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOther1.Location = new System.Drawing.Point(2, 2);
+            this.dgvOther1.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvOther1.Name = "dgvOther1";
+            this.dgvOther1.RowTemplate.Height = 24;
+            this.dgvOther1.Size = new System.Drawing.Size(851, 593);
+            this.dgvOther1.TabIndex = 4;
+            // 
+            // btnOtherImport
+            // 
+            this.btnOtherImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnOtherImport.Location = new System.Drawing.Point(750, 603);
+            this.btnOtherImport.Name = "btnOtherImport";
+            this.btnOtherImport.Size = new System.Drawing.Size(75, 23);
+            this.btnOtherImport.TabIndex = 168;
+            this.btnOtherImport.Text = "นำเข้า Uric";
+            this.btnOtherImport.UseVisualStyleBackColor = true;
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label89.Location = new System.Drawing.Point(639, 586);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(85, 16);
+            this.label89.TabIndex = 167;
+            this.label89.Text = "เลือก file Excel";
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label90.Location = new System.Drawing.Point(760, 586);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(35, 16);
+            this.label90.TabIndex = 166;
+            this.label90.Text = "นำเข้า";
+            // 
+            // btnOther1Excel
+            // 
+            this.btnOther1Excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnOther1Excel.Location = new System.Drawing.Point(653, 604);
+            this.btnOther1Excel.Name = "btnOther1Excel";
+            this.btnOther1Excel.Size = new System.Drawing.Size(75, 23);
+            this.btnOther1Excel.TabIndex = 165;
+            this.btnOther1Excel.Text = "Excel";
+            this.btnOther1Excel.UseVisualStyleBackColor = true;
+            this.btnOther1Excel.Click += new System.EventHandler(this.btnOther1Excel_Click);
+            // 
+            // textBox51
+            // 
+            this.textBox51.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox51.Location = new System.Drawing.Point(562, 606);
+            this.textBox51.Name = "textBox51";
+            this.textBox51.Size = new System.Drawing.Size(62, 22);
+            this.textBox51.TabIndex = 164;
+            // 
+            // textBox52
+            // 
+            this.textBox52.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox52.Location = new System.Drawing.Point(494, 606);
+            this.textBox52.Name = "textBox52";
+            this.textBox52.Size = new System.Drawing.Size(62, 22);
+            this.textBox52.TabIndex = 163;
+            // 
+            // textBox53
+            // 
+            this.textBox53.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox53.Location = new System.Drawing.Point(426, 606);
+            this.textBox53.Name = "textBox53";
+            this.textBox53.Size = new System.Drawing.Size(62, 22);
+            this.textBox53.TabIndex = 162;
+            // 
+            // textBox54
+            // 
+            this.textBox54.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox54.Location = new System.Drawing.Point(358, 606);
+            this.textBox54.Name = "textBox54";
+            this.textBox54.Size = new System.Drawing.Size(62, 22);
+            this.textBox54.TabIndex = 161;
+            // 
+            // textBox55
+            // 
+            this.textBox55.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox55.Location = new System.Drawing.Point(290, 606);
+            this.textBox55.Name = "textBox55";
+            this.textBox55.Size = new System.Drawing.Size(62, 22);
+            this.textBox55.TabIndex = 160;
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label91.Location = new System.Drawing.Point(559, 586);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(67, 16);
+            this.label91.TabIndex = 159;
+            this.label91.Text = "%ผลผิดปกติ";
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label92.Location = new System.Drawing.Point(497, 586);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(53, 16);
+            this.label92.TabIndex = 158;
+            this.label92.Text = "%ผลปกติ";
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label93.Location = new System.Drawing.Point(423, 586);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(55, 16);
+            this.label93.TabIndex = 157;
+            this.label93.Text = "ผลผิดปกติ";
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label94.Location = new System.Drawing.Point(363, 586);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(41, 16);
+            this.label94.TabIndex = 156;
+            this.label94.Text = "ผลปกติ";
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label95.Location = new System.Drawing.Point(287, 586);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(63, 16);
+            this.label95.TabIndex = 155;
+            this.label95.Text = "จน.พนักงาน";
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label96.Location = new System.Drawing.Point(9, 597);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(113, 25);
+            this.label96.TabIndex = 154;
+            this.label96.Text = "11. Other1";
+            // 
             // FrmCheckUPAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1243, 714);
+            this.ClientSize = new System.Drawing.Size(1243, 783);
             this.Controls.Add(this.pB1);
             this.Controls.Add(this.btnUnActive);
             this.Controls.Add(this.ChkUnActive);
@@ -2398,7 +2652,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBun)).EndInit();
             this.tabPage11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUric)).EndInit();
+            this.tabPage13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOther1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2603,6 +2859,27 @@
         private System.Windows.Forms.NumericUpDown nmDPrintEnd;
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.TabPage tabPage13;
+        private System.Windows.Forms.TabPage tabPage14;
+        private System.Windows.Forms.TabPage tabPage15;
+        private System.Windows.Forms.TabPage tabPage16;
+        private System.Windows.Forms.TabPage tabPage17;
+        private System.Windows.Forms.DataGridView dgvOther1;
+        private System.Windows.Forms.Button btnOtherImport;
+        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.Button btnOther1Excel;
+        private System.Windows.Forms.TextBox textBox51;
+        private System.Windows.Forms.TextBox textBox52;
+        private System.Windows.Forms.TextBox textBox53;
+        private System.Windows.Forms.TextBox textBox54;
+        private System.Windows.Forms.TextBox textBox55;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.Label label92;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.Label label96;
 
     }
 }

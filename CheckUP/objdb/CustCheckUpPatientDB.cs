@@ -79,7 +79,7 @@ namespace CheckUP.objdb
             ccp.thyroidT3 = "thyroid_t3";
             ccp.thyroidT4 = "thyroid_t4";
             ccp.thyroidTsh = "thyroid_tsh";
-            ccp.fPatientBloodGroupId = "f_patient_blood_group_id";
+            ccp.BloodGroup = "blood_group";
             ccp.vdrl = "vdrl";
             ccp.antiHiv = "anti_hiv";
             ccp.hbsag = "hbsag";
@@ -343,7 +343,7 @@ namespace CheckUP.objdb
 
                 + ccp.disscusExam + "," + ccp.ekgExam + ","
                 + ccp.urineEpithelium + "," + ccp.eyesExam + ","
-                + ccp.fPatientBloodGroupId + "," + ccp.fSexId + ","
+                + ccp.BloodGroup + "," + ccp.fSexId + ","
                 + ccp.hbsab + "," + ccp.hbsag + ","
                 + ccp.hdl + "," + ccp.kidneyBun + ","
 
@@ -428,7 +428,7 @@ namespace CheckUP.objdb
 
                 + p.disscusExam + "','" + p.ekgExam + "','"
                 + p.urineEpithelium + "','" + p.eyesExam + "','"
-                + p.fPatientBloodGroupId + "','" + p.fSexId + "','"
+                + p.BloodGroup + "','" + p.fSexId + "','"
                 + p.hbsab + "','" + p.hbsag + "','"
                 + p.hdl + "','" + p.kidneyBun + "','"
 
@@ -527,7 +527,7 @@ namespace CheckUP.objdb
             chk = insert(p);
             return chk;
         }
-        public String UpdatePE(String rowNumber, String cucId, String vitalSign, String height, String weight, String bmi, String pulse, String result, String summary)
+        public String UpdatePE(String rowNumber, String cucId, String vitalSign, String height, String weight, String bmi, String pulse, String result, String summary, String bloodgroup)
         {
             String chk = "", sql = "";
             try
@@ -537,7 +537,7 @@ namespace CheckUP.objdb
                 ccp.patientWeight + "='" + weight + "'," +
                 ccp.bmi + "='" + bmi + "'," +
                 ccp.patientPulse + "='" + pulse + "' " +
-                //ccp.patientAge + "='" + age + "' " +
+                ccp.BloodGroup + "='" + bloodgroup + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             }
@@ -549,7 +549,7 @@ namespace CheckUP.objdb
 
             return chk;
         }
-        public String UpdatePE(String rowNumber, String cucId, String age, String vitalSign, String height, String weight, String bmi, String pulse, String result, String summary)
+        public String UpdatePE(String rowNumber, String cucId, String age, String vitalSign, String height, String weight, String bmi, String pulse, String result, String summary, String bloodgroup)
         {
             String chk = "", sql="";
             try
@@ -559,14 +559,14 @@ namespace CheckUP.objdb
                 ccp.patientWeight + "='" + weight + "'," +
                 ccp.bmi + "='" + bmi + "'," +
                 ccp.patientPulse + "='" + pulse + "', " +
-                ccp.patientAge + "='" + age + "' " +
+                ccp.patientAge + "='" + age + "', " +
+                ccp.BloodGroup + "='" + bloodgroup + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             } catch (Exception ex) {
                 //Logger.getLogger(MarketingTCheckupDB.class.getName).log(Level.SEVERE, null, ex);
                 //max = ex.getMessage;
             }
-            
             return chk;
         }
         public String UpdateXray(String rowNumber, String cucId, String result, String summary)
@@ -682,15 +682,16 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String UpdateCholes(String rowNumber, String cucId, String value, String result, String summary)
+        public String UpdateCholes(String rowNumber, String cucId, String value, String result, String summary, String ldl, String hdl)
         {
             String chk = "", sql = "";
             try
             {
                 sql = "Update " + ccp.table + " Set " + ccp.cholesterol + "='" + value + "'," +
                 ccp.cholesterolSuggess + "='" + result + "', " +
-                ccp.cholesterolSummary + "='" + summary + "' " +
-                    //ccp.sugarSuggess + "='" + suggess + "' " +
+                ccp.cholesterolSummary + "='" + summary + "', " +
+                ccp.ldl + "='" + ldl + "', " +
+                ccp.hdl + "='" + hdl + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql); ;
             }

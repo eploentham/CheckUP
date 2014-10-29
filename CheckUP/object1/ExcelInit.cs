@@ -11,7 +11,7 @@ namespace CheckUP.object1
         public String SfRow = "", SfStatusName = "", SfANo = "", SfAPrefix = "", SfAFirstName = "", SfALastName = "", SfAAge = "", SfBNo = "", SfBPrefix = "", SfBFullName = "", SfBAge = "";
         public String SfCNo = "", SfCFullName = "", SfCAge = "", Active="";
         
-        public String PERow = "", PENo="", PEAge="", PEWeight="", PEHeight="", PEBMI="", PEVitalSign="", PEPulse="", PEResult="", PESummary="";
+        public String PERow = "", PENo="", PEAge="", PEWeight="", PEHeight="", PEBMI="", PEVitalSign="", PEPulse="", PEResult="", PESummary="", PEBloodGroup="";
 
         public String XrayRow = "", XrayNo = "", Xray = "", XraySummary = "";
 
@@ -23,12 +23,14 @@ namespace CheckUP.object1
 
         public String TriRow = "", TriNo = "", Triglyceride = "", TriResult = "", TriSummary = "";
 
-        public String ChoRow = "", ChoNo = "", Cholesteral = "", ChoResult = "", Chosummary = "";
+        public String ChoRow = "", ChoNo = "", Cholesteral = "", ChoResult = "", Chosummary = "", ChoLDL="", ChoHDL="";
 
-        public String SgotRow = "", SgotNo = "", Sgot = "", Sgpt = "", SgotResult = "", SgptSummary = "";
+        public String SgotRow = "", SgotNo = "", Sgot = "", Sgpt = "", SgotResult = "", SgptSummary = "", SgotALP="";
 
         public String BunRow = "", BunNo = "", Bun = "", BunCreatinine = "", BunResult = "", BunSummary = "";
 
         public String UricRow = "", UricNo = "", UricAcid = "", UricResult = "", UricSummary = "";
+
+        public String Other1Row = "", Other1No = "", Other1HBsAg = "", Other1HBsAb = "", Other1AntiHIV = "", Other1VDRL = "", Other1Calcium = "", Other1Amphetamine="";
     }
 }

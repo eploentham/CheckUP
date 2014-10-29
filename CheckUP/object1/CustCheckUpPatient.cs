@@ -66,7 +66,7 @@ namespace CheckUP.object1
         public String thyroidT3="";
         public String thyroidT4="";
         public String thyroidTsh="";
-        public String fPatientBloodGroupId="";
+        public String BloodGroup="";
         public String vdrl="";
         public String antiHiv="";
         public String hbsag="";

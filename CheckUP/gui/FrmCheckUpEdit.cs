@@ -84,7 +84,7 @@ namespace CheckUP.gui
             txtPESummary.Text = "";
             txtPEVitalSign.Text = dtccp.Rows[0][cc.ccpdb.ccp.vitalsign].ToString();
             txtPEWeight.Text = dtccp.Rows[0][cc.ccpdb.ccp.patientWeight].ToString();
-            nmDPEAge.Value = int.Parse(cc.cf.NumberNull1(dtccp.Rows[0][cc.ccpdb.ccp.patientAge].ToString()));
+            txtPEAge.Text = dtccp.Rows[0][cc.ccpdb.ccp.patientAge].ToString();
             txtAge.Text  = dtccp.Rows[0][cc.ccpdb.ccp.patientAge].ToString();
 
             txtXRayResult.Text = dtccp.Rows[0][cc.ccpdb.ccp.xrayChestExam].ToString();
@@ -115,6 +115,8 @@ namespace CheckUP.gui
             txtTriSummary.Text = dtccp.Rows[0][cc.ccpdb.ccp.triglycerideSummary].ToString();
 
             txtChoValue.Text = dtccp.Rows[0][cc.ccpdb.ccp.cholesterol].ToString();
+            txtChoLDL.Text = dtccp.Rows[0][cc.ccpdb.ccp.ldl].ToString();
+            txtChoHDL.Text = dtccp.Rows[0][cc.ccpdb.ccp.hdl].ToString();
             txtChoResult.Text = dtccp.Rows[0][cc.ccpdb.ccp.cholesterolSuggess].ToString();
             txtChoSummary.Text = dtccp.Rows[0][cc.ccpdb.ccp.cholesterolSummary].ToString();
 
@@ -173,6 +175,8 @@ namespace CheckUP.gui
             txtTriNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.triglyceride].ToString();
 
             txtChoNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.cholesterol].ToString();
+            txtChoLDL.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ldl].ToString();
+            txtChoHDL.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.hdl].ToString();
 
             txtSgotNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.liverSgot].ToString();
             txtSgotSgptNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.liverSgpt].ToString();
@@ -197,7 +201,7 @@ namespace CheckUP.gui
         private void btnSavePE_Click(object sender, EventArgs e)
         {
 
-            String chk = cc.ccpdb.UpdatePE(txtRowNumber.Text, cuc.Id,int.Parse(nmDPEAge.Value.ToString()).ToString(), txtPEVitalSign.Text, txtPEHeight.Text, txtPEWeight.Text, 
+            String chk = cc.ccpdb.UpdatePE(txtRowNumber.Text, cuc.Id, txtPEAge.Text, txtPEVitalSign.Text, txtPEHeight.Text, txtPEWeight.Text, 
                 txtPEBMI.Text, txtPEPulse.Text, txtPEResult.Text, txtPESummary.Text);
             if (chk.Equals("1"))
             {
@@ -256,7 +260,7 @@ namespace CheckUP.gui
 
         private void btnChoSave_Click(object sender, EventArgs e)
         {
-            String chk = cc.ccpdb.UpdateCholes(txtRowNumber.Text, cuc.Id, txtChoValue.Text, txtChoResult.Text, txtChoSummary.Text);
+            String chk = cc.ccpdb.UpdateCholes(txtRowNumber.Text, cuc.Id, txtChoValue.Text, txtChoResult.Text, txtChoSummary.Text, txtChoLDL.Text, txtChoHDL.Text);
             if (chk.Equals("1"))
             {
                 MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");

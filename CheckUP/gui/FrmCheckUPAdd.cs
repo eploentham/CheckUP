@@ -16,11 +16,11 @@ namespace CheckUP.gui
         CheckControl cc;
         CustCheckUp cuc;
 
-        int tabSum = 0, tabPrint=1, tabPE=2, tabXRay=3, tabCBC=4, tabFBS=5, tabUA=6,tabTri=7, tabCho=8, tabSgot=9, tabBun=10, tabUric=11;
-        int tabCnt = 12;
+        int tabSum = 0, tabPrint=1, tabPE=2, tabXRay=3, tabCBC=4, tabFBS=5, tabUA=6,tabTri=7, tabCho=8, tabSgot=9, tabBun=10, tabUric=11, tabOther1=12;
+        int tabCnt = 13;
 
-        int colPERow = 0, colPEId = 1, colPEName = 2, colPESex=3, colPEAge = 4, colPEWeight = 5, colPEHeight = 6, colPEBMI = 7, colPEvitalsign = 8, colPEPulse = 9, colPEResult = 10, colPESummary = 11;
-        int colPECnt = 12;
+        int colPERow = 0, colPEId = 1, colPEName = 2, colPESex=3, colPEAge = 4, colPEWeight = 5, colPEHeight = 6, colPEBMI = 7, colPEvitalsign = 8, colPEPulse = 9, colPEBloodGroup=10, colPEResult = 11, colPESummary = 12;
+        int colPECnt = 13;
 
         int colSumRow = 0, colSumDesc = 1, colSumSfCnt = 2, colSumSfNormal = 3, colSumAbNormal = 4, colSumPerNormal = 5, colSumPerAbNormal = 6, colSumOpen=7, colSumImport=8;
         int colSumCnt = 9;
@@ -42,8 +42,8 @@ namespace CheckUP.gui
         int colTriRow = 0, colTriId = 1, colTriName = 2, colTriValue = 3, colTriResult = 4, coLTriSummary = 5;
         int colTriCnt = 6;
 
-        int colChoRow = 0, colChoId = 1, colChoName = 2, colChoValue = 3, colChoResult = 4, coLChoSummary = 5;
-        int colChoCnt = 6;
+        int colChoRow = 0, colChoId = 1, colChoName = 2, colChoValue = 3, colChoLDL=4, colChoHDL=5, colChoResult = 6, coLChoSummary = 7;
+        int colChoCnt = 8;
 
         int colSgotRow = 0, colSgotId = 1, colSgotName = 2, colSgotValue = 3, colSgotSgptValue = 4, colSgotResult=5, coLSgotSummary = 6;
         int colSgotCnt = 7;
@@ -54,14 +54,17 @@ namespace CheckUP.gui
         int colUricRow = 0, colUricId = 1, colUricName = 2, colUricValue = 3, colUricResult = 4, coLUricSummary = 5;
         int colUricCnt = 6;
 
+        int colOther1Row = 0, colOther1Id = 1, colOther1HBsAg = 2, colOther1HBsAb = 3, colOther1AntiHIV = 4, colOther1VDRL = 5, colOther1Amphetamine = 6, colOther1Calcium = 7;
+
         Font font = new Font("Microsoft Sans Serif", 12);
         Boolean flagNew=false;
         String fileName = "", fileNamePE = "", fileNameFBS = "", fileNameXray = "", fileNameCBC = "", fileNameUA = "", fileNameTri = "", fileNameCho = "";
-        String fileNameSgot = "", fileNameBun = "", fileNameUric = "";
+        String fileNameSgot = "", fileNameBun = "", fileNameUric = "", fileNameOther1="";
         //String cucId = "";
         DataTable dtAll;
         OpenFileDialog ofd = new OpenFileDialog();
         object misValue = System.Reflection.Missing.Value;
+        ExcelInit ei;
         public FrmCheckUPAdd(String cucId,Boolean flagnew,CheckControl c)
         {
             InitializeComponent();
@@ -74,6 +77,7 @@ namespace CheckUP.gui
             cuc = new CustCheckUp();
             cuc.Id = cucId;
             dtAll = cc.ccpdb.selectAllByCucId(cucId);
+            ei = cc.eidb.selectByPk();
             tC.TabPages[tabSum].Text = "Summary";
             tC.TabPages[tabPE].Text = "PE";
             tC.TabPages[tabXRay].Text = "X-Ray";
@@ -86,6 +90,7 @@ namespace CheckUP.gui
             tC.TabPages[tabBun].Text = "BUN Creatine";
             tC.TabPages[tabUric].Text = "Uric acid";
             tC.TabPages[tabPrint].Text = "Print";
+            tC.TabPages[tabOther1].Text = "Other1";
             pB1.Visible = false;
             btnPEImport.Enabled = false;
             btnXrayImport.Enabled = false;
@@ -128,6 +133,8 @@ namespace CheckUP.gui
             setGrdSgot();
             setGrdBun();
             setGrdUric();
+            setGrdOther1();
+
             setGrdPE(cucId);
             setGrdXray(cucId);
             setGrdFBS(cucId);
@@ -138,6 +145,7 @@ namespace CheckUP.gui
             setGrdSgot(cucId);
             setGrdBun(cucId);
             setGrdUric(cucId);
+            setGrdOther1(cucId);
         }
 
         private void setResize()
@@ -201,6 +209,13 @@ namespace CheckUP.gui
             dgvCho.Left = dgvPE.Left;
             dgvCho.Top = dgvPE.Left;
 
+            tC.TabPages[tabOther1].Width = tC.Width - 10;
+            tC.TabPages[tabOther1].Height = tC.Height - 10;
+            dgvOther1.Width = tC.TabPages[tabOther1].Width - 10;
+            dgvOther1.Height = tC.TabPages[tabOther1].Height - 10;
+            dgvOther1.Left = dgvPE.Left;
+            dgvOther1.Top = dgvPE.Left;
+
             //groupBox1.Width = this.Width - 50;
             //groupBox1.Height = this.Height = 150;
         }
@@ -231,6 +246,7 @@ namespace CheckUP.gui
             dgvPE.Columns[colPEBMI].HeaderText = "BMI";
             dgvPE.Columns[colPEvitalsign].HeaderText = "VitalSign";
             dgvPE.Columns[colPEPulse].HeaderText = "Pulse";
+            dgvPE.Columns[colPEBloodGroup].HeaderText = "กรุ๊ปมเลือด";
             dgvPE.Columns[colPEResult].HeaderText = "ผล";
             dgvPE.Columns[colPESummary].HeaderText = "สรุปผลตรวจ";
 
@@ -289,7 +305,7 @@ namespace CheckUP.gui
             dgvXRay.Columns[colXrayResult].Width = 180;
             dgvXRay.Columns[coLXraySummary].Width = 180;            
 
-            dgvXRay.Columns[colSumRow].HeaderText = "ลำดับ";
+            dgvXRay.Columns[colXrayRow].HeaderText = "ลำดับ";
             dgvXRay.Columns[colXrayId].HeaderText = "id";
             dgvXRay.Columns[colXrayName].HeaderText = "ชื่อ นามสกุล";
             dgvXRay.Columns[colXrayResult].HeaderText = "ผล";
@@ -453,6 +469,8 @@ namespace CheckUP.gui
             dgvCho.Columns[colChoId].Width = 150;
             dgvCho.Columns[colChoName].Width =250;
             dgvCho.Columns[colChoValue].Width = 80;
+            dgvCho.Columns[colChoHDL].Width = 80;
+            dgvCho.Columns[colChoLDL].Width = 80;
             dgvCho.Columns[colChoResult].Width = 180;
             dgvCho.Columns[coLChoSummary].Width = 180;
 
@@ -460,6 +478,8 @@ namespace CheckUP.gui
             dgvCho.Columns[colChoId].HeaderText = "code";
             dgvCho.Columns[colChoName].HeaderText = "ชื่อ นามสกุล";
             dgvCho.Columns[colChoValue].HeaderText = "ค่า";
+            dgvCho.Columns[colChoLDL].HeaderText = "LDL";
+            dgvCho.Columns[colChoHDL].HeaderText = "HDL";
             dgvCho.Columns[colChoResult].HeaderText = "ผล";
             dgvCho.Columns[coLChoSummary].HeaderText = "สรุปผลตรวจ";
 
@@ -551,6 +571,38 @@ namespace CheckUP.gui
             dgvUric.Font = font;
             dgvUric.Columns[colUricId].Visible = false;
         }
+        private void setGrdOther1()
+        {
+            dgvOther1.ColumnCount = colXrayCnt;
+            dgvOther1.Rows.Clear();
+            dgvOther1.RowCount = 1;
+            dgvOther1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvOther1.Columns[colOther1Row].Width = 50;
+            dgvOther1.Columns[colOther1Id].Width = 250;
+            dgvOther1.Columns[colOther1HBsAg].Width = 100;
+            dgvOther1.Columns[colOther1HBsAb].Width = 100;
+            dgvOther1.Columns[colOther1AntiHIV].Width = 100;
+            dgvOther1.Columns[colOther1VDRL].Width = 100;
+            dgvOther1.Columns[colOther1Amphetamine].Width = 100;
+            dgvOther1.Columns[colOther1Calcium].Width = 100;
+
+
+            dgvOther1.Columns[colOther1Row].HeaderText = "ลำดับ";
+            dgvOther1.Columns[colOther1Id].HeaderText = "id";
+            dgvOther1.Columns[colOther1HBsAg].HeaderText = "HBsAg";
+            dgvOther1.Columns[colOther1HBsAb].HeaderText = "HbsAb";
+            dgvOther1.Columns[colOther1AntiHIV].HeaderText = "AntiHIV";
+            dgvOther1.Columns[colOther1VDRL].HeaderText = "VDRL";
+            dgvOther1.Columns[colOther1Amphetamine].HeaderText = "Amphetamine";
+            dgvOther1.Columns[colOther1Calcium].HeaderText = "Calcium";
+            //dgvOther1.Columns[colOther1AntiHIV].HeaderText = "สรุปผลตรวจ";
+
+            //dgvSum.Columns[colPEId].HeaderText = "id";
+            //Font font = new Font("Microsoft Sans Serif", 12);
+
+            dgvOther1.Font = font;
+            dgvOther1.Columns[colXrayId].Visible = false;
+        }
         private void setControl(String cucId)
         {
             cuc = cc.cucdb.selectByPk(cucId);
@@ -585,6 +637,7 @@ namespace CheckUP.gui
                     dgvPE[colPEBMI, i].Value = dt.Rows[i][cc.ccpdb.ccp.bmi].ToString();
                     dgvPE[colPEvitalsign, i].Value = dt.Rows[i][cc.ccpdb.ccp.vitalsign].ToString();
                     dgvPE[colPEPulse, i].Value = dt.Rows[i][cc.ccpdb.ccp.patientPulse].ToString();
+                    dgvPE[colPEBloodGroup, i].Value = dt.Rows[i][cc.ccpdb.ccp.BloodGroup].ToString();
                     dgvPE[colPEResult, i].Value = dt.Rows[i][cc.ccpdb.ccp.lungSuggess].ToString();
                     dgvPE[colPESummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.lungSuggess].ToString();
                     dgvPE[colPEId, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
@@ -797,6 +850,8 @@ namespace CheckUP.gui
                     dgvCho[colChoRow, i].Value = (i + 1);
                     dgvCho[colChoName, i].Value = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
                     dgvCho[colChoValue, i].Value = dt.Rows[i][cc.ccpdb.ccp.cholesterol].ToString();
+                    dgvCho[colChoLDL, i].Value = dt.Rows[i][cc.ccpdb.ccp.ldl].ToString();
+                    dgvCho[colChoHDL, i].Value = dt.Rows[i][cc.ccpdb.ccp.hdl].ToString();
                     dgvCho[colChoResult, i].Value = dt.Rows[i][cc.ccpdb.ccp.cholesterolSuggess].ToString();
                     dgvCho[coLChoSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.cholesterolSummary].ToString();
                     dgvCho[colChoId, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
@@ -901,6 +956,40 @@ namespace CheckUP.gui
                     if ((i % 2) != 0)
                     {
                         dgvUric.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                    }
+                }
+            }
+            //dgvView.ReadOnly = true;
+        }
+        private void setGrdOther1(String cucId)
+        {
+            DataTable dt;
+            dgvOther1.Rows.Clear();
+            if (flagNew)
+            {
+                dt = cc.ccpdb.selectAllByCucId(cucId);
+            }
+            else
+            {
+                dt = dtAll;
+            }
+
+            if (dt.Rows.Count > 0)
+            {
+                dgvOther1.RowCount = dt.Rows.Count;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    dgvOther1[colOther1Row, i].Value = (i + 1);
+                    dgvOther1[colOther1Amphetamine, i].Value = dt.Rows[i][cc.ccpdb.ccp.amphetamine].ToString();
+                    dgvOther1[colOther1AntiHIV, i].Value = dt.Rows[i][cc.ccpdb.ccp.antiHiv].ToString();
+                    dgvOther1[colOther1Calcium, i].Value = dt.Rows[i][cc.ccpdb.ccp.antiHiv].ToString();
+                    dgvOther1[colOther1HBsAb, i].Value = dt.Rows[i][cc.ccpdb.ccp.hbsag].ToString();
+                    dgvOther1[colOther1HBsAg, i].Value = dt.Rows[i][cc.ccpdb.ccp.hbsab].ToString();
+                    dgvOther1[colOther1VDRL, i].Value = dt.Rows[i][cc.ccpdb.ccp.vdrl].ToString();
+                    dgvOther1[colOther1Id, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    if ((i % 2) != 0)
+                    {
+                        dgvOther1.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
                     }
                 }
             }
@@ -1191,7 +1280,7 @@ namespace CheckUP.gui
 
         private void btnPEImport_Click(object sender, EventArgs e)
         {
-            String rowNumber = "", chk="",vitalSign="", height="", weight="", bmi="", pulse="", result="", summary="";
+            String rowNumber = "", chk="",vitalSign="", height="", weight="", bmi="", pulse="", result="", summary="", bloodgroup="";
 
             pB1.Visible = true;
             pB1.Minimum = 0;
@@ -1206,55 +1295,63 @@ namespace CheckUP.gui
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
-                if (xlRange.Cells[i, 1].Value2 != null)
+                if (xlRange.Cells[i, ei.PENo].Value2 != null)
                 {
-                    rowNumber = xlRange.Cells[i, 1].Value2.ToString();
+                    rowNumber = xlRange.Cells[i, ei.PENo].Value2.ToString();
                 }
                 else
                 {
                     rowNumber = "";
                 }
-                if (xlRange.Cells[i, 6].Value2 != null)
+                if (xlRange.Cells[i, ei.PEWeight].Value2 != null)
                 {
-                    weight = xlRange.Cells[i, 6].Value2.ToString();
+                    weight = xlRange.Cells[i, ei.PEWeight].Value2.ToString();
                 }
                 else
                 {
                     weight = "";
                 }
-                if (xlRange.Cells[i, 7].Value2 != null)
+                if (xlRange.Cells[i, ei.PEHeight].Value2 != null)
                 {
-                    height = xlRange.Cells[i, 7].Value2.ToString();
+                    height = xlRange.Cells[i, ei.PEHeight].Value2.ToString();
                 }
                 else
                 {
                     height = "";
                 }
-                if (xlRange.Cells[i, 8].Value2 != null)
+                if (xlRange.Cells[i, ei.PEBMI].Value2 != null)
                 {
-                    bmi = xlRange.Cells[i, 8].Value2.ToString();
+                    bmi = xlRange.Cells[i, ei.PEBMI].Value2.ToString();
                 }
                 else
                 {
                     bmi = "";
                 }
-                if (xlRange.Cells[i, 9].Value2 != null)
+                if (xlRange.Cells[i, ei.PEVitalSign].Value2 != null)
                 {
-                    vitalSign = xlRange.Cells[i, 9].Value2.ToString();
+                    vitalSign = xlRange.Cells[i, ei.PEVitalSign].Value2.ToString();
                 }
                 else
                 {
                     vitalSign = "";
                 }
-                if (xlRange.Cells[i, 10].Value2 != null)
+                if (xlRange.Cells[i, ei.PEPulse].Value2 != null)
                 {
-                    pulse = xlRange.Cells[i, 10].Value2.ToString();
+                    pulse = xlRange.Cells[i, ei.PEPulse].Value2.ToString();
                 }
                 else
                 {
                     pulse = "";
                 }
-                chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, vitalSign, height, weight, bmi, pulse, result, summary);
+                if (xlRange.Cells[i, ei.PEBloodGroup].Value2 != null)
+                {
+                    bloodgroup = xlRange.Cells[i, cc.eidb.ei.PEBloodGroup].Value2.ToString();
+                }
+                else
+                {
+                    bloodgroup = "";
+                }
+                chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, vitalSign, height, weight, bmi, pulse, result, summary, bloodgroup);
                 pB1.Value = i;
             }
             xlWorkbook.Close(true, misValue, misValue);
@@ -1281,25 +1378,25 @@ namespace CheckUP.gui
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
-                if (xlRange.Cells[i, 1].Value2 != null)
+                if (xlRange.Cells[i, ei.XrayNo].Value2 != null)
                 {
-                    rowNumber = xlRange.Cells[i, 1].Value2.ToString();
+                    rowNumber = xlRange.Cells[i, ei.XrayNo].Value2.ToString();
                 }
                 else
                 {
                     rowNumber = "";
                 }
-                if (xlRange.Cells[i, 5].Value2 != null)
+                if (xlRange.Cells[i, ei.Xray].Value2 != null)
                 {
-                    result = xlRange.Cells[i, 5].Value2.ToString();
+                    result = xlRange.Cells[i, ei.Xray].Value2.ToString();
                 }
                 else
                 {
                     result = "";
                 }
-                if (xlRange.Cells[i, 6].Value2 != null)
+                if (xlRange.Cells[i, ei.XraySummary].Value2 != null)
                 {
-                    summary = xlRange.Cells[i, 6].Value2.ToString();
+                    summary = xlRange.Cells[i, ei.XraySummary].Value2.ToString();
                 }
                 else
                 {
@@ -1333,33 +1430,33 @@ namespace CheckUP.gui
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
-                if (xlRange.Cells[i, 1].Value2 != null)
+                if (xlRange.Cells[i, ei.FBSNo].Value2 != null)
                 {
-                    rowNumber = xlRange.Cells[i, 1].Value2.ToString();
+                    rowNumber = xlRange.Cells[i, ei.FBSNo].Value2.ToString();
                 }
                 else
                 {
                     rowNumber = "";
                 }
-                if (xlRange.Cells[i, 5].Value2 != null)
+                if (xlRange.Cells[i, ei.FBS].Value2 != null)
                 {
-                    value = xlRange.Cells[i, 5].Value2.ToString();
+                    value = xlRange.Cells[i, ei.FBS].Value2.ToString();
                 }
                 else
                 {
                     value = "";
                 }
-                if (xlRange.Cells[i, 6].Value2 != null)
+                if (xlRange.Cells[i, ei.FBSResult].Value2 != null)
                 {
-                    result = xlRange.Cells[i, 6].Value2.ToString();
+                    result = xlRange.Cells[i, ei.FBSResult].Value2.ToString();
                 }
                 else
                 {
                     result = "";
                 }
-                if (xlRange.Cells[i, 7].Value2 != null)
+                if (xlRange.Cells[i, ei.FBSSummary].Value2 != null)
                 {
-                    summary = xlRange.Cells[i, 7].Value2.ToString();
+                    summary = xlRange.Cells[i, ei.FBSSummary].Value2.ToString();
                 }
                 else
                 {
@@ -1393,113 +1490,113 @@ namespace CheckUP.gui
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
-                if (xlRange.Cells[i, 1].Value2 != null)
+                if (xlRange.Cells[i, ei.CBCNo].Value2 != null)
                 {
-                    rowNumber = xlRange.Cells[i, 1].Value2.ToString();
+                    rowNumber = xlRange.Cells[i, ei.CBCNo].Value2.ToString();
                 }
                 else
                 {
                     rowNumber = "";
                 }
-                if (xlRange.Cells[i, 7].Value2 != null)
+                if (xlRange.Cells[i, ei.CBCHb].Value2 != null)
                 {
-                    hb = xlRange.Cells[i, 7].Value2.ToString();
+                    hb = xlRange.Cells[i, ei.CBCHb].Value2.ToString();
                 }
                 else
                 {
                     hb = "";
                 }
-                if (xlRange.Cells[i, 5].Value2 != null)
+                if (xlRange.Cells[i, ei.CBCWBC].Value2 != null)
                 {
-                    wbc = xlRange.Cells[i, 5].Value2.ToString();
+                    wbc = xlRange.Cells[i, ei.CBCWBC].Value2.ToString();
                 }
                 else
                 {
                     wbc = "";
                 }
-                if (xlRange.Cells[i, 6].Value2 != null)
+                if (xlRange.Cells[i, ei.CBCRBC].Value2 != null)
                 {
-                    rbc = xlRange.Cells[i, 6].Value2.ToString();
+                    rbc = xlRange.Cells[i, ei.CBCRBC].Value2.ToString();
                 }
                 else
                 {
                     rbc = "";
                 }
-                if (xlRange.Cells[i, 8].Value2 != null)
+                if (xlRange.Cells[i, ei.CBCHct].Value2 != null)
                 {
-                    hct = xlRange.Cells[i, 8].Value2.ToString();
+                    hct = xlRange.Cells[i, ei.CBCHct].Value2.ToString();
                 }
                 else
                 {
                     hct = "";
                 }
-                if (xlRange.Cells[i, 9].Value2 != null)
+                if (xlRange.Cells[i, ei.CBCNeu].Value2 != null)
                 {
-                    neu = xlRange.Cells[i, 9].Value2.ToString();
+                    neu = xlRange.Cells[i, ei.CBCNeu].Value2.ToString();
                 }
                 else
                 {
                     neu = "";
                 }
-                if (xlRange.Cells[i, 10].Value2 != null)
+                if (xlRange.Cells[i, ei.CBCLy].Value2 != null)
                 {
-                    lym = xlRange.Cells[i, 10].Value2.ToString();
+                    lym = xlRange.Cells[i, ei.CBCLy].Value2.ToString();
                 }
                 else
                 {
                     lym = "";
                 }
-                if (xlRange.Cells[i, 11].Value2 != null)
+                if (xlRange.Cells[i, ei.CBCMono].Value2 != null)
                 {
-                    mono = xlRange.Cells[i, 11].Value2.ToString();
+                    mono = xlRange.Cells[i, ei.CBCMono].Value2.ToString();
                 }
                 else
                 {
                     mono = "";
                 }
-                if (xlRange.Cells[i, 12].Value2 != null)
+                if (xlRange.Cells[i, ei.CBCEos].Value2 != null)
                 {
-                    eos = xlRange.Cells[i, 12].Value2.ToString();
+                    eos = xlRange.Cells[i, ei.CBCEos].Value2.ToString();
                 }
                 else
                 {
                     eos = "";
                 }
-                if (xlRange.Cells[i, 13].Value2 != null)
+                if (xlRange.Cells[i, ei.CBCBact].Value2 != null)
                 {
-                    bas = xlRange.Cells[i, 13].Value2.ToString();
+                    bas = xlRange.Cells[i, ei.CBCBact].Value2.ToString();
                 }
                 else
                 {
                     bas = "";
                 }
-                if (xlRange.Cells[i, 14].Value2 != null)
+                if (xlRange.Cells[i, ei.CBCPltC].Value2 != null)
                 {
-                    plaC = xlRange.Cells[i, 14].Value2.ToString();
+                    plaC = xlRange.Cells[i, ei.CBCPltC].Value2.ToString();
                 }
                 else
                 {
                     plaC = "";
                 }
-                if (xlRange.Cells[i, 15].Value2 != null)
+                if (xlRange.Cells[i, ei.CBCPltS].Value2 != null)
                 {
-                    plaS = xlRange.Cells[i, 15].Value2.ToString();
+                    plaS = xlRange.Cells[i, ei.CBCPltS].Value2.ToString();
                 }
                 else
                 {
                     plaS = "";
                 }
-                if (xlRange.Cells[i, 16].Value2 != null)
+                if (xlRange.Cells[i, ei.CBCRBCmono].Value2 != null)
                 {
-                    rbcmono = xlRange.Cells[i, 16].Value2.ToString();
+                    rbcmono = xlRange.Cells[i, ei.CBCRBCmono].Value2.ToString();
                 }
                 else
                 {
                     rbcmono = "";
                 }
-                if (xlRange.Cells[i, 17].Value2 != null)
+                if (xlRange.Cells[i, ei.CBCSummary].Value2 != null)
                 {
-                    summary = xlRange.Cells[i, 17].Value2.ToString();
+                    summary = xlRange.Cells[i, ei.CBCSummary].Value2.ToString();
                 }
                 else
                 {
@@ -1542,105 +1639,105 @@ namespace CheckUP.gui
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
-                if (xlRange.Cells[i, 1].Value2 != null)
+                if (xlRange.Cells[i, ei.UANo].Value2 != null)
                 {
-                    rowNumber = xlRange.Cells[i, 1].Value2.ToString();
+                    rowNumber = xlRange.Cells[i, ei.UANo].Value2.ToString();
                 }
                 else
                 {
                     rowNumber = "";
                 }
-                if (xlRange.Cells[i, 7].Value2 != null)
+                if (xlRange.Cells[i, ei.UASugar].Value2 != null)
                 {
-                    Sugar = xlRange.Cells[i, 7].Value2.ToString();
+                    Sugar = xlRange.Cells[i, ei.UASugar].Value2.ToString();
                 }
                 else
                 {
                     Sugar = "";
                 }
-                if (xlRange.Cells[i, 5].Value2 != null)
+                if (xlRange.Cells[i, ei.UAColor].Value2 != null)
                 {
-                    Color = xlRange.Cells[i, 5].Value2.ToString();
+                    Color = xlRange.Cells[i, ei.UAColor].Value2.ToString();
                 }
                 else
                 {
                     Color = "";
                 }
-                if (xlRange.Cells[i, 6].Value2 != null)
+                if (xlRange.Cells[i, ei.UAAppe].Value2 != null)
                 {
-                    Appe = xlRange.Cells[i, 6].Value2.ToString();
+                    Appe = xlRange.Cells[i, ei.UAAppe].Value2.ToString();
                 }
                 else
                 {
                     Appe = "";
                 }
-                if (xlRange.Cells[i, 8].Value2 != null)
+                if (xlRange.Cells[i, ei.UASpgr].Value2 != null)
                 {
-                    spgr = xlRange.Cells[i, 8].Value2.ToString();
+                    spgr = xlRange.Cells[i, ei.UASpgr].Value2.ToString();
                 }
                 else
                 {
                     spgr = "";
                 }
-                if (xlRange.Cells[i, 9].Value2 != null)
+                if (xlRange.Cells[i, ei.UApH].Value2 != null)
                 {
-                    pH = xlRange.Cells[i, 9].Value2.ToString();
+                    pH = xlRange.Cells[i, ei.UApH].Value2.ToString();
                 }
                 else
                 {
                     pH = "";
                 }
-                if (xlRange.Cells[i, 10].Value2 != null)
+                if (xlRange.Cells[i, ei.UAProtein].Value2 != null)
                 {
-                    Protein = xlRange.Cells[i, 10].Value2.ToString();
+                    Protein = xlRange.Cells[i, ei.UAProtein].Value2.ToString();
                 }
                 else
                 {
                     Protein = "";
                 }
-                if (xlRange.Cells[i, 11].Value2 != null)
+                if (xlRange.Cells[i, ei.UAWBC].Value2 != null)
                 {
-                    Wbc = xlRange.Cells[i, 11].Value2.ToString();
+                    Wbc = xlRange.Cells[i, ei.UAWBC].Value2.ToString();
                 }
                 else
                 {
                     Wbc = "";
                 }
-                if (xlRange.Cells[i, 12].Value2 != null)
+                if (xlRange.Cells[i, ei.UARBC].Value2 != null)
                 {
-                    Rbc = xlRange.Cells[i, 12].Value2.ToString();
+                    Rbc = xlRange.Cells[i, ei.UARBC].Value2.ToString();
                 }
                 else
                 {
                     Rbc = "";
                 }
-                if (xlRange.Cells[i, 13].Value2 != null)
+                if (xlRange.Cells[i, ei.UAEpi].Value2 != null)
                 {
-                    Epi = xlRange.Cells[i, 13].Value2.ToString();
+                    Epi = xlRange.Cells[i, ei.UAEpi].Value2.ToString();
                 }
                 else
                 {
                     Epi = "";
                 }
-                if (xlRange.Cells[i, 14].Value2 != null)
+                if (xlRange.Cells[i, ei.UABact].Value2 != null)
                 {
-                    Bact = xlRange.Cells[i, 14].Value2.ToString();
+                    Bact = xlRange.Cells[i, ei.UABact].Value2.ToString();
                 }
                 else
                 {
                     Bact = "";
                 }
-                if (xlRange.Cells[i, 15].Value2 != null)
+                if (xlRange.Cells[i, ei.UAResult].Value2 != null)
                 {
-                    Result = xlRange.Cells[i, 15].Value2.ToString();
+                    Result = xlRange.Cells[i, ei.UAResult].Value2.ToString();
                 }
                 else
                 {
                     Result = "";
                 }
-                if (xlRange.Cells[i, 16].Value2 != null)
+                if (xlRange.Cells[i, ei.UASummary].Value2 != null)
                 {
-                    Summary = xlRange.Cells[i, 16].Value2.ToString();
+                    Summary = xlRange.Cells[i, ei.UASummary].Value2.ToString();
                 }
                 else
                 {
@@ -1690,33 +1787,33 @@ namespace CheckUP.gui
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
-                if (xlRange.Cells[i, 1].Value2 != null)
+                if (xlRange.Cells[i, ei.TriNo].Value2 != null)
                 {
-                    rowNumber = xlRange.Cells[i, 1].Value2.ToString();
+                    rowNumber = xlRange.Cells[i, ei.TriNo].Value2.ToString();
                 }
                 else
                 {
                     rowNumber = "";
                 }
-                if (xlRange.Cells[i, 5].Value2 != null)
+                if (xlRange.Cells[i, ei.Triglyceride].Value2 != null)
                 {
-                    value = xlRange.Cells[i, 5].Value2.ToString();
+                    value = xlRange.Cells[i, ei.Triglyceride].Value2.ToString();
                 }
                 else
                 {
                     value = "";
                 }
-                if (xlRange.Cells[i, 6].Value2 != null)
+                if (xlRange.Cells[i, ei.TriResult].Value2 != null)
                 {
-                    result = xlRange.Cells[i, 6].Value2.ToString();
+                    result = xlRange.Cells[i, ei.TriResult].Value2.ToString();
                 }
                 else
                 {
                     result = "";
                 }
-                if (xlRange.Cells[i, 7].Value2 != null)
+                if (xlRange.Cells[i, ei.TriSummary].Value2 != null)
                 {
-                    summary = xlRange.Cells[i, 7].Value2.ToString();
+                    summary = xlRange.Cells[i, ei.TriSummary].Value2.ToString();
                 }
                 else
                 {
@@ -1752,7 +1849,7 @@ namespace CheckUP.gui
 
         private void btnChoImport_Click(object sender, EventArgs e)
         {
-            String rowNumber = "", chk = "", result = "", summary = "", value = "";
+            String rowNumber = "", chk = "", result = "", summary = "", value = "", ldl="", hdl="";
 
             pB1.Visible = true;
             pB1.Minimum = 0;
@@ -1767,40 +1864,58 @@ namespace CheckUP.gui
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
-                if (xlRange.Cells[i, 1].Value2 != null)
+                if (xlRange.Cells[i, ei.ChoNo].Value2 != null)
                 {
-                    rowNumber = xlRange.Cells[i, 1].Value2.ToString();
+                    rowNumber = xlRange.Cells[i, ei.ChoNo].Value2.ToString();
                 }
                 else
                 {
                     rowNumber = "";
                 }
-                if (xlRange.Cells[i, 5].Value2 != null)
+                if (xlRange.Cells[i, ei.Cholesteral].Value2 != null)
                 {
-                    value = xlRange.Cells[i, 5].Value2.ToString();
+                    value = xlRange.Cells[i, ei.Cholesteral].Value2.ToString();
                 }
                 else
                 {
                     value = "";
                 }
-                if (xlRange.Cells[i, 6].Value2 != null)
+
+                if (xlRange.Cells[i, ei.ChoLDL].Value2 != null)
                 {
-                    result = xlRange.Cells[i, 6].Value2.ToString();
+                    ldl = xlRange.Cells[i, ei.ChoLDL].Value2.ToString();
+                }
+                else
+                {
+                    ldl = "";
+                } if (xlRange.Cells[i, ei.ChoHDL].Value2 != null)
+                {
+                    hdl = xlRange.Cells[i, ei.ChoHDL].Value2.ToString();
+                }
+                else
+                {
+                    hdl = "";
+                }
+
+                if (xlRange.Cells[i, ei.ChoResult].Value2 != null)
+                {
+                    result = xlRange.Cells[i, ei.ChoResult].Value2.ToString();
                 }
                 else
                 {
                     result = "";
                 }
-                if (xlRange.Cells[i, 7].Value2 != null)
+                if (xlRange.Cells[i, ei.Chosummary].Value2 != null)
                 {
-                    summary = xlRange.Cells[i, 7].Value2.ToString();
+                    summary = xlRange.Cells[i, ei.Chosummary].Value2.ToString();
                 }
                 else
                 {
                     summary = "";
                 }
 
-                chk = cc.ccpdb.UpdateCholes(rowNumber, txtId.Text, value, result, summary);
+
+                chk = cc.ccpdb.UpdateCholes(rowNumber, txtId.Text, value, result, summary, ldl,hdl);
                 pB1.Value = i;
             }
             xlWorkbook.Close(true, misValue, misValue);
@@ -1833,7 +1948,7 @@ namespace CheckUP.gui
 
         private void btnSgotImport_Click(object sender, EventArgs e)
         {
-            String rowNumber = "", chk = "", result = "", summary = "", sgot = "", sgpt="";
+            String rowNumber = "", chk = "", result = "", summary = "", sgot = "", sgpt="", alt="";
 
             pB1.Visible = true;
             pB1.Minimum = 0;
@@ -1848,48 +1963,56 @@ namespace CheckUP.gui
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
-                if (xlRange.Cells[i, 1].Value2 != null)
+                if (xlRange.Cells[i, ei.SgotNo].Value2 != null)
                 {
-                    rowNumber = xlRange.Cells[i, 1].Value2.ToString();
+                    rowNumber = xlRange.Cells[i, ei.SgotNo].Value2.ToString();
                 }
                 else
                 {
                     rowNumber = "";
                 }
-                if (xlRange.Cells[i, 5].Value2 != null)
+                if (xlRange.Cells[i, ei.Sgot].Value2 != null)
                 {
-                    sgot = xlRange.Cells[i, 5].Value2.ToString();
+                    sgot = xlRange.Cells[i, ei.Sgot].Value2.ToString();
                 }
                 else
                 {
                     sgot = "";
                 }
-                if (xlRange.Cells[i, 6].Value2 != null)
+                if (xlRange.Cells[i, ei.Sgpt].Value2 != null)
                 {
-                    sgpt = xlRange.Cells[i, 6].Value2.ToString();
+                    sgpt = xlRange.Cells[i, ei.Sgpt].Value2.ToString();
                 }
                 else
                 {
                     sgpt = "";
                 }
-                if (xlRange.Cells[i, 7].Value2 != null)
+                if (xlRange.Cells[i, ei.Sgpt].Value2 != null)
                 {
-                    result = xlRange.Cells[i, 7].Value2.ToString();
+                    alt = xlRange.Cells[i, ei.Sgpt].Value2.ToString();
+                }
+                else
+                {
+                    alt = "";
+                }
+                if (xlRange.Cells[i, ei.SgotResult].Value2 != null)
+                {
+                    result = xlRange.Cells[i, ei.SgotResult].Value2.ToString();
                 }
                 else
                 {
                     result = "";
                 }
-                if (xlRange.Cells[i, 8].Value2 != null)
+                if (xlRange.Cells[i, ei.SgptSummary].Value2 != null)
                 {
-                    summary = xlRange.Cells[i, 8].Value2.ToString();
+                    summary = xlRange.Cells[i, ei.SgptSummary].Value2.ToString();
                 }
                 else
                 {
                     summary = "";
                 }
 
-                chk = cc.ccpdb.UpdateSgot(rowNumber, txtId.Text, sgot, sgpt,"", result, summary);
+                chk = cc.ccpdb.UpdateSgot(rowNumber, txtId.Text, sgot, sgpt, alt, result, summary);
                 pB1.Value = i;
             }
             xlWorkbook.Close(true, misValue, misValue);
@@ -1916,41 +2039,41 @@ namespace CheckUP.gui
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
-                if (xlRange.Cells[i, 1].Value2 != null)
+                if (xlRange.Cells[i,ei.BunNo].Value2 != null)
                 {
-                    rowNumber = xlRange.Cells[i, 1].Value2.ToString();
+                    rowNumber = xlRange.Cells[i, ei.BunNo].Value2.ToString();
                 }
                 else
                 {
                     rowNumber = "";
                 }
-                if (xlRange.Cells[i, 5].Value2 != null)
+                if (xlRange.Cells[i, ei.Bun].Value2 != null)
                 {
-                    bun = xlRange.Cells[i, 5].Value2.ToString();
+                    bun = xlRange.Cells[i, ei.Bun].Value2.ToString();
                 }
                 else
                 {
                     bun = "";
                 }
-                if (xlRange.Cells[i, 6].Value2 != null)
+                if (xlRange.Cells[i, ei.BunCreatinine].Value2 != null)
                 {
-                    creatinine = xlRange.Cells[i, 6].Value2.ToString();
+                    creatinine = xlRange.Cells[i, ei.BunCreatinine].Value2.ToString();
                 }
                 else
                 {
                     creatinine = "";
                 }
-                if (xlRange.Cells[i, 7].Value2 != null)
+                if (xlRange.Cells[i, ei.BunResult].Value2 != null)
                 {
-                    result = xlRange.Cells[i, 7].Value2.ToString();
+                    result = xlRange.Cells[i, ei.BunResult].Value2.ToString();
                 }
                 else
                 {
                     result = "";
                 }
-                if (xlRange.Cells[i, 8].Value2 != null)
+                if (xlRange.Cells[i, ei.BunSummary].Value2 != null)
                 {
-                    summary = xlRange.Cells[i, 8].Value2.ToString();
+                    summary = xlRange.Cells[i, ei.BunSummary].Value2.ToString();
                 }
                 else
                 {
@@ -1984,33 +2107,33 @@ namespace CheckUP.gui
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
-                if (xlRange.Cells[i, 1].Value2 != null)
+                if (xlRange.Cells[i, ei.UricNo].Value2 != null)
                 {
-                    rowNumber = xlRange.Cells[i, 1].Value2.ToString();
+                    rowNumber = xlRange.Cells[i, ei.UricNo].Value2.ToString();
                 }
                 else
                 {
                     rowNumber = "";
                 }
-                if (xlRange.Cells[i, 5].Value2 != null)
+                if (xlRange.Cells[i, ei.UricAcid].Value2 != null)
                 {
-                    value = xlRange.Cells[i, 5].Value2.ToString();
+                    value = xlRange.Cells[i, ei.UricAcid].Value2.ToString();
                 }
                 else
                 {
                     value = "";
                 }
-                if (xlRange.Cells[i, 6].Value2 != null)
+                if (xlRange.Cells[i, ei.UricResult].Value2 != null)
                 {
-                    result = xlRange.Cells[i, 6].Value2.ToString();
+                    result = xlRange.Cells[i, ei.UricResult].Value2.ToString();
                 }
                 else
                 {
                     result = "";
                 }
-                if (xlRange.Cells[i, 7].Value2 != null)
+                if (xlRange.Cells[i, ei.UricSummary].Value2 != null)
                 {
-                    summary = xlRange.Cells[i, 7].Value2.ToString();
+                    summary = xlRange.Cells[i, ei.UricSummary].Value2.ToString();
                 }
                 else
                 {
@@ -2744,15 +2867,158 @@ namespace CheckUP.gui
             {
                 return;
             }
-            if (dgvPE[colPEId, e.RowIndex].Value == null)
+            if (dgvPE[colXrayId, e.RowIndex].Value == null)
             {
                 return;
             }
 
-            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colPEId, e.RowIndex].Value.ToString(), cc);
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colXrayId, e.RowIndex].Value.ToString(), cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
-            setGrdPE(cuc.Id);
+            setGrdXray(cuc.Id);
+        }
+
+        private void dgvCBC_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            if (dgvPE[colCBCId, e.RowIndex].Value == null)
+            {
+                return;
+            }
+
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colCBCId, e.RowIndex].Value.ToString(), cc);
+            //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
+            frm.ShowDialog(this);
+            setGrdCBC(cuc.Id);
+        }
+
+        private void dgvFBS_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            if (dgvPE[colFBSId, e.RowIndex].Value == null)
+            {
+                return;
+            }
+
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colFBSId, e.RowIndex].Value.ToString(), cc);
+            //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
+            frm.ShowDialog(this);
+            setGrdFBS(cuc.Id);
+        }
+
+        private void dgvUA_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            if (dgvPE[colUAId, e.RowIndex].Value == null)
+            {
+                return;
+            }
+
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colUAId, e.RowIndex].Value.ToString(), cc);
+            //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
+            frm.ShowDialog(this);
+            setGrdUA(cuc.Id);
+        }
+
+        private void dgvTri_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            if (dgvPE[colTriId, e.RowIndex].Value == null)
+            {
+                return;
+            }
+
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colTriId, e.RowIndex].Value.ToString(), cc);
+            //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
+            frm.ShowDialog(this);
+            setGrdTri(cuc.Id);
+        }
+
+        private void dgvCho_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            if (dgvPE[colChoId, e.RowIndex].Value == null)
+            {
+                return;
+            }
+
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colChoId, e.RowIndex].Value.ToString(), cc);
+            //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
+            frm.ShowDialog(this);
+            setGrdCholes(cuc.Id);
+        }
+
+        private void dgvSgot_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            if (dgvPE[colSgotId, e.RowIndex].Value == null)
+            {
+                return;
+            }
+
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colSgotId, e.RowIndex].Value.ToString(), cc);
+            //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
+            frm.ShowDialog(this);
+            setGrdSgot(cuc.Id);
+        }
+
+        private void dgvBun_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            if (dgvPE[colBunId, e.RowIndex].Value == null)
+            {
+                return;
+            }
+
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colBunId, e.RowIndex].Value.ToString(), cc);
+            //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
+            frm.ShowDialog(this);
+            setGrdBun(cuc.Id);
+        }
+
+        private void dgvUric_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            if (dgvPE[colUricId, e.RowIndex].Value == null)
+            {
+                return;
+            }
+
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colUricId, e.RowIndex].Value.ToString(), cc);
+            //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
+            frm.ShowDialog(this);
+            setGrdUric(cuc.Id);
+        }
+
+        private void btnOther1Excel_Click(object sender, EventArgs e)
+        {
+            ofd.ShowDialog();
+            fileNameOther1 = ofd.FileName;
+            btnOther1Excel.Enabled = true;
         }
         
     }
