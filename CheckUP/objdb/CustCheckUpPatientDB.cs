@@ -756,5 +756,48 @@ namespace CheckUP.objdb
             }
             return chk;
         }
+        public String UpdateOther1(String rowNumber, String cucId, String HBsAg, String HbsAb, String AntiHIV, String VDRL, String Amphetamine, String Calcium)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.hbsag + "='" + HBsAg + "'," +
+                ccp.hbsab + "='" + HbsAb + "', " +
+                ccp.antiHiv + "='" + AntiHIV + "', " +
+                ccp.vdrl + "='" + VDRL + "', " +
+                ccp.amphetamine + "='" + Amphetamine + "', " +
+                ccp.calcium + "='" + Calcium + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateLung(String rowNumber, String cucId, String LungFvcPredic, String LungFvcMeas, String LungFvcPer, String LungFev1Predic, String LungFev1Meas,
+            String LungFev1Per, String LungPerFev1, String LungSummary)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.lungFvcPredic + "='" + LungFvcPredic + "'," +
+                ccp.lungFvcMeas + "='" + LungFvcMeas + "', " +
+                ccp.lungFvcPer + "='" + LungFvcPer + "', " +
+                ccp.lungFev1Predic + "='" + LungFev1Predic + "', " +
+                ccp.lungFev1Meas + "='" + LungFev1Meas + "', " +
+                ccp.lungFev1Per + "='" + LungFev1Per + "', " +
+                ccp.lungPerFev1 + "='" + LungPerFev1 + "', " +
+                ccp.lungSummary + "='" + LungSummary + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
     }
 }

@@ -16,8 +16,8 @@ namespace CheckUP.gui
         CheckControl cc;
         CustCheckUp cuc;
 
-        int tabSum = 0, tabPrint=1, tabPE=2, tabXRay=3, tabCBC=4, tabFBS=5, tabUA=6,tabTri=7, tabCho=8, tabSgot=9, tabBun=10, tabUric=11, tabOther1=12;
-        int tabCnt = 13;
+        int tabSum = 0, tabPrint=1, tabPE=2, tabXRay=3, tabCBC=4, tabFBS=5, tabUA=6,tabTri=7, tabCho=8, tabSgot=9, tabBun=10, tabUric=11, tabOther1=12, tabLung=13;
+        int tabCnt = 14;
 
         int colPERow = 0, colPEId = 1, colPEName = 2, colPESex=3, colPEAge = 4, colPEWeight = 5, colPEHeight = 6, colPEBMI = 7, colPEvitalsign = 8, colPEPulse = 9, colPEBloodGroup=10, colPEResult = 11, colPESummary = 12;
         int colPECnt = 13;
@@ -54,11 +54,15 @@ namespace CheckUP.gui
         int colUricRow = 0, colUricId = 1, colUricName = 2, colUricValue = 3, colUricResult = 4, coLUricSummary = 5;
         int colUricCnt = 6;
 
-        int colOther1Row = 0, colOther1Id = 1, colOther1HBsAg = 2, colOther1HBsAb = 3, colOther1AntiHIV = 4, colOther1VDRL = 5, colOther1Amphetamine = 6, colOther1Calcium = 7;
+        int colOther1Row = 0, colOther1Id = 1, colOther1Name = 2, colOther1HBsAg = 3, colOther1HBsAb = 4, colOther1AntiHIV = 5, colOther1VDRL = 6, colOther1Amphetamine = 7, colOther1Calcium = 8;
+        int colOther1Cnt = 9;
+
+        int colLungRow = 0, colLung1Id = 1, colLung1Name = 2, colLungFvcPredic = 3, colLungFvcMeas = 4, colLungFvcPer = 5, colLungFev1Predic = 6, colLungFev1Meas = 7, colLungFev1Per = 8, colLungPerFev1 = 9, colLungSummary = 10;
+        int colLungCnt = 11;
 
         Font font = new Font("Microsoft Sans Serif", 12);
         Boolean flagNew=false;
-        String fileName = "", fileNamePE = "", fileNameFBS = "", fileNameXray = "", fileNameCBC = "", fileNameUA = "", fileNameTri = "", fileNameCho = "";
+        String fileName = "", fileNamePE = "", fileNameFBS = "", fileNameXray = "", fileNameCBC = "", fileNameUA = "", fileNameTri = "", fileNameCho = "", fileNameLung="";
         String fileNameSgot = "", fileNameBun = "", fileNameUric = "", fileNameOther1="";
         //String cucId = "";
         DataTable dtAll;
@@ -91,6 +95,7 @@ namespace CheckUP.gui
             tC.TabPages[tabUric].Text = "Uric acid";
             tC.TabPages[tabPrint].Text = "Print";
             tC.TabPages[tabOther1].Text = "Other1";
+            tC.TabPages[tabLung].Text = "Lung";
             pB1.Visible = false;
             btnPEImport.Enabled = false;
             btnXrayImport.Enabled = false;
@@ -102,6 +107,8 @@ namespace CheckUP.gui
             btnUricImport.Enabled = false;
             btnSgotImport.Enabled = false;
             btnBunImport.Enabled = false;
+            btnOtherImport.Enabled = false;
+            btnLungImport.Enabled = false;
             if (flagNew)
             {
                 btnImport.Text = "นำเข้ารายชื่อ";
@@ -134,6 +141,7 @@ namespace CheckUP.gui
             setGrdBun();
             setGrdUric();
             setGrdOther1();
+            setGrdLung();
 
             setGrdPE(cucId);
             setGrdXray(cucId);
@@ -146,6 +154,7 @@ namespace CheckUP.gui
             setGrdBun(cucId);
             setGrdUric(cucId);
             setGrdOther1(cucId);
+            setGrdLung(cucId);
         }
 
         private void setResize()
@@ -209,12 +218,40 @@ namespace CheckUP.gui
             dgvCho.Left = dgvPE.Left;
             dgvCho.Top = dgvPE.Left;
 
+            tC.TabPages[tabSgot].Width = tC.Width - 10;
+            tC.TabPages[tabSgot].Height = tC.Height - 10;
+            dgvSgot.Width = tC.TabPages[tabSgot].Width - 10;
+            dgvSgot.Height = tC.TabPages[tabSgot].Height - 10;
+            dgvSgot.Left = dgvPE.Left;
+            dgvSgot.Top = dgvPE.Left;
+
+            tC.TabPages[tabBun].Width = tC.Width - 10;
+            tC.TabPages[tabBun].Height = tC.Height - 10;
+            dgvBun.Width = tC.TabPages[tabBun].Width - 10;
+            dgvBun.Height = tC.TabPages[tabBun].Height - 10;
+            dgvBun.Left = dgvPE.Left;
+            dgvBun.Top = dgvPE.Left;
+
+            tC.TabPages[tabUric].Width = tC.Width - 10;
+            tC.TabPages[tabUric].Height = tC.Height - 10;
+            dgvUric.Width = tC.TabPages[tabUric].Width - 10;
+            dgvUric.Height = tC.TabPages[tabUric].Height - 10;
+            dgvUric.Left = dgvPE.Left;
+            dgvUric.Top = dgvPE.Left;
+
             tC.TabPages[tabOther1].Width = tC.Width - 10;
             tC.TabPages[tabOther1].Height = tC.Height - 10;
             dgvOther1.Width = tC.TabPages[tabOther1].Width - 10;
             dgvOther1.Height = tC.TabPages[tabOther1].Height - 10;
             dgvOther1.Left = dgvPE.Left;
             dgvOther1.Top = dgvPE.Left;
+
+            tC.TabPages[tabLung].Width = tC.Width - 10;
+            tC.TabPages[tabLung].Height = tC.Height - 10;
+            dgvLung.Width = tC.TabPages[tabLung].Width - 10;
+            dgvLung.Height = tC.TabPages[tabLung].Height - 10;
+            dgvLung.Left = dgvPE.Left;
+            dgvLung.Top = dgvPE.Left;
 
             //groupBox1.Width = this.Width - 50;
             //groupBox1.Height = this.Height = 150;
@@ -573,12 +610,12 @@ namespace CheckUP.gui
         }
         private void setGrdOther1()
         {
-            dgvOther1.ColumnCount = colXrayCnt;
+            dgvOther1.ColumnCount = colOther1Cnt;
             dgvOther1.Rows.Clear();
             dgvOther1.RowCount = 1;
             dgvOther1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvOther1.Columns[colOther1Row].Width = 50;
-            dgvOther1.Columns[colOther1Id].Width = 250;
+            dgvOther1.Columns[colOther1Name].Width = 250;
             dgvOther1.Columns[colOther1HBsAg].Width = 100;
             dgvOther1.Columns[colOther1HBsAb].Width = 100;
             dgvOther1.Columns[colOther1AntiHIV].Width = 100;
@@ -586,9 +623,9 @@ namespace CheckUP.gui
             dgvOther1.Columns[colOther1Amphetamine].Width = 100;
             dgvOther1.Columns[colOther1Calcium].Width = 100;
 
-
             dgvOther1.Columns[colOther1Row].HeaderText = "ลำดับ";
             dgvOther1.Columns[colOther1Id].HeaderText = "id";
+            dgvOther1.Columns[colOther1Name].HeaderText = "ชื่อ นามสกุล";
             dgvOther1.Columns[colOther1HBsAg].HeaderText = "HBsAg";
             dgvOther1.Columns[colOther1HBsAb].HeaderText = "HbsAb";
             dgvOther1.Columns[colOther1AntiHIV].HeaderText = "AntiHIV";
@@ -601,7 +638,42 @@ namespace CheckUP.gui
             //Font font = new Font("Microsoft Sans Serif", 12);
 
             dgvOther1.Font = font;
-            dgvOther1.Columns[colXrayId].Visible = false;
+            dgvOther1.Columns[colOther1Id].Visible = false;
+        }
+        private void setGrdLung()
+        {
+            dgvLung.ColumnCount = colLungCnt;
+            dgvLung.Rows.Clear();
+            dgvLung.RowCount = 1;
+            dgvLung.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvLung.Columns[colLungRow].Width = 50;
+            dgvLung.Columns[colLung1Name].Width = 250;
+            dgvLung.Columns[colLungFvcPredic].Width = 100;
+            dgvLung.Columns[colLungFvcMeas].Width = 100;
+            dgvLung.Columns[colLungFvcPer].Width = 100;
+            dgvLung.Columns[colLungFev1Predic].Width = 100;
+            dgvLung.Columns[colLungFev1Meas].Width = 100;
+            dgvLung.Columns[colLungFev1Per].Width = 100;
+            dgvLung.Columns[colLungPerFev1].Width = 100;
+            dgvLung.Columns[colLungSummary].Width = 100;
+
+            dgvLung.Columns[colLungRow].HeaderText = "ลำดับ";
+            dgvLung.Columns[colLung1Id].HeaderText = "id";
+            dgvLung.Columns[colLung1Name].HeaderText = "ชื่อ นามสกุล";
+            dgvLung.Columns[colLungFvcPredic].HeaderText = "Fvc Predic";
+            dgvLung.Columns[colLungFvcMeas].HeaderText = "Fvc Meas";
+            dgvLung.Columns[colLungFvcPer].HeaderText = "Fvc Per";
+            dgvLung.Columns[colLungFev1Predic].HeaderText = "Fev1 Predic";
+            dgvLung.Columns[colLungFev1Meas].HeaderText = "Fev1 Meas";
+            dgvLung.Columns[colLungPerFev1].HeaderText = "Per Fev1";
+            dgvLung.Columns[colLungFev1Per].HeaderText = "สรุปผลตรวจ";
+            dgvLung.Columns[colLungSummary].HeaderText = "สรุปผลตรวจ";
+
+            //dgvSum.Columns[colPEId].HeaderText = "id";
+            //Font font = new Font("Microsoft Sans Serif", 12);
+
+            dgvLung.Font = font;
+            dgvLung.Columns[colLung1Id].Visible = false;
         }
         private void setControl(String cucId)
         {
@@ -980,6 +1052,7 @@ namespace CheckUP.gui
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     dgvOther1[colOther1Row, i].Value = (i + 1);
+                    dgvOther1[colOther1Name, i].Value = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
                     dgvOther1[colOther1Amphetamine, i].Value = dt.Rows[i][cc.ccpdb.ccp.amphetamine].ToString();
                     dgvOther1[colOther1AntiHIV, i].Value = dt.Rows[i][cc.ccpdb.ccp.antiHiv].ToString();
                     dgvOther1[colOther1Calcium, i].Value = dt.Rows[i][cc.ccpdb.ccp.antiHiv].ToString();
@@ -990,6 +1063,43 @@ namespace CheckUP.gui
                     if ((i % 2) != 0)
                     {
                         dgvOther1.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                    }
+                }
+            }
+            //dgvView.ReadOnly = true;
+        }
+        private void setGrdLung(String cucId)
+        {
+            DataTable dt;
+            dgvLung.Rows.Clear();
+            if (flagNew)
+            {
+                dt = cc.ccpdb.selectAllByCucId(cucId);
+            }
+            else
+            {
+                dt = dtAll;
+            }
+
+            if (dt.Rows.Count > 0)
+            {
+                dgvLung.RowCount = dt.Rows.Count;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    dgvLung[colLungRow, i].Value = (i + 1);
+                    dgvLung[colLung1Name, i].Value = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
+                    dgvLung[colLungFvcPredic, i].Value = dt.Rows[i][cc.ccpdb.ccp.lungFvcPredic].ToString();
+                    dgvLung[colLungFvcMeas, i].Value = dt.Rows[i][cc.ccpdb.ccp.lungFvcMeas].ToString();
+                    dgvLung[colLungFvcPer, i].Value = dt.Rows[i][cc.ccpdb.ccp.lungFvcPer].ToString();
+                    dgvLung[colLungFev1Predic, i].Value = dt.Rows[i][cc.ccpdb.ccp.lungFev1Predic].ToString();
+                    dgvLung[colLungFev1Meas, i].Value = dt.Rows[i][cc.ccpdb.ccp.lungFev1Meas].ToString();
+                    dgvLung[colLungPerFev1, i].Value = dt.Rows[i][cc.ccpdb.ccp.lungPerFev1].ToString();
+                    dgvLung[colLungFev1Per, i].Value = dt.Rows[i][cc.ccpdb.ccp.lungFev1Per].ToString();
+                    dgvLung[colLungSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.lungSummary].ToString();
+                    dgvLung[colLung1Id, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    if ((i % 2) != 0)
+                    {
+                        dgvLung.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
                     }
                 }
             }
@@ -3018,7 +3128,214 @@ namespace CheckUP.gui
         {
             ofd.ShowDialog();
             fileNameOther1 = ofd.FileName;
-            btnOther1Excel.Enabled = true;
+            btnOtherImport.Enabled = true;
+        }
+
+        private void btnOtherImport_Click(object sender, EventArgs e)
+        {
+            String rowNumber = "", chk = "", result = "", summary = "", HBsAg = "", HbsAb="", AntiHIV="", VDRL="", Amphetamine="", Calcium="";
+
+            pB1.Visible = true;
+            pB1.Minimum = 0;
+
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameOther1);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+            int rowCount = xlRange.Rows.Count;
+            pB1.Maximum = rowCount;
+            xlApp.Visible = false;
+            for (int i = int.Parse(ei.Other1Row); i <= rowCount; i++)
+            {
+                //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
+                if (xlRange.Cells[i, int.Parse(ei.Other1No)].Value2 != null)
+                {
+                    rowNumber = xlRange.Cells[i, int.Parse(ei.Other1No)].Value2.ToString();
+                }
+                else
+                {
+                    rowNumber = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Other1HBsAg)].Value2 != null)
+                {
+                    HBsAg = xlRange.Cells[i, int.Parse(ei.Other1HBsAg)].Value2.ToString();
+                }
+                else
+                {
+                    HBsAg = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Other1HBsAb)].Value2 != null)
+                {
+                    HbsAb = xlRange.Cells[i, int.Parse(ei.Other1HBsAb)].Value2.ToString();
+                }
+                else
+                {
+                    HbsAb = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Other1AntiHIV)].Value2 != null)
+                {
+                    AntiHIV = xlRange.Cells[i, int.Parse(ei.Other1AntiHIV)].Value2.ToString();
+                }
+                else
+                {
+                    AntiHIV = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Other1VDRL)].Value2 != null)
+                {
+                    VDRL = xlRange.Cells[i, int.Parse(ei.Other1VDRL)].Value2.ToString();
+                }
+                else
+                {
+                    VDRL = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Other1Amphetamine)].Value2 != null)
+                {
+                    Amphetamine = xlRange.Cells[i, int.Parse(ei.Other1Amphetamine)].Value2.ToString();
+                }
+                else
+                {
+                    Amphetamine = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Other1Calcium)].Value2 != null)
+                {
+                    Calcium = xlRange.Cells[i, int.Parse(ei.Other1Calcium)].Value2.ToString();
+                }
+                else
+                {
+                    Calcium = "";
+                }
+                //if (xlRange.Cells[i, ei.UricResult].Value2 != null)
+                //{
+                //    result = xlRange.Cells[i, ei.UricResult].Value2.ToString();
+                //}
+                //else
+                //{
+                //    result = "";
+                //}
+                //if (xlRange.Cells[i, ei.UricSummary].Value2 != null)
+                //{
+                //    summary = xlRange.Cells[i, ei.UricSummary].Value2.ToString();
+                //}
+                //else
+                //{
+                //    summary = "";
+                //}
+
+                chk = cc.ccpdb.UpdateOther1(rowNumber, txtId.Text, HBsAg, HbsAb, AntiHIV, VDRL, Amphetamine, Calcium);
+                pB1.Value = i;
+            }
+            xlWorkbook.Close(true, misValue, misValue);
+            xlApp.Quit();
+            pB1.Visible = false;
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
+            setGrdOther1(txtId.Text);
+        }
+
+        private void btnLungExcel_Click(object sender, EventArgs e)
+        {
+            ofd.ShowDialog();
+            fileNameLung = ofd.FileName;
+            btnLungImport.Enabled = true;
+        }
+
+        private void btnLungImport_Click(object sender, EventArgs e)
+        {
+            String rowNumber = "", chk = "", result = "", summary = "", LungFvcPredic = "", LungFvcMeas = "", LungFvcPer = "", LungFev1Predic = "", LungFev1Meas = "", LungFev1Per = "", LungPerFev1 = "";
+
+            pB1.Visible = true;
+            pB1.Minimum = 0;
+
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameLung);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+            int rowCount = xlRange.Rows.Count;
+            pB1.Maximum = rowCount;
+            xlApp.Visible = false;
+            for (int i = int.Parse(ei.LungRow); i <= rowCount; i++)
+            {
+                //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
+                if (xlRange.Cells[i, int.Parse(ei.LungNo)].Value2 != null)
+                {
+                    rowNumber = xlRange.Cells[i, int.Parse(ei.LungNo)].Value2.ToString();
+                }
+                else
+                {
+                    rowNumber = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.LungFvcPredic)].Value2 != null)
+                {
+                    LungFvcPredic = xlRange.Cells[i, int.Parse(ei.LungFvcPredic)].Value2.ToString();
+                }
+                else
+                {
+                    LungFvcPredic = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.LungFvcMeas)].Value2 != null)
+                {
+                    LungFvcMeas = xlRange.Cells[i, int.Parse(ei.LungFvcMeas)].Value2.ToString();
+                }
+                else
+                {
+                    LungFvcMeas = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.LungFvcPer)].Value2 != null)
+                {
+                    LungFvcPer = xlRange.Cells[i, int.Parse(ei.LungFvcPer)].Value2.ToString();
+                }
+                else
+                {
+                    LungFvcPer = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.LungFev1Predic)].Value2 != null)
+                {
+                    LungFev1Predic = xlRange.Cells[i, int.Parse(ei.LungFev1Predic)].Value2.ToString();
+                }
+                else
+                {
+                    LungFev1Predic = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.LungFev1Meas)].Value2 != null)
+                {
+                    LungFev1Meas = xlRange.Cells[i, int.Parse(ei.LungFev1Meas)].Value2.ToString();
+                }
+                else
+                {
+                    LungFev1Meas = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.LungFev1Per)].Value2 != null)
+                {
+                    LungFev1Per = xlRange.Cells[i, int.Parse(ei.LungFev1Per)].Value2.ToString();
+                }
+                else
+                {
+                    LungFev1Per = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.LungPerFev1)].Value2 != null)
+                {
+                    LungPerFev1 = xlRange.Cells[i, int.Parse(ei.LungPerFev1)].Value2.ToString();
+                }
+                else
+                {
+                    LungPerFev1 = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.LungSummary)].Value2 != null)
+                {
+                    summary = xlRange.Cells[i, int.Parse(ei.LungSummary)].Value2.ToString();
+                }
+                else
+                {
+                    summary = "";
+                }
+
+                chk = cc.ccpdb.UpdateLung(rowNumber, txtId.Text, LungFvcPredic, LungFvcMeas, LungFvcPer, LungFev1Predic, LungFev1Meas, LungFev1Per, LungPerFev1, summary);
+                pB1.Value = i;
+            }
+            xlWorkbook.Close(true, misValue, misValue);
+            xlApp.Quit();
+            pB1.Visible = false;
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
+            setGrdLung(txtId.Text);
         }
         
     }

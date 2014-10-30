@@ -32,5 +32,7 @@ namespace CheckUP.object1
         public String UricRow = "", UricNo = "", UricAcid = "", UricResult = "", UricSummary = "";
 
         public String Other1Row = "", Other1No = "", Other1HBsAg = "", Other1HBsAb = "", Other1AntiHIV = "", Other1VDRL = "", Other1Calcium = "", Other1Amphetamine="";
+
+        public String LungRow = "", LungNo = "", LungFvcPredic = "", LungFvcMeas = "", LungFvcPer = "", LungFev1Predic = "", LungFev1Meas = "", LungFev1Per = "", LungPerFev1 = "", LungSummary = "";
     }
 }

@@ -213,6 +213,8 @@
             this.lbCho = new System.Windows.Forms.Label();
             this.nmDChoRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.label18 = new System.Windows.Forms.Label();
+            this.nmDSgotALPValue = new System.Windows.Forms.NumericUpDown();
             this.label87 = new System.Windows.Forms.Label();
             this.txtSgotTest = new System.Windows.Forms.TextBox();
             this.btnSgotExcel = new System.Windows.Forms.Button();
@@ -258,9 +260,13 @@
             this.nmDUricNo = new System.Windows.Forms.NumericUpDown();
             this.lbUric = new System.Windows.Forms.Label();
             this.nmDUricRow = new System.Windows.Forms.NumericUpDown();
-            this.label18 = new System.Windows.Forms.Label();
-            this.nmDSgotALPValue = new System.Windows.Forms.NumericUpDown();
             this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.label92 = new System.Windows.Forms.Label();
+            this.nmDOther1Calcium = new System.Windows.Forms.NumericUpDown();
+            this.label91 = new System.Windows.Forms.Label();
+            this.nmDOther1Amphetamine = new System.Windows.Forms.NumericUpDown();
+            this.label90 = new System.Windows.Forms.Label();
+            this.nmDOther1VDRL = new System.Windows.Forms.NumericUpDown();
             this.label19 = new System.Windows.Forms.Label();
             this.txtOther1Test = new System.Windows.Forms.TextBox();
             this.btnOther1Excel = new System.Windows.Forms.Button();
@@ -274,12 +280,30 @@
             this.nmDOther1No = new System.Windows.Forms.NumericUpDown();
             this.label24 = new System.Windows.Forms.Label();
             this.nmDOther1Row = new System.Windows.Forms.NumericUpDown();
-            this.label90 = new System.Windows.Forms.Label();
-            this.nmDOther1VDRL = new System.Windows.Forms.NumericUpDown();
-            this.label91 = new System.Windows.Forms.Label();
-            this.nmDOther1Amphetamine = new System.Windows.Forms.NumericUpDown();
-            this.label92 = new System.Windows.Forms.Label();
-            this.nmDOther1Calcium = new System.Windows.Forms.NumericUpDown();
+            this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.label103 = new System.Windows.Forms.Label();
+            this.nmDLungSummary = new System.Windows.Forms.NumericUpDown();
+            this.label102 = new System.Windows.Forms.Label();
+            this.nmDLungPerFev1 = new System.Windows.Forms.NumericUpDown();
+            this.label93 = new System.Windows.Forms.Label();
+            this.nmDLungFev1Per = new System.Windows.Forms.NumericUpDown();
+            this.label94 = new System.Windows.Forms.Label();
+            this.nmDLungFev1Meas = new System.Windows.Forms.NumericUpDown();
+            this.label95 = new System.Windows.Forms.Label();
+            this.nmDLungFev1Predic = new System.Windows.Forms.NumericUpDown();
+            this.label96 = new System.Windows.Forms.Label();
+            this.txtLungTest = new System.Windows.Forms.TextBox();
+            this.btnLungExcel = new System.Windows.Forms.Button();
+            this.label97 = new System.Windows.Forms.Label();
+            this.nmDLungFvcMeas = new System.Windows.Forms.NumericUpDown();
+            this.label98 = new System.Windows.Forms.Label();
+            this.nmDLungFvcPer = new System.Windows.Forms.NumericUpDown();
+            this.label99 = new System.Windows.Forms.Label();
+            this.nmDLungFvcPredic = new System.Windows.Forms.NumericUpDown();
+            this.label100 = new System.Windows.Forms.Label();
+            this.nmDLungNo = new System.Windows.Forms.NumericUpDown();
+            this.label101 = new System.Windows.Forms.Label();
+            this.nmDLungRow = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDARow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDAPrefix)).BeginInit();
@@ -364,6 +388,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDChoNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDChoRow)).BeginInit();
             this.tabPage9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDSgotALPValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDSgotvalue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDSgotResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDSgotSummary)).BeginInit();
@@ -383,16 +408,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDUricValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDUricNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDUricRow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDSgotALPValue)).BeginInit();
             this.tabPage12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1Calcium)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1Amphetamine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1VDRL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOther1HBsAb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOther1AntiHIV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOther1HBsAg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOther1No)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOther1Row)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1VDRL)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1Amphetamine)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1Calcium)).BeginInit();
+            this.tabPage13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDLungSummary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDLungPerFev1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDLungFev1Per)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDLungFev1Meas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDLungFev1Predic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDLungFvcMeas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDLungFvcPer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDLungFvcPredic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDLungNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDLungRow)).BeginInit();
             this.SuspendLayout();
             // 
             // nmDRow
@@ -731,6 +766,7 @@
             this.tC.Controls.Add(this.tabPage10);
             this.tC.Controls.Add(this.tabPage11);
             this.tC.Controls.Add(this.tabPage12);
+            this.tC.Controls.Add(this.tabPage13);
             this.tC.Location = new System.Drawing.Point(12, 12);
             this.tC.Name = "tC";
             this.tC.SelectedIndex = 0;
@@ -2577,6 +2613,28 @@
             this.tabPage9.Text = "tabPage9";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label18.Location = new System.Drawing.Point(326, 96);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(33, 16);
+            this.label18.TabIndex = 81;
+            this.label18.Text = "ALP";
+            // 
+            // nmDSgotALPValue
+            // 
+            this.nmDSgotALPValue.Location = new System.Drawing.Point(322, 124);
+            this.nmDSgotALPValue.Name = "nmDSgotALPValue";
+            this.nmDSgotALPValue.Size = new System.Drawing.Size(46, 20);
+            this.nmDSgotALPValue.TabIndex = 82;
+            this.nmDSgotALPValue.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
             // label87
             // 
             this.label87.AutoSize = true;
@@ -3080,28 +3138,6 @@
             0,
             0});
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label18.Location = new System.Drawing.Point(326, 96);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(33, 16);
-            this.label18.TabIndex = 81;
-            this.label18.Text = "ALP";
-            // 
-            // nmDSgotALPValue
-            // 
-            this.nmDSgotALPValue.Location = new System.Drawing.Point(322, 124);
-            this.nmDSgotALPValue.Name = "nmDSgotALPValue";
-            this.nmDSgotALPValue.Size = new System.Drawing.Size(46, 20);
-            this.nmDSgotALPValue.TabIndex = 82;
-            this.nmDSgotALPValue.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
             // tabPage12
             // 
             this.tabPage12.Controls.Add(this.label92);
@@ -3130,6 +3166,72 @@
             this.tabPage12.TabIndex = 11;
             this.tabPage12.Text = "tabPage12";
             this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label92.Location = new System.Drawing.Point(649, 71);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(56, 16);
+            this.label92.TabIndex = 98;
+            this.label92.Text = "Calcium";
+            // 
+            // nmDOther1Calcium
+            // 
+            this.nmDOther1Calcium.Location = new System.Drawing.Point(655, 100);
+            this.nmDOther1Calcium.Name = "nmDOther1Calcium";
+            this.nmDOther1Calcium.Size = new System.Drawing.Size(46, 20);
+            this.nmDOther1Calcium.TabIndex = 99;
+            this.nmDOther1Calcium.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label91.Location = new System.Drawing.Point(535, 71);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(91, 16);
+            this.label91.TabIndex = 96;
+            this.label91.Text = "Amphetamine";
+            // 
+            // nmDOther1Amphetamine
+            // 
+            this.nmDOther1Amphetamine.Location = new System.Drawing.Point(541, 100);
+            this.nmDOther1Amphetamine.Name = "nmDOther1Amphetamine";
+            this.nmDOther1Amphetamine.Size = new System.Drawing.Size(46, 20);
+            this.nmDOther1Amphetamine.TabIndex = 97;
+            this.nmDOther1Amphetamine.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label90.Location = new System.Drawing.Point(428, 70);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(44, 16);
+            this.label90.TabIndex = 94;
+            this.label90.Text = "VDRL";
+            // 
+            // nmDOther1VDRL
+            // 
+            this.nmDOther1VDRL.Location = new System.Drawing.Point(434, 99);
+            this.nmDOther1VDRL.Name = "nmDOther1VDRL";
+            this.nmDOther1VDRL.Size = new System.Drawing.Size(46, 20);
+            this.nmDOther1VDRL.TabIndex = 95;
+            this.nmDOther1VDRL.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // label19
             // 
@@ -3268,67 +3370,281 @@
             0,
             0});
             // 
-            // label90
+            // tabPage13
             // 
-            this.label90.AutoSize = true;
-            this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label90.Location = new System.Drawing.Point(428, 70);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(44, 16);
-            this.label90.TabIndex = 94;
-            this.label90.Text = "VDRL";
+            this.tabPage13.Controls.Add(this.label103);
+            this.tabPage13.Controls.Add(this.nmDLungSummary);
+            this.tabPage13.Controls.Add(this.label102);
+            this.tabPage13.Controls.Add(this.nmDLungPerFev1);
+            this.tabPage13.Controls.Add(this.label93);
+            this.tabPage13.Controls.Add(this.nmDLungFev1Per);
+            this.tabPage13.Controls.Add(this.label94);
+            this.tabPage13.Controls.Add(this.nmDLungFev1Meas);
+            this.tabPage13.Controls.Add(this.label95);
+            this.tabPage13.Controls.Add(this.nmDLungFev1Predic);
+            this.tabPage13.Controls.Add(this.label96);
+            this.tabPage13.Controls.Add(this.txtLungTest);
+            this.tabPage13.Controls.Add(this.btnLungExcel);
+            this.tabPage13.Controls.Add(this.label97);
+            this.tabPage13.Controls.Add(this.nmDLungFvcMeas);
+            this.tabPage13.Controls.Add(this.label98);
+            this.tabPage13.Controls.Add(this.nmDLungFvcPer);
+            this.tabPage13.Controls.Add(this.label99);
+            this.tabPage13.Controls.Add(this.nmDLungFvcPredic);
+            this.tabPage13.Controls.Add(this.label100);
+            this.tabPage13.Controls.Add(this.nmDLungNo);
+            this.tabPage13.Controls.Add(this.label101);
+            this.tabPage13.Controls.Add(this.nmDLungRow);
+            this.tabPage13.Location = new System.Drawing.Point(4, 22);
+            this.tabPage13.Name = "tabPage13";
+            this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage13.Size = new System.Drawing.Size(920, 322);
+            this.tabPage13.TabIndex = 12;
+            this.tabPage13.Text = "tabPage13";
+            this.tabPage13.UseVisualStyleBackColor = true;
             // 
-            // nmDOther1VDRL
+            // label103
             // 
-            this.nmDOther1VDRL.Location = new System.Drawing.Point(434, 99);
-            this.nmDOther1VDRL.Name = "nmDOther1VDRL";
-            this.nmDOther1VDRL.Size = new System.Drawing.Size(46, 20);
-            this.nmDOther1VDRL.TabIndex = 95;
-            this.nmDOther1VDRL.Value = new decimal(new int[] {
+            this.label103.AutoSize = true;
+            this.label103.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label103.Location = new System.Drawing.Point(30, 146);
+            this.label103.Name = "label103";
+            this.label103.Size = new System.Drawing.Size(65, 16);
+            this.label103.TabIndex = 121;
+            this.label103.Text = "Summary";
+            // 
+            // nmDLungSummary
+            // 
+            this.nmDLungSummary.Location = new System.Drawing.Point(36, 175);
+            this.nmDLungSummary.Name = "nmDLungSummary";
+            this.nmDLungSummary.Size = new System.Drawing.Size(46, 20);
+            this.nmDLungSummary.TabIndex = 122;
+            this.nmDLungSummary.Value = new decimal(new int[] {
             5,
             0,
             0,
             0});
             // 
-            // label91
+            // label102
             // 
-            this.label91.AutoSize = true;
-            this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label91.Location = new System.Drawing.Point(535, 71);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(91, 16);
-            this.label91.TabIndex = 96;
-            this.label91.Text = "Amphetamine";
+            this.label102.AutoSize = true;
+            this.label102.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label102.Location = new System.Drawing.Point(763, 71);
+            this.label102.Name = "label102";
+            this.label102.Size = new System.Drawing.Size(56, 16);
+            this.label102.TabIndex = 119;
+            this.label102.Text = "per fev1";
             // 
-            // nmDOther1Amphetamine
+            // nmDLungPerFev1
             // 
-            this.nmDOther1Amphetamine.Location = new System.Drawing.Point(541, 100);
-            this.nmDOther1Amphetamine.Name = "nmDOther1Amphetamine";
-            this.nmDOther1Amphetamine.Size = new System.Drawing.Size(46, 20);
-            this.nmDOther1Amphetamine.TabIndex = 97;
-            this.nmDOther1Amphetamine.Value = new decimal(new int[] {
+            this.nmDLungPerFev1.Location = new System.Drawing.Point(769, 100);
+            this.nmDLungPerFev1.Name = "nmDLungPerFev1";
+            this.nmDLungPerFev1.Size = new System.Drawing.Size(46, 20);
+            this.nmDLungPerFev1.TabIndex = 120;
+            this.nmDLungPerFev1.Value = new decimal(new int[] {
             5,
             0,
             0,
             0});
             // 
-            // label92
+            // label93
             // 
-            this.label92.AutoSize = true;
-            this.label92.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label92.Location = new System.Drawing.Point(649, 71);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(56, 16);
-            this.label92.TabIndex = 98;
-            this.label92.Text = "Calcium";
+            this.label93.AutoSize = true;
+            this.label93.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label93.Location = new System.Drawing.Point(649, 71);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(56, 16);
+            this.label93.TabIndex = 117;
+            this.label93.Text = "fev1 per";
             // 
-            // nmDOther1Calcium
+            // nmDLungFev1Per
             // 
-            this.nmDOther1Calcium.Location = new System.Drawing.Point(655, 100);
-            this.nmDOther1Calcium.Name = "nmDOther1Calcium";
-            this.nmDOther1Calcium.Size = new System.Drawing.Size(46, 20);
-            this.nmDOther1Calcium.TabIndex = 99;
-            this.nmDOther1Calcium.Value = new decimal(new int[] {
+            this.nmDLungFev1Per.Location = new System.Drawing.Point(655, 100);
+            this.nmDLungFev1Per.Name = "nmDLungFev1Per";
+            this.nmDLungFev1Per.Size = new System.Drawing.Size(46, 20);
+            this.nmDLungFev1Per.TabIndex = 118;
+            this.nmDLungFev1Per.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label94.Location = new System.Drawing.Point(535, 71);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(70, 16);
+            this.label94.TabIndex = 115;
+            this.label94.Text = "fev1 meas";
+            // 
+            // nmDLungFev1Meas
+            // 
+            this.nmDLungFev1Meas.Location = new System.Drawing.Point(541, 100);
+            this.nmDLungFev1Meas.Name = "nmDLungFev1Meas";
+            this.nmDLungFev1Meas.Size = new System.Drawing.Size(46, 20);
+            this.nmDLungFev1Meas.TabIndex = 116;
+            this.nmDLungFev1Meas.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label95.Location = new System.Drawing.Point(428, 70);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(74, 16);
+            this.label95.TabIndex = 113;
+            this.label95.Text = "fev1 predic";
+            // 
+            // nmDLungFev1Predic
+            // 
+            this.nmDLungFev1Predic.Location = new System.Drawing.Point(434, 99);
+            this.nmDLungFev1Predic.Name = "nmDLungFev1Predic";
+            this.nmDLungFev1Predic.Size = new System.Drawing.Size(46, 20);
+            this.nmDLungFev1Predic.TabIndex = 114;
+            this.nmDLungFev1Predic.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(6, 253);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(80, 13);
+            this.label96.TabIndex = 112;
+            this.label96.Text = "ข้อมูลจากการดึง";
+            // 
+            // txtLungTest
+            // 
+            this.txtLungTest.Location = new System.Drawing.Point(6, 269);
+            this.txtLungTest.Name = "txtLungTest";
+            this.txtLungTest.Size = new System.Drawing.Size(903, 20);
+            this.txtLungTest.TabIndex = 111;
+            // 
+            // btnLungExcel
+            // 
+            this.btnLungExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnLungExcel.Location = new System.Drawing.Point(828, 220);
+            this.btnLungExcel.Name = "btnLungExcel";
+            this.btnLungExcel.Size = new System.Drawing.Size(86, 34);
+            this.btnLungExcel.TabIndex = 110;
+            this.btnLungExcel.Text = "ทดสอบ Excel";
+            this.btnLungExcel.UseVisualStyleBackColor = true;
+            this.btnLungExcel.Click += new System.EventHandler(this.btnLungExcel_Click);
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label97.Location = new System.Drawing.Point(232, 71);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(62, 16);
+            this.label97.TabIndex = 108;
+            this.label97.Text = "fvc meas";
+            // 
+            // nmDLungFvcMeas
+            // 
+            this.nmDLungFvcMeas.Location = new System.Drawing.Point(228, 99);
+            this.nmDLungFvcMeas.Name = "nmDLungFvcMeas";
+            this.nmDLungFvcMeas.Size = new System.Drawing.Size(46, 20);
+            this.nmDLungFvcMeas.TabIndex = 109;
+            this.nmDLungFvcMeas.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label98.Location = new System.Drawing.Point(327, 70);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(48, 16);
+            this.label98.TabIndex = 106;
+            this.label98.Text = "fvc per";
+            // 
+            // nmDLungFvcPer
+            // 
+            this.nmDLungFvcPer.Location = new System.Drawing.Point(333, 99);
+            this.nmDLungFvcPer.Name = "nmDLungFvcPer";
+            this.nmDLungFvcPer.Size = new System.Drawing.Size(46, 20);
+            this.nmDLungFvcPer.TabIndex = 107;
+            this.nmDLungFvcPer.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label99
+            // 
+            this.label99.AutoSize = true;
+            this.label99.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label99.Location = new System.Drawing.Point(133, 71);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(66, 16);
+            this.label99.TabIndex = 104;
+            this.label99.Text = "fvc predic";
+            // 
+            // nmDLungFvcPredic
+            // 
+            this.nmDLungFvcPredic.Location = new System.Drawing.Point(129, 99);
+            this.nmDLungFvcPredic.Name = "nmDLungFvcPredic";
+            this.nmDLungFvcPredic.Size = new System.Drawing.Size(46, 20);
+            this.nmDLungFvcPredic.TabIndex = 105;
+            this.nmDLungFvcPredic.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label100
+            // 
+            this.label100.AutoSize = true;
+            this.label100.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label100.Location = new System.Drawing.Point(40, 70);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(42, 16);
+            this.label100.TabIndex = 102;
+            this.label100.Text = "ลำดับ  :";
+            // 
+            // nmDLungNo
+            // 
+            this.nmDLungNo.Location = new System.Drawing.Point(36, 99);
+            this.nmDLungNo.Name = "nmDLungNo";
+            this.nmDLungNo.Size = new System.Drawing.Size(46, 20);
+            this.nmDLungNo.TabIndex = 103;
+            this.nmDLungNo.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label101
+            // 
+            this.label101.AutoSize = true;
+            this.label101.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label101.Location = new System.Drawing.Point(107, 33);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(68, 16);
+            this.label101.TabIndex = 100;
+            this.label101.Text = "row เริ่มต้น :";
+            // 
+            // nmDLungRow
+            // 
+            this.nmDLungRow.Location = new System.Drawing.Point(197, 33);
+            this.nmDLungRow.Name = "nmDLungRow";
+            this.nmDLungRow.Size = new System.Drawing.Size(46, 20);
+            this.nmDLungRow.TabIndex = 101;
+            this.nmDLungRow.Value = new decimal(new int[] {
             5,
             0,
             0,
@@ -3437,6 +3753,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDChoRow)).EndInit();
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDSgotALPValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDSgotvalue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDSgotResult)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDSgotSummary)).EndInit();
@@ -3458,17 +3775,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDUricValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDUricNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDUricRow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDSgotALPValue)).EndInit();
             this.tabPage12.ResumeLayout(false);
             this.tabPage12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1Calcium)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1Amphetamine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1VDRL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOther1HBsAb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOther1AntiHIV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOther1HBsAg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOther1No)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOther1Row)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1VDRL)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1Amphetamine)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1Calcium)).EndInit();
+            this.tabPage13.ResumeLayout(false);
+            this.tabPage13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDLungSummary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDLungPerFev1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDLungFev1Per)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDLungFev1Meas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDLungFev1Predic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDLungFvcMeas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDLungFvcPer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDLungFvcPredic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDLungNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDLungRow)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3727,5 +4055,29 @@
         private System.Windows.Forms.NumericUpDown nmDOther1VDRL;
         private System.Windows.Forms.Label label92;
         private System.Windows.Forms.NumericUpDown nmDOther1Calcium;
+        private System.Windows.Forms.TabPage tabPage13;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.NumericUpDown nmDLungFev1Per;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.NumericUpDown nmDLungFev1Meas;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.NumericUpDown nmDLungFev1Predic;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.TextBox txtLungTest;
+        private System.Windows.Forms.Button btnLungExcel;
+        private System.Windows.Forms.Label label97;
+        private System.Windows.Forms.NumericUpDown nmDLungFvcMeas;
+        private System.Windows.Forms.Label label98;
+        private System.Windows.Forms.NumericUpDown nmDLungFvcPer;
+        private System.Windows.Forms.Label label99;
+        private System.Windows.Forms.NumericUpDown nmDLungFvcPredic;
+        private System.Windows.Forms.Label label100;
+        private System.Windows.Forms.NumericUpDown nmDLungNo;
+        private System.Windows.Forms.Label label101;
+        private System.Windows.Forms.NumericUpDown nmDLungRow;
+        private System.Windows.Forms.Label label103;
+        private System.Windows.Forms.NumericUpDown nmDLungSummary;
+        private System.Windows.Forms.Label label102;
+        private System.Windows.Forms.NumericUpDown nmDLungPerFev1;
     }
 }

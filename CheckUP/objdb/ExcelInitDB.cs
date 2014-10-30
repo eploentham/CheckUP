@@ -135,6 +135,17 @@ namespace CheckUP.objdb
             ei.Other1Row = "other1_row";
             ei.Other1VDRL = "other1_vdrl";
 
+            ei.LungFev1Meas = "lung_fev1_meas";
+            ei.LungFev1Per = "lung_fev1_per";
+            ei.LungFev1Predic = "lung_fev1_predic";
+            ei.LungFvcMeas = "lung_fvc_meas";
+            ei.LungFvcPer = "lung_fvc_per";
+            ei.LungFvcPredic = "lung_fvc_predic";
+            ei.LungNo = "lung_no";
+            ei.LungPerFev1 = "lung_per_fev1";
+            ei.LungRow = "lung_row";
+            ei.LungSummary = "lung_summary";
+
             ei.pkField = "id";
             ei.table = "b_excel_init";
         }
@@ -254,6 +265,17 @@ namespace CheckUP.objdb
             item.Other1No = dt.Rows[0][ei.Other1No].ToString();
             item.Other1Row = dt.Rows[0][ei.Other1Row].ToString();
             item.Other1VDRL = dt.Rows[0][ei.Other1VDRL].ToString();
+
+            item.LungFev1Meas = dt.Rows[0][ei.LungFev1Meas].ToString();
+            item.LungFev1Per = dt.Rows[0][ei.LungFev1Per].ToString();
+            item.LungFev1Predic = dt.Rows[0][ei.LungFev1Predic].ToString();
+            item.LungFvcMeas = dt.Rows[0][ei.LungFvcMeas].ToString();
+            item.LungFvcPer = dt.Rows[0][ei.LungFvcPer].ToString();
+            item.LungFvcPredic = dt.Rows[0][ei.LungFvcPredic].ToString();
+            item.LungNo = dt.Rows[0][ei.LungNo].ToString();
+            item.LungPerFev1 = dt.Rows[0][ei.LungPerFev1].ToString();
+            item.LungRow = dt.Rows[0][ei.LungRow].ToString();
+            item.LungSummary = dt.Rows[0][ei.LungSummary].ToString();
 
             item.Active = dt.Rows[0][ei.Active].ToString();
             return item;
@@ -691,7 +713,7 @@ namespace CheckUP.objdb
                 ei.Other1HBsAb + "='" + HBsAb + "', " +
                 ei.Other1HBsAg + "='" + HBsAg + "', " +
                 ei.Other1No + "='" + No + "', " +
-                ei.Other1Row + "='" + Row + "' " +
+                ei.Other1Row + "='" + Row + "', " +
                 ei.Other1VDRL + "='" + VDRL + "' ";
             try
             {
@@ -700,6 +722,38 @@ namespace CheckUP.objdb
             catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex.ToString(), "update updateOther1");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateLung(String LungRow, String LungNo, String LungFvcPredic, String LungFvcMeas, String LungFvcPer, String LungFev1Predic, String LungFev1Meas, 
+            String LungFev1Per, String LungPerFev1, String LungSummary)
+        {
+            String sql = "", chk = "";
+
+            //p.NameT = p.NameT.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+            //p.PositionName = p.PositionName.Replace("'", "''");
+
+            sql = "Update " + ei.table + " Set " + ei.LungRow + "='" + LungRow + "', " +
+                ei.LungNo + "='" + LungNo + "', " +
+                ei.LungFvcPredic + "='" + LungFvcPredic + "', " +
+                ei.LungFvcMeas + "='" + LungFvcMeas + "', " +
+                ei.LungFvcPer + "='" + LungFvcPer + "', " +
+                ei.LungFev1Predic + "='" + LungFev1Predic + "', " +
+                ei.LungFev1Meas + "='" + LungFev1Meas + "', " +
+                ei.LungFev1Per + "='" + LungFev1Per + "', " +
+                ei.LungPerFev1 + "='" + LungPerFev1 + "', " +
+                ei.LungSummary + "='" + LungSummary + "' ";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateLung");
             }
             finally
             {
