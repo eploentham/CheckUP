@@ -146,6 +146,42 @@ namespace CheckUP.objdb
             ei.LungRow = "lung_row";
             ei.LungSummary = "lung_summary";
 
+            ei.Audiogram1000L = "audiogram_1000_left";
+            ei.Audiogram1000R = "audiogram_1000_right";
+            ei.Audiogram2000L = "audiogram_2000_left";
+            ei.Audiogram2000R = "audiogram_2000_right";
+            ei.Audiogram3000L = "audiogram_3000_left";
+            ei.Audiogram3000R = "audiogram_3000_right";
+            ei.Audiogram4000L = "audiogram_4000_left";
+            ei.Audiogram4000R = "audiogram_4000_rightt";
+            ei.Audiogram500L = "audiogram_500_left";
+            ei.Audiogram500R = "audiogram_500_right";
+            ei.Audiogram6000L = "audiogram_6000_left";
+            ei.Audiogram6000R = "audiogram_6000_right";
+            ei.Audiogram8000L = "audiogram_8000_left";
+            ei.Audiogram8000R = "audiogram_8000_right";
+            ei.AudiogramExam = "audiogram_exam";
+            ei.AudiogramSummaryL = "audiogram_summary_left";
+            ei.AudiogramSummaryR = "audiogram_summary_right";
+            ei.AudiogramNo = "audiogram_no";
+            ei.AudoigramRow = "audiogram_row";
+
+            ei.EyeNo = "eye_no";
+            ei.EyeRow = "eye_row";
+            //ei.EyeShortLongLeft = "eye_short_long_left";
+            //ei.EyeShortLongRight = "eye_short_long_right";
+            ei.EyedegreeLeft = "eye_degree_left";
+            ei.EyeDegreeRight = "eye_degree_right";
+            ei.EyeShortLongLeft = "eye_short_long_left";
+            ei.EyeShortLongRight = "eye_short_long_right";
+            ei.EyeSquintLeft = "eye_squint_left";
+            ei.EyeSquintRight = "eye_squint_short";
+            ei.EyeOldLeft = "eye_old_left";
+            ei.EyeOldRight = "eye_old_right";
+            ei.EyeSummary = "eye_summary";
+            ei.EyeResult = "eye_result";
+            ei.EyeBlindness = "eye_blindness";
+
             ei.pkField = "id";
             ei.table = "b_excel_init";
         }
@@ -276,6 +312,41 @@ namespace CheckUP.objdb
             item.LungPerFev1 = dt.Rows[0][ei.LungPerFev1].ToString();
             item.LungRow = dt.Rows[0][ei.LungRow].ToString();
             item.LungSummary = dt.Rows[0][ei.LungSummary].ToString();
+
+            item.Audiogram1000L = dt.Rows[0][ei.Audiogram1000L].ToString();
+            item.Audiogram1000R = dt.Rows[0][ei.Audiogram1000R].ToString();
+            item.Audiogram2000L = dt.Rows[0][ei.Audiogram2000L].ToString();
+            item.Audiogram2000R = dt.Rows[0][ei.Audiogram2000R].ToString();
+            item.Audiogram3000L = dt.Rows[0][ei.Audiogram3000L].ToString();
+            item.Audiogram3000R = dt.Rows[0][ei.Audiogram3000R].ToString();
+            item.Audiogram4000L = dt.Rows[0][ei.Audiogram4000L].ToString();
+            item.Audiogram4000R = dt.Rows[0][ei.Audiogram4000R].ToString();
+            item.Audiogram500L = dt.Rows[0][ei.Audiogram500L].ToString();
+            item.Audiogram500R = dt.Rows[0][ei.Audiogram500R].ToString();
+            item.Audiogram6000L = dt.Rows[0][ei.Audiogram6000L].ToString();
+            item.Audiogram6000R = dt.Rows[0][ei.Audiogram6000R].ToString();
+            item.Audiogram8000L = dt.Rows[0][ei.Audiogram8000L].ToString();
+            item.Audiogram8000R = dt.Rows[0][ei.Audiogram8000R].ToString();
+            item.AudiogramExam = dt.Rows[0][ei.AudiogramExam].ToString();
+            item.AudiogramSummaryL = dt.Rows[0][ei.AudiogramSummaryL].ToString();
+            item.AudiogramSummaryR = dt.Rows[0][ei.AudiogramSummaryR].ToString();
+            item.AudiogramNo = dt.Rows[0][ei.AudiogramNo].ToString();
+            item.AudoigramRow = dt.Rows[0][ei.AudoigramRow].ToString();
+
+            item.EyeNo = dt.Rows[0][ei.EyeNo].ToString();
+            item.EyeRow = dt.Rows[0][ei.EyeRow].ToString();
+            item.EyeShortLongLeft = dt.Rows[0][ei.EyeShortLongLeft].ToString();
+            item.EyeShortLongRight = dt.Rows[0][ei.EyeShortLongRight].ToString();
+            //item.EyeShortLongRight = dt.Rows[0][ei.EyeShortLongRight].ToString();
+            item.EyedegreeLeft = dt.Rows[0][ei.EyedegreeLeft].ToString();
+            item.EyeDegreeRight = dt.Rows[0][ei.EyeDegreeRight].ToString();
+            item.EyeSquintLeft = dt.Rows[0][ei.EyeSquintLeft].ToString();
+            item.EyeSquintRight = dt.Rows[0][ei.EyeSquintRight].ToString();
+            item.EyeOldLeft = dt.Rows[0][ei.EyeOldLeft].ToString();
+            item.EyeOldRight = dt.Rows[0][ei.EyeOldRight].ToString();
+            item.EyeSummary = dt.Rows[0][ei.EyeSummary].ToString();
+            item.EyeResult = dt.Rows[0][ei.EyeResult].ToString();
+            item.EyeBlindness = dt.Rows[0][ei.EyeBlindness].ToString();
 
             item.Active = dt.Rows[0][ei.Active].ToString();
             return item;
@@ -754,6 +825,83 @@ namespace CheckUP.objdb
             catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex.ToString(), "update updateLung");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateAudioGram(String AudiogramRow, String AudiogramNo, String Audiogram500L, String Audiogram500R, String Audiogram1000L, String Audiogram1000R, String Audiogram2000L, String Audiogram2000R,
+            String Audiogram3000L, String Audiogram3000R, String Audiogram4000L, String Audiogram4000R, String Audiogram6000L, String Audiogram6000R, String Audiogram8000L, String Audiogram8000R,
+            String AudiogramSummaryL, String AudiogramSummaryR, String AudiogramExam)
+        {
+            String sql = "", chk = "";
+
+            //p.NameT = p.NameT.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+            //p.PositionName = p.PositionName.Replace("'", "''");
+
+            sql = "Update " + ei.table + " Set " + ei.AudoigramRow + "='" + AudiogramRow + "', " +
+                ei.AudiogramNo + "='" + AudiogramNo + "', " +
+                ei.Audiogram500L + "='" + Audiogram500L + "', " +
+                ei.Audiogram500R + "='" + Audiogram500R + "', " +
+                ei.Audiogram1000L + "='" + Audiogram1000L + "', " +
+                ei.Audiogram1000R + "='" + Audiogram1000R + "', " +
+                ei.Audiogram2000L + "='" + Audiogram2000L + "', " +
+                ei.Audiogram2000R + "='" + Audiogram2000R + "', " +
+                ei.Audiogram3000L + "='" + Audiogram3000L + "', " +
+                ei.Audiogram3000R + "='" + Audiogram3000R + "', " +
+                ei.Audiogram4000L + "='" + Audiogram4000L + "', " +
+                ei.Audiogram4000R + "='" + Audiogram4000R + "', " +
+                ei.Audiogram6000L + "='" + Audiogram6000L + "', " +
+                ei.Audiogram6000R + "='" + Audiogram6000R + "', " +
+                ei.Audiogram8000L + "='" + Audiogram8000L + "', " +
+                ei.Audiogram8000R + "='" + Audiogram8000R + "', " +
+                ei.AudiogramSummaryL + "='" + AudiogramSummaryL + "', " +
+                ei.AudiogramSummaryR + "='" + AudiogramSummaryR + "', " +
+                ei.AudiogramExam + "='" + AudiogramExam + "' ";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateAudioGram");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateEye(String EyeRow, String EyeNo, String EyeShortLongLeft, String EyeShortLongRight, String EyeSquintLeft, String EyeSquintRight,
+            String EyedegreeLeft, String EyeDegreeRight, String EyeOldLeft, String EyeOldRight, String EyeResult, String EyeSummary, String EyeBlindness)
+        {
+            String sql = "", chk = "";
+
+            //p.NameT = p.NameT.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+            //p.PositionName = p.PositionName.Replace("'", "''");
+
+            sql = "Update " + ei.table + " Set " + ei.EyeRow + "='" + EyeRow + "', " +
+                ei.EyeNo + "='" + EyeNo + "', " +
+                ei.EyeShortLongLeft + "='" + EyeShortLongLeft + "', " +
+                ei.EyeShortLongRight + "='" + EyeShortLongRight + "', " +
+                ei.EyeSquintLeft + "='" + EyeSquintLeft + "', " +
+                ei.EyeSquintRight + "='" + EyeSquintRight + "', " +
+                ei.EyedegreeLeft + "='" + EyedegreeLeft + "', " +
+                ei.EyeDegreeRight + "='" + EyeDegreeRight + "', " +
+                ei.EyeOldLeft + "='" + EyeOldLeft + "', " +
+                ei.EyeOldRight + "='" + EyeOldRight + "', " +
+                ei.EyeResult + "='" + EyeResult + "', " +
+                ei.EyeSummary + "='" + EyeSummary + "', " +
+                ei.EyeBlindness + "='" + EyeBlindness + "' " ;
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateEye");
             }
             finally
             {

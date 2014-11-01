@@ -35,8 +35,21 @@ namespace CheckUP.objdb
             ccp.patientHeight = "patient_height";
             ccp.patientPulse = "patient_pulse";
             ccp.patientWeight = "patient_weight";
-            ccp.opticalExamLeft = "optical_exam_left";
-            ccp.opticalExamRight = "optical_exam_right";
+
+            //ccp.EyeShortLongLeft = "eye_short_long_left";
+            //ccp.EyeShortLongRight = "eye_short_long_right";
+            ccp.EyeDegreeLeft = "eye_degree_left";
+            ccp.EyeDegreeRight = "eye_degree_right";
+            ccp.EyeShortLongLeft = "eye_short_long_left";
+            ccp.EyeShortLongRight = "eye_short_long_right";
+            ccp.EyeSquintLeft = "eye_squint_left";
+            ccp.EyeSquintRight = "eye_squint_short";
+            ccp.EyeOldLeft = "eye_old_left";
+            ccp.EyeOldRight = "eye_old_right";
+            ccp.EyeSummary = "eye_summary";
+            ccp.EyeResult = "eye_result";
+            ccp.EyeBlindness = "eye_blindness";
+
             ccp.fSexId = "f_sex_id";
             ccp.summaryPhysicalExam = "summary_physical_exam";
             ccp.stoolExamColor = "stool_exam_color";
@@ -48,23 +61,23 @@ namespace CheckUP.objdb
             ccp.toxicologyMercury = "toxicology_mercury";
             ccp.toxicologyBenzene = "toxicology_benzene";
             ccp.toxicologyXylene = "toxicology_xylene";
-            ccp.audiogram500Left = "audiogram_500_left";
-            ccp.audiogram1000Left = "audiogram_1000_left";
-            ccp.audiogram2000Left = "audiogram_2000_left";
-            ccp.audiogram3000Left = "audiogram_3000_left";
-            ccp.audiogram4000Left = "audiogram_4000_left";
-            ccp.audiogram6000Left = "audiogram_6000_left";
-            ccp.audiogram8000Left = "audiogram_8000_left";
-            ccp.audiogramSummaryLeft = "audiogram_summary_left";
-            ccp.audiogram500Right = "audiogram_500_right";
-            ccp.audiogram1000Right = "audiogram_1000_right";
-            ccp.audiogram2000Right = "audiogram_2000_right";
-            ccp.audiogram3000Right = "audiogram_3000_right";
-            ccp.audiogram4000Rightt = "audiogram_4000_rightt";
-            ccp.audiogram6000Right = "audiogram_6000_right";
-            ccp.audiogram8000Right = "audiogram_8000_right";
-            ccp.audiogramSummaryRight = "audiogram_summary_right";
-            ccp.audiogramExam = "audiogram_exam";
+            ccp.Audiogram500L = "audiogram_500_left";
+            ccp.Audiogram1000L = "audiogram_1000_left";
+            ccp.Audiogram2000L = "audiogram_2000_left";
+            ccp.Audiogram3000L = "audiogram_3000_left";
+            ccp.Audiogram4000L = "audiogram_4000_left";
+            ccp.Audiogram6000L = "audiogram_6000_left";
+            ccp.Audiogram8000L = "audiogram_8000_left";
+            ccp.AudiogramSummaryL = "audiogram_summary_left";
+            ccp.Audiogram500R = "audiogram_500_right";
+            ccp.Audiogram1000R = "audiogram_1000_right";
+            ccp.Audiogram2000R = "audiogram_2000_right";
+            ccp.Audiogram3000R = "audiogram_3000_right";
+            ccp.Audiogram4000R = "audiogram_4000_rightt";
+            ccp.Audiogram6000R = "audiogram_6000_right";
+            ccp.Audiogram8000R = "audiogram_8000_right";
+            ccp.AudiogramSummaryR = "audiogram_summary_right";
+            ccp.AudiogramExam = "audiogram_exam";
             ccp.xrayChestExam = "xray_chest_exam";
             ccp.xrayChestSummary = "xray_chest_summary";
             ccp.eyesExam = "eyes_exam";
@@ -318,16 +331,16 @@ namespace CheckUP.objdb
                     //max = getMaxRowMarketingTCheckupPatient(st);
             sql = "Insert Into " + ccp.table+ "(" 
                 + ccp.Id + ", " + ccp.amphetamine + ", "
-                + ccp.antiHiv + "," + ccp.audiogramExam + ","
-                + ccp.audiogram1000Left + "," + ccp.audiogram1000Right + ","
-                + ccp.audiogram2000Left + "," + ccp.audiogram2000Right + ","
-                + ccp.audiogram3000Left + "," + ccp.audiogram3000Right + ","
+                + ccp.antiHiv + "," + ccp.AudiogramExam + ","
+                + ccp.Audiogram1000L + "," + ccp.Audiogram1000R + ","
+                + ccp.Audiogram2000L + "," + ccp.Audiogram2000R + ","
+                + ccp.Audiogram3000L + "," + ccp.Audiogram3000R + ","
 
-                + ccp.audiogram4000Left + "," + ccp.audiogram4000Rightt + ","
-                + ccp.audiogram6000Left + "," + ccp.audiogram6000Right + ","
-                + ccp.audiogram8000Left + "," + ccp.audiogram8000Right + ","
-                + ccp.audiogram500Left + "," + ccp.audiogram500Right + ","
-                + ccp.audiogramSummaryLeft + "," + ccp.audiogramSummaryRight + ","
+                + ccp.Audiogram4000L + "," + ccp.Audiogram4000R + ","
+                + ccp.Audiogram6000L + "," + ccp.Audiogram6000R + ","
+                + ccp.Audiogram8000L + "," + ccp.Audiogram8000R + ","
+                + ccp.Audiogram500L + "," + ccp.Audiogram500R + ","
+                + ccp.AudiogramSummaryL + "," + ccp.AudiogramSummaryR + ","
 
                 + ccp.ca125 + "," + ccp.cbcPlateletSmear + ","
                 + ccp.ca199 + "," + ccp.caAfp + ","
@@ -350,8 +363,8 @@ namespace CheckUP.objdb
                 + ccp.kidneyCreatinine + "," + ccp.ldl + ","
                 + ccp.liverAlp + "," + ccp.liverSgot + ","
                 + ccp.liverSgpt + "," + ccp.CustCheckUpId + ","
-                + ccp.xrayChestExam + "," + ccp.opticalExamLeft + ","
-                + ccp.opticalExamRight + "," + ccp.patientAge + ","
+                + ccp.xrayChestExam + "," + ccp.EyeShortLongLeft + ","
+                + ccp.EyeShortLongRight + "," + ccp.patientAge + ","
 
                 + ccp.patientFullname + "," + ccp.xrayChestSummary+","
                 + ccp.patientHeight + "," + ccp.patientNumber + ","
@@ -403,16 +416,16 @@ namespace CheckUP.objdb
                     ccp.liverResult + "," + ccp.liverSummary +","+
                     ccp.kidneyResult + "," + ccp.kidneySummary + ") "
                 + "Values('" + p.Id + "','" + p.amphetamine + "','"
-                + p.antiHiv + "','" + p.audiogramExam + "','"
-                + p.audiogram1000Left + "','" + p.audiogram1000Right + "','"
-                + p.audiogram2000Left + "','" + p.audiogram2000Right + "','"
-                + p.audiogram3000Left + "','" + p.audiogram3000Right + "','"
+                + p.antiHiv + "','" + p.AudiogramExam + "','"
+                + p.Audiogram1000L + "','" + p.Audiogram1000R + "','"
+                + p.Audiogram2000L + "','" + p.Audiogram2000R + "','"
+                + p.Audiogram3000L + "','" + p.Audiogram3000R + "','"
 
-                + p.audiogram4000Left + "','" + p.audiogram4000Rightt + "','"
-                + p.audiogram6000Left + "','" + p.audiogram6000Right + "','"
-                + p.audiogram8000Left + "','" + p.audiogram8000Right + "','"
-                + p.audiogram500Left + "','" + p.audiogram500Right + "','"
-                + p.audiogramSummaryLeft + "','" + p.audiogramSummaryRight + "','"
+                + p.Audiogram4000L + "','" + p.Audiogram4000R + "','"
+                + p.Audiogram6000L + "','" + p.Audiogram6000R + "','"
+                + p.Audiogram8000L + "','" + p.Audiogram8000R + "','"
+                + p.Audiogram500L + "','" + p.Audiogram500R + "','"
+                + p.AudiogramSummaryL + "','" + p.AudiogramSummaryR + "','"
 
                 + p.ca125 + "','" + p.cbcPlateletSmear + "','"
                 + p.ca199 + "','" + p.caAfp + "','"
@@ -435,8 +448,8 @@ namespace CheckUP.objdb
                 + p.kidneyCreatinine + "','" + p.ldl + "','"
                 + p.liverAlp + "','" + p.liverSgot + "','"
                 + p.liverSgpt + "','" + p.CustCheckUpId + "','"
-                + p.xrayChestExam + "','" + p.opticalExamLeft + "','"
-                + p.opticalExamRight + "','" + p.patientAge + "','"
+                + p.xrayChestExam + "','" + p.EyeShortLongLeft + "','"
+                + p.EyeShortLongRight + "','" + p.patientAge + "','"
 
                 + p.patientFullname + "','" + p.xrayChestSummary + "','"
                 + p.patientHeight + "','" + p.patientNumber + "','"
@@ -796,6 +809,81 @@ namespace CheckUP.objdb
             catch (Exception ex)
             {
 
+            }
+            return chk;
+        }
+        public String updateAudioGram(String rowNumber, String cucId, String Audiogram500L, String Audiogram500R, String Audiogram1000L, String Audiogram1000R, String Audiogram2000L, String Audiogram2000R,
+            String Audiogram3000L, String Audiogram3000R, String Audiogram4000L, String Audiogram4000R, String Audiogram6000L, String Audiogram6000R, String Audiogram8000L, String Audiogram8000R,
+            String AudiogramSummaryL, String AudiogramSummaryR, String AudiogramExam)
+        {
+            String sql = "", chk = "";
+
+            //p.NameT = p.NameT.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+            //p.PositionName = p.PositionName.Replace("'", "''");
+
+            sql = "Update " + ccp.table + " Set " + ccp.Audiogram500L + "='" + Audiogram500L + "', " +
+                ccp.Audiogram500R + "='" + Audiogram500R + "', " +
+                ccp.Audiogram1000L + "='" + Audiogram1000L + "', " +
+                ccp.Audiogram1000R + "='" + Audiogram1000R + "', " +
+                ccp.Audiogram2000L + "='" + Audiogram2000L + "', " +
+                ccp.Audiogram2000R + "='" + Audiogram2000R + "', " +
+                ccp.Audiogram3000L + "='" + Audiogram3000L + "', " +
+                ccp.Audiogram3000R + "='" + Audiogram3000R + "', " +
+                ccp.Audiogram4000L + "='" + Audiogram4000L + "', " +
+                ccp.Audiogram4000R + "='" + Audiogram4000R + "', " +
+                ccp.Audiogram6000L + "='" + Audiogram6000L + "', " +
+                ccp.Audiogram6000R + "='" + Audiogram6000R + "', " +
+                ccp.Audiogram8000L + "='" + Audiogram8000L + "', " +
+                ccp.Audiogram8000R + "='" + Audiogram8000R + "', " +
+                ccp.AudiogramSummaryL + "='" + AudiogramSummaryL + "', " +
+                ccp.AudiogramSummaryR + "='" + AudiogramSummaryR + "', " +
+                ccp.AudiogramExam + "='" + AudiogramExam + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Error " + ex.ToString(), "update updateAudioGram");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateEye(String rowNumber, String cucId, String EyeShortLongLeft, String EyeShortLongRight, String EyeSquintLeft, String EyeSquintRight,
+            String EyeDegreeLeft, String EyeDegreeRight, String EyeOldLeft, String EyeOldRight, String EyeResult, String EyeSummary, String EyeBlindness)
+        {
+            String sql = "", chk = "";
+
+            //p.NameT = p.NameT.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+            //p.PositionName = p.PositionName.Replace("'", "''");
+
+            sql = "Update " + ccp.table + " Set " + ccp.EyeShortLongLeft + "='" + EyeShortLongLeft + "', " +
+                ccp.EyeShortLongRight + "='" + EyeShortLongRight + "', " +
+                ccp.EyeSquintLeft + "='" + EyeSquintLeft + "', " +
+                ccp.EyeSquintRight + "='" + EyeSquintRight + "', " +
+                ccp.EyeDegreeLeft + "='" + EyeDegreeLeft + "', " +
+                ccp.EyeDegreeRight + "='" + EyeDegreeRight + "', " +
+                ccp.EyeOldLeft + "='" + EyeOldLeft + "', " +
+                ccp.EyeOldRight + "='" + EyeOldRight + "', " +
+                ccp.EyeResult + "='" + EyeResult + "', " +
+                ccp.EyeSummary + "='" + EyeSummary + "', " +
+                ccp.EyeBlindness + "='" + EyeBlindness + "' "+
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";;
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Error " + ex.ToString(), "update updateEye");
+            }
+            finally
+            {
             }
             return chk;
         }

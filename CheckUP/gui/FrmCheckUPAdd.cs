@@ -16,8 +16,8 @@ namespace CheckUP.gui
         CheckControl cc;
         CustCheckUp cuc;
 
-        int tabSum = 0, tabPrint=1, tabPE=2, tabXRay=3, tabCBC=4, tabFBS=5, tabUA=6,tabTri=7, tabCho=8, tabSgot=9, tabBun=10, tabUric=11, tabOther1=12, tabLung=13;
-        int tabCnt = 14;
+        int tabSum = 0, tabPrint=1, tabPE=2, tabXRay=3, tabCBC=4, tabFBS=5, tabUA=6,tabTri=7, tabCho=8, tabSgot=9, tabBun=10, tabUric=11, tabOther1=12, tabLung=13, tabAudio=14, tabEye=15;
+        int tabCnt = 16;
 
         int colPERow = 0, colPEId = 1, colPEName = 2, colPESex=3, colPEAge = 4, colPEWeight = 5, colPEHeight = 6, colPEBMI = 7, colPEvitalsign = 8, colPEPulse = 9, colPEBloodGroup=10, colPEResult = 11, colPESummary = 12;
         int colPECnt = 13;
@@ -57,13 +57,22 @@ namespace CheckUP.gui
         int colOther1Row = 0, colOther1Id = 1, colOther1Name = 2, colOther1HBsAg = 3, colOther1HBsAb = 4, colOther1AntiHIV = 5, colOther1VDRL = 6, colOther1Amphetamine = 7, colOther1Calcium = 8;
         int colOther1Cnt = 9;
 
-        int colLungRow = 0, colLung1Id = 1, colLung1Name = 2, colLungFvcPredic = 3, colLungFvcMeas = 4, colLungFvcPer = 5, colLungFev1Predic = 6, colLungFev1Meas = 7, colLungFev1Per = 8, colLungPerFev1 = 9, colLungSummary = 10;
+        int colLungRow = 0, colLungId = 1, colLungName = 2, colLungFvcPredic = 3, colLungFvcMeas = 4, colLungFvcPer = 5, colLungFev1Predic = 6, colLungFev1Meas = 7, colLungFev1Per = 8, colLungPerFev1 = 9, colLungSummary = 10;
         int colLungCnt = 11;
+
+        int colAudiogramRow = 0, colAudiogramId = 1, colAudiogramName = 2, colAudiogram500L = 3, colAudiogram1000L = 4, colAudiogram2000L = 5, colAudiogram3000L = 6, colAudiogram4000L = 7;
+        int colAudiogram6000L = 8, colAudiogram8000L = 9, colAudiogramSummaryL = 10;
+        int colAudiogram500R = 11, colAudiogram1000R = 12, colAudiogram2000R = 13, colAudiogram3000R = 14, colAudiogram4000R = 15;
+        int colAudiogram6000R = 16, colAudiogram8000R = 17, colAudiogramSummaryR = 18, colAudiogramSummary = 19;
+        int colAudiogramCnt = 20;
+
+        int colEyeRow = 0, colEyeId = 1, colEyeName = 2, colEyeShortLongLeft = 3, colEyeShortLongRight = 4, colEyeSquintLeft = 5, colEyeSquintRight = 6, colEyeDegreeLeft = 7, colEyeDegreeRight = 8, colEyeOldLeft = 9, colEyeOldRight = 10, colEyeBlindness = 10, colEyeResult = 11, colEyeSummary = 12;
+        int colEyeCnt = 13;
 
         Font font = new Font("Microsoft Sans Serif", 12);
         Boolean flagNew=false;
         String fileName = "", fileNamePE = "", fileNameFBS = "", fileNameXray = "", fileNameCBC = "", fileNameUA = "", fileNameTri = "", fileNameCho = "", fileNameLung="";
-        String fileNameSgot = "", fileNameBun = "", fileNameUric = "", fileNameOther1="";
+        String fileNameSgot = "", fileNameBun = "", fileNameUric = "", fileNameOther1 = "", fileNameAudio="", fileNameEye="";
         //String cucId = "";
         DataTable dtAll;
         OpenFileDialog ofd = new OpenFileDialog();
@@ -96,6 +105,9 @@ namespace CheckUP.gui
             tC.TabPages[tabPrint].Text = "Print";
             tC.TabPages[tabOther1].Text = "Other1";
             tC.TabPages[tabLung].Text = "Lung";
+            tC.TabPages[tabAudio].Text = "Audio";
+            tC.TabPages[tabEye].Text = "Eye";
+
             pB1.Visible = false;
             btnPEImport.Enabled = false;
             btnXrayImport.Enabled = false;
@@ -109,6 +121,9 @@ namespace CheckUP.gui
             btnBunImport.Enabled = false;
             btnOtherImport.Enabled = false;
             btnLungImport.Enabled = false;
+            btnAudioImport.Enabled = false;
+            btnEyeImport.Enabled = false;
+
             if (flagNew)
             {
                 btnImport.Text = "นำเข้ารายชื่อ";
@@ -142,6 +157,7 @@ namespace CheckUP.gui
             setGrdUric();
             setGrdOther1();
             setGrdLung();
+            setGrdAudio();
 
             setGrdPE(cucId);
             setGrdXray(cucId);
@@ -155,6 +171,7 @@ namespace CheckUP.gui
             setGrdUric(cucId);
             setGrdOther1(cucId);
             setGrdLung(cucId);
+            setGrdAudoigram(cucId);
         }
 
         private void setResize()
@@ -647,7 +664,7 @@ namespace CheckUP.gui
             dgvLung.RowCount = 1;
             dgvLung.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvLung.Columns[colLungRow].Width = 50;
-            dgvLung.Columns[colLung1Name].Width = 250;
+            dgvLung.Columns[colLungName].Width = 250;
             dgvLung.Columns[colLungFvcPredic].Width = 100;
             dgvLung.Columns[colLungFvcMeas].Width = 100;
             dgvLung.Columns[colLungFvcPer].Width = 100;
@@ -658,8 +675,8 @@ namespace CheckUP.gui
             dgvLung.Columns[colLungSummary].Width = 100;
 
             dgvLung.Columns[colLungRow].HeaderText = "ลำดับ";
-            dgvLung.Columns[colLung1Id].HeaderText = "id";
-            dgvLung.Columns[colLung1Name].HeaderText = "ชื่อ นามสกุล";
+            dgvLung.Columns[colLungId].HeaderText = "id";
+            dgvLung.Columns[colLungName].HeaderText = "ชื่อ นามสกุล";
             dgvLung.Columns[colLungFvcPredic].HeaderText = "Fvc Predic";
             dgvLung.Columns[colLungFvcMeas].HeaderText = "Fvc Meas";
             dgvLung.Columns[colLungFvcPer].HeaderText = "Fvc Per";
@@ -673,7 +690,107 @@ namespace CheckUP.gui
             //Font font = new Font("Microsoft Sans Serif", 12);
 
             dgvLung.Font = font;
-            dgvLung.Columns[colLung1Id].Visible = false;
+            dgvLung.Columns[colLungId].Visible = false;
+        }
+        private void setGrdAudio()
+        {
+            dgvAudio.ColumnCount = colAudiogramCnt;
+            dgvAudio.Rows.Clear();
+            dgvAudio.RowCount = 1;
+            dgvAudio.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvAudio.Columns[colAudiogramRow].Width = 50;
+            dgvAudio.Columns[colAudiogramName].Width = 250;
+            dgvAudio.Columns[colAudiogram500L].Width = 80;
+            dgvAudio.Columns[colAudiogram1000L].Width = 80;
+            dgvAudio.Columns[colAudiogram2000L].Width = 80;
+            dgvAudio.Columns[colAudiogram3000L].Width = 80;
+            dgvAudio.Columns[colAudiogram4000L].Width = 80;
+            dgvAudio.Columns[colAudiogram6000L].Width = 80;
+            dgvAudio.Columns[colAudiogram8000L].Width = 80;
+            dgvAudio.Columns[colAudiogramSummaryL].Width = 80;
+            dgvAudio.Columns[colAudiogram500R].Width = 80;
+            dgvAudio.Columns[colAudiogram1000R].Width = 80;
+            dgvAudio.Columns[colAudiogram2000R].Width = 80;
+            dgvAudio.Columns[colAudiogram3000R].Width = 80;
+            dgvAudio.Columns[colAudiogram4000R].Width = 80;
+            dgvAudio.Columns[colAudiogram6000R].Width = 80;
+            dgvAudio.Columns[colAudiogram8000R].Width = 80;
+            dgvAudio.Columns[colAudiogramSummaryR].Width = 80;
+            dgvAudio.Columns[colAudiogramSummary].Width = 80;
+
+            dgvAudio.Columns[colAudiogramRow].HeaderText = "ลำดับ";
+            dgvAudio.Columns[colAudiogramName].HeaderText = "ชื่อ นามสกุล";
+            dgvAudio.Columns[colAudiogram500L].HeaderText = "Left 500";
+            dgvAudio.Columns[colAudiogram1000L].HeaderText = "Left 500";
+            dgvAudio.Columns[colAudiogram2000L].HeaderText = "Left 500";
+            dgvAudio.Columns[colAudiogram3000L].HeaderText = "Left 500";
+            dgvAudio.Columns[colAudiogram4000L].HeaderText = "Left 500";
+            dgvAudio.Columns[colAudiogram6000L].HeaderText = "Left 500";
+            dgvAudio.Columns[colAudiogram8000L].HeaderText = "Left 500";
+            dgvAudio.Columns[colAudiogramSummaryL].HeaderText = "Left ";
+
+            dgvAudio.Columns[colAudiogram500R].HeaderText = "Right 500";
+            dgvAudio.Columns[colAudiogram1000R].HeaderText = "Right 500";
+            dgvAudio.Columns[colAudiogram2000R].HeaderText = "Right 500";
+            dgvAudio.Columns[colAudiogram3000R].HeaderText = "Right 500";
+            dgvAudio.Columns[colAudiogram4000R].HeaderText = "Right 500";
+            dgvAudio.Columns[colAudiogram6000R].HeaderText = "Right 500";
+            dgvAudio.Columns[colAudiogram8000R].HeaderText = "Right 500";
+            dgvAudio.Columns[colAudiogramSummaryR].HeaderText = "Right";
+
+            dgvAudio.Columns[colAudiogramSummary].HeaderText = "Summary";
+            dgvAudio.Columns[colAudiogramId].HeaderText = "id";
+            //Font font = new Font("Microsoft Sans Serif", 12);
+
+            dgvAudio.Font = font;
+            dgvAudio.Columns[colAudiogramId].Visible = false;
+        }
+        private void setGrdEye()
+        {
+            dgvEye.ColumnCount = colAudiogramCnt;
+            dgvEye.Rows.Clear();
+            dgvEye.RowCount = 1;
+            dgvEye.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvEye.Columns[colEyeRow].Width = 50;
+            dgvEye.Columns[colEyeName].Width = 250;
+            dgvEye.Columns[colEyeShortLongLeft].Width = 80;
+            dgvEye.Columns[colEyeShortLongRight].Width = 80;
+            dgvEye.Columns[colEyeSquintLeft].Width = 80;
+            dgvEye.Columns[colEyeSquintRight].Width = 80;
+            dgvEye.Columns[colEyeDegreeLeft].Width = 80;
+            dgvEye.Columns[colEyeDegreeRight].Width = 80;
+            dgvEye.Columns[colEyeOldLeft].Width = 80;
+            dgvEye.Columns[colEyeOldRight].Width = 80;
+            dgvEye.Columns[colEyeBlindness].Width = 80;
+            dgvEye.Columns[colEyeResult].Width = 80;
+            dgvEye.Columns[colEyeSummary].Width = 80;
+            //dgvEye.Columns[colAudiogram3000R].Width = 80;
+            //dgvEye.Columns[colAudiogram4000R].Width = 80;
+            //dgvEye.Columns[colAudiogram6000R].Width = 80;
+            //dgvEye.Columns[colAudiogram8000R].Width = 80;
+            //dgvEye.Columns[colAudiogramSummaryR].Width = 80;
+            //dgvEye.Columns[colAudiogramSummary].Width = 80;
+
+            dgvEye.Columns[colEyeRow].HeaderText = "ลำดับ";
+            dgvEye.Columns[colEyeName].HeaderText = "ชื่อ นามสกุล";
+            dgvEye.Columns[colEyeShortLongLeft].HeaderText = "สายตาสั้น / ยาว";
+            dgvEye.Columns[colEyeShortLongRight].HeaderText = "สายตาสั้น / ยาว";
+            dgvEye.Columns[colEyeSquintLeft].HeaderText = "สายตาเอียง";
+            dgvEye.Columns[colEyeSquintRight].HeaderText = "สายตาเอียง";
+            dgvEye.Columns[colEyeDegreeLeft].HeaderText = "องศา";
+            dgvEye.Columns[colEyeDegreeRight].HeaderText = "องศา";
+            dgvEye.Columns[colEyeOldLeft].HeaderText = "สายตายาว(มีอายุ)";
+            dgvEye.Columns[colEyeOldRight].HeaderText = "สายตายาว(มีอายุ) ";
+
+            dgvEye.Columns[colEyeBlindness].HeaderText = "Right 500";
+            dgvEye.Columns[colEyeResult].HeaderText = "Right 500";
+            dgvEye.Columns[colEyeSummary].HeaderText = "Summary";
+
+            dgvEye.Columns[colEyeId].HeaderText = "id";
+            //Font font = new Font("Microsoft Sans Serif", 12);
+
+            dgvEye.Font = font;
+            dgvEye.Columns[colEyeId].Visible = false;
         }
         private void setControl(String cucId)
         {
@@ -1087,7 +1204,7 @@ namespace CheckUP.gui
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     dgvLung[colLungRow, i].Value = (i + 1);
-                    dgvLung[colLung1Name, i].Value = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
+                    dgvLung[colLungName, i].Value = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
                     dgvLung[colLungFvcPredic, i].Value = dt.Rows[i][cc.ccpdb.ccp.lungFvcPredic].ToString();
                     dgvLung[colLungFvcMeas, i].Value = dt.Rows[i][cc.ccpdb.ccp.lungFvcMeas].ToString();
                     dgvLung[colLungFvcPer, i].Value = dt.Rows[i][cc.ccpdb.ccp.lungFvcPer].ToString();
@@ -1096,10 +1213,100 @@ namespace CheckUP.gui
                     dgvLung[colLungPerFev1, i].Value = dt.Rows[i][cc.ccpdb.ccp.lungPerFev1].ToString();
                     dgvLung[colLungFev1Per, i].Value = dt.Rows[i][cc.ccpdb.ccp.lungFev1Per].ToString();
                     dgvLung[colLungSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.lungSummary].ToString();
-                    dgvLung[colLung1Id, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    dgvLung[colLungId, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
                     if ((i % 2) != 0)
                     {
                         dgvLung.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                    }
+                }
+            }
+            //dgvView.ReadOnly = true;
+        }
+        private void setGrdAudoigram(String cucId)
+        {
+            DataTable dt;
+            dgvAudio.Rows.Clear();
+            if (flagNew)
+            {
+                dt = cc.ccpdb.selectAllByCucId(cucId);
+            }
+            else
+            {
+                dt = dtAll;
+            }
+
+            if (dt.Rows.Count > 0)
+            {
+                dgvAudio.RowCount = dt.Rows.Count;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    dgvAudio[colAudiogramRow, i].Value = (i + 1);
+                    dgvAudio[colAudiogramName, i].Value = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
+                    dgvAudio[colAudiogram500L, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram500L].ToString();
+                    dgvAudio[colAudiogram1000L, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram1000L].ToString();
+                    dgvAudio[colAudiogram2000L, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram2000L].ToString();
+                    dgvAudio[colAudiogram3000L, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram3000L].ToString();
+                    dgvAudio[colAudiogram4000L, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram4000L].ToString();
+                    dgvAudio[colAudiogram6000L, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram6000L].ToString();
+                    dgvAudio[colAudiogram8000L, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram8000L].ToString();
+                    dgvAudio[colAudiogramSummaryL, i].Value = dt.Rows[i][cc.ccpdb.ccp.AudiogramSummaryL].ToString();
+                    dgvAudio[colAudiogram500R, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram500R].ToString();
+                    dgvAudio[colAudiogram1000R, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram1000R].ToString();
+                    dgvAudio[colAudiogram2000R, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram2000R].ToString();
+                    dgvAudio[colAudiogram3000R, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram3000R].ToString();
+                    dgvAudio[colAudiogram4000R, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram4000R].ToString();
+                    dgvAudio[colAudiogram6000R, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram6000R].ToString();
+                    dgvAudio[colAudiogram8000R, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram8000R].ToString();
+                    dgvAudio[colAudiogramSummaryR, i].Value = dt.Rows[i][cc.ccpdb.ccp.AudiogramSummaryR].ToString();
+                    dgvAudio[colAudiogramSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    if ((i % 2) != 0)
+                    {
+                        dgvAudio.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                    }
+                }
+            }
+            //dgvView.ReadOnly = true;
+        }
+        private void setGrdEye(String cucId)
+        {
+            DataTable dt;
+            dgvAudio.Rows.Clear();
+            if (flagNew)
+            {
+                dt = cc.ccpdb.selectAllByCucId(cucId);
+            }
+            else
+            {
+                dt = dtAll;
+            }
+
+            if (dt.Rows.Count > 0)
+            {
+                dgvEye.RowCount = dt.Rows.Count;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    dgvEye[colEyeRow, i].Value = (i + 1);
+                    dgvEye[colEyeName, i].Value = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
+                    dgvEye[colEyeShortLongLeft, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeShortLongLeft].ToString();
+                    dgvEye[colEyeShortLongRight, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeShortLongRight].ToString();
+                    dgvEye[colEyeSquintLeft, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeSquintLeft].ToString();
+                    dgvEye[colEyeSquintRight, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeSquintRight].ToString();
+                    dgvEye[colEyeDegreeLeft, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeDegreeLeft].ToString();
+                    dgvEye[colEyeDegreeRight, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeDegreeRight].ToString();
+                    dgvEye[colEyeOldLeft, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeOldLeft].ToString();
+                    dgvEye[colEyeOldRight, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeOldRight].ToString();
+                    dgvEye[colEyeBlindness, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeBlindness].ToString();
+                    dgvEye[colEyeResult, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeResult].ToString();
+                    dgvEye[colEyeSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeSummary].ToString();
+                    //dgvEye[colAudiogram3000R, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram3000R].ToString();
+                    //dgvEye[colAudiogram4000R, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram4000R].ToString();
+                    //dgvEye[colAudiogram6000R, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram6000R].ToString();
+                    //dgvEye[colAudiogram8000R, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram8000R].ToString();
+                    //dgvEye[colAudiogramSummaryR, i].Value = dt.Rows[i][cc.ccpdb.ccp.AudiogramSummaryR].ToString();
+                    //dgvEye[colAudiogramSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    if ((i % 2) != 0)
+                    {
+                        dgvEye.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
                     }
                 }
             }
@@ -3329,6 +3536,374 @@ namespace CheckUP.gui
                 }
 
                 chk = cc.ccpdb.UpdateLung(rowNumber, txtId.Text, LungFvcPredic, LungFvcMeas, LungFvcPer, LungFev1Predic, LungFev1Meas, LungFev1Per, LungPerFev1, summary);
+                pB1.Value = i;
+            }
+            xlWorkbook.Close(true, misValue, misValue);
+            xlApp.Quit();
+            pB1.Visible = false;
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
+            setGrdLung(txtId.Text);
+        }
+
+        private void btnAudioExcel_Click(object sender, EventArgs e)
+        {
+            ofd.ShowDialog();
+            fileNameAudio = ofd.FileName;
+            btnAudioImport.Enabled = true;
+        }
+
+        private void btnAudioImport_Click(object sender, EventArgs e)
+        {
+            String rowNumber = "", chk = "";
+            
+            String Audiogram500L = "", Audiogram1000L = "", Audiogram2000L = "", Audiogram3000L = "", Audiogram4000L="",Audiogram6000L="", Audiogram8000L="", AudiogramSummaryL="";
+            String Audiogram500R = "", Audiogram1000R = "", Audiogram2000R = "", Audiogram3000R="", Audiogram4000R="", Audiogram6000R="", Audiogram8000R="", AudiogramSummaryR="", AudiogramExam="";
+            pB1.Visible = true;
+            pB1.Minimum = 0;
+
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameAudio);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+            int rowCount = xlRange.Rows.Count;
+            pB1.Maximum = rowCount;
+            xlApp.Visible = false;
+            for (int i = int.Parse(ei.AudoigramRow); i <= rowCount; i++)
+            {
+                //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
+                if (xlRange.Cells[i, int.Parse(ei.AudiogramNo)].Value2 != null)
+                {
+                    rowNumber = xlRange.Cells[i, int.Parse(ei.AudiogramNo)].Value2.ToString();
+                }
+                else
+                {
+                    rowNumber = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Audiogram500L)].Value2 != null)
+                {
+                    Audiogram500L = xlRange.Cells[i, int.Parse(ei.Audiogram500L)].Value2.ToString();
+                }
+                else
+                {
+                    Audiogram500L = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Audiogram1000L)].Value2 != null)
+                {
+                    Audiogram1000L = xlRange.Cells[i, int.Parse(ei.Audiogram1000L)].Value2.ToString();
+                }
+                else
+                {
+                    Audiogram1000L = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Audiogram2000L)].Value2 != null)
+                {
+                    Audiogram2000L = xlRange.Cells[i, int.Parse(ei.Audiogram2000L)].Value2.ToString();
+                }
+                else
+                {
+                    Audiogram2000L = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Audiogram3000L)].Value2 != null)
+                {
+                    Audiogram3000L = xlRange.Cells[i, int.Parse(ei.Audiogram3000L)].Value2.ToString();
+                }
+                else
+                {
+                    Audiogram3000L = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Audiogram4000L)].Value2 != null)
+                {
+                    Audiogram4000L = xlRange.Cells[i, int.Parse(ei.Audiogram4000L)].Value2.ToString();
+                }
+                else
+                {
+                    Audiogram4000L = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Audiogram6000L)].Value2 != null)
+                {
+                    Audiogram6000L = xlRange.Cells[i, int.Parse(ei.Audiogram6000L)].Value2.ToString();
+                }
+                else
+                {
+                    Audiogram6000L = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Audiogram8000L)].Value2 != null)
+                {
+                    Audiogram8000L = xlRange.Cells[i, int.Parse(ei.Audiogram8000L)].Value2.ToString();
+                }
+                else
+                {
+                    Audiogram8000L = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.AudiogramSummaryL)].Value2 != null)
+                {
+                    AudiogramSummaryL = xlRange.Cells[i, int.Parse(ei.AudiogramSummaryL)].Value2.ToString();
+                }
+                else
+                {
+                    AudiogramSummaryL = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Audiogram500R)].Value2 != null)
+                {
+                    Audiogram500R = xlRange.Cells[i, int.Parse(ei.Audiogram500R)].Value2.ToString();
+                }
+                else
+                {
+                    Audiogram500R = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Audiogram1000R)].Value2 != null)
+                {
+                    Audiogram1000R = xlRange.Cells[i, int.Parse(ei.Audiogram1000R)].Value2.ToString();
+                }
+                else
+                {
+                    Audiogram1000R = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Audiogram2000R)].Value2 != null)
+                {
+                    Audiogram2000R = xlRange.Cells[i, int.Parse(ei.Audiogram2000R)].Value2.ToString();
+                }
+                else
+                {
+                    Audiogram2000R = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Audiogram3000R)].Value2 != null)
+                {
+                    Audiogram3000R = xlRange.Cells[i, int.Parse(ei.Audiogram3000R)].Value2.ToString();
+                }
+                else
+                {
+                    Audiogram3000R = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Audiogram4000R)].Value2 != null)
+                {
+                    Audiogram4000R = xlRange.Cells[i, int.Parse(ei.Audiogram4000R)].Value2.ToString();
+                }
+                else
+                {
+                    Audiogram4000R = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Audiogram6000R)].Value2 != null)
+                {
+                    Audiogram6000R = xlRange.Cells[i, int.Parse(ei.Audiogram6000R)].Value2.ToString();
+                }
+                else
+                {
+                    Audiogram6000R = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Audiogram8000R)].Value2 != null)
+                {
+                    Audiogram8000R = xlRange.Cells[i, int.Parse(ei.Audiogram8000R)].Value2.ToString();
+                }
+                else
+                {
+                    Audiogram8000R = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.AudiogramSummaryR)].Value2 != null)
+                {
+                    AudiogramSummaryR = xlRange.Cells[i, int.Parse(ei.AudiogramSummaryR)].Value2.ToString();
+                }
+                else
+                {
+                    AudiogramSummaryR = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.AudiogramExam)].Value2 != null)
+                {
+                    AudiogramExam = xlRange.Cells[i, int.Parse(ei.AudiogramExam)].Value2.ToString();
+                }
+                else
+                {
+                    AudiogramExam = "";
+                }
+
+
+                chk = cc.ccpdb.updateAudioGram(rowNumber, txtId.Text, Audiogram500L, Audiogram500R, Audiogram1000L, Audiogram1000R, Audiogram2000L, Audiogram2000R, Audiogram3000L, Audiogram3000R,
+                    Audiogram4000L, Audiogram4000R, Audiogram6000L, Audiogram6000R, Audiogram8000L, Audiogram8000R, AudiogramSummaryL, AudiogramSummaryR, AudiogramExam);
+                pB1.Value = i;
+            }
+            xlWorkbook.Close(true, misValue, misValue);
+            xlApp.Quit();
+            pB1.Visible = false;
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
+            setGrdAudoigram(txtId.Text);
+        }
+
+        private void dgvOther1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            if (dgvPE[colUricId, e.RowIndex].Value == null)
+            {
+                return;
+            }
+
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colOther1Id, e.RowIndex].Value.ToString(), cc);
+            //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
+            frm.ShowDialog(this);
+            setGrdOther1(cuc.Id);
+        }
+
+        private void dgvLung_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            if (dgvPE[colUricId, e.RowIndex].Value == null)
+            {
+                return;
+            }
+
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colLungId, e.RowIndex].Value.ToString(), cc);
+            //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
+            frm.ShowDialog(this);
+            setGrdLung(cuc.Id);
+        }
+
+        private void dgvAudio_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            if (dgvPE[colUricId, e.RowIndex].Value == null)
+            {
+                return;
+            }
+
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colAudiogramId, e.RowIndex].Value.ToString(), cc);
+            //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
+            frm.ShowDialog(this);            
+            setGrdAudoigram(cuc.Id);
+        }
+
+        private void btnEyeExcel_Click(object sender, EventArgs e)
+        {
+            ofd.ShowDialog();
+            fileNameEye = ofd.FileName;
+            btnEyeImport.Enabled = true;
+        }
+
+        private void btnEyeImport_Click(object sender, EventArgs e)
+        {
+            String rowNumber = "", chk = "";
+
+            String EyeShortLongLeft = "", EyeShortLongRight = "", EyeSquintLeft = "", EyeSquintRight = "", EyedegreeLeft = "", EyeDegreeRight = "", EyeOldLeft = "", EyeOldRight = "", EyeBlindness = "", EyeResult = "", EyeSummary = "";
+            pB1.Visible = true;
+            pB1.Minimum = 0;
+
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameEye);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+            int rowCount = xlRange.Rows.Count;
+            pB1.Maximum = rowCount;
+            xlApp.Visible = false;
+            for (int i = int.Parse(ei.AudoigramRow); i <= rowCount; i++)
+            {
+                //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
+                if (xlRange.Cells[i, int.Parse(ei.EyeNo)].Value2 != null)
+                {
+                    rowNumber = xlRange.Cells[i, int.Parse(ei.EyeNo)].Value2.ToString();
+                }
+                else
+                {
+                    rowNumber = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.EyeShortLongLeft)].Value2 != null)
+                {
+                    EyeShortLongLeft = xlRange.Cells[i, int.Parse(ei.EyeShortLongLeft)].Value2.ToString();
+                }
+                else
+                {
+                    EyeShortLongLeft = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.EyeShortLongRight)].Value2 != null)
+                {
+                    EyeShortLongRight = xlRange.Cells[i, int.Parse(ei.EyeShortLongRight)].Value2.ToString();
+                }
+                else
+                {
+                    EyeShortLongRight = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.EyeSquintLeft)].Value2 != null)
+                {
+                    EyeSquintLeft = xlRange.Cells[i, int.Parse(ei.EyeSquintLeft)].Value2.ToString();
+                }
+                else
+                {
+                    EyeSquintLeft = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.EyeSquintRight)].Value2 != null)
+                {
+                    EyeSquintRight = xlRange.Cells[i, int.Parse(ei.EyeSquintRight)].Value2.ToString();
+                }
+                else
+                {
+                    EyeSquintRight = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.EyedegreeLeft)].Value2 != null)
+                {
+                    EyedegreeLeft = xlRange.Cells[i, int.Parse(ei.EyedegreeLeft)].Value2.ToString();
+                }
+                else
+                {
+                    EyedegreeLeft = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.EyeDegreeRight)].Value2 != null)
+                {
+                    EyeDegreeRight = xlRange.Cells[i, int.Parse(ei.EyeDegreeRight)].Value2.ToString();
+                }
+                else
+                {
+                    EyeDegreeRight = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.EyeOldLeft)].Value2 != null)
+                {
+                    EyeOldLeft = xlRange.Cells[i, int.Parse(ei.EyeOldLeft)].Value2.ToString();
+                }
+                else
+                {
+                    EyeOldLeft = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.EyeOldRight)].Value2 != null)
+                {
+                    EyeOldRight = xlRange.Cells[i, int.Parse(ei.EyeOldRight)].Value2.ToString();
+                }
+                else
+                {
+                    EyeOldRight = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.EyeBlindness)].Value2 != null)
+                {
+                    EyeBlindness = xlRange.Cells[i, int.Parse(ei.EyeBlindness)].Value2.ToString();
+                }
+                else
+                {
+                    EyeBlindness = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.EyeResult)].Value2 != null)
+                {
+                    EyeResult = xlRange.Cells[i, int.Parse(ei.EyeResult)].Value2.ToString();
+                }
+                else
+                {
+                    EyeResult = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.EyeSummary)].Value2 != null)
+                {
+                    EyeSummary = xlRange.Cells[i, int.Parse(ei.EyeSummary)].Value2.ToString();
+                }
+                else
+                {
+                    EyeSummary = "";
+                }
+
+
+                chk = cc.ccpdb.updateEye(rowNumber, txtId.Text, EyeShortLongLeft, EyeShortLongRight, EyeSquintLeft, EyeSquintRight, EyedegreeLeft, EyeDegreeRight, EyeOldLeft, EyeOldRight,
+                    EyeResult, EyeSummary, EyeBlindness);
                 pB1.Value = i;
             }
             xlWorkbook.Close(true, misValue, misValue);

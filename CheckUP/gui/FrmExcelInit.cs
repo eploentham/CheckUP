@@ -14,8 +14,8 @@ namespace CheckUP.gui
     public partial class FrmExcelInit : Form
     {
         CheckControl cc;
-        int tabSum = 0, tabPE = 1, tabXRay = 2, tabCBC = 3, tabFBS = 4, tabUA = 5, tabTri = 6, tabCho = 7, tabSgot = 8, tabBun = 9, tabUric = 10, tabOther1=11, tabLung=12;
-        int tabCnt = 13;
+        int tabSum = 0, tabPE = 1, tabXRay = 2, tabCBC = 3, tabFBS = 4, tabUA = 5, tabTri = 6, tabCho = 7, tabSgot = 8, tabBun = 9, tabUric = 10, tabOther1=11, tabLung=12, tabAudio=13, tabEye=14;
+        int tabCnt = 15;
         OpenFileDialog ofd = new OpenFileDialog();
         ExcelInit ei;
         public FrmExcelInit(CheckControl c)
@@ -40,6 +40,8 @@ namespace CheckUP.gui
             tC.TabPages[tabUric].Text = "Uric Acid";
             tC.TabPages[tabOther1].Text = "Other1";
             tC.TabPages[tabLung].Text = "Lung";
+            tC.TabPages[tabAudio].Text = "Audio";
+            tC.TabPages[tabEye].Text = "Eye";
 
             if (ei.SfStatusName.Equals("A"))
             {
@@ -162,6 +164,26 @@ namespace CheckUP.gui
             nmDLungFev1Per.Value = int.Parse(cc.cf.NumberNull1(ei.LungFev1Per));
             nmDLungPerFev1.Value = int.Parse(cc.cf.NumberNull1(ei.LungPerFev1));
             nmDLungSummary.Value = int.Parse(cc.cf.NumberNull1(ei.LungSummary));
+
+            nmDAudioNo.Value = int.Parse(cc.cf.NumberNull1(ei.LungSummary));
+            nmDAudioRow.Value = int.Parse(cc.cf.NumberNull1(ei.LungSummary));
+            nmDAudiogram500L.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram500L));
+            nmDAudiogram500R.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram500R));
+            nmDAudiogram1000L.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram1000L));
+            nmDAudiogram1000R.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram1000R));
+            nmDAudiogram2000L.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram2000L));
+            nmDAudiogram2000R.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram2000R));
+            nmDAudiogram3000L.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram3000L));
+            nmDAudiogram3000R.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram3000R));
+            nmDAudiogram4000L.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram4000L));
+            nmDAudiogram4000R.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram4000R));
+            nmDAudiogram6000L.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram6000L));
+            nmDAudiogram6000R.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram6000R));
+            nmDAudiogram8000L.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram8000L));
+            nmDAudiogram8000R.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram8000R));
+            nmDAudiogramSummaryL.Value = int.Parse(cc.cf.NumberNull1(ei.AudiogramSummaryL));
+            nmDAudiogramSummaryR.Value = int.Parse(cc.cf.NumberNull1(ei.AudiogramSummaryR));
+            nmDAudiogramExam.Value = int.Parse(cc.cf.NumberNull1(ei.AudiogramExam));
 
             lbPE.Left = label3.Left;
             lbXRay.Left = label3.Left;
@@ -856,6 +878,316 @@ namespace CheckUP.gui
                 MessageBox.Show("บันทึกข้อมูล Lung เรียบร้อย", "บันทึกข้อมูล");
             }
         }
+        private void SaveAudio()
+        {
+            String No = "", Audiogram500L = "", Audiogram1000L = "", Audiogram2000L = "", Audiogram3000L = "", Audiogram4000L="",Audiogram6000L="", Audiogram8000L="", AudiogramSummaryL="";
+            String Audiogram500R = "", Audiogram1000R = "", Audiogram2000R = "", Audiogram3000R="", Audiogram4000R="", Audiogram6000R="", Audiogram8000R="", AudiogramSummaryR="", AudiogramExam="";
+            ofd.ShowDialog();
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+
+            if (xlRange.Cells[nmDAudioRow.Value, nmDAudioNo.Value].Value2 != null)
+            {
+                No = xlRange.Cells[nmDAudioRow.Value, nmDAudioNo.Value].Value2.ToString();
+            }
+            else
+            {
+                No = "";
+            }
+            No = No.Trim();
+            if (xlRange.Cells[nmDAudioRow.Value, nmDAudiogram500L.Value].Value2 != null)
+            {
+                Audiogram500L = xlRange.Cells[nmDAudioRow.Value, nmDAudiogram500L.Value].Value2.ToString();
+            }
+            else
+            {
+                Audiogram500L = "";
+            }
+            Audiogram500L = Audiogram500L.Trim();
+            if (xlRange.Cells[nmDAudioRow.Value, nmDAudiogram1000L.Value].Value2 != null)
+            {
+                Audiogram1000L = xlRange.Cells[nmDAudioRow.Value, nmDAudiogram1000L.Value].Value2.ToString();
+            }
+            else
+            {
+                Audiogram1000L = "";
+            }
+            Audiogram1000L = Audiogram1000L.Trim();
+            if (xlRange.Cells[nmDAudioRow.Value, nmDAudiogram2000L.Value].Value2 != null)
+            {
+                Audiogram2000L = xlRange.Cells[nmDAudioRow.Value, nmDAudiogram2000L.Value].Value2.ToString();
+            }
+            else
+            {
+                Audiogram2000L = "";
+            }
+            Audiogram2000L = Audiogram2000L.Trim();
+            if (xlRange.Cells[nmDAudioRow.Value, nmDAudiogram3000L.Value].Value2 != null)
+            {
+                Audiogram3000L = xlRange.Cells[nmDAudioRow.Value, nmDAudiogram3000L.Value].Value2.ToString();
+            }
+            else
+            {
+                Audiogram3000L = "";
+            }
+            Audiogram3000L = Audiogram3000L.Trim();
+            if (xlRange.Cells[nmDAudioRow.Value, nmDAudiogram4000L.Value].Value2 != null)
+            {
+                Audiogram4000L = xlRange.Cells[nmDAudioRow.Value, nmDAudiogram4000L.Value].Value2.ToString();
+            }
+            else
+            {
+                Audiogram4000L = "";
+            }
+            Audiogram4000L = Audiogram4000L.Trim();
+            if (xlRange.Cells[nmDAudioRow.Value, nmDAudiogram6000L.Value].Value2 != null)
+            {
+                Audiogram6000L = xlRange.Cells[nmDAudioRow.Value, nmDAudiogram6000L.Value].Value2.ToString();
+            }
+            else
+            {
+                Audiogram6000L = "";
+            }
+            Audiogram6000L = Audiogram6000L.Trim();
+            if (xlRange.Cells[nmDAudioRow.Value, nmDAudiogram8000L.Value].Value2 != null)
+            {
+                Audiogram8000L = xlRange.Cells[nmDAudioRow.Value, nmDAudiogram8000L.Value].Value2.ToString();
+            }
+            else
+            {
+                Audiogram8000L = "";
+            }
+            Audiogram8000L = Audiogram8000L.Trim();
+            if (xlRange.Cells[nmDAudioRow.Value, nmDAudiogramSummaryL.Value].Value2 != null)
+            {
+                AudiogramSummaryL = xlRange.Cells[nmDAudioRow.Value, nmDAudiogramSummaryL.Value].Value2.ToString();
+            }
+            else
+            {
+                AudiogramSummaryL = "";
+            }
+            AudiogramSummaryL = AudiogramSummaryL.Trim();
+            if (xlRange.Cells[nmDAudioRow.Value, nmDAudiogram500R.Value].Value2 != null)
+            {
+                Audiogram500R = xlRange.Cells[nmDAudioRow.Value, nmDAudiogram500R.Value].Value2.ToString();
+            }
+            else
+            {
+                Audiogram500R = "";
+            }
+            Audiogram500R = Audiogram500R.Trim();
+            if (xlRange.Cells[nmDAudioRow.Value, nmDAudiogram1000R.Value].Value2 != null)
+            {
+                Audiogram1000R = xlRange.Cells[nmDAudioRow.Value, nmDAudiogram1000R.Value].Value2.ToString();
+            }
+            else
+            {
+                Audiogram1000R = "";
+            }
+            Audiogram1000R = Audiogram1000R.Trim();
+            if (xlRange.Cells[nmDAudioRow.Value, nmDAudiogram2000R.Value].Value2 != null)
+            {
+                Audiogram2000R = xlRange.Cells[nmDAudioRow.Value, nmDAudiogram2000R.Value].Value2.ToString();
+            }
+            else
+            {
+                Audiogram2000R = "";
+            }
+            Audiogram2000R = Audiogram2000R.Trim();
+
+            if (xlRange.Cells[nmDAudioRow.Value, nmDAudiogram3000R.Value].Value2 != null)
+            {
+                Audiogram3000R = xlRange.Cells[nmDAudioRow.Value, nmDAudiogram3000R.Value].Value2.ToString();
+            }
+            else
+            {
+                Audiogram3000R = "";
+            }
+            Audiogram3000R = Audiogram3000R.Trim();
+            if (xlRange.Cells[nmDAudioRow.Value, nmDAudiogram4000R.Value].Value2 != null)
+            {
+                Audiogram4000R = xlRange.Cells[nmDAudioRow.Value, nmDAudiogram4000R.Value].Value2.ToString();
+            }
+            else
+            {
+                Audiogram4000R = "";
+            }
+            Audiogram4000R = Audiogram4000R.Trim();
+            if (xlRange.Cells[nmDAudioRow.Value, nmDAudiogram6000R.Value].Value2 != null)
+            {
+                Audiogram6000R = xlRange.Cells[nmDAudioRow.Value, nmDAudiogram6000R.Value].Value2.ToString();
+            }
+            else
+            {
+                Audiogram6000R = "";
+            }
+            Audiogram6000R = Audiogram6000R.Trim();
+            if (xlRange.Cells[nmDAudioRow.Value, nmDAudiogram8000R.Value].Value2 != null)
+            {
+                Audiogram8000R = xlRange.Cells[nmDAudioRow.Value, nmDAudiogram8000R.Value].Value2.ToString();
+            }
+            else
+            {
+                Audiogram8000R = "";
+            }
+            Audiogram8000R = Audiogram8000R.Trim();
+            if (xlRange.Cells[nmDAudioRow.Value, nmDAudiogramSummaryR.Value].Value2 != null)
+            {
+                AudiogramSummaryR = xlRange.Cells[nmDAudioRow.Value, nmDAudiogramSummaryR.Value].Value2.ToString();
+            }
+            else
+            {
+                AudiogramSummaryR = "";
+            }
+            AudiogramSummaryR = AudiogramSummaryR.Trim();
+            if (xlRange.Cells[nmDAudioRow.Value, nmDAudiogramExam.Value].Value2 != null)
+            {
+                AudiogramExam = xlRange.Cells[nmDAudioRow.Value, nmDAudiogramExam.Value].Value2.ToString();
+            }
+            else
+            {
+                AudiogramExam = "";
+            }
+            AudiogramExam = AudiogramExam.Trim();
+            txtAudioTest.Text = "ลำดับ " + No + " Audiogram500L " + Audiogram500L + " Audiogram1000L " + Audiogram1000L + " Audiogram2000L " + Audiogram2000L + " Audiogram3000L " + Audiogram3000L + " Audiogram4000L " + Audiogram4000L + " Audiogram6000L " + Audiogram6000L + " Audiogram8000L " + Audiogram8000L +
+                " AudiogramSummaryL " + AudiogramSummaryL + " Audiogram500R " + Audiogram500R + " Audiogram1000R " + Audiogram1000R + " Audiogram2000R " + Audiogram2000R + " Audiogram3000R " + Audiogram3000R + " Audiogram4000R " + Audiogram4000R + " Audiogram6000R " + Audiogram6000R + " Audiogram8000R " + Audiogram8000R + " AudiogramSummaryR " + AudiogramSummaryR + " AudiogramSummary " + AudiogramExam;
+            if (cc.eidb.updateAudioGram(nmDAudioRow.Value.ToString(), nmDAudioNo.Value.ToString(),nmDAudiogram500L.Value.ToString(), nmDAudiogram500R.Value.ToString(), nmDAudiogram1000L.Value.ToString(), nmDAudiogram1000R.Value.ToString(),
+                nmDAudiogram2000L.Value.ToString(), nmDAudiogram2000R.Value.ToString(), nmDAudiogram3000L.Value.ToString(), nmDAudiogram3000R.Value.ToString(), nmDAudiogram4000L.Value.ToString(), nmDAudiogram4000R.Value.ToString(),
+                nmDAudiogram6000L.Value.ToString(), nmDAudiogram6000R.Value.ToString(), nmDAudiogram8000L.Value.ToString(), nmDAudiogram8000R.Value.ToString(), nmDAudiogramSummaryL.Value.ToString(), nmDAudiogramSummaryR.Value.ToString(), nmDAudiogramExam.Value.ToString()).Length >= 1)
+            {
+                MessageBox.Show("บันทึกข้อมูล AudioGram เรียบร้อย", "บันทึกข้อมูล");
+            }
+        }
+        private void SaveEye()
+        {
+            String No = "", EyeShortLongLeft = "", EyeShortLongRight = "", EyeSquintLeft = "", EyeSquintRight = "", EyedegreeLeft = "", EyeDegreeRight = "", EyeOldLeft = "", EyeOldRight = "", EyeBlindness = "", EyeResult = "", EyeSummary = "";
+            ofd.ShowDialog();
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+
+            if (xlRange.Cells[nmDEyeRow.Value, nmDEyeNo.Value].Value2 != null)
+            {
+                No = xlRange.Cells[nmDEyeRow.Value, nmDEyeNo.Value].Value2.ToString();
+            }
+            else
+            {
+                No = "";
+            }
+            No = No.Trim();
+            if (xlRange.Cells[nmDEyeRow.Value, nmDEyeShortLongLeft.Value].Value2 != null)
+            {
+                EyeShortLongLeft = xlRange.Cells[nmDEyeRow.Value, nmDEyeShortLongLeft.Value].Value2.ToString();
+            }
+            else
+            {
+                EyeShortLongLeft = "";
+            }
+            EyeShortLongLeft = EyeShortLongLeft.Trim();
+            if (xlRange.Cells[nmDEyeRow.Value, nmDEyeShortLongRight.Value].Value2 != null)
+            {
+                EyeShortLongRight = xlRange.Cells[nmDEyeRow.Value, nmDEyeShortLongRight.Value].Value2.ToString();
+            }
+            else
+            {
+                EyeShortLongRight = "";
+            }
+            EyeShortLongRight = EyeShortLongRight.Trim();
+            if (xlRange.Cells[nmDEyeRow.Value, nmDEyeSquintLeft.Value].Value2 != null)
+            {
+                EyeSquintLeft = xlRange.Cells[nmDEyeRow.Value, nmDEyeSquintLeft.Value].Value2.ToString();
+            }
+            else
+            {
+                EyeSquintLeft = "";
+            }
+            EyeSquintLeft = EyeSquintLeft.Trim();
+            if (xlRange.Cells[nmDEyeRow.Value, nmDEyeSquintRight.Value].Value2 != null)
+            {
+                EyeSquintRight = xlRange.Cells[nmDEyeRow.Value, nmDEyeSquintRight.Value].Value2.ToString();
+            }
+            else
+            {
+                EyeSquintRight = "";
+            }
+            EyeSquintRight = EyeSquintRight.Trim();
+            if (xlRange.Cells[nmDEyeRow.Value, nmDEyeDegreeLeft.Value].Value2 != null)
+            {
+                EyedegreeLeft = xlRange.Cells[nmDEyeRow.Value, nmDEyeDegreeLeft.Value].Value2.ToString();
+            }
+            else
+            {
+                EyedegreeLeft = "";
+            }
+            EyedegreeLeft = EyedegreeLeft.Trim();
+            if (xlRange.Cells[nmDEyeRow.Value, nmDEyeDegreeRight.Value].Value2 != null)
+            {
+                EyeDegreeRight = xlRange.Cells[nmDEyeRow.Value, nmDEyeDegreeRight.Value].Value2.ToString();
+            }
+            else
+            {
+                EyeDegreeRight = "";
+            }
+            EyeDegreeRight = EyeDegreeRight.Trim();
+            if (xlRange.Cells[nmDEyeRow.Value, nmDEyeOldLeft.Value].Value2 != null)
+            {
+                EyeOldLeft = xlRange.Cells[nmDEyeRow.Value, nmDEyeOldLeft.Value].Value2.ToString();
+            }
+            else
+            {
+                EyeOldLeft = "";
+            }
+            EyeOldLeft = EyeOldLeft.Trim();
+            if (xlRange.Cells[nmDEyeRow.Value, nmDEyeOldRight.Value].Value2 != null)
+            {
+                EyeOldRight = xlRange.Cells[nmDEyeRow.Value, nmDEyeOldRight.Value].Value2.ToString();
+            }
+            else
+            {
+                EyeOldRight = "";
+            }
+            EyeOldRight = EyeOldRight.Trim();
+            if (xlRange.Cells[nmDEyeRow.Value, nmDEyeBlindness.Value].Value2 != null)
+            {
+                EyeBlindness = xlRange.Cells[nmDEyeRow.Value, nmDEyeBlindness.Value].Value2.ToString();
+            }
+            else
+            {
+                EyeBlindness = "";
+            }
+            EyeBlindness = EyeBlindness.Trim();
+            if (xlRange.Cells[nmDEyeRow.Value, nmDEyeResult.Value].Value2 != null)
+            {
+                EyeResult = xlRange.Cells[nmDEyeRow.Value, nmDEyeResult.Value].Value2.ToString();
+            }
+            else
+            {
+                EyeResult = "";
+            }
+            EyeResult = EyeResult.Trim();
+            if (xlRange.Cells[nmDEyeRow.Value, nmDEyeSummary.Value].Value2 != null)
+            {
+                EyeSummary = xlRange.Cells[nmDEyeRow.Value, nmDEyeSummary.Value].Value2.ToString();
+            }
+            else
+            {
+                EyeSummary = "";
+            }
+            EyeSummary = EyeSummary.Trim();
+
+
+            txtEyeTest.Text = "ลำดับ " + No + " EyeShortLongLeft " + EyeShortLongLeft + " EyeShortLongRight " + EyeShortLongRight + " EyeSquintLeft " + EyeSquintLeft + " EyeSquintRight " + EyeSquintRight + " EyedegreeLeft " + EyedegreeLeft + " EyeDegreeRight " + EyeDegreeRight + " EyeOldLeft " + EyeOldLeft +
+                " EyeOldRight " + EyeOldRight + " EyeBlindness " + EyeBlindness + " EyeResult " + EyeResult + " EyeSummary " + EyeSummary;
+            if (cc.eidb.updateEye(nmDEyeRow.Value.ToString(), nmDEyeNo.Value.ToString(), nmDEyeShortLongLeft.Value.ToString(), nmDEyeShortLongRight.Value.ToString(), nmDEyeSquintLeft.Value.ToString(), nmDEyeSquintRight.Value.ToString(),
+                nmDEyeDegreeLeft.Value.ToString(), nmDEyeDegreeRight.Value.ToString(), nmDEyeOldLeft.Value.ToString(), nmDEyeOldRight.Value.ToString(), nmDEyeBlindness.Value.ToString(), nmDEyeResult.Value.ToString(),
+                nmDEyeSummary.Value.ToString()).Length >= 1)
+            {
+                MessageBox.Show("บันทึกข้อมูล AudioGram เรียบร้อย", "บันทึกข้อมูล");
+            }
+        }
         private void FrmExcelInit_Load(object sender, EventArgs e)
         {
 
@@ -1426,6 +1758,16 @@ namespace CheckUP.gui
         private void btnLungExcel_Click(object sender, EventArgs e)
         {
             SaveLung();
+        }
+
+        private void btnAudioExcel_Click(object sender, EventArgs e)
+        {
+            SaveAudio();
+        }
+
+        private void btnEyeExcel_Click(object sender, EventArgs e)
+        {
+            SaveEye();
         }
     }
 }

@@ -304,6 +304,78 @@
             this.nmDLungNo = new System.Windows.Forms.NumericUpDown();
             this.label101 = new System.Windows.Forms.Label();
             this.nmDLungRow = new System.Windows.Forms.NumericUpDown();
+            this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.label123 = new System.Windows.Forms.Label();
+            this.nmDAudiogramExam = new System.Windows.Forms.NumericUpDown();
+            this.label122 = new System.Windows.Forms.Label();
+            this.nmDAudiogramSummaryR = new System.Windows.Forms.NumericUpDown();
+            this.label121 = new System.Windows.Forms.Label();
+            this.nmDAudiogram8000R = new System.Windows.Forms.NumericUpDown();
+            this.label120 = new System.Windows.Forms.Label();
+            this.nmDAudiogram6000R = new System.Windows.Forms.NumericUpDown();
+            this.label119 = new System.Windows.Forms.Label();
+            this.nmDAudiogram4000R = new System.Windows.Forms.NumericUpDown();
+            this.label104 = new System.Windows.Forms.Label();
+            this.txtAudioTest = new System.Windows.Forms.TextBox();
+            this.btnAudioExcel = new System.Windows.Forms.Button();
+            this.label105 = new System.Windows.Forms.Label();
+            this.nmDAudiogram3000R = new System.Windows.Forms.NumericUpDown();
+            this.label106 = new System.Windows.Forms.Label();
+            this.nmDAudiogram2000R = new System.Windows.Forms.NumericUpDown();
+            this.label107 = new System.Windows.Forms.Label();
+            this.nmDAudiogram1000R = new System.Windows.Forms.NumericUpDown();
+            this.label108 = new System.Windows.Forms.Label();
+            this.nmDAudiogram500R = new System.Windows.Forms.NumericUpDown();
+            this.label109 = new System.Windows.Forms.Label();
+            this.nmDAudiogramSummaryL = new System.Windows.Forms.NumericUpDown();
+            this.label110 = new System.Windows.Forms.Label();
+            this.nmDAudiogram8000L = new System.Windows.Forms.NumericUpDown();
+            this.label111 = new System.Windows.Forms.Label();
+            this.nmDAudiogram6000L = new System.Windows.Forms.NumericUpDown();
+            this.label112 = new System.Windows.Forms.Label();
+            this.nmDAudiogram4000L = new System.Windows.Forms.NumericUpDown();
+            this.label113 = new System.Windows.Forms.Label();
+            this.nmDAudiogram3000L = new System.Windows.Forms.NumericUpDown();
+            this.label114 = new System.Windows.Forms.Label();
+            this.nmDAudiogram2000L = new System.Windows.Forms.NumericUpDown();
+            this.label115 = new System.Windows.Forms.Label();
+            this.nmDAudiogram1000L = new System.Windows.Forms.NumericUpDown();
+            this.label116 = new System.Windows.Forms.Label();
+            this.nmDAudiogram500L = new System.Windows.Forms.NumericUpDown();
+            this.label117 = new System.Windows.Forms.Label();
+            this.nmDAudioNo = new System.Windows.Forms.NumericUpDown();
+            this.label118 = new System.Windows.Forms.Label();
+            this.nmDAudioRow = new System.Windows.Forms.NumericUpDown();
+            this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.label129 = new System.Windows.Forms.Label();
+            this.txtEyeTest = new System.Windows.Forms.TextBox();
+            this.btnEyeExcel = new System.Windows.Forms.Button();
+            this.label131 = new System.Windows.Forms.Label();
+            this.nmDEyeSummary = new System.Windows.Forms.NumericUpDown();
+            this.label132 = new System.Windows.Forms.Label();
+            this.nmDEyeResult = new System.Windows.Forms.NumericUpDown();
+            this.label133 = new System.Windows.Forms.Label();
+            this.nmDEyeBlindness = new System.Windows.Forms.NumericUpDown();
+            this.label134 = new System.Windows.Forms.Label();
+            this.nmDEyeOldRight = new System.Windows.Forms.NumericUpDown();
+            this.label135 = new System.Windows.Forms.Label();
+            this.nmDEyeOldLeft = new System.Windows.Forms.NumericUpDown();
+            this.label136 = new System.Windows.Forms.Label();
+            this.nmDEyeDegreeRight = new System.Windows.Forms.NumericUpDown();
+            this.label137 = new System.Windows.Forms.Label();
+            this.nmDEyeDegreeLeft = new System.Windows.Forms.NumericUpDown();
+            this.label138 = new System.Windows.Forms.Label();
+            this.nmDEyeSquintRight = new System.Windows.Forms.NumericUpDown();
+            this.label139 = new System.Windows.Forms.Label();
+            this.nmDEyeSquintLeft = new System.Windows.Forms.NumericUpDown();
+            this.label140 = new System.Windows.Forms.Label();
+            this.nmDEyeShortLongRight = new System.Windows.Forms.NumericUpDown();
+            this.label141 = new System.Windows.Forms.Label();
+            this.nmDEyeShortLongLeft = new System.Windows.Forms.NumericUpDown();
+            this.label142 = new System.Windows.Forms.Label();
+            this.nmDEyeNo = new System.Windows.Forms.NumericUpDown();
+            this.label143 = new System.Windows.Forms.Label();
+            this.nmDEyeRow = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDARow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDAPrefix)).BeginInit();
@@ -428,6 +500,40 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDLungFvcPredic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDLungNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDLungRow)).BeginInit();
+            this.tabPage14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogramExam)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogramSummaryR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram8000R)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram6000R)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram4000R)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram3000R)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram2000R)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram1000R)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram500R)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogramSummaryL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram8000L)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram6000L)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram4000L)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram3000L)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram2000L)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram1000L)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram500L)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudioNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudioRow)).BeginInit();
+            this.tabPage15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeSummary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeResult)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeBlindness)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeOldRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeOldLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeDegreeRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeDegreeLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeSquintRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeSquintLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeShortLongRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeShortLongLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeRow)).BeginInit();
             this.SuspendLayout();
             // 
             // nmDRow
@@ -767,6 +873,8 @@
             this.tC.Controls.Add(this.tabPage11);
             this.tC.Controls.Add(this.tabPage12);
             this.tC.Controls.Add(this.tabPage13);
+            this.tC.Controls.Add(this.tabPage14);
+            this.tC.Controls.Add(this.tabPage15);
             this.tC.Location = new System.Drawing.Point(12, 12);
             this.tC.Name = "tC";
             this.tC.SelectedIndex = 0;
@@ -3650,6 +3758,854 @@
             0,
             0});
             // 
+            // tabPage14
+            // 
+            this.tabPage14.Controls.Add(this.label123);
+            this.tabPage14.Controls.Add(this.nmDAudiogramExam);
+            this.tabPage14.Controls.Add(this.label122);
+            this.tabPage14.Controls.Add(this.nmDAudiogramSummaryR);
+            this.tabPage14.Controls.Add(this.label121);
+            this.tabPage14.Controls.Add(this.nmDAudiogram8000R);
+            this.tabPage14.Controls.Add(this.label120);
+            this.tabPage14.Controls.Add(this.nmDAudiogram6000R);
+            this.tabPage14.Controls.Add(this.label119);
+            this.tabPage14.Controls.Add(this.nmDAudiogram4000R);
+            this.tabPage14.Controls.Add(this.label104);
+            this.tabPage14.Controls.Add(this.txtAudioTest);
+            this.tabPage14.Controls.Add(this.btnAudioExcel);
+            this.tabPage14.Controls.Add(this.label105);
+            this.tabPage14.Controls.Add(this.nmDAudiogram3000R);
+            this.tabPage14.Controls.Add(this.label106);
+            this.tabPage14.Controls.Add(this.nmDAudiogram2000R);
+            this.tabPage14.Controls.Add(this.label107);
+            this.tabPage14.Controls.Add(this.nmDAudiogram1000R);
+            this.tabPage14.Controls.Add(this.label108);
+            this.tabPage14.Controls.Add(this.nmDAudiogram500R);
+            this.tabPage14.Controls.Add(this.label109);
+            this.tabPage14.Controls.Add(this.nmDAudiogramSummaryL);
+            this.tabPage14.Controls.Add(this.label110);
+            this.tabPage14.Controls.Add(this.nmDAudiogram8000L);
+            this.tabPage14.Controls.Add(this.label111);
+            this.tabPage14.Controls.Add(this.nmDAudiogram6000L);
+            this.tabPage14.Controls.Add(this.label112);
+            this.tabPage14.Controls.Add(this.nmDAudiogram4000L);
+            this.tabPage14.Controls.Add(this.label113);
+            this.tabPage14.Controls.Add(this.nmDAudiogram3000L);
+            this.tabPage14.Controls.Add(this.label114);
+            this.tabPage14.Controls.Add(this.nmDAudiogram2000L);
+            this.tabPage14.Controls.Add(this.label115);
+            this.tabPage14.Controls.Add(this.nmDAudiogram1000L);
+            this.tabPage14.Controls.Add(this.label116);
+            this.tabPage14.Controls.Add(this.nmDAudiogram500L);
+            this.tabPage14.Controls.Add(this.label117);
+            this.tabPage14.Controls.Add(this.nmDAudioNo);
+            this.tabPage14.Controls.Add(this.label118);
+            this.tabPage14.Controls.Add(this.nmDAudioRow);
+            this.tabPage14.Location = new System.Drawing.Point(4, 22);
+            this.tabPage14.Name = "tabPage14";
+            this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage14.Size = new System.Drawing.Size(920, 322);
+            this.tabPage14.TabIndex = 13;
+            this.tabPage14.Text = "tabPage14";
+            this.tabPage14.UseVisualStyleBackColor = true;
+            // 
+            // label123
+            // 
+            this.label123.AutoSize = true;
+            this.label123.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label123.Location = new System.Drawing.Point(114, 211);
+            this.label123.Name = "label123";
+            this.label123.Size = new System.Drawing.Size(99, 16);
+            this.label123.TabIndex = 114;
+            this.label123.Text = "Audio Example";
+            // 
+            // nmDAudiogramExam
+            // 
+            this.nmDAudiogramExam.Location = new System.Drawing.Point(107, 239);
+            this.nmDAudiogramExam.Name = "nmDAudiogramExam";
+            this.nmDAudiogramExam.Size = new System.Drawing.Size(46, 20);
+            this.nmDAudiogramExam.TabIndex = 115;
+            this.nmDAudiogramExam.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label122
+            // 
+            this.label122.AutoSize = true;
+            this.label122.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label122.Location = new System.Drawing.Point(678, 150);
+            this.label122.Name = "label122";
+            this.label122.Size = new System.Drawing.Size(99, 16);
+            this.label122.TabIndex = 112;
+            this.label122.Text = "Right Summary";
+            // 
+            // nmDAudiogramSummaryR
+            // 
+            this.nmDAudiogramSummaryR.Location = new System.Drawing.Point(674, 178);
+            this.nmDAudiogramSummaryR.Name = "nmDAudiogramSummaryR";
+            this.nmDAudiogramSummaryR.Size = new System.Drawing.Size(46, 20);
+            this.nmDAudiogramSummaryR.TabIndex = 113;
+            this.nmDAudiogramSummaryR.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label121
+            // 
+            this.label121.AutoSize = true;
+            this.label121.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label121.Location = new System.Drawing.Point(598, 150);
+            this.label121.Name = "label121";
+            this.label121.Size = new System.Drawing.Size(70, 16);
+            this.label121.TabIndex = 110;
+            this.label121.Text = "Right 8000";
+            // 
+            // nmDAudiogram8000R
+            // 
+            this.nmDAudiogram8000R.Location = new System.Drawing.Point(594, 178);
+            this.nmDAudiogram8000R.Name = "nmDAudiogram8000R";
+            this.nmDAudiogram8000R.Size = new System.Drawing.Size(46, 20);
+            this.nmDAudiogram8000R.TabIndex = 111;
+            this.nmDAudiogram8000R.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label120
+            // 
+            this.label120.AutoSize = true;
+            this.label120.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label120.Location = new System.Drawing.Point(525, 150);
+            this.label120.Name = "label120";
+            this.label120.Size = new System.Drawing.Size(70, 16);
+            this.label120.TabIndex = 108;
+            this.label120.Text = "Right 6000";
+            // 
+            // nmDAudiogram6000R
+            // 
+            this.nmDAudiogram6000R.Location = new System.Drawing.Point(521, 178);
+            this.nmDAudiogram6000R.Name = "nmDAudiogram6000R";
+            this.nmDAudiogram6000R.Size = new System.Drawing.Size(46, 20);
+            this.nmDAudiogram6000R.TabIndex = 109;
+            this.nmDAudiogram6000R.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label119
+            // 
+            this.label119.AutoSize = true;
+            this.label119.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label119.Location = new System.Drawing.Point(444, 150);
+            this.label119.Name = "label119";
+            this.label119.Size = new System.Drawing.Size(70, 16);
+            this.label119.TabIndex = 106;
+            this.label119.Text = "Right 4000";
+            // 
+            // nmDAudiogram4000R
+            // 
+            this.nmDAudiogram4000R.Location = new System.Drawing.Point(440, 178);
+            this.nmDAudiogram4000R.Name = "nmDAudiogram4000R";
+            this.nmDAudiogram4000R.Size = new System.Drawing.Size(46, 20);
+            this.nmDAudiogram4000R.TabIndex = 107;
+            this.nmDAudiogram4000R.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label104
+            // 
+            this.label104.AutoSize = true;
+            this.label104.Location = new System.Drawing.Point(6, 265);
+            this.label104.Name = "label104";
+            this.label104.Size = new System.Drawing.Size(80, 13);
+            this.label104.TabIndex = 105;
+            this.label104.Text = "ข้อมูลจากการดึง";
+            // 
+            // txtAudioTest
+            // 
+            this.txtAudioTest.Location = new System.Drawing.Point(6, 281);
+            this.txtAudioTest.Name = "txtAudioTest";
+            this.txtAudioTest.Size = new System.Drawing.Size(908, 20);
+            this.txtAudioTest.TabIndex = 104;
+            // 
+            // btnAudioExcel
+            // 
+            this.btnAudioExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnAudioExcel.Location = new System.Drawing.Point(828, 230);
+            this.btnAudioExcel.Name = "btnAudioExcel";
+            this.btnAudioExcel.Size = new System.Drawing.Size(86, 34);
+            this.btnAudioExcel.TabIndex = 103;
+            this.btnAudioExcel.Text = "ทดสอบ Excel";
+            this.btnAudioExcel.UseVisualStyleBackColor = true;
+            this.btnAudioExcel.Click += new System.EventHandler(this.btnAudioExcel_Click);
+            // 
+            // label105
+            // 
+            this.label105.AutoSize = true;
+            this.label105.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label105.Location = new System.Drawing.Point(361, 150);
+            this.label105.Name = "label105";
+            this.label105.Size = new System.Drawing.Size(70, 16);
+            this.label105.TabIndex = 101;
+            this.label105.Text = "Right 3000";
+            // 
+            // nmDAudiogram3000R
+            // 
+            this.nmDAudiogram3000R.Location = new System.Drawing.Point(357, 178);
+            this.nmDAudiogram3000R.Name = "nmDAudiogram3000R";
+            this.nmDAudiogram3000R.Size = new System.Drawing.Size(46, 20);
+            this.nmDAudiogram3000R.TabIndex = 102;
+            this.nmDAudiogram3000R.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label106
+            // 
+            this.label106.AutoSize = true;
+            this.label106.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label106.Location = new System.Drawing.Point(262, 150);
+            this.label106.Name = "label106";
+            this.label106.Size = new System.Drawing.Size(70, 16);
+            this.label106.TabIndex = 99;
+            this.label106.Text = "Right 2000";
+            // 
+            // nmDAudiogram2000R
+            // 
+            this.nmDAudiogram2000R.Location = new System.Drawing.Point(272, 178);
+            this.nmDAudiogram2000R.Name = "nmDAudiogram2000R";
+            this.nmDAudiogram2000R.Size = new System.Drawing.Size(46, 20);
+            this.nmDAudiogram2000R.TabIndex = 100;
+            this.nmDAudiogram2000R.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label107
+            // 
+            this.label107.AutoSize = true;
+            this.label107.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label107.Location = new System.Drawing.Point(182, 150);
+            this.label107.Name = "label107";
+            this.label107.Size = new System.Drawing.Size(70, 16);
+            this.label107.TabIndex = 97;
+            this.label107.Text = "Right 1000";
+            // 
+            // nmDAudiogram1000R
+            // 
+            this.nmDAudiogram1000R.Location = new System.Drawing.Point(193, 178);
+            this.nmDAudiogram1000R.Name = "nmDAudiogram1000R";
+            this.nmDAudiogram1000R.Size = new System.Drawing.Size(46, 20);
+            this.nmDAudiogram1000R.TabIndex = 98;
+            this.nmDAudiogram1000R.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label108
+            // 
+            this.label108.AutoSize = true;
+            this.label108.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label108.Location = new System.Drawing.Point(114, 150);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(63, 16);
+            this.label108.TabIndex = 95;
+            this.label108.Text = "Right 500";
+            // 
+            // nmDAudiogram500R
+            // 
+            this.nmDAudiogram500R.Location = new System.Drawing.Point(110, 178);
+            this.nmDAudiogram500R.Name = "nmDAudiogram500R";
+            this.nmDAudiogram500R.Size = new System.Drawing.Size(46, 20);
+            this.nmDAudiogram500R.TabIndex = 96;
+            this.nmDAudiogram500R.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label109
+            // 
+            this.label109.AutoSize = true;
+            this.label109.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label109.Location = new System.Drawing.Point(678, 78);
+            this.label109.Name = "label109";
+            this.label109.Size = new System.Drawing.Size(89, 16);
+            this.label109.TabIndex = 93;
+            this.label109.Text = "Left Summary";
+            // 
+            // nmDAudiogramSummaryL
+            // 
+            this.nmDAudiogramSummaryL.Location = new System.Drawing.Point(674, 106);
+            this.nmDAudiogramSummaryL.Name = "nmDAudiogramSummaryL";
+            this.nmDAudiogramSummaryL.Size = new System.Drawing.Size(46, 20);
+            this.nmDAudiogramSummaryL.TabIndex = 94;
+            this.nmDAudiogramSummaryL.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label110
+            // 
+            this.label110.AutoSize = true;
+            this.label110.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label110.Location = new System.Drawing.Point(598, 78);
+            this.label110.Name = "label110";
+            this.label110.Size = new System.Drawing.Size(60, 16);
+            this.label110.TabIndex = 91;
+            this.label110.Text = "Left 8000";
+            // 
+            // nmDAudiogram8000L
+            // 
+            this.nmDAudiogram8000L.Location = new System.Drawing.Point(594, 106);
+            this.nmDAudiogram8000L.Name = "nmDAudiogram8000L";
+            this.nmDAudiogram8000L.Size = new System.Drawing.Size(46, 20);
+            this.nmDAudiogram8000L.TabIndex = 92;
+            this.nmDAudiogram8000L.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label111
+            // 
+            this.label111.AutoSize = true;
+            this.label111.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label111.Location = new System.Drawing.Point(525, 78);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(60, 16);
+            this.label111.TabIndex = 89;
+            this.label111.Text = "Left 6000";
+            // 
+            // nmDAudiogram6000L
+            // 
+            this.nmDAudiogram6000L.Location = new System.Drawing.Point(521, 106);
+            this.nmDAudiogram6000L.Name = "nmDAudiogram6000L";
+            this.nmDAudiogram6000L.Size = new System.Drawing.Size(46, 20);
+            this.nmDAudiogram6000L.TabIndex = 90;
+            this.nmDAudiogram6000L.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label112
+            // 
+            this.label112.AutoSize = true;
+            this.label112.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label112.Location = new System.Drawing.Point(437, 78);
+            this.label112.Name = "label112";
+            this.label112.Size = new System.Drawing.Size(60, 16);
+            this.label112.TabIndex = 87;
+            this.label112.Text = "Left 4000";
+            // 
+            // nmDAudiogram4000L
+            // 
+            this.nmDAudiogram4000L.Location = new System.Drawing.Point(440, 106);
+            this.nmDAudiogram4000L.Name = "nmDAudiogram4000L";
+            this.nmDAudiogram4000L.Size = new System.Drawing.Size(46, 20);
+            this.nmDAudiogram4000L.TabIndex = 88;
+            this.nmDAudiogram4000L.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label113
+            // 
+            this.label113.AutoSize = true;
+            this.label113.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label113.Location = new System.Drawing.Point(361, 78);
+            this.label113.Name = "label113";
+            this.label113.Size = new System.Drawing.Size(60, 16);
+            this.label113.TabIndex = 85;
+            this.label113.Text = "Left 3000";
+            // 
+            // nmDAudiogram3000L
+            // 
+            this.nmDAudiogram3000L.Location = new System.Drawing.Point(357, 106);
+            this.nmDAudiogram3000L.Name = "nmDAudiogram3000L";
+            this.nmDAudiogram3000L.Size = new System.Drawing.Size(46, 20);
+            this.nmDAudiogram3000L.TabIndex = 86;
+            this.nmDAudiogram3000L.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label114
+            // 
+            this.label114.AutoSize = true;
+            this.label114.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label114.Location = new System.Drawing.Point(276, 78);
+            this.label114.Name = "label114";
+            this.label114.Size = new System.Drawing.Size(60, 16);
+            this.label114.TabIndex = 83;
+            this.label114.Text = "Left 2000";
+            // 
+            // nmDAudiogram2000L
+            // 
+            this.nmDAudiogram2000L.Location = new System.Drawing.Point(272, 106);
+            this.nmDAudiogram2000L.Name = "nmDAudiogram2000L";
+            this.nmDAudiogram2000L.Size = new System.Drawing.Size(46, 20);
+            this.nmDAudiogram2000L.TabIndex = 84;
+            this.nmDAudiogram2000L.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label115
+            // 
+            this.label115.AutoSize = true;
+            this.label115.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label115.Location = new System.Drawing.Point(197, 78);
+            this.label115.Name = "label115";
+            this.label115.Size = new System.Drawing.Size(60, 16);
+            this.label115.TabIndex = 81;
+            this.label115.Text = "Left 1000";
+            // 
+            // nmDAudiogram1000L
+            // 
+            this.nmDAudiogram1000L.Location = new System.Drawing.Point(193, 106);
+            this.nmDAudiogram1000L.Name = "nmDAudiogram1000L";
+            this.nmDAudiogram1000L.Size = new System.Drawing.Size(46, 20);
+            this.nmDAudiogram1000L.TabIndex = 82;
+            this.nmDAudiogram1000L.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label116
+            // 
+            this.label116.AutoSize = true;
+            this.label116.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label116.Location = new System.Drawing.Point(114, 78);
+            this.label116.Name = "label116";
+            this.label116.Size = new System.Drawing.Size(53, 16);
+            this.label116.TabIndex = 79;
+            this.label116.Text = "Left 500";
+            // 
+            // nmDAudiogram500L
+            // 
+            this.nmDAudiogram500L.Location = new System.Drawing.Point(110, 106);
+            this.nmDAudiogram500L.Name = "nmDAudiogram500L";
+            this.nmDAudiogram500L.Size = new System.Drawing.Size(46, 20);
+            this.nmDAudiogram500L.TabIndex = 80;
+            this.nmDAudiogram500L.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label117
+            // 
+            this.label117.AutoSize = true;
+            this.label117.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label117.Location = new System.Drawing.Point(41, 77);
+            this.label117.Name = "label117";
+            this.label117.Size = new System.Drawing.Size(42, 16);
+            this.label117.TabIndex = 77;
+            this.label117.Text = "ลำดับ  :";
+            // 
+            // nmDAudioNo
+            // 
+            this.nmDAudioNo.Location = new System.Drawing.Point(37, 106);
+            this.nmDAudioNo.Name = "nmDAudioNo";
+            this.nmDAudioNo.Size = new System.Drawing.Size(46, 20);
+            this.nmDAudioNo.TabIndex = 78;
+            this.nmDAudioNo.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label118
+            // 
+            this.label118.AutoSize = true;
+            this.label118.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label118.Location = new System.Drawing.Point(85, 22);
+            this.label118.Name = "label118";
+            this.label118.Size = new System.Drawing.Size(68, 16);
+            this.label118.TabIndex = 75;
+            this.label118.Text = "row เริ่มต้น :";
+            // 
+            // nmDAudioRow
+            // 
+            this.nmDAudioRow.Location = new System.Drawing.Point(175, 22);
+            this.nmDAudioRow.Name = "nmDAudioRow";
+            this.nmDAudioRow.Size = new System.Drawing.Size(46, 20);
+            this.nmDAudioRow.TabIndex = 76;
+            this.nmDAudioRow.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // tabPage15
+            // 
+            this.tabPage15.Controls.Add(this.label129);
+            this.tabPage15.Controls.Add(this.txtEyeTest);
+            this.tabPage15.Controls.Add(this.btnEyeExcel);
+            this.tabPage15.Controls.Add(this.label131);
+            this.tabPage15.Controls.Add(this.nmDEyeSummary);
+            this.tabPage15.Controls.Add(this.label132);
+            this.tabPage15.Controls.Add(this.nmDEyeResult);
+            this.tabPage15.Controls.Add(this.label133);
+            this.tabPage15.Controls.Add(this.nmDEyeBlindness);
+            this.tabPage15.Controls.Add(this.label134);
+            this.tabPage15.Controls.Add(this.nmDEyeOldRight);
+            this.tabPage15.Controls.Add(this.label135);
+            this.tabPage15.Controls.Add(this.nmDEyeOldLeft);
+            this.tabPage15.Controls.Add(this.label136);
+            this.tabPage15.Controls.Add(this.nmDEyeDegreeRight);
+            this.tabPage15.Controls.Add(this.label137);
+            this.tabPage15.Controls.Add(this.nmDEyeDegreeLeft);
+            this.tabPage15.Controls.Add(this.label138);
+            this.tabPage15.Controls.Add(this.nmDEyeSquintRight);
+            this.tabPage15.Controls.Add(this.label139);
+            this.tabPage15.Controls.Add(this.nmDEyeSquintLeft);
+            this.tabPage15.Controls.Add(this.label140);
+            this.tabPage15.Controls.Add(this.nmDEyeShortLongRight);
+            this.tabPage15.Controls.Add(this.label141);
+            this.tabPage15.Controls.Add(this.nmDEyeShortLongLeft);
+            this.tabPage15.Controls.Add(this.label142);
+            this.tabPage15.Controls.Add(this.nmDEyeNo);
+            this.tabPage15.Controls.Add(this.label143);
+            this.tabPage15.Controls.Add(this.nmDEyeRow);
+            this.tabPage15.Location = new System.Drawing.Point(4, 22);
+            this.tabPage15.Name = "tabPage15";
+            this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage15.Size = new System.Drawing.Size(920, 322);
+            this.tabPage15.TabIndex = 14;
+            this.tabPage15.Text = "tabPage15";
+            this.tabPage15.UseVisualStyleBackColor = true;
+            // 
+            // label129
+            // 
+            this.label129.AutoSize = true;
+            this.label129.Location = new System.Drawing.Point(6, 265);
+            this.label129.Name = "label129";
+            this.label129.Size = new System.Drawing.Size(80, 13);
+            this.label129.TabIndex = 146;
+            this.label129.Text = "ข้อมูลจากการดึง";
+            // 
+            // txtEyeTest
+            // 
+            this.txtEyeTest.Location = new System.Drawing.Point(6, 281);
+            this.txtEyeTest.Name = "txtEyeTest";
+            this.txtEyeTest.Size = new System.Drawing.Size(908, 20);
+            this.txtEyeTest.TabIndex = 145;
+            // 
+            // btnEyeExcel
+            // 
+            this.btnEyeExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnEyeExcel.Location = new System.Drawing.Point(828, 230);
+            this.btnEyeExcel.Name = "btnEyeExcel";
+            this.btnEyeExcel.Size = new System.Drawing.Size(86, 34);
+            this.btnEyeExcel.TabIndex = 144;
+            this.btnEyeExcel.Text = "ทดสอบ Excel";
+            this.btnEyeExcel.UseVisualStyleBackColor = true;
+            this.btnEyeExcel.Click += new System.EventHandler(this.btnEyeExcel_Click);
+            // 
+            // label131
+            // 
+            this.label131.AutoSize = true;
+            this.label131.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label131.Location = new System.Drawing.Point(262, 150);
+            this.label131.Name = "label131";
+            this.label131.Size = new System.Drawing.Size(28, 16);
+            this.label131.TabIndex = 140;
+            this.label131.Text = "สรุป";
+            // 
+            // nmDEyeSummary
+            // 
+            this.nmDEyeSummary.Location = new System.Drawing.Point(272, 178);
+            this.nmDEyeSummary.Name = "nmDEyeSummary";
+            this.nmDEyeSummary.Size = new System.Drawing.Size(46, 20);
+            this.nmDEyeSummary.TabIndex = 141;
+            this.nmDEyeSummary.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label132
+            // 
+            this.label132.AutoSize = true;
+            this.label132.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label132.Location = new System.Drawing.Point(182, 150);
+            this.label132.Name = "label132";
+            this.label132.Size = new System.Drawing.Size(21, 16);
+            this.label132.TabIndex = 138;
+            this.label132.Text = "ผล";
+            // 
+            // nmDEyeResult
+            // 
+            this.nmDEyeResult.Location = new System.Drawing.Point(193, 178);
+            this.nmDEyeResult.Name = "nmDEyeResult";
+            this.nmDEyeResult.Size = new System.Drawing.Size(46, 20);
+            this.nmDEyeResult.TabIndex = 139;
+            this.nmDEyeResult.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label133
+            // 
+            this.label133.AutoSize = true;
+            this.label133.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label133.Location = new System.Drawing.Point(114, 150);
+            this.label133.Name = "label133";
+            this.label133.Size = new System.Drawing.Size(47, 16);
+            this.label133.TabIndex = 136;
+            this.label133.Text = "ตาบอดสี";
+            // 
+            // nmDEyeBlindness
+            // 
+            this.nmDEyeBlindness.Location = new System.Drawing.Point(110, 178);
+            this.nmDEyeBlindness.Name = "nmDEyeBlindness";
+            this.nmDEyeBlindness.Size = new System.Drawing.Size(46, 20);
+            this.nmDEyeBlindness.TabIndex = 137;
+            this.nmDEyeBlindness.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label134
+            // 
+            this.label134.AutoSize = true;
+            this.label134.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label134.Location = new System.Drawing.Point(678, 78);
+            this.label134.Name = "label134";
+            this.label134.Size = new System.Drawing.Size(76, 16);
+            this.label134.TabIndex = 134;
+            this.label134.Text = "สายตายาว ขวา";
+            // 
+            // nmDEyeOldRight
+            // 
+            this.nmDEyeOldRight.Location = new System.Drawing.Point(674, 106);
+            this.nmDEyeOldRight.Name = "nmDEyeOldRight";
+            this.nmDEyeOldRight.Size = new System.Drawing.Size(46, 20);
+            this.nmDEyeOldRight.TabIndex = 135;
+            this.nmDEyeOldRight.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label135
+            // 
+            this.label135.AutoSize = true;
+            this.label135.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label135.Location = new System.Drawing.Point(598, 78);
+            this.label135.Name = "label135";
+            this.label135.Size = new System.Drawing.Size(76, 16);
+            this.label135.TabIndex = 132;
+            this.label135.Text = "สายตายาว ซ้าย";
+            // 
+            // nmDEyeOldLeft
+            // 
+            this.nmDEyeOldLeft.Location = new System.Drawing.Point(594, 106);
+            this.nmDEyeOldLeft.Name = "nmDEyeOldLeft";
+            this.nmDEyeOldLeft.Size = new System.Drawing.Size(46, 20);
+            this.nmDEyeOldLeft.TabIndex = 133;
+            this.nmDEyeOldLeft.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label136
+            // 
+            this.label136.AutoSize = true;
+            this.label136.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label136.Location = new System.Drawing.Point(525, 78);
+            this.label136.Name = "label136";
+            this.label136.Size = new System.Drawing.Size(53, 16);
+            this.label136.TabIndex = 130;
+            this.label136.Text = "องศา ขวา";
+            // 
+            // nmDEyeDegreeRight
+            // 
+            this.nmDEyeDegreeRight.Location = new System.Drawing.Point(521, 106);
+            this.nmDEyeDegreeRight.Name = "nmDEyeDegreeRight";
+            this.nmDEyeDegreeRight.Size = new System.Drawing.Size(46, 20);
+            this.nmDEyeDegreeRight.TabIndex = 131;
+            this.nmDEyeDegreeRight.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label137
+            // 
+            this.label137.AutoSize = true;
+            this.label137.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label137.Location = new System.Drawing.Point(437, 78);
+            this.label137.Name = "label137";
+            this.label137.Size = new System.Drawing.Size(53, 16);
+            this.label137.TabIndex = 128;
+            this.label137.Text = "องศา ซ้าย";
+            // 
+            // nmDEyeDegreeLeft
+            // 
+            this.nmDEyeDegreeLeft.Location = new System.Drawing.Point(440, 106);
+            this.nmDEyeDegreeLeft.Name = "nmDEyeDegreeLeft";
+            this.nmDEyeDegreeLeft.Size = new System.Drawing.Size(46, 20);
+            this.nmDEyeDegreeLeft.TabIndex = 129;
+            this.nmDEyeDegreeLeft.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label138
+            // 
+            this.label138.AutoSize = true;
+            this.label138.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label138.Location = new System.Drawing.Point(361, 78);
+            this.label138.Name = "label138";
+            this.label138.Size = new System.Drawing.Size(62, 16);
+            this.label138.TabIndex = 126;
+            this.label138.Text = "ตา เอียงขวา";
+            // 
+            // nmDEyeSquintRight
+            // 
+            this.nmDEyeSquintRight.Location = new System.Drawing.Point(357, 106);
+            this.nmDEyeSquintRight.Name = "nmDEyeSquintRight";
+            this.nmDEyeSquintRight.Size = new System.Drawing.Size(46, 20);
+            this.nmDEyeSquintRight.TabIndex = 127;
+            this.nmDEyeSquintRight.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label139
+            // 
+            this.label139.AutoSize = true;
+            this.label139.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label139.Location = new System.Drawing.Point(276, 78);
+            this.label139.Name = "label139";
+            this.label139.Size = new System.Drawing.Size(65, 16);
+            this.label139.TabIndex = 124;
+            this.label139.Text = "ตา เอียง ซ้าย";
+            // 
+            // nmDEyeSquintLeft
+            // 
+            this.nmDEyeSquintLeft.Location = new System.Drawing.Point(272, 106);
+            this.nmDEyeSquintLeft.Name = "nmDEyeSquintLeft";
+            this.nmDEyeSquintLeft.Size = new System.Drawing.Size(46, 20);
+            this.nmDEyeSquintLeft.TabIndex = 125;
+            this.nmDEyeSquintLeft.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label140
+            // 
+            this.label140.AutoSize = true;
+            this.label140.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label140.Location = new System.Drawing.Point(197, 78);
+            this.label140.Name = "label140";
+            this.label140.Size = new System.Drawing.Size(78, 16);
+            this.label140.TabIndex = 122;
+            this.label140.Text = "ตา สั้น ยาว ขวา";
+            // 
+            // nmDEyeShortLongRight
+            // 
+            this.nmDEyeShortLongRight.Location = new System.Drawing.Point(193, 106);
+            this.nmDEyeShortLongRight.Name = "nmDEyeShortLongRight";
+            this.nmDEyeShortLongRight.Size = new System.Drawing.Size(46, 20);
+            this.nmDEyeShortLongRight.TabIndex = 123;
+            this.nmDEyeShortLongRight.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label141
+            // 
+            this.label141.AutoSize = true;
+            this.label141.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label141.Location = new System.Drawing.Point(114, 78);
+            this.label141.Name = "label141";
+            this.label141.Size = new System.Drawing.Size(78, 16);
+            this.label141.TabIndex = 120;
+            this.label141.Text = "ตา สั้น ยาว ซ้าย";
+            // 
+            // nmDEyeShortLongLeft
+            // 
+            this.nmDEyeShortLongLeft.Location = new System.Drawing.Point(110, 106);
+            this.nmDEyeShortLongLeft.Name = "nmDEyeShortLongLeft";
+            this.nmDEyeShortLongLeft.Size = new System.Drawing.Size(46, 20);
+            this.nmDEyeShortLongLeft.TabIndex = 121;
+            this.nmDEyeShortLongLeft.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label142
+            // 
+            this.label142.AutoSize = true;
+            this.label142.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label142.Location = new System.Drawing.Point(41, 77);
+            this.label142.Name = "label142";
+            this.label142.Size = new System.Drawing.Size(42, 16);
+            this.label142.TabIndex = 118;
+            this.label142.Text = "ลำดับ  :";
+            // 
+            // nmDEyeNo
+            // 
+            this.nmDEyeNo.Location = new System.Drawing.Point(37, 106);
+            this.nmDEyeNo.Name = "nmDEyeNo";
+            this.nmDEyeNo.Size = new System.Drawing.Size(46, 20);
+            this.nmDEyeNo.TabIndex = 119;
+            this.nmDEyeNo.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label143
+            // 
+            this.label143.AutoSize = true;
+            this.label143.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label143.Location = new System.Drawing.Point(85, 22);
+            this.label143.Name = "label143";
+            this.label143.Size = new System.Drawing.Size(68, 16);
+            this.label143.TabIndex = 116;
+            this.label143.Text = "row เริ่มต้น :";
+            // 
+            // nmDEyeRow
+            // 
+            this.nmDEyeRow.Location = new System.Drawing.Point(175, 22);
+            this.nmDEyeRow.Name = "nmDEyeRow";
+            this.nmDEyeRow.Size = new System.Drawing.Size(46, 20);
+            this.nmDEyeRow.TabIndex = 117;
+            this.nmDEyeRow.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
             // FrmExcelInit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3797,6 +4753,42 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDLungFvcPredic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDLungNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDLungRow)).EndInit();
+            this.tabPage14.ResumeLayout(false);
+            this.tabPage14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogramExam)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogramSummaryR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram8000R)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram6000R)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram4000R)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram3000R)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram2000R)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram1000R)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram500R)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogramSummaryL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram8000L)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram6000L)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram4000L)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram3000L)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram2000L)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram1000L)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudiogram500L)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudioNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDAudioRow)).EndInit();
+            this.tabPage15.ResumeLayout(false);
+            this.tabPage15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeSummary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeResult)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeBlindness)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeOldRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeOldLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeDegreeRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeDegreeLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeSquintRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeSquintLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeShortLongRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeShortLongLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeRow)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4079,5 +5071,77 @@
         private System.Windows.Forms.NumericUpDown nmDLungSummary;
         private System.Windows.Forms.Label label102;
         private System.Windows.Forms.NumericUpDown nmDLungPerFev1;
+        private System.Windows.Forms.TabPage tabPage14;
+        private System.Windows.Forms.Label label104;
+        private System.Windows.Forms.TextBox txtAudioTest;
+        private System.Windows.Forms.Button btnAudioExcel;
+        private System.Windows.Forms.Label label105;
+        private System.Windows.Forms.NumericUpDown nmDAudiogram3000R;
+        private System.Windows.Forms.Label label106;
+        private System.Windows.Forms.NumericUpDown nmDAudiogram2000R;
+        private System.Windows.Forms.Label label107;
+        private System.Windows.Forms.NumericUpDown nmDAudiogram1000R;
+        private System.Windows.Forms.Label label108;
+        private System.Windows.Forms.NumericUpDown nmDAudiogram500R;
+        private System.Windows.Forms.Label label109;
+        private System.Windows.Forms.NumericUpDown nmDAudiogramSummaryL;
+        private System.Windows.Forms.Label label110;
+        private System.Windows.Forms.NumericUpDown nmDAudiogram8000L;
+        private System.Windows.Forms.Label label111;
+        private System.Windows.Forms.NumericUpDown nmDAudiogram6000L;
+        private System.Windows.Forms.Label label112;
+        private System.Windows.Forms.NumericUpDown nmDAudiogram4000L;
+        private System.Windows.Forms.Label label113;
+        private System.Windows.Forms.NumericUpDown nmDAudiogram3000L;
+        private System.Windows.Forms.Label label114;
+        private System.Windows.Forms.NumericUpDown nmDAudiogram2000L;
+        private System.Windows.Forms.Label label115;
+        private System.Windows.Forms.NumericUpDown nmDAudiogram1000L;
+        private System.Windows.Forms.Label label116;
+        private System.Windows.Forms.NumericUpDown nmDAudiogram500L;
+        private System.Windows.Forms.Label label117;
+        private System.Windows.Forms.NumericUpDown nmDAudioNo;
+        private System.Windows.Forms.Label label118;
+        private System.Windows.Forms.NumericUpDown nmDAudioRow;
+        private System.Windows.Forms.Label label122;
+        private System.Windows.Forms.NumericUpDown nmDAudiogramSummaryR;
+        private System.Windows.Forms.Label label121;
+        private System.Windows.Forms.NumericUpDown nmDAudiogram8000R;
+        private System.Windows.Forms.Label label120;
+        private System.Windows.Forms.NumericUpDown nmDAudiogram6000R;
+        private System.Windows.Forms.Label label119;
+        private System.Windows.Forms.NumericUpDown nmDAudiogram4000R;
+        private System.Windows.Forms.Label label123;
+        private System.Windows.Forms.NumericUpDown nmDAudiogramExam;
+        private System.Windows.Forms.TabPage tabPage15;
+        private System.Windows.Forms.Label label129;
+        private System.Windows.Forms.TextBox txtEyeTest;
+        private System.Windows.Forms.Button btnEyeExcel;
+        private System.Windows.Forms.Label label131;
+        private System.Windows.Forms.NumericUpDown nmDEyeSummary;
+        private System.Windows.Forms.Label label132;
+        private System.Windows.Forms.NumericUpDown nmDEyeResult;
+        private System.Windows.Forms.Label label133;
+        private System.Windows.Forms.NumericUpDown nmDEyeBlindness;
+        private System.Windows.Forms.Label label134;
+        private System.Windows.Forms.NumericUpDown nmDEyeOldRight;
+        private System.Windows.Forms.Label label135;
+        private System.Windows.Forms.NumericUpDown nmDEyeOldLeft;
+        private System.Windows.Forms.Label label136;
+        private System.Windows.Forms.NumericUpDown nmDEyeDegreeRight;
+        private System.Windows.Forms.Label label137;
+        private System.Windows.Forms.NumericUpDown nmDEyeDegreeLeft;
+        private System.Windows.Forms.Label label138;
+        private System.Windows.Forms.NumericUpDown nmDEyeSquintRight;
+        private System.Windows.Forms.Label label139;
+        private System.Windows.Forms.NumericUpDown nmDEyeSquintLeft;
+        private System.Windows.Forms.Label label140;
+        private System.Windows.Forms.NumericUpDown nmDEyeShortLongRight;
+        private System.Windows.Forms.Label label141;
+        private System.Windows.Forms.NumericUpDown nmDEyeShortLongLeft;
+        private System.Windows.Forms.Label label142;
+        private System.Windows.Forms.NumericUpDown nmDEyeNo;
+        private System.Windows.Forms.Label label143;
+        private System.Windows.Forms.NumericUpDown nmDEyeRow;
     }
 }
