@@ -31,10 +31,17 @@ namespace CheckUP.object1
         public String stoolExamWbc="";
         public String stoolExamRbc="";
         public String stoolExamParasite="";
-        public String toxicologyLead="";
-        public String toxicologyMercury="";
-        public String toxicologyBenzene="";
-        public String toxicologyXylene="";
+
+        public String toxicologyLead="",toxicologyMercury="",toxicologyBenzene="",toxicologyXylene="";
+
+        public String toxicologyToluene = "";
+        public String toxicologyThinner = "";
+        public String toxicologyAlcohol = "";
+        public String toxicologyHexane = "";
+        public String toxicologyMethanol = "";
+        public String toxicologyMek = "";
+        public String toxicologyAcetone = "";
+
         public String Audiogram500L="";
         public String Audiogram1000L="";
         public String Audiogram2000L="";
@@ -139,11 +146,10 @@ namespace CheckUP.object1
         public String statusName="";
         public String rowNumber = "";
         public String cbcMcv="";
-        public String toxicologyToluene="";
+        
         public String thyroidRubellaLgg="";
         public String billirubin="";
-        public String toxicologyThinner="";
-        public String toxicologyAlcohol="";
+        
         public String stickerQty="";
         public String statusCbc="";
         public String statusUa="";
@@ -176,10 +182,9 @@ namespace CheckUP.object1
         public String bmi="";
         public String caFt3="";
         public String hbtyping="";
-        public String toxicologyHexane="";
-        public String toxicologyMethanol="";
-        public String toxicologyMek="";
-        public String toxicologyAcetone="";
+
+        
+
         public String antiHbc="";
         public String eyeLeft = "";
         public String eyeRight = "";

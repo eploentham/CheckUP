@@ -158,6 +158,7 @@ namespace CheckUP.gui
             setGrdOther1();
             setGrdLung();
             setGrdAudio();
+            setGrdEye();
 
             setGrdPE(cucId);
             setGrdXray(cucId);
@@ -172,6 +173,7 @@ namespace CheckUP.gui
             setGrdOther1(cucId);
             setGrdLung(cucId);
             setGrdAudoigram(cucId);
+            setGrdEye(cucId);
         }
 
         private void setResize()
@@ -269,6 +271,20 @@ namespace CheckUP.gui
             dgvLung.Height = tC.TabPages[tabLung].Height - 10;
             dgvLung.Left = dgvPE.Left;
             dgvLung.Top = dgvPE.Left;
+
+            tC.TabPages[tabAudio].Width = tC.Width - 10;
+            tC.TabPages[tabAudio].Height = tC.Height - 10;
+            dgvAudio.Width = tC.TabPages[tabAudio].Width - 10;
+            dgvAudio.Height = tC.TabPages[tabAudio].Height - 10;
+            dgvAudio.Left = dgvPE.Left;
+            dgvAudio.Top = dgvPE.Left;
+
+            tC.TabPages[tabEye].Width = tC.Width - 10;
+            tC.TabPages[tabEye].Height = tC.Height - 10;
+            dgvEye.Width = tC.TabPages[tabEye].Width - 10;
+            dgvEye.Height = tC.TabPages[tabEye].Height - 10;
+            dgvEye.Left = dgvPE.Left;
+            dgvEye.Top = dgvPE.Left;
 
             //groupBox1.Width = this.Width - 50;
             //groupBox1.Height = this.Height = 150;
@@ -665,14 +681,14 @@ namespace CheckUP.gui
             dgvLung.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvLung.Columns[colLungRow].Width = 50;
             dgvLung.Columns[colLungName].Width = 250;
-            dgvLung.Columns[colLungFvcPredic].Width = 100;
-            dgvLung.Columns[colLungFvcMeas].Width = 100;
-            dgvLung.Columns[colLungFvcPer].Width = 100;
-            dgvLung.Columns[colLungFev1Predic].Width = 100;
-            dgvLung.Columns[colLungFev1Meas].Width = 100;
-            dgvLung.Columns[colLungFev1Per].Width = 100;
-            dgvLung.Columns[colLungPerFev1].Width = 100;
-            dgvLung.Columns[colLungSummary].Width = 100;
+            dgvLung.Columns[colLungFvcPredic].Width = 120;
+            dgvLung.Columns[colLungFvcMeas].Width = 120;
+            dgvLung.Columns[colLungFvcPer].Width = 120;
+            dgvLung.Columns[colLungFev1Predic].Width = 120;
+            dgvLung.Columns[colLungFev1Meas].Width = 120;
+            dgvLung.Columns[colLungFev1Per].Width = 120;
+            dgvLung.Columns[colLungPerFev1].Width = 120;
+            dgvLung.Columns[colLungSummary].Width = 120;
 
             dgvLung.Columns[colLungRow].HeaderText = "ลำดับ";
             dgvLung.Columns[colLungId].HeaderText = "id";
@@ -700,42 +716,42 @@ namespace CheckUP.gui
             dgvAudio.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvAudio.Columns[colAudiogramRow].Width = 50;
             dgvAudio.Columns[colAudiogramName].Width = 250;
-            dgvAudio.Columns[colAudiogram500L].Width = 80;
-            dgvAudio.Columns[colAudiogram1000L].Width = 80;
-            dgvAudio.Columns[colAudiogram2000L].Width = 80;
-            dgvAudio.Columns[colAudiogram3000L].Width = 80;
-            dgvAudio.Columns[colAudiogram4000L].Width = 80;
-            dgvAudio.Columns[colAudiogram6000L].Width = 80;
-            dgvAudio.Columns[colAudiogram8000L].Width = 80;
-            dgvAudio.Columns[colAudiogramSummaryL].Width = 80;
-            dgvAudio.Columns[colAudiogram500R].Width = 80;
-            dgvAudio.Columns[colAudiogram1000R].Width = 80;
-            dgvAudio.Columns[colAudiogram2000R].Width = 80;
-            dgvAudio.Columns[colAudiogram3000R].Width = 80;
-            dgvAudio.Columns[colAudiogram4000R].Width = 80;
-            dgvAudio.Columns[colAudiogram6000R].Width = 80;
-            dgvAudio.Columns[colAudiogram8000R].Width = 80;
-            dgvAudio.Columns[colAudiogramSummaryR].Width = 80;
-            dgvAudio.Columns[colAudiogramSummary].Width = 80;
+            dgvAudio.Columns[colAudiogram500L].Width = 120;
+            dgvAudio.Columns[colAudiogram1000L].Width = 120;
+            dgvAudio.Columns[colAudiogram2000L].Width = 120;
+            dgvAudio.Columns[colAudiogram3000L].Width = 120;
+            dgvAudio.Columns[colAudiogram4000L].Width = 120;
+            dgvAudio.Columns[colAudiogram6000L].Width = 120;
+            dgvAudio.Columns[colAudiogram8000L].Width = 120;
+            dgvAudio.Columns[colAudiogramSummaryL].Width = 120;
+            dgvAudio.Columns[colAudiogram500R].Width = 120;
+            dgvAudio.Columns[colAudiogram1000R].Width = 120;
+            dgvAudio.Columns[colAudiogram2000R].Width = 120;
+            dgvAudio.Columns[colAudiogram3000R].Width = 120;
+            dgvAudio.Columns[colAudiogram4000R].Width = 120;
+            dgvAudio.Columns[colAudiogram6000R].Width = 120;
+            dgvAudio.Columns[colAudiogram8000R].Width = 120;
+            dgvAudio.Columns[colAudiogramSummaryR].Width = 120;
+            dgvAudio.Columns[colAudiogramSummary].Width = 120;
 
             dgvAudio.Columns[colAudiogramRow].HeaderText = "ลำดับ";
             dgvAudio.Columns[colAudiogramName].HeaderText = "ชื่อ นามสกุล";
             dgvAudio.Columns[colAudiogram500L].HeaderText = "Left 500";
-            dgvAudio.Columns[colAudiogram1000L].HeaderText = "Left 500";
-            dgvAudio.Columns[colAudiogram2000L].HeaderText = "Left 500";
-            dgvAudio.Columns[colAudiogram3000L].HeaderText = "Left 500";
-            dgvAudio.Columns[colAudiogram4000L].HeaderText = "Left 500";
-            dgvAudio.Columns[colAudiogram6000L].HeaderText = "Left 500";
-            dgvAudio.Columns[colAudiogram8000L].HeaderText = "Left 500";
+            dgvAudio.Columns[colAudiogram1000L].HeaderText = "Left 1000";
+            dgvAudio.Columns[colAudiogram2000L].HeaderText = "Left 2000";
+            dgvAudio.Columns[colAudiogram3000L].HeaderText = "Left 3000";
+            dgvAudio.Columns[colAudiogram4000L].HeaderText = "Left 4000";
+            dgvAudio.Columns[colAudiogram6000L].HeaderText = "Left 6000";
+            dgvAudio.Columns[colAudiogram8000L].HeaderText = "Left 8000";
             dgvAudio.Columns[colAudiogramSummaryL].HeaderText = "Left ";
 
             dgvAudio.Columns[colAudiogram500R].HeaderText = "Right 500";
-            dgvAudio.Columns[colAudiogram1000R].HeaderText = "Right 500";
-            dgvAudio.Columns[colAudiogram2000R].HeaderText = "Right 500";
-            dgvAudio.Columns[colAudiogram3000R].HeaderText = "Right 500";
-            dgvAudio.Columns[colAudiogram4000R].HeaderText = "Right 500";
-            dgvAudio.Columns[colAudiogram6000R].HeaderText = "Right 500";
-            dgvAudio.Columns[colAudiogram8000R].HeaderText = "Right 500";
+            dgvAudio.Columns[colAudiogram1000R].HeaderText = "Right 1000";
+            dgvAudio.Columns[colAudiogram2000R].HeaderText = "Right 2000";
+            dgvAudio.Columns[colAudiogram3000R].HeaderText = "Right 3000";
+            dgvAudio.Columns[colAudiogram4000R].HeaderText = "Right 4000";
+            dgvAudio.Columns[colAudiogram6000R].HeaderText = "Right 6000";
+            dgvAudio.Columns[colAudiogram8000R].HeaderText = "Right 8000";
             dgvAudio.Columns[colAudiogramSummaryR].HeaderText = "Right";
 
             dgvAudio.Columns[colAudiogramSummary].HeaderText = "Summary";
@@ -1338,6 +1354,8 @@ namespace CheckUP.gui
                 pB1.Visible = false;
                 return "";
             }
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileName);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -1465,6 +1483,7 @@ namespace CheckUP.gui
                 //}
 
             }
+            Cursor.Current = cursor;
             pB1.Visible = false;
             return cucId;
         }
@@ -1601,7 +1620,8 @@ namespace CheckUP.gui
 
             pB1.Visible = true;
             pB1.Minimum = 0;
-            
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNamePE);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -1676,6 +1696,7 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdPE(txtId.Text);
+            Cursor.Current = cursor;
         }
 
         private void btnXrayImport_Click(object sender, EventArgs e)
@@ -1684,7 +1705,8 @@ namespace CheckUP.gui
 
             pB1.Visible = true;
             pB1.Minimum = 0;
-
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameXray);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -1728,6 +1750,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdXray(txtId.Text);
+
+            Cursor.Current = cursor;
         }
 
         private void btnFBSImport_Click(object sender, EventArgs e)
@@ -1736,7 +1760,8 @@ namespace CheckUP.gui
 
             pB1.Visible = true;
             pB1.Minimum = 0;
-
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameFBS);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -1788,6 +1813,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdFBS(txtId.Text);
+
+            Cursor.Current = cursor;
         }
 
         private void btnCBCImport_Click(object sender, EventArgs e)
@@ -1796,7 +1823,8 @@ namespace CheckUP.gui
             String summary = "", eos="", bas="", plaS="";
             pB1.Visible = true;
             pB1.Minimum = 0;
-
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameCBC);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -1936,6 +1964,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdCBC(txtId.Text);
+
+            Cursor.Current = cursor;
         }
 
         private void btnUAImport_Click(object sender, EventArgs e)
@@ -1944,7 +1974,8 @@ namespace CheckUP.gui
             //String summary = "", eos = "", bas = "", plaS = "";
             pB1.Visible = true;
             pB1.Minimum = 0;
-
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameUA);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -2085,6 +2116,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdUA(txtId.Text);
+
+            Cursor.Current = cursor;
         }
 
         private void btnTriImport_Click(object sender, EventArgs e)
@@ -2093,7 +2126,8 @@ namespace CheckUP.gui
 
             pB1.Visible = true;
             pB1.Minimum = 0;
-
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameTri);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -2145,6 +2179,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdTri(txtId.Text);
+
+            Cursor.Current = cursor;
         }
         private void releaseObject(object obj)
         {
@@ -2170,7 +2206,8 @@ namespace CheckUP.gui
 
             pB1.Visible = true;
             pB1.Minimum = 0;
-
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameCho);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -2240,6 +2277,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdCholes(txtId.Text);
+
+            Cursor.Current = cursor;
         }
 
         private void btnSgotExcel_Click(object sender, EventArgs e)
@@ -2269,7 +2308,8 @@ namespace CheckUP.gui
 
             pB1.Visible = true;
             pB1.Minimum = 0;
-
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameSgot);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -2337,6 +2377,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdSgot(txtId.Text);
+
+            Cursor.Current = cursor;
         }
 
         private void btnBunImport_Click(object sender, EventArgs e)
@@ -2345,7 +2387,8 @@ namespace CheckUP.gui
 
             pB1.Visible = true;
             pB1.Minimum = 0;
-
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameBun);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -2405,6 +2448,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdBun(txtId.Text);
+
+            Cursor.Current = cursor;
         }
 
         private void btnUricImport_Click(object sender, EventArgs e)
@@ -2413,7 +2458,8 @@ namespace CheckUP.gui
 
             pB1.Visible = true;
             pB1.Minimum = 0;
-
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameUric);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -2465,6 +2511,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdUric(txtId.Text);
+
+            Cursor.Current = cursor;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -3344,7 +3392,8 @@ namespace CheckUP.gui
 
             pB1.Visible = true;
             pB1.Minimum = 0;
-
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameOther1);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -3436,6 +3485,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdOther1(txtId.Text);
+
+            Cursor.Current = cursor;
         }
 
         private void btnLungExcel_Click(object sender, EventArgs e)
@@ -3451,7 +3502,8 @@ namespace CheckUP.gui
 
             pB1.Visible = true;
             pB1.Minimum = 0;
-
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameLung);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -3543,6 +3595,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdLung(txtId.Text);
+
+            Cursor.Current = cursor;
         }
 
         private void btnAudioExcel_Click(object sender, EventArgs e)
@@ -3560,7 +3614,8 @@ namespace CheckUP.gui
             String Audiogram500R = "", Audiogram1000R = "", Audiogram2000R = "", Audiogram3000R="", Audiogram4000R="", Audiogram6000R="", Audiogram8000R="", AudiogramSummaryR="", AudiogramExam="";
             pB1.Visible = true;
             pB1.Minimum = 0;
-
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameAudio);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -3568,7 +3623,7 @@ namespace CheckUP.gui
             int rowCount = xlRange.Rows.Count;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
-            for (int i = int.Parse(ei.AudoigramRow); i <= rowCount; i++)
+            for (int i = int.Parse(ei.AudiogramRow); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
                 if (xlRange.Cells[i, int.Parse(ei.AudiogramNo)].Value2 != null)
@@ -3726,6 +3781,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdAudoigram(txtId.Text);
+
+            Cursor.Current = cursor;
         }
 
         private void dgvOther1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -3793,7 +3850,8 @@ namespace CheckUP.gui
             String EyeShortLongLeft = "", EyeShortLongRight = "", EyeSquintLeft = "", EyeSquintRight = "", EyedegreeLeft = "", EyeDegreeRight = "", EyeOldLeft = "", EyeOldRight = "", EyeBlindness = "", EyeResult = "", EyeSummary = "";
             pB1.Visible = true;
             pB1.Minimum = 0;
-
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameEye);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -3801,7 +3859,7 @@ namespace CheckUP.gui
             int rowCount = xlRange.Rows.Count;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
-            for (int i = int.Parse(ei.AudoigramRow); i <= rowCount; i++)
+            for (int i = int.Parse(ei.AudiogramRow); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
                 if (xlRange.Cells[i, int.Parse(ei.EyeNo)].Value2 != null)
@@ -3844,9 +3902,9 @@ namespace CheckUP.gui
                 {
                     EyeSquintRight = "";
                 }
-                if (xlRange.Cells[i, int.Parse(ei.EyedegreeLeft)].Value2 != null)
+                if (xlRange.Cells[i, int.Parse(ei.EyeDegreeLeft)].Value2 != null)
                 {
-                    EyedegreeLeft = xlRange.Cells[i, int.Parse(ei.EyedegreeLeft)].Value2.ToString();
+                    EyedegreeLeft = xlRange.Cells[i, int.Parse(ei.EyeDegreeLeft)].Value2.ToString();
                 }
                 else
                 {
@@ -3910,7 +3968,9 @@ namespace CheckUP.gui
             xlApp.Quit();
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
-            setGrdLung(txtId.Text);
+            setGrdEye(txtId.Text);
+
+            Cursor.Current = cursor;
         }
         
     }

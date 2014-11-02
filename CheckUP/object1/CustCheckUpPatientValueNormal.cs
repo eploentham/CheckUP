@@ -29,10 +29,11 @@ namespace CheckUP.object1
         public String stoolExamWbc="";
         public String stoolExamRbc="";
         public String stoolExamParasite="";
-        public String toxicologyLead="";
-        public String toxicologyMercury="";
-        public String toxicologyBenzene="";
-        public String toxicologyXylene="";
+        public String toxicologyLead = "", toxicologyMercury = "", toxicologyBenzene = "", toxicologyXylene = "";
+        //public String toxicologyLead="";
+        //public String toxicologyMercury="";
+        //public String toxicologyBenzene="";
+        //public String toxicologyXylene="";
         public String Audiogram500L="";
         public String Audiogram1000L="";
         public String Audiogram2000L="";

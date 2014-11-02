@@ -30,6 +30,21 @@
         {
             this.tC = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnEyeImport = new System.Windows.Forms.Button();
+            this.label113 = new System.Windows.Forms.Label();
+            this.label114 = new System.Windows.Forms.Label();
+            this.btnEyeExcel = new System.Windows.Forms.Button();
+            this.textBox66 = new System.Windows.Forms.TextBox();
+            this.textBox67 = new System.Windows.Forms.TextBox();
+            this.textBox68 = new System.Windows.Forms.TextBox();
+            this.textBox69 = new System.Windows.Forms.TextBox();
+            this.textBox70 = new System.Windows.Forms.TextBox();
+            this.label115 = new System.Windows.Forms.Label();
+            this.label116 = new System.Windows.Forms.Label();
+            this.label117 = new System.Windows.Forms.Label();
+            this.label118 = new System.Windows.Forms.Label();
+            this.label119 = new System.Windows.Forms.Label();
+            this.label120 = new System.Windows.Forms.Label();
             this.btnAudioImport = new System.Windows.Forms.Button();
             this.label105 = new System.Windows.Forms.Label();
             this.label106 = new System.Windows.Forms.Label();
@@ -261,6 +276,7 @@
             this.tabPage15 = new System.Windows.Forms.TabPage();
             this.dgvAudio = new System.Windows.Forms.DataGridView();
             this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.dgvEye = new System.Windows.Forms.DataGridView();
             this.tabPage17 = new System.Windows.Forms.TabPage();
             this.cboCust = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -278,22 +294,9 @@
             this.ChkUnActive = new System.Windows.Forms.RadioButton();
             this.chkActive = new System.Windows.Forms.RadioButton();
             this.pB1 = new System.Windows.Forms.ProgressBar();
-            this.dgvEye = new System.Windows.Forms.DataGridView();
-            this.btnEyeImport = new System.Windows.Forms.Button();
-            this.label113 = new System.Windows.Forms.Label();
-            this.label114 = new System.Windows.Forms.Label();
-            this.btnEyeExcel = new System.Windows.Forms.Button();
-            this.textBox66 = new System.Windows.Forms.TextBox();
-            this.textBox67 = new System.Windows.Forms.TextBox();
-            this.textBox68 = new System.Windows.Forms.TextBox();
-            this.textBox69 = new System.Windows.Forms.TextBox();
-            this.textBox70 = new System.Windows.Forms.TextBox();
-            this.label115 = new System.Windows.Forms.Label();
-            this.label116 = new System.Windows.Forms.Label();
-            this.label117 = new System.Windows.Forms.Label();
-            this.label118 = new System.Windows.Forms.Label();
-            this.label119 = new System.Windows.Forms.Label();
-            this.label120 = new System.Windows.Forms.Label();
+            this.tabPage18 = new System.Windows.Forms.TabPage();
+            this.dgvChemB = new System.Windows.Forms.DataGridView();
+            this.dgvChemU = new System.Windows.Forms.DataGridView();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -327,8 +330,12 @@
             this.tabPage15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAudio)).BeginInit();
             this.tabPage16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEye)).BeginInit();
+            this.tabPage17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
+            this.tabPage18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChemB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChemU)).BeginInit();
             this.SuspendLayout();
             // 
             // tC
@@ -350,6 +357,7 @@
             this.tC.Controls.Add(this.tabPage15);
             this.tC.Controls.Add(this.tabPage16);
             this.tC.Controls.Add(this.tabPage17);
+            this.tC.Controls.Add(this.tabPage18);
             this.tC.Location = new System.Drawing.Point(12, 79);
             this.tC.Name = "tC";
             this.tC.SelectedIndex = 0;
@@ -578,6 +586,148 @@
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Summary";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnEyeImport
+            // 
+            this.btnEyeImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnEyeImport.Location = new System.Drawing.Point(750, 751);
+            this.btnEyeImport.Name = "btnEyeImport";
+            this.btnEyeImport.Size = new System.Drawing.Size(90, 23);
+            this.btnEyeImport.TabIndex = 213;
+            this.btnEyeImport.Text = "นำเข้า Eye";
+            this.btnEyeImport.UseVisualStyleBackColor = true;
+            this.btnEyeImport.Click += new System.EventHandler(this.btnEyeImport_Click);
+            // 
+            // label113
+            // 
+            this.label113.AutoSize = true;
+            this.label113.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label113.Location = new System.Drawing.Point(639, 734);
+            this.label113.Name = "label113";
+            this.label113.Size = new System.Drawing.Size(85, 16);
+            this.label113.TabIndex = 212;
+            this.label113.Text = "เลือก file Excel";
+            // 
+            // label114
+            // 
+            this.label114.AutoSize = true;
+            this.label114.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label114.Location = new System.Drawing.Point(760, 734);
+            this.label114.Name = "label114";
+            this.label114.Size = new System.Drawing.Size(35, 16);
+            this.label114.TabIndex = 211;
+            this.label114.Text = "นำเข้า";
+            // 
+            // btnEyeExcel
+            // 
+            this.btnEyeExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnEyeExcel.Location = new System.Drawing.Point(653, 752);
+            this.btnEyeExcel.Name = "btnEyeExcel";
+            this.btnEyeExcel.Size = new System.Drawing.Size(75, 23);
+            this.btnEyeExcel.TabIndex = 210;
+            this.btnEyeExcel.Text = "Excel";
+            this.btnEyeExcel.UseVisualStyleBackColor = true;
+            this.btnEyeExcel.Click += new System.EventHandler(this.btnEyeExcel_Click);
+            // 
+            // textBox66
+            // 
+            this.textBox66.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox66.Location = new System.Drawing.Point(562, 754);
+            this.textBox66.Name = "textBox66";
+            this.textBox66.Size = new System.Drawing.Size(62, 22);
+            this.textBox66.TabIndex = 209;
+            // 
+            // textBox67
+            // 
+            this.textBox67.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox67.Location = new System.Drawing.Point(494, 754);
+            this.textBox67.Name = "textBox67";
+            this.textBox67.Size = new System.Drawing.Size(62, 22);
+            this.textBox67.TabIndex = 208;
+            // 
+            // textBox68
+            // 
+            this.textBox68.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox68.Location = new System.Drawing.Point(426, 754);
+            this.textBox68.Name = "textBox68";
+            this.textBox68.Size = new System.Drawing.Size(62, 22);
+            this.textBox68.TabIndex = 207;
+            // 
+            // textBox69
+            // 
+            this.textBox69.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox69.Location = new System.Drawing.Point(358, 754);
+            this.textBox69.Name = "textBox69";
+            this.textBox69.Size = new System.Drawing.Size(62, 22);
+            this.textBox69.TabIndex = 206;
+            // 
+            // textBox70
+            // 
+            this.textBox70.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox70.Location = new System.Drawing.Point(290, 754);
+            this.textBox70.Name = "textBox70";
+            this.textBox70.Size = new System.Drawing.Size(62, 22);
+            this.textBox70.TabIndex = 205;
+            // 
+            // label115
+            // 
+            this.label115.AutoSize = true;
+            this.label115.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label115.Location = new System.Drawing.Point(559, 734);
+            this.label115.Name = "label115";
+            this.label115.Size = new System.Drawing.Size(67, 16);
+            this.label115.TabIndex = 204;
+            this.label115.Text = "%ผลผิดปกติ";
+            // 
+            // label116
+            // 
+            this.label116.AutoSize = true;
+            this.label116.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label116.Location = new System.Drawing.Point(497, 734);
+            this.label116.Name = "label116";
+            this.label116.Size = new System.Drawing.Size(53, 16);
+            this.label116.TabIndex = 203;
+            this.label116.Text = "%ผลปกติ";
+            // 
+            // label117
+            // 
+            this.label117.AutoSize = true;
+            this.label117.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label117.Location = new System.Drawing.Point(423, 734);
+            this.label117.Name = "label117";
+            this.label117.Size = new System.Drawing.Size(55, 16);
+            this.label117.TabIndex = 202;
+            this.label117.Text = "ผลผิดปกติ";
+            // 
+            // label118
+            // 
+            this.label118.AutoSize = true;
+            this.label118.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label118.Location = new System.Drawing.Point(363, 734);
+            this.label118.Name = "label118";
+            this.label118.Size = new System.Drawing.Size(41, 16);
+            this.label118.TabIndex = 201;
+            this.label118.Text = "ผลปกติ";
+            // 
+            // label119
+            // 
+            this.label119.AutoSize = true;
+            this.label119.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label119.Location = new System.Drawing.Point(287, 734);
+            this.label119.Name = "label119";
+            this.label119.Size = new System.Drawing.Size(63, 16);
+            this.label119.TabIndex = 200;
+            this.label119.Text = "จน.พนักงาน";
+            // 
+            // label120
+            // 
+            this.label120.AutoSize = true;
+            this.label120.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label120.Location = new System.Drawing.Point(9, 745);
+            this.label120.Name = "label120";
+            this.label120.Size = new System.Drawing.Size(85, 25);
+            this.label120.TabIndex = 199;
+            this.label120.Text = "14. Eye";
             // 
             // btnAudioImport
             // 
@@ -2467,7 +2617,7 @@
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage12.Size = new System.Drawing.Size(965, 782);
+            this.tabPage12.Size = new System.Drawing.Size(1115, 782);
             this.tabPage12.TabIndex = 1;
             this.tabPage12.Text = "Print";
             this.tabPage12.UseVisualStyleBackColor = true;
@@ -2533,7 +2683,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(965, 782);
+            this.tabPage3.Size = new System.Drawing.Size(1115, 782);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage2";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -2556,7 +2706,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(965, 782);
+            this.tabPage1.Size = new System.Drawing.Size(1115, 782);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -2579,7 +2729,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(965, 782);
+            this.tabPage2.Size = new System.Drawing.Size(1115, 782);
             this.tabPage2.TabIndex = 4;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -2602,7 +2752,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(965, 782);
+            this.tabPage5.Size = new System.Drawing.Size(1115, 782);
             this.tabPage5.TabIndex = 5;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -2625,7 +2775,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(965, 782);
+            this.tabPage6.Size = new System.Drawing.Size(1115, 782);
             this.tabPage6.TabIndex = 6;
             this.tabPage6.Text = "tabPage6";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -2648,7 +2798,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(965, 782);
+            this.tabPage7.Size = new System.Drawing.Size(1115, 782);
             this.tabPage7.TabIndex = 7;
             this.tabPage7.Text = "tabPage7";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -2671,7 +2821,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(965, 782);
+            this.tabPage8.Size = new System.Drawing.Size(1115, 782);
             this.tabPage8.TabIndex = 8;
             this.tabPage8.Text = "tabPage8";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -2694,7 +2844,7 @@
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(965, 782);
+            this.tabPage9.Size = new System.Drawing.Size(1115, 782);
             this.tabPage9.TabIndex = 9;
             this.tabPage9.Text = "tabPage9";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -2717,7 +2867,7 @@
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(965, 782);
+            this.tabPage10.Size = new System.Drawing.Size(1115, 782);
             this.tabPage10.TabIndex = 10;
             this.tabPage10.Text = "tabPage10";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -2740,7 +2890,7 @@
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage11.Size = new System.Drawing.Size(965, 782);
+            this.tabPage11.Size = new System.Drawing.Size(1115, 782);
             this.tabPage11.TabIndex = 11;
             this.tabPage11.Text = "tabPage11";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -2763,7 +2913,7 @@
             this.tabPage13.Location = new System.Drawing.Point(4, 22);
             this.tabPage13.Name = "tabPage13";
             this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage13.Size = new System.Drawing.Size(965, 782);
+            this.tabPage13.Size = new System.Drawing.Size(1115, 782);
             this.tabPage13.TabIndex = 12;
             this.tabPage13.Text = "tabPage13";
             this.tabPage13.UseVisualStyleBackColor = true;
@@ -2786,7 +2936,7 @@
             this.tabPage14.Location = new System.Drawing.Point(4, 22);
             this.tabPage14.Name = "tabPage14";
             this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage14.Size = new System.Drawing.Size(965, 782);
+            this.tabPage14.Size = new System.Drawing.Size(1115, 782);
             this.tabPage14.TabIndex = 13;
             this.tabPage14.Text = "tabPage14";
             this.tabPage14.UseVisualStyleBackColor = true;
@@ -2837,8 +2987,20 @@
             this.tabPage16.Text = "tabPage16";
             this.tabPage16.UseVisualStyleBackColor = true;
             // 
+            // dgvEye
+            // 
+            this.dgvEye.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvEye.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEye.Location = new System.Drawing.Point(6, 5);
+            this.dgvEye.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvEye.Name = "dgvEye";
+            this.dgvEye.RowTemplate.Height = 24;
+            this.dgvEye.Size = new System.Drawing.Size(851, 593);
+            this.dgvEye.TabIndex = 7;
+            // 
             // tabPage17
             // 
+            this.tabPage17.Controls.Add(this.dgvChemB);
             this.tabPage17.Location = new System.Drawing.Point(4, 22);
             this.tabPage17.Name = "tabPage17";
             this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
@@ -3009,158 +3171,38 @@
             this.pB1.Size = new System.Drawing.Size(124, 23);
             this.pB1.TabIndex = 68;
             // 
-            // dgvEye
+            // tabPage18
             // 
-            this.dgvEye.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvEye.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEye.Location = new System.Drawing.Point(6, 5);
-            this.dgvEye.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvEye.Name = "dgvEye";
-            this.dgvEye.RowTemplate.Height = 24;
-            this.dgvEye.Size = new System.Drawing.Size(851, 593);
-            this.dgvEye.TabIndex = 7;
+            this.tabPage18.Controls.Add(this.dgvChemU);
+            this.tabPage18.Location = new System.Drawing.Point(4, 22);
+            this.tabPage18.Name = "tabPage18";
+            this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage18.Size = new System.Drawing.Size(1115, 782);
+            this.tabPage18.TabIndex = 17;
+            this.tabPage18.Text = "tabPage18";
+            this.tabPage18.UseVisualStyleBackColor = true;
             // 
-            // btnEyeImport
+            // dgvChemB
             // 
-            this.btnEyeImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnEyeImport.Location = new System.Drawing.Point(750, 751);
-            this.btnEyeImport.Name = "btnEyeImport";
-            this.btnEyeImport.Size = new System.Drawing.Size(90, 23);
-            this.btnEyeImport.TabIndex = 213;
-            this.btnEyeImport.Text = "นำเข้า Audio";
-            this.btnEyeImport.UseVisualStyleBackColor = true;
-            this.btnEyeImport.Click += new System.EventHandler(this.btnEyeImport_Click);
+            this.dgvChemB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvChemB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChemB.Location = new System.Drawing.Point(6, 5);
+            this.dgvChemB.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvChemB.Name = "dgvChemB";
+            this.dgvChemB.RowTemplate.Height = 24;
+            this.dgvChemB.Size = new System.Drawing.Size(851, 593);
+            this.dgvChemB.TabIndex = 8;
             // 
-            // label113
+            // dgvChemU
             // 
-            this.label113.AutoSize = true;
-            this.label113.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label113.Location = new System.Drawing.Point(639, 734);
-            this.label113.Name = "label113";
-            this.label113.Size = new System.Drawing.Size(85, 16);
-            this.label113.TabIndex = 212;
-            this.label113.Text = "เลือก file Excel";
-            // 
-            // label114
-            // 
-            this.label114.AutoSize = true;
-            this.label114.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label114.Location = new System.Drawing.Point(760, 734);
-            this.label114.Name = "label114";
-            this.label114.Size = new System.Drawing.Size(35, 16);
-            this.label114.TabIndex = 211;
-            this.label114.Text = "นำเข้า";
-            // 
-            // btnEyeExcel
-            // 
-            this.btnEyeExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnEyeExcel.Location = new System.Drawing.Point(653, 752);
-            this.btnEyeExcel.Name = "btnEyeExcel";
-            this.btnEyeExcel.Size = new System.Drawing.Size(75, 23);
-            this.btnEyeExcel.TabIndex = 210;
-            this.btnEyeExcel.Text = "Excel";
-            this.btnEyeExcel.UseVisualStyleBackColor = true;
-            this.btnEyeExcel.Click += new System.EventHandler(this.btnEyeExcel_Click);
-            // 
-            // textBox66
-            // 
-            this.textBox66.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox66.Location = new System.Drawing.Point(562, 754);
-            this.textBox66.Name = "textBox66";
-            this.textBox66.Size = new System.Drawing.Size(62, 22);
-            this.textBox66.TabIndex = 209;
-            // 
-            // textBox67
-            // 
-            this.textBox67.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox67.Location = new System.Drawing.Point(494, 754);
-            this.textBox67.Name = "textBox67";
-            this.textBox67.Size = new System.Drawing.Size(62, 22);
-            this.textBox67.TabIndex = 208;
-            // 
-            // textBox68
-            // 
-            this.textBox68.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox68.Location = new System.Drawing.Point(426, 754);
-            this.textBox68.Name = "textBox68";
-            this.textBox68.Size = new System.Drawing.Size(62, 22);
-            this.textBox68.TabIndex = 207;
-            // 
-            // textBox69
-            // 
-            this.textBox69.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox69.Location = new System.Drawing.Point(358, 754);
-            this.textBox69.Name = "textBox69";
-            this.textBox69.Size = new System.Drawing.Size(62, 22);
-            this.textBox69.TabIndex = 206;
-            // 
-            // textBox70
-            // 
-            this.textBox70.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox70.Location = new System.Drawing.Point(290, 754);
-            this.textBox70.Name = "textBox70";
-            this.textBox70.Size = new System.Drawing.Size(62, 22);
-            this.textBox70.TabIndex = 205;
-            // 
-            // label115
-            // 
-            this.label115.AutoSize = true;
-            this.label115.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label115.Location = new System.Drawing.Point(559, 734);
-            this.label115.Name = "label115";
-            this.label115.Size = new System.Drawing.Size(67, 16);
-            this.label115.TabIndex = 204;
-            this.label115.Text = "%ผลผิดปกติ";
-            // 
-            // label116
-            // 
-            this.label116.AutoSize = true;
-            this.label116.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label116.Location = new System.Drawing.Point(497, 734);
-            this.label116.Name = "label116";
-            this.label116.Size = new System.Drawing.Size(53, 16);
-            this.label116.TabIndex = 203;
-            this.label116.Text = "%ผลปกติ";
-            // 
-            // label117
-            // 
-            this.label117.AutoSize = true;
-            this.label117.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label117.Location = new System.Drawing.Point(423, 734);
-            this.label117.Name = "label117";
-            this.label117.Size = new System.Drawing.Size(55, 16);
-            this.label117.TabIndex = 202;
-            this.label117.Text = "ผลผิดปกติ";
-            // 
-            // label118
-            // 
-            this.label118.AutoSize = true;
-            this.label118.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label118.Location = new System.Drawing.Point(363, 734);
-            this.label118.Name = "label118";
-            this.label118.Size = new System.Drawing.Size(41, 16);
-            this.label118.TabIndex = 201;
-            this.label118.Text = "ผลปกติ";
-            // 
-            // label119
-            // 
-            this.label119.AutoSize = true;
-            this.label119.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label119.Location = new System.Drawing.Point(287, 734);
-            this.label119.Name = "label119";
-            this.label119.Size = new System.Drawing.Size(63, 16);
-            this.label119.TabIndex = 200;
-            this.label119.Text = "จน.พนักงาน";
-            // 
-            // label120
-            // 
-            this.label120.AutoSize = true;
-            this.label120.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label120.Location = new System.Drawing.Point(9, 745);
-            this.label120.Name = "label120";
-            this.label120.Size = new System.Drawing.Size(85, 25);
-            this.label120.TabIndex = 199;
-            this.label120.Text = "14. Eye";
+            this.dgvChemU.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvChemU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChemU.Location = new System.Drawing.Point(6, 5);
+            this.dgvChemU.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvChemU.Name = "dgvChemU";
+            this.dgvChemU.RowTemplate.Height = 24;
+            this.dgvChemU.Size = new System.Drawing.Size(851, 593);
+            this.dgvChemU.TabIndex = 8;
             // 
             // FrmCheckUPAdd
             // 
@@ -3224,8 +3266,12 @@
             this.tabPage15.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAudio)).EndInit();
             this.tabPage16.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEye)).EndInit();
+            this.tabPage17.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).EndInit();
+            this.tabPage18.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChemB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChemU)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3499,6 +3545,9 @@
         private System.Windows.Forms.Label label118;
         private System.Windows.Forms.Label label119;
         private System.Windows.Forms.Label label120;
+        private System.Windows.Forms.TabPage tabPage18;
+        private System.Windows.Forms.DataGridView dgvChemB;
+        private System.Windows.Forms.DataGridView dgvChemU;
 
     }
 }

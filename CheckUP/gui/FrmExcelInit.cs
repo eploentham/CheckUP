@@ -165,8 +165,8 @@ namespace CheckUP.gui
             nmDLungPerFev1.Value = int.Parse(cc.cf.NumberNull1(ei.LungPerFev1));
             nmDLungSummary.Value = int.Parse(cc.cf.NumberNull1(ei.LungSummary));
 
-            nmDAudioNo.Value = int.Parse(cc.cf.NumberNull1(ei.LungSummary));
-            nmDAudioRow.Value = int.Parse(cc.cf.NumberNull1(ei.LungSummary));
+            nmDAudioNo.Value = int.Parse(cc.cf.NumberNull1(ei.AudiogramNo));
+            nmDAudioRow.Value = int.Parse(cc.cf.NumberNull1(ei.AudiogramRow));
             nmDAudiogram500L.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram500L));
             nmDAudiogram500R.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram500R));
             nmDAudiogram1000L.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram1000L));
@@ -184,6 +184,20 @@ namespace CheckUP.gui
             nmDAudiogramSummaryL.Value = int.Parse(cc.cf.NumberNull1(ei.AudiogramSummaryL));
             nmDAudiogramSummaryR.Value = int.Parse(cc.cf.NumberNull1(ei.AudiogramSummaryR));
             nmDAudiogramExam.Value = int.Parse(cc.cf.NumberNull1(ei.AudiogramExam));
+
+            nmDEyeNo.Value = int.Parse(cc.cf.NumberNull1(ei.EyeNo));
+            nmDEyeRow.Value = int.Parse(cc.cf.NumberNull1(ei.EyeRow));
+            nmDEyeShortLongLeft.Value = int.Parse(cc.cf.NumberNull1(ei.EyeShortLongLeft));
+            nmDEyeShortLongRight.Value = int.Parse(cc.cf.NumberNull1(ei.EyeShortLongRight));
+            nmDEyeSquintLeft.Value = int.Parse(cc.cf.NumberNull1(ei.EyeSquintLeft));
+            nmDEyeSquintRight.Value = int.Parse(cc.cf.NumberNull1(ei.EyeSquintRight));
+            nmDEyeDegreeLeft.Value = int.Parse(cc.cf.NumberNull1(ei.EyeDegreeLeft));
+            nmDEyeDegreeRight.Value = int.Parse(cc.cf.NumberNull1(ei.EyeDegreeRight));
+            nmDEyeOldLeft.Value = int.Parse(cc.cf.NumberNull1(ei.EyeOldLeft));
+            nmDEyeOldRight.Value = int.Parse(cc.cf.NumberNull1(ei.EyeOldRight));
+            nmDEyeBlindness.Value = int.Parse(cc.cf.NumberNull1(ei.EyeBlindness));
+            nmDEyeResult.Value = int.Parse(cc.cf.NumberNull1(ei.EyeResult));
+            nmDEyeSummary.Value = int.Parse(cc.cf.NumberNull1(ei.EyeSummary));
 
             lbPE.Left = label3.Left;
             lbXRay.Left = label3.Left;
@@ -274,6 +288,9 @@ namespace CheckUP.gui
         {
             String No = "", sgot = "", sgpt = "", result = "", summary = "";
             ofd.ShowDialog();
+
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -325,6 +342,8 @@ namespace CheckUP.gui
             }
             summary = summary.Trim();
             txtSgotTest.Text = "ลำดับ " + No + " sgot " + sgot + " sgpt " + sgpt + " result " + result + " summary " + summary;
+
+            Cursor.Current = cursor;
             if (cc.eidb.updateSgot(nmDSgotvalue.Value.ToString(), nmDSgotNo.Value.ToString(), nmDSgotResult.Value.ToString(), nmDSgotRow.Value.ToString(), nmDSgotSgptValue.Value.ToString(), nmDSgotSummary.Value.ToString()).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล Sgot เรียบร้อย", "บันทึกข้อมูล");
@@ -334,6 +353,9 @@ namespace CheckUP.gui
         {
             String No = "", bun = "", creatinine = "", result = "", summary = "";
             ofd.ShowDialog();
+
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -385,6 +407,8 @@ namespace CheckUP.gui
             }
             summary = summary.Trim();
             txtSgotTest.Text = "ลำดับ " + No + " bun " + bun + " sgpt " + creatinine + " result " + result + " summary " + summary;
+
+            Cursor.Current = cursor;
             if (cc.eidb.updateBun(nmDBunValue.Value.ToString(), nmDBunNo.Value.ToString(), nmDBunResult.Value.ToString(), nmDBunRow.Value.ToString(), nmDBunCreatinine.Value.ToString(), nmDBunSummary.Value.ToString()).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล BUN เรียบร้อย", "บันทึกข้อมูล");
@@ -394,6 +418,9 @@ namespace CheckUP.gui
         {
             String No = "", uric = "", result = "", summary = "";
             ofd.ShowDialog();
+
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -436,6 +463,8 @@ namespace CheckUP.gui
             }
             summary = summary.Trim();
             txtTriTest.Text = "ลำดับ " + No + " Uric " + uric + " result " + result + " summary " + summary;
+
+            Cursor.Current = cursor;
             if (cc.eidb.updateTrig(nmDUricValue.Value.ToString(), nmDUricNo.Value.ToString(), nmDUricResult.Value.ToString(), nmDUricRow.Value.ToString(), nmDUricSummary.Value.ToString()).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล Uric Acid เรียบร้อย", "บันทึกข้อมูล");
@@ -445,6 +474,9 @@ namespace CheckUP.gui
         {
             String No = "", cho = "", result = "", summary = "", ldl="", hdl="";
             ofd.ShowDialog();
+
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -506,6 +538,8 @@ namespace CheckUP.gui
                 summary = "";
             }
             summary = summary.Trim();
+
+            Cursor.Current = cursor;
             txtChoTest.Text = "ลำดับ " + No + " choles " + cho + " LDL " + ldl + " HDL " + hdl + " result " + result + " summary " + summary;
             if (cc.eidb.updateCholes(nmDChoValue.Value.ToString(), nmDChoNo.Value.ToString(), nmDChoResult.Value.ToString(), nmDChoRow.Value.ToString(),
                 nmDChoSummary.Value.ToString(), nmDChoLDL.Value.ToString(), nmDChoHDL.Value.ToString()).Length >= 1)
@@ -517,6 +551,9 @@ namespace CheckUP.gui
         {
             String No = "", tri = "", result = "", summary = "";
             ofd.ShowDialog();
+
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -559,6 +596,8 @@ namespace CheckUP.gui
             }
             summary = summary.Trim();
             txtTriTest.Text = "ลำดับ " + No + " Trig " + tri + " result " + result + " summary " + summary;
+
+            Cursor.Current = cursor;
             if (cc.eidb.updateTrig(nmDTriValue.Value.ToString(), nmDTriNo.Value.ToString(), nmDTriResult.Value.ToString(), nmDTriRow.Value.ToString(), nmDTriSummary.Value.ToString()).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล Trig เรียบร้อย", "บันทึกข้อมูล");
@@ -568,6 +607,9 @@ namespace CheckUP.gui
         {
             String No = "", color = "", appe = "", sugar = "", spgr = "", pH = "", protein = "", wbc = "", rbc = "", epi = "", bact = "", result = "", rbcmono = "", summary = "";
             ofd.ShowDialog();
+
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -693,6 +735,8 @@ namespace CheckUP.gui
             summary = summary.Trim();
             txtUATest.Text = "ลำดับ " + No + " color " + color + " spgr " + spgr + " sugar " + sugar + " appe " + appe + " protein " + protein + " pH " + pH + " wbc " + wbc +
                 " rbc " + rbc + " epi " + epi + " bact " + bact + " result " + result + " rbcmono " + rbcmono + " Summary " + summary;
+
+            Cursor.Current = cursor;
             if (cc.eidb.updateUA(nmDUAAppe.Value.ToString(), nmDUABact.Value.ToString(), nmDUAColor.Value.ToString(), nmDUAEpi.Value.ToString(),
                 nmDUANo.Value.ToString(), nmDUApH.Value.ToString(), nmDUAProtein.Value.ToString(), nmDUARBC.Value.ToString(), nmDUAResult.Value.ToString(), nmDUARow.Value.ToString(),
                 nmDUASpgr.Value.ToString(), nmDUASugar.Value.ToString(), nmDUASummary.Value.ToString(), nmDUAWBC.Value.ToString()).Length >= 1)
@@ -704,6 +748,9 @@ namespace CheckUP.gui
         {
             String No = "", HBsAg = "", HbsAb = "", AntiHIV = "", VDRL = "", Amphetamine = "", Calcium = "";
             ofd.ShowDialog();
+
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -773,6 +820,8 @@ namespace CheckUP.gui
             }
             Calcium = Calcium.Trim();
             txtOther1Test.Text = "ลำดับ " + No + " HBsAg " + HBsAg + " HbsAb " + HbsAb + " AntiHIV " + AntiHIV + " VDRL " + VDRL + " Amphetamine " + Amphetamine + " Calcium " + Calcium;
+
+            Cursor.Current = cursor;
             if (cc.eidb.updateOther1(nmDOther1Amphetamine.Value.ToString(), nmDOther1AntiHIV.Value.ToString(), nmDOther1Calcium.Value.ToString(), nmDOther1HBsAb.Value.ToString(),
                 nmDOther1HBsAg.Value.ToString(), nmDOther1No.Value.ToString(), nmDOther1Row.Value.ToString(), nmDOther1VDRL.Value.ToString()).Length >= 1)
             {
@@ -783,6 +832,9 @@ namespace CheckUP.gui
         {
             String LungRow = "", LungNo = "", LungFvcPredic = "", LungFvcMeas = "", LungFvcPer = "", LungFev1Predic = "", LungFev1Meas = "", LungFev1Per = "", LungPerFev1 = "", LungSummary = "";
             ofd.ShowDialog();
+
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -871,6 +923,8 @@ namespace CheckUP.gui
             LungSummary = LungSummary.Trim();
             txtLungTest.Text = "ลำดับ " + LungNo + " FvcPredic " + LungFvcPredic + " FvcMeas " + LungFvcMeas + " FvcPer " + LungFvcPer +
                 " Fev1Predic " + LungFev1Predic + " Fev1Meas " + LungFev1Meas + " Fev1Per " + LungFev1Per + " PerFev1 " + LungPerFev1 + " Summary " + LungSummary;
+
+            Cursor.Current = cursor;
             if (cc.eidb.updateLung(nmDLungRow.Value.ToString(), nmDLungNo.Value.ToString(), nmDLungFvcPredic.Value.ToString(), nmDLungFvcMeas.Value.ToString(),
                 nmDLungFvcPer.Value.ToString(), nmDLungFev1Predic.Value.ToString(), nmDLungFev1Meas.Value.ToString(), nmDLungFev1Per.Value.ToString(), 
                 nmDLungPerFev1.Value.ToString(), nmDLungSummary.Value.ToString()).Length >= 1)
@@ -883,6 +937,9 @@ namespace CheckUP.gui
             String No = "", Audiogram500L = "", Audiogram1000L = "", Audiogram2000L = "", Audiogram3000L = "", Audiogram4000L="",Audiogram6000L="", Audiogram8000L="", AudiogramSummaryL="";
             String Audiogram500R = "", Audiogram1000R = "", Audiogram2000R = "", Audiogram3000R="", Audiogram4000R="", Audiogram6000R="", Audiogram8000R="", AudiogramSummaryR="", AudiogramExam="";
             ofd.ShowDialog();
+
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -1053,6 +1110,8 @@ namespace CheckUP.gui
             AudiogramExam = AudiogramExam.Trim();
             txtAudioTest.Text = "ลำดับ " + No + " Audiogram500L " + Audiogram500L + " Audiogram1000L " + Audiogram1000L + " Audiogram2000L " + Audiogram2000L + " Audiogram3000L " + Audiogram3000L + " Audiogram4000L " + Audiogram4000L + " Audiogram6000L " + Audiogram6000L + " Audiogram8000L " + Audiogram8000L +
                 " AudiogramSummaryL " + AudiogramSummaryL + " Audiogram500R " + Audiogram500R + " Audiogram1000R " + Audiogram1000R + " Audiogram2000R " + Audiogram2000R + " Audiogram3000R " + Audiogram3000R + " Audiogram4000R " + Audiogram4000R + " Audiogram6000R " + Audiogram6000R + " Audiogram8000R " + Audiogram8000R + " AudiogramSummaryR " + AudiogramSummaryR + " AudiogramSummary " + AudiogramExam;
+
+            Cursor.Current = cursor;
             if (cc.eidb.updateAudioGram(nmDAudioRow.Value.ToString(), nmDAudioNo.Value.ToString(),nmDAudiogram500L.Value.ToString(), nmDAudiogram500R.Value.ToString(), nmDAudiogram1000L.Value.ToString(), nmDAudiogram1000R.Value.ToString(),
                 nmDAudiogram2000L.Value.ToString(), nmDAudiogram2000R.Value.ToString(), nmDAudiogram3000L.Value.ToString(), nmDAudiogram3000R.Value.ToString(), nmDAudiogram4000L.Value.ToString(), nmDAudiogram4000R.Value.ToString(),
                 nmDAudiogram6000L.Value.ToString(), nmDAudiogram6000R.Value.ToString(), nmDAudiogram8000L.Value.ToString(), nmDAudiogram8000R.Value.ToString(), nmDAudiogramSummaryL.Value.ToString(), nmDAudiogramSummaryR.Value.ToString(), nmDAudiogramExam.Value.ToString()).Length >= 1)
@@ -1064,6 +1123,9 @@ namespace CheckUP.gui
         {
             String No = "", EyeShortLongLeft = "", EyeShortLongRight = "", EyeSquintLeft = "", EyeSquintRight = "", EyedegreeLeft = "", EyeDegreeRight = "", EyeOldLeft = "", EyeOldRight = "", EyeBlindness = "", EyeResult = "", EyeSummary = "";
             ofd.ShowDialog();
+
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -1181,9 +1243,12 @@ namespace CheckUP.gui
 
             txtEyeTest.Text = "ลำดับ " + No + " EyeShortLongLeft " + EyeShortLongLeft + " EyeShortLongRight " + EyeShortLongRight + " EyeSquintLeft " + EyeSquintLeft + " EyeSquintRight " + EyeSquintRight + " EyedegreeLeft " + EyedegreeLeft + " EyeDegreeRight " + EyeDegreeRight + " EyeOldLeft " + EyeOldLeft +
                 " EyeOldRight " + EyeOldRight + " EyeBlindness " + EyeBlindness + " EyeResult " + EyeResult + " EyeSummary " + EyeSummary;
-            if (cc.eidb.updateEye(nmDEyeRow.Value.ToString(), nmDEyeNo.Value.ToString(), nmDEyeShortLongLeft.Value.ToString(), nmDEyeShortLongRight.Value.ToString(), nmDEyeSquintLeft.Value.ToString(), nmDEyeSquintRight.Value.ToString(),
-                nmDEyeDegreeLeft.Value.ToString(), nmDEyeDegreeRight.Value.ToString(), nmDEyeOldLeft.Value.ToString(), nmDEyeOldRight.Value.ToString(), nmDEyeBlindness.Value.ToString(), nmDEyeResult.Value.ToString(),
-                nmDEyeSummary.Value.ToString()).Length >= 1)
+
+            Cursor.Current = cursor;
+            if (cc.eidb.updateEye(nmDEyeRow.Value.ToString(), nmDEyeNo.Value.ToString(), nmDEyeShortLongLeft.Value.ToString(), nmDEyeShortLongRight.Value.ToString(), nmDEyeSquintLeft.Value.ToString(), 
+                nmDEyeSquintRight.Value.ToString(),
+                nmDEyeDegreeLeft.Value.ToString(), nmDEyeDegreeRight.Value.ToString(), nmDEyeOldLeft.Value.ToString(), nmDEyeOldRight.Value.ToString(), nmDEyeResult.Value.ToString(),
+                nmDEyeSummary.Value.ToString(), nmDEyeBlindness.Value.ToString()).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล AudioGram เรียบร้อย", "บันทึกข้อมูล");
             }
@@ -1211,6 +1276,9 @@ namespace CheckUP.gui
 
             //}
             ofd.ShowDialog();
+
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -1264,7 +1332,7 @@ namespace CheckUP.gui
                 }
                 LastName = LastName.Trim();
                 txtPrefixTest.Text = "ลำดับ " + No + " ชื่อ นามสกุล " + prefix + " " + FirstName + " " + LastName + " อายุ " + Age + " ";
-
+                Cursor.Current = cursor;
                 if (cc.eidb.updateSfA(nmDAAge.Value.ToString(), nmDAPrefix.Value.ToString(), nmDAFirstName.Value.ToString(), nmDALastName.Value.ToString(), 
                     nmDARow.Value.ToString(), nmDRow.Value.ToString()).Length >= 1)
                 {
@@ -1319,7 +1387,7 @@ namespace CheckUP.gui
                 }
                 LastName = LastName.Trim();
                 txtPrefixTest.Text = "ลำดับ " + No + " ชื่อ นามสกุล " + prefix + " " + FullName + " อายุ " + Age + " ";
-
+                Cursor.Current = cursor;
                 if (cc.eidb.updateSfB(nmDBAge.Value.ToString(), nmDBPrefix.Value.ToString(), nmDBFullName.Value.ToString(), nmDBRow.Value.ToString(), nmDRow.Value.ToString()).Length >= 1)
                 {
                     MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
@@ -1356,6 +1424,7 @@ namespace CheckUP.gui
                 LastName = LastName.Trim();
                 txtPrefixTest.Text = "ลำดับ " + No + " ชื่อ นามสกุล " + prefix + " " + FirstName + " อายุ " + LastName + " ";
 
+                Cursor.Current = cursor;
                 if (cc.eidb.updateSfC(nmDCAge.Value.ToString(), nmDCPrefix.Value.ToString(), nmDBRow.Value.ToString(), nmDRow.Value.ToString()).Length >= 1)
                 {
                     MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
@@ -1373,6 +1442,10 @@ namespace CheckUP.gui
         {
             String No = "", age="", bmi="", height="", weight="", pulse="", vi="", result="", summary="", bloodGroup="";
             ofd.ShowDialog();
+
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
+
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -1472,6 +1545,8 @@ namespace CheckUP.gui
             summary = summary.Trim();
             txtPETest.Text = "ลำดับ " + No + " อายุ " + age + " น้ำหนัก " + weight + " ส่วนสูง " + height + " BMI " + bmi + " VitalSign " + vi + " Pulse " + pulse +
                 " Blood Group " + bloodGroup + " Result " + result + " Summary " + summary;
+
+            Cursor.Current = cursor;
             if (cc.eidb.updatePE(nmDPENo.Value.ToString(), nmDPERow.Value.ToString(), nmDPEAge.Value.ToString(), nmDPEBMI.Value.ToString(),
                 nmDPEHeight.Value.ToString(), nmDPEWeight.Value.ToString(), nmDPEPulse.Value.ToString(), nmDPEVi.Value.ToString(), nmDPEResult.Value.ToString(),
                 nmDPESummary.Value.ToString(), nmDPEBloodGroup.Value.ToString()).Length >= 1)
@@ -1484,6 +1559,9 @@ namespace CheckUP.gui
         {
             String No = "", xray = "", summary = "";
             ofd.ShowDialog();
+
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -1517,6 +1595,8 @@ namespace CheckUP.gui
             }
             summary = summary.Trim();
             txtXRayTest.Text = "ลำดับ " + No + " XRay " + xray + " summary " + summary;
+
+            Cursor.Current = cursor;
             if (cc.eidb.updateXray(nmDXRayValue.Value.ToString(), nmDXRayNo.Value.ToString(), nmDXRayRow.Value.ToString(), nmDXRaySummary.Value.ToString()).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล XRay เรียบร้อย", "บันทึกข้อมูล");
@@ -1527,6 +1607,9 @@ namespace CheckUP.gui
         {
             String No = "", wbc = "", rbc = "", Hb = "", Hct = "", neu = "", ly = "", mono = "", eos="", bact="", pltc="", plts="", rbcmono="", summary = "";
             ofd.ShowDialog();
+
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -1660,6 +1743,8 @@ namespace CheckUP.gui
             summary = summary.Trim();
             txtCBCTest.Text = "ลำดับ " + No + " WBC " + wbc + " Hct " + Hct + " Hb " + Hb + " RBC " + rbc + " Ly " + ly + " Neu " + neu + " mono " + mono +
                 " Eos " + eos + " bact " + bact + " pltc " + pltc + " plts " + plts + " rbcmono " + rbcmono + " Summary " + summary;
+
+            Cursor.Current = cursor;
             if (cc.eidb.updateCBC(nmDCBCBact.Value.ToString(), nmDCBCEos.Value.ToString(), nmDCBCHb.Value.ToString(), nmDCBCHct.Value.ToString(),
                 nmDCBCLy.Value.ToString(), nmDCBCMono.Value.ToString(), nmDCBCNeu.Value.ToString(), nmDCBCNo.Value.ToString(), nmDCBCPltC.Value.ToString(), nmDCBCPltS.Value.ToString(),
                 nmDCBCRBC.Value.ToString(), nmDCBCRBCmono.Value.ToString(), nmDCBCRow.Value.ToString(), nmDPESummary.Value.ToString(), nmDCBCWBC.Value.ToString()).Length >= 1)
@@ -1672,6 +1757,9 @@ namespace CheckUP.gui
         {
             String No = "", fbs = "", result="", summary = "";
             ofd.ShowDialog();
+
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
@@ -1714,6 +1802,8 @@ namespace CheckUP.gui
             }
             summary = summary.Trim();
             txtFBSTest.Text = "ลำดับ " + No + " fbs " + fbs + " result " + result + " summary " + summary;
+
+            Cursor.Current = cursor;
             if (cc.eidb.updateFBS(nmDFBSValue.Value.ToString(), nmDFBSNo.Value.ToString(), nmDFBSResult.Value.ToString(), nmDFBSRow.Value.ToString(), nmDFBSSummary.Value.ToString()).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล FBS เรียบร้อย", "บันทึกข้อมูล");

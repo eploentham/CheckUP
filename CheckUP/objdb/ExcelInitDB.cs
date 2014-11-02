@@ -164,13 +164,13 @@ namespace CheckUP.objdb
             ei.AudiogramSummaryL = "audiogram_summary_left";
             ei.AudiogramSummaryR = "audiogram_summary_right";
             ei.AudiogramNo = "audiogram_no";
-            ei.AudoigramRow = "audiogram_row";
+            ei.AudiogramRow = "audiogram_row";
 
             ei.EyeNo = "eye_no";
             ei.EyeRow = "eye_row";
             //ei.EyeShortLongLeft = "eye_short_long_left";
             //ei.EyeShortLongRight = "eye_short_long_right";
-            ei.EyedegreeLeft = "eye_degree_left";
+            ei.EyeDegreeLeft = "eye_degree_left";
             ei.EyeDegreeRight = "eye_degree_right";
             ei.EyeShortLongLeft = "eye_short_long_left";
             ei.EyeShortLongRight = "eye_short_long_right";
@@ -331,14 +331,14 @@ namespace CheckUP.objdb
             item.AudiogramSummaryL = dt.Rows[0][ei.AudiogramSummaryL].ToString();
             item.AudiogramSummaryR = dt.Rows[0][ei.AudiogramSummaryR].ToString();
             item.AudiogramNo = dt.Rows[0][ei.AudiogramNo].ToString();
-            item.AudoigramRow = dt.Rows[0][ei.AudoigramRow].ToString();
+            item.AudiogramRow = dt.Rows[0][ei.AudiogramRow].ToString();
 
             item.EyeNo = dt.Rows[0][ei.EyeNo].ToString();
             item.EyeRow = dt.Rows[0][ei.EyeRow].ToString();
             item.EyeShortLongLeft = dt.Rows[0][ei.EyeShortLongLeft].ToString();
             item.EyeShortLongRight = dt.Rows[0][ei.EyeShortLongRight].ToString();
             //item.EyeShortLongRight = dt.Rows[0][ei.EyeShortLongRight].ToString();
-            item.EyedegreeLeft = dt.Rows[0][ei.EyedegreeLeft].ToString();
+            item.EyeDegreeLeft = dt.Rows[0][ei.EyeDegreeLeft].ToString();
             item.EyeDegreeRight = dt.Rows[0][ei.EyeDegreeRight].ToString();
             item.EyeSquintLeft = dt.Rows[0][ei.EyeSquintLeft].ToString();
             item.EyeSquintRight = dt.Rows[0][ei.EyeSquintRight].ToString();
@@ -841,7 +841,7 @@ namespace CheckUP.objdb
             //p.Remark = p.Remark.Replace("'", "''");
             //p.PositionName = p.PositionName.Replace("'", "''");
 
-            sql = "Update " + ei.table + " Set " + ei.AudoigramRow + "='" + AudiogramRow + "', " +
+            sql = "Update " + ei.table + " Set " + ei.AudiogramRow + "='" + AudiogramRow + "', " +
                 ei.AudiogramNo + "='" + AudiogramNo + "', " +
                 ei.Audiogram500L + "='" + Audiogram500L + "', " +
                 ei.Audiogram500R + "='" + Audiogram500R + "', " +
@@ -888,7 +888,7 @@ namespace CheckUP.objdb
                 ei.EyeShortLongRight + "='" + EyeShortLongRight + "', " +
                 ei.EyeSquintLeft + "='" + EyeSquintLeft + "', " +
                 ei.EyeSquintRight + "='" + EyeSquintRight + "', " +
-                ei.EyedegreeLeft + "='" + EyedegreeLeft + "', " +
+                ei.EyeDegreeLeft + "='" + EyedegreeLeft + "', " +
                 ei.EyeDegreeRight + "='" + EyeDegreeRight + "', " +
                 ei.EyeOldLeft + "='" + EyeOldLeft + "', " +
                 ei.EyeOldRight + "='" + EyeOldRight + "', " +

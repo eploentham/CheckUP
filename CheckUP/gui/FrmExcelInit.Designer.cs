@@ -376,6 +376,37 @@
             this.nmDEyeNo = new System.Windows.Forms.NumericUpDown();
             this.label143 = new System.Windows.Forms.Label();
             this.nmDEyeRow = new System.Windows.Forms.NumericUpDown();
+            this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.tabPage17 = new System.Windows.Forms.TabPage();
+            this.label124 = new System.Windows.Forms.Label();
+            this.txtCheMBTest = new System.Windows.Forms.TextBox();
+            this.btnChemBExcel = new System.Windows.Forms.Button();
+            this.label125 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label126 = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label127 = new System.Windows.Forms.Label();
+            this.nmDChemBAmmonia = new System.Windows.Forms.NumericUpDown();
+            this.label128 = new System.Windows.Forms.Label();
+            this.nmDChemBZinc = new System.Windows.Forms.NumericUpDown();
+            this.label130 = new System.Windows.Forms.Label();
+            this.nmDChemBManganese = new System.Windows.Forms.NumericUpDown();
+            this.label144 = new System.Windows.Forms.Label();
+            this.nmDChemBCopper = new System.Windows.Forms.NumericUpDown();
+            this.label145 = new System.Windows.Forms.Label();
+            this.nmDChemBTin = new System.Windows.Forms.NumericUpDown();
+            this.label146 = new System.Windows.Forms.Label();
+            this.nmDChemBMercury = new System.Windows.Forms.NumericUpDown();
+            this.label147 = new System.Windows.Forms.Label();
+            this.nmDChemBCadmium = new System.Windows.Forms.NumericUpDown();
+            this.label148 = new System.Windows.Forms.Label();
+            this.nmDChemBAluminium = new System.Windows.Forms.NumericUpDown();
+            this.label149 = new System.Windows.Forms.Label();
+            this.nmDChemBLead = new System.Windows.Forms.NumericUpDown();
+            this.label150 = new System.Windows.Forms.Label();
+            this.nmDChemBNo = new System.Windows.Forms.NumericUpDown();
+            this.label151 = new System.Windows.Forms.Label();
+            this.nmDChemBRow = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDARow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDAPrefix)).BeginInit();
@@ -534,6 +565,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDEyeShortLongLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDEyeNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDEyeRow)).BeginInit();
+            this.tabPage16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBAmmonia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBZinc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBManganese)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBCopper)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBTin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBMercury)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBCadmium)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBAluminium)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBLead)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBRow)).BeginInit();
             this.SuspendLayout();
             // 
             // nmDRow
@@ -875,6 +920,8 @@
             this.tC.Controls.Add(this.tabPage13);
             this.tC.Controls.Add(this.tabPage14);
             this.tC.Controls.Add(this.tabPage15);
+            this.tC.Controls.Add(this.tabPage16);
+            this.tC.Controls.Add(this.tabPage17);
             this.tC.Location = new System.Drawing.Point(12, 12);
             this.tC.Name = "tC";
             this.tC.SelectedIndex = 0;
@@ -4606,6 +4653,367 @@
             0,
             0});
             // 
+            // tabPage16
+            // 
+            this.tabPage16.Controls.Add(this.label124);
+            this.tabPage16.Controls.Add(this.txtCheMBTest);
+            this.tabPage16.Controls.Add(this.btnChemBExcel);
+            this.tabPage16.Controls.Add(this.label125);
+            this.tabPage16.Controls.Add(this.numericUpDown1);
+            this.tabPage16.Controls.Add(this.label126);
+            this.tabPage16.Controls.Add(this.numericUpDown2);
+            this.tabPage16.Controls.Add(this.label127);
+            this.tabPage16.Controls.Add(this.nmDChemBAmmonia);
+            this.tabPage16.Controls.Add(this.label128);
+            this.tabPage16.Controls.Add(this.nmDChemBZinc);
+            this.tabPage16.Controls.Add(this.label130);
+            this.tabPage16.Controls.Add(this.nmDChemBManganese);
+            this.tabPage16.Controls.Add(this.label144);
+            this.tabPage16.Controls.Add(this.nmDChemBCopper);
+            this.tabPage16.Controls.Add(this.label145);
+            this.tabPage16.Controls.Add(this.nmDChemBTin);
+            this.tabPage16.Controls.Add(this.label146);
+            this.tabPage16.Controls.Add(this.nmDChemBMercury);
+            this.tabPage16.Controls.Add(this.label147);
+            this.tabPage16.Controls.Add(this.nmDChemBCadmium);
+            this.tabPage16.Controls.Add(this.label148);
+            this.tabPage16.Controls.Add(this.nmDChemBAluminium);
+            this.tabPage16.Controls.Add(this.label149);
+            this.tabPage16.Controls.Add(this.nmDChemBLead);
+            this.tabPage16.Controls.Add(this.label150);
+            this.tabPage16.Controls.Add(this.nmDChemBNo);
+            this.tabPage16.Controls.Add(this.label151);
+            this.tabPage16.Controls.Add(this.nmDChemBRow);
+            this.tabPage16.Location = new System.Drawing.Point(4, 22);
+            this.tabPage16.Name = "tabPage16";
+            this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage16.Size = new System.Drawing.Size(920, 322);
+            this.tabPage16.TabIndex = 15;
+            this.tabPage16.Text = "tabPage16";
+            this.tabPage16.UseVisualStyleBackColor = true;
+            // 
+            // tabPage17
+            // 
+            this.tabPage17.Location = new System.Drawing.Point(4, 22);
+            this.tabPage17.Name = "tabPage17";
+            this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage17.Size = new System.Drawing.Size(920, 322);
+            this.tabPage17.TabIndex = 16;
+            this.tabPage17.Text = "tabPage17";
+            this.tabPage17.UseVisualStyleBackColor = true;
+            // 
+            // label124
+            // 
+            this.label124.AutoSize = true;
+            this.label124.Location = new System.Drawing.Point(6, 265);
+            this.label124.Name = "label124";
+            this.label124.Size = new System.Drawing.Size(80, 13);
+            this.label124.TabIndex = 175;
+            this.label124.Text = "ข้อมูลจากการดึง";
+            // 
+            // txtCheMBTest
+            // 
+            this.txtCheMBTest.Location = new System.Drawing.Point(6, 281);
+            this.txtCheMBTest.Name = "txtCheMBTest";
+            this.txtCheMBTest.Size = new System.Drawing.Size(908, 20);
+            this.txtCheMBTest.TabIndex = 174;
+            // 
+            // btnChemBExcel
+            // 
+            this.btnChemBExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnChemBExcel.Location = new System.Drawing.Point(828, 230);
+            this.btnChemBExcel.Name = "btnChemBExcel";
+            this.btnChemBExcel.Size = new System.Drawing.Size(86, 34);
+            this.btnChemBExcel.TabIndex = 173;
+            this.btnChemBExcel.Text = "ทดสอบ Excel";
+            this.btnChemBExcel.UseVisualStyleBackColor = true;
+            // 
+            // label125
+            // 
+            this.label125.AutoSize = true;
+            this.label125.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label125.Location = new System.Drawing.Point(262, 150);
+            this.label125.Name = "label125";
+            this.label125.Size = new System.Drawing.Size(28, 16);
+            this.label125.TabIndex = 171;
+            this.label125.Text = "สรุป";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(272, 178);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(46, 20);
+            this.numericUpDown1.TabIndex = 172;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label126
+            // 
+            this.label126.AutoSize = true;
+            this.label126.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label126.Location = new System.Drawing.Point(182, 150);
+            this.label126.Name = "label126";
+            this.label126.Size = new System.Drawing.Size(21, 16);
+            this.label126.TabIndex = 169;
+            this.label126.Text = "ผล";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(193, 178);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(46, 20);
+            this.numericUpDown2.TabIndex = 170;
+            this.numericUpDown2.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label127
+            // 
+            this.label127.AutoSize = true;
+            this.label127.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label127.Location = new System.Drawing.Point(107, 150);
+            this.label127.Name = "label127";
+            this.label127.Size = new System.Drawing.Size(65, 16);
+            this.label127.TabIndex = 167;
+            this.label127.Text = "Ammonia";
+            // 
+            // nmDChemBAmmonia
+            // 
+            this.nmDChemBAmmonia.Location = new System.Drawing.Point(110, 178);
+            this.nmDChemBAmmonia.Name = "nmDChemBAmmonia";
+            this.nmDChemBAmmonia.Size = new System.Drawing.Size(46, 20);
+            this.nmDChemBAmmonia.TabIndex = 168;
+            this.nmDChemBAmmonia.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label128
+            // 
+            this.label128.AutoSize = true;
+            this.label128.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label128.Location = new System.Drawing.Point(678, 78);
+            this.label128.Name = "label128";
+            this.label128.Size = new System.Drawing.Size(33, 16);
+            this.label128.TabIndex = 165;
+            this.label128.Text = "Zinc";
+            // 
+            // nmDChemBZinc
+            // 
+            this.nmDChemBZinc.Location = new System.Drawing.Point(674, 106);
+            this.nmDChemBZinc.Name = "nmDChemBZinc";
+            this.nmDChemBZinc.Size = new System.Drawing.Size(46, 20);
+            this.nmDChemBZinc.TabIndex = 166;
+            this.nmDChemBZinc.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label130
+            // 
+            this.label130.AutoSize = true;
+            this.label130.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label130.Location = new System.Drawing.Point(577, 78);
+            this.label130.Name = "label130";
+            this.label130.Size = new System.Drawing.Size(80, 16);
+            this.label130.TabIndex = 163;
+            this.label130.Text = "Manganese";
+            // 
+            // nmDChemBManganese
+            // 
+            this.nmDChemBManganese.Location = new System.Drawing.Point(594, 106);
+            this.nmDChemBManganese.Name = "nmDChemBManganese";
+            this.nmDChemBManganese.Size = new System.Drawing.Size(46, 20);
+            this.nmDChemBManganese.TabIndex = 164;
+            this.nmDChemBManganese.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label144
+            // 
+            this.label144.AutoSize = true;
+            this.label144.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label144.Location = new System.Drawing.Point(518, 78);
+            this.label144.Name = "label144";
+            this.label144.Size = new System.Drawing.Size(53, 16);
+            this.label144.TabIndex = 161;
+            this.label144.Text = "Copper";
+            // 
+            // nmDChemBCopper
+            // 
+            this.nmDChemBCopper.Location = new System.Drawing.Point(521, 106);
+            this.nmDChemBCopper.Name = "nmDChemBCopper";
+            this.nmDChemBCopper.Size = new System.Drawing.Size(46, 20);
+            this.nmDChemBCopper.TabIndex = 162;
+            this.nmDChemBCopper.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label145
+            // 
+            this.label145.AutoSize = true;
+            this.label145.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label145.Location = new System.Drawing.Point(437, 78);
+            this.label145.Name = "label145";
+            this.label145.Size = new System.Drawing.Size(27, 16);
+            this.label145.TabIndex = 159;
+            this.label145.Text = "Tin";
+            // 
+            // nmDChemBTin
+            // 
+            this.nmDChemBTin.Location = new System.Drawing.Point(440, 106);
+            this.nmDChemBTin.Name = "nmDChemBTin";
+            this.nmDChemBTin.Size = new System.Drawing.Size(46, 20);
+            this.nmDChemBTin.TabIndex = 160;
+            this.nmDChemBTin.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label146
+            // 
+            this.label146.AutoSize = true;
+            this.label146.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label146.Location = new System.Drawing.Point(354, 77);
+            this.label146.Name = "label146";
+            this.label146.Size = new System.Drawing.Size(56, 16);
+            this.label146.TabIndex = 157;
+            this.label146.Text = "Mercury";
+            // 
+            // nmDChemBMercury
+            // 
+            this.nmDChemBMercury.Location = new System.Drawing.Point(357, 106);
+            this.nmDChemBMercury.Name = "nmDChemBMercury";
+            this.nmDChemBMercury.Size = new System.Drawing.Size(46, 20);
+            this.nmDChemBMercury.TabIndex = 158;
+            this.nmDChemBMercury.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label147
+            // 
+            this.label147.AutoSize = true;
+            this.label147.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label147.Location = new System.Drawing.Point(265, 78);
+            this.label147.Name = "label147";
+            this.label147.Size = new System.Drawing.Size(65, 16);
+            this.label147.TabIndex = 155;
+            this.label147.Text = "Cadmium";
+            // 
+            // nmDChemBCadmium
+            // 
+            this.nmDChemBCadmium.Location = new System.Drawing.Point(272, 106);
+            this.nmDChemBCadmium.Name = "nmDChemBCadmium";
+            this.nmDChemBCadmium.Size = new System.Drawing.Size(46, 20);
+            this.nmDChemBCadmium.TabIndex = 156;
+            this.nmDChemBCadmium.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label148
+            // 
+            this.label148.AutoSize = true;
+            this.label148.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label148.Location = new System.Drawing.Point(190, 78);
+            this.label148.Name = "label148";
+            this.label148.Size = new System.Drawing.Size(69, 16);
+            this.label148.TabIndex = 153;
+            this.label148.Text = "Aluminium";
+            // 
+            // nmDChemBAluminium
+            // 
+            this.nmDChemBAluminium.Location = new System.Drawing.Point(193, 106);
+            this.nmDChemBAluminium.Name = "nmDChemBAluminium";
+            this.nmDChemBAluminium.Size = new System.Drawing.Size(46, 20);
+            this.nmDChemBAluminium.TabIndex = 154;
+            this.nmDChemBAluminium.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label149
+            // 
+            this.label149.AutoSize = true;
+            this.label149.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label149.Location = new System.Drawing.Point(114, 78);
+            this.label149.Name = "label149";
+            this.label149.Size = new System.Drawing.Size(39, 16);
+            this.label149.TabIndex = 151;
+            this.label149.Text = "Lead";
+            // 
+            // nmDChemBLead
+            // 
+            this.nmDChemBLead.Location = new System.Drawing.Point(110, 106);
+            this.nmDChemBLead.Name = "nmDChemBLead";
+            this.nmDChemBLead.Size = new System.Drawing.Size(46, 20);
+            this.nmDChemBLead.TabIndex = 152;
+            this.nmDChemBLead.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label150
+            // 
+            this.label150.AutoSize = true;
+            this.label150.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label150.Location = new System.Drawing.Point(41, 77);
+            this.label150.Name = "label150";
+            this.label150.Size = new System.Drawing.Size(42, 16);
+            this.label150.TabIndex = 149;
+            this.label150.Text = "ลำดับ  :";
+            // 
+            // nmDChemBNo
+            // 
+            this.nmDChemBNo.Location = new System.Drawing.Point(37, 106);
+            this.nmDChemBNo.Name = "nmDChemBNo";
+            this.nmDChemBNo.Size = new System.Drawing.Size(46, 20);
+            this.nmDChemBNo.TabIndex = 150;
+            this.nmDChemBNo.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label151
+            // 
+            this.label151.AutoSize = true;
+            this.label151.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label151.Location = new System.Drawing.Point(85, 22);
+            this.label151.Name = "label151";
+            this.label151.Size = new System.Drawing.Size(68, 16);
+            this.label151.TabIndex = 147;
+            this.label151.Text = "row เริ่มต้น :";
+            // 
+            // nmDChemBRow
+            // 
+            this.nmDChemBRow.Location = new System.Drawing.Point(175, 22);
+            this.nmDChemBRow.Name = "nmDChemBRow";
+            this.nmDChemBRow.Size = new System.Drawing.Size(46, 20);
+            this.nmDChemBRow.TabIndex = 148;
+            this.nmDChemBRow.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
             // FrmExcelInit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4789,6 +5197,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDEyeShortLongLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDEyeNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDEyeRow)).EndInit();
+            this.tabPage16.ResumeLayout(false);
+            this.tabPage16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBAmmonia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBZinc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBManganese)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBCopper)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBTin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBMercury)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBCadmium)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBAluminium)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBLead)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBRow)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -5143,5 +5566,36 @@
         private System.Windows.Forms.NumericUpDown nmDEyeNo;
         private System.Windows.Forms.Label label143;
         private System.Windows.Forms.NumericUpDown nmDEyeRow;
+        private System.Windows.Forms.TabPage tabPage16;
+        private System.Windows.Forms.TabPage tabPage17;
+        private System.Windows.Forms.Label label124;
+        private System.Windows.Forms.TextBox txtCheMBTest;
+        private System.Windows.Forms.Button btnChemBExcel;
+        private System.Windows.Forms.Label label125;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label126;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Label label127;
+        private System.Windows.Forms.NumericUpDown nmDChemBAmmonia;
+        private System.Windows.Forms.Label label128;
+        private System.Windows.Forms.NumericUpDown nmDChemBZinc;
+        private System.Windows.Forms.Label label130;
+        private System.Windows.Forms.NumericUpDown nmDChemBManganese;
+        private System.Windows.Forms.Label label144;
+        private System.Windows.Forms.NumericUpDown nmDChemBCopper;
+        private System.Windows.Forms.Label label145;
+        private System.Windows.Forms.NumericUpDown nmDChemBTin;
+        private System.Windows.Forms.Label label146;
+        private System.Windows.Forms.NumericUpDown nmDChemBMercury;
+        private System.Windows.Forms.Label label147;
+        private System.Windows.Forms.NumericUpDown nmDChemBCadmium;
+        private System.Windows.Forms.Label label148;
+        private System.Windows.Forms.NumericUpDown nmDChemBAluminium;
+        private System.Windows.Forms.Label label149;
+        private System.Windows.Forms.NumericUpDown nmDChemBLead;
+        private System.Windows.Forms.Label label150;
+        private System.Windows.Forms.NumericUpDown nmDChemBNo;
+        private System.Windows.Forms.Label label151;
+        private System.Windows.Forms.NumericUpDown nmDChemBRow;
     }
 }
