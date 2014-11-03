@@ -68,7 +68,7 @@ namespace CheckUP.objdb
             ei.PESummary = "pe_summary";
             ei.PEVitalSign = "pe_vitalsign";
             ei.PEWeight = "pe_weight";
-            ei.PEBloodGroup = "";
+            ei.PEBloodGroup = "pe_bloodgroup";
 
             ei.SfAAge = "sf_a_age";
             ei.SfAFirstName = "sf_a_first_name";
@@ -235,6 +235,7 @@ namespace CheckUP.objdb
             item.PESummary = dt.Rows[0][ei.PESummary].ToString();
             item.PEVitalSign = dt.Rows[0][ei.PEVitalSign].ToString();
             item.PEWeight = dt.Rows[0][ei.PEWeight].ToString();
+            item.PEBloodGroup = dt.Rows[0][ei.PEBloodGroup].ToString();
 
             //item.SfStatusName = dt.Rows[0][ei.SfStatusName].ToString();
 
@@ -374,7 +375,7 @@ namespace CheckUP.objdb
             }
             return item;
         }
-        public String updateBun(String bunValue, String bunCreatinine, String bunNo, String bunResult, String bunRow, String bunSummary)
+        public String updateBun(String bunRow, String bunNo,String bunValue, String bunCreatinine, String bunResult,  String bunSummary)
         {
             String sql = "", chk = "";
 
@@ -434,7 +435,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateCholes(String Cholesteral, String ChoNo, String ChoResult, String ChoRow, String Chosummary, String ChoLDL, String ChoHDL)
+        public String updateCholes(String ChoRow, String ChoNo,String Cholesteral, String ChoResult,  String Chosummary, String ChoLDL, String ChoHDL)
         {
             String sql = "", chk = "";
 
@@ -502,7 +503,7 @@ namespace CheckUP.objdb
                 ei.PERow + "='" + PERow + "', " +
                 ei.PESummary + "='" + PESummary + "', " +
                 ei.PEVitalSign + "='" + PEVitalSign + "', " +
-                ei.PEWeight + "='" + PEWeight + "' " +
+                ei.PEWeight + "='" + PEWeight + "', " +
                 ei.PEBloodGroup + "='" + PEBloodGroup + "' ";
             try
             {
@@ -722,7 +723,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateUric(String id, String UricAcid, String UricNo, String UricResult, String UricRow, String UricSummary)
+        public String updateUric(String UricRow, String UricNo,String UricAcid, String UricResult,  String UricSummary)
         {
             String sql = "", chk = "";
 
@@ -734,9 +735,7 @@ namespace CheckUP.objdb
                 ei.UricNo + "='" + UricNo + "', " +
                 ei.UricResult + "='" + UricResult + "', " +
                 ei.UricRow + "='" + UricRow + "', " +
-                ei.UricSummary + "='" + UricSummary + "' " +
-                //ei.SgptSummary + "='" + SgptSummary + "' " +
-                "Where " + ei.pkField + "='" + id + "'";
+                ei.UricSummary + "='" + UricSummary + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

@@ -305,7 +305,7 @@ namespace CheckUP.objdb
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "'";
+            sql = "Select * From " + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "'" + " Order By " + ccp.rowNumber;
             dt = conn.selectData(sql);
 
             return dt;
@@ -549,7 +549,7 @@ namespace CheckUP.objdb
                 ccp.patientHeight + "='" + height + "'," +
                 ccp.patientWeight + "='" + weight + "'," +
                 ccp.bmi + "='" + bmi + "'," +
-                ccp.patientPulse + "='" + pulse + "' " +
+                ccp.patientPulse + "='" + pulse + "', " +
                 ccp.BloodGroup + "='" + bloodgroup + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);

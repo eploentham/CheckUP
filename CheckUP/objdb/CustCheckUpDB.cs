@@ -33,62 +33,77 @@ namespace CheckUP.objdb
             cuc.RegisDate = "regis_date";
             cuc.Remark = "remark";
             cuc.YearId = "year_id";
+            cuc.CntSuccess = "cnt_success";
 
             cuc.PEAbNormal = "pe_abnormal";
             cuc.PECnt = "pe_cnt";
             cuc.PENormal = "pe_normal";
+            cuc.PESuccess = "pe_success";
 
             cuc.XrayAbNormal = "xray_abnormal";
             cuc.XrayCnt = "xray_cnt";
             cuc.XrayNormal = "xray_normal";
+            cuc.XraySuccess = "xray_success";
 
             cuc.CBCAbNormal = "cbc_abnormal";
             cuc.CBCCnt = "cbc_cnt";
             cuc.CBCNormal = "cbc_normal";
+            cuc.CBCSuccess = "cbc_success";
 
             cuc.FBSAbNormal = "fbs_abnormal";
             cuc.FBSCnt = "fbs_cnt";
             cuc.FBSNormal = "fbs_normal";
+            cuc.FBSSuccess = "fbs_success";
 
             cuc.UAAbNormal = "ua_abnormal";
             cuc.UACnt = "ua_cnt";
             cuc.UANormal = "ua_normal";
+            cuc.UASuccess = "ua_success";
 
             cuc.TriAbNormal = "tri_abnormal";
             cuc.TriCnt = "tri_cnt";
             cuc.TriNormal = "tri_normal";
+            cuc.TriSuccess = "tri_success";
 
             cuc.BunAbNormal = "bun_abnormal";
             cuc.BunCnt = "bun_cnt";
             cuc.BunNormal = "bun_normal";
+            cuc.BunSuccess = "bun_success";
 
             cuc.ChoAbNormal = "cho_abnormal";
             cuc.ChoCnt = "cho_cnt";
             cuc.ChoNormal = "cho_normal";
+            cuc.ChoSuccess = "cho_success";
 
             cuc.SgotAbNormal = "sgot_abnormal";
             cuc.SgotCnt = "sgot_cnt";
             cuc.SgotNormal = "sgot_normal";
+            cuc.SgotSuccess = "sgot_success";
 
             cuc.UricAbNormal = "uric_abnormal";
             cuc.UricCnt = "uric_cnt";
             cuc.UricNormal = "uric_normal";
+            cuc.UricSuccess = "uric_success";
 
             cuc.Other1AbNormal = "other1_abnormal";
             cuc.Other1Cnt = "other1_cnt";
             cuc.Other1Normal = "other1_normal";
+            cuc.Other1Success = "other1_success";
 
             cuc.AudioAbNormal = "audio_abnormal";
             cuc.AudioCnt = "audio_cnt";
             cuc.AudioNormal = "audio_normal";
+            cuc.AudioSuccess = "audio_success";
 
             cuc.LungAbNormal = "lung_abnormal";
             cuc.LungCnt = "lung_cnt";
             cuc.LungNormal = "lung_normal";
+            cuc.LungSuccess = "lung_success";
 
             cuc.EyeAbNormal = "eye_abnormal";
             cuc.EyeCnt = "eye_cnt";
             cuc.EyeNormal = "eye_normal";
+            cuc.EyeSuccess = "eye_success";
 
             cuc.pkField = "cust_checkup_patient_id";
             cuc.table = "t_cust_checkup";
@@ -102,6 +117,7 @@ namespace CheckUP.objdb
             item.CntEmployee = dt.Rows[0][cuc.CntEmployee].ToString();
             item.CommitCheckUpDate = dt.Rows[0][cuc.CommitCheckUpDate].ToString();
             item.CustId = dt.Rows[0][cuc.CustId].ToString();
+            item.CntSuccess = dt.Rows[0][cuc.CntSuccess].ToString();
 
             item.CustNameT = dt.Rows[0][cuc.CustNameT].ToString();
             item.Description = dt.Rows[0][cuc.Description].ToString();
@@ -113,59 +129,72 @@ namespace CheckUP.objdb
             item.PEAbNormal = dt.Rows[0][cuc.PEAbNormal].ToString();
             item.PECnt = dt.Rows[0][cuc.PECnt].ToString();
             item.PENormal = dt.Rows[0][cuc.PENormal].ToString();
+            item.PESuccess = dt.Rows[0][cuc.PESuccess].ToString();
 
             item.XrayAbNormal = dt.Rows[0][cuc.XrayAbNormal].ToString();
             item.XrayCnt = dt.Rows[0][cuc.XrayCnt].ToString();
             item.XrayNormal = dt.Rows[0][cuc.XrayNormal].ToString();
+            item.XraySuccess = dt.Rows[0][cuc.XraySuccess].ToString();
 
             item.CBCAbNormal = dt.Rows[0][cuc.CBCAbNormal].ToString();
             item.CBCCnt = dt.Rows[0][cuc.CBCCnt].ToString();
             item.CBCNormal = dt.Rows[0][cuc.CBCNormal].ToString();
+            item.CBCSuccess = dt.Rows[0][cuc.CBCSuccess].ToString();
 
             item.FBSAbNormal = dt.Rows[0][cuc.FBSAbNormal].ToString();
             item.FBSCnt = dt.Rows[0][cuc.FBSCnt].ToString();
             item.FBSNormal = dt.Rows[0][cuc.FBSNormal].ToString();
+            item.FBSSuccess = dt.Rows[0][cuc.FBSSuccess].ToString();
 
             item.UAAbNormal = dt.Rows[0][cuc.UAAbNormal].ToString();
             item.UACnt = dt.Rows[0][cuc.UACnt].ToString();
             item.UANormal = dt.Rows[0][cuc.UANormal].ToString();
+            item.UASuccess = dt.Rows[0][cuc.UASuccess].ToString();
 
             item.TriAbNormal = dt.Rows[0][cuc.TriAbNormal].ToString();
             item.TriCnt = dt.Rows[0][cuc.TriCnt].ToString();
             item.TriNormal = dt.Rows[0][cuc.TriNormal].ToString();
+            item.TriSuccess = dt.Rows[0][cuc.TriSuccess].ToString();
 
             item.BunAbNormal = dt.Rows[0][cuc.BunAbNormal].ToString();
             item.BunCnt = dt.Rows[0][cuc.BunCnt].ToString();
             item.BunNormal = dt.Rows[0][cuc.BunNormal].ToString();
+            item.BunSuccess = dt.Rows[0][cuc.BunSuccess].ToString();
 
             item.ChoAbNormal = dt.Rows[0][cuc.ChoAbNormal].ToString();
             item.ChoCnt = dt.Rows[0][cuc.ChoCnt].ToString();
             item.ChoNormal = dt.Rows[0][cuc.ChoNormal].ToString();
+            item.ChoSuccess = dt.Rows[0][cuc.ChoSuccess].ToString();
 
             item.SgotAbNormal = dt.Rows[0][cuc.SgotAbNormal].ToString();
             item.SgotCnt = dt.Rows[0][cuc.SgotCnt].ToString();
             item.SgotNormal = dt.Rows[0][cuc.SgotNormal].ToString();
+            item.SgotSuccess = dt.Rows[0][cuc.SgotSuccess].ToString();
 
             item.UricAbNormal = dt.Rows[0][cuc.UricAbNormal].ToString();
             item.UricCnt = dt.Rows[0][cuc.UricCnt].ToString();
             item.UricNormal = dt.Rows[0][cuc.UricNormal].ToString();
+            item.UricSuccess = dt.Rows[0][cuc.UricSuccess].ToString();
 
             item.Other1AbNormal = dt.Rows[0][cuc.Other1AbNormal].ToString();
             item.Other1Cnt = dt.Rows[0][cuc.Other1Cnt].ToString();
             item.Other1Normal = dt.Rows[0][cuc.Other1Normal].ToString();
+            item.Other1Success = dt.Rows[0][cuc.Other1Success].ToString();
 
             item.AudioAbNormal = dt.Rows[0][cuc.AudioAbNormal].ToString();
             item.AudioCnt = dt.Rows[0][cuc.AudioCnt].ToString();
             item.AudioNormal = dt.Rows[0][cuc.AudioNormal].ToString();
-
+            item.AudioSuccess = dt.Rows[0][cuc.AudioSuccess].ToString();
 
             item.LungAbNormal = dt.Rows[0][cuc.LungAbNormal].ToString();
             item.LungCnt = dt.Rows[0][cuc.LungCnt].ToString();
             item.LungNormal = dt.Rows[0][cuc.LungNormal].ToString();
+            item.LungSuccess = dt.Rows[0][cuc.LungSuccess].ToString();
 
             item.EyeAbNormal = dt.Rows[0][cuc.EyeAbNormal].ToString();
             item.EyeCnt = dt.Rows[0][cuc.EyeCnt].ToString();
             item.EyeNormal = dt.Rows[0][cuc.EyeNormal].ToString();
+            item.EyeSuccess = dt.Rows[0][cuc.EyeSuccess].ToString();
 
             return item;
         }
@@ -345,7 +374,7 @@ namespace CheckUP.objdb
                 return o;
             }
         }
-        private String updatePE(String cucId, String PEAbNormal, String PECnt, String PENormal)
+        public String updatePE(String cucId, String PEAbNormal, String PECnt, String PENormal)
         {
             String sql = "", chk = "";
 
@@ -370,7 +399,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        private String updateXray(String cucId, String XrayAbNormal, String XrayCnt, String XrayNormal)
+        public String updateXray(String cucId, String XrayAbNormal, String XrayCnt, String XrayNormal)
         {
             String sql = "", chk = "";
 
@@ -395,7 +424,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        private String updateFBS(String cucId, String FBSAbNormal, String FBSCnt, String FBSNormal)
+        public String updateFBS(String cucId, String FBSAbNormal, String FBSCnt, String FBSNormal)
         {
             String sql = "", chk = "";
 
@@ -420,7 +449,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        private String updateCBC(String cucId, String CBCAbNormal, String CBCSCnt, String CBCNormal)
+        public String updateCBC(String cucId, String CBCAbNormal, String CBCSCnt, String CBCNormal)
         {
             String sql = "", chk = "";
 
@@ -445,7 +474,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        private String updateUA(String cucId, String UAAbNormal, String UACnt, String UANormal)
+        public String updateUA(String cucId, String UAAbNormal, String UACnt, String UANormal)
         {
             String sql = "", chk = "";
 
@@ -470,7 +499,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        private String updateTri(String cucId, String TriAbNormal, String TriCnt, String TriNormal)
+        public String updateTri(String cucId, String TriAbNormal, String TriCnt, String TriNormal)
         {
             String sql = "", chk = "";
 
@@ -495,7 +524,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        private String updateCho(String cucId, String ChoAbNormal, String ChoCnt, String ChoNormal)
+        public String updateCho(String cucId, String ChoAbNormal, String ChoCnt, String ChoNormal)
         {
             String sql = "", chk = "";
 
@@ -520,7 +549,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        private String updateSgot(String cucId, String SgotAbNormal, String SgotCnt, String SgotNormal)
+        public String updateSgot(String cucId, String SgotAbNormal, String SgotCnt, String SgotNormal)
         {
             String sql = "", chk = "";
 
@@ -545,7 +574,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        private String updateBun(String cucId, String BunAbNormal, String BunCnt, String BunNormal)
+        public String updateBun(String cucId, String BunAbNormal, String BunCnt, String BunNormal)
         {
             String sql = "", chk = "";
 
@@ -570,7 +599,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        private String updateUric(String cucId, String UricAbNormal, String UricCnt, String UricNormal)
+        public String updateUric(String cucId, String UricAbNormal, String UricCnt, String UricNormal)
         {
             String sql = "", chk = "";
 
@@ -595,7 +624,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        private String updateOther1(String cucId, String Other1AbNormal, String Other1Cnt, String Other1Normal)
+        public String updateOther1(String cucId, String Other1AbNormal, String Other1Cnt, String Other1Normal)
         {
             String sql = "", chk = "";
 
@@ -620,7 +649,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        private String updateLung(String cucId, String LungAbNormal, String LungCnt, String LungNormal)
+        public String updateLung(String cucId, String LungAbNormal, String LungCnt, String LungNormal)
         {
             String sql = "", chk = "";
 
@@ -645,7 +674,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        private String updateAudio(String cucId, String AudioAbNormal, String AudioCnt, String AudioNormal)
+        public String updateAudio(String cucId, String AudioAbNormal, String AudioCnt, String AudioNormal)
         {
             String sql = "", chk = "";
 
@@ -670,7 +699,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        private String updateEye(String cucId, String EyeAbNormal, String EyeCnt, String EyeNormal)
+        public String updateEye(String cucId, String EyeAbNormal, String EyeCnt, String EyeNormal)
         {
             String sql = "", chk = "";
 
@@ -689,6 +718,366 @@ namespace CheckUP.objdb
             catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex.ToString(), "update updateEye");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateCntImport(String cucId, int cntEmp, int row)
+        {
+            String sql = "", chk = "";
+
+            //p.Description = p.Description.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+
+            sql = "Update " + cuc.table + " Set " + cuc.CntEmployee + "=" + cntEmp + ", " +
+                cuc.CntSuccess + "=" + row + " " +
+                
+                "Where " + cuc.pkField + "='" + cucId + "'";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateEye");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updatePEImport(String cucId, int cntEmp, int row)
+        {
+            String sql = "", chk = "";
+
+            //p.Description = p.Description.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+
+            sql = "Update " + cuc.table + " Set " + cuc.PECnt + "=" + cntEmp + ", " +
+                cuc.CntSuccess + "=" + row + " " +
+
+                "Where " + cuc.pkField + "='" + cucId + "'";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updatePEImport");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateXrayImport(String cucId, int cnt, int row)
+        {
+            String sql = "", chk = "";
+
+            //p.Description = p.Description.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+
+            sql = "Update " + cuc.table + " Set " + cuc.XrayCnt + "=" + cnt + ", " +
+                cuc.XraySuccess + "=" + row + " " +
+
+                "Where " + cuc.pkField + "='" + cucId + "'";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateXrayImport");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateCBCImport(String cucId, int cnt, int row)
+        {
+            String sql = "", chk = "";
+
+            //p.Description = p.Description.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+
+            sql = "Update " + cuc.table + " Set " + cuc.CBCCnt + "=" + cnt + ", " +
+                cuc.CBCSuccess + "=" + row + " " +
+
+                "Where " + cuc.pkField + "='" + cucId + "'";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateCBCImport");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateFBSImport(String cucId, int cnt, int row)
+        {
+            String sql = "", chk = "";
+
+            //p.Description = p.Description.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+
+            sql = "Update " + cuc.table + " Set " + cuc.FBSCnt + "=" + cnt + ", " +
+                cuc.FBSSuccess + "=" + row + " " +
+
+                "Where " + cuc.pkField + "='" + cucId + "'";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateFBSImport");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateUAImport(String cucId, int cnt, int row)
+        {
+            String sql = "", chk = "";
+
+            //p.Description = p.Description.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+
+            sql = "Update " + cuc.table + " Set " + cuc.UACnt + "=" + cnt + ", " +
+                cuc.UASuccess + "=" + row + " " +
+
+                "Where " + cuc.pkField + "='" + cucId + "'";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateUAImport");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateTriImport(String cucId, int cnt, int row)
+        {
+            String sql = "", chk = "";
+
+            //p.Description = p.Description.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+
+            sql = "Update " + cuc.table + " Set " + cuc.TriCnt + "=" + cnt + ", " +
+                cuc.TriSuccess + "=" + row + " " +
+
+                "Where " + cuc.pkField + "='" + cucId + "'";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateTriImport");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateChoImport(String cucId, int cnt, int row)
+        {
+            String sql = "", chk = "";
+
+            //p.Description = p.Description.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+
+            sql = "Update " + cuc.table + " Set " + cuc.ChoCnt + "=" + cnt + ", " +
+                cuc.ChoSuccess + "=" + row + " " +
+
+                "Where " + cuc.pkField + "='" + cucId + "'";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateChoImport");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateSgotImport(String cucId, int cnt, int row)
+        {
+            String sql = "", chk = "";
+
+            //p.Description = p.Description.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+
+            sql = "Update " + cuc.table + " Set " + cuc.SgotCnt + "=" + cnt + ", " +
+                cuc.SgotSuccess + "=" + row + " " +
+
+                "Where " + cuc.pkField + "='" + cucId + "'";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateSgotImport");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateBunImport(String cucId, int cnt, int row)
+        {
+            String sql = "", chk = "";
+
+            //p.Description = p.Description.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+
+            sql = "Update " + cuc.table + " Set " + cuc.BunCnt + "=" + cnt + ", " +
+                cuc.BunSuccess + "=" + row + " " +
+
+                "Where " + cuc.pkField + "='" + cucId + "'";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateBunImport");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateUricImport(String cucId, int cnt, int row)
+        {
+            String sql = "", chk = "";
+
+            //p.Description = p.Description.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+
+            sql = "Update " + cuc.table + " Set " + cuc.UricCnt + "=" + cnt + ", " +
+                cuc.UricSuccess + "=" + row + " " +
+
+                "Where " + cuc.pkField + "='" + cucId + "'";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateUricImport");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateOther1Import(String cucId, int cnt, int row)
+        {
+            String sql = "", chk = "";
+
+            //p.Description = p.Description.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+
+            sql = "Update " + cuc.table + " Set " + cuc.Other1Cnt + "=" + cnt + ", " +
+                cuc.Other1Success + "=" + row + " " +
+
+                "Where " + cuc.pkField + "='" + cucId + "'";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateOther1Import");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateLungImport(String cucId, int cnt, int row)
+        {
+            String sql = "", chk = "";
+
+            //p.Description = p.Description.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+
+            sql = "Update " + cuc.table + " Set " + cuc.LungCnt + "=" + cnt + ", " +
+                cuc.LungSuccess + "=" + row + " " +
+
+                "Where " + cuc.pkField + "='" + cucId + "'";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateLungImport");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateAudioImport(String cucId, int cnt, int row)
+        {
+            String sql = "", chk = "";
+
+            //p.Description = p.Description.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+
+            sql = "Update " + cuc.table + " Set " + cuc.AudioCnt + "=" + cnt + ", " +
+                cuc.AudioSuccess + "=" + row + " " +
+
+                "Where " + cuc.pkField + "='" + cucId + "'";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateAudioImport");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateEyeImport(String cucId, int cnt, int row)
+        {
+            String sql = "", chk = "";
+
+            //p.Description = p.Description.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+
+            sql = "Update " + cuc.table + " Set " + cuc.EyeCnt + "=" + cnt + ", " +
+                cuc.EyeSuccess + "=" + row + " " +
+
+                "Where " + cuc.pkField + "='" + cucId + "'";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateEyeImport");
             }
             finally
             {

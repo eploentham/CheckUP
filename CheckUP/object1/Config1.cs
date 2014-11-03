@@ -397,6 +397,10 @@ namespace CheckUP.object1
             {
                 return "0";
             }
+            else if (o.Equals("-"))
+            {
+                return "0";
+            }
             else
             {
                 return o;

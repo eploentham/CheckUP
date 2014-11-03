@@ -406,10 +406,10 @@ namespace CheckUP.gui
                 summary = "";
             }
             summary = summary.Trim();
-            txtSgotTest.Text = "ลำดับ " + No + " bun " + bun + " sgpt " + creatinine + " result " + result + " summary " + summary;
+            txtBunTest.Text = "ลำดับ " + No + " bun " + bun + " sgpt " + creatinine + " result " + result + " summary " + summary;
 
             Cursor.Current = cursor;
-            if (cc.eidb.updateBun(nmDBunValue.Value.ToString(), nmDBunNo.Value.ToString(), nmDBunResult.Value.ToString(), nmDBunRow.Value.ToString(), nmDBunCreatinine.Value.ToString(), nmDBunSummary.Value.ToString()).Length >= 1)
+            if (cc.eidb.updateBun(nmDBunRow.Value.ToString(), nmDBunNo.Value.ToString(),nmDBunValue.Value.ToString(),  nmDBunCreatinine.Value.ToString(), nmDBunResult.Value.ToString(), nmDBunSummary.Value.ToString()).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล BUN เรียบร้อย", "บันทึกข้อมูล");
             }
@@ -462,10 +462,10 @@ namespace CheckUP.gui
                 summary = "";
             }
             summary = summary.Trim();
-            txtTriTest.Text = "ลำดับ " + No + " Uric " + uric + " result " + result + " summary " + summary;
+            txtUricTest.Text = "ลำดับ " + No + " Uric " + uric + " result " + result + " summary " + summary;
 
             Cursor.Current = cursor;
-            if (cc.eidb.updateTrig(nmDUricValue.Value.ToString(), nmDUricNo.Value.ToString(), nmDUricResult.Value.ToString(), nmDUricRow.Value.ToString(), nmDUricSummary.Value.ToString()).Length >= 1)
+            if (cc.eidb.updateUric(nmDUricRow.Value.ToString(), nmDUricNo.Value.ToString(),nmDUricValue.Value.ToString(), nmDUricResult.Value.ToString(),  nmDUricSummary.Value.ToString()).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล Uric Acid เรียบร้อย", "บันทึกข้อมูล");
             }
@@ -541,7 +541,7 @@ namespace CheckUP.gui
 
             Cursor.Current = cursor;
             txtChoTest.Text = "ลำดับ " + No + " choles " + cho + " LDL " + ldl + " HDL " + hdl + " result " + result + " summary " + summary;
-            if (cc.eidb.updateCholes(nmDChoValue.Value.ToString(), nmDChoNo.Value.ToString(), nmDChoResult.Value.ToString(), nmDChoRow.Value.ToString(),
+            if (cc.eidb.updateCholes(nmDChoRow.Value.ToString(), nmDChoNo.Value.ToString(),nmDChoValue.Value.ToString(), nmDChoResult.Value.ToString(), 
                 nmDChoSummary.Value.ToString(), nmDChoLDL.Value.ToString(), nmDChoHDL.Value.ToString()).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล Choles เรียบร้อย", "บันทึกข้อมูล");

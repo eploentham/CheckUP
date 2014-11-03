@@ -406,7 +406,34 @@ namespace CheckUP
                 cc.lw.WriteLog("rpt.setReportCheckUp Error " + chk);
             }
         }
+        public void setReportCheckUpSticker(DataTable dt)
+        {
+            String chk = "";
+            ReportDocument rpt = new ReportDocument();
+            try
+            {
+                cc.lw.WriteLog("rpt.setReportCheckUpSticker OK ");
+                rpt.Load(cc.initC.PathReport + "\\CheckUpSticker.rpt");
+                cc.lw.WriteLog("rpt.setReportCheckUpSticker OK Load" + cc.initC.PathReport + "\\CheckUpSticker.rpt");
+                rpt.SetDataSource(dt);
+                cc.lw.WriteLog("rpt.setReportCheckUpSticker OK SetDataSource");
 
+                //rpt.SetParameterValue("line1", "ผลตรวจสุขภาพประจำปี 2557");
+                //rpt.SetParameterValue("compName", "โรงพบาบาล บางนา5");
+                //rpt.SetParameterValue("compAddress", "55 หมู่4 ");
+
+                //rpt.SetParameterValue("custName", "Test Company");
+                
+
+                this.crystalReportViewer1.ReportSource = rpt;
+                this.crystalReportViewer1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                chk = ex.Message.ToString();
+                cc.lw.WriteLog("rpt.setReportCheckUpSticker Error " + chk);
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             

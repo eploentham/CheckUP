@@ -200,6 +200,17 @@
       <DependentUpon>CheckUpPrint2.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="report\CheckUpSticker.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckUpSticker.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\CheckUpStickerDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckUpStickerDS.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="gui\FrmCheckUPAdd.resx">
       <DependentUpon>FrmCheckUPAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,6 +275,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CheckUpPrint2.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="report\CheckUpSticker.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CheckUpSticker.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -283,6 +298,17 @@
     </None>
     <None Include="report\CheckUpDS.xss">
       <DependentUpon>CheckUpDS.xsd</DependentUpon>
+    </None>
+    <None Include="report\CheckUpStickerDS.xsc">
+      <DependentUpon>CheckUpStickerDS.xsd</DependentUpon>
+    </None>
+    <None Include="report\CheckUpStickerDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CheckUpStickerDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="report\CheckUpStickerDS.xss">
+      <DependentUpon>CheckUpStickerDS.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

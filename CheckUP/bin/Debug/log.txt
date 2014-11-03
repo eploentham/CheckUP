@@ -332,3 +332,24 @@ Failed to load database information.
 28/10/2557 15:38->rpt.setReportCheckUp OK 
 28/10/2557 15:38->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
 28/10/2557 15:38->rpt.setReportCheckUp OK SetDataSource
+3/11/2557 17:41->rpt.setReportCheckUp OK 
+3/11/2557 17:41->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+3/11/2557 17:41->rpt.setReportCheckUp OK SetDataSource
+3/11/2557 17:42->rpt.setReportCheckUp OK 
+3/11/2557 17:42->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+3/11/2557 17:42->rpt.setReportCheckUp OK SetDataSource
+3/11/2557 17:43->rpt.setReportCheckUpSticker OK 
+3/11/2557 17:43->rpt.setReportCheckUpSticker OK LoadD:\source\CheckUP\CheckUP\report\CheckUpSticker.rpt
+3/11/2557 17:43->rpt.setReportCheckUpSticker OK SetDataSource
+3/11/2557 17:44->rpt.setReportCheckUpSticker OK 
+3/11/2557 17:44->rpt.setReportCheckUpSticker OK LoadD:\source\CheckUP\CheckUP\report\CheckUpSticker.rpt
+3/11/2557 17:44->rpt.setReportCheckUpSticker OK SetDataSource
+3/11/2557 17:47->rpt.setReportCheckUpSticker OK 
+3/11/2557 17:47->rpt.setReportCheckUpSticker OK LoadD:\source\CheckUP\CheckUP\report\CheckUpSticker.rpt
+3/11/2557 17:47->rpt.setReportCheckUpSticker OK SetDataSource
+3/11/2557 17:51->rpt.setReportCheckUpSticker OK 
+3/11/2557 17:51->rpt.setReportCheckUpSticker OK LoadD:\source\CheckUP\CheckUP\report\CheckUpSticker.rpt
+3/11/2557 17:51->rpt.setReportCheckUpSticker OK SetDataSource
+3/11/2557 17:54->rpt.setReportCheckUpSticker OK 
+3/11/2557 17:54->rpt.setReportCheckUpSticker OK LoadD:\source\CheckUP\CheckUP\report\CheckUpSticker.rpt
+3/11/2557 17:54->rpt.setReportCheckUpSticker OK SetDataSource

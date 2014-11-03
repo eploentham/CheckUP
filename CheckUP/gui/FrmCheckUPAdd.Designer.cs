@@ -38,7 +38,7 @@
             this.textBox67 = new System.Windows.Forms.TextBox();
             this.textBox68 = new System.Windows.Forms.TextBox();
             this.textBox69 = new System.Windows.Forms.TextBox();
-            this.textBox70 = new System.Windows.Forms.TextBox();
+            this.txtEyeCntEmp = new System.Windows.Forms.TextBox();
             this.label115 = new System.Windows.Forms.Label();
             this.label116 = new System.Windows.Forms.Label();
             this.label117 = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@
             this.textBox62 = new System.Windows.Forms.TextBox();
             this.textBox63 = new System.Windows.Forms.TextBox();
             this.textBox64 = new System.Windows.Forms.TextBox();
-            this.textBox65 = new System.Windows.Forms.TextBox();
+            this.txtAudioCntEmp = new System.Windows.Forms.TextBox();
             this.label107 = new System.Windows.Forms.Label();
             this.label108 = new System.Windows.Forms.Label();
             this.label109 = new System.Windows.Forms.Label();
@@ -68,7 +68,7 @@
             this.textBox57 = new System.Windows.Forms.TextBox();
             this.textBox58 = new System.Windows.Forms.TextBox();
             this.textBox59 = new System.Windows.Forms.TextBox();
-            this.textBox60 = new System.Windows.Forms.TextBox();
+            this.txtLungCntEmp = new System.Windows.Forms.TextBox();
             this.label99 = new System.Windows.Forms.Label();
             this.label100 = new System.Windows.Forms.Label();
             this.label101 = new System.Windows.Forms.Label();
@@ -83,7 +83,7 @@
             this.textBox52 = new System.Windows.Forms.TextBox();
             this.textBox53 = new System.Windows.Forms.TextBox();
             this.textBox54 = new System.Windows.Forms.TextBox();
-            this.textBox55 = new System.Windows.Forms.TextBox();
+            this.txtOther1CntEmp = new System.Windows.Forms.TextBox();
             this.label91 = new System.Windows.Forms.Label();
             this.label92 = new System.Windows.Forms.Label();
             this.label93 = new System.Windows.Forms.Label();
@@ -100,7 +100,7 @@
             this.textBox47 = new System.Windows.Forms.TextBox();
             this.textBox48 = new System.Windows.Forms.TextBox();
             this.textBox49 = new System.Windows.Forms.TextBox();
-            this.textBox50 = new System.Windows.Forms.TextBox();
+            this.txtUricCntEmp = new System.Windows.Forms.TextBox();
             this.label79 = new System.Windows.Forms.Label();
             this.label80 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
@@ -115,7 +115,7 @@
             this.textBox42 = new System.Windows.Forms.TextBox();
             this.textBox43 = new System.Windows.Forms.TextBox();
             this.textBox44 = new System.Windows.Forms.TextBox();
-            this.textBox45 = new System.Windows.Forms.TextBox();
+            this.txtBunCntEmp = new System.Windows.Forms.TextBox();
             this.label71 = new System.Windows.Forms.Label();
             this.label72 = new System.Windows.Forms.Label();
             this.label73 = new System.Windows.Forms.Label();
@@ -130,7 +130,7 @@
             this.textBox37 = new System.Windows.Forms.TextBox();
             this.textBox38 = new System.Windows.Forms.TextBox();
             this.textBox39 = new System.Windows.Forms.TextBox();
-            this.textBox40 = new System.Windows.Forms.TextBox();
+            this.txtSgotCntEmp = new System.Windows.Forms.TextBox();
             this.label63 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
@@ -145,7 +145,7 @@
             this.textBox32 = new System.Windows.Forms.TextBox();
             this.textBox33 = new System.Windows.Forms.TextBox();
             this.textBox34 = new System.Windows.Forms.TextBox();
-            this.textBox35 = new System.Windows.Forms.TextBox();
+            this.txtChoCntEmp = new System.Windows.Forms.TextBox();
             this.label55 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
@@ -160,7 +160,7 @@
             this.textBox27 = new System.Windows.Forms.TextBox();
             this.textBox28 = new System.Windows.Forms.TextBox();
             this.textBox29 = new System.Windows.Forms.TextBox();
-            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.txtTriCntEmp = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
@@ -175,7 +175,7 @@
             this.textBox22 = new System.Windows.Forms.TextBox();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.txtUACntEmp = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
@@ -190,7 +190,7 @@
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.txtCBCCntEmp = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -205,7 +205,7 @@
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.txtFBSCntEmp = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -220,7 +220,7 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtXrayCntEmp = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -234,8 +234,8 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPECntNormal = new System.Windows.Forms.TextBox();
+            this.txtPECntEmp = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -244,6 +244,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dgvSum = new System.Windows.Forms.DataGridView();
             this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.btnPrintSticker = new System.Windows.Forms.Button();
             this.label88 = new System.Windows.Forms.Label();
             this.label87 = new System.Windows.Forms.Label();
             this.nmDPrintFirst = new System.Windows.Forms.NumericUpDown();
@@ -278,6 +279,9 @@
             this.tabPage16 = new System.Windows.Forms.TabPage();
             this.dgvEye = new System.Windows.Forms.DataGridView();
             this.tabPage17 = new System.Windows.Forms.TabPage();
+            this.dgvChemB = new System.Windows.Forms.DataGridView();
+            this.tabPage18 = new System.Windows.Forms.TabPage();
+            this.dgvChemU = new System.Windows.Forms.DataGridView();
             this.cboCust = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnImport = new System.Windows.Forms.Button();
@@ -294,9 +298,12 @@
             this.ChkUnActive = new System.Windows.Forms.RadioButton();
             this.chkActive = new System.Windows.Forms.RadioButton();
             this.pB1 = new System.Windows.Forms.ProgressBar();
-            this.tabPage18 = new System.Windows.Forms.TabPage();
-            this.dgvChemB = new System.Windows.Forms.DataGridView();
-            this.dgvChemU = new System.Windows.Forms.DataGridView();
+            this.txtCntEmp = new System.Windows.Forms.TextBox();
+            this.label121 = new System.Windows.Forms.Label();
+            this.txtYear = new System.Windows.Forms.TextBox();
+            this.label122 = new System.Windows.Forms.Label();
+            this.txtCntSuccess = new System.Windows.Forms.TextBox();
+            this.label123 = new System.Windows.Forms.Label();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -332,10 +339,10 @@
             this.tabPage16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEye)).BeginInit();
             this.tabPage17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
-            this.tabPage18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChemB)).BeginInit();
+            this.tabPage18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChemU)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
             this.SuspendLayout();
             // 
             // tC
@@ -374,7 +381,7 @@
             this.tabPage4.Controls.Add(this.textBox67);
             this.tabPage4.Controls.Add(this.textBox68);
             this.tabPage4.Controls.Add(this.textBox69);
-            this.tabPage4.Controls.Add(this.textBox70);
+            this.tabPage4.Controls.Add(this.txtEyeCntEmp);
             this.tabPage4.Controls.Add(this.label115);
             this.tabPage4.Controls.Add(this.label116);
             this.tabPage4.Controls.Add(this.label117);
@@ -389,7 +396,7 @@
             this.tabPage4.Controls.Add(this.textBox62);
             this.tabPage4.Controls.Add(this.textBox63);
             this.tabPage4.Controls.Add(this.textBox64);
-            this.tabPage4.Controls.Add(this.textBox65);
+            this.tabPage4.Controls.Add(this.txtAudioCntEmp);
             this.tabPage4.Controls.Add(this.label107);
             this.tabPage4.Controls.Add(this.label108);
             this.tabPage4.Controls.Add(this.label109);
@@ -404,7 +411,7 @@
             this.tabPage4.Controls.Add(this.textBox57);
             this.tabPage4.Controls.Add(this.textBox58);
             this.tabPage4.Controls.Add(this.textBox59);
-            this.tabPage4.Controls.Add(this.textBox60);
+            this.tabPage4.Controls.Add(this.txtLungCntEmp);
             this.tabPage4.Controls.Add(this.label99);
             this.tabPage4.Controls.Add(this.label100);
             this.tabPage4.Controls.Add(this.label101);
@@ -419,7 +426,7 @@
             this.tabPage4.Controls.Add(this.textBox52);
             this.tabPage4.Controls.Add(this.textBox53);
             this.tabPage4.Controls.Add(this.textBox54);
-            this.tabPage4.Controls.Add(this.textBox55);
+            this.tabPage4.Controls.Add(this.txtOther1CntEmp);
             this.tabPage4.Controls.Add(this.label91);
             this.tabPage4.Controls.Add(this.label92);
             this.tabPage4.Controls.Add(this.label93);
@@ -436,7 +443,7 @@
             this.tabPage4.Controls.Add(this.textBox47);
             this.tabPage4.Controls.Add(this.textBox48);
             this.tabPage4.Controls.Add(this.textBox49);
-            this.tabPage4.Controls.Add(this.textBox50);
+            this.tabPage4.Controls.Add(this.txtUricCntEmp);
             this.tabPage4.Controls.Add(this.label79);
             this.tabPage4.Controls.Add(this.label80);
             this.tabPage4.Controls.Add(this.label81);
@@ -451,7 +458,7 @@
             this.tabPage4.Controls.Add(this.textBox42);
             this.tabPage4.Controls.Add(this.textBox43);
             this.tabPage4.Controls.Add(this.textBox44);
-            this.tabPage4.Controls.Add(this.textBox45);
+            this.tabPage4.Controls.Add(this.txtBunCntEmp);
             this.tabPage4.Controls.Add(this.label71);
             this.tabPage4.Controls.Add(this.label72);
             this.tabPage4.Controls.Add(this.label73);
@@ -466,7 +473,7 @@
             this.tabPage4.Controls.Add(this.textBox37);
             this.tabPage4.Controls.Add(this.textBox38);
             this.tabPage4.Controls.Add(this.textBox39);
-            this.tabPage4.Controls.Add(this.textBox40);
+            this.tabPage4.Controls.Add(this.txtSgotCntEmp);
             this.tabPage4.Controls.Add(this.label63);
             this.tabPage4.Controls.Add(this.label64);
             this.tabPage4.Controls.Add(this.label65);
@@ -481,7 +488,7 @@
             this.tabPage4.Controls.Add(this.textBox32);
             this.tabPage4.Controls.Add(this.textBox33);
             this.tabPage4.Controls.Add(this.textBox34);
-            this.tabPage4.Controls.Add(this.textBox35);
+            this.tabPage4.Controls.Add(this.txtChoCntEmp);
             this.tabPage4.Controls.Add(this.label55);
             this.tabPage4.Controls.Add(this.label56);
             this.tabPage4.Controls.Add(this.label57);
@@ -496,7 +503,7 @@
             this.tabPage4.Controls.Add(this.textBox27);
             this.tabPage4.Controls.Add(this.textBox28);
             this.tabPage4.Controls.Add(this.textBox29);
-            this.tabPage4.Controls.Add(this.textBox30);
+            this.tabPage4.Controls.Add(this.txtTriCntEmp);
             this.tabPage4.Controls.Add(this.label47);
             this.tabPage4.Controls.Add(this.label48);
             this.tabPage4.Controls.Add(this.label49);
@@ -511,7 +518,7 @@
             this.tabPage4.Controls.Add(this.textBox22);
             this.tabPage4.Controls.Add(this.textBox23);
             this.tabPage4.Controls.Add(this.textBox24);
-            this.tabPage4.Controls.Add(this.textBox25);
+            this.tabPage4.Controls.Add(this.txtUACntEmp);
             this.tabPage4.Controls.Add(this.label39);
             this.tabPage4.Controls.Add(this.label40);
             this.tabPage4.Controls.Add(this.label41);
@@ -526,7 +533,7 @@
             this.tabPage4.Controls.Add(this.textBox17);
             this.tabPage4.Controls.Add(this.textBox18);
             this.tabPage4.Controls.Add(this.textBox19);
-            this.tabPage4.Controls.Add(this.textBox20);
+            this.tabPage4.Controls.Add(this.txtCBCCntEmp);
             this.tabPage4.Controls.Add(this.label31);
             this.tabPage4.Controls.Add(this.label32);
             this.tabPage4.Controls.Add(this.label33);
@@ -541,7 +548,7 @@
             this.tabPage4.Controls.Add(this.textBox12);
             this.tabPage4.Controls.Add(this.textBox13);
             this.tabPage4.Controls.Add(this.textBox14);
-            this.tabPage4.Controls.Add(this.textBox15);
+            this.tabPage4.Controls.Add(this.txtFBSCntEmp);
             this.tabPage4.Controls.Add(this.label23);
             this.tabPage4.Controls.Add(this.label24);
             this.tabPage4.Controls.Add(this.label25);
@@ -556,7 +563,7 @@
             this.tabPage4.Controls.Add(this.textBox7);
             this.tabPage4.Controls.Add(this.textBox8);
             this.tabPage4.Controls.Add(this.textBox9);
-            this.tabPage4.Controls.Add(this.textBox10);
+            this.tabPage4.Controls.Add(this.txtXrayCntEmp);
             this.tabPage4.Controls.Add(this.label15);
             this.tabPage4.Controls.Add(this.label16);
             this.tabPage4.Controls.Add(this.label17);
@@ -570,8 +577,8 @@
             this.tabPage4.Controls.Add(this.textBox5);
             this.tabPage4.Controls.Add(this.textBox4);
             this.tabPage4.Controls.Add(this.textBox3);
-            this.tabPage4.Controls.Add(this.textBox2);
-            this.tabPage4.Controls.Add(this.textBox1);
+            this.tabPage4.Controls.Add(this.txtPECntNormal);
+            this.tabPage4.Controls.Add(this.txtPECntEmp);
             this.tabPage4.Controls.Add(this.label10);
             this.tabPage4.Controls.Add(this.label9);
             this.tabPage4.Controls.Add(this.label8);
@@ -661,13 +668,13 @@
             this.textBox69.Size = new System.Drawing.Size(62, 22);
             this.textBox69.TabIndex = 206;
             // 
-            // textBox70
+            // txtEyeCntEmp
             // 
-            this.textBox70.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox70.Location = new System.Drawing.Point(290, 754);
-            this.textBox70.Name = "textBox70";
-            this.textBox70.Size = new System.Drawing.Size(62, 22);
-            this.textBox70.TabIndex = 205;
+            this.txtEyeCntEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtEyeCntEmp.Location = new System.Drawing.Point(290, 754);
+            this.txtEyeCntEmp.Name = "txtEyeCntEmp";
+            this.txtEyeCntEmp.Size = new System.Drawing.Size(62, 22);
+            this.txtEyeCntEmp.TabIndex = 205;
             // 
             // label115
             // 
@@ -803,13 +810,13 @@
             this.textBox64.Size = new System.Drawing.Size(62, 22);
             this.textBox64.TabIndex = 191;
             // 
-            // textBox65
+            // txtAudioCntEmp
             // 
-            this.textBox65.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox65.Location = new System.Drawing.Point(290, 705);
-            this.textBox65.Name = "textBox65";
-            this.textBox65.Size = new System.Drawing.Size(62, 22);
-            this.textBox65.TabIndex = 190;
+            this.txtAudioCntEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudioCntEmp.Location = new System.Drawing.Point(290, 705);
+            this.txtAudioCntEmp.Name = "txtAudioCntEmp";
+            this.txtAudioCntEmp.Size = new System.Drawing.Size(62, 22);
+            this.txtAudioCntEmp.TabIndex = 190;
             // 
             // label107
             // 
@@ -945,13 +952,13 @@
             this.textBox59.Size = new System.Drawing.Size(62, 22);
             this.textBox59.TabIndex = 176;
             // 
-            // textBox60
+            // txtLungCntEmp
             // 
-            this.textBox60.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox60.Location = new System.Drawing.Point(290, 648);
-            this.textBox60.Name = "textBox60";
-            this.textBox60.Size = new System.Drawing.Size(62, 22);
-            this.textBox60.TabIndex = 175;
+            this.txtLungCntEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtLungCntEmp.Location = new System.Drawing.Point(290, 648);
+            this.txtLungCntEmp.Name = "txtLungCntEmp";
+            this.txtLungCntEmp.Size = new System.Drawing.Size(62, 22);
+            this.txtLungCntEmp.TabIndex = 175;
             // 
             // label99
             // 
@@ -1087,13 +1094,13 @@
             this.textBox54.Size = new System.Drawing.Size(62, 22);
             this.textBox54.TabIndex = 161;
             // 
-            // textBox55
+            // txtOther1CntEmp
             // 
-            this.textBox55.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox55.Location = new System.Drawing.Point(290, 594);
-            this.textBox55.Name = "textBox55";
-            this.textBox55.Size = new System.Drawing.Size(62, 22);
-            this.textBox55.TabIndex = 160;
+            this.txtOther1CntEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtOther1CntEmp.Location = new System.Drawing.Point(290, 594);
+            this.txtOther1CntEmp.Name = "txtOther1CntEmp";
+            this.txtOther1CntEmp.Size = new System.Drawing.Size(62, 22);
+            this.txtOther1CntEmp.TabIndex = 160;
             // 
             // label91
             // 
@@ -1249,13 +1256,13 @@
             this.textBox49.Size = new System.Drawing.Size(62, 22);
             this.textBox49.TabIndex = 144;
             // 
-            // textBox50
+            // txtUricCntEmp
             // 
-            this.textBox50.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox50.Location = new System.Drawing.Point(290, 541);
-            this.textBox50.Name = "textBox50";
-            this.textBox50.Size = new System.Drawing.Size(62, 22);
-            this.textBox50.TabIndex = 143;
+            this.txtUricCntEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtUricCntEmp.Location = new System.Drawing.Point(290, 541);
+            this.txtUricCntEmp.Name = "txtUricCntEmp";
+            this.txtUricCntEmp.Size = new System.Drawing.Size(62, 22);
+            this.txtUricCntEmp.TabIndex = 143;
             // 
             // label79
             // 
@@ -1391,13 +1398,13 @@
             this.textBox44.Size = new System.Drawing.Size(62, 22);
             this.textBox44.TabIndex = 129;
             // 
-            // textBox45
+            // txtBunCntEmp
             // 
-            this.textBox45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox45.Location = new System.Drawing.Point(290, 492);
-            this.textBox45.Name = "textBox45";
-            this.textBox45.Size = new System.Drawing.Size(62, 22);
-            this.textBox45.TabIndex = 128;
+            this.txtBunCntEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtBunCntEmp.Location = new System.Drawing.Point(290, 492);
+            this.txtBunCntEmp.Name = "txtBunCntEmp";
+            this.txtBunCntEmp.Size = new System.Drawing.Size(62, 22);
+            this.txtBunCntEmp.TabIndex = 128;
             // 
             // label71
             // 
@@ -1533,13 +1540,13 @@
             this.textBox39.Size = new System.Drawing.Size(62, 22);
             this.textBox39.TabIndex = 114;
             // 
-            // textBox40
+            // txtSgotCntEmp
             // 
-            this.textBox40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox40.Location = new System.Drawing.Point(290, 438);
-            this.textBox40.Name = "textBox40";
-            this.textBox40.Size = new System.Drawing.Size(62, 22);
-            this.textBox40.TabIndex = 113;
+            this.txtSgotCntEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtSgotCntEmp.Location = new System.Drawing.Point(290, 438);
+            this.txtSgotCntEmp.Name = "txtSgotCntEmp";
+            this.txtSgotCntEmp.Size = new System.Drawing.Size(62, 22);
+            this.txtSgotCntEmp.TabIndex = 113;
             // 
             // label63
             // 
@@ -1675,13 +1682,13 @@
             this.textBox34.Size = new System.Drawing.Size(62, 22);
             this.textBox34.TabIndex = 99;
             // 
-            // textBox35
+            // txtChoCntEmp
             // 
-            this.textBox35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox35.Location = new System.Drawing.Point(290, 382);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.Size = new System.Drawing.Size(62, 22);
-            this.textBox35.TabIndex = 98;
+            this.txtChoCntEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtChoCntEmp.Location = new System.Drawing.Point(290, 382);
+            this.txtChoCntEmp.Name = "txtChoCntEmp";
+            this.txtChoCntEmp.Size = new System.Drawing.Size(62, 22);
+            this.txtChoCntEmp.TabIndex = 98;
             // 
             // label55
             // 
@@ -1817,13 +1824,13 @@
             this.textBox29.Size = new System.Drawing.Size(62, 22);
             this.textBox29.TabIndex = 84;
             // 
-            // textBox30
+            // txtTriCntEmp
             // 
-            this.textBox30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox30.Location = new System.Drawing.Point(290, 324);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(62, 22);
-            this.textBox30.TabIndex = 83;
+            this.txtTriCntEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtTriCntEmp.Location = new System.Drawing.Point(290, 324);
+            this.txtTriCntEmp.Name = "txtTriCntEmp";
+            this.txtTriCntEmp.Size = new System.Drawing.Size(62, 22);
+            this.txtTriCntEmp.TabIndex = 83;
             // 
             // label47
             // 
@@ -1959,13 +1966,13 @@
             this.textBox24.Size = new System.Drawing.Size(62, 22);
             this.textBox24.TabIndex = 69;
             // 
-            // textBox25
+            // txtUACntEmp
             // 
-            this.textBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox25.Location = new System.Drawing.Point(290, 267);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(62, 22);
-            this.textBox25.TabIndex = 68;
+            this.txtUACntEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtUACntEmp.Location = new System.Drawing.Point(290, 267);
+            this.txtUACntEmp.Name = "txtUACntEmp";
+            this.txtUACntEmp.Size = new System.Drawing.Size(62, 22);
+            this.txtUACntEmp.TabIndex = 68;
             // 
             // label39
             // 
@@ -2101,13 +2108,13 @@
             this.textBox19.Size = new System.Drawing.Size(62, 22);
             this.textBox19.TabIndex = 54;
             // 
-            // textBox20
+            // txtCBCCntEmp
             // 
-            this.textBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox20.Location = new System.Drawing.Point(290, 207);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(62, 22);
-            this.textBox20.TabIndex = 53;
+            this.txtCBCCntEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCBCCntEmp.Location = new System.Drawing.Point(290, 207);
+            this.txtCBCCntEmp.Name = "txtCBCCntEmp";
+            this.txtCBCCntEmp.Size = new System.Drawing.Size(62, 22);
+            this.txtCBCCntEmp.TabIndex = 53;
             // 
             // label31
             // 
@@ -2243,13 +2250,13 @@
             this.textBox14.Size = new System.Drawing.Size(62, 22);
             this.textBox14.TabIndex = 39;
             // 
-            // textBox15
+            // txtFBSCntEmp
             // 
-            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox15.Location = new System.Drawing.Point(290, 149);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(62, 22);
-            this.textBox15.TabIndex = 38;
+            this.txtFBSCntEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtFBSCntEmp.Location = new System.Drawing.Point(290, 149);
+            this.txtFBSCntEmp.Name = "txtFBSCntEmp";
+            this.txtFBSCntEmp.Size = new System.Drawing.Size(62, 22);
+            this.txtFBSCntEmp.TabIndex = 38;
             // 
             // label23
             // 
@@ -2385,13 +2392,13 @@
             this.textBox9.Size = new System.Drawing.Size(62, 22);
             this.textBox9.TabIndex = 24;
             // 
-            // textBox10
+            // txtXrayCntEmp
             // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox10.Location = new System.Drawing.Point(290, 95);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(62, 22);
-            this.textBox10.TabIndex = 23;
+            this.txtXrayCntEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtXrayCntEmp.Location = new System.Drawing.Point(290, 95);
+            this.txtXrayCntEmp.Name = "txtXrayCntEmp";
+            this.txtXrayCntEmp.Size = new System.Drawing.Size(62, 22);
+            this.txtXrayCntEmp.TabIndex = 23;
             // 
             // label15
             // 
@@ -2519,21 +2526,21 @@
             this.textBox3.Size = new System.Drawing.Size(62, 22);
             this.textBox3.TabIndex = 10;
             // 
-            // textBox2
+            // txtPECntNormal
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox2.Location = new System.Drawing.Point(358, 41);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(62, 22);
-            this.textBox2.TabIndex = 9;
+            this.txtPECntNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtPECntNormal.Location = new System.Drawing.Point(358, 41);
+            this.txtPECntNormal.Name = "txtPECntNormal";
+            this.txtPECntNormal.Size = new System.Drawing.Size(62, 22);
+            this.txtPECntNormal.TabIndex = 9;
             // 
-            // textBox1
+            // txtPECntEmp
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox1.Location = new System.Drawing.Point(290, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(62, 22);
-            this.textBox1.TabIndex = 8;
+            this.txtPECntEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtPECntEmp.Location = new System.Drawing.Point(290, 41);
+            this.txtPECntEmp.Name = "txtPECntEmp";
+            this.txtPECntEmp.Size = new System.Drawing.Size(62, 22);
+            this.txtPECntEmp.TabIndex = 8;
             // 
             // label10
             // 
@@ -2609,6 +2616,7 @@
             // 
             // tabPage12
             // 
+            this.tabPage12.Controls.Add(this.btnPrintSticker);
             this.tabPage12.Controls.Add(this.label88);
             this.tabPage12.Controls.Add(this.label87);
             this.tabPage12.Controls.Add(this.nmDPrintFirst);
@@ -2622,11 +2630,22 @@
             this.tabPage12.Text = "Print";
             this.tabPage12.UseVisualStyleBackColor = true;
             // 
+            // btnPrintSticker
+            // 
+            this.btnPrintSticker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnPrintSticker.Location = new System.Drawing.Point(410, 125);
+            this.btnPrintSticker.Name = "btnPrintSticker";
+            this.btnPrintSticker.Size = new System.Drawing.Size(152, 34);
+            this.btnPrintSticker.TabIndex = 74;
+            this.btnPrintSticker.Text = " พิมพ์ Sticker";
+            this.btnPrintSticker.UseVisualStyleBackColor = true;
+            this.btnPrintSticker.Click += new System.EventHandler(this.btnPrintSticker_Click);
+            // 
             // label88
             // 
             this.label88.AutoSize = true;
             this.label88.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label88.Location = new System.Drawing.Point(243, 93);
+            this.label88.Location = new System.Drawing.Point(234, 267);
             this.label88.Name = "label88";
             this.label88.Size = new System.Drawing.Size(59, 16);
             this.label88.TabIndex = 73;
@@ -2636,7 +2655,7 @@
             // 
             this.label87.AutoSize = true;
             this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label87.Location = new System.Drawing.Point(55, 93);
+            this.label87.Location = new System.Drawing.Point(46, 267);
             this.label87.Name = "label87";
             this.label87.Size = new System.Drawing.Size(80, 16);
             this.label87.TabIndex = 72;
@@ -2644,7 +2663,7 @@
             // 
             // nmDPrintFirst
             // 
-            this.nmDPrintFirst.Location = new System.Drawing.Point(162, 89);
+            this.nmDPrintFirst.Location = new System.Drawing.Point(153, 263);
             this.nmDPrintFirst.Name = "nmDPrintFirst";
             this.nmDPrintFirst.Size = new System.Drawing.Size(46, 20);
             this.nmDPrintFirst.TabIndex = 70;
@@ -2656,7 +2675,7 @@
             // 
             // nmDPrintEnd
             // 
-            this.nmDPrintEnd.Location = new System.Drawing.Point(317, 89);
+            this.nmDPrintEnd.Location = new System.Drawing.Point(308, 263);
             this.nmDPrintEnd.Name = "nmDPrintEnd";
             this.nmDPrintEnd.Size = new System.Drawing.Size(46, 20);
             this.nmDPrintEnd.TabIndex = 71;
@@ -2669,7 +2688,7 @@
             // btnPrint
             // 
             this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnPrint.Location = new System.Drawing.Point(419, 80);
+            this.btnPrint.Location = new System.Drawing.Point(410, 254);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(152, 34);
             this.btnPrint.TabIndex = 69;
@@ -3009,6 +3028,39 @@
             this.tabPage17.Text = "tabPage17";
             this.tabPage17.UseVisualStyleBackColor = true;
             // 
+            // dgvChemB
+            // 
+            this.dgvChemB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvChemB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChemB.Location = new System.Drawing.Point(6, 5);
+            this.dgvChemB.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvChemB.Name = "dgvChemB";
+            this.dgvChemB.RowTemplate.Height = 24;
+            this.dgvChemB.Size = new System.Drawing.Size(851, 593);
+            this.dgvChemB.TabIndex = 8;
+            // 
+            // tabPage18
+            // 
+            this.tabPage18.Controls.Add(this.dgvChemU);
+            this.tabPage18.Location = new System.Drawing.Point(4, 22);
+            this.tabPage18.Name = "tabPage18";
+            this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage18.Size = new System.Drawing.Size(1115, 782);
+            this.tabPage18.TabIndex = 17;
+            this.tabPage18.Text = "tabPage18";
+            this.tabPage18.UseVisualStyleBackColor = true;
+            // 
+            // dgvChemU
+            // 
+            this.dgvChemU.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvChemU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChemU.Location = new System.Drawing.Point(6, 5);
+            this.dgvChemU.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvChemU.Name = "dgvChemU";
+            this.dgvChemU.RowTemplate.Height = 24;
+            this.dgvChemU.Size = new System.Drawing.Size(851, 593);
+            this.dgvChemU.TabIndex = 8;
+            // 
             // cboCust
             // 
             this.cboCust.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -3031,7 +3083,7 @@
             // btnImport
             // 
             this.btnImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnImport.Location = new System.Drawing.Point(1035, 15);
+            this.btnImport.Location = new System.Drawing.Point(1307, 18);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(86, 34);
             this.btnImport.TabIndex = 4;
@@ -3052,7 +3104,7 @@
             // dtpCheckUpDate
             // 
             this.dtpCheckUpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dtpCheckUpDate.Location = new System.Drawing.Point(516, 25);
+            this.dtpCheckUpDate.Location = new System.Drawing.Point(516, 21);
             this.dtpCheckUpDate.Name = "dtpCheckUpDate";
             this.dtpCheckUpDate.Size = new System.Drawing.Size(125, 22);
             this.dtpCheckUpDate.TabIndex = 6;
@@ -3072,7 +3124,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label3.Location = new System.Drawing.Point(778, 24);
+            this.label3.Location = new System.Drawing.Point(1050, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 8;
@@ -3081,7 +3133,7 @@
             // 
             // nmDRow
             // 
-            this.nmDRow.Location = new System.Drawing.Point(852, 22);
+            this.nmDRow.Location = new System.Drawing.Point(1124, 25);
             this.nmDRow.Name = "nmDRow";
             this.nmDRow.Size = new System.Drawing.Size(46, 20);
             this.nmDRow.TabIndex = 9;
@@ -3121,7 +3173,7 @@
             // btnExcel
             // 
             this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExcel.Location = new System.Drawing.Point(658, 15);
+            this.btnExcel.Location = new System.Drawing.Point(958, 15);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(86, 34);
             this.btnExcel.TabIndex = 58;
@@ -3131,7 +3183,7 @@
             // 
             // btnUnActive
             // 
-            this.btnUnActive.Location = new System.Drawing.Point(992, 52);
+            this.btnUnActive.Location = new System.Drawing.Point(1307, 55);
             this.btnUnActive.Name = "btnUnActive";
             this.btnUnActive.Size = new System.Drawing.Size(86, 23);
             this.btnUnActive.TabIndex = 67;
@@ -3142,7 +3194,7 @@
             // 
             this.ChkUnActive.AutoSize = true;
             this.ChkUnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.ChkUnActive.Location = new System.Drawing.Point(905, 51);
+            this.ChkUnActive.Location = new System.Drawing.Point(1177, 54);
             this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2);
             this.ChkUnActive.Name = "ChkUnActive";
             this.ChkUnActive.Size = new System.Drawing.Size(60, 21);
@@ -3155,7 +3207,7 @@
             // 
             this.chkActive.AutoSize = true;
             this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chkActive.Location = new System.Drawing.Point(780, 51);
+            this.chkActive.Location = new System.Drawing.Point(1052, 54);
             this.chkActive.Margin = new System.Windows.Forms.Padding(2);
             this.chkActive.Name = "chkActive";
             this.chkActive.Size = new System.Drawing.Size(61, 21);
@@ -3166,49 +3218,76 @@
             // 
             // pB1
             // 
-            this.pB1.Location = new System.Drawing.Point(905, 21);
+            this.pB1.Location = new System.Drawing.Point(1177, 24);
             this.pB1.Name = "pB1";
             this.pB1.Size = new System.Drawing.Size(124, 23);
             this.pB1.TabIndex = 68;
             // 
-            // tabPage18
+            // txtCntEmp
             // 
-            this.tabPage18.Controls.Add(this.dgvChemU);
-            this.tabPage18.Location = new System.Drawing.Point(4, 22);
-            this.tabPage18.Name = "tabPage18";
-            this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage18.Size = new System.Drawing.Size(1115, 782);
-            this.tabPage18.TabIndex = 17;
-            this.tabPage18.Text = "tabPage18";
-            this.tabPage18.UseVisualStyleBackColor = true;
+            this.txtCntEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCntEmp.Location = new System.Drawing.Point(494, 51);
+            this.txtCntEmp.Name = "txtCntEmp";
+            this.txtCntEmp.Size = new System.Drawing.Size(58, 22);
+            this.txtCntEmp.TabIndex = 69;
             // 
-            // dgvChemB
+            // label121
             // 
-            this.dgvChemB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvChemB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChemB.Location = new System.Drawing.Point(6, 5);
-            this.dgvChemB.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvChemB.Name = "dgvChemB";
-            this.dgvChemB.RowTemplate.Height = 24;
-            this.dgvChemB.Size = new System.Drawing.Size(851, 593);
-            this.dgvChemB.TabIndex = 8;
+            this.label121.AutoSize = true;
+            this.label121.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label121.Location = new System.Drawing.Point(384, 59);
+            this.label121.Name = "label121";
+            this.label121.Size = new System.Drawing.Size(104, 16);
+            this.label121.TabIndex = 70;
+            this.label121.Text = "จำนวนข้อมูลExcel :";
             // 
-            // dgvChemU
+            // txtYear
             // 
-            this.dgvChemU.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvChemU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChemU.Location = new System.Drawing.Point(6, 5);
-            this.dgvChemU.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvChemU.Name = "dgvChemU";
-            this.dgvChemU.RowTemplate.Height = 24;
-            this.dgvChemU.Size = new System.Drawing.Size(851, 593);
-            this.dgvChemU.TabIndex = 8;
+            this.txtYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtYear.Location = new System.Drawing.Point(767, 21);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(58, 22);
+            this.txtYear.TabIndex = 71;
+            // 
+            // label122
+            // 
+            this.label122.AutoSize = true;
+            this.label122.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label122.Location = new System.Drawing.Point(646, 27);
+            this.label122.Name = "label122";
+            this.label122.Size = new System.Drawing.Size(110, 16);
+            this.label122.TabIndex = 72;
+            this.label122.Text = "ตรวจสุขภาพประจำปี :";
+            // 
+            // txtCntSuccess
+            // 
+            this.txtCntSuccess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCntSuccess.Location = new System.Drawing.Point(693, 51);
+            this.txtCntSuccess.Name = "txtCntSuccess";
+            this.txtCntSuccess.Size = new System.Drawing.Size(58, 22);
+            this.txtCntSuccess.TabIndex = 73;
+            // 
+            // label123
+            // 
+            this.label123.AutoSize = true;
+            this.label123.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label123.Location = new System.Drawing.Point(573, 59);
+            this.label123.Name = "label123";
+            this.label123.Size = new System.Drawing.Size(110, 16);
+            this.label123.TabIndex = 74;
+            this.label123.Text = "จำนวนข้อมูลนำเข้าได้ :";
             // 
             // FrmCheckUPAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1243, 899);
+            this.ClientSize = new System.Drawing.Size(1413, 899);
+            this.Controls.Add(this.txtCntSuccess);
+            this.Controls.Add(this.label123);
+            this.Controls.Add(this.txtYear);
+            this.Controls.Add(this.label122);
+            this.Controls.Add(this.txtCntEmp);
+            this.Controls.Add(this.label121);
             this.Controls.Add(this.pB1);
             this.Controls.Add(this.btnUnActive);
             this.Controls.Add(this.ChkUnActive);
@@ -3268,10 +3347,10 @@
             this.tabPage16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEye)).EndInit();
             this.tabPage17.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).EndInit();
-            this.tabPage18.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChemB)).EndInit();
+            this.tabPage18.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChemU)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3327,8 +3406,8 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPECntNormal;
+        private System.Windows.Forms.TextBox txtPECntEmp;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnPEExcel;
         private System.Windows.Forms.Label label12;
@@ -3341,7 +3420,7 @@
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox txtFBSCntEmp;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
@@ -3356,7 +3435,7 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtXrayCntEmp;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
@@ -3371,7 +3450,7 @@
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.TextBox textBox18;
         private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox txtCBCCntEmp;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
@@ -3386,7 +3465,7 @@
         private System.Windows.Forms.TextBox textBox22;
         private System.Windows.Forms.TextBox textBox23;
         private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.TextBox txtUACntEmp;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
@@ -3401,7 +3480,7 @@
         private System.Windows.Forms.TextBox textBox27;
         private System.Windows.Forms.TextBox textBox28;
         private System.Windows.Forms.TextBox textBox29;
-        private System.Windows.Forms.TextBox textBox30;
+        private System.Windows.Forms.TextBox txtTriCntEmp;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label49;
@@ -3416,7 +3495,7 @@
         private System.Windows.Forms.TextBox textBox32;
         private System.Windows.Forms.TextBox textBox33;
         private System.Windows.Forms.TextBox textBox34;
-        private System.Windows.Forms.TextBox textBox35;
+        private System.Windows.Forms.TextBox txtChoCntEmp;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.Label label57;
@@ -3431,7 +3510,7 @@
         private System.Windows.Forms.TextBox textBox42;
         private System.Windows.Forms.TextBox textBox43;
         private System.Windows.Forms.TextBox textBox44;
-        private System.Windows.Forms.TextBox textBox45;
+        private System.Windows.Forms.TextBox txtBunCntEmp;
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.Label label72;
         private System.Windows.Forms.Label label73;
@@ -3446,7 +3525,7 @@
         private System.Windows.Forms.TextBox textBox37;
         private System.Windows.Forms.TextBox textBox38;
         private System.Windows.Forms.TextBox textBox39;
-        private System.Windows.Forms.TextBox textBox40;
+        private System.Windows.Forms.TextBox txtSgotCntEmp;
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Label label65;
@@ -3461,7 +3540,7 @@
         private System.Windows.Forms.TextBox textBox47;
         private System.Windows.Forms.TextBox textBox48;
         private System.Windows.Forms.TextBox textBox49;
-        private System.Windows.Forms.TextBox textBox50;
+        private System.Windows.Forms.TextBox txtUricCntEmp;
         private System.Windows.Forms.Label label79;
         private System.Windows.Forms.Label label80;
         private System.Windows.Forms.Label label81;
@@ -3490,7 +3569,7 @@
         private System.Windows.Forms.TextBox textBox52;
         private System.Windows.Forms.TextBox textBox53;
         private System.Windows.Forms.TextBox textBox54;
-        private System.Windows.Forms.TextBox textBox55;
+        private System.Windows.Forms.TextBox txtOther1CntEmp;
         private System.Windows.Forms.Label label91;
         private System.Windows.Forms.Label label92;
         private System.Windows.Forms.Label label93;
@@ -3505,7 +3584,7 @@
         private System.Windows.Forms.TextBox textBox57;
         private System.Windows.Forms.TextBox textBox58;
         private System.Windows.Forms.TextBox textBox59;
-        private System.Windows.Forms.TextBox textBox60;
+        private System.Windows.Forms.TextBox txtLungCntEmp;
         private System.Windows.Forms.Label label99;
         private System.Windows.Forms.Label label100;
         private System.Windows.Forms.Label label101;
@@ -3521,7 +3600,7 @@
         private System.Windows.Forms.TextBox textBox62;
         private System.Windows.Forms.TextBox textBox63;
         private System.Windows.Forms.TextBox textBox64;
-        private System.Windows.Forms.TextBox textBox65;
+        private System.Windows.Forms.TextBox txtAudioCntEmp;
         private System.Windows.Forms.Label label107;
         private System.Windows.Forms.Label label108;
         private System.Windows.Forms.Label label109;
@@ -3538,7 +3617,7 @@
         private System.Windows.Forms.TextBox textBox67;
         private System.Windows.Forms.TextBox textBox68;
         private System.Windows.Forms.TextBox textBox69;
-        private System.Windows.Forms.TextBox textBox70;
+        private System.Windows.Forms.TextBox txtEyeCntEmp;
         private System.Windows.Forms.Label label115;
         private System.Windows.Forms.Label label116;
         private System.Windows.Forms.Label label117;
@@ -3548,6 +3627,13 @@
         private System.Windows.Forms.TabPage tabPage18;
         private System.Windows.Forms.DataGridView dgvChemB;
         private System.Windows.Forms.DataGridView dgvChemU;
+        private System.Windows.Forms.TextBox txtCntEmp;
+        private System.Windows.Forms.Label label121;
+        private System.Windows.Forms.TextBox txtYear;
+        private System.Windows.Forms.Label label122;
+        private System.Windows.Forms.TextBox txtCntSuccess;
+        private System.Windows.Forms.Label label123;
+        private System.Windows.Forms.Button btnPrintSticker;
 
     }
 }
