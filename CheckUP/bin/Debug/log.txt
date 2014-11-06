@@ -353,3 +353,6 @@ Failed to load database information.
 3/11/2557 17:54->rpt.setReportCheckUpSticker OK 
 3/11/2557 17:54->rpt.setReportCheckUpSticker OK LoadD:\source\CheckUP\CheckUP\report\CheckUpSticker.rpt
 3/11/2557 17:54->rpt.setReportCheckUpSticker OK SetDataSource
+5/11/2557 11:58->rpt.setReportCheckUpSticker OK 
+5/11/2557 11:58->rpt.setReportCheckUpSticker OK LoadD:\source\CheckUP\CheckUP\report\CheckUpSticker.rpt
+5/11/2557 11:58->rpt.setReportCheckUpSticker OK SetDataSource

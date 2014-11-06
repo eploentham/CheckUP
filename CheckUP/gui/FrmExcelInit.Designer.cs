@@ -59,6 +59,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.tC = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label152 = new System.Windows.Forms.Label();
+            this.nmDDepartment = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
             this.txtPrefixTest = new System.Windows.Forms.TextBox();
             this.btnSfExcel = new System.Windows.Forms.Button();
@@ -377,7 +379,6 @@
             this.label143 = new System.Windows.Forms.Label();
             this.nmDEyeRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage16 = new System.Windows.Forms.TabPage();
-            this.tabPage17 = new System.Windows.Forms.TabPage();
             this.label124 = new System.Windows.Forms.Label();
             this.txtCheMBTest = new System.Windows.Forms.TextBox();
             this.btnChemBExcel = new System.Windows.Forms.Button();
@@ -407,6 +408,26 @@
             this.nmDChemBNo = new System.Windows.Forms.NumericUpDown();
             this.label151 = new System.Windows.Forms.Label();
             this.nmDChemBRow = new System.Windows.Forms.NumericUpDown();
+            this.tabPage17 = new System.Windows.Forms.TabPage();
+            this.label153 = new System.Windows.Forms.Label();
+            this.nmDStoolExamSummary = new System.Windows.Forms.NumericUpDown();
+            this.label156 = new System.Windows.Forms.Label();
+            this.nmDStoolExamParasite = new System.Windows.Forms.NumericUpDown();
+            this.label157 = new System.Windows.Forms.Label();
+            this.nmDStoolExamRBC = new System.Windows.Forms.NumericUpDown();
+            this.label158 = new System.Windows.Forms.Label();
+            this.txtStoolExamTest = new System.Windows.Forms.TextBox();
+            this.btnStoolExamExcel = new System.Windows.Forms.Button();
+            this.label159 = new System.Windows.Forms.Label();
+            this.nmDStoolExamAppearance = new System.Windows.Forms.NumericUpDown();
+            this.label160 = new System.Windows.Forms.Label();
+            this.nmDStoolExamWBC = new System.Windows.Forms.NumericUpDown();
+            this.label161 = new System.Windows.Forms.Label();
+            this.nmDStoolExamColor = new System.Windows.Forms.NumericUpDown();
+            this.label162 = new System.Windows.Forms.Label();
+            this.nmDStoolExamNo = new System.Windows.Forms.NumericUpDown();
+            this.label163 = new System.Windows.Forms.Label();
+            this.nmDStoolExamRow = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDARow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDAPrefix)).BeginInit();
@@ -422,6 +443,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDCAge)).BeginInit();
             this.tC.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDDepartment)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDPEBloodGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDPESummary)).BeginInit();
@@ -579,6 +601,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDChemBLead)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDChemBNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDChemBRow)).BeginInit();
+            this.tabPage17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamSummary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamParasite)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRBC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamAppearance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamWBC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamColor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRow)).BeginInit();
             this.SuspendLayout();
             // 
             // nmDRow
@@ -930,6 +961,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label152);
+            this.tabPage1.Controls.Add(this.nmDDepartment);
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.txtPrefixTest);
             this.tabPage1.Controls.Add(this.btnSfExcel);
@@ -969,6 +1002,28 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label152
+            // 
+            this.label152.AutoSize = true;
+            this.label152.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label152.Location = new System.Drawing.Point(335, 28);
+            this.label152.Name = "label152";
+            this.label152.Size = new System.Drawing.Size(34, 16);
+            this.label152.TabIndex = 62;
+            this.label152.Text = "แผนก";
+            // 
+            // nmDDepartment
+            // 
+            this.nmDDepartment.Location = new System.Drawing.Point(391, 28);
+            this.nmDDepartment.Name = "nmDDepartment";
+            this.nmDDepartment.Size = new System.Drawing.Size(46, 20);
+            this.nmDDepartment.TabIndex = 63;
+            this.nmDDepartment.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // label14
             // 
@@ -4692,16 +4747,6 @@
             this.tabPage16.Text = "tabPage16";
             this.tabPage16.UseVisualStyleBackColor = true;
             // 
-            // tabPage17
-            // 
-            this.tabPage17.Location = new System.Drawing.Point(4, 22);
-            this.tabPage17.Name = "tabPage17";
-            this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage17.Size = new System.Drawing.Size(920, 322);
-            this.tabPage17.TabIndex = 16;
-            this.tabPage17.Text = "tabPage17";
-            this.tabPage17.UseVisualStyleBackColor = true;
-            // 
             // label124
             // 
             this.label124.AutoSize = true;
@@ -4727,6 +4772,7 @@
             this.btnChemBExcel.TabIndex = 173;
             this.btnChemBExcel.Text = "ทดสอบ Excel";
             this.btnChemBExcel.UseVisualStyleBackColor = true;
+            this.btnChemBExcel.Click += new System.EventHandler(this.btnChemBExcel_Click);
             // 
             // label125
             // 
@@ -5014,6 +5060,237 @@
             0,
             0});
             // 
+            // tabPage17
+            // 
+            this.tabPage17.Controls.Add(this.label153);
+            this.tabPage17.Controls.Add(this.nmDStoolExamSummary);
+            this.tabPage17.Controls.Add(this.label156);
+            this.tabPage17.Controls.Add(this.nmDStoolExamParasite);
+            this.tabPage17.Controls.Add(this.label157);
+            this.tabPage17.Controls.Add(this.nmDStoolExamRBC);
+            this.tabPage17.Controls.Add(this.label158);
+            this.tabPage17.Controls.Add(this.txtStoolExamTest);
+            this.tabPage17.Controls.Add(this.btnStoolExamExcel);
+            this.tabPage17.Controls.Add(this.label159);
+            this.tabPage17.Controls.Add(this.nmDStoolExamAppearance);
+            this.tabPage17.Controls.Add(this.label160);
+            this.tabPage17.Controls.Add(this.nmDStoolExamWBC);
+            this.tabPage17.Controls.Add(this.label161);
+            this.tabPage17.Controls.Add(this.nmDStoolExamColor);
+            this.tabPage17.Controls.Add(this.label162);
+            this.tabPage17.Controls.Add(this.nmDStoolExamNo);
+            this.tabPage17.Controls.Add(this.label163);
+            this.tabPage17.Controls.Add(this.nmDStoolExamRow);
+            this.tabPage17.Location = new System.Drawing.Point(4, 22);
+            this.tabPage17.Name = "tabPage17";
+            this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage17.Size = new System.Drawing.Size(920, 322);
+            this.tabPage17.TabIndex = 16;
+            this.tabPage17.Text = "tabPage17";
+            this.tabPage17.UseVisualStyleBackColor = true;
+            // 
+            // label153
+            // 
+            this.label153.AutoSize = true;
+            this.label153.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label153.Location = new System.Drawing.Point(30, 146);
+            this.label153.Name = "label153";
+            this.label153.Size = new System.Drawing.Size(65, 16);
+            this.label153.TabIndex = 144;
+            this.label153.Text = "Summary";
+            // 
+            // nmDStoolExamSummary
+            // 
+            this.nmDStoolExamSummary.Location = new System.Drawing.Point(36, 175);
+            this.nmDStoolExamSummary.Name = "nmDStoolExamSummary";
+            this.nmDStoolExamSummary.Size = new System.Drawing.Size(46, 20);
+            this.nmDStoolExamSummary.TabIndex = 145;
+            this.nmDStoolExamSummary.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label156
+            // 
+            this.label156.AutoSize = true;
+            this.label156.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label156.Location = new System.Drawing.Point(535, 71);
+            this.label156.Name = "label156";
+            this.label156.Size = new System.Drawing.Size(58, 16);
+            this.label156.TabIndex = 138;
+            this.label156.Text = "Parasite";
+            // 
+            // nmDStoolExamParasite
+            // 
+            this.nmDStoolExamParasite.Location = new System.Drawing.Point(541, 100);
+            this.nmDStoolExamParasite.Name = "nmDStoolExamParasite";
+            this.nmDStoolExamParasite.Size = new System.Drawing.Size(46, 20);
+            this.nmDStoolExamParasite.TabIndex = 139;
+            this.nmDStoolExamParasite.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label157
+            // 
+            this.label157.AutoSize = true;
+            this.label157.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label157.Location = new System.Drawing.Point(428, 70);
+            this.label157.Name = "label157";
+            this.label157.Size = new System.Drawing.Size(36, 16);
+            this.label157.TabIndex = 136;
+            this.label157.Text = "RBC";
+            // 
+            // nmDStoolExamRBC
+            // 
+            this.nmDStoolExamRBC.Location = new System.Drawing.Point(434, 99);
+            this.nmDStoolExamRBC.Name = "nmDStoolExamRBC";
+            this.nmDStoolExamRBC.Size = new System.Drawing.Size(46, 20);
+            this.nmDStoolExamRBC.TabIndex = 137;
+            this.nmDStoolExamRBC.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label158
+            // 
+            this.label158.AutoSize = true;
+            this.label158.Location = new System.Drawing.Point(6, 253);
+            this.label158.Name = "label158";
+            this.label158.Size = new System.Drawing.Size(80, 13);
+            this.label158.TabIndex = 135;
+            this.label158.Text = "ข้อมูลจากการดึง";
+            // 
+            // txtStoolExamTest
+            // 
+            this.txtStoolExamTest.Location = new System.Drawing.Point(6, 269);
+            this.txtStoolExamTest.Name = "txtStoolExamTest";
+            this.txtStoolExamTest.Size = new System.Drawing.Size(903, 20);
+            this.txtStoolExamTest.TabIndex = 134;
+            // 
+            // btnStoolExamExcel
+            // 
+            this.btnStoolExamExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnStoolExamExcel.Location = new System.Drawing.Point(828, 220);
+            this.btnStoolExamExcel.Name = "btnStoolExamExcel";
+            this.btnStoolExamExcel.Size = new System.Drawing.Size(86, 34);
+            this.btnStoolExamExcel.TabIndex = 133;
+            this.btnStoolExamExcel.Text = "ทดสอบ Excel";
+            this.btnStoolExamExcel.UseVisualStyleBackColor = true;
+            // 
+            // label159
+            // 
+            this.label159.AutoSize = true;
+            this.label159.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label159.Location = new System.Drawing.Point(232, 71);
+            this.label159.Name = "label159";
+            this.label159.Size = new System.Drawing.Size(83, 16);
+            this.label159.TabIndex = 131;
+            this.label159.Text = "Appearance";
+            // 
+            // nmDStoolExamAppearance
+            // 
+            this.nmDStoolExamAppearance.Location = new System.Drawing.Point(228, 99);
+            this.nmDStoolExamAppearance.Name = "nmDStoolExamAppearance";
+            this.nmDStoolExamAppearance.Size = new System.Drawing.Size(46, 20);
+            this.nmDStoolExamAppearance.TabIndex = 132;
+            this.nmDStoolExamAppearance.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label160
+            // 
+            this.label160.AutoSize = true;
+            this.label160.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label160.Location = new System.Drawing.Point(327, 70);
+            this.label160.Name = "label160";
+            this.label160.Size = new System.Drawing.Size(39, 16);
+            this.label160.TabIndex = 129;
+            this.label160.Text = "WBC";
+            // 
+            // nmDStoolExamWBC
+            // 
+            this.nmDStoolExamWBC.Location = new System.Drawing.Point(333, 99);
+            this.nmDStoolExamWBC.Name = "nmDStoolExamWBC";
+            this.nmDStoolExamWBC.Size = new System.Drawing.Size(46, 20);
+            this.nmDStoolExamWBC.TabIndex = 130;
+            this.nmDStoolExamWBC.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label161
+            // 
+            this.label161.AutoSize = true;
+            this.label161.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label161.Location = new System.Drawing.Point(133, 71);
+            this.label161.Name = "label161";
+            this.label161.Size = new System.Drawing.Size(40, 16);
+            this.label161.TabIndex = 127;
+            this.label161.Text = "Color";
+            // 
+            // nmDStoolExamColor
+            // 
+            this.nmDStoolExamColor.Location = new System.Drawing.Point(129, 99);
+            this.nmDStoolExamColor.Name = "nmDStoolExamColor";
+            this.nmDStoolExamColor.Size = new System.Drawing.Size(46, 20);
+            this.nmDStoolExamColor.TabIndex = 128;
+            this.nmDStoolExamColor.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label162
+            // 
+            this.label162.AutoSize = true;
+            this.label162.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label162.Location = new System.Drawing.Point(40, 70);
+            this.label162.Name = "label162";
+            this.label162.Size = new System.Drawing.Size(42, 16);
+            this.label162.TabIndex = 125;
+            this.label162.Text = "ลำดับ  :";
+            // 
+            // nmDStoolExamNo
+            // 
+            this.nmDStoolExamNo.Location = new System.Drawing.Point(36, 99);
+            this.nmDStoolExamNo.Name = "nmDStoolExamNo";
+            this.nmDStoolExamNo.Size = new System.Drawing.Size(46, 20);
+            this.nmDStoolExamNo.TabIndex = 126;
+            this.nmDStoolExamNo.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label163
+            // 
+            this.label163.AutoSize = true;
+            this.label163.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label163.Location = new System.Drawing.Point(107, 33);
+            this.label163.Name = "label163";
+            this.label163.Size = new System.Drawing.Size(68, 16);
+            this.label163.TabIndex = 123;
+            this.label163.Text = "row เริ่มต้น :";
+            // 
+            // nmDStoolExamRow
+            // 
+            this.nmDStoolExamRow.Location = new System.Drawing.Point(197, 33);
+            this.nmDStoolExamRow.Name = "nmDStoolExamRow";
+            this.nmDStoolExamRow.Size = new System.Drawing.Size(46, 20);
+            this.nmDStoolExamRow.TabIndex = 124;
+            this.nmDStoolExamRow.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
             // FrmExcelInit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5040,6 +5317,7 @@
             this.tC.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDDepartment)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDPEBloodGroup)).EndInit();
@@ -5212,6 +5490,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDChemBLead)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDChemBNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDChemBRow)).EndInit();
+            this.tabPage17.ResumeLayout(false);
+            this.tabPage17.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamSummary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamParasite)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRBC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamAppearance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamWBC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamColor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRow)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -5597,5 +5885,26 @@
         private System.Windows.Forms.NumericUpDown nmDChemBNo;
         private System.Windows.Forms.Label label151;
         private System.Windows.Forms.NumericUpDown nmDChemBRow;
+        private System.Windows.Forms.Label label152;
+        private System.Windows.Forms.NumericUpDown nmDDepartment;
+        private System.Windows.Forms.Label label153;
+        private System.Windows.Forms.NumericUpDown nmDStoolExamSummary;
+        private System.Windows.Forms.Label label156;
+        private System.Windows.Forms.NumericUpDown nmDStoolExamParasite;
+        private System.Windows.Forms.Label label157;
+        private System.Windows.Forms.NumericUpDown nmDStoolExamRBC;
+        private System.Windows.Forms.Label label158;
+        private System.Windows.Forms.TextBox txtStoolExamTest;
+        private System.Windows.Forms.Button btnStoolExamExcel;
+        private System.Windows.Forms.Label label159;
+        private System.Windows.Forms.NumericUpDown nmDStoolExamAppearance;
+        private System.Windows.Forms.Label label160;
+        private System.Windows.Forms.NumericUpDown nmDStoolExamWBC;
+        private System.Windows.Forms.Label label161;
+        private System.Windows.Forms.NumericUpDown nmDStoolExamColor;
+        private System.Windows.Forms.Label label162;
+        private System.Windows.Forms.NumericUpDown nmDStoolExamNo;
+        private System.Windows.Forms.Label label163;
+        private System.Windows.Forms.NumericUpDown nmDStoolExamRow;
     }
 }

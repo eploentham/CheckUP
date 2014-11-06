@@ -24,13 +24,10 @@ namespace CheckUP.object1
         public String patientWeight="";
         public String EyeShortLongLeft = "", EyeShortLongRight = "", EyeSquintLeft = "", EyeSquintRight = "", EyeDegreeLeft = "", EyeDegreeRight = "", EyeOldLeft="", EyeOldRight="", EyeResult = "", EyeSummary = "", EyeBlindness="";
         
-        public String fSexId="";    
-        public String summaryPhysicalExam="";    
-        public String stoolExamColor="";
-        public String stoolExamAppearance="";
-        public String stoolExamWbc="";
-        public String stoolExamRbc="";
-        public String stoolExamParasite="";
+        public String fSexId="", SexName="";    
+        public String summaryPhysicalExam="";
+
+        public String StoolExamColor = "", StoolExamAppearance = "", StoolExamWbc = "", StoolExamRbc = "", StoolExamParasite = "", StoolExamSummary = "";
 
         public String toxicologyLead="",toxicologyMercury="",toxicologyBenzene="",toxicologyXylene="";
 
@@ -157,7 +154,7 @@ namespace CheckUP.object1
         public String statusPe="";
         public String statusXray="";
         public String statusStool="";
-        public String stoolExamSummary="";
+        //public String stoolExamSummary="";
         public String cholesterolSummary="";
         public String cholesterolSuggess="";
         public String statusCholes="";

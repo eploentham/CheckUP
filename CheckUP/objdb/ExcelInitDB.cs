@@ -21,6 +21,9 @@ namespace CheckUP.objdb
         {
             ei = new ExcelInit();
             ei.Id = "id";
+
+            ei.DepartmentName = "department_name";
+
             ei.Bun = "bun_value";
             ei.BunCreatinine = "bun_creatinine";
             ei.BunNo = "bun_no";
@@ -182,6 +185,15 @@ namespace CheckUP.objdb
             ei.EyeResult = "eye_result";
             ei.EyeBlindness = "eye_blindness";
 
+            ei.StoolExamAppearance = "stool_exam_appearance";
+            ei.StoolExamColor = "stool_exam_color";
+            ei.StoolExamNo = "stool_exam_no";
+            ei.StoolExamParasite = "stool_exam_parasite";
+            ei.StoolExamRbc = "stool_exam_rbc";
+            ei.StoolExamRow = "stool_exam_row";
+            ei.StoolExamSummary = "stool_exam_summary";
+            ei.StoolExamWbc = "stool_exam_wbc";
+
             ei.pkField = "id";
             ei.table = "b_excel_init";
         }
@@ -237,7 +249,7 @@ namespace CheckUP.objdb
             item.PEWeight = dt.Rows[0][ei.PEWeight].ToString();
             item.PEBloodGroup = dt.Rows[0][ei.PEBloodGroup].ToString();
 
-            //item.SfStatusName = dt.Rows[0][ei.SfStatusName].ToString();
+            item.DepartmentName = dt.Rows[0][ei.DepartmentName].ToString();
 
             item.SfAAge = dt.Rows[0][ei.SfAAge].ToString();
             item.SfAFirstName = dt.Rows[0][ei.SfAFirstName].ToString();
@@ -348,6 +360,15 @@ namespace CheckUP.objdb
             item.EyeSummary = dt.Rows[0][ei.EyeSummary].ToString();
             item.EyeResult = dt.Rows[0][ei.EyeResult].ToString();
             item.EyeBlindness = dt.Rows[0][ei.EyeBlindness].ToString();
+
+            item.StoolExamAppearance = dt.Rows[0][ei.StoolExamAppearance].ToString();
+            item.StoolExamColor = dt.Rows[0][ei.StoolExamColor].ToString();
+            item.StoolExamNo = dt.Rows[0][ei.StoolExamNo].ToString();
+            item.StoolExamParasite = dt.Rows[0][ei.StoolExamParasite].ToString();
+            item.StoolExamRbc = dt.Rows[0][ei.StoolExamRbc].ToString();
+            item.StoolExamRow = dt.Rows[0][ei.StoolExamRow].ToString();
+            item.StoolExamSummary = dt.Rows[0][ei.StoolExamSummary].ToString();
+            item.StoolExamWbc = dt.Rows[0][ei.StoolExamWbc].ToString();
 
             item.Active = dt.Rows[0][ei.Active].ToString();
             return item;
@@ -556,7 +577,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateSfA(String SfAAge, String SfAPrefix, String SfAFirstName, String SfALastName, String SfANo, String SfRow)
+        public String updateSfA(String SfAAge, String SfAPrefix, String SfAFirstName, String SfALastName, String SfANo, String SfRow, String department)
         {
             String sql = "", chk = "";
 
@@ -569,7 +590,7 @@ namespace CheckUP.objdb
                 ei.SfALastName + "='" + SfALastName + "', " +
                 ei.SfANo + "='" + SfANo + "', " +
                 ei.SfAPrefix + "='" + SfAPrefix + "', " +
-                //ei.SfBAge + "='" + SfBAge + "', " +
+                ei.DepartmentName + "='" + department + "', " +
                 //ei.SfBNo + "='" + SfBNo + "', " +
                 //ei.SfBFullName + "='" + SfBFullName + "', " +
                 //ei.SfBPrefix + "='" + SfBPrefix + "', " +
@@ -593,7 +614,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateSfB(String SfBAge, String SfBPrefix, String SfBFullName, String SfBNo, String SfRow)
+        public String updateSfB(String SfBAge, String SfBPrefix, String SfBFullName, String SfBNo, String SfRow, String department)
         {
             String sql = "", chk = "";
             
@@ -602,6 +623,7 @@ namespace CheckUP.objdb
                 ei.SfBNo + "='" + SfBNo + "', " +
                 ei.SfBPrefix + "='" + SfBPrefix + "', " +
                 ei.SfRow + "='" + SfRow + "', " +
+                ei.DepartmentName + "='" + department + "', " +
                 ei.SfStatusName + "='B' ";
 
             //"Where " + ei.pkField + "='" + id + "'";
@@ -611,21 +633,21 @@ namespace CheckUP.objdb
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex.ToString(), "update updateSfA");
+                MessageBox.Show("Error " + ex.ToString(), "update updateSfB");
             }
             finally
             {
             }
             return chk;
         }
-        public String updateSfC(String SfCAge, String SfCAllName, String SfCNo, String SfRow)
+        public String updateSfC(String SfCAge, String SfCAllName, String SfCNo, String SfRow, String department)
         {
             String sql = "", chk = "";
             
             sql = "Update " + ei.table + " Set " + ei.SfCAge + "='" + SfCAge + "', " +
                 ei.SfCFullName + "='" + SfCAllName + "', " +
                 ei.SfCNo + "='" + SfCNo + "', " +
-                ////ei.SfAPrefix + "='" + SfBPrefix + "', " +
+                ei.DepartmentName + "='" + department + "', " +
                 ei.SfRow + "='" + SfRow + "', " +
                 ei.SfStatusName + "='C' ";
 
@@ -636,7 +658,7 @@ namespace CheckUP.objdb
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex.ToString(), "update updateSfA");
+                MessageBox.Show("Error " + ex.ToString(), "update updateSfC");
             }
             finally
             {
@@ -901,6 +923,31 @@ namespace CheckUP.objdb
             catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex.ToString(), "update updateEye");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateStoolExam(String StoolExamRow, String StoolExamNo, String StoolExamAppearance, String StoolExamColor, String StoolExamWbc, String StoolExamRbc, String StoolExamParasite, String StoolExamSummary)
+        {
+            String sql = "", chk = "";
+
+            sql = "Update " + ei.table + " Set " + ei.StoolExamRow + "='" + StoolExamRow + "', " +
+                ei.StoolExamNo + "='" + StoolExamNo + "', " +
+                ei.StoolExamAppearance + "='" + StoolExamAppearance + "', " +
+                ei.StoolExamColor + "='" + StoolExamColor + "', " +
+                ei.StoolExamWbc + "='" + StoolExamWbc + "', " +
+                ei.StoolExamRbc + "='" + StoolExamRbc + "', " +
+                ei.StoolExamParasite + "='" + StoolExamParasite + "', " +
+                ei.StoolExamSummary + "='" + StoolExamSummary + "' ";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateStoolExam");
             }
             finally
             {

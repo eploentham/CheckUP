@@ -19,8 +19,8 @@ namespace CheckUP.gui
         int tabSum = 0, tabPrint=1, tabPE=2, tabXRay=3, tabCBC=4, tabFBS=5, tabUA=6,tabTri=7, tabCho=8, tabSgot=9, tabBun=10, tabUric=11, tabOther1=12, tabLung=13, tabAudio=14, tabEye=15;
         int tabCnt = 16;
 
-        int colPERow = 0, colPEId = 1, colPEName = 2, colPESex=3, colPEAge = 4, colPEWeight = 5, colPEHeight = 6, colPEBMI = 7, colPEvitalsign = 8, colPEPulse = 9, colPEBloodGroup=10, colPEResult = 11, colPESummary = 12;
-        int colPECnt = 13;
+        int colPERow = 0, colPEId = 1, colPEName = 2, colPESex=3, colPEAge = 4, colPEDepartment=5, colPEWeight = 6, colPEHeight = 7, colPEBMI = 8, colPEvitalsign = 9, colPEPulse = 10, colPEBloodGroup=11, colPEResult = 12, colPESummary = 13;
+        int colPECnt = 14;
 
         int colSumRow = 0, colSumDesc = 1, colSumSfCnt = 2, colSumSfNormal = 3, colSumAbNormal = 4, colSumPerNormal = 5, colSumPerAbNormal = 6, colSumOpen=7, colSumImport=8;
         int colSumCnt = 9;
@@ -299,6 +299,7 @@ namespace CheckUP.gui
             dgvPE.Columns[colPEName].Width = 250;
             dgvPE.Columns[colPESex].Width = 120;
             dgvPE.Columns[colPEAge].Width = 80;
+            dgvPE.Columns[colPEDepartment].Width = 120;
             dgvPE.Columns[colPEWeight].Width = 80;
             dgvPE.Columns[colPEHeight].Width = 180;
             dgvPE.Columns[colPEBMI].Width = 180;
@@ -311,6 +312,7 @@ namespace CheckUP.gui
             dgvPE.Columns[colPEName].HeaderText = "ชื่อ นามสกุล";
             dgvPE.Columns[colPESex].HeaderText = "เพศ";
             dgvPE.Columns[colPEAge].HeaderText = "อายุ";
+            dgvPE.Columns[colPEDepartment].HeaderText = "department";
             dgvPE.Columns[colPEWeight].HeaderText = "น้ำหนัก";
             dgvPE.Columns[colPEHeight].HeaderText = "ส่วนสูง";
             dgvPE.Columns[colPEBMI].HeaderText = "BMI";
@@ -817,6 +819,18 @@ namespace CheckUP.gui
             txtCntEmp.Text = cuc.CntEmployee;
             txtYear.Text = cuc.YearId;
             txtCntSuccess.Text = cuc.CntSuccess;
+            if (cuc.Active.Equals("1"))
+            {
+                chkActive.Checked = true;
+                ChkUnActive.Checked = false;
+                btnUnActive.Visible = false;
+            }
+            else 
+            {
+                chkActive.Checked = true;
+                ChkUnActive.Checked = false;
+                btnUnActive.Visible = true;
+            }
         }
         private void setGrdPE(String cucId)
         {
@@ -838,7 +852,23 @@ namespace CheckUP.gui
                 {
                     dgvPE[colPERow, i].Value = (i + 1);
                     dgvPE[colPEName, i].Value = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
-                    dgvPE[colPESex, i].Value = dt.Rows[i][cc.ccpdb.ccp.fSexId].ToString();
+                    //if (dt.Rows[i][cc.ccpdb.ccp.fSexId].ToString().Equals("1"))
+                    //{
+                    dgvPE[colPESex, i].Value = dt.Rows[i][cc.ccpdb.ccp.SexName].ToString();
+                    //}
+                    //else if (dt.Rows[i][cc.ccpdb.ccp.fSexId].ToString().Equals("2"))
+                    //{
+                    //    dgvPE[colPESex, i].Value = "หญิง";
+                    //}
+                    //if (dt.Rows[i][cc.ccpdb.ccp.fSexId].ToString().Equals("3"))
+                    //{
+                    //    dgvPE[colPESex, i].Value = "ไม่ระบุ";
+                    //}
+                    //else
+                    //{
+                    //    dgvPE[colPESex, i].Value = "ไม่ระบุ";
+                    //}
+                    dgvPE[colPEDepartment, i].Value = dt.Rows[i][cc.ccpdb.ccp.departmentName].ToString();
                     dgvPE[colPEAge, i].Value = dt.Rows[i][cc.ccpdb.ccp.patientAge].ToString();
                     dgvPE[colPEWeight, i].Value = dt.Rows[i][cc.ccpdb.ccp.patientWeight].ToString();
                     dgvPE[colPEHeight, i].Value = dt.Rows[i][cc.ccpdb.ccp.patientHeight].ToString();
@@ -1363,7 +1393,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileName);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            String prefix = "", firstName = "", lastName = "";
+            String prefix = "", firstName = "", lastName = "", department="";
             int rowCount = xlRange.Rows.Count, row = 0;
             int colCount = xlRange.Columns.Count;
 
@@ -1395,82 +1425,339 @@ namespace CheckUP.gui
                     prefix = "";
                     firstName = "";
                     lastName = "";
-                    if (xlRange.Cells[i, 2].Value2 != null)
+                    if (ei.SfStatusName.Equals("A"))
                     {
-                        prefix = xlRange.Cells[i, 2].Value2.ToString();
-                    }
-                    else
-                    {
-                        prefix = "";
-                    }
-                    prefix = prefix.Trim();
-                    if (prefix.Equals("นาย"))
-                    {
-                        sexId = "1";
-                    }
-                    else if (prefix.Equals("นาย."))
-                    {
-                        sexId = "1";
-                    }
-                    else if (prefix.Equals("น.ส."))
-                    {
-                        sexId = "2";
-                    }
-                    else if (prefix.Equals("น.ส"))
-                    {
-                        sexId = "2";
-                    }
-                    else if (prefix.Equals("นส"))
-                    {
-                        sexId = "2";
-                    }
-                    else if (prefix.Equals("นส."))
-                    {
-                        sexId = "2";
-                    }
-                    else if (prefix.Equals("นาง"))
-                    {
-                        sexId = "2";
-                    }
-                    else
-                    {
-                        sexId = "3";
-                    }
-                    ccp.fSexId = sexId;
-                    if (xlRange.Cells[i, 3].Value2 != null)
-                    {
-                        firstName = xlRange.Cells[i, 3].Value2.ToString();
-                    }
-                    else
-                    {
-                        firstName = "";
-                        continue;
-                    }
-                    if (xlRange.Cells[i, 4].Value2 != null)
-                    {
-                        lastName = xlRange.Cells[i, 4].Value2.ToString();
-                    }
-                    else
-                    {
-                        lastName = "";
-                    }
-                    if (xlRange.Cells[i, 1].Value2 != null)
-                    {
-                        ccp.rowNumber = xlRange.Cells[i, 1].Value2.ToString();
-                    }
-                    else
-                    {
-                        ccp.rowNumber = "";
-                    }
-                    if (xlRange.Cells[i, 5].Value2 != null)
-                    {
-                        ccp.patientAge = xlRange.Cells[i, 5].Value2.ToString();
-                    }
-                    else
-                    {
+                        if (xlRange.Cells[i, int.Parse(ei.SfAPrefix)].Value2 != null)
+                        {
+                            prefix = xlRange.Cells[i, int.Parse(ei.SfAPrefix)].Value2.ToString();
+                        }
+                        else
+                        {
+                            prefix = "";
+                        }
+                        prefix = prefix.Trim();
+                        if (prefix.Equals("นาย"))
+                        {
+                            sexId = "1";
+                            ccp.SexName = "ชาย";
+                        }
+                        else if (prefix.Equals("นาย."))
+                        {
+                            sexId = "1";
+                            ccp.SexName = "ชาย";
+                        }
+                        else if (prefix.Equals("น.ส."))
+                        {
+                            sexId = "2";
+                            ccp.SexName = "หญิง";
+                        }
+                        else if (prefix.Equals("น.ส"))
+                        {
+                            sexId = "2";
+                            ccp.SexName = "หญิง";
+                        }
+                        else if (prefix.Equals("นส"))
+                        {
+                            sexId = "2";
+                            ccp.SexName = "หญิง";
+                        }
+                        else if (prefix.Equals("นส."))
+                        {
+                            sexId = "2";
+                            ccp.SexName = "หญิง";
+                        }
+                        else if (prefix.Equals("นาง"))
+                        {
+                            sexId = "2";
+                            ccp.SexName = "หญิง";
+                        }
+                        else if (prefix.Equals("Mr."))
+                        {
+                            sexId = "1";
+                            ccp.SexName = "ชาย";
+                        }
+                        else if (prefix.Equals("Mrs."))
+                        {
+                            sexId = "2";
+                            ccp.SexName = "หญิง";
+                        }
+                        else if (prefix.Equals("Mr"))
+                        {
+                            sexId = "1";
+                            ccp.SexName = "ชาย";
+                        }
+                        else if (prefix.Equals("Miss"))
+                        {
+                            sexId = "2";
+                            ccp.SexName = "หญิง";
+                        }
+                        else
+                        {
+                            sexId = "3";
+                            ccp.SexName = "ไม่ระบุ";
+                        }
+                        ccp.fSexId = sexId;
+                        if (xlRange.Cells[i, int.Parse(ei.SfAFirstName)].Value2 != null)
+                        {
+                            firstName = xlRange.Cells[i, int.Parse(ei.SfAFirstName)].Value2.ToString();
+                        }
+                        else
+                        {
+                            firstName = "";
+                            continue;
+                        }
+                        if (xlRange.Cells[i, int.Parse(ei.SfALastName)].Value2 != null)
+                        {
+                            lastName = xlRange.Cells[i, int.Parse(ei.SfALastName)].Value2.ToString();
+                        }
+                        else
+                        {
+                            lastName = "";
+                        }
+                        if (xlRange.Cells[i, int.Parse(ei.SfANo)].Value2 != null)
+                        {
+                            ccp.rowNumber = xlRange.Cells[i, int.Parse(ei.SfANo)].Value2.ToString();
+                        }
+                        else
+                        {
+                            ccp.rowNumber = "";
+                        }
+                        if (xlRange.Cells[i, int.Parse(ei.SfAAge)].Value2 != null)
+                        {
+                            ccp.patientAge = xlRange.Cells[i, int.Parse(ei.SfAAge)].Value2.ToString();
+                        }
+                        else
+                        {
 
+                        }
+                        ccp.patientFullname = prefix + " " + firstName + " " + lastName;
                     }
-                    ccp.patientFullname = prefix + " " + firstName + " " + lastName;
+                    else if (ei.SfStatusName.Equals("B"))
+                    {
+                        if (xlRange.Cells[i, int.Parse(ei.SfBPrefix)].Value2 != null)
+                        {
+                            prefix = xlRange.Cells[i, int.Parse(ei.SfBPrefix)].Value2.ToString();
+                        }
+                        else
+                        {
+                            prefix = "";
+                        }
+                        prefix = prefix.Trim();
+                        if (prefix.Equals("นาย"))
+                        {
+                            sexId = "1";
+                            ccp.SexName = "ชาย";
+                        }
+                        else if (prefix.Equals("นาย."))
+                        {
+                            sexId = "1";
+                            ccp.SexName = "ชาย";
+                        }
+                        else if (prefix.Equals("น.ส."))
+                        {
+                            sexId = "2";
+                            ccp.SexName = "หญิง";
+                        }
+                        else if (prefix.Equals("น.ส"))
+                        {
+                            sexId = "2";
+                            ccp.SexName = "หญิง";
+                        }
+                        else if (prefix.Equals("นส"))
+                        {
+                            sexId = "2";
+                            ccp.SexName = "หญิง";
+                        }
+                        else if (prefix.Equals("นส."))
+                        {
+                            sexId = "2";
+                            ccp.SexName = "หญิง";
+                        }
+                        else if (prefix.Equals("นาง"))
+                        {
+                            sexId = "2";
+                            ccp.SexName = "หญิง";
+                        }
+                        else if (prefix.Equals("Mr."))
+                        {
+                            sexId = "1";
+                            ccp.SexName = "ชาย";
+                        }
+                        else if (prefix.Equals("Mrs."))
+                        {
+                            sexId = "2";
+                            ccp.SexName = "หญิง";
+                        }
+                        else if (prefix.Equals("Mr"))
+                        {
+                            sexId = "1";
+                            ccp.SexName = "ชาย";
+                        }
+                        else if (prefix.Equals("Miss"))
+                        {
+                            sexId = "2";
+                            ccp.SexName = "หญิง";
+                        }
+                        else
+                        {
+                            sexId = "3";
+                            ccp.SexName = "ไม่ระบุ";
+                        }
+                        ccp.fSexId = sexId;
+                        if (xlRange.Cells[i, int.Parse(ei.SfBFullName)].Value2 != null)
+                        {
+                            firstName = xlRange.Cells[i, int.Parse(ei.SfBFullName)].Value2.ToString();
+                        }
+                        else
+                        {
+                            firstName = "";
+                            continue;
+                        }
+                        //if (xlRange.Cells[i, int.Parse(ei.SfALastName)].Value2 != null)
+                        //{
+                        //    lastName = xlRange.Cells[i, int.Parse(ei.SfALastName)].Value2.ToString();
+                        //}
+                        //else
+                        //{
+                        //    lastName = "";
+                        //}
+                        if (xlRange.Cells[i, int.Parse(ei.SfBNo)].Value2 != null)
+                        {
+                            ccp.rowNumber = xlRange.Cells[i, int.Parse(ei.SfBNo)].Value2.ToString();
+                        }
+                        else
+                        {
+                            ccp.rowNumber = "";
+                        }
+                        if (xlRange.Cells[i, int.Parse(ei.SfBAge)].Value2 != null)
+                        {
+                            ccp.patientAge = xlRange.Cells[i, int.Parse(ei.SfBAge)].Value2.ToString();
+                        }
+                        else
+                        {
+
+                        }
+                        ccp.patientFullname = prefix + " " + firstName ;
+                    }
+                    else if (ei.SfStatusName.Equals("C"))
+                    {
+                        //if (xlRange.Cells[i, int.Parse(ei.SfBPrefix)].Value2 != null)
+                        //{
+                        //    prefix = xlRange.Cells[i, int.Parse(ei.SfBPrefix)].Value2.ToString();
+                        //}
+                        //else
+                        //{
+                        //    prefix = "";
+                        //}
+                        //prefix = prefix.Trim();
+                        
+                        if (xlRange.Cells[i, int.Parse(ei.SfCFullName)].Value2 != null)
+                        {
+                            firstName = xlRange.Cells[i, int.Parse(ei.SfCFullName)].Value2.ToString();
+                            if (firstName.IndexOf("นาย")>=0)
+                            {
+                                sexId = "1";
+                                ccp.SexName = "ชาย";
+                            }
+                            else if (firstName.IndexOf("นาย.") >= 0)
+                            {
+                                sexId = "1";
+                                ccp.SexName = "ชาย";
+                            }
+                            else if (firstName.IndexOf("น.ส.") >= 0)
+                            {
+                                sexId = "2";
+                                ccp.SexName = "หญิง";
+                            }
+                            else if (firstName.IndexOf("น.ส") >= 0)
+                            {
+                                sexId = "2";
+                                ccp.SexName = "หญิง";
+                            }
+                            else if (firstName.IndexOf("นส") >= 0)
+                            {
+                                sexId = "2";
+                                ccp.SexName = "หญิง";
+                            }
+                            else if (firstName.IndexOf("นส.") >= 0)
+                            {
+                                sexId = "2";
+                                ccp.SexName = "หญิง";
+                            }
+                            else if (firstName.IndexOf("นาง") >= 0)
+                            {
+                                sexId = "2";
+                                ccp.SexName = "หญิง";
+                            }
+                            else if (firstName.IndexOf("Mr.") >= 0)
+                            {
+                                sexId = "1";
+                                ccp.SexName = "ชาย";
+                            }
+                            else if (firstName.IndexOf("Mrs.") >= 0)
+                            {
+                                sexId = "2";
+                                ccp.SexName = "หญิง";
+                            }
+                            else if (firstName.IndexOf("Mr") >= 0)
+                            {
+                                sexId = "1";
+                                ccp.SexName = "ชาย";
+                            }
+                            else if (firstName.IndexOf("Miss") >= 0)
+                            {
+                                sexId = "2";
+                                ccp.SexName = "หญิง";
+                            }
+                            else
+                            {
+                                sexId = "3";
+                                ccp.SexName = "ไม่ระบุ";
+                            }
+                            ccp.fSexId = sexId;
+                            
+                        }
+                        else
+                        {
+                            firstName = "";
+                            continue;
+                        }
+                        //if (xlRange.Cells[i, int.Parse(ei.SfALastName)].Value2 != null)
+                        //{
+                        //    lastName = xlRange.Cells[i, int.Parse(ei.SfALastName)].Value2.ToString();
+                        //}
+                        //else
+                        //{
+                        //    lastName = "";
+                        //}
+                        if (xlRange.Cells[i, int.Parse(ei.SfCNo)].Value2 != null)
+                        {
+                            ccp.rowNumber = xlRange.Cells[i, int.Parse(ei.SfCNo)].Value2.ToString();
+                        }
+                        else
+                        {
+                            ccp.rowNumber = "";
+                        }
+                        if (xlRange.Cells[i, int.Parse(ei.SfCAge)].Value2 != null)
+                        {
+                            ccp.patientAge = xlRange.Cells[i, int.Parse(ei.SfCAge)].Value2.ToString();
+                        }
+                        else
+                        {
+
+                        }
+                        ccp.patientFullname = firstName;
+                    }
+
+                    if (xlRange.Cells[i, int.Parse(ei.DepartmentName)].Value2 != null)
+                    {
+                        ccp.departmentName = xlRange.Cells[i, int.Parse(ei.DepartmentName)].Value2.ToString();
+                    }
+                    else
+                    {
+                        ccp.departmentName = "";
+                    }
+                    
 
                     cc.ccpdb.InsertCustCheckUpPatient1(ccp);
                     row++;
@@ -1548,32 +1835,24 @@ namespace CheckUP.gui
             if (chkActive.Checked)
             {
                 btnUnActive.Visible = false;
-
-                //txtId.Enabled = true;
-                //txtCode.Enabled = true;
-                //txtAddr.Enabled = true;
-                //txtAddressE.Enabled = true;
-                //txtAddressT.Enabled = true;
-                //txtEmail.Enabled = true;
-                //TxtFax.Enabled = true;
-                //txtNameE.Enabled = true;
-                //txtNameT.Enabled = true;
-                //txtTaxID.Enabled = true;
-                //txtTele.Enabled = true;
-                //txtZipcode.Enabled = true;
-                //cboAmphur.Enabled = true;
-                //cboDistrict.Enabled = true;
-                //cboProvince.Enabled = true;
-                //txtContactName1.Enabled = true;
-                //txtContactName1Tel.Enabled = true;
-                //txtContactName2.Enabled = true;
-                //txtContactName2Tel.Enabled = true;
             }
+            else if (ChkUnActive.Checked)
+            {
+                btnUnActive.Visible = true;
+            }
+
         }
 
         private void chkActive_Click(object sender, EventArgs e)
         {
-
+            if (chkActive.Checked)
+            {
+                btnUnActive.Visible = false;
+            }
+            else if (ChkUnActive.Checked)
+            {
+                btnUnActive.Visible = true;
+            }
         }
 
         private void btnPEExcel_Click(object sender, EventArgs e)
@@ -4006,6 +4285,15 @@ namespace CheckUP.gui
             FrmReport frm = new FrmReport(cc);
             frm.setReportCheckUpSticker(dt);
             frm.ShowDialog(this);
+        }
+
+        private void btnUnActive_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("ต้องการยกเลิก", "ยกเลิก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                cc.cucdb.VoidCustCheckUp(txtId.Text);
+                this.Dispose();
+            }
         }
         
     }

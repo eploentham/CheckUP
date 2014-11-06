@@ -49,11 +49,14 @@ namespace CheckUP.objdb
 
             ccpvn.fSexId = "f_sex_id";
             ccpvn.summaryPhysicalExam = "summary_physical_exam";
+
             ccpvn.stoolExamColor = "stool_exam_color";
             ccpvn.stoolExamAppearance = "stool_exam_appearance";
             ccpvn.stoolExamWbc = "stool_exam_wbc";
             ccpvn.stoolExamRbc = "stool_exam_rbc";
             ccpvn.stoolExamParasite = "stool_exam_parasite";
+            ccpvn.stoolExamSummary = "stool_exam_summary";
+
             ccpvn.toxicologyLead = "toxicology_lead";
             ccpvn.toxicologyMercury = "toxicology_mercury";
             ccpvn.toxicologyBenzene = "toxicology_benzene";
@@ -175,7 +178,7 @@ namespace CheckUP.objdb
             ccpvn.statusCholes = "status_choles";
             ccpvn.StatusHbsag = "status_hbsag";
 
-            ccpvn.stoolExamSummary = "stool_exam_summary";
+            
             ccpvn.cholesterolSummary = "cholesterol_summary";
             ccpvn.cholesterolSuggess = "cholesterol_suggess";
 

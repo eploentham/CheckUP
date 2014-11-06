@@ -51,12 +51,16 @@ namespace CheckUP.objdb
             ccp.EyeBlindness = "eye_blindness";
 
             ccp.fSexId = "f_sex_id";
+            ccp.SexName = "sex_name";
             ccp.summaryPhysicalExam = "summary_physical_exam";
-            ccp.stoolExamColor = "stool_exam_color";
-            ccp.stoolExamAppearance = "stool_exam_appearance";
-            ccp.stoolExamWbc = "stool_exam_wbc";
-            ccp.stoolExamRbc = "stool_exam_rbc";
-            ccp.stoolExamParasite = "stool_exam_parasite";
+
+            ccp.StoolExamColor = "stool_exam_color";
+            ccp.StoolExamAppearance = "stool_exam_appearance";
+            ccp.StoolExamWbc = "stool_exam_wbc";
+            ccp.StoolExamRbc = "stool_exam_rbc";
+            ccp.StoolExamParasite = "stool_exam_parasite";
+            ccp.StoolExamSummary = "stool_exam_summary";
+
             ccp.toxicologyLead = "toxicology_lead";
             ccp.toxicologyMercury = "toxicology_mercury";
             ccp.toxicologyBenzene = "toxicology_benzene";
@@ -178,7 +182,7 @@ namespace CheckUP.objdb
             ccp.statusCholes = "status_choles";
             ccp.StatusHbsag = "status_hbsag";
 
-            ccp.stoolExamSummary = "stool_exam_summary";
+            
             ccp.cholesterolSummary = "cholesterol_summary";
             ccp.cholesterolSuggess = "cholesterol_suggess";
 
@@ -370,10 +374,10 @@ namespace CheckUP.objdb
                 + ccp.patientHeight + "," + ccp.patientNumber + ","
                 + ccp.patientPulse + "," + ccp.patientWeight + ","
                 + ccp.pid + "," + ccp.sectionName + ","
-                + ccp.stoolExamAppearance + "," + ccp.ChecklistId + ","
+                + ccp.StoolExamAppearance + "," + ccp.ChecklistId + ","
 
-                + ccp.stoolExamColor + "," + ccp.stoolExamParasite + ","
-                + ccp.stoolExamRbc + "," + ccp.stoolExamWbc + ","
+                + ccp.StoolExamColor + "," + ccp.StoolExamParasite + ","
+                + ccp.StoolExamRbc + "," + ccp.StoolExamWbc + ","
                 + ccp.sugar + "," + ccp.suggestExam + ","
                 + ccp.sugarDiagnosis + "," + ccp.sugarSuggess + ","
                 + ccp.sugarSummary + ","+ccp.urineResult+","
@@ -402,7 +406,7 @@ namespace CheckUP.objdb
                     + ccp.stickerQty+","+ccp.statusCbc+","
                     + ccp.statusFbs+","+ccp.statusUa+","
                     + ccp.statusPe+","+ccp.statusXray+","
-                    + ccp.statusStool+","+ccp.stoolExamSummary+","
+                    + ccp.statusStool+","+ccp.StoolExamSummary+","
                     + ccp.cholesterolSuggess+","+ccp.cholesterolSummary+","
                     + ccp.cbcMch+","+ccp.cbcMchc+","
                     + ccp.hbsagSuggess+","+ccp.hbsagSummary+","
@@ -414,7 +418,7 @@ namespace CheckUP.objdb
                     + ccp.statusAntiHiv+","+ccp.statusVisit+","+
                     ccp.triglycerideResult + "," + ccp.triglycerideSummary +","+
                     ccp.liverResult + "," + ccp.liverSummary +","+
-                    ccp.kidneyResult + "," + ccp.kidneySummary + ") "
+                    ccp.kidneyResult + "," + ccp.kidneySummary + "," + ccp.SexName + ") "
                 + "Values('" + p.Id + "','" + p.amphetamine + "','"
                 + p.antiHiv + "','" + p.AudiogramExam + "','"
                 + p.Audiogram1000L + "','" + p.Audiogram1000R + "','"
@@ -455,10 +459,10 @@ namespace CheckUP.objdb
                 + p.patientHeight + "','" + p.patientNumber + "','"
                 + p.patientPulse + "','" + p.patientWeight + "','"
                 + p.pid + "','" + p.sectionName + "','"
-                + p.stoolExamAppearance + "','" + p.ChecklistId + "','"
+                + p.StoolExamAppearance + "','" + p.ChecklistId + "','"
 
-                + p.stoolExamColor + "','" + p.stoolExamParasite + "','"
-                + p.stoolExamRbc + "','" + p.stoolExamWbc + "','"
+                + p.StoolExamColor + "','" + p.StoolExamParasite + "','"
+                + p.StoolExamRbc + "','" + p.StoolExamWbc + "','"
                 + p.sugar + "','" + p.suggestExam + "','"
                 + p.sugarDiagnosis + "','" + p.sugarSuggess + "','"
                 + p.sugarSummary + "','"+p.urineResult+"','"
@@ -487,7 +491,7 @@ namespace CheckUP.objdb
                     + p.stickerQty + "','" + p.statusCbc + "','"
                     + p.statusFbs + "','" + p.statusUa + "','"
                     + p.statusPe + "','" + p.statusXray + "','"
-                    + p.statusStool + "','" + p.stoolExamSummary + "','"
+                    + p.statusStool + "','" + p.StoolExamSummary + "','"
                     + p.cholesterolSuggess + "','" + p.cholesterolSummary + "','"
                     + p.cbcMch + "','" + p.cbcMchc + "','"
                     + p.hbsagSuggess + "','" + p.hbsagSummary + "','"
@@ -499,7 +503,7 @@ namespace CheckUP.objdb
                     + p.statusAntiHiv + "','" + p.statusVisit + "','"+
                     p.triglycerideResult + "','" + p.triglycerideSummary + "','" +
                     p.liverResult + "','" + p.liverSummary + "','" +
-                    p.kidneyResult + "','" + p.kidneySummary + "') ";
+                    p.kidneyResult + "','" + p.kidneySummary + "','" + p.SexName + "') ";
             chk = conn.ExecuteNonQuery(sql);
     //            conn.close;
             } catch (Exception ex) {
@@ -873,7 +877,7 @@ namespace CheckUP.objdb
                 ccp.EyeResult + "='" + EyeResult + "', " +
                 ccp.EyeSummary + "='" + EyeSummary + "', " +
                 ccp.EyeBlindness + "='" + EyeBlindness + "' "+
-                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";;
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -881,6 +885,30 @@ namespace CheckUP.objdb
             catch (Exception ex)
             {
                 //MessageBox.Show("Error " + ex.ToString(), "update updateEye");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateStoolExam(String rowNumber, String cucId, String StoolExamAppearance, String StoolExamColor, String StoolExamWbc, String StoolExamRbc, String StoolExamParasite, String StoolExamSummary)
+        {
+            String sql = "", chk = "";
+
+            sql = "Update " + ccp.table + " Set " + ccp.StoolExamAppearance + "='" + StoolExamAppearance + "', " +
+                ccp.StoolExamColor + "='" + StoolExamColor + "', " +
+                ccp.StoolExamWbc + "='" + StoolExamWbc + "', " +
+                ccp.StoolExamRbc + "='" + StoolExamRbc + "', " +
+                ccp.StoolExamParasite + "='" + StoolExamParasite + "', " +
+                ccp.StoolExamSummary + "='" + StoolExamSummary + "' "+
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Error " + ex.ToString(), "update updateStoolExam");
             }
             finally
             {
