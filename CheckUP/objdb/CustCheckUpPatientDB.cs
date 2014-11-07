@@ -13,6 +13,7 @@ namespace CheckUP.objdb
     {
         ConnectDB conn;
         public CustCheckUpPatient ccp;
+        LogWriter lw;
         public CustCheckUpPatientDB(ConnectDB c)
         {
             conn = c;
@@ -20,6 +21,7 @@ namespace CheckUP.objdb
         }
         private void initConfig()
         {
+            lw = new LogWriter();
             ccp = new CustCheckUpPatient();
             ccp.Id="patient_id";
             ccp.CustCheckUpId="cust_checkup_id";    
@@ -560,7 +562,7 @@ namespace CheckUP.objdb
             }
             catch (Exception ex)
             {
-                //Logger.getLogger(MarketingTCheckupDB.class.getName).log(Level.SEVERE, null, ex);
+                lw.WriteLog("ccp.UpdatePE Error " + ex.Message);
                 //max = ex.getMessage;
             }
 

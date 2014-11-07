@@ -356,3 +356,46 @@ Failed to load database information.
 5/11/2557 11:58->rpt.setReportCheckUpSticker OK 
 5/11/2557 11:58->rpt.setReportCheckUpSticker OK LoadD:\source\CheckUP\CheckUP\report\CheckUpSticker.rpt
 5/11/2557 11:58->rpt.setReportCheckUpSticker OK SetDataSource
+7/11/2557 11:36->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 11:36->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 11:36->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 11:36->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 11:36->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 11:40->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 11:42->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 11:42->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 11:42->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 11:42->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 12:11->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 12:11->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 12:11->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 12:11->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 12:11->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 12:16->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 12:16->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 12:16->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 12:16->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 12:16->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 12:27->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 12:27->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 12:27->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 12:27->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 12:27->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+7/11/2557 14:47->FrmCheckUPAdd.btnPrint_Click 01 
+7/11/2557 14:47->FrmCheckUPAdd.btnPrint_Click 02 
+7/11/2557 14:47->FrmCheckUPAdd.btnPrint_Click 03 
+7/11/2557 14:47->rpt.setReportCheckUp OK 
+7/11/2557 14:47->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+7/11/2557 14:47->rpt.setReportCheckUp OK SetDataSource
+7/11/2557 14:48->FrmCheckUPAdd.btnPrint_Click 01 
+7/11/2557 14:48->FrmCheckUPAdd.btnPrint_Click 02 
+7/11/2557 14:48->FrmCheckUPAdd.btnPrint_Click 03 
+7/11/2557 14:48->rpt.setReportCheckUp OK 
+7/11/2557 14:48->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+7/11/2557 14:48->rpt.setReportCheckUp OK SetDataSource
+7/11/2557 14:49->FrmCheckUPAdd.btnPrint_Click 01 
+7/11/2557 14:49->FrmCheckUPAdd.btnPrint_Click 02 
+7/11/2557 14:49->FrmCheckUPAdd.btnPrint_Click 03 
+7/11/2557 14:49->rpt.setReportCheckUp OK 
+7/11/2557 14:49->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+7/11/2557 14:49->rpt.setReportCheckUp OK SetDataSource

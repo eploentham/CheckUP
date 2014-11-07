@@ -16,8 +16,8 @@ namespace CheckUP.gui
         CheckControl cc;
         CustCheckUp cuc;
 
-        int tabSum = 0, tabPrint=1, tabPE=2, tabXRay=3, tabCBC=4, tabFBS=5, tabUA=6,tabTri=7, tabCho=8, tabSgot=9, tabBun=10, tabUric=11, tabOther1=12, tabLung=13, tabAudio=14, tabEye=15;
-        int tabCnt = 16;
+        int tabSum = 0, tabSum2=1, tabPrint=2, tabPE=3, tabXRay=4, tabCBC=5, tabFBS=6, tabUA=7,tabTri=8, tabCho=9, tabSgot=10, tabBun=11, tabUric=12, tabOther1=13, tabLung=14, tabAudio=15, tabEye=16, tabChemB=17, tabChemU=18, tabStoolExam=19;
+        int tabCnt = 20;
 
         int colPERow = 0, colPEId = 1, colPEName = 2, colPESex=3, colPEAge = 4, colPEDepartment=5, colPEWeight = 6, colPEHeight = 7, colPEBMI = 8, colPEvitalsign = 9, colPEPulse = 10, colPEBloodGroup=11, colPEResult = 12, colPESummary = 13;
         int colPECnt = 14;
@@ -69,10 +69,13 @@ namespace CheckUP.gui
         int colEyeRow = 0, colEyeId = 1, colEyeName = 2, colEyeShortLongLeft = 3, colEyeShortLongRight = 4, colEyeSquintLeft = 5, colEyeSquintRight = 6, colEyeDegreeLeft = 7, colEyeDegreeRight = 8, colEyeOldLeft = 9, colEyeOldRight = 10, colEyeBlindness = 10, colEyeResult = 11, colEyeSummary = 12;
         int colEyeCnt = 13;
 
+        int colStoolExamRow = 0, colStoolExamId = 1, colStoolExamName=2, colStoolExamColor = 3, colStoolExamAppearance = 4, colStoolExamWBC = 5, colStoolExamRBC = 6, colParasite = 7, colStoolExamSummary = 8;
+        int colStoolExamCnt = 9;    
+    
         Font font = new Font("Microsoft Sans Serif", 12);
         Boolean flagNew=false;
         String fileName = "", fileNamePE = "", fileNameFBS = "", fileNameXray = "", fileNameCBC = "", fileNameUA = "", fileNameTri = "", fileNameCho = "", fileNameLung="";
-        String fileNameSgot = "", fileNameBun = "", fileNameUric = "", fileNameOther1 = "", fileNameAudio="", fileNameEye="";
+        String fileNameSgot = "", fileNameBun = "", fileNameUric = "", fileNameOther1 = "", fileNameAudio="", fileNameEye="", fileNameStoolExam="", fileNameChemB="", fileNameChemU="";
         //String cucId = "";
         DataTable dtAll;
         OpenFileDialog ofd = new OpenFileDialog();
@@ -107,6 +110,9 @@ namespace CheckUP.gui
             tC.TabPages[tabLung].Text = "Lung";
             tC.TabPages[tabAudio].Text = "Audio";
             tC.TabPages[tabEye].Text = "Eye";
+            tC.TabPages[tabChemB].Text = "Chem Blood";
+            tC.TabPages[tabChemU].Text = "Chem Uric";
+            tC.TabPages[tabStoolExam].Text = "Stool Exam";
 
             pB1.Visible = false;
             btnPEImport.Enabled = false;
@@ -123,6 +129,11 @@ namespace CheckUP.gui
             btnLungImport.Enabled = false;
             btnAudioImport.Enabled = false;
             btnEyeImport.Enabled = false;
+            btnStoolExamImport.Enabled = false;
+            btnChemBImport.Enabled = false;
+            btnChemUImport.Enabled = false;
+
+            btnUnActive.Visible = false;
 
             if (flagNew)
             {
@@ -159,6 +170,7 @@ namespace CheckUP.gui
             setGrdLung();
             setGrdAudio();
             setGrdEye();
+            setGrdStoolExam();
 
             setGrdPE(cucId);
             setGrdXray(cucId);
@@ -174,6 +186,7 @@ namespace CheckUP.gui
             setGrdLung(cucId);
             setGrdAudoigram(cucId);
             setGrdEye(cucId);
+            setGrdStoolExam(cucId);
         }
 
         private void setResize()
@@ -285,6 +298,13 @@ namespace CheckUP.gui
             dgvEye.Height = tC.TabPages[tabEye].Height - 10;
             dgvEye.Left = dgvPE.Left;
             dgvEye.Top = dgvPE.Left;
+
+            tC.TabPages[tabStoolExam].Width = tC.Width - 10;
+            tC.TabPages[tabStoolExam].Height = tC.Height - 10;
+            dgvStoolExam.Width = tC.TabPages[tabStoolExam].Width - 10;
+            dgvStoolExam.Height = tC.TabPages[tabStoolExam].Height - 10;
+            dgvStoolExam.Left = dgvPE.Left;
+            dgvStoolExam.Top = dgvPE.Left;
 
             //groupBox1.Width = this.Width - 50;
             //groupBox1.Height = this.Height = 150;
@@ -765,23 +785,23 @@ namespace CheckUP.gui
         }
         private void setGrdEye()
         {
-            dgvEye.ColumnCount = colAudiogramCnt;
+            dgvEye.ColumnCount =colEyeCnt;
             dgvEye.Rows.Clear();
             dgvEye.RowCount = 1;
             dgvEye.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvEye.Columns[colEyeRow].Width = 50;
             dgvEye.Columns[colEyeName].Width = 250;
-            dgvEye.Columns[colEyeShortLongLeft].Width = 80;
-            dgvEye.Columns[colEyeShortLongRight].Width = 80;
-            dgvEye.Columns[colEyeSquintLeft].Width = 80;
-            dgvEye.Columns[colEyeSquintRight].Width = 80;
-            dgvEye.Columns[colEyeDegreeLeft].Width = 80;
-            dgvEye.Columns[colEyeDegreeRight].Width = 80;
-            dgvEye.Columns[colEyeOldLeft].Width = 80;
-            dgvEye.Columns[colEyeOldRight].Width = 80;
-            dgvEye.Columns[colEyeBlindness].Width = 80;
-            dgvEye.Columns[colEyeResult].Width = 80;
-            dgvEye.Columns[colEyeSummary].Width = 80;
+            dgvEye.Columns[colEyeShortLongLeft].Width = 120;
+            dgvEye.Columns[colEyeShortLongRight].Width = 120;
+            dgvEye.Columns[colEyeSquintLeft].Width = 120;
+            dgvEye.Columns[colEyeSquintRight].Width = 120;
+            dgvEye.Columns[colEyeDegreeLeft].Width = 120;
+            dgvEye.Columns[colEyeDegreeRight].Width = 120;
+            dgvEye.Columns[colEyeOldLeft].Width = 120;
+            dgvEye.Columns[colEyeOldRight].Width = 120;
+            dgvEye.Columns[colEyeBlindness].Width = 120;
+            dgvEye.Columns[colEyeResult].Width = 120;
+            dgvEye.Columns[colEyeSummary].Width = 120;
             //dgvEye.Columns[colAudiogram3000R].Width = 80;
             //dgvEye.Columns[colAudiogram4000R].Width = 80;
             //dgvEye.Columns[colAudiogram6000R].Width = 80;
@@ -810,6 +830,36 @@ namespace CheckUP.gui
             dgvEye.Font = font;
             dgvEye.Columns[colEyeId].Visible = false;
         }
+        private void setGrdStoolExam()
+        {
+            dgvStoolExam.ColumnCount = colStoolExamCnt;
+            dgvStoolExam.Rows.Clear();
+            dgvStoolExam.RowCount = 1;
+            dgvStoolExam.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvStoolExam.Columns[colStoolExamRow].Width = 50;
+            dgvStoolExam.Columns[colStoolExamName].Width = 250;
+            dgvStoolExam.Columns[colStoolExamColor].Width = 120;
+            dgvStoolExam.Columns[colStoolExamAppearance].Width = 120;
+            dgvStoolExam.Columns[colStoolExamWBC].Width = 120;
+            dgvStoolExam.Columns[colStoolExamRBC].Width = 120;
+            dgvStoolExam.Columns[colParasite].Width = 120;
+            dgvStoolExam.Columns[colStoolExamSummary].Width = 120;
+
+            dgvStoolExam.Columns[colStoolExamRow].HeaderText = "ลำดับ";
+            dgvStoolExam.Columns[colStoolExamName].HeaderText = "ชื่อ นามสกุล";
+            dgvStoolExam.Columns[colStoolExamColor].HeaderText = "Color";
+            dgvStoolExam.Columns[colStoolExamAppearance].HeaderText = "Appearance";
+            dgvStoolExam.Columns[colStoolExamWBC].HeaderText = "WBC";
+            dgvStoolExam.Columns[colStoolExamRBC].HeaderText = "RBC";
+            dgvStoolExam.Columns[colParasite].HeaderText = "Parasite";
+            dgvStoolExam.Columns[colStoolExamSummary].HeaderText = "Summary";
+
+            dgvStoolExam.Columns[colStoolExamId].HeaderText = "id";
+            //Font font = new Font("Microsoft Sans Serif", 12);
+
+            dgvStoolExam.Font = font;
+            dgvStoolExam.Columns[colStoolExamId].Visible = false;
+        }
         private void setControl(String cucId)
         {
             cuc = cc.cucdb.selectByPk(cucId);
@@ -819,6 +869,41 @@ namespace CheckUP.gui
             txtCntEmp.Text = cuc.CntEmployee;
             txtYear.Text = cuc.YearId;
             txtCntSuccess.Text = cuc.CntSuccess;
+
+            txtPECntEmp.Text = cuc.PECnt;
+            txtPESucess.Text = cuc.PESuccess;
+
+            txtXrayCntEmp.Text = cuc.XrayCnt;
+            txtXraySucess.Text = cuc.XraySuccess;
+
+            txtFBSCntEmp.Text = cuc.FBSCnt;
+            txtFBSSucess.Text = cuc.FBSSuccess;
+            txtFBSNormal.Text = cuc.FBSNormal;
+
+            txtCBCCntEmp.Text = cuc.CBCCnt;
+            txtCBCSucess.Text = cuc.CBCSuccess;
+
+            txtUACntEmp.Text = cuc.UACnt;
+            txtUASucess.Text = cuc.UASuccess;
+            txtUANormal.Text = cuc.UANormal;
+
+            txtChoCntEmp.Text = cuc.ChoCnt;
+            txtChoSucess.Text = cuc.ChoSuccess;
+            txtchoNormal.Text = cuc.ChoNormal;
+
+            txtTriCntEmp.Text = cuc.TriCnt;
+            txtTriSucess.Text = cuc.TriSuccess;
+            txtTriNormal.Text = cuc.TriAbNormal;
+
+            txtSgotCntEmp.Text = cuc.SgotCnt;
+            txtSgotSucess.Text = cuc.SgotSuccess;
+
+            txtUricCntEmp.Text = cuc.UricCnt;
+            txtUricSucess.Text = cuc.UricSuccess;
+
+            txtBunCntEmp.Text = cuc.BunCnt;
+            txtBunSucess.Text = cuc.BunSuccess;
+
             if (cuc.Active.Equals("1"))
             {
                 chkActive.Checked = true;
@@ -1356,6 +1441,41 @@ namespace CheckUP.gui
                     if ((i % 2) != 0)
                     {
                         dgvEye.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                    }
+                }
+            }
+            //dgvView.ReadOnly = true;
+        }
+        private void setGrdStoolExam(String cucId)
+        {
+            DataTable dt;
+            dgvStoolExam.Rows.Clear();
+            if (flagNew)
+            {
+                dt = cc.ccpdb.selectAllByCucId(cucId);
+            }
+            else
+            {
+                dt = dtAll;
+            }
+
+            if (dt.Rows.Count > 0)
+            {
+                dgvStoolExam.RowCount = dt.Rows.Count;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    dgvStoolExam[colStoolExamRow, i].Value = (i + 1);
+                    dgvStoolExam[colStoolExamName, i].Value = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
+                    dgvStoolExam[colStoolExamColor, i].Value = dt.Rows[i][cc.ccpdb.ccp.StoolExamColor].ToString();
+                    dgvStoolExam[colStoolExamAppearance, i].Value = dt.Rows[i][cc.ccpdb.ccp.StoolExamAppearance].ToString();
+                    dgvStoolExam[colStoolExamWBC, i].Value = dt.Rows[i][cc.ccpdb.ccp.StoolExamWbc].ToString();
+                    dgvStoolExam[colStoolExamRBC, i].Value = dt.Rows[i][cc.ccpdb.ccp.StoolExamRbc].ToString();
+                    dgvStoolExam[colParasite, i].Value = dt.Rows[i][cc.ccpdb.ccp.StoolExamParasite].ToString();
+                    dgvStoolExam[colStoolExamSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.StoolExamSummary].ToString();
+                    dgvStoolExam[colStoolExamId, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    if ((i % 2) != 0)
+                    {
+                        dgvStoolExam.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
                     }
                 }
             }
@@ -1916,7 +2036,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNamePE);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row=0;
+            int rowCount = xlRange.Rows.Count, row=0, normal=0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
@@ -1978,6 +2098,26 @@ namespace CheckUP.gui
                 {
                     bloodgroup = "";
                 }
+                if (xlRange.Cells[i, int.Parse(ei.PEResult)].Value2 != null)
+                {
+                    result = xlRange.Cells[i, int.Parse(ei.PEResult)].Value2.ToString();
+                    if (result.Equals("ปกติ"))
+                    {
+                        normal++;
+                    }
+                }
+                else
+                {
+                    result = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.PESummary)].Value2 != null)
+                {
+                    summary = xlRange.Cells[i, int.Parse(ei.PESummary)].Value2.ToString();
+                }
+                else
+                {
+                    summary = "";
+                }
                 chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, vitalSign, height, weight, string.Format("{0:f2}", Double.Parse(cc.cf.NumberNull1(bmi))), pulse, result, summary, bloodgroup);
                 pB1.Value = i;
                 row++;
@@ -1985,9 +2125,12 @@ namespace CheckUP.gui
             xlWorkbook.Close(true, misValue, misValue);
             xlApp.Quit();
             pB1.Visible = false;
-            cc.cucdb.updatePEImport(txtId.Text, rowCount, row);
+            cc.cucdb.updatePEImport(txtId.Text, rowCount- int.Parse(nmDRow.Value.ToString()), row , normal);
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdPE(txtId.Text);
+            txtPESucess.Text = row.ToString();
+            txtPECntEmp.Text = String.Concat(rowCount - int.Parse(nmDRow.Value.ToString()));
+            txtPECntNormal.Text = normal.ToString();
             Cursor.Current = cursor;
         }
 
@@ -2043,7 +2186,9 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdXray(txtId.Text);
-            cc.cucdb.updateXrayImport(txtId.Text, rowCount, row);
+            cc.cucdb.updateXrayImport(txtId.Text, rowCount-int.Parse(nmDRow.Value.ToString()), row);
+            txtXrayCntEmp.Text = rowCount.ToString();
+            txtXraySucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
 
@@ -2059,7 +2204,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameFBS);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row = 0;
+            int rowCount = xlRange.Rows.Count, row = 0, normal=0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
@@ -2084,6 +2229,10 @@ namespace CheckUP.gui
                 if (xlRange.Cells[i, int.Parse(ei.FBSResult)].Value2 != null)
                 {
                     result = xlRange.Cells[i, int.Parse(ei.FBSResult)].Value2.ToString();
+                    if (result.Equals("ปกติ"))
+                    {
+                        normal++;
+                    }
                 }
                 else
                 {
@@ -2107,7 +2256,10 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdFBS(txtId.Text);
-            cc.cucdb.updateFBSImport(txtId.Text, rowCount, row);
+            cc.cucdb.updateFBSImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row, normal);
+            txtFBSCntEmp.Text = String.Concat(rowCount - int.Parse(nmDRow.Value.ToString()));
+            txtFBSSucess.Text = row.ToString();
+            txtFBSNormal.Text = normal.ToString();
             Cursor.Current = cursor;
         }
 
@@ -2259,7 +2411,9 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdCBC(txtId.Text);
-            cc.cucdb.updateCBCImport(txtId.Text, rowCount, row);
+            cc.cucdb.updateCBCImport(txtId.Text, rowCount- int.Parse(nmDRow.Value.ToString()), row );
+            txtCBCCntEmp.Text = rowCount.ToString();
+            txtCBCSucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
 
@@ -2275,7 +2429,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameUA);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row = 0;
+            int rowCount = xlRange.Rows.Count, row = 0, normal=0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             //xlWorkbook.
@@ -2373,6 +2527,10 @@ namespace CheckUP.gui
                 if (xlRange.Cells[i, int.Parse(ei.UAResult)].Value2 != null)
                 {
                     Result = xlRange.Cells[i, int.Parse(ei.UAResult)].Value2.ToString();
+                    if (Result.Equals("ปกติ"))
+                    {
+                        normal++;
+                    }
                 }
                 else
                 {
@@ -2412,7 +2570,9 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdUA(txtId.Text);
-            cc.cucdb.updateUAImport(txtId.Text, rowCount, row);
+            cc.cucdb.updateUAImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row, normal);
+            txtUACntEmp.Text = rowCount.ToString();
+            txtUASucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
 
@@ -2428,7 +2588,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameTri);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row = 0;
+            int rowCount = xlRange.Rows.Count, row = 0, normal=0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
@@ -2453,6 +2613,10 @@ namespace CheckUP.gui
                 if (xlRange.Cells[i, int.Parse(ei.TriResult)].Value2 != null)
                 {
                     result = xlRange.Cells[i, int.Parse(ei.TriResult)].Value2.ToString();
+                    if (result.Equals("ปกติ"))
+                    {
+                        normal++;
+                    }
                 }
                 else
                 {
@@ -2476,7 +2640,9 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdTri(txtId.Text);
-            cc.cucdb.updateTriImport(txtId.Text, rowCount, row);
+            cc.cucdb.updateTriImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row, normal);
+            txtTriCntEmp.Text = rowCount.ToString();
+            txtTriSucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
         private void releaseObject(object obj)
@@ -2509,7 +2675,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameCho);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row = 0;
+            int rowCount = xlRange.Rows.Count, row = 0, normal=0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
@@ -2551,6 +2717,10 @@ namespace CheckUP.gui
                 if (xlRange.Cells[i, int.Parse(ei.ChoResult)].Value2 != null)
                 {
                     result = xlRange.Cells[i, int.Parse(ei.ChoResult)].Value2.ToString();
+                    if (result.Equals("ปกติ"))
+                    {
+                        normal++;
+                    }
                 }
                 else
                 {
@@ -2575,7 +2745,9 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdCholes(txtId.Text);
-            cc.cucdb.updateCBCImport(txtId.Text, rowCount, row);
+            cc.cucdb.updateChoImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row, normal);
+            txtChoCntEmp.Text = rowCount.ToString();
+            txtChoSucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
 
@@ -2612,7 +2784,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameSgot);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row = 0;
+            int rowCount = xlRange.Rows.Count, row = 0, normal=0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
@@ -2653,6 +2825,10 @@ namespace CheckUP.gui
                 if (xlRange.Cells[i,int.Parse(ei.SgotResult)].Value2 != null)
                 {
                     result = xlRange.Cells[i, int.Parse(ei.SgotResult)].Value2.ToString();
+                    if (result.Equals("ปกติ"))
+                    {
+                        normal++;
+                    }
                 }
                 else
                 {
@@ -2676,7 +2852,9 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdSgot(txtId.Text);
-            cc.cucdb.updateSgotImport(txtId.Text, rowCount, row);
+            cc.cucdb.updateSgotImport(txtId.Text, rowCount- int.Parse(nmDRow.Value.ToString()), row , normal);
+            txtSgotCntEmp.Text = rowCount.ToString();
+            txtSgotSucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
 
@@ -2692,7 +2870,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameBun);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row = 0;
+            int rowCount = xlRange.Rows.Count, row = 0, normal=0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
@@ -2725,6 +2903,10 @@ namespace CheckUP.gui
                 if (xlRange.Cells[i, int.Parse(ei.BunResult)].Value2 != null)
                 {
                     result = xlRange.Cells[i, int.Parse(ei.BunResult)].Value2.ToString();
+                    if (result.Equals("ปกติ"))
+                    {
+                        normal++;
+                    }
                 }
                 else
                 {
@@ -2748,7 +2930,9 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdBun(txtId.Text);
-            cc.cucdb.updateBunImport(txtId.Text, rowCount, row);
+            cc.cucdb.updateBunImport(txtId.Text, rowCount- int.Parse(nmDRow.Value.ToString()), row ,normal);
+            txtBunCntEmp.Text = rowCount.ToString();
+            txtBunSucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
 
@@ -2764,7 +2948,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameUric);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row = 0;
+            int rowCount = xlRange.Rows.Count, row = 0, normal=0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
@@ -2789,6 +2973,10 @@ namespace CheckUP.gui
                 if (xlRange.Cells[i, int.Parse(ei.UricResult)].Value2 != null)
                 {
                     result = xlRange.Cells[i, int.Parse(ei.UricResult)].Value2.ToString();
+                    if (result.Equals("ปกติ"))
+                    {
+                        normal++;
+                    }
                 }
                 else
                 {
@@ -2812,7 +3000,9 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdUric(txtId.Text);
-            cc.cucdb.updateUricImport(txtId.Text, rowCount, row);
+            cc.cucdb.updateUricImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row, normal);
+            txtUricCntEmp.Text = rowCount.ToString();
+            txtUricSucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
 
@@ -3787,7 +3977,9 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdOther1(txtId.Text);
-            cc.cucdb.updateOther1Import(txtId.Text, rowCount, row);
+            cc.cucdb.updateOther1Import(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row);
+            txtOther1CntEmp.Text = rowCount.ToString();
+            txtOther1Sucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
 
@@ -3898,7 +4090,9 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdLung(txtId.Text);
-            cc.cucdb.updateLungImport(txtId.Text, rowCount, row);
+            cc.cucdb.updateLungImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row);
+            txtLungCntEmp.Text = rowCount.ToString();
+            txtLungSucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
 
@@ -4085,7 +4279,9 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdAudoigram(txtId.Text);
-            cc.cucdb.updateAudioImport(txtId.Text, rowCount, row);
+            cc.cucdb.updateAudioImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row);
+            txtAudioCntEmp.Text = rowCount.ToString();
+            txtAudioSucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
 
@@ -4274,7 +4470,9 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdEye(txtId.Text);
-            cc.cucdb.updateEyeImport(txtId.Text, rowCount, row);
+            cc.cucdb.updateEyeImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row);
+            txtEyeCntEmp.Text = rowCount.ToString();
+            txtEyeSucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
 
@@ -4295,6 +4493,127 @@ namespace CheckUP.gui
                 this.Dispose();
             }
         }
-        
+
+        private void btnChemBImport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnChemUImport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStoolExamImport_Click(object sender, EventArgs e)
+        {
+            String rowNumber = "", chk = "";
+
+            String StoolExamRow = "", StoolExamNo = "", StoolExamColor = "", StoolExamAppearance = "", StoolExamWBC = "", StoolExamRBC = "", Parasite = "", StoolExamSummary = "";
+            pB1.Visible = true;
+            pB1.Minimum = 0;
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameStoolExam);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+            int rowCount = xlRange.Rows.Count, row = 0;
+            pB1.Maximum = rowCount;
+            xlApp.Visible = false;
+            for (int i = int.Parse(ei.StoolExamRow); i <= rowCount; i++)
+            {
+                //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
+                if (xlRange.Cells[i, int.Parse(ei.StoolExamNo)].Value2 != null)
+                {
+                    rowNumber = xlRange.Cells[i, int.Parse(ei.StoolExamNo)].Value2.ToString();
+                }
+                else
+                {
+                    rowNumber = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.StoolExamColor)].Value2 != null)
+                {
+                    StoolExamColor = xlRange.Cells[i, int.Parse(ei.StoolExamColor)].Value2.ToString();
+                }
+                else
+                {
+                    StoolExamColor = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.StoolExamAppearance)].Value2 != null)
+                {
+                    StoolExamAppearance = xlRange.Cells[i, int.Parse(ei.StoolExamAppearance)].Value2.ToString();
+                }
+                else
+                {
+                    StoolExamAppearance = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.StoolExamWbc)].Value2 != null)
+                {
+                    StoolExamWBC = xlRange.Cells[i, int.Parse(ei.StoolExamWbc)].Value2.ToString();
+                }
+                else
+                {
+                    StoolExamWBC = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.StoolExamRbc)].Value2 != null)
+                {
+                    StoolExamRBC = xlRange.Cells[i, int.Parse(ei.StoolExamRbc)].Value2.ToString();
+                }
+                else
+                {
+                    StoolExamRBC = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.StoolExamParasite)].Value2 != null)
+                {
+                    Parasite = xlRange.Cells[i, int.Parse(ei.StoolExamParasite)].Value2.ToString();
+                }
+                else
+                {
+                    Parasite = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.StoolExamSummary)].Value2 != null)
+                {
+                    StoolExamSummary = xlRange.Cells[i, int.Parse(ei.StoolExamSummary)].Value2.ToString();
+                }
+                else
+                {
+                    StoolExamSummary = "";
+                }
+
+                chk = cc.ccpdb.updateStoolExam(rowNumber, txtId.Text, StoolExamAppearance, StoolExamColor, StoolExamWBC, StoolExamRBC, Parasite, StoolExamSummary);
+                pB1.Value = i;
+                row++;
+            }
+            xlWorkbook.Close(true, misValue, misValue);
+            xlApp.Quit();
+            pB1.Visible = false;
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
+            setGrdStoolExam(txtId.Text);
+            cc.cucdb.updateEyeImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row);
+            txtStoolExamCntEmp.Text = rowCount.ToString();
+            txtStoolExamSucess.Text = row.ToString();
+            Cursor.Current = cursor;
+        }
+
+        private void btnChemBExcel_Click(object sender, EventArgs e)
+        {
+            ofd.ShowDialog();
+            fileNameChemB = ofd.FileName;
+            btnEyeImport.Enabled = true;
+        }
+
+        private void btnChemUExcel_Click(object sender, EventArgs e)
+        {
+            ofd.ShowDialog();
+            fileNameChemU = ofd.FileName;
+            btnEyeImport.Enabled = true;
+        }
+
+        private void btnStoolExamExcel_Click(object sender, EventArgs e)
+        {
+            ofd.ShowDialog();
+            fileNameStoolExam = ofd.FileName;
+            btnEyeImport.Enabled = true;
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace CheckUP.object1
         public String EyeCnt = "", EyeNormal = "", EyeAbNormal = "", LungCnt="", LungNormal="", LungAbNormal="", CntSuccess="";
 
         public String PESuccess = "", CBCSuccess = "", FBSSuccess = "", UASuccess = "", XraySuccess = "", TriSuccess = "", ChoSuccess = "", SgotSuccess = "", BunSuccess = "", UricSuccess = "", Other1Success = "", LungSuccess = "",AudioSuccess="",EyeSuccess="";
-        
+        public String StoolExamCnt = "", StoolExamSuccess = "", StoolExamNormal = "", StoolExamAbNormal = "";
         public override String ToString()
         {
             return Description;

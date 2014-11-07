@@ -428,6 +428,14 @@
             this.nmDStoolExamNo = new System.Windows.Forms.NumericUpDown();
             this.label163 = new System.Windows.Forms.Label();
             this.nmDStoolExamRow = new System.Windows.Forms.NumericUpDown();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDARow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDAPrefix)).BeginInit();
@@ -1054,6 +1062,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.nmDPEBloodGroup);
             this.tabPage2.Controls.Add(this.label33);
@@ -1894,6 +1903,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.textBox2);
             this.tabPage5.Controls.Add(this.label66);
             this.tabPage5.Controls.Add(this.txtFBSTest);
             this.tabPage5.Controls.Add(this.btnFBSExcel);
@@ -2054,6 +2064,7 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.textBox3);
             this.tabPage6.Controls.Add(this.label67);
             this.tabPage6.Controls.Add(this.txtUATest);
             this.tabPage6.Controls.Add(this.btnUAExcel);
@@ -2430,6 +2441,7 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.textBox4);
             this.tabPage7.Controls.Add(this.label85);
             this.tabPage7.Controls.Add(this.txtTriTest);
             this.tabPage7.Controls.Add(this.btnTriExcel);
@@ -2590,6 +2602,7 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.textBox5);
             this.tabPage8.Controls.Add(this.label16);
             this.tabPage8.Controls.Add(this.nmDChoHDL);
             this.tabPage8.Controls.Add(this.label15);
@@ -2798,6 +2811,7 @@
             // 
             // tabPage9
             // 
+            this.tabPage9.Controls.Add(this.textBox6);
             this.tabPage9.Controls.Add(this.label18);
             this.tabPage9.Controls.Add(this.nmDSgotALPValue);
             this.tabPage9.Controls.Add(this.label87);
@@ -3006,6 +3020,7 @@
             // 
             // tabPage10
             // 
+            this.tabPage10.Controls.Add(this.textBox7);
             this.tabPage10.Controls.Add(this.label88);
             this.tabPage10.Controls.Add(this.txtBunTest);
             this.tabPage10.Controls.Add(this.btnBunExcel);
@@ -3190,6 +3205,7 @@
             // 
             // tabPage11
             // 
+            this.tabPage11.Controls.Add(this.textBox8);
             this.tabPage11.Controls.Add(this.label89);
             this.tabPage11.Controls.Add(this.txtUricTest);
             this.tabPage11.Controls.Add(this.btnUricExcel);
@@ -5180,6 +5196,7 @@
             this.btnStoolExamExcel.TabIndex = 133;
             this.btnStoolExamExcel.Text = "ทดสอบ Excel";
             this.btnStoolExamExcel.UseVisualStyleBackColor = true;
+            this.btnStoolExamExcel.Click += new System.EventHandler(this.btnStoolExamExcel_Click);
             // 
             // label159
             // 
@@ -5290,6 +5307,70 @@
             0,
             0,
             0});
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(582, 146);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(46, 20);
+            this.textBox1.TabIndex = 67;
+            this.textBox1.Text = "ปกติ";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(225, 149);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(46, 20);
+            this.textBox2.TabIndex = 71;
+            this.textBox2.Text = "ปกติ";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(258, 229);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(46, 20);
+            this.textBox3.TabIndex = 75;
+            this.textBox3.Text = "ปกติ";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(248, 169);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(46, 20);
+            this.textBox4.TabIndex = 78;
+            this.textBox4.Text = "ปกติ";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(474, 155);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(46, 20);
+            this.textBox5.TabIndex = 85;
+            this.textBox5.Text = "ปกติ";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(417, 161);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(46, 20);
+            this.textBox6.TabIndex = 83;
+            this.textBox6.Text = "ปกติ";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(320, 153);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(46, 20);
+            this.textBox7.TabIndex = 81;
+            this.textBox7.Text = "ปกติ";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(228, 156);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(46, 20);
+            this.textBox8.TabIndex = 81;
+            this.textBox8.Text = "ปกติ";
             // 
             // FrmExcelInit
             // 
@@ -5906,5 +5987,13 @@
         private System.Windows.Forms.NumericUpDown nmDStoolExamNo;
         private System.Windows.Forms.Label label163;
         private System.Windows.Forms.NumericUpDown nmDStoolExamRow;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox8;
     }
 }

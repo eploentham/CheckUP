@@ -14,8 +14,8 @@ namespace CheckUP.gui
     public partial class FrmExcelInit : Form
     {
         CheckControl cc;
-        int tabSum = 0, tabPE = 1, tabXRay = 2, tabCBC = 3, tabFBS = 4, tabUA = 5, tabTri = 6, tabCho = 7, tabSgot = 8, tabBun = 9, tabUric = 10, tabOther1=11, tabLung=12, tabAudio=13, tabEye=14, tabStoolExam=15;
-        int tabCnt = 16;
+        int tabSum = 0, tabPE = 1, tabXRay = 2, tabCBC = 3, tabFBS = 4, tabUA = 5, tabTri = 6, tabCho = 7, tabSgot = 8, tabBun = 9, tabUric = 10, tabOther1=11, tabLung=12, tabAudio=13, tabEye=14, tabToxi=15, tabStoolExam=16;
+        int tabCnt = 17;
         OpenFileDialog ofd = new OpenFileDialog();
         ExcelInit ei;
         public FrmExcelInit(CheckControl c)
@@ -42,6 +42,7 @@ namespace CheckUP.gui
             tC.TabPages[tabLung].Text = "Lung";
             tC.TabPages[tabAudio].Text = "Audio";
             tC.TabPages[tabEye].Text = "Eye";
+            tC.TabPages[tabToxi].Text = "Toxicology";
             tC.TabPages[tabStoolExam].Text = "Stool Exam";
 
             if (ei.SfStatusName.Equals("A"))
@@ -1681,6 +1682,92 @@ namespace CheckUP.gui
                 MessageBox.Show("บันทึกข้อมูล PE เรียบร้อย", "บันทึกข้อมูล");
             }
         }
+        private void SaveStoolExam()
+        {
+            String StoolExamRow = "", StoolExamNo = "", StoolExamColor = "", StoolExamAppearance = "", StoolExamWBC = "", StoolExamRBC = "", Parasite = "", StoolExamSummary = "";
+            ofd.ShowDialog();
+
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+
+            if (xlRange.Cells[nmDLungRow.Value, nmDStoolExamNo.Value].Value2 != null)
+            {
+                StoolExamNo = xlRange.Cells[nmDLungRow.Value, nmDStoolExamNo.Value].Value2.ToString();
+            }
+            else
+            {
+                StoolExamNo = "";
+            }
+            StoolExamNo = StoolExamNo.Trim();
+            if (xlRange.Cells[nmDStoolExamRow.Value, nmDStoolExamColor.Value].Value2 != null)
+            {
+                StoolExamColor = xlRange.Cells[nmDStoolExamRow.Value, nmDStoolExamColor.Value].Value2.ToString();
+            }
+            else
+            {
+                StoolExamColor = "";
+            }
+            StoolExamColor = StoolExamColor.Trim();
+            if (xlRange.Cells[nmDStoolExamRow.Value, nmDStoolExamAppearance.Value].Value2 != null)
+            {
+                StoolExamAppearance = xlRange.Cells[nmDStoolExamRow.Value, nmDStoolExamAppearance.Value].Value2.ToString();
+            }
+            else
+            {
+                StoolExamAppearance = "";
+            }
+            StoolExamAppearance = StoolExamAppearance.Trim();
+            if (xlRange.Cells[nmDStoolExamRow.Value, nmDStoolExamWBC.Value].Value2 != null)
+            {
+                StoolExamWBC = xlRange.Cells[nmDStoolExamRow.Value, nmDStoolExamWBC.Value].Value2.ToString();
+            }
+            else
+            {
+                StoolExamWBC = "";
+            }
+            StoolExamWBC = StoolExamWBC.Trim();
+            if (xlRange.Cells[nmDStoolExamRow.Value, nmDStoolExamRBC.Value].Value2 != null)
+            {
+                StoolExamRBC = xlRange.Cells[nmDStoolExamRow.Value, nmDStoolExamRBC.Value].Value2.ToString();
+            }
+            else
+            {
+                StoolExamRBC = "";
+            }
+            StoolExamRBC = StoolExamRBC.Trim();
+            if (xlRange.Cells[nmDStoolExamRow.Value, nmDStoolExamParasite.Value].Value2 != null)
+            {
+                Parasite = xlRange.Cells[nmDStoolExamRow.Value, nmDStoolExamParasite.Value].Value2.ToString();
+            }
+            else
+            {
+                Parasite = "";
+            }
+            Parasite = Parasite.Trim();
+
+            if (xlRange.Cells[nmDStoolExamRow.Value, nmDStoolExamSummary.Value].Value2 != null)
+            {
+                StoolExamSummary = xlRange.Cells[nmDStoolExamRow.Value, nmDStoolExamSummary.Value].Value2.ToString();
+            }
+            else
+            {
+                StoolExamSummary = "";
+            }
+            StoolExamSummary = StoolExamSummary.Trim();
+            txtStoolExamTest.Text = "ลำดับ " + StoolExamNo + " Color " + StoolExamColor + " Appearance " + StoolExamAppearance + " WBC " + StoolExamWBC +
+                " RBC " + StoolExamRBC + " Parasite " + Parasite + " Summary " + StoolExamSummary;
+
+            Cursor.Current = cursor;
+            if (cc.eidb.updateStoolExam(nmDStoolExamRow.Value.ToString(), nmDStoolExamNo.Value.ToString(), nmDStoolExamAppearance.Value.ToString(), nmDStoolExamColor.Value.ToString(),
+                nmDStoolExamWBC.Value.ToString(), nmDStoolExamRBC.Value.ToString(), nmDStoolExamParasite.Value.ToString(), nmDStoolExamSummary.Value.ToString()).Length >= 1)
+            {
+                MessageBox.Show("บันทึกข้อมูล StoolExam เรียบร้อย", "บันทึกข้อมูล");
+            }
+        }
 
         private void btnXRayExcel_Click(object sender, EventArgs e)
         {
@@ -1989,7 +2076,12 @@ namespace CheckUP.gui
 
         private void btnChemBExcel_Click(object sender, EventArgs e)
         {
+            SaveChem();
+        }
 
+        private void btnStoolExamExcel_Click(object sender, EventArgs e)
+        {
+            SaveStoolExam();
         }
     }
 }

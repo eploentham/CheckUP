@@ -105,6 +105,11 @@ namespace CheckUP.objdb
             cuc.EyeNormal = "eye_normal";
             cuc.EyeSuccess = "eye_success";
 
+            cuc.StoolExamAbNormal = "stoolexam_abnormal";
+            cuc.StoolExamCnt = "stoolexam_cnt";
+            cuc.StoolExamNormal = "stoolexam_normal";
+            cuc.StoolExamSuccess = "stoolexam_success";
+
             cuc.pkField = "cust_checkup_patient_id";
             cuc.table = "t_cust_checkup";
         }
@@ -195,6 +200,11 @@ namespace CheckUP.objdb
             item.EyeCnt = dt.Rows[0][cuc.EyeCnt].ToString();
             item.EyeNormal = dt.Rows[0][cuc.EyeNormal].ToString();
             item.EyeSuccess = dt.Rows[0][cuc.EyeSuccess].ToString();
+
+            item.StoolExamAbNormal = dt.Rows[0][cuc.StoolExamAbNormal].ToString();
+            item.StoolExamCnt = dt.Rows[0][cuc.StoolExamCnt].ToString();
+            item.StoolExamNormal = dt.Rows[0][cuc.StoolExamNormal].ToString();
+            item.StoolExamSuccess = dt.Rows[0][cuc.StoolExamSuccess].ToString();
 
             return item;
         }
@@ -748,7 +758,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updatePEImport(String cucId, int cntEmp, int row)
+        public String updatePEImport(String cucId, int cntEmp, int row, int normal)
         {
             String sql = "", chk = "";
 
@@ -756,7 +766,9 @@ namespace CheckUP.objdb
             //p.Remark = p.Remark.Replace("'", "''");
 
             sql = "Update " + cuc.table + " Set " + cuc.PECnt + "=" + cntEmp + ", " +
-                cuc.CntSuccess + "=" + row + " " +
+                cuc.PESuccess + "=" + row + ", " +
+                cuc.PENormal + "=" + normal + ", " +
+                cuc.PEAbNormal + "=" + (row - normal) + " " +
 
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
@@ -820,7 +832,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateFBSImport(String cucId, int cnt, int row)
+        public String updateFBSImport(String cucId, int cnt, int row, int normal)
         {
             String sql = "", chk = "";
 
@@ -828,8 +840,9 @@ namespace CheckUP.objdb
             //p.Remark = p.Remark.Replace("'", "''");
 
             sql = "Update " + cuc.table + " Set " + cuc.FBSCnt + "=" + cnt + ", " +
-                cuc.FBSSuccess + "=" + row + " " +
-
+                cuc.FBSSuccess + "=" + row + ", " +
+                cuc.FBSNormal + "=" + normal + ", " +
+                cuc.FBSAbNormal + "=" + (row - normal) + " " +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
@@ -844,7 +857,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateUAImport(String cucId, int cnt, int row)
+        public String updateUAImport(String cucId, int cnt, int row, int normal)
         {
             String sql = "", chk = "";
 
@@ -852,8 +865,9 @@ namespace CheckUP.objdb
             //p.Remark = p.Remark.Replace("'", "''");
 
             sql = "Update " + cuc.table + " Set " + cuc.UACnt + "=" + cnt + ", " +
-                cuc.UASuccess + "=" + row + " " +
-
+                cuc.UASuccess + "=" + row + ", " +
+                cuc.UANormal + "=" + normal + ", " +
+                cuc.UAAbNormal + "=" + (row - normal) + " " +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
@@ -868,7 +882,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateTriImport(String cucId, int cnt, int row)
+        public String updateTriImport(String cucId, int cnt, int row, int normal)
         {
             String sql = "", chk = "";
 
@@ -876,8 +890,9 @@ namespace CheckUP.objdb
             //p.Remark = p.Remark.Replace("'", "''");
 
             sql = "Update " + cuc.table + " Set " + cuc.TriCnt + "=" + cnt + ", " +
-                cuc.TriSuccess + "=" + row + " " +
-
+                cuc.TriSuccess + "=" + row + ", " +
+                cuc.TriNormal + "=" + normal + ", " +
+                cuc.TriAbNormal + "=" + (row - normal) + " " +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
@@ -892,7 +907,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateChoImport(String cucId, int cnt, int row)
+        public String updateChoImport(String cucId, int cnt, int row, int normal)
         {
             String sql = "", chk = "";
 
@@ -900,8 +915,9 @@ namespace CheckUP.objdb
             //p.Remark = p.Remark.Replace("'", "''");
 
             sql = "Update " + cuc.table + " Set " + cuc.ChoCnt + "=" + cnt + ", " +
-                cuc.ChoSuccess + "=" + row + " " +
-
+                cuc.ChoSuccess + "=" + row + ", " +
+                cuc.ChoNormal + "=" + normal + ", " +
+                cuc.ChoAbNormal + "=" + (row - normal) + " " +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
@@ -916,7 +932,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateSgotImport(String cucId, int cnt, int row)
+        public String updateSgotImport(String cucId, int cnt, int row, int normal)
         {
             String sql = "", chk = "";
 
@@ -925,7 +941,8 @@ namespace CheckUP.objdb
 
             sql = "Update " + cuc.table + " Set " + cuc.SgotCnt + "=" + cnt + ", " +
                 cuc.SgotSuccess + "=" + row + " " +
-
+                cuc.SgotNormal + "=" + normal + ", " +
+                cuc.SgotAbNormal + "=" + (row - normal) + " " +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
@@ -940,7 +957,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateBunImport(String cucId, int cnt, int row)
+        public String updateBunImport(String cucId, int cnt, int row, int normal)
         {
             String sql = "", chk = "";
 
@@ -948,8 +965,9 @@ namespace CheckUP.objdb
             //p.Remark = p.Remark.Replace("'", "''");
 
             sql = "Update " + cuc.table + " Set " + cuc.BunCnt + "=" + cnt + ", " +
-                cuc.BunSuccess + "=" + row + " " +
-
+                cuc.BunSuccess + "=" + row + ", " +
+                cuc.BunNormal + "=" + normal + ", " +
+                cuc.BunAbNormal + "=" + (row - normal) + " " +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
@@ -964,7 +982,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateUricImport(String cucId, int cnt, int row)
+        public String updateUricImport(String cucId, int cnt, int row, int normal)
         {
             String sql = "", chk = "";
 
@@ -972,8 +990,9 @@ namespace CheckUP.objdb
             //p.Remark = p.Remark.Replace("'", "''");
 
             sql = "Update " + cuc.table + " Set " + cuc.UricCnt + "=" + cnt + ", " +
-                cuc.UricSuccess + "=" + row + " " +
-
+                cuc.UricSuccess + "=" + row + ", " +
+                cuc.UricNormal + "=" + normal + ", " +
+                cuc.UricAbNormal + "=" + (row - normal) + " " +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
@@ -1078,6 +1097,30 @@ namespace CheckUP.objdb
             catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex.ToString(), "update updateEyeImport");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateStoolExamImport(String cucId, int cnt, int row)
+        {
+            String sql = "", chk = "";
+
+            //p.Description = p.Description.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+
+            sql = "Update " + cuc.table + " Set " + cuc.StoolExamCnt + "=" + cnt + ", " +
+                cuc.StoolExamSuccess + "=" + row + " " +
+
+                "Where " + cuc.pkField + "='" + cucId + "'";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateStoolExamImport");
             }
             finally
             {

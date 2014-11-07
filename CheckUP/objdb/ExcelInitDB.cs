@@ -185,6 +185,8 @@ namespace CheckUP.objdb
             ei.EyeResult = "eye_result";
             ei.EyeBlindness = "eye_blindness";
 
+
+
             ei.StoolExamAppearance = "stool_exam_appearance";
             ei.StoolExamColor = "stool_exam_color";
             ei.StoolExamNo = "stool_exam_no";
