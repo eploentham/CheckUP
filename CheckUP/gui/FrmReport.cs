@@ -334,10 +334,10 @@ namespace CheckUP
         //        //myParam.Name = "header1";
         //        //myParam.
                 rpt.SetParameterValue("line1", "ผลตรวจสุขภาพประจำปี 2557");
-                rpt.SetParameterValue("compName", "โรงพบาบาล บางนา5");
-                rpt.SetParameterValue("compAddress", "55 หมู่4 ");
+                rpt.SetParameterValue("compName", "โรงพยาบาล บางนา5");
+                rpt.SetParameterValue("compAddress", "55 หมู่4 ถนนเทพารักษ์ ตำบลบางพลีใหญ่ อำเภอบางพลี จังหวัดสมุทรปราการ 10540");
 
-                rpt.SetParameterValue("custName", "Test Company");
+                rpt.SetParameterValue("custName", cuc.CustNameT);
         //        rpt.SetParameterValue("quoDate", qu.QuoDate);
         //        rpt.SetParameterValue("contactName", qu.ContactName);
         //        rpt.SetParameterValue("compName", qu.CompName);

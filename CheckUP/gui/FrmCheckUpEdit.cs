@@ -200,7 +200,6 @@ namespace CheckUP.gui
 
         private void btnSavePE_Click(object sender, EventArgs e)
         {
-
             String chk = cc.ccpdb.UpdatePE(txtRowNumber.Text, cuc.Id, txtPEAge.Text, txtPEVitalSign.Text, txtPEHeight.Text, txtPEWeight.Text, 
                 txtPEBMI.Text, txtPEPulse.Text, txtPEResult.Text, txtPESummary.Text);
             if (chk.Equals("1"))
@@ -291,6 +290,15 @@ namespace CheckUP.gui
             if (chk.Equals("1"))
             {
                 MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
+            }
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            String chk = cc.ccpdb.UpdateName(txtRowNumber.Text, cuc.Id, txtFullName.Text);
+            if (chk.Equals("1"))
+            {
+                MessageBox.Show("บันทึกข้อมูล PE เรียบร้อย", "บันทึกข้อมูล");
             }
         }
     }

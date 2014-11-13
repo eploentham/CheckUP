@@ -29,15 +29,15 @@ namespace CheckUP.object1
 
         public String StoolExamColor = "", StoolExamAppearance = "", StoolExamWbc = "", StoolExamRbc = "", StoolExamParasite = "", StoolExamSummary = "";
 
-        public String toxicologyLead="",toxicologyMercury="",toxicologyBenzene="",toxicologyXylene="";
 
-        public String toxicologyToluene = "";
-        public String toxicologyThinner = "";
-        public String toxicologyAlcohol = "";
-        public String toxicologyHexane = "";
-        public String toxicologyMethanol = "";
-        public String toxicologyMek = "";
-        public String toxicologyAcetone = "";
+        public String ToxiLead = "", ToxiAluminium = "", ToxiCadmium = "", ToxiMercury = "", ToxiTin = "", ToxiCopper = "", ToxiManganese = "", ToxiZinc = "", ToxiAmmonia = "";
+        public String ToxiHippuric = "", ToxiMethyl = "", ToxiAcetone="", ToxiNickel="", ToxiChromium="", ToxiPhenol="", ToxiKetone="", ToxiBenzene="", ToxiMandelic="", ToxiMethanol="";
+        public String ToxiEthanol="", ToxiIPA="", ToxiArsenic="", ToxiHexane="", ToxiFomaldehyde="", ToxiTrichloroethylene="", ToxiAntimony="", ToxiFluoride="";
+        
+        
+        //public String toxicologyLead="",toxicologyMercury="",toxicologyBenzene="",toxicologyXylene="";
+
+        //public String toxicologyToluene = "", toxicologyThinner = "", toxicologyAlcohol = "", toxicologyHexane = "", toxicologyMethanol = "", toxicologyMek = "", toxicologyAcetone = "";
 
         public String Audiogram500L="";
         public String Audiogram1000L="";
@@ -213,17 +213,17 @@ namespace CheckUP.object1
         public String triglycerideOld="";
         public String hdlOld="";
         public String ldlOld="";
-        public String toxicologyLeadOld="";
-        public String toxicologyMercuryOld="";
-        public String toxicologyBenzeneOld="";
-        public String toxicologyXyleneOld="";
-        public String toxicologyThinnerOld="";
-        public String toxicologyAlcoholOld="";
-        public String toxicologyHexaneOld="";
-        public String toxicologyMethanolOld="";
-        public String toxicologyMekOld="";
-        public String toxicologyAcetoneOld="";
-        public String toxicologyTolueneOld="";
+        //public String toxicologyLeadOld="";
+        //public String toxicologyMercuryOld="";
+        //public String toxicologyBenzeneOld="";
+        //public String toxicologyXyleneOld="";
+        //public String toxicologyThinnerOld="";
+        //public String toxicologyAlcoholOld="";
+        //public String toxicologyHexaneOld="";
+        //public String toxicologyMethanolOld="";
+        //public String toxicologyMekOld="";
+        //public String toxicologyAcetoneOld="";
+        //public String toxicologyTolueneOld="";
         public String urineLeu="";
         public String urineOther="";
         public String cultureStool="";

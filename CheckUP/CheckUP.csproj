@@ -41,7 +41,7 @@
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.9.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -141,6 +141,12 @@
     </Compile>
     <Compile Include="gui\FrmStaffView.designer.cs">
       <DependentUpon>FrmStaffView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmValueNormal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmValueNormal.Designer.cs">
+      <DependentUpon>FrmValueNormal.cs</DependentUpon>
     </Compile>
     <Compile Include="objdb\AmphurDB.cs" />
     <Compile Include="objdb\CompanyDB.cs" />
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmStaffView.resx">
       <DependentUpon>FrmStaffView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmValueNormal.resx">
+      <DependentUpon>FrmValueNormal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

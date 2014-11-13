@@ -57,10 +57,10 @@ namespace CheckUP.objdb
             ccpvn.stoolExamParasite = "stool_exam_parasite";
             ccpvn.stoolExamSummary = "stool_exam_summary";
 
-            ccpvn.toxicologyLead = "toxicology_lead";
-            ccpvn.toxicologyMercury = "toxicology_mercury";
-            ccpvn.toxicologyBenzene = "toxicology_benzene";
-            ccpvn.toxicologyXylene = "toxicology_xylene";
+            //ccpvn.toxicologyLead = "toxicology_lead";
+            //ccpvn.toxicologyMercury = "toxicology_mercury";
+            //ccpvn.toxicologyBenzene = "toxicology_benzene";
+            //ccpvn.toxicologyXylene = "toxicology_xylene";
             ccpvn.Audiogram500L = "audiogram_500_left";
             ccpvn.Audiogram1000L = "audiogram_1000_left";
             ccpvn.Audiogram2000L = "audiogram_2000_left";
@@ -158,8 +158,10 @@ namespace CheckUP.objdb
             ccpvn.lungSuggess = "lung_suggess";
             ccpvn.statusName = "status_name";
             ccpvn.rowNumber = "row_number";
+
             //ccpvn.cbcMcv="";
-            ccpvn.toxicologyToluene = "toxicology_toluene";
+            //ccpvn.toxicologyToluene = "toxicology_toluene";
+
             ccpvn.thyroidRubellaLgg = "thyroid_rubella_lgg";
             ccpvn.billirubin = "billirubin";
             ccpvn.toxicologyThinner = "toxicology_thinner";
@@ -203,10 +205,10 @@ namespace CheckUP.objdb
             ccpvn.antiHbc = "anti_hbc";
             ccpvn.caFt3 = "ca_ft3";
             ccpvn.hbtyping = "hbtyping";
-            ccpvn.toxicologyHexane = "toxicology_hexane";
-            ccpvn.toxicologyMethanol = "toxicology_methanol";
-            ccpvn.toxicologyMek = "toxicology_mek";
-            ccpvn.toxicologyAcetone = "toxicology_acetone";
+            //ccpvn.toxicologyHexane = "toxicology_hexane";
+            //ccpvn.toxicologyMethanol = "toxicology_methanol";
+            //ccpvn.toxicologyMek = "toxicology_mek";
+            //ccpvn.toxicologyAcetone = "toxicology_acetone";
             //ccpvn.antiHbc="";
             ccpvn.eyeLeft = "";
             ccpvn.eyeRight = "";
@@ -266,6 +268,34 @@ namespace CheckUP.objdb
             ccpvn.albuminGlobulin = "albumin_globulin";
             ccpvn.directBillirubin = "direct_billirubin";
             ccpvn.colorBlindness = "color_blindness";
+
+            ccpvn.toxiAcetone = "toxicology_acetone";
+            ccpvn.toxiAluminium = "toxicology_aluminium";
+            ccpvn.toxiAmmonia = "toxicology_ammonia";
+            ccpvn.toxiAntimony = "toxicology_antimony";
+            ccpvn.toxiArsenic = "toxicology_arsenic";
+            ccpvn.toxiBenzene = "toxicology_benzene";
+            ccpvn.toxiCadmium = "toxicology_cadmium";
+            ccpvn.toxiChromium = "toxicology_chromium";
+            ccpvn.toxiCopper = "toxicology_copper";
+            ccpvn.toxiEthanol = "toxicology_ethanol";
+            ccpvn.toxiFluoride = "toxicology_fluoride";
+            ccpvn.toxiFomaldehyde = "toxicology_fomaldehyde";
+            ccpvn.toxiHexane = "toxicology_hexane";
+            ccpvn.toxiHippuric = "toxicology_hippuric";
+            ccpvn.toxiIPA = "toxicology_ipa";
+            ccpvn.toxiKetone = "toxicology_ketone";
+            ccpvn.toxiLead = "toxicology_lead";
+            ccpvn.toxiMandelic = "toxicology_mandelic";
+            ccpvn.toxiManganese = "toxicology_manganese";
+            ccpvn.toxiMercury = "toxicology_mercury";
+            ccpvn.toxiMethanol = "toxicology_methanol";
+            ccpvn.toxiMethyl = "toxicology_methyl";
+            ccpvn.toxiNickel = "toxicology_nickel";
+            ccpvn.toxiPhenol = "toxicology_phenol";
+            ccpvn.toxiTin = "toxicology_tin";
+            ccpvn.toxiTrichloroethylene = "toxicology_trichloroethylenel";
+            ccpvn.toxiZinc = "toxicology_zinc";
 
             ccpvn.pkField = "patient_id";
             ccpvn.table = "b_cust_checkup_patient_value_normal";

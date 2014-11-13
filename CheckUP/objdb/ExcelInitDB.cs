@@ -196,6 +196,36 @@ namespace CheckUP.objdb
             ei.StoolExamSummary = "stool_exam_summary";
             ei.StoolExamWbc = "stool_exam_wbc";
 
+            ei.ToxiAcetone = "toxicology_acetone";
+            ei.ToxiAluminium = "toxicology_aluminium";
+            ei.ToxiAmmonia = "toxicology_ammonia";
+            ei.ToxiAntimony = "toxicology_antimony";
+            ei.ToxiArsenic = "toxicology_arsenic";
+            ei.ToxiBenzene = "toxicology_benzene";
+            ei.ToxiCadmium = "toxicology_cadmium";
+            ei.ToxiChromium = "toxicology_chromium";
+            ei.ToxiCopper = "toxicology_copper";
+            ei.ToxiEthanol = "toxicology_ethanol";
+            ei.ToxiFluoride = "toxicology_fluoride";
+            ei.ToxiFomaldehyde = "toxicology_fomaldehyde";
+            ei.ToxiHexane = "toxicology_hexane";
+            ei.ToxiHippuric = "toxicology_hippuric";
+            ei.ToxiIPA = "toxicology_ipa";
+            ei.ToxiKetone = "toxicology_ketone";
+            ei.ToxiLead = "toxicology_lead";
+            ei.ToxiMandelic = "toxicology_mandelic";
+            ei.ToxiManganese = "toxicology_manganese";
+            ei.ToxiMercury = "toxicology_mercury";
+            ei.ToxiMethanol = "toxicology_methanol";
+            ei.ToxiMethyl = "toxicology_methyl";
+            ei.ToxiNickel = "toxicology_nickel";
+            ei.ToxiPhenol = "toxicology_phenol";
+            ei.ToxiTin = "toxicology_tin";
+            ei.ToxiTrichloroethylene = "toxicology_trichloroethylenel";
+            ei.ToxiZinc = "toxicology_zinc";
+            ei.ToxiRow = "toxicology_row";
+            ei.ToxiNo = "toxicology_no";
+
             ei.pkField = "id";
             ei.table = "b_excel_init";
         }
@@ -371,6 +401,39 @@ namespace CheckUP.objdb
             item.StoolExamRow = dt.Rows[0][ei.StoolExamRow].ToString();
             item.StoolExamSummary = dt.Rows[0][ei.StoolExamSummary].ToString();
             item.StoolExamWbc = dt.Rows[0][ei.StoolExamWbc].ToString();
+
+            item.ToxiLead = dt.Rows[0][ei.ToxiLead].ToString();
+            item.ToxiAluminium = dt.Rows[0][ei.ToxiAluminium].ToString();
+            item.ToxiCadmium = dt.Rows[0][ei.ToxiCadmium].ToString();
+            item.ToxiMercury = dt.Rows[0][ei.ToxiMercury].ToString();
+            item.ToxiTin = dt.Rows[0][ei.ToxiTin].ToString();
+            item.ToxiCopper = dt.Rows[0][ei.ToxiCopper].ToString();
+            item.ToxiManganese = dt.Rows[0][ei.ToxiManganese].ToString();
+            item.ToxiZinc = dt.Rows[0][ei.ToxiZinc].ToString();
+            item.ToxiAmmonia = dt.Rows[0][ei.ToxiAmmonia].ToString();
+
+            item.ToxiHippuric = dt.Rows[0][ei.ToxiHippuric].ToString();
+            item.ToxiMethyl = dt.Rows[0][ei.ToxiMethyl].ToString();
+            item.ToxiAcetone = dt.Rows[0][ei.ToxiAcetone].ToString();
+            item.ToxiNickel = dt.Rows[0][ei.ToxiNickel].ToString();
+            item.ToxiChromium = dt.Rows[0][ei.ToxiChromium].ToString();
+            item.ToxiPhenol = dt.Rows[0][ei.ToxiPhenol].ToString();
+            item.ToxiKetone = dt.Rows[0][ei.ToxiKetone].ToString();
+            item.ToxiBenzene = dt.Rows[0][ei.ToxiBenzene].ToString();
+            item.ToxiMandelic = dt.Rows[0][ei.ToxiMandelic].ToString();
+
+            item.ToxiMethanol = dt.Rows[0][ei.ToxiMethanol].ToString();
+            item.ToxiEthanol = dt.Rows[0][ei.ToxiEthanol].ToString();
+            item.ToxiIPA = dt.Rows[0][ei.ToxiIPA].ToString();
+            item.ToxiArsenic = dt.Rows[0][ei.ToxiArsenic].ToString();
+            item.ToxiHexane = dt.Rows[0][ei.ToxiHexane].ToString();
+            item.ToxiFomaldehyde = dt.Rows[0][ei.ToxiFomaldehyde].ToString();
+            item.ToxiTrichloroethylene = dt.Rows[0][ei.ToxiTrichloroethylene].ToString();
+            item.ToxiAntimony = dt.Rows[0][ei.ToxiAntimony].ToString();
+            item.ToxiFluoride = dt.Rows[0][ei.ToxiFluoride].ToString();
+
+            item.ToxiRow = dt.Rows[0][ei.ToxiRow].ToString();
+            item.ToxiNo = dt.Rows[0][ei.ToxiNo].ToString();
 
             item.Active = dt.Rows[0][ei.Active].ToString();
             return item;
@@ -950,6 +1013,80 @@ namespace CheckUP.objdb
             catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex.ToString(), "update updateStoolExam");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateToxi1(String ToxiRow, String ToxiNo, String ToxiLead, String ToxiAluminium, String ToxiCadmium, String ToxiMercury, String ToxiTin, String ToxiCopper,
+            String ToxiManganese, String ToxiZinc, String ToxiAmmonia)
+        {
+            String sql = "", chk = "";
+
+            //p.NameT = p.NameT.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+            //p.PositionName = p.PositionName.Replace("'", "''");
+
+            sql = "Update " + ei.table + " Set " + ei.ToxiRow + "='" + ToxiRow + "', " +
+                ei.ToxiNo + "='" + ToxiNo + "', " +
+                ei.ToxiLead + "='" + ToxiLead + "', " +
+                ei.ToxiAluminium + "='" + ToxiAluminium + "', " +
+                ei.ToxiCadmium + "='" + ToxiCadmium + "', " +
+                ei.ToxiMercury + "='" + ToxiMercury + "', " +
+                ei.ToxiTin + "='" + ToxiTin + "', " +
+                ei.ToxiCopper + "='" + ToxiCopper + "', " +
+                ei.ToxiManganese + "='" + ToxiManganese + "', " +
+                ei.ToxiZinc + "='" + ToxiZinc + "', " +
+                ei.ToxiAmmonia + "='" + ToxiAmmonia + "' ";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateToxi1");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateToxi2(String ToxiHippuric, String ToxiMethyl, String ToxiAcetone, String ToxiNickel, String ToxiChromium,
+            String ToxiPhenol, String ToxiKetone, String ToxiBenzene, String ToxiMandelic, String ToxiMethanol, String ToxiEthanol, String ToxiIPA,
+            String ToxiArsenic, String ToxiHexane, String ToxiFomaldehyde, String ToxiTrichloroethylene, String ToxiAntimony, String ToxiFluoride)
+        {
+            String sql = "", chk = "";
+
+            //p.NameT = p.NameT.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+            //p.PositionName = p.PositionName.Replace("'", "''");
+
+            sql = "Update " + ei.table + " Set " + ei.ToxiHippuric + "='" + ToxiHippuric + "', " +
+                ei.ToxiMethyl + "='" + ToxiMethyl + "', " +
+                ei.ToxiAcetone + "='" + ToxiAcetone + "', " +
+                ei.ToxiNickel + "='" + ToxiNickel + "', " +
+                ei.ToxiChromium + "='" + ToxiChromium + "', " +
+                ei.ToxiPhenol + "='" + ToxiPhenol + "', " +
+                ei.ToxiKetone + "='" + ToxiKetone + "', " +
+                ei.ToxiBenzene + "='" + ToxiBenzene + "', " +
+                ei.ToxiMandelic + "='" + ToxiMandelic + "', " +
+                ei.ToxiMethanol + "='" + ToxiMethanol + "', " +
+                ei.ToxiEthanol + "='" + ToxiEthanol + "', " +
+                ei.ToxiIPA + "='" + ToxiIPA + "', " +
+                ei.ToxiArsenic + "='" + ToxiArsenic + "', " +
+                ei.ToxiHexane + "='" + ToxiHexane + "', " +
+                ei.ToxiFomaldehyde + "='" + ToxiFomaldehyde + "', " +
+                ei.ToxiTrichloroethylene + "='" + ToxiTrichloroethylene + "', " +
+                ei.ToxiAntimony + "='" + ToxiAntimony + "', " +
+                ei.ToxiFluoride + "='" + ToxiFluoride + "' ";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateToxi2");
             }
             finally
             {

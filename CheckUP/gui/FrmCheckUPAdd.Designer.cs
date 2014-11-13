@@ -133,7 +133,6 @@
             this.dgvSum = new System.Windows.Forms.DataGridView();
             this.tabPage20 = new System.Windows.Forms.TabPage();
             this.txtStoolExamSucess = new System.Windows.Forms.TextBox();
-            this.txtChemUSucess = new System.Windows.Forms.TextBox();
             this.txtChemBSucess = new System.Windows.Forms.TextBox();
             this.txtEyeSucess = new System.Windows.Forms.TextBox();
             this.txtAudioSucess = new System.Windows.Forms.TextBox();
@@ -145,23 +144,15 @@
             this.textBox50 = new System.Windows.Forms.TextBox();
             this.textBox55 = new System.Windows.Forms.TextBox();
             this.textBox60 = new System.Windows.Forms.TextBox();
-            this.textBox65 = new System.Windows.Forms.TextBox();
+            this.txtStoolExamNormal = new System.Windows.Forms.TextBox();
             this.txtStoolExamCntEmp = new System.Windows.Forms.TextBox();
             this.label147 = new System.Windows.Forms.Label();
-            this.btnChemUImport = new System.Windows.Forms.Button();
-            this.btnChemUExcel = new System.Windows.Forms.Button();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox30 = new System.Windows.Forms.TextBox();
-            this.textBox35 = new System.Windows.Forms.TextBox();
-            this.textBox40 = new System.Windows.Forms.TextBox();
-            this.txtChemUCntEmp = new System.Windows.Forms.TextBox();
-            this.label139 = new System.Windows.Forms.Label();
-            this.btnChemBImport = new System.Windows.Forms.Button();
-            this.btnChemBExcel = new System.Windows.Forms.Button();
+            this.btnToxiImport = new System.Windows.Forms.Button();
+            this.btnToxiExcel = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.txtChemBNormal = new System.Windows.Forms.TextBox();
             this.txtChemBCntEmp = new System.Windows.Forms.TextBox();
             this.label131 = new System.Windows.Forms.Label();
             this.btnEyeImport = new System.Windows.Forms.Button();
@@ -169,7 +160,7 @@
             this.textBox66 = new System.Windows.Forms.TextBox();
             this.textBox67 = new System.Windows.Forms.TextBox();
             this.textBox68 = new System.Windows.Forms.TextBox();
-            this.textBox69 = new System.Windows.Forms.TextBox();
+            this.txtEyeNormal = new System.Windows.Forms.TextBox();
             this.txtEyeCntEmp = new System.Windows.Forms.TextBox();
             this.label120 = new System.Windows.Forms.Label();
             this.btnAudioImport = new System.Windows.Forms.Button();
@@ -177,7 +168,7 @@
             this.textBox61 = new System.Windows.Forms.TextBox();
             this.textBox62 = new System.Windows.Forms.TextBox();
             this.textBox63 = new System.Windows.Forms.TextBox();
-            this.textBox64 = new System.Windows.Forms.TextBox();
+            this.txtAudioNormal = new System.Windows.Forms.TextBox();
             this.txtAudioCntEmp = new System.Windows.Forms.TextBox();
             this.label112 = new System.Windows.Forms.Label();
             this.btnLungImport = new System.Windows.Forms.Button();
@@ -185,7 +176,7 @@
             this.textBox56 = new System.Windows.Forms.TextBox();
             this.textBox57 = new System.Windows.Forms.TextBox();
             this.textBox58 = new System.Windows.Forms.TextBox();
-            this.textBox59 = new System.Windows.Forms.TextBox();
+            this.txtLungNormal = new System.Windows.Forms.TextBox();
             this.txtLungCntEmp = new System.Windows.Forms.TextBox();
             this.label104 = new System.Windows.Forms.Label();
             this.btnOtherImport = new System.Windows.Forms.Button();
@@ -195,7 +186,7 @@
             this.textBox51 = new System.Windows.Forms.TextBox();
             this.textBox52 = new System.Windows.Forms.TextBox();
             this.textBox53 = new System.Windows.Forms.TextBox();
-            this.textBox54 = new System.Windows.Forms.TextBox();
+            this.txtOther1Normal = new System.Windows.Forms.TextBox();
             this.txtOther1CntEmp = new System.Windows.Forms.TextBox();
             this.label91 = new System.Windows.Forms.Label();
             this.label92 = new System.Windows.Forms.Label();
@@ -240,8 +231,6 @@
             this.dgvEye = new System.Windows.Forms.DataGridView();
             this.tabPage17 = new System.Windows.Forms.TabPage();
             this.dgvChemB = new System.Windows.Forms.DataGridView();
-            this.tabPage18 = new System.Windows.Forms.TabPage();
-            this.dgvChemU = new System.Windows.Forms.DataGridView();
             this.tabPage19 = new System.Windows.Forms.TabPage();
             this.dgvStoolExam = new System.Windows.Forms.DataGridView();
             this.cboCust = new System.Windows.Forms.ComboBox();
@@ -303,8 +292,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvEye)).BeginInit();
             this.tabPage17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChemB)).BeginInit();
-            this.tabPage18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChemU)).BeginInit();
             this.tabPage19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStoolExam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
@@ -330,7 +317,6 @@
             this.tC.Controls.Add(this.tabPage15);
             this.tC.Controls.Add(this.tabPage16);
             this.tC.Controls.Add(this.tabPage17);
-            this.tC.Controls.Add(this.tabPage18);
             this.tC.Controls.Add(this.tabPage19);
             this.tC.Location = new System.Drawing.Point(12, 79);
             this.tC.Name = "tC";
@@ -1364,7 +1350,6 @@
             // tabPage20
             // 
             this.tabPage20.Controls.Add(this.txtStoolExamSucess);
-            this.tabPage20.Controls.Add(this.txtChemUSucess);
             this.tabPage20.Controls.Add(this.txtChemBSucess);
             this.tabPage20.Controls.Add(this.txtEyeSucess);
             this.tabPage20.Controls.Add(this.txtAudioSucess);
@@ -1376,23 +1361,15 @@
             this.tabPage20.Controls.Add(this.textBox50);
             this.tabPage20.Controls.Add(this.textBox55);
             this.tabPage20.Controls.Add(this.textBox60);
-            this.tabPage20.Controls.Add(this.textBox65);
+            this.tabPage20.Controls.Add(this.txtStoolExamNormal);
             this.tabPage20.Controls.Add(this.txtStoolExamCntEmp);
             this.tabPage20.Controls.Add(this.label147);
-            this.tabPage20.Controls.Add(this.btnChemUImport);
-            this.tabPage20.Controls.Add(this.btnChemUExcel);
-            this.tabPage20.Controls.Add(this.textBox25);
-            this.tabPage20.Controls.Add(this.textBox30);
-            this.tabPage20.Controls.Add(this.textBox35);
-            this.tabPage20.Controls.Add(this.textBox40);
-            this.tabPage20.Controls.Add(this.txtChemUCntEmp);
-            this.tabPage20.Controls.Add(this.label139);
-            this.tabPage20.Controls.Add(this.btnChemBImport);
-            this.tabPage20.Controls.Add(this.btnChemBExcel);
+            this.tabPage20.Controls.Add(this.btnToxiImport);
+            this.tabPage20.Controls.Add(this.btnToxiExcel);
             this.tabPage20.Controls.Add(this.textBox1);
             this.tabPage20.Controls.Add(this.textBox2);
             this.tabPage20.Controls.Add(this.textBox10);
-            this.tabPage20.Controls.Add(this.textBox15);
+            this.tabPage20.Controls.Add(this.txtChemBNormal);
             this.tabPage20.Controls.Add(this.txtChemBCntEmp);
             this.tabPage20.Controls.Add(this.label131);
             this.tabPage20.Controls.Add(this.btnEyeImport);
@@ -1400,7 +1377,7 @@
             this.tabPage20.Controls.Add(this.textBox66);
             this.tabPage20.Controls.Add(this.textBox67);
             this.tabPage20.Controls.Add(this.textBox68);
-            this.tabPage20.Controls.Add(this.textBox69);
+            this.tabPage20.Controls.Add(this.txtEyeNormal);
             this.tabPage20.Controls.Add(this.txtEyeCntEmp);
             this.tabPage20.Controls.Add(this.label120);
             this.tabPage20.Controls.Add(this.btnAudioImport);
@@ -1408,7 +1385,7 @@
             this.tabPage20.Controls.Add(this.textBox61);
             this.tabPage20.Controls.Add(this.textBox62);
             this.tabPage20.Controls.Add(this.textBox63);
-            this.tabPage20.Controls.Add(this.textBox64);
+            this.tabPage20.Controls.Add(this.txtAudioNormal);
             this.tabPage20.Controls.Add(this.txtAudioCntEmp);
             this.tabPage20.Controls.Add(this.label112);
             this.tabPage20.Controls.Add(this.btnLungImport);
@@ -1416,7 +1393,7 @@
             this.tabPage20.Controls.Add(this.textBox56);
             this.tabPage20.Controls.Add(this.textBox57);
             this.tabPage20.Controls.Add(this.textBox58);
-            this.tabPage20.Controls.Add(this.textBox59);
+            this.tabPage20.Controls.Add(this.txtLungNormal);
             this.tabPage20.Controls.Add(this.txtLungCntEmp);
             this.tabPage20.Controls.Add(this.label104);
             this.tabPage20.Controls.Add(this.btnOtherImport);
@@ -1426,7 +1403,7 @@
             this.tabPage20.Controls.Add(this.textBox51);
             this.tabPage20.Controls.Add(this.textBox52);
             this.tabPage20.Controls.Add(this.textBox53);
-            this.tabPage20.Controls.Add(this.textBox54);
+            this.tabPage20.Controls.Add(this.txtOther1Normal);
             this.tabPage20.Controls.Add(this.txtOther1CntEmp);
             this.tabPage20.Controls.Add(this.label91);
             this.tabPage20.Controls.Add(this.label92);
@@ -1449,14 +1426,6 @@
             this.txtStoolExamSucess.Name = "txtStoolExamSucess";
             this.txtStoolExamSucess.Size = new System.Drawing.Size(62, 22);
             this.txtStoolExamSucess.TabIndex = 332;
-            // 
-            // txtChemUSucess
-            // 
-            this.txtChemUSucess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtChemUSucess.Location = new System.Drawing.Point(371, 318);
-            this.txtChemUSucess.Name = "txtChemUSucess";
-            this.txtChemUSucess.Size = new System.Drawing.Size(62, 22);
-            this.txtChemUSucess.TabIndex = 330;
             // 
             // txtChemBSucess
             // 
@@ -1554,13 +1523,13 @@
             this.textBox60.Size = new System.Drawing.Size(62, 22);
             this.textBox60.TabIndex = 312;
             // 
-            // textBox65
+            // txtStoolExamNormal
             // 
-            this.textBox65.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox65.Location = new System.Drawing.Point(560, 378);
-            this.textBox65.Name = "textBox65";
-            this.textBox65.Size = new System.Drawing.Size(62, 22);
-            this.textBox65.TabIndex = 311;
+            this.txtStoolExamNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtStoolExamNormal.Location = new System.Drawing.Point(560, 378);
+            this.txtStoolExamNormal.Name = "txtStoolExamNormal";
+            this.txtStoolExamNormal.Size = new System.Drawing.Size(62, 22);
+            this.txtStoolExamNormal.TabIndex = 311;
             // 
             // txtStoolExamCntEmp
             // 
@@ -1578,101 +1547,29 @@
             this.label147.Name = "label147";
             this.label147.Size = new System.Drawing.Size(157, 25);
             this.label147.TabIndex = 304;
-            this.label147.Text = "17. Stool Exam";
+            this.label147.Text = "16. Stool Exam";
             // 
-            // btnChemUImport
+            // btnToxiImport
             // 
-            this.btnChemUImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnChemUImport.Location = new System.Drawing.Point(952, 315);
-            this.btnChemUImport.Name = "btnChemUImport";
-            this.btnChemUImport.Size = new System.Drawing.Size(103, 23);
-            this.btnChemUImport.TabIndex = 303;
-            this.btnChemUImport.Text = "นำเข้า Chem U";
-            this.btnChemUImport.UseVisualStyleBackColor = true;
-            this.btnChemUImport.Click += new System.EventHandler(this.btnChemUImport_Click);
+            this.btnToxiImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnToxiImport.Location = new System.Drawing.Point(952, 260);
+            this.btnToxiImport.Name = "btnToxiImport";
+            this.btnToxiImport.Size = new System.Drawing.Size(103, 23);
+            this.btnToxiImport.TabIndex = 288;
+            this.btnToxiImport.Text = "นำเข้า Toxi";
+            this.btnToxiImport.UseVisualStyleBackColor = true;
+            this.btnToxiImport.Click += new System.EventHandler(this.btnToxiImport_Click);
             // 
-            // btnChemUExcel
+            // btnToxiExcel
             // 
-            this.btnChemUExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnChemUExcel.Location = new System.Drawing.Point(855, 316);
-            this.btnChemUExcel.Name = "btnChemUExcel";
-            this.btnChemUExcel.Size = new System.Drawing.Size(75, 23);
-            this.btnChemUExcel.TabIndex = 300;
-            this.btnChemUExcel.Text = "Excel";
-            this.btnChemUExcel.UseVisualStyleBackColor = true;
-            this.btnChemUExcel.Click += new System.EventHandler(this.btnChemUExcel_Click);
-            // 
-            // textBox25
-            // 
-            this.textBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox25.Location = new System.Drawing.Point(764, 318);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(62, 22);
-            this.textBox25.TabIndex = 299;
-            // 
-            // textBox30
-            // 
-            this.textBox30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox30.Location = new System.Drawing.Point(696, 318);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(62, 22);
-            this.textBox30.TabIndex = 298;
-            // 
-            // textBox35
-            // 
-            this.textBox35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox35.Location = new System.Drawing.Point(628, 318);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.Size = new System.Drawing.Size(62, 22);
-            this.textBox35.TabIndex = 297;
-            // 
-            // textBox40
-            // 
-            this.textBox40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox40.Location = new System.Drawing.Point(560, 318);
-            this.textBox40.Name = "textBox40";
-            this.textBox40.Size = new System.Drawing.Size(62, 22);
-            this.textBox40.TabIndex = 296;
-            // 
-            // txtChemUCntEmp
-            // 
-            this.txtChemUCntEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtChemUCntEmp.Location = new System.Drawing.Point(295, 318);
-            this.txtChemUCntEmp.Name = "txtChemUCntEmp";
-            this.txtChemUCntEmp.Size = new System.Drawing.Size(62, 22);
-            this.txtChemUCntEmp.TabIndex = 295;
-            // 
-            // label139
-            // 
-            this.label139.AutoSize = true;
-            this.label139.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label139.Location = new System.Drawing.Point(14, 309);
-            this.label139.Name = "label139";
-            this.label139.Size = new System.Drawing.Size(148, 25);
-            this.label139.TabIndex = 289;
-            this.label139.Text = "16. Chem Uric";
-            // 
-            // btnChemBImport
-            // 
-            this.btnChemBImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnChemBImport.Location = new System.Drawing.Point(952, 260);
-            this.btnChemBImport.Name = "btnChemBImport";
-            this.btnChemBImport.Size = new System.Drawing.Size(103, 23);
-            this.btnChemBImport.TabIndex = 288;
-            this.btnChemBImport.Text = "นำเข้า Chem B";
-            this.btnChemBImport.UseVisualStyleBackColor = true;
-            this.btnChemBImport.Click += new System.EventHandler(this.btnChemBImport_Click);
-            // 
-            // btnChemBExcel
-            // 
-            this.btnChemBExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnChemBExcel.Location = new System.Drawing.Point(855, 261);
-            this.btnChemBExcel.Name = "btnChemBExcel";
-            this.btnChemBExcel.Size = new System.Drawing.Size(75, 23);
-            this.btnChemBExcel.TabIndex = 285;
-            this.btnChemBExcel.Text = "Excel";
-            this.btnChemBExcel.UseVisualStyleBackColor = true;
-            this.btnChemBExcel.Click += new System.EventHandler(this.btnChemBExcel_Click);
+            this.btnToxiExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnToxiExcel.Location = new System.Drawing.Point(855, 261);
+            this.btnToxiExcel.Name = "btnToxiExcel";
+            this.btnToxiExcel.Size = new System.Drawing.Size(75, 23);
+            this.btnToxiExcel.TabIndex = 285;
+            this.btnToxiExcel.Text = "Excel";
+            this.btnToxiExcel.UseVisualStyleBackColor = true;
+            this.btnToxiExcel.Click += new System.EventHandler(this.btnToxiExcel_Click);
             // 
             // textBox1
             // 
@@ -1698,13 +1595,13 @@
             this.textBox10.Size = new System.Drawing.Size(62, 22);
             this.textBox10.TabIndex = 282;
             // 
-            // textBox15
+            // txtChemBNormal
             // 
-            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox15.Location = new System.Drawing.Point(560, 263);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(62, 22);
-            this.textBox15.TabIndex = 281;
+            this.txtChemBNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtChemBNormal.Location = new System.Drawing.Point(560, 263);
+            this.txtChemBNormal.Name = "txtChemBNormal";
+            this.txtChemBNormal.Size = new System.Drawing.Size(62, 22);
+            this.txtChemBNormal.TabIndex = 281;
             // 
             // txtChemBCntEmp
             // 
@@ -1720,9 +1617,9 @@
             this.label131.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label131.Location = new System.Drawing.Point(14, 254);
             this.label131.Name = "label131";
-            this.label131.Size = new System.Drawing.Size(165, 25);
+            this.label131.Size = new System.Drawing.Size(152, 25);
             this.label131.TabIndex = 274;
-            this.label131.Text = "15. Chem Blood";
+            this.label131.Text = "15. Toxicology";
             // 
             // btnEyeImport
             // 
@@ -1770,13 +1667,13 @@
             this.textBox68.Size = new System.Drawing.Size(62, 22);
             this.textBox68.TabIndex = 267;
             // 
-            // textBox69
+            // txtEyeNormal
             // 
-            this.textBox69.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox69.Location = new System.Drawing.Point(560, 208);
-            this.textBox69.Name = "textBox69";
-            this.textBox69.Size = new System.Drawing.Size(62, 22);
-            this.textBox69.TabIndex = 266;
+            this.txtEyeNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtEyeNormal.Location = new System.Drawing.Point(560, 208);
+            this.txtEyeNormal.Name = "txtEyeNormal";
+            this.txtEyeNormal.Size = new System.Drawing.Size(62, 22);
+            this.txtEyeNormal.TabIndex = 266;
             // 
             // txtEyeCntEmp
             // 
@@ -1842,13 +1739,13 @@
             this.textBox63.Size = new System.Drawing.Size(62, 22);
             this.textBox63.TabIndex = 252;
             // 
-            // textBox64
+            // txtAudioNormal
             // 
-            this.textBox64.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox64.Location = new System.Drawing.Point(560, 159);
-            this.textBox64.Name = "textBox64";
-            this.textBox64.Size = new System.Drawing.Size(62, 22);
-            this.textBox64.TabIndex = 251;
+            this.txtAudioNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudioNormal.Location = new System.Drawing.Point(560, 159);
+            this.txtAudioNormal.Name = "txtAudioNormal";
+            this.txtAudioNormal.Size = new System.Drawing.Size(62, 22);
+            this.txtAudioNormal.TabIndex = 251;
             // 
             // txtAudioCntEmp
             // 
@@ -1914,13 +1811,13 @@
             this.textBox58.Size = new System.Drawing.Size(62, 22);
             this.textBox58.TabIndex = 237;
             // 
-            // textBox59
+            // txtLungNormal
             // 
-            this.textBox59.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox59.Location = new System.Drawing.Point(560, 102);
-            this.textBox59.Name = "textBox59";
-            this.textBox59.Size = new System.Drawing.Size(62, 22);
-            this.textBox59.TabIndex = 236;
+            this.txtLungNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtLungNormal.Location = new System.Drawing.Point(560, 102);
+            this.txtLungNormal.Name = "txtLungNormal";
+            this.txtLungNormal.Size = new System.Drawing.Size(62, 22);
+            this.txtLungNormal.TabIndex = 236;
             // 
             // txtLungCntEmp
             // 
@@ -2006,13 +1903,13 @@
             this.textBox53.Size = new System.Drawing.Size(62, 22);
             this.textBox53.TabIndex = 222;
             // 
-            // textBox54
+            // txtOther1Normal
             // 
-            this.textBox54.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox54.Location = new System.Drawing.Point(560, 48);
-            this.textBox54.Name = "textBox54";
-            this.textBox54.Size = new System.Drawing.Size(62, 22);
-            this.textBox54.TabIndex = 221;
+            this.txtOther1Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtOther1Normal.Location = new System.Drawing.Point(560, 48);
+            this.txtOther1Normal.Name = "txtOther1Normal";
+            this.txtOther1Normal.Size = new System.Drawing.Size(62, 22);
+            this.txtOther1Normal.TabIndex = 221;
             // 
             // txtOther1CntEmp
             // 
@@ -2507,28 +2404,6 @@
             this.dgvChemB.Size = new System.Drawing.Size(851, 593);
             this.dgvChemB.TabIndex = 8;
             // 
-            // tabPage18
-            // 
-            this.tabPage18.Controls.Add(this.dgvChemU);
-            this.tabPage18.Location = new System.Drawing.Point(4, 22);
-            this.tabPage18.Name = "tabPage18";
-            this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage18.Size = new System.Drawing.Size(1276, 782);
-            this.tabPage18.TabIndex = 17;
-            this.tabPage18.Text = "tabPage18";
-            this.tabPage18.UseVisualStyleBackColor = true;
-            // 
-            // dgvChemU
-            // 
-            this.dgvChemU.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvChemU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChemU.Location = new System.Drawing.Point(6, 5);
-            this.dgvChemU.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvChemU.Name = "dgvChemU";
-            this.dgvChemU.RowTemplate.Height = 24;
-            this.dgvChemU.Size = new System.Drawing.Size(851, 593);
-            this.dgvChemU.TabIndex = 8;
-            // 
             // tabPage19
             // 
             this.tabPage19.Controls.Add(this.dgvStoolExam);
@@ -2843,8 +2718,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvEye)).EndInit();
             this.tabPage17.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChemB)).EndInit();
-            this.tabPage18.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChemU)).EndInit();
             this.tabPage19.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStoolExam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).EndInit();
@@ -2998,9 +2871,7 @@
         private System.Windows.Forms.DataGridView dgvLung;
         private System.Windows.Forms.DataGridView dgvAudio;
         private System.Windows.Forms.DataGridView dgvEye;
-        private System.Windows.Forms.TabPage tabPage18;
         private System.Windows.Forms.DataGridView dgvChemB;
-        private System.Windows.Forms.DataGridView dgvChemU;
         private System.Windows.Forms.TextBox txtCntEmp;
         private System.Windows.Forms.Label label121;
         private System.Windows.Forms.TextBox txtYear;
@@ -3016,7 +2887,7 @@
         private System.Windows.Forms.TextBox textBox66;
         private System.Windows.Forms.TextBox textBox67;
         private System.Windows.Forms.TextBox textBox68;
-        private System.Windows.Forms.TextBox textBox69;
+        private System.Windows.Forms.TextBox txtEyeNormal;
         private System.Windows.Forms.TextBox txtEyeCntEmp;
         private System.Windows.Forms.Label label120;
         private System.Windows.Forms.Button btnAudioImport;
@@ -3024,7 +2895,7 @@
         private System.Windows.Forms.TextBox textBox61;
         private System.Windows.Forms.TextBox textBox62;
         private System.Windows.Forms.TextBox textBox63;
-        private System.Windows.Forms.TextBox textBox64;
+        private System.Windows.Forms.TextBox txtAudioNormal;
         private System.Windows.Forms.TextBox txtAudioCntEmp;
         private System.Windows.Forms.Label label112;
         private System.Windows.Forms.Button btnLungImport;
@@ -3032,7 +2903,7 @@
         private System.Windows.Forms.TextBox textBox56;
         private System.Windows.Forms.TextBox textBox57;
         private System.Windows.Forms.TextBox textBox58;
-        private System.Windows.Forms.TextBox textBox59;
+        private System.Windows.Forms.TextBox txtLungNormal;
         private System.Windows.Forms.TextBox txtLungCntEmp;
         private System.Windows.Forms.Label label104;
         private System.Windows.Forms.Button btnOtherImport;
@@ -3042,7 +2913,7 @@
         private System.Windows.Forms.TextBox textBox51;
         private System.Windows.Forms.TextBox textBox52;
         private System.Windows.Forms.TextBox textBox53;
-        private System.Windows.Forms.TextBox textBox54;
+        private System.Windows.Forms.TextBox txtOther1Normal;
         private System.Windows.Forms.TextBox txtOther1CntEmp;
         private System.Windows.Forms.Label label91;
         private System.Windows.Forms.Label label92;
@@ -3055,23 +2926,15 @@
         private System.Windows.Forms.TextBox textBox50;
         private System.Windows.Forms.TextBox textBox55;
         private System.Windows.Forms.TextBox textBox60;
-        private System.Windows.Forms.TextBox textBox65;
+        private System.Windows.Forms.TextBox txtStoolExamNormal;
         private System.Windows.Forms.TextBox txtStoolExamCntEmp;
         private System.Windows.Forms.Label label147;
-        private System.Windows.Forms.Button btnChemUImport;
-        private System.Windows.Forms.Button btnChemUExcel;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.TextBox textBox30;
-        private System.Windows.Forms.TextBox textBox35;
-        private System.Windows.Forms.TextBox textBox40;
-        private System.Windows.Forms.TextBox txtChemUCntEmp;
-        private System.Windows.Forms.Label label139;
-        private System.Windows.Forms.Button btnChemBImport;
-        private System.Windows.Forms.Button btnChemBExcel;
+        private System.Windows.Forms.Button btnToxiImport;
+        private System.Windows.Forms.Button btnToxiExcel;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox txtChemBNormal;
         private System.Windows.Forms.TextBox txtChemBCntEmp;
         private System.Windows.Forms.Label label131;
         private System.Windows.Forms.TextBox txtUricSucess;
@@ -3086,7 +2949,6 @@
         private System.Windows.Forms.TextBox txtPESucess;
         private System.Windows.Forms.Label label157;
         private System.Windows.Forms.TextBox txtStoolExamSucess;
-        private System.Windows.Forms.TextBox txtChemUSucess;
         private System.Windows.Forms.TextBox txtChemBSucess;
         private System.Windows.Forms.TextBox txtEyeSucess;
         private System.Windows.Forms.TextBox txtAudioSucess;

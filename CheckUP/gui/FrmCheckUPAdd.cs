@@ -16,7 +16,7 @@ namespace CheckUP.gui
         CheckControl cc;
         CustCheckUp cuc;
 
-        int tabSum = 0, tabSum2=1, tabPrint=2, tabPE=3, tabXRay=4, tabCBC=5, tabFBS=6, tabUA=7,tabTri=8, tabCho=9, tabSgot=10, tabBun=11, tabUric=12, tabOther1=13, tabLung=14, tabAudio=15, tabEye=16, tabChemB=17, tabChemU=18, tabStoolExam=19;
+        int tabSum = 0, tabSum2=1, tabPrint=2, tabPE=3, tabXRay=4, tabCBC=5, tabFBS=6, tabUA=7,tabTri=8, tabCho=9, tabSgot=10, tabBun=11, tabUric=12, tabOther1=13, tabLung=14, tabAudio=15, tabEye=16, tabToxi=17, tabStoolExam=18;
         int tabCnt = 20;
 
         int colPERow = 0, colPEId = 1, colPEName = 2, colPESex=3, colPEAge = 4, colPEDepartment=5, colPEWeight = 6, colPEHeight = 7, colPEBMI = 8, colPEvitalsign = 9, colPEPulse = 10, colPEBloodGroup=11, colPEResult = 12, colPESummary = 13;
@@ -75,7 +75,7 @@ namespace CheckUP.gui
         Font font = new Font("Microsoft Sans Serif", 12);
         Boolean flagNew=false;
         String fileName = "", fileNamePE = "", fileNameFBS = "", fileNameXray = "", fileNameCBC = "", fileNameUA = "", fileNameTri = "", fileNameCho = "", fileNameLung="";
-        String fileNameSgot = "", fileNameBun = "", fileNameUric = "", fileNameOther1 = "", fileNameAudio="", fileNameEye="", fileNameStoolExam="", fileNameChemB="", fileNameChemU="";
+        String fileNameSgot = "", fileNameBun = "", fileNameUric = "", fileNameOther1 = "", fileNameAudio="", fileNameEye="", fileNameStoolExam="", fileNameToxi="", fileNameChemU="";
         //String cucId = "";
         DataTable dtAll;
         OpenFileDialog ofd = new OpenFileDialog();
@@ -110,8 +110,8 @@ namespace CheckUP.gui
             tC.TabPages[tabLung].Text = "Lung";
             tC.TabPages[tabAudio].Text = "Audio";
             tC.TabPages[tabEye].Text = "Eye";
-            tC.TabPages[tabChemB].Text = "Chem Blood";
-            tC.TabPages[tabChemU].Text = "Chem Uric";
+            tC.TabPages[tabToxi].Text = "Toxicology";
+            //tC.TabPages[tabChemU].Text = "Chem Uric";
             tC.TabPages[tabStoolExam].Text = "Stool Exam";
 
             pB1.Visible = false;
@@ -130,8 +130,8 @@ namespace CheckUP.gui
             btnAudioImport.Enabled = false;
             btnEyeImport.Enabled = false;
             btnStoolExamImport.Enabled = false;
-            btnChemBImport.Enabled = false;
-            btnChemUImport.Enabled = false;
+            btnToxiImport.Enabled = false;
+            //btnChemUImport.Enabled = false;
 
             btnUnActive.Visible = false;
 
@@ -3023,6 +3023,7 @@ namespace CheckUP.gui
             cc.lw.WriteLog("FrmCheckUPAdd.btnPrint_Click 01 ");
             cc.rcdb.deleteAll();
             dtAll = cc.ccpdb.selectAllByCucId(cuc.Id);
+            cuc = cc.cucdb.selectByPk(cuc.Id);
             cc.lw.WriteLog("FrmCheckUPAdd.btnPrint_Click 02 ");
             //pB1.Maximum = dtAll.Rows.Count;
             pB1.Maximum = int.Parse(nmDPrintEnd.Value.ToString());
@@ -3041,649 +3042,1227 @@ namespace CheckUP.gui
             {
                 rc.Id = r.Next().ToString();
                 rc.FullName = dtAll.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
-                rc.Age = dtAll.Rows[i][cc.ccpdb.ccp.patientAge].ToString();
+                if (dtAll.Rows[i][cc.ccpdb.ccp.patientAge].ToString().Equals("") || dtAll.Rows[i][cc.ccpdb.ccp.patientAge].ToString().Equals("0"))
+                {
+                    rc.Age = "-";
+                }
+                else
+                {
+                    rc.Age = dtAll.Rows[i][cc.ccpdb.ccp.patientAge].ToString();
+                }                
+
                 rc.BMI = dtAll.Rows[i][cc.ccpdb.ccp.bmi].ToString();
                 rc.Height = dtAll.Rows[i][cc.ccpdb.ccp.patientHeight].ToString();
                 rc.Weight = dtAll.Rows[i][cc.ccpdb.ccp.patientWeight].ToString();
                 rc.RowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
 
-                rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
-                rc.LabName = "Hb";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHb].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcHb].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                rc.Remark = "";
-                rc.StatusLab = "cbc";
-                rc.Sort1 = "1010";
-                rc.Sort2 = "10";
-                //rc.LabNormal = dtN.Rows[0][cc.ccpvndb.ccpvn.cbcHb].ToString();
-                cc.rcdb.insertRCheckUp(rc);
+                //Xray
+                if (int.Parse(cuc.XraySuccess) > 0)
+                {
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "Xray";
+                    rc.LabName = "Xray";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.xrayChestExam].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.xrayChestExam].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "Xray";
+                    rc.Remark = "";
+                    rc.StatusLab = "xray";
+                    rc.Sort1 = "1009";
+                    rc.Sort2 = "10";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
-                rc.LabName = "Hct";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHct].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcHct].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                rc.Remark = "";
-                rc.StatusLab = "cbc";
-                rc.Sort1 = "1010";
-                rc.Sort2 = "11";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "Xray";
+                    rc.LabName = "สรุปผล Xray";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.xrayChestSummary].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.xrayChestSummary].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "Xray";
+                    rc.Remark = "";
+                    rc.StatusLab = "xray";
+                    rc.Sort1 = "1009";
+                    rc.Sort2 = "10";
+                    cc.rcdb.insertRCheckUp(rc);
+                }
+                //CBC
+                if (int.Parse(cuc.CBCSuccess)>0)
+                {
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
+                    rc.LabName = "Hb";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHb].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcHb].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
+                    rc.Remark = "";
+                    rc.StatusLab = "cbc";
+                    rc.Sort1 = "1010";
+                    rc.Sort2 = "10";
+                    //rc.LabNormal = dtN.Rows[0][cc.ccpvndb.ccpvn.cbcHb].ToString();
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
-                rc.LabName = "WBC";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcWbc].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcWbc].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                rc.Remark = "";
-                rc.StatusLab = "cbc";
-                rc.Sort1 = "1010";
-                rc.Sort2 = "13";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
+                    rc.LabName = "Hct";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHct].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcHct].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
+                    rc.Remark = "";
+                    rc.StatusLab = "cbc";
+                    rc.Sort1 = "1010";
+                    rc.Sort2 = "11";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
-                rc.LabName = "Neutrophils";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcNeutrophil].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcNeutrophil].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                rc.Remark = "";
-                rc.StatusLab = "cbc";
-                rc.Sort1 = "1010";
-                rc.Sort2 = "14";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
+                    rc.LabName = "WBC";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcWbc].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcWbc].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
+                    rc.Remark = "";
+                    rc.StatusLab = "cbc";
+                    rc.Sort1 = "1010";
+                    rc.Sort2 = "13";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
-                rc.LabName = "Eosinophils ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcEosinophil].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcEosinophil].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                rc.Remark = "";
-                rc.StatusLab = "cbc";
-                rc.Sort1 = "1010";
-                rc.Sort2 = "15";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
+                    rc.LabName = "Neutrophils";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcNeutrophil].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcNeutrophil].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
+                    rc.Remark = "";
+                    rc.StatusLab = "cbc";
+                    rc.Sort1 = "1010";
+                    rc.Sort2 = "14";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
-                rc.LabName = "Basophils ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcBasophil].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcBasophil].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                rc.Remark = "";
-                rc.StatusLab = "cbc";
-                rc.Sort1 = "1010";
-                rc.Sort2 = "16";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
+                    rc.LabName = "Eosinophils ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcEosinophil].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcEosinophil].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
+                    rc.Remark = "";
+                    rc.StatusLab = "cbc";
+                    rc.Sort1 = "1010";
+                    rc.Sort2 = "15";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
-                rc.LabName = "Lymphocyte ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcLymphocyte].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcLymphocyte].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                rc.Remark = "";
-                rc.StatusLab = "cbc";
-                rc.Sort1 = "1010";
-                rc.Sort2 = "17";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
+                    rc.LabName = "Basophils ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcBasophil].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcBasophil].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
+                    rc.Remark = "";
+                    rc.StatusLab = "cbc";
+                    rc.Sort1 = "1010";
+                    rc.Sort2 = "16";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
-                rc.LabName = "Monocyte ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMonocyte].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcMonocyte].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                rc.Remark = "";
-                rc.StatusLab = "cbc";
-                rc.Sort1 = "1010";
-                rc.Sort2 = "18";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
+                    rc.LabName = "Lymphocyte ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcLymphocyte].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcLymphocyte].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
+                    rc.Remark = "";
+                    rc.StatusLab = "cbc";
+                    rc.Sort1 = "1010";
+                    rc.Sort2 = "17";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
-                rc.LabName = "RBC ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbc].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcRbc].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                rc.Remark = "";
-                rc.StatusLab = "cbc";
-                rc.Sort1 = "1010";
-                rc.Sort2 = "19";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
+                    rc.LabName = "Monocyte ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMonocyte].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcMonocyte].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
+                    rc.Remark = "";
+                    rc.StatusLab = "cbc";
+                    rc.Sort1 = "1010";
+                    rc.Sort2 = "18";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
-                rc.LabName = "MCV ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMcv].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcMcv].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                rc.Remark = "";
-                rc.StatusLab = "cbc";
-                rc.Sort1 = "1010";
-                rc.Sort2 = "20";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
+                    rc.LabName = "RBC ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbc].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcRbc].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
+                    rc.Remark = "";
+                    rc.StatusLab = "cbc";
+                    rc.Sort1 = "1010";
+                    rc.Sort2 = "19";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
-                rc.LabName = "MCH ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMch].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcMch].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                rc.Remark = "";
-                rc.StatusLab = "cbc";
-                rc.Sort1 = "1010";
-                rc.Sort2 = "21";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
+                    rc.LabName = "MCV ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMcv].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcMcv].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
+                    rc.Remark = "";
+                    rc.StatusLab = "cbc";
+                    rc.Sort1 = "1010";
+                    rc.Sort2 = "20";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
-                rc.LabName = "MCHC ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMchc].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcMchc].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                rc.Remark = "";
-                rc.StatusLab = "cbc";
-                rc.Sort1 = "1010";
-                rc.Sort2 = "22";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
+                    rc.LabName = "MCH ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMch].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcMch].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
+                    rc.Remark = "";
+                    rc.StatusLab = "cbc";
+                    rc.Sort1 = "1010";
+                    rc.Sort2 = "21";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
-                rc.LabName = "Platelet Count ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPlateletCount].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcPlateletCount].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                rc.Remark = "";
-                rc.StatusLab = "cbc";
-                rc.Sort1 = "1010";
-                rc.Sort2 = "23";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
+                    rc.LabName = "MCHC ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMchc].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcMchc].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
+                    rc.Remark = "";
+                    rc.StatusLab = "cbc";
+                    rc.Sort1 = "1010";
+                    rc.Sort2 = "22";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
-                rc.LabName = "Platelet smear ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPlateletSmear].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcPlateletSmear].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                rc.Remark = "";
-                rc.StatusLab = "cbc";
-                rc.Sort1 = "1010";
-                rc.Sort2 = "24";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
+                    rc.LabName = "Platelet Count ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPlateletCount].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcPlateletCount].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
+                    rc.Remark = "";
+                    rc.StatusLab = "cbc";
+                    rc.Sort1 = "1010";
+                    rc.Sort2 = "23";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
-                rc.LabName = "RBC morphology ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbcMorpholog].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcRbcMorpholog].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                rc.Remark = "";
-                rc.StatusLab = "cbc";
-                rc.Sort1 = "1010";
-                rc.Sort2 = "25";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
+                    rc.LabName = "Platelet smear ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPlateletSmear].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcPlateletSmear].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
+                    rc.Remark = "";
+                    rc.StatusLab = "cbc";
+                    rc.Sort1 = "1010";
+                    rc.Sort2 = "24";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                //FBS
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "ระดับน้ำตาลในเลือด (Fasting Blood Sugar)";
-                rc.LabName = "FBS ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.sugar].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.sugar].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจน้ำตาล";
-                rc.Remark = "";
-                rc.StatusLab = "fbs";
-                rc.Sort1 = "1011";
-                rc.Sort2 = "10";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
+                    rc.LabName = "RBC morphology ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbcMorpholog].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcRbcMorpholog].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
+                    rc.Remark = "";
+                    rc.StatusLab = "cbc";
+                    rc.Sort1 = "1010";
+                    rc.Sort2 = "25";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
+                    rc.LabName = "สรุปผลการตรวจ CBC ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcSummary].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcSummary].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
+                    rc.Remark = "";
+                    rc.StatusLab = "cbc";
+                    rc.Sort1 = "1010";
+                    rc.Sort2 = "26";
+                    cc.rcdb.insertRCheckUp(rc);
+                }                
+
+                //FBS                
+                {
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "ระดับน้ำตาลในเลือด (Fasting Blood Sugar)";
+                    rc.LabName = "FBS ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.sugar].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.sugar].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจน้ำตาล";
+                    rc.Remark = "";
+                    rc.StatusLab = "fbs";
+                    rc.Sort1 = "1011";
+                    rc.Sort2 = "10";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "ระดับน้ำตาลในเลือด (Fasting Blood Sugar)";
+                    rc.LabName = "สรุปผลการตรวจน้ำตาลในเลือด ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.sugarSummary].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.sugarSummary].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจน้ำตาล";
+                    rc.Remark = "";
+                    rc.StatusLab = "fbs";
+                    rc.Sort1 = "1011";
+                    rc.Sort2 = "11";
+                    cc.rcdb.insertRCheckUp(rc);
+                }                
 
                 //UA
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
-                rc.LabName = "Color ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineColor].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineColor].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                rc.Remark = "";
-                rc.StatusLab = "ua";
-                rc.Sort1 = "1012";
-                rc.Sort2 = "10";
-                cc.rcdb.insertRCheckUp(rc);
+                if (int.Parse(cuc.UASuccess) > 0)
+                {
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
+                    rc.LabName = "Color ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineColor].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineColor].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
+                    rc.Remark = "";
+                    rc.StatusLab = "ua";
+                    rc.Sort1 = "1012";
+                    rc.Sort2 = "10";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
-                rc.LabName = "Appearance ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineAppearance].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineAppearance].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                rc.Remark = "";
-                rc.StatusLab = "ua";
-                rc.Sort1 = "1012";
-                rc.Sort2 = "11";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
+                    rc.LabName = "Appearance ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineAppearance].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineAppearance].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
+                    rc.Remark = "";
+                    rc.StatusLab = "ua";
+                    rc.Sort1 = "1012";
+                    rc.Sort2 = "11";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
-                rc.LabName = "pH. ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urinePh].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urinePh].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                rc.Remark = "";
-                rc.StatusLab = "ua";
-                rc.Sort1 = "1012";
-                rc.Sort2 = "12";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
+                    rc.LabName = "pH. ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urinePh].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urinePh].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
+                    rc.Remark = "";
+                    rc.StatusLab = "ua";
+                    rc.Sort1 = "1012";
+                    rc.Sort2 = "12";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
-                rc.LabName = "Sugar ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineSugar].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineSugar].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                rc.Remark = "";
-                rc.StatusLab = "ua";
-                rc.Sort1 = "1012";
-                rc.Sort2 = "13";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
+                    rc.LabName = "Sugar ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineSugar].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineSugar].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
+                    rc.Remark = "";
+                    rc.StatusLab = "ua";
+                    rc.Sort1 = "1012";
+                    rc.Sort2 = "13";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
-                rc.LabName = "Protein ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineProtein].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineProtein].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                rc.Remark = "";
-                rc.StatusLab = "ua";
-                rc.Sort1 = "1012";
-                rc.Sort2 = "14";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
+                    rc.LabName = "Protein ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineProtein].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineProtein].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
+                    rc.Remark = "";
+                    rc.StatusLab = "ua";
+                    rc.Sort1 = "1012";
+                    rc.Sort2 = "14";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
-                rc.LabName = "SpGr ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineSpGr].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineSpGr].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                rc.Remark = "";
-                rc.StatusLab = "ua";
-                rc.Sort1 = "1012";
-                rc.Sort2 = "15";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
+                    rc.LabName = "SpGr ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineSpGr].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineSpGr].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
+                    rc.Remark = "";
+                    rc.StatusLab = "ua";
+                    rc.Sort1 = "1012";
+                    rc.Sort2 = "15";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
-                rc.LabName = "Uric Acid ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.uricAcid].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.uricAcid].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                rc.Remark = "";
-                rc.StatusLab = "ua";
-                rc.Sort1 = "1012";
-                rc.Sort2 = "16";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
+                    rc.LabName = "Uric Acid ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.uricAcid].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.uricAcid].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
+                    rc.Remark = "";
+                    rc.StatusLab = "ua";
+                    rc.Sort1 = "1012";
+                    rc.Sort2 = "16";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
-                rc.LabName = "Bacteria ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineBacteria].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineBacteria].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                rc.Remark = "";
-                rc.StatusLab = "ua";
-                rc.Sort1 = "1012";
-                rc.Sort2 = "17";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
+                    rc.LabName = "Bacteria ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineBacteria].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineBacteria].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
+                    rc.Remark = "";
+                    rc.StatusLab = "ua";
+                    rc.Sort1 = "1012";
+                    rc.Sort2 = "17";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
-                rc.LabName = "Blood ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineBlood].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineBlood].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                rc.Remark = "";
-                rc.StatusLab = "ua";
-                rc.Sort1 = "1012";
-                rc.Sort2 = "18";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
+                    rc.LabName = "Blood ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineBlood].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineBlood].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
+                    rc.Remark = "";
+                    rc.StatusLab = "ua";
+                    rc.Sort1 = "1012";
+                    rc.Sort2 = "18";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
-                rc.LabName = "Epithelium ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineEpithelium].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineEpithelium].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                rc.Remark = "";
-                rc.StatusLab = "ua";
-                rc.Sort1 = "1012";
-                rc.Sort2 = "19";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
+                    rc.LabName = "Epithelium ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineEpithelium].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineEpithelium].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
+                    rc.Remark = "";
+                    rc.StatusLab = "ua";
+                    rc.Sort1 = "1012";
+                    rc.Sort2 = "19";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
-                rc.LabName = "RBC ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineRbc].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineRbc].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                rc.Remark = "";
-                rc.StatusLab = "ua";
-                rc.Sort1 = "1012";
-                rc.Sort2 = "20";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
+                    rc.LabName = "RBC ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineRbc].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineRbc].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
+                    rc.Remark = "";
+                    rc.StatusLab = "ua";
+                    rc.Sort1 = "1012";
+                    rc.Sort2 = "20";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
-                rc.LabName = "WBC ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineWbc].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineWbc].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                rc.Remark = "";
-                rc.StatusLab = "ua";
-                rc.Sort1 = "1012";
-                rc.Sort2 = "21";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
+                    rc.LabName = "WBC ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineWbc].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineWbc].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
+                    rc.Remark = "";
+                    rc.StatusLab = "ua";
+                    rc.Sort1 = "1012";
+                    rc.Sort2 = "21";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
-                rc.LabName = "Ketone ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineKetone].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineKetone].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                rc.Remark = "";
-                rc.StatusLab = "ua";
-                rc.Sort1 = "1012";
-                rc.Sort2 = "22";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
+                    rc.LabName = "Ketone ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineKetone].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineKetone].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
+                    rc.Remark = "";
+                    rc.StatusLab = "ua";
+                    rc.Sort1 = "1012";
+                    rc.Sort2 = "22";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
-                rc.LabName = "Leu ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineLeu].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineLeu].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                rc.Remark = "";
-                rc.StatusLab = "ua";
-                rc.Sort1 = "1012";
-                rc.Sort2 = "23";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
+                    rc.LabName = "Leu ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineLeu].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineLeu].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
+                    rc.Remark = "";
+                    rc.StatusLab = "ua";
+                    rc.Sort1 = "1012";
+                    rc.Sort2 = "23";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                }
 
                 //Bun
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "การตรวจ (Bun)";
-                rc.LabName = "Bun ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyBun].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.kidneyBun].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจ BUN";
-                rc.Remark = "";
-                rc.StatusLab = "bun";
-                rc.Sort1 = "1013";
-                rc.Sort2 = "10";
-                cc.rcdb.insertRCheckUp(rc);
+                if (int.Parse(cuc.BunSuccess) > 0)
+                {
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Bun)";
+                    rc.LabName = "Bun ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyBun].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.kidneyBun].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ BUN";
+                    rc.Remark = "";
+                    rc.StatusLab = "bun";
+                    rc.Sort1 = "1013";
+                    rc.Sort2 = "10";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "การตรวจ (Bun)";
-                rc.LabName = "Creatinine ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.kidneyCreatinine].ToString(); ;
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.kidneyCreatinine].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจ BUN";
-                rc.Remark = "";
-                rc.StatusLab = "bun";
-                rc.Sort1 = "1013";
-                rc.Sort2 = "11";
-                cc.rcdb.insertRCheckUp(rc);
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Bun)";
+                    rc.LabName = "Creatinine ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.kidneyCreatinine].ToString(); ;
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.kidneyCreatinine].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ BUN";
+                    rc.Remark = "";
+                    rc.StatusLab = "bun";
+                    rc.Sort1 = "1013";
+                    rc.Sort2 = "11";
+                    cc.rcdb.insertRCheckUp(rc);
+                }                
 
                 //Uric
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "การตรวจ (Uric)";
-                rc.LabName = "Bacteria ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.uricAcid].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.uricAcid].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจ Uric";
-                rc.Remark = "";
-                rc.StatusLab = "uric";
-                rc.Sort1 = "1014";
-                rc.Sort2 = "10";
-                cc.rcdb.insertRCheckUp(rc);
+                if (int.Parse(cuc.UricSuccess) > 0)
+                {
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Uric)";
+                    rc.LabName = "Bacteria ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.uricAcid].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.uricAcid].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Uric";
+                    rc.Remark = "";
+                    rc.StatusLab = "uric";
+                    rc.Sort1 = "1014";
+                    rc.Sort2 = "10";
+                    cc.rcdb.insertRCheckUp(rc);
+                }
+                
 
                 //Trig
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "การตรวจ (Triglyceride)";
-                rc.LabName = "Triglyceride ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.triglyceride].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.triglyceride].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจ Triglyceride";
-                rc.Remark = "";
-                rc.StatusLab = "tri";
-                rc.Sort1 = "1015";
-                rc.Sort2 = "10";
-                cc.rcdb.insertRCheckUp(rc);
+                if (int.Parse(cuc.TriSuccess) > 0)
+                {
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Triglyceride)";
+                    rc.LabName = "Triglyceride ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.triglyceride].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.triglyceride].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Triglyceride";
+                    rc.Remark = "";
+                    rc.StatusLab = "tri";
+                    rc.Sort1 = "1015";
+                    rc.Sort2 = "10";
+                    cc.rcdb.insertRCheckUp(rc);
+                }                
 
                 //Sgot
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "การตรวจ (SGOT/SGPT)";
-                rc.LabName = "SGOT ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.liverSgot].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.liverSgot].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจ SGOT";
-                rc.Remark = "";
-                rc.StatusLab = "sgot";
-                rc.Sort1 = "1016";
-                rc.Sort2 = "10";
-                cc.rcdb.insertRCheckUp(rc);
+                if (int.Parse(cuc.SgotSuccess) > 0)
+                {
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (SGOT/SGPT)";
+                    rc.LabName = "SGOT ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.liverSgot].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.liverSgot].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ SGOT";
+                    rc.Remark = "";
+                    rc.StatusLab = "sgot";
+                    rc.Sort1 = "1016";
+                    rc.Sort2 = "10";
+                    cc.rcdb.insertRCheckUp(rc);
 
-                //Sgot
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "การตรวจ (SGOT/SGPT)";
-                rc.LabName = "SGPT ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.liverSgpt].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.liverSgpt].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจ SGOT";
-                rc.Remark = "";
-                rc.StatusLab = "sgot";
-                rc.Sort1 = "1016";
-                rc.Sort2 = "11";
-                cc.rcdb.insertRCheckUp(rc);
+                    //Sgot
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (SGOT/SGPT)";
+                    rc.LabName = "SGPT ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.liverSgpt].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.liverSgpt].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ SGOT";
+                    rc.Remark = "";
+                    rc.StatusLab = "sgot";
+                    rc.Sort1 = "1016";
+                    rc.Sort2 = "11";
+                    cc.rcdb.insertRCheckUp(rc);
+                }
+                
 
                 //Choles
-                rc.Id = r.Next().ToString();
-                rc.LabGroup = "การตรวจ (Choles)";
-                rc.LabName = "Choles ";
-                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.cholesterol].ToString();
-                rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cholesterol].ToString();
-                rc.LInter = "การแปรผล";
-                rc.LInterAbnormal = "ปกติ";
-                rc.LInterNormal = "ผิดปกติ";
-                rc.LNormal = "ค่าปกติ";
-                rc.lResult = "ผลการตรวจ";
-                rc.LTypeLab = "ประเภทการตรวจ Choles";
-                rc.Remark = "";
-                rc.StatusLab = "cho";
-                rc.Sort1 = "1017";
-                rc.Sort2 = "10";
-                cc.rcdb.insertRCheckUp(rc);
+                if (int.Parse(cuc.ChoSuccess) > 0)
+                {
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Choles)";
+                    rc.LabName = "Choles ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.cholesterol].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cholesterol].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Choles";
+                    rc.Remark = "";
+                    rc.StatusLab = "cho";
+                    rc.Sort1 = "1017";
+                    rc.Sort2 = "10";
+                    cc.rcdb.insertRCheckUp(rc);
+                }
 
+                //Other1
+                if (int.Parse(cuc.Other1Success) > 0)
+                {
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Other1)";
+                    rc.LabName = "HBsAg ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.hbsag].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.hbsag].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ HBsAg";
+                    rc.Remark = "";
+                    rc.StatusLab = "other1";
+                    rc.Sort1 = "1018";
+                    rc.Sort2 = "10";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Other1)";
+                    rc.LabName = "HBsAb ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.hbsab].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.hbsab].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ HBsAb";
+                    rc.Remark = "";
+                    rc.StatusLab = "other1";
+                    rc.Sort1 = "1018";
+                    rc.Sort2 = "11";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Other1)";
+                    rc.LabName = "Anti HIV ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.antiHiv].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.antiHiv].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Anti HIV";
+                    rc.Remark = "";
+                    rc.StatusLab = "other1";
+                    rc.Sort1 = "1018";
+                    rc.Sort2 = "12";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Other1)";
+                    rc.LabName = "VDRL ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.vdrl].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.vdrl].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ VDRL";
+                    rc.Remark = "";
+                    rc.StatusLab = "other1";
+                    rc.Sort1 = "1018";
+                    rc.Sort2 = "13";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Other1)";
+                    rc.LabName = "Amphetamine ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.amphetamine].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.amphetamine].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Amphetamine";
+                    rc.Remark = "";
+                    rc.StatusLab = "other1";
+                    rc.Sort1 = "1018";
+                    rc.Sort2 = "14";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Other1)";
+                    rc.LabName = "Calcium ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.calcium].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.calcium].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Calcium";
+                    rc.Remark = "";
+                    rc.StatusLab = "other1";
+                    rc.Sort1 = "1018";
+                    rc.Sort2 = "15";
+                    cc.rcdb.insertRCheckUp(rc);
+                }
+
+                //Lung
+                if (int.Parse(cuc.LungSuccess) > 0)
+                {
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Lung)";
+                    rc.LabName = "FvcPredic ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.lungFvcPredic].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.lungFvcPredic].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ FvcPredic";
+                    rc.Remark = "";
+                    rc.StatusLab = "lung";
+                    rc.Sort1 = "1019";
+                    rc.Sort2 = "10";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Lung)";
+                    rc.LabName = "FvcMeas ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.lungFvcMeas].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.lungFvcMeas].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ FvcMeas";
+                    rc.Remark = "";
+                    rc.StatusLab = "lung";
+                    rc.Sort1 = "1019";
+                    rc.Sort2 = "11";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Lung)";
+                    rc.LabName = "FvcPer ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.lungFvcPer].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.lungFvcMeas].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ FvcPer";
+                    rc.Remark = "";
+                    rc.StatusLab = "lung";
+                    rc.Sort1 = "1019";
+                    rc.Sort2 = "12";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Lung)";
+                    rc.LabName = "Fev1Predic ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.lungFev1Predic].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.lungFvcMeas].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Fev1Predic";
+                    rc.Remark = "";
+                    rc.StatusLab = "lung";
+                    rc.Sort1 = "1019";
+                    rc.Sort2 = "13";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Lung)";
+                    rc.LabName = "Fev1Meas ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.lungFev1Meas].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.lungFev1Meas].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Fev1Meas";
+                    rc.Remark = "";
+                    rc.StatusLab = "lung";
+                    rc.Sort1 = "1019";
+                    rc.Sort2 = "14";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Lung)";
+                    rc.LabName = "Fev1Per ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.lungFev1Per].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.lungFev1Per].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Fev1Per";
+                    rc.Remark = "";
+                    rc.StatusLab = "lung";
+                    rc.Sort1 = "1019";
+                    rc.Sort2 = "15";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Lung)";
+                    rc.LabName = "PerFev1 ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.lungPerFev1].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.lungPerFev1].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ PerFev1";
+                    rc.Remark = "";
+                    rc.StatusLab = "lung";
+                    rc.Sort1 = "1019";
+                    rc.Sort2 = "16";
+                    cc.rcdb.insertRCheckUp(rc);
+                }
+
+                //
+                if (int.Parse(cuc.LungSuccess) > 0)
+                {
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (AudioGram)";
+                    rc.LabName = "500L ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.Audiogram500L].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.Audiogram500L].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ AudioGram";
+                    rc.Remark = "";
+                    rc.StatusLab = "audoi";
+                    rc.Sort1 = "1020";
+                    rc.Sort2 = "10";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (AudioGram)";
+                    rc.LabName = "500R ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.Audiogram500R].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.Audiogram500R].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ AudioGram";
+                    rc.Remark = "";
+                    rc.StatusLab = "audoi";
+                    rc.Sort1 = "1020";
+                    rc.Sort2 = "11";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (AudioGram)";
+                    rc.LabName = "1000L ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.Audiogram1000L].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.Audiogram1000L].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ AudioGram";
+                    rc.Remark = "";
+                    rc.StatusLab = "audoi";
+                    rc.Sort1 = "1020";
+                    rc.Sort2 = "12";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (AudioGram)";
+                    rc.LabName = "1000R ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.Audiogram1000R].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.Audiogram1000R].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ AudioGram";
+                    rc.Remark = "";
+                    rc.StatusLab = "audoi";
+                    rc.Sort1 = "1020";
+                    rc.Sort2 = "13";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (AudioGram)";
+                    rc.LabName = "2000L ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.Audiogram2000L].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.Audiogram2000L].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ AudioGram";
+                    rc.Remark = "";
+                    rc.StatusLab = "audoi";
+                    rc.Sort1 = "1020";
+                    rc.Sort2 = "14";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (AudioGram)";
+                    rc.LabName = "2000R ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.Audiogram2000R].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.Audiogram2000R].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ AudioGram";
+                    rc.Remark = "";
+                    rc.StatusLab = "audoi";
+                    rc.Sort1 = "1020";
+                    rc.Sort2 = "15";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (AudioGram)";
+                    rc.LabName = "3000L ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.Audiogram3000L].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.Audiogram3000L].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ AudioGram";
+                    rc.Remark = "";
+                    rc.StatusLab = "audoi";
+                    rc.Sort1 = "1020";
+                    rc.Sort2 = "16";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (AudioGram)";
+                    rc.LabName = "3000R ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.Audiogram3000R].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.Audiogram3000R].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ AudioGram";
+                    rc.Remark = "";
+                    rc.StatusLab = "audoi";
+                    rc.Sort1 = "1020";
+                    rc.Sort2 = "17";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (AudioGram)";
+                    rc.LabName = "4000L ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.Audiogram4000L].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.Audiogram4000L].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ AudioGram";
+                    rc.Remark = "";
+                    rc.StatusLab = "audoi";
+                    rc.Sort1 = "1020";
+                    rc.Sort2 = "18";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (AudioGram)";
+                    rc.LabName = "4000R ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.Audiogram4000R].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.Audiogram4000R].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ AudioGram";
+                    rc.Remark = "";
+                    rc.StatusLab = "audoi";
+                    rc.Sort1 = "1020";
+                    rc.Sort2 = "19";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (AudioGram)";
+                    rc.LabName = "6000L ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.Audiogram6000L].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.Audiogram6000L].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ AudioGram";
+                    rc.Remark = "";
+                    rc.StatusLab = "audoi";
+                    rc.Sort1 = "1020";
+                    rc.Sort2 = "20";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (AudioGram)";
+                    rc.LabName = "6000R ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.Audiogram6000R].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.Audiogram6000R].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ AudioGram";
+                    rc.Remark = "";
+                    rc.StatusLab = "audoi";
+                    rc.Sort1 = "1020";
+                    rc.Sort2 = "21";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (AudioGram)";
+                    rc.LabName = "8000L ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.Audiogram8000L].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.Audiogram8000L].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ AudioGram";
+                    rc.Remark = "";
+                    rc.StatusLab = "audoi";
+                    rc.Sort1 = "1020";
+                    rc.Sort2 = "22";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (AudioGram)";
+                    rc.LabName = "8000R ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.Audiogram8000R].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.Audiogram8000R].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ AudioGram";
+                    rc.Remark = "";
+                    rc.StatusLab = "audoi";
+                    rc.Sort1 = "1020";
+                    rc.Sort2 = "23";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                }
                 pB1.Value = i;
             }
             pB1.Visible = false;
@@ -4268,7 +4847,6 @@ namespace CheckUP.gui
                     AudiogramExam = "";
                 }
 
-
                 chk = cc.ccpdb.updateAudioGram(rowNumber, txtId.Text, Audiogram500L, Audiogram500R, Audiogram1000L, Audiogram1000R, Audiogram2000L, Audiogram2000R, Audiogram3000L, Audiogram3000R,
                     Audiogram4000L, Audiogram4000R, Audiogram6000L, Audiogram6000R, Audiogram8000L, Audiogram8000R, AudiogramSummaryL, AudiogramSummaryR, AudiogramExam);
                 pB1.Value = i;
@@ -4494,16 +5072,6 @@ namespace CheckUP.gui
             }
         }
 
-        private void btnChemBImport_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnChemUImport_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnStoolExamImport_Click(object sender, EventArgs e)
         {
             String rowNumber = "", chk = "";
@@ -4595,24 +5163,283 @@ namespace CheckUP.gui
             Cursor.Current = cursor;
         }
 
-        private void btnChemBExcel_Click(object sender, EventArgs e)
-        {
-            ofd.ShowDialog();
-            fileNameChemB = ofd.FileName;
-            btnEyeImport.Enabled = true;
-        }
-
-        private void btnChemUExcel_Click(object sender, EventArgs e)
-        {
-            ofd.ShowDialog();
-            fileNameChemU = ofd.FileName;
-            btnEyeImport.Enabled = true;
-        }
-
         private void btnStoolExamExcel_Click(object sender, EventArgs e)
         {
             ofd.ShowDialog();
             fileNameStoolExam = ofd.FileName;
+            btnEyeImport.Enabled = true;
+        }
+
+        private void btnToxiImport_Click(object sender, EventArgs e)
+        {
+            String rowNumber = "", chk = "";
+
+            String ToxiLead = "", ToxiAluminium = "", ToxiCadmium = "", ToxiMercury = "", ToxiTin = "", ToxiCopper = "", ToxiManganese = "", ToxiZinc = "", ToxiAmmonia = "";
+            String ToxiHippuric = "", ToxiMethyl = "", ToxiAcetone="", ToxiNickel="", ToxiChromium="", ToxiPhenol="", ToxiKetone="", ToxiBenzene="", ToxiMandelic="", ToxiMethanol="";
+            String ToxiEthanol="", ToxiIPA="", ToxiArsenic="", ToxiHexane="", ToxiFomaldehyde="", ToxiTrichloroethylene="", ToxiAntimony="", ToxiFluoride="";
+
+            pB1.Visible = true;
+            pB1.Minimum = 0;
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameToxi);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+            int rowCount = xlRange.Rows.Count, row = 0;
+            pB1.Maximum = rowCount;
+            xlApp.Visible = false;
+            for (int i = int.Parse(ei.StoolExamRow); i <= rowCount; i++)
+            {
+                //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
+                if (xlRange.Cells[i, int.Parse(ei.ToxiNo)].Value2 != null)
+                {
+                    rowNumber = xlRange.Cells[i, int.Parse(ei.ToxiNo)].Value2.ToString();
+                }
+                else
+                {
+                    rowNumber = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiLead)].Value2 != null)
+                {
+                    ToxiLead = xlRange.Cells[i, int.Parse(ei.ToxiLead)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiLead = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiAluminium)].Value2 != null)
+                {
+                    ToxiAluminium = xlRange.Cells[i, int.Parse(ei.ToxiAluminium)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiAluminium = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiCadmium)].Value2 != null)
+                {
+                    ToxiCadmium = xlRange.Cells[i, int.Parse(ei.ToxiCadmium)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiCadmium = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiMercury)].Value2 != null)
+                {
+                    ToxiMercury = xlRange.Cells[i, int.Parse(ei.ToxiMercury)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiMercury = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiTin)].Value2 != null)
+                {
+                    ToxiTin = xlRange.Cells[i, int.Parse(ei.ToxiTin)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiTin = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiCopper)].Value2 != null)
+                {
+                    ToxiCopper = xlRange.Cells[i, int.Parse(ei.ToxiCopper)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiCopper = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiManganese)].Value2 != null)
+                {
+                    ToxiManganese = xlRange.Cells[i, int.Parse(ei.ToxiManganese)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiManganese = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiZinc)].Value2 != null)
+                {
+                    ToxiZinc = xlRange.Cells[i, int.Parse(ei.ToxiZinc)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiZinc = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiAmmonia)].Value2 != null)
+                {
+                    ToxiAmmonia = xlRange.Cells[i, int.Parse(ei.ToxiAmmonia)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiAmmonia = "";
+                }
+
+                if (xlRange.Cells[i, int.Parse(ei.ToxiHippuric)].Value2 != null)
+                {
+                    ToxiHippuric = xlRange.Cells[i, int.Parse(ei.ToxiHippuric)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiHippuric = "";
+                }
+
+                if (xlRange.Cells[i, int.Parse(ei.ToxiMethyl)].Value2 != null)
+                {
+                    ToxiMethyl = xlRange.Cells[i, int.Parse(ei.ToxiMethyl)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiMethyl = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiAcetone)].Value2 != null)
+                {
+                    ToxiAcetone = xlRange.Cells[i, int.Parse(ei.ToxiAcetone)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiAcetone = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiNickel)].Value2 != null)
+                {
+                    ToxiNickel = xlRange.Cells[i, int.Parse(ei.ToxiNickel)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiNickel = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiChromium)].Value2 != null)
+                {
+                    ToxiChromium = xlRange.Cells[i, int.Parse(ei.ToxiChromium)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiChromium = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiPhenol)].Value2 != null)
+                {
+                    ToxiPhenol = xlRange.Cells[i, int.Parse(ei.ToxiPhenol)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiPhenol = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiKetone)].Value2 != null)
+                {
+                    ToxiKetone = xlRange.Cells[i, int.Parse(ei.ToxiKetone)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiKetone = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiBenzene)].Value2 != null)
+                {
+                    ToxiBenzene = xlRange.Cells[i, int.Parse(ei.ToxiBenzene)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiBenzene = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiMandelic)].Value2 != null)
+                {
+                    ToxiMandelic = xlRange.Cells[i, int.Parse(ei.ToxiMandelic)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiMandelic = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiMethanol)].Value2 != null)
+                {
+                    ToxiMethanol = xlRange.Cells[i, int.Parse(ei.ToxiMethanol)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiMethanol = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiEthanol)].Value2 != null)
+                {
+                    ToxiEthanol = xlRange.Cells[i, int.Parse(ei.ToxiEthanol)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiEthanol = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiIPA)].Value2 != null)
+                {
+                    ToxiIPA = xlRange.Cells[i, int.Parse(ei.ToxiIPA)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiIPA = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiArsenic)].Value2 != null)
+                {
+                    ToxiArsenic = xlRange.Cells[i, int.Parse(ei.ToxiArsenic)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiArsenic = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiHexane)].Value2 != null)
+                {
+                    ToxiHexane = xlRange.Cells[i, int.Parse(ei.ToxiHexane)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiHexane = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiFomaldehyde)].Value2 != null)
+                {
+                    ToxiFomaldehyde = xlRange.Cells[i, int.Parse(ei.ToxiFomaldehyde)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiFomaldehyde = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiTrichloroethylene)].Value2 != null)
+                {
+                    ToxiTrichloroethylene = xlRange.Cells[i, int.Parse(ei.ToxiTrichloroethylene)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiTrichloroethylene = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiAntimony)].Value2 != null)
+                {
+                    ToxiAntimony = xlRange.Cells[i, int.Parse(ei.ToxiAntimony)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiAntimony = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ToxiFluoride)].Value2 != null)
+                {
+                    ToxiFluoride = xlRange.Cells[i, int.Parse(ei.ToxiFluoride)].Value2.ToString();
+                }
+                else
+                {
+                    ToxiFluoride = "";
+                }
+
+                chk = cc.ccpdb.updateToxi1(rowNumber, txtId.Text, ToxiLead, ToxiAluminium, ToxiCadmium, ToxiMercury, ToxiTin, ToxiCopper, ToxiManganese, ToxiZinc, ToxiAmmonia);
+                chk = cc.ccpdb.updateToxi2(rowNumber, txtId.Text, ToxiHippuric, ToxiMethyl, ToxiAcetone, ToxiNickel, ToxiChromium, ToxiPhenol, ToxiKetone, ToxiBenzene, ToxiMandelic, ToxiMethanol,
+                    ToxiEthanol, ToxiIPA, ToxiArsenic, ToxiHexane, ToxiFomaldehyde, ToxiTrichloroethylene, ToxiAntimony, ToxiFluoride);
+                pB1.Value = i;
+                row++;
+            }
+            xlWorkbook.Close(true, misValue, misValue);
+            xlApp.Quit();
+            pB1.Visible = false;
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
+            setGrdStoolExam(txtId.Text);
+            cc.cucdb.updateEyeImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row);
+            txtStoolExamCntEmp.Text = rowCount.ToString();
+            txtStoolExamSucess.Text = row.ToString();
+            Cursor.Current = cursor;
+        }
+
+        private void btnToxiExcel_Click(object sender, EventArgs e)
+        {
+            ofd.ShowDialog();
+            fileNameToxi = ofd.FileName;
             btnEyeImport.Enabled = true;
         }
     }

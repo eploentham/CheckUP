@@ -212,6 +212,34 @@ namespace CheckUP.gui
             nmDStoolExamSummary.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamSummary));
             nmDStoolExamWBC.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamWbc));
 
+            nmDToxiLead.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiLead));
+            nmDToxiAluminium.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiAluminium));
+            nmDToxiCadmium.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiCadmium));
+            nmDToxiMercury.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiMercury));
+            nmDToxiTin.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiTin));
+            nmDToxiCopper.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiCopper));
+            nmDToxiManganese.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiManganese));
+            nmDToxiZinc.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiZinc));
+            nmDToxiAmmonia.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiAmmonia));
+
+            nmDToxiHippuric.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiHippuric));
+            nmDToxiMethyl.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiMethyl));
+            nmDToxiAcetone.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiAcetone));
+            nmDToxiNickel.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiNickel));
+            nmDToxiChromium.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiChromium));
+            nmDToxiPhenol.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiPhenol));
+            nmDToxiKetone.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiKetone));
+            nmDToxiBenzene.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiBenzene));
+            nmDToxiMandelic.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiMandelic));
+            nmDToxiMethanol.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiMethanol));
+            nmDToxiEthanol.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiEthanol));
+            nmDToxiIPA.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiIPA));
+            nmDToxiArsenic.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiArsenic));
+            nmDToxiHexane.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiHexane));
+            nmDToxiFomaldehyde.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiFomaldehyde));
+            nmDToxiTrichloroethylene.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiTrichloroethylene));
+            nmDToxiAntimony.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiAntimony));
+            nmDToxiFluoride.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiFluoride));
 
             lbPE.Left = label3.Left;
             lbXRay.Left = label3.Left;
@@ -1267,9 +1295,13 @@ namespace CheckUP.gui
                 MessageBox.Show("บันทึกข้อมูล AudioGram เรียบร้อย", "บันทึกข้อมูล");
             }
         }
-        private void SaveChem()
+        private void SaveToxi1()
         {
-            String ChemRow = "", ChemNo = "", LungFvcPredic = "", LungFvcMeas = "", LungFvcPer = "", LungFev1Predic = "", LungFev1Meas = "", LungFev1Per = "", LungPerFev1 = "", LungSummary = "";
+            String toxiRow = "", toxiNo = "";//, LungFvcPredic = "", LungFvcMeas = "", LungFvcPer = "", LungFev1Predic = "", LungFev1Meas = "", LungFev1Per = "", LungPerFev1 = "", LungSummary = "";
+            
+            String ToxiLead = "", ToxiAluminium = "", ToxiCadmium = "", ToxiMercury = "", ToxiTin = "", ToxiCopper = "", ToxiManganese = "", ToxiZinc = "", ToxiAmmonia = "";
+            //String ToxiHippuric = "", ToxiMethyl = "", ToxiAcetone = "", ToxiNickel = "", ToxiChromium = "", ToxiPhenol = "", ToxiKetone = "", ToxiBenzene = "", ToxiMandelic = "", ToxiMethanol = "";
+            //String ToxiEthanol = "", ToxiIPA = "", ToxiArsenic = "", ToxiHexane = "", ToxiFomaldehyde = "", ToxiTrichloroethylene = "", ToxiAntimony = "", ToxiFluoride = "";
             ofd.ShowDialog();
 
             Cursor cursor = Cursor.Current;
@@ -1279,96 +1311,563 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
 
-            if (xlRange.Cells[nmDLungRow.Value, nmDLungNo.Value].Value2 != null)
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiNo.Value].Value2 != null)
             {
-                ChemNo = xlRange.Cells[nmDLungRow.Value, nmDLungNo.Value].Value2.ToString();
+                toxiNo = xlRange.Cells[nmDToxiRow.Value, nmDToxiNo.Value].Value2.ToString();
             }
             else
             {
-                ChemNo = "";
+                toxiNo = "";
             }
-            ChemNo = ChemNo.Trim();
-            if (xlRange.Cells[nmDLungRow.Value, nmDLungFvcPredic.Value].Value2 != null)
+            toxiNo = toxiNo.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiLead.Value].Value2 != null)
             {
-                LungFvcPredic = xlRange.Cells[nmDLungRow.Value, nmDLungFvcPredic.Value].Value2.ToString();
+                ToxiLead = xlRange.Cells[nmDToxiRow.Value, nmDToxiLead.Value].Value2.ToString();
             }
             else
             {
-                LungFvcPredic = "";
+                ToxiLead = "";
             }
-            LungFvcPredic = LungFvcPredic.Trim();
-            if (xlRange.Cells[nmDLungRow.Value, nmDLungFvcMeas.Value].Value2 != null)
+            ToxiLead = ToxiLead.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiAluminium.Value].Value2 != null)
             {
-                LungFvcMeas = xlRange.Cells[nmDLungRow.Value, nmDLungFvcMeas.Value].Value2.ToString();
+                ToxiAluminium = xlRange.Cells[nmDToxiRow.Value, nmDToxiAluminium.Value].Value2.ToString();
             }
             else
             {
-                LungFvcMeas = "";
+                ToxiAluminium = "";
             }
-            LungFvcMeas = LungFvcMeas.Trim();
-            if (xlRange.Cells[nmDLungRow.Value, nmDLungFvcPer.Value].Value2 != null)
+            ToxiAluminium = ToxiAluminium.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiCadmium.Value].Value2 != null)
             {
-                LungFvcPer = xlRange.Cells[nmDLungRow.Value, nmDLungFvcPer.Value].Value2.ToString();
+                ToxiCadmium = xlRange.Cells[nmDToxiRow.Value, nmDToxiCadmium.Value].Value2.ToString();
             }
             else
             {
-                LungFvcPer = "";
+                ToxiCadmium = "";
             }
-            LungFvcPer = LungFvcPer.Trim();
-            if (xlRange.Cells[nmDLungRow.Value, nmDLungFev1Predic.Value].Value2 != null)
+            ToxiCadmium = ToxiCadmium.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiMercury.Value].Value2 != null)
             {
-                LungFev1Predic = xlRange.Cells[nmDLungRow.Value, nmDLungFev1Predic.Value].Value2.ToString();
+                ToxiMercury = xlRange.Cells[nmDToxiRow.Value, nmDToxiMercury.Value].Value2.ToString();
             }
             else
             {
-                LungFev1Predic = "";
+                ToxiMercury = "";
             }
-            LungFev1Predic = LungFev1Predic.Trim();
-            if (xlRange.Cells[nmDLungRow.Value, nmDLungFev1Meas.Value].Value2 != null)
+            ToxiMercury = ToxiMercury.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiTin.Value].Value2 != null)
             {
-                LungFev1Meas = xlRange.Cells[nmDLungRow.Value, nmDLungFev1Meas.Value].Value2.ToString();
+                ToxiTin = xlRange.Cells[nmDToxiRow.Value, nmDToxiTin.Value].Value2.ToString();
             }
             else
             {
-                LungFev1Meas = "";
+                ToxiTin = "";
             }
-            LungFev1Meas = LungFev1Meas.Trim();
-            if (xlRange.Cells[nmDLungRow.Value, nmDLungFev1Per.Value].Value2 != null)
+            ToxiTin = ToxiTin.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiCopper.Value].Value2 != null)
             {
-                LungFev1Per = xlRange.Cells[nmDLungRow.Value, nmDLungFev1Per.Value].Value2.ToString();
+                ToxiCopper = xlRange.Cells[nmDToxiRow.Value, nmDToxiCopper.Value].Value2.ToString();
             }
             else
             {
-                LungFev1Per = "";
+                ToxiCopper = "";
             }
-            LungFev1Per = LungFev1Per.Trim();
-            if (xlRange.Cells[nmDLungRow.Value, nmDLungPerFev1.Value].Value2 != null)
+            ToxiCopper = ToxiCopper.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiManganese.Value].Value2 != null)
             {
-                LungPerFev1 = xlRange.Cells[nmDLungRow.Value, nmDLungPerFev1.Value].Value2.ToString();
+                ToxiManganese = xlRange.Cells[nmDToxiRow.Value, nmDToxiManganese.Value].Value2.ToString();
             }
             else
             {
-                LungPerFev1 = "";
+                ToxiManganese = "";
             }
-            LungPerFev1 = LungPerFev1.Trim();
-            if (xlRange.Cells[nmDLungRow.Value, nmDLungSummary.Value].Value2 != null)
+            ToxiManganese = ToxiManganese.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiZinc.Value].Value2 != null)
             {
-                LungSummary = xlRange.Cells[nmDLungRow.Value, nmDLungSummary.Value].Value2.ToString();
+                ToxiZinc = xlRange.Cells[nmDToxiRow.Value, nmDToxiZinc.Value].Value2.ToString();
             }
             else
             {
-                LungSummary = "";
+                ToxiZinc = "";
             }
-            LungSummary = LungSummary.Trim();
-            txtLungTest.Text = "ลำดับ " + ChemNo + " FvcPredic " + LungFvcPredic + " FvcMeas " + LungFvcMeas + " FvcPer " + LungFvcPer +
-                " Fev1Predic " + LungFev1Predic + " Fev1Meas " + LungFev1Meas + " Fev1Per " + LungFev1Per + " PerFev1 " + LungPerFev1 + " Summary " + LungSummary;
+            ToxiZinc = ToxiZinc.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiAmmonia.Value].Value2 != null)
+            {
+                ToxiAmmonia = xlRange.Cells[nmDToxiRow.Value, nmDToxiAmmonia.Value].Value2.ToString();
+            }
+            else
+            {
+                ToxiAmmonia = "";
+            }
+            ToxiAmmonia = ToxiAmmonia.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiHippuric.Value].Value2 != null)
+            //{
+            //    ToxiHippuric = xlRange.Cells[nmDToxiRow.Value, nmDToxiHippuric.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiHippuric = "";
+            //}
+            //ToxiHippuric = ToxiHippuric.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiMethyl.Value].Value2 != null)
+            //{
+            //    ToxiMethyl = xlRange.Cells[nmDToxiRow.Value, nmDToxiMethyl.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiMethyl = "";
+            //}
+            //ToxiMethyl = ToxiMethyl.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiAcetone.Value].Value2 != null)
+            //{
+            //    ToxiAcetone = xlRange.Cells[nmDToxiRow.Value, nmDToxiAcetone.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiAcetone = "";
+            //}
+            //ToxiAcetone = ToxiAcetone.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiNickel.Value].Value2 != null)
+            //{
+            //    ToxiNickel = xlRange.Cells[nmDToxiRow.Value, nmDToxiNickel.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiNickel = "";
+            //}
+            //ToxiNickel = ToxiNickel.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiChromium.Value].Value2 != null)
+            //{
+            //    ToxiChromium = xlRange.Cells[nmDToxiRow.Value, nmDToxiChromium.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiChromium = "";
+            //}
+            //ToxiChromium = ToxiChromium.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiPhenol.Value].Value2 != null)
+            //{
+            //    ToxiPhenol = xlRange.Cells[nmDToxiRow.Value, nmDToxiPhenol.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiPhenol = "";
+            //}
+            //ToxiPhenol = ToxiPhenol.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiKetone.Value].Value2 != null)
+            //{
+            //    ToxiKetone = xlRange.Cells[nmDToxiRow.Value, nmDToxiKetone.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiKetone = "";
+            //}
+            //ToxiKetone = ToxiKetone.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiBenzene.Value].Value2 != null)
+            //{
+            //    ToxiBenzene = xlRange.Cells[nmDToxiRow.Value, nmDToxiBenzene.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiBenzene = "";
+            //}
+            //ToxiBenzene = ToxiBenzene.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiMandelic.Value].Value2 != null)
+            //{
+            //    ToxiMandelic = xlRange.Cells[nmDToxiRow.Value, nmDToxiMandelic.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiMandelic = "";
+            //}
+            //ToxiMandelic = ToxiMandelic.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiMethanol.Value].Value2 != null)
+            //{
+            //    ToxiMethanol = xlRange.Cells[nmDToxiRow.Value, nmDToxiMethanol.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiMethanol = "";
+            //}
+            //ToxiMethanol = ToxiMethanol.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiEthanol.Value].Value2 != null)
+            //{
+            //    ToxiEthanol = xlRange.Cells[nmDToxiRow.Value, nmDToxiEthanol.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiEthanol = "";
+            //}
+            //ToxiEthanol = ToxiEthanol.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiIPA.Value].Value2 != null)
+            //{
+            //    ToxiIPA = xlRange.Cells[nmDToxiRow.Value, nmDToxiIPA.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiIPA = "";
+            //}
+            //ToxiIPA = ToxiIPA.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiArsenic.Value].Value2 != null)
+            //{
+            //    ToxiArsenic = xlRange.Cells[nmDToxiRow.Value, nmDToxiArsenic.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiArsenic = "";
+            //}
+            //ToxiArsenic = ToxiArsenic.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiHexane.Value].Value2 != null)
+            //{
+            //    ToxiHexane = xlRange.Cells[nmDToxiRow.Value, nmDToxiHexane.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiHexane = "";
+            //}
+            //ToxiHexane = ToxiHexane.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiFomaldehyde.Value].Value2 != null)
+            //{
+            //    ToxiFomaldehyde = xlRange.Cells[nmDToxiRow.Value, nmDToxiFomaldehyde.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiFomaldehyde = "";
+            //}
+            //ToxiFomaldehyde = ToxiFomaldehyde.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiTrichloroethylene.Value].Value2 != null)
+            //{
+            //    ToxiTrichloroethylene = xlRange.Cells[nmDToxiRow.Value, nmDToxiTrichloroethylene.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiTrichloroethylene = "";
+            //}
+            //ToxiTrichloroethylene = ToxiTrichloroethylene.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiAntimony.Value].Value2 != null)
+            //{
+            //    ToxiAntimony = xlRange.Cells[nmDToxiRow.Value, nmDToxiAntimony.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiAntimony = "";
+            //}
+            //ToxiAntimony = ToxiAntimony.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiFluoride.Value].Value2 != null)
+            //{
+            //    ToxiFluoride = xlRange.Cells[nmDToxiRow.Value, nmDToxiFluoride.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiFluoride = "";
+            //}
+            //ToxiFluoride = ToxiFluoride.Trim();
+            txtToxi1Test.Text = "ลำดับ " + toxiNo + " ToxiLead " + ToxiLead + " ToxiAluminium " + ToxiAluminium + " ToxiCadmium " + ToxiCadmium +
+                " ToxiMercury " + ToxiMercury + " ToxiTin " + ToxiTin + " ToxiCopper " + ToxiCopper + " ToxiManganese " + ToxiManganese + " ToxiZinc " + ToxiZinc +
+                " ToxiAmmonia " + ToxiAmmonia;
 
             Cursor.Current = cursor;
-            if (cc.eidb.updateLung(nmDLungRow.Value.ToString(), nmDLungNo.Value.ToString(), nmDLungFvcPredic.Value.ToString(), nmDLungFvcMeas.Value.ToString(),
-                nmDLungFvcPer.Value.ToString(), nmDLungFev1Predic.Value.ToString(), nmDLungFev1Meas.Value.ToString(), nmDLungFev1Per.Value.ToString(),
-                nmDLungPerFev1.Value.ToString(), nmDLungSummary.Value.ToString()).Length >= 1)
+            if (cc.eidb.updateToxi1(nmDToxiRow.Value.ToString(), nmDToxiNo.Value.ToString(), nmDToxiLead.Value.ToString(), nmDToxiAluminium.Value.ToString(),
+                nmDToxiCadmium.Value.ToString(), nmDToxiMercury.Value.ToString(), nmDToxiTin.Value.ToString(), nmDToxiCopper.Value.ToString(),
+                nmDToxiManganese.Value.ToString(), nmDToxiZinc.Value.ToString(), nmDToxiAmmonia.Value.ToString()).Length >= 1)
             {
-                MessageBox.Show("บันทึกข้อมูล Lung เรียบร้อย", "บันทึกข้อมูล");
+                MessageBox.Show("บันทึกข้อมูล Toxi1 เรียบร้อย", "บันทึกข้อมูล");
+            }
+            //if (cc.eidb.updateToxi2(nmDToxiHippuric.Value.ToString(), nmDToxiMethyl.Value.ToString(), nmDToxiAcetone.Value.ToString(), nmDToxiNickel.Value.ToString(),
+            //    nmDToxiChromium.Value.ToString(), nmDToxiPhenol.Value.ToString(), nmDToxiKetone.Value.ToString(), nmDToxiBenzene.Value.ToString(),
+            //    nmDToxiMandelic.Value.ToString(), nmDToxiMethanol.Value.ToString(), nmDToxiEthanol.Value.ToString(), nmDToxiIPA.Value.ToString(), nmDToxiArsenic.Value.ToString(),
+            //    nmDToxiHexane.Value.ToString(), nmDToxiFomaldehyde.Value.ToString(), nmDToxiTrichloroethylene.Value.ToString(), nmDToxiAntimony.Value.ToString(), nmDToxiFluoride.Value.ToString()).Length >= 1)
+            //{
+            //    MessageBox.Show("บันทึกข้อมูล Toxi เรียบร้อย", "บันทึกข้อมูล");
+            //}
+        }
+        private void SaveToxi2()
+        {
+            String toxiRow = "", toxiNo = "";//, LungFvcPredic = "", LungFvcMeas = "", LungFvcPer = "", LungFev1Predic = "", LungFev1Meas = "", LungFev1Per = "", LungPerFev1 = "", LungSummary = "";
+
+            //String ToxiLead = "", ToxiAluminium = "", ToxiCadmium = "", ToxiMercury = "", ToxiTin = "", ToxiCopper = "", ToxiManganese = "", ToxiZinc = "", ToxiAmmonia = "";
+            String ToxiHippuric = "", ToxiMethyl = "", ToxiAcetone = "", ToxiNickel = "", ToxiChromium = "", ToxiPhenol = "", ToxiKetone = "", ToxiBenzene = "", ToxiMandelic = "", ToxiMethanol = "";
+            String ToxiEthanol = "", ToxiIPA = "", ToxiArsenic = "", ToxiHexane = "", ToxiFomaldehyde = "", ToxiTrichloroethylene = "", ToxiAntimony = "", ToxiFluoride = "";
+            ofd.ShowDialog();
+
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiNo.Value].Value2 != null)
+            {
+                toxiNo = xlRange.Cells[nmDToxiRow.Value, nmDToxiNo.Value].Value2.ToString();
+            }
+            else
+            {
+                toxiNo = "";
+            }
+            toxiNo = toxiNo.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiLead.Value].Value2 != null)
+            //{
+            //    ToxiLead = xlRange.Cells[nmDToxiRow.Value, nmDToxiLead.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiLead = "";
+            //}
+            //ToxiLead = ToxiLead.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiAluminium.Value].Value2 != null)
+            //{
+            //    ToxiAluminium = xlRange.Cells[nmDToxiRow.Value, nmDToxiAluminium.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiAluminium = "";
+            //}
+            //ToxiAluminium = ToxiAluminium.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiCadmium.Value].Value2 != null)
+            //{
+            //    ToxiCadmium = xlRange.Cells[nmDToxiRow.Value, nmDToxiCadmium.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiCadmium = "";
+            //}
+            //ToxiCadmium = ToxiCadmium.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiMercury.Value].Value2 != null)
+            //{
+            //    ToxiMercury = xlRange.Cells[nmDToxiRow.Value, nmDToxiMercury.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiMercury = "";
+            //}
+            //ToxiMercury = ToxiMercury.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiTin.Value].Value2 != null)
+            //{
+            //    ToxiTin = xlRange.Cells[nmDToxiRow.Value, nmDToxiTin.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiTin = "";
+            //}
+            //ToxiTin = ToxiTin.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiCopper.Value].Value2 != null)
+            //{
+            //    ToxiCopper = xlRange.Cells[nmDToxiRow.Value, nmDToxiCopper.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiCopper = "";
+            //}
+            //ToxiCopper = ToxiCopper.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiManganese.Value].Value2 != null)
+            //{
+            //    ToxiManganese = xlRange.Cells[nmDToxiRow.Value, nmDToxiManganese.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiManganese = "";
+            //}
+            //ToxiManganese = ToxiManganese.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiZinc.Value].Value2 != null)
+            //{
+            //    ToxiZinc = xlRange.Cells[nmDToxiRow.Value, nmDToxiZinc.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiZinc = "";
+            //}
+            //ToxiZinc = ToxiZinc.Trim();
+            //if (xlRange.Cells[nmDToxiRow.Value, nmDToxiAmmonia.Value].Value2 != null)
+            //{
+            //    ToxiAmmonia = xlRange.Cells[nmDToxiRow.Value, nmDToxiAmmonia.Value].Value2.ToString();
+            //}
+            //else
+            //{
+            //    ToxiAmmonia = "";
+            //}
+            //ToxiAmmonia = ToxiAmmonia.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiHippuric.Value].Value2 != null)
+            {
+                ToxiHippuric = xlRange.Cells[nmDToxiRow.Value, nmDToxiHippuric.Value].Value2.ToString();
+            }
+            else
+            {
+                ToxiHippuric = "";
+            }
+            ToxiHippuric = ToxiHippuric.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiMethyl.Value].Value2 != null)
+            {
+                ToxiMethyl = xlRange.Cells[nmDToxiRow.Value, nmDToxiMethyl.Value].Value2.ToString();
+            }
+            else
+            {
+                ToxiMethyl = "";
+            }
+            ToxiMethyl = ToxiMethyl.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiAcetone.Value].Value2 != null)
+            {
+                ToxiAcetone = xlRange.Cells[nmDToxiRow.Value, nmDToxiAcetone.Value].Value2.ToString();
+            }
+            else
+            {
+                ToxiAcetone = "";
+            }
+            ToxiAcetone = ToxiAcetone.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiNickel.Value].Value2 != null)
+            {
+                ToxiNickel = xlRange.Cells[nmDToxiRow.Value, nmDToxiNickel.Value].Value2.ToString();
+            }
+            else
+            {
+                ToxiNickel = "";
+            }
+            ToxiNickel = ToxiNickel.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiChromium.Value].Value2 != null)
+            {
+                ToxiChromium = xlRange.Cells[nmDToxiRow.Value, nmDToxiChromium.Value].Value2.ToString();
+            }
+            else
+            {
+                ToxiChromium = "";
+            }
+            ToxiChromium = ToxiChromium.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiPhenol.Value].Value2 != null)
+            {
+                ToxiPhenol = xlRange.Cells[nmDToxiRow.Value, nmDToxiPhenol.Value].Value2.ToString();
+            }
+            else
+            {
+                ToxiPhenol = "";
+            }
+            ToxiPhenol = ToxiPhenol.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiKetone.Value].Value2 != null)
+            {
+                ToxiKetone = xlRange.Cells[nmDToxiRow.Value, nmDToxiKetone.Value].Value2.ToString();
+            }
+            else
+            {
+                ToxiKetone = "";
+            }
+            ToxiKetone = ToxiKetone.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiBenzene.Value].Value2 != null)
+            {
+                ToxiBenzene = xlRange.Cells[nmDToxiRow.Value, nmDToxiBenzene.Value].Value2.ToString();
+            }
+            else
+            {
+                ToxiBenzene = "";
+            }
+            ToxiBenzene = ToxiBenzene.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiMandelic.Value].Value2 != null)
+            {
+                ToxiMandelic = xlRange.Cells[nmDToxiRow.Value, nmDToxiMandelic.Value].Value2.ToString();
+            }
+            else
+            {
+                ToxiMandelic = "";
+            }
+            ToxiMandelic = ToxiMandelic.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiMethanol.Value].Value2 != null)
+            {
+                ToxiMethanol = xlRange.Cells[nmDToxiRow.Value, nmDToxiMethanol.Value].Value2.ToString();
+            }
+            else
+            {
+                ToxiMethanol = "";
+            }
+            ToxiMethanol = ToxiMethanol.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiEthanol.Value].Value2 != null)
+            {
+                ToxiEthanol = xlRange.Cells[nmDToxiRow.Value, nmDToxiEthanol.Value].Value2.ToString();
+            }
+            else
+            {
+                ToxiEthanol = "";
+            }
+            ToxiEthanol = ToxiEthanol.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiIPA.Value].Value2 != null)
+            {
+                ToxiIPA = xlRange.Cells[nmDToxiRow.Value, nmDToxiIPA.Value].Value2.ToString();
+            }
+            else
+            {
+                ToxiIPA = "";
+            }
+            ToxiIPA = ToxiIPA.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiArsenic.Value].Value2 != null)
+            {
+                ToxiArsenic = xlRange.Cells[nmDToxiRow.Value, nmDToxiArsenic.Value].Value2.ToString();
+            }
+            else
+            {
+                ToxiArsenic = "";
+            }
+            ToxiArsenic = ToxiArsenic.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiHexane.Value].Value2 != null)
+            {
+                ToxiHexane = xlRange.Cells[nmDToxiRow.Value, nmDToxiHexane.Value].Value2.ToString();
+            }
+            else
+            {
+                ToxiHexane = "";
+            }
+            ToxiHexane = ToxiHexane.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiFomaldehyde.Value].Value2 != null)
+            {
+                ToxiFomaldehyde = xlRange.Cells[nmDToxiRow.Value, nmDToxiFomaldehyde.Value].Value2.ToString();
+            }
+            else
+            {
+                ToxiFomaldehyde = "";
+            }
+            ToxiFomaldehyde = ToxiFomaldehyde.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiTrichloroethylene.Value].Value2 != null)
+            {
+                ToxiTrichloroethylene = xlRange.Cells[nmDToxiRow.Value, nmDToxiTrichloroethylene.Value].Value2.ToString();
+            }
+            else
+            {
+                ToxiTrichloroethylene = "";
+            }
+            ToxiTrichloroethylene = ToxiTrichloroethylene.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiAntimony.Value].Value2 != null)
+            {
+                ToxiAntimony = xlRange.Cells[nmDToxiRow.Value, nmDToxiAntimony.Value].Value2.ToString();
+            }
+            else
+            {
+                ToxiAntimony = "";
+            }
+            ToxiAntimony = ToxiAntimony.Trim();
+            if (xlRange.Cells[nmDToxiRow.Value, nmDToxiFluoride.Value].Value2 != null)
+            {
+                ToxiFluoride = xlRange.Cells[nmDToxiRow.Value, nmDToxiFluoride.Value].Value2.ToString();
+            }
+            else
+            {
+                ToxiFluoride = "";
+            }
+            ToxiFluoride = ToxiFluoride.Trim();
+            txtToxi2Test.Text = " ToxiHippuric " + ToxiHippuric + " ToxiMethyl " + ToxiMethyl + " ToxiAcetone " + ToxiAcetone + " ToxiNickel " + ToxiNickel +
+                " ToxiChromium " + ToxiChromium + " ToxiPhenol " + ToxiPhenol + " ToxiKetone " + ToxiKetone + " ToxiBenzene " + ToxiBenzene + " ToxiMandelic " + ToxiMandelic +
+                " ToxiMethanol " + ToxiMethanol + " ToxiEthanol " + ToxiEthanol + " ToxiIPA " + ToxiIPA + " ToxiArsenic " + ToxiArsenic + " ToxiHexane " + ToxiHexane +
+                " ToxiFomaldehyde " + ToxiFomaldehyde + " ToxiTrichloroethylene " + ToxiTrichloroethylene + " ToxiAntimony " + ToxiAntimony + " ToxiFluoride " + ToxiFluoride;
+
+            Cursor.Current = cursor;
+            //if (cc.eidb.updateToxi1(nmDToxiRow.Value.ToString(), nmDToxiNo.Value.ToString(), nmDToxiLead.Value.ToString(), nmDToxiAluminium.Value.ToString(),
+            //    nmDToxiCadmium.Value.ToString(), nmDToxiMercury.Value.ToString(), nmDToxiTin.Value.ToString(), nmDToxiCopper.Value.ToString(),
+            //    nmDToxiManganese.Value.ToString(), nmDToxiZinc.Value.ToString(), nmDToxiAmmonia.Value.ToString()).Length >= 1)
+            //{
+            //    MessageBox.Show("บันทึกข้อมูล Toxi เรียบร้อย", "บันทึกข้อมูล");
+            //}
+            if (cc.eidb.updateToxi2(nmDToxiHippuric.Value.ToString(), nmDToxiMethyl.Value.ToString(), nmDToxiAcetone.Value.ToString(), nmDToxiNickel.Value.ToString(),
+                nmDToxiChromium.Value.ToString(), nmDToxiPhenol.Value.ToString(), nmDToxiKetone.Value.ToString(), nmDToxiBenzene.Value.ToString(),
+                nmDToxiMandelic.Value.ToString(), nmDToxiMethanol.Value.ToString(), nmDToxiEthanol.Value.ToString(), nmDToxiIPA.Value.ToString(), nmDToxiArsenic.Value.ToString(),
+                nmDToxiHexane.Value.ToString(), nmDToxiFomaldehyde.Value.ToString(), nmDToxiTrichloroethylene.Value.ToString(), nmDToxiAntimony.Value.ToString(), nmDToxiFluoride.Value.ToString()).Length >= 1)
+            {
+                MessageBox.Show("บันทึกข้อมูล Toxi2 เรียบร้อย", "บันทึกข้อมูล");
             }
         }
         private void FrmExcelInit_Load(object sender, EventArgs e)
@@ -2074,14 +2573,19 @@ namespace CheckUP.gui
             SaveEye();
         }
 
-        private void btnChemBExcel_Click(object sender, EventArgs e)
-        {
-            SaveChem();
-        }
-
         private void btnStoolExamExcel_Click(object sender, EventArgs e)
         {
             SaveStoolExam();
+        }
+
+        private void btnToxi2Excel_Click(object sender, EventArgs e)
+        {
+            SaveToxi2();
+        }
+
+        private void btnToxi1Excel_Click(object sender, EventArgs e)
+        {
+            SaveToxi1();
         }
     }
 }

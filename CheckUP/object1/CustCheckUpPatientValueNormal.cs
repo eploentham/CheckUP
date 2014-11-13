@@ -25,7 +25,12 @@ namespace CheckUP.object1
         public String fSexId="";    
         public String summaryPhysicalExam="";    
         public String stoolExamColor="", stoolExamAppearance="", stoolExamWbc="", stoolExamRbc="", stoolExamParasite="", stoolExamSummary="";
-        public String toxicologyLead = "", toxicologyMercury = "", toxicologyBenzene = "", toxicologyXylene = "";
+
+        public String toxiLead = "", toxiAluminium = "", toxiCadmium = "", toxiMercury = "", toxiTin = "", toxiCopper = "", toxiManganese = "", toxiZinc = "", toxiAmmonia = "";
+        public String toxiHippuric = "", toxiMethyl = "", toxiAcetone = "", toxiNickel = "", toxiChromium = "", toxiPhenol = "", toxiKetone = "", toxiBenzene = "", toxiMandelic = "", toxiMethanol = "";
+        public String toxiEthanol = "", toxiIPA = "", toxiArsenic = "", toxiHexane = "", toxiFomaldehyde = "", toxiTrichloroethylene = "", toxiAntimony = "", toxiFluoride = "";
+
+        //public String toxicologyLead = "", toxicologyMercury = "", toxicologyBenzene = "", toxicologyXylene = "";
         //public String toxicologyLead="";
         //public String toxicologyMercury="";
         //public String toxicologyBenzene="";
@@ -134,7 +139,7 @@ namespace CheckUP.object1
         public String statusName="";
         public String rowNumber = "";
         public String cbcMcv="";
-        public String toxicologyToluene="";
+        //public String toxicologyToluene="";
         public String thyroidRubellaLgg="";
         public String billirubin="";
         public String toxicologyThinner="";
@@ -171,10 +176,10 @@ namespace CheckUP.object1
         public String bmi="";
         public String caFt3="";
         public String hbtyping="";
-        public String toxicologyHexane="";
-        public String toxicologyMethanol="";
-        public String toxicologyMek="";
-        public String toxicologyAcetone="";
+        //public String toxicologyHexane="";
+        //public String toxicologyMethanol="";
+        //public String toxicologyMek="";
+        //public String toxicologyAcetone="";
         public String antiHbc="";
         public String eyeLeft = "";
         public String eyeRight = "";

@@ -63,10 +63,11 @@ namespace CheckUP.objdb
             ccp.StoolExamParasite = "stool_exam_parasite";
             ccp.StoolExamSummary = "stool_exam_summary";
 
-            ccp.toxicologyLead = "toxicology_lead";
-            ccp.toxicologyMercury = "toxicology_mercury";
-            ccp.toxicologyBenzene = "toxicology_benzene";
-            ccp.toxicologyXylene = "toxicology_xylene";
+            //ccp.toxicologyLead = "toxicology_lead";
+            //ccp.toxicologyMercury = "toxicology_mercury";
+            //ccp.toxicologyBenzene = "toxicology_benzene";
+            //ccp.toxicologyXylene = "toxicology_xylene";
+
             ccp.Audiogram500L = "audiogram_500_left";
             ccp.Audiogram1000L = "audiogram_1000_left";
             ccp.Audiogram2000L = "audiogram_2000_left";
@@ -165,11 +166,11 @@ namespace CheckUP.objdb
             ccp.statusName = "status_name";
             ccp.rowNumber="row_number";
             //ccp.cbcMcv="";
-            ccp.toxicologyToluene = "toxicology_toluene";
+            //ccp.toxicologyToluene = "toxicology_toluene";
             ccp.thyroidRubellaLgg = "thyroid_rubella_lgg";
             ccp.billirubin = "billirubin";
-            ccp.toxicologyThinner = "toxicology_thinner";
-            ccp.toxicologyAlcohol = "toxicology_alcohol";
+            //ccp.toxicologyThinner = "toxicology_thinner";
+            //ccp.toxicologyAlcohol = "toxicology_alcohol";
             ccp.stickerQty = "sticker_qty";
             ccp.statusCbc = "status_cbc";
             ccp.statusUa = "status_ua";
@@ -209,10 +210,10 @@ namespace CheckUP.objdb
             ccp.antiHbc = "anti_hbc";
             ccp.caFt3 = "ca_ft3";
             ccp.hbtyping = "hbtyping";
-            ccp.toxicologyHexane = "toxicology_hexane";
-            ccp.toxicologyMethanol = "toxicology_methanol";
-            ccp.toxicologyMek = "toxicology_mek";
-            ccp.toxicologyAcetone = "toxicology_acetone";
+            //ccp.toxicologyHexane = "toxicology_hexane";
+            //ccp.toxicologyMethanol = "toxicology_methanol";
+            //ccp.toxicologyMek = "toxicology_mek";
+            //ccp.toxicologyAcetone = "toxicology_acetone";
             //ccp.antiHbc="";
             ccp.eyeLeft = "";
             ccp.eyeRight = "";
@@ -245,17 +246,17 @@ namespace CheckUP.objdb
             ccp.triglycerideOld = "triglyceride_old";
             ccp.hdlOld = "hdl_old";
             ccp.ldlOld = "ldl_old";
-            ccp.toxicologyLeadOld = "toxicology_lead_old";
-            ccp.toxicologyMercuryOld = "toxicology_mercury_old";
-            ccp.toxicologyBenzeneOld = "toxicology_benzene_old";
-            ccp.toxicologyXyleneOld = "toxicology_xylene_old";
-            ccp.toxicologyThinnerOld = "toxicology_thinner_old";
-            ccp.toxicologyAlcoholOld = "toxicology_alcohol_old";
-            ccp.toxicologyHexaneOld = "toxicology_hexane_old";
-            ccp.toxicologyMethanolOld = "toxicology_methanol_old";
-            ccp.toxicologyMekOld = "toxicology_mek_old";
-            ccp.toxicologyAcetoneOld = "toxicology_acetone_old";
-            ccp.toxicologyTolueneOld = "toxicology_toluene_old";
+            //ccp.toxicologyLeadOld = "toxicology_lead_old";
+            //ccp.toxicologyMercuryOld = "toxicology_mercury_old";
+            //ccp.toxicologyBenzeneOld = "toxicology_benzene_old";
+            //ccp.toxicologyXyleneOld = "toxicology_xylene_old";
+            //ccp.toxicologyThinnerOld = "toxicology_thinner_old";
+            //ccp.toxicologyAlcoholOld = "toxicology_alcohol_old";
+            //ccp.toxicologyHexaneOld = "toxicology_hexane_old";
+            //ccp.toxicologyMethanolOld = "toxicology_methanol_old";
+            //ccp.toxicologyMekOld = "toxicology_mek_old";
+            //ccp.toxicologyAcetoneOld = "toxicology_acetone_old";
+            //ccp.toxicologyTolueneOld = "toxicology_toluene_old";
             ccp.urineLeu = "urine_leu";
             ccp.urineOther = "urine_other";
             ccp.cultureStool = "culture_stool";
@@ -272,6 +273,34 @@ namespace CheckUP.objdb
             ccp.albuminGlobulin = "albumin_globulin";
             ccp.directBillirubin = "direct_billirubin";
             ccp.colorBlindness = "color_blindness";
+
+            ccp.ToxiAcetone = "toxicology_acetone";
+            ccp.ToxiAluminium = "toxicology_aluminium";
+            ccp.ToxiAmmonia = "toxicology_ammonia";
+            ccp.ToxiAntimony = "toxicology_antimony";
+            ccp.ToxiArsenic = "toxicology_arsenic";
+            ccp.ToxiBenzene = "toxicology_benzene";
+            ccp.ToxiCadmium = "toxicology_cadmium";
+            ccp.ToxiChromium = "toxicology_chromium";
+            ccp.ToxiCopper = "toxicology_copper";
+            ccp.ToxiEthanol = "toxicology_ethanol";
+            ccp.ToxiFluoride = "toxicology_fluoride";
+            ccp.ToxiFomaldehyde = "toxicology_fomaldehyde";
+            ccp.ToxiHexane = "toxicology_hexane";
+            ccp.ToxiHippuric = "toxicology_hippuric";
+            ccp.ToxiIPA = "toxicology_ipa";
+            ccp.ToxiKetone = "toxicology_ketone";
+            ccp.ToxiLead = "toxicology_lead";
+            ccp.ToxiMandelic = "toxicology_mandelic";
+            ccp.ToxiManganese = "toxicology_manganese";
+            ccp.ToxiMercury = "toxicology_mercury";
+            ccp.ToxiMethanol = "toxicology_methanol";
+            ccp.ToxiMethyl = "toxicology_methyl";
+            ccp.ToxiNickel = "toxicology_nickel";
+            ccp.ToxiPhenol = "toxicology_phenol";
+            ccp.ToxiTin = "toxicology_tin";
+            ccp.ToxiTrichloroethylene = "toxicology_trichloroethylenel";
+            ccp.ToxiZinc = "toxicology_zinc";
 
             ccp.pkField = "patient_id";
             ccp.table = "t_cust_checkup_patient";
@@ -385,9 +414,7 @@ namespace CheckUP.objdb
                 + ccp.sugarSummary + ","+ccp.urineResult+","
 
                 + ccp.thyroidT3+ "," + ccp.thyroidT4 + ","
-                + ccp.thyroidTsh + "," + ccp.toxicologyBenzene + ","
-                + ccp.toxicologyLead + "," + ccp.toxicologyMercury + ","
-                + ccp.toxicologyXylene + "," + ccp.triglyceride + ","
+                + ccp.thyroidTsh + ","  + ccp.triglyceride + ","
                 + ccp.uricAcid + "," + ccp.urineAppearance + ","
 
                 + ccp.urineBacteria + "," + ccp.urineBlood + ","
@@ -470,9 +497,7 @@ namespace CheckUP.objdb
                 + p.sugarSummary + "','"+p.urineResult+"','"
 
                 + p.thyroidT3 + "','" + p.thyroidT4 + "','"
-                + p.thyroidTsh + "','" + p.toxicologyBenzene + "','"
-                + p.toxicologyLead + "','" + p.toxicologyMercury + "','"
-                + p.toxicologyXylene + "','" + p.triglyceride + "','"
+                + p.thyroidTsh + "','"  + p.triglyceride + "','"
                 + p.uricAcid + "','" + p.urineAppearance + "','"
 
                 + p.urineBacteria + "','" + p.urineBlood + "','"
@@ -544,6 +569,26 @@ namespace CheckUP.objdb
             //CustCheckUpPatient item = new CustCheckUpPatient();
             String chk = "", id = "";
             chk = insert(p);
+            return chk;
+        }
+        public String UpdateName(String rowNumber, String cucId, String name)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.patientFullname + "='" + name + "' " +
+                //ccp.patientAge + "='" + age + "'," +
+                //ccp.departmentName + "='" + department + "' " +
+                
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                lw.WriteLog("ccp.UpdatePE Error " + ex.Message);
+                //max = ex.getMessage;
+            }
+
             return chk;
         }
         public String UpdatePE(String rowNumber, String cucId, String vitalSign, String height, String weight, String bmi, String pulse, String result, String summary, String bloodgroup)
@@ -911,6 +956,80 @@ namespace CheckUP.objdb
             catch (Exception ex)
             {
                 //MessageBox.Show("Error " + ex.ToString(), "update updateStoolExam");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateToxi1(String rowNumber, String cucId, String ToxiLead, String ToxiAluminium, String ToxiCadmium, String ToxiMercury, String ToxiTin, String ToxiCopper,
+            String ToxiManganese, String ToxiZinc, String ToxiAmmonia)
+        {
+            String sql = "", chk = "";
+
+            //p.NameT = p.NameT.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+            //p.PositionName = p.PositionName.Replace("'", "''");
+
+            sql = "Update " + ccp.table + " Set " + ccp.ToxiLead + "='" + ToxiLead + "', " +
+                ccp.ToxiAluminium + "='" + ToxiAluminium + "', " +
+                ccp.ToxiCadmium + "='" + ToxiCadmium + "', " +
+                ccp.ToxiMercury + "='" + ToxiMercury + "', " +
+                ccp.ToxiTin + "='" + ToxiTin + "', " +
+                ccp.ToxiCopper + "='" + ToxiCopper + "', " +
+                ccp.ToxiManganese + "='" + ToxiManganese + "', " +
+                ccp.ToxiZinc + "='" + ToxiZinc + "', " +
+                ccp.ToxiAmmonia + "='" + ToxiAmmonia + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Error " + ex.ToString(), "update updateAudioGram");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateToxi2(String rowNumber, String cucId, String ToxiHippuric, String ToxiMethyl, String ToxiAcetone, String ToxiNickel, String ToxiChromium, String ToxiPhenol,
+            String ToxiKetone, String ToxiBenzene, String ToxiMandelic, String ToxiMethanol, String ToxiEthanol, String ToxiIPA, String ToxiArsenic, String ToxiHexane,
+            String ToxiFomaldehyde, String ToxiTrichloroethylene, String ToxiAntimony, String ToxiFluoride)
+        {
+            String sql = "", chk = "";
+
+            //p.NameT = p.NameT.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+            //p.PositionName = p.PositionName.Replace("'", "''");
+
+            sql = "Update " + ccp.table + " Set " + ccp.ToxiHippuric + "='" + ToxiHippuric + "', " +
+                ccp.ToxiMethyl + "='" + ToxiMethyl + "', " +
+                ccp.ToxiAcetone + "='" + ToxiAcetone + "', " +
+                ccp.ToxiNickel + "='" + ToxiNickel + "', " +
+                ccp.ToxiChromium + "='" + ToxiChromium + "', " +
+                ccp.ToxiPhenol + "='" + ToxiPhenol + "', " +
+                ccp.ToxiKetone + "='" + ToxiKetone + "', " +
+                ccp.ToxiBenzene + "='" + ToxiBenzene + "', " +
+                ccp.ToxiMandelic + "='" + ToxiMandelic + "', " +
+                ccp.ToxiMethanol + "='" + ToxiMethanol + "', " +
+                ccp.ToxiEthanol + "='" + ToxiEthanol + "', " +
+                ccp.ToxiIPA + "='" + ToxiIPA + "', " +
+                ccp.ToxiArsenic + "='" + ToxiArsenic + "', " +
+                ccp.ToxiHexane + "='" + ToxiHexane + "', " +
+                ccp.ToxiFomaldehyde + "='" + ToxiFomaldehyde + "', " +
+                ccp.ToxiTrichloroethylene + "='" + ToxiTrichloroethylene + "', " +
+                ccp.ToxiAntimony + "='" + ToxiAntimony + "', " +
+                ccp.ToxiFluoride + "='" + ToxiFluoride + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Error " + ex.ToString(), "update updateAudioGram");
             }
             finally
             {

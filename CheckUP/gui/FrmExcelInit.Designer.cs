@@ -65,6 +65,7 @@
             this.txtPrefixTest = new System.Windows.Forms.TextBox();
             this.btnSfExcel = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.nmDPEBloodGroup = new System.Windows.Forms.NumericUpDown();
             this.label33 = new System.Windows.Forms.Label();
@@ -137,6 +138,7 @@
             this.lbCBC = new System.Windows.Forms.Label();
             this.nmDCBCRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label66 = new System.Windows.Forms.Label();
             this.txtFBSTest = new System.Windows.Forms.TextBox();
             this.btnFBSExcel = new System.Windows.Forms.Button();
@@ -151,6 +153,7 @@
             this.lbFBS = new System.Windows.Forms.Label();
             this.nmDFBSRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label67 = new System.Windows.Forms.Label();
             this.txtUATest = new System.Windows.Forms.TextBox();
             this.btnUAExcel = new System.Windows.Forms.Button();
@@ -183,6 +186,7 @@
             this.lbUA = new System.Windows.Forms.Label();
             this.nmDUARow = new System.Windows.Forms.NumericUpDown();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label85 = new System.Windows.Forms.Label();
             this.txtTriTest = new System.Windows.Forms.TextBox();
             this.btnTriExcel = new System.Windows.Forms.Button();
@@ -197,6 +201,7 @@
             this.lbTri = new System.Windows.Forms.Label();
             this.nmDTriRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.nmDChoHDL = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
@@ -215,6 +220,7 @@
             this.lbCho = new System.Windows.Forms.Label();
             this.nmDChoRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.nmDSgotALPValue = new System.Windows.Forms.NumericUpDown();
             this.label87 = new System.Windows.Forms.Label();
@@ -233,6 +239,7 @@
             this.lbSgot = new System.Windows.Forms.Label();
             this.nmDSgotRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.label88 = new System.Windows.Forms.Label();
             this.txtBunTest = new System.Windows.Forms.TextBox();
             this.btnBunExcel = new System.Windows.Forms.Button();
@@ -249,6 +256,7 @@
             this.lbBun = new System.Windows.Forms.Label();
             this.nmDBunRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.label89 = new System.Windows.Forms.Label();
             this.txtUricTest = new System.Windows.Forms.TextBox();
             this.btnUricExcel = new System.Windows.Forms.Button();
@@ -379,35 +387,76 @@
             this.label143 = new System.Windows.Forms.Label();
             this.nmDEyeRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label124 = new System.Windows.Forms.Label();
-            this.txtCheMBTest = new System.Windows.Forms.TextBox();
-            this.btnChemBExcel = new System.Windows.Forms.Button();
+            this.txtToxi2Test = new System.Windows.Forms.TextBox();
+            this.btnToxi2Excel = new System.Windows.Forms.Button();
+            this.nmDToxiMethanol = new System.Windows.Forms.NumericUpDown();
+            this.label174 = new System.Windows.Forms.Label();
+            this.nmDToxiEthanol = new System.Windows.Forms.NumericUpDown();
+            this.label171 = new System.Windows.Forms.Label();
+            this.nmDToxiIPA = new System.Windows.Forms.NumericUpDown();
+            this.label172 = new System.Windows.Forms.Label();
+            this.nmDToxiArsenic = new System.Windows.Forms.NumericUpDown();
+            this.label173 = new System.Windows.Forms.Label();
+            this.nmDToxiHexane = new System.Windows.Forms.NumericUpDown();
+            this.label175 = new System.Windows.Forms.Label();
+            this.nmDToxiFomaldehyde = new System.Windows.Forms.NumericUpDown();
+            this.label176 = new System.Windows.Forms.Label();
+            this.label177 = new System.Windows.Forms.Label();
+            this.nmDToxiFluoride = new System.Windows.Forms.NumericUpDown();
+            this.nmDToxiTrichloroethylene = new System.Windows.Forms.NumericUpDown();
+            this.label178 = new System.Windows.Forms.Label();
+            this.label179 = new System.Windows.Forms.Label();
+            this.nmDToxiAntimony = new System.Windows.Forms.NumericUpDown();
+            this.nmDToxiMandelic = new System.Windows.Forms.NumericUpDown();
+            this.nmDToxiHippuric = new System.Windows.Forms.NumericUpDown();
+            this.label154 = new System.Windows.Forms.Label();
+            this.nmDToxiMethyl = new System.Windows.Forms.NumericUpDown();
+            this.label155 = new System.Windows.Forms.Label();
+            this.nmDToxiAcetone = new System.Windows.Forms.NumericUpDown();
+            this.label164 = new System.Windows.Forms.Label();
+            this.nmDToxiNickel = new System.Windows.Forms.NumericUpDown();
+            this.label165 = new System.Windows.Forms.Label();
+            this.label166 = new System.Windows.Forms.Label();
+            this.nmDToxiChromium = new System.Windows.Forms.NumericUpDown();
+            this.label167 = new System.Windows.Forms.Label();
+            this.label168 = new System.Windows.Forms.Label();
+            this.nmDToxiBenzene = new System.Windows.Forms.NumericUpDown();
+            this.nmDToxiPhenol = new System.Windows.Forms.NumericUpDown();
+            this.label169 = new System.Windows.Forms.Label();
+            this.label170 = new System.Windows.Forms.Label();
+            this.nmDToxiKetone = new System.Windows.Forms.NumericUpDown();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label180 = new System.Windows.Forms.Label();
+            this.txtToxi1Test = new System.Windows.Forms.TextBox();
+            this.btnToxi1Excel = new System.Windows.Forms.Button();
+            this.nmDToxiAmmonia = new System.Windows.Forms.NumericUpDown();
+            this.nmDToxiLead = new System.Windows.Forms.NumericUpDown();
+            this.label149 = new System.Windows.Forms.Label();
+            this.nmDToxiAluminium = new System.Windows.Forms.NumericUpDown();
+            this.label148 = new System.Windows.Forms.Label();
+            this.nmDToxiCadmium = new System.Windows.Forms.NumericUpDown();
+            this.label147 = new System.Windows.Forms.Label();
+            this.nmDToxiMercury = new System.Windows.Forms.NumericUpDown();
+            this.label127 = new System.Windows.Forms.Label();
+            this.label146 = new System.Windows.Forms.Label();
+            this.nmDToxiTin = new System.Windows.Forms.NumericUpDown();
+            this.label128 = new System.Windows.Forms.Label();
+            this.label145 = new System.Windows.Forms.Label();
+            this.nmDToxiZinc = new System.Windows.Forms.NumericUpDown();
+            this.nmDToxiCopper = new System.Windows.Forms.NumericUpDown();
+            this.label130 = new System.Windows.Forms.Label();
+            this.label144 = new System.Windows.Forms.Label();
+            this.nmDToxiManganese = new System.Windows.Forms.NumericUpDown();
             this.label125 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label126 = new System.Windows.Forms.Label();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label127 = new System.Windows.Forms.Label();
-            this.nmDChemBAmmonia = new System.Windows.Forms.NumericUpDown();
-            this.label128 = new System.Windows.Forms.Label();
-            this.nmDChemBZinc = new System.Windows.Forms.NumericUpDown();
-            this.label130 = new System.Windows.Forms.Label();
-            this.nmDChemBManganese = new System.Windows.Forms.NumericUpDown();
-            this.label144 = new System.Windows.Forms.Label();
-            this.nmDChemBCopper = new System.Windows.Forms.NumericUpDown();
-            this.label145 = new System.Windows.Forms.Label();
-            this.nmDChemBTin = new System.Windows.Forms.NumericUpDown();
-            this.label146 = new System.Windows.Forms.Label();
-            this.nmDChemBMercury = new System.Windows.Forms.NumericUpDown();
-            this.label147 = new System.Windows.Forms.Label();
-            this.nmDChemBCadmium = new System.Windows.Forms.NumericUpDown();
-            this.label148 = new System.Windows.Forms.Label();
-            this.nmDChemBAluminium = new System.Windows.Forms.NumericUpDown();
-            this.label149 = new System.Windows.Forms.Label();
-            this.nmDChemBLead = new System.Windows.Forms.NumericUpDown();
             this.label150 = new System.Windows.Forms.Label();
-            this.nmDChemBNo = new System.Windows.Forms.NumericUpDown();
+            this.nmDToxiNo = new System.Windows.Forms.NumericUpDown();
             this.label151 = new System.Windows.Forms.Label();
-            this.nmDChemBRow = new System.Windows.Forms.NumericUpDown();
+            this.nmDToxiRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage17 = new System.Windows.Forms.TabPage();
             this.label153 = new System.Windows.Forms.Label();
             this.nmDStoolExamSummary = new System.Windows.Forms.NumericUpDown();
@@ -428,14 +477,6 @@
             this.nmDStoolExamNo = new System.Windows.Forms.NumericUpDown();
             this.label163 = new System.Windows.Forms.Label();
             this.nmDStoolExamRow = new System.Windows.Forms.NumericUpDown();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDARow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDAPrefix)).BeginInit();
@@ -596,19 +637,39 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDEyeNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDEyeRow)).BeginInit();
             this.tabPage16.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiMethanol)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiEthanol)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiIPA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiArsenic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiHexane)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiFomaldehyde)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiFluoride)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiTrichloroethylene)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiAntimony)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiMandelic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiHippuric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiMethyl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiAcetone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiNickel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiChromium)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiBenzene)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiPhenol)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiKetone)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiAmmonia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiLead)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiAluminium)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiCadmium)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiMercury)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiTin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiZinc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiCopper)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiManganese)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBAmmonia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBZinc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBManganese)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBCopper)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBTin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBMercury)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBCadmium)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBAluminium)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBLead)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBRow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiRow)).BeginInit();
             this.tabPage17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamSummary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamParasite)).BeginInit();
@@ -964,7 +1025,7 @@
             this.tC.Location = new System.Drawing.Point(12, 12);
             this.tC.Name = "tC";
             this.tC.SelectedIndex = 0;
-            this.tC.Size = new System.Drawing.Size(928, 348);
+            this.tC.Size = new System.Drawing.Size(1072, 507);
             this.tC.TabIndex = 39;
             // 
             // tabPage1
@@ -1006,7 +1067,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(920, 322);
+            this.tabPage1.Size = new System.Drawing.Size(951, 481);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1091,10 +1152,18 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(920, 322);
+            this.tabPage2.Size = new System.Drawing.Size(951, 481);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(582, 146);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(46, 20);
+            this.textBox1.TabIndex = 67;
+            this.textBox1.Text = "ปกติ";
             // 
             // label17
             // 
@@ -1381,7 +1450,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(920, 322);
+            this.tabPage3.Size = new System.Drawing.Size(951, 481);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1539,7 +1608,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(920, 322);
+            this.tabPage4.Size = new System.Drawing.Size(1064, 481);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1920,10 +1989,18 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(920, 322);
+            this.tabPage5.Size = new System.Drawing.Size(951, 481);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(225, 149);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(46, 20);
+            this.textBox2.TabIndex = 71;
+            this.textBox2.Text = "ปกติ";
             // 
             // label66
             // 
@@ -2099,10 +2176,18 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(920, 322);
+            this.tabPage6.Size = new System.Drawing.Size(951, 481);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "tabPage6";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(258, 229);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(46, 20);
+            this.textBox3.TabIndex = 75;
+            this.textBox3.Text = "ปกติ";
             // 
             // label67
             // 
@@ -2458,10 +2543,18 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(920, 322);
+            this.tabPage7.Size = new System.Drawing.Size(951, 481);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "tabPage7";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(248, 169);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(46, 20);
+            this.textBox4.TabIndex = 78;
+            this.textBox4.Text = "ปกติ";
             // 
             // label85
             // 
@@ -2623,10 +2716,18 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(920, 322);
+            this.tabPage8.Size = new System.Drawing.Size(951, 481);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "tabPage8";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(474, 155);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(46, 20);
+            this.textBox5.TabIndex = 85;
+            this.textBox5.Text = "ปกติ";
             // 
             // label16
             // 
@@ -2832,10 +2933,18 @@
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(920, 322);
+            this.tabPage9.Size = new System.Drawing.Size(951, 481);
             this.tabPage9.TabIndex = 8;
             this.tabPage9.Text = "tabPage9";
             this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(417, 161);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(46, 20);
+            this.textBox6.TabIndex = 83;
+            this.textBox6.Text = "ปกติ";
             // 
             // label18
             // 
@@ -3039,10 +3148,18 @@
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(920, 322);
+            this.tabPage10.Size = new System.Drawing.Size(951, 481);
             this.tabPage10.TabIndex = 9;
             this.tabPage10.Text = "tabPage10";
             this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(320, 153);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(46, 20);
+            this.textBox7.TabIndex = 81;
+            this.textBox7.Text = "ปกติ";
             // 
             // label88
             // 
@@ -3222,10 +3339,18 @@
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage11.Size = new System.Drawing.Size(920, 322);
+            this.tabPage11.Size = new System.Drawing.Size(951, 481);
             this.tabPage11.TabIndex = 10;
             this.tabPage11.Text = "tabPage11";
             this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(228, 156);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(46, 20);
+            this.textBox8.TabIndex = 81;
+            this.textBox8.Text = "ปกติ";
             // 
             // label89
             // 
@@ -3388,7 +3513,7 @@
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage12.Size = new System.Drawing.Size(920, 322);
+            this.tabPage12.Size = new System.Drawing.Size(951, 481);
             this.tabPage12.TabIndex = 11;
             this.tabPage12.Text = "tabPage12";
             this.tabPage12.UseVisualStyleBackColor = true;
@@ -3624,7 +3749,7 @@
             this.tabPage13.Location = new System.Drawing.Point(4, 22);
             this.tabPage13.Name = "tabPage13";
             this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage13.Size = new System.Drawing.Size(920, 322);
+            this.tabPage13.Size = new System.Drawing.Size(951, 481);
             this.tabPage13.TabIndex = 12;
             this.tabPage13.Text = "tabPage13";
             this.tabPage13.UseVisualStyleBackColor = true;
@@ -3922,7 +4047,7 @@
             this.tabPage14.Location = new System.Drawing.Point(4, 22);
             this.tabPage14.Name = "tabPage14";
             this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage14.Size = new System.Drawing.Size(920, 322);
+            this.tabPage14.Size = new System.Drawing.Size(951, 481);
             this.tabPage14.TabIndex = 13;
             this.tabPage14.Text = "tabPage14";
             this.tabPage14.UseVisualStyleBackColor = true;
@@ -4406,7 +4531,7 @@
             this.tabPage15.Location = new System.Drawing.Point(4, 22);
             this.tabPage15.Name = "tabPage15";
             this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage15.Size = new System.Drawing.Size(920, 322);
+            this.tabPage15.Size = new System.Drawing.Size(951, 481);
             this.tabPage15.TabIndex = 14;
             this.tabPage15.Text = "tabPage15";
             this.tabPage15.UseVisualStyleBackColor = true;
@@ -4726,75 +4851,755 @@
             // 
             // tabPage16
             // 
-            this.tabPage16.Controls.Add(this.label124);
-            this.tabPage16.Controls.Add(this.txtCheMBTest);
-            this.tabPage16.Controls.Add(this.btnChemBExcel);
+            this.tabPage16.Controls.Add(this.groupBox2);
+            this.tabPage16.Controls.Add(this.groupBox1);
             this.tabPage16.Controls.Add(this.label125);
             this.tabPage16.Controls.Add(this.numericUpDown1);
             this.tabPage16.Controls.Add(this.label126);
             this.tabPage16.Controls.Add(this.numericUpDown2);
-            this.tabPage16.Controls.Add(this.label127);
-            this.tabPage16.Controls.Add(this.nmDChemBAmmonia);
-            this.tabPage16.Controls.Add(this.label128);
-            this.tabPage16.Controls.Add(this.nmDChemBZinc);
-            this.tabPage16.Controls.Add(this.label130);
-            this.tabPage16.Controls.Add(this.nmDChemBManganese);
-            this.tabPage16.Controls.Add(this.label144);
-            this.tabPage16.Controls.Add(this.nmDChemBCopper);
-            this.tabPage16.Controls.Add(this.label145);
-            this.tabPage16.Controls.Add(this.nmDChemBTin);
-            this.tabPage16.Controls.Add(this.label146);
-            this.tabPage16.Controls.Add(this.nmDChemBMercury);
-            this.tabPage16.Controls.Add(this.label147);
-            this.tabPage16.Controls.Add(this.nmDChemBCadmium);
-            this.tabPage16.Controls.Add(this.label148);
-            this.tabPage16.Controls.Add(this.nmDChemBAluminium);
-            this.tabPage16.Controls.Add(this.label149);
-            this.tabPage16.Controls.Add(this.nmDChemBLead);
             this.tabPage16.Controls.Add(this.label150);
-            this.tabPage16.Controls.Add(this.nmDChemBNo);
+            this.tabPage16.Controls.Add(this.nmDToxiNo);
             this.tabPage16.Controls.Add(this.label151);
-            this.tabPage16.Controls.Add(this.nmDChemBRow);
+            this.tabPage16.Controls.Add(this.nmDToxiRow);
             this.tabPage16.Location = new System.Drawing.Point(4, 22);
             this.tabPage16.Name = "tabPage16";
             this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage16.Size = new System.Drawing.Size(920, 322);
+            this.tabPage16.Size = new System.Drawing.Size(951, 481);
             this.tabPage16.TabIndex = 15;
             this.tabPage16.Text = "tabPage16";
             this.tabPage16.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label124);
+            this.groupBox2.Controls.Add(this.txtToxi2Test);
+            this.groupBox2.Controls.Add(this.btnToxi2Excel);
+            this.groupBox2.Controls.Add(this.nmDToxiMethanol);
+            this.groupBox2.Controls.Add(this.label174);
+            this.groupBox2.Controls.Add(this.nmDToxiEthanol);
+            this.groupBox2.Controls.Add(this.label171);
+            this.groupBox2.Controls.Add(this.nmDToxiIPA);
+            this.groupBox2.Controls.Add(this.label172);
+            this.groupBox2.Controls.Add(this.nmDToxiArsenic);
+            this.groupBox2.Controls.Add(this.label173);
+            this.groupBox2.Controls.Add(this.nmDToxiHexane);
+            this.groupBox2.Controls.Add(this.label175);
+            this.groupBox2.Controls.Add(this.nmDToxiFomaldehyde);
+            this.groupBox2.Controls.Add(this.label176);
+            this.groupBox2.Controls.Add(this.label177);
+            this.groupBox2.Controls.Add(this.nmDToxiFluoride);
+            this.groupBox2.Controls.Add(this.nmDToxiTrichloroethylene);
+            this.groupBox2.Controls.Add(this.label178);
+            this.groupBox2.Controls.Add(this.label179);
+            this.groupBox2.Controls.Add(this.nmDToxiAntimony);
+            this.groupBox2.Controls.Add(this.nmDToxiMandelic);
+            this.groupBox2.Controls.Add(this.nmDToxiHippuric);
+            this.groupBox2.Controls.Add(this.label154);
+            this.groupBox2.Controls.Add(this.nmDToxiMethyl);
+            this.groupBox2.Controls.Add(this.label155);
+            this.groupBox2.Controls.Add(this.nmDToxiAcetone);
+            this.groupBox2.Controls.Add(this.label164);
+            this.groupBox2.Controls.Add(this.nmDToxiNickel);
+            this.groupBox2.Controls.Add(this.label165);
+            this.groupBox2.Controls.Add(this.label166);
+            this.groupBox2.Controls.Add(this.nmDToxiChromium);
+            this.groupBox2.Controls.Add(this.label167);
+            this.groupBox2.Controls.Add(this.label168);
+            this.groupBox2.Controls.Add(this.nmDToxiBenzene);
+            this.groupBox2.Controls.Add(this.nmDToxiPhenol);
+            this.groupBox2.Controls.Add(this.label169);
+            this.groupBox2.Controls.Add(this.label170);
+            this.groupBox2.Controls.Add(this.nmDToxiKetone);
+            this.groupBox2.Location = new System.Drawing.Point(6, 255);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(939, 220);
+            this.groupBox2.TabIndex = 177;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "ตรวจสารเคมีในเดือด";
+            // 
             // label124
             // 
             this.label124.AutoSize = true;
-            this.label124.Location = new System.Drawing.Point(6, 265);
+            this.label124.Location = new System.Drawing.Point(11, 179);
             this.label124.Name = "label124";
             this.label124.Size = new System.Drawing.Size(80, 13);
-            this.label124.TabIndex = 175;
+            this.label124.TabIndex = 189;
             this.label124.Text = "ข้อมูลจากการดึง";
             // 
-            // txtCheMBTest
+            // txtToxi2Test
             // 
-            this.txtCheMBTest.Location = new System.Drawing.Point(6, 281);
-            this.txtCheMBTest.Name = "txtCheMBTest";
-            this.txtCheMBTest.Size = new System.Drawing.Size(908, 20);
-            this.txtCheMBTest.TabIndex = 174;
+            this.txtToxi2Test.Location = new System.Drawing.Point(11, 195);
+            this.txtToxi2Test.Name = "txtToxi2Test";
+            this.txtToxi2Test.Size = new System.Drawing.Size(908, 20);
+            this.txtToxi2Test.TabIndex = 188;
             // 
-            // btnChemBExcel
+            // btnToxi2Excel
             // 
-            this.btnChemBExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnChemBExcel.Location = new System.Drawing.Point(828, 230);
-            this.btnChemBExcel.Name = "btnChemBExcel";
-            this.btnChemBExcel.Size = new System.Drawing.Size(86, 34);
-            this.btnChemBExcel.TabIndex = 173;
-            this.btnChemBExcel.Text = "ทดสอบ Excel";
-            this.btnChemBExcel.UseVisualStyleBackColor = true;
-            this.btnChemBExcel.Click += new System.EventHandler(this.btnChemBExcel_Click);
+            this.btnToxi2Excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnToxi2Excel.Location = new System.Drawing.Point(833, 156);
+            this.btnToxi2Excel.Name = "btnToxi2Excel";
+            this.btnToxi2Excel.Size = new System.Drawing.Size(86, 34);
+            this.btnToxi2Excel.TabIndex = 187;
+            this.btnToxi2Excel.Text = "ทดสอบ Excel";
+            this.btnToxi2Excel.UseVisualStyleBackColor = true;
+            this.btnToxi2Excel.Click += new System.EventHandler(this.btnToxi2Excel_Click);
+            // 
+            // nmDToxiMethanol
+            // 
+            this.nmDToxiMethanol.Location = new System.Drawing.Point(744, 47);
+            this.nmDToxiMethanol.Name = "nmDToxiMethanol";
+            this.nmDToxiMethanol.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiMethanol.TabIndex = 186;
+            this.nmDToxiMethanol.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label174
+            // 
+            this.label174.AutoSize = true;
+            this.label174.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label174.Location = new System.Drawing.Point(741, 19);
+            this.label174.Name = "label174";
+            this.label174.Size = new System.Drawing.Size(63, 16);
+            this.label174.TabIndex = 185;
+            this.label174.Text = "Methanol";
+            // 
+            // nmDToxiEthanol
+            // 
+            this.nmDToxiEthanol.Location = new System.Drawing.Point(20, 121);
+            this.nmDToxiEthanol.Name = "nmDToxiEthanol";
+            this.nmDToxiEthanol.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiEthanol.TabIndex = 170;
+            this.nmDToxiEthanol.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label171
+            // 
+            this.label171.AutoSize = true;
+            this.label171.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label171.Location = new System.Drawing.Point(24, 93);
+            this.label171.Name = "label171";
+            this.label171.Size = new System.Drawing.Size(53, 16);
+            this.label171.TabIndex = 169;
+            this.label171.Text = "Ethanol";
+            // 
+            // nmDToxiIPA
+            // 
+            this.nmDToxiIPA.Location = new System.Drawing.Point(103, 121);
+            this.nmDToxiIPA.Name = "nmDToxiIPA";
+            this.nmDToxiIPA.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiIPA.TabIndex = 172;
+            this.nmDToxiIPA.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label172
+            // 
+            this.label172.AutoSize = true;
+            this.label172.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label172.Location = new System.Drawing.Point(100, 93);
+            this.label172.Name = "label172";
+            this.label172.Size = new System.Drawing.Size(29, 16);
+            this.label172.TabIndex = 171;
+            this.label172.Text = "IPA";
+            // 
+            // nmDToxiArsenic
+            // 
+            this.nmDToxiArsenic.Location = new System.Drawing.Point(182, 121);
+            this.nmDToxiArsenic.Name = "nmDToxiArsenic";
+            this.nmDToxiArsenic.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiArsenic.TabIndex = 174;
+            this.nmDToxiArsenic.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label173
+            // 
+            this.label173.AutoSize = true;
+            this.label173.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label173.Location = new System.Drawing.Point(175, 93);
+            this.label173.Name = "label173";
+            this.label173.Size = new System.Drawing.Size(53, 16);
+            this.label173.TabIndex = 173;
+            this.label173.Text = "Arsenic";
+            // 
+            // nmDToxiHexane
+            // 
+            this.nmDToxiHexane.Location = new System.Drawing.Point(267, 121);
+            this.nmDToxiHexane.Name = "nmDToxiHexane";
+            this.nmDToxiHexane.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiHexane.TabIndex = 176;
+            this.nmDToxiHexane.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label175
+            // 
+            this.label175.AutoSize = true;
+            this.label175.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label175.Location = new System.Drawing.Point(264, 92);
+            this.label175.Name = "label175";
+            this.label175.Size = new System.Drawing.Size(55, 16);
+            this.label175.TabIndex = 175;
+            this.label175.Text = "Hexane";
+            // 
+            // nmDToxiFomaldehyde
+            // 
+            this.nmDToxiFomaldehyde.Location = new System.Drawing.Point(350, 121);
+            this.nmDToxiFomaldehyde.Name = "nmDToxiFomaldehyde";
+            this.nmDToxiFomaldehyde.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiFomaldehyde.TabIndex = 178;
+            this.nmDToxiFomaldehyde.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label176
+            // 
+            this.label176.AutoSize = true;
+            this.label176.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label176.Location = new System.Drawing.Point(682, 93);
+            this.label176.Name = "label176";
+            this.label176.Size = new System.Drawing.Size(57, 16);
+            this.label176.TabIndex = 183;
+            this.label176.Text = "Fluoride";
+            // 
+            // label177
+            // 
+            this.label177.AutoSize = true;
+            this.label177.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label177.Location = new System.Drawing.Point(325, 93);
+            this.label177.Name = "label177";
+            this.label177.Size = new System.Drawing.Size(99, 16);
+            this.label177.TabIndex = 177;
+            this.label177.Text = "Fomaldenhyde";
+            // 
+            // nmDToxiFluoride
+            // 
+            this.nmDToxiFluoride.Location = new System.Drawing.Point(678, 121);
+            this.nmDToxiFluoride.Name = "nmDToxiFluoride";
+            this.nmDToxiFluoride.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiFluoride.TabIndex = 184;
+            this.nmDToxiFluoride.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // nmDToxiTrichloroethylene
+            // 
+            this.nmDToxiTrichloroethylene.Location = new System.Drawing.Point(476, 121);
+            this.nmDToxiTrichloroethylene.Name = "nmDToxiTrichloroethylene";
+            this.nmDToxiTrichloroethylene.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiTrichloroethylene.TabIndex = 180;
+            this.nmDToxiTrichloroethylene.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label178
+            // 
+            this.label178.AutoSize = true;
+            this.label178.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label178.Location = new System.Drawing.Point(581, 93);
+            this.label178.Name = "label178";
+            this.label178.Size = new System.Drawing.Size(88, 16);
+            this.label178.TabIndex = 181;
+            this.label178.Text = "Antimony(Sb)";
+            // 
+            // label179
+            // 
+            this.label179.AutoSize = true;
+            this.label179.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label179.Location = new System.Drawing.Point(428, 93);
+            this.label179.Name = "label179";
+            this.label179.Size = new System.Drawing.Size(147, 16);
+            this.label179.TabIndex = 179;
+            this.label179.Text = "Trichloroethylene(TCA)";
+            // 
+            // nmDToxiAntimony
+            // 
+            this.nmDToxiAntimony.Location = new System.Drawing.Point(598, 121);
+            this.nmDToxiAntimony.Name = "nmDToxiAntimony";
+            this.nmDToxiAntimony.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiAntimony.TabIndex = 182;
+            this.nmDToxiAntimony.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // nmDToxiMandelic
+            // 
+            this.nmDToxiMandelic.Location = new System.Drawing.Point(654, 47);
+            this.nmDToxiMandelic.Name = "nmDToxiMandelic";
+            this.nmDToxiMandelic.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiMandelic.TabIndex = 168;
+            this.nmDToxiMandelic.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // nmDToxiHippuric
+            // 
+            this.nmDToxiHippuric.Location = new System.Drawing.Point(20, 47);
+            this.nmDToxiHippuric.Name = "nmDToxiHippuric";
+            this.nmDToxiHippuric.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiHippuric.TabIndex = 152;
+            this.nmDToxiHippuric.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label154
+            // 
+            this.label154.AutoSize = true;
+            this.label154.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label154.Location = new System.Drawing.Point(24, 19);
+            this.label154.Name = "label154";
+            this.label154.Size = new System.Drawing.Size(58, 16);
+            this.label154.TabIndex = 151;
+            this.label154.Text = "Hippuric";
+            // 
+            // nmDToxiMethyl
+            // 
+            this.nmDToxiMethyl.Location = new System.Drawing.Point(103, 47);
+            this.nmDToxiMethyl.Name = "nmDToxiMethyl";
+            this.nmDToxiMethyl.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiMethyl.TabIndex = 154;
+            this.nmDToxiMethyl.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label155
+            // 
+            this.label155.AutoSize = true;
+            this.label155.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label155.Location = new System.Drawing.Point(100, 19);
+            this.label155.Name = "label155";
+            this.label155.Size = new System.Drawing.Size(47, 16);
+            this.label155.TabIndex = 153;
+            this.label155.Text = "Methyl";
+            // 
+            // nmDToxiAcetone
+            // 
+            this.nmDToxiAcetone.Location = new System.Drawing.Point(182, 47);
+            this.nmDToxiAcetone.Name = "nmDToxiAcetone";
+            this.nmDToxiAcetone.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiAcetone.TabIndex = 156;
+            this.nmDToxiAcetone.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label164
+            // 
+            this.label164.AutoSize = true;
+            this.label164.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label164.Location = new System.Drawing.Point(175, 19);
+            this.label164.Name = "label164";
+            this.label164.Size = new System.Drawing.Size(58, 16);
+            this.label164.TabIndex = 155;
+            this.label164.Text = "Acetone";
+            // 
+            // nmDToxiNickel
+            // 
+            this.nmDToxiNickel.Location = new System.Drawing.Point(267, 47);
+            this.nmDToxiNickel.Name = "nmDToxiNickel";
+            this.nmDToxiNickel.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiNickel.TabIndex = 158;
+            this.nmDToxiNickel.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label165
+            // 
+            this.label165.AutoSize = true;
+            this.label165.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label165.Location = new System.Drawing.Point(651, 19);
+            this.label165.Name = "label165";
+            this.label165.Size = new System.Drawing.Size(63, 16);
+            this.label165.TabIndex = 167;
+            this.label165.Text = "Mandelic";
+            // 
+            // label166
+            // 
+            this.label166.AutoSize = true;
+            this.label166.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label166.Location = new System.Drawing.Point(264, 18);
+            this.label166.Name = "label166";
+            this.label166.Size = new System.Drawing.Size(46, 16);
+            this.label166.TabIndex = 157;
+            this.label166.Text = "Nickel";
+            // 
+            // nmDToxiChromium
+            // 
+            this.nmDToxiChromium.Location = new System.Drawing.Point(350, 47);
+            this.nmDToxiChromium.Name = "nmDToxiChromium";
+            this.nmDToxiChromium.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiChromium.TabIndex = 160;
+            this.nmDToxiChromium.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label167
+            // 
+            this.label167.AutoSize = true;
+            this.label167.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label167.Location = new System.Drawing.Point(569, 19);
+            this.label167.Name = "label167";
+            this.label167.Size = new System.Drawing.Size(61, 16);
+            this.label167.TabIndex = 165;
+            this.label167.Text = "Benzene";
+            // 
+            // label168
+            // 
+            this.label168.AutoSize = true;
+            this.label168.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label168.Location = new System.Drawing.Point(347, 19);
+            this.label168.Name = "label168";
+            this.label168.Size = new System.Drawing.Size(68, 16);
+            this.label168.TabIndex = 159;
+            this.label168.Text = "Chromium";
+            // 
+            // nmDToxiBenzene
+            // 
+            this.nmDToxiBenzene.Location = new System.Drawing.Point(584, 47);
+            this.nmDToxiBenzene.Name = "nmDToxiBenzene";
+            this.nmDToxiBenzene.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiBenzene.TabIndex = 166;
+            this.nmDToxiBenzene.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // nmDToxiPhenol
+            // 
+            this.nmDToxiPhenol.Location = new System.Drawing.Point(431, 47);
+            this.nmDToxiPhenol.Name = "nmDToxiPhenol";
+            this.nmDToxiPhenol.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiPhenol.TabIndex = 162;
+            this.nmDToxiPhenol.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label169
+            // 
+            this.label169.AutoSize = true;
+            this.label169.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label169.Location = new System.Drawing.Point(501, 19);
+            this.label169.Name = "label169";
+            this.label169.Size = new System.Drawing.Size(50, 16);
+            this.label169.TabIndex = 163;
+            this.label169.Text = "Ketone";
+            // 
+            // label170
+            // 
+            this.label170.AutoSize = true;
+            this.label170.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label170.Location = new System.Drawing.Point(428, 19);
+            this.label170.Name = "label170";
+            this.label170.Size = new System.Drawing.Size(50, 16);
+            this.label170.TabIndex = 161;
+            this.label170.Text = "Phenol";
+            // 
+            // nmDToxiKetone
+            // 
+            this.nmDToxiKetone.Location = new System.Drawing.Point(504, 47);
+            this.nmDToxiKetone.Name = "nmDToxiKetone";
+            this.nmDToxiKetone.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiKetone.TabIndex = 164;
+            this.nmDToxiKetone.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label180);
+            this.groupBox1.Controls.Add(this.txtToxi1Test);
+            this.groupBox1.Controls.Add(this.btnToxi1Excel);
+            this.groupBox1.Controls.Add(this.nmDToxiAmmonia);
+            this.groupBox1.Controls.Add(this.nmDToxiLead);
+            this.groupBox1.Controls.Add(this.label149);
+            this.groupBox1.Controls.Add(this.nmDToxiAluminium);
+            this.groupBox1.Controls.Add(this.label148);
+            this.groupBox1.Controls.Add(this.nmDToxiCadmium);
+            this.groupBox1.Controls.Add(this.label147);
+            this.groupBox1.Controls.Add(this.nmDToxiMercury);
+            this.groupBox1.Controls.Add(this.label127);
+            this.groupBox1.Controls.Add(this.label146);
+            this.groupBox1.Controls.Add(this.nmDToxiTin);
+            this.groupBox1.Controls.Add(this.label128);
+            this.groupBox1.Controls.Add(this.label145);
+            this.groupBox1.Controls.Add(this.nmDToxiZinc);
+            this.groupBox1.Controls.Add(this.nmDToxiCopper);
+            this.groupBox1.Controls.Add(this.label130);
+            this.groupBox1.Controls.Add(this.label144);
+            this.groupBox1.Controls.Add(this.nmDToxiManganese);
+            this.groupBox1.Location = new System.Drawing.Point(6, 100);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(939, 149);
+            this.groupBox1.TabIndex = 176;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "ตรวจสารเคมีในเดือด";
+            // 
+            // label180
+            // 
+            this.label180.AutoSize = true;
+            this.label180.Location = new System.Drawing.Point(11, 105);
+            this.label180.Name = "label180";
+            this.label180.Size = new System.Drawing.Size(80, 13);
+            this.label180.TabIndex = 178;
+            this.label180.Text = "ข้อมูลจากการดึง";
+            // 
+            // txtToxi1Test
+            // 
+            this.txtToxi1Test.Location = new System.Drawing.Point(11, 121);
+            this.txtToxi1Test.Name = "txtToxi1Test";
+            this.txtToxi1Test.Size = new System.Drawing.Size(908, 20);
+            this.txtToxi1Test.TabIndex = 177;
+            // 
+            // btnToxi1Excel
+            // 
+            this.btnToxi1Excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnToxi1Excel.Location = new System.Drawing.Point(833, 82);
+            this.btnToxi1Excel.Name = "btnToxi1Excel";
+            this.btnToxi1Excel.Size = new System.Drawing.Size(86, 34);
+            this.btnToxi1Excel.TabIndex = 176;
+            this.btnToxi1Excel.Text = "ทดสอบ Excel";
+            this.btnToxi1Excel.UseVisualStyleBackColor = true;
+            this.btnToxi1Excel.Click += new System.EventHandler(this.btnToxi1Excel_Click);
+            // 
+            // nmDToxiAmmonia
+            // 
+            this.nmDToxiAmmonia.Location = new System.Drawing.Point(654, 47);
+            this.nmDToxiAmmonia.Name = "nmDToxiAmmonia";
+            this.nmDToxiAmmonia.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiAmmonia.TabIndex = 168;
+            this.nmDToxiAmmonia.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // nmDToxiLead
+            // 
+            this.nmDToxiLead.Location = new System.Drawing.Point(20, 47);
+            this.nmDToxiLead.Name = "nmDToxiLead";
+            this.nmDToxiLead.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiLead.TabIndex = 152;
+            this.nmDToxiLead.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label149
+            // 
+            this.label149.AutoSize = true;
+            this.label149.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label149.Location = new System.Drawing.Point(24, 19);
+            this.label149.Name = "label149";
+            this.label149.Size = new System.Drawing.Size(39, 16);
+            this.label149.TabIndex = 151;
+            this.label149.Text = "Lead";
+            // 
+            // nmDToxiAluminium
+            // 
+            this.nmDToxiAluminium.Location = new System.Drawing.Point(103, 47);
+            this.nmDToxiAluminium.Name = "nmDToxiAluminium";
+            this.nmDToxiAluminium.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiAluminium.TabIndex = 154;
+            this.nmDToxiAluminium.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label148
+            // 
+            this.label148.AutoSize = true;
+            this.label148.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label148.Location = new System.Drawing.Point(100, 19);
+            this.label148.Name = "label148";
+            this.label148.Size = new System.Drawing.Size(69, 16);
+            this.label148.TabIndex = 153;
+            this.label148.Text = "Aluminium";
+            // 
+            // nmDToxiCadmium
+            // 
+            this.nmDToxiCadmium.Location = new System.Drawing.Point(182, 47);
+            this.nmDToxiCadmium.Name = "nmDToxiCadmium";
+            this.nmDToxiCadmium.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiCadmium.TabIndex = 156;
+            this.nmDToxiCadmium.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label147
+            // 
+            this.label147.AutoSize = true;
+            this.label147.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label147.Location = new System.Drawing.Point(175, 19);
+            this.label147.Name = "label147";
+            this.label147.Size = new System.Drawing.Size(65, 16);
+            this.label147.TabIndex = 155;
+            this.label147.Text = "Cadmium";
+            // 
+            // nmDToxiMercury
+            // 
+            this.nmDToxiMercury.Location = new System.Drawing.Point(267, 47);
+            this.nmDToxiMercury.Name = "nmDToxiMercury";
+            this.nmDToxiMercury.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiMercury.TabIndex = 158;
+            this.nmDToxiMercury.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label127
+            // 
+            this.label127.AutoSize = true;
+            this.label127.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label127.Location = new System.Drawing.Point(651, 19);
+            this.label127.Name = "label127";
+            this.label127.Size = new System.Drawing.Size(65, 16);
+            this.label127.TabIndex = 167;
+            this.label127.Text = "Ammonia";
+            // 
+            // label146
+            // 
+            this.label146.AutoSize = true;
+            this.label146.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label146.Location = new System.Drawing.Point(264, 18);
+            this.label146.Name = "label146";
+            this.label146.Size = new System.Drawing.Size(56, 16);
+            this.label146.TabIndex = 157;
+            this.label146.Text = "Mercury";
+            // 
+            // nmDToxiTin
+            // 
+            this.nmDToxiTin.Location = new System.Drawing.Point(350, 47);
+            this.nmDToxiTin.Name = "nmDToxiTin";
+            this.nmDToxiTin.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiTin.TabIndex = 160;
+            this.nmDToxiTin.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label128
+            // 
+            this.label128.AutoSize = true;
+            this.label128.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label128.Location = new System.Drawing.Point(588, 19);
+            this.label128.Name = "label128";
+            this.label128.Size = new System.Drawing.Size(33, 16);
+            this.label128.TabIndex = 165;
+            this.label128.Text = "Zinc";
+            // 
+            // label145
+            // 
+            this.label145.AutoSize = true;
+            this.label145.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label145.Location = new System.Drawing.Point(347, 19);
+            this.label145.Name = "label145";
+            this.label145.Size = new System.Drawing.Size(27, 16);
+            this.label145.TabIndex = 159;
+            this.label145.Text = "Tin";
+            // 
+            // nmDToxiZinc
+            // 
+            this.nmDToxiZinc.Location = new System.Drawing.Point(584, 47);
+            this.nmDToxiZinc.Name = "nmDToxiZinc";
+            this.nmDToxiZinc.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiZinc.TabIndex = 166;
+            this.nmDToxiZinc.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // nmDToxiCopper
+            // 
+            this.nmDToxiCopper.Location = new System.Drawing.Point(431, 47);
+            this.nmDToxiCopper.Name = "nmDToxiCopper";
+            this.nmDToxiCopper.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiCopper.TabIndex = 162;
+            this.nmDToxiCopper.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label130
+            // 
+            this.label130.AutoSize = true;
+            this.label130.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label130.Location = new System.Drawing.Point(487, 19);
+            this.label130.Name = "label130";
+            this.label130.Size = new System.Drawing.Size(80, 16);
+            this.label130.TabIndex = 163;
+            this.label130.Text = "Manganese";
+            // 
+            // label144
+            // 
+            this.label144.AutoSize = true;
+            this.label144.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label144.Location = new System.Drawing.Point(428, 19);
+            this.label144.Name = "label144";
+            this.label144.Size = new System.Drawing.Size(53, 16);
+            this.label144.TabIndex = 161;
+            this.label144.Text = "Copper";
+            // 
+            // nmDToxiManganese
+            // 
+            this.nmDToxiManganese.Location = new System.Drawing.Point(504, 47);
+            this.nmDToxiManganese.Name = "nmDToxiManganese";
+            this.nmDToxiManganese.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiManganese.TabIndex = 164;
+            this.nmDToxiManganese.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // label125
             // 
             this.label125.AutoSize = true;
             this.label125.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label125.Location = new System.Drawing.Point(262, 150);
+            this.label125.Location = new System.Drawing.Point(732, 38);
             this.label125.Name = "label125";
             this.label125.Size = new System.Drawing.Size(28, 16);
             this.label125.TabIndex = 171;
@@ -4802,7 +5607,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(272, 178);
+            this.numericUpDown1.Location = new System.Drawing.Point(766, 34);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(46, 20);
             this.numericUpDown1.TabIndex = 172;
@@ -4816,7 +5621,7 @@
             // 
             this.label126.AutoSize = true;
             this.label126.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label126.Location = new System.Drawing.Point(182, 150);
+            this.label126.Location = new System.Drawing.Point(599, 38);
             this.label126.Name = "label126";
             this.label126.Size = new System.Drawing.Size(21, 16);
             this.label126.TabIndex = 169;
@@ -4824,7 +5629,7 @@
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(193, 178);
+            this.numericUpDown2.Location = new System.Drawing.Point(633, 34);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(46, 20);
             this.numericUpDown2.TabIndex = 170;
@@ -4834,221 +5639,23 @@
             0,
             0});
             // 
-            // label127
-            // 
-            this.label127.AutoSize = true;
-            this.label127.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label127.Location = new System.Drawing.Point(107, 150);
-            this.label127.Name = "label127";
-            this.label127.Size = new System.Drawing.Size(65, 16);
-            this.label127.TabIndex = 167;
-            this.label127.Text = "Ammonia";
-            // 
-            // nmDChemBAmmonia
-            // 
-            this.nmDChemBAmmonia.Location = new System.Drawing.Point(110, 178);
-            this.nmDChemBAmmonia.Name = "nmDChemBAmmonia";
-            this.nmDChemBAmmonia.Size = new System.Drawing.Size(46, 20);
-            this.nmDChemBAmmonia.TabIndex = 168;
-            this.nmDChemBAmmonia.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // label128
-            // 
-            this.label128.AutoSize = true;
-            this.label128.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label128.Location = new System.Drawing.Point(678, 78);
-            this.label128.Name = "label128";
-            this.label128.Size = new System.Drawing.Size(33, 16);
-            this.label128.TabIndex = 165;
-            this.label128.Text = "Zinc";
-            // 
-            // nmDChemBZinc
-            // 
-            this.nmDChemBZinc.Location = new System.Drawing.Point(674, 106);
-            this.nmDChemBZinc.Name = "nmDChemBZinc";
-            this.nmDChemBZinc.Size = new System.Drawing.Size(46, 20);
-            this.nmDChemBZinc.TabIndex = 166;
-            this.nmDChemBZinc.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // label130
-            // 
-            this.label130.AutoSize = true;
-            this.label130.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label130.Location = new System.Drawing.Point(577, 78);
-            this.label130.Name = "label130";
-            this.label130.Size = new System.Drawing.Size(80, 16);
-            this.label130.TabIndex = 163;
-            this.label130.Text = "Manganese";
-            // 
-            // nmDChemBManganese
-            // 
-            this.nmDChemBManganese.Location = new System.Drawing.Point(594, 106);
-            this.nmDChemBManganese.Name = "nmDChemBManganese";
-            this.nmDChemBManganese.Size = new System.Drawing.Size(46, 20);
-            this.nmDChemBManganese.TabIndex = 164;
-            this.nmDChemBManganese.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // label144
-            // 
-            this.label144.AutoSize = true;
-            this.label144.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label144.Location = new System.Drawing.Point(518, 78);
-            this.label144.Name = "label144";
-            this.label144.Size = new System.Drawing.Size(53, 16);
-            this.label144.TabIndex = 161;
-            this.label144.Text = "Copper";
-            // 
-            // nmDChemBCopper
-            // 
-            this.nmDChemBCopper.Location = new System.Drawing.Point(521, 106);
-            this.nmDChemBCopper.Name = "nmDChemBCopper";
-            this.nmDChemBCopper.Size = new System.Drawing.Size(46, 20);
-            this.nmDChemBCopper.TabIndex = 162;
-            this.nmDChemBCopper.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // label145
-            // 
-            this.label145.AutoSize = true;
-            this.label145.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label145.Location = new System.Drawing.Point(437, 78);
-            this.label145.Name = "label145";
-            this.label145.Size = new System.Drawing.Size(27, 16);
-            this.label145.TabIndex = 159;
-            this.label145.Text = "Tin";
-            // 
-            // nmDChemBTin
-            // 
-            this.nmDChemBTin.Location = new System.Drawing.Point(440, 106);
-            this.nmDChemBTin.Name = "nmDChemBTin";
-            this.nmDChemBTin.Size = new System.Drawing.Size(46, 20);
-            this.nmDChemBTin.TabIndex = 160;
-            this.nmDChemBTin.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // label146
-            // 
-            this.label146.AutoSize = true;
-            this.label146.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label146.Location = new System.Drawing.Point(354, 77);
-            this.label146.Name = "label146";
-            this.label146.Size = new System.Drawing.Size(56, 16);
-            this.label146.TabIndex = 157;
-            this.label146.Text = "Mercury";
-            // 
-            // nmDChemBMercury
-            // 
-            this.nmDChemBMercury.Location = new System.Drawing.Point(357, 106);
-            this.nmDChemBMercury.Name = "nmDChemBMercury";
-            this.nmDChemBMercury.Size = new System.Drawing.Size(46, 20);
-            this.nmDChemBMercury.TabIndex = 158;
-            this.nmDChemBMercury.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // label147
-            // 
-            this.label147.AutoSize = true;
-            this.label147.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label147.Location = new System.Drawing.Point(265, 78);
-            this.label147.Name = "label147";
-            this.label147.Size = new System.Drawing.Size(65, 16);
-            this.label147.TabIndex = 155;
-            this.label147.Text = "Cadmium";
-            // 
-            // nmDChemBCadmium
-            // 
-            this.nmDChemBCadmium.Location = new System.Drawing.Point(272, 106);
-            this.nmDChemBCadmium.Name = "nmDChemBCadmium";
-            this.nmDChemBCadmium.Size = new System.Drawing.Size(46, 20);
-            this.nmDChemBCadmium.TabIndex = 156;
-            this.nmDChemBCadmium.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // label148
-            // 
-            this.label148.AutoSize = true;
-            this.label148.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label148.Location = new System.Drawing.Point(190, 78);
-            this.label148.Name = "label148";
-            this.label148.Size = new System.Drawing.Size(69, 16);
-            this.label148.TabIndex = 153;
-            this.label148.Text = "Aluminium";
-            // 
-            // nmDChemBAluminium
-            // 
-            this.nmDChemBAluminium.Location = new System.Drawing.Point(193, 106);
-            this.nmDChemBAluminium.Name = "nmDChemBAluminium";
-            this.nmDChemBAluminium.Size = new System.Drawing.Size(46, 20);
-            this.nmDChemBAluminium.TabIndex = 154;
-            this.nmDChemBAluminium.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // label149
-            // 
-            this.label149.AutoSize = true;
-            this.label149.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label149.Location = new System.Drawing.Point(114, 78);
-            this.label149.Name = "label149";
-            this.label149.Size = new System.Drawing.Size(39, 16);
-            this.label149.TabIndex = 151;
-            this.label149.Text = "Lead";
-            // 
-            // nmDChemBLead
-            // 
-            this.nmDChemBLead.Location = new System.Drawing.Point(110, 106);
-            this.nmDChemBLead.Name = "nmDChemBLead";
-            this.nmDChemBLead.Size = new System.Drawing.Size(46, 20);
-            this.nmDChemBLead.TabIndex = 152;
-            this.nmDChemBLead.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
             // label150
             // 
             this.label150.AutoSize = true;
             this.label150.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label150.Location = new System.Drawing.Point(41, 77);
+            this.label150.Location = new System.Drawing.Point(41, 45);
             this.label150.Name = "label150";
             this.label150.Size = new System.Drawing.Size(42, 16);
             this.label150.TabIndex = 149;
             this.label150.Text = "ลำดับ  :";
             // 
-            // nmDChemBNo
+            // nmDToxiNo
             // 
-            this.nmDChemBNo.Location = new System.Drawing.Point(37, 106);
-            this.nmDChemBNo.Name = "nmDChemBNo";
-            this.nmDChemBNo.Size = new System.Drawing.Size(46, 20);
-            this.nmDChemBNo.TabIndex = 150;
-            this.nmDChemBNo.Value = new decimal(new int[] {
+            this.nmDToxiNo.Location = new System.Drawing.Point(37, 74);
+            this.nmDToxiNo.Name = "nmDToxiNo";
+            this.nmDToxiNo.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiNo.TabIndex = 150;
+            this.nmDToxiNo.Value = new decimal(new int[] {
             5,
             0,
             0,
@@ -5064,13 +5671,13 @@
             this.label151.TabIndex = 147;
             this.label151.Text = "row เริ่มต้น :";
             // 
-            // nmDChemBRow
+            // nmDToxiRow
             // 
-            this.nmDChemBRow.Location = new System.Drawing.Point(175, 22);
-            this.nmDChemBRow.Name = "nmDChemBRow";
-            this.nmDChemBRow.Size = new System.Drawing.Size(46, 20);
-            this.nmDChemBRow.TabIndex = 148;
-            this.nmDChemBRow.Value = new decimal(new int[] {
+            this.nmDToxiRow.Location = new System.Drawing.Point(175, 22);
+            this.nmDToxiRow.Name = "nmDToxiRow";
+            this.nmDToxiRow.Size = new System.Drawing.Size(46, 20);
+            this.nmDToxiRow.TabIndex = 148;
+            this.nmDToxiRow.Value = new decimal(new int[] {
             5,
             0,
             0,
@@ -5100,7 +5707,7 @@
             this.tabPage17.Location = new System.Drawing.Point(4, 22);
             this.tabPage17.Name = "tabPage17";
             this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage17.Size = new System.Drawing.Size(920, 322);
+            this.tabPage17.Size = new System.Drawing.Size(951, 481);
             this.tabPage17.TabIndex = 16;
             this.tabPage17.Text = "tabPage17";
             this.tabPage17.UseVisualStyleBackColor = true;
@@ -5308,75 +5915,11 @@
             0,
             0});
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(582, 146);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(46, 20);
-            this.textBox1.TabIndex = 67;
-            this.textBox1.Text = "ปกติ";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(225, 149);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(46, 20);
-            this.textBox2.TabIndex = 71;
-            this.textBox2.Text = "ปกติ";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(258, 229);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(46, 20);
-            this.textBox3.TabIndex = 75;
-            this.textBox3.Text = "ปกติ";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(248, 169);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(46, 20);
-            this.textBox4.TabIndex = 78;
-            this.textBox4.Text = "ปกติ";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(474, 155);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(46, 20);
-            this.textBox5.TabIndex = 85;
-            this.textBox5.Text = "ปกติ";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(417, 161);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(46, 20);
-            this.textBox6.TabIndex = 83;
-            this.textBox6.Text = "ปกติ";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(320, 153);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(46, 20);
-            this.textBox7.TabIndex = 81;
-            this.textBox7.Text = "ปกติ";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(228, 156);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(46, 20);
-            this.textBox8.TabIndex = 81;
-            this.textBox8.Text = "ปกติ";
-            // 
             // FrmExcelInit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 378);
+            this.ClientSize = new System.Drawing.Size(1096, 531);
             this.Controls.Add(this.tC);
             this.Name = "FrmExcelInit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -5558,19 +6101,41 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDEyeRow)).EndInit();
             this.tabPage16.ResumeLayout(false);
             this.tabPage16.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiMethanol)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiEthanol)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiIPA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiArsenic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiHexane)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiFomaldehyde)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiFluoride)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiTrichloroethylene)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiAntimony)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiMandelic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiHippuric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiMethyl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiAcetone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiNickel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiChromium)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiBenzene)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiPhenol)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiKetone)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiAmmonia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiLead)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiAluminium)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiCadmium)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiMercury)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiTin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiZinc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiCopper)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiManganese)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBAmmonia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBZinc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBManganese)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBCopper)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBTin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBMercury)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBCadmium)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBAluminium)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBLead)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDChemBRow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDToxiRow)).EndInit();
             this.tabPage17.ResumeLayout(false);
             this.tabPage17.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamSummary)).EndInit();
@@ -5937,35 +6502,32 @@
         private System.Windows.Forms.NumericUpDown nmDEyeRow;
         private System.Windows.Forms.TabPage tabPage16;
         private System.Windows.Forms.TabPage tabPage17;
-        private System.Windows.Forms.Label label124;
-        private System.Windows.Forms.TextBox txtCheMBTest;
-        private System.Windows.Forms.Button btnChemBExcel;
         private System.Windows.Forms.Label label125;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label126;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Label label127;
-        private System.Windows.Forms.NumericUpDown nmDChemBAmmonia;
+        private System.Windows.Forms.NumericUpDown nmDToxiAmmonia;
         private System.Windows.Forms.Label label128;
-        private System.Windows.Forms.NumericUpDown nmDChemBZinc;
+        private System.Windows.Forms.NumericUpDown nmDToxiZinc;
         private System.Windows.Forms.Label label130;
-        private System.Windows.Forms.NumericUpDown nmDChemBManganese;
+        private System.Windows.Forms.NumericUpDown nmDToxiManganese;
         private System.Windows.Forms.Label label144;
-        private System.Windows.Forms.NumericUpDown nmDChemBCopper;
+        private System.Windows.Forms.NumericUpDown nmDToxiCopper;
         private System.Windows.Forms.Label label145;
-        private System.Windows.Forms.NumericUpDown nmDChemBTin;
+        private System.Windows.Forms.NumericUpDown nmDToxiTin;
         private System.Windows.Forms.Label label146;
-        private System.Windows.Forms.NumericUpDown nmDChemBMercury;
+        private System.Windows.Forms.NumericUpDown nmDToxiMercury;
         private System.Windows.Forms.Label label147;
-        private System.Windows.Forms.NumericUpDown nmDChemBCadmium;
+        private System.Windows.Forms.NumericUpDown nmDToxiCadmium;
         private System.Windows.Forms.Label label148;
-        private System.Windows.Forms.NumericUpDown nmDChemBAluminium;
+        private System.Windows.Forms.NumericUpDown nmDToxiAluminium;
         private System.Windows.Forms.Label label149;
-        private System.Windows.Forms.NumericUpDown nmDChemBLead;
+        private System.Windows.Forms.NumericUpDown nmDToxiLead;
         private System.Windows.Forms.Label label150;
-        private System.Windows.Forms.NumericUpDown nmDChemBNo;
+        private System.Windows.Forms.NumericUpDown nmDToxiNo;
         private System.Windows.Forms.Label label151;
-        private System.Windows.Forms.NumericUpDown nmDChemBRow;
+        private System.Windows.Forms.NumericUpDown nmDToxiRow;
         private System.Windows.Forms.Label label152;
         private System.Windows.Forms.NumericUpDown nmDDepartment;
         private System.Windows.Forms.Label label153;
@@ -5995,5 +6557,49 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.NumericUpDown nmDToxiMandelic;
+        private System.Windows.Forms.NumericUpDown nmDToxiHippuric;
+        private System.Windows.Forms.Label label154;
+        private System.Windows.Forms.NumericUpDown nmDToxiMethyl;
+        private System.Windows.Forms.Label label155;
+        private System.Windows.Forms.NumericUpDown nmDToxiAcetone;
+        private System.Windows.Forms.Label label164;
+        private System.Windows.Forms.NumericUpDown nmDToxiNickel;
+        private System.Windows.Forms.Label label165;
+        private System.Windows.Forms.Label label166;
+        private System.Windows.Forms.NumericUpDown nmDToxiChromium;
+        private System.Windows.Forms.Label label167;
+        private System.Windows.Forms.Label label168;
+        private System.Windows.Forms.NumericUpDown nmDToxiBenzene;
+        private System.Windows.Forms.NumericUpDown nmDToxiPhenol;
+        private System.Windows.Forms.Label label169;
+        private System.Windows.Forms.Label label170;
+        private System.Windows.Forms.NumericUpDown nmDToxiKetone;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.NumericUpDown nmDToxiEthanol;
+        private System.Windows.Forms.Label label171;
+        private System.Windows.Forms.NumericUpDown nmDToxiIPA;
+        private System.Windows.Forms.Label label172;
+        private System.Windows.Forms.NumericUpDown nmDToxiArsenic;
+        private System.Windows.Forms.Label label173;
+        private System.Windows.Forms.NumericUpDown nmDToxiHexane;
+        private System.Windows.Forms.Label label175;
+        private System.Windows.Forms.NumericUpDown nmDToxiFomaldehyde;
+        private System.Windows.Forms.Label label176;
+        private System.Windows.Forms.Label label177;
+        private System.Windows.Forms.NumericUpDown nmDToxiFluoride;
+        private System.Windows.Forms.NumericUpDown nmDToxiTrichloroethylene;
+        private System.Windows.Forms.Label label178;
+        private System.Windows.Forms.Label label179;
+        private System.Windows.Forms.NumericUpDown nmDToxiAntimony;
+        private System.Windows.Forms.NumericUpDown nmDToxiMethanol;
+        private System.Windows.Forms.Label label174;
+        private System.Windows.Forms.Label label124;
+        private System.Windows.Forms.TextBox txtToxi2Test;
+        private System.Windows.Forms.Button btnToxi2Excel;
+        private System.Windows.Forms.Label label180;
+        private System.Windows.Forms.TextBox txtToxi1Test;
+        private System.Windows.Forms.Button btnToxi1Excel;
     }
 }

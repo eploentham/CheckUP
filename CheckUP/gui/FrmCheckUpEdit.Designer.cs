@@ -31,6 +31,7 @@
             this.tC = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.txtPEAge = new System.Windows.Forms.TextBox();
             this.btnSavePE = new System.Windows.Forms.Button();
             this.txtPESummary = new System.Windows.Forms.TextBox();
             this.txtPEResult = new System.Windows.Forms.TextBox();
@@ -225,7 +226,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtAge = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtPEAge = new System.Windows.Forms.TextBox();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.tabPage15 = new System.Windows.Forms.TabPage();
             this.tC.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -252,6 +256,10 @@
             this.tC.Controls.Add(this.tabPage9);
             this.tC.Controls.Add(this.tabPage10);
             this.tC.Controls.Add(this.tabPage11);
+            this.tC.Controls.Add(this.tabPage12);
+            this.tC.Controls.Add(this.tabPage13);
+            this.tC.Controls.Add(this.tabPage14);
+            this.tC.Controls.Add(this.tabPage15);
             this.tC.Location = new System.Drawing.Point(12, 106);
             this.tC.Name = "tC";
             this.tC.SelectedIndex = 0;
@@ -294,6 +302,15 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // txtPEAge
+            // 
+            this.txtPEAge.BackColor = System.Drawing.Color.White;
+            this.txtPEAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtPEAge.Location = new System.Drawing.Point(138, 49);
+            this.txtPEAge.Name = "txtPEAge";
+            this.txtPEAge.Size = new System.Drawing.Size(100, 22);
+            this.txtPEAge.TabIndex = 61;
             // 
             // btnSavePE
             // 
@@ -1051,10 +1068,12 @@
             // 
             // txtFBSNormal
             // 
+            this.txtFBSNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtFBSNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFBSNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtFBSNormal.Location = new System.Drawing.Point(308, 55);
             this.txtFBSNormal.Name = "txtFBSNormal";
-            this.txtFBSNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtFBSNormal.Size = new System.Drawing.Size(173, 13);
             this.txtFBSNormal.TabIndex = 110;
             // 
             // btnFBSSave
@@ -1178,106 +1197,132 @@
             // 
             // txtUALeuNormal
             // 
+            this.txtUALeuNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUALeuNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUALeuNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtUALeuNormal.Location = new System.Drawing.Point(951, 100);
             this.txtUALeuNormal.Name = "txtUALeuNormal";
-            this.txtUALeuNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtUALeuNormal.Size = new System.Drawing.Size(173, 13);
             this.txtUALeuNormal.TabIndex = 123;
             // 
             // txtUAKetoneNormal
             // 
+            this.txtUAKetoneNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUAKetoneNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUAKetoneNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtUAKetoneNormal.Location = new System.Drawing.Point(951, 47);
             this.txtUAKetoneNormal.Name = "txtUAKetoneNormal";
-            this.txtUAKetoneNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtUAKetoneNormal.Size = new System.Drawing.Size(173, 13);
             this.txtUAKetoneNormal.TabIndex = 122;
             // 
             // txtUABloodNormal
             // 
+            this.txtUABloodNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUABloodNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUABloodNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtUABloodNormal.Location = new System.Drawing.Point(560, 243);
             this.txtUABloodNormal.Name = "txtUABloodNormal";
-            this.txtUABloodNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtUABloodNormal.Size = new System.Drawing.Size(173, 13);
             this.txtUABloodNormal.TabIndex = 121;
             // 
             // txtUABactNormal
             // 
+            this.txtUABactNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUABactNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUABactNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtUABactNormal.Location = new System.Drawing.Point(560, 197);
             this.txtUABactNormal.Name = "txtUABactNormal";
-            this.txtUABactNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtUABactNormal.Size = new System.Drawing.Size(173, 13);
             this.txtUABactNormal.TabIndex = 120;
             // 
             // txtUAEpiNormal
             // 
+            this.txtUAEpiNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUAEpiNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUAEpiNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtUAEpiNormal.Location = new System.Drawing.Point(560, 146);
             this.txtUAEpiNormal.Name = "txtUAEpiNormal";
-            this.txtUAEpiNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtUAEpiNormal.Size = new System.Drawing.Size(173, 13);
             this.txtUAEpiNormal.TabIndex = 119;
             // 
             // txtUARbcNormal
             // 
+            this.txtUARbcNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUARbcNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUARbcNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtUARbcNormal.Location = new System.Drawing.Point(560, 97);
             this.txtUARbcNormal.Name = "txtUARbcNormal";
-            this.txtUARbcNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtUARbcNormal.Size = new System.Drawing.Size(173, 13);
             this.txtUARbcNormal.TabIndex = 118;
             // 
             // txtUAWBCNormal
             // 
+            this.txtUAWBCNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUAWBCNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUAWBCNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtUAWBCNormal.Location = new System.Drawing.Point(560, 48);
             this.txtUAWBCNormal.Name = "txtUAWBCNormal";
-            this.txtUAWBCNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtUAWBCNormal.Size = new System.Drawing.Size(173, 13);
             this.txtUAWBCNormal.TabIndex = 117;
             // 
             // txtUAProteinNormal
             // 
+            this.txtUAProteinNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUAProteinNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUAProteinNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtUAProteinNormal.Location = new System.Drawing.Point(185, 292);
             this.txtUAProteinNormal.Name = "txtUAProteinNormal";
-            this.txtUAProteinNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtUAProteinNormal.Size = new System.Drawing.Size(173, 13);
             this.txtUAProteinNormal.TabIndex = 116;
             // 
             // txtUApHNormal
             // 
+            this.txtUApHNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUApHNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUApHNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtUApHNormal.Location = new System.Drawing.Point(185, 243);
             this.txtUApHNormal.Name = "txtUApHNormal";
-            this.txtUApHNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtUApHNormal.Size = new System.Drawing.Size(173, 13);
             this.txtUApHNormal.TabIndex = 115;
             // 
             // txtUASpgrNormal
             // 
+            this.txtUASpgrNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUASpgrNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUASpgrNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtUASpgrNormal.Location = new System.Drawing.Point(185, 194);
             this.txtUASpgrNormal.Name = "txtUASpgrNormal";
-            this.txtUASpgrNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtUASpgrNormal.Size = new System.Drawing.Size(173, 13);
             this.txtUASpgrNormal.TabIndex = 114;
             // 
             // txtUASugarNormal
             // 
+            this.txtUASugarNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUASugarNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUASugarNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtUASugarNormal.Location = new System.Drawing.Point(185, 146);
             this.txtUASugarNormal.Name = "txtUASugarNormal";
-            this.txtUASugarNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtUASugarNormal.Size = new System.Drawing.Size(173, 13);
             this.txtUASugarNormal.TabIndex = 113;
             // 
             // txtUAAppeNormal
             // 
+            this.txtUAAppeNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUAAppeNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUAAppeNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtUAAppeNormal.Location = new System.Drawing.Point(185, 97);
             this.txtUAAppeNormal.Name = "txtUAAppeNormal";
-            this.txtUAAppeNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtUAAppeNormal.Size = new System.Drawing.Size(173, 13);
             this.txtUAAppeNormal.TabIndex = 112;
             // 
             // txtUAColorNormal
             // 
+            this.txtUAColorNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUAColorNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUAColorNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtUAColorNormal.Location = new System.Drawing.Point(185, 50);
             this.txtUAColorNormal.Name = "txtUAColorNormal";
-            this.txtUAColorNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtUAColorNormal.Size = new System.Drawing.Size(173, 13);
             this.txtUAColorNormal.TabIndex = 111;
             // 
             // txtUALeu
@@ -1581,10 +1626,12 @@
             // 
             // txtTriNormal
             // 
+            this.txtTriNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtTriNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTriNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtTriNormal.Location = new System.Drawing.Point(281, 38);
             this.txtTriNormal.Name = "txtTriNormal";
-            this.txtTriNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtTriNormal.Size = new System.Drawing.Size(173, 13);
             this.txtTriNormal.TabIndex = 112;
             // 
             // btnTriSave
@@ -1678,10 +1725,12 @@
             // 
             // txtChoHDLNormal
             // 
+            this.txtChoHDLNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtChoHDLNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtChoHDLNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtChoHDLNormal.Location = new System.Drawing.Point(309, 128);
             this.txtChoHDLNormal.Name = "txtChoHDLNormal";
-            this.txtChoHDLNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtChoHDLNormal.Size = new System.Drawing.Size(173, 13);
             this.txtChoHDLNormal.TabIndex = 118;
             // 
             // txtChoHDL
@@ -1704,10 +1753,12 @@
             // 
             // txtChoLDLNormal
             // 
+            this.txtChoLDLNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtChoLDLNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtChoLDLNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtChoLDLNormal.Location = new System.Drawing.Point(309, 100);
             this.txtChoLDLNormal.Name = "txtChoLDLNormal";
-            this.txtChoLDLNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtChoLDLNormal.Size = new System.Drawing.Size(173, 13);
             this.txtChoLDLNormal.TabIndex = 115;
             // 
             // txtChoLDL
@@ -1730,10 +1781,12 @@
             // 
             // txtChoNormal
             // 
+            this.txtChoNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtChoNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtChoNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtChoNormal.Location = new System.Drawing.Point(309, 72);
             this.txtChoNormal.Name = "txtChoNormal";
-            this.txtChoNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtChoNormal.Size = new System.Drawing.Size(173, 13);
             this.txtChoNormal.TabIndex = 112;
             // 
             // btnChoSave
@@ -1827,26 +1880,32 @@
             // 
             // txtSgotALTNormal
             // 
+            this.txtSgotALTNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtSgotALTNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSgotALTNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtSgotALTNormal.Location = new System.Drawing.Point(600, 68);
             this.txtSgotALTNormal.Name = "txtSgotALTNormal";
-            this.txtSgotALTNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtSgotALTNormal.Size = new System.Drawing.Size(173, 13);
             this.txtSgotALTNormal.TabIndex = 114;
             // 
             // txtSgotSgptNormal
             // 
+            this.txtSgotSgptNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtSgotSgptNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSgotSgptNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtSgotSgptNormal.Location = new System.Drawing.Point(230, 132);
             this.txtSgotSgptNormal.Name = "txtSgotSgptNormal";
-            this.txtSgotSgptNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtSgotSgptNormal.Size = new System.Drawing.Size(173, 13);
             this.txtSgotSgptNormal.TabIndex = 113;
             // 
             // txtSgotNormal
             // 
+            this.txtSgotNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtSgotNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSgotNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtSgotNormal.Location = new System.Drawing.Point(230, 67);
             this.txtSgotNormal.Name = "txtSgotNormal";
-            this.txtSgotNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtSgotNormal.Size = new System.Drawing.Size(173, 13);
             this.txtSgotNormal.TabIndex = 112;
             // 
             // txtSgotALT
@@ -1973,18 +2032,22 @@
             // 
             // txtBunCreatinineNormal
             // 
+            this.txtBunCreatinineNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtBunCreatinineNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBunCreatinineNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtBunCreatinineNormal.Location = new System.Drawing.Point(303, 122);
             this.txtBunCreatinineNormal.Name = "txtBunCreatinineNormal";
-            this.txtBunCreatinineNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtBunCreatinineNormal.Size = new System.Drawing.Size(173, 13);
             this.txtBunCreatinineNormal.TabIndex = 113;
             // 
             // txtBunNormal
             // 
+            this.txtBunNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtBunNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBunNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtBunNormal.Location = new System.Drawing.Point(303, 62);
             this.txtBunNormal.Name = "txtBunNormal";
-            this.txtBunNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtBunNormal.Size = new System.Drawing.Size(173, 13);
             this.txtBunNormal.TabIndex = 112;
             // 
             // btnBunSave
@@ -2090,10 +2153,12 @@
             // 
             // txtUricNormal
             // 
+            this.txtUricNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUricNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUricNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtUricNormal.Location = new System.Drawing.Point(316, 52);
             this.txtUricNormal.Name = "txtUricNormal";
-            this.txtUricNormal.Size = new System.Drawing.Size(173, 20);
+            this.txtUricNormal.Size = new System.Drawing.Size(173, 13);
             this.txtUricNormal.TabIndex = 112;
             // 
             // btnUricSave
@@ -2168,8 +2233,9 @@
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(86, 34);
             this.btnExcel.TabIndex = 59;
-            this.btnExcel.Text = "Excel";
+            this.btnExcel.Text = "Save";
             this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // label1
             // 
@@ -2235,14 +2301,45 @@
             this.label8.TabIndex = 66;
             this.label8.Text = "อายุ :";
             // 
-            // txtPEAge
+            // tabPage12
             // 
-            this.txtPEAge.BackColor = System.Drawing.Color.White;
-            this.txtPEAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtPEAge.Location = new System.Drawing.Point(138, 49);
-            this.txtPEAge.Name = "txtPEAge";
-            this.txtPEAge.Size = new System.Drawing.Size(100, 22);
-            this.txtPEAge.TabIndex = 61;
+            this.tabPage12.Location = new System.Drawing.Point(4, 22);
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage12.Size = new System.Drawing.Size(1150, 441);
+            this.tabPage12.TabIndex = 12;
+            this.tabPage12.Text = "tabPage12";
+            this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // tabPage13
+            // 
+            this.tabPage13.Location = new System.Drawing.Point(4, 22);
+            this.tabPage13.Name = "tabPage13";
+            this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage13.Size = new System.Drawing.Size(1150, 441);
+            this.tabPage13.TabIndex = 13;
+            this.tabPage13.Text = "tabPage13";
+            this.tabPage13.UseVisualStyleBackColor = true;
+            // 
+            // tabPage14
+            // 
+            this.tabPage14.Location = new System.Drawing.Point(4, 22);
+            this.tabPage14.Name = "tabPage14";
+            this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage14.Size = new System.Drawing.Size(1150, 441);
+            this.tabPage14.TabIndex = 14;
+            this.tabPage14.Text = "tabPage14";
+            this.tabPage14.UseVisualStyleBackColor = true;
+            // 
+            // tabPage15
+            // 
+            this.tabPage15.Location = new System.Drawing.Point(4, 22);
+            this.tabPage15.Name = "tabPage15";
+            this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage15.Size = new System.Drawing.Size(1150, 441);
+            this.tabPage15.TabIndex = 15;
+            this.tabPage15.Text = "tabPage15";
+            this.tabPage15.UseVisualStyleBackColor = true;
             // 
             // FrmCheckUpEdit
             // 
@@ -2489,5 +2586,9 @@
         private System.Windows.Forms.TextBox txtChoLDL;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtPEAge;
+        private System.Windows.Forms.TabPage tabPage12;
+        private System.Windows.Forms.TabPage tabPage13;
+        private System.Windows.Forms.TabPage tabPage14;
+        private System.Windows.Forms.TabPage tabPage15;
     }
 }
