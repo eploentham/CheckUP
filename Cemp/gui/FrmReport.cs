@@ -374,8 +374,8 @@ namespace Cemp
             try
             {
                 cc.lw.WriteLog("rpt.setReportQuotation OK ");
-                rpt.Load(cc.initC.PathReport + "\\QuotationPrint.rpt");
-                cc.lw.WriteLog("rpt.setReportQuotation OK Load" + cc.initC.PathReport + "\\QuotationPrint.rpt");
+                rpt.Load(cc.initC.PathReport + "\\QuotationPrint1.rpt");
+                cc.lw.WriteLog("rpt.setReportQuotation OK Load" + cc.initC.PathReport + "\\QuotationPrint1.rpt");
                 rpt.SetDataSource(dt);
                 cc.lw.WriteLog("rpt.setReportQuotation OK SetDataSource");
                 //rpt.SetDataSource(dt2);

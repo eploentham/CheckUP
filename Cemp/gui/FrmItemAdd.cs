@@ -76,6 +76,7 @@ namespace Cemp.gui
             cboDocType.Text = it.ItemType;
             cboCustPO = cc.cudb.getCboVendor(cboCustPO);
             cboCustPO.Text = cc.getVendorNamet(it.CustId);
+            txtSort1.Text = it.Sort1;
         }
         private void getItem()
         {
@@ -99,6 +100,7 @@ namespace Cemp.gui
             it.CustNameT = cboCustPO.Text;
             it.AnalysisId = cc.getValueCboItem(cboAnalysis);
             it.AnalysisNameT = cboAnalysis.Text;
+            it.Sort1 = "";
         }
         private void FrmItemAdd_Load(object sender, EventArgs e)
         {
@@ -152,6 +154,7 @@ namespace Cemp.gui
             }
             if (cc.itdb.insertItem(it).Length >= 1)
             {
+                cc.quidb.UpdateGroupNameT(txtId.Text,it.ItemGroupId, cboGroup.Text, txtSort1.Text);
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 this.Dispose();
                 //this.Hide();

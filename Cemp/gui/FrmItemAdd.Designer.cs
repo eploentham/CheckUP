@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAnalysisAdd = new System.Windows.Forms.Button();
+            this.cboAnalysis = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.cboDocType = new System.Windows.Forms.ComboBox();
             this.txtPriceCostReal = new System.Windows.Forms.TextBox();
@@ -62,14 +65,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnAnalysisAdd = new System.Windows.Forms.Button();
-            this.cboAnalysis = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.txtSort1 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtSort1);
+            this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.btnAnalysisAdd);
             this.groupBox1.Controls.Add(this.cboAnalysis);
             this.groupBox1.Controls.Add(this.label14);
@@ -111,6 +115,35 @@
             this.groupBox1.Size = new System.Drawing.Size(590, 498);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // btnAnalysisAdd
+            // 
+            this.btnAnalysisAdd.Location = new System.Drawing.Point(512, 193);
+            this.btnAnalysisAdd.Name = "btnAnalysisAdd";
+            this.btnAnalysisAdd.Size = new System.Drawing.Size(37, 23);
+            this.btnAnalysisAdd.TabIndex = 141;
+            this.btnAnalysisAdd.Text = "...";
+            this.btnAnalysisAdd.UseVisualStyleBackColor = true;
+            this.btnAnalysisAdd.Click += new System.EventHandler(this.btnAnalysisAdd_Click);
+            // 
+            // cboAnalysis
+            // 
+            this.cboAnalysis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboAnalysis.FormattingEnabled = true;
+            this.cboAnalysis.Location = new System.Drawing.Point(108, 193);
+            this.cboAnalysis.Name = "cboAnalysis";
+            this.cboAnalysis.Size = new System.Drawing.Size(398, 24);
+            this.cboAnalysis.TabIndex = 140;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(6, 196);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(65, 16);
+            this.label14.TabIndex = 139;
+            this.label14.Text = "Analysis :";
             // 
             // label13
             // 
@@ -469,34 +502,24 @@
             this.label1.TabIndex = 101;
             this.label1.Text = "รหัส  yyxxx:";
             // 
-            // btnAnalysisAdd
+            // txtSort1
             // 
-            this.btnAnalysisAdd.Location = new System.Drawing.Point(512, 193);
-            this.btnAnalysisAdd.Name = "btnAnalysisAdd";
-            this.btnAnalysisAdd.Size = new System.Drawing.Size(37, 23);
-            this.btnAnalysisAdd.TabIndex = 141;
-            this.btnAnalysisAdd.Text = "...";
-            this.btnAnalysisAdd.UseVisualStyleBackColor = true;
-            this.btnAnalysisAdd.Click += new System.EventHandler(this.btnAnalysisAdd_Click);
+            this.txtSort1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSort1.Location = new System.Drawing.Point(439, 257);
+            this.txtSort1.Name = "txtSort1";
+            this.txtSort1.Size = new System.Drawing.Size(75, 22);
+            this.txtSort1.TabIndex = 143;
+            this.txtSort1.TabStop = false;
             // 
-            // cboAnalysis
+            // label15
             // 
-            this.cboAnalysis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboAnalysis.FormattingEnabled = true;
-            this.cboAnalysis.Location = new System.Drawing.Point(108, 193);
-            this.cboAnalysis.Name = "cboAnalysis";
-            this.cboAnalysis.Size = new System.Drawing.Size(398, 24);
-            this.cboAnalysis.TabIndex = 140;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(6, 196);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(65, 16);
-            this.label14.TabIndex = 139;
-            this.label14.Text = "Analysis :";
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(337, 260);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(32, 16);
+            this.label15.TabIndex = 142;
+            this.label15.Text = "Sort";
             // 
             // FrmItemAdd
             // 
@@ -554,5 +577,7 @@
         private System.Windows.Forms.Button btnAnalysisAdd;
         private System.Windows.Forms.ComboBox cboAnalysis;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtSort1;
+        private System.Windows.Forms.Label label15;
     }
 }

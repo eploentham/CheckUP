@@ -322,5 +322,15 @@ namespace Cemp.objdb
                 return o;
             }
         }
+        public String UpdateGroupNameT(String itId, String itgId, String itgNameT, String sort1)
+        {
+            String sql = "", chk = "";
+            sql = "Update " + qui.table + " Set " + qui.ItemGroupNameT + "='" + itgNameT + "', " +
+                qui.ItemGroupId + "='" + itgId + "', " +
+                qui.ItemGroupSort + "='" + sort1 + "' " +
+                "Where " + qui.ItemId + "='" + itId + "'";
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
     }
 }

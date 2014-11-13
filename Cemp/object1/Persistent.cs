@@ -10,7 +10,8 @@ namespace Cemp.object1
         public String table { get; set; }
         public String pkField { get; set; }
         public String sited { get; set; }
-        public String dateGenDB = "Format(Now(),'yyyy')+'-'+Format(Now(),'mm')+'-'+Format(Now(),'dd')+' '+Format(Now(),'hh:nn:ss')";
+        //public String dateGenDB = "Format(Now(),'yyyy')+'-'+Format(Now(),'mm')+'-'+Format(Now(),'dd')+' '+Format(Now(),'hh:nn:ss')";// access
+        public String dateGenDB = "Now()";//MySQL
         Random r = new Random();
         public Persistent()
         {

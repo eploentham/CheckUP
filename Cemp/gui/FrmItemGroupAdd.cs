@@ -157,7 +157,7 @@ namespace Cemp.gui
         {
             if (MessageBox.Show("ต้องการยกเลิก"  + txtNameT.Text, "ยกเลิก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
-                cc.medb.VoidMethod(txtId.Text);
+                cc.itgdb.VoidItemGroup(txtId.Text);
                 this.Dispose();
             }
         }

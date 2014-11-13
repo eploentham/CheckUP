@@ -323,7 +323,7 @@ namespace Cemp.objdb
                 qu.StaffName + "," + qu.StaffTel + "," + qu.StatusQuo + "," +
                 qu.Total + "," + qu.Vat + "," + qu.VatRate + "," +
                 qu.StaffApproveId + "," + qu.StaffApproveName + "," + qu.Discount + "," +
-                qu.QuoNumberCnt + "," + qu.StatusMOU + "," + qu.Remark4 + "," + qu.Remark5 + "," + qu.Remark6 + "," + qu.Remark7 + ") " +
+                qu.QuoNumberCnt + "," + qu.StatusMOU + "," + qu.Remark4 + "," + qu.Remark5 + "," + qu.Remark6 + "," + qu.Remark7 + "," + qu.dateCreate + ") " +
                 "Values('" + p.Id + "'," + NumberNull1(p.Amount) + "," + NumberNull1(p.AmountDiscount) + ",'" +
                 p.CompAddress1 + "','" + p.CompAddress2 + "','" + p.CompId + "','" +
                 p.CompName + "','" + p.CompTaxId + "','" + p.ContactName + "','" +
@@ -338,7 +338,7 @@ namespace Cemp.objdb
                 p.StaffName + "','" + p.StaffTel + "','" + p.StatusQuo + "'," +
                 NumberNull1(p.Total) + "," + NumberNull1(p.Vat) + "," + NumberNull1(p.VatRate) + ",'" +
                 p.StaffApproveId + "','" + p.StaffApproveName + "'," + NumberNull1(p.Discount) + "," +
-                NumberNull1(p.QuoNumberCnt) + ",'" + p.StatusMOU + "','" + p.Remark4 + "','" + p.Remark5 + "','" + p.Remark6 + "','" + p.Remark7 + "')";
+                NumberNull1(p.QuoNumberCnt) + ",'" + p.StatusMOU + "','" + p.Remark4 + "','" + p.Remark5 + "','" + p.Remark6 + "','" + p.Remark7 + "'," + p.dateGenDB + ")";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

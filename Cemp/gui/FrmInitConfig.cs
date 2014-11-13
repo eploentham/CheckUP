@@ -64,6 +64,24 @@ namespace Cemp.gui
                 txtPwd.Visible = false;
                 txtUser.Visible = false;
             }
+            if (cc.initC.connectDatabaseServer.Equals("yes"))
+            {
+                ChkServer.Checked = true;
+                gBServer.Visible = true;
+                ChkClient.Checked = false;
+                gBClient.Visible = false;
+
+                chkConnectServer.Checked = true;
+                txtHost.Text = cc.initC.ServerIP;
+                txtUser.Text = cc.initC.User;
+                txtPwd.Text = cc.initC.Password;
+                txtDatabase.Text = cc.initC.Database;
+                txtDatabase.Visible = true;
+                txtHost.Visible = true;
+                txtPwd.Visible = true;
+                txtUser.Visible = true;
+
+            }
             txtIP.Text = cc.initC.IPServer;
             txtPathData.Text = cc.initC.PathData;
             txtPathImage.Text = cc.initC.pathImageLogo;
@@ -135,7 +153,7 @@ namespace Cemp.gui
             else
             {
                 cc.SetSetatusServer(false);
-                cc.SetConnectServer(chkConnectServer.Checked, txtHost.Text, txtUser.Text, txtPwd.Text);
+                cc.SetConnectServer(chkConnectServer.Checked, txtHost.Text, txtDatabase.Text, txtUser.Text, txtPwd.Text);
                 //lc.SetPathImage(txtPathImage.Text);
                 cc.SetIPServer(txtHost.Text);
                 cc.SetPathShareImage(txtConnectShareData.Text);

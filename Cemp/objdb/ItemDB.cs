@@ -14,7 +14,7 @@ namespace Cemp.objdb
         public Item it;
         public ItemDB(ConnectDB c)
         {
-            conn = c;
+            conn = c;                       
             initConfig();
         }
         private void initConfig()
@@ -46,7 +46,10 @@ namespace Cemp.objdb
             it.CustNameT = "cust_name_t";
             it.AnalysisId = "analysis_id";
             it.AnalysisNameT = "analysis_name_t";
-
+            if (conn.initc.connectDatabaseServer.Equals("yes"))
+            {
+                it.dateGenDB = "Now()";
+            }
             it.table = "b_item";
             it.pkField = "item_id";
         }
@@ -110,7 +113,7 @@ namespace Cemp.objdb
             }
             if (!itName.Equals(""))
             {
-                whereitName = " and " + it.NameT + " like '" + itName + "%'";
+                whereitName = " and (" + it.NameT + " like '" + itName + "%' or "+it.Code+" like '"+itName+"%')";
             }
             sql = "Select * From " + it.table + " Where " + it.Active + "='1'" + whereitg + wheremeid + whereityid + whereitName;
             dt = conn.selectData(sql);
@@ -244,11 +247,11 @@ namespace Cemp.objdb
         {
             String sql = "", chk = "";
 
-            p.NameE = p.NameE.Replace("''", "'");
-            p.NameT = p.NameT.Replace("''", "'");
-            p.Remark = p.Remark.Replace("''", "'");
-            p.ItemGroupNameT = p.ItemGroupNameT.Replace("''", "'");
-            p.MethodNameT = p.MethodNameT.Replace("''", "'");
+            p.NameE = p.NameE.Replace("'", "''");
+            p.NameT = p.NameT.Replace("'", "''");
+            p.Remark = p.Remark.Replace("'", "''");
+            p.ItemGroupNameT = p.ItemGroupNameT.Replace("'", "''");
+            p.MethodNameT = p.MethodNameT.Replace("'", "''");
             p.CustNameT = p.CustNameT.Replace("'", "''");
             p.AnalysisNameT = p.AnalysisNameT.Replace("'", "''");
             if (p.Sort1.Equals(""))
@@ -267,7 +270,7 @@ namespace Cemp.objdb
                 it.PriceSale + "=" + NumberNull1(p.PriceSale) + ", " +
                 it.Sort1 + "='" + p.Sort1 + "', " +
                 it.userModi + "='" + p.userModi + "'," +
-                it.dateModi + "=" + p.dateGenDB + ", " +
+                it.dateModi + "=" + it.dateGenDB + ", " +
                 it.PriceCostReal + "=" + NumberNull1(p.PriceCostReal) + ", " +
                 it.ItemType + "='" + p.ItemType + "', " +
                 it.CustNameT + "='" + p.CustNameT + "', " +
@@ -391,6 +394,15 @@ namespace Cemp.objdb
             {
                 return o;
             }
+        }
+        public String UpdateGroupNameT(String id, String itgId, String itgNameT)
+        {
+            String sql = "", chk = "";
+            sql = "Update " + it.table + " Set " + it.ItemGroupNameT + "='" + itgNameT + "' " +
+                //it.ItemGroupNameT + "='" + itgNameT + "' " +
+                "Where " + it.pkField + "='" + id + "'";
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
         }
     }
 }

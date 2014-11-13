@@ -19,6 +19,7 @@ namespace Cemp.Control
 {
     public class CnviControl
     {
+        public Persistent per;
         public Config1 cf;
         public ConnectDB conn;//
 
@@ -114,6 +115,8 @@ namespace Cemp.Control
                 cbocu = cudb.getCboCustomer(cbocu);
                 cbove = cudb.getCboVendor(cbove);
 
+                per = new Persistent();
+                per.dateGenDB = "Now()";
 
                 PathLogo = Environment.CurrentDirectory;
             }
@@ -178,6 +181,7 @@ namespace Cemp.Control
             initC.ServerIP = iniFile.Read("host");
             initC.User = iniFile.Read("username");
             initC.Password = iniFile.Read("password");
+            initC.Database = iniFile.Read("database");
 
             initC.PathData = iniFile.Read("pathimage");
             initC.pathImageLogo = iniFile.Read("pathimagelogo");
@@ -317,7 +321,7 @@ namespace Cemp.Control
                 iniFile.Write("use32bit", "no");
             }
         }
-        public void SetConnectServer(Boolean value, String host, String username, String password)
+        public void SetConnectServer(Boolean value, String host, String database, String username, String password)
         {
             if (value)
             {
@@ -325,6 +329,7 @@ namespace Cemp.Control
                 iniFile.Write("host", host.Trim());
                 iniFile.Write("username", username.Trim());
                 iniFile.Write("password", password.Trim());
+                iniFile.Write("database", database.Trim());
             }
             else
             {

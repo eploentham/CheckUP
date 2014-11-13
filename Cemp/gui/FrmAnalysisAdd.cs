@@ -153,7 +153,7 @@ namespace Cemp.gui
         {
             if (MessageBox.Show("ต้องการยกเลิก"  + txtNameT.Text, "ยกเลิก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
-                cc.medb.VoidMethod(txtId.Text);
+                cc.anadb.VoidAnalysis(txtId.Text);
                 this.Dispose();
             }
         }

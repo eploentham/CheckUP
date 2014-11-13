@@ -16,8 +16,8 @@ namespace Cemp.gui
     {
         CnviControl cc;
         Item it;
-        int colRow = 0, colNameT = 1, colNameE = 2, colMethod = 5, colGroup = 4, colType=6, colVendor=7, colAnalysis=3, colRemark = 8, colId = 9;
-        int colCnt = 10;
+        int colRow = 0, colCode=1, colNameT = 2, colNameE = 3, colMethod = 6, colGroup = 5, colType=7, colVendor=8, colAnalysis=4, colRemark = 9, colId = 10;
+        int colCnt = 11;
         Boolean pageLoad = false;
         DataTable dt = new DataTable();
         public FrmItemView(CnviControl c)
@@ -75,6 +75,7 @@ namespace Cemp.gui
 
                 dgvView.Columns[colRow].HeaderText = "ลำดับ";
                 dgvView.Columns[colNameT].HeaderText = "ชื่อ";
+                dgvView.Columns[colCode].HeaderText = "Code";
                 dgvView.Columns[colNameE].HeaderText = "Name";
                 dgvView.Columns[colMethod].HeaderText = "Method";
                 dgvView.Columns[colGroup].HeaderText = "กลุ่ม";
@@ -93,6 +94,7 @@ namespace Cemp.gui
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         dgvView[colRow, i].Value = (i + 1);
+                        dgvView[colCode, i].Value = dt.Rows[i][cc.itdb.it.Code].ToString();
                         dgvView[colNameT, i].Value = dt.Rows[i][cc.itdb.it.NameT].ToString();
                         dgvView[colNameE, i].Value = dt.Rows[i][cc.itdb.it.NameE].ToString();
                         dgvView[colMethod, i].Value = dt.Rows[i][cc.itdb.it.MethodNameT].ToString();
