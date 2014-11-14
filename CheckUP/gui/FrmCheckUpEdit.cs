@@ -17,8 +17,8 @@ namespace CheckUP.gui
         CustCheckUp cuc;
         CustCheckUpPatient ccp;
         DataTable dtccp;
-        int tabSum = 0, tabPE = 1, tabXRay = 2, tabCBC = 3, tabFBS = 4, tabUA = 5, tabTri = 6, tabCho = 7, tabSgot = 8, tabBun = 9, tabUric = 10;
-        int tabCnt = 11;
+        int tabSum = 0, tabPE = 1, tabXRay = 2, tabCBC = 3, tabFBS = 4, tabUA = 5, tabTri = 6, tabCho = 7, tabSgot = 8, tabBun = 9, tabUric = 10, tabOther1 = 11, tabLung = 12, tabAudio = 13, tabEye = 14, tabToxi = 15, tabStoolExam = 16;
+        int tabCnt = 17;
 
         public FrmCheckUpEdit(String ccpId,CheckControl c)
         {
@@ -43,6 +43,12 @@ namespace CheckUP.gui
             tC.TabPages[tabSgot].Text = "SGOT/SGPT";
             tC.TabPages[tabBun].Text = "BUN Creatine";
             tC.TabPages[tabUric].Text = "Uric acid";
+            tC.TabPages[tabOther1].Text = "Other1";
+            tC.TabPages[tabLung].Text = "Lung";
+            tC.TabPages[tabAudio].Text = "Audio";
+            tC.TabPages[tabEye].Text = "Eye";
+            tC.TabPages[tabToxi].Text = "Toxicology";
+            tC.TabPages[tabStoolExam].Text = "Stool Exam";
             tC.TabPages[tabPE].Focus();
             //tC.TabPages[tabPrint].Text = "Print";
             setControl(ccpId);
@@ -185,6 +191,8 @@ namespace CheckUP.gui
             txtSgotALTNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.liverAlp].ToString();
 
             txtUricNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.uricAcid].ToString();
+
+            txtUricNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.Audiogram1000L].ToString();
 
         }
 

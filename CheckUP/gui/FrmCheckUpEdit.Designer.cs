@@ -217,6 +217,228 @@
             this.label82 = new System.Windows.Forms.Label();
             this.label83 = new System.Windows.Forms.Label();
             this.label84 = new System.Windows.Forms.Label();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.txtCalciumNormal = new System.Windows.Forms.TextBox();
+            this.txtAmphetamineNormal = new System.Windows.Forms.TextBox();
+            this.txtVDRLNormal = new System.Windows.Forms.TextBox();
+            this.txtAntiHIVNormal = new System.Windows.Forms.TextBox();
+            this.txtHBsAbNormal = new System.Windows.Forms.TextBox();
+            this.txtHBsAgNormal = new System.Windows.Forms.TextBox();
+            this.txtCalcium = new System.Windows.Forms.TextBox();
+            this.txtAmphetamine = new System.Windows.Forms.TextBox();
+            this.txtVDRL = new System.Windows.Forms.TextBox();
+            this.txtAntiHIV = new System.Windows.Forms.TextBox();
+            this.txtHBsAb = new System.Windows.Forms.TextBox();
+            this.txtHBsAg = new System.Windows.Forms.TextBox();
+            this.label92 = new System.Windows.Forms.Label();
+            this.label91 = new System.Windows.Forms.Label();
+            this.label90 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.txtPerFev1Normal = new System.Windows.Forms.TextBox();
+            this.txtPerFev1 = new System.Windows.Forms.TextBox();
+            this.txtFev1PerNormal = new System.Windows.Forms.TextBox();
+            this.txtFev1MeasNormal = new System.Windows.Forms.TextBox();
+            this.txtFev1PredicNormal = new System.Windows.Forms.TextBox();
+            this.txtFvcPerNormal = new System.Windows.Forms.TextBox();
+            this.txtFvcMeasNormal = new System.Windows.Forms.TextBox();
+            this.txtFvcPredicNormal = new System.Windows.Forms.TextBox();
+            this.txtFev1Per = new System.Windows.Forms.TextBox();
+            this.txtFev1Meas = new System.Windows.Forms.TextBox();
+            this.txtFev1Predic = new System.Windows.Forms.TextBox();
+            this.txtFvcPer = new System.Windows.Forms.TextBox();
+            this.txtFvcMeas = new System.Windows.Forms.TextBox();
+            this.txtFvcPredic = new System.Windows.Forms.TextBox();
+            this.label102 = new System.Windows.Forms.Label();
+            this.label93 = new System.Windows.Forms.Label();
+            this.label94 = new System.Windows.Forms.Label();
+            this.label95 = new System.Windows.Forms.Label();
+            this.label97 = new System.Windows.Forms.Label();
+            this.label98 = new System.Windows.Forms.Label();
+            this.label99 = new System.Windows.Forms.Label();
+            this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.textBox45 = new System.Windows.Forms.TextBox();
+            this.textBox46 = new System.Windows.Forms.TextBox();
+            this.txtAudiogram8000RNormal = new System.Windows.Forms.TextBox();
+            this.txtAudiogram8000R = new System.Windows.Forms.TextBox();
+            this.txtAudiogram6000RNormal = new System.Windows.Forms.TextBox();
+            this.txtAudiogram4000RNormal = new System.Windows.Forms.TextBox();
+            this.txtAudiogram3000RNormal = new System.Windows.Forms.TextBox();
+            this.txtAudiogram2000RNormal = new System.Windows.Forms.TextBox();
+            this.txtAudiogram1000RNormal = new System.Windows.Forms.TextBox();
+            this.txtAudiogram500RNormal = new System.Windows.Forms.TextBox();
+            this.txtAudiogram6000R = new System.Windows.Forms.TextBox();
+            this.txtAudiogram4000R = new System.Windows.Forms.TextBox();
+            this.txtAudiogram3000R = new System.Windows.Forms.TextBox();
+            this.txtAudiogram2000R = new System.Windows.Forms.TextBox();
+            this.txtAudiogram1000R = new System.Windows.Forms.TextBox();
+            this.txtAudiogram500R = new System.Windows.Forms.TextBox();
+            this.textBox43 = new System.Windows.Forms.TextBox();
+            this.textBox44 = new System.Windows.Forms.TextBox();
+            this.txtAudiogram8000LNormal = new System.Windows.Forms.TextBox();
+            this.txtAudiogram8000L = new System.Windows.Forms.TextBox();
+            this.txtAudiogram6000LNormal = new System.Windows.Forms.TextBox();
+            this.txtAudiogram4000LNormal = new System.Windows.Forms.TextBox();
+            this.txtAudiogram3000LNormal = new System.Windows.Forms.TextBox();
+            this.txtAudiogram2000LNormal = new System.Windows.Forms.TextBox();
+            this.txtAudiogram1000LNormal = new System.Windows.Forms.TextBox();
+            this.txtAudiogram500LNormal = new System.Windows.Forms.TextBox();
+            this.txtAudiogram6000L = new System.Windows.Forms.TextBox();
+            this.txtAudiogram4000L = new System.Windows.Forms.TextBox();
+            this.txtAudiogram3000L = new System.Windows.Forms.TextBox();
+            this.txtAudiogram2000L = new System.Windows.Forms.TextBox();
+            this.txtAudiogram1000L = new System.Windows.Forms.TextBox();
+            this.txtAudiogram500L = new System.Windows.Forms.TextBox();
+            this.label122 = new System.Windows.Forms.Label();
+            this.label121 = new System.Windows.Forms.Label();
+            this.label120 = new System.Windows.Forms.Label();
+            this.label119 = new System.Windows.Forms.Label();
+            this.label105 = new System.Windows.Forms.Label();
+            this.label106 = new System.Windows.Forms.Label();
+            this.label107 = new System.Windows.Forms.Label();
+            this.label108 = new System.Windows.Forms.Label();
+            this.label109 = new System.Windows.Forms.Label();
+            this.label110 = new System.Windows.Forms.Label();
+            this.label111 = new System.Windows.Forms.Label();
+            this.label112 = new System.Windows.Forms.Label();
+            this.label113 = new System.Windows.Forms.Label();
+            this.label114 = new System.Windows.Forms.Label();
+            this.label115 = new System.Windows.Forms.Label();
+            this.label116 = new System.Windows.Forms.Label();
+            this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.textBox81 = new System.Windows.Forms.TextBox();
+            this.textBox82 = new System.Windows.Forms.TextBox();
+            this.txtEyeOldRightNormal = new System.Windows.Forms.TextBox();
+            this.EyeDegreeLeftRightNormal = new System.Windows.Forms.TextBox();
+            this.txtEyeOldRight = new System.Windows.Forms.TextBox();
+            this.EyeDegreeRight = new System.Windows.Forms.TextBox();
+            this.txtEyeSquintRightNormal = new System.Windows.Forms.TextBox();
+            this.txtEyeShortLongRightNormal = new System.Windows.Forms.TextBox();
+            this.txtEyeSquintRight = new System.Windows.Forms.TextBox();
+            this.txtEyeShortLongRight = new System.Windows.Forms.TextBox();
+            this.textBox61 = new System.Windows.Forms.TextBox();
+            this.textBox62 = new System.Windows.Forms.TextBox();
+            this.textBox63 = new System.Windows.Forms.TextBox();
+            this.txtEyeBlindness = new System.Windows.Forms.TextBox();
+            this.txtEyeOldLeftNormal = new System.Windows.Forms.TextBox();
+            this.EyeDegreeLeftNormal = new System.Windows.Forms.TextBox();
+            this.txtEyeSquintLeftNormal = new System.Windows.Forms.TextBox();
+            this.txtEyeShortLongLeftNormal = new System.Windows.Forms.TextBox();
+            this.txtEyeOldLeft = new System.Windows.Forms.TextBox();
+            this.txtEyeDegreeLeft = new System.Windows.Forms.TextBox();
+            this.txtEyeSquintLeft = new System.Windows.Forms.TextBox();
+            this.txtEyeShortLongLeft = new System.Windows.Forms.TextBox();
+            this.label131 = new System.Windows.Forms.Label();
+            this.label132 = new System.Windows.Forms.Label();
+            this.label133 = new System.Windows.Forms.Label();
+            this.label134 = new System.Windows.Forms.Label();
+            this.label135 = new System.Windows.Forms.Label();
+            this.label136 = new System.Windows.Forms.Label();
+            this.label137 = new System.Windows.Forms.Label();
+            this.label138 = new System.Windows.Forms.Label();
+            this.label139 = new System.Windows.Forms.Label();
+            this.label140 = new System.Windows.Forms.Label();
+            this.label141 = new System.Windows.Forms.Label();
+            this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.txtToxiAntimonyNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiAntimony = new System.Windows.Forms.TextBox();
+            this.txtToxiTrichloroethyleneNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiTrichloroethylene = new System.Windows.Forms.TextBox();
+            this.txtToxiFomaldehydeNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiFomaldehyde = new System.Windows.Forms.TextBox();
+            this.txtToxiFluorideNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiFluoride = new System.Windows.Forms.TextBox();
+            this.txtToxiHexaneNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiHexane = new System.Windows.Forms.TextBox();
+            this.txtToxiArsenicNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiArsenic = new System.Windows.Forms.TextBox();
+            this.txtToxiMethanolNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiMethanol = new System.Windows.Forms.TextBox();
+            this.txtToxiIPANormal = new System.Windows.Forms.TextBox();
+            this.txtToxiIPA = new System.Windows.Forms.TextBox();
+            this.txtToxiMandelicNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiMandelic = new System.Windows.Forms.TextBox();
+            this.txtToxiBenzeneNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiBenzene = new System.Windows.Forms.TextBox();
+            this.txtToxiKetoneNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiKetone = new System.Windows.Forms.TextBox();
+            this.txtToxiPhenolNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiPhenol = new System.Windows.Forms.TextBox();
+            this.txtToxiChromiumNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiChromium = new System.Windows.Forms.TextBox();
+            this.txtToxiNickelNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiNickel = new System.Windows.Forms.TextBox();
+            this.txtToxiAcetoneNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiAcetone = new System.Windows.Forms.TextBox();
+            this.txtToxiMethylNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiMethyl = new System.Windows.Forms.TextBox();
+            this.txtToxiEthanolNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiEthanol = new System.Windows.Forms.TextBox();
+            this.txtToxiHippuricNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiHippuric = new System.Windows.Forms.TextBox();
+            this.txtToxiAmmoniaNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiAmmonia = new System.Windows.Forms.TextBox();
+            this.txtToxiZincNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiZinc = new System.Windows.Forms.TextBox();
+            this.txtToxiManganeseNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiManganese = new System.Windows.Forms.TextBox();
+            this.txtToxiCopperNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiCopper = new System.Windows.Forms.TextBox();
+            this.txtToxiTinNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiTin = new System.Windows.Forms.TextBox();
+            this.txtToxiMercuryNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiCadmiumNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiAluminiumNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiLeadNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiMercury = new System.Windows.Forms.TextBox();
+            this.txtToxiCadmium = new System.Windows.Forms.TextBox();
+            this.txtToxiAluminium = new System.Windows.Forms.TextBox();
+            this.txtToxiLead = new System.Windows.Forms.TextBox();
+            this.label171 = new System.Windows.Forms.Label();
+            this.label172 = new System.Windows.Forms.Label();
+            this.label173 = new System.Windows.Forms.Label();
+            this.label175 = new System.Windows.Forms.Label();
+            this.label176 = new System.Windows.Forms.Label();
+            this.label177 = new System.Windows.Forms.Label();
+            this.label178 = new System.Windows.Forms.Label();
+            this.label179 = new System.Windows.Forms.Label();
+            this.label174 = new System.Windows.Forms.Label();
+            this.label154 = new System.Windows.Forms.Label();
+            this.label155 = new System.Windows.Forms.Label();
+            this.label164 = new System.Windows.Forms.Label();
+            this.label165 = new System.Windows.Forms.Label();
+            this.label166 = new System.Windows.Forms.Label();
+            this.label167 = new System.Windows.Forms.Label();
+            this.label168 = new System.Windows.Forms.Label();
+            this.label169 = new System.Windows.Forms.Label();
+            this.label170 = new System.Windows.Forms.Label();
+            this.label149 = new System.Windows.Forms.Label();
+            this.label148 = new System.Windows.Forms.Label();
+            this.label147 = new System.Windows.Forms.Label();
+            this.label127 = new System.Windows.Forms.Label();
+            this.label146 = new System.Windows.Forms.Label();
+            this.label128 = new System.Windows.Forms.Label();
+            this.label145 = new System.Windows.Forms.Label();
+            this.label130 = new System.Windows.Forms.Label();
+            this.label144 = new System.Windows.Forms.Label();
+            this.tabPage17 = new System.Windows.Forms.TabPage();
+            this.txtStoolExamParasiteNormal = new System.Windows.Forms.TextBox();
+            this.txtStoolExamParasite = new System.Windows.Forms.TextBox();
+            this.txtStoolExamRbcNormal = new System.Windows.Forms.TextBox();
+            this.txtStoolExamWbcNormal = new System.Windows.Forms.TextBox();
+            this.txtStoolExamAppearanceNormal = new System.Windows.Forms.TextBox();
+            this.txtStoolExamColorNormal = new System.Windows.Forms.TextBox();
+            this.txtStoolExamRbc = new System.Windows.Forms.TextBox();
+            this.txtStoolExamWbc = new System.Windows.Forms.TextBox();
+            this.txtStoolExamAppearance = new System.Windows.Forms.TextBox();
+            this.txtStoolExamColor = new System.Windows.Forms.TextBox();
+            this.label156 = new System.Windows.Forms.Label();
+            this.label157 = new System.Windows.Forms.Label();
+            this.label159 = new System.Windows.Forms.Label();
+            this.label160 = new System.Windows.Forms.Label();
+            this.label161 = new System.Windows.Forms.Label();
             this.btnExcel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCustName = new System.Windows.Forms.TextBox();
@@ -226,10 +448,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtAge = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.tabPage12 = new System.Windows.Forms.TabPage();
-            this.tabPage13 = new System.Windows.Forms.TabPage();
-            this.tabPage14 = new System.Windows.Forms.TabPage();
-            this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.btnOther1Save = new System.Windows.Forms.Button();
+            this.btnLungSave = new System.Windows.Forms.Button();
+            this.btnAudiogramSave = new System.Windows.Forms.Button();
+            this.btnEyeSave = new System.Windows.Forms.Button();
+            this.btnToxiSave = new System.Windows.Forms.Button();
+            this.btnStoolExamSave = new System.Windows.Forms.Button();
             this.tC.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -241,6 +465,12 @@
             this.tabPage9.SuspendLayout();
             this.tabPage10.SuspendLayout();
             this.tabPage11.SuspendLayout();
+            this.tabPage12.SuspendLayout();
+            this.tabPage13.SuspendLayout();
+            this.tabPage14.SuspendLayout();
+            this.tabPage15.SuspendLayout();
+            this.tabPage16.SuspendLayout();
+            this.tabPage17.SuspendLayout();
             this.SuspendLayout();
             // 
             // tC
@@ -260,10 +490,12 @@
             this.tC.Controls.Add(this.tabPage13);
             this.tC.Controls.Add(this.tabPage14);
             this.tC.Controls.Add(this.tabPage15);
+            this.tC.Controls.Add(this.tabPage16);
+            this.tC.Controls.Add(this.tabPage17);
             this.tC.Location = new System.Drawing.Point(12, 106);
             this.tC.Name = "tC";
             this.tC.SelectedIndex = 0;
-            this.tC.Size = new System.Drawing.Size(1158, 467);
+            this.tC.Size = new System.Drawing.Size(1207, 467);
             this.tC.TabIndex = 0;
             // 
             // tabPage2
@@ -271,7 +503,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1150, 441);
+            this.tabPage2.Size = new System.Drawing.Size(1199, 441);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -298,7 +530,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1150, 441);
+            this.tabPage3.Size = new System.Drawing.Size(1199, 441);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -474,7 +706,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1150, 441);
+            this.tabPage4.Size = new System.Drawing.Size(1199, 441);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -482,7 +714,7 @@
             // btnXraySave
             // 
             this.btnXraySave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnXraySave.Location = new System.Drawing.Point(1041, 146);
+            this.btnXraySave.Location = new System.Drawing.Point(1107, 401);
             this.btnXraySave.Name = "btnXraySave";
             this.btnXraySave.Size = new System.Drawing.Size(86, 34);
             this.btnXraySave.TabIndex = 60;
@@ -579,7 +811,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1150, 441);
+            this.tabPage5.Size = new System.Drawing.Size(1199, 441);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1061,7 +1293,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1150, 441);
+            this.tabPage6.Size = new System.Drawing.Size(1199, 441);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "tabPage6";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1190,7 +1422,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1150, 441);
+            this.tabPage7.Size = new System.Drawing.Size(1199, 441);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "tabPage7";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1619,7 +1851,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1150, 441);
+            this.tabPage1.Size = new System.Drawing.Size(1199, 441);
             this.tabPage1.TabIndex = 7;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1718,7 +1950,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1150, 441);
+            this.tabPage8.Size = new System.Drawing.Size(1199, 441);
             this.tabPage8.TabIndex = 8;
             this.tabPage8.Text = "tabPage8";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1873,7 +2105,7 @@
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(1150, 441);
+            this.tabPage9.Size = new System.Drawing.Size(1199, 441);
             this.tabPage9.TabIndex = 9;
             this.tabPage9.Text = "tabPage9";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -2025,7 +2257,7 @@
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(1150, 441);
+            this.tabPage10.Size = new System.Drawing.Size(1199, 441);
             this.tabPage10.TabIndex = 10;
             this.tabPage10.Text = "tabPage10";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -2146,7 +2378,7 @@
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage11.Size = new System.Drawing.Size(1150, 441);
+            this.tabPage11.Size = new System.Drawing.Size(1199, 441);
             this.tabPage11.TabIndex = 11;
             this.tabPage11.Text = "tabPage11";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -2226,6 +2458,2304 @@
             this.label84.TabIndex = 49;
             this.label84.Text = "Uric Acid";
             // 
+            // tabPage12
+            // 
+            this.tabPage12.Controls.Add(this.btnOther1Save);
+            this.tabPage12.Controls.Add(this.txtCalciumNormal);
+            this.tabPage12.Controls.Add(this.txtAmphetamineNormal);
+            this.tabPage12.Controls.Add(this.txtVDRLNormal);
+            this.tabPage12.Controls.Add(this.txtAntiHIVNormal);
+            this.tabPage12.Controls.Add(this.txtHBsAbNormal);
+            this.tabPage12.Controls.Add(this.txtHBsAgNormal);
+            this.tabPage12.Controls.Add(this.txtCalcium);
+            this.tabPage12.Controls.Add(this.txtAmphetamine);
+            this.tabPage12.Controls.Add(this.txtVDRL);
+            this.tabPage12.Controls.Add(this.txtAntiHIV);
+            this.tabPage12.Controls.Add(this.txtHBsAb);
+            this.tabPage12.Controls.Add(this.txtHBsAg);
+            this.tabPage12.Controls.Add(this.label92);
+            this.tabPage12.Controls.Add(this.label91);
+            this.tabPage12.Controls.Add(this.label90);
+            this.tabPage12.Controls.Add(this.label20);
+            this.tabPage12.Controls.Add(this.label21);
+            this.tabPage12.Controls.Add(this.label22);
+            this.tabPage12.Location = new System.Drawing.Point(4, 22);
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage12.Size = new System.Drawing.Size(1199, 441);
+            this.tabPage12.TabIndex = 12;
+            this.tabPage12.Text = "tabPage12";
+            this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // txtCalciumNormal
+            // 
+            this.txtCalciumNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtCalciumNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCalciumNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCalciumNormal.Location = new System.Drawing.Point(308, 332);
+            this.txtCalciumNormal.Name = "txtCalciumNormal";
+            this.txtCalciumNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtCalciumNormal.TabIndex = 117;
+            // 
+            // txtAmphetamineNormal
+            // 
+            this.txtAmphetamineNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAmphetamineNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAmphetamineNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAmphetamineNormal.Location = new System.Drawing.Point(308, 274);
+            this.txtAmphetamineNormal.Name = "txtAmphetamineNormal";
+            this.txtAmphetamineNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtAmphetamineNormal.TabIndex = 116;
+            // 
+            // txtVDRLNormal
+            // 
+            this.txtVDRLNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtVDRLNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtVDRLNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtVDRLNormal.Location = new System.Drawing.Point(308, 225);
+            this.txtVDRLNormal.Name = "txtVDRLNormal";
+            this.txtVDRLNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtVDRLNormal.TabIndex = 115;
+            // 
+            // txtAntiHIVNormal
+            // 
+            this.txtAntiHIVNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAntiHIVNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAntiHIVNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAntiHIVNormal.Location = new System.Drawing.Point(308, 170);
+            this.txtAntiHIVNormal.Name = "txtAntiHIVNormal";
+            this.txtAntiHIVNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtAntiHIVNormal.TabIndex = 114;
+            // 
+            // txtHBsAbNormal
+            // 
+            this.txtHBsAbNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtHBsAbNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtHBsAbNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtHBsAbNormal.Location = new System.Drawing.Point(308, 119);
+            this.txtHBsAbNormal.Name = "txtHBsAbNormal";
+            this.txtHBsAbNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtHBsAbNormal.TabIndex = 113;
+            // 
+            // txtHBsAgNormal
+            // 
+            this.txtHBsAgNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtHBsAgNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtHBsAgNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtHBsAgNormal.Location = new System.Drawing.Point(308, 65);
+            this.txtHBsAgNormal.Name = "txtHBsAgNormal";
+            this.txtHBsAgNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtHBsAgNormal.TabIndex = 112;
+            // 
+            // txtCalcium
+            // 
+            this.txtCalcium.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCalcium.Location = new System.Drawing.Point(170, 327);
+            this.txtCalcium.Name = "txtCalcium";
+            this.txtCalcium.Size = new System.Drawing.Size(123, 22);
+            this.txtCalcium.TabIndex = 110;
+            // 
+            // txtAmphetamine
+            // 
+            this.txtAmphetamine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAmphetamine.Location = new System.Drawing.Point(170, 269);
+            this.txtAmphetamine.Name = "txtAmphetamine";
+            this.txtAmphetamine.Size = new System.Drawing.Size(123, 22);
+            this.txtAmphetamine.TabIndex = 109;
+            // 
+            // txtVDRL
+            // 
+            this.txtVDRL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtVDRL.Location = new System.Drawing.Point(170, 220);
+            this.txtVDRL.Name = "txtVDRL";
+            this.txtVDRL.Size = new System.Drawing.Size(123, 22);
+            this.txtVDRL.TabIndex = 108;
+            // 
+            // txtAntiHIV
+            // 
+            this.txtAntiHIV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAntiHIV.Location = new System.Drawing.Point(170, 165);
+            this.txtAntiHIV.Name = "txtAntiHIV";
+            this.txtAntiHIV.Size = new System.Drawing.Size(123, 22);
+            this.txtAntiHIV.TabIndex = 107;
+            // 
+            // txtHBsAb
+            // 
+            this.txtHBsAb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtHBsAb.Location = new System.Drawing.Point(170, 114);
+            this.txtHBsAb.Name = "txtHBsAb";
+            this.txtHBsAb.Size = new System.Drawing.Size(123, 22);
+            this.txtHBsAb.TabIndex = 106;
+            // 
+            // txtHBsAg
+            // 
+            this.txtHBsAg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtHBsAg.Location = new System.Drawing.Point(170, 59);
+            this.txtHBsAg.Name = "txtHBsAg";
+            this.txtHBsAg.Size = new System.Drawing.Size(123, 22);
+            this.txtHBsAg.TabIndex = 105;
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label92.Location = new System.Drawing.Point(54, 330);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(56, 16);
+            this.label92.TabIndex = 104;
+            this.label92.Text = "Calcium";
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label91.Location = new System.Drawing.Point(54, 272);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(91, 16);
+            this.label91.TabIndex = 103;
+            this.label91.Text = "Amphetamine";
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label90.Location = new System.Drawing.Point(54, 223);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(44, 16);
+            this.label90.TabIndex = 102;
+            this.label90.Text = "VDRL";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label20.Location = new System.Drawing.Point(54, 117);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(51, 16);
+            this.label20.TabIndex = 101;
+            this.label20.Text = "HBsAb";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label21.Location = new System.Drawing.Point(54, 168);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(52, 16);
+            this.label21.TabIndex = 100;
+            this.label21.Text = "AntiHIV";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label22.Location = new System.Drawing.Point(54, 62);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(51, 16);
+            this.label22.TabIndex = 99;
+            this.label22.Text = "HBsAg";
+            // 
+            // tabPage13
+            // 
+            this.tabPage13.Controls.Add(this.btnLungSave);
+            this.tabPage13.Controls.Add(this.txtPerFev1Normal);
+            this.tabPage13.Controls.Add(this.txtPerFev1);
+            this.tabPage13.Controls.Add(this.txtFev1PerNormal);
+            this.tabPage13.Controls.Add(this.txtFev1MeasNormal);
+            this.tabPage13.Controls.Add(this.txtFev1PredicNormal);
+            this.tabPage13.Controls.Add(this.txtFvcPerNormal);
+            this.tabPage13.Controls.Add(this.txtFvcMeasNormal);
+            this.tabPage13.Controls.Add(this.txtFvcPredicNormal);
+            this.tabPage13.Controls.Add(this.txtFev1Per);
+            this.tabPage13.Controls.Add(this.txtFev1Meas);
+            this.tabPage13.Controls.Add(this.txtFev1Predic);
+            this.tabPage13.Controls.Add(this.txtFvcPer);
+            this.tabPage13.Controls.Add(this.txtFvcMeas);
+            this.tabPage13.Controls.Add(this.txtFvcPredic);
+            this.tabPage13.Controls.Add(this.label102);
+            this.tabPage13.Controls.Add(this.label93);
+            this.tabPage13.Controls.Add(this.label94);
+            this.tabPage13.Controls.Add(this.label95);
+            this.tabPage13.Controls.Add(this.label97);
+            this.tabPage13.Controls.Add(this.label98);
+            this.tabPage13.Controls.Add(this.label99);
+            this.tabPage13.Location = new System.Drawing.Point(4, 22);
+            this.tabPage13.Name = "tabPage13";
+            this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage13.Size = new System.Drawing.Size(1199, 441);
+            this.tabPage13.TabIndex = 13;
+            this.tabPage13.Text = "tabPage13";
+            this.tabPage13.UseVisualStyleBackColor = true;
+            // 
+            // txtPerFev1Normal
+            // 
+            this.txtPerFev1Normal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtPerFev1Normal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPerFev1Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtPerFev1Normal.Location = new System.Drawing.Point(796, 214);
+            this.txtPerFev1Normal.Name = "txtPerFev1Normal";
+            this.txtPerFev1Normal.Size = new System.Drawing.Size(173, 13);
+            this.txtPerFev1Normal.TabIndex = 142;
+            // 
+            // txtPerFev1
+            // 
+            this.txtPerFev1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtPerFev1.Location = new System.Drawing.Point(658, 209);
+            this.txtPerFev1.Name = "txtPerFev1";
+            this.txtPerFev1.Size = new System.Drawing.Size(123, 22);
+            this.txtPerFev1.TabIndex = 140;
+            // 
+            // txtFev1PerNormal
+            // 
+            this.txtFev1PerNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtFev1PerNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFev1PerNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtFev1PerNormal.Location = new System.Drawing.Point(796, 159);
+            this.txtFev1PerNormal.Name = "txtFev1PerNormal";
+            this.txtFev1PerNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtFev1PerNormal.TabIndex = 138;
+            // 
+            // txtFev1MeasNormal
+            // 
+            this.txtFev1MeasNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtFev1MeasNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFev1MeasNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtFev1MeasNormal.Location = new System.Drawing.Point(796, 101);
+            this.txtFev1MeasNormal.Name = "txtFev1MeasNormal";
+            this.txtFev1MeasNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtFev1MeasNormal.TabIndex = 137;
+            // 
+            // txtFev1PredicNormal
+            // 
+            this.txtFev1PredicNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtFev1PredicNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFev1PredicNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtFev1PredicNormal.Location = new System.Drawing.Point(796, 52);
+            this.txtFev1PredicNormal.Name = "txtFev1PredicNormal";
+            this.txtFev1PredicNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtFev1PredicNormal.TabIndex = 136;
+            // 
+            // txtFvcPerNormal
+            // 
+            this.txtFvcPerNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtFvcPerNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFvcPerNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtFvcPerNormal.Location = new System.Drawing.Point(290, 161);
+            this.txtFvcPerNormal.Name = "txtFvcPerNormal";
+            this.txtFvcPerNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtFvcPerNormal.TabIndex = 135;
+            // 
+            // txtFvcMeasNormal
+            // 
+            this.txtFvcMeasNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtFvcMeasNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFvcMeasNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtFvcMeasNormal.Location = new System.Drawing.Point(290, 110);
+            this.txtFvcMeasNormal.Name = "txtFvcMeasNormal";
+            this.txtFvcMeasNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtFvcMeasNormal.TabIndex = 134;
+            // 
+            // txtFvcPredicNormal
+            // 
+            this.txtFvcPredicNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtFvcPredicNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFvcPredicNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtFvcPredicNormal.Location = new System.Drawing.Point(290, 56);
+            this.txtFvcPredicNormal.Name = "txtFvcPredicNormal";
+            this.txtFvcPredicNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtFvcPredicNormal.TabIndex = 133;
+            // 
+            // txtFev1Per
+            // 
+            this.txtFev1Per.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtFev1Per.Location = new System.Drawing.Point(658, 154);
+            this.txtFev1Per.Name = "txtFev1Per";
+            this.txtFev1Per.Size = new System.Drawing.Size(123, 22);
+            this.txtFev1Per.TabIndex = 132;
+            // 
+            // txtFev1Meas
+            // 
+            this.txtFev1Meas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtFev1Meas.Location = new System.Drawing.Point(658, 96);
+            this.txtFev1Meas.Name = "txtFev1Meas";
+            this.txtFev1Meas.Size = new System.Drawing.Size(123, 22);
+            this.txtFev1Meas.TabIndex = 131;
+            // 
+            // txtFev1Predic
+            // 
+            this.txtFev1Predic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtFev1Predic.Location = new System.Drawing.Point(658, 47);
+            this.txtFev1Predic.Name = "txtFev1Predic";
+            this.txtFev1Predic.Size = new System.Drawing.Size(123, 22);
+            this.txtFev1Predic.TabIndex = 130;
+            // 
+            // txtFvcPer
+            // 
+            this.txtFvcPer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtFvcPer.Location = new System.Drawing.Point(152, 156);
+            this.txtFvcPer.Name = "txtFvcPer";
+            this.txtFvcPer.Size = new System.Drawing.Size(123, 22);
+            this.txtFvcPer.TabIndex = 129;
+            // 
+            // txtFvcMeas
+            // 
+            this.txtFvcMeas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtFvcMeas.Location = new System.Drawing.Point(152, 105);
+            this.txtFvcMeas.Name = "txtFvcMeas";
+            this.txtFvcMeas.Size = new System.Drawing.Size(123, 22);
+            this.txtFvcMeas.TabIndex = 128;
+            // 
+            // txtFvcPredic
+            // 
+            this.txtFvcPredic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtFvcPredic.Location = new System.Drawing.Point(152, 50);
+            this.txtFvcPredic.Name = "txtFvcPredic";
+            this.txtFvcPredic.Size = new System.Drawing.Size(123, 22);
+            this.txtFvcPredic.TabIndex = 127;
+            // 
+            // label102
+            // 
+            this.label102.AutoSize = true;
+            this.label102.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label102.Location = new System.Drawing.Point(573, 212);
+            this.label102.Name = "label102";
+            this.label102.Size = new System.Drawing.Size(56, 16);
+            this.label102.TabIndex = 126;
+            this.label102.Text = "per fev1";
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label93.Location = new System.Drawing.Point(573, 157);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(56, 16);
+            this.label93.TabIndex = 125;
+            this.label93.Text = "fev1 per";
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label94.Location = new System.Drawing.Point(573, 99);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(70, 16);
+            this.label94.TabIndex = 124;
+            this.label94.Text = "fev1 meas";
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label95.Location = new System.Drawing.Point(573, 53);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(74, 16);
+            this.label95.TabIndex = 123;
+            this.label95.Text = "fev1 predic";
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label97.Location = new System.Drawing.Point(53, 108);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(62, 16);
+            this.label97.TabIndex = 122;
+            this.label97.Text = "fvc meas";
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label98.Location = new System.Drawing.Point(57, 159);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(48, 16);
+            this.label98.TabIndex = 121;
+            this.label98.Text = "fvc per";
+            // 
+            // label99
+            // 
+            this.label99.AutoSize = true;
+            this.label99.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label99.Location = new System.Drawing.Point(49, 53);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(66, 16);
+            this.label99.TabIndex = 120;
+            this.label99.Text = "fvc predic";
+            // 
+            // tabPage14
+            // 
+            this.tabPage14.Controls.Add(this.btnAudiogramSave);
+            this.tabPage14.Controls.Add(this.textBox45);
+            this.tabPage14.Controls.Add(this.textBox46);
+            this.tabPage14.Controls.Add(this.txtAudiogram8000RNormal);
+            this.tabPage14.Controls.Add(this.txtAudiogram8000R);
+            this.tabPage14.Controls.Add(this.txtAudiogram6000RNormal);
+            this.tabPage14.Controls.Add(this.txtAudiogram4000RNormal);
+            this.tabPage14.Controls.Add(this.txtAudiogram3000RNormal);
+            this.tabPage14.Controls.Add(this.txtAudiogram2000RNormal);
+            this.tabPage14.Controls.Add(this.txtAudiogram1000RNormal);
+            this.tabPage14.Controls.Add(this.txtAudiogram500RNormal);
+            this.tabPage14.Controls.Add(this.txtAudiogram6000R);
+            this.tabPage14.Controls.Add(this.txtAudiogram4000R);
+            this.tabPage14.Controls.Add(this.txtAudiogram3000R);
+            this.tabPage14.Controls.Add(this.txtAudiogram2000R);
+            this.tabPage14.Controls.Add(this.txtAudiogram1000R);
+            this.tabPage14.Controls.Add(this.txtAudiogram500R);
+            this.tabPage14.Controls.Add(this.textBox43);
+            this.tabPage14.Controls.Add(this.textBox44);
+            this.tabPage14.Controls.Add(this.txtAudiogram8000LNormal);
+            this.tabPage14.Controls.Add(this.txtAudiogram8000L);
+            this.tabPage14.Controls.Add(this.txtAudiogram6000LNormal);
+            this.tabPage14.Controls.Add(this.txtAudiogram4000LNormal);
+            this.tabPage14.Controls.Add(this.txtAudiogram3000LNormal);
+            this.tabPage14.Controls.Add(this.txtAudiogram2000LNormal);
+            this.tabPage14.Controls.Add(this.txtAudiogram1000LNormal);
+            this.tabPage14.Controls.Add(this.txtAudiogram500LNormal);
+            this.tabPage14.Controls.Add(this.txtAudiogram6000L);
+            this.tabPage14.Controls.Add(this.txtAudiogram4000L);
+            this.tabPage14.Controls.Add(this.txtAudiogram3000L);
+            this.tabPage14.Controls.Add(this.txtAudiogram2000L);
+            this.tabPage14.Controls.Add(this.txtAudiogram1000L);
+            this.tabPage14.Controls.Add(this.txtAudiogram500L);
+            this.tabPage14.Controls.Add(this.label122);
+            this.tabPage14.Controls.Add(this.label121);
+            this.tabPage14.Controls.Add(this.label120);
+            this.tabPage14.Controls.Add(this.label119);
+            this.tabPage14.Controls.Add(this.label105);
+            this.tabPage14.Controls.Add(this.label106);
+            this.tabPage14.Controls.Add(this.label107);
+            this.tabPage14.Controls.Add(this.label108);
+            this.tabPage14.Controls.Add(this.label109);
+            this.tabPage14.Controls.Add(this.label110);
+            this.tabPage14.Controls.Add(this.label111);
+            this.tabPage14.Controls.Add(this.label112);
+            this.tabPage14.Controls.Add(this.label113);
+            this.tabPage14.Controls.Add(this.label114);
+            this.tabPage14.Controls.Add(this.label115);
+            this.tabPage14.Controls.Add(this.label116);
+            this.tabPage14.Location = new System.Drawing.Point(4, 22);
+            this.tabPage14.Name = "tabPage14";
+            this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage14.Size = new System.Drawing.Size(1199, 441);
+            this.tabPage14.TabIndex = 14;
+            this.tabPage14.Text = "tabPage14";
+            this.tabPage14.UseVisualStyleBackColor = true;
+            // 
+            // textBox45
+            // 
+            this.textBox45.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox45.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox45.Location = new System.Drawing.Point(839, 384);
+            this.textBox45.Name = "textBox45";
+            this.textBox45.Size = new System.Drawing.Size(173, 13);
+            this.textBox45.TabIndex = 170;
+            // 
+            // textBox46
+            // 
+            this.textBox46.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox46.Location = new System.Drawing.Point(701, 379);
+            this.textBox46.Name = "textBox46";
+            this.textBox46.Size = new System.Drawing.Size(123, 22);
+            this.textBox46.TabIndex = 169;
+            // 
+            // txtAudiogram8000RNormal
+            // 
+            this.txtAudiogram8000RNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAudiogram8000RNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAudiogram8000RNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram8000RNormal.Location = new System.Drawing.Point(839, 339);
+            this.txtAudiogram8000RNormal.Name = "txtAudiogram8000RNormal";
+            this.txtAudiogram8000RNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtAudiogram8000RNormal.TabIndex = 168;
+            // 
+            // txtAudiogram8000R
+            // 
+            this.txtAudiogram8000R.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram8000R.Location = new System.Drawing.Point(701, 334);
+            this.txtAudiogram8000R.Name = "txtAudiogram8000R";
+            this.txtAudiogram8000R.Size = new System.Drawing.Size(123, 22);
+            this.txtAudiogram8000R.TabIndex = 167;
+            // 
+            // txtAudiogram6000RNormal
+            // 
+            this.txtAudiogram6000RNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAudiogram6000RNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAudiogram6000RNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram6000RNormal.Location = new System.Drawing.Point(839, 287);
+            this.txtAudiogram6000RNormal.Name = "txtAudiogram6000RNormal";
+            this.txtAudiogram6000RNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtAudiogram6000RNormal.TabIndex = 166;
+            // 
+            // txtAudiogram4000RNormal
+            // 
+            this.txtAudiogram4000RNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAudiogram4000RNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAudiogram4000RNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram4000RNormal.Location = new System.Drawing.Point(839, 239);
+            this.txtAudiogram4000RNormal.Name = "txtAudiogram4000RNormal";
+            this.txtAudiogram4000RNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtAudiogram4000RNormal.TabIndex = 165;
+            // 
+            // txtAudiogram3000RNormal
+            // 
+            this.txtAudiogram3000RNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAudiogram3000RNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAudiogram3000RNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram3000RNormal.Location = new System.Drawing.Point(839, 192);
+            this.txtAudiogram3000RNormal.Name = "txtAudiogram3000RNormal";
+            this.txtAudiogram3000RNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtAudiogram3000RNormal.TabIndex = 164;
+            // 
+            // txtAudiogram2000RNormal
+            // 
+            this.txtAudiogram2000RNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAudiogram2000RNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAudiogram2000RNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram2000RNormal.Location = new System.Drawing.Point(839, 145);
+            this.txtAudiogram2000RNormal.Name = "txtAudiogram2000RNormal";
+            this.txtAudiogram2000RNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtAudiogram2000RNormal.TabIndex = 163;
+            // 
+            // txtAudiogram1000RNormal
+            // 
+            this.txtAudiogram1000RNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAudiogram1000RNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAudiogram1000RNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram1000RNormal.Location = new System.Drawing.Point(839, 98);
+            this.txtAudiogram1000RNormal.Name = "txtAudiogram1000RNormal";
+            this.txtAudiogram1000RNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtAudiogram1000RNormal.TabIndex = 162;
+            // 
+            // txtAudiogram500RNormal
+            // 
+            this.txtAudiogram500RNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAudiogram500RNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAudiogram500RNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram500RNormal.Location = new System.Drawing.Point(839, 45);
+            this.txtAudiogram500RNormal.Name = "txtAudiogram500RNormal";
+            this.txtAudiogram500RNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtAudiogram500RNormal.TabIndex = 161;
+            // 
+            // txtAudiogram6000R
+            // 
+            this.txtAudiogram6000R.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram6000R.Location = new System.Drawing.Point(701, 282);
+            this.txtAudiogram6000R.Name = "txtAudiogram6000R";
+            this.txtAudiogram6000R.Size = new System.Drawing.Size(123, 22);
+            this.txtAudiogram6000R.TabIndex = 160;
+            // 
+            // txtAudiogram4000R
+            // 
+            this.txtAudiogram4000R.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram4000R.Location = new System.Drawing.Point(701, 234);
+            this.txtAudiogram4000R.Name = "txtAudiogram4000R";
+            this.txtAudiogram4000R.Size = new System.Drawing.Size(123, 22);
+            this.txtAudiogram4000R.TabIndex = 159;
+            // 
+            // txtAudiogram3000R
+            // 
+            this.txtAudiogram3000R.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram3000R.Location = new System.Drawing.Point(701, 187);
+            this.txtAudiogram3000R.Name = "txtAudiogram3000R";
+            this.txtAudiogram3000R.Size = new System.Drawing.Size(123, 22);
+            this.txtAudiogram3000R.TabIndex = 158;
+            // 
+            // txtAudiogram2000R
+            // 
+            this.txtAudiogram2000R.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram2000R.Location = new System.Drawing.Point(701, 140);
+            this.txtAudiogram2000R.Name = "txtAudiogram2000R";
+            this.txtAudiogram2000R.Size = new System.Drawing.Size(123, 22);
+            this.txtAudiogram2000R.TabIndex = 157;
+            // 
+            // txtAudiogram1000R
+            // 
+            this.txtAudiogram1000R.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram1000R.Location = new System.Drawing.Point(701, 93);
+            this.txtAudiogram1000R.Name = "txtAudiogram1000R";
+            this.txtAudiogram1000R.Size = new System.Drawing.Size(123, 22);
+            this.txtAudiogram1000R.TabIndex = 156;
+            // 
+            // txtAudiogram500R
+            // 
+            this.txtAudiogram500R.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram500R.Location = new System.Drawing.Point(701, 39);
+            this.txtAudiogram500R.Name = "txtAudiogram500R";
+            this.txtAudiogram500R.Size = new System.Drawing.Size(123, 22);
+            this.txtAudiogram500R.TabIndex = 155;
+            // 
+            // textBox43
+            // 
+            this.textBox43.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox43.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox43.Location = new System.Drawing.Point(277, 383);
+            this.textBox43.Name = "textBox43";
+            this.textBox43.Size = new System.Drawing.Size(173, 13);
+            this.textBox43.TabIndex = 154;
+            // 
+            // textBox44
+            // 
+            this.textBox44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox44.Location = new System.Drawing.Point(139, 378);
+            this.textBox44.Name = "textBox44";
+            this.textBox44.Size = new System.Drawing.Size(123, 22);
+            this.textBox44.TabIndex = 153;
+            // 
+            // txtAudiogram8000LNormal
+            // 
+            this.txtAudiogram8000LNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAudiogram8000LNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAudiogram8000LNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram8000LNormal.Location = new System.Drawing.Point(277, 338);
+            this.txtAudiogram8000LNormal.Name = "txtAudiogram8000LNormal";
+            this.txtAudiogram8000LNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtAudiogram8000LNormal.TabIndex = 152;
+            // 
+            // txtAudiogram8000L
+            // 
+            this.txtAudiogram8000L.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram8000L.Location = new System.Drawing.Point(139, 333);
+            this.txtAudiogram8000L.Name = "txtAudiogram8000L";
+            this.txtAudiogram8000L.Size = new System.Drawing.Size(123, 22);
+            this.txtAudiogram8000L.TabIndex = 151;
+            // 
+            // txtAudiogram6000LNormal
+            // 
+            this.txtAudiogram6000LNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAudiogram6000LNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAudiogram6000LNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram6000LNormal.Location = new System.Drawing.Point(277, 286);
+            this.txtAudiogram6000LNormal.Name = "txtAudiogram6000LNormal";
+            this.txtAudiogram6000LNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtAudiogram6000LNormal.TabIndex = 150;
+            // 
+            // txtAudiogram4000LNormal
+            // 
+            this.txtAudiogram4000LNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAudiogram4000LNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAudiogram4000LNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram4000LNormal.Location = new System.Drawing.Point(277, 238);
+            this.txtAudiogram4000LNormal.Name = "txtAudiogram4000LNormal";
+            this.txtAudiogram4000LNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtAudiogram4000LNormal.TabIndex = 149;
+            // 
+            // txtAudiogram3000LNormal
+            // 
+            this.txtAudiogram3000LNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAudiogram3000LNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAudiogram3000LNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram3000LNormal.Location = new System.Drawing.Point(277, 191);
+            this.txtAudiogram3000LNormal.Name = "txtAudiogram3000LNormal";
+            this.txtAudiogram3000LNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtAudiogram3000LNormal.TabIndex = 148;
+            // 
+            // txtAudiogram2000LNormal
+            // 
+            this.txtAudiogram2000LNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAudiogram2000LNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAudiogram2000LNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram2000LNormal.Location = new System.Drawing.Point(277, 144);
+            this.txtAudiogram2000LNormal.Name = "txtAudiogram2000LNormal";
+            this.txtAudiogram2000LNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtAudiogram2000LNormal.TabIndex = 147;
+            // 
+            // txtAudiogram1000LNormal
+            // 
+            this.txtAudiogram1000LNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAudiogram1000LNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAudiogram1000LNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram1000LNormal.Location = new System.Drawing.Point(277, 97);
+            this.txtAudiogram1000LNormal.Name = "txtAudiogram1000LNormal";
+            this.txtAudiogram1000LNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtAudiogram1000LNormal.TabIndex = 146;
+            // 
+            // txtAudiogram500LNormal
+            // 
+            this.txtAudiogram500LNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAudiogram500LNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAudiogram500LNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram500LNormal.Location = new System.Drawing.Point(277, 44);
+            this.txtAudiogram500LNormal.Name = "txtAudiogram500LNormal";
+            this.txtAudiogram500LNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtAudiogram500LNormal.TabIndex = 145;
+            // 
+            // txtAudiogram6000L
+            // 
+            this.txtAudiogram6000L.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram6000L.Location = new System.Drawing.Point(139, 281);
+            this.txtAudiogram6000L.Name = "txtAudiogram6000L";
+            this.txtAudiogram6000L.Size = new System.Drawing.Size(123, 22);
+            this.txtAudiogram6000L.TabIndex = 144;
+            // 
+            // txtAudiogram4000L
+            // 
+            this.txtAudiogram4000L.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram4000L.Location = new System.Drawing.Point(139, 233);
+            this.txtAudiogram4000L.Name = "txtAudiogram4000L";
+            this.txtAudiogram4000L.Size = new System.Drawing.Size(123, 22);
+            this.txtAudiogram4000L.TabIndex = 143;
+            // 
+            // txtAudiogram3000L
+            // 
+            this.txtAudiogram3000L.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram3000L.Location = new System.Drawing.Point(139, 186);
+            this.txtAudiogram3000L.Name = "txtAudiogram3000L";
+            this.txtAudiogram3000L.Size = new System.Drawing.Size(123, 22);
+            this.txtAudiogram3000L.TabIndex = 142;
+            // 
+            // txtAudiogram2000L
+            // 
+            this.txtAudiogram2000L.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram2000L.Location = new System.Drawing.Point(139, 139);
+            this.txtAudiogram2000L.Name = "txtAudiogram2000L";
+            this.txtAudiogram2000L.Size = new System.Drawing.Size(123, 22);
+            this.txtAudiogram2000L.TabIndex = 141;
+            // 
+            // txtAudiogram1000L
+            // 
+            this.txtAudiogram1000L.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram1000L.Location = new System.Drawing.Point(139, 92);
+            this.txtAudiogram1000L.Name = "txtAudiogram1000L";
+            this.txtAudiogram1000L.Size = new System.Drawing.Size(123, 22);
+            this.txtAudiogram1000L.TabIndex = 140;
+            // 
+            // txtAudiogram500L
+            // 
+            this.txtAudiogram500L.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtAudiogram500L.Location = new System.Drawing.Point(139, 38);
+            this.txtAudiogram500L.Name = "txtAudiogram500L";
+            this.txtAudiogram500L.Size = new System.Drawing.Size(123, 22);
+            this.txtAudiogram500L.TabIndex = 139;
+            // 
+            // label122
+            // 
+            this.label122.AutoSize = true;
+            this.label122.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label122.Location = new System.Drawing.Point(590, 384);
+            this.label122.Name = "label122";
+            this.label122.Size = new System.Drawing.Size(99, 16);
+            this.label122.TabIndex = 136;
+            this.label122.Text = "Right Summary";
+            // 
+            // label121
+            // 
+            this.label121.AutoSize = true;
+            this.label121.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label121.Location = new System.Drawing.Point(590, 333);
+            this.label121.Name = "label121";
+            this.label121.Size = new System.Drawing.Size(70, 16);
+            this.label121.TabIndex = 135;
+            this.label121.Text = "Right 8000";
+            // 
+            // label120
+            // 
+            this.label120.AutoSize = true;
+            this.label120.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label120.Location = new System.Drawing.Point(590, 284);
+            this.label120.Name = "label120";
+            this.label120.Size = new System.Drawing.Size(70, 16);
+            this.label120.TabIndex = 134;
+            this.label120.Text = "Right 6000";
+            // 
+            // label119
+            // 
+            this.label119.AutoSize = true;
+            this.label119.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label119.Location = new System.Drawing.Point(590, 236);
+            this.label119.Name = "label119";
+            this.label119.Size = new System.Drawing.Size(70, 16);
+            this.label119.TabIndex = 133;
+            this.label119.Text = "Right 4000";
+            // 
+            // label105
+            // 
+            this.label105.AutoSize = true;
+            this.label105.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label105.Location = new System.Drawing.Point(590, 189);
+            this.label105.Name = "label105";
+            this.label105.Size = new System.Drawing.Size(70, 16);
+            this.label105.TabIndex = 132;
+            this.label105.Text = "Right 3000";
+            // 
+            // label106
+            // 
+            this.label106.AutoSize = true;
+            this.label106.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label106.Location = new System.Drawing.Point(590, 142);
+            this.label106.Name = "label106";
+            this.label106.Size = new System.Drawing.Size(70, 16);
+            this.label106.TabIndex = 131;
+            this.label106.Text = "Right 2000";
+            // 
+            // label107
+            // 
+            this.label107.AutoSize = true;
+            this.label107.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label107.Location = new System.Drawing.Point(590, 95);
+            this.label107.Name = "label107";
+            this.label107.Size = new System.Drawing.Size(70, 16);
+            this.label107.TabIndex = 130;
+            this.label107.Text = "Right 1000";
+            // 
+            // label108
+            // 
+            this.label108.AutoSize = true;
+            this.label108.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label108.Location = new System.Drawing.Point(590, 38);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(63, 16);
+            this.label108.TabIndex = 129;
+            this.label108.Text = "Right 500";
+            // 
+            // label109
+            // 
+            this.label109.AutoSize = true;
+            this.label109.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label109.Location = new System.Drawing.Point(41, 384);
+            this.label109.Name = "label109";
+            this.label109.Size = new System.Drawing.Size(89, 16);
+            this.label109.TabIndex = 128;
+            this.label109.Text = "Left Summary";
+            // 
+            // label110
+            // 
+            this.label110.AutoSize = true;
+            this.label110.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label110.Location = new System.Drawing.Point(41, 333);
+            this.label110.Name = "label110";
+            this.label110.Size = new System.Drawing.Size(60, 16);
+            this.label110.TabIndex = 127;
+            this.label110.Text = "Left 8000";
+            // 
+            // label111
+            // 
+            this.label111.AutoSize = true;
+            this.label111.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label111.Location = new System.Drawing.Point(41, 284);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(60, 16);
+            this.label111.TabIndex = 126;
+            this.label111.Text = "Left 6000";
+            // 
+            // label112
+            // 
+            this.label112.AutoSize = true;
+            this.label112.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label112.Location = new System.Drawing.Point(41, 236);
+            this.label112.Name = "label112";
+            this.label112.Size = new System.Drawing.Size(60, 16);
+            this.label112.TabIndex = 125;
+            this.label112.Text = "Left 4000";
+            // 
+            // label113
+            // 
+            this.label113.AutoSize = true;
+            this.label113.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label113.Location = new System.Drawing.Point(41, 189);
+            this.label113.Name = "label113";
+            this.label113.Size = new System.Drawing.Size(60, 16);
+            this.label113.TabIndex = 124;
+            this.label113.Text = "Left 3000";
+            // 
+            // label114
+            // 
+            this.label114.AutoSize = true;
+            this.label114.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label114.Location = new System.Drawing.Point(41, 142);
+            this.label114.Name = "label114";
+            this.label114.Size = new System.Drawing.Size(60, 16);
+            this.label114.TabIndex = 123;
+            this.label114.Text = "Left 2000";
+            // 
+            // label115
+            // 
+            this.label115.AutoSize = true;
+            this.label115.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label115.Location = new System.Drawing.Point(41, 95);
+            this.label115.Name = "label115";
+            this.label115.Size = new System.Drawing.Size(60, 16);
+            this.label115.TabIndex = 122;
+            this.label115.Text = "Left 1000";
+            // 
+            // label116
+            // 
+            this.label116.AutoSize = true;
+            this.label116.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label116.Location = new System.Drawing.Point(41, 38);
+            this.label116.Name = "label116";
+            this.label116.Size = new System.Drawing.Size(53, 16);
+            this.label116.TabIndex = 121;
+            this.label116.Text = "Left 500";
+            // 
+            // tabPage15
+            // 
+            this.tabPage15.Controls.Add(this.btnEyeSave);
+            this.tabPage15.Controls.Add(this.textBox81);
+            this.tabPage15.Controls.Add(this.textBox82);
+            this.tabPage15.Controls.Add(this.txtEyeOldRightNormal);
+            this.tabPage15.Controls.Add(this.EyeDegreeLeftRightNormal);
+            this.tabPage15.Controls.Add(this.txtEyeOldRight);
+            this.tabPage15.Controls.Add(this.EyeDegreeRight);
+            this.tabPage15.Controls.Add(this.txtEyeSquintRightNormal);
+            this.tabPage15.Controls.Add(this.txtEyeShortLongRightNormal);
+            this.tabPage15.Controls.Add(this.txtEyeSquintRight);
+            this.tabPage15.Controls.Add(this.txtEyeShortLongRight);
+            this.tabPage15.Controls.Add(this.textBox61);
+            this.tabPage15.Controls.Add(this.textBox62);
+            this.tabPage15.Controls.Add(this.textBox63);
+            this.tabPage15.Controls.Add(this.txtEyeBlindness);
+            this.tabPage15.Controls.Add(this.txtEyeOldLeftNormal);
+            this.tabPage15.Controls.Add(this.EyeDegreeLeftNormal);
+            this.tabPage15.Controls.Add(this.txtEyeSquintLeftNormal);
+            this.tabPage15.Controls.Add(this.txtEyeShortLongLeftNormal);
+            this.tabPage15.Controls.Add(this.txtEyeOldLeft);
+            this.tabPage15.Controls.Add(this.txtEyeDegreeLeft);
+            this.tabPage15.Controls.Add(this.txtEyeSquintLeft);
+            this.tabPage15.Controls.Add(this.txtEyeShortLongLeft);
+            this.tabPage15.Controls.Add(this.label131);
+            this.tabPage15.Controls.Add(this.label132);
+            this.tabPage15.Controls.Add(this.label133);
+            this.tabPage15.Controls.Add(this.label134);
+            this.tabPage15.Controls.Add(this.label135);
+            this.tabPage15.Controls.Add(this.label136);
+            this.tabPage15.Controls.Add(this.label137);
+            this.tabPage15.Controls.Add(this.label138);
+            this.tabPage15.Controls.Add(this.label139);
+            this.tabPage15.Controls.Add(this.label140);
+            this.tabPage15.Controls.Add(this.label141);
+            this.tabPage15.Location = new System.Drawing.Point(4, 22);
+            this.tabPage15.Name = "tabPage15";
+            this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage15.Size = new System.Drawing.Size(1199, 441);
+            this.tabPage15.TabIndex = 15;
+            this.tabPage15.Text = "tabPage15";
+            this.tabPage15.UseVisualStyleBackColor = true;
+            // 
+            // textBox81
+            // 
+            this.textBox81.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox81.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox81.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox81.Location = new System.Drawing.Point(825, 325);
+            this.textBox81.Name = "textBox81";
+            this.textBox81.Size = new System.Drawing.Size(173, 13);
+            this.textBox81.TabIndex = 180;
+            // 
+            // textBox82
+            // 
+            this.textBox82.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox82.Location = new System.Drawing.Point(687, 320);
+            this.textBox82.Name = "textBox82";
+            this.textBox82.Size = new System.Drawing.Size(123, 22);
+            this.textBox82.TabIndex = 179;
+            // 
+            // txtEyeOldRightNormal
+            // 
+            this.txtEyeOldRightNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtEyeOldRightNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEyeOldRightNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtEyeOldRightNormal.Location = new System.Drawing.Point(825, 252);
+            this.txtEyeOldRightNormal.Name = "txtEyeOldRightNormal";
+            this.txtEyeOldRightNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtEyeOldRightNormal.TabIndex = 178;
+            // 
+            // EyeDegreeLeftRightNormal
+            // 
+            this.EyeDegreeLeftRightNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.EyeDegreeLeftRightNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.EyeDegreeLeftRightNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.EyeDegreeLeftRightNormal.Location = new System.Drawing.Point(825, 199);
+            this.EyeDegreeLeftRightNormal.Name = "EyeDegreeLeftRightNormal";
+            this.EyeDegreeLeftRightNormal.Size = new System.Drawing.Size(173, 13);
+            this.EyeDegreeLeftRightNormal.TabIndex = 177;
+            // 
+            // txtEyeOldRight
+            // 
+            this.txtEyeOldRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtEyeOldRight.Location = new System.Drawing.Point(687, 247);
+            this.txtEyeOldRight.Name = "txtEyeOldRight";
+            this.txtEyeOldRight.Size = new System.Drawing.Size(123, 22);
+            this.txtEyeOldRight.TabIndex = 176;
+            // 
+            // EyeDegreeRight
+            // 
+            this.EyeDegreeRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.EyeDegreeRight.Location = new System.Drawing.Point(687, 193);
+            this.EyeDegreeRight.Name = "EyeDegreeRight";
+            this.EyeDegreeRight.Size = new System.Drawing.Size(123, 22);
+            this.EyeDegreeRight.TabIndex = 175;
+            // 
+            // txtEyeSquintRightNormal
+            // 
+            this.txtEyeSquintRightNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtEyeSquintRightNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEyeSquintRightNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtEyeSquintRightNormal.Location = new System.Drawing.Point(825, 110);
+            this.txtEyeSquintRightNormal.Name = "txtEyeSquintRightNormal";
+            this.txtEyeSquintRightNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtEyeSquintRightNormal.TabIndex = 174;
+            // 
+            // txtEyeShortLongRightNormal
+            // 
+            this.txtEyeShortLongRightNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtEyeShortLongRightNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEyeShortLongRightNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtEyeShortLongRightNormal.Location = new System.Drawing.Point(825, 57);
+            this.txtEyeShortLongRightNormal.Name = "txtEyeShortLongRightNormal";
+            this.txtEyeShortLongRightNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtEyeShortLongRightNormal.TabIndex = 173;
+            // 
+            // txtEyeSquintRight
+            // 
+            this.txtEyeSquintRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtEyeSquintRight.Location = new System.Drawing.Point(687, 105);
+            this.txtEyeSquintRight.Name = "txtEyeSquintRight";
+            this.txtEyeSquintRight.Size = new System.Drawing.Size(123, 22);
+            this.txtEyeSquintRight.TabIndex = 172;
+            // 
+            // txtEyeShortLongRight
+            // 
+            this.txtEyeShortLongRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtEyeShortLongRight.Location = new System.Drawing.Point(687, 51);
+            this.txtEyeShortLongRight.Name = "txtEyeShortLongRight";
+            this.txtEyeShortLongRight.Size = new System.Drawing.Size(123, 22);
+            this.txtEyeShortLongRight.TabIndex = 171;
+            // 
+            // textBox61
+            // 
+            this.textBox61.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox61.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox61.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox61.Location = new System.Drawing.Point(298, 390);
+            this.textBox61.Name = "textBox61";
+            this.textBox61.Size = new System.Drawing.Size(173, 13);
+            this.textBox61.TabIndex = 170;
+            // 
+            // textBox62
+            // 
+            this.textBox62.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox62.Location = new System.Drawing.Point(160, 385);
+            this.textBox62.Name = "textBox62";
+            this.textBox62.Size = new System.Drawing.Size(123, 22);
+            this.textBox62.TabIndex = 169;
+            // 
+            // textBox63
+            // 
+            this.textBox63.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox63.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox63.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox63.Location = new System.Drawing.Point(298, 345);
+            this.textBox63.Name = "textBox63";
+            this.textBox63.Size = new System.Drawing.Size(173, 13);
+            this.textBox63.TabIndex = 168;
+            // 
+            // txtEyeBlindness
+            // 
+            this.txtEyeBlindness.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtEyeBlindness.Location = new System.Drawing.Point(160, 340);
+            this.txtEyeBlindness.Name = "txtEyeBlindness";
+            this.txtEyeBlindness.Size = new System.Drawing.Size(123, 22);
+            this.txtEyeBlindness.TabIndex = 167;
+            // 
+            // txtEyeOldLeftNormal
+            // 
+            this.txtEyeOldLeftNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtEyeOldLeftNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEyeOldLeftNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtEyeOldLeftNormal.Location = new System.Drawing.Point(298, 245);
+            this.txtEyeOldLeftNormal.Name = "txtEyeOldLeftNormal";
+            this.txtEyeOldLeftNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtEyeOldLeftNormal.TabIndex = 165;
+            // 
+            // EyeDegreeLeftNormal
+            // 
+            this.EyeDegreeLeftNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.EyeDegreeLeftNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.EyeDegreeLeftNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.EyeDegreeLeftNormal.Location = new System.Drawing.Point(298, 198);
+            this.EyeDegreeLeftNormal.Name = "EyeDegreeLeftNormal";
+            this.EyeDegreeLeftNormal.Size = new System.Drawing.Size(173, 13);
+            this.EyeDegreeLeftNormal.TabIndex = 164;
+            // 
+            // txtEyeSquintLeftNormal
+            // 
+            this.txtEyeSquintLeftNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtEyeSquintLeftNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEyeSquintLeftNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtEyeSquintLeftNormal.Location = new System.Drawing.Point(298, 104);
+            this.txtEyeSquintLeftNormal.Name = "txtEyeSquintLeftNormal";
+            this.txtEyeSquintLeftNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtEyeSquintLeftNormal.TabIndex = 162;
+            // 
+            // txtEyeShortLongLeftNormal
+            // 
+            this.txtEyeShortLongLeftNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtEyeShortLongLeftNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEyeShortLongLeftNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtEyeShortLongLeftNormal.Location = new System.Drawing.Point(298, 51);
+            this.txtEyeShortLongLeftNormal.Name = "txtEyeShortLongLeftNormal";
+            this.txtEyeShortLongLeftNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtEyeShortLongLeftNormal.TabIndex = 161;
+            // 
+            // txtEyeOldLeft
+            // 
+            this.txtEyeOldLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtEyeOldLeft.Location = new System.Drawing.Point(160, 240);
+            this.txtEyeOldLeft.Name = "txtEyeOldLeft";
+            this.txtEyeOldLeft.Size = new System.Drawing.Size(123, 22);
+            this.txtEyeOldLeft.TabIndex = 159;
+            // 
+            // txtEyeDegreeLeft
+            // 
+            this.txtEyeDegreeLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtEyeDegreeLeft.Location = new System.Drawing.Point(160, 193);
+            this.txtEyeDegreeLeft.Name = "txtEyeDegreeLeft";
+            this.txtEyeDegreeLeft.Size = new System.Drawing.Size(123, 22);
+            this.txtEyeDegreeLeft.TabIndex = 158;
+            // 
+            // txtEyeSquintLeft
+            // 
+            this.txtEyeSquintLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtEyeSquintLeft.Location = new System.Drawing.Point(160, 99);
+            this.txtEyeSquintLeft.Name = "txtEyeSquintLeft";
+            this.txtEyeSquintLeft.Size = new System.Drawing.Size(123, 22);
+            this.txtEyeSquintLeft.TabIndex = 156;
+            // 
+            // txtEyeShortLongLeft
+            // 
+            this.txtEyeShortLongLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtEyeShortLongLeft.Location = new System.Drawing.Point(160, 45);
+            this.txtEyeShortLongLeft.Name = "txtEyeShortLongLeft";
+            this.txtEyeShortLongLeft.Size = new System.Drawing.Size(123, 22);
+            this.txtEyeShortLongLeft.TabIndex = 155;
+            // 
+            // label131
+            // 
+            this.label131.AutoSize = true;
+            this.label131.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label131.Location = new System.Drawing.Point(61, 392);
+            this.label131.Name = "label131";
+            this.label131.Size = new System.Drawing.Size(28, 16);
+            this.label131.TabIndex = 145;
+            this.label131.Text = "สรุป";
+            // 
+            // label132
+            // 
+            this.label132.AutoSize = true;
+            this.label132.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label132.Location = new System.Drawing.Point(578, 320);
+            this.label132.Name = "label132";
+            this.label132.Size = new System.Drawing.Size(21, 16);
+            this.label132.TabIndex = 144;
+            this.label132.Text = "ผล";
+            // 
+            // label133
+            // 
+            this.label133.AutoSize = true;
+            this.label133.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label133.Location = new System.Drawing.Point(61, 343);
+            this.label133.Name = "label133";
+            this.label133.Size = new System.Drawing.Size(47, 16);
+            this.label133.TabIndex = 143;
+            this.label133.Text = "ตาบอดสี";
+            // 
+            // label134
+            // 
+            this.label134.AutoSize = true;
+            this.label134.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label134.Location = new System.Drawing.Point(578, 237);
+            this.label134.Name = "label134";
+            this.label134.Size = new System.Drawing.Size(76, 16);
+            this.label134.TabIndex = 142;
+            this.label134.Text = "สายตายาว ขวา";
+            // 
+            // label135
+            // 
+            this.label135.AutoSize = true;
+            this.label135.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label135.Location = new System.Drawing.Point(61, 242);
+            this.label135.Name = "label135";
+            this.label135.Size = new System.Drawing.Size(76, 16);
+            this.label135.TabIndex = 141;
+            this.label135.Text = "สายตายาว ซ้าย";
+            // 
+            // label136
+            // 
+            this.label136.AutoSize = true;
+            this.label136.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label136.Location = new System.Drawing.Point(578, 199);
+            this.label136.Name = "label136";
+            this.label136.Size = new System.Drawing.Size(53, 16);
+            this.label136.TabIndex = 140;
+            this.label136.Text = "องศา ขวา";
+            // 
+            // label137
+            // 
+            this.label137.AutoSize = true;
+            this.label137.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label137.Location = new System.Drawing.Point(61, 195);
+            this.label137.Name = "label137";
+            this.label137.Size = new System.Drawing.Size(53, 16);
+            this.label137.TabIndex = 139;
+            this.label137.Text = "องศา ซ้าย";
+            // 
+            // label138
+            // 
+            this.label138.AutoSize = true;
+            this.label138.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label138.Location = new System.Drawing.Point(578, 113);
+            this.label138.Name = "label138";
+            this.label138.Size = new System.Drawing.Size(62, 16);
+            this.label138.TabIndex = 138;
+            this.label138.Text = "ตา เอียงขวา";
+            // 
+            // label139
+            // 
+            this.label139.AutoSize = true;
+            this.label139.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label139.Location = new System.Drawing.Point(61, 102);
+            this.label139.Name = "label139";
+            this.label139.Size = new System.Drawing.Size(65, 16);
+            this.label139.TabIndex = 137;
+            this.label139.Text = "ตา เอียง ซ้าย";
+            // 
+            // label140
+            // 
+            this.label140.AutoSize = true;
+            this.label140.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label140.Location = new System.Drawing.Point(578, 51);
+            this.label140.Name = "label140";
+            this.label140.Size = new System.Drawing.Size(78, 16);
+            this.label140.TabIndex = 136;
+            this.label140.Text = "ตา สั้น ยาว ขวา";
+            // 
+            // label141
+            // 
+            this.label141.AutoSize = true;
+            this.label141.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label141.Location = new System.Drawing.Point(61, 51);
+            this.label141.Name = "label141";
+            this.label141.Size = new System.Drawing.Size(78, 16);
+            this.label141.TabIndex = 135;
+            this.label141.Text = "ตา สั้น ยาว ซ้าย";
+            // 
+            // tabPage16
+            // 
+            this.tabPage16.Controls.Add(this.btnToxiSave);
+            this.tabPage16.Controls.Add(this.txtToxiAntimonyNormal);
+            this.tabPage16.Controls.Add(this.txtToxiAntimony);
+            this.tabPage16.Controls.Add(this.txtToxiTrichloroethyleneNormal);
+            this.tabPage16.Controls.Add(this.txtToxiTrichloroethylene);
+            this.tabPage16.Controls.Add(this.txtToxiFomaldehydeNormal);
+            this.tabPage16.Controls.Add(this.txtToxiFomaldehyde);
+            this.tabPage16.Controls.Add(this.txtToxiFluorideNormal);
+            this.tabPage16.Controls.Add(this.txtToxiFluoride);
+            this.tabPage16.Controls.Add(this.txtToxiHexaneNormal);
+            this.tabPage16.Controls.Add(this.txtToxiHexane);
+            this.tabPage16.Controls.Add(this.txtToxiArsenicNormal);
+            this.tabPage16.Controls.Add(this.txtToxiArsenic);
+            this.tabPage16.Controls.Add(this.txtToxiMethanolNormal);
+            this.tabPage16.Controls.Add(this.txtToxiMethanol);
+            this.tabPage16.Controls.Add(this.txtToxiIPANormal);
+            this.tabPage16.Controls.Add(this.txtToxiIPA);
+            this.tabPage16.Controls.Add(this.txtToxiMandelicNormal);
+            this.tabPage16.Controls.Add(this.txtToxiMandelic);
+            this.tabPage16.Controls.Add(this.txtToxiBenzeneNormal);
+            this.tabPage16.Controls.Add(this.txtToxiBenzene);
+            this.tabPage16.Controls.Add(this.txtToxiKetoneNormal);
+            this.tabPage16.Controls.Add(this.txtToxiKetone);
+            this.tabPage16.Controls.Add(this.txtToxiPhenolNormal);
+            this.tabPage16.Controls.Add(this.txtToxiPhenol);
+            this.tabPage16.Controls.Add(this.txtToxiChromiumNormal);
+            this.tabPage16.Controls.Add(this.txtToxiChromium);
+            this.tabPage16.Controls.Add(this.txtToxiNickelNormal);
+            this.tabPage16.Controls.Add(this.txtToxiNickel);
+            this.tabPage16.Controls.Add(this.txtToxiAcetoneNormal);
+            this.tabPage16.Controls.Add(this.txtToxiAcetone);
+            this.tabPage16.Controls.Add(this.txtToxiMethylNormal);
+            this.tabPage16.Controls.Add(this.txtToxiMethyl);
+            this.tabPage16.Controls.Add(this.txtToxiEthanolNormal);
+            this.tabPage16.Controls.Add(this.txtToxiEthanol);
+            this.tabPage16.Controls.Add(this.txtToxiHippuricNormal);
+            this.tabPage16.Controls.Add(this.txtToxiHippuric);
+            this.tabPage16.Controls.Add(this.txtToxiAmmoniaNormal);
+            this.tabPage16.Controls.Add(this.txtToxiAmmonia);
+            this.tabPage16.Controls.Add(this.txtToxiZincNormal);
+            this.tabPage16.Controls.Add(this.txtToxiZinc);
+            this.tabPage16.Controls.Add(this.txtToxiManganeseNormal);
+            this.tabPage16.Controls.Add(this.txtToxiManganese);
+            this.tabPage16.Controls.Add(this.txtToxiCopperNormal);
+            this.tabPage16.Controls.Add(this.txtToxiCopper);
+            this.tabPage16.Controls.Add(this.txtToxiTinNormal);
+            this.tabPage16.Controls.Add(this.txtToxiTin);
+            this.tabPage16.Controls.Add(this.txtToxiMercuryNormal);
+            this.tabPage16.Controls.Add(this.txtToxiCadmiumNormal);
+            this.tabPage16.Controls.Add(this.txtToxiAluminiumNormal);
+            this.tabPage16.Controls.Add(this.txtToxiLeadNormal);
+            this.tabPage16.Controls.Add(this.txtToxiMercury);
+            this.tabPage16.Controls.Add(this.txtToxiCadmium);
+            this.tabPage16.Controls.Add(this.txtToxiAluminium);
+            this.tabPage16.Controls.Add(this.txtToxiLead);
+            this.tabPage16.Controls.Add(this.label171);
+            this.tabPage16.Controls.Add(this.label172);
+            this.tabPage16.Controls.Add(this.label173);
+            this.tabPage16.Controls.Add(this.label175);
+            this.tabPage16.Controls.Add(this.label176);
+            this.tabPage16.Controls.Add(this.label177);
+            this.tabPage16.Controls.Add(this.label178);
+            this.tabPage16.Controls.Add(this.label179);
+            this.tabPage16.Controls.Add(this.label174);
+            this.tabPage16.Controls.Add(this.label154);
+            this.tabPage16.Controls.Add(this.label155);
+            this.tabPage16.Controls.Add(this.label164);
+            this.tabPage16.Controls.Add(this.label165);
+            this.tabPage16.Controls.Add(this.label166);
+            this.tabPage16.Controls.Add(this.label167);
+            this.tabPage16.Controls.Add(this.label168);
+            this.tabPage16.Controls.Add(this.label169);
+            this.tabPage16.Controls.Add(this.label170);
+            this.tabPage16.Controls.Add(this.label149);
+            this.tabPage16.Controls.Add(this.label148);
+            this.tabPage16.Controls.Add(this.label147);
+            this.tabPage16.Controls.Add(this.label127);
+            this.tabPage16.Controls.Add(this.label146);
+            this.tabPage16.Controls.Add(this.label128);
+            this.tabPage16.Controls.Add(this.label145);
+            this.tabPage16.Controls.Add(this.label130);
+            this.tabPage16.Controls.Add(this.label144);
+            this.tabPage16.Location = new System.Drawing.Point(4, 22);
+            this.tabPage16.Name = "tabPage16";
+            this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage16.Size = new System.Drawing.Size(1199, 441);
+            this.tabPage16.TabIndex = 16;
+            this.tabPage16.Text = "tabPage16";
+            this.tabPage16.UseVisualStyleBackColor = true;
+            // 
+            // txtToxiAntimonyNormal
+            // 
+            this.txtToxiAntimonyNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiAntimonyNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiAntimonyNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiAntimonyNormal.Location = new System.Drawing.Point(1004, 278);
+            this.txtToxiAntimonyNormal.Name = "txtToxiAntimonyNormal";
+            this.txtToxiAntimonyNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiAntimonyNormal.TabIndex = 257;
+            // 
+            // txtToxiAntimony
+            // 
+            this.txtToxiAntimony.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiAntimony.Location = new System.Drawing.Point(891, 273);
+            this.txtToxiAntimony.Name = "txtToxiAntimony";
+            this.txtToxiAntimony.Size = new System.Drawing.Size(98, 22);
+            this.txtToxiAntimony.TabIndex = 256;
+            // 
+            // txtToxiTrichloroethyleneNormal
+            // 
+            this.txtToxiTrichloroethyleneNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiTrichloroethyleneNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiTrichloroethyleneNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiTrichloroethyleneNormal.Location = new System.Drawing.Point(1004, 234);
+            this.txtToxiTrichloroethyleneNormal.Name = "txtToxiTrichloroethyleneNormal";
+            this.txtToxiTrichloroethyleneNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiTrichloroethyleneNormal.TabIndex = 255;
+            // 
+            // txtToxiTrichloroethylene
+            // 
+            this.txtToxiTrichloroethylene.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiTrichloroethylene.Location = new System.Drawing.Point(950, 229);
+            this.txtToxiTrichloroethylene.Name = "txtToxiTrichloroethylene";
+            this.txtToxiTrichloroethylene.Size = new System.Drawing.Size(39, 22);
+            this.txtToxiTrichloroethylene.TabIndex = 254;
+            // 
+            // txtToxiFomaldehydeNormal
+            // 
+            this.txtToxiFomaldehydeNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiFomaldehydeNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiFomaldehydeNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiFomaldehydeNormal.Location = new System.Drawing.Point(1004, 197);
+            this.txtToxiFomaldehydeNormal.Name = "txtToxiFomaldehydeNormal";
+            this.txtToxiFomaldehydeNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiFomaldehydeNormal.TabIndex = 253;
+            // 
+            // txtToxiFomaldehyde
+            // 
+            this.txtToxiFomaldehyde.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiFomaldehyde.Location = new System.Drawing.Point(902, 192);
+            this.txtToxiFomaldehyde.Name = "txtToxiFomaldehyde";
+            this.txtToxiFomaldehyde.Size = new System.Drawing.Size(87, 22);
+            this.txtToxiFomaldehyde.TabIndex = 252;
+            // 
+            // txtToxiFluorideNormal
+            // 
+            this.txtToxiFluorideNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiFluorideNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiFluorideNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiFluorideNormal.Location = new System.Drawing.Point(1004, 313);
+            this.txtToxiFluorideNormal.Name = "txtToxiFluorideNormal";
+            this.txtToxiFluorideNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiFluorideNormal.TabIndex = 251;
+            // 
+            // txtToxiFluoride
+            // 
+            this.txtToxiFluoride.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiFluoride.Location = new System.Drawing.Point(866, 308);
+            this.txtToxiFluoride.Name = "txtToxiFluoride";
+            this.txtToxiFluoride.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiFluoride.TabIndex = 250;
+            // 
+            // txtToxiHexaneNormal
+            // 
+            this.txtToxiHexaneNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiHexaneNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiHexaneNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiHexaneNormal.Location = new System.Drawing.Point(1004, 164);
+            this.txtToxiHexaneNormal.Name = "txtToxiHexaneNormal";
+            this.txtToxiHexaneNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiHexaneNormal.TabIndex = 249;
+            // 
+            // txtToxiHexane
+            // 
+            this.txtToxiHexane.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiHexane.Location = new System.Drawing.Point(866, 159);
+            this.txtToxiHexane.Name = "txtToxiHexane";
+            this.txtToxiHexane.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiHexane.TabIndex = 248;
+            // 
+            // txtToxiArsenicNormal
+            // 
+            this.txtToxiArsenicNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiArsenicNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiArsenicNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiArsenicNormal.Location = new System.Drawing.Point(1004, 122);
+            this.txtToxiArsenicNormal.Name = "txtToxiArsenicNormal";
+            this.txtToxiArsenicNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiArsenicNormal.TabIndex = 247;
+            // 
+            // txtToxiArsenic
+            // 
+            this.txtToxiArsenic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiArsenic.Location = new System.Drawing.Point(866, 117);
+            this.txtToxiArsenic.Name = "txtToxiArsenic";
+            this.txtToxiArsenic.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiArsenic.TabIndex = 246;
+            // 
+            // txtToxiMethanolNormal
+            // 
+            this.txtToxiMethanolNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiMethanolNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiMethanolNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiMethanolNormal.Location = new System.Drawing.Point(618, 403);
+            this.txtToxiMethanolNormal.Name = "txtToxiMethanolNormal";
+            this.txtToxiMethanolNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiMethanolNormal.TabIndex = 245;
+            // 
+            // txtToxiMethanol
+            // 
+            this.txtToxiMethanol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiMethanol.Location = new System.Drawing.Point(480, 398);
+            this.txtToxiMethanol.Name = "txtToxiMethanol";
+            this.txtToxiMethanol.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiMethanol.TabIndex = 244;
+            // 
+            // txtToxiIPANormal
+            // 
+            this.txtToxiIPANormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiIPANormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiIPANormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiIPANormal.Location = new System.Drawing.Point(1004, 84);
+            this.txtToxiIPANormal.Name = "txtToxiIPANormal";
+            this.txtToxiIPANormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiIPANormal.TabIndex = 243;
+            // 
+            // txtToxiIPA
+            // 
+            this.txtToxiIPA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiIPA.Location = new System.Drawing.Point(866, 79);
+            this.txtToxiIPA.Name = "txtToxiIPA";
+            this.txtToxiIPA.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiIPA.TabIndex = 242;
+            // 
+            // txtToxiMandelicNormal
+            // 
+            this.txtToxiMandelicNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiMandelicNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiMandelicNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiMandelicNormal.Location = new System.Drawing.Point(618, 358);
+            this.txtToxiMandelicNormal.Name = "txtToxiMandelicNormal";
+            this.txtToxiMandelicNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiMandelicNormal.TabIndex = 241;
+            // 
+            // txtToxiMandelic
+            // 
+            this.txtToxiMandelic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiMandelic.Location = new System.Drawing.Point(480, 353);
+            this.txtToxiMandelic.Name = "txtToxiMandelic";
+            this.txtToxiMandelic.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiMandelic.TabIndex = 240;
+            // 
+            // txtToxiBenzeneNormal
+            // 
+            this.txtToxiBenzeneNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiBenzeneNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiBenzeneNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiBenzeneNormal.Location = new System.Drawing.Point(618, 316);
+            this.txtToxiBenzeneNormal.Name = "txtToxiBenzeneNormal";
+            this.txtToxiBenzeneNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiBenzeneNormal.TabIndex = 239;
+            // 
+            // txtToxiBenzene
+            // 
+            this.txtToxiBenzene.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiBenzene.Location = new System.Drawing.Point(480, 311);
+            this.txtToxiBenzene.Name = "txtToxiBenzene";
+            this.txtToxiBenzene.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiBenzene.TabIndex = 238;
+            // 
+            // txtToxiKetoneNormal
+            // 
+            this.txtToxiKetoneNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiKetoneNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiKetoneNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiKetoneNormal.Location = new System.Drawing.Point(618, 272);
+            this.txtToxiKetoneNormal.Name = "txtToxiKetoneNormal";
+            this.txtToxiKetoneNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiKetoneNormal.TabIndex = 237;
+            // 
+            // txtToxiKetone
+            // 
+            this.txtToxiKetone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiKetone.Location = new System.Drawing.Point(480, 267);
+            this.txtToxiKetone.Name = "txtToxiKetone";
+            this.txtToxiKetone.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiKetone.TabIndex = 236;
+            // 
+            // txtToxiPhenolNormal
+            // 
+            this.txtToxiPhenolNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiPhenolNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiPhenolNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiPhenolNormal.Location = new System.Drawing.Point(618, 234);
+            this.txtToxiPhenolNormal.Name = "txtToxiPhenolNormal";
+            this.txtToxiPhenolNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiPhenolNormal.TabIndex = 235;
+            // 
+            // txtToxiPhenol
+            // 
+            this.txtToxiPhenol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiPhenol.Location = new System.Drawing.Point(480, 229);
+            this.txtToxiPhenol.Name = "txtToxiPhenol";
+            this.txtToxiPhenol.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiPhenol.TabIndex = 234;
+            // 
+            // txtToxiChromiumNormal
+            // 
+            this.txtToxiChromiumNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiChromiumNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiChromiumNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiChromiumNormal.Location = new System.Drawing.Point(618, 192);
+            this.txtToxiChromiumNormal.Name = "txtToxiChromiumNormal";
+            this.txtToxiChromiumNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiChromiumNormal.TabIndex = 233;
+            // 
+            // txtToxiChromium
+            // 
+            this.txtToxiChromium.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiChromium.Location = new System.Drawing.Point(490, 187);
+            this.txtToxiChromium.Name = "txtToxiChromium";
+            this.txtToxiChromium.Size = new System.Drawing.Size(113, 22);
+            this.txtToxiChromium.TabIndex = 232;
+            // 
+            // txtToxiNickelNormal
+            // 
+            this.txtToxiNickelNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiNickelNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiNickelNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiNickelNormal.Location = new System.Drawing.Point(618, 161);
+            this.txtToxiNickelNormal.Name = "txtToxiNickelNormal";
+            this.txtToxiNickelNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiNickelNormal.TabIndex = 231;
+            // 
+            // txtToxiNickel
+            // 
+            this.txtToxiNickel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiNickel.Location = new System.Drawing.Point(480, 156);
+            this.txtToxiNickel.Name = "txtToxiNickel";
+            this.txtToxiNickel.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiNickel.TabIndex = 230;
+            // 
+            // txtToxiAcetoneNormal
+            // 
+            this.txtToxiAcetoneNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiAcetoneNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiAcetoneNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiAcetoneNormal.Location = new System.Drawing.Point(618, 119);
+            this.txtToxiAcetoneNormal.Name = "txtToxiAcetoneNormal";
+            this.txtToxiAcetoneNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiAcetoneNormal.TabIndex = 229;
+            // 
+            // txtToxiAcetone
+            // 
+            this.txtToxiAcetone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiAcetone.Location = new System.Drawing.Point(480, 114);
+            this.txtToxiAcetone.Name = "txtToxiAcetone";
+            this.txtToxiAcetone.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiAcetone.TabIndex = 228;
+            // 
+            // txtToxiMethylNormal
+            // 
+            this.txtToxiMethylNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiMethylNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiMethylNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiMethylNormal.Location = new System.Drawing.Point(618, 84);
+            this.txtToxiMethylNormal.Name = "txtToxiMethylNormal";
+            this.txtToxiMethylNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiMethylNormal.TabIndex = 227;
+            // 
+            // txtToxiMethyl
+            // 
+            this.txtToxiMethyl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiMethyl.Location = new System.Drawing.Point(480, 79);
+            this.txtToxiMethyl.Name = "txtToxiMethyl";
+            this.txtToxiMethyl.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiMethyl.TabIndex = 226;
+            // 
+            // txtToxiEthanolNormal
+            // 
+            this.txtToxiEthanolNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiEthanolNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiEthanolNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiEthanolNormal.Location = new System.Drawing.Point(1004, 46);
+            this.txtToxiEthanolNormal.Name = "txtToxiEthanolNormal";
+            this.txtToxiEthanolNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiEthanolNormal.TabIndex = 225;
+            // 
+            // txtToxiEthanol
+            // 
+            this.txtToxiEthanol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiEthanol.Location = new System.Drawing.Point(866, 41);
+            this.txtToxiEthanol.Name = "txtToxiEthanol";
+            this.txtToxiEthanol.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiEthanol.TabIndex = 224;
+            // 
+            // txtToxiHippuricNormal
+            // 
+            this.txtToxiHippuricNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiHippuricNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiHippuricNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiHippuricNormal.Location = new System.Drawing.Point(618, 43);
+            this.txtToxiHippuricNormal.Name = "txtToxiHippuricNormal";
+            this.txtToxiHippuricNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiHippuricNormal.TabIndex = 223;
+            // 
+            // txtToxiHippuric
+            // 
+            this.txtToxiHippuric.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiHippuric.Location = new System.Drawing.Point(480, 38);
+            this.txtToxiHippuric.Name = "txtToxiHippuric";
+            this.txtToxiHippuric.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiHippuric.TabIndex = 222;
+            // 
+            // txtToxiAmmoniaNormal
+            // 
+            this.txtToxiAmmoniaNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiAmmoniaNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiAmmoniaNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiAmmoniaNormal.Location = new System.Drawing.Point(237, 358);
+            this.txtToxiAmmoniaNormal.Name = "txtToxiAmmoniaNormal";
+            this.txtToxiAmmoniaNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiAmmoniaNormal.TabIndex = 221;
+            // 
+            // txtToxiAmmonia
+            // 
+            this.txtToxiAmmonia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiAmmonia.Location = new System.Drawing.Point(99, 353);
+            this.txtToxiAmmonia.Name = "txtToxiAmmonia";
+            this.txtToxiAmmonia.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiAmmonia.TabIndex = 220;
+            // 
+            // txtToxiZincNormal
+            // 
+            this.txtToxiZincNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiZincNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiZincNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiZincNormal.Location = new System.Drawing.Point(237, 319);
+            this.txtToxiZincNormal.Name = "txtToxiZincNormal";
+            this.txtToxiZincNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiZincNormal.TabIndex = 219;
+            // 
+            // txtToxiZinc
+            // 
+            this.txtToxiZinc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiZinc.Location = new System.Drawing.Point(99, 314);
+            this.txtToxiZinc.Name = "txtToxiZinc";
+            this.txtToxiZinc.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiZinc.TabIndex = 218;
+            // 
+            // txtToxiManganeseNormal
+            // 
+            this.txtToxiManganeseNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiManganeseNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiManganeseNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiManganeseNormal.Location = new System.Drawing.Point(237, 272);
+            this.txtToxiManganeseNormal.Name = "txtToxiManganeseNormal";
+            this.txtToxiManganeseNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiManganeseNormal.TabIndex = 217;
+            // 
+            // txtToxiManganese
+            // 
+            this.txtToxiManganese.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiManganese.Location = new System.Drawing.Point(99, 267);
+            this.txtToxiManganese.Name = "txtToxiManganese";
+            this.txtToxiManganese.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiManganese.TabIndex = 216;
+            // 
+            // txtToxiCopperNormal
+            // 
+            this.txtToxiCopperNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiCopperNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiCopperNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiCopperNormal.Location = new System.Drawing.Point(237, 234);
+            this.txtToxiCopperNormal.Name = "txtToxiCopperNormal";
+            this.txtToxiCopperNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiCopperNormal.TabIndex = 215;
+            // 
+            // txtToxiCopper
+            // 
+            this.txtToxiCopper.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiCopper.Location = new System.Drawing.Point(99, 229);
+            this.txtToxiCopper.Name = "txtToxiCopper";
+            this.txtToxiCopper.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiCopper.TabIndex = 214;
+            // 
+            // txtToxiTinNormal
+            // 
+            this.txtToxiTinNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiTinNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiTinNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiTinNormal.Location = new System.Drawing.Point(237, 196);
+            this.txtToxiTinNormal.Name = "txtToxiTinNormal";
+            this.txtToxiTinNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiTinNormal.TabIndex = 213;
+            // 
+            // txtToxiTin
+            // 
+            this.txtToxiTin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiTin.Location = new System.Drawing.Point(99, 191);
+            this.txtToxiTin.Name = "txtToxiTin";
+            this.txtToxiTin.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiTin.TabIndex = 212;
+            // 
+            // txtToxiMercuryNormal
+            // 
+            this.txtToxiMercuryNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiMercuryNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiMercuryNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiMercuryNormal.Location = new System.Drawing.Point(237, 164);
+            this.txtToxiMercuryNormal.Name = "txtToxiMercuryNormal";
+            this.txtToxiMercuryNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiMercuryNormal.TabIndex = 211;
+            // 
+            // txtToxiCadmiumNormal
+            // 
+            this.txtToxiCadmiumNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiCadmiumNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiCadmiumNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiCadmiumNormal.Location = new System.Drawing.Point(237, 122);
+            this.txtToxiCadmiumNormal.Name = "txtToxiCadmiumNormal";
+            this.txtToxiCadmiumNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiCadmiumNormal.TabIndex = 210;
+            // 
+            // txtToxiAluminiumNormal
+            // 
+            this.txtToxiAluminiumNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiAluminiumNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiAluminiumNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiAluminiumNormal.Location = new System.Drawing.Point(237, 84);
+            this.txtToxiAluminiumNormal.Name = "txtToxiAluminiumNormal";
+            this.txtToxiAluminiumNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiAluminiumNormal.TabIndex = 209;
+            // 
+            // txtToxiLeadNormal
+            // 
+            this.txtToxiLeadNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtToxiLeadNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToxiLeadNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiLeadNormal.Location = new System.Drawing.Point(237, 44);
+            this.txtToxiLeadNormal.Name = "txtToxiLeadNormal";
+            this.txtToxiLeadNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtToxiLeadNormal.TabIndex = 208;
+            // 
+            // txtToxiMercury
+            // 
+            this.txtToxiMercury.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiMercury.Location = new System.Drawing.Point(99, 159);
+            this.txtToxiMercury.Name = "txtToxiMercury";
+            this.txtToxiMercury.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiMercury.TabIndex = 207;
+            // 
+            // txtToxiCadmium
+            // 
+            this.txtToxiCadmium.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiCadmium.Location = new System.Drawing.Point(99, 117);
+            this.txtToxiCadmium.Name = "txtToxiCadmium";
+            this.txtToxiCadmium.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiCadmium.TabIndex = 206;
+            // 
+            // txtToxiAluminium
+            // 
+            this.txtToxiAluminium.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiAluminium.Location = new System.Drawing.Point(99, 79);
+            this.txtToxiAluminium.Name = "txtToxiAluminium";
+            this.txtToxiAluminium.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiAluminium.TabIndex = 205;
+            // 
+            // txtToxiLead
+            // 
+            this.txtToxiLead.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiLead.Location = new System.Drawing.Point(99, 38);
+            this.txtToxiLead.Name = "txtToxiLead";
+            this.txtToxiLead.Size = new System.Drawing.Size(123, 22);
+            this.txtToxiLead.TabIndex = 204;
+            // 
+            // label171
+            // 
+            this.label171.AutoSize = true;
+            this.label171.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label171.Location = new System.Drawing.Point(797, 44);
+            this.label171.Name = "label171";
+            this.label171.Size = new System.Drawing.Size(53, 16);
+            this.label171.TabIndex = 196;
+            this.label171.Text = "Ethanol";
+            // 
+            // label172
+            // 
+            this.label172.AutoSize = true;
+            this.label172.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label172.Location = new System.Drawing.Point(797, 82);
+            this.label172.Name = "label172";
+            this.label172.Size = new System.Drawing.Size(29, 16);
+            this.label172.TabIndex = 197;
+            this.label172.Text = "IPA";
+            // 
+            // label173
+            // 
+            this.label173.AutoSize = true;
+            this.label173.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label173.Location = new System.Drawing.Point(797, 120);
+            this.label173.Name = "label173";
+            this.label173.Size = new System.Drawing.Size(53, 16);
+            this.label173.TabIndex = 198;
+            this.label173.Text = "Arsenic";
+            // 
+            // label175
+            // 
+            this.label175.AutoSize = true;
+            this.label175.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label175.Location = new System.Drawing.Point(797, 162);
+            this.label175.Name = "label175";
+            this.label175.Size = new System.Drawing.Size(55, 16);
+            this.label175.TabIndex = 199;
+            this.label175.Text = "Hexane";
+            // 
+            // label176
+            // 
+            this.label176.AutoSize = true;
+            this.label176.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label176.Location = new System.Drawing.Point(797, 317);
+            this.label176.Name = "label176";
+            this.label176.Size = new System.Drawing.Size(57, 16);
+            this.label176.TabIndex = 203;
+            this.label176.Text = "Fluoride";
+            // 
+            // label177
+            // 
+            this.label177.AutoSize = true;
+            this.label177.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label177.Location = new System.Drawing.Point(797, 194);
+            this.label177.Name = "label177";
+            this.label177.Size = new System.Drawing.Size(99, 16);
+            this.label177.TabIndex = 200;
+            this.label177.Text = "Fomaldenhyde";
+            // 
+            // label178
+            // 
+            this.label178.AutoSize = true;
+            this.label178.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label178.Location = new System.Drawing.Point(797, 273);
+            this.label178.Name = "label178";
+            this.label178.Size = new System.Drawing.Size(88, 16);
+            this.label178.TabIndex = 202;
+            this.label178.Text = "Antimony(Sb)";
+            // 
+            // label179
+            // 
+            this.label179.AutoSize = true;
+            this.label179.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label179.Location = new System.Drawing.Point(797, 232);
+            this.label179.Name = "label179";
+            this.label179.Size = new System.Drawing.Size(147, 16);
+            this.label179.TabIndex = 201;
+            this.label179.Text = "Trichloroethylene(TCA)";
+            // 
+            // label174
+            // 
+            this.label174.AutoSize = true;
+            this.label174.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label174.Location = new System.Drawing.Point(416, 401);
+            this.label174.Name = "label174";
+            this.label174.Size = new System.Drawing.Size(63, 16);
+            this.label174.TabIndex = 195;
+            this.label174.Text = "Methanol";
+            // 
+            // label154
+            // 
+            this.label154.AutoSize = true;
+            this.label154.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label154.Location = new System.Drawing.Point(416, 41);
+            this.label154.Name = "label154";
+            this.label154.Size = new System.Drawing.Size(58, 16);
+            this.label154.TabIndex = 186;
+            this.label154.Text = "Hippuric";
+            // 
+            // label155
+            // 
+            this.label155.AutoSize = true;
+            this.label155.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label155.Location = new System.Drawing.Point(416, 79);
+            this.label155.Name = "label155";
+            this.label155.Size = new System.Drawing.Size(47, 16);
+            this.label155.TabIndex = 187;
+            this.label155.Text = "Methyl";
+            // 
+            // label164
+            // 
+            this.label164.AutoSize = true;
+            this.label164.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label164.Location = new System.Drawing.Point(416, 117);
+            this.label164.Name = "label164";
+            this.label164.Size = new System.Drawing.Size(58, 16);
+            this.label164.TabIndex = 188;
+            this.label164.Text = "Acetone";
+            // 
+            // label165
+            // 
+            this.label165.AutoSize = true;
+            this.label165.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label165.Location = new System.Drawing.Point(416, 356);
+            this.label165.Name = "label165";
+            this.label165.Size = new System.Drawing.Size(63, 16);
+            this.label165.TabIndex = 194;
+            this.label165.Text = "Mandelic";
+            // 
+            // label166
+            // 
+            this.label166.AutoSize = true;
+            this.label166.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label166.Location = new System.Drawing.Point(416, 159);
+            this.label166.Name = "label166";
+            this.label166.Size = new System.Drawing.Size(46, 16);
+            this.label166.TabIndex = 189;
+            this.label166.Text = "Nickel";
+            // 
+            // label167
+            // 
+            this.label167.AutoSize = true;
+            this.label167.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label167.Location = new System.Drawing.Point(416, 314);
+            this.label167.Name = "label167";
+            this.label167.Size = new System.Drawing.Size(61, 16);
+            this.label167.TabIndex = 193;
+            this.label167.Text = "Benzene";
+            // 
+            // label168
+            // 
+            this.label168.AutoSize = true;
+            this.label168.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label168.Location = new System.Drawing.Point(416, 191);
+            this.label168.Name = "label168";
+            this.label168.Size = new System.Drawing.Size(68, 16);
+            this.label168.TabIndex = 190;
+            this.label168.Text = "Chromium";
+            // 
+            // label169
+            // 
+            this.label169.AutoSize = true;
+            this.label169.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label169.Location = new System.Drawing.Point(416, 270);
+            this.label169.Name = "label169";
+            this.label169.Size = new System.Drawing.Size(50, 16);
+            this.label169.TabIndex = 192;
+            this.label169.Text = "Ketone";
+            // 
+            // label170
+            // 
+            this.label170.AutoSize = true;
+            this.label170.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label170.Location = new System.Drawing.Point(416, 229);
+            this.label170.Name = "label170";
+            this.label170.Size = new System.Drawing.Size(50, 16);
+            this.label170.TabIndex = 191;
+            this.label170.Text = "Phenol";
+            // 
+            // label149
+            // 
+            this.label149.AutoSize = true;
+            this.label149.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label149.Location = new System.Drawing.Point(23, 44);
+            this.label149.Name = "label149";
+            this.label149.Size = new System.Drawing.Size(39, 16);
+            this.label149.TabIndex = 168;
+            this.label149.Text = "Lead";
+            // 
+            // label148
+            // 
+            this.label148.AutoSize = true;
+            this.label148.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label148.Location = new System.Drawing.Point(23, 82);
+            this.label148.Name = "label148";
+            this.label148.Size = new System.Drawing.Size(69, 16);
+            this.label148.TabIndex = 169;
+            this.label148.Text = "Aluminium";
+            // 
+            // label147
+            // 
+            this.label147.AutoSize = true;
+            this.label147.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label147.Location = new System.Drawing.Point(23, 120);
+            this.label147.Name = "label147";
+            this.label147.Size = new System.Drawing.Size(65, 16);
+            this.label147.TabIndex = 170;
+            this.label147.Text = "Cadmium";
+            // 
+            // label127
+            // 
+            this.label127.AutoSize = true;
+            this.label127.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label127.Location = new System.Drawing.Point(23, 359);
+            this.label127.Name = "label127";
+            this.label127.Size = new System.Drawing.Size(65, 16);
+            this.label127.TabIndex = 176;
+            this.label127.Text = "Ammonia";
+            // 
+            // label146
+            // 
+            this.label146.AutoSize = true;
+            this.label146.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label146.Location = new System.Drawing.Point(23, 162);
+            this.label146.Name = "label146";
+            this.label146.Size = new System.Drawing.Size(56, 16);
+            this.label146.TabIndex = 171;
+            this.label146.Text = "Mercury";
+            // 
+            // label128
+            // 
+            this.label128.AutoSize = true;
+            this.label128.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label128.Location = new System.Drawing.Point(23, 317);
+            this.label128.Name = "label128";
+            this.label128.Size = new System.Drawing.Size(33, 16);
+            this.label128.TabIndex = 175;
+            this.label128.Text = "Zinc";
+            // 
+            // label145
+            // 
+            this.label145.AutoSize = true;
+            this.label145.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label145.Location = new System.Drawing.Point(23, 194);
+            this.label145.Name = "label145";
+            this.label145.Size = new System.Drawing.Size(27, 16);
+            this.label145.TabIndex = 172;
+            this.label145.Text = "Tin";
+            // 
+            // label130
+            // 
+            this.label130.AutoSize = true;
+            this.label130.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label130.Location = new System.Drawing.Point(23, 273);
+            this.label130.Name = "label130";
+            this.label130.Size = new System.Drawing.Size(80, 16);
+            this.label130.TabIndex = 174;
+            this.label130.Text = "Manganese";
+            // 
+            // label144
+            // 
+            this.label144.AutoSize = true;
+            this.label144.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label144.Location = new System.Drawing.Point(23, 232);
+            this.label144.Name = "label144";
+            this.label144.Size = new System.Drawing.Size(53, 16);
+            this.label144.TabIndex = 173;
+            this.label144.Text = "Copper";
+            // 
+            // tabPage17
+            // 
+            this.tabPage17.Controls.Add(this.btnStoolExamSave);
+            this.tabPage17.Controls.Add(this.txtStoolExamParasiteNormal);
+            this.tabPage17.Controls.Add(this.txtStoolExamParasite);
+            this.tabPage17.Controls.Add(this.txtStoolExamRbcNormal);
+            this.tabPage17.Controls.Add(this.txtStoolExamWbcNormal);
+            this.tabPage17.Controls.Add(this.txtStoolExamAppearanceNormal);
+            this.tabPage17.Controls.Add(this.txtStoolExamColorNormal);
+            this.tabPage17.Controls.Add(this.txtStoolExamRbc);
+            this.tabPage17.Controls.Add(this.txtStoolExamWbc);
+            this.tabPage17.Controls.Add(this.txtStoolExamAppearance);
+            this.tabPage17.Controls.Add(this.txtStoolExamColor);
+            this.tabPage17.Controls.Add(this.label156);
+            this.tabPage17.Controls.Add(this.label157);
+            this.tabPage17.Controls.Add(this.label159);
+            this.tabPage17.Controls.Add(this.label160);
+            this.tabPage17.Controls.Add(this.label161);
+            this.tabPage17.Location = new System.Drawing.Point(4, 22);
+            this.tabPage17.Name = "tabPage17";
+            this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage17.Size = new System.Drawing.Size(1199, 441);
+            this.tabPage17.TabIndex = 17;
+            this.tabPage17.Text = "tabPage17";
+            this.tabPage17.UseVisualStyleBackColor = true;
+            // 
+            // txtStoolExamParasiteNormal
+            // 
+            this.txtStoolExamParasiteNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtStoolExamParasiteNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtStoolExamParasiteNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtStoolExamParasiteNormal.Location = new System.Drawing.Point(378, 312);
+            this.txtStoolExamParasiteNormal.Name = "txtStoolExamParasiteNormal";
+            this.txtStoolExamParasiteNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtStoolExamParasiteNormal.TabIndex = 223;
+            // 
+            // txtStoolExamParasite
+            // 
+            this.txtStoolExamParasite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtStoolExamParasite.Location = new System.Drawing.Point(240, 307);
+            this.txtStoolExamParasite.Name = "txtStoolExamParasite";
+            this.txtStoolExamParasite.Size = new System.Drawing.Size(123, 22);
+            this.txtStoolExamParasite.TabIndex = 222;
+            // 
+            // txtStoolExamRbcNormal
+            // 
+            this.txtStoolExamRbcNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtStoolExamRbcNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtStoolExamRbcNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtStoolExamRbcNormal.Location = new System.Drawing.Point(378, 248);
+            this.txtStoolExamRbcNormal.Name = "txtStoolExamRbcNormal";
+            this.txtStoolExamRbcNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtStoolExamRbcNormal.TabIndex = 221;
+            // 
+            // txtStoolExamWbcNormal
+            // 
+            this.txtStoolExamWbcNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtStoolExamWbcNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtStoolExamWbcNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtStoolExamWbcNormal.Location = new System.Drawing.Point(378, 184);
+            this.txtStoolExamWbcNormal.Name = "txtStoolExamWbcNormal";
+            this.txtStoolExamWbcNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtStoolExamWbcNormal.TabIndex = 220;
+            // 
+            // txtStoolExamAppearanceNormal
+            // 
+            this.txtStoolExamAppearanceNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtStoolExamAppearanceNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtStoolExamAppearanceNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtStoolExamAppearanceNormal.Location = new System.Drawing.Point(378, 121);
+            this.txtStoolExamAppearanceNormal.Name = "txtStoolExamAppearanceNormal";
+            this.txtStoolExamAppearanceNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtStoolExamAppearanceNormal.TabIndex = 219;
+            // 
+            // txtStoolExamColorNormal
+            // 
+            this.txtStoolExamColorNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtStoolExamColorNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtStoolExamColorNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtStoolExamColorNormal.Location = new System.Drawing.Point(378, 61);
+            this.txtStoolExamColorNormal.Name = "txtStoolExamColorNormal";
+            this.txtStoolExamColorNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtStoolExamColorNormal.TabIndex = 218;
+            // 
+            // txtStoolExamRbc
+            // 
+            this.txtStoolExamRbc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtStoolExamRbc.Location = new System.Drawing.Point(240, 243);
+            this.txtStoolExamRbc.Name = "txtStoolExamRbc";
+            this.txtStoolExamRbc.Size = new System.Drawing.Size(123, 22);
+            this.txtStoolExamRbc.TabIndex = 217;
+            // 
+            // txtStoolExamWbc
+            // 
+            this.txtStoolExamWbc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtStoolExamWbc.Location = new System.Drawing.Point(240, 179);
+            this.txtStoolExamWbc.Name = "txtStoolExamWbc";
+            this.txtStoolExamWbc.Size = new System.Drawing.Size(123, 22);
+            this.txtStoolExamWbc.TabIndex = 216;
+            // 
+            // txtStoolExamAppearance
+            // 
+            this.txtStoolExamAppearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtStoolExamAppearance.Location = new System.Drawing.Point(240, 116);
+            this.txtStoolExamAppearance.Name = "txtStoolExamAppearance";
+            this.txtStoolExamAppearance.Size = new System.Drawing.Size(123, 22);
+            this.txtStoolExamAppearance.TabIndex = 215;
+            // 
+            // txtStoolExamColor
+            // 
+            this.txtStoolExamColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtStoolExamColor.Location = new System.Drawing.Point(240, 55);
+            this.txtStoolExamColor.Name = "txtStoolExamColor";
+            this.txtStoolExamColor.Size = new System.Drawing.Size(123, 22);
+            this.txtStoolExamColor.TabIndex = 214;
+            // 
+            // label156
+            // 
+            this.label156.AutoSize = true;
+            this.label156.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label156.Location = new System.Drawing.Point(94, 313);
+            this.label156.Name = "label156";
+            this.label156.Size = new System.Drawing.Size(58, 16);
+            this.label156.TabIndex = 143;
+            this.label156.Text = "Parasite";
+            // 
+            // label157
+            // 
+            this.label157.AutoSize = true;
+            this.label157.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label157.Location = new System.Drawing.Point(94, 249);
+            this.label157.Name = "label157";
+            this.label157.Size = new System.Drawing.Size(36, 16);
+            this.label157.TabIndex = 142;
+            this.label157.Text = "RBC";
+            // 
+            // label159
+            // 
+            this.label159.AutoSize = true;
+            this.label159.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label159.Location = new System.Drawing.Point(94, 122);
+            this.label159.Name = "label159";
+            this.label159.Size = new System.Drawing.Size(83, 16);
+            this.label159.TabIndex = 141;
+            this.label159.Text = "Appearance";
+            // 
+            // label160
+            // 
+            this.label160.AutoSize = true;
+            this.label160.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label160.Location = new System.Drawing.Point(94, 185);
+            this.label160.Name = "label160";
+            this.label160.Size = new System.Drawing.Size(39, 16);
+            this.label160.TabIndex = 140;
+            this.label160.Text = "WBC";
+            // 
+            // label161
+            // 
+            this.label161.AutoSize = true;
+            this.label161.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label161.Location = new System.Drawing.Point(94, 61);
+            this.label161.Name = "label161";
+            this.label161.Size = new System.Drawing.Size(40, 16);
+            this.label161.TabIndex = 139;
+            this.label161.Text = "Color";
+            // 
             // btnExcel
             // 
             this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -2301,51 +4831,71 @@
             this.label8.TabIndex = 66;
             this.label8.Text = "อายุ :";
             // 
-            // tabPage12
+            // btnOther1Save
             // 
-            this.tabPage12.Location = new System.Drawing.Point(4, 22);
-            this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage12.Size = new System.Drawing.Size(1150, 441);
-            this.tabPage12.TabIndex = 12;
-            this.tabPage12.Text = "tabPage12";
-            this.tabPage12.UseVisualStyleBackColor = true;
+            this.btnOther1Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnOther1Save.Location = new System.Drawing.Point(1107, 401);
+            this.btnOther1Save.Name = "btnOther1Save";
+            this.btnOther1Save.Size = new System.Drawing.Size(86, 34);
+            this.btnOther1Save.TabIndex = 118;
+            this.btnOther1Save.Text = "Save";
+            this.btnOther1Save.UseVisualStyleBackColor = true;
             // 
-            // tabPage13
+            // btnLungSave
             // 
-            this.tabPage13.Location = new System.Drawing.Point(4, 22);
-            this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage13.Size = new System.Drawing.Size(1150, 441);
-            this.tabPage13.TabIndex = 13;
-            this.tabPage13.Text = "tabPage13";
-            this.tabPage13.UseVisualStyleBackColor = true;
+            this.btnLungSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnLungSave.Location = new System.Drawing.Point(1107, 401);
+            this.btnLungSave.Name = "btnLungSave";
+            this.btnLungSave.Size = new System.Drawing.Size(86, 34);
+            this.btnLungSave.TabIndex = 143;
+            this.btnLungSave.Text = "Save";
+            this.btnLungSave.UseVisualStyleBackColor = true;
             // 
-            // tabPage14
+            // btnAudiogramSave
             // 
-            this.tabPage14.Location = new System.Drawing.Point(4, 22);
-            this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage14.Size = new System.Drawing.Size(1150, 441);
-            this.tabPage14.TabIndex = 14;
-            this.tabPage14.Text = "tabPage14";
-            this.tabPage14.UseVisualStyleBackColor = true;
+            this.btnAudiogramSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnAudiogramSave.Location = new System.Drawing.Point(1107, 401);
+            this.btnAudiogramSave.Name = "btnAudiogramSave";
+            this.btnAudiogramSave.Size = new System.Drawing.Size(86, 34);
+            this.btnAudiogramSave.TabIndex = 171;
+            this.btnAudiogramSave.Text = "Save";
+            this.btnAudiogramSave.UseVisualStyleBackColor = true;
             // 
-            // tabPage15
+            // btnEyeSave
             // 
-            this.tabPage15.Location = new System.Drawing.Point(4, 22);
-            this.tabPage15.Name = "tabPage15";
-            this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage15.Size = new System.Drawing.Size(1150, 441);
-            this.tabPage15.TabIndex = 15;
-            this.tabPage15.Text = "tabPage15";
-            this.tabPage15.UseVisualStyleBackColor = true;
+            this.btnEyeSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnEyeSave.Location = new System.Drawing.Point(1107, 401);
+            this.btnEyeSave.Name = "btnEyeSave";
+            this.btnEyeSave.Size = new System.Drawing.Size(86, 34);
+            this.btnEyeSave.TabIndex = 181;
+            this.btnEyeSave.Text = "Save";
+            this.btnEyeSave.UseVisualStyleBackColor = true;
+            // 
+            // btnToxiSave
+            // 
+            this.btnToxiSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnToxiSave.Location = new System.Drawing.Point(1107, 401);
+            this.btnToxiSave.Name = "btnToxiSave";
+            this.btnToxiSave.Size = new System.Drawing.Size(86, 34);
+            this.btnToxiSave.TabIndex = 258;
+            this.btnToxiSave.Text = "Save";
+            this.btnToxiSave.UseVisualStyleBackColor = true;
+            // 
+            // btnStoolExamSave
+            // 
+            this.btnStoolExamSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnStoolExamSave.Location = new System.Drawing.Point(1107, 401);
+            this.btnStoolExamSave.Name = "btnStoolExamSave";
+            this.btnStoolExamSave.Size = new System.Drawing.Size(86, 34);
+            this.btnStoolExamSave.TabIndex = 224;
+            this.btnStoolExamSave.Text = "Save";
+            this.btnStoolExamSave.UseVisualStyleBackColor = true;
             // 
             // FrmCheckUpEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 595);
+            this.ClientSize = new System.Drawing.Size(1222, 595);
             this.Controls.Add(this.txtAge);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtRowNumber);
@@ -2381,6 +4931,18 @@
             this.tabPage10.PerformLayout();
             this.tabPage11.ResumeLayout(false);
             this.tabPage11.PerformLayout();
+            this.tabPage12.ResumeLayout(false);
+            this.tabPage12.PerformLayout();
+            this.tabPage13.ResumeLayout(false);
+            this.tabPage13.PerformLayout();
+            this.tabPage14.ResumeLayout(false);
+            this.tabPage14.PerformLayout();
+            this.tabPage15.ResumeLayout(false);
+            this.tabPage15.PerformLayout();
+            this.tabPage16.ResumeLayout(false);
+            this.tabPage16.PerformLayout();
+            this.tabPage17.ResumeLayout(false);
+            this.tabPage17.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2590,5 +5152,229 @@
         private System.Windows.Forms.TabPage tabPage13;
         private System.Windows.Forms.TabPage tabPage14;
         private System.Windows.Forms.TabPage tabPage15;
+        private System.Windows.Forms.TabPage tabPage16;
+        private System.Windows.Forms.TabPage tabPage17;
+        private System.Windows.Forms.TextBox txtCalciumNormal;
+        private System.Windows.Forms.TextBox txtAmphetamineNormal;
+        private System.Windows.Forms.TextBox txtVDRLNormal;
+        private System.Windows.Forms.TextBox txtAntiHIVNormal;
+        private System.Windows.Forms.TextBox txtHBsAbNormal;
+        private System.Windows.Forms.TextBox txtHBsAgNormal;
+        private System.Windows.Forms.TextBox txtCalcium;
+        private System.Windows.Forms.TextBox txtAmphetamine;
+        private System.Windows.Forms.TextBox txtVDRL;
+        private System.Windows.Forms.TextBox txtAntiHIV;
+        private System.Windows.Forms.TextBox txtHBsAb;
+        private System.Windows.Forms.TextBox txtHBsAg;
+        private System.Windows.Forms.Label label92;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txtPerFev1Normal;
+        private System.Windows.Forms.TextBox txtPerFev1;
+        private System.Windows.Forms.TextBox txtFev1PerNormal;
+        private System.Windows.Forms.TextBox txtFev1MeasNormal;
+        private System.Windows.Forms.TextBox txtFev1PredicNormal;
+        private System.Windows.Forms.TextBox txtFvcPerNormal;
+        private System.Windows.Forms.TextBox txtFvcMeasNormal;
+        private System.Windows.Forms.TextBox txtFvcPredicNormal;
+        private System.Windows.Forms.TextBox txtFev1Per;
+        private System.Windows.Forms.TextBox txtFev1Meas;
+        private System.Windows.Forms.TextBox txtFev1Predic;
+        private System.Windows.Forms.TextBox txtFvcPer;
+        private System.Windows.Forms.TextBox txtFvcMeas;
+        private System.Windows.Forms.TextBox txtFvcPredic;
+        private System.Windows.Forms.Label label102;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.Label label97;
+        private System.Windows.Forms.Label label98;
+        private System.Windows.Forms.Label label99;
+        private System.Windows.Forms.TextBox textBox45;
+        private System.Windows.Forms.TextBox textBox46;
+        private System.Windows.Forms.TextBox txtAudiogram8000RNormal;
+        private System.Windows.Forms.TextBox txtAudiogram8000R;
+        private System.Windows.Forms.TextBox txtAudiogram6000RNormal;
+        private System.Windows.Forms.TextBox txtAudiogram4000RNormal;
+        private System.Windows.Forms.TextBox txtAudiogram3000RNormal;
+        private System.Windows.Forms.TextBox txtAudiogram2000RNormal;
+        private System.Windows.Forms.TextBox txtAudiogram1000RNormal;
+        private System.Windows.Forms.TextBox txtAudiogram500RNormal;
+        private System.Windows.Forms.TextBox txtAudiogram6000R;
+        private System.Windows.Forms.TextBox txtAudiogram4000R;
+        private System.Windows.Forms.TextBox txtAudiogram3000R;
+        private System.Windows.Forms.TextBox txtAudiogram2000R;
+        private System.Windows.Forms.TextBox txtAudiogram1000R;
+        private System.Windows.Forms.TextBox txtAudiogram500R;
+        private System.Windows.Forms.TextBox textBox43;
+        private System.Windows.Forms.TextBox textBox44;
+        private System.Windows.Forms.TextBox txtAudiogram8000LNormal;
+        private System.Windows.Forms.TextBox txtAudiogram8000L;
+        private System.Windows.Forms.TextBox txtAudiogram6000LNormal;
+        private System.Windows.Forms.TextBox txtAudiogram4000LNormal;
+        private System.Windows.Forms.TextBox txtAudiogram3000LNormal;
+        private System.Windows.Forms.TextBox txtAudiogram2000LNormal;
+        private System.Windows.Forms.TextBox txtAudiogram1000LNormal;
+        private System.Windows.Forms.TextBox txtAudiogram500LNormal;
+        private System.Windows.Forms.TextBox txtAudiogram6000L;
+        private System.Windows.Forms.TextBox txtAudiogram4000L;
+        private System.Windows.Forms.TextBox txtAudiogram3000L;
+        private System.Windows.Forms.TextBox txtAudiogram2000L;
+        private System.Windows.Forms.TextBox txtAudiogram1000L;
+        private System.Windows.Forms.TextBox txtAudiogram500L;
+        private System.Windows.Forms.Label label122;
+        private System.Windows.Forms.Label label121;
+        private System.Windows.Forms.Label label120;
+        private System.Windows.Forms.Label label119;
+        private System.Windows.Forms.Label label105;
+        private System.Windows.Forms.Label label106;
+        private System.Windows.Forms.Label label107;
+        private System.Windows.Forms.Label label108;
+        private System.Windows.Forms.Label label109;
+        private System.Windows.Forms.Label label110;
+        private System.Windows.Forms.Label label111;
+        private System.Windows.Forms.Label label112;
+        private System.Windows.Forms.Label label113;
+        private System.Windows.Forms.Label label114;
+        private System.Windows.Forms.Label label115;
+        private System.Windows.Forms.Label label116;
+        private System.Windows.Forms.Label label134;
+        private System.Windows.Forms.Label label135;
+        private System.Windows.Forms.Label label136;
+        private System.Windows.Forms.Label label137;
+        private System.Windows.Forms.Label label138;
+        private System.Windows.Forms.Label label139;
+        private System.Windows.Forms.Label label140;
+        private System.Windows.Forms.Label label141;
+        private System.Windows.Forms.Label label131;
+        private System.Windows.Forms.Label label132;
+        private System.Windows.Forms.Label label133;
+        private System.Windows.Forms.TextBox textBox81;
+        private System.Windows.Forms.TextBox textBox82;
+        private System.Windows.Forms.TextBox txtEyeOldRightNormal;
+        private System.Windows.Forms.TextBox EyeDegreeLeftRightNormal;
+        private System.Windows.Forms.TextBox txtEyeOldRight;
+        private System.Windows.Forms.TextBox EyeDegreeRight;
+        private System.Windows.Forms.TextBox txtEyeSquintRightNormal;
+        private System.Windows.Forms.TextBox txtEyeShortLongRightNormal;
+        private System.Windows.Forms.TextBox txtEyeSquintRight;
+        private System.Windows.Forms.TextBox txtEyeShortLongRight;
+        private System.Windows.Forms.TextBox textBox61;
+        private System.Windows.Forms.TextBox textBox62;
+        private System.Windows.Forms.TextBox textBox63;
+        private System.Windows.Forms.TextBox txtEyeBlindness;
+        private System.Windows.Forms.TextBox txtEyeOldLeftNormal;
+        private System.Windows.Forms.TextBox EyeDegreeLeftNormal;
+        private System.Windows.Forms.TextBox txtEyeSquintLeftNormal;
+        private System.Windows.Forms.TextBox txtEyeShortLongLeftNormal;
+        private System.Windows.Forms.TextBox txtEyeOldLeft;
+        private System.Windows.Forms.TextBox txtEyeDegreeLeft;
+        private System.Windows.Forms.TextBox txtEyeSquintLeft;
+        private System.Windows.Forms.TextBox txtEyeShortLongLeft;
+        private System.Windows.Forms.Label label149;
+        private System.Windows.Forms.Label label148;
+        private System.Windows.Forms.Label label147;
+        private System.Windows.Forms.Label label127;
+        private System.Windows.Forms.Label label146;
+        private System.Windows.Forms.Label label128;
+        private System.Windows.Forms.Label label145;
+        private System.Windows.Forms.Label label130;
+        private System.Windows.Forms.Label label144;
+        private System.Windows.Forms.Label label174;
+        private System.Windows.Forms.Label label154;
+        private System.Windows.Forms.Label label155;
+        private System.Windows.Forms.Label label164;
+        private System.Windows.Forms.Label label165;
+        private System.Windows.Forms.Label label166;
+        private System.Windows.Forms.Label label167;
+        private System.Windows.Forms.Label label168;
+        private System.Windows.Forms.Label label169;
+        private System.Windows.Forms.Label label170;
+        private System.Windows.Forms.Label label171;
+        private System.Windows.Forms.Label label172;
+        private System.Windows.Forms.Label label173;
+        private System.Windows.Forms.Label label175;
+        private System.Windows.Forms.Label label176;
+        private System.Windows.Forms.Label label177;
+        private System.Windows.Forms.Label label178;
+        private System.Windows.Forms.Label label179;
+        private System.Windows.Forms.TextBox txtToxiCopperNormal;
+        private System.Windows.Forms.TextBox txtToxiCopper;
+        private System.Windows.Forms.TextBox txtToxiTinNormal;
+        private System.Windows.Forms.TextBox txtToxiTin;
+        private System.Windows.Forms.TextBox txtToxiMercuryNormal;
+        private System.Windows.Forms.TextBox txtToxiCadmiumNormal;
+        private System.Windows.Forms.TextBox txtToxiAluminiumNormal;
+        private System.Windows.Forms.TextBox txtToxiLeadNormal;
+        private System.Windows.Forms.TextBox txtToxiMercury;
+        private System.Windows.Forms.TextBox txtToxiCadmium;
+        private System.Windows.Forms.TextBox txtToxiAluminium;
+        private System.Windows.Forms.TextBox txtToxiLead;
+        private System.Windows.Forms.Label label156;
+        private System.Windows.Forms.Label label157;
+        private System.Windows.Forms.Label label159;
+        private System.Windows.Forms.Label label160;
+        private System.Windows.Forms.Label label161;
+        private System.Windows.Forms.TextBox txtStoolExamParasiteNormal;
+        private System.Windows.Forms.TextBox txtStoolExamParasite;
+        private System.Windows.Forms.TextBox txtStoolExamRbcNormal;
+        private System.Windows.Forms.TextBox txtStoolExamWbcNormal;
+        private System.Windows.Forms.TextBox txtStoolExamAppearanceNormal;
+        private System.Windows.Forms.TextBox txtStoolExamColorNormal;
+        private System.Windows.Forms.TextBox txtStoolExamRbc;
+        private System.Windows.Forms.TextBox txtStoolExamWbc;
+        private System.Windows.Forms.TextBox txtStoolExamAppearance;
+        private System.Windows.Forms.TextBox txtStoolExamColor;
+        private System.Windows.Forms.TextBox txtToxiEthanolNormal;
+        private System.Windows.Forms.TextBox txtToxiEthanol;
+        private System.Windows.Forms.TextBox txtToxiHippuricNormal;
+        private System.Windows.Forms.TextBox txtToxiHippuric;
+        private System.Windows.Forms.TextBox txtToxiAmmoniaNormal;
+        private System.Windows.Forms.TextBox txtToxiAmmonia;
+        private System.Windows.Forms.TextBox txtToxiZincNormal;
+        private System.Windows.Forms.TextBox txtToxiZinc;
+        private System.Windows.Forms.TextBox txtToxiManganeseNormal;
+        private System.Windows.Forms.TextBox txtToxiManganese;
+        private System.Windows.Forms.TextBox txtToxiFluorideNormal;
+        private System.Windows.Forms.TextBox txtToxiFluoride;
+        private System.Windows.Forms.TextBox txtToxiHexaneNormal;
+        private System.Windows.Forms.TextBox txtToxiHexane;
+        private System.Windows.Forms.TextBox txtToxiArsenicNormal;
+        private System.Windows.Forms.TextBox txtToxiArsenic;
+        private System.Windows.Forms.TextBox txtToxiMethanolNormal;
+        private System.Windows.Forms.TextBox txtToxiMethanol;
+        private System.Windows.Forms.TextBox txtToxiIPANormal;
+        private System.Windows.Forms.TextBox txtToxiIPA;
+        private System.Windows.Forms.TextBox txtToxiMandelicNormal;
+        private System.Windows.Forms.TextBox txtToxiMandelic;
+        private System.Windows.Forms.TextBox txtToxiBenzeneNormal;
+        private System.Windows.Forms.TextBox txtToxiBenzene;
+        private System.Windows.Forms.TextBox txtToxiKetoneNormal;
+        private System.Windows.Forms.TextBox txtToxiKetone;
+        private System.Windows.Forms.TextBox txtToxiPhenolNormal;
+        private System.Windows.Forms.TextBox txtToxiPhenol;
+        private System.Windows.Forms.TextBox txtToxiChromiumNormal;
+        private System.Windows.Forms.TextBox txtToxiChromium;
+        private System.Windows.Forms.TextBox txtToxiNickelNormal;
+        private System.Windows.Forms.TextBox txtToxiNickel;
+        private System.Windows.Forms.TextBox txtToxiAcetoneNormal;
+        private System.Windows.Forms.TextBox txtToxiAcetone;
+        private System.Windows.Forms.TextBox txtToxiMethylNormal;
+        private System.Windows.Forms.TextBox txtToxiMethyl;
+        private System.Windows.Forms.TextBox txtToxiAntimonyNormal;
+        private System.Windows.Forms.TextBox txtToxiAntimony;
+        private System.Windows.Forms.TextBox txtToxiTrichloroethyleneNormal;
+        private System.Windows.Forms.TextBox txtToxiTrichloroethylene;
+        private System.Windows.Forms.TextBox txtToxiFomaldehydeNormal;
+        private System.Windows.Forms.TextBox txtToxiFomaldehyde;
+        private System.Windows.Forms.Button btnOther1Save;
+        private System.Windows.Forms.Button btnLungSave;
+        private System.Windows.Forms.Button btnAudiogramSave;
+        private System.Windows.Forms.Button btnEyeSave;
+        private System.Windows.Forms.Button btnToxiSave;
+        private System.Windows.Forms.Button btnStoolExamSave;
     }
 }
