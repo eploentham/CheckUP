@@ -37,6 +37,7 @@ namespace Cemp.objdb
             poi.UserModi = "user_modi";
             poi.ItemType = "item_type";
             poi.RowNumber = "row_number";
+            poi.ItemCode = "item_code";
 
             poi.pkField = "po_item_id";
             poi.table = "t_po_item";
@@ -60,6 +61,7 @@ namespace Cemp.objdb
             item.UserModi = dt.Rows[0][poi.UserModi].ToString();
             item.ItemType = dt.Rows[0][poi.ItemType].ToString();
             item.RowNumber = dt.Rows[0][poi.RowNumber].ToString();
+            item.ItemCode = dt.Rows[0][poi.ItemCode].ToString();
 
             return item;
         }
@@ -121,14 +123,14 @@ namespace Cemp.objdb
                 poi.DateCreate + "," + poi.DateModi + "," + poi.ItemAmount + "," +
                 poi.ItemId + "," + poi.ItemNameT + "," + poi.ItemPrice + "," +
                 poi.ItemQty + "," + poi.POId + "," + poi.Remark + "," +
-                poi.UserCancel + "," + poi.UserCreate + "," + poi.UserModi + "," + 
-                poi.ItemType + "," + poi.RowNumber + ") " +
+                poi.UserCancel + "," + poi.UserCreate + "," + poi.UserModi + "," +
+                poi.ItemType + "," + poi.RowNumber + "," + poi.ItemCode + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.DateCancel + "'," +
                 p.dateGenDB + ",'" + p.DateModi + "'," + p.ItemAmount + ",'" +
                 p.ItemId + "','" + p.ItemNameT + "'," + p.ItemPrice + "," +
                 p.ItemQty + ",'" + p.POId + "','" + p.Remark + "','" +
-                p.UserCancel + "','" + p.UserCreate + "','" + p.UserModi + "','" + 
-                p.ItemType + "'," + NumberNull1(p.RowNumber) + ")";
+                p.UserCancel + "','" + p.UserCreate + "','" + p.UserModi + "','" +
+                p.ItemType + "'," + NumberNull1(p.RowNumber) + ",'" + p.ItemCode + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -160,7 +162,8 @@ namespace Cemp.objdb
                 poi.Remark + "='" + p.Remark + "', " +
                 poi.UserModi + "='" + p.UserModi + "', " +
                 poi.ItemType + "='" + p.ItemType + "', " +
-                poi.RowNumber + "=" + p.RowNumber + " " +
+                poi.RowNumber + "=" + p.RowNumber + ", " +
+                poi.ItemCode + "='" + p.ItemCode + "' " +
                 "Where " + poi.pkField + "='" + p.Id + "'";
             try
             {

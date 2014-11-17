@@ -75,6 +75,7 @@ namespace Cemp.objdb
             qu.userCancel = "user_cancel";
             qu.userCreate = "user_create";
             qu.userModi = "user_modi";
+            qu.PathPicConfirm = "pathpicconfirm";
 
             qu.table = "t_quotation";
             qu.pkField = "quo_id";
@@ -137,6 +138,9 @@ namespace Cemp.objdb
             item.userCreate = dt.Rows[0][qu.userCreate].ToString();
             item.userModi = dt.Rows[0][qu.userModi].ToString();
 
+            item.PathPicConfirm = dt.Rows[0][qu.PathPicConfirm].ToString();
+            item.PathPicConfirm = item.PathPicConfirm.Replace("@","\\");
+
             return item;
         }
         public DataTable selectAll()
@@ -148,11 +152,20 @@ namespace Cemp.objdb
 
             return dt;
         }
-        public DataTable selectMOUNoQuotation()
+        public DataTable selectQuoConfirmNoMOU()
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + qu.table + " Where " + qu.Active + "='1' ";
+            sql = "Select * From " + qu.table + " Where " + qu.Active + "='1' and " + qu.StatusQuo + "='2' and "+qu.StatusMOU+" = '1' Order By " + qu.QuoNumber + " desc," + qu.QuoNumberCnt + " desc";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectQuoConfirm()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From " + qu.table + " Where " + qu.Active + "='1' and "+qu.StatusQuo+"='2' Order By " + qu.QuoNumber + " desc," + qu.QuoNumberCnt + " desc";
             dt = conn.selectData(sql);
 
             return dt;
@@ -465,6 +478,21 @@ namespace Cemp.objdb
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
+        public ComboBox getCboQuoConfirmNoMOU(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectQuoConfirmNoMOU();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i][qu.Id].ToString();
+                item.Text = dt.Rows[i][qu.QuoNumber].ToString() + "-" + dt.Rows[i][qu.QuoNumberCnt].ToString();
+                c.Items.Add(item);
+                //c.Items.Add(new );
+            }
+            //c.SelectedItem = item;
+            return c;
+        }
         public ComboBox getCboQuotation(ComboBox c)
         {
             ComboBoxItem item = new ComboBoxItem();
@@ -665,6 +693,24 @@ namespace Cemp.objdb
             String sql = "", chk = "";
 
             sql = "Update " + qu.table + " Set " + qu.QuoNumberCnt + "=" + quoNumberCnt + " " +
+                "Where " + qu.pkField + "='" + quId + "'";
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
+        public String updatePathPicConfirm(String quId, String path)
+        {
+            String sql = "", chk = "", path1="";
+            path1 = path.Replace("\\", "@");
+            sql = "Update " + qu.table + " Set " + qu.PathPicConfirm + "='" + path1 + "' " +
+                "Where " + qu.pkField + "='" + quId + "'";
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
+        public String updateStatusConfirm(String quId)
+        {
+            String sql = "", chk = "";
+
+            sql = "Update " + qu.table + " Set " + qu.StatusQuo + "='2' " +
                 "Where " + qu.pkField + "='" + quId + "'";
             chk = conn.ExecuteNonQuery(sql);
             return chk;

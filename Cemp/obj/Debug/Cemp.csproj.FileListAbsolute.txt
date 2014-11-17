@@ -92,4 +92,3 @@ D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmBankView.resources
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmCompanyBank.resources
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmStaffPrefixAdd.resources
 D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmStaffPrefixView.resources
-D:\source\CNVI\CNVI.Cemp\Cemp\obj\Debug\Cemp.csprojResolveAssemblyReference.cache

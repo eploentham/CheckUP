@@ -17,8 +17,8 @@ namespace Cemp.gui
         PO po;
         Company cp;
         Boolean pageLoad = false;
-        int colRow = 0, colItem = 1, colDesc = 2, colPrice = 3, colQty = 4, colAmt=5, colRemark = 6, colId=7, colDel=8;
-        int colCnt = 9;
+        int colRow = 0, colItemCode = 1, colItemId = 2, colDesc = 3, colPrice = 4, colQty = 5, colAmt = 6, colRemark = 7, colId = 8, colDel = 9;
+        int colCnt = 10;
         int row = 0;
         public FrmPOAdd(String poId,CnviControl c)
         {
@@ -196,7 +196,7 @@ namespace Cemp.gui
             dgvAdd.RowCount = 1;
             dgvAdd.SelectionMode = DataGridViewSelectionMode.CellSelect;
             dgvAdd.Columns[colRow].Width = 50;
-            dgvAdd.Columns[colItem].Width = 80;
+            dgvAdd.Columns[colItemCode].Width = 80;
             dgvAdd.Columns[colDesc].Width = 300;
             dgvAdd.Columns[colPrice].Width = 80;
             dgvAdd.Columns[colQty].Width = 80;
@@ -205,7 +205,7 @@ namespace Cemp.gui
             dgvAdd.Columns[colAmt].Width = 100;
 
             dgvAdd.Columns[colRow].HeaderText = "ลำดับ";
-            dgvAdd.Columns[colItem].HeaderText = "รหัส";
+            dgvAdd.Columns[colItemCode].HeaderText = "รหัส";
             dgvAdd.Columns[colDesc].HeaderText = "รายการ";
             dgvAdd.Columns[colPrice].HeaderText = "ราคา";
             dgvAdd.Columns[colQty].HeaderText = "จำนวน";
@@ -224,7 +224,7 @@ namespace Cemp.gui
             dgvAdd.Font = font;
             dgvAdd.Columns[colId].Visible = false;
             dgvAdd.Columns[colDel].Visible = false;
-
+            dgvAdd.Columns[colItemId].Visible = false;
             //dgvAdd.Columns[colSample].ReadOnly = true;
             //dgvAdd.Columns[colMethod].ReadOnly = true;
             //dgvAdd.Columns[colItem].ReadOnly = true;
@@ -232,8 +232,8 @@ namespace Cemp.gui
             //dgvAdd.EditMode = DataGridViewEditMode.EditOnF2;
             dgvAdd.AllowUserToAddRows = false;
             DgvAddRow();
-            dgvAdd.Rows[row].Cells[colItem].Selected = true;
-            dgvAdd.CurrentCell = dgvAdd.Rows[row].Cells[colItem];
+            dgvAdd.Rows[row].Cells[colItemCode].Selected = true;
+            dgvAdd.CurrentCell = dgvAdd.Rows[row].Cells[colItemCode];
         }
         private void setGrd(String poId)
         {
@@ -252,7 +252,8 @@ namespace Cemp.gui
                     //DataGridViewComboBoxCell cell = (DataGridViewComboBoxCell)(dgvAdd.Rows[i].Cells[colItem]);
                     //cell.DataSource = newColumn;
                     dgvAdd[colRow, i].Value = (i + 1);
-                    dgvAdd[colItem, i].Value = dt.Rows[i][cc.poidb.poi.ItemId].ToString();
+                    dgvAdd[colItemCode, i].Value = dt.Rows[i][cc.poidb.poi.ItemCode].ToString();
+                    dgvAdd[colItemId, i].Value = dt.Rows[i][cc.poidb.poi.ItemId].ToString();
                     dgvAdd[colDesc, i].Value = dt.Rows[i][cc.poidb.poi.ItemNameT].ToString();
                     dgvAdd[colPrice, i].Value = dt.Rows[i][cc.poidb.poi.ItemPrice].ToString();
                     dgvAdd[colQty, i].Value = dt.Rows[i][cc.poidb.poi.ItemQty].ToString();
@@ -350,7 +351,8 @@ namespace Cemp.gui
             row = dgvAdd.Rows.Add();
             dgvAdd[colDel, row].Value = "";
             dgvAdd[colId, row].Value = "";
-            dgvAdd[colItem, row].Value = "";
+            dgvAdd[colItemCode, row].Value = "";
+            dgvAdd[colItemId, row].Value = "";
             dgvAdd[colDesc, row].Value = "";
             dgvAdd[colRemark, row].Value = "";
             dgvAdd[colQty, row].Value = "";
@@ -395,7 +397,7 @@ namespace Cemp.gui
 
         private void dgvAdd_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            if (e.ColumnIndex == colItem)
+            if (e.ColumnIndex == colItemCode)
             {
 
             }
@@ -510,11 +512,12 @@ namespace Cemp.gui
                     poi.Active = "1";
                     poi.Id = dgvAdd[colId, i].Value.ToString();
                     poi.ItemAmount = dgvAdd[colAmt, i].Value.ToString().Replace(",", "");
-                    poi.ItemId = dgvAdd[colItem, i].Value.ToString();
+                    poi.ItemId = dgvAdd[colItemId, i].Value.ToString();
                     poi.ItemNameT=dgvAdd[colDesc, i].Value.ToString();
                     poi.ItemPrice = dgvAdd[colPrice, i].Value.ToString().Replace(",", "");
                     poi.ItemQty = dgvAdd[colQty, i].Value.ToString().Replace(",","");
                     poi.Remark = dgvAdd[colRemark, i].Value.ToString();
+                    poi.ItemCode = dgvAdd[colItemCode, i].Value.ToString();
                     poi.POId = poId;
                     cc.poidb.insertPOItem(poi);
                 }
@@ -535,7 +538,7 @@ namespace Cemp.gui
         {
             try
             {
-                if (e.ColumnIndex == colItem)
+                if (e.ColumnIndex == colItemCode)
                 {
                     dgvAdd.Rows[e.RowIndex].Cells[colDesc].Selected = true;
                     dgvAdd.CurrentCell = dgvAdd[colDesc, e.RowIndex];
@@ -559,8 +562,8 @@ namespace Cemp.gui
                     calAmount();
                     calNetTotal();
                     DgvAddRow();
-                    dgvAdd.Rows[row].Cells[colItem].Selected = true;
-                    dgvAdd.CurrentCell = dgvAdd.Rows[row].Cells[colItem];
+                    dgvAdd.Rows[row].Cells[colItemCode].Selected = true;
+                    dgvAdd.CurrentCell = dgvAdd.Rows[row].Cells[colItemCode];
                 }
                 else if (e.ColumnIndex == colRemark)
                 {

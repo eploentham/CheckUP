@@ -59,7 +59,7 @@ namespace Cemp.gui
             sf = new Staff();
             txtMOUNumber.Text = moNumber;
             cboMOU = cc.moidb.getCboMOUNumberMain(cboMOU, moNumber);
-            cboQuo = cc.qudb.getCboQuotation(cboQuo);
+            cboQuo = cc.qudb.getCboQuoConfirmNoMOU(cboQuo);
             cboStaffPlaceRecord = cc.sfdb.getCboStaff(cboStaffPlaceRecord);
             cboStaffMOU = cc.sfdb.getCboStaff(cboStaffMOU);
             cboDocType = cc.itydb.getCboDocType(cboDocType,"mou");

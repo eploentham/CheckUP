@@ -142,20 +142,25 @@ namespace Cemp
 
                 rpt.SetParameterValue("custName", po.CuNameT);
                 rpt.SetParameterValue("custAddress", po.CuAddressT);
-                //rpt.SetParameterValue("machinery", po.Machinery);
-                //rpt.SetParameterValue("measurecompany", cc.cp.NameT);
-                //rpt.SetParameterValue("methodmeasure", po.MethodMeasure);
+                rpt.SetParameterValue("custemail", po.CuEmail);
+                rpt.SetParameterValue("custtel", po.CuTel);
 
-                //rpt.SetParameterValue("summary", po.Summary);
-                rpt.SetParameterValue("line1", cc.cp.quLine1);
-                //rpt.SetParameterValue("line2", cc.cp.quLine1);
-                //rpt.SetParameterValue("line3", cc.cp.quLine1);
-                //rpt.SetParameterValue("datedueperiod", rs.InvDuePeriod);
-                ////rpt.SetParameterValue("duedate", "");
-                rpt.SetParameterValue("amount", po.Amt);
-                //rpt.SetParameterValue("total", rs.Total);
 
-                //rpt.SetParameterValue("vatrate", rs.VatRate);
+                rpt.SetParameterValue("thaibaht", cc.ThaiBaht(po.NetTotal));
+                rpt.SetParameterValue("line1", po.Line1);
+                rpt.SetParameterValue("lnettotal", "รวมทั้งหมด : ");
+                rpt.SetParameterValue("lvat", "VAT : ");
+                rpt.SetParameterValue("vatRate", po.VatRate);
+                rpt.SetParameterValue("vat", po.Vat);
+                rpt.SetParameterValue("lamount", "รวม :");
+                rpt.SetParameterValue("amount2", po.Amt);
+                rpt.SetParameterValue("line3", "หมายเหตุ ");
+
+                rpt.SetParameterValue("remark1", "");
+                rpt.SetParameterValue("remark2", "");
+                rpt.SetParameterValue("remark3", "");
+                rpt.SetParameterValue("remark4", "");
+                rpt.SetParameterValue("remark5", "");
 
                 rpt.SetParameterValue("nettotal", po.NetTotal);
                 //rpt.SetParameterValue("contactName", qu.ContactName);
@@ -401,7 +406,8 @@ namespace Cemp
                 rpt.SetParameterValue("custFax", qu.CustFax);
                 rpt.SetParameterValue("custEmail", qu.CustEmail);
                 rpt.SetParameterValue("line2", qu.Line2);
-                rpt.SetParameterValue("staffName", qu.StaffName);
+                rpt.SetParameterValue("staffName", "ผู้เสนอราคา  " + qu.StaffName);
+                rpt.SetParameterValue("staffName1", "( "+qu.StaffName+" )");
                 rpt.SetParameterValue("staffTel", qu.StaffTel);
                 rpt.SetParameterValue("staffEmail", qu.StaffEmail);
                 rpt.SetParameterValue("remark1", qu.Remark1);
@@ -422,14 +428,7 @@ namespace Cemp
                 
                 rpt.SetParameterValue("amount2", qu.Amount);
 
-                if (qu.DiscountPer.Equals(".00") || qu.DiscountPer.Equals("0.00"))
-                {
-                    rpt.SetParameterValue("discountPer","");
-                }
-                else
-                {
-                    rpt.SetParameterValue("discountPer", qu.DiscountPer);
-                }
+                
                 
 
                 if (qu.Discount.Equals("0.00"))
@@ -448,13 +447,25 @@ namespace Cemp
                     rpt.SetParameterValue("discount", String.Format("{0:#,###,###.00}", double.Parse(cc.cf.NumberNull1(qu.Discount))));
                     rpt.SetParameterValue("discountPer", String.Format("{0:#,###,###.00}", double.Parse(cc.cf.NumberNull1(qu.DiscountPer))));
                 }
-
+                if (qu.DiscountPer.Equals(".00") || qu.DiscountPer.Equals("0.00") || qu.DiscountPer.Equals("0"))
+                {
+                    rpt.SetParameterValue("discountPer","");
+                }
+                else
+                {
+                    rpt.SetParameterValue("discountPer", qu.DiscountPer);
+                }
                 
                 rpt.SetParameterValue("amountDiscount", qu.AmountDiscount);
                 rpt.SetParameterValue("plus1Name", qu.Plus1Name);
                 if (qu.Plus1.Equals("0.00"))
                 {
                     rpt.SetParameterValue("plus1", "");
+                }
+                else if (qu.Plus1.Equals("0"))
+                {
+                    rpt.SetParameterValue("plus1", "-");
+                    //rpt.SetParameterValue("discountPer", "");
                 }
                 else
                 {

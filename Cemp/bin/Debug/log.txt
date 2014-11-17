@@ -1198,3 +1198,120 @@ Parameter name: length
 12/11/2557 12:00->rpt.setReportQuotation OK 
 12/11/2557 12:00->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint1.rpt
 12/11/2557 12:00->rpt.setReportQuotation OK SetDataSource
+16/11/2557 11:09->rpt.setReportPO OK 
+16/11/2557 11:09->rpt.setReportPO OK SetDataSource
+16/11/2557 11:09->rpt.setReportPO Error ดัชนีไม่ถูกต้อง (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+16/11/2557 11:09->rpt.setReportPO OK 
+16/11/2557 11:09->rpt.setReportPO OK SetDataSource
+16/11/2557 13:42->rpt.setReportPO OK 
+16/11/2557 13:42->rpt.setReportPO OK SetDataSource
+16/11/2557 13:42->rpt.setReportPO Error ดัชนีไม่ถูกต้อง (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+16/11/2557 13:42->rpt.setReportPO OK 
+16/11/2557 13:42->rpt.setReportPO OK SetDataSource
+16/11/2557 13:43->rpt.setReportPO Error ดัชนีไม่ถูกต้อง (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+16/11/2557 13:50->rpt.setReportPO OK 
+16/11/2557 13:50->rpt.setReportPO OK SetDataSource
+16/11/2557 13:50->rpt.setReportPO Error ดัชนีไม่ถูกต้อง (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+16/11/2557 13:51->rpt.setReportPO OK 
+16/11/2557 13:51->rpt.setReportPO OK SetDataSource
+16/11/2557 13:51->rpt.setReportPO Error ดัชนีไม่ถูกต้อง (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+16/11/2557 13:51->rpt.setReportPO OK 
+16/11/2557 13:51->rpt.setReportPO OK SetDataSource
+16/11/2557 13:52->rpt.setReportPO OK 
+16/11/2557 13:52->rpt.setReportPO OK SetDataSource
+16/11/2557 13:53->rpt.setReportPO OK 
+16/11/2557 13:53->rpt.setReportPO OK SetDataSource
+16/11/2557 13:54->rpt.setReportPO OK 
+16/11/2557 13:54->rpt.setReportPO OK SetDataSource
+16/11/2557 13:54->rpt.setReportPO OK 
+16/11/2557 13:54->rpt.setReportPO OK SetDataSource
+16/11/2557 13:55->rpt.setReportPO OK 
+16/11/2557 13:55->rpt.setReportPO OK SetDataSource
+16/11/2557 13:55->rpt.setReportPO OK 
+16/11/2557 13:55->rpt.setReportPO OK SetDataSource
+17/11/2557 10:10->rpt.setReportQuotation OK 
+17/11/2557 10:10->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint1.rpt
+17/11/2557 10:10->rpt.setReportQuotation OK SetDataSource
+17/11/2557 10:10->rpt.setReportQuotation Error ดัชนีไม่ถูกต้อง (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+17/11/2557 10:11->rpt.setReportQuotation OK 
+17/11/2557 10:11->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint1.rpt
+17/11/2557 10:11->rpt.setReportQuotation OK SetDataSource
+17/11/2557 10:12->rpt.setReportQuotation OK 
+17/11/2557 10:12->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 10:12->rpt.setReportQuotation OK SetDataSource
+17/11/2557 10:18->rpt.setReportQuotation OK 
+17/11/2557 10:18->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 10:18->rpt.setReportQuotation OK SetDataSource
+17/11/2557 12:38->rpt.setReportQuotation OK 
+17/11/2557 12:38->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 12:38->rpt.setReportQuotation OK SetDataSource
+17/11/2557 12:39->rpt.setReportQuotation OK 
+17/11/2557 12:39->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 12:39->rpt.setReportQuotation OK SetDataSource
+17/11/2557 12:41->rpt.setReportQuotation OK 
+17/11/2557 12:41->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 12:41->rpt.setReportQuotation OK SetDataSource
+17/11/2557 15:09->rpt.setReportQuotation OK 
+17/11/2557 15:09->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 15:09->rpt.setReportQuotation OK SetDataSource
+17/11/2557 15:09->rpt.setReportQuotation Error ดัชนีไม่ถูกต้อง (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+17/11/2557 15:10->rpt.setReportQuotation OK 
+17/11/2557 15:10->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 15:10->rpt.setReportQuotation OK SetDataSource
+17/11/2557 15:39->rpt.setReportQuotation OK 
+17/11/2557 15:39->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 15:39->rpt.setReportQuotation OK SetDataSource
+17/11/2557 15:40->rpt.setReportQuotation OK 
+17/11/2557 15:40->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 15:40->rpt.setReportQuotation OK SetDataSource
+17/11/2557 15:40->rpt.setReportQuotation OK 
+17/11/2557 15:40->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 15:40->rpt.setReportQuotation OK SetDataSource
+17/11/2557 15:49->rpt.setReportQuotation OK 
+17/11/2557 15:49->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 15:49->rpt.setReportQuotation OK SetDataSource
+17/11/2557 15:50->rpt.setReportQuotation OK 
+17/11/2557 15:50->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 15:50->rpt.setReportQuotation OK SetDataSource
+17/11/2557 15:51->rpt.setReportQuotation OK 
+17/11/2557 15:51->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 15:51->rpt.setReportQuotation OK SetDataSource
+17/11/2557 15:58->rpt.setReportQuotation OK 
+17/11/2557 15:58->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 15:58->rpt.setReportQuotation OK SetDataSource
+17/11/2557 15:59->rpt.setReportQuotation OK 
+17/11/2557 15:59->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 15:59->rpt.setReportQuotation OK SetDataSource
+17/11/2557 15:59->rpt.setReportQuotation OK 
+17/11/2557 15:59->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 15:59->rpt.setReportQuotation OK SetDataSource
+17/11/2557 16:00->rpt.setReportQuotation OK 
+17/11/2557 16:00->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 16:00->rpt.setReportQuotation OK SetDataSource
+17/11/2557 16:01->rpt.setReportQuotation OK 
+17/11/2557 16:01->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 16:01->rpt.setReportQuotation OK SetDataSource
+17/11/2557 16:02->rpt.setReportQuotation OK 
+17/11/2557 16:02->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 16:02->rpt.setReportQuotation OK SetDataSource
+17/11/2557 16:04->rpt.setReportQuotation OK 
+17/11/2557 16:04->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 16:04->rpt.setReportQuotation OK SetDataSource
+17/11/2557 17:46->rpt.setReportQuotation OK 
+17/11/2557 17:46->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 17:46->rpt.setReportQuotation OK SetDataSource
+17/11/2557 17:46->rpt.setReportQuotation OK 
+17/11/2557 17:46->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 17:46->rpt.setReportQuotation OK SetDataSource
+17/11/2557 17:46->rpt.setReportQuotation OK 
+17/11/2557 17:46->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 17:46->rpt.setReportQuotation OK SetDataSource
+17/11/2557 17:46->rpt.setReportQuotation OK 
+17/11/2557 17:46->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 17:46->rpt.setReportQuotation OK SetDataSource
+17/11/2557 17:47->rpt.setReportQuotation OK 
+17/11/2557 17:47->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 17:47->rpt.setReportQuotation OK SetDataSource
+17/11/2557 17:47->rpt.setReportQuotation OK 
+17/11/2557 17:47->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint.rpt
+17/11/2557 17:47->rpt.setReportQuotation OK SetDataSource

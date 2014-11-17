@@ -62,17 +62,24 @@
             this.cboRemark4 = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.btnUnActive = new System.Windows.Forms.Button();
+            this.ChkUnActive = new System.Windows.Forms.RadioButton();
             this.label35 = new System.Windows.Forms.Label();
             this.cboRemark3 = new System.Windows.Forms.ComboBox();
             this.cboRemark2 = new System.Windows.Forms.ComboBox();
+            this.chkActive = new System.Windows.Forms.RadioButton();
             this.cboRemark1 = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.btnUnActive = new System.Windows.Forms.Button();
-            this.ChkUnActive = new System.Windows.Forms.RadioButton();
-            this.chkActive = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtDiscountPer = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtPlus1 = new System.Windows.Forms.TextBox();
             this.txtStaffTel = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.cboStaff = new System.Windows.Forms.ComboBox();
@@ -97,14 +104,9 @@
             this.btnPrintT = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtPOId = new System.Windows.Forms.TextBox();
-            this.txtTotal = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtPlus1 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.txtDiscountPer = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
@@ -509,6 +511,28 @@
             this.label13.TabIndex = 47;
             this.label13.Text = "ระยะเวลา credit :";
             // 
+            // btnUnActive
+            // 
+            this.btnUnActive.Location = new System.Drawing.Point(373, 205);
+            this.btnUnActive.Name = "btnUnActive";
+            this.btnUnActive.Size = new System.Drawing.Size(86, 23);
+            this.btnUnActive.TabIndex = 69;
+            this.btnUnActive.Text = "ยกเลิกการใช้งาน";
+            this.btnUnActive.UseVisualStyleBackColor = true;
+            // 
+            // ChkUnActive
+            // 
+            this.ChkUnActive.AutoSize = true;
+            this.ChkUnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.ChkUnActive.Location = new System.Drawing.Point(311, 205);
+            this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2);
+            this.ChkUnActive.Name = "ChkUnActive";
+            this.ChkUnActive.Size = new System.Drawing.Size(60, 21);
+            this.ChkUnActive.TabIndex = 68;
+            this.ChkUnActive.TabStop = true;
+            this.ChkUnActive.Text = "ยกเลิก";
+            this.ChkUnActive.UseVisualStyleBackColor = true;
+            // 
             // label35
             // 
             this.label35.AutoSize = true;
@@ -539,6 +563,19 @@
             this.cboRemark2.Name = "cboRemark2";
             this.cboRemark2.Size = new System.Drawing.Size(446, 25);
             this.cboRemark2.TabIndex = 29;
+            // 
+            // chkActive
+            // 
+            this.chkActive.AutoSize = true;
+            this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.chkActive.Location = new System.Drawing.Point(238, 205);
+            this.chkActive.Margin = new System.Windows.Forms.Padding(2);
+            this.chkActive.Name = "chkActive";
+            this.chkActive.Size = new System.Drawing.Size(61, 21);
+            this.chkActive.TabIndex = 67;
+            this.chkActive.TabStop = true;
+            this.chkActive.Text = "ใช้งาน";
+            this.chkActive.UseVisualStyleBackColor = true;
             // 
             // cboRemark1
             // 
@@ -583,43 +620,11 @@
             this.label23.TabIndex = 22;
             this.label23.Text = "1 :";
             // 
-            // btnUnActive
-            // 
-            this.btnUnActive.Location = new System.Drawing.Point(373, 205);
-            this.btnUnActive.Name = "btnUnActive";
-            this.btnUnActive.Size = new System.Drawing.Size(86, 23);
-            this.btnUnActive.TabIndex = 69;
-            this.btnUnActive.Text = "ยกเลิกการใช้งาน";
-            this.btnUnActive.UseVisualStyleBackColor = true;
-            // 
-            // ChkUnActive
-            // 
-            this.ChkUnActive.AutoSize = true;
-            this.ChkUnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.ChkUnActive.Location = new System.Drawing.Point(311, 205);
-            this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2);
-            this.ChkUnActive.Name = "ChkUnActive";
-            this.ChkUnActive.Size = new System.Drawing.Size(60, 21);
-            this.ChkUnActive.TabIndex = 68;
-            this.ChkUnActive.TabStop = true;
-            this.ChkUnActive.Text = "ยกเลิก";
-            this.ChkUnActive.UseVisualStyleBackColor = true;
-            // 
-            // chkActive
-            // 
-            this.chkActive.AutoSize = true;
-            this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chkActive.Location = new System.Drawing.Point(238, 205);
-            this.chkActive.Margin = new System.Windows.Forms.Padding(2);
-            this.chkActive.Name = "chkActive";
-            this.chkActive.Size = new System.Drawing.Size(61, 21);
-            this.chkActive.TabIndex = 67;
-            this.chkActive.TabStop = true;
-            this.chkActive.Text = "ใช้งาน";
-            this.chkActive.UseVisualStyleBackColor = true;
-            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label17);
+            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.label31);
             this.groupBox3.Controls.Add(this.label30);
             this.groupBox3.Controls.Add(this.txtDiscountPer);
             this.groupBox3.Controls.Add(this.textBox1);
@@ -627,7 +632,6 @@
             this.groupBox3.Controls.Add(this.txtTotal);
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.txtPlus1);
-            this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.txtStaffTel);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.cboStaff);
@@ -652,6 +656,78 @@
             this.groupBox3.TabIndex = 32;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "amount";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label30.Location = new System.Drawing.Point(139, 155);
+            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(20, 17);
+            this.label30.TabIndex = 77;
+            this.label30.Text = "%";
+            // 
+            // txtDiscountPer
+            // 
+            this.txtDiscountPer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtDiscountPer.Location = new System.Drawing.Point(86, 152);
+            this.txtDiscountPer.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDiscountPer.Name = "txtDiscountPer";
+            this.txtDiscountPer.Size = new System.Drawing.Size(43, 23);
+            this.txtDiscountPer.TabIndex = 76;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox1.Location = new System.Drawing.Point(267, 149);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(141, 23);
+            this.textBox1.TabIndex = 75;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label29.Location = new System.Drawing.Point(32, 152);
+            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(45, 17);
+            this.label29.TabIndex = 74;
+            this.label29.Text = "มัดจำ :";
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtTotal.Location = new System.Drawing.Point(267, 69);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(141, 23);
+            this.txtTotal.TabIndex = 73;
+            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label18.Location = new System.Drawing.Point(190, 72);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(65, 17);
+            this.label18.TabIndex = 72;
+            this.label18.Text = "รวมราคา :";
+            // 
+            // txtPlus1
+            // 
+            this.txtPlus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtPlus1.Location = new System.Drawing.Point(267, 43);
+            this.txtPlus1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPlus1.Name = "txtPlus1";
+            this.txtPlus1.Size = new System.Drawing.Size(141, 23);
+            this.txtPlus1.TabIndex = 71;
+            this.txtPlus1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtStaffTel
             // 
@@ -911,88 +987,36 @@
             this.txtPOId.TabIndex = 78;
             this.txtPOId.Visible = false;
             // 
-            // txtTotal
-            // 
-            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtTotal.Location = new System.Drawing.Point(267, 69);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(141, 23);
-            this.txtTotal.TabIndex = 73;
-            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label18.Location = new System.Drawing.Point(190, 72);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(65, 17);
-            this.label18.TabIndex = 72;
-            this.label18.Text = "รวมราคา :";
-            // 
-            // txtPlus1
-            // 
-            this.txtPlus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtPlus1.Location = new System.Drawing.Point(267, 43);
-            this.txtPlus1.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPlus1.Name = "txtPlus1";
-            this.txtPlus1.Size = new System.Drawing.Size(141, 23);
-            this.txtPlus1.TabIndex = 71;
-            this.txtPlus1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label17.Location = new System.Drawing.Point(164, 46);
+            this.label17.Location = new System.Drawing.Point(139, 46);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(91, 17);
-            this.label17.TabIndex = 70;
-            this.label17.Text = "ค่าเดินทาง/อื่น :";
+            this.label17.Size = new System.Drawing.Size(20, 17);
+            this.label17.TabIndex = 80;
+            this.label17.Text = "%";
             // 
-            // textBox1
+            // textBox2
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox1.Location = new System.Drawing.Point(267, 149);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(141, 23);
-            this.textBox1.TabIndex = 75;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox2.Location = new System.Drawing.Point(86, 43);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(43, 23);
+            this.textBox2.TabIndex = 79;
             // 
-            // label29
+            // label31
             // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label29.Location = new System.Drawing.Point(32, 152);
-            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(45, 17);
-            this.label29.TabIndex = 74;
-            this.label29.Text = "มัดจำ :";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label30.Location = new System.Drawing.Point(139, 155);
-            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(20, 17);
-            this.label30.TabIndex = 77;
-            this.label30.Text = "%";
-            // 
-            // txtDiscountPer
-            // 
-            this.txtDiscountPer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtDiscountPer.Location = new System.Drawing.Point(86, 152);
-            this.txtDiscountPer.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDiscountPer.Name = "txtDiscountPer";
-            this.txtDiscountPer.Size = new System.Drawing.Size(43, 23);
-            this.txtDiscountPer.TabIndex = 76;
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label31.Location = new System.Drawing.Point(22, 46);
+            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(58, 17);
+            this.label31.TabIndex = 78;
+            this.label31.Text = "ส่วนลด  :";
             // 
             // FrmPOAdd
             // 
@@ -1111,10 +1135,12 @@
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtPlus1;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox txtDiscountPer;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label31;
     }
 }

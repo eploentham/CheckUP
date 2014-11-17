@@ -47,10 +47,11 @@ namespace Cemp.gui
             cboStaffApprove = cc.sfdb.getCboStaff(cboStaffApprove);
             setControl(quId);
             setGrd(quId);
+            calAmountcost();
             pageLoad = false;
             txtItemAmount.ReadOnly = true;
             txtRow.ReadOnly = true;
-            dgvAdd.ReadOnly = true;
+            //dgvAdd.ReadOnly = true;
             txtAmount.ReadOnly = true;
             txtAmountDiscount.ReadOnly = true;
             txtVatRate.ReadOnly = true;
@@ -176,7 +177,7 @@ namespace Cemp.gui
             {
                 btnPrint.Visible = true;
             }
-
+            
             txtQuNumber.ReadOnly = true;
             txtPriceCost.ReadOnly = true;
             oldNetTotal = qu.NetTotal;
@@ -282,6 +283,11 @@ namespace Cemp.gui
 
             dgvAdd.Columns[colPriceCost].Visible = flagViewCost;
             dgvAdd.Columns[colItemCode].ReadOnly = true;
+            dgvAdd.Columns[colPriceCost].ReadOnly = true;
+            dgvAdd.Columns[colPriceSale].ReadOnly = true;
+            dgvAdd.Columns[colAmount].ReadOnly = true;
+            dgvAdd.Columns[colQty].ReadOnly = true;
+            dgvAdd.Columns[colRow].ReadOnly = true;
 
             //dgvAdd.Columns.Add(newColumn);
             if (dt.Rows.Count > 0)
@@ -321,6 +327,33 @@ namespace Cemp.gui
             txtDiscount.Text = String.Format("{0:#,###,###.00}", discount);
 
             calNetTotal();
+        }
+        /*
+         * ทำเพื่อแก้ไข Bug เพราะไม่ได้เพิ่ม Field amount_cost ใน table t_quotation
+         */
+        private void calAmountcost()
+        {
+            Double amt = 0, amtCost = 0;
+            String amt1 = "";
+            for (int i = 0; i < dgvAdd.Rows.Count; i++)
+            {
+                if (dgvAdd[colAmount, i].Value == null)
+                {
+                    continue;
+                }
+                if (dgvAdd[colAmount, i].Value.ToString().Equals(""))
+                {
+                    continue;
+                }
+                if (!dgvAdd[colDel, i].Value.ToString().Equals("1"))
+                {
+                    //amt += Double.Parse(cc.cf.NumberNull1(dgvAdd[colAmount, i].Value.ToString().Replace(",", "")));
+                    amtCost += (Double.Parse(cc.cf.NumberNull1(dgvAdd[colPriceCost, i].Value.ToString().Replace(",", ""))) *
+                        Double.Parse(cc.cf.NumberNull1(dgvAdd[colQty, i].Value.ToString().Replace(",", ""))));
+                }
+            }
+            //txtAmount.Text = String.Format("{0:#,###,###.00}", amt);
+            txtAmountCost.Text = String.Format("{0:#,###,###.00}", amtCost);
         }
         private void calAmount()
         {
@@ -373,15 +406,22 @@ namespace Cemp.gui
                     ////row = 0;
                     //btnSave.Enabled = true;
                     //Cursor.Current = cursor;
+                    cc.itSearch.PriceSale="";
+                    cc.itSearch.userCancel = "";
+                    cc.itSearch.Id = "";
                     FrmItemSearch frm = new FrmItemSearch(cc);
                     frm.ShowDialog(this);
-                    txtRow.Text = "";
-                    //cboItem.Text = cc.itSearch.Code + " " + cc.itSearch.NameT + "[" + cc.itSearch.MethodNameT+"]";
-                    txtItemPrice.Text = cc.itSearch.PriceSale;
-                    txtPriceCost.Text = cc.itSearch.PriceCost;
-                    txtItemQty.Text = cc.itSearch.userCancel;
-                    calItemAmount();
-                    setItemtoGrd(cc.itSearch.Id, getRow());
+                    if (!cc.itSearch.userCancel.Equals(""))
+                    {
+                        txtRow.Text = "";
+                        //cboItem.Text = cc.itSearch.Code + " " + cc.itSearch.NameT + "[" + cc.itSearch.MethodNameT+"]";
+                        txtItemPrice.Text = cc.itSearch.PriceSale;
+                        txtPriceCost.Text = cc.itSearch.PriceCost;
+                        txtItemQty.Text = cc.itSearch.userCancel;
+                        calItemAmount();
+                        setItemtoGrd(cc.itSearch.Id, getRow());
+                    }
+                    
                     //calItemAmount();
                     //btnAdd_Click(null,null);
                     return true; // signal that we've processed this key
@@ -506,6 +546,7 @@ namespace Cemp.gui
                     qui.RowNumber = dgvAdd[colRow, i].Value.ToString();
                     qui.ItemCode = it.Code;
                     qui.PriceSale = cc.cf.NumberNull1(dgvAdd[colPriceSale, i].Value.ToString());
+                    //qui.PriceCost = cc.cf.NumberNull1(dgvAdd[colPriceCost, i].Value.ToString());
                     qui.Qty = cc.cf.NumberNull1(dgvAdd[colQty, i].Value.ToString());
                     qui.Amount = cc.cf.NumberNull1(dgvAdd[colAmount, i].Value.ToString());
                     qui.ItemDescription = dgvAdd[colItem, i].Value.ToString();
@@ -980,7 +1021,7 @@ namespace Cemp.gui
             qu.QuoNumber = "เลขที่ : " + qu.QuoNumber + "-" + qu.QuoNumberCnt;
             qu.QuoDate = "วันที่ :" + cc.cf.dateDBtoShow(qu.QuoDate);
 
-            qu.StaffName = "ผู้เสนอราคา ( " + qu.StaffName+" )";
+            //qu.StaffName = "ผู้เสนอราคา  " + qu.StaffName+" ";
             qu.StaffTel = "เบอร์โทร : " + qu.StaffTel;
             qu.StaffEmail = "Email : " + qu.StaffEmail;
             qu.Line4=qu.Line4;
@@ -1013,8 +1054,8 @@ namespace Cemp.gui
             {
                 qu.Remark7 = "7. " + qu.Remark7;
             }
-         
-           
+
+            //qu.ThaiBaht = cc.ThaiBaht("11");
             qu.ThaiBaht = cc.ThaiBaht(qu.NetTotal);
             //qu.Amount = "รวมราคา " + qu.Amount;
             //qu.Discount = "ส่วนลด " + qu.Amount;

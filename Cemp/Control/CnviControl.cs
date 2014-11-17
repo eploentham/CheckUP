@@ -538,14 +538,40 @@ namespace Cemp.Control
             catch { amount = 0; }
             bahtTxt = amount.ToString("####.00");
             string[] num = { "ศูนย์", "หนึ่ง", "สอง", "สาม", "สี่", "ห้า", "หก", "เจ็ด", "แปด", "เก้า", "สิบ" };
-            string[] rank = { "", "สิบ", "ร้อย", "พัน", "หมื่น", "แสน", "ล้าน" };
+            string[] rank = { "", "สิบ", "ร้อย", "พัน", "หมื่น", "แสน", "ล้าน","ล้าน","ล้าน" };
             string[] temp = bahtTxt.Split('.');
             string intVal = temp[0];
             string decVal = temp[1];
+            bahtTH = "";
+
             if (Convert.ToDouble(bahtTxt) == 0)
                 bahtTH = "ศูนย์บาทถ้วน";
             else
             {
+                //intVal = "11";
+                if (intVal.Length > 7)
+                {
+                    string intVal1 = intVal.Substring(0, (intVal.Length - 6));
+                    intVal = intVal.Substring(intVal.Length-6);
+                    for (int i = 0; i < intVal1.Length; i++)
+                    {
+                        n = intVal1.Substring(i, 1);
+                        if (n != "0")
+                        {
+                            if ((i == (intVal1.Length - 1)) && (n == "1"))
+                                bahtTH += "เอ็ด";
+                            else if ((i == (intVal1.Length - 2)) && (n == "2"))
+                                bahtTH += "ยี่";
+                            else if ((i == (intVal1.Length - 2)) && (n == "1"))
+                                bahtTH += "";
+                            else
+                                bahtTH += num[Convert.ToInt32(n)];
+
+                            bahtTH += rank[(intVal1.Length - i) - 1];
+                        }
+                    }
+                    bahtTH += "ล้าน";
+                }
                 for (int i = 0; i < intVal.Length; i++)
                 {
                     n = intVal.Substring(i, 1);
@@ -559,6 +585,7 @@ namespace Cemp.Control
                             bahtTH += "";
                         else
                             bahtTH += num[Convert.ToInt32(n)];
+
                         bahtTH += rank[(intVal.Length - i) - 1];
                     }
                 }
@@ -586,6 +613,7 @@ namespace Cemp.Control
                     bahtTH += "สตางค์";
                 }
             }
+
             return bahtTH;
         }
         public static string Utf8ToUtf16(string utf8String)
