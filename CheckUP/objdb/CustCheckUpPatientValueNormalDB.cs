@@ -35,7 +35,7 @@ namespace CheckUP.objdb
             ccpvn.patientWeight = "patient_weight";
             //ccpvn.EyeShortLongLeft = "eye_short_long_left";
             //ccpvn.EyeShortLongRight = "eye_short_long_right";
-            ccpvn.EyedegreeLeft = "eye_degree_left";
+            ccpvn.EyeDegreeLeft = "eye_degree_left";
             ccpvn.EyeDegreeRight = "eye_degree_right";
             ccpvn.EyeShortLongLeft = "eye_short_long_left";
             ccpvn.EyeShortLongRight = "eye_short_long_right";
@@ -50,12 +50,12 @@ namespace CheckUP.objdb
             ccpvn.fSexId = "f_sex_id";
             ccpvn.summaryPhysicalExam = "summary_physical_exam";
 
-            ccpvn.stoolExamColor = "stool_exam_color";
-            ccpvn.stoolExamAppearance = "stool_exam_appearance";
-            ccpvn.stoolExamWbc = "stool_exam_wbc";
-            ccpvn.stoolExamRbc = "stool_exam_rbc";
-            ccpvn.stoolExamParasite = "stool_exam_parasite";
-            ccpvn.stoolExamSummary = "stool_exam_summary";
+            ccpvn.StoolExamColor = "stool_exam_color";
+            ccpvn.StoolExamAppearance = "stool_exam_appearance";
+            ccpvn.StoolExamWbc = "stool_exam_wbc";
+            ccpvn.StoolExamRbc = "stool_exam_rbc";
+            ccpvn.StoolExamParasite = "stool_exam_parasite";
+            ccpvn.StoolExamSummary = "stool_exam_summary";
 
             //ccpvn.toxicologyLead = "toxicology_lead";
             //ccpvn.toxicologyMercury = "toxicology_mercury";
@@ -269,33 +269,33 @@ namespace CheckUP.objdb
             ccpvn.directBillirubin = "direct_billirubin";
             ccpvn.colorBlindness = "color_blindness";
 
-            ccpvn.toxiAcetone = "toxicology_acetone";
-            ccpvn.toxiAluminium = "toxicology_aluminium";
-            ccpvn.toxiAmmonia = "toxicology_ammonia";
-            ccpvn.toxiAntimony = "toxicology_antimony";
-            ccpvn.toxiArsenic = "toxicology_arsenic";
-            ccpvn.toxiBenzene = "toxicology_benzene";
-            ccpvn.toxiCadmium = "toxicology_cadmium";
-            ccpvn.toxiChromium = "toxicology_chromium";
-            ccpvn.toxiCopper = "toxicology_copper";
-            ccpvn.toxiEthanol = "toxicology_ethanol";
-            ccpvn.toxiFluoride = "toxicology_fluoride";
-            ccpvn.toxiFomaldehyde = "toxicology_fomaldehyde";
-            ccpvn.toxiHexane = "toxicology_hexane";
-            ccpvn.toxiHippuric = "toxicology_hippuric";
-            ccpvn.toxiIPA = "toxicology_ipa";
-            ccpvn.toxiKetone = "toxicology_ketone";
-            ccpvn.toxiLead = "toxicology_lead";
-            ccpvn.toxiMandelic = "toxicology_mandelic";
-            ccpvn.toxiManganese = "toxicology_manganese";
-            ccpvn.toxiMercury = "toxicology_mercury";
-            ccpvn.toxiMethanol = "toxicology_methanol";
-            ccpvn.toxiMethyl = "toxicology_methyl";
-            ccpvn.toxiNickel = "toxicology_nickel";
-            ccpvn.toxiPhenol = "toxicology_phenol";
-            ccpvn.toxiTin = "toxicology_tin";
-            ccpvn.toxiTrichloroethylene = "toxicology_trichloroethylenel";
-            ccpvn.toxiZinc = "toxicology_zinc";
+            ccpvn.ToxiAcetone = "toxicology_acetone";
+            ccpvn.ToxiAluminium = "toxicology_aluminium";
+            ccpvn.ToxiAmmonia = "toxicology_ammonia";
+            ccpvn.ToxiAntimony = "toxicology_antimony";
+            ccpvn.ToxiArsenic = "toxicology_arsenic";
+            ccpvn.ToxiBenzene = "toxicology_benzene";
+            ccpvn.ToxiCadmium = "toxicology_cadmium";
+            ccpvn.ToxiChromium = "toxicology_chromium";
+            ccpvn.ToxiCopper = "toxicology_copper";
+            ccpvn.ToxiEthanol = "toxicology_ethanol";
+            ccpvn.ToxiFluoride = "toxicology_fluoride";
+            ccpvn.ToxiFomaldehyde = "toxicology_fomaldehyde";
+            ccpvn.ToxiHexane = "toxicology_hexane";
+            ccpvn.ToxiHippuric = "toxicology_hippuric";
+            ccpvn.ToxiIPA = "toxicology_ipa";
+            ccpvn.ToxiKetone = "toxicology_ketone";
+            ccpvn.ToxiLead = "toxicology_lead";
+            ccpvn.ToxiMandelic = "toxicology_mandelic";
+            ccpvn.ToxiManganese = "toxicology_manganese";
+            ccpvn.ToxiMercury = "toxicology_mercury";
+            ccpvn.ToxiMethanol = "toxicology_methanol";
+            ccpvn.ToxiMethyl = "toxicology_methyl";
+            ccpvn.ToxiNickel = "toxicology_nickel";
+            ccpvn.ToxiPhenol = "toxicology_phenol";
+            ccpvn.ToxiTin = "toxicology_tin";
+            ccpvn.ToxiTrichloroethylene = "toxicology_trichloroethylenel";
+            ccpvn.ToxiZinc = "toxicology_zinc";
 
             ccpvn.pkField = "patient_id";
             ccpvn.table = "b_cust_checkup_patient_value_normal";
@@ -308,6 +308,390 @@ namespace CheckUP.objdb
             dt = conn.selectData(sql);
 
             return dt;
+        }
+        public String UpdateFBS(String value)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccpvn.table + " Set " + ccpvn.sugar + "='" + value + "' " 
+                //ccp.sugarDiagnosis + "='" + result + "', " +
+                //ccp.sugarSummary + "='" + summary + "', " +
+                //ccp.sugarSuggess + "='" + suggess + "' " +
+                //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateCBC(String Basophil, String Eosinophil, String Hb, String Hct, String Lymphocyte,
+            String Mch, String Mchc, String Mcv, String Monocyte, String Neutrophil, String PlateletCount, String Rbc, String RbcMorpholog,
+            String Wbc, String PlateletSmear)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccpvn.table + " Set " + ccpvn.cbcBasophil + "='" + Basophil + "'," +
+                ccpvn.cbcEosinophil + "='" + Eosinophil + "', " +
+                ccpvn.cbcHb + "='" + Hb + "', " +
+                ccpvn.cbcHct + "='" + Hct + "', " +
+                ccpvn.cbcLymphocyte + "='" + Lymphocyte + "', " +
+                ccpvn.cbcMch + "='" + Mch + "', " +
+                ccpvn.cbcMchc + "='" + Mchc + "', " +
+                ccpvn.cbcMcv + "='" + Mcv + "', " +
+                ccpvn.cbcMonocyte + "='" + Monocyte + "', " +
+                ccpvn.cbcNeutrophil + "='" + Neutrophil + "', " +
+                ccpvn.cbcPlateletCount + "='" + PlateletCount + "', " +
+                ccpvn.cbcPlateletSmear + "='" + PlateletSmear + "', " +
+                ccpvn.cbcRbc + "='" + Rbc + "', " +
+                ccpvn.cbcRbcMorpholog + "='" + RbcMorpholog + "', " +
+                //ccpvn.cbcSummary + "='" + Summary + "', " +
+                ccpvn.cbcWbc + "='" + Wbc + "' " ;
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateUA(String Color, String Appe, String Sugar, String spgr, String pH,
+            String Protein, String Wbc, String Rbc, String Epi, String Bact)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccpvn.table + " Set " + ccpvn.urineColor + "='" + Color + "'," +
+                ccpvn.urineAppearance + "='" + Appe + "', " +
+                ccpvn.urineSugar + "='" + Sugar + "', " +
+                ccpvn.urineSpGr + "='" + spgr + "', " +
+                ccpvn.urinePh + "='" + pH + "', " +
+                ccpvn.urineProtein + "='" + Protein + "', " +
+                ccpvn.urineWbc + "='" + Wbc + "', " +
+                ccpvn.urineRbc + "='" + Rbc + "', " +
+                ccpvn.urineEpithelium + "='" + Epi + "', " +
+                ccpvn.urineBacteria + "='" + Bact + "' ";
+                    //ccpvn.urineSummary + "='" + Result + "', " +                
+                    //ccpvn.urineRbc + "='" + Rbc + "', " +
+                //ccpvn.urineSummary + "='" + Summary + "', " +
+                //ccpvn.urineResult + "='" + Result + "' " ;
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateTrigly(String value)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccpvn.table + " Set " + ccpvn.triglyceride + "='" + value + "' ";
+                //ccp.triglycerideResult + "='" + result + "', " +
+                //ccp.triglycerideSummary + "='" + summary + "' " +
+                //    //ccp.sugarSuggess + "='" + suggess + "' " +
+                //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateCholes(String value, String ldl, String hdl)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccpvn.table + " Set " + ccpvn.cholesterol + "='" + value + "'," +
+                    //ccp.cholesterolSuggess + "='" + result + "', " +
+                    //ccp.cholesterolSummary + "='" + summary + "', " +
+                ccpvn.ldl + "='" + ldl + "', " +
+                ccpvn.hdl + "='" + hdl + "' ";
+                //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateSgot(String sgot, String sgpt, String alt)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccpvn.table + " Set " + ccpvn.liverSgot + "='" + sgot + "'," +
+                    //ccp.liverResult + "='" + result + "', " +
+                    //ccp.liverSummary + "='" + summary + "', " +
+                ccpvn.liverAlp + "='" + sgpt + "', " +
+                ccpvn.liverSgpt + "='" + alt + "' ";
+                //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateBun(String bun, String creatinine)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccpvn.table + " Set " + ccpvn.kidneyBun + "='" + bun + "'," +
+                    //ccp.kidneyResult + "='" + result + "', " +
+                    //ccp.kidneySummary + "='" + summary + "', " +
+                ccpvn.kidneyCreatinine + "='" + creatinine + "' ";
+                //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateUric(String value)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccpvn.table + " Set " + ccpvn.uricAcid + "='" + value + "' ";
+                //ccp.uricAcidSuggess + "='" + result + "', " +
+                //ccp.uricAcidSummary + "='" + summary + "' " +
+                    //ccp.sugarSuggess + "='" + suggess + "' " +
+                //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateOther1(String HBsAg, String HbsAb, String AntiHIV, String VDRL, String Amphetamine, String Calcium)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccpvn.table + " Set " + ccpvn.hbsag + "='" + HBsAg + "'," +
+                ccpvn.hbsab + "='" + HbsAb + "', " +
+                ccpvn.antiHiv + "='" + AntiHIV + "', " +
+                ccpvn.vdrl + "='" + VDRL + "', " +
+                ccpvn.amphetamine + "='" + Amphetamine + "', " +
+                ccpvn.calcium + "='" + Calcium + "' ";
+                //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateLung(String LungFvcPredic, String LungFvcMeas, String LungFvcPer, String LungFev1Predic, String LungFev1Meas,
+            String LungFev1Per, String LungPerFev1)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccpvn.table + " Set " + ccpvn.lungFvcPredic + "='" + LungFvcPredic + "'," +
+                ccpvn.lungFvcMeas + "='" + LungFvcMeas + "', " +
+                ccpvn.lungFvcPer + "='" + LungFvcPer + "', " +
+                ccpvn.lungFev1Predic + "='" + LungFev1Predic + "', " +
+                ccpvn.lungFev1Meas + "='" + LungFev1Meas + "', " +
+                ccpvn.lungFev1Per + "='" + LungFev1Per + "', " +
+                ccpvn.lungPerFev1 + "='" + LungPerFev1 + "' ";
+                //ccpvn.lungSummary + "='" + LungSummary + "' " +
+                //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateAudioGram(String Audiogram500L, String Audiogram500R, String Audiogram1000L, String Audiogram1000R, String Audiogram2000L, String Audiogram2000R,
+            String Audiogram3000L, String Audiogram3000R, String Audiogram4000L, String Audiogram4000R, String Audiogram6000L, String Audiogram6000R, String Audiogram8000L, String Audiogram8000R)
+        {
+            String sql = "", chk = "";
+
+            //p.NameT = p.NameT.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+            //p.PositionName = p.PositionName.Replace("'", "''");
+
+            sql = "Update " + ccpvn.table + " Set " + ccpvn.Audiogram500L + "='" + Audiogram500L + "', " +
+                ccpvn.Audiogram500R + "='" + Audiogram500R + "', " +
+                ccpvn.Audiogram1000L + "='" + Audiogram1000L + "', " +
+                ccpvn.Audiogram1000R + "='" + Audiogram1000R + "', " +
+                ccpvn.Audiogram2000L + "='" + Audiogram2000L + "', " +
+                ccpvn.Audiogram2000R + "='" + Audiogram2000R + "', " +
+                ccpvn.Audiogram3000L + "='" + Audiogram3000L + "', " +
+                ccpvn.Audiogram3000R + "='" + Audiogram3000R + "', " +
+                ccpvn.Audiogram4000L + "='" + Audiogram4000L + "', " +
+                ccpvn.Audiogram4000R + "='" + Audiogram4000R + "', " +
+                ccpvn.Audiogram6000L + "='" + Audiogram6000L + "', " +
+                ccpvn.Audiogram6000R + "='" + Audiogram6000R + "', " +
+                ccpvn.Audiogram8000L + "='" + Audiogram8000L + "', " +
+                ccpvn.Audiogram8000R + "='" + Audiogram8000R + "' ";
+                //ccpvn.AudiogramSummaryL + "='" + AudiogramSummaryL + "', " +
+                //ccpvn.AudiogramSummaryR + "='" + AudiogramSummaryR + "', " +
+                //ccpvn.AudiogramExam + "='" + AudiogramExam + "' " +
+                //"Where " + ccpvn.CustCheckUpId + "='" + cucId + "' and " + ccpvn.rowNumber + "=" + rowNumber + " ";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Error " + ex.ToString(), "update updateAudioGram");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateEye(String EyeShortLongLeft, String EyeShortLongRight, String EyeSquintLeft, String EyeSquintRight,
+            String EyeDegreeLeft, String EyeDegreeRight, String EyeOldLeft, String EyeOldRight, String EyeBlindness)
+        {
+            String sql = "", chk = "";
+
+            //p.NameT = p.NameT.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+            //p.PositionName = p.PositionName.Replace("'", "''");
+
+            sql = "Update " + ccpvn.table + " Set " + ccpvn.EyeShortLongLeft + "='" + EyeShortLongLeft + "', " +
+                ccpvn.EyeShortLongRight + "='" + EyeShortLongRight + "', " +
+                ccpvn.EyeSquintLeft + "='" + EyeSquintLeft + "', " +
+                ccpvn.EyeSquintRight + "='" + EyeSquintRight + "', " +
+                ccpvn.EyeDegreeLeft + "='" + EyeDegreeLeft + "', " +
+                ccpvn.EyeDegreeRight + "='" + EyeDegreeRight + "', " +
+                ccpvn.EyeOldLeft + "='" + EyeOldLeft + "', " +
+                ccpvn.EyeOldRight + "='" + EyeOldRight + "', " +
+                //ccp.EyeResult + "='" + EyeResult + "', " +
+                //ccp.EyeSummary + "='" + EyeSummary + "', " +
+                ccpvn.EyeBlindness + "='" + EyeBlindness + "' ";
+                //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Error " + ex.ToString(), "update updateEye");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateStoolExam(String StoolExamAppearance, String StoolExamColor, String StoolExamWbc, String StoolExamRbc, String StoolExamParasite)
+        {
+            String sql = "", chk = "";
+
+            sql = "Update " + ccpvn.table + " Set " + ccpvn.StoolExamAppearance + "='" + StoolExamAppearance + "', " +
+                ccpvn.StoolExamColor + "='" + StoolExamColor + "', " +
+                ccpvn.StoolExamWbc + "='" + StoolExamWbc + "', " +
+                ccpvn.StoolExamRbc + "='" + StoolExamRbc + "', " +
+                ccpvn.StoolExamParasite + "='" + StoolExamParasite + "' ";
+                //ccp.StoolExamSummary + "='" + StoolExamSummary + "' " +
+                //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Error " + ex.ToString(), "update updateStoolExam");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateToxi1(String ToxiLead, String ToxiAluminium, String ToxiCadmium, String ToxiMercury, String ToxiTin, String ToxiCopper,
+            String ToxiManganese, String ToxiZinc, String ToxiAmmonia)
+        {
+            String sql = "", chk = "";
+
+            //p.NameT = p.NameT.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+            //p.PositionName = p.PositionName.Replace("'", "''");
+
+            sql = "Update " + ccpvn.table + " Set " + ccpvn.ToxiLead + "='" + ToxiLead + "', " +
+                ccpvn.ToxiAluminium + "='" + ToxiAluminium + "', " +
+                ccpvn.ToxiCadmium + "='" + ToxiCadmium + "', " +
+                ccpvn.ToxiMercury + "='" + ToxiMercury + "', " +
+                ccpvn.ToxiTin + "='" + ToxiTin + "', " +
+                ccpvn.ToxiCopper + "='" + ToxiCopper + "', " +
+                ccpvn.ToxiManganese + "='" + ToxiManganese + "', " +
+                ccpvn.ToxiZinc + "='" + ToxiZinc + "', " +
+                ccpvn.ToxiAmmonia + "='" + ToxiAmmonia + "' ";
+                //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Error " + ex.ToString(), "update updateAudioGram");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateToxi2(String ToxiHippuric, String ToxiMethyl, String ToxiAcetone, String ToxiNickel, String ToxiChromium, String ToxiPhenol,
+            String ToxiKetone, String ToxiBenzene, String ToxiMandelic, String ToxiMethanol, String ToxiEthanol, String ToxiIPA, String ToxiArsenic, String ToxiHexane,
+            String ToxiFomaldehyde, String ToxiTrichloroethylene, String ToxiAntimony, String ToxiFluoride)
+        {
+            String sql = "", chk = "";
+
+            //p.NameT = p.NameT.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+            //p.PositionName = p.PositionName.Replace("'", "''");
+
+            sql = "Update " + ccpvn.table + " Set " + ccpvn.ToxiHippuric + "='" + ToxiHippuric + "', " +
+                ccpvn.ToxiMethyl + "='" + ToxiMethyl + "', " +
+                ccpvn.ToxiAcetone + "='" + ToxiAcetone + "', " +
+                ccpvn.ToxiNickel + "='" + ToxiNickel + "', " +
+                ccpvn.ToxiChromium + "='" + ToxiChromium + "', " +
+                ccpvn.ToxiPhenol + "='" + ToxiPhenol + "', " +
+                ccpvn.ToxiKetone + "='" + ToxiKetone + "', " +
+                ccpvn.ToxiBenzene + "='" + ToxiBenzene + "', " +
+                ccpvn.ToxiMandelic + "='" + ToxiMandelic + "', " +
+                ccpvn.ToxiMethanol + "='" + ToxiMethanol + "', " +
+                ccpvn.ToxiEthanol + "='" + ToxiEthanol + "', " +
+                ccpvn.ToxiIPA + "='" + ToxiIPA + "', " +
+                ccpvn.ToxiArsenic + "='" + ToxiArsenic + "', " +
+                ccpvn.ToxiHexane + "='" + ToxiHexane + "', " +
+                ccpvn.ToxiFomaldehyde + "='" + ToxiFomaldehyde + "', " +
+                ccpvn.ToxiTrichloroethylene + "='" + ToxiTrichloroethylene + "', " +
+                ccpvn.ToxiAntimony + "='" + ToxiAntimony + "', " +
+                ccpvn.ToxiFluoride + "='" + ToxiFluoride + "' ";
+                //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Error " + ex.ToString(), "update updateAudioGram");
+            }
+            finally
+            {
+            }
+            return chk;
         }
     }
 }

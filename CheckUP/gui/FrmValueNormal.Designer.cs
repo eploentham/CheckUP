@@ -124,12 +124,7 @@
             this.txtUricValue = new System.Windows.Forms.TextBox();
             this.label84 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage12 = new System.Windows.Forms.TabPage();
-            this.tabPage13 = new System.Windows.Forms.TabPage();
-            this.tabPage14 = new System.Windows.Forms.TabPage();
-            this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.btnOther1Save = new System.Windows.Forms.Button();
             this.txtCalcium = new System.Windows.Forms.TextBox();
             this.txtAmphetamine = new System.Windows.Forms.TextBox();
             this.txtVDRL = new System.Windows.Forms.TextBox();
@@ -142,7 +137,8 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.btnOther1Save = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnLungSave = new System.Windows.Forms.Button();
             this.txtPerFev1 = new System.Windows.Forms.TextBox();
             this.txtFev1Per = new System.Windows.Forms.TextBox();
             this.txtFev1Meas = new System.Windows.Forms.TextBox();
@@ -157,7 +153,7 @@
             this.label97 = new System.Windows.Forms.Label();
             this.label98 = new System.Windows.Forms.Label();
             this.label99 = new System.Windows.Forms.Label();
-            this.btnLungSave = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.btnAudiogramSave = new System.Windows.Forms.Button();
             this.textBox46 = new System.Windows.Forms.TextBox();
             this.txtAudiogram8000R = new System.Windows.Forms.TextBox();
@@ -191,6 +187,7 @@
             this.label114 = new System.Windows.Forms.Label();
             this.label115 = new System.Windows.Forms.Label();
             this.label116 = new System.Windows.Forms.Label();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
             this.btnEyeSave = new System.Windows.Forms.Button();
             this.txtEyeOldRight = new System.Windows.Forms.TextBox();
             this.EyeDegreeRight = new System.Windows.Forms.TextBox();
@@ -210,6 +207,7 @@
             this.label139 = new System.Windows.Forms.Label();
             this.label140 = new System.Windows.Forms.Label();
             this.label141 = new System.Windows.Forms.Label();
+            this.tabPage13 = new System.Windows.Forms.TabPage();
             this.btnToxiSave = new System.Windows.Forms.Button();
             this.txtToxiAntimony = new System.Windows.Forms.TextBox();
             this.txtToxiTrichloroethylene = new System.Windows.Forms.TextBox();
@@ -265,6 +263,7 @@
             this.label145 = new System.Windows.Forms.Label();
             this.label130 = new System.Windows.Forms.Label();
             this.label144 = new System.Windows.Forms.Label();
+            this.tabPage14 = new System.Windows.Forms.TabPage();
             this.btnStoolExamSave = new System.Windows.Forms.Button();
             this.txtStoolExamParasite = new System.Windows.Forms.TextBox();
             this.txtStoolExamRbc = new System.Windows.Forms.TextBox();
@@ -276,6 +275,7 @@
             this.label159 = new System.Windows.Forms.Label();
             this.label160 = new System.Windows.Forms.Label();
             this.label161 = new System.Windows.Forms.Label();
+            this.tabPage15 = new System.Windows.Forms.TabPage();
             this.tC.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
@@ -420,6 +420,7 @@
             this.btnCBCSave.TabIndex = 102;
             this.btnCBCSave.Text = "Save";
             this.btnCBCSave.UseVisualStyleBackColor = true;
+            this.btnCBCSave.Click += new System.EventHandler(this.btnCBCSave_Click);
             // 
             // txtCBCRbcMono
             // 
@@ -659,6 +660,7 @@
             this.btnFBSSave.TabIndex = 93;
             this.btnFBSSave.Text = "Save";
             this.btnFBSSave.UseVisualStyleBackColor = true;
+            this.btnFBSSave.Click += new System.EventHandler(this.btnFBSSave_Click);
             // 
             // txtFBSValue
             // 
@@ -778,6 +780,7 @@
             this.btnUASave.TabIndex = 102;
             this.btnUASave.Text = "Save";
             this.btnUASave.UseVisualStyleBackColor = true;
+            this.btnUASave.Click += new System.EventHandler(this.btnUASave_Click);
             // 
             // txtUABact
             // 
@@ -981,6 +984,7 @@
             this.btnTriSave.TabIndex = 93;
             this.btnTriSave.Text = "Save";
             this.btnTriSave.UseVisualStyleBackColor = true;
+            this.btnTriSave.Click += new System.EventHandler(this.btnTriSave_Click);
             // 
             // txtTriValue
             // 
@@ -1062,6 +1066,7 @@
             this.btnChoSave.TabIndex = 93;
             this.btnChoSave.Text = "Save";
             this.btnChoSave.UseVisualStyleBackColor = true;
+            this.btnChoSave.Click += new System.EventHandler(this.btnChoSave_Click);
             // 
             // txtChoValue
             // 
@@ -1125,6 +1130,7 @@
             this.btnSgotSave.TabIndex = 94;
             this.btnSgotSave.Text = "Save";
             this.btnSgotSave.UseVisualStyleBackColor = true;
+            this.btnSgotSave.Click += new System.EventHandler(this.btnSgotSave_Click);
             // 
             // txtSgotSgptValue
             // 
@@ -1186,6 +1192,7 @@
             this.btnBunSave.TabIndex = 94;
             this.btnBunSave.Text = "Save";
             this.btnBunSave.UseVisualStyleBackColor = true;
+            this.btnBunSave.Click += new System.EventHandler(this.btnBunSave_Click);
             // 
             // txtBunCreatinineValue
             // 
@@ -1245,6 +1252,7 @@
             this.btnUricSave.TabIndex = 93;
             this.btnUricSave.Text = "Save";
             this.btnUricSave.UseVisualStyleBackColor = true;
+            this.btnUricSave.Click += new System.EventHandler(this.btnUricSave_Click);
             // 
             // txtUricValue
             // 
@@ -1287,198 +1295,16 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // btnOther1Save
             // 
-            this.tabPage3.Controls.Add(this.btnLungSave);
-            this.tabPage3.Controls.Add(this.txtPerFev1);
-            this.tabPage3.Controls.Add(this.txtFev1Per);
-            this.tabPage3.Controls.Add(this.txtFev1Meas);
-            this.tabPage3.Controls.Add(this.txtFev1Predic);
-            this.tabPage3.Controls.Add(this.txtFvcPer);
-            this.tabPage3.Controls.Add(this.txtFvcMeas);
-            this.tabPage3.Controls.Add(this.txtFvcPredic);
-            this.tabPage3.Controls.Add(this.label102);
-            this.tabPage3.Controls.Add(this.label93);
-            this.tabPage3.Controls.Add(this.label94);
-            this.tabPage3.Controls.Add(this.label95);
-            this.tabPage3.Controls.Add(this.label97);
-            this.tabPage3.Controls.Add(this.label98);
-            this.tabPage3.Controls.Add(this.label99);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1150, 441);
-            this.tabPage3.TabIndex = 13;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.btnAudiogramSave);
-            this.tabPage4.Controls.Add(this.textBox46);
-            this.tabPage4.Controls.Add(this.txtAudiogram8000R);
-            this.tabPage4.Controls.Add(this.txtAudiogram6000R);
-            this.tabPage4.Controls.Add(this.txtAudiogram4000R);
-            this.tabPage4.Controls.Add(this.txtAudiogram3000R);
-            this.tabPage4.Controls.Add(this.txtAudiogram2000R);
-            this.tabPage4.Controls.Add(this.txtAudiogram1000R);
-            this.tabPage4.Controls.Add(this.txtAudiogram500R);
-            this.tabPage4.Controls.Add(this.textBox44);
-            this.tabPage4.Controls.Add(this.txtAudiogram8000L);
-            this.tabPage4.Controls.Add(this.txtAudiogram6000L);
-            this.tabPage4.Controls.Add(this.txtAudiogram4000L);
-            this.tabPage4.Controls.Add(this.txtAudiogram3000L);
-            this.tabPage4.Controls.Add(this.txtAudiogram2000L);
-            this.tabPage4.Controls.Add(this.txtAudiogram1000L);
-            this.tabPage4.Controls.Add(this.txtAudiogram500L);
-            this.tabPage4.Controls.Add(this.label122);
-            this.tabPage4.Controls.Add(this.label121);
-            this.tabPage4.Controls.Add(this.label120);
-            this.tabPage4.Controls.Add(this.label119);
-            this.tabPage4.Controls.Add(this.label105);
-            this.tabPage4.Controls.Add(this.label106);
-            this.tabPage4.Controls.Add(this.label107);
-            this.tabPage4.Controls.Add(this.label108);
-            this.tabPage4.Controls.Add(this.label109);
-            this.tabPage4.Controls.Add(this.label110);
-            this.tabPage4.Controls.Add(this.label111);
-            this.tabPage4.Controls.Add(this.label112);
-            this.tabPage4.Controls.Add(this.label113);
-            this.tabPage4.Controls.Add(this.label114);
-            this.tabPage4.Controls.Add(this.label115);
-            this.tabPage4.Controls.Add(this.label116);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1150, 441);
-            this.tabPage4.TabIndex = 14;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage12
-            // 
-            this.tabPage12.Controls.Add(this.btnEyeSave);
-            this.tabPage12.Controls.Add(this.txtEyeOldRight);
-            this.tabPage12.Controls.Add(this.EyeDegreeRight);
-            this.tabPage12.Controls.Add(this.txtEyeSquintRight);
-            this.tabPage12.Controls.Add(this.txtEyeShortLongRight);
-            this.tabPage12.Controls.Add(this.txtEyeBlindness);
-            this.tabPage12.Controls.Add(this.txtEyeOldLeft);
-            this.tabPage12.Controls.Add(this.txtEyeDegreeLeft);
-            this.tabPage12.Controls.Add(this.txtEyeSquintLeft);
-            this.tabPage12.Controls.Add(this.txtEyeShortLongLeft);
-            this.tabPage12.Controls.Add(this.label133);
-            this.tabPage12.Controls.Add(this.label134);
-            this.tabPage12.Controls.Add(this.label135);
-            this.tabPage12.Controls.Add(this.label136);
-            this.tabPage12.Controls.Add(this.label137);
-            this.tabPage12.Controls.Add(this.label138);
-            this.tabPage12.Controls.Add(this.label139);
-            this.tabPage12.Controls.Add(this.label140);
-            this.tabPage12.Controls.Add(this.label141);
-            this.tabPage12.Location = new System.Drawing.Point(4, 22);
-            this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage12.Size = new System.Drawing.Size(1150, 441);
-            this.tabPage12.TabIndex = 15;
-            this.tabPage12.Text = "tabPage12";
-            this.tabPage12.UseVisualStyleBackColor = true;
-            // 
-            // tabPage13
-            // 
-            this.tabPage13.Controls.Add(this.btnToxiSave);
-            this.tabPage13.Controls.Add(this.txtToxiAntimony);
-            this.tabPage13.Controls.Add(this.txtToxiTrichloroethylene);
-            this.tabPage13.Controls.Add(this.txtToxiFomaldehyde);
-            this.tabPage13.Controls.Add(this.txtToxiFluoride);
-            this.tabPage13.Controls.Add(this.txtToxiHexane);
-            this.tabPage13.Controls.Add(this.txtToxiArsenic);
-            this.tabPage13.Controls.Add(this.txtToxiMethanol);
-            this.tabPage13.Controls.Add(this.txtToxiIPA);
-            this.tabPage13.Controls.Add(this.txtToxiMandelic);
-            this.tabPage13.Controls.Add(this.txtToxiBenzene);
-            this.tabPage13.Controls.Add(this.txtToxiKetone);
-            this.tabPage13.Controls.Add(this.txtToxiPhenol);
-            this.tabPage13.Controls.Add(this.txtToxiChromium);
-            this.tabPage13.Controls.Add(this.txtToxiNickel);
-            this.tabPage13.Controls.Add(this.txtToxiAcetone);
-            this.tabPage13.Controls.Add(this.txtToxiMethyl);
-            this.tabPage13.Controls.Add(this.txtToxiEthanol);
-            this.tabPage13.Controls.Add(this.txtToxiHippuric);
-            this.tabPage13.Controls.Add(this.txtToxiAmmonia);
-            this.tabPage13.Controls.Add(this.txtToxiZinc);
-            this.tabPage13.Controls.Add(this.txtToxiManganese);
-            this.tabPage13.Controls.Add(this.txtToxiCopper);
-            this.tabPage13.Controls.Add(this.txtToxiTin);
-            this.tabPage13.Controls.Add(this.txtToxiMercury);
-            this.tabPage13.Controls.Add(this.txtToxiCadmium);
-            this.tabPage13.Controls.Add(this.txtToxiAluminium);
-            this.tabPage13.Controls.Add(this.txtToxiLead);
-            this.tabPage13.Controls.Add(this.label171);
-            this.tabPage13.Controls.Add(this.label172);
-            this.tabPage13.Controls.Add(this.label173);
-            this.tabPage13.Controls.Add(this.label175);
-            this.tabPage13.Controls.Add(this.label176);
-            this.tabPage13.Controls.Add(this.label177);
-            this.tabPage13.Controls.Add(this.label178);
-            this.tabPage13.Controls.Add(this.label179);
-            this.tabPage13.Controls.Add(this.label174);
-            this.tabPage13.Controls.Add(this.label154);
-            this.tabPage13.Controls.Add(this.label155);
-            this.tabPage13.Controls.Add(this.label164);
-            this.tabPage13.Controls.Add(this.label165);
-            this.tabPage13.Controls.Add(this.label166);
-            this.tabPage13.Controls.Add(this.label167);
-            this.tabPage13.Controls.Add(this.label168);
-            this.tabPage13.Controls.Add(this.label169);
-            this.tabPage13.Controls.Add(this.label170);
-            this.tabPage13.Controls.Add(this.label149);
-            this.tabPage13.Controls.Add(this.label148);
-            this.tabPage13.Controls.Add(this.label147);
-            this.tabPage13.Controls.Add(this.label127);
-            this.tabPage13.Controls.Add(this.label146);
-            this.tabPage13.Controls.Add(this.label128);
-            this.tabPage13.Controls.Add(this.label145);
-            this.tabPage13.Controls.Add(this.label130);
-            this.tabPage13.Controls.Add(this.label144);
-            this.tabPage13.Location = new System.Drawing.Point(4, 22);
-            this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage13.Size = new System.Drawing.Size(1150, 441);
-            this.tabPage13.TabIndex = 16;
-            this.tabPage13.Text = "tabPage13";
-            this.tabPage13.UseVisualStyleBackColor = true;
-            // 
-            // tabPage14
-            // 
-            this.tabPage14.Controls.Add(this.btnStoolExamSave);
-            this.tabPage14.Controls.Add(this.txtStoolExamParasite);
-            this.tabPage14.Controls.Add(this.txtStoolExamRbc);
-            this.tabPage14.Controls.Add(this.txtStoolExamWbc);
-            this.tabPage14.Controls.Add(this.txtStoolExamAppearance);
-            this.tabPage14.Controls.Add(this.txtStoolExamColor);
-            this.tabPage14.Controls.Add(this.label156);
-            this.tabPage14.Controls.Add(this.label157);
-            this.tabPage14.Controls.Add(this.label159);
-            this.tabPage14.Controls.Add(this.label160);
-            this.tabPage14.Controls.Add(this.label161);
-            this.tabPage14.Location = new System.Drawing.Point(4, 22);
-            this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage14.Size = new System.Drawing.Size(1150, 441);
-            this.tabPage14.TabIndex = 17;
-            this.tabPage14.Text = "tabPage14";
-            this.tabPage14.UseVisualStyleBackColor = true;
-            // 
-            // tabPage15
-            // 
-            this.tabPage15.Location = new System.Drawing.Point(4, 22);
-            this.tabPage15.Name = "tabPage15";
-            this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage15.Size = new System.Drawing.Size(1150, 441);
-            this.tabPage15.TabIndex = 18;
-            this.tabPage15.Text = "tabPage15";
-            this.tabPage15.UseVisualStyleBackColor = true;
+            this.btnOther1Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnOther1Save.Location = new System.Drawing.Point(1058, 401);
+            this.btnOther1Save.Name = "btnOther1Save";
+            this.btnOther1Save.Size = new System.Drawing.Size(86, 34);
+            this.btnOther1Save.TabIndex = 123;
+            this.btnOther1Save.Text = "Save";
+            this.btnOther1Save.UseVisualStyleBackColor = true;
+            this.btnOther1Save.Click += new System.EventHandler(this.btnOther1Save_Click);
             // 
             // txtCalcium
             // 
@@ -1588,15 +1414,41 @@
             this.label22.TabIndex = 111;
             this.label22.Text = "HBsAg";
             // 
-            // btnOther1Save
+            // tabPage3
             // 
-            this.btnOther1Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnOther1Save.Location = new System.Drawing.Point(1058, 401);
-            this.btnOther1Save.Name = "btnOther1Save";
-            this.btnOther1Save.Size = new System.Drawing.Size(86, 34);
-            this.btnOther1Save.TabIndex = 123;
-            this.btnOther1Save.Text = "Save";
-            this.btnOther1Save.UseVisualStyleBackColor = true;
+            this.tabPage3.Controls.Add(this.btnLungSave);
+            this.tabPage3.Controls.Add(this.txtPerFev1);
+            this.tabPage3.Controls.Add(this.txtFev1Per);
+            this.tabPage3.Controls.Add(this.txtFev1Meas);
+            this.tabPage3.Controls.Add(this.txtFev1Predic);
+            this.tabPage3.Controls.Add(this.txtFvcPer);
+            this.tabPage3.Controls.Add(this.txtFvcMeas);
+            this.tabPage3.Controls.Add(this.txtFvcPredic);
+            this.tabPage3.Controls.Add(this.label102);
+            this.tabPage3.Controls.Add(this.label93);
+            this.tabPage3.Controls.Add(this.label94);
+            this.tabPage3.Controls.Add(this.label95);
+            this.tabPage3.Controls.Add(this.label97);
+            this.tabPage3.Controls.Add(this.label98);
+            this.tabPage3.Controls.Add(this.label99);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1150, 441);
+            this.tabPage3.TabIndex = 13;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btnLungSave
+            // 
+            this.btnLungSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnLungSave.Location = new System.Drawing.Point(1058, 401);
+            this.btnLungSave.Name = "btnLungSave";
+            this.btnLungSave.Size = new System.Drawing.Size(86, 34);
+            this.btnLungSave.TabIndex = 155;
+            this.btnLungSave.Text = "Save";
+            this.btnLungSave.UseVisualStyleBackColor = true;
+            this.btnLungSave.Click += new System.EventHandler(this.btnLungSave_Click);
             // 
             // txtPerFev1
             // 
@@ -1724,15 +1576,48 @@
             this.label99.TabIndex = 141;
             this.label99.Text = "fvc predic";
             // 
-            // btnLungSave
+            // tabPage4
             // 
-            this.btnLungSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnLungSave.Location = new System.Drawing.Point(1058, 401);
-            this.btnLungSave.Name = "btnLungSave";
-            this.btnLungSave.Size = new System.Drawing.Size(86, 34);
-            this.btnLungSave.TabIndex = 155;
-            this.btnLungSave.Text = "Save";
-            this.btnLungSave.UseVisualStyleBackColor = true;
+            this.tabPage4.Controls.Add(this.btnAudiogramSave);
+            this.tabPage4.Controls.Add(this.textBox46);
+            this.tabPage4.Controls.Add(this.txtAudiogram8000R);
+            this.tabPage4.Controls.Add(this.txtAudiogram6000R);
+            this.tabPage4.Controls.Add(this.txtAudiogram4000R);
+            this.tabPage4.Controls.Add(this.txtAudiogram3000R);
+            this.tabPage4.Controls.Add(this.txtAudiogram2000R);
+            this.tabPage4.Controls.Add(this.txtAudiogram1000R);
+            this.tabPage4.Controls.Add(this.txtAudiogram500R);
+            this.tabPage4.Controls.Add(this.textBox44);
+            this.tabPage4.Controls.Add(this.txtAudiogram8000L);
+            this.tabPage4.Controls.Add(this.txtAudiogram6000L);
+            this.tabPage4.Controls.Add(this.txtAudiogram4000L);
+            this.tabPage4.Controls.Add(this.txtAudiogram3000L);
+            this.tabPage4.Controls.Add(this.txtAudiogram2000L);
+            this.tabPage4.Controls.Add(this.txtAudiogram1000L);
+            this.tabPage4.Controls.Add(this.txtAudiogram500L);
+            this.tabPage4.Controls.Add(this.label122);
+            this.tabPage4.Controls.Add(this.label121);
+            this.tabPage4.Controls.Add(this.label120);
+            this.tabPage4.Controls.Add(this.label119);
+            this.tabPage4.Controls.Add(this.label105);
+            this.tabPage4.Controls.Add(this.label106);
+            this.tabPage4.Controls.Add(this.label107);
+            this.tabPage4.Controls.Add(this.label108);
+            this.tabPage4.Controls.Add(this.label109);
+            this.tabPage4.Controls.Add(this.label110);
+            this.tabPage4.Controls.Add(this.label111);
+            this.tabPage4.Controls.Add(this.label112);
+            this.tabPage4.Controls.Add(this.label113);
+            this.tabPage4.Controls.Add(this.label114);
+            this.tabPage4.Controls.Add(this.label115);
+            this.tabPage4.Controls.Add(this.label116);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1150, 441);
+            this.tabPage4.TabIndex = 14;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // btnAudiogramSave
             // 
@@ -2032,6 +1917,35 @@
             this.label116.TabIndex = 172;
             this.label116.Text = "Left 500";
             // 
+            // tabPage12
+            // 
+            this.tabPage12.Controls.Add(this.btnEyeSave);
+            this.tabPage12.Controls.Add(this.txtEyeOldRight);
+            this.tabPage12.Controls.Add(this.EyeDegreeRight);
+            this.tabPage12.Controls.Add(this.txtEyeSquintRight);
+            this.tabPage12.Controls.Add(this.txtEyeShortLongRight);
+            this.tabPage12.Controls.Add(this.txtEyeBlindness);
+            this.tabPage12.Controls.Add(this.txtEyeOldLeft);
+            this.tabPage12.Controls.Add(this.txtEyeDegreeLeft);
+            this.tabPage12.Controls.Add(this.txtEyeSquintLeft);
+            this.tabPage12.Controls.Add(this.txtEyeShortLongLeft);
+            this.tabPage12.Controls.Add(this.label133);
+            this.tabPage12.Controls.Add(this.label134);
+            this.tabPage12.Controls.Add(this.label135);
+            this.tabPage12.Controls.Add(this.label136);
+            this.tabPage12.Controls.Add(this.label137);
+            this.tabPage12.Controls.Add(this.label138);
+            this.tabPage12.Controls.Add(this.label139);
+            this.tabPage12.Controls.Add(this.label140);
+            this.tabPage12.Controls.Add(this.label141);
+            this.tabPage12.Location = new System.Drawing.Point(4, 22);
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage12.Size = new System.Drawing.Size(1150, 441);
+            this.tabPage12.TabIndex = 15;
+            this.tabPage12.Text = "tabPage12";
+            this.tabPage12.UseVisualStyleBackColor = true;
+            // 
             // btnEyeSave
             // 
             this.btnEyeSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -2203,6 +2117,71 @@
             this.label141.Size = new System.Drawing.Size(78, 16);
             this.label141.TabIndex = 182;
             this.label141.Text = "ตา สั้น ยาว ซ้าย";
+            // 
+            // tabPage13
+            // 
+            this.tabPage13.Controls.Add(this.btnToxiSave);
+            this.tabPage13.Controls.Add(this.txtToxiAntimony);
+            this.tabPage13.Controls.Add(this.txtToxiTrichloroethylene);
+            this.tabPage13.Controls.Add(this.txtToxiFomaldehyde);
+            this.tabPage13.Controls.Add(this.txtToxiFluoride);
+            this.tabPage13.Controls.Add(this.txtToxiHexane);
+            this.tabPage13.Controls.Add(this.txtToxiArsenic);
+            this.tabPage13.Controls.Add(this.txtToxiMethanol);
+            this.tabPage13.Controls.Add(this.txtToxiIPA);
+            this.tabPage13.Controls.Add(this.txtToxiMandelic);
+            this.tabPage13.Controls.Add(this.txtToxiBenzene);
+            this.tabPage13.Controls.Add(this.txtToxiKetone);
+            this.tabPage13.Controls.Add(this.txtToxiPhenol);
+            this.tabPage13.Controls.Add(this.txtToxiChromium);
+            this.tabPage13.Controls.Add(this.txtToxiNickel);
+            this.tabPage13.Controls.Add(this.txtToxiAcetone);
+            this.tabPage13.Controls.Add(this.txtToxiMethyl);
+            this.tabPage13.Controls.Add(this.txtToxiEthanol);
+            this.tabPage13.Controls.Add(this.txtToxiHippuric);
+            this.tabPage13.Controls.Add(this.txtToxiAmmonia);
+            this.tabPage13.Controls.Add(this.txtToxiZinc);
+            this.tabPage13.Controls.Add(this.txtToxiManganese);
+            this.tabPage13.Controls.Add(this.txtToxiCopper);
+            this.tabPage13.Controls.Add(this.txtToxiTin);
+            this.tabPage13.Controls.Add(this.txtToxiMercury);
+            this.tabPage13.Controls.Add(this.txtToxiCadmium);
+            this.tabPage13.Controls.Add(this.txtToxiAluminium);
+            this.tabPage13.Controls.Add(this.txtToxiLead);
+            this.tabPage13.Controls.Add(this.label171);
+            this.tabPage13.Controls.Add(this.label172);
+            this.tabPage13.Controls.Add(this.label173);
+            this.tabPage13.Controls.Add(this.label175);
+            this.tabPage13.Controls.Add(this.label176);
+            this.tabPage13.Controls.Add(this.label177);
+            this.tabPage13.Controls.Add(this.label178);
+            this.tabPage13.Controls.Add(this.label179);
+            this.tabPage13.Controls.Add(this.label174);
+            this.tabPage13.Controls.Add(this.label154);
+            this.tabPage13.Controls.Add(this.label155);
+            this.tabPage13.Controls.Add(this.label164);
+            this.tabPage13.Controls.Add(this.label165);
+            this.tabPage13.Controls.Add(this.label166);
+            this.tabPage13.Controls.Add(this.label167);
+            this.tabPage13.Controls.Add(this.label168);
+            this.tabPage13.Controls.Add(this.label169);
+            this.tabPage13.Controls.Add(this.label170);
+            this.tabPage13.Controls.Add(this.label149);
+            this.tabPage13.Controls.Add(this.label148);
+            this.tabPage13.Controls.Add(this.label147);
+            this.tabPage13.Controls.Add(this.label127);
+            this.tabPage13.Controls.Add(this.label146);
+            this.tabPage13.Controls.Add(this.label128);
+            this.tabPage13.Controls.Add(this.label145);
+            this.tabPage13.Controls.Add(this.label130);
+            this.tabPage13.Controls.Add(this.label144);
+            this.tabPage13.Location = new System.Drawing.Point(4, 22);
+            this.tabPage13.Name = "tabPage13";
+            this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage13.Size = new System.Drawing.Size(1150, 441);
+            this.tabPage13.TabIndex = 16;
+            this.tabPage13.Text = "tabPage13";
+            this.tabPage13.UseVisualStyleBackColor = true;
             // 
             // btnToxiSave
             // 
@@ -2700,6 +2679,27 @@
             this.label144.TabIndex = 264;
             this.label144.Text = "Copper";
             // 
+            // tabPage14
+            // 
+            this.tabPage14.Controls.Add(this.btnStoolExamSave);
+            this.tabPage14.Controls.Add(this.txtStoolExamParasite);
+            this.tabPage14.Controls.Add(this.txtStoolExamRbc);
+            this.tabPage14.Controls.Add(this.txtStoolExamWbc);
+            this.tabPage14.Controls.Add(this.txtStoolExamAppearance);
+            this.tabPage14.Controls.Add(this.txtStoolExamColor);
+            this.tabPage14.Controls.Add(this.label156);
+            this.tabPage14.Controls.Add(this.label157);
+            this.tabPage14.Controls.Add(this.label159);
+            this.tabPage14.Controls.Add(this.label160);
+            this.tabPage14.Controls.Add(this.label161);
+            this.tabPage14.Location = new System.Drawing.Point(4, 22);
+            this.tabPage14.Name = "tabPage14";
+            this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage14.Size = new System.Drawing.Size(1150, 441);
+            this.tabPage14.TabIndex = 17;
+            this.tabPage14.Text = "tabPage14";
+            this.tabPage14.UseVisualStyleBackColor = true;
+            // 
             // btnStoolExamSave
             // 
             this.btnStoolExamSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -2709,6 +2709,7 @@
             this.btnStoolExamSave.TabIndex = 235;
             this.btnStoolExamSave.Text = "Save";
             this.btnStoolExamSave.UseVisualStyleBackColor = true;
+            this.btnStoolExamSave.Click += new System.EventHandler(this.btnStoolExamSave_Click);
             // 
             // txtStoolExamParasite
             // 
@@ -2799,6 +2800,16 @@
             this.label161.Size = new System.Drawing.Size(40, 16);
             this.label161.TabIndex = 225;
             this.label161.Text = "Color";
+            // 
+            // tabPage15
+            // 
+            this.tabPage15.Location = new System.Drawing.Point(4, 22);
+            this.tabPage15.Name = "tabPage15";
+            this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage15.Size = new System.Drawing.Size(1150, 441);
+            this.tabPage15.TabIndex = 18;
+            this.tabPage15.Text = "tabPage15";
+            this.tabPage15.UseVisualStyleBackColor = true;
             // 
             // FrmValueNormal
             // 

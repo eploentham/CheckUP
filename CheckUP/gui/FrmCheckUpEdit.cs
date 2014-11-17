@@ -241,7 +241,7 @@ namespace CheckUP.gui
             String chk = cc.ccpdb.UpdateFBS(txtRowNumber.Text, cuc.Id, txtFBSValue.Text, txtFBSResult.Text, txtFBSSummary.Text, "");
             if (chk.Equals("1"))
             {
-                MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
+                MessageBox.Show("บันทึกข้อมูล FBS เรียบร้อย", "บันทึกข้อมูล");
             }
         }
 
@@ -252,7 +252,7 @@ namespace CheckUP.gui
                 txtUAResult.Text, txtUASpgr.Text);
             if (chk.Equals("1"))
             {
-                MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
+                MessageBox.Show("บันทึกข้อมูล UA เรียบร้อย", "บันทึกข้อมูล");
             }
         }
 
@@ -261,7 +261,7 @@ namespace CheckUP.gui
             String chk = cc.ccpdb.UpdateTrigly(txtRowNumber.Text, cuc.Id, txtTriValue.Text, txtTriResult.Text, txtTriSummary.Text);
             if (chk.Equals("1"))
             {
-                MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
+                MessageBox.Show("บันทึกข้อมูล Trigly เรียบร้อย", "บันทึกข้อมูล");
             }
         }
 
@@ -270,7 +270,7 @@ namespace CheckUP.gui
             String chk = cc.ccpdb.UpdateCholes(txtRowNumber.Text, cuc.Id, txtChoValue.Text, txtChoResult.Text, txtChoSummary.Text, txtChoLDL.Text, txtChoHDL.Text);
             if (chk.Equals("1"))
             {
-                MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
+                MessageBox.Show("บันทึกข้อมูล Choles เรียบร้อย", "บันทึกข้อมูล");
             }
         }
 
@@ -279,7 +279,7 @@ namespace CheckUP.gui
             String chk = cc.ccpdb.UpdateSgot(txtRowNumber.Text, cuc.Id, txtSgotValue.Text, txtSgotSgptValue.Text,"", txtSgotResult.Text, txtSgotSummary.Text);
             if (chk.Equals("1"))
             {
-                MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
+                MessageBox.Show("บันทึกข้อมูล SGOT เรียบร้อย", "บันทึกข้อมูล");
             }
         }
 
@@ -288,7 +288,7 @@ namespace CheckUP.gui
             String chk = cc.ccpdb.UpdateBun(txtRowNumber.Text, cuc.Id, txtBunValue.Text, txtBunCreatinineValue.Text, txtBunResult.Text, txtBunSummary.Text);
             if (chk.Equals("1"))
             {
-                MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
+                MessageBox.Show("บันทึกข้อมูล Bun เรียบร้อย", "บันทึกข้อมูล");
             }
         }
 
@@ -297,7 +297,7 @@ namespace CheckUP.gui
             String chk = cc.ccpdb.UpdateUric(txtRowNumber.Text, cuc.Id, txtUricValue.Text, txtUricResult.Text, txtUricSummary.Text);
             if (chk.Equals("1"))
             {
-                MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
+                MessageBox.Show("บันทึกข้อมูล Uric เรียบร้อย", "บันทึกข้อมูล");
             }
         }
 

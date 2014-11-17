@@ -21,14 +21,14 @@ namespace CheckUP.object1
         public String patientHeight="";    
         public String patientPulse="";    
         public String patientWeight="";
-        public String EyeShortLongLeft = "", EyeShortLongRight = "", EyeSquintLeft = "", EyeSquintRight = "", EyedegreeLeft = "", EyeDegreeRight = "", EyeOldLeft = "", EyeOldRight = "", EyeResult = "", EyeSummary = "", EyeBlindness = "";
+        public String EyeShortLongLeft = "", EyeShortLongRight = "", EyeSquintLeft = "", EyeSquintRight = "", EyeDegreeLeft = "", EyeDegreeRight = "", EyeOldLeft = "", EyeOldRight = "", EyeResult = "", EyeSummary = "", EyeBlindness = "";
         public String fSexId="";    
         public String summaryPhysicalExam="";    
-        public String stoolExamColor="", stoolExamAppearance="", stoolExamWbc="", stoolExamRbc="", stoolExamParasite="", stoolExamSummary="";
+        public String StoolExamColor="", StoolExamAppearance="", StoolExamWbc="", StoolExamRbc="", StoolExamParasite="", StoolExamSummary="";
 
-        public String toxiLead = "", toxiAluminium = "", toxiCadmium = "", toxiMercury = "", toxiTin = "", toxiCopper = "", toxiManganese = "", toxiZinc = "", toxiAmmonia = "";
-        public String toxiHippuric = "", toxiMethyl = "", toxiAcetone = "", toxiNickel = "", toxiChromium = "", toxiPhenol = "", toxiKetone = "", toxiBenzene = "", toxiMandelic = "", toxiMethanol = "";
-        public String toxiEthanol = "", toxiIPA = "", toxiArsenic = "", toxiHexane = "", toxiFomaldehyde = "", toxiTrichloroethylene = "", toxiAntimony = "", toxiFluoride = "";
+        public String ToxiLead = "", ToxiAluminium = "", ToxiCadmium = "", ToxiMercury = "", ToxiTin = "", ToxiCopper = "", ToxiManganese = "", ToxiZinc = "", ToxiAmmonia = "";
+        public String ToxiHippuric = "", ToxiMethyl = "", ToxiAcetone = "", ToxiNickel = "", ToxiChromium = "", ToxiPhenol = "", ToxiKetone = "", ToxiBenzene = "", ToxiMandelic = "", ToxiMethanol = "";
+        public String ToxiEthanol = "", ToxiIPA = "", ToxiArsenic = "", ToxiHexane = "", ToxiFomaldehyde = "", ToxiTrichloroethylene = "", ToxiAntimony = "", ToxiFluoride = "";
 
         //public String toxicologyLead = "", toxicologyMercury = "", toxicologyBenzene = "", toxicologyXylene = "";
         //public String toxicologyLead="";
