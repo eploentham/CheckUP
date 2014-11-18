@@ -2192,6 +2192,7 @@
             this.btnToxiSave.TabIndex = 313;
             this.btnToxiSave.Text = "Save";
             this.btnToxiSave.UseVisualStyleBackColor = true;
+            this.btnToxiSave.Click += new System.EventHandler(this.btnToxiSave_Click);
             // 
             // txtToxiAntimony
             // 

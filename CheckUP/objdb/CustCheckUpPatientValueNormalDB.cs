@@ -164,8 +164,8 @@ namespace CheckUP.objdb
 
             ccpvn.thyroidRubellaLgg = "thyroid_rubella_lgg";
             ccpvn.billirubin = "billirubin";
-            ccpvn.toxicologyThinner = "toxicology_thinner";
-            ccpvn.toxicologyAlcohol = "toxicology_alcohol";
+            //ccpvn.toxicologyThinner = "toxicology_thinner";
+            //ccpvn.toxicologyAlcohol = "toxicology_alcohol";
             ccpvn.stickerQty = "sticker_qty";
             ccpvn.statusCbc = "status_cbc";
             ccpvn.statusUa = "status_ua";
@@ -241,17 +241,17 @@ namespace CheckUP.objdb
             ccpvn.triglycerideOld = "triglyceride_old";
             ccpvn.hdlOld = "hdl_old";
             ccpvn.ldlOld = "ldl_old";
-            ccpvn.toxicologyLeadOld = "toxicology_lead_old";
-            ccpvn.toxicologyMercuryOld = "toxicology_mercury_old";
-            ccpvn.toxicologyBenzeneOld = "toxicology_benzene_old";
-            ccpvn.toxicologyXyleneOld = "toxicology_xylene_old";
-            ccpvn.toxicologyThinnerOld = "toxicology_thinner_old";
-            ccpvn.toxicologyAlcoholOld = "toxicology_alcohol_old";
-            ccpvn.toxicologyHexaneOld = "toxicology_hexane_old";
-            ccpvn.toxicologyMethanolOld = "toxicology_methanol_old";
-            ccpvn.toxicologyMekOld = "toxicology_mek_old";
-            ccpvn.toxicologyAcetoneOld = "toxicology_acetone_old";
-            ccpvn.toxicologyTolueneOld = "toxicology_toluene_old";
+            //ccpvn.toxicologyLeadOld = "toxicology_lead_old";
+            //ccpvn.toxicologyMercuryOld = "toxicology_mercury_old";
+            //ccpvn.toxicologyBenzeneOld = "toxicology_benzene_old";
+            //ccpvn.toxicologyXyleneOld = "toxicology_xylene_old";
+            //ccpvn.toxicologyThinnerOld = "toxicology_thinner_old";
+            //ccpvn.toxicologyAlcoholOld = "toxicology_alcohol_old";
+            //ccpvn.toxicologyHexaneOld = "toxicology_hexane_old";
+            //ccpvn.toxicologyMethanolOld = "toxicology_methanol_old";
+            //ccpvn.toxicologyMekOld = "toxicology_mek_old";
+            //ccpvn.toxicologyAcetoneOld = "toxicology_acetone_old";
+            //ccpvn.toxicologyTolueneOld = "toxicology_toluene_old";
             ccpvn.urineLeu = "urine_leu";
             ccpvn.urineOther = "urine_other";
             ccpvn.cultureStool = "culture_stool";
@@ -314,7 +314,7 @@ namespace CheckUP.objdb
             String chk = "", sql = "";
             try
             {
-                sql = "Update " + ccpvn.table + " Set " + ccpvn.sugar + "='" + value + "' " 
+                sql = "Update " + ccpvn.table + " Set " + ccpvn.sugar + "='" + value + "' ";
                 //ccp.sugarDiagnosis + "='" + result + "', " +
                 //ccp.sugarSummary + "='" + summary + "', " +
                 //ccp.sugarSuggess + "='" + suggess + "' " +

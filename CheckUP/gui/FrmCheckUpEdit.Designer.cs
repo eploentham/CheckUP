@@ -218,6 +218,7 @@
             this.label83 = new System.Windows.Forms.Label();
             this.label84 = new System.Windows.Forms.Label();
             this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.btnOther1Save = new System.Windows.Forms.Button();
             this.txtCalciumNormal = new System.Windows.Forms.TextBox();
             this.txtAmphetamineNormal = new System.Windows.Forms.TextBox();
             this.txtVDRLNormal = new System.Windows.Forms.TextBox();
@@ -237,6 +238,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.btnLungSave = new System.Windows.Forms.Button();
             this.txtPerFev1Normal = new System.Windows.Forms.TextBox();
             this.txtPerFev1 = new System.Windows.Forms.TextBox();
             this.txtFev1PerNormal = new System.Windows.Forms.TextBox();
@@ -259,6 +261,7 @@
             this.label98 = new System.Windows.Forms.Label();
             this.label99 = new System.Windows.Forms.Label();
             this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.btnAudiogramSave = new System.Windows.Forms.Button();
             this.textBox45 = new System.Windows.Forms.TextBox();
             this.textBox46 = new System.Windows.Forms.TextBox();
             this.txtAudiogram8000RNormal = new System.Windows.Forms.TextBox();
@@ -308,6 +311,7 @@
             this.label115 = new System.Windows.Forms.Label();
             this.label116 = new System.Windows.Forms.Label();
             this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.btnEyeSave = new System.Windows.Forms.Button();
             this.textBox81 = new System.Windows.Forms.TextBox();
             this.textBox82 = new System.Windows.Forms.TextBox();
             this.txtEyeOldRightNormal = new System.Windows.Forms.TextBox();
@@ -342,6 +346,7 @@
             this.label140 = new System.Windows.Forms.Label();
             this.label141 = new System.Windows.Forms.Label();
             this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.btnToxiSave = new System.Windows.Forms.Button();
             this.txtToxiAntimonyNormal = new System.Windows.Forms.TextBox();
             this.txtToxiAntimony = new System.Windows.Forms.TextBox();
             this.txtToxiTrichloroethyleneNormal = new System.Windows.Forms.TextBox();
@@ -424,6 +429,7 @@
             this.label130 = new System.Windows.Forms.Label();
             this.label144 = new System.Windows.Forms.Label();
             this.tabPage17 = new System.Windows.Forms.TabPage();
+            this.btnStoolExamSave = new System.Windows.Forms.Button();
             this.txtStoolExamParasiteNormal = new System.Windows.Forms.TextBox();
             this.txtStoolExamParasite = new System.Windows.Forms.TextBox();
             this.txtStoolExamRbcNormal = new System.Windows.Forms.TextBox();
@@ -448,12 +454,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtAge = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnOther1Save = new System.Windows.Forms.Button();
-            this.btnLungSave = new System.Windows.Forms.Button();
-            this.btnAudiogramSave = new System.Windows.Forms.Button();
-            this.btnEyeSave = new System.Windows.Forms.Button();
-            this.btnToxiSave = new System.Windows.Forms.Button();
-            this.btnStoolExamSave = new System.Windows.Forms.Button();
             this.tC.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -1038,7 +1038,7 @@
             // btnCBCSave
             // 
             this.btnCBCSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnCBCSave.Location = new System.Drawing.Point(1041, 361);
+            this.btnCBCSave.Location = new System.Drawing.Point(1107, 401);
             this.btnCBCSave.Name = "btnCBCSave";
             this.btnCBCSave.Size = new System.Drawing.Size(86, 34);
             this.btnCBCSave.TabIndex = 102;
@@ -1311,7 +1311,7 @@
             // btnFBSSave
             // 
             this.btnFBSSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnFBSSave.Location = new System.Drawing.Point(1041, 219);
+            this.btnFBSSave.Location = new System.Drawing.Point(1107, 401);
             this.btnFBSSave.Name = "btnFBSSave";
             this.btnFBSSave.Size = new System.Drawing.Size(86, 34);
             this.btnFBSSave.TabIndex = 93;
@@ -1614,7 +1614,7 @@
             // btnUASave
             // 
             this.btnUASave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnUASave.Location = new System.Drawing.Point(1041, 367);
+            this.btnUASave.Location = new System.Drawing.Point(1108, 401);
             this.btnUASave.Name = "btnUASave";
             this.btnUASave.Size = new System.Drawing.Size(86, 34);
             this.btnUASave.TabIndex = 102;
@@ -1869,7 +1869,7 @@
             // btnTriSave
             // 
             this.btnTriSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnTriSave.Location = new System.Drawing.Point(1020, 244);
+            this.btnTriSave.Location = new System.Drawing.Point(1107, 401);
             this.btnTriSave.Name = "btnTriSave";
             this.btnTriSave.Size = new System.Drawing.Size(86, 34);
             this.btnTriSave.TabIndex = 93;
@@ -2024,7 +2024,7 @@
             // btnChoSave
             // 
             this.btnChoSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnChoSave.Location = new System.Drawing.Point(1041, 321);
+            this.btnChoSave.Location = new System.Drawing.Point(1107, 401);
             this.btnChoSave.Name = "btnChoSave";
             this.btnChoSave.Size = new System.Drawing.Size(86, 34);
             this.btnChoSave.TabIndex = 93;
@@ -2161,7 +2161,7 @@
             // btnSgotSave
             // 
             this.btnSgotSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnSgotSave.Location = new System.Drawing.Point(1031, 292);
+            this.btnSgotSave.Location = new System.Drawing.Point(1107, 401);
             this.btnSgotSave.Name = "btnSgotSave";
             this.btnSgotSave.Size = new System.Drawing.Size(86, 34);
             this.btnSgotSave.TabIndex = 94;
@@ -2285,7 +2285,7 @@
             // btnBunSave
             // 
             this.btnBunSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnBunSave.Location = new System.Drawing.Point(1025, 272);
+            this.btnBunSave.Location = new System.Drawing.Point(1107, 401);
             this.btnBunSave.Name = "btnBunSave";
             this.btnBunSave.Size = new System.Drawing.Size(86, 34);
             this.btnBunSave.TabIndex = 94;
@@ -2396,7 +2396,7 @@
             // btnUricSave
             // 
             this.btnUricSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnUricSave.Location = new System.Drawing.Point(1020, 217);
+            this.btnUricSave.Location = new System.Drawing.Point(1107, 401);
             this.btnUricSave.Name = "btnUricSave";
             this.btnUricSave.Size = new System.Drawing.Size(86, 34);
             this.btnUricSave.TabIndex = 93;
@@ -2486,6 +2486,17 @@
             this.tabPage12.TabIndex = 12;
             this.tabPage12.Text = "tabPage12";
             this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // btnOther1Save
+            // 
+            this.btnOther1Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnOther1Save.Location = new System.Drawing.Point(1107, 401);
+            this.btnOther1Save.Name = "btnOther1Save";
+            this.btnOther1Save.Size = new System.Drawing.Size(86, 34);
+            this.btnOther1Save.TabIndex = 118;
+            this.btnOther1Save.Text = "Save";
+            this.btnOther1Save.UseVisualStyleBackColor = true;
+            this.btnOther1Save.Click += new System.EventHandler(this.btnOther1Save_Click);
             // 
             // txtCalciumNormal
             // 
@@ -2686,6 +2697,16 @@
             this.tabPage13.TabIndex = 13;
             this.tabPage13.Text = "tabPage13";
             this.tabPage13.UseVisualStyleBackColor = true;
+            // 
+            // btnLungSave
+            // 
+            this.btnLungSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnLungSave.Location = new System.Drawing.Point(1107, 401);
+            this.btnLungSave.Name = "btnLungSave";
+            this.btnLungSave.Size = new System.Drawing.Size(86, 34);
+            this.btnLungSave.TabIndex = 143;
+            this.btnLungSave.Text = "Save";
+            this.btnLungSave.UseVisualStyleBackColor = true;
             // 
             // txtPerFev1Normal
             // 
@@ -2941,6 +2962,16 @@
             this.tabPage14.TabIndex = 14;
             this.tabPage14.Text = "tabPage14";
             this.tabPage14.UseVisualStyleBackColor = true;
+            // 
+            // btnAudiogramSave
+            // 
+            this.btnAudiogramSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnAudiogramSave.Location = new System.Drawing.Point(1107, 401);
+            this.btnAudiogramSave.Name = "btnAudiogramSave";
+            this.btnAudiogramSave.Size = new System.Drawing.Size(86, 34);
+            this.btnAudiogramSave.TabIndex = 171;
+            this.btnAudiogramSave.Text = "Save";
+            this.btnAudiogramSave.UseVisualStyleBackColor = true;
             // 
             // textBox45
             // 
@@ -3434,6 +3465,16 @@
             this.tabPage15.Text = "tabPage15";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
+            // btnEyeSave
+            // 
+            this.btnEyeSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnEyeSave.Location = new System.Drawing.Point(1107, 401);
+            this.btnEyeSave.Name = "btnEyeSave";
+            this.btnEyeSave.Size = new System.Drawing.Size(86, 34);
+            this.btnEyeSave.TabIndex = 181;
+            this.btnEyeSave.Text = "Save";
+            this.btnEyeSave.UseVisualStyleBackColor = true;
+            // 
             // textBox81
             // 
             this.textBox81.BackColor = System.Drawing.SystemColors.Control;
@@ -3833,6 +3874,16 @@
             this.tabPage16.TabIndex = 16;
             this.tabPage16.Text = "tabPage16";
             this.tabPage16.UseVisualStyleBackColor = true;
+            // 
+            // btnToxiSave
+            // 
+            this.btnToxiSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnToxiSave.Location = new System.Drawing.Point(1107, 401);
+            this.btnToxiSave.Name = "btnToxiSave";
+            this.btnToxiSave.Size = new System.Drawing.Size(86, 34);
+            this.btnToxiSave.TabIndex = 258;
+            this.btnToxiSave.Text = "Save";
+            this.btnToxiSave.UseVisualStyleBackColor = true;
             // 
             // txtToxiAntimonyNormal
             // 
@@ -4616,6 +4667,17 @@
             this.tabPage17.Text = "tabPage17";
             this.tabPage17.UseVisualStyleBackColor = true;
             // 
+            // btnStoolExamSave
+            // 
+            this.btnStoolExamSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnStoolExamSave.Location = new System.Drawing.Point(1107, 401);
+            this.btnStoolExamSave.Name = "btnStoolExamSave";
+            this.btnStoolExamSave.Size = new System.Drawing.Size(86, 34);
+            this.btnStoolExamSave.TabIndex = 224;
+            this.btnStoolExamSave.Text = "Save";
+            this.btnStoolExamSave.UseVisualStyleBackColor = true;
+            this.btnStoolExamSave.Click += new System.EventHandler(this.btnStoolExamSave_Click);
+            // 
             // txtStoolExamParasiteNormal
             // 
             this.txtStoolExamParasiteNormal.BackColor = System.Drawing.SystemColors.Control;
@@ -4830,66 +4892,6 @@
             this.label8.Size = new System.Drawing.Size(31, 13);
             this.label8.TabIndex = 66;
             this.label8.Text = "อายุ :";
-            // 
-            // btnOther1Save
-            // 
-            this.btnOther1Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnOther1Save.Location = new System.Drawing.Point(1107, 401);
-            this.btnOther1Save.Name = "btnOther1Save";
-            this.btnOther1Save.Size = new System.Drawing.Size(86, 34);
-            this.btnOther1Save.TabIndex = 118;
-            this.btnOther1Save.Text = "Save";
-            this.btnOther1Save.UseVisualStyleBackColor = true;
-            // 
-            // btnLungSave
-            // 
-            this.btnLungSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnLungSave.Location = new System.Drawing.Point(1107, 401);
-            this.btnLungSave.Name = "btnLungSave";
-            this.btnLungSave.Size = new System.Drawing.Size(86, 34);
-            this.btnLungSave.TabIndex = 143;
-            this.btnLungSave.Text = "Save";
-            this.btnLungSave.UseVisualStyleBackColor = true;
-            // 
-            // btnAudiogramSave
-            // 
-            this.btnAudiogramSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnAudiogramSave.Location = new System.Drawing.Point(1107, 401);
-            this.btnAudiogramSave.Name = "btnAudiogramSave";
-            this.btnAudiogramSave.Size = new System.Drawing.Size(86, 34);
-            this.btnAudiogramSave.TabIndex = 171;
-            this.btnAudiogramSave.Text = "Save";
-            this.btnAudiogramSave.UseVisualStyleBackColor = true;
-            // 
-            // btnEyeSave
-            // 
-            this.btnEyeSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnEyeSave.Location = new System.Drawing.Point(1107, 401);
-            this.btnEyeSave.Name = "btnEyeSave";
-            this.btnEyeSave.Size = new System.Drawing.Size(86, 34);
-            this.btnEyeSave.TabIndex = 181;
-            this.btnEyeSave.Text = "Save";
-            this.btnEyeSave.UseVisualStyleBackColor = true;
-            // 
-            // btnToxiSave
-            // 
-            this.btnToxiSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnToxiSave.Location = new System.Drawing.Point(1107, 401);
-            this.btnToxiSave.Name = "btnToxiSave";
-            this.btnToxiSave.Size = new System.Drawing.Size(86, 34);
-            this.btnToxiSave.TabIndex = 258;
-            this.btnToxiSave.Text = "Save";
-            this.btnToxiSave.UseVisualStyleBackColor = true;
-            // 
-            // btnStoolExamSave
-            // 
-            this.btnStoolExamSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnStoolExamSave.Location = new System.Drawing.Point(1107, 401);
-            this.btnStoolExamSave.Name = "btnStoolExamSave";
-            this.btnStoolExamSave.Size = new System.Drawing.Size(86, 34);
-            this.btnStoolExamSave.TabIndex = 224;
-            this.btnStoolExamSave.Text = "Save";
-            this.btnStoolExamSave.UseVisualStyleBackColor = true;
             // 
             // FrmCheckUpEdit
             // 
