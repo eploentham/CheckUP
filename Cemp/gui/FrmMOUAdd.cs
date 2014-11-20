@@ -435,7 +435,8 @@ namespace Cemp.gui
         private void setMOUNew(String quId)
         {
             setGrd();
-            DataTable dt = cc.quidb.selectByQuId(quId);
+            //DataTable dt = cc.quidb.selectByQuId(quId);
+            DataTable dt = cc.quidb.selectMOUByQuId(quId);
             //dgvAdd.RowCount = dt.Rows.Count + 1;
             //dgvAdd.Columns.Add(newColumn);
             try
@@ -686,7 +687,7 @@ namespace Cemp.gui
             {
                 SortGrdDatePlaceRecord();
                 setMOUNumberCnt();
-            }            
+            }
             getMOU();
             //if (mo.Id.Equals("") && (!MOUSplit))
             if (mouNew)
@@ -762,6 +763,7 @@ namespace Cemp.gui
                     moi.Discount = "0";
                     moi.Amount = String.Concat(Double.Parse(moi.PriceSale) * int.Parse(moi.Sample));
                     moi.ItemType = dgvAdd[colItemType, i].Value.ToString();
+
                     //if (cboMOU.Text.IndexOf("-"))
                     //{
                     //    moi.MOUNumber = cboMOU.Text;

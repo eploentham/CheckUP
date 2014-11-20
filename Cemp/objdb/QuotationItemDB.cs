@@ -108,12 +108,34 @@ namespace Cemp.objdb
             }
             return item;
         }
+        public DataTable selectMOUByQuId(String quId)
+        {
+            //QuotationItem item = new QuotationItem();
+            String sql = "";
+            DataTable dt=new DataTable();
+            sql = "Select qui.* From " + qui.table + " as qui inner join b_item bi on bi.item_id = qui." + qui.ItemId +
+                " Where qui." + qui.QuoId + "='" + quId + "' and qui." + qui.Active + "='1' and bi.status_real = '1' " +
+                "Order By qui." + qui.RowNumber;
+            //dt = conn.selectData(sql);
+            try
+            {
+                dt = conn.selectData(sql);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            
+
+            return dt;
+        }
         public DataTable selectByQuId(String quId)
         {
             //QuotationItem item = new QuotationItem();
             String sql = "";
 
-            sql = "Select * From " + qui.table + " Where " + qui.QuoId + "='" + quId + "' and " + qui.Active + "='1' Order By "+qui.RowNumber;
+            sql = "Select qui.* From " + qui.table + " Where qui." + qui.QuoId + "='" + quId + "' and qui." + qui.Active + "='1' "+
+                "Order By qui." + qui.RowNumber;
             //dt = conn.selectData(sql);
             DataTable dt = conn.selectData(sql);
 

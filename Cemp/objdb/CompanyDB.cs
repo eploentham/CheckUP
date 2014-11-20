@@ -254,6 +254,7 @@ namespace Cemp.objdb
                 cp.rsLine5 + "='" + p.rsLine5 + "', " +
                 cp.rsLine6 + "='" + p.rsLine6 + "', " +
                 cp.poLine1 + "='" + p.poLine1 + "', " +
+                cp.Spec1 + "='" + p.Spec1 + "', " +
                 cp.PODuePeriod + "=" + NumberNull1(p.PODuePeriod) + " " +
 
                 "Where " + cp.pkField + "='" + p.Id + "'";

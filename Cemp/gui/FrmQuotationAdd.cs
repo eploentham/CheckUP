@@ -222,7 +222,7 @@ namespace Cemp.gui
 
             //qu.Line1 = txtLine1.Text;
             qu.Line2 = txtLine2.Text;
-            //qu.Line3 = txtLine3.Text;
+            qu.Line3 = cp.quLine3;
             qu.Line4 = txtLine4.Text;
             qu.Line5 = txtLine5.Text;
             qu.Line6 = txtLine6.Text;
@@ -1007,7 +1007,6 @@ namespace Cemp.gui
             frm.setReportQuotation(qu,dt);
             frm.ShowDialog(this);
         }
-
         private void btnPrintT_Click(object sender, EventArgs e)
         {
             String sql = "";
@@ -1024,7 +1023,7 @@ namespace Cemp.gui
             //qu.StaffName = "ผู้เสนอราคา  " + qu.StaffName+" ";
             qu.StaffTel = "เบอร์โทร : " + qu.StaffTel;
             qu.StaffEmail = "Email : " + qu.StaffEmail;
-            qu.Line4=qu.Line4;
+            //qu.Line4=qu.Line4;
             qu.Line5 = "Email : " + qu.Line5;
             if (!qu.Remark1.Equals(""))
             {

@@ -46,6 +46,8 @@ namespace Cemp.objdb
             it.CustNameT = "cust_name_t";
             it.AnalysisId = "analysis_id";
             it.AnalysisNameT = "analysis_name_t";
+            it.StatusReal = "status_real";//0=default 1= itemที่ใช้งานจริง 3=เป็นพวกของแถม ค่าจัดทำเอกสาร
+            it.StatusStock = "status_stock";//0=default 1= stock 3=no stock
             if (conn.initc.connectDatabaseServer.Equals("yes"))
             {
                 it.dateGenDB = "Now()";
@@ -84,6 +86,8 @@ namespace Cemp.objdb
             item.AnalysisId = dt.Rows[0][it.AnalysisId].ToString();
             item.AnalysisNameT = dt.Rows[0][it.AnalysisNameT].ToString();
 
+            item.StatusReal = dt.Rows[0][it.StatusReal].ToString();
+            item.StatusStock = dt.Rows[0][it.StatusStock].ToString();
             return item;
         }
         public DataTable selectAll()
@@ -211,6 +215,14 @@ namespace Cemp.objdb
             {
                 p.Sort1 = "9999";
             }
+            if (p.StatusReal.Equals(""))
+            {
+                p.StatusReal = "1";
+            }
+            if (p.StatusStock.Equals(""))
+            {
+                p.StatusStock = "1";
+            }
             sql = "Insert Into " + it.table + " (" + it.pkField + "," + it.Active + "," + it.Code + "," +
                 it.NameE + "," + it.NameT + "," + it.Remark + "," +
                 it.PriceCost + "," + it.PriceSale + "," + it.ItemGroupId + "," +
@@ -218,8 +230,8 @@ namespace Cemp.objdb
                 it.Sort1 + "," + it.dateCancel + "," + it.dateCreate + "," +
                 it.dateModi + "," + it.userCancel + "," + it.userCreate + "," +
                 it.userModi + "," + it.PriceCostReal + "," + it.ItemType + "," + 
-                it.CustNameT + "," + it.CustId + "," + it.AnalysisId + "," + 
-                it.AnalysisNameT + ") " +
+                it.CustNameT + "," + it.CustId + "," + it.AnalysisId + "," +
+                it.AnalysisNameT + "," + it.StatusReal + "," + it.StatusStock + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.Code + "','" +
                 p.NameE + "','" + p.NameT + "','" + p.Remark + "'," +
                 NumberNull1(p.PriceCost) + "," + NumberNull1(p.PriceSale) + ",'" + p.ItemGroupId + "','" +
@@ -227,8 +239,8 @@ namespace Cemp.objdb
                 p.Sort1 + "','" +p.dateCancel + "'," + p.dateGenDB + ",'" + 
                 p.dateModi + "','" +p.userCancel + "','" + p.userCreate + "','" +
                 p.userModi + "'," + NumberNull1(p.PriceCostReal) + ",'" + p.ItemType + "','" + 
-                p.CustNameT + "','" + p.CustId + "','" + p.AnalysisId + "','" + 
-                p.AnalysisNameT + "')";
+                p.CustNameT + "','" + p.CustId + "','" + p.AnalysisId + "','" +
+                p.AnalysisNameT + "','" + p.StatusReal + "','" + p.StatusStock + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -276,7 +288,9 @@ namespace Cemp.objdb
                 it.CustNameT + "='" + p.CustNameT + "', " +
                 it.CustId + "='" + p.CustId + "', " +
                 it.AnalysisId + "='" + p.AnalysisId + "', " +
-                it.AnalysisNameT + "='" + p.AnalysisNameT + "' " +
+                it.AnalysisNameT + "='" + p.AnalysisNameT + "', " +
+                it.StatusReal + "='" + p.StatusReal + "', " +
+                it.StatusStock + "='" + p.StatusStock + "' " +
                 "Where " + it.pkField + "='" + p.Id + "'";
             try
             {

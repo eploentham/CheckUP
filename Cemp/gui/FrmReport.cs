@@ -406,7 +406,7 @@ namespace Cemp
                 rpt.SetParameterValue("custFax", qu.CustFax);
                 rpt.SetParameterValue("custEmail", qu.CustEmail);
                 rpt.SetParameterValue("line2", qu.Line2);
-                rpt.SetParameterValue("staffName", "ผู้เสนอราคา  " + qu.StaffName);
+                rpt.SetParameterValue("staffName", "ผู้เสนอราคา : " + qu.StaffName);
                 rpt.SetParameterValue("staffName1", "( "+qu.StaffName+" )");
                 rpt.SetParameterValue("staffTel", qu.StaffTel);
                 rpt.SetParameterValue("staffEmail", qu.StaffEmail);

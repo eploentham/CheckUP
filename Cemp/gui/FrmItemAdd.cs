@@ -77,6 +77,26 @@ namespace Cemp.gui
             cboCustPO = cc.cudb.getCboVendor(cboCustPO);
             cboCustPO.Text = cc.getVendorNamet(it.CustId);
             txtSort1.Text = it.Sort1;
+            if (it.StatusReal.Equals("1"))
+            {
+                chkItemReal.Checked = true;
+                chkItemFail.Checked = false;
+            }
+            else
+            {
+                chkItemFail.Checked = true;
+                chkItemReal.Checked = false;
+            }
+            if (it.StatusStock.Equals("1"))
+            {
+                chkStock.Checked = true;
+                chkStatusNoStock.Checked = false;
+            }
+            else
+            {
+                chkStock.Checked = false;
+                chkStatusNoStock.Checked = true;
+            }
         }
         private void getItem()
         {
@@ -100,7 +120,24 @@ namespace Cemp.gui
             it.CustNameT = cboCustPO.Text;
             it.AnalysisId = cc.getValueCboItem(cboAnalysis);
             it.AnalysisNameT = cboAnalysis.Text;
-            it.Sort1 = "";
+            it.Sort1 = txtSort1.Text;
+
+            if (chkItemReal.Checked)
+            {
+                it.StatusReal = "1";
+            }
+            else
+            {
+                it.StatusReal = "3";
+            }
+            if (chkStock.Checked)
+            {
+                it.StatusStock = "1";
+            }
+            else
+            {
+                it.StatusStock = "3";
+            }
         }
         private void FrmItemAdd_Load(object sender, EventArgs e)
         {

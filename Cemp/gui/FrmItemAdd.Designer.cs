@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtSort1 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.btnAnalysisAdd = new System.Windows.Forms.Button();
             this.cboAnalysis = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -65,13 +67,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtSort1 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.chkItemReal = new System.Windows.Forms.RadioButton();
+            this.chkItemFail = new System.Windows.Forms.RadioButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.chkStatusNoStock = new System.Windows.Forms.RadioButton();
+            this.chkStock = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel2);
+            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.txtSort1);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.btnAnalysisAdd);
@@ -112,9 +122,28 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(590, 498);
+            this.groupBox1.Size = new System.Drawing.Size(590, 696);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // txtSort1
+            // 
+            this.txtSort1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSort1.Location = new System.Drawing.Point(439, 257);
+            this.txtSort1.Name = "txtSort1";
+            this.txtSort1.Size = new System.Drawing.Size(75, 22);
+            this.txtSort1.TabIndex = 143;
+            this.txtSort1.TabStop = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(337, 260);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(32, 16);
+            this.label15.TabIndex = 142;
+            this.label15.Text = "Sort";
             // 
             // btnAnalysisAdd
             // 
@@ -295,7 +324,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(439, 447);
+            this.btnSave.Location = new System.Drawing.Point(439, 648);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 33);
             this.btnSave.TabIndex = 124;
@@ -305,7 +334,7 @@
             // 
             // btnUnActive
             // 
-            this.btnUnActive.Location = new System.Drawing.Point(318, 425);
+            this.btnUnActive.Location = new System.Drawing.Point(318, 626);
             this.btnUnActive.Name = "btnUnActive";
             this.btnUnActive.Size = new System.Drawing.Size(103, 23);
             this.btnUnActive.TabIndex = 123;
@@ -317,7 +346,7 @@
             // 
             this.ChkUnActive.AutoSize = true;
             this.ChkUnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.ChkUnActive.Location = new System.Drawing.Point(241, 425);
+            this.ChkUnActive.Location = new System.Drawing.Point(241, 626);
             this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2);
             this.ChkUnActive.Name = "ChkUnActive";
             this.ChkUnActive.Size = new System.Drawing.Size(60, 21);
@@ -330,7 +359,7 @@
             // 
             this.chkActive.AutoSize = true;
             this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chkActive.Location = new System.Drawing.Point(116, 425);
+            this.chkActive.Location = new System.Drawing.Point(116, 626);
             this.chkActive.Margin = new System.Windows.Forms.Padding(2);
             this.chkActive.Name = "chkActive";
             this.chkActive.Size = new System.Drawing.Size(61, 21);
@@ -502,30 +531,73 @@
             this.label1.TabIndex = 101;
             this.label1.Text = "รหัส  yyxxx:";
             // 
-            // txtSort1
+            // panel1
             // 
-            this.txtSort1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSort1.Location = new System.Drawing.Point(439, 257);
-            this.txtSort1.Name = "txtSort1";
-            this.txtSort1.Size = new System.Drawing.Size(75, 22);
-            this.txtSort1.TabIndex = 143;
-            this.txtSort1.TabStop = false;
+            this.panel1.Controls.Add(this.chkItemFail);
+            this.panel1.Controls.Add(this.chkItemReal);
+            this.panel1.Location = new System.Drawing.Point(108, 429);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(464, 44);
+            this.panel1.TabIndex = 144;
             // 
-            // label15
+            // chkItemReal
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(337, 260);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(32, 16);
-            this.label15.TabIndex = 142;
-            this.label15.Text = "Sort";
+            this.chkItemReal.AutoSize = true;
+            this.chkItemReal.Location = new System.Drawing.Point(11, 14);
+            this.chkItemReal.Name = "chkItemReal";
+            this.chkItemReal.Size = new System.Drawing.Size(177, 17);
+            this.chkItemReal.TabIndex = 0;
+            this.chkItemReal.TabStop = true;
+            this.chkItemReal.Text = "เป็นรายการที่ใช้ในข้อมูลข้อตกลง";
+            this.chkItemReal.UseVisualStyleBackColor = true;
+            // 
+            // chkItemFail
+            // 
+            this.chkItemFail.AutoSize = true;
+            this.chkItemFail.Location = new System.Drawing.Point(257, 14);
+            this.chkItemFail.Name = "chkItemFail";
+            this.chkItemFail.Size = new System.Drawing.Size(120, 17);
+            this.chkItemFail.TabIndex = 1;
+            this.chkItemFail.TabStop = true;
+            this.chkItemFail.Text = "เป็นรายการของแถม";
+            this.chkItemFail.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.chkStatusNoStock);
+            this.panel2.Controls.Add(this.chkStock);
+            this.panel2.Location = new System.Drawing.Point(108, 493);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(464, 44);
+            this.panel2.TabIndex = 145;
+            // 
+            // chkStatusNoStock
+            // 
+            this.chkStatusNoStock.AutoSize = true;
+            this.chkStatusNoStock.Location = new System.Drawing.Point(257, 14);
+            this.chkStatusNoStock.Name = "chkStatusNoStock";
+            this.chkStatusNoStock.Size = new System.Drawing.Size(113, 17);
+            this.chkStatusNoStock.TabIndex = 1;
+            this.chkStatusNoStock.TabStop = true;
+            this.chkStatusNoStock.Text = "ไม่ต้องนำเข้าStock";
+            this.chkStatusNoStock.UseVisualStyleBackColor = true;
+            // 
+            // chkStock
+            // 
+            this.chkStock.AutoSize = true;
+            this.chkStock.Location = new System.Drawing.Point(11, 14);
+            this.chkStock.Name = "chkStock";
+            this.chkStock.Size = new System.Drawing.Size(53, 17);
+            this.chkStock.TabIndex = 0;
+            this.chkStock.TabStop = true;
+            this.chkStock.Text = "Stock";
+            this.chkStock.UseVisualStyleBackColor = true;
             // 
             // FrmItemAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(614, 522);
+            this.ClientSize = new System.Drawing.Size(614, 720);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmItemAdd";
@@ -534,6 +606,10 @@
             this.Load += new System.EventHandler(this.FrmItemAdd_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -579,5 +655,11 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtSort1;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton chkItemFail;
+        private System.Windows.Forms.RadioButton chkItemReal;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton chkStatusNoStock;
+        private System.Windows.Forms.RadioButton chkStock;
     }
 }
