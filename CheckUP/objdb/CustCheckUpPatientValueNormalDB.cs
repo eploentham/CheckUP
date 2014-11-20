@@ -350,7 +350,7 @@ namespace CheckUP.objdb
                 ccpvn.cbcRbcMorpholog + "='" + RbcMorpholog + "', " +
                 //ccpvn.cbcSummary + "='" + Summary + "', " +
                 ccpvn.cbcWbc + "='" + Wbc + "' " ;
-                chk = conn.ExecuteNonQuery(sql); ;
+                chk = conn.ExecuteNonQuery(sql);
             }
             catch (Exception ex)
             {
@@ -359,7 +359,7 @@ namespace CheckUP.objdb
             return chk;
         }
         public String UpdateUA(String Color, String Appe, String Sugar, String spgr, String pH,
-            String Protein, String Wbc, String Rbc, String Epi, String Bact)
+            String Protein, String Wbc, String Rbc, String Epi, String Bact, String ketone, String leu, String blood)
         {
             String chk = "", sql = "";
             try
@@ -373,12 +373,12 @@ namespace CheckUP.objdb
                 ccpvn.urineWbc + "='" + Wbc + "', " +
                 ccpvn.urineRbc + "='" + Rbc + "', " +
                 ccpvn.urineEpithelium + "='" + Epi + "', " +
-                ccpvn.urineBacteria + "='" + Bact + "' ";
-                    //ccpvn.urineSummary + "='" + Result + "', " +                
-                    //ccpvn.urineRbc + "='" + Rbc + "', " +
-                //ccpvn.urineSummary + "='" + Summary + "', " +
+                ccpvn.urineBacteria + "='" + Bact + "', " +
+                ccpvn.urineLeu + "='" + leu + "', " +
+                ccpvn.urineKetone + "='" + ketone + "', " +
+                ccpvn.urineBlood + "='" + blood + "' ";
                 //ccpvn.urineResult + "='" + Result + "' " ;
-                chk = conn.ExecuteNonQuery(sql); ;
+                chk = conn.ExecuteNonQuery(sql);
             }
             catch (Exception ex)
             {
@@ -396,7 +396,7 @@ namespace CheckUP.objdb
                 //ccp.triglycerideSummary + "='" + summary + "' " +
                 //    //ccp.sugarSuggess + "='" + suggess + "' " +
                 //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQuery(sql); ;
+                chk = conn.ExecuteNonQuery(sql);
             }
             catch (Exception ex)
             {
@@ -415,7 +415,7 @@ namespace CheckUP.objdb
                 ccpvn.ldl + "='" + ldl + "', " +
                 ccpvn.hdl + "='" + hdl + "' ";
                 //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQuery(sql); ;
+                chk = conn.ExecuteNonQuery(sql);
             }
             catch (Exception ex)
             {
@@ -434,7 +434,7 @@ namespace CheckUP.objdb
                 ccpvn.liverAlp + "='" + sgpt + "', " +
                 ccpvn.liverSgpt + "='" + alt + "' ";
                 //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQuery(sql); ;
+                chk = conn.ExecuteNonQuery(sql);
             }
             catch (Exception ex)
             {
@@ -452,7 +452,7 @@ namespace CheckUP.objdb
                     //ccp.kidneySummary + "='" + summary + "', " +
                 ccpvn.kidneyCreatinine + "='" + creatinine + "' ";
                 //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQuery(sql); ;
+                chk = conn.ExecuteNonQuery(sql);
             }
             catch (Exception ex)
             {
@@ -470,7 +470,7 @@ namespace CheckUP.objdb
                 //ccp.uricAcidSummary + "='" + summary + "' " +
                     //ccp.sugarSuggess + "='" + suggess + "' " +
                 //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQuery(sql); ;
+                chk = conn.ExecuteNonQuery(sql);
             }
             catch (Exception ex)
             {
@@ -490,7 +490,7 @@ namespace CheckUP.objdb
                 ccpvn.amphetamine + "='" + Amphetamine + "', " +
                 ccpvn.calcium + "='" + Calcium + "' ";
                 //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQuery(sql); ;
+                chk = conn.ExecuteNonQuery(sql);
             }
             catch (Exception ex)
             {
@@ -513,7 +513,7 @@ namespace CheckUP.objdb
                 ccpvn.lungPerFev1 + "='" + LungPerFev1 + "' ";
                 //ccpvn.lungSummary + "='" + LungSummary + "' " +
                 //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQuery(sql); ;
+                chk = conn.ExecuteNonQuery(sql);
             }
             catch (Exception ex)
             {

@@ -70,8 +70,13 @@ namespace CheckUP.gui
         int colEyeCnt = 13;
 
         int colStoolExamRow = 0, colStoolExamId = 1, colStoolExamName=2, colStoolExamColor = 3, colStoolExamAppearance = 4, colStoolExamWBC = 5, colStoolExamRBC = 6, colParasite = 7, colStoolExamSummary = 8;
-        int colStoolExamCnt = 9;    
-    
+        int colStoolExamCnt = 9;
+
+        int colToxiRow = 0, colToxiId = 1, colToxiName = 2, colToxiLead = 3, colToxiAluminium = 4, colToxiCadmium = 5, colToxiMercury = 6, colToxiTin = 7, colToxiCopper = 8, colToxiManganese = 9, colToxiZinc = 10, colToxiAmmonia = 11;
+        int colToxiHippuric = 12, colToxiMethyl = 13, colToxiAcetone = 14, colToxiNickel = 15, colToxiChromium = 16, colToxiPhenol = 17, colToxiKetone = 18, colToxiBenzene = 19, colToxiMandelic = 20, colToxiMethanol = 21;
+        int colToxiEthanol = 22, colToxiIPA = 23, colToxiArsenic = 24, colToxiHexane = 25, colToxiFomaldehyde = 26, colToxiTrichloroethylene = 27, colToxiAntimony = 28, colToxiFluoride = 29;
+        int colToxiCnt = 30;
+
         Font font = new Font("Microsoft Sans Serif", 12);
         Boolean flagNew=false;
         String fileName = "", fileNamePE = "", fileNameFBS = "", fileNameXray = "", fileNameCBC = "", fileNameUA = "", fileNameTri = "", fileNameCho = "", fileNameLung="";
@@ -171,6 +176,7 @@ namespace CheckUP.gui
             setGrdAudio();
             setGrdEye();
             setGrdStoolExam();
+            setGrdToxi();
 
             setGrdPE(cucId);
             setGrdXray(cucId);
@@ -187,6 +193,7 @@ namespace CheckUP.gui
             setGrdAudoigram(cucId);
             setGrdEye(cucId);
             setGrdStoolExam(cucId);
+            setGrdToxi(cucId);
         }
 
         private void setResize()
@@ -305,6 +312,13 @@ namespace CheckUP.gui
             dgvStoolExam.Height = tC.TabPages[tabStoolExam].Height - 10;
             dgvStoolExam.Left = dgvPE.Left;
             dgvStoolExam.Top = dgvPE.Left;
+
+            tC.TabPages[tabToxi].Width = tC.Width - 10;
+            tC.TabPages[tabToxi].Height = tC.Height - 10;
+            dgvToxi.Width = tC.TabPages[tabToxi].Width - 10;
+            dgvToxi.Height = tC.TabPages[tabToxi].Height - 10;
+            dgvToxi.Left = dgvPE.Left;
+            dgvToxi.Top = dgvPE.Left;
 
             //groupBox1.Width = this.Width - 50;
             //groupBox1.Height = this.Height = 150;
@@ -860,6 +874,78 @@ namespace CheckUP.gui
             dgvStoolExam.Font = font;
             dgvStoolExam.Columns[colStoolExamId].Visible = false;
         }
+        private void setGrdToxi()
+        {
+            dgvToxi.ColumnCount = colToxiCnt;
+            dgvToxi.Rows.Clear();
+            dgvToxi.RowCount = 1;
+            dgvToxi.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvToxi.Columns[colToxiRow].Width = 50;
+            dgvToxi.Columns[colToxiName].Width = 250;
+            dgvToxi.Columns[colToxiLead].Width = 120;
+            dgvToxi.Columns[colToxiAluminium].Width = 120;
+            dgvToxi.Columns[colToxiCadmium].Width = 120;
+            dgvToxi.Columns[colToxiMercury].Width = 120;
+            dgvToxi.Columns[colToxiTin].Width = 120;
+            dgvToxi.Columns[colToxiCopper].Width = 120;
+            dgvToxi.Columns[colToxiManganese].Width = 120;
+            dgvToxi.Columns[colToxiZinc].Width = 120;
+            dgvToxi.Columns[colToxiAmmonia].Width = 120;
+            dgvToxi.Columns[colToxiHippuric].Width = 120;
+            dgvToxi.Columns[colToxiMethyl].Width = 120;
+            dgvToxi.Columns[colToxiAcetone].Width = 120;
+            dgvToxi.Columns[colToxiNickel].Width = 120;
+            dgvToxi.Columns[colToxiChromium].Width = 120;
+            dgvToxi.Columns[colToxiPhenol].Width = 120;
+            dgvToxi.Columns[colToxiKetone].Width = 120;
+            dgvToxi.Columns[colToxiBenzene].Width = 120;
+            dgvToxi.Columns[colToxiMandelic].Width = 120;
+            dgvToxi.Columns[colToxiMethanol].Width = 120;
+            dgvToxi.Columns[colToxiEthanol].Width = 120;
+            dgvToxi.Columns[colToxiIPA].Width = 120;
+            dgvToxi.Columns[colToxiArsenic].Width = 120;
+            dgvToxi.Columns[colToxiHexane].Width = 120;
+            dgvToxi.Columns[colToxiFomaldehyde].Width = 120;
+            dgvToxi.Columns[colToxiTrichloroethylene].Width = 120;
+            dgvToxi.Columns[colToxiAntimony].Width = 120;
+            dgvToxi.Columns[colToxiFluoride].Width = 120;
+
+            dgvToxi.Columns[colToxiRow].HeaderText = "ลำดับ";
+            dgvToxi.Columns[colToxiName].HeaderText = "ชื่อ นามสกุล";
+            dgvToxi.Columns[colToxiLead].HeaderText = "Lead";
+            dgvToxi.Columns[colToxiAluminium].HeaderText = "Aluminium";
+            dgvToxi.Columns[colToxiCadmium].HeaderText = "Cadmium";
+            dgvToxi.Columns[colToxiMercury].HeaderText = "Mercury";
+            dgvToxi.Columns[colToxiTin].HeaderText = "Tin";
+            dgvToxi.Columns[colToxiCopper].HeaderText = "Copper";
+            dgvToxi.Columns[colToxiManganese].HeaderText = "Manganese";
+            dgvToxi.Columns[colToxiZinc].HeaderText = "Zinc";
+            dgvToxi.Columns[colToxiAmmonia].HeaderText = "Ammonia";
+            dgvToxi.Columns[colToxiHippuric].HeaderText = "Hippuric";
+            dgvToxi.Columns[colToxiMethyl].HeaderText = "Methyl";
+            dgvToxi.Columns[colToxiAcetone].HeaderText = "Acetone";
+            dgvToxi.Columns[colToxiNickel].HeaderText = "Nickel";
+            dgvToxi.Columns[colToxiChromium].HeaderText = "Chromium";
+            dgvToxi.Columns[colToxiPhenol].HeaderText = "Phenol";
+            dgvToxi.Columns[colToxiKetone].HeaderText = "Ketone";
+            dgvToxi.Columns[colToxiBenzene].HeaderText = "Benzene";
+            dgvToxi.Columns[colToxiMandelic].HeaderText = "Mandelic";
+            dgvToxi.Columns[colToxiMethanol].HeaderText = "Methanol";
+            dgvToxi.Columns[colToxiEthanol].HeaderText = "Ethanol";
+            dgvToxi.Columns[colToxiIPA].HeaderText = "IPA";
+            dgvToxi.Columns[colToxiArsenic].HeaderText = "Arsenic";
+            dgvToxi.Columns[colToxiHexane].HeaderText = "Hexane";
+            dgvToxi.Columns[colToxiFomaldehyde].HeaderText = "Fomaldehyde";
+            dgvToxi.Columns[colToxiTrichloroethylene].HeaderText = "Trichloroethylene";
+            dgvToxi.Columns[colToxiAntimony].HeaderText = "Antimony";
+            dgvToxi.Columns[colToxiFluoride].HeaderText = "Fluoride";
+
+            dgvToxi.Columns[colToxiId].HeaderText = "id";
+            //Font font = new Font("Microsoft Sans Serif", 12);
+
+            dgvToxi.Font = font;
+            dgvToxi.Columns[colToxiId].Visible = false;
+        }
         private void setControl(String cucId)
         {
             cuc = cc.cucdb.selectByPk(cucId);
@@ -1404,7 +1490,7 @@ namespace CheckUP.gui
         private void setGrdEye(String cucId)
         {
             DataTable dt;
-            dgvAudio.Rows.Clear();
+            dgvEye.Rows.Clear();
             if (flagNew)
             {
                 dt = cc.ccpdb.selectAllByCucId(cucId);
@@ -1476,6 +1562,63 @@ namespace CheckUP.gui
                     if ((i % 2) != 0)
                     {
                         dgvStoolExam.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                    }
+                }
+            }
+            //dgvView.ReadOnly = true;
+        }
+        private void setGrdToxi(String cucId)
+        {
+            DataTable dt;
+            dgvToxi.Rows.Clear();
+            if (flagNew)
+            {
+                dt = cc.ccpdb.selectAllByCucId(cucId);
+            }
+            else
+            {
+                dt = dtAll;
+            }
+
+            if (dt.Rows.Count > 0)
+            {
+                dgvToxi.RowCount = dt.Rows.Count;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    dgvToxi[colToxiRow, i].Value = (i + 1);
+                    dgvToxi[colToxiName, i].Value = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
+                    dgvToxi[colToxiLead, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeShortLongLeft].ToString();
+                    dgvToxi[colToxiAluminium, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeShortLongRight].ToString();
+                    dgvToxi[colToxiCadmium, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeSquintLeft].ToString();
+                    dgvToxi[colToxiMercury, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeSquintRight].ToString();
+                    dgvToxi[colToxiTin, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeDegreeLeft].ToString();
+                    dgvToxi[colToxiCopper, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeDegreeRight].ToString();
+                    dgvToxi[colToxiManganese, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeOldLeft].ToString();
+                    dgvToxi[colToxiZinc, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeOldRight].ToString();
+                    dgvToxi[colToxiAmmonia, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeBlindness].ToString();
+
+                    dgvToxi[colToxiHippuric, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeResult].ToString();
+                    dgvToxi[colToxiMethyl, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeSummary].ToString();
+                    dgvToxi[colToxiAcetone, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram3000R].ToString();
+                    dgvToxi[colToxiNickel, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram4000R].ToString();
+                    dgvToxi[colToxiChromium, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram6000R].ToString();
+                    dgvToxi[colToxiPhenol, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram8000R].ToString();
+                    dgvToxi[colToxiKetone, i].Value = dt.Rows[i][cc.ccpdb.ccp.AudiogramSummaryR].ToString();
+                    dgvToxi[colToxiBenzene, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    dgvToxi[colToxiMandelic, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    dgvToxi[colToxiMethanol, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    dgvToxi[colToxiEthanol, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    dgvToxi[colToxiIPA, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    dgvToxi[colToxiArsenic, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    dgvToxi[colToxiHexane, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    dgvToxi[colToxiFomaldehyde, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    dgvToxi[colToxiTrichloroethylene, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    dgvToxi[colToxiAntimony, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    dgvToxi[colToxiFluoride, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    
+                    if ((i % 2) != 0)
+                    {
+                        dgvToxi.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
                     }
                 }
             }
@@ -3054,7 +3197,10 @@ namespace CheckUP.gui
                 rc.BMI = dtAll.Rows[i][cc.ccpdb.ccp.bmi].ToString();
                 rc.Height = dtAll.Rows[i][cc.ccpdb.ccp.patientHeight].ToString();
                 rc.Weight = dtAll.Rows[i][cc.ccpdb.ccp.patientWeight].ToString();
+                rc.VitalSign = dtAll.Rows[i][cc.ccpdb.ccp.vitalsign].ToString();
+                rc.Pulse = dtAll.Rows[i][cc.ccpdb.ccp.patientPulse].ToString();
                 rc.RowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
+                rc.PESummary = dtAll.Rows[i][cc.ccpdb.ccp.summaryPhysicalExam].ToString();
 
                 //Xray
                 if (int.Parse(cuc.XraySuccess) > 0)
@@ -3090,7 +3236,7 @@ namespace CheckUP.gui
                     rc.Remark = "";
                     rc.StatusLab = "xray";
                     rc.Sort1 = "1009";
-                    rc.Sort2 = "10";
+                    rc.Sort2 = "11";
                     cc.rcdb.insertRCheckUp(rc);
                 }
                 //CBC
@@ -4021,8 +4167,8 @@ namespace CheckUP.gui
                     cc.rcdb.insertRCheckUp(rc);
                 }
 
-                //
-                if (int.Parse(cuc.LungSuccess) > 0)
+                //Audiogram
+                if (int.Parse(cuc.AudioSuccess) > 0)
                 {
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "การตรวจ (AudioGram)";
@@ -4036,7 +4182,7 @@ namespace CheckUP.gui
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจ AudioGram";
                     rc.Remark = "";
-                    rc.StatusLab = "audoi";
+                    rc.StatusLab = "audio";
                     rc.Sort1 = "1020";
                     rc.Sort2 = "10";
                     cc.rcdb.insertRCheckUp(rc);
@@ -4070,7 +4216,7 @@ namespace CheckUP.gui
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจ AudioGram";
                     rc.Remark = "";
-                    rc.StatusLab = "audoi";
+                    rc.StatusLab = "audio";
                     rc.Sort1 = "1020";
                     rc.Sort2 = "12";
                     cc.rcdb.insertRCheckUp(rc);
@@ -4087,7 +4233,7 @@ namespace CheckUP.gui
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจ AudioGram";
                     rc.Remark = "";
-                    rc.StatusLab = "audoi";
+                    rc.StatusLab = "audio";
                     rc.Sort1 = "1020";
                     rc.Sort2 = "13";
                     cc.rcdb.insertRCheckUp(rc);
@@ -4104,7 +4250,7 @@ namespace CheckUP.gui
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจ AudioGram";
                     rc.Remark = "";
-                    rc.StatusLab = "audoi";
+                    rc.StatusLab = "audio";
                     rc.Sort1 = "1020";
                     rc.Sort2 = "14";
                     cc.rcdb.insertRCheckUp(rc);
@@ -4121,7 +4267,7 @@ namespace CheckUP.gui
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจ AudioGram";
                     rc.Remark = "";
-                    rc.StatusLab = "audoi";
+                    rc.StatusLab = "audio";
                     rc.Sort1 = "1020";
                     rc.Sort2 = "15";
                     cc.rcdb.insertRCheckUp(rc);
@@ -4138,7 +4284,7 @@ namespace CheckUP.gui
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจ AudioGram";
                     rc.Remark = "";
-                    rc.StatusLab = "audoi";
+                    rc.StatusLab = "audio";
                     rc.Sort1 = "1020";
                     rc.Sort2 = "16";
                     cc.rcdb.insertRCheckUp(rc);
@@ -4155,7 +4301,7 @@ namespace CheckUP.gui
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจ AudioGram";
                     rc.Remark = "";
-                    rc.StatusLab = "audoi";
+                    rc.StatusLab = "audio";
                     rc.Sort1 = "1020";
                     rc.Sort2 = "17";
                     cc.rcdb.insertRCheckUp(rc);
@@ -4172,7 +4318,7 @@ namespace CheckUP.gui
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจ AudioGram";
                     rc.Remark = "";
-                    rc.StatusLab = "audoi";
+                    rc.StatusLab = "audio";
                     rc.Sort1 = "1020";
                     rc.Sort2 = "18";
                     cc.rcdb.insertRCheckUp(rc);
@@ -4189,7 +4335,7 @@ namespace CheckUP.gui
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจ AudioGram";
                     rc.Remark = "";
-                    rc.StatusLab = "audoi";
+                    rc.StatusLab = "audio";
                     rc.Sort1 = "1020";
                     rc.Sort2 = "19";
                     cc.rcdb.insertRCheckUp(rc);
@@ -4206,7 +4352,7 @@ namespace CheckUP.gui
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจ AudioGram";
                     rc.Remark = "";
-                    rc.StatusLab = "audoi";
+                    rc.StatusLab = "audio";
                     rc.Sort1 = "1020";
                     rc.Sort2 = "20";
                     cc.rcdb.insertRCheckUp(rc);
@@ -4223,7 +4369,7 @@ namespace CheckUP.gui
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจ AudioGram";
                     rc.Remark = "";
-                    rc.StatusLab = "audoi";
+                    rc.StatusLab = "audio";
                     rc.Sort1 = "1020";
                     rc.Sort2 = "21";
                     cc.rcdb.insertRCheckUp(rc);
@@ -4240,7 +4386,7 @@ namespace CheckUP.gui
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจ AudioGram";
                     rc.Remark = "";
-                    rc.StatusLab = "audoi";
+                    rc.StatusLab = "audio";
                     rc.Sort1 = "1020";
                     rc.Sort2 = "22";
                     cc.rcdb.insertRCheckUp(rc);
@@ -4257,8 +4403,644 @@ namespace CheckUP.gui
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจ AudioGram";
                     rc.Remark = "";
-                    rc.StatusLab = "audoi";
+                    rc.StatusLab = "audio";
                     rc.Sort1 = "1020";
+                    rc.Sort2 = "23";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                }
+                //Eye
+                if (int.Parse(cuc.EyeSuccess) > 0)
+                {
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Eye)";
+                    rc.LabName = "EyeShortLongLeft ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.EyeShortLongLeft].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.EyeShortLongLeft].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Eye";
+                    rc.Remark = "";
+                    rc.StatusLab = "eye";
+                    rc.Sort1 = "1021";
+                    rc.Sort2 = "10";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Eye)";
+                    rc.LabName = "EyeShortLongRight ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.EyeShortLongRight].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.EyeShortLongRight].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Eye";
+                    rc.Remark = "";
+                    rc.StatusLab = "eye";
+                    rc.Sort1 = "1021";
+                    rc.Sort2 = "11";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Eye)";
+                    rc.LabName = "EyeSquintLeft ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.EyeSquintLeft].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.EyeSquintLeft].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Eye";
+                    rc.Remark = "";
+                    rc.StatusLab = "eye";
+                    rc.Sort1 = "1021";
+                    rc.Sort2 = "12";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Eye)";
+                    rc.LabName = "EyeSquintRight ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.EyeSquintRight].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.EyeSquintRight].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Eye";
+                    rc.Remark = "";
+                    rc.StatusLab = "eye";
+                    rc.Sort1 = "1021";
+                    rc.Sort2 = "13";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Eye)";
+                    rc.LabName = "EyeDegreeLeft ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.EyeDegreeLeft].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.EyeDegreeLeft].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Eye";
+                    rc.Remark = "";
+                    rc.StatusLab = "eye";
+                    rc.Sort1 = "1021";
+                    rc.Sort2 = "14";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Eye)";
+                    rc.LabName = "EyeDegreeRight ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.EyeDegreeRight].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.EyeDegreeRight].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Eye";
+                    rc.Remark = "";
+                    rc.StatusLab = "eye";
+                    rc.Sort1 = "1021";
+                    rc.Sort2 = "15";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Eye)";
+                    rc.LabName = "EyeOldLeft ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.EyeOldLeft].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.EyeOldLeft].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Eye";
+                    rc.Remark = "";
+                    rc.StatusLab = "eye";
+                    rc.Sort1 = "1021";
+                    rc.Sort2 = "16";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Eye)";
+                    rc.LabName = "EyeOldRight ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.EyeOldRight].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.EyeOldRight].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Eye";
+                    rc.Remark = "";
+                    rc.StatusLab = "eye";
+                    rc.Sort1 = "1021";
+                    rc.Sort2 = "17";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Eye)";
+                    rc.LabName = "EyeBlindness ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.EyeBlindness].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.EyeBlindness].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Eye";
+                    rc.Remark = "";
+                    rc.StatusLab = "eye";
+                    rc.Sort1 = "1021";
+                    rc.Sort2 = "18";
+                    cc.rcdb.insertRCheckUp(rc);
+                    
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Eye)";
+                    rc.LabName = "EyeSummary ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.EyeSummary].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.EyeSummary].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Eye";
+                    rc.Remark = "";
+                    rc.StatusLab = "eye";
+                    rc.Sort1 = "1021";
+                    rc.Sort2 = "19";
+                    cc.rcdb.insertRCheckUp(rc);                                        
+                }
+                //Toxi
+                if (int.Parse(cuc.ToxiSuccess) > 0)
+                {
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiAcetone ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiAcetone].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiAcetone].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "10";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiAluminium ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiAluminium].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiAluminium].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "11";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiAmmonia ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiAmmonia].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiAmmonia].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "12";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiAntimony ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiAntimony].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiAntimony].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "13";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiArsenic ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiArsenic].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiArsenic].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "14";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiBenzene ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiBenzene].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiBenzene].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "15";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiCadmium ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiCadmium].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiCadmium].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "16";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiChromium ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiChromium].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiChromium].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "17";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiCopper ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiCopper].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiCopper].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "18";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiEthanol ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiEthanol].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiEthanol].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "19";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiFluoride ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiFluoride].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiFluoride].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "20";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiFomaldehyde ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiFomaldehyde].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiFomaldehyde].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "21";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiHexane ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiHexane].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiHexane].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "22";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiHippuric ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiHippuric].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiHippuric].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "23";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiIPA ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiIPA].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiIPA].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "23";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiKetone ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiKetone].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiKetone].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "23";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiLead ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiLead].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiLead].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "23";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiMandelic ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiMandelic].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiMandelic].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "23";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiManganese ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiManganese].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiManganese].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "23";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiMercury ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiMercury].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiMercury].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "23";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiMethanol ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiMethanol].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiMethanol].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "23";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiMethyl ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiMethyl].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiMethyl].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "23";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiNickel ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiNickel].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiNickel].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "23";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiPhenol ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiPhenol].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiPhenol].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "23";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiTin ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiTin].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiTin].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "23";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiTrichloroethylene ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiTrichloroethylene].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiTrichloroethylene].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
+                    rc.Sort2 = "23";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Toxicology)";
+                    rc.LabName = "ToxiZinc ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiZinc].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiZinc].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                    rc.Remark = "";
+                    rc.StatusLab = "toxi";
+                    rc.Sort1 = "1022";
                     rc.Sort2 = "23";
                     cc.rcdb.insertRCheckUp(rc);
 
@@ -5085,7 +5867,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameStoolExam);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row = 0;
+            int rowCount = xlRange.Rows.Count, rowStoolExam = 0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             for (int i = int.Parse(ei.StoolExamRow); i <= rowCount; i++)
@@ -5150,16 +5932,16 @@ namespace CheckUP.gui
 
                 chk = cc.ccpdb.updateStoolExam(rowNumber, txtId.Text, StoolExamAppearance, StoolExamColor, StoolExamWBC, StoolExamRBC, Parasite, StoolExamSummary);
                 pB1.Value = i;
-                row++;
+                rowStoolExam++;
             }
             xlWorkbook.Close(true, misValue, misValue);
             xlApp.Quit();
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdStoolExam(txtId.Text);
-            cc.cucdb.updateEyeImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row);
+            cc.cucdb.updateStoolExamImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), rowStoolExam);
             txtStoolExamCntEmp.Text = rowCount.ToString();
-            txtStoolExamSucess.Text = row.ToString();
+            txtStoolExamSucess.Text = rowStoolExam.ToString();
             Cursor.Current = cursor;
         }
 
@@ -5167,7 +5949,7 @@ namespace CheckUP.gui
         {
             ofd.ShowDialog();
             fileNameStoolExam = ofd.FileName;
-            btnEyeImport.Enabled = true;
+            btnStoolExamImport.Enabled = true;
         }
 
         private void btnToxiImport_Click(object sender, EventArgs e)
@@ -5186,7 +5968,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameToxi);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row = 0;
+            int rowCount = xlRange.Rows.Count, rowToxi = 0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             for (int i = int.Parse(ei.StoolExamRow); i <= rowCount; i++)
@@ -5423,16 +6205,16 @@ namespace CheckUP.gui
                 chk = cc.ccpdb.updateToxi2(rowNumber, txtId.Text, ToxiHippuric, ToxiMethyl, ToxiAcetone, ToxiNickel, ToxiChromium, ToxiPhenol, ToxiKetone, ToxiBenzene, ToxiMandelic, ToxiMethanol,
                     ToxiEthanol, ToxiIPA, ToxiArsenic, ToxiHexane, ToxiFomaldehyde, ToxiTrichloroethylene, ToxiAntimony, ToxiFluoride);
                 pB1.Value = i;
-                row++;
+                rowToxi++;
             }
             xlWorkbook.Close(true, misValue, misValue);
             xlApp.Quit();
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdStoolExam(txtId.Text);
-            cc.cucdb.updateEyeImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row);
-            txtStoolExamCntEmp.Text = rowCount.ToString();
-            txtStoolExamSucess.Text = row.ToString();
+            cc.cucdb.updateToxiImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), rowToxi);
+            txtToxiCntEmp.Text = rowCount.ToString();
+            txtToxiSucess.Text = rowToxi.ToString();
             Cursor.Current = cursor;
         }
 
@@ -5440,7 +6222,7 @@ namespace CheckUP.gui
         {
             ofd.ShowDialog();
             fileNameToxi = ofd.FileName;
-            btnEyeImport.Enabled = true;
+            btnToxiImport.Enabled = true;
         }
     }
 }

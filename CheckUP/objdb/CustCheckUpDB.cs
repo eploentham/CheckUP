@@ -110,6 +110,11 @@ namespace CheckUP.objdb
             cuc.StoolExamNormal = "stoolexam_normal";
             cuc.StoolExamSuccess = "stoolexam_success";
 
+            cuc.ToxiAbNormal = "toxi_abnormal";
+            cuc.ToxiCnt = "toxi_cnt";
+            cuc.ToxiNormal = "toxi_normal";
+            cuc.ToxiSuccess = "toxi_success";
+
             cuc.pkField = "cust_checkup_patient_id";
             cuc.table = "t_cust_checkup";
         }
@@ -205,6 +210,11 @@ namespace CheckUP.objdb
             item.StoolExamCnt = dt.Rows[0][cuc.StoolExamCnt].ToString();
             item.StoolExamNormal = dt.Rows[0][cuc.StoolExamNormal].ToString();
             item.StoolExamSuccess = dt.Rows[0][cuc.StoolExamSuccess].ToString();
+
+            item.ToxiAbNormal = dt.Rows[0][cuc.ToxiAbNormal].ToString();
+            item.ToxiCnt = dt.Rows[0][cuc.ToxiCnt].ToString();
+            item.ToxiNormal = dt.Rows[0][cuc.ToxiNormal].ToString();
+            item.ToxiSuccess = dt.Rows[0][cuc.ToxiSuccess].ToString();
 
             return item;
         }
@@ -1121,6 +1131,30 @@ namespace CheckUP.objdb
             catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex.ToString(), "update updateStoolExamImport");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateToxiImport(String cucId, int cnt, int row)
+        {
+            String sql = "", chk = "";
+
+            //p.Description = p.Description.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+
+            sql = "Update " + cuc.table + " Set " + cuc.ToxiCnt + "=" + cnt + ", " +
+                cuc.ToxiSuccess + "=" + row + " " +
+
+                "Where " + cuc.pkField + "='" + cucId + "'";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateToxiImport");
             }
             finally
             {

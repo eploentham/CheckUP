@@ -133,7 +133,7 @@
             this.dgvSum = new System.Windows.Forms.DataGridView();
             this.tabPage20 = new System.Windows.Forms.TabPage();
             this.txtStoolExamSucess = new System.Windows.Forms.TextBox();
-            this.txtChemBSucess = new System.Windows.Forms.TextBox();
+            this.txtToxiSucess = new System.Windows.Forms.TextBox();
             this.txtEyeSucess = new System.Windows.Forms.TextBox();
             this.txtAudioSucess = new System.Windows.Forms.TextBox();
             this.txtLungSucess = new System.Windows.Forms.TextBox();
@@ -152,8 +152,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
-            this.txtChemBNormal = new System.Windows.Forms.TextBox();
-            this.txtChemBCntEmp = new System.Windows.Forms.TextBox();
+            this.txtToxiNormal = new System.Windows.Forms.TextBox();
+            this.txtToxiCntEmp = new System.Windows.Forms.TextBox();
             this.label131 = new System.Windows.Forms.Label();
             this.btnEyeImport = new System.Windows.Forms.Button();
             this.btnEyeExcel = new System.Windows.Forms.Button();
@@ -230,7 +230,7 @@
             this.tabPage16 = new System.Windows.Forms.TabPage();
             this.dgvEye = new System.Windows.Forms.DataGridView();
             this.tabPage17 = new System.Windows.Forms.TabPage();
-            this.dgvChemB = new System.Windows.Forms.DataGridView();
+            this.dgvToxi = new System.Windows.Forms.DataGridView();
             this.tabPage19 = new System.Windows.Forms.TabPage();
             this.dgvStoolExam = new System.Windows.Forms.DataGridView();
             this.cboCust = new System.Windows.Forms.ComboBox();
@@ -291,7 +291,7 @@
             this.tabPage16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEye)).BeginInit();
             this.tabPage17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChemB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvToxi)).BeginInit();
             this.tabPage19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStoolExam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
@@ -1350,7 +1350,7 @@
             // tabPage20
             // 
             this.tabPage20.Controls.Add(this.txtStoolExamSucess);
-            this.tabPage20.Controls.Add(this.txtChemBSucess);
+            this.tabPage20.Controls.Add(this.txtToxiSucess);
             this.tabPage20.Controls.Add(this.txtEyeSucess);
             this.tabPage20.Controls.Add(this.txtAudioSucess);
             this.tabPage20.Controls.Add(this.txtLungSucess);
@@ -1369,8 +1369,8 @@
             this.tabPage20.Controls.Add(this.textBox1);
             this.tabPage20.Controls.Add(this.textBox2);
             this.tabPage20.Controls.Add(this.textBox10);
-            this.tabPage20.Controls.Add(this.txtChemBNormal);
-            this.tabPage20.Controls.Add(this.txtChemBCntEmp);
+            this.tabPage20.Controls.Add(this.txtToxiNormal);
+            this.tabPage20.Controls.Add(this.txtToxiCntEmp);
             this.tabPage20.Controls.Add(this.label131);
             this.tabPage20.Controls.Add(this.btnEyeImport);
             this.tabPage20.Controls.Add(this.btnEyeExcel);
@@ -1427,13 +1427,13 @@
             this.txtStoolExamSucess.Size = new System.Drawing.Size(62, 22);
             this.txtStoolExamSucess.TabIndex = 332;
             // 
-            // txtChemBSucess
+            // txtToxiSucess
             // 
-            this.txtChemBSucess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtChemBSucess.Location = new System.Drawing.Point(371, 263);
-            this.txtChemBSucess.Name = "txtChemBSucess";
-            this.txtChemBSucess.Size = new System.Drawing.Size(62, 22);
-            this.txtChemBSucess.TabIndex = 328;
+            this.txtToxiSucess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiSucess.Location = new System.Drawing.Point(371, 263);
+            this.txtToxiSucess.Name = "txtToxiSucess";
+            this.txtToxiSucess.Size = new System.Drawing.Size(62, 22);
+            this.txtToxiSucess.TabIndex = 328;
             // 
             // txtEyeSucess
             // 
@@ -1595,21 +1595,21 @@
             this.textBox10.Size = new System.Drawing.Size(62, 22);
             this.textBox10.TabIndex = 282;
             // 
-            // txtChemBNormal
+            // txtToxiNormal
             // 
-            this.txtChemBNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtChemBNormal.Location = new System.Drawing.Point(560, 263);
-            this.txtChemBNormal.Name = "txtChemBNormal";
-            this.txtChemBNormal.Size = new System.Drawing.Size(62, 22);
-            this.txtChemBNormal.TabIndex = 281;
+            this.txtToxiNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiNormal.Location = new System.Drawing.Point(560, 263);
+            this.txtToxiNormal.Name = "txtToxiNormal";
+            this.txtToxiNormal.Size = new System.Drawing.Size(62, 22);
+            this.txtToxiNormal.TabIndex = 281;
             // 
-            // txtChemBCntEmp
+            // txtToxiCntEmp
             // 
-            this.txtChemBCntEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtChemBCntEmp.Location = new System.Drawing.Point(295, 263);
-            this.txtChemBCntEmp.Name = "txtChemBCntEmp";
-            this.txtChemBCntEmp.Size = new System.Drawing.Size(62, 22);
-            this.txtChemBCntEmp.TabIndex = 280;
+            this.txtToxiCntEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtToxiCntEmp.Location = new System.Drawing.Point(295, 263);
+            this.txtToxiCntEmp.Name = "txtToxiCntEmp";
+            this.txtToxiCntEmp.Size = new System.Drawing.Size(62, 22);
+            this.txtToxiCntEmp.TabIndex = 280;
             // 
             // label131
             // 
@@ -2384,7 +2384,7 @@
             // 
             // tabPage17
             // 
-            this.tabPage17.Controls.Add(this.dgvChemB);
+            this.tabPage17.Controls.Add(this.dgvToxi);
             this.tabPage17.Location = new System.Drawing.Point(4, 22);
             this.tabPage17.Name = "tabPage17";
             this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
@@ -2393,16 +2393,16 @@
             this.tabPage17.Text = "tabPage17";
             this.tabPage17.UseVisualStyleBackColor = true;
             // 
-            // dgvChemB
+            // dgvToxi
             // 
-            this.dgvChemB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvChemB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChemB.Location = new System.Drawing.Point(6, 5);
-            this.dgvChemB.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvChemB.Name = "dgvChemB";
-            this.dgvChemB.RowTemplate.Height = 24;
-            this.dgvChemB.Size = new System.Drawing.Size(851, 593);
-            this.dgvChemB.TabIndex = 8;
+            this.dgvToxi.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvToxi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvToxi.Location = new System.Drawing.Point(6, 5);
+            this.dgvToxi.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvToxi.Name = "dgvToxi";
+            this.dgvToxi.RowTemplate.Height = 24;
+            this.dgvToxi.Size = new System.Drawing.Size(851, 593);
+            this.dgvToxi.TabIndex = 8;
             // 
             // tabPage19
             // 
@@ -2717,7 +2717,7 @@
             this.tabPage16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEye)).EndInit();
             this.tabPage17.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChemB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvToxi)).EndInit();
             this.tabPage19.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStoolExam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).EndInit();
@@ -2871,7 +2871,7 @@
         private System.Windows.Forms.DataGridView dgvLung;
         private System.Windows.Forms.DataGridView dgvAudio;
         private System.Windows.Forms.DataGridView dgvEye;
-        private System.Windows.Forms.DataGridView dgvChemB;
+        private System.Windows.Forms.DataGridView dgvToxi;
         private System.Windows.Forms.TextBox txtCntEmp;
         private System.Windows.Forms.Label label121;
         private System.Windows.Forms.TextBox txtYear;
@@ -2934,8 +2934,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox txtChemBNormal;
-        private System.Windows.Forms.TextBox txtChemBCntEmp;
+        private System.Windows.Forms.TextBox txtToxiNormal;
+        private System.Windows.Forms.TextBox txtToxiCntEmp;
         private System.Windows.Forms.Label label131;
         private System.Windows.Forms.TextBox txtUricSucess;
         private System.Windows.Forms.TextBox txtBunSucess;
@@ -2949,7 +2949,7 @@
         private System.Windows.Forms.TextBox txtPESucess;
         private System.Windows.Forms.Label label157;
         private System.Windows.Forms.TextBox txtStoolExamSucess;
-        private System.Windows.Forms.TextBox txtChemBSucess;
+        private System.Windows.Forms.TextBox txtToxiSucess;
         private System.Windows.Forms.TextBox txtEyeSucess;
         private System.Windows.Forms.TextBox txtAudioSucess;
         private System.Windows.Forms.TextBox txtLungSucess;

@@ -201,7 +201,7 @@ namespace CheckUP.gui
         {
             if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
-                String chk = cc.ccpvndb.UpdateUA(txtUAColor.Text,txtUAAppe.Text,txtUASugar.Text,txtUASpgr.Text,txtUApH.Text,txtUAProtein.Text,txtUAWBC.Text,txtUARbc.Text,txtUAEpi.Text,txtUABact.Text);
+                String chk = cc.ccpvndb.UpdateUA(txtUAColor.Text,txtUAAppe.Text,txtUASugar.Text,txtUASpgr.Text,txtUApH.Text,txtUAProtein.Text,txtUAWBC.Text,txtUARbc.Text,txtUAEpi.Text,txtUABact.Text, txtUAKetone.Text, txtUALeu.Text,txtUABlood.Text);
                 if (chk.Equals("1"))
                 {
                     MessageBox.Show("บันทึกข้อมูล UA เรียบร้อย", "บันทึกข้อมูล");

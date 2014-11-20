@@ -197,7 +197,55 @@ namespace CheckUP.gui
 
             txtUricNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.uricAcid].ToString();
 
-            //txtUricNormal.Text = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.Audiogram1000L].ToString();
+            txtHBsAgNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.hbsag].ToString();
+            txtHBsAbNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.hbsab].ToString();
+            txtAntiHIVNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.antiHiv].ToString();
+            txtVDRLNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.vdrl].ToString();
+            txtAmphetamineNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.amphetamine].ToString();
+            txtCalciumNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.calcium].ToString();
+
+            txtFvcPredicNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.lungFvcPredic].ToString();
+            txtFvcMeasNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.lungFvcMeas].ToString();
+            txtFvcPerNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.lungFvcPer].ToString();
+            txtFev1PredicNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.lungFev1Predic].ToString();
+            txtFev1MeasNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.lungFev1Meas].ToString();
+            txtFev1PerNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.lungFev1Per].ToString();
+            txtPerFev1Normal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.lungPerFev1].ToString();
+
+            txtToxiLeadNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.lungPerFev1].ToString();
+            txtToxiAluminiumNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.lungPerFev1].ToString();
+            txtToxiCadmiumNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.lungPerFev1].ToString();
+            txtToxiMercuryNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.lungPerFev1].ToString();
+            txtToxiTinNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.lungPerFev1].ToString();
+            txtToxiCopperNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.lungPerFev1].ToString();
+            txtToxiManganeseNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.lungPerFev1].ToString();
+            txtToxiZincNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.lungPerFev1].ToString();
+            txtToxiAmmoniaNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.lungPerFev1].ToString();
+
+            txtToxiHippuricNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiHippuric].ToString();
+            txtToxiMethylNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiMethyl].ToString();
+            txtToxiAcetoneNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiAcetone].ToString();
+            txtToxiNickelNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiNickel].ToString();
+            txtToxiChromiumNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiChromium].ToString();
+            txtToxiPhenolNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiPhenol].ToString();
+            txtToxiKetoneNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiKetone].ToString();
+            txtToxiBenzeneNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiBenzene].ToString();
+            txtToxiMandelicNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiMandelic].ToString();
+            txtToxiMethanolNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiMethanol].ToString();
+            txtToxiEthanolNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiEthanol].ToString();
+            txtToxiIPANormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiIPA].ToString();
+            txtToxiArsenicNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiArsenic].ToString();
+            txtToxiHexaneNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiHexane].ToString();
+            txtToxiFomaldehydeNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiFomaldehyde].ToString();
+            txtToxiTrichloroethyleneNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiTrichloroethylene].ToString();
+            txtToxiAntimonyNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiAntimony].ToString();
+            txtToxiFluorideNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiFluoride].ToString();
+
+            txtStoolExamColorNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.StoolExamColor].ToString();
+            txtStoolExamAppearanceNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.StoolExamAppearance].ToString();
+            txtStoolExamWbcNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.StoolExamWbc].ToString();
+            txtStoolExamRbcNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.StoolExamRbc].ToString();
+            txtStoolExamParasiteNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.StoolExamParasite].ToString();
 
         }
 
