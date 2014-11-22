@@ -552,3 +552,32 @@ Failed to load database information.
 12/11/2557 14:08->rpt.setReportCheckUp OK 
 12/11/2557 14:08->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
 12/11/2557 14:08->rpt.setReportCheckUp OK SetDataSource
+21/11/2557 10:01->FrmCheckUPAdd.btnPrint_Click 01 
+21/11/2557 10:01->FrmCheckUPAdd.btnPrint_Click 02 
+21/11/2557 10:01->FrmCheckUPAdd.btnPrint_Click 03 
+21/11/2557 10:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+21/11/2557 10:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+21/11/2557 10:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+21/11/2557 10:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+21/11/2557 10:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+21/11/2557 10:59->FrmCheckUPAdd.btnPrint_Click 01 
+21/11/2557 10:59->FrmCheckUPAdd.btnPrint_Click 02 
+21/11/2557 10:59->FrmCheckUPAdd.btnPrint_Click 03 
+21/11/2557 10:59->rpt.setReportCheckUp OK 
+21/11/2557 10:59->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+21/11/2557 10:59->rpt.setReportCheckUp OK SetDataSource
+21/11/2557 11:00->FrmCheckUPAdd.btnPrint_Click 01 
+21/11/2557 11:00->FrmCheckUPAdd.btnPrint_Click 02 
+21/11/2557 11:00->FrmCheckUPAdd.btnPrint_Click 03 
+21/11/2557 11:01->FrmCheckUPAdd.btnPrint_Click 01 
+21/11/2557 11:01->FrmCheckUPAdd.btnPrint_Click 02 
+21/11/2557 11:01->FrmCheckUPAdd.btnPrint_Click 03 
+21/11/2557 11:01->rpt.setReportCheckUp OK 
+21/11/2557 11:01->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+21/11/2557 11:01->rpt.setReportCheckUp OK SetDataSource
+21/11/2557 11:02->FrmCheckUPAdd.btnPrint_Click 01 
+21/11/2557 11:02->FrmCheckUPAdd.btnPrint_Click 02 
+21/11/2557 11:02->FrmCheckUPAdd.btnPrint_Click 03 
+21/11/2557 11:02->rpt.setReportCheckUp OK 
+21/11/2557 11:02->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
+21/11/2557 11:02->rpt.setReportCheckUp OK SetDataSource

@@ -28,13 +28,11 @@ namespace CheckUP.object1
         public String summaryPhysicalExam="";
 
         public String StoolExamColor = "", StoolExamAppearance = "", StoolExamWbc = "", StoolExamRbc = "", StoolExamParasite = "", StoolExamSummary = "";
-
-
+        
         public String ToxiLead = "", ToxiAluminium = "", ToxiCadmium = "", ToxiMercury = "", ToxiTin = "", ToxiCopper = "", ToxiManganese = "", ToxiZinc = "", ToxiAmmonia = "";
         public String ToxiHippuric = "", ToxiMethyl = "", ToxiAcetone="", ToxiNickel="", ToxiChromium="", ToxiPhenol="", ToxiKetone="", ToxiBenzene="", ToxiMandelic="", ToxiMethanol="";
         public String ToxiEthanol="", ToxiIPA="", ToxiArsenic="", ToxiHexane="", ToxiFomaldehyde="", ToxiTrichloroethylene="", ToxiAntimony="", ToxiFluoride="";
-        
-        
+                
         //public String toxicologyLead="",toxicologyMercury="",toxicologyBenzene="",toxicologyXylene="";
 
         //public String toxicologyToluene = "", toxicologyThinner = "", toxicologyAlcohol = "", toxicologyHexane = "", toxicologyMethanol = "", toxicologyMek = "", toxicologyAcetone = "";

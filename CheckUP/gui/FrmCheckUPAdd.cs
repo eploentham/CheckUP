@@ -1633,6 +1633,7 @@ namespace CheckUP.gui
             cuc.YearId = dtpCheckUpDate.Value.Year.ToString();
             cuc.CustId = cc.getValueCboItem(cboCust);
             cuc.CustNameT = cboCust.Text;
+            //cuc.CommitCheckUpDate = cc.cf.datetoDB(dtpCheckUpDate.Value);
             cuc.Id = txtId.Text;
         }
         private String ImportExcel()
@@ -2066,6 +2067,7 @@ namespace CheckUP.gui
             if (flagNew)
             {
                 String cucId = ImportExcel();
+                txtId.Text = cucId;
                 setGrdPE(cucId);
             }
             else
@@ -3192,7 +3194,7 @@ namespace CheckUP.gui
                 else
                 {
                     rc.Age = dtAll.Rows[i][cc.ccpdb.ccp.patientAge].ToString();
-                }                
+                }
 
                 rc.BMI = dtAll.Rows[i][cc.ccpdb.ccp.bmi].ToString();
                 rc.Height = dtAll.Rows[i][cc.ccpdb.ccp.patientHeight].ToString();
@@ -3201,6 +3203,7 @@ namespace CheckUP.gui
                 rc.Pulse = dtAll.Rows[i][cc.ccpdb.ccp.patientPulse].ToString();
                 rc.RowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
                 rc.PESummary = dtAll.Rows[i][cc.ccpdb.ccp.summaryPhysicalExam].ToString();
+                rc.CheckUpDate = cc.cf.dateDBtoShow(cuc.CheckUpDate);
 
                 //Xray
                 if (int.Parse(cuc.XraySuccess) > 0)
@@ -3247,6 +3250,7 @@ namespace CheckUP.gui
                     rc.LabName = "Hb";
                     rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHb].ToString();
                     rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcHb].ToString();
+                    //rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbc].ToString();
                     rc.LInter = "การแปรผล";
                     rc.LInterAbnormal = "ปกติ";
                     rc.LInterNormal = "ผิดปกติ";
@@ -3903,6 +3907,7 @@ namespace CheckUP.gui
                     rc.LabName = "SGPT ";
                     rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.liverSgpt].ToString();
                     rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.liverSgpt].ToString();
+                    //rc.Remark = dtAll.Rows[i][cc.ccpdb.ccp.liverSummary].ToString();
                     rc.LInter = "การแปรผล";
                     rc.LInterAbnormal = "ปกติ";
                     rc.LInterNormal = "ผิดปกติ";
@@ -3921,16 +3926,17 @@ namespace CheckUP.gui
                 if (int.Parse(cuc.ChoSuccess) > 0)
                 {
                     rc.Id = r.Next().ToString();
-                    rc.LabGroup = "การตรวจ (Choles)";
-                    rc.LabName = "Choles ";
+                    rc.LabGroup = "การตรวจ (Cholesterol)";
+                    rc.LabName = "Cholesterol ";
                     rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.cholesterol].ToString();
                     rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cholesterol].ToString();
+                    rc.Remark = dtAll.Rows[i][cc.ccpdb.ccp.cholesterolSummary].ToString();
                     rc.LInter = "การแปรผล";
                     rc.LInterAbnormal = "ปกติ";
                     rc.LInterNormal = "ผิดปกติ";
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
-                    rc.LTypeLab = "ประเภทการตรวจ Choles";
+                    rc.LTypeLab = "ประเภทการตรวจ Cholesterol";
                     rc.Remark = "";
                     rc.StatusLab = "cho";
                     rc.Sort1 = "1017";

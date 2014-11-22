@@ -153,6 +153,7 @@ namespace CheckUP.gui
             if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
                 String chk = cc.ccpvndb.updateStoolExam(txtStoolExamAppearance.Text,txtStoolExamColor.Text,txtStoolExamWbc.Text,txtStoolExamRbc.Text,txtStoolExamParasite.Text);
+                cc.dtccpvn = cc.ccpvndb.selectByPk();
                 if (chk.Equals("1"))
                 {
                     MessageBox.Show("บันทึกข้อมูล StoolExam เรียบร้อย", "บันทึกข้อมูล");
@@ -165,6 +166,7 @@ namespace CheckUP.gui
             if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
                 String chk = cc.ccpvndb.UpdateSgot(txtSgotValue.Text, txtSgotSgptValue.Text, txtSgotALT.Text);
+                cc.dtccpvn = cc.ccpvndb.selectByPk();
                 if (chk.Equals("1"))
                 {
                     MessageBox.Show("บันทึกข้อมูล SGOT เรียบร้อย", "บันทึกข้อมูล");
@@ -178,6 +180,7 @@ namespace CheckUP.gui
             {
                 String chk = cc.ccpvndb.UpdateCBC(txtCBCBact.Text, txtCBCEos.Text, txtCBCHb.Text, txtCBCHct.Text,
                 txtCBCLy.Text, txtCBCMch.Text, txtCBCMchc.Text, txtCBCMcv.Text, txtCBCMono.Text, txtCBCNeu.Text, txtCBCPltC.Text, txtCBCRbc.Text, txtCBCRbcMono.Text, txtCBCWbc.Text, txtCBCPltS.Text);
+                cc.dtccpvn = cc.ccpvndb.selectByPk();
                 if (chk.Equals("1"))
                 {
                     MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
@@ -190,6 +193,7 @@ namespace CheckUP.gui
             if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
                 String chk = cc.ccpvndb.UpdateFBS(txtFBSValue.Text);
+                cc.dtccpvn = cc.ccpvndb.selectByPk();
                 if (chk.Equals("1"))
                 {
                     MessageBox.Show("บันทึกข้อมูล FBS เรียบร้อย", "บันทึกข้อมูล");
@@ -202,6 +206,7 @@ namespace CheckUP.gui
             if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
                 String chk = cc.ccpvndb.UpdateUA(txtUAColor.Text,txtUAAppe.Text,txtUASugar.Text,txtUASpgr.Text,txtUApH.Text,txtUAProtein.Text,txtUAWBC.Text,txtUARbc.Text,txtUAEpi.Text,txtUABact.Text, txtUAKetone.Text, txtUALeu.Text,txtUABlood.Text);
+                cc.dtccpvn = cc.ccpvndb.selectByPk();
                 if (chk.Equals("1"))
                 {
                     MessageBox.Show("บันทึกข้อมูล UA เรียบร้อย", "บันทึกข้อมูล");
@@ -214,6 +219,7 @@ namespace CheckUP.gui
             if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
                 String chk = cc.ccpvndb.UpdateTrigly(txtTriValue.Text);
+                cc.dtccpvn = cc.ccpvndb.selectByPk();
                 if (chk.Equals("1"))
                 {
                     MessageBox.Show("บันทึกข้อมูล Trigly เรียบร้อย", "บันทึกข้อมูล");
@@ -226,6 +232,7 @@ namespace CheckUP.gui
             if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
                 String chk = cc.ccpvndb.UpdateCholes(txtChoValue.Text, txtChoLDL.Text,txtChoHDL.Text);
+                cc.dtccpvn = cc.ccpvndb.selectByPk();
                 if (chk.Equals("1"))
                 {
                     MessageBox.Show("บันทึกข้อมูล Choles เรียบร้อย", "บันทึกข้อมูล");
@@ -238,6 +245,7 @@ namespace CheckUP.gui
             if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
                 String chk = cc.ccpvndb.UpdateBun(txtBunValue.Text,txtBunCreatinineValue.Text);
+                cc.dtccpvn = cc.ccpvndb.selectByPk();
                 if (chk.Equals("1"))
                 {
                     MessageBox.Show("บันทึกข้อมูล Bun เรียบร้อย", "บันทึกข้อมูล");
@@ -250,6 +258,7 @@ namespace CheckUP.gui
             if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
                 String chk = cc.ccpvndb.UpdateUric(txtUricValue.Text);
+                cc.dtccpvn = cc.ccpvndb.selectByPk();
                 if (chk.Equals("1"))
                 {
                     MessageBox.Show("บันทึกข้อมูล Uric เรียบร้อย", "บันทึกข้อมูล");
@@ -262,6 +271,7 @@ namespace CheckUP.gui
             if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
                 String chk = cc.ccpvndb.UpdateOther1(txtHBsAg.Text, txtHBsAb.Text,txtAntiHIV.Text,txtVDRL.Text,txtAmphetamine.Text,txtCalcium.Text);
+                cc.dtccpvn = cc.ccpvndb.selectByPk();
                 if (chk.Equals("1"))
                 {
                     MessageBox.Show("บันทึกข้อมูล Other1 เรียบร้อย", "บันทึกข้อมูล");
@@ -274,6 +284,7 @@ namespace CheckUP.gui
             if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
                 String chk = cc.ccpvndb.UpdateLung(txtFvcPredic.Text,txtFvcMeas.Text,txtFvcPer.Text,txtFev1Predic.Text,txtFev1Meas.Text,txtFev1Per.Text,txtPerFev1.Text);
+                cc.dtccpvn = cc.ccpvndb.selectByPk();
                 if (chk.Equals("1"))
                 {
                     MessageBox.Show("บันทึกข้อมูล Lung เรียบร้อย", "บันทึกข้อมูล");
@@ -286,6 +297,7 @@ namespace CheckUP.gui
             if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
                 String chk = cc.ccpvndb.updateToxi1(txtToxiLead.Text,txtToxiAluminium.Text,txtToxiCadmium.Text,txtToxiMercury.Text,txtToxiTin.Text,txtToxiCopper.Text,txtToxiManganese.Text,txtToxiZinc.Text,txtToxiAmmonia.Text);
+                cc.dtccpvn = cc.ccpvndb.selectByPk();
                 if (chk.Equals("1"))
                 {
                     chk = cc.ccpvndb.updateToxi2(txtToxiHippuric.Text,txtToxiMethyl.Text,txtToxiAcetone.Text,txtToxiNickel.Text,txtToxiChromium.Text,txtToxiPhenol.Text,txtToxiKetone.Text,

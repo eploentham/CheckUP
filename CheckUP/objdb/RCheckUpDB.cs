@@ -132,14 +132,14 @@ namespace CheckUP.objdb
                 rcu.lResult).Append(",").Append(rcu.LTypeLab).Append(",").Append(rcu.Remark).Append(",").Append(rcu.StatusLab).Append(",").Append(rcu.Sort1).Append(",").Append(
                 rcu.FullName).Append(",").Append(rcu.RowNumber).Append(",").Append(rcu.Age).Append(",").Append(rcu.Height).Append(",").Append(
                 rcu.Weight).Append(",").Append(rcu.BMI).Append(",").Append(rcu.Pulse).Append(",").Append(
-                rcu.VitalSign).Append(",").Append(rcu.Sort2).Append(") ").Append(
+                rcu.VitalSign).Append(",").Append(rcu.Sort2).Append(",").Append(rcu.CheckUpDate).Append(") ").Append(
                 "Values('").Append(p.Id).Append("','" ).Append(p.LabGroup).Append("','").Append(p.LabName).Append("','").Append(
                 p.LabNormal).Append("','").Append(p.LabResult).Append("','").Append(p.LInter).Append("','").Append(
                 p.LInterAbnormal).Append("','").Append(p.LInterNormal).Append( "','").Append(p.LNormal).Append("','").Append(
                 p.lResult).Append("','").Append(p.LTypeLab).Append("','").Append(p.Remark).Append("','").Append(p.StatusLab).Append("','").Append(p.Sort1).Append("','").Append(
                 p.FullName).Append("',").Append(NumberNull1(p.RowNumber)).Append(",'").Append(p.Age).Append("','").Append(p.Height).Append("','").Append(
                 p.Weight).Append("','").Append(p.BMI).Append("','").Append(p.Pulse).Append("','").Append(
-                p.VitalSign).Append("','").Append(p.Sort2).Append("')");
+                p.VitalSign).Append("','").Append(p.Sort2).Append("','").Append(p.CheckUpDate).Append("')");
             try
             {
                 chk = conn.ExecuteNonQueryNoClose(sql1.ToString());
