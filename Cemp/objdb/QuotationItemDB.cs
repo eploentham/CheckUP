@@ -134,7 +134,7 @@ namespace Cemp.objdb
             //QuotationItem item = new QuotationItem();
             String sql = "";
 
-            sql = "Select qui.* From " + qui.table + " Where qui." + qui.QuoId + "='" + quId + "' and qui." + qui.Active + "='1' "+
+            sql = "Select qui.* From " + qui.table + " as qui Where qui." + qui.QuoId + "='" + quId + "' and qui." + qui.Active + "='1' " +
                 "Order By qui." + qui.RowNumber;
             //dt = conn.selectData(sql);
             DataTable dt = conn.selectData(sql);

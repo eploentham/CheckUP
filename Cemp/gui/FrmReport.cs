@@ -131,9 +131,9 @@ namespace Cemp
             try
             {
                 cc.lw.WriteLog("rpt.setReportPO OK ");
-                rpt.Load(cc.initC.PathReport + "\\POPrint.rpt");
+                rpt.Load(cc.initC.PathReport + "\\POPrint1.rpt");
                 rpt.SetDataSource(dt);
-                cc.lw.WriteLog("rpt.setReportPO OK SetDataSource");
+                cc.lw.WriteLog("rpt.setReportPO OK SetDataSource POPrint1.rpt");
 
                 rpt.SetParameterValue("compName", cc.cp.NameT);
                 rpt.SetParameterValue("compAddress1", cc.cp.AddressT);
@@ -161,6 +161,12 @@ namespace Cemp
                 rpt.SetParameterValue("remark3", "");
                 rpt.SetParameterValue("remark4", "");
                 rpt.SetParameterValue("remark5", "");
+
+                rpt.SetParameterValue("line2", "Terms of payment กำหนดชำระเงินสดหรือเช็คสั่งจ่าย ณ วันรับสินค้า เครดิต "+po.PODuePeriod+" วัน");
+                rpt.SetParameterValue("line4", "");
+                rpt.SetParameterValue("line5", "");
+                rpt.SetParameterValue("line6", "");
+                
 
                 rpt.SetParameterValue("nettotal", po.NetTotal);
                 //rpt.SetParameterValue("contactName", qu.ContactName);

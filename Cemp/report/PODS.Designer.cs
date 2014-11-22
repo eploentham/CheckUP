@@ -315,6 +315,8 @@ namespace Cemp.report {
             
             private global::System.Data.DataColumn columnitem_code;
             
+            private global::System.Data.DataColumn columnref1;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public t_po_itemDataTable() {
@@ -494,6 +496,14 @@ namespace Cemp.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ref1Column {
+                get {
+                    return this.columnref1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -547,7 +557,8 @@ namespace Cemp.report {
                         string date_modi, 
                         string date_cancel, 
                         string item_type, 
-                        string item_code) {
+                        string item_code, 
+                        string ref1) {
                 t_po_itemRow rowt_po_itemRow = ((t_po_itemRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         po_item_id,
@@ -567,7 +578,8 @@ namespace Cemp.report {
                         date_modi,
                         date_cancel,
                         item_type,
-                        item_code};
+                        item_code,
+                        ref1};
                 rowt_po_itemRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowt_po_itemRow);
                 return rowt_po_itemRow;
@@ -615,6 +627,7 @@ namespace Cemp.report {
                 this.columndate_cancel = base.Columns["date_cancel"];
                 this.columnitem_type = base.Columns["item_type"];
                 this.columnitem_code = base.Columns["item_code"];
+                this.columnref1 = base.Columns["ref1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -656,6 +669,8 @@ namespace Cemp.report {
                 base.Columns.Add(this.columnitem_type);
                 this.columnitem_code = new global::System.Data.DataColumn("item_code", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnitem_code);
+                this.columnref1 = new global::System.Data.DataColumn("ref1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnref1);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnpo_item_id}, true));
                 this.columnpo_item_id.AllowDBNull = false;
@@ -1098,6 +1113,22 @@ namespace Cemp.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ref1 {
+                get {
+                    try {
+                        return ((string)(this[this.tablet_po_item.ref1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ref1\' in table \'t_po_item\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablet_po_item.ref1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Ispo_idNull() {
                 return this.IsNull(this.tablet_po_item.po_idColumn);
             }
@@ -1298,6 +1329,18 @@ namespace Cemp.report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setitem_codeNull() {
                 this[this.tablet_po_item.item_codeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isref1Null() {
+                return this.IsNull(this.tablet_po_item.ref1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setref1Null() {
+                this[this.tablet_po_item.ref1Column] = global::System.Convert.DBNull;
             }
         }
         

@@ -16,14 +16,14 @@ namespace Cemp.report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class POPrint : ReportClass {
+    public class POPrint1 : ReportClass {
         
-        public POPrint() {
+        public POPrint1() {
         }
         
         public override string ResourceName {
             get {
-                return "POPrint.rpt";
+                return "POPrint1.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Cemp.report {
         
         public override string FullResourceName {
             get {
-                return "Cemp.report.POPrint.rpt";
+                return "Cemp.report.POPrint1.rpt";
             }
             set {
                 // Do nothing
@@ -274,9 +274,9 @@ namespace Cemp.report {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedPOPrint : Component, ICachedReport {
+    public class CachedPOPrint1 : Component, ICachedReport {
         
-        public CachedPOPrint() {
+        public CachedPOPrint1() {
         }
         
         [Browsable(false)]
@@ -313,7 +313,7 @@ namespace Cemp.report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            POPrint rpt = new POPrint();
+            POPrint1 rpt = new POPrint1();
             rpt.Site = this.Site;
             return rpt;
         }

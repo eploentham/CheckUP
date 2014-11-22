@@ -99,6 +99,11 @@ namespace Cemp.gui
             txtRsLine6.Text = cp.rsLine6;
 
             txtPOLine1.Text = cp.poLine1;
+            txtPOLine2.Text = cp.poLine2;
+            txtPOLine3.Text = cp.poLine3;
+            txtPOLine4.Text = cp.poLine4;
+            txtPOLine5.Text = cp.poLine5;
+            txtPOLine6.Text = cp.poLine6;
             nuDDuePeriod.Value = int.Parse(cc.cf.NumberNull1(cp.PODuePeriod));
 
             txtInvDuePeriod.Text = cp.InvDuePeriod;
@@ -153,6 +158,11 @@ namespace Cemp.gui
             cp.rsLine6 = txtRsLine6.Text;
 
             cp.poLine1 = txtPOLine1.Text;
+            cp.poLine2 = txtPOLine2.Text;
+            cp.poLine3 = txtPOLine3.Text;
+            cp.poLine4 = txtPOLine4.Text;
+            cp.poLine5 = txtPOLine5.Text;
+            cp.poLine6 = txtPOLine6.Text;
             cp.PODuePeriod = nuDDuePeriod.Value.ToString();
 
             cp.InvDuePeriod = txtInvDuePeriod.Text;

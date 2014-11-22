@@ -38,6 +38,7 @@ namespace Cemp.objdb
             poi.ItemType = "item_type";
             poi.RowNumber = "row_number";
             poi.ItemCode = "item_code";
+            poi.Ref1 = "ref1";
 
             poi.pkField = "po_item_id";
             poi.table = "t_po_item";
@@ -62,6 +63,8 @@ namespace Cemp.objdb
             item.ItemType = dt.Rows[0][poi.ItemType].ToString();
             item.RowNumber = dt.Rows[0][poi.RowNumber].ToString();
             item.ItemCode = dt.Rows[0][poi.ItemCode].ToString();
+
+            item.Ref1 = dt.Rows[0][poi.Ref1].ToString();
 
             return item;
         }
@@ -118,19 +121,19 @@ namespace Cemp.objdb
             //p.SfName = p.SfName.Replace("'", "''");
             //p.MethodMeasure = p.MethodMeasure.Replace("'", "''");
             //p.Summary = p.Summary.Replace("'", "''");
-
+            p.Ref1 = p.Ref1.Replace("'", "''");
             sql = "Insert Into " + poi.table + " (" + poi.pkField + "," + poi.Active + "," + poi.DateCancel + "," +
                 poi.DateCreate + "," + poi.DateModi + "," + poi.ItemAmount + "," +
                 poi.ItemId + "," + poi.ItemNameT + "," + poi.ItemPrice + "," +
                 poi.ItemQty + "," + poi.POId + "," + poi.Remark + "," +
                 poi.UserCancel + "," + poi.UserCreate + "," + poi.UserModi + "," +
-                poi.ItemType + "," + poi.RowNumber + "," + poi.ItemCode + ") " +
+                poi.ItemType + "," + poi.RowNumber + "," + poi.ItemCode + "," + poi.Ref1 + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.DateCancel + "'," +
                 p.dateGenDB + ",'" + p.DateModi + "'," + p.ItemAmount + ",'" +
                 p.ItemId + "','" + p.ItemNameT + "'," + p.ItemPrice + "," +
                 p.ItemQty + ",'" + p.POId + "','" + p.Remark + "','" +
                 p.UserCancel + "','" + p.UserCreate + "','" + p.UserModi + "','" +
-                p.ItemType + "'," + NumberNull1(p.RowNumber) + ",'" + p.ItemCode + "')";
+                p.ItemType + "'," + NumberNull1(p.RowNumber) + ",'" + p.ItemCode + "','" + p.Ref1 + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -151,7 +154,7 @@ namespace Cemp.objdb
 
             p.ItemNameT = p.ItemNameT.Replace("'", "''");
             p.Remark = p.Remark.Replace("'", "''");
-
+            p.Ref1 = p.Ref1.Replace("'", "''");
             sql = "Update " + poi.table + " Set " + poi.DateModi + "=" + p.dateGenDB + ", " +
                 poi.ItemAmount + "=" + p.ItemAmount + ", " +
                 poi.ItemId + "='" + p.ItemId + "', " +
@@ -163,7 +166,8 @@ namespace Cemp.objdb
                 poi.UserModi + "='" + p.UserModi + "', " +
                 poi.ItemType + "='" + p.ItemType + "', " +
                 poi.RowNumber + "=" + p.RowNumber + ", " +
-                poi.ItemCode + "='" + p.ItemCode + "' " +
+                poi.ItemCode + "='" + p.ItemCode + "', " +
+                poi.Ref1 + "='" + p.Ref1 + "' " +
                 "Where " + poi.pkField + "='" + p.Id + "'";
             try
             {

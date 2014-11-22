@@ -108,6 +108,7 @@ namespace Cemp.gui
 
                 txtDueDate.Text = cc.cf.dateDBtoShow(po.PODueDate);
                 nuDDuePeriod.Value = int.Parse(po.PODuePeriod);
+                txtRef1.Text = po.Ref1;
 
                 setGrd(poId);
                 btnPrintT.Visible = true;
@@ -187,6 +188,8 @@ namespace Cemp.gui
 
             po.PODuePeriod = nuDDuePeriod.Value.ToString();
             po.PODueDate = cc.cf.datetoDBChk25(txtDueDate.Text);
+
+            po.Ref1 = txtRef1.Text;
             return chk;
         }
         private void setGrd()
@@ -289,10 +292,10 @@ namespace Cemp.gui
         {
             dgvAdd.Width = this.Width - 80;
             //groupBox3.Left = dgvAdd.Width - groupBox3.Width - 50;
-            //btnSave.Left = dgvAdd.Width - 80;
-            //btnPrintMou.Left = btnSave.Left;
+            btnSave.Left = dgvAdd.Width - 80;
+            btnPrintT.Left = btnSave.Left;
             //btnReceive.Left = btnSave.Left;
-            //groupBox2.Left = this.Width - groupBox2.Width - btnSave.Width - 150;
+            groupBox2.Left = this.Width - groupBox2.Width - btnSave.Width - 150;
 
             //panel1.Top = this.Height - panel1.Height - 50;
             //dgvAdd.Height = this.Height - groupBox2.Top - groupBox2.Height - panel1.Height - 50 - 5;
@@ -518,6 +521,7 @@ namespace Cemp.gui
                     poi.ItemQty = dgvAdd[colQty, i].Value.ToString().Replace(",","");
                     poi.Remark = dgvAdd[colRemark, i].Value.ToString();
                     poi.ItemCode = dgvAdd[colItemCode, i].Value.ToString();
+                    poi.Ref1 = txtRef1.Text;
                     poi.POId = poId;
                     cc.poidb.insertPOItem(poi);
                 }
@@ -650,8 +654,8 @@ namespace Cemp.gui
             po.Remark1 = "1. " + po.Remark1;
             po.Remark2 = "2. " + po.Remark2;
             po.Remark3 = "3. " + po.Remark3;
-            po.Remark4 = "4. " + po.Remark4;
-            po.Remark5 = "5. " + po.Remark5;
+            //po.Remark4 = "4. " + po.Remark4;
+            //po.Remark5 = "5. " + po.Remark5;
             //po.Remark6 = "6. " + po.Remark6;
             //po.Remark7 = "7. " + po.Remark7;
             //po.ThaiBaht = cc.ThaiBaht(po.NetTotal);
@@ -677,6 +681,24 @@ namespace Cemp.gui
         private void dtpDatePO_ValueChanged(object sender, EventArgs e)
         {
             setDueDate();
+        }
+
+        private void chkActive_Click(object sender, EventArgs e)
+        {
+            if (chkActive.Checked)
+            {
+                btnUnActive.Visible = false;
+                //setEnable(true);
+            }
+        }
+
+        private void ChkUnActive_Click(object sender, EventArgs e)
+        {
+            if (ChkUnActive.Checked)
+            {
+                btnUnActive.Visible = true;
+                //setEnable(true);
+            }
         }
     }
 }

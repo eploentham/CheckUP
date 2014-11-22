@@ -47,6 +47,7 @@ namespace Cemp.Control
         public PrefixDB predb;
         public BankDB bandb;
         public CompanyBankDB cobdb;
+        public ItemPricePeriodDB ippdb;
 
         public Staff sf;
         public Company cp;
@@ -104,6 +105,7 @@ namespace Cemp.Control
                 predb = new PrefixDB(conn);
                 bandb = new BankDB(conn);
                 cobdb = new CompanyBankDB(conn);
+                ippdb = new ItemPricePeriodDB(conn);
 
                 lw = new LogWriter();
 

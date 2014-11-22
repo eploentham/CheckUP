@@ -15,6 +15,9 @@ namespace Cemp.gui
     {
         CnviControl cc;
         Item it;
+        int colRow = 0, colPeriodStart = 1, colPeriodEnd = 2, colPrice = 3, colRemark = 4, colActive=5;
+        int colCnt = 5;
+
         public FrmItemAdd(String itId,CnviControl c)
         {
             InitializeComponent();
@@ -139,6 +142,63 @@ namespace Cemp.gui
                 it.StatusStock = "3";
             }
         }
+        //private void setGrd(String itId)
+        //{
+        //    DataTable dt;
+
+        //    dt = cc.modb.selectByNoBilling(itId);
+
+        //    dgvAdd.ColumnCount = colCnt;
+        //    dgvAdd.Rows.Clear();
+        //    dgvAdd.RowCount = dt.Rows.Count + 1;
+        //    dgvAdd.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        //    dgvAdd.Columns[colRow].Width = 50;
+        //    dgvAdd.Columns[colRemark].Width = 120;
+        //    dgvAdd.Columns[colPeriodEnd].Width = 150;
+        //    dgvAdd.Columns[colPrice].Width = 300;
+        //    dgvAdd.Columns[colNetTotal].Width = 120;
+        //    dgvAdd.Columns[colRemark].Width = 150;
+        //    //dgvAdd.Columns[colAmount].Width = 180;
+
+        //    dgvAdd.Columns[colRow].HeaderText = "ลำดับ";
+        //    dgvAdd.Columns[colRemark].HeaderText = "เลขที่ข้อตกลง";
+        //    dgvAdd.Columns[colPrice].HeaderText = "ลูกค้า บริษัท";
+        //    dgvAdd.Columns[colPeriodEnd].HeaderText = "วันที่เริ่มข้อตกลง";
+        //    dgvAdd.Columns[colSample].HeaderText = "จน.sample";
+        //    dgvAdd.Columns[colNetTotal].HeaderText = "มูลค่าทั้งหมด";
+        //    dgvAdd.Columns[colRemark].HeaderText = "หมายเหตุ";
+
+        //    dgvAdd.Columns[colNetTotal].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+        //    //dgvAdd.Columns[colPriceSale].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+        //    //dgvAdd.Columns[colAmount].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+        //    dgvAdd.Columns[colPeriodStart].Visible = false;
+        //    dgvAdd.Columns[colMOUId].Visible = false;
+        //    dgvAdd.Columns[colAdd].Visible = false;
+        //    //dgvAdd.Columns[colId].HeaderText = "id";
+        //    Font font = new Font("Microsoft Sans Serif", 12);
+
+        //    dgvAdd.Font = font;
+
+        //    if (dt.Rows.Count > 0)
+        //    {
+        //        for (int i = 0; i < dt.Rows.Count; i++)
+        //        {
+        //            dgvAdd[colRow, i].Value = (i + 1);
+        //            dgvAdd[colMOUId, i].Value = dt.Rows[i][cc.modb.mo.Id].ToString();
+        //            dgvAdd[colRemark, i].Value = dt.Rows[i][cc.modb.mo.MOUNumberMain].ToString();
+        //            dgvAdd[colPeriodEnd, i].Value = dt.Rows[i][cc.modb.mo.MOUDate].ToString();
+        //            dgvAdd[colPrice, i].Value = dt.Rows[i][cc.modb.mo.CustName].ToString();
+        //            dgvAdd[colNetTotal, i].Value = String.Format("{0:#,###,###.00}", dt.Rows[i]["amount1"]);
+        //            dgvAdd[colRemark, i].Value = String.Format("{0:#,###,###.00}", dt.Rows[i][cc.modb.mo.Remark]);
+        //            dgvAdd[colSample, i].Value = String.Format("{0:#,###,###.00}", dt.Rows[i]["cnt"]);
+        //            dgvAdd[colAdd, i].Value = "0";
+        //            if ((i % 2) != 0)
+        //            {
+        //                dgvAdd.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+        //            }
+        //        }
+        //    }
+        //}
         private void FrmItemAdd_Load(object sender, EventArgs e)
         {
 

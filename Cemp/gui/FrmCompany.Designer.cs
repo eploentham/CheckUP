@@ -140,6 +140,16 @@
             this.cboCobBank = new System.Windows.Forms.ComboBox();
             this.label42 = new System.Windows.Forms.Label();
             this.dgvView = new System.Windows.Forms.DataGridView();
+            this.label46 = new System.Windows.Forms.Label();
+            this.txtPOLine2 = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.txtPOLine3 = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.txtPOLine4 = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.txtPOLine5 = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.txtPOLine6 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -618,7 +628,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(671, 432);
+            this.tabPage1.Size = new System.Drawing.Size(671, 543);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Quotation";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -758,7 +768,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(566, 432);
+            this.tabPage2.Size = new System.Drawing.Size(671, 543);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "ข้อตกลง";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -858,7 +868,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(566, 432);
+            this.tabPage3.Size = new System.Drawing.Size(671, 543);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "ใบรับตัวอย่าง";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -998,7 +1008,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(566, 432);
+            this.tabPage4.Size = new System.Drawing.Size(671, 543);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Invoice";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1069,13 +1079,23 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(566, 432);
+            this.tabPage5.Size = new System.Drawing.Size(671, 543);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "PO";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.label50);
+            this.groupBox6.Controls.Add(this.txtPOLine6);
+            this.groupBox6.Controls.Add(this.label49);
+            this.groupBox6.Controls.Add(this.txtPOLine5);
+            this.groupBox6.Controls.Add(this.label48);
+            this.groupBox6.Controls.Add(this.txtPOLine4);
+            this.groupBox6.Controls.Add(this.label47);
+            this.groupBox6.Controls.Add(this.txtPOLine3);
+            this.groupBox6.Controls.Add(this.label46);
+            this.groupBox6.Controls.Add(this.txtPOLine2);
             this.groupBox6.Controls.Add(this.nuDDuePeriod);
             this.groupBox6.Controls.Add(this.label39);
             this.groupBox6.Controls.Add(this.txtPOLine1);
@@ -1083,7 +1103,7 @@
             this.groupBox6.Controls.Add(this.label41);
             this.groupBox6.Location = new System.Drawing.Point(23, 19);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(526, 79);
+            this.groupBox6.Size = new System.Drawing.Size(526, 410);
             this.groupBox6.TabIndex = 8;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "PO";
@@ -1327,6 +1347,96 @@
             this.dgvView.TabIndex = 16;
             this.dgvView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvView_CellDoubleClick);
             // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(16, 81);
+            this.label46.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(35, 13);
+            this.label46.TabIndex = 114;
+            this.label46.Text = "line2 :";
+            // 
+            // txtPOLine2
+            // 
+            this.txtPOLine2.Location = new System.Drawing.Point(102, 78);
+            this.txtPOLine2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPOLine2.Name = "txtPOLine2";
+            this.txtPOLine2.Size = new System.Drawing.Size(419, 20);
+            this.txtPOLine2.TabIndex = 113;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(16, 105);
+            this.label47.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(35, 13);
+            this.label47.TabIndex = 116;
+            this.label47.Text = "line3 :";
+            // 
+            // txtPOLine3
+            // 
+            this.txtPOLine3.Location = new System.Drawing.Point(102, 102);
+            this.txtPOLine3.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPOLine3.Name = "txtPOLine3";
+            this.txtPOLine3.Size = new System.Drawing.Size(419, 20);
+            this.txtPOLine3.TabIndex = 115;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(16, 129);
+            this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(35, 13);
+            this.label48.TabIndex = 118;
+            this.label48.Text = "line4 :";
+            // 
+            // txtPOLine4
+            // 
+            this.txtPOLine4.Location = new System.Drawing.Point(102, 126);
+            this.txtPOLine4.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPOLine4.Name = "txtPOLine4";
+            this.txtPOLine4.Size = new System.Drawing.Size(419, 20);
+            this.txtPOLine4.TabIndex = 117;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(16, 153);
+            this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(35, 13);
+            this.label49.TabIndex = 120;
+            this.label49.Text = "line5 :";
+            // 
+            // txtPOLine5
+            // 
+            this.txtPOLine5.Location = new System.Drawing.Point(102, 150);
+            this.txtPOLine5.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPOLine5.Name = "txtPOLine5";
+            this.txtPOLine5.Size = new System.Drawing.Size(419, 20);
+            this.txtPOLine5.TabIndex = 119;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(16, 177);
+            this.label50.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(35, 13);
+            this.label50.TabIndex = 122;
+            this.label50.Text = "line6 :";
+            // 
+            // txtPOLine6
+            // 
+            this.txtPOLine6.Location = new System.Drawing.Point(102, 174);
+            this.txtPOLine6.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPOLine6.Name = "txtPOLine6";
+            this.txtPOLine6.Size = new System.Drawing.Size(419, 20);
+            this.txtPOLine6.TabIndex = 121;
+            // 
             // FrmCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1480,5 +1590,15 @@
         private System.Windows.Forms.TextBox txtAccNumber;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.TextBox txtCobId;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.TextBox txtPOLine6;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.TextBox txtPOLine5;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.TextBox txtPOLine4;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.TextBox txtPOLine3;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.TextBox txtPOLine2;
     }
 }

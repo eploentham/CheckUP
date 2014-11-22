@@ -48,6 +48,7 @@ namespace Cemp.objdb
             it.AnalysisNameT = "analysis_name_t";
             it.StatusReal = "status_real";//0=default 1= itemที่ใช้งานจริง 3=เป็นพวกของแถม ค่าจัดทำเอกสาร
             it.StatusStock = "status_stock";//0=default 1= stock 3=no stock
+            it.StatusPrice = "status_price";//0=default, 1=normal,2=price period
             if (conn.initc.connectDatabaseServer.Equals("yes"))
             {
                 it.dateGenDB = "Now()";
@@ -88,6 +89,8 @@ namespace Cemp.objdb
 
             item.StatusReal = dt.Rows[0][it.StatusReal].ToString();
             item.StatusStock = dt.Rows[0][it.StatusStock].ToString();
+
+            item.StatusPrice = dt.Rows[0][it.StatusPrice].ToString();
             return item;
         }
         public DataTable selectAll()
@@ -223,6 +226,10 @@ namespace Cemp.objdb
             {
                 p.StatusStock = "1";
             }
+            if (p.StatusPrice.Equals(""))
+            {
+                p.StatusPrice = "1";
+            }
             sql = "Insert Into " + it.table + " (" + it.pkField + "," + it.Active + "," + it.Code + "," +
                 it.NameE + "," + it.NameT + "," + it.Remark + "," +
                 it.PriceCost + "," + it.PriceSale + "," + it.ItemGroupId + "," +
@@ -231,7 +238,7 @@ namespace Cemp.objdb
                 it.dateModi + "," + it.userCancel + "," + it.userCreate + "," +
                 it.userModi + "," + it.PriceCostReal + "," + it.ItemType + "," + 
                 it.CustNameT + "," + it.CustId + "," + it.AnalysisId + "," +
-                it.AnalysisNameT + "," + it.StatusReal + "," + it.StatusStock + ") " +
+                it.AnalysisNameT + "," + it.StatusReal + "," + it.StatusStock + "," + it.StatusPrice + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.Code + "','" +
                 p.NameE + "','" + p.NameT + "','" + p.Remark + "'," +
                 NumberNull1(p.PriceCost) + "," + NumberNull1(p.PriceSale) + ",'" + p.ItemGroupId + "','" +
@@ -240,7 +247,7 @@ namespace Cemp.objdb
                 p.dateModi + "','" +p.userCancel + "','" + p.userCreate + "','" +
                 p.userModi + "'," + NumberNull1(p.PriceCostReal) + ",'" + p.ItemType + "','" + 
                 p.CustNameT + "','" + p.CustId + "','" + p.AnalysisId + "','" +
-                p.AnalysisNameT + "','" + p.StatusReal + "','" + p.StatusStock + "')";
+                p.AnalysisNameT + "','" + p.StatusReal + "','" + p.StatusStock + "','" + p.StatusPrice + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -290,7 +297,8 @@ namespace Cemp.objdb
                 it.AnalysisId + "='" + p.AnalysisId + "', " +
                 it.AnalysisNameT + "='" + p.AnalysisNameT + "', " +
                 it.StatusReal + "='" + p.StatusReal + "', " +
-                it.StatusStock + "='" + p.StatusStock + "' " +
+                it.StatusStock + "='" + p.StatusStock + "', " +
+                it.StatusPrice + "='" + p.StatusPrice + "' " +
                 "Where " + it.pkField + "='" + p.Id + "'";
             try
             {

@@ -65,6 +65,7 @@ namespace Cemp.objdb
             po.SfApproveName = "staff_approve_name";
             po.Line1 = "line1";
             po.PODueDate = "po_due_date";
+            po.Ref1 = "ref1";
 
             po.pkField = "po_id";
             po.table = "t_po";
@@ -119,6 +120,7 @@ namespace Cemp.objdb
             item.Line1 = dt.Rows[0][po.Line1].ToString();
 
             item.PODueDate = dt.Rows[0][po.PODueDate].ToString();
+            item.Ref1 = dt.Rows[0][po.Ref1].ToString();
 
             return item;
         }
@@ -164,6 +166,7 @@ namespace Cemp.objdb
             p.CuAddressT = p.CuAddressT.Replace("'", "''");
             p.CpAddress1 = p.CpAddress1.Replace("'", "''");
             p.CpAddress2 = p.CpAddress2.Replace("'", "''");
+            p.Ref1 = p.Ref1.Replace("'", "''");
             p.PONumberCnt = "1";
             sql = "Insert Into " + po.table + " (" + po.pkField + "," + po.Active + "," + po.ContactName + "," +
                 po.CpId + "," + po.CpNameT + "," + po.CuFax + "," +
@@ -179,7 +182,7 @@ namespace Cemp.objdb
                 po.CuAddressT + "," + po.CpAddress1 + "," + po.CpAddress2 + "," +
                 po.CpTaxId + "," + po.Amt + "," + po.VatRate + "," + 
                 po.Vat + "," + po.NetTotal + "," + po.SfApproveId + "," +
-                po.SfApproveName + "," + po.Line1 + "," + po.PODueDate + ") " +
+                po.SfApproveName + "," + po.Line1 + "," + po.PODueDate + "," + po.Ref1 + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.ContactName + "','" +
                 p.CpId + "','" + p.CpNameT + "','" + p.CuFax + "','" +
                 p.CuId + "','" + p.CuNameT + "','" + p.CuEmail + "','" +
@@ -194,7 +197,7 @@ namespace Cemp.objdb
                 p.CuAddressT + "','" + p.CpAddress1 + "','" + p.CpAddress2 + "','" +
                 p.CpTaxId + "'," + NumberNull1(p.Amt) + "," + NumberNull1(p.VatRate) + "," +
                 NumberNull1(p.Vat) + "," + NumberNull1(p.NetTotal) + ",'" + p.SfApproveId + "','" +
-                p.SfApproveName + "','" + p.Line1 + "','" + p.PODueDate + "')";
+                p.SfApproveName + "','" + p.Line1 + "','" + p.PODueDate + "','" + p.Ref1 + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -225,7 +228,7 @@ namespace Cemp.objdb
             p.CuAddressT = p.CuAddressT.Replace("'", "''");
             p.CpAddress1 = p.CpAddress1.Replace("'", "''");
             p.CpAddress2 = p.CpAddress2.Replace("'", "''");
-
+            p.Ref1 = p.Ref1.Replace("'", "''");
             sql = "Update " + po.table + " Set " + po.ContactName + "='" + p.ContactName + "', " +
                 po.CpId + "='" + p.CpId + "', " +
                 po.CpNameT + "='" + p.CpNameT + "', " +
@@ -264,7 +267,8 @@ namespace Cemp.objdb
                 po.SfApproveId + "='" + p.SfApproveId + "', " +
                 po.SfApproveName + "='" + p.SfApproveName + "', " +
                 po.Line1 + "='" + p.Line1 + "', " +
-                po.PODueDate + "='" + p.PODueDate + "' " +
+                po.PODueDate + "='" + p.PODueDate + "', " +
+                po.Ref1 + "='" + p.Ref1 + "' " +
                 "Where " + po.pkField + "='" + p.Id + "'";
             try
             {

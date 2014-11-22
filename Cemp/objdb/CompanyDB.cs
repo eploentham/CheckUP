@@ -71,6 +71,12 @@ namespace Cemp.objdb
             cp.poLine1 = "po_line1";
             cp.PODuePeriod = "po_due_period";
 
+            cp.poLine2 = "po_line2";
+            cp.poLine3 = "po_line3";
+            cp.poLine4 = "po_line4";
+            cp.poLine5 = "po_line5";
+            cp.poLine6 = "po_line6";
+
             cp.pkField = "comp_id";
             cp.table = "b_company";
         }
@@ -125,7 +131,12 @@ namespace Cemp.objdb
 
             item.poLine1 = dt.Rows[0][cp.poLine1].ToString();
             item.PODuePeriod = dt.Rows[0][cp.PODuePeriod].ToString();
-
+            item.poLine2 = dt.Rows[0][cp.poLine2].ToString();
+            item.poLine3 = dt.Rows[0][cp.poLine3].ToString();
+            item.poLine4 = dt.Rows[0][cp.poLine4].ToString();
+            item.poLine5 = dt.Rows[0][cp.poLine5].ToString();
+            item.poLine6 = dt.Rows[0][cp.poLine6].ToString();
+            
             return item;
         }
         public DataTable selectAll()
@@ -219,6 +230,11 @@ namespace Cemp.objdb
             p.rsLine6 = p.rsLine6.Replace("'", "''");
 
             p.poLine1 = p.poLine1.Replace("'", "''");
+            p.poLine2 = p.poLine2.Replace("'", "''");
+            p.poLine3 = p.poLine3.Replace("'", "''");
+            p.poLine4 = p.poLine4.Replace("'", "''");
+            p.poLine5 = p.poLine5.Replace("'", "''");
+            p.poLine6 = p.poLine6.Replace("'", "''");
 
             sql = "Update " + cp.table + " Set " + cp.AddressE + "='" + p.AddressE + "', " +
                 cp.AddressT + "='" + p.AddressT + "', " +
@@ -255,8 +271,13 @@ namespace Cemp.objdb
                 cp.rsLine6 + "='" + p.rsLine6 + "', " +
                 cp.poLine1 + "='" + p.poLine1 + "', " +
                 cp.Spec1 + "='" + p.Spec1 + "', " +
-                cp.PODuePeriod + "=" + NumberNull1(p.PODuePeriod) + " " +
-
+                cp.PODuePeriod + "=" + NumberNull1(p.PODuePeriod) + ", " +
+                cp.poLine2 + "='" + p.poLine2 + "', " +
+                cp.poLine3 + "='" + p.poLine3 + "', " +
+                cp.poLine4 + "='" + p.poLine4 + "', " +
+                cp.poLine5 + "='" + p.poLine5 + "', " +
+                cp.poLine6 + "='" + p.poLine6 + "' " +
+                
                 "Where " + cp.pkField + "='" + p.Id + "'";
             try
             {

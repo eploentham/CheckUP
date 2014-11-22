@@ -29,6 +29,17 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.txtPriceSale = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.chkStatusNoStock = new System.Windows.Forms.RadioButton();
+            this.chkStock = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.chkItemFail = new System.Windows.Forms.RadioButton();
+            this.chkItemReal = new System.Windows.Forms.RadioButton();
             this.txtSort1 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.btnAnalysisAdd = new System.Windows.Forms.Button();
@@ -56,8 +67,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtRemark = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtPriceSale = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.cboMethod = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -67,19 +76,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.chkItemReal = new System.Windows.Forms.RadioButton();
-            this.chkItemFail = new System.Windows.Forms.RadioButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.chkStatusNoStock = new System.Windows.Forms.RadioButton();
-            this.chkStock = new System.Windows.Forms.RadioButton();
+            this.dgvAdd = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dgvAdd);
+            this.groupBox1.Controls.Add(this.panel3);
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.txtSort1);
@@ -109,8 +117,6 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtRemark);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtPriceSale);
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.cboMethod);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtId);
@@ -122,14 +128,132 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(590, 696);
+            this.groupBox1.Size = new System.Drawing.Size(1102, 696);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.radioButton1);
+            this.panel3.Controls.Add(this.radioButton2);
+            this.panel3.Controls.Add(this.txtPriceSale);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Location = new System.Drawing.Point(565, 24);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(504, 53);
+            this.panel3.TabIndex = 146;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(389, 16);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(104, 17);
+            this.radioButton1.TabIndex = 1;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "ราคาขายเป็นช่วง";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(11, 14);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(69, 17);
+            this.radioButton2.TabIndex = 0;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "ราคาปกติ";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // txtPriceSale
+            // 
+            this.txtPriceSale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPriceSale.Location = new System.Drawing.Point(159, 11);
+            this.txtPriceSale.Name = "txtPriceSale";
+            this.txtPriceSale.Size = new System.Drawing.Size(100, 22);
+            this.txtPriceSale.TabIndex = 113;
+            this.txtPriceSale.TabStop = false;
+            this.txtPriceSale.Enter += new System.EventHandler(this.txtPriceSale_Enter);
+            this.txtPriceSale.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPriceSale_KeyPress);
+            this.txtPriceSale.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPriceSale_KeyUp);
+            this.txtPriceSale.Leave += new System.EventHandler(this.txtPriceSale_Leave);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(95, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 16);
+            this.label5.TabIndex = 112;
+            this.label5.Text = "ราคาขาย  :";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.chkStatusNoStock);
+            this.panel2.Controls.Add(this.chkStock);
+            this.panel2.Location = new System.Drawing.Point(108, 402);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(464, 44);
+            this.panel2.TabIndex = 145;
+            // 
+            // chkStatusNoStock
+            // 
+            this.chkStatusNoStock.AutoSize = true;
+            this.chkStatusNoStock.Location = new System.Drawing.Point(257, 14);
+            this.chkStatusNoStock.Name = "chkStatusNoStock";
+            this.chkStatusNoStock.Size = new System.Drawing.Size(113, 17);
+            this.chkStatusNoStock.TabIndex = 1;
+            this.chkStatusNoStock.TabStop = true;
+            this.chkStatusNoStock.Text = "ไม่ต้องนำเข้าStock";
+            this.chkStatusNoStock.UseVisualStyleBackColor = true;
+            // 
+            // chkStock
+            // 
+            this.chkStock.AutoSize = true;
+            this.chkStock.Location = new System.Drawing.Point(11, 14);
+            this.chkStock.Name = "chkStock";
+            this.chkStock.Size = new System.Drawing.Size(53, 17);
+            this.chkStock.TabIndex = 0;
+            this.chkStock.TabStop = true;
+            this.chkStock.Text = "Stock";
+            this.chkStock.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.chkItemFail);
+            this.panel1.Controls.Add(this.chkItemReal);
+            this.panel1.Location = new System.Drawing.Point(108, 338);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(464, 44);
+            this.panel1.TabIndex = 144;
+            // 
+            // chkItemFail
+            // 
+            this.chkItemFail.AutoSize = true;
+            this.chkItemFail.Location = new System.Drawing.Point(257, 14);
+            this.chkItemFail.Name = "chkItemFail";
+            this.chkItemFail.Size = new System.Drawing.Size(120, 17);
+            this.chkItemFail.TabIndex = 1;
+            this.chkItemFail.TabStop = true;
+            this.chkItemFail.Text = "เป็นรายการของแถม";
+            this.chkItemFail.UseVisualStyleBackColor = true;
+            // 
+            // chkItemReal
+            // 
+            this.chkItemReal.AutoSize = true;
+            this.chkItemReal.Location = new System.Drawing.Point(11, 14);
+            this.chkItemReal.Name = "chkItemReal";
+            this.chkItemReal.Size = new System.Drawing.Size(177, 17);
+            this.chkItemReal.TabIndex = 0;
+            this.chkItemReal.TabStop = true;
+            this.chkItemReal.Text = "เป็นรายการที่ใช้ในข้อมูลข้อตกลง";
+            this.chkItemReal.UseVisualStyleBackColor = true;
             // 
             // txtSort1
             // 
             this.txtSort1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSort1.Location = new System.Drawing.Point(439, 257);
+            this.txtSort1.Location = new System.Drawing.Point(474, 226);
             this.txtSort1.Name = "txtSort1";
             this.txtSort1.Size = new System.Drawing.Size(75, 22);
             this.txtSort1.TabIndex = 143;
@@ -139,7 +263,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(337, 260);
+            this.label15.Location = new System.Drawing.Point(436, 232);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(32, 16);
             this.label15.TabIndex = 142;
@@ -201,7 +325,7 @@
             // txtPriceCostReal
             // 
             this.txtPriceCostReal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPriceCostReal.Location = new System.Drawing.Point(108, 310);
+            this.txtPriceCostReal.Location = new System.Drawing.Point(321, 226);
             this.txtPriceCostReal.Name = "txtPriceCostReal";
             this.txtPriceCostReal.Size = new System.Drawing.Size(100, 22);
             this.txtPriceCostReal.TabIndex = 136;
@@ -215,7 +339,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(6, 313);
+            this.label12.Location = new System.Drawing.Point(219, 229);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(62, 16);
             this.label12.TabIndex = 135;
@@ -223,7 +347,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(512, 345);
+            this.button1.Location = new System.Drawing.Point(512, 254);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(37, 23);
             this.button1.TabIndex = 134;
@@ -234,7 +358,7 @@
             // 
             this.cboCustPO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCustPO.FormattingEnabled = true;
-            this.cboCustPO.Location = new System.Drawing.Point(108, 345);
+            this.cboCustPO.Location = new System.Drawing.Point(108, 254);
             this.cboCustPO.Name = "cboCustPO";
             this.cboCustPO.Size = new System.Drawing.Size(398, 24);
             this.cboCustPO.TabIndex = 133;
@@ -246,7 +370,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(6, 348);
+            this.label11.Location = new System.Drawing.Point(6, 257);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(96, 16);
             this.label11.TabIndex = 132;
@@ -324,7 +448,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(439, 648);
+            this.btnSave.Location = new System.Drawing.Point(474, 613);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 33);
             this.btnSave.TabIndex = 124;
@@ -334,7 +458,7 @@
             // 
             // btnUnActive
             // 
-            this.btnUnActive.Location = new System.Drawing.Point(318, 626);
+            this.btnUnActive.Location = new System.Drawing.Point(318, 613);
             this.btnUnActive.Name = "btnUnActive";
             this.btnUnActive.Size = new System.Drawing.Size(103, 23);
             this.btnUnActive.TabIndex = 123;
@@ -346,7 +470,7 @@
             // 
             this.ChkUnActive.AutoSize = true;
             this.ChkUnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.ChkUnActive.Location = new System.Drawing.Point(241, 626);
+            this.ChkUnActive.Location = new System.Drawing.Point(241, 613);
             this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2);
             this.ChkUnActive.Name = "ChkUnActive";
             this.ChkUnActive.Size = new System.Drawing.Size(60, 21);
@@ -359,7 +483,7 @@
             // 
             this.chkActive.AutoSize = true;
             this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chkActive.Location = new System.Drawing.Point(116, 626);
+            this.chkActive.Location = new System.Drawing.Point(116, 613);
             this.chkActive.Margin = new System.Windows.Forms.Padding(2);
             this.chkActive.Name = "chkActive";
             this.chkActive.Size = new System.Drawing.Size(61, 21);
@@ -371,7 +495,7 @@
             // txtPriceCost
             // 
             this.txtPriceCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPriceCost.Location = new System.Drawing.Point(108, 282);
+            this.txtPriceCost.Location = new System.Drawing.Point(108, 226);
             this.txtPriceCost.Name = "txtPriceCost";
             this.txtPriceCost.Size = new System.Drawing.Size(100, 22);
             this.txtPriceCost.TabIndex = 117;
@@ -385,7 +509,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 285);
+            this.label6.Location = new System.Drawing.Point(6, 229);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 16);
             this.label6.TabIndex = 116;
@@ -394,7 +518,7 @@
             // txtRemark
             // 
             this.txtRemark.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRemark.Location = new System.Drawing.Point(108, 385);
+            this.txtRemark.Location = new System.Drawing.Point(108, 294);
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(398, 22);
             this.txtRemark.TabIndex = 115;
@@ -407,34 +531,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 387);
+            this.label4.Location = new System.Drawing.Point(6, 296);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 16);
             this.label4.TabIndex = 114;
             this.label4.Text = "หมายเหตุ :";
-            // 
-            // txtPriceSale
-            // 
-            this.txtPriceSale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPriceSale.Location = new System.Drawing.Point(108, 254);
-            this.txtPriceSale.Name = "txtPriceSale";
-            this.txtPriceSale.Size = new System.Drawing.Size(100, 22);
-            this.txtPriceSale.TabIndex = 113;
-            this.txtPriceSale.TabStop = false;
-            this.txtPriceSale.Enter += new System.EventHandler(this.txtPriceSale_Enter);
-            this.txtPriceSale.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPriceSale_KeyPress);
-            this.txtPriceSale.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPriceSale_KeyUp);
-            this.txtPriceSale.Leave += new System.EventHandler(this.txtPriceSale_Leave);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 257);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 16);
-            this.label5.TabIndex = 112;
-            this.label5.Text = "ราคาขาย  :";
             // 
             // cboMethod
             // 
@@ -531,73 +632,22 @@
             this.label1.TabIndex = 101;
             this.label1.Text = "รหัส  yyxxx:";
             // 
-            // panel1
+            // dgvAdd
             // 
-            this.panel1.Controls.Add(this.chkItemFail);
-            this.panel1.Controls.Add(this.chkItemReal);
-            this.panel1.Location = new System.Drawing.Point(108, 429);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(464, 44);
-            this.panel1.TabIndex = 144;
-            // 
-            // chkItemReal
-            // 
-            this.chkItemReal.AutoSize = true;
-            this.chkItemReal.Location = new System.Drawing.Point(11, 14);
-            this.chkItemReal.Name = "chkItemReal";
-            this.chkItemReal.Size = new System.Drawing.Size(177, 17);
-            this.chkItemReal.TabIndex = 0;
-            this.chkItemReal.TabStop = true;
-            this.chkItemReal.Text = "เป็นรายการที่ใช้ในข้อมูลข้อตกลง";
-            this.chkItemReal.UseVisualStyleBackColor = true;
-            // 
-            // chkItemFail
-            // 
-            this.chkItemFail.AutoSize = true;
-            this.chkItemFail.Location = new System.Drawing.Point(257, 14);
-            this.chkItemFail.Name = "chkItemFail";
-            this.chkItemFail.Size = new System.Drawing.Size(120, 17);
-            this.chkItemFail.TabIndex = 1;
-            this.chkItemFail.TabStop = true;
-            this.chkItemFail.Text = "เป็นรายการของแถม";
-            this.chkItemFail.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.chkStatusNoStock);
-            this.panel2.Controls.Add(this.chkStock);
-            this.panel2.Location = new System.Drawing.Point(108, 493);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(464, 44);
-            this.panel2.TabIndex = 145;
-            // 
-            // chkStatusNoStock
-            // 
-            this.chkStatusNoStock.AutoSize = true;
-            this.chkStatusNoStock.Location = new System.Drawing.Point(257, 14);
-            this.chkStatusNoStock.Name = "chkStatusNoStock";
-            this.chkStatusNoStock.Size = new System.Drawing.Size(113, 17);
-            this.chkStatusNoStock.TabIndex = 1;
-            this.chkStatusNoStock.TabStop = true;
-            this.chkStatusNoStock.Text = "ไม่ต้องนำเข้าStock";
-            this.chkStatusNoStock.UseVisualStyleBackColor = true;
-            // 
-            // chkStock
-            // 
-            this.chkStock.AutoSize = true;
-            this.chkStock.Location = new System.Drawing.Point(11, 14);
-            this.chkStock.Name = "chkStock";
-            this.chkStock.Size = new System.Drawing.Size(53, 17);
-            this.chkStock.TabIndex = 0;
-            this.chkStock.TabStop = true;
-            this.chkStock.Text = "Stock";
-            this.chkStock.UseVisualStyleBackColor = true;
+            this.dgvAdd.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAdd.Location = new System.Drawing.Point(577, 82);
+            this.dgvAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvAdd.Name = "dgvAdd";
+            this.dgvAdd.RowTemplate.Height = 24;
+            this.dgvAdd.Size = new System.Drawing.Size(499, 362);
+            this.dgvAdd.TabIndex = 147;
             // 
             // FrmItemAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(614, 720);
+            this.ClientSize = new System.Drawing.Size(1126, 720);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmItemAdd";
@@ -606,10 +656,13 @@
             this.Load += new System.EventHandler(this.FrmItemAdd_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -661,5 +714,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RadioButton chkStatusNoStock;
         private System.Windows.Forms.RadioButton chkStock;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.DataGridView dgvAdd;
     }
 }

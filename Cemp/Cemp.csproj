@@ -323,6 +323,7 @@
     <Compile Include="objdb\AnalysisDB.cs" />
     <Compile Include="objdb\BankDB.cs" />
     <Compile Include="objdb\CompanyBankDB.cs" />
+    <Compile Include="objdb\ItemPricePeriodDB.cs" />
     <Compile Include="objdb\ItemTypeDB.cs" />
     <Compile Include="objdb\InvoiceDB.cs" />
     <Compile Include="objdb\InvoiceItemDB.cs" />
@@ -361,6 +362,7 @@
     <Compile Include="object1\InitConfig.cs" />
     <Compile Include="object1\Item.cs" />
     <Compile Include="object1\ItemGroup.cs" />
+    <Compile Include="object1\ItemPricePeriod.cs" />
     <Compile Include="object1\LogWriter.cs" />
     <Compile Include="object1\Method.cs" />
     <Compile Include="object1\MOU.cs" />
@@ -470,6 +472,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>POPrint.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\POPrint1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POPrint1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="report\QuotationDS.cs">
@@ -683,6 +691,10 @@
     <EmbeddedResource Include="report\POPrint.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>POPrint.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\POPrint1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>POPrint1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="report\QuotationPrint.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

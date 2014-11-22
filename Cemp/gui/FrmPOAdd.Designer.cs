@@ -73,9 +73,12 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtDiscountPer1 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.txtDiscountPer = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPledgePer = new System.Windows.Forms.TextBox();
+            this.txtPledge = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -104,9 +107,8 @@
             this.btnPrintT = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtPOId = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
+            this.txtRef1 = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
@@ -127,11 +129,11 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.cboCust);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(553, 11);
+            this.groupBox2.Location = new System.Drawing.Point(610, 11);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(516, 135);
+            this.groupBox2.Size = new System.Drawing.Size(640, 135);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "รายละเอียด Vendor";
@@ -142,7 +144,7 @@
             this.txtCustEmail.Location = new System.Drawing.Point(74, 103);
             this.txtCustEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustEmail.Name = "txtCustEmail";
-            this.txtCustEmail.Size = new System.Drawing.Size(432, 23);
+            this.txtCustEmail.Size = new System.Drawing.Size(562, 23);
             this.txtCustEmail.TabIndex = 13;
             // 
             // label10
@@ -159,17 +161,17 @@
             // txtCustFax
             // 
             this.txtCustFax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCustFax.Location = new System.Drawing.Point(324, 72);
+            this.txtCustFax.Location = new System.Drawing.Point(468, 72);
             this.txtCustFax.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustFax.Name = "txtCustFax";
-            this.txtCustFax.Size = new System.Drawing.Size(182, 23);
+            this.txtCustFax.Size = new System.Drawing.Size(168, 23);
             this.txtCustFax.TabIndex = 11;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label9.Location = new System.Drawing.Point(277, 76);
+            this.label9.Location = new System.Drawing.Point(421, 76);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 17);
@@ -182,7 +184,7 @@
             this.txtCustTel.Location = new System.Drawing.Point(74, 73);
             this.txtCustTel.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustTel.Name = "txtCustTel";
-            this.txtCustTel.Size = new System.Drawing.Size(199, 23);
+            this.txtCustTel.Size = new System.Drawing.Size(343, 23);
             this.txtCustTel.TabIndex = 9;
             // 
             // label8
@@ -202,7 +204,7 @@
             this.txtCustAddress.Location = new System.Drawing.Point(74, 46);
             this.txtCustAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustAddress.Name = "txtCustAddress";
-            this.txtCustAddress.Size = new System.Drawing.Size(432, 23);
+            this.txtCustAddress.Size = new System.Drawing.Size(562, 23);
             this.txtCustAddress.TabIndex = 7;
             // 
             // label7
@@ -252,7 +254,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(513, 139);
+            this.groupBox1.Size = new System.Drawing.Size(595, 139);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "รายละเอียด บริษัท";
@@ -263,7 +265,7 @@
             this.txtCpTaxId.Location = new System.Drawing.Point(67, 100);
             this.txtCpTaxId.Margin = new System.Windows.Forms.Padding(2);
             this.txtCpTaxId.Name = "txtCpTaxId";
-            this.txtCpTaxId.Size = new System.Drawing.Size(442, 23);
+            this.txtCpTaxId.Size = new System.Drawing.Size(524, 23);
             this.txtCpTaxId.TabIndex = 7;
             // 
             // label4
@@ -283,7 +285,7 @@
             this.txtCpAddress2.Location = new System.Drawing.Point(67, 73);
             this.txtCpAddress2.Margin = new System.Windows.Forms.Padding(2);
             this.txtCpAddress2.Name = "txtCpAddress2";
-            this.txtCpAddress2.Size = new System.Drawing.Size(442, 23);
+            this.txtCpAddress2.Size = new System.Drawing.Size(524, 23);
             this.txtCpAddress2.TabIndex = 5;
             // 
             // label3
@@ -303,7 +305,7 @@
             this.txtCpAddress1.Location = new System.Drawing.Point(67, 46);
             this.txtCpAddress1.Margin = new System.Windows.Forms.Padding(2);
             this.txtCpAddress1.Name = "txtCpAddress1";
-            this.txtCpAddress1.Size = new System.Drawing.Size(442, 23);
+            this.txtCpAddress1.Size = new System.Drawing.Size(524, 23);
             this.txtCpAddress1.TabIndex = 3;
             // 
             // label2
@@ -324,7 +326,7 @@
             this.cboComp.Location = new System.Drawing.Point(67, 18);
             this.cboComp.Margin = new System.Windows.Forms.Padding(2);
             this.cboComp.Name = "cboComp";
-            this.cboComp.Size = new System.Drawing.Size(442, 25);
+            this.cboComp.Size = new System.Drawing.Size(524, 25);
             this.cboComp.TabIndex = 1;
             // 
             // label1
@@ -383,7 +385,7 @@
             // 
             this.dgvAdd.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAdd.Location = new System.Drawing.Point(11, 181);
+            this.dgvAdd.Location = new System.Drawing.Point(11, 221);
             this.dgvAdd.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAdd.Name = "dgvAdd";
             this.dgvAdd.RowTemplate.Height = 24;
@@ -415,7 +417,7 @@
             this.groupBox4.Controls.Add(this.label25);
             this.groupBox4.Controls.Add(this.label24);
             this.groupBox4.Controls.Add(this.label23);
-            this.groupBox4.Location = new System.Drawing.Point(11, 505);
+            this.groupBox4.Location = new System.Drawing.Point(11, 551);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
@@ -532,6 +534,7 @@
             this.ChkUnActive.TabStop = true;
             this.ChkUnActive.Text = "ยกเลิก";
             this.ChkUnActive.UseVisualStyleBackColor = true;
+            this.ChkUnActive.Click += new System.EventHandler(this.ChkUnActive_Click);
             // 
             // label35
             // 
@@ -576,6 +579,7 @@
             this.chkActive.TabStop = true;
             this.chkActive.Text = "ใช้งาน";
             this.chkActive.UseVisualStyleBackColor = true;
+            this.chkActive.Click += new System.EventHandler(this.chkActive_Click);
             // 
             // cboRemark1
             // 
@@ -623,11 +627,11 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label17);
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.txtDiscountPer1);
             this.groupBox3.Controls.Add(this.label31);
             this.groupBox3.Controls.Add(this.label30);
-            this.groupBox3.Controls.Add(this.txtDiscountPer);
-            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.txtPledgePer);
+            this.groupBox3.Controls.Add(this.txtPledge);
             this.groupBox3.Controls.Add(this.label29);
             this.groupBox3.Controls.Add(this.txtTotal);
             this.groupBox3.Controls.Add(this.label18);
@@ -648,7 +652,7 @@
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.txtAmount);
             this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Location = new System.Drawing.Point(592, 505);
+            this.groupBox3.Location = new System.Drawing.Point(592, 551);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
@@ -656,6 +660,37 @@
             this.groupBox3.TabIndex = 32;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "amount";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label17.Location = new System.Drawing.Point(139, 46);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(20, 17);
+            this.label17.TabIndex = 80;
+            this.label17.Text = "%";
+            // 
+            // txtDiscountPer1
+            // 
+            this.txtDiscountPer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtDiscountPer1.Location = new System.Drawing.Point(86, 43);
+            this.txtDiscountPer1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDiscountPer1.Name = "txtDiscountPer1";
+            this.txtDiscountPer1.Size = new System.Drawing.Size(43, 23);
+            this.txtDiscountPer1.TabIndex = 79;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label31.Location = new System.Drawing.Point(22, 46);
+            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(58, 17);
+            this.label31.TabIndex = 78;
+            this.label31.Text = "ส่วนลด  :";
             // 
             // label30
             // 
@@ -668,24 +703,24 @@
             this.label30.TabIndex = 77;
             this.label30.Text = "%";
             // 
-            // txtDiscountPer
+            // txtPledgePer
             // 
-            this.txtDiscountPer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtDiscountPer.Location = new System.Drawing.Point(86, 152);
-            this.txtDiscountPer.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDiscountPer.Name = "txtDiscountPer";
-            this.txtDiscountPer.Size = new System.Drawing.Size(43, 23);
-            this.txtDiscountPer.TabIndex = 76;
+            this.txtPledgePer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtPledgePer.Location = new System.Drawing.Point(86, 152);
+            this.txtPledgePer.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPledgePer.Name = "txtPledgePer";
+            this.txtPledgePer.Size = new System.Drawing.Size(43, 23);
+            this.txtPledgePer.TabIndex = 76;
             // 
-            // textBox1
+            // txtPledge
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox1.Location = new System.Drawing.Point(267, 149);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(141, 23);
-            this.textBox1.TabIndex = 75;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPledge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtPledge.Location = new System.Drawing.Point(267, 149);
+            this.txtPledge.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPledge.Name = "txtPledge";
+            this.txtPledge.Size = new System.Drawing.Size(141, 23);
+            this.txtPledge.TabIndex = 75;
+            this.txtPledge.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label29
             // 
@@ -712,12 +747,12 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label18.Location = new System.Drawing.Point(190, 72);
+            this.label18.Location = new System.Drawing.Point(135, 72);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(65, 17);
+            this.label18.Size = new System.Drawing.Size(120, 17);
             this.label18.TabIndex = 72;
-            this.label18.Text = "รวมราคา :";
+            this.label18.Text = "ราคาหลังหักส่วนลด :";
             // 
             // txtPlus1
             // 
@@ -900,7 +935,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label6.Location = new System.Drawing.Point(560, 155);
+            this.label6.Location = new System.Drawing.Point(866, 200);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 17);
@@ -909,7 +944,7 @@
             // 
             // btnSearchQu
             // 
-            this.btnSearchQu.Location = new System.Drawing.Point(921, 151);
+            this.btnSearchQu.Location = new System.Drawing.Point(1227, 196);
             this.btnSearchQu.Name = "btnSearchQu";
             this.btnSearchQu.Size = new System.Drawing.Size(34, 23);
             this.btnSearchQu.TabIndex = 71;
@@ -920,7 +955,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.radioButton1.Location = new System.Drawing.Point(722, 153);
+            this.radioButton1.Location = new System.Drawing.Point(1028, 198);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(94, 21);
@@ -933,7 +968,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.radioButton2.Location = new System.Drawing.Point(650, 153);
+            this.radioButton2.Location = new System.Drawing.Point(956, 198);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(68, 21);
@@ -946,7 +981,7 @@
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.radioButton3.Location = new System.Drawing.Point(820, 153);
+            this.radioButton3.Location = new System.Drawing.Point(1126, 198);
             this.radioButton3.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(84, 21);
@@ -957,7 +992,7 @@
             // 
             // btnPrintT
             // 
-            this.btnPrintT.Location = new System.Drawing.Point(1073, 101);
+            this.btnPrintT.Location = new System.Drawing.Point(1254, 101);
             this.btnPrintT.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrintT.Name = "btnPrintT";
             this.btnPrintT.Size = new System.Drawing.Size(56, 29);
@@ -968,7 +1003,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(1073, 14);
+            this.btnSave.Location = new System.Drawing.Point(1254, 14);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(56, 29);
@@ -987,42 +1022,33 @@
             this.txtPOId.TabIndex = 78;
             this.txtPOId.Visible = false;
             // 
-            // label17
+            // txtRef1
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label17.Location = new System.Drawing.Point(139, 46);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(20, 17);
-            this.label17.TabIndex = 80;
-            this.label17.Text = "%";
+            this.txtRef1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtRef1.Location = new System.Drawing.Point(78, 194);
+            this.txtRef1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRef1.Name = "txtRef1";
+            this.txtRef1.Size = new System.Drawing.Size(772, 23);
+            this.txtRef1.TabIndex = 79;
             // 
-            // textBox2
+            // label32
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox2.Location = new System.Drawing.Point(86, 43);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(43, 23);
-            this.textBox2.TabIndex = 79;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label31.Location = new System.Drawing.Point(22, 46);
-            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(58, 17);
-            this.label31.TabIndex = 78;
-            this.label31.Text = "ส่วนลด  :";
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label32.Location = new System.Drawing.Point(8, 197);
+            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(48, 17);
+            this.label32.TabIndex = 80;
+            this.label32.Text = "อ้างอิง :";
             // 
             // FrmPOAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1159, 772);
+            this.ClientSize = new System.Drawing.Size(1352, 824);
+            this.Controls.Add(this.label32);
+            this.Controls.Add(this.txtRef1);
             this.Controls.Add(this.txtPOId);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnPrintT);
@@ -1135,12 +1161,14 @@
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtPlus1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPledge;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox txtDiscountPer;
+        private System.Windows.Forms.TextBox txtPledgePer;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDiscountPer1;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox txtRef1;
+        private System.Windows.Forms.Label label32;
     }
 }
