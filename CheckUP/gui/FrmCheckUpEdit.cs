@@ -159,10 +159,10 @@ namespace CheckUP.gui
             txtCBCWbcNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcWbc].ToString();
             txtCBCPltSNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPlateletSmear].ToString();
 
-            txtBunCreatinineNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyCreatinine].ToString();
+            txtBunCreatinineNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyCreatinineMale].ToString();
             //txtBunResultNormal.Text = dtccp.Rows[0][cc.ccpdb.ccp.kidneyResult].ToString();
             //txtBunSummary.Text = dtccp.Rows[0][cc.ccpdb.ccp.kidneySummary].ToString();
-            txtBunNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyBun].ToString();
+            txtBunNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyBunMale].ToString();
 
             txtFBSNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.sugar].ToString();
 

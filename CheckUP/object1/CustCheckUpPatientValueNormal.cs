@@ -78,8 +78,9 @@ namespace CheckUP.object1
         public String sugarDiagnosis="";
         public String sugarSummary="";
         public String sugarSuggess="";
-        public String kidneyBun="";
-        public String kidneyCreatinine="";
+
+        public String kidneyBunMale = "", kidneyBunFemale = "";
+        public String kidneyCreatinineMale = "", kidneyCreatinineFemale = "";
         public String kidneyResult = "";
         public String kidneySummary = "";
 

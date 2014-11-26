@@ -87,8 +87,10 @@ namespace CheckUP.gui
             txtSgotSgptValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.liverSgpt].ToString();
             txtSgotValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.liverSgot].ToString();
 
-            txtBunValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.kidneyBun].ToString();
-            txtBunCreatinineValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.kidneyCreatinine].ToString();
+            txtBunMaleValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.kidneyBunMale].ToString();
+            txtBunCreatinineMaleValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.kidneyCreatinineMale].ToString();
+            txtBunFemaleValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.kidneyBunFemale].ToString();
+            txtBunCreatinineFemaleValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.kidneyCreatinineFemale].ToString();
 
             txtUricValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.uricAcid].ToString();
 
@@ -163,15 +165,44 @@ namespace CheckUP.gui
 
         private void btnSgotSave_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            try
             {
-                String chk = cc.ccpvndb.UpdateSgot(txtSgotValue.Text, txtSgotSgptValue.Text, txtSgotALT.Text);
-                cc.dtccpvn = cc.ccpvndb.selectByPk();
-                if (chk.Equals("1"))
+                String[] sgot = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgot].ToString().Split('@');
+                int sgotMin = 0, sgotMax = 0;
+                String sgotUnit = "";
+                if (sgot.Length == 2)
                 {
-                    MessageBox.Show("บันทึกข้อมูล SGOT เรียบร้อย", "บันทึกข้อมูล");
+                    String[] aa = sgot[0].ToString().Split('-');
+                    sgotMin = int.Parse(aa[0]);
+                    sgotMax = int.Parse(aa[1]);
+                    sgotUnit = sgot[1];
+                }
+                String[] sgpt = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgot].ToString().Split('@');
+                int sgptMin = 0, sgptMax = 0;
+                String sgptUnit = "";
+                if (sgot.Length == 2)
+                {
+                    String[] aa = sgpt[0].ToString().Split('-');
+                    sgptMin = int.Parse(aa[0]);
+                    sgptMax = int.Parse(aa[1]);
+                    sgptUnit = sgot[1];
+                }
+                if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                {
+                    String chk = cc.ccpvndb.UpdateSgot(txtSgotValue.Text, txtSgotSgptValue.Text, txtSgotALT.Text);
+                    cc.dtccpvn = cc.ccpvndb.selectByPk();
+                    if (chk.Equals("1"))
+                    {
+                        MessageBox.Show("บันทึกข้อมูล SGOT เรียบร้อย", "บันทึกข้อมูล");
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ข้อมูล FBS ไม่ถูกต้อง - @ ", "Error");
+                return;
+            }
+            
         }
 
         private void btnCBCSave_Click(object sender, EventArgs e)
@@ -190,14 +221,32 @@ namespace CheckUP.gui
 
         private void btnFBSSave_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            try
             {
-                String chk = cc.ccpvndb.UpdateFBS(txtFBSValue.Text);
-                cc.dtccpvn = cc.ccpvndb.selectByPk();
-                if (chk.Equals("1"))
+                String[] fbs = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.sugar].ToString().Split('@');
+                int fbsMin = 0, fbsMax = 0;
+                String fbsUnit = "";
+                if (fbs.Length == 2)
                 {
-                    MessageBox.Show("บันทึกข้อมูล FBS เรียบร้อย", "บันทึกข้อมูล");
+                    String[] aa = fbs[0].ToString().Split('-');
+                    fbsMin = int.Parse(aa[0]);
+                    fbsMax = int.Parse(aa[1]);
+                    fbsUnit = fbs[1];
                 }
+                if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                {
+                    String chk = cc.ccpvndb.UpdateFBS(txtFBSValue.Text);
+                    cc.dtccpvn = cc.ccpvndb.selectByPk();
+                    if (chk.Equals("1"))
+                    {
+                        MessageBox.Show("บันทึกข้อมูล FBS เรียบร้อย", "บันทึกข้อมูล");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ข้อมูล FBS ไม่ถูกต้อง - @ ", "Error");
+                return;
             }
         }
 
@@ -216,40 +265,126 @@ namespace CheckUP.gui
 
         private void btnTriSave_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            try
             {
-                String chk = cc.ccpvndb.UpdateTrigly(txtTriValue.Text);
-                cc.dtccpvn = cc.ccpvndb.selectByPk();
-                if (chk.Equals("1"))
+                String[] tri = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.triglyceride].ToString().Split('@');
+                int triMax = 0;
+                String triUnit = "";
+                if (tri.Length == 2)
                 {
-                    MessageBox.Show("บันทึกข้อมูล Trigly เรียบร้อย", "บันทึกข้อมูล");
+                    String[] aa = tri[0].ToString().Split('<');
+                    triMax = int.Parse(aa[0]);
+                    //fbsMax = int.Parse(aa[1]);
+                    triUnit = tri[1];
+                }
+                if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                {
+                    String chk = cc.ccpvndb.UpdateTrigly(txtTriValue.Text);
+                    cc.dtccpvn = cc.ccpvndb.selectByPk();
+                    if (chk.Equals("1"))
+                    {
+                        MessageBox.Show("บันทึกข้อมูล Trigly เรียบร้อย", "บันทึกข้อมูล");
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ข้อมูล Trigly ไม่ถูกต้อง < @ ", "Error");
+                return;
+            }                        
         }
 
         private void btnChoSave_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            try
             {
-                String chk = cc.ccpvndb.UpdateCholes(txtChoValue.Text, txtChoLDL.Text,txtChoHDL.Text);
-                cc.dtccpvn = cc.ccpvndb.selectByPk();
-                if (chk.Equals("1"))
+                String[] choles = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cholesterol].ToString().Split('@');
+                int cholesMax = 0;
+                String cholesUnit = "";
+                if (choles.Length == 2)
                 {
-                    MessageBox.Show("บันทึกข้อมูล Choles เรียบร้อย", "บันทึกข้อมูล");
+                    String[] aa = choles[0].ToString().Split('<');
+                    cholesMax = int.Parse(aa[0]);
+                    //fbsMax = int.Parse(aa[1]);
+                    cholesUnit = choles[1];
+                }
+                if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                {
+                    String chk = cc.ccpvndb.UpdateCholes(txtChoValue.Text, txtChoLDL.Text, txtChoHDL.Text);
+                    cc.dtccpvn = cc.ccpvndb.selectByPk();
+                    if (chk.Equals("1"))
+                    {
+                        MessageBox.Show("บันทึกข้อมูล Choles เรียบร้อย", "บันทึกข้อมูล");
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ข้อมูล Choles ไม่ถูกต้อง < @ ", "Error");
+                return;
+            }
+            
         }
 
         private void btnBunSave_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            try
             {
-                String chk = cc.ccpvndb.UpdateBun(txtBunValue.Text,txtBunCreatinineValue.Text);
-                cc.dtccpvn = cc.ccpvndb.selectByPk();
-                if (chk.Equals("1"))
+                String[] bunMale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyBunMale].ToString().Split('@');
+                int bunMaleMin = 0,bunMaleMax = 0;
+                String bunMaleUnit = "";
+                if (bunMale.Length == 2)
                 {
-                    MessageBox.Show("บันทึกข้อมูล Bun เรียบร้อย", "บันทึกข้อมูล");
+                    String[] aa = bunMale[0].ToString().Split('<');
+                    bunMaleMin = int.Parse(aa[0]);
+                    bunMaleMax = int.Parse(aa[1]);
+                    bunMaleUnit = bunMale[1];
                 }
+                String[] bunFemale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyBunFemale].ToString().Split('@');
+                int bunFemaleMin = 0, bunFemaleMax = 0;
+                String bunFemaleUnit = "";
+                if (bunFemale.Length == 2)
+                {
+                    String[] aa = bunFemale[0].ToString().Split('<');
+                    bunFemaleMin = int.Parse(aa[0]);
+                    bunFemaleMax = int.Parse(aa[1]);
+                    bunFemaleUnit = bunFemale[1];
+                }
+                String[] CreatinineMale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyCreatinineMale].ToString().Split('@');
+                int CreatinineMaleMin = 0, CreatinineMaleMax = 0;
+                String CreatinineMaleUnit = "";
+                if (CreatinineMale.Length == 2)
+                {
+                    String[] aa = CreatinineMale[0].ToString().Split('<');
+                    CreatinineMaleMin = int.Parse(aa[0]);
+                    CreatinineMaleMax = int.Parse(aa[1]);
+                    CreatinineMaleUnit = CreatinineMale[1];
+                }
+                String[] CreatinineFemale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyCreatinineFemale].ToString().Split('@');
+                int CreatinineFemaleMin = 0, CreatinineFemaleMax = 0;
+                String CreatinineFemaleUnit = "";
+                if (CreatinineFemale.Length == 2)
+                {
+                    String[] aa = CreatinineFemale[0].ToString().Split('<');
+                    CreatinineFemaleMin = int.Parse(aa[0]);
+                    CreatinineFemaleMax = int.Parse(aa[1]);
+                    CreatinineFemaleUnit = CreatinineFemale[1];
+                }
+
+                if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                {
+                    String chk = cc.ccpvndb.UpdateBun(txtBunMaleValue.Text, txtBunCreatinineMaleValue.Text, txtBunFemaleValue.Text, txtBunCreatinineFemaleValue.Text);
+                    cc.dtccpvn = cc.ccpvndb.selectByPk();
+                    if (chk.Equals("1"))
+                    {
+                        MessageBox.Show("บันทึกข้อมูล Bun เรียบร้อย", "บันทึกข้อมูล");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ข้อมูล Bun ไม่ถูกต้อง < @ ", "Error");
+                return;
             }
         }
 

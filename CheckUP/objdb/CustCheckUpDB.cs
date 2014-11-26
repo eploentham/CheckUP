@@ -950,7 +950,7 @@ namespace CheckUP.objdb
             //p.Remark = p.Remark.Replace("'", "''");
 
             sql = "Update " + cuc.table + " Set " + cuc.SgotCnt + "=" + cnt + ", " +
-                cuc.SgotSuccess + "=" + row + " " +
+                cuc.SgotSuccess + "=" + row + ", " +
                 cuc.SgotNormal + "=" + normal + ", " +
                 cuc.SgotAbNormal + "=" + (row - normal) + " " +
                 "Where " + cuc.pkField + "='" + cucId + "'";

@@ -104,8 +104,11 @@ namespace CheckUP.objdb
             ccpvn.sugarDiagnosis = "sugar_diagnosis";
             ccpvn.sugarSummary = "sugar_summary";
             ccpvn.sugarSuggess = "sugar_suggess";
-            ccpvn.kidneyBun = "kidney_bun";
-            ccpvn.kidneyCreatinine = "kidney_creatinine";
+            ccpvn.kidneyBunMale = "kidney_bun_male";
+            ccpvn.kidneyCreatinineMale = "kidney_creatinine_male";
+            ccpvn.kidneyBunFemale = "kidney_bun_female";
+            ccpvn.kidneyCreatinineFemale = "kidney_creatinine_female";
+
             ccpvn.kidneyResult = "kidney_result";
             ccpvn.kidneySummary = "kidney_summary";
             ccpvn.liverSgot = "liver_sgot";
@@ -431,8 +434,8 @@ namespace CheckUP.objdb
                 sql = "Update " + ccpvn.table + " Set " + ccpvn.liverSgot + "='" + sgot + "'," +
                     //ccp.liverResult + "='" + result + "', " +
                     //ccp.liverSummary + "='" + summary + "', " +
-                ccpvn.liverAlp + "='" + sgpt + "', " +
-                ccpvn.liverSgpt + "='" + alt + "' ";
+                ccpvn.liverAlp + "='" + alt + "', " +
+                ccpvn.liverSgpt + "='" + sgpt + "' ";
                 //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             }
@@ -442,15 +445,15 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String UpdateBun(String bun, String creatinine)
+        public String UpdateBun(String bunMale, String creatinineMale, String bunFemale, String creatinineFemale)
         {
             String chk = "", sql = "";
             try
             {
-                sql = "Update " + ccpvn.table + " Set " + ccpvn.kidneyBun + "='" + bun + "'," +
-                    //ccp.kidneyResult + "='" + result + "', " +
-                    //ccp.kidneySummary + "='" + summary + "', " +
-                ccpvn.kidneyCreatinine + "='" + creatinine + "' ";
+                sql = "Update " + ccpvn.table + " Set " + ccpvn.kidneyBunMale + "='" + bunMale + "'," +
+                    ccpvn.kidneyBunFemale + "='" + bunFemale + "', " +
+                    ccpvn.kidneyCreatinineFemale + "='" + creatinineFemale + "', " +
+                ccpvn.kidneyCreatinineMale + "='" + creatinineMale + "' ";
                 //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             }
