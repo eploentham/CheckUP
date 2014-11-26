@@ -100,6 +100,30 @@ namespace Cemp.gui
                 chkStock.Checked = false;
                 chkStatusNoStock.Checked = true;
             }
+            if (it.StatusPrice.Equals("1"))
+            {
+                chkPriceNormal.Checked = true;
+                chkPricePeriod.Checked = false;
+                chkPriceFree.Checked = false;
+            }
+            else if (it.StatusPrice.Equals("2"))
+            {
+                chkPriceNormal.Checked = false;
+                chkPricePeriod.Checked = false;
+                chkPriceFree.Checked = true;
+            }
+            else if (it.StatusPrice.Equals("4"))
+            {
+                chkPriceNormal.Checked = false;
+                chkPricePeriod.Checked = true;
+                chkPriceFree.Checked = false;
+            }
+            else
+            {
+                chkPriceNormal.Checked = true;
+                chkPricePeriod.Checked = false;
+                chkPriceFree.Checked = false;
+            }
         }
         private void getItem()
         {
@@ -140,6 +164,22 @@ namespace Cemp.gui
             else
             {
                 it.StatusStock = "3";
+            }
+            if (chkPriceNormal.Checked)
+            {
+                it.StatusPrice = "1";
+            }
+            else if (chkPriceFree.Checked)
+            {
+                it.StatusPrice = "2";
+            }
+            else if (chkPricePeriod.Checked)
+            {
+                it.StatusPrice = "4";
+            }
+            else
+            {
+                it.StatusPrice = "1";
             }
         }
         //private void setGrd(String itId)

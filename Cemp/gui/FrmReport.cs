@@ -434,9 +434,6 @@ namespace Cemp
                 
                 rpt.SetParameterValue("amount2", qu.Amount);
 
-                
-                
-
                 if (qu.Discount.Equals("0.00"))
                 {
                     rpt.SetParameterValue("discount", "-");

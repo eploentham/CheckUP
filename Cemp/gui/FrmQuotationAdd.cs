@@ -562,6 +562,7 @@ namespace Cemp.gui
                     qui.ItemGroupSort = itg.Sort1;
                     qui.PriceCost = cc.cf.NumberNull1(dgvAdd[colPriceCost, i].Value.ToString());
                     qui.ItemType = it.ItemType;
+                    qui.StatusPrice = it.StatusPrice;
                     if (dgvAdd[colDel, i].Value.ToString().Equals("1"))
                     {
                         cc.quidb.VoidQuotationItem(dgvAdd[colId, i].Value.ToString());

@@ -9,7 +9,7 @@ namespace Cemp.object1
     {
         public String Id = "", QuoId = "", RowNumber = "", ItemId = "", ItemDescription = "", MethodId = "", MethodDescription = "", Qty = "", PriceSale = "", Discount = "", Amount = "", Active = "",Remark="";
         public String ItemGroupId = "", ItemGroupNameT = "", ItemGroupNameE = "", ItemGroupSort="", PriceCost="";
-        public String dateCreate = "", dateModi = "", dateCancel = "", userCreate = "", userModi = "", userCancel = "", ItemCode="";
+        public String dateCreate = "", dateModi = "", dateCancel = "", userCreate = "", userModi = "", userCancel = "", ItemCode = "", StatusPrice = "";
         public String ItemType = "";
         public override string ToString()
         {

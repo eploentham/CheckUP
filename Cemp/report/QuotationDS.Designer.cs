@@ -329,6 +329,8 @@ namespace Cemp.report {
             
             private global::System.Data.DataColumn columnuser_cancel;
             
+            private global::System.Data.DataColumn columnstatus_price;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public t_quotation_itemDataTable() {
@@ -564,6 +566,14 @@ namespace Cemp.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn status_priceColumn {
+                get {
+                    return this.columnstatus_price;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -624,7 +634,8 @@ namespace Cemp.report {
                         string date_cancel, 
                         string user_create, 
                         string user_modi, 
-                        string user_cancel) {
+                        string user_cancel, 
+                        string status_price) {
                 t_quotation_itemRow rowt_quotation_itemRow = ((t_quotation_itemRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         quo_item_id,
@@ -651,7 +662,8 @@ namespace Cemp.report {
                         date_cancel,
                         user_create,
                         user_modi,
-                        user_cancel};
+                        user_cancel,
+                        status_price};
                 rowt_quotation_itemRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowt_quotation_itemRow);
                 return rowt_quotation_itemRow;
@@ -706,6 +718,7 @@ namespace Cemp.report {
                 this.columnuser_create = base.Columns["user_create"];
                 this.columnuser_modi = base.Columns["user_modi"];
                 this.columnuser_cancel = base.Columns["user_cancel"];
+                this.columnstatus_price = base.Columns["status_price"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -761,6 +774,8 @@ namespace Cemp.report {
                 base.Columns.Add(this.columnuser_modi);
                 this.columnuser_cancel = new global::System.Data.DataColumn("user_cancel", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnuser_cancel);
+                this.columnstatus_price = new global::System.Data.DataColumn("status_price", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstatus_price);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnquo_item_id}, true));
                 this.columnquo_item_id.AllowDBNull = false;
@@ -1322,6 +1337,22 @@ namespace Cemp.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string status_price {
+                get {
+                    try {
+                        return ((string)(this[this.tablet_quotation_item.status_priceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'status_price\' in table \'t_quotation_item\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablet_quotation_item.status_priceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isquo_idNull() {
                 return this.IsNull(this.tablet_quotation_item.quo_idColumn);
             }
@@ -1606,6 +1637,18 @@ namespace Cemp.report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setuser_cancelNull() {
                 this[this.tablet_quotation_item.user_cancelColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isstatus_priceNull() {
+                return this.IsNull(this.tablet_quotation_item.status_priceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setstatus_priceNull() {
+                this[this.tablet_quotation_item.status_priceColumn] = global::System.Convert.DBNull;
             }
         }
         

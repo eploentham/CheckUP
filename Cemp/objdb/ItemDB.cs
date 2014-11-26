@@ -277,6 +277,10 @@ namespace Cemp.objdb
             {
                 p.Sort1 = "9999";
             }
+            if (p.StatusPrice.Equals(""))
+            {
+                p.StatusPrice = "1";
+            }
             sql = "Update " + it.table + " Set " + it.Code + "='" + p.Code + "', " +
                 it.NameE + "='" + p.NameE + "', " +
                 it.NameT + "='" + p.NameT + "', " +

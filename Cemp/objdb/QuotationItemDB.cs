@@ -49,6 +49,8 @@ namespace Cemp.objdb
             qui.ItemCode = "item_code";
             qui.ItemType = "item_type";
 
+            qui.StatusPrice = "status_price";
+
             qui.table = "t_quotation_item";
             qui.pkField = "quo_item_id";
         }
@@ -83,6 +85,8 @@ namespace Cemp.objdb
 
             item.ItemCode = dt.Rows[0][qui.ItemCode].ToString();
             item.ItemType = dt.Rows[0][qui.ItemType].ToString();
+
+            item.StatusPrice = dt.Rows[0][qui.StatusPrice].ToString();
 
             return item;
         }
@@ -124,8 +128,7 @@ namespace Cemp.objdb
             catch (Exception ex)
             {
 
-            }
-            
+            }            
 
             return dt;
         }
@@ -199,13 +202,15 @@ namespace Cemp.objdb
                 qui.MethodDescription + "," + qui.MethodId + "," + qui.PriceSale + "," +
                 qui.Qty + "," + qui.QuoId + "," + qui.RowNumber + "," +
                 qui.Remark + "," + qui.ItemGroupNameE + "," + qui.ItemGroupNameT + "," +
-                qui.ItemGroupSort + "," + qui.ItemGroupId + "," + qui.PriceCost + "," + qui.ItemCode + "," + qui.ItemType + ") " +
+                qui.ItemGroupSort + "," + qui.ItemGroupId + "," + qui.PriceCost + "," +
+                qui.ItemCode + "," + qui.ItemType + "," + qui.StatusPrice + ") " +
                 "Values('" + p.Id + "','" + p.Active + "'," + NumberNull1(p.Amount.Replace(",", "")) + "," +
                 NumberNull1(p.Discount.Replace(",", "")) + ",'" + p.ItemDescription + "','" + p.ItemId + "','" +
                 p.MethodDescription + "','" + p.MethodId + "'," + NumberNull1(p.PriceSale.Replace(",", "")) + "," +
                 NumberNull1(p.Qty.Replace(",", "")) + ",'" + p.QuoId + "'," + NumberNull1(p.RowNumber) + ",'" +
                 p.Remark + "','" + p.ItemGroupNameE + "','" + p.ItemGroupNameT + "','" +
-                p.ItemGroupSort + "','" + p.ItemGroupId + "'," + NumberNull1(p.PriceCost.Replace(",", "")) + ",'" + p.ItemCode + "','" + p.ItemType + "')";
+                p.ItemGroupSort + "','" + p.ItemGroupId + "'," + NumberNull1(p.PriceCost.Replace(",", "")) + ",'" +
+                p.ItemCode + "','" + p.ItemType + "','" + p.StatusPrice + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -213,7 +218,7 @@ namespace Cemp.objdb
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex.ToString(), "insert Staff");
+                MessageBox.Show("Error " + ex.ToString(), "insert QuotationItem");
             }
             finally
             {
@@ -257,7 +262,8 @@ namespace Cemp.objdb
                 qui.PriceCost + "=" + NumberNull1(p.PriceCost.Replace(",", "")) + ", " +
                 qui.ItemCode + "='" + p.ItemCode + "', " +
                 //qui.ItemGroupId + "='" + p.ItemGroupId + "', " +
-                qui.ItemType + "='" + p.ItemType + "' " +
+                qui.ItemType + "='" + p.ItemType + "', " +
+                qui.StatusPrice + "='" + p.StatusPrice + "' " +
                 "Where " + qui.pkField + "='" + p.Id + "'";
             try
             {
@@ -265,7 +271,7 @@ namespace Cemp.objdb
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex.ToString(), "update Staff");
+                MessageBox.Show("Error " + ex.ToString(), "update QuotationItem");
             }
             finally
             {

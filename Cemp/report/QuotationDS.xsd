@@ -224,7 +224,7 @@
   <xs:element name="QuotationDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="QuotationDS" msprop:Generator_UserDSName="QuotationDS">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="t_quotation_item" msprop:Generator_TableClassName="t_quotation_itemDataTable" msprop:Generator_TableVarName="tablet_quotation_item" msprop:Generator_TablePropName="t_quotation_item" msprop:Generator_RowDeletingName="t_quotation_itemRowDeleting" msprop:Generator_RowChangingName="t_quotation_itemRowChanging" msprop:Generator_RowEvHandlerName="t_quotation_itemRowChangeEventHandler" msprop:Generator_RowDeletedName="t_quotation_itemRowDeleted" msprop:Generator_UserTableName="t_quotation_item" msprop:Generator_RowChangedName="t_quotation_itemRowChanged" msprop:Generator_RowEvArgName="t_quotation_itemRowChangeEvent" msprop:Generator_RowClassName="t_quotation_itemRow">
+        <xs:element name="t_quotation_item" msprop:Generator_TableClassName="t_quotation_itemDataTable" msprop:Generator_TableVarName="tablet_quotation_item" msprop:Generator_RowChangedName="t_quotation_itemRowChanged" msprop:Generator_TablePropName="t_quotation_item" msprop:Generator_RowDeletingName="t_quotation_itemRowDeleting" msprop:Generator_RowChangingName="t_quotation_itemRowChanging" msprop:Generator_RowEvHandlerName="t_quotation_itemRowChangeEventHandler" msprop:Generator_RowDeletedName="t_quotation_itemRowDeleted" msprop:Generator_RowClassName="t_quotation_itemRow" msprop:Generator_UserTableName="t_quotation_item" msprop:Generator_RowEvArgName="t_quotation_itemRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="quo_item_id" msprop:Generator_ColumnVarNameInTable="columnquo_item_id" msprop:Generator_ColumnPropNameInRow="quo_item_id" msprop:Generator_ColumnPropNameInTable="quo_item_idColumn" msprop:Generator_UserColumnName="quo_item_id">
@@ -366,6 +366,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="status_price" msprop:Generator_ColumnVarNameInTable="columnstatus_price" msprop:Generator_ColumnPropNameInRow="status_price" msprop:Generator_ColumnPropNameInTable="status_priceColumn" msprop:Generator_UserColumnName="status_price" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
