@@ -477,6 +477,8 @@
             this.nmDStoolExamNo = new System.Windows.Forms.NumericUpDown();
             this.label163 = new System.Windows.Forms.Label();
             this.nmDStoolExamRow = new System.Windows.Forms.NumericUpDown();
+            this.label181 = new System.Windows.Forms.Label();
+            this.nmDEyeExam = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDARow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDAPrefix)).BeginInit();
@@ -679,6 +681,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeExam)).BeginInit();
             this.SuspendLayout();
             // 
             // nmDRow
@@ -4499,6 +4502,8 @@
             // 
             // tabPage15
             // 
+            this.tabPage15.Controls.Add(this.label181);
+            this.tabPage15.Controls.Add(this.nmDEyeExam);
             this.tabPage15.Controls.Add(this.label129);
             this.tabPage15.Controls.Add(this.txtEyeTest);
             this.tabPage15.Controls.Add(this.btnEyeExcel);
@@ -5915,6 +5920,28 @@
             0,
             0});
             // 
+            // label181
+            // 
+            this.label181.AutoSize = true;
+            this.label181.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label181.Location = new System.Drawing.Point(347, 150);
+            this.label181.Name = "label181";
+            this.label181.Size = new System.Drawing.Size(64, 16);
+            this.label181.TabIndex = 147;
+            this.label181.Text = "สายตาทั่วไป";
+            // 
+            // nmDEyeExam
+            // 
+            this.nmDEyeExam.Location = new System.Drawing.Point(357, 178);
+            this.nmDEyeExam.Name = "nmDEyeExam";
+            this.nmDEyeExam.Size = new System.Drawing.Size(46, 20);
+            this.nmDEyeExam.TabIndex = 148;
+            this.nmDEyeExam.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
             // FrmExcelInit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -6146,6 +6173,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeExam)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -6601,5 +6629,7 @@
         private System.Windows.Forms.Label label180;
         private System.Windows.Forms.TextBox txtToxi1Test;
         private System.Windows.Forms.Button btnToxi1Excel;
+        private System.Windows.Forms.Label label181;
+        private System.Windows.Forms.NumericUpDown nmDEyeExam;
     }
 }

@@ -202,6 +202,7 @@ namespace CheckUP.gui
             nmDEyeBlindness.Value = int.Parse(cc.cf.NumberNull1(ei.EyeBlindness));
             nmDEyeResult.Value = int.Parse(cc.cf.NumberNull1(ei.EyeResult));
             nmDEyeSummary.Value = int.Parse(cc.cf.NumberNull1(ei.EyeSummary));
+            nmDEyeExam.Value = int.Parse(cc.cf.NumberNull1(ei.EyeExam));
 
             nmDStoolExamAppearance.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamAppearance));
             nmDStoolExamColor.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamColor));
@@ -1163,7 +1164,7 @@ namespace CheckUP.gui
         }
         private void SaveEye()
         {
-            String No = "", EyeShortLongLeft = "", EyeShortLongRight = "", EyeSquintLeft = "", EyeSquintRight = "", EyedegreeLeft = "", EyeDegreeRight = "", EyeOldLeft = "", EyeOldRight = "", EyeBlindness = "", EyeResult = "", EyeSummary = "";
+            String No = "", EyeShortLongLeft = "", EyeShortLongRight = "", EyeSquintLeft = "", EyeSquintRight = "", EyedegreeLeft = "", EyeDegreeRight = "", EyeOldLeft = "", EyeOldRight = "", EyeBlindness = "", EyeResult = "", EyeSummary = "", EyeExam="";
             ofd.ShowDialog();
 
             Cursor cursor = Cursor.Current;
@@ -1282,15 +1283,25 @@ namespace CheckUP.gui
             }
             EyeSummary = EyeSummary.Trim();
 
+            if (xlRange.Cells[nmDEyeRow.Value, nmDEyeExam.Value].Value2 != null)
+            {
+                EyeExam = xlRange.Cells[nmDEyeRow.Value, nmDEyeExam.Value].Value2.ToString();
+            }
+            else
+            {
+                EyeExam = "";
+            }
+            EyeExam = EyeExam.Trim();
+
 
             txtEyeTest.Text = "ลำดับ " + No + " EyeShortLongLeft " + EyeShortLongLeft + " EyeShortLongRight " + EyeShortLongRight + " EyeSquintLeft " + EyeSquintLeft + " EyeSquintRight " + EyeSquintRight + " EyedegreeLeft " + EyedegreeLeft + " EyeDegreeRight " + EyeDegreeRight + " EyeOldLeft " + EyeOldLeft +
-                " EyeOldRight " + EyeOldRight + " EyeBlindness " + EyeBlindness + " EyeResult " + EyeResult + " EyeSummary " + EyeSummary;
+                " EyeOldRight " + EyeOldRight + " EyeBlindness " + EyeBlindness + " EyeResult " + EyeResult + " EyeSummary " + EyeSummary + " EyeExam " + EyeExam;
 
             Cursor.Current = cursor;
             if (cc.eidb.updateEye(nmDEyeRow.Value.ToString(), nmDEyeNo.Value.ToString(), nmDEyeShortLongLeft.Value.ToString(), nmDEyeShortLongRight.Value.ToString(), nmDEyeSquintLeft.Value.ToString(), 
                 nmDEyeSquintRight.Value.ToString(),
                 nmDEyeDegreeLeft.Value.ToString(), nmDEyeDegreeRight.Value.ToString(), nmDEyeOldLeft.Value.ToString(), nmDEyeOldRight.Value.ToString(), nmDEyeResult.Value.ToString(),
-                nmDEyeSummary.Value.ToString(), nmDEyeBlindness.Value.ToString()).Length >= 1)
+                nmDEyeSummary.Value.ToString(), nmDEyeBlindness.Value.ToString(), nmDEyeExam.Value.ToString()).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล Eye เรียบร้อย", "บันทึกข้อมูล");
             }

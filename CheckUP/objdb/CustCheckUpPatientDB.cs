@@ -51,6 +51,7 @@ namespace CheckUP.objdb
             ccp.EyeSummary = "eye_summary";
             ccp.EyeResult = "eye_result";
             ccp.EyeBlindness = "eye_blindness";
+            ccp.EyeExam = "eyes_exam";
 
             ccp.fSexId = "f_sex_id";
             ccp.SexName = "sex_name";
@@ -905,7 +906,7 @@ namespace CheckUP.objdb
             return chk;
         }
         public String updateEye(String rowNumber, String cucId, String EyeShortLongLeft, String EyeShortLongRight, String EyeSquintLeft, String EyeSquintRight,
-            String EyeDegreeLeft, String EyeDegreeRight, String EyeOldLeft, String EyeOldRight, String EyeResult, String EyeSummary, String EyeBlindness)
+            String EyeDegreeLeft, String EyeDegreeRight, String EyeOldLeft, String EyeOldRight, String EyeResult, String EyeSummary, String EyeBlindness, String EyeExam)
         {
             String sql = "", chk = "";
 
@@ -923,7 +924,8 @@ namespace CheckUP.objdb
                 ccp.EyeOldRight + "='" + EyeOldRight + "', " +
                 ccp.EyeResult + "='" + EyeResult + "', " +
                 ccp.EyeSummary + "='" + EyeSummary + "', " +
-                ccp.EyeBlindness + "='" + EyeBlindness + "' "+
+                ccp.EyeBlindness + "='" + EyeBlindness + "', "+
+                ccp.EyeExam + "='" + EyeExam + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
             try
             {

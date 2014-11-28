@@ -34,7 +34,7 @@ namespace CheckUP.objdb
             ccpvn.patientPulse = "patient_pulse";
             ccpvn.patientWeight = "patient_weight";
             //ccpvn.EyeShortLongLeft = "eye_short_long_left";
-            //ccpvn.EyeShortLongRight = "eye_short_long_right";
+            ccpvn.EyeExam = "eyes_exam";
             ccpvn.EyeDegreeLeft = "eye_degree_left";
             ccpvn.EyeDegreeRight = "eye_degree_right";
             ccpvn.EyeShortLongLeft = "eye_short_long_left";
@@ -124,10 +124,18 @@ namespace CheckUP.objdb
             ccpvn.hdl = "hdl";
             ccpvn.ldl = "ldl";
             ccpvn.calcium = "calcium";
-            ccpvn.cbcMcv = "cbc_mcv";
-            ccpvn.cbcHb = "cbc_hb";
-            ccpvn.cbcHct = "cbc_hct";
+
+            ccpvn.cbcMcvMale = "cbc_mcv_male";
+            ccpvn.cbcHbMale = "cbc_hb_male";
+            ccpvn.cbcHctMale = "cbc_hct_male";
+            ccpvn.cbcRbcMale = "cbc_rbc_male";
+            ccpvn.cbcMcvFemale = "cbc_mcv_female";
+            ccpvn.cbcHbFemale = "cbc_hb_female";
+            ccpvn.cbcHctFemale = "cbc_hct_female";
+            ccpvn.cbcRbcFemale = "cbc_rbc_female";
             ccpvn.cbcWbc = "cbc_wbc";
+            ccpvn.cbcMch = "cbc_mch";
+            ccpvn.cbcMchc = "cbc_mchc";
             ccpvn.cbcNeutrophil = "cbc_neutrophil";
             ccpvn.cbcLymphocyte = "cbc_lymphocyte";
             ccpvn.cbcEosinophil = "cbc_eosinophil";
@@ -136,6 +144,7 @@ namespace CheckUP.objdb
             ccpvn.cbcPlateletCount = "cbc_platelet_count";
             ccpvn.cbcRbcMorpholog = "cbc_rbc_morpholog";
             ccpvn.cbcSummary = "cbc_summary";
+
             ccpvn.urineColor = "urine_color";
             ccpvn.urineAppearance = "urine_appearance";
             ccpvn.urinePh = "urine_ph";
@@ -189,9 +198,7 @@ namespace CheckUP.objdb
 
             ccpvn.hbsagSuggess = "hbsag_suggess";
             ccpvn.hbsagSummary = "hbsag_summary";
-            ccpvn.cbcRbc = "cbc_rbc";
-            ccpvn.cbcMch = "cbc_mch";
-            ccpvn.cbcMchc = "cbc_mchc";
+            
             ccpvn.Active = "cust_checkup_patient_active";
             ccpvn.eyeBio = "eye_bio";
             ccpvn.amphetamineSummary = "amphetamine_summary";
@@ -330,8 +337,8 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String UpdateCBC(String Basophil, String Eosinophil, String Hb, String Hct, String Lymphocyte,
-            String Mch, String Mchc, String Mcv, String Monocyte, String Neutrophil, String PlateletCount, String Rbc, String RbcMorpholog,
+        public String UpdateCBC(String Basophil, String Eosinophil, String HbMale, String HbFemale, String HctMale, String HctFemale, String Lymphocyte,
+            String Mch, String Mchc, String McvMale, String McvFemale, String Monocyte, String Neutrophil, String PlateletCount, String RbcMale, String RbcFemale, String RbcMorpholog,
             String Wbc, String PlateletSmear)
         {
             String chk = "", sql = "";
@@ -339,17 +346,21 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccpvn.table + " Set " + ccpvn.cbcBasophil + "='" + Basophil + "'," +
                 ccpvn.cbcEosinophil + "='" + Eosinophil + "', " +
-                ccpvn.cbcHb + "='" + Hb + "', " +
-                ccpvn.cbcHct + "='" + Hct + "', " +
+                ccpvn.cbcHbMale + "='" + HbMale + "', " +
+                ccpvn.cbcHbFemale + "='" + HbFemale + "', " +
+                ccpvn.cbcHctMale + "='" + HctMale + "', " +
+                ccpvn.cbcHctFemale + "='" + HctFemale + "', " +
                 ccpvn.cbcLymphocyte + "='" + Lymphocyte + "', " +
                 ccpvn.cbcMch + "='" + Mch + "', " +
                 ccpvn.cbcMchc + "='" + Mchc + "', " +
-                ccpvn.cbcMcv + "='" + Mcv + "', " +
+                ccpvn.cbcMcvMale + "='" + McvMale + "', " +
+                ccpvn.cbcMcvFemale + "='" + McvFemale + "', " +
                 ccpvn.cbcMonocyte + "='" + Monocyte + "', " +
                 ccpvn.cbcNeutrophil + "='" + Neutrophil + "', " +
                 ccpvn.cbcPlateletCount + "='" + PlateletCount + "', " +
                 ccpvn.cbcPlateletSmear + "='" + PlateletSmear + "', " +
-                ccpvn.cbcRbc + "='" + Rbc + "', " +
+                ccpvn.cbcRbcMale + "='" + RbcMale + "', " +
+                ccpvn.cbcRbcFemale + "='" + RbcFemale + "', " +
                 ccpvn.cbcRbcMorpholog + "='" + RbcMorpholog + "', " +
                 //ccpvn.cbcSummary + "='" + Summary + "', " +
                 ccpvn.cbcWbc + "='" + Wbc + "' " ;
@@ -565,7 +576,7 @@ namespace CheckUP.objdb
             return chk;
         }
         public String updateEye(String EyeShortLongLeft, String EyeShortLongRight, String EyeSquintLeft, String EyeSquintRight,
-            String EyeDegreeLeft, String EyeDegreeRight, String EyeOldLeft, String EyeOldRight, String EyeBlindness)
+            String EyeDegreeLeft, String EyeDegreeRight, String EyeOldLeft, String EyeOldRight, String EyeBlindness, String EyeExam)
         {
             String sql = "", chk = "";
 
@@ -581,7 +592,7 @@ namespace CheckUP.objdb
                 ccpvn.EyeDegreeRight + "='" + EyeDegreeRight + "', " +
                 ccpvn.EyeOldLeft + "='" + EyeOldLeft + "', " +
                 ccpvn.EyeOldRight + "='" + EyeOldRight + "', " +
-                //ccp.EyeResult + "='" + EyeResult + "', " +
+                ccpvn.EyeExam + "='" + EyeExam + "', " +
                 //ccp.EyeSummary + "='" + EyeSummary + "', " +
                 ccpvn.EyeBlindness + "='" + EyeBlindness + "' ";
                 //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";

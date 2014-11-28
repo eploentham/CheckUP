@@ -255,6 +255,7 @@
             this.label122 = new System.Windows.Forms.Label();
             this.txtCntSuccess = new System.Windows.Forms.TextBox();
             this.label123 = new System.Windows.Forms.Label();
+            this.btnExcel1 = new System.Windows.Forms.Button();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -2448,7 +2449,7 @@
             // btnImport
             // 
             this.btnImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnImport.Location = new System.Drawing.Point(1151, 18);
+            this.btnImport.Location = new System.Drawing.Point(1200, 18);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(86, 34);
             this.btnImport.TabIndex = 4;
@@ -2489,7 +2490,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label3.Location = new System.Drawing.Point(894, 27);
+            this.label3.Location = new System.Drawing.Point(943, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 8;
@@ -2498,7 +2499,7 @@
             // 
             // nmDRow
             // 
-            this.nmDRow.Location = new System.Drawing.Point(968, 25);
+            this.nmDRow.Location = new System.Drawing.Point(1017, 25);
             this.nmDRow.Name = "nmDRow";
             this.nmDRow.Size = new System.Drawing.Size(46, 20);
             this.nmDRow.TabIndex = 9;
@@ -2548,7 +2549,7 @@
             // 
             // btnUnActive
             // 
-            this.btnUnActive.Location = new System.Drawing.Point(1151, 55);
+            this.btnUnActive.Location = new System.Drawing.Point(1200, 55);
             this.btnUnActive.Name = "btnUnActive";
             this.btnUnActive.Size = new System.Drawing.Size(86, 23);
             this.btnUnActive.TabIndex = 67;
@@ -2560,7 +2561,7 @@
             // 
             this.ChkUnActive.AutoSize = true;
             this.ChkUnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.ChkUnActive.Location = new System.Drawing.Point(1021, 54);
+            this.ChkUnActive.Location = new System.Drawing.Point(1070, 54);
             this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2);
             this.ChkUnActive.Name = "ChkUnActive";
             this.ChkUnActive.Size = new System.Drawing.Size(60, 21);
@@ -2574,7 +2575,7 @@
             // 
             this.chkActive.AutoSize = true;
             this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chkActive.Location = new System.Drawing.Point(896, 54);
+            this.chkActive.Location = new System.Drawing.Point(945, 54);
             this.chkActive.Margin = new System.Windows.Forms.Padding(2);
             this.chkActive.Name = "chkActive";
             this.chkActive.Size = new System.Drawing.Size(61, 21);
@@ -2586,7 +2587,7 @@
             // 
             // pB1
             // 
-            this.pB1.Location = new System.Drawing.Point(1021, 24);
+            this.pB1.Location = new System.Drawing.Point(1070, 24);
             this.pB1.Name = "pB1";
             this.pB1.Size = new System.Drawing.Size(124, 23);
             this.pB1.TabIndex = 68;
@@ -2645,11 +2646,23 @@
             this.label123.TabIndex = 74;
             this.label123.Text = "จำนวนข้อมูลนำเข้าได้ :";
             // 
+            // btnExcel1
+            // 
+            this.btnExcel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnExcel1.Location = new System.Drawing.Point(894, 18);
+            this.btnExcel1.Name = "btnExcel1";
+            this.btnExcel1.Size = new System.Drawing.Size(40, 28);
+            this.btnExcel1.TabIndex = 75;
+            this.btnExcel1.Text = "...";
+            this.btnExcel1.UseVisualStyleBackColor = true;
+            this.btnExcel1.Click += new System.EventHandler(this.btnExcel1_Click);
+            // 
             // FrmCheckUPAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1413, 899);
+            this.Controls.Add(this.btnExcel1);
             this.Controls.Add(this.txtCntSuccess);
             this.Controls.Add(this.label123);
             this.Controls.Add(this.txtYear);
@@ -2955,6 +2968,7 @@
         private System.Windows.Forms.TextBox txtLungSucess;
         private System.Windows.Forms.TextBox txtOther1Sucess;
         private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Button btnExcel1;
 
     }
 }

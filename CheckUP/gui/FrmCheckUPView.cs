@@ -98,7 +98,9 @@ namespace CheckUP
         {
             FrmCheckUPAdd frm = new FrmCheckUPAdd("",true, cc);
             //frm.setControl("");
+            this.Hide();
             frm.ShowDialog(this);
+            this.Show();
             setGrd();
         }
 
@@ -116,7 +118,9 @@ namespace CheckUP
             //{
             FrmCheckUPAdd frm = new FrmCheckUPAdd(dgvView[colId, e.RowIndex].Value.ToString(), false, cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
+            this.Hide();
             frm.ShowDialog(this);
+            this.Show();
             setGrd();
             //}            
         }

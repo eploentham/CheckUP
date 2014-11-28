@@ -21,7 +21,7 @@ namespace CheckUP.object1
         public String patientHeight="";    
         public String patientPulse="";    
         public String patientWeight="";
-        public String EyeShortLongLeft = "", EyeShortLongRight = "", EyeSquintLeft = "", EyeSquintRight = "", EyeDegreeLeft = "", EyeDegreeRight = "", EyeOldLeft = "", EyeOldRight = "", EyeResult = "", EyeSummary = "", EyeBlindness = "";
+        public String EyeShortLongLeft = "", EyeShortLongRight = "", EyeSquintLeft = "", EyeSquintRight = "", EyeDegreeLeft = "", EyeDegreeRight = "", EyeOldLeft = "", EyeOldRight = "", EyeResult = "", EyeSummary = "", EyeBlindness = "", EyeExam = "";
         public String fSexId="";    
         public String summaryPhysicalExam="";    
         public String StoolExamColor="", StoolExamAppearance="", StoolExamWbc="", StoolExamRbc="", StoolExamParasite="", StoolExamSummary="";
@@ -98,8 +98,11 @@ namespace CheckUP.object1
         public String ldl="";
 
         public String calcium="";
-        public String cbcHb="";
-        public String cbcHct="";
+
+        public String cbcHbMale = "", cbcHbFemale = "";
+        public String cbcHctMale = "", cbcHctFemale = "";
+        public String cbcMcvMale = "", cbcMcvFemale = "";
+        public String cbcRbcMale = "", cbcRbcFemale = "";
         public String cbcWbc="";
         public String cbcNeutrophil="";
         public String cbcLymphocyte="";
@@ -139,7 +142,7 @@ namespace CheckUP.object1
         public String lungSuggess="";
         public String statusName="";
         public String rowNumber = "";
-        public String cbcMcv="";
+        
         //public String toxicologyToluene="";
         public String thyroidRubellaLgg="";
         public String billirubin="";
@@ -158,8 +161,7 @@ namespace CheckUP.object1
         public String statusCholes="";
         public String StatusHbsag="";
         public String hbsagSuggess="";
-        public String hbsagSummary="";
-        public String cbcRbc="";
+        public String hbsagSummary="";        
     
         public String Active="";
         public String eyeBio="";

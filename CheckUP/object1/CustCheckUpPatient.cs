@@ -22,7 +22,7 @@ namespace CheckUP.object1
         public String patientHeight="";    
         public String patientPulse="";    
         public String patientWeight="";
-        public String EyeShortLongLeft = "", EyeShortLongRight = "", EyeSquintLeft = "", EyeSquintRight = "", EyeDegreeLeft = "", EyeDegreeRight = "", EyeOldLeft="", EyeOldRight="", EyeResult = "", EyeSummary = "", EyeBlindness="";
+        public String EyeShortLongLeft = "", EyeShortLongRight = "", EyeSquintLeft = "", EyeSquintRight = "", EyeDegreeLeft = "", EyeDegreeRight = "", EyeOldLeft="", EyeOldRight="", EyeResult = "", EyeSummary = "", EyeBlindness="", EyeExam="";
         
         public String fSexId="", SexName="";    
         public String summaryPhysicalExam="";

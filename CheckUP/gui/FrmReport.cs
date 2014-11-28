@@ -326,7 +326,7 @@ namespace CheckUP
             {
                 cc.lw.WriteLog("rpt.setReportCheckUp OK ");
                 rpt.Load(cc.initC.PathReport + "\\CheckUpPrint3.rpt");
-                cc.lw.WriteLog("rpt.setReportCheckUp OK Load" + cc.initC.PathReport + "\\CheckUpPrint.rpt");
+                cc.lw.WriteLog("rpt.setReportCheckUp OK Load" + cc.initC.PathReport + "\\CheckUpPrint3.rpt");
                 rpt.SetDataSource(dt);
                 cc.lw.WriteLog("rpt.setReportCheckUp OK SetDataSource");
         //        //rpt.SetDataSource(dt2);

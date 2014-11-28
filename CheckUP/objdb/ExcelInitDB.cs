@@ -184,7 +184,7 @@ namespace CheckUP.objdb
             ei.EyeSummary = "eye_summary";
             ei.EyeResult = "eye_result";
             ei.EyeBlindness = "eye_blindness";
-
+            ei.EyeExam = "eyes_exam";
 
 
             ei.StoolExamAppearance = "stool_exam_appearance";
@@ -382,7 +382,7 @@ namespace CheckUP.objdb
             item.EyeRow = dt.Rows[0][ei.EyeRow].ToString();
             item.EyeShortLongLeft = dt.Rows[0][ei.EyeShortLongLeft].ToString();
             item.EyeShortLongRight = dt.Rows[0][ei.EyeShortLongRight].ToString();
-            //item.EyeShortLongRight = dt.Rows[0][ei.EyeShortLongRight].ToString();
+            item.EyeExam = dt.Rows[0][ei.EyeExam].ToString();
             item.EyeDegreeLeft = dt.Rows[0][ei.EyeDegreeLeft].ToString();
             item.EyeDegreeRight = dt.Rows[0][ei.EyeDegreeRight].ToString();
             item.EyeSquintLeft = dt.Rows[0][ei.EyeSquintLeft].ToString();
@@ -960,7 +960,7 @@ namespace CheckUP.objdb
             return chk;
         }
         public String updateEye(String EyeRow, String EyeNo, String EyeShortLongLeft, String EyeShortLongRight, String EyeSquintLeft, String EyeSquintRight,
-            String EyedegreeLeft, String EyeDegreeRight, String EyeOldLeft, String EyeOldRight, String EyeResult, String EyeSummary, String EyeBlindness)
+            String EyedegreeLeft, String EyeDegreeRight, String EyeOldLeft, String EyeOldRight, String EyeResult, String EyeSummary, String EyeBlindness, String EyeExam)
         {
             String sql = "", chk = "";
 
@@ -980,6 +980,7 @@ namespace CheckUP.objdb
                 ei.EyeOldRight + "='" + EyeOldRight + "', " +
                 ei.EyeResult + "='" + EyeResult + "', " +
                 ei.EyeSummary + "='" + EyeSummary + "', " +
+                ei.EyeExam + "='" + EyeExam + "', " +
                 ei.EyeBlindness + "='" + EyeBlindness + "' " ;
             try
             {

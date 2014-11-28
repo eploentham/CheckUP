@@ -145,17 +145,17 @@ namespace CheckUP.gui
 
             txtCBCBactNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcBasophil].ToString();
             txtCBCEosNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcEosinophil].ToString();
-            txtCBCHbNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHb].ToString();
-            txtCBCHctNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHct].ToString();
+            txtCBCHbNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHbMale].ToString();
+            txtCBCHctNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHctMale].ToString();
             txtCBCLyNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcLymphocyte].ToString();
             txtCBCMonoNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMonocyte].ToString();
             txtCBCNeuNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcNeutrophil].ToString();
             txtCBCPltCNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPlateletCount].ToString();
-            txtCBCRbcNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbc].ToString();
+            txtCBCRbcNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbcMale].ToString();
             txtCBCRbcMonoNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbcMorpholog].ToString();
             txtCBCMchNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMch].ToString();
             txtCBCMchcNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMchc].ToString();
-            txtCBCMcvNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMcv].ToString();
+            txtCBCMcvNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMcvMale].ToString();
             txtCBCWbcNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcWbc].ToString();
             txtCBCPltSNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPlateletSmear].ToString();
 

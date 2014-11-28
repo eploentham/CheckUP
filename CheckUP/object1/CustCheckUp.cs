@@ -19,6 +19,8 @@ namespace CheckUP.object1
         public String ToxiCnt = "", ToxiSuccess = "", ToxiNormal = "", ToxiAbNormal = "";
         
         public String StoolExamCnt = "", StoolExamSuccess = "", StoolExamNormal = "", StoolExamAbNormal = "";
+
+        public String dateCreate = "", dateModi = "", dateCancel = "", userCreate = "", userModi = "", userCancel = "";
         
         public override String ToString()
         {

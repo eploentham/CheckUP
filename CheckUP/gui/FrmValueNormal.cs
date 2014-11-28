@@ -47,17 +47,21 @@ namespace CheckUP.gui
             DataTable dt = cc.ccpvndb.selectByPk();
             txtCBCBact.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcBasophil].ToString();
             txtCBCEos.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcEosinophil].ToString();
-            txtCBCHb.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcHb].ToString();
-            txtCBCHct.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcHct].ToString();
+            txtCBCHbMale.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcHbMale].ToString();
+            txtCBCHbFemale.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcHbFemale].ToString();
+            txtCBCHctMale.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcHctMale].ToString();
+            txtCBCHctFemale.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcHctFemale].ToString();
             txtCBCLy.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcLymphocyte].ToString();
             txtCBCMch.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcMch].ToString();
             txtCBCMchc.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcMchc].ToString();
-            txtCBCMcv.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcMcv].ToString();
+            txtCBCMcvMale.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcMcvMale].ToString();
+            txtCBCMcvFemale.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcMcvFemale].ToString();
             txtCBCMono.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcMonocyte].ToString();
             txtCBCNeu.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcNeutrophil].ToString();
             txtCBCPltC.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcPlateletCount].ToString();
             txtCBCPltS.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcPlateletSmear].ToString();
-            txtCBCRbc.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcRbc].ToString();
+            txtCBCRbcMale.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcRbcMale].ToString();
+            txtCBCRbcFemale.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcRbcFemale].ToString();
             txtCBCRbcMono.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcRbcMorpholog].ToString();
             txtCBCWbc.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcWbc].ToString();
 
@@ -209,8 +213,9 @@ namespace CheckUP.gui
         {
             if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
-                String chk = cc.ccpvndb.UpdateCBC(txtCBCBact.Text, txtCBCEos.Text, txtCBCHb.Text, txtCBCHct.Text,
-                txtCBCLy.Text, txtCBCMch.Text, txtCBCMchc.Text, txtCBCMcv.Text, txtCBCMono.Text, txtCBCNeu.Text, txtCBCPltC.Text, txtCBCRbc.Text, txtCBCRbcMono.Text, txtCBCWbc.Text, txtCBCPltS.Text);
+                String chk = cc.ccpvndb.UpdateCBC(txtCBCBact.Text, txtCBCEos.Text, txtCBCHbMale.Text, txtCBCHbFemale.Text, txtCBCHctMale.Text, txtCBCHctFemale.Text,
+                txtCBCLy.Text, txtCBCMch.Text, txtCBCMchc.Text, txtCBCMcvMale.Text, txtCBCMcvFemale.Text, txtCBCMono.Text, txtCBCNeu.Text, txtCBCPltC.Text, 
+                txtCBCRbcMale.Text, txtCBCRbcFemale.Text, txtCBCRbcMono.Text, txtCBCWbc.Text, txtCBCPltS.Text);
                 cc.dtccpvn = cc.ccpvndb.selectByPk();
                 if (chk.Equals("1"))
                 {
@@ -444,6 +449,35 @@ namespace CheckUP.gui
                         MessageBox.Show("บันทึกข้อมูล Toxi เรียบร้อย", "บันทึกข้อมูล");
                     }
                     //MessageBox.Show("บันทึกข้อมูล Lung เรียบร้อย", "บันทึกข้อมูล");
+                }
+            }
+        }
+
+        private void btnEyeSave_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                String chk = cc.ccpvndb.updateEye(txtEyeShortLongLeft.Text, txtEyeShortLongRight.Text,txtEyeSquintLeft.Text, txtEyeSquintRight.Text,txtEyeDegreeLeft.Text, 
+                    txtEyeDegreeRight.Text,txtEyeOldLeft.Text, txtEyeOldRight.Text, txtEyeBlindness.Text, txtEyeExam.Text);
+                cc.dtccpvn = cc.ccpvndb.selectByPk();
+                if (chk.Equals("1"))
+                {
+                    MessageBox.Show("บันทึกข้อมูล Eye เรียบร้อย", "บันทึกข้อมูล");
+                }
+            }
+        }
+
+        private void btnAudiogramSave_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                String chk = cc.ccpvndb.UpdateAudioGram(txtAudiogram500L.Text, txtAudiogram500R.Text, txtAudiogram1000L.Text, txtAudiogram1000R.Text, txtAudiogram2000L.Text,
+                    txtAudiogram2000R.Text, txtAudiogram3000L.Text, txtAudiogram3000R.Text, txtAudiogram4000L.Text, txtAudiogram4000R.Text, txtAudiogram6000L.Text,
+                    txtAudiogram6000R.Text, txtAudiogram8000L.Text, txtAudiogram8000R.Text);
+                cc.dtccpvn = cc.ccpvndb.selectByPk();
+                if (chk.Equals("1"))
+                {
+                    MessageBox.Show("บันทึกข้อมูล AudioGram เรียบร้อย", "บันทึกข้อมูล");
                 }
             }
         }

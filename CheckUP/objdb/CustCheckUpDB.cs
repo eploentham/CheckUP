@@ -115,6 +115,14 @@ namespace CheckUP.objdb
             cuc.ToxiNormal = "toxi_normal";
             cuc.ToxiSuccess = "toxi_success";
 
+            cuc.dateCancel = "date_cancel";
+            cuc.dateCreate = "date_create";
+            cuc.dateModi = "date_modi";
+
+            cuc.userCancel = "user_cancel";
+            cuc.userCreate = "user_create";
+            cuc.userModi = "user_modi";
+
             cuc.pkField = "cust_checkup_patient_id";
             cuc.table = "t_cust_checkup";
         }
@@ -216,13 +224,21 @@ namespace CheckUP.objdb
             item.ToxiNormal = dt.Rows[0][cuc.ToxiNormal].ToString();
             item.ToxiSuccess = dt.Rows[0][cuc.ToxiSuccess].ToString();
 
+            item.dateCancel = dt.Rows[0][cuc.dateCancel].ToString();
+            item.dateCreate = dt.Rows[0][cuc.dateCreate].ToString();
+            item.dateModi = dt.Rows[0][cuc.dateModi].ToString();
+
+            item.userCancel = dt.Rows[0][cuc.userCancel].ToString();
+            item.userCreate = dt.Rows[0][cuc.userCreate].ToString();
+            item.userModi = dt.Rows[0][cuc.userModi].ToString();
+
             return item;
         }
         public DataTable selectAll()
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + cuc.table + " Where " + cuc.Active + "='1'";
+            sql = "Select * From " + cuc.table + " Where " + cuc.Active + "='1' Order By "+cuc.dateCreate+" desc";
             dt = conn.selectData(sql);
 
             return dt;
@@ -279,12 +295,12 @@ namespace CheckUP.objdb
                 cuc.CheckUpEndDate + "," + cuc.CheckUpStartDate + "," + cuc.CntEmployee + "," +
                 cuc.CommitCheckUpDate + "," + cuc.CustId + "," + cuc.CustNameT + "," +
                 cuc.Description + "," + cuc.RegisDate + "," + cuc.Remark + "," +
-                cuc.YearId + ") " +
+                cuc.YearId + "," + cuc.dateCreate + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.CheckUpDate + "','" +
                 p.CheckUpEndDate + "','" + p.CheckUpStartDate + "'," + NumberNull1(p.CntEmployee) + ",'" +
                 p.CommitCheckUpDate + "','" + p.CustId + "','" + p.CustNameT + "','" +
                 p.Description + "','" + p.RegisDate + "','" + p.Remark + "','" +
-                p.YearId + "')";
+                p.YearId + "'," + p.dateGenDB + ")";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

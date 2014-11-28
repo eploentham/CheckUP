@@ -66,8 +66,8 @@ namespace CheckUP.gui
         int colAudiogram6000R = 16, colAudiogram8000R = 17, colAudiogramSummaryR = 18, colAudiogramSummary = 19;
         int colAudiogramCnt = 20;
 
-        int colEyeRow = 0, colEyeId = 1, colEyeName = 2, colEyeShortLongLeft = 3, colEyeShortLongRight = 4, colEyeSquintLeft = 5, colEyeSquintRight = 6, colEyeDegreeLeft = 7, colEyeDegreeRight = 8, colEyeOldLeft = 9, colEyeOldRight = 10, colEyeBlindness = 10, colEyeResult = 11, colEyeSummary = 12;
-        int colEyeCnt = 13;
+        int colEyeRow = 0, colEyeId = 1, colEyeName = 2, colEyeShortLongLeft = 3, colEyeShortLongRight = 4, colEyeSquintLeft = 5, colEyeSquintRight = 6, colEyeDegreeLeft = 7, colEyeDegreeRight = 8, colEyeOldLeft = 9, colEyeOldRight = 10, colEyeBlindness = 10, colEyeResult = 11, colEyeSummary = 12, colEyeExam=13;
+        int colEyeCnt = 14;
 
         int colStoolExamRow = 0, colStoolExamId = 1, colStoolExamName=2, colStoolExamColor = 3, colStoolExamAppearance = 4, colStoolExamWBC = 5, colStoolExamRBC = 6, colParasite = 7, colStoolExamSummary = 8;
         int colStoolExamCnt = 9;
@@ -819,7 +819,7 @@ namespace CheckUP.gui
             dgvEye.Columns[colEyeBlindness].Width = 150;
             dgvEye.Columns[colEyeResult].Width = 150;
             dgvEye.Columns[colEyeSummary].Width = 150;
-            //dgvEye.Columns[colAudiogram3000R].Width = 80;
+            dgvEye.Columns[colEyeExam].Width = 150;
             //dgvEye.Columns[colAudiogram4000R].Width = 80;
             //dgvEye.Columns[colAudiogram6000R].Width = 80;
             //dgvEye.Columns[colAudiogram8000R].Width = 80;
@@ -840,6 +840,7 @@ namespace CheckUP.gui
             dgvEye.Columns[colEyeBlindness].HeaderText = "ตาบอดสี";
             dgvEye.Columns[colEyeResult].HeaderText = "ผล";
             dgvEye.Columns[colEyeSummary].HeaderText = "Summary";
+            dgvEye.Columns[colEyeExam].HeaderText = "ตาทั่วไป";
 
             dgvEye.Columns[colEyeId].HeaderText = "id";
             //Font font = new Font("Microsoft Sans Serif", 12);
@@ -1255,12 +1256,12 @@ namespace CheckUP.gui
             DataTable dt;
             //Trigy
             String[] tri = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.triglyceride].ToString().Split('@');
-            int triMax = 0;
+            Double triMax = 0;
             String triUnit = "";
             if (tri.Length == 2)
             {
                 String[] aa = tri[0].ToString().Split('<');
-                triMax = int.Parse(aa[1]);
+                triMax = Double.Parse(aa[1]);
                 //fbsMax = int.Parse(aa[1]);
                 triUnit = tri[1];
             }
@@ -1287,13 +1288,13 @@ namespace CheckUP.gui
                     dgvTri[coLTriSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.triglycerideSummary].ToString();
                     dgvTri[colTriId, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
 
-                    if (int.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.triglyceride].ToString())) > 0)
+                    if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.triglyceride].ToString())) > 0)
                     {
-                        if (int.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.triglyceride].ToString())) >= triMax)
+                        if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.triglyceride].ToString())) >= triMax)
                         {
                             dgvTri[colTriResult, i].Value = "สูงกว่าปกติ";
                         }
-                        else if (int.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.triglyceride].ToString())) < triMax)
+                        else if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.triglyceride].ToString())) < triMax)
                         {
                             dgvTri[colTriResult, i].Value = "ปกติ";
                         }
@@ -1316,12 +1317,12 @@ namespace CheckUP.gui
             DataTable dt;
             //Choles
             String[] choles = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cholesterol].ToString().Split('@');
-            int cholesMax = 0;
+            Double cholesMax = 0;
             String cholesUnit = "";
             if (choles.Length == 2)
             {
                 String[] aa = choles[0].ToString().Split('<');
-                cholesMax = int.Parse(aa[1]);
+                cholesMax = Double.Parse(aa[1]);
                 //fbsMax = int.Parse(aa[1]);
                 cholesUnit = choles[1];
             }
@@ -1349,13 +1350,13 @@ namespace CheckUP.gui
                     //dgvCho[colChoResult, i].Value = dt.Rows[i][cc.ccpdb.ccp.cholesterolSuggess].ToString();
                     dgvCho[coLChoSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.cholesterolSummary].ToString();
 
-                    if (int.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.cholesterol].ToString())) > 0)
+                    if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.cholesterol].ToString())) > 0)
                     {
-                        if (int.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.cholesterol].ToString())) >= cholesMax)
+                        if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.cholesterol].ToString())) >= cholesMax)
                         {
                             dgvCho[colChoResult, i].Value = "สูงกว่าปกติ";
                         }
-                        else if (int.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.cholesterol].ToString())) < cholesMax)
+                        else if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.cholesterol].ToString())) < cholesMax)
                         {
                             dgvCho[colChoResult, i].Value = "ปกติ";
                         }
@@ -1379,23 +1380,23 @@ namespace CheckUP.gui
             DataTable dt;
             //Sgot
             String[] sgot = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgot].ToString().Split('@');
-            int sgotMin = 0, sgotMax = 0;
+            Double sgotMin = 0, sgotMax = 0;
             String sgotUnit = "";
             if (sgot.Length == 2)
             {
                 String[] aa = sgot[0].ToString().Split('-');
-                sgotMin = int.Parse(aa[0]);
-                sgotMax = int.Parse(aa[1]);
+                sgotMin = Double.Parse(aa[0]);
+                sgotMax = Double.Parse(aa[1]);
                 sgotUnit = sgot[1];
             }
             String[] sgpt = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgot].ToString().Split('@');
-            int sgptMin = 0, sgptMax = 0;
+            Double sgptMin = 0, sgptMax = 0;
             String sgptUnit = "";
             if (sgpt.Length == 2)
             {
                 String[] aa = sgpt[0].ToString().Split('-');
-                sgptMin = int.Parse(aa[0]);
-                sgptMax = int.Parse(aa[1]);
+                sgptMin = Double.Parse(aa[0]);
+                sgptMax = Double.Parse(aa[1]);
                 sgptUnit = sgpt[1];
             }
             dgvSgot.Rows.Clear();
@@ -1422,16 +1423,16 @@ namespace CheckUP.gui
                     //dgvSgot[colSgptResult, i].Value = dt.Rows[i][cc.ccpdb.ccp.liverResult].ToString();
                     dgvSgot[coLSgotSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.liverSummary].ToString();
 
-                    if (int.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.liverSgot].ToString())) > 0)
+                    if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.liverSgot].ToString())) > 0)
                     {
-                        if ((int.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.liverSgot].ToString())) > sgptMin) && 
-                            (int.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.liverSgot].ToString())) < sgptMax))
+                        if ((Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.liverSgot].ToString())) > sgptMin) &&
+                            (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.liverSgot].ToString())) < sgptMax))
                         {
                             dgvSgot[colSgotResult, i].Value = "ปกติ";
                         }
                         else
                         {
-                            if (int.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.liverSgot].ToString())) > sgptMax)
+                            if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.liverSgot].ToString())) > sgptMax)
                             {
                                 dgvSgot[colSgotResult, i].Value = "สูงกว่ามาตรฐาน";
                             }
@@ -1445,16 +1446,16 @@ namespace CheckUP.gui
                     {
                         dgvSgot[colSgotResult, i].Value = "";
                     }
-                    if (int.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.liverSgpt].ToString())) > 0)
+                    if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.liverSgpt].ToString())) > 0)
                     {
-                        if ((int.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.liverSgpt].ToString())) > sgptMin) &&
-                            (int.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.liverSgpt].ToString())) < sgptMax))
+                        if ((Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.liverSgpt].ToString())) > sgptMin) &&
+                            (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.liverSgpt].ToString())) < sgptMax))
                         {
                             dgvSgot[colSgptResult, i].Value = "ปกติ";
                         }
                         else
                         {
-                            if (int.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.liverSgpt].ToString())) > sgptMax)
+                            if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.liverSgpt].ToString())) > sgptMax)
                             {
                                 dgvSgot[colSgptResult, i].Value = "สูงกว่ามาตรฐาน";
                             }
@@ -1697,7 +1698,7 @@ namespace CheckUP.gui
                     dgvEye[colEyeBlindness, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeBlindness].ToString();
                     dgvEye[colEyeResult, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeResult].ToString();
                     dgvEye[colEyeSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeSummary].ToString();
-                    //dgvEye[colAudiogram3000R, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram3000R].ToString();
+                    dgvEye[colEyeExam, i].Value = dt.Rows[i][cc.ccpdb.ccp.EyeExam].ToString();
                     //dgvEye[colAudiogram4000R, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram4000R].ToString();
                     //dgvEye[colAudiogram6000R, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram6000R].ToString();
                     //dgvEye[colAudiogram8000R, i].Value = dt.Rows[i][cc.ccpdb.ccp.Audiogram8000R].ToString();
@@ -1932,6 +1933,11 @@ namespace CheckUP.gui
                             ccp.SexName = "ชาย";
                         }
                         else if (prefix.Equals("Miss"))
+                        {
+                            sexId = "2";
+                            ccp.SexName = "หญิง";
+                        }
+                        else if (prefix.IndexOf("หญิง")>=0)
                         {
                             sexId = "2";
                             ccp.SexName = "หญิง";
@@ -3348,6 +3354,209 @@ namespace CheckUP.gui
         {
             Random r = new Random();
             RCheckUp rc = new RCheckUp();
+
+            //CBC wbc
+            String[] cbcwbc = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcWbc].ToString().Split('@');
+            int cbcwbcMin = 0, cbcwbcMax = 0;
+            String cbcwbcUnit = "";
+            if (cbcwbc.Length == 2)
+            {
+                String[] aa = cbcwbc[0].ToString().Split('-');
+                cbcwbcMin = int.Parse(aa[0]);
+                cbcwbcMax = int.Parse(aa[1]);
+                cbcwbcUnit = cbcwbc[1];
+            }
+            //CBC Hb male
+            String[] cbchbmale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHbMale].ToString().Split('@');
+            int cbchbmaleMin = 0, cbchbmaleMax = 0;
+            String cbchbmaleUnit = "";
+            if (cbchbmale.Length == 2)
+            {
+                String[] aa = cbchbmale[0].ToString().Split('-');
+                cbchbmaleMin = int.Parse(aa[0]);
+                cbchbmaleMax = int.Parse(aa[1]);
+                cbchbmaleUnit = cbchbmale[1];
+            }
+            //CBC Hb female
+            String[] cbchbfemale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHbFemale].ToString().Split('@');
+            int cbchbfemaleMin = 0, cbchbfemaleMax = 0;
+            String cbchbfemaleUnit = "";
+            if (cbchbfemale.Length == 2)
+            {
+                String[] aa = cbchbfemale[0].ToString().Split('-');
+                cbchbfemaleMin = int.Parse(aa[0]);
+                cbchbfemaleMax = int.Parse(aa[1]);
+                cbchbfemaleUnit = cbchbfemale[1];
+            }
+            //CBC Hct male
+            String[] cbchctmale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHctMale].ToString().Split('@');
+            int cbchctmaleMin = 0, cbchctmaleMax = 0;
+            String cbchctmaleUnit = "";
+            if (cbchctmale.Length == 2)
+            {
+                String[] aa = cbchctmale[0].ToString().Split('-');
+                cbchctmaleMin = int.Parse(aa[0]);
+                cbchctmaleMax = int.Parse(aa[1]);
+                cbchctmaleUnit = cbchctmale[1];
+            }
+            //CBC Hct female
+            String[] cbchctfemale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHctFemale].ToString().Split('@');
+            int cbchctfemaleMin = 0, cbchctfemaleMax = 0;
+            String cbchctfemaleUnit = "";
+            if (cbchctfemale.Length == 2)
+            {
+                String[] aa = cbchctfemale[0].ToString().Split('-');
+                cbchctfemaleMin = int.Parse(aa[0]);
+                cbchctfemaleMax = int.Parse(aa[1]);
+                cbchctfemaleUnit = cbchctfemale[1];
+            }
+            //CBC mcv male
+            String[] cbcmcvmale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMcvMale].ToString().Split('@');
+            Double cbcmcvmaleMin = 0, cbcmcvmaleMax = 0;
+            String cbcmcvmaleUnit = "";
+            if (cbcmcvmale.Length == 2)
+            {
+                String[] aa = cbcmcvmale[0].ToString().Split('-');
+                cbcmcvmaleMin = Double.Parse(aa[0]);
+                cbcmcvmaleMax = Double.Parse(aa[1]);
+                cbcmcvmaleUnit = cbcmcvmale[1];
+            }
+            //CBC mcv female
+            String[] cbcmcvfemale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMcvFemale].ToString().Split('@');
+            Double cbcmcvfemaleMin = 0, cbcmcvfemaleMax = 0;
+            String cbcmcvfemaleUnit = "";
+            if (cbcmcvfemale.Length == 2)
+            {
+                String[] aa = cbcmcvfemale[0].ToString().Split('-');
+                cbcmcvfemaleMin = Double.Parse(aa[0]);
+                cbcmcvfemaleMax = Double.Parse(aa[1]);
+                cbcmcvfemaleUnit = cbcmcvfemale[1];
+            }
+            //CBC mch
+            String[] cbcmch = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMch].ToString().Split('@');
+            Double cbcmchMin = 0, cbcmchMax = 0;
+            String cbcmchUnit = "";
+            if (cbcmch.Length == 2)
+            {
+                String[] aa = cbcmch[0].ToString().Split('-');
+                cbcmchMin = Double.Parse(aa[0]);
+                cbcmchMax = Double.Parse(aa[1]);
+                cbcmchUnit = cbcmch[1];
+            }
+            //CBC mchc
+            String[] cbcmchc = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMchc].ToString().Split('@');
+            Double cbcmchcMin = 0, cbcmchcMax = 0;
+            String cbcmchcUnit = "";
+            if (cbcmchc.Length == 2)
+            {
+                String[] aa = cbcmchc[0].ToString().Split('-');
+                cbcmchcMin = Double.Parse(aa[0]);
+                cbcmchcMax = Double.Parse(aa[1]);
+                cbcmchcUnit = cbcmchc[1];
+            }
+            //CBC rbc male
+            String[] cbcrbcmale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbcMale].ToString().Split('@');
+            Double cbcrbcmaleMin = 0, cbcrbcmaleMax = 0;
+            String cbcrbcmaleUnit = "";
+            if (cbcrbcmale.Length == 2)
+            {
+                String[] aa = cbcrbcmale[0].ToString().Split('-');
+                cbcrbcmaleMin = Double.Parse(aa[0]);
+                cbcrbcmaleMax = Double.Parse(aa[1]);
+                cbcrbcmaleUnit = cbcrbcmale[1];
+            }
+            //CBC rbc female
+            String[] cbcrbcfemale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbcFemale].ToString().Split('@');
+            Double cbcrbcfemaleMin = 0, cbcrbcfemaleMax = 0;
+            String cbcrbcfemaleUnit = "";
+            if (cbcrbcfemale.Length == 2)
+            {
+                String[] aa = cbcrbcfemale[0].ToString().Split('-');
+                cbcrbcfemaleMin = Double.Parse(aa[0]);
+                cbcrbcfemaleMax = Double.Parse(aa[1]);
+                cbcrbcfemaleUnit = cbcrbcfemale[1];
+            }
+            //CBC lym
+            String[] cbclym = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcLymphocyte].ToString().Split('@');
+            int cbclymMin = 0, cbclymMax = 0;
+            String cbclymUnit = "";
+            if (cbclym.Length == 2)
+            {
+                String[] aa = cbclym[0].ToString().Split('-');
+                cbclymMin = int.Parse(aa[0]);
+                cbclymMax = int.Parse(aa[1]);
+                cbclymUnit = cbclym[1];
+            }
+            //CBC mono
+            String[] cbcmono = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMonocyte].ToString().Split('@');
+            int cbcmonoMin = 0, cbcmonoMax = 0;
+            String cbcmonoUnit = "";
+            if (cbcmono.Length == 2)
+            {
+                String[] aa = cbcmono[0].ToString().Split('-');
+                cbcmonoMin = int.Parse(aa[0]);
+                cbcmonoMax = int.Parse(aa[1]);
+                cbcmonoUnit = cbcmono[1];
+            }
+            //CBC eos
+            String[] cbceos = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcEosinophil].ToString().Split('@');
+            int cbceosMin = 0, cbceosMax = 0;
+            String cbceosUnit = "";
+            if (cbceos.Length == 2)
+            {
+                String[] aa = cbceos[0].ToString().Split('-');
+                cbceosMin = int.Parse(aa[0]);
+                cbceosMax = int.Parse(aa[1]);
+                cbceosUnit = cbceos[1];
+            }
+            //CBC bas
+            String[] cbcbas = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcBasophil].ToString().Split('@');
+            int cbcbasMin = 0, cbcbasMax = 0;
+            String cbcbasUnit = "";
+            if (cbcbas.Length == 2)
+            {
+                String[] aa = cbcbas[0].ToString().Split('-');
+                cbcbasMin = int.Parse(aa[0]);
+                cbcbasMax = int.Parse(aa[1]);
+                cbcbasUnit = cbcbas[1];
+            }
+            //CBC pltc
+            String[] cbcpltc = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPlateletCount].ToString().Split('@');
+            Double cbcpltcMin = 0, cbcpltcMax = 0;
+            String cbcpltcUnit = "";
+            if (cbcpltc.Length == 2)
+            {
+                String[] aa = cbcpltc[0].ToString().Split('-');
+                cbcpltcMin = Double.Parse(aa[0]);
+                cbcpltcMax = Double.Parse(aa[1]);
+                cbcpltcUnit = cbcpltc[1];
+            }
+            //CBC neu
+            String[] cbcneu = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcNeutrophil].ToString().Split('@');
+            Double cbcneuMin = 0, cbcneuMax = 0;
+            String cbcneuUnit = "";
+            if (cbcneu.Length == 2)
+            {
+                String[] aa = cbcneu[0].ToString().Split('-');
+                cbcneuMin = Double.Parse(aa[0]);
+                cbcneuMax = Double.Parse(aa[1]);
+                cbcneuUnit = cbcneu[1];
+            }
+            ////CBC plts
+            String cbcplts = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPlateletSmear].ToString();
+            //CBC rbc mono
+            String cbcrbcmono = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbcMorpholog].ToString();
+            //String[] plts = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPlateletSmear].ToString().Split('@');
+            //int pltsMin = 0, pltsMax = 0;
+            //String pltsUnit = "";
+            //if (mchc.Length == 2)
+            //{
+            //    String[] aa = plts[0].ToString().Split('-');
+            //    pltsMin = int.Parse(aa[0]);
+            //    pltsMax = int.Parse(aa[1]);
+            //    pltsUnit = plts[1];
+            //}
+
             //FBS
             String[] fbs = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.sugar].ToString().Split('@');
             int fbsMin = 0, fbsMax = 0;            
@@ -3446,6 +3655,63 @@ namespace CheckUP.gui
                 creatinineFemaleMax = Double.Parse(aa[1]);
                 creatinineFemaleUnit = creatinineFemale[1];
             }
+            
+
+            //UA Color
+            String uacolor = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineColor].ToString();
+            String uasugar = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineSugar].ToString();
+            String uaprotein = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineProtein].ToString();
+            String uaappear = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineAppearance].ToString();
+            //UA pH
+            String[] uapH = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urinePh].ToString().Split('@');
+            Double uapHMin = 0, uapHMax = 0;
+            String uapHUnit = "";
+            if (uapH.Length == 1)//ไม่มีหน่วย
+            {
+                String[] aa = uapH[0].ToString().Split('-');
+                uapHMin = Double.Parse(aa[0]);
+                uapHMax = Double.Parse(aa[1]);
+                //uapHUnit = uapH[1];
+            }
+            String[] uaspgr = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineSpGr].ToString().Split('@');
+            Double uaspgrMin = 0, uaspgrMax = 0;
+            String uaspgrUnit = "";
+            if (uaspgr.Length == 1)//ไม่มีหน่วย
+            {
+                String[] aa = uaspgr[0].ToString().Split('-');
+                uaspgrMin = Double.Parse(aa[0]);
+                uaspgrMax = Double.Parse(aa[1]);
+                //uaspgrUnit = uaspgr[1];
+            }
+            String[] uawbc = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineSpGr].ToString().Split('@');
+            Double uawbcMin = 0, uawbcMax = 0;
+            String uawbcUnit = "";
+            if (uawbc.Length == 1)//ไม่มีหน่วย
+            {
+                String[] aa = uaspgr[0].ToString().Split('-');
+                uawbcMin = Double.Parse(aa[0]);
+                uawbcMax = Double.Parse(aa[1]);
+                //uaspgrUnit = uawbc[1];
+            }
+            String[] uaepi = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineSpGr].ToString().Split('@');
+            Double uaepiMin = 0, uaepiMax = 0;
+            String uaepiUnit = "";
+            if (uaepi.Length == 1)//ไม่มีหน่วย
+            {
+                String[] aa = uaspgr[0].ToString().Split('-');
+                uaepiMin = Double.Parse(aa[0]);
+                uaepiMax = Double.Parse(aa[1]);
+                //uaspgrUnit = uaepi[1];
+            }
+            //Double creatinineFemaleMin = 0, creatinineFemaleMax = 0;
+            //String uacolorUnit = "";
+            //if (uacolor.Length == 2)
+            //{
+            //    String[] aa = uacolor[0].ToString().Split('-');
+            //    creatinineFemaleMin = Double.Parse(aa[0]);
+            //    creatinineFemaleMax = Double.Parse(aa[1]);
+            //    uacolorUnit = uacolor[1];
+            //}
 
             int row = 0;
             label85.Text = System.DateTime.Now.ToShortTimeString();
@@ -3471,6 +3737,7 @@ namespace CheckUP.gui
             cc.lw.WriteLog("FrmCheckUPAdd.btnPrint_Click 03 ");
             for (int i = row; i < int.Parse(nmDPrintEnd.Value.ToString()); i++)
             {
+                rc.Remark = "";
                 rc.Id = r.Next().ToString();
                 rc.FullName = dtAll.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
                 rc.Sex = dtAll.Rows[i][cc.ccpdb.ccp.fSexId].ToString();
@@ -3535,7 +3802,7 @@ namespace CheckUP.gui
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
                     rc.LabName = "Hb";
-                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHb].ToString();
+                    //rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHbMale].ToString();
                     rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcHb].ToString();
                     //rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbc].ToString();
                     rc.LInter = "การแปรผล";
@@ -3544,7 +3811,67 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                    rc.Remark = "";
+                    try
+                    {
+                        if (rc.Sex.Equals("1"))//male
+                        {
+                            rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHbMale].ToString().Replace("@", " ");
+                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                            {
+                                if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbchbmaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbchbmaleMax))
+                                {
+                                    rc.Remark = "ปกติ";
+                                }
+                                else
+                                {
+                                    if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbchbmaleMax)
+                                    {
+                                        rc.Remark = "สูงกว่ามาตรฐาน";
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                rc.Remark = "";
+                            }
+                        }
+                        else
+                        {
+                            rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHbFemale].ToString().Replace("@", " ");
+                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                            {
+                                if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbchbfemaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbchbfemaleMax))
+                                {
+                                    rc.Remark = "ปกติ";
+                                }
+                                else
+                                {
+                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbchbfemaleMax)
+                                    {
+                                        rc.Remark = "สูงกว่ามาตรฐาน";
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                rc.Remark = "";
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                    }
+                    
+                    //rc.Remark = "";
                     rc.StatusLab = "cbc";
                     rc.Sort1 = "1010";
                     rc.Sort2 = "10";
@@ -3554,7 +3881,7 @@ namespace CheckUP.gui
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
                     rc.LabName = "Hct";
-                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHct].ToString();
+                    //rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHctMale].ToString();
                     rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcHct].ToString();
                     rc.LInter = "การแปรผล";
                     rc.LInterAbnormal = "ปกติ";
@@ -3562,7 +3889,67 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                    rc.Remark = "";
+                    try
+                    {
+                        if (rc.Sex.Equals("1"))//male
+                        {
+                            rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHctMale].ToString().Replace("@", " ");
+                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                            {
+                                if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbchctmaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbchctmaleMax))
+                                {
+                                    rc.Remark = "ปกติ";
+                                }
+                                else
+                                {
+                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbchctmaleMax)
+                                    {
+                                        rc.Remark = "สูงกว่ามาตรฐาน";
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                rc.Remark = "";
+                            }
+                        }
+                        else
+                        {
+                            rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHctFemale].ToString().Replace("@", " ");
+                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                            {
+                                if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbchctfemaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbchctfemaleMax))
+                                {
+                                    rc.Remark = "ปกติ";
+                                }
+                                else
+                                {
+                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbchctfemaleMax)
+                                    {
+                                        rc.Remark = "สูงกว่ามาตรฐาน";
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                rc.Remark = "";
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                    }
+                    
+                    //rc.Remark = "";
                     rc.StatusLab = "cbc";
                     rc.Sort1 = "1010";
                     rc.Sort2 = "11";
@@ -3571,7 +3958,7 @@ namespace CheckUP.gui
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
                     rc.LabName = "WBC";
-                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcWbc].ToString();
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcWbc].ToString().Replace("@", " ");
                     rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcWbc].ToString();
                     rc.LInter = "การแปรผล";
                     rc.LInterAbnormal = "ปกติ";
@@ -3579,7 +3966,37 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                    rc.Remark = "";
+                    try
+                    {
+                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                        {
+                            if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbcwbcMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbcwbcMax))
+                            {
+                                rc.Remark = "ปกติ";
+                            }
+                            else
+                            {
+                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbcwbcMax)
+                                {
+                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                }
+                                else
+                                {
+                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            rc.Remark = "";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                    }
+                    
+                    //rc.Remark = "";
                     rc.StatusLab = "cbc";
                     rc.Sort1 = "1010";
                     rc.Sort2 = "13";
@@ -3588,7 +4005,7 @@ namespace CheckUP.gui
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
                     rc.LabName = "Neutrophils";
-                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcNeutrophil].ToString();
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcNeutrophil].ToString().Replace("@", " ");
                     rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcNeutrophil].ToString();
                     rc.LInter = "การแปรผล";
                     rc.LInterAbnormal = "ปกติ";
@@ -3596,7 +4013,37 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                    rc.Remark = "";
+                    try
+                    {
+                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                        {
+                            if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbcneuMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbcneuMax))
+                            {
+                                rc.Remark = "ปกติ";
+                            }
+                            else
+                            {
+                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbcneuMax)
+                                {
+                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                }
+                                else
+                                {
+                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            rc.Remark = "";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                    }
+                    
+                    //rc.Remark = "";
                     rc.StatusLab = "cbc";
                     rc.Sort1 = "1010";
                     rc.Sort2 = "14";
@@ -3605,7 +4052,7 @@ namespace CheckUP.gui
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
                     rc.LabName = "Eosinophils ";
-                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcEosinophil].ToString();
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcEosinophil].ToString().Replace("@", " ");
                     rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcEosinophil].ToString();
                     rc.LInter = "การแปรผล";
                     rc.LInterAbnormal = "ปกติ";
@@ -3613,7 +4060,37 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                    rc.Remark = "";
+                    try
+                    {
+                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                        {
+                            if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbceosMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbceosMax))
+                            {
+                                rc.Remark = "ปกติ";
+                            }
+                            else
+                            {
+                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbceosMax)
+                                {
+                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                }
+                                else
+                                {
+                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            rc.Remark = "";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                    }
+                    
+                    //rc.Remark = "";
                     rc.StatusLab = "cbc";
                     rc.Sort1 = "1010";
                     rc.Sort2 = "15";
@@ -3622,7 +4099,7 @@ namespace CheckUP.gui
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
                     rc.LabName = "Basophils ";
-                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcBasophil].ToString();
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcBasophil].ToString().Replace("@", " ");
                     rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcBasophil].ToString();
                     rc.LInter = "การแปรผล";
                     rc.LInterAbnormal = "ปกติ";
@@ -3630,7 +4107,37 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                    rc.Remark = "";
+                    try
+                    {
+                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                        {
+                            if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbcbasMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbcbasMax))
+                            {
+                                rc.Remark = "ปกติ";
+                            }
+                            else
+                            {
+                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbcbasMax)
+                                {
+                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                }
+                                else
+                                {
+                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            rc.Remark = "";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                    }
+                    
+                    //rc.Remark = "";
                     rc.StatusLab = "cbc";
                     rc.Sort1 = "1010";
                     rc.Sort2 = "16";
@@ -3639,7 +4146,7 @@ namespace CheckUP.gui
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
                     rc.LabName = "Lymphocyte ";
-                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcLymphocyte].ToString();
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcLymphocyte].ToString().Replace("@", " ");
                     rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcLymphocyte].ToString();
                     rc.LInter = "การแปรผล";
                     rc.LInterAbnormal = "ปกติ";
@@ -3647,7 +4154,37 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                    rc.Remark = "";
+                    try
+                    {
+                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                        {
+                            if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbclymMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbclymMax))
+                            {
+                                rc.Remark = "ปกติ";
+                            }
+                            else
+                            {
+                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbclymMax)
+                                {
+                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                }
+                                else
+                                {
+                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            rc.Remark = "";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                    }
+                    
+                    //rc.Remark = "";
                     rc.StatusLab = "cbc";
                     rc.Sort1 = "1010";
                     rc.Sort2 = "17";
@@ -3656,7 +4193,7 @@ namespace CheckUP.gui
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
                     rc.LabName = "Monocyte ";
-                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMonocyte].ToString();
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMonocyte].ToString().Replace("@", " ");
                     rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcMonocyte].ToString();
                     rc.LInter = "การแปรผล";
                     rc.LInterAbnormal = "ปกติ";
@@ -3664,7 +4201,37 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                    rc.Remark = "";
+                    try
+                    {
+                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                        {
+                            if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbcmonoMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbcmonoMax))
+                            {
+                                rc.Remark = "ปกติ";
+                            }
+                            else
+                            {
+                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbcmonoMax)
+                                {
+                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                }
+                                else
+                                {
+                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            rc.Remark = "";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                    }
+                    
+                    //rc.Remark = "";
                     rc.StatusLab = "cbc";
                     rc.Sort1 = "1010";
                     rc.Sort2 = "18";
@@ -3673,7 +4240,7 @@ namespace CheckUP.gui
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
                     rc.LabName = "RBC ";
-                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbc].ToString();
+                    //rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbcMale].ToString().Replace("@", " ");
                     rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcRbc].ToString();
                     rc.LInter = "การแปรผล";
                     rc.LInterAbnormal = "ปกติ";
@@ -3681,7 +4248,67 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                    rc.Remark = "";
+                    try
+                    {
+                        if (rc.Sex.Equals("1"))//male
+                        {
+                            rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbcMale].ToString().Replace("@", " ");
+                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                            {
+                                if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbcrbcmaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbcrbcmaleMax))
+                                {
+                                    rc.Remark = "ปกติ";
+                                }
+                                else
+                                {
+                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbcrbcmaleMax)
+                                    {
+                                        rc.Remark = "สูงกว่ามาตรฐาน";
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                rc.Remark = "";
+                            }
+                        }
+                        else
+                        {
+                            rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbcFemale].ToString().Replace("@", " ");
+                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                            {
+                                if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbcrbcfemaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbcrbcfemaleMax))
+                                {
+                                    rc.Remark = "ปกติ";
+                                }
+                                else
+                                {
+                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbcrbcfemaleMax)
+                                    {
+                                        rc.Remark = "สูงกว่ามาตรฐาน";
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                rc.Remark = "";
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                    }
+                    
+                    //rc.Remark = "";
                     rc.StatusLab = "cbc";
                     rc.Sort1 = "1010";
                     rc.Sort2 = "19";
@@ -3690,7 +4317,7 @@ namespace CheckUP.gui
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
                     rc.LabName = "MCV ";
-                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMcv].ToString();
+                    //rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMcvMale].ToString().Replace("@", " ");
                     rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcMcv].ToString();
                     rc.LInter = "การแปรผล";
                     rc.LInterAbnormal = "ปกติ";
@@ -3698,7 +4325,67 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                    rc.Remark = "";
+                    try
+                    {
+                        if (rc.Sex.Equals("1"))//male
+                        {
+                            rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMcvMale].ToString().Replace("@", " ");
+                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                            {
+                                if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbcmcvmaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbcmcvmaleMax))
+                                {
+                                    rc.Remark = "ปกติ";
+                                }
+                                else
+                                {
+                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbcmcvmaleMax)
+                                    {
+                                        rc.Remark = "สูงกว่ามาตรฐาน";
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                rc.Remark = "";
+                            }
+                        }
+                        else
+                        {
+                            rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMcvFemale].ToString().Replace("@", " ");
+                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                            {
+                                if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbcmcvfemaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbcmcvfemaleMax))
+                                {
+                                    rc.Remark = "ปกติ";
+                                }
+                                else
+                                {
+                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbcmcvfemaleMax)
+                                    {
+                                        rc.Remark = "สูงกว่ามาตรฐาน";
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                rc.Remark = "";
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                    }
+                    
+                    //rc.Remark = "";
                     rc.StatusLab = "cbc";
                     rc.Sort1 = "1010";
                     rc.Sort2 = "20";
@@ -3707,7 +4394,7 @@ namespace CheckUP.gui
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
                     rc.LabName = "MCH ";
-                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMch].ToString();
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMch].ToString().Replace("@", " ");
                     rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcMch].ToString();
                     rc.LInter = "การแปรผล";
                     rc.LInterAbnormal = "ปกติ";
@@ -3715,7 +4402,37 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                    rc.Remark = "";
+                    try
+                    {
+                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                        {
+                            if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbcmchMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbcmchMax))
+                            {
+                                rc.Remark = "ปกติ";
+                            }
+                            else
+                            {
+                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbcmchMax)
+                                {
+                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                }
+                                else
+                                {
+                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            rc.Remark = "";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                    }
+                    
+                    //rc.Remark = "";
                     rc.StatusLab = "cbc";
                     rc.Sort1 = "1010";
                     rc.Sort2 = "21";
@@ -3724,7 +4441,7 @@ namespace CheckUP.gui
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
                     rc.LabName = "MCHC ";
-                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMchc].ToString();
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMchc].ToString().Replace("@", " ");
                     rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcMchc].ToString();
                     rc.LInter = "การแปรผล";
                     rc.LInterAbnormal = "ปกติ";
@@ -3732,7 +4449,38 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                    rc.Remark = "";
+                    try
+                    {
+                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                        {
+                            if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbcmchcMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbcmchcMax))
+                            {
+                                rc.Remark = "ปกติ";
+                            }
+                            else
+                            {
+                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbcmchcMax)
+                                {
+                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                }
+                                else
+                                {
+                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            rc.Remark = "";
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                    }
+                    
+                    //rc.Remark = "";
                     rc.StatusLab = "cbc";
                     rc.Sort1 = "1010";
                     rc.Sort2 = "22";
@@ -3741,7 +4489,7 @@ namespace CheckUP.gui
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
                     rc.LabName = "Platelet Count ";
-                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPlateletCount].ToString();
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPlateletCount].ToString().Replace("@", " ");
                     rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cbcPlateletCount].ToString();
                     rc.LInter = "การแปรผล";
                     rc.LInterAbnormal = "ปกติ";
@@ -3749,7 +4497,37 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                    rc.Remark = "";
+                    try
+                    {
+                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                        {
+                            if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbcpltcMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbcpltcMax))
+                            {
+                                rc.Remark = "ปกติ";
+                            }
+                            else
+                            {
+                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbcpltcMax)
+                                {
+                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                }
+                                else
+                                {
+                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            rc.Remark = "";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                    }
+                    
+                    //rc.Remark = "";
                     rc.StatusLab = "cbc";
                     rc.Sort1 = "1010";
                     rc.Sort2 = "23";
@@ -3766,7 +4544,15 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                    rc.Remark = "";
+                    if (rc.LabResult.ToLower().Equals(cbcplts.ToLower()))
+                    {
+                        rc.Remark = "ปกติ";
+                    }
+                    else
+                    {
+                        rc.Remark = "ผิดปกติ";
+                    }
+                    //rc.Remark = "";
                     rc.StatusLab = "cbc";
                     rc.Sort1 = "1010";
                     rc.Sort2 = "24";
@@ -3783,7 +4569,15 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
-                    rc.Remark = "";
+                    if (rc.LabResult.ToLower().Equals(cbcrbcmono.ToLower()))
+                    {
+                        rc.Remark = "ปกติ";
+                    }
+                    else
+                    {
+                        rc.Remark = "ผิดปกติ";
+                    }
+                    //rc.Remark = "";
                     rc.StatusLab = "cbc";
                     rc.Sort1 = "1010";
                     rc.Sort2 = "25";
@@ -3822,28 +4616,36 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจน้ำตาล";
-                    if (int.Parse(cc.cf.NumberNull1(rc.LabResult))>0)
+                    try
                     {
-                        if ((int.Parse(cc.cf.NumberNull1(rc.LabResult)) > fbsMin) && (int.Parse(cc.cf.NumberNull1(rc.LabResult)) < fbsMax))
+                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
                         {
-                            rc.Remark = "ปกติ";
-                        }
-                        else
-                        {
-                            if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) > fbsMax)
+                            if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= fbsMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= fbsMax))
                             {
-                                rc.Remark = "สูงกว่ามาตรฐาน";
+                                rc.Remark = "ปกติ";
                             }
                             else
                             {
-                                rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > fbsMax)
+                                {
+                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                }
+                                else
+                                {
+                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                }
                             }
                         }
+                        else
+                        {
+                            rc.Remark = "";
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        rc.Remark = "";
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
                     }
+                    
                     
                     rc.StatusLab = "fbs";
                     rc.Sort1 = "1011";
@@ -3883,7 +4685,15 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                    rc.Remark = "";
+                    if (rc.LabResult.ToLower().Equals(uacolor.ToLower()))
+                    {
+                        rc.Remark = "ปกติ";
+                    }
+                    else
+                    {
+                        rc.Remark = "ผิดปกติ";
+                    }
+                    //rc.Remark = "";
                     rc.StatusLab = "ua";
                     rc.Sort1 = "1012";
                     rc.Sort2 = "10";
@@ -3900,7 +4710,15 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                    rc.Remark = "";
+                    if (rc.LabResult.ToLower().Equals(uaappear.ToLower()))
+                    {
+                        rc.Remark = "ปกติ";
+                    }
+                    else
+                    {
+                        rc.Remark = "ผิดปกติ";
+                    }
+                    //rc.Remark = "";
                     rc.StatusLab = "ua";
                     rc.Sort1 = "1012";
                     rc.Sort2 = "11";
@@ -3917,7 +4735,37 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                    rc.Remark = "";
+                    try
+                    {
+                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                        {
+                            if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= uapHMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= uapHMax))
+                            {
+                                rc.Remark = "ปกติ";
+                            }
+                            else
+                            {
+                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > uapHMax)
+                                {
+                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                }
+                                else
+                                {
+                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            rc.Remark = "";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                    }
+                    
+                    //rc.Remark = "";
                     rc.StatusLab = "ua";
                     rc.Sort1 = "1012";
                     rc.Sort2 = "12";
@@ -3934,7 +4782,15 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                    rc.Remark = "";
+                    if (rc.LabResult.ToLower().Equals(uasugar.ToLower()))
+                    {
+                        rc.Remark = "ปกติ";
+                    }
+                    else
+                    {
+                        rc.Remark = "ผิดปกติ";
+                    }
+                    //rc.Remark = "";
                     rc.StatusLab = "ua";
                     rc.Sort1 = "1012";
                     rc.Sort2 = "13";
@@ -3951,7 +4807,15 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                    rc.Remark = "";
+                    if (rc.LabResult.ToLower().Equals(uaprotein.ToLower()))
+                    {
+                        rc.Remark = "ปกติ";
+                    }
+                    else
+                    {
+                        rc.Remark = "ผิดปกติ";
+                    }
+                    //rc.Remark = "";
                     rc.StatusLab = "ua";
                     rc.Sort1 = "1012";
                     rc.Sort2 = "14";
@@ -3968,7 +4832,37 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                    rc.Remark = "";
+                    try
+                    {
+                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                        {
+                            if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= uaspgrMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= uaspgrMax))
+                            {
+                                rc.Remark = "ปกติ";
+                            }
+                            else
+                            {
+                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > uaspgrMax)
+                                {
+                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                }
+                                else
+                                {
+                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            rc.Remark = "";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                    }
+                    
+                    //rc.Remark = "";
                     rc.StatusLab = "ua";
                     rc.Sort1 = "1012";
                     rc.Sort2 = "15";
@@ -4036,7 +4930,37 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                    rc.Remark = "";
+                    try
+                    {
+                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                        {
+                            if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= uaepiMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= uaepiMax))
+                            {
+                                rc.Remark = "ปกติ";
+                            }
+                            else
+                            {
+                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > uaepiMax)
+                                {
+                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                }
+                                else
+                                {
+                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            rc.Remark = "";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                    }
+                    
+                    //rc.Remark = "";
                     rc.StatusLab = "ua";
                     rc.Sort1 = "1012";
                     rc.Sort2 = "19";
@@ -4070,7 +4994,36 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                    rc.Remark = "";
+                    try
+                    {
+                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                        {
+                            if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= uawbcMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= uawbcMax))
+                            {
+                                rc.Remark = "ปกติ";
+                            }
+                            else
+                            {
+                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > uawbcMax)
+                                {
+                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                }
+                                else
+                                {
+                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            rc.Remark = "";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                    }
+                    //rc.Remark = "";
                     rc.StatusLab = "ua";
                     rc.Sort1 = "1012";
                     rc.Sort2 = "21";
@@ -4143,57 +5096,64 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจ BUN";
-                    if (rc.Sex.Equals("1"))//male
+                    try
                     {
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyBunMale].ToString().Replace("@", " ");
-                        if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                        if (rc.Sex.Equals("1"))//male
                         {
-                            if ((int.Parse(cc.cf.NumberNull1(rc.LabResult)) > bunMaleMin) && (int.Parse(cc.cf.NumberNull1(rc.LabResult)) < bunMaleMax))
+                            rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyBunMale].ToString().Replace("@", " ");
+                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
                             {
-                                rc.Remark = "ปกติ";
-                            }
-                            else
-                            {
-                                if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) > bunMaleMax)
+                                if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= bunMaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= bunMaleMax))
                                 {
-                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                    rc.Remark = "ปกติ";
                                 }
                                 else
                                 {
-                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > bunMaleMax)
+                                    {
+                                        rc.Remark = "สูงกว่ามาตรฐาน";
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                    }
                                 }
+                            }
+                            else
+                            {
+                                rc.Remark = "";
                             }
                         }
                         else
                         {
-                            rc.Remark = "";
+                            rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyBunFemale].ToString().Replace("@", " ");
+                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                            {
+                                if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= bunFemaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= bunFemaleMax))
+                                {
+                                    rc.Remark = "ปกติ";
+                                }
+                                else
+                                {
+                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > bunFemaleMax)
+                                    {
+                                        rc.Remark = "สูงกว่ามาตรฐาน";
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                rc.Remark = "ไม่ระบุเพศ";
+                            }
                         }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyBunFemale].ToString().Replace("@", " ");
-                        if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
-                        {
-                            if ((int.Parse(cc.cf.NumberNull1(rc.LabResult)) > bunFemaleMin) && (int.Parse(cc.cf.NumberNull1(rc.LabResult)) < bunFemaleMax))
-                            {
-                                rc.Remark = "ปกติ";
-                            }
-                            else
-                            {
-                                if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) > bunFemaleMax)
-                                {
-                                    rc.Remark = "สูงกว่ามาตรฐาน";
-                                }
-                                else
-                                {
-                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
-                                }
-                            }
-                        }
-                        else
-                        {
-                            rc.Remark = "ไม่ระบุเพศ";
-                        }
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
                     }
                     
                     //rc.Remark = "";
@@ -4213,59 +5173,67 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจ BUN";
-                    if (rc.Sex.Equals("1"))//male
+                    try
                     {
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyCreatinineMale].ToString().Replace("@", " ");
-                        if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                        if (rc.Sex.Equals("1"))//male
                         {
-                            if ((int.Parse(cc.cf.NumberNull1(rc.LabResult)) > creatinineMaleMin) && (int.Parse(cc.cf.NumberNull1(rc.LabResult)) < creatinineMaleMax))
+                            rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyCreatinineMale].ToString().Replace("@", " ");
+                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
                             {
-                                rc.Remark = "ปกติ";
-                            }
-                            else
-                            {
-                                if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) > creatinineMaleMax)
+                                if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= creatinineMaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= creatinineMaleMax))
                                 {
-                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                    rc.Remark = "ปกติ";
                                 }
                                 else
                                 {
-                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > creatinineMaleMax)
+                                    {
+                                        rc.Remark = "สูงกว่ามาตรฐาน";
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                    }
                                 }
+                            }
+                            else
+                            {
+                                rc.Remark = "";
                             }
                         }
                         else
                         {
-                            rc.Remark = "";
-                        }
-                    }
-                    else
-                    {
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyCreatinineFemale].ToString().Replace("@", " ");
-                        if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
-                        {
-                            if ((int.Parse(cc.cf.NumberNull1(rc.LabResult)) > bunFemaleMin) && (int.Parse(cc.cf.NumberNull1(rc.LabResult)) < bunFemaleMax))
+                            rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyCreatinineFemale].ToString().Replace("@", " ");
+                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
                             {
-                                rc.Remark = "ปกติ";
-                            }
-                            else
-                            {
-                                if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) > bunFemaleMax)
+                                if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= creatinineFemaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= creatinineFemaleMax))
                                 {
-                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                    rc.Remark = "ปกติ";
                                 }
                                 else
                                 {
-                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > creatinineFemaleMax)
+                                    {
+                                        rc.Remark = "สูงกว่ามาตรฐาน";
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                    }
                                 }
                             }
-                        }
-                        else
-                        {
-                            rc.Remark = "";
+                            else
+                            {
+                                rc.Remark = "";
+                            }
                         }
                     }
-                    rc.Remark = "";
+                    catch (Exception ex)
+                    {
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                    }
+                    
+                    //rc.Remark = "";
                     rc.StatusLab = "bun";
                     rc.Sort1 = "1013";
                     rc.Sort2 = "11";
@@ -4275,7 +5243,7 @@ namespace CheckUP.gui
                     rc.LabGroup = "การตรวจ (Bun)";
                     rc.LabName = "สรุป ";
                     //rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.sugarSummary].ToString();
-                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.liverSummary].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.kidneySummary].ToString();
                     //rc.LabResult = "";
                     rc.LInter = "การแปรผล";
                     rc.LInterAbnormal = "ปกติ";
@@ -4344,21 +5312,29 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจ Triglyceride";
-                    if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                    try
                     {
-                        if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) >= triMax)
+                        if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
                         {
-                            rc.Remark = "สูงกว่าปกติ";
+                            if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) >= triMax)
+                            {
+                                rc.Remark = "สูงกว่าปกติ";
+                            }
+                            else if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) < triMax)
+                            {
+                                rc.Remark = "ปกติ";
+                            }
                         }
-                        else if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) < triMax)
+                        else
                         {
-                            rc.Remark = "ปกติ";
+                            rc.Remark = "";
                         }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        rc.Remark = "";
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
                     }
+                    
                     
                     rc.StatusLab = "tri";
                     rc.Sort1 = "1015";
@@ -4398,33 +5374,45 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจ SGOT";
-                    if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                    if (!rc.LabResult.Equals("") && !rc.LabResult.Equals("-"))
                     {
-                        if ((int.Parse(cc.cf.NumberNull1(rc.LabResult)) > sgptMin) && (int.Parse(cc.cf.NumberNull1(rc.LabResult)) < sgptMax))
+                        try
                         {
-                            rc.Remark = "ปกติ";
-                        }
-                        else
-                        {
-                            if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) > sgptMax)
+                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
                             {
-                                rc.Remark = "สูงกว่ามาตรฐาน";
+                                if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= sgptMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= sgptMax))
+                                {
+                                    rc.Remark = "ปกติ";
+                                }
+                                else
+                                {
+                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > sgptMax)
+                                    {
+                                        rc.Remark = "สูงกว่ามาตรฐาน";
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                    }
+                                }
                             }
                             else
                             {
-                                rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                rc.Remark = "";
                             }
                         }
+                        catch (Exception ex)
+                        {
+                            rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                        }
+
+                        //rc.Remark = "";
+                        rc.StatusLab = "sgot";
+                        rc.Sort1 = "1016";
+                        rc.Sort2 = "10";
+                        cc.rcdb.insertRCheckUp(rc);
                     }
-                    else
-                    {
-                        rc.Remark = "";
-                    }
-                    //rc.Remark = "";
-                    rc.StatusLab = "sgot";
-                    rc.Sort1 = "1016";
-                    rc.Sort2 = "10";
-                    cc.rcdb.insertRCheckUp(rc);
+                    
 
                     //Sgpt
                     rc.Id = r.Next().ToString();
@@ -4439,33 +5427,45 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจ SGPT";
-                    if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                    if (!rc.LabResult.Equals("") && !rc.LabResult.Equals("-"))
                     {
-                        if ((int.Parse(cc.cf.NumberNull1(rc.LabResult)) > sgptMin) && (int.Parse(cc.cf.NumberNull1(rc.LabResult)) < sgptMax))
+                        try
                         {
-                            rc.Remark = "ปกติ";
-                        }
-                        else
-                        {
-                            if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) > sgptMax)
+                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
                             {
-                                rc.Remark = "สูงกว่ามาตรฐาน";
+                                if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= sgptMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= sgptMax))
+                                {
+                                    rc.Remark = "ปกติ";
+                                }
+                                else
+                                {
+                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > sgptMax)
+                                    {
+                                        rc.Remark = "สูงกว่ามาตรฐาน";
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                    }
+                                }
                             }
                             else
                             {
-                                rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                rc.Remark = "";
                             }
                         }
+                        catch (Exception ex)
+                        {
+                            rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                        }
+
+                        //rc.Remark = "";
+                        rc.StatusLab = "sgot";
+                        rc.Sort1 = "1016";
+                        rc.Sort2 = "11";
+                        cc.rcdb.insertRCheckUp(rc);
                     }
-                    else
-                    {
-                        rc.Remark = "";
-                    }
-                    //rc.Remark = "";
-                    rc.StatusLab = "sgot";
-                    rc.Sort1 = "1016";
-                    rc.Sort2 = "11";
-                    cc.rcdb.insertRCheckUp(rc);
+                    
 
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "การตรวจ (SGPT)";
@@ -4502,21 +5502,28 @@ namespace CheckUP.gui
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจ Cholesterol";
-                    if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                    try
                     {
-                        if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cholesMax)
+                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
                         {
-                            rc.Remark = "สูงกว่าปกติ";
+                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cholesMax)
+                            {
+                                rc.Remark = "สูงกว่าปกติ";
+                            }
+                            else if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) < cholesMax)
+                            {
+                                rc.Remark = "ปกติ";
+                            }
                         }
-                        else if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) < cholesMax)
+                        else
                         {
-                            rc.Remark = "ปกติ";
+                            rc.Remark = "";
                         }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        rc.Remark = "";
-                    }
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                    }                    
                     
                     rc.StatusLab = "cho";
                     rc.Sort1 = "1017";
@@ -6383,7 +7390,7 @@ namespace CheckUP.gui
         {
             String rowNumber = "", chk = "";
 
-            String EyeShortLongLeft = "", EyeShortLongRight = "", EyeSquintLeft = "", EyeSquintRight = "", EyedegreeLeft = "", EyeDegreeRight = "", EyeOldLeft = "", EyeOldRight = "", EyeBlindness = "", EyeResult = "", EyeSummary = "";
+            String EyeShortLongLeft = "", EyeShortLongRight = "", EyeSquintLeft = "", EyeSquintRight = "", EyedegreeLeft = "", EyeDegreeRight = "", EyeOldLeft = "", EyeOldRight = "", EyeBlindness = "", EyeResult = "", EyeSummary = "", EyeExam="";
             pB1.Visible = true;
             pB1.Minimum = 0;
             Cursor cursor = Cursor.Current;
@@ -6395,7 +7402,7 @@ namespace CheckUP.gui
             int rowCount = xlRange.Rows.Count, row = 0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
-            for (int i = int.Parse(ei.AudiogramRow); i <= rowCount; i++)
+            for (int i = int.Parse(ei.EyeRow); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
                 if (xlRange.Cells[i, int.Parse(ei.EyeNo)].Value2 != null)
@@ -6494,10 +7501,17 @@ namespace CheckUP.gui
                 {
                     EyeSummary = "";
                 }
-
+                if (xlRange.Cells[i, int.Parse(ei.EyeExam)].Value2 != null)
+                {
+                    EyeExam = xlRange.Cells[i, int.Parse(ei.EyeExam)].Value2.ToString();
+                }
+                else
+                {
+                    EyeExam = "";
+                }
 
                 chk = cc.ccpdb.updateEye(rowNumber, txtId.Text, EyeShortLongLeft, EyeShortLongRight, EyeSquintLeft, EyeSquintRight, EyedegreeLeft, EyeDegreeRight, EyeOldLeft, EyeOldRight,
-                    EyeResult, EyeSummary, EyeBlindness);
+                    EyeResult, EyeSummary, EyeBlindness, EyeExam);
                 pB1.Value = i;
                 row++;
             }
@@ -6899,6 +7913,13 @@ namespace CheckUP.gui
             ofd.ShowDialog();
             fileNameToxi = ofd.FileName;
             btnToxiImport.Enabled = true;
+        }
+
+        private void btnExcel1_Click(object sender, EventArgs e)
+        {
+            FrmExcelInit frm = new FrmExcelInit(cc);
+            frm.ShowDialog();
+            ei = cc.eidb.selectByPk();
         }
     }
 }
