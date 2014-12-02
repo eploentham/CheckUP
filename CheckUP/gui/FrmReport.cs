@@ -2,6 +2,8 @@
 using CheckUP.objdb;
 using CheckUP.object1;
 using CrystalDecisions.CrystalReports.Engine;
+//using CrystalDecisions.CrystalReports.Engine;
+//using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using System;
 using System.Collections.Generic;
@@ -38,7 +40,7 @@ namespace CheckUP
         public void setReport(String rptName, String reportName, String condition, DataTable dt)
         {
             String chk = "";
-            ReportDocument rpt = new ReportDocument();
+            CrystalDecisions.CrystalReports.Engine.ReportDocument rpt = new CrystalDecisions.CrystalReports.Engine.ReportDocument();
             //DataTable dt1;
             //DataSet ds = new DataSet();
             //if (!sql.Equals(""))
@@ -321,7 +323,7 @@ namespace CheckUP
         public void setReportCheckUp(CustCheckUp cuc, DataTable dt)
         {
             String chk = "";
-            ReportDocument rpt = new ReportDocument();
+            CrystalDecisions.CrystalReports.Engine.ReportDocument rpt = new CrystalDecisions.CrystalReports.Engine.ReportDocument();
             try
             {
                 cc.lw.WriteLog("rpt.setReportCheckUp OK ");

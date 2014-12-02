@@ -105,7 +105,7 @@ namespace CheckUP
             }
             else if (e.Node.Name.ToString() == "nExcelInit")
             {
-                FrmExcelInit frm = new FrmExcelInit(cc);
+                FrmExcelInit frm = new FrmExcelInit(cc,"");
                 showFrame(frm);
             }
             else if (e.Node.Name.ToString() == "nValueNormal")

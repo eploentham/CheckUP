@@ -959,3 +959,24 @@ Failed to load database information.
 28/11/2557 14:31->rpt.setReportCheckUp OK 
 28/11/2557 14:31->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint.rpt
 28/11/2557 14:31->rpt.setReportCheckUp OK SetDataSource
+1/12/2557 11:45->FrmCheckUPAdd.btnPrint_Click 01 
+1/12/2557 11:45->FrmCheckUPAdd.btnPrint_Click 02 
+1/12/2557 11:45->FrmCheckUPAdd.btnPrint_Click 03 
+1/12/2557 11:58->FrmCheckUPAdd.btnPrint_Click 01 
+1/12/2557 11:58->FrmCheckUPAdd.btnPrint_Click 02 
+1/12/2557 11:58->FrmCheckUPAdd.btnPrint_Click 03 
+1/12/2557 12:00->FrmCheckUPAdd.btnPrint_Click 01 
+1/12/2557 12:00->FrmCheckUPAdd.btnPrint_Click 02 
+1/12/2557 12:00->FrmCheckUPAdd.btnPrint_Click 03 
+1/12/2557 12:01->FrmCheckUPAdd.btnPrint_Click 01 
+1/12/2557 12:01->FrmCheckUPAdd.btnPrint_Click 02 
+1/12/2557 12:01->FrmCheckUPAdd.btnPrint_Click 03 
+1/12/2557 12:14->FrmCheckUPAdd.btnPrint_Click 01 
+1/12/2557 12:14->FrmCheckUPAdd.btnPrint_Click 02 
+1/12/2557 12:14->FrmCheckUPAdd.btnPrint_Click 03 
+1/12/2557 12:14->FrmCheckUPAdd.btnPrint_Click 01 
+1/12/2557 12:14->FrmCheckUPAdd.btnPrint_Click 02 
+1/12/2557 12:14->FrmCheckUPAdd.btnPrint_Click 03 
+1/12/2557 14:37->FrmCheckUPAdd.btnPrint_Click 01 
+1/12/2557 14:37->FrmCheckUPAdd.btnPrint_Click 02 
+1/12/2557 14:37->FrmCheckUPAdd.btnPrint_Click 03 

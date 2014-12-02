@@ -3346,7 +3346,7 @@ namespace CheckUP.gui
 
         private void label3_Click(object sender, EventArgs e)
         {
-            FrmExcelInit frm = new FrmExcelInit(cc);
+            FrmExcelInit frm = new FrmExcelInit(cc,"");
             frm.ShowDialog(this);
         }
 
@@ -7917,9 +7917,20 @@ namespace CheckUP.gui
 
         private void btnExcel1_Click(object sender, EventArgs e)
         {
-            FrmExcelInit frm = new FrmExcelInit(cc);
+            FrmExcelInit frm = new FrmExcelInit(cc,"");
             frm.ShowDialog();
             ei = cc.eidb.selectByPk();
+        }
+        private void OpenExcelInit(String tab)
+        {
+            FrmExcelInit frm = new FrmExcelInit(cc,tab);
+            frm.ShowDialog();
+            ei = cc.eidb.selectByPk();
+        }
+
+        private void btnExelPE_Click(object sender, EventArgs e)
+        {
+            OpenExcelInit("pe");
         }
     }
 }

@@ -18,11 +18,25 @@ namespace CheckUP.gui
         int tabCnt = 17;
         OpenFileDialog ofd = new OpenFileDialog();
         ExcelInit ei;
-        public FrmExcelInit(CheckControl c)
+        public FrmExcelInit(CheckControl c, String tab)
         {
             InitializeComponent();
             cc = c;
             initConfig();
+
+            setTabShow(tab);
+
+        }
+        private void setTabShow(String tab)
+        {
+            if (tab.Equals(""))
+            {
+                return;
+            }
+            for (int i = 0; i < tabCnt; i++)
+            {
+                //tC.TabPages[i]
+            }
         }
         private void initConfig()
         {
