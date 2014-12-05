@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Cemp.gui
 {
-    public partial class FrmMOUAdd : Form
+    public partial class FrmMOUAdd3 : Form
     {
         CnviControl cc;
         MOU mo;
@@ -32,7 +32,7 @@ namespace Cemp.gui
         List<String> ltype;
         //DataGridView dgv;
         String editItemTypeOld = "", editPlaceOld="", editDateOld="";
-        public FrmMOUAdd(String moNumber, Boolean flagNew, CnviControl c)
+        public FrmMOUAdd3(String moNumber, Boolean flagNew, CnviControl c)
         {
             mouNew = flagNew;
             InitializeComponent();
@@ -75,7 +75,6 @@ namespace Cemp.gui
             }
             setLDate1(moNumber);
             setLPlace1(moNumber);
-            pB1.Visible = false;
             pageLoad = false;
         }
         private void HideMOU()
@@ -173,6 +172,7 @@ namespace Cemp.gui
                 {
                     dtpDateMOU.Value = DateTime.Now;
                 }
+                
             }
             catch (Exception ex)
             {
@@ -184,7 +184,7 @@ namespace Cemp.gui
             txtMOUName.Text = mo.MOUName;
             chkActive.Checked =true;
             btnUnActive.Visible = false;
-            setGrd(cc.getValueCboItem(cboMOU), mo.Id);
+            setGrd(cc.getValueCboItem(cboMOU));
             pageLoad = false;
         }
         private void getMOU()
@@ -280,19 +280,10 @@ namespace Cemp.gui
             dgvAdd.Columns[colItem].ReadOnly = true;
             dgvAdd.Columns[colRow].ReadOnly = true;
         }
-        private void setGrd(String moNumber,String moId)
+        private void setGrd(String moNumber)
         {
             setGrd();
-            DataTable dt = new DataTable();
-            if (moNumber.IndexOf("-") <= 0)
-            {
-                dt = cc.moidb.selectByMoiId1( moId);
-            }
-            else
-            {
-                dt = cc.moidb.selectByMoNumber(moNumber);
-            }
-            
+            DataTable dt = cc.moidb.selectByMoNumber(moNumber);
             //DataGridViewComboBoxColumn newColumn = new DataGridViewComboBoxColumn();
             //newColumn.Name = "abc";
             //newColumn.DataSource = new string[] { "a", "b", "c" };
@@ -300,11 +291,10 @@ namespace Cemp.gui
 
             //DataTable dt = new DataTable();
             //dt = cc.sfdb.selectAll();
-            
+            dgvAdd.RowCount = dt.Rows.Count + 1;
             //dgvAdd.Columns.Add(newColumn);
             if (dt.Rows.Count > 0)
             {
-                dgvAdd.RowCount = dt.Rows.Count + 1;
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     //dgvAdd.Rows[0].Cells = newColumn;
@@ -486,7 +476,7 @@ namespace Cemp.gui
                 }
             }
         }
-        private void FrmMOUAdd_Load(object sender, EventArgs e)
+        private void FrmMOUAdd3_Load(object sender, EventArgs e)
         {
 
         }
@@ -503,7 +493,7 @@ namespace Cemp.gui
             }
         }
 
-        private void FrmMOUAdd_Resize(object sender, EventArgs e)
+        private void FrmMOUAdd3_Resize(object sender, EventArgs e)
         {
             setResize();
         }
@@ -652,7 +642,6 @@ namespace Cemp.gui
             String moId = "", datePlaceRecordTemp="", ity="";
             int rowOld = 0, row = 0;
             Boolean chkEdit = false;
-            pB1.Visible = true;
             if (cboMOU.Text.Equals("") && !mouNew)
             {
                 MessageBox.Show("ไม่มีเลขที่ MOU", "ป้อนข้อมูลไม่ครบ");
@@ -690,14 +679,14 @@ namespace Cemp.gui
             //}
             if (ChkGrd1())
             {
-                //return;
+                return;
             }
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
             if (mouNew)
             {
-                //SortGrdDatePlaceRecord();
-                //setMOUNumberCnt();
+                SortGrdDatePlaceRecord();
+                setMOUNumberCnt();
             }
             getMOU();
             //if (mo.Id.Equals("") && (!MOUSplit))
@@ -723,8 +712,6 @@ namespace Cemp.gui
             //    mo.MOUNumberMain = doc1[0];
             //    mo.MOUNumberCnt = doc1[1];
             //}
-            pB1.Minimum = 0;
-            pB1.Maximum = dgvAdd.RowCount;
             moId = cc.modb.insertMOU(mo);
             if (moId.Length >= 1)
             {
@@ -738,10 +725,6 @@ namespace Cemp.gui
                     {
                         continue;
                     }
-                    //if ((dgvAdd[colDatePlaceRecord, i].Value == null) || (dgvAdd[colDatePlaceRecord, i].Value.ToString().Equals("")))
-                    //{
-                    //    continue;
-                    //}
                     MOUItem moi = new MOUItem();
                     //moi.RowNumber = dgvAdd[colRow, i].Value.ToString();
                     //row = int.Parse(moi.RowNumber);
@@ -756,10 +739,8 @@ namespace Cemp.gui
                         moi.Id = dgvAdd[colId, i].Value.ToString();
                     }
                     //moi.RowNumber = dgvAdd[colRow, i].Value.ToString();
-                    //Item it = cc.itdb.selectByPk(dgvAdd[colItemId, i].Value.ToString());
-                    //ItemGroup itg = cc.itgdb.selectByPk(it.ItemGroupId);
-                    Item it = cc.getItemByList(dgvAdd[colItemId, i].Value.ToString());
-                    ItemGroup itg = cc.getItemGroupByList(it.ItemGroupId);
+                    Item it = cc.itdb.selectByPk(dgvAdd[colItemId, i].Value.ToString());
+                    ItemGroup itg = cc.itgdb.selectByPk(it.ItemGroupId);
 
                     moi.Active = "1";
                     moi.ItemDescription = dgvAdd[colItem, i].Value.ToString();
@@ -775,15 +756,7 @@ namespace Cemp.gui
                     moi.ItemGroupNameT = itg.NameT;
                     moi.ItemGroupNameE = itg.NameE;
                     moi.ItemGroupSort = itg.Sort1;
-                    if (dgvAdd[colMOUNumberCnt, i].Value == null)
-                    {
-                        moi.MOUNumberCnt = "0";
-                    }
-                    else
-                    {
-                        moi.MOUNumberCnt = dgvAdd[colMOUNumberCnt, i].Value.ToString();
-                    }
-                    
+                    moi.MOUNumberCnt = dgvAdd[colMOUNumberCnt, i].Value.ToString();
                     moi.MOUNumberMain = mo.MOUNumberMain;
                     moi.PriceCost = cc.cf.NumberNull1(it.PriceCost);
                     moi.PriceSale = cc.cf.NumberNull1(it.PriceSale);
@@ -822,7 +795,6 @@ namespace Cemp.gui
                     {
                         cc.moidb.insertMOUItem(moi);
                     }
-                    pB1.Value = i;
                 }
                 if (mouNew)
                 {
@@ -837,12 +809,10 @@ namespace Cemp.gui
                 txtMOUNumber.Text = mo1.MOUNumberMain;
                 cboMOU = cc.moidb.getCboMOUNumberMain(cboMOU, mo1.MOUNumberMain);
                 //cboMOU.Text = mo1.MOUNumberMain + "-" + mo1.MOUNumberCnt;
-                pB1.Visible = false;
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 btnPrintMou.Visible = true;
                 UnLockSplit();
             }
-            pB1.Visible = false;
             Cursor.Current = cursor;
         }
 
@@ -1121,16 +1091,7 @@ namespace Cemp.gui
             //    return;
             //}
             MenuItem m = (MenuItem)(sender);
-            
-            //dgvAdd.CurrentCell.Value = m.Text;
-
-            foreach (DataGridViewCell r in dgvAdd.SelectedCells)
-            {
-                r.Value = m.Text;
-                //dgvAdd.Rows.Remove(r);
-                //dgvAdd.Rows.Add(r);
-            }
-
+            dgvAdd.CurrentCell.Value = m.Text;
             if ((dgvAdd.CurrentCell.RowIndex % 2) != 0)
             {
                 dgvAdd[colDatePlaceRecord, dgvAdd.CurrentCell.RowIndex].Style.BackColor = Color.LightSalmon;

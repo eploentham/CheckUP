@@ -271,5 +271,51 @@ namespace Cemp.objdb
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
+        public List<ItemGroup> getListItemGroup(List<ItemGroup> item)
+        {
+            //ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectAll();
+            //c.Items.Clear();
+            //String aaa = "";
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                ItemGroup itg1 = new ItemGroup();
+                itg1.Active = dt.Rows[i][itg.Active].ToString();
+                //item.Code = dt.Rows[0][itg.Code].ToString();
+                itg1.Id = dt.Rows[i][itg.Id].ToString();
+                itg1.NameE = dt.Rows[i][itg.NameE].ToString();
+                itg1.NameT = dt.Rows[i][itg.NameT].ToString();
+                itg1.Remark = dt.Rows[i][itg.Remark].ToString();
+                itg1.Sort1 = dt.Rows[i][itg.Sort1].ToString();
+                itg1.dateCancel = dt.Rows[i][itg.dateCancel].ToString();
+                itg1.dateCreate = dt.Rows[i][itg.dateCreate].ToString();
+                itg1.dateModi = dt.Rows[i][itg.dateModi].ToString();
+                //item.DatePlaceRecord = dt.Rows[0][mo.DatePlaceRecord].ToString();
+                itg1.userCancel = dt.Rows[i][itg.userCancel].ToString();
+                itg1.userCreate = dt.Rows[i][itg.userCreate].ToString();
+                itg1.userModi = dt.Rows[i][itg.userModi].ToString();
+                item.Add(itg1);
+                //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
+                //c.Items.Add(new );
+            }
+            return item;
+        }
+        public ComboBox getCboItemGroupByList(ComboBox c, List<ItemGroup> litg)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            //DataTable dt = selectAll();
+            c.Items.Clear();
+            //String aaa = "";
+            foreach (ItemGroup i in litg)
+            {
+                item = new ComboBoxItem();
+                item.Value = i.Id;
+                item.Text = i.NameT;
+                c.Items.Add(item);
+                //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
+                //c.Items.Add(new );
+            }
+            return c;
+        }
     }
 }

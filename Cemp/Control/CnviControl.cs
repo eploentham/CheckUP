@@ -62,7 +62,8 @@ namespace Cemp.Control
         public ComboBox cbocu, cbove;
         public ComboBox cboIt;
         public List<Customer> lcu;
-
+        public List<ItemGroup> litg;
+        public List<Item> lit;
         public CnviControl()
         {
             initConfig();
@@ -78,6 +79,8 @@ namespace Cemp.Control
 
                 sf = new Staff();
                 itSearch = new Item();
+                litg = new List<ItemGroup>();
+                lit = new List<Item>();
 
                 conn = new ConnectDB(initC);
 
@@ -116,6 +119,8 @@ namespace Cemp.Control
                 cboIty = itydb.getCboDocType(cboIty,"mou");
                 cbocu = cudb.getCboCustomer(cbocu);
                 cbove = cudb.getCboVendor(cbove);
+                itgdb.getListItemGroup(litg);
+                itdb.getListItem(lit);
 
                 per = new Persistent();
                 per.dateGenDB = "Now()";
@@ -628,6 +633,36 @@ namespace Cemp.Control
 
             // Return UTF16 bytes as UTF16 string
             return Encoding.Unicode.GetString(utf16Bytes);
+        }
+        public ItemGroup getItemGroupByList(String itgId)
+        {
+            ItemGroup item = new ItemGroup();
+
+            foreach (ItemGroup i in litg)
+            {
+                if (i.Id.Equals(itgId))
+                {
+                    //item = i;
+                    return i;
+                }
+            }
+
+            return item;
+        }
+        public Item getItemByList(String itId)
+        {
+            Item item = new Item();
+
+            foreach (Item i in lit)
+            {
+                if (i.Id.Equals(itId))
+                {
+                    //item = i;
+                    return i;
+                }
+            }
+
+            return item;
         }
     }
 }

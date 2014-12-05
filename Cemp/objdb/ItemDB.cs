@@ -430,5 +430,70 @@ namespace Cemp.objdb
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
+        public List<Item> getListItem(List<Item> item)
+        {
+            //ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectAll();
+            //c.Items.Clear();
+            //String aaa = "";
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                Item itg1 = new Item();
+                itg1.Active = dt.Rows[i][it.Active].ToString();
+                itg1.Code = dt.Rows[i][it.Code].ToString();
+                itg1.Id = dt.Rows[i][it.Id].ToString();
+                itg1.NameE = dt.Rows[i][it.NameE].ToString();
+                itg1.NameT = dt.Rows[i][it.NameT].ToString();
+                itg1.PriceCost = dt.Rows[i][it.PriceCost].ToString();
+                itg1.PriceSale = dt.Rows[i][it.PriceSale].ToString();
+                itg1.Remark = dt.Rows[i][it.Remark].ToString();
+                itg1.ItemGroupId = dt.Rows[i][it.ItemGroupId].ToString();
+                itg1.ItemGroupNameT = dt.Rows[i][it.ItemGroupNameT].ToString();
+                itg1.MethodNameT = dt.Rows[i][it.MethodNameT].ToString();
+                itg1.MethodId = dt.Rows[i][it.MethodId].ToString();
+                itg1.MeasuringPoint = dt.Rows[i][it.MeasuringPoint].ToString();
+                itg1.Sort1 = dt.Rows[i][it.Sort1].ToString();
+                itg1.dateCancel = dt.Rows[i][it.dateCancel].ToString();
+                itg1.dateCreate = dt.Rows[i][it.dateCreate].ToString();
+                itg1.dateModi = dt.Rows[i][it.dateModi].ToString();
+                itg1.userCancel = dt.Rows[i][it.userCancel].ToString();
+                itg1.userCreate = dt.Rows[i][it.userCreate].ToString();
+                itg1.userModi = dt.Rows[i][it.userModi].ToString();
+                itg1.PriceCostReal = dt.Rows[i][it.PriceCostReal].ToString();
+                itg1.ItemType = dt.Rows[i][it.ItemType].ToString();
+
+                itg1.CustId = dt.Rows[i][it.CustId].ToString();
+                itg1.CustNameT = dt.Rows[i][it.CustNameT].ToString();
+
+                itg1.AnalysisId = dt.Rows[i][it.AnalysisId].ToString();
+                itg1.AnalysisNameT = dt.Rows[i][it.AnalysisNameT].ToString();
+
+                itg1.StatusReal = dt.Rows[i][it.StatusReal].ToString();
+                itg1.StatusStock = dt.Rows[i][it.StatusStock].ToString();
+
+                itg1.StatusPrice = dt.Rows[i][it.StatusPrice].ToString();
+                item.Add(itg1);
+                //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
+                //c.Items.Add(new );
+            }
+            return item;
+        }
+        public ComboBox getCboItemByList(ComboBox c, List<Item> litg)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            //DataTable dt = selectAll();
+            c.Items.Clear();
+            //String aaa = "";
+            foreach (Item i in litg)
+            {
+                item = new ComboBoxItem();
+                item.Value = i.Id;
+                item.Text = i.NameT;
+                c.Items.Add(item);
+                //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
+                //c.Items.Add(new );
+            }
+            return c;
+        }
     }
 }

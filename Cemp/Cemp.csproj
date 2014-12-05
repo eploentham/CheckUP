@@ -151,6 +151,12 @@
     <Compile Include="gui\FrmMOUAdd2.Designer.cs">
       <DependentUpon>FrmMOUAdd2.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmMOUAdd3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmMOUAdd3.Designer.cs">
+      <DependentUpon>FrmMOUAdd3.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmMOUPlaceRecord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -565,6 +571,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmMOUAdd2.resx">
       <DependentUpon>FrmMOUAdd2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmMOUAdd3.resx">
+      <DependentUpon>FrmMOUAdd3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmMOUPlaceRecord.resx">
       <DependentUpon>FrmMOUPlaceRecord.cs</DependentUpon>

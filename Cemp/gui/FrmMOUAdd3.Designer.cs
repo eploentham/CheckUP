@@ -1,6 +1,6 @@
 ﻿namespace Cemp.gui
 {
-    partial class FrmMOUAdd
+    partial class FrmMOUAdd3
     {
         /// <summary>
         /// Required designer variable.
@@ -77,7 +77,6 @@
             this.btnUnActive = new System.Windows.Forms.Button();
             this.ChkUnActive = new System.Windows.Forms.RadioButton();
             this.chkActive = new System.Windows.Forms.RadioButton();
-            this.pB1 = new System.Windows.Forms.ProgressBar();
             this.groupBox2.SuspendLayout();
             this.groupBox21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
@@ -86,7 +85,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.pB1);
             this.groupBox2.Controls.Add(this.txtCustName);
             this.groupBox2.Controls.Add(this.txtCustId);
             this.groupBox2.Controls.Add(this.cboQuo);
@@ -117,7 +115,7 @@
             this.txtCustName.Location = new System.Drawing.Point(98, 55);
             this.txtCustName.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustName.Name = "txtCustName";
-            this.txtCustName.Size = new System.Drawing.Size(452, 23);
+            this.txtCustName.Size = new System.Drawing.Size(298, 23);
             this.txtCustName.TabIndex = 39;
             // 
             // txtCustId
@@ -147,7 +145,7 @@
             this.txtCustEmail.Location = new System.Drawing.Point(98, 162);
             this.txtCustEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustEmail.Name = "txtCustEmail";
-            this.txtCustEmail.Size = new System.Drawing.Size(359, 23);
+            this.txtCustEmail.Size = new System.Drawing.Size(298, 23);
             this.txtCustEmail.TabIndex = 37;
             // 
             // label10
@@ -207,7 +205,7 @@
             this.txtCustAddress.Location = new System.Drawing.Point(98, 108);
             this.txtCustAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustAddress.Name = "txtCustAddress";
-            this.txtCustAddress.Size = new System.Drawing.Size(452, 23);
+            this.txtCustAddress.Size = new System.Drawing.Size(298, 23);
             this.txtCustAddress.TabIndex = 31;
             // 
             // label7
@@ -227,7 +225,7 @@
             this.txtContactName.Location = new System.Drawing.Point(98, 81);
             this.txtContactName.Margin = new System.Windows.Forms.Padding(2);
             this.txtContactName.Name = "txtContactName";
-            this.txtContactName.Size = new System.Drawing.Size(452, 23);
+            this.txtContactName.Size = new System.Drawing.Size(298, 23);
             this.txtContactName.TabIndex = 29;
             // 
             // label3
@@ -633,13 +631,6 @@
             this.chkActive.UseVisualStyleBackColor = true;
             this.chkActive.Click += new System.EventHandler(this.chkActive_Click);
             // 
-            // pB1
-            // 
-            this.pB1.Location = new System.Drawing.Point(11, 187);
-            this.pB1.Name = "pB1";
-            this.pB1.Size = new System.Drawing.Size(539, 23);
-            this.pB1.TabIndex = 54;
-            // 
             // FrmMOUAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -663,8 +654,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMOUAdd";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmMOUAdd_Load);
-            this.Resize += new System.EventHandler(this.FrmMOUAdd_Resize);
+            this.Load += new System.EventHandler(this.FrmMOUAdd3_Load);
+            this.Resize += new System.EventHandler(this.FrmMOUAdd3_Resize);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox21.ResumeLayout(false);
@@ -728,6 +719,5 @@
         private System.Windows.Forms.RadioButton chkActive;
         private System.Windows.Forms.TextBox txtMOUNumber;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ProgressBar pB1;
     }
 }

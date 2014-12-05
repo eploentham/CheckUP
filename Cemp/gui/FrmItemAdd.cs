@@ -285,6 +285,7 @@ namespace Cemp.gui
                 //}
             }
             getItem();
+
             if (it.Code.Equals(""))
             {
                 it.Code = cc.itdb.getItemCode();
@@ -292,6 +293,7 @@ namespace Cemp.gui
             if (cc.itdb.insertItem(it).Length >= 1)
             {
                 cc.quidb.UpdateGroupNameT(txtId.Text,it.ItemGroupId, cboGroup.Text, txtSort1.Text);
+                cc.itdb.getListItem(cc.lit);
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 this.Dispose();
                 //this.Hide();

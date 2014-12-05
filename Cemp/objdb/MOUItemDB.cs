@@ -144,10 +144,24 @@ namespace Cemp.objdb
             DataTable dt = conn.selectData(sql);
             return dt;
         }
-        public DataTable selectByMoNumber(String moNumber)
+        public DataTable selectByMoiId1(String moId)
         {
             //MOUItem item = new MOUItem();
             String sql = "", cnt="", number="";
+
+            cnt = "";
+            sql = "Select * From " + moi.table + " Where " + moi.MOUId + "='" + moId + "' and " + moi.DatePlaceRecord + "=''  Order By " + moi.RowNumber;
+
+            //sql = "Select * From " + moi.table + " Where " + moi.MOUNumber + "='" + number +"' and "+ moi.MOUNumberCnt + "=" + cnt + " Order By " + moi.RowNumber;
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectByMoNumber(String moNumber)
+        {
+            //MOUItem item = new MOUItem();
+            String sql = "", cnt = "", number = "";
             if (moNumber.IndexOf("-") <= 0)
             {
                 cnt = "";
@@ -156,9 +170,9 @@ namespace Cemp.objdb
             {
                 number = moNumber.Substring(0, moNumber.IndexOf("-"));
                 cnt = moNumber.Substring(moNumber.IndexOf("-"));
-                cnt = cnt.Replace("-","");
+                cnt = cnt.Replace("-", "");
             }
-            sql = "Select * From " + moi.table + " Where " + moi.MOUNumber + "='" + number +"' and "+ moi.MOUNumberCnt + "=" + cnt + " Order By " + moi.RowNumber;
+            sql = "Select * From " + moi.table + " Where " + moi.MOUNumber + "='" + number + "' and " + moi.MOUNumberCnt + "=" + cnt + " Order By " + moi.RowNumber;
             //dt = conn.selectData(sql);
             DataTable dt = conn.selectData(sql);
 
@@ -240,7 +254,7 @@ namespace Cemp.objdb
                 p.MOUId + "','" + p.PlaceRecord + "','" + p.RowNumber + "','" +
                 p.Sample + "','" + p.ItemGroupNameE + "','" + p.ItemGroupNameT + "','" +
                 p.ItemGroupSort + "','" + p.ItemGroupId + "','" + p.DatePlaceRecord + "','" +
-                p.MOUNumber + "'," + p.MOUNumberCnt + "," + NumberNull1(p.PriceCost) + "," +
+                p.MOUNumber + "'," + NumberNull1(p.MOUNumberCnt) + "," + NumberNull1(p.PriceCost) + "," +
                 NumberNull1(p.PriceSale) + "," + NumberNull1(p.Amount) + "," + NumberNull1(p.Discount) + ",'" + 
                 p.MOUNumberMain + "','" + p.ItemType + "')";
             try
@@ -406,12 +420,16 @@ namespace Cemp.objdb
             String sql = "", cnt = "", doc = "";
             doc = "00000"+max.ToString();
             doc = doc1 + doc.Substring(doc.Length - 5);
-            sql = "Update " + moi.table + " "+
+            //sql = "Update " + moi.table + " "+
+            //    "Set " + moi.MOUNumber + "='" + doc + "', " +
+            //    moi.MOUNumberCnt+"=1"+
+            //    " Where " + moi.MOUId + "='" + moId + "' and "+moi.ItemType+"='"+ity+"'";
+            sql = "Update " + moi.table + " " +
                 "Set " + moi.MOUNumber + "='" + doc + "', " +
-                moi.MOUNumberCnt+"=1"+
-                " Where " + moi.MOUId + "='" + moId + "' and "+moi.ItemType+"='"+ity+"'";
+                moi.MOUNumberCnt + "=1" +
+                " Where " + moi.MOUId + "='" + moId + "' and " + moi.ItemType + "='" + ity + "' and "+ moi.DatePlaceRecord+" <> '' and "+moi.PlaceRecord+" <> '' ";
             //dt = conn.selectData(sql);
-            conn.ExecuteNonQuery(sql);
+            cnt = conn.ExecuteNonQuery(sql);
 
             return "";
         }
@@ -439,6 +457,7 @@ namespace Cemp.objdb
                     {
                         max = max.Substring(0,max.IndexOf("-"));
                     }
+
                     UpdateMOUNumber1(MOUNumberMain, ity, doc, (int.Parse(NumberNull1(max.Substring(2))) + 1));
                 }
             }

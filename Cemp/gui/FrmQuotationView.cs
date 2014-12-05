@@ -105,7 +105,9 @@ namespace Cemp.gui
         private void btnAdd_Click(object sender, EventArgs e)
         {
             FrmQuotationAdd frm = new FrmQuotationAdd("",false, cc);
+            this.Hide();
             frm.ShowDialog(this);
+            this.Hide();
             setGrd();
         }
 
@@ -122,7 +124,9 @@ namespace Cemp.gui
 
             FrmQuotationAdd frm = new FrmQuotationAdd(dgvView[colId, e.RowIndex].Value.ToString(),false, cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
+            this.Hide();
             frm.ShowDialog(this);
+            this.Show();
             setGrd();
         }
         private void mnuCost_Click(object sender, EventArgs e)

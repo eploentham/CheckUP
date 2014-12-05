@@ -452,7 +452,7 @@
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.txtAmount);
             this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Location = new System.Drawing.Point(515, 521);
+            this.groupBox3.Location = new System.Drawing.Point(618, 521);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
@@ -695,7 +695,7 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(490, 221);
+            this.groupBox4.Size = new System.Drawing.Size(584, 221);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "หมายเหตุ";
@@ -707,7 +707,7 @@
             this.cboRemark7.Location = new System.Drawing.Point(40, 191);
             this.cboRemark7.Margin = new System.Windows.Forms.Padding(2);
             this.cboRemark7.Name = "cboRemark7";
-            this.cboRemark7.Size = new System.Drawing.Size(446, 25);
+            this.cboRemark7.Size = new System.Drawing.Size(540, 25);
             this.cboRemark7.TabIndex = 38;
             // 
             // label38
@@ -728,7 +728,7 @@
             this.cboRemark6.Location = new System.Drawing.Point(40, 162);
             this.cboRemark6.Margin = new System.Windows.Forms.Padding(2);
             this.cboRemark6.Name = "cboRemark6";
-            this.cboRemark6.Size = new System.Drawing.Size(446, 25);
+            this.cboRemark6.Size = new System.Drawing.Size(540, 25);
             this.cboRemark6.TabIndex = 36;
             // 
             // label37
@@ -749,7 +749,7 @@
             this.cboRemark5.Location = new System.Drawing.Point(40, 133);
             this.cboRemark5.Margin = new System.Windows.Forms.Padding(2);
             this.cboRemark5.Name = "cboRemark5";
-            this.cboRemark5.Size = new System.Drawing.Size(446, 25);
+            this.cboRemark5.Size = new System.Drawing.Size(540, 25);
             this.cboRemark5.TabIndex = 34;
             // 
             // label36
@@ -770,7 +770,7 @@
             this.cboRemark4.Location = new System.Drawing.Point(40, 104);
             this.cboRemark4.Margin = new System.Windows.Forms.Padding(2);
             this.cboRemark4.Name = "cboRemark4";
-            this.cboRemark4.Size = new System.Drawing.Size(446, 25);
+            this.cboRemark4.Size = new System.Drawing.Size(540, 25);
             this.cboRemark4.TabIndex = 32;
             // 
             // label35
@@ -791,7 +791,7 @@
             this.cboRemark3.Location = new System.Drawing.Point(40, 75);
             this.cboRemark3.Margin = new System.Windows.Forms.Padding(2);
             this.cboRemark3.Name = "cboRemark3";
-            this.cboRemark3.Size = new System.Drawing.Size(446, 25);
+            this.cboRemark3.Size = new System.Drawing.Size(540, 25);
             this.cboRemark3.TabIndex = 30;
             this.cboRemark3.Enter += new System.EventHandler(this.cboRemark3_Enter);
             this.cboRemark3.Leave += new System.EventHandler(this.cboRemark3_Leave);
@@ -803,7 +803,7 @@
             this.cboRemark2.Location = new System.Drawing.Point(40, 47);
             this.cboRemark2.Margin = new System.Windows.Forms.Padding(2);
             this.cboRemark2.Name = "cboRemark2";
-            this.cboRemark2.Size = new System.Drawing.Size(446, 25);
+            this.cboRemark2.Size = new System.Drawing.Size(540, 25);
             this.cboRemark2.TabIndex = 29;
             this.cboRemark2.Enter += new System.EventHandler(this.cboRemark2_Enter);
             this.cboRemark2.Leave += new System.EventHandler(this.cboRemark2_Leave);
@@ -815,7 +815,7 @@
             this.cboRemark1.Location = new System.Drawing.Point(40, 20);
             this.cboRemark1.Margin = new System.Windows.Forms.Padding(2);
             this.cboRemark1.Name = "cboRemark1";
-            this.cboRemark1.Size = new System.Drawing.Size(446, 25);
+            this.cboRemark1.Size = new System.Drawing.Size(540, 25);
             this.cboRemark1.TabIndex = 28;
             this.cboRemark1.Enter += new System.EventHandler(this.cboRemark1_Enter);
             this.cboRemark1.Leave += new System.EventHandler(this.cboRemark1_Leave);
@@ -995,6 +995,7 @@
             this.cboItem.TabIndex = 27;
             this.cboItem.SelectedIndexChanged += new System.EventHandler(this.cboItem_SelectedIndexChanged);
             this.cboItem.Enter += new System.EventHandler(this.cboItem_Enter);
+            this.cboItem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cboItem_KeyUp);
             this.cboItem.Leave += new System.EventHandler(this.cboItem_Leave);
             // 
             // label29
