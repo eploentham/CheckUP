@@ -357,6 +357,8 @@
             this.label118 = new System.Windows.Forms.Label();
             this.nmDAudioRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.label181 = new System.Windows.Forms.Label();
+            this.nmDEyeExam = new System.Windows.Forms.NumericUpDown();
             this.label129 = new System.Windows.Forms.Label();
             this.txtEyeTest = new System.Windows.Forms.TextBox();
             this.btnEyeExcel = new System.Windows.Forms.Button();
@@ -477,8 +479,6 @@
             this.nmDStoolExamNo = new System.Windows.Forms.NumericUpDown();
             this.label163 = new System.Windows.Forms.Label();
             this.nmDStoolExamRow = new System.Windows.Forms.NumericUpDown();
-            this.label181 = new System.Windows.Forms.Label();
-            this.nmDEyeExam = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDARow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDAPrefix)).BeginInit();
@@ -625,6 +625,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDAudioNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDAudioRow)).BeginInit();
             this.tabPage15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeExam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDEyeSummary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDEyeResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDEyeBlindness)).BeginInit();
@@ -681,12 +682,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeExam)).BeginInit();
             this.SuspendLayout();
             // 
             // nmDRow
             // 
             this.nmDRow.Location = new System.Drawing.Point(214, 24);
+            this.nmDRow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDRow.Name = "nmDRow";
             this.nmDRow.Size = new System.Drawing.Size(46, 20);
             this.nmDRow.TabIndex = 11;
@@ -709,6 +714,11 @@
             // nmDARow
             // 
             this.nmDARow.Location = new System.Drawing.Point(254, 85);
+            this.nmDARow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDARow.Name = "nmDARow";
             this.nmDARow.Size = new System.Drawing.Size(46, 20);
             this.nmDARow.TabIndex = 13;
@@ -731,6 +741,11 @@
             // nmDAPrefix
             // 
             this.nmDAPrefix.Location = new System.Drawing.Point(338, 85);
+            this.nmDAPrefix.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAPrefix.Name = "nmDAPrefix";
             this.nmDAPrefix.Size = new System.Drawing.Size(46, 20);
             this.nmDAPrefix.TabIndex = 15;
@@ -753,6 +768,11 @@
             // nmDAFirstName
             // 
             this.nmDAFirstName.Location = new System.Drawing.Point(405, 85);
+            this.nmDAFirstName.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAFirstName.Name = "nmDAFirstName";
             this.nmDAFirstName.Size = new System.Drawing.Size(46, 20);
             this.nmDAFirstName.TabIndex = 17;
@@ -775,6 +795,11 @@
             // nmDALastName
             // 
             this.nmDALastName.Location = new System.Drawing.Point(478, 85);
+            this.nmDALastName.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDALastName.Name = "nmDALastName";
             this.nmDALastName.Size = new System.Drawing.Size(46, 20);
             this.nmDALastName.TabIndex = 19;
@@ -797,6 +822,11 @@
             // nmDAAge
             // 
             this.nmDAAge.Location = new System.Drawing.Point(569, 85);
+            this.nmDAAge.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAAge.Name = "nmDAAge";
             this.nmDAAge.Size = new System.Drawing.Size(46, 20);
             this.nmDAAge.TabIndex = 21;
@@ -843,6 +873,11 @@
             // nmDBRow
             // 
             this.nmDBRow.Location = new System.Drawing.Point(254, 161);
+            this.nmDBRow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDBRow.Name = "nmDBRow";
             this.nmDBRow.Size = new System.Drawing.Size(46, 20);
             this.nmDBRow.TabIndex = 25;
@@ -865,6 +900,11 @@
             // nmDBPrefix
             // 
             this.nmDBPrefix.Location = new System.Drawing.Point(338, 161);
+            this.nmDBPrefix.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDBPrefix.Name = "nmDBPrefix";
             this.nmDBPrefix.Size = new System.Drawing.Size(46, 20);
             this.nmDBPrefix.TabIndex = 27;
@@ -887,6 +927,11 @@
             // nmDBFullName
             // 
             this.nmDBFullName.Location = new System.Drawing.Point(416, 161);
+            this.nmDBFullName.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDBFullName.Name = "nmDBFullName";
             this.nmDBFullName.Size = new System.Drawing.Size(46, 20);
             this.nmDBFullName.TabIndex = 29;
@@ -909,6 +954,11 @@
             // nmDBAge
             // 
             this.nmDBAge.Location = new System.Drawing.Point(569, 161);
+            this.nmDBAge.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDBAge.Name = "nmDBAge";
             this.nmDBAge.Size = new System.Drawing.Size(46, 20);
             this.nmDBAge.TabIndex = 31;
@@ -943,6 +993,11 @@
             // nmDCRow
             // 
             this.nmDCRow.Location = new System.Drawing.Point(254, 237);
+            this.nmDCRow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDCRow.Name = "nmDCRow";
             this.nmDCRow.Size = new System.Drawing.Size(46, 20);
             this.nmDCRow.TabIndex = 34;
@@ -965,6 +1020,11 @@
             // nmDCPrefix
             // 
             this.nmDCPrefix.Location = new System.Drawing.Point(338, 237);
+            this.nmDCPrefix.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDCPrefix.Name = "nmDCPrefix";
             this.nmDCPrefix.Size = new System.Drawing.Size(46, 20);
             this.nmDCPrefix.TabIndex = 36;
@@ -987,6 +1047,11 @@
             // nmDCAge
             // 
             this.nmDCAge.Location = new System.Drawing.Point(569, 239);
+            this.nmDCAge.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDCAge.Name = "nmDCAge";
             this.nmDCAge.Size = new System.Drawing.Size(46, 20);
             this.nmDCAge.TabIndex = 38;
@@ -1088,6 +1153,11 @@
             // nmDDepartment
             // 
             this.nmDDepartment.Location = new System.Drawing.Point(391, 28);
+            this.nmDDepartment.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDDepartment.Name = "nmDDepartment";
             this.nmDDepartment.Size = new System.Drawing.Size(46, 20);
             this.nmDDepartment.TabIndex = 63;
@@ -1181,6 +1251,11 @@
             // nmDPEBloodGroup
             // 
             this.nmDPEBloodGroup.Location = new System.Drawing.Point(98, 188);
+            this.nmDPEBloodGroup.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDPEBloodGroup.Name = "nmDPEBloodGroup";
             this.nmDPEBloodGroup.Size = new System.Drawing.Size(46, 20);
             this.nmDPEBloodGroup.TabIndex = 66;
@@ -1230,6 +1305,11 @@
             // nmDPESummary
             // 
             this.nmDPESummary.Location = new System.Drawing.Point(662, 105);
+            this.nmDPESummary.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDPESummary.Name = "nmDPESummary";
             this.nmDPESummary.Size = new System.Drawing.Size(46, 20);
             this.nmDPESummary.TabIndex = 31;
@@ -1252,6 +1332,11 @@
             // nmDPEResult
             // 
             this.nmDPEResult.Location = new System.Drawing.Point(582, 105);
+            this.nmDPEResult.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDPEResult.Name = "nmDPEResult";
             this.nmDPEResult.Size = new System.Drawing.Size(46, 20);
             this.nmDPEResult.TabIndex = 29;
@@ -1274,6 +1359,11 @@
             // nmDPEPulse
             // 
             this.nmDPEPulse.Location = new System.Drawing.Point(509, 105);
+            this.nmDPEPulse.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDPEPulse.Name = "nmDPEPulse";
             this.nmDPEPulse.Size = new System.Drawing.Size(46, 20);
             this.nmDPEPulse.TabIndex = 27;
@@ -1296,6 +1386,11 @@
             // nmDPEVi
             // 
             this.nmDPEVi.Location = new System.Drawing.Point(428, 105);
+            this.nmDPEVi.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDPEVi.Name = "nmDPEVi";
             this.nmDPEVi.Size = new System.Drawing.Size(46, 20);
             this.nmDPEVi.TabIndex = 25;
@@ -1318,6 +1413,11 @@
             // nmDPEBMI
             // 
             this.nmDPEBMI.Location = new System.Drawing.Point(345, 105);
+            this.nmDPEBMI.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDPEBMI.Name = "nmDPEBMI";
             this.nmDPEBMI.Size = new System.Drawing.Size(46, 20);
             this.nmDPEBMI.TabIndex = 23;
@@ -1340,6 +1440,11 @@
             // nmDPEHeight
             // 
             this.nmDPEHeight.Location = new System.Drawing.Point(260, 105);
+            this.nmDPEHeight.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDPEHeight.Name = "nmDPEHeight";
             this.nmDPEHeight.Size = new System.Drawing.Size(46, 20);
             this.nmDPEHeight.TabIndex = 21;
@@ -1362,6 +1467,11 @@
             // nmDPEWeight
             // 
             this.nmDPEWeight.Location = new System.Drawing.Point(181, 105);
+            this.nmDPEWeight.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDPEWeight.Name = "nmDPEWeight";
             this.nmDPEWeight.Size = new System.Drawing.Size(46, 20);
             this.nmDPEWeight.TabIndex = 19;
@@ -1384,6 +1494,11 @@
             // nmDPEAge
             // 
             this.nmDPEAge.Location = new System.Drawing.Point(98, 105);
+            this.nmDPEAge.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDPEAge.Name = "nmDPEAge";
             this.nmDPEAge.Size = new System.Drawing.Size(46, 20);
             this.nmDPEAge.TabIndex = 17;
@@ -1406,6 +1521,11 @@
             // nmDPENo
             // 
             this.nmDPENo.Location = new System.Drawing.Point(21, 105);
+            this.nmDPENo.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDPENo.Name = "nmDPENo";
             this.nmDPENo.Size = new System.Drawing.Size(46, 20);
             this.nmDPENo.TabIndex = 15;
@@ -1428,6 +1548,11 @@
             // nmDPERow
             // 
             this.nmDPERow.Location = new System.Drawing.Point(202, 29);
+            this.nmDPERow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDPERow.Name = "nmDPERow";
             this.nmDPERow.Size = new System.Drawing.Size(46, 20);
             this.nmDPERow.TabIndex = 13;
@@ -1498,6 +1623,11 @@
             // nmDXRaySummary
             // 
             this.nmDXRaySummary.Location = new System.Drawing.Point(223, 106);
+            this.nmDXRaySummary.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDXRaySummary.Name = "nmDXRaySummary";
             this.nmDXRaySummary.Size = new System.Drawing.Size(46, 20);
             this.nmDXRaySummary.TabIndex = 25;
@@ -1520,6 +1650,11 @@
             // nmDXRayValue
             // 
             this.nmDXRayValue.Location = new System.Drawing.Point(121, 106);
+            this.nmDXRayValue.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDXRayValue.Name = "nmDXRayValue";
             this.nmDXRayValue.Size = new System.Drawing.Size(46, 20);
             this.nmDXRayValue.TabIndex = 23;
@@ -1542,6 +1677,11 @@
             // nmDXRayNo
             // 
             this.nmDXRayNo.Location = new System.Drawing.Point(27, 106);
+            this.nmDXRayNo.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDXRayNo.Name = "nmDXRayNo";
             this.nmDXRayNo.Size = new System.Drawing.Size(46, 20);
             this.nmDXRayNo.TabIndex = 17;
@@ -1564,6 +1704,11 @@
             // nmDXRayRow
             // 
             this.nmDXRayRow.Location = new System.Drawing.Point(189, 30);
+            this.nmDXRayRow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDXRayRow.Name = "nmDXRayRow";
             this.nmDXRayRow.Size = new System.Drawing.Size(46, 20);
             this.nmDXRayRow.TabIndex = 13;
@@ -1629,6 +1774,11 @@
             // nmDCBCSummary
             // 
             this.nmDCBCSummary.Location = new System.Drawing.Point(519, 197);
+            this.nmDCBCSummary.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDCBCSummary.Name = "nmDCBCSummary";
             this.nmDCBCSummary.Size = new System.Drawing.Size(46, 20);
             this.nmDCBCSummary.TabIndex = 77;
@@ -1651,6 +1801,11 @@
             // nmDCBCRBCmono
             // 
             this.nmDCBCRBCmono.Location = new System.Drawing.Point(350, 197);
+            this.nmDCBCRBCmono.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDCBCRBCmono.Name = "nmDCBCRBCmono";
             this.nmDCBCRBCmono.Size = new System.Drawing.Size(46, 20);
             this.nmDCBCRBCmono.TabIndex = 75;
@@ -1673,6 +1828,11 @@
             // nmDCBCPltS
             // 
             this.nmDCBCPltS.Location = new System.Drawing.Point(270, 197);
+            this.nmDCBCPltS.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDCBCPltS.Name = "nmDCBCPltS";
             this.nmDCBCPltS.Size = new System.Drawing.Size(46, 20);
             this.nmDCBCPltS.TabIndex = 73;
@@ -1695,6 +1855,11 @@
             // nmDCBCPltC
             // 
             this.nmDCBCPltC.Location = new System.Drawing.Point(183, 197);
+            this.nmDCBCPltC.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDCBCPltC.Name = "nmDCBCPltC";
             this.nmDCBCPltC.Size = new System.Drawing.Size(46, 20);
             this.nmDCBCPltC.TabIndex = 71;
@@ -1717,6 +1882,11 @@
             // nmDCBCBact
             // 
             this.nmDCBCBact.Location = new System.Drawing.Point(110, 197);
+            this.nmDCBCBact.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDCBCBact.Name = "nmDCBCBact";
             this.nmDCBCBact.Size = new System.Drawing.Size(46, 20);
             this.nmDCBCBact.TabIndex = 69;
@@ -1766,6 +1936,11 @@
             // nmDCBCEos
             // 
             this.nmDCBCEos.Location = new System.Drawing.Point(672, 113);
+            this.nmDCBCEos.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDCBCEos.Name = "nmDCBCEos";
             this.nmDCBCEos.Size = new System.Drawing.Size(46, 20);
             this.nmDCBCEos.TabIndex = 47;
@@ -1788,6 +1963,11 @@
             // nmDCBCMono
             // 
             this.nmDCBCMono.Location = new System.Drawing.Point(592, 113);
+            this.nmDCBCMono.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDCBCMono.Name = "nmDCBCMono";
             this.nmDCBCMono.Size = new System.Drawing.Size(46, 20);
             this.nmDCBCMono.TabIndex = 45;
@@ -1810,6 +1990,11 @@
             // nmDCBCLy
             // 
             this.nmDCBCLy.Location = new System.Drawing.Point(519, 113);
+            this.nmDCBCLy.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDCBCLy.Name = "nmDCBCLy";
             this.nmDCBCLy.Size = new System.Drawing.Size(46, 20);
             this.nmDCBCLy.TabIndex = 43;
@@ -1832,6 +2017,11 @@
             // nmDCBCNeu
             // 
             this.nmDCBCNeu.Location = new System.Drawing.Point(438, 113);
+            this.nmDCBCNeu.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDCBCNeu.Name = "nmDCBCNeu";
             this.nmDCBCNeu.Size = new System.Drawing.Size(46, 20);
             this.nmDCBCNeu.TabIndex = 41;
@@ -1854,6 +2044,11 @@
             // nmDCBCHct
             // 
             this.nmDCBCHct.Location = new System.Drawing.Point(355, 113);
+            this.nmDCBCHct.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDCBCHct.Name = "nmDCBCHct";
             this.nmDCBCHct.Size = new System.Drawing.Size(46, 20);
             this.nmDCBCHct.TabIndex = 39;
@@ -1876,6 +2071,11 @@
             // nmDCBCHb
             // 
             this.nmDCBCHb.Location = new System.Drawing.Point(270, 113);
+            this.nmDCBCHb.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDCBCHb.Name = "nmDCBCHb";
             this.nmDCBCHb.Size = new System.Drawing.Size(46, 20);
             this.nmDCBCHb.TabIndex = 37;
@@ -1898,6 +2098,11 @@
             // nmDCBCRBC
             // 
             this.nmDCBCRBC.Location = new System.Drawing.Point(191, 113);
+            this.nmDCBCRBC.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDCBCRBC.Name = "nmDCBCRBC";
             this.nmDCBCRBC.Size = new System.Drawing.Size(46, 20);
             this.nmDCBCRBC.TabIndex = 35;
@@ -1920,6 +2125,11 @@
             // nmDCBCWBC
             // 
             this.nmDCBCWBC.Location = new System.Drawing.Point(108, 113);
+            this.nmDCBCWBC.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDCBCWBC.Name = "nmDCBCWBC";
             this.nmDCBCWBC.Size = new System.Drawing.Size(46, 20);
             this.nmDCBCWBC.TabIndex = 33;
@@ -1942,6 +2152,11 @@
             // nmDCBCNo
             // 
             this.nmDCBCNo.Location = new System.Drawing.Point(38, 116);
+            this.nmDCBCNo.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDCBCNo.Name = "nmDCBCNo";
             this.nmDCBCNo.Size = new System.Drawing.Size(46, 20);
             this.nmDCBCNo.TabIndex = 17;
@@ -1964,6 +2179,11 @@
             // nmDCBCRow
             // 
             this.nmDCBCRow.Location = new System.Drawing.Point(157, 34);
+            this.nmDCBCRow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDCBCRow.Name = "nmDCBCRow";
             this.nmDCBCRow.Size = new System.Drawing.Size(46, 20);
             this.nmDCBCRow.TabIndex = 13;
@@ -2045,6 +2265,11 @@
             // nmDFBSResult
             // 
             this.nmDFBSResult.Location = new System.Drawing.Point(225, 111);
+            this.nmDFBSResult.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDFBSResult.Name = "nmDFBSResult";
             this.nmDFBSResult.Size = new System.Drawing.Size(46, 20);
             this.nmDFBSResult.TabIndex = 31;
@@ -2067,6 +2292,11 @@
             // nmDFBSSummary
             // 
             this.nmDFBSSummary.Location = new System.Drawing.Point(330, 111);
+            this.nmDFBSSummary.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDFBSSummary.Name = "nmDFBSSummary";
             this.nmDFBSSummary.Size = new System.Drawing.Size(46, 20);
             this.nmDFBSSummary.TabIndex = 29;
@@ -2089,6 +2319,11 @@
             // nmDFBSValue
             // 
             this.nmDFBSValue.Location = new System.Drawing.Point(126, 111);
+            this.nmDFBSValue.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDFBSValue.Name = "nmDFBSValue";
             this.nmDFBSValue.Size = new System.Drawing.Size(46, 20);
             this.nmDFBSValue.TabIndex = 27;
@@ -2111,6 +2346,11 @@
             // nmDFBSNo
             // 
             this.nmDFBSNo.Location = new System.Drawing.Point(28, 111);
+            this.nmDFBSNo.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDFBSNo.Name = "nmDFBSNo";
             this.nmDFBSNo.Size = new System.Drawing.Size(46, 20);
             this.nmDFBSNo.TabIndex = 17;
@@ -2133,6 +2373,11 @@
             // nmDFBSRow
             // 
             this.nmDFBSRow.Location = new System.Drawing.Point(151, 33);
+            this.nmDFBSRow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDFBSRow.Name = "nmDFBSRow";
             this.nmDFBSRow.Size = new System.Drawing.Size(46, 20);
             this.nmDFBSRow.TabIndex = 13;
@@ -2232,6 +2477,11 @@
             // nmDUASummary
             // 
             this.nmDUASummary.Location = new System.Drawing.Point(357, 193);
+            this.nmDUASummary.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDUASummary.Name = "nmDUASummary";
             this.nmDUASummary.Size = new System.Drawing.Size(46, 20);
             this.nmDUASummary.TabIndex = 71;
@@ -2254,6 +2504,11 @@
             // nmDUAResult
             // 
             this.nmDUAResult.Location = new System.Drawing.Point(258, 193);
+            this.nmDUAResult.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDUAResult.Name = "nmDUAResult";
             this.nmDUAResult.Size = new System.Drawing.Size(46, 20);
             this.nmDUAResult.TabIndex = 69;
@@ -2276,6 +2531,11 @@
             // nmDUABact
             // 
             this.nmDUABact.Location = new System.Drawing.Point(178, 193);
+            this.nmDUABact.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDUABact.Name = "nmDUABact";
             this.nmDUABact.Size = new System.Drawing.Size(46, 20);
             this.nmDUABact.TabIndex = 67;
@@ -2298,6 +2558,11 @@
             // nmDUAEpi
             // 
             this.nmDUAEpi.Location = new System.Drawing.Point(105, 193);
+            this.nmDUAEpi.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDUAEpi.Name = "nmDUAEpi";
             this.nmDUAEpi.Size = new System.Drawing.Size(46, 20);
             this.nmDUAEpi.TabIndex = 65;
@@ -2320,6 +2585,11 @@
             // nmDUARBC
             // 
             this.nmDUARBC.Location = new System.Drawing.Point(674, 121);
+            this.nmDUARBC.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDUARBC.Name = "nmDUARBC";
             this.nmDUARBC.Size = new System.Drawing.Size(46, 20);
             this.nmDUARBC.TabIndex = 63;
@@ -2342,6 +2612,11 @@
             // nmDUAWBC
             // 
             this.nmDUAWBC.Location = new System.Drawing.Point(594, 121);
+            this.nmDUAWBC.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDUAWBC.Name = "nmDUAWBC";
             this.nmDUAWBC.Size = new System.Drawing.Size(46, 20);
             this.nmDUAWBC.TabIndex = 61;
@@ -2364,6 +2639,11 @@
             // nmDUAProtein
             // 
             this.nmDUAProtein.Location = new System.Drawing.Point(521, 121);
+            this.nmDUAProtein.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDUAProtein.Name = "nmDUAProtein";
             this.nmDUAProtein.Size = new System.Drawing.Size(46, 20);
             this.nmDUAProtein.TabIndex = 59;
@@ -2386,6 +2666,11 @@
             // nmDUApH
             // 
             this.nmDUApH.Location = new System.Drawing.Point(440, 121);
+            this.nmDUApH.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDUApH.Name = "nmDUApH";
             this.nmDUApH.Size = new System.Drawing.Size(46, 20);
             this.nmDUApH.TabIndex = 57;
@@ -2408,6 +2693,11 @@
             // nmDUASpgr
             // 
             this.nmDUASpgr.Location = new System.Drawing.Point(357, 121);
+            this.nmDUASpgr.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDUASpgr.Name = "nmDUASpgr";
             this.nmDUASpgr.Size = new System.Drawing.Size(46, 20);
             this.nmDUASpgr.TabIndex = 55;
@@ -2430,6 +2720,11 @@
             // nmDUASugar
             // 
             this.nmDUASugar.Location = new System.Drawing.Point(272, 121);
+            this.nmDUASugar.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDUASugar.Name = "nmDUASugar";
             this.nmDUASugar.Size = new System.Drawing.Size(46, 20);
             this.nmDUASugar.TabIndex = 53;
@@ -2452,6 +2747,11 @@
             // nmDUAAppe
             // 
             this.nmDUAAppe.Location = new System.Drawing.Point(193, 121);
+            this.nmDUAAppe.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDUAAppe.Name = "nmDUAAppe";
             this.nmDUAAppe.Size = new System.Drawing.Size(46, 20);
             this.nmDUAAppe.TabIndex = 51;
@@ -2474,6 +2774,11 @@
             // nmDUAColor
             // 
             this.nmDUAColor.Location = new System.Drawing.Point(110, 121);
+            this.nmDUAColor.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDUAColor.Name = "nmDUAColor";
             this.nmDUAColor.Size = new System.Drawing.Size(46, 20);
             this.nmDUAColor.TabIndex = 49;
@@ -2496,6 +2801,11 @@
             // nmDUANo
             // 
             this.nmDUANo.Location = new System.Drawing.Point(37, 121);
+            this.nmDUANo.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDUANo.Name = "nmDUANo";
             this.nmDUANo.Size = new System.Drawing.Size(46, 20);
             this.nmDUANo.TabIndex = 19;
@@ -2518,6 +2828,11 @@
             // nmDUARow
             // 
             this.nmDUARow.Location = new System.Drawing.Point(175, 37);
+            this.nmDUARow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDUARow.Name = "nmDUARow";
             this.nmDUARow.Size = new System.Drawing.Size(46, 20);
             this.nmDUARow.TabIndex = 13;
@@ -2599,6 +2914,11 @@
             // nmDTriResult
             // 
             this.nmDTriResult.Location = new System.Drawing.Point(248, 132);
+            this.nmDTriResult.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDTriResult.Name = "nmDTriResult";
             this.nmDTriResult.Size = new System.Drawing.Size(46, 20);
             this.nmDTriResult.TabIndex = 37;
@@ -2621,6 +2941,11 @@
             // nmDTriSummary
             // 
             this.nmDTriSummary.Location = new System.Drawing.Point(353, 132);
+            this.nmDTriSummary.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDTriSummary.Name = "nmDTriSummary";
             this.nmDTriSummary.Size = new System.Drawing.Size(46, 20);
             this.nmDTriSummary.TabIndex = 35;
@@ -2643,6 +2968,11 @@
             // nmDTriValue
             // 
             this.nmDTriValue.Location = new System.Drawing.Point(149, 132);
+            this.nmDTriValue.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDTriValue.Name = "nmDTriValue";
             this.nmDTriValue.Size = new System.Drawing.Size(46, 20);
             this.nmDTriValue.TabIndex = 33;
@@ -2665,6 +2995,11 @@
             // nmDTriNo
             // 
             this.nmDTriNo.Location = new System.Drawing.Point(43, 132);
+            this.nmDTriNo.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDTriNo.Name = "nmDTriNo";
             this.nmDTriNo.Size = new System.Drawing.Size(46, 20);
             this.nmDTriNo.TabIndex = 19;
@@ -2687,6 +3022,11 @@
             // nmDTriRow
             // 
             this.nmDTriRow.Location = new System.Drawing.Point(200, 44);
+            this.nmDTriRow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDTriRow.Name = "nmDTriRow";
             this.nmDTriRow.Size = new System.Drawing.Size(46, 20);
             this.nmDTriRow.TabIndex = 13;
@@ -2745,6 +3085,11 @@
             // nmDChoHDL
             // 
             this.nmDChoHDL.Location = new System.Drawing.Point(355, 114);
+            this.nmDChoHDL.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDChoHDL.Name = "nmDChoHDL";
             this.nmDChoHDL.Size = new System.Drawing.Size(46, 20);
             this.nmDChoHDL.TabIndex = 84;
@@ -2767,6 +3112,11 @@
             // nmDChoLDL
             // 
             this.nmDChoLDL.Location = new System.Drawing.Point(242, 114);
+            this.nmDChoLDL.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDChoLDL.Name = "nmDChoLDL";
             this.nmDChoLDL.Size = new System.Drawing.Size(46, 20);
             this.nmDChoLDL.TabIndex = 82;
@@ -2816,6 +3166,11 @@
             // nmDChoResult
             // 
             this.nmDChoResult.Location = new System.Drawing.Point(474, 114);
+            this.nmDChoResult.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDChoResult.Name = "nmDChoResult";
             this.nmDChoResult.Size = new System.Drawing.Size(46, 20);
             this.nmDChoResult.TabIndex = 43;
@@ -2838,6 +3193,11 @@
             // nmDChoSummary
             // 
             this.nmDChoSummary.Location = new System.Drawing.Point(579, 114);
+            this.nmDChoSummary.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDChoSummary.Name = "nmDChoSummary";
             this.nmDChoSummary.Size = new System.Drawing.Size(46, 20);
             this.nmDChoSummary.TabIndex = 41;
@@ -2860,6 +3220,11 @@
             // nmDChoValue
             // 
             this.nmDChoValue.Location = new System.Drawing.Point(131, 114);
+            this.nmDChoValue.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDChoValue.Name = "nmDChoValue";
             this.nmDChoValue.Size = new System.Drawing.Size(46, 20);
             this.nmDChoValue.TabIndex = 39;
@@ -2882,6 +3247,11 @@
             // nmDChoNo
             // 
             this.nmDChoNo.Location = new System.Drawing.Point(33, 114);
+            this.nmDChoNo.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDChoNo.Name = "nmDChoNo";
             this.nmDChoNo.Size = new System.Drawing.Size(46, 20);
             this.nmDChoNo.TabIndex = 19;
@@ -2904,6 +3274,11 @@
             // nmDChoRow
             // 
             this.nmDChoRow.Location = new System.Drawing.Point(187, 46);
+            this.nmDChoRow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDChoRow.Name = "nmDChoRow";
             this.nmDChoRow.Size = new System.Drawing.Size(46, 20);
             this.nmDChoRow.TabIndex = 13;
@@ -2962,6 +3337,11 @@
             // nmDSgotALPValue
             // 
             this.nmDSgotALPValue.Location = new System.Drawing.Point(322, 124);
+            this.nmDSgotALPValue.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDSgotALPValue.Name = "nmDSgotALPValue";
             this.nmDSgotALPValue.Size = new System.Drawing.Size(46, 20);
             this.nmDSgotALPValue.TabIndex = 82;
@@ -3011,6 +3391,11 @@
             // nmDSgotvalue
             // 
             this.nmDSgotvalue.Location = new System.Drawing.Point(135, 124);
+            this.nmDSgotvalue.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDSgotvalue.Name = "nmDSgotvalue";
             this.nmDSgotvalue.Size = new System.Drawing.Size(46, 20);
             this.nmDSgotvalue.TabIndex = 51;
@@ -3033,6 +3418,11 @@
             // nmDSgotResult
             // 
             this.nmDSgotResult.Location = new System.Drawing.Point(417, 124);
+            this.nmDSgotResult.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDSgotResult.Name = "nmDSgotResult";
             this.nmDSgotResult.Size = new System.Drawing.Size(46, 20);
             this.nmDSgotResult.TabIndex = 49;
@@ -3055,6 +3445,11 @@
             // nmDSgotSummary
             // 
             this.nmDSgotSummary.Location = new System.Drawing.Point(522, 124);
+            this.nmDSgotSummary.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDSgotSummary.Name = "nmDSgotSummary";
             this.nmDSgotSummary.Size = new System.Drawing.Size(46, 20);
             this.nmDSgotSummary.TabIndex = 47;
@@ -3077,6 +3472,11 @@
             // nmDSgotSgptValue
             // 
             this.nmDSgotSgptValue.Location = new System.Drawing.Point(232, 124);
+            this.nmDSgotSgptValue.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDSgotSgptValue.Name = "nmDSgotSgptValue";
             this.nmDSgotSgptValue.Size = new System.Drawing.Size(46, 20);
             this.nmDSgotSgptValue.TabIndex = 45;
@@ -3099,6 +3499,11 @@
             // nmDSgotNo
             // 
             this.nmDSgotNo.Location = new System.Drawing.Point(33, 124);
+            this.nmDSgotNo.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDSgotNo.Name = "nmDSgotNo";
             this.nmDSgotNo.Size = new System.Drawing.Size(46, 20);
             this.nmDSgotNo.TabIndex = 19;
@@ -3121,6 +3526,11 @@
             // nmDSgotRow
             // 
             this.nmDSgotRow.Location = new System.Drawing.Point(175, 41);
+            this.nmDSgotRow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDSgotRow.Name = "nmDSgotRow";
             this.nmDSgotRow.Size = new System.Drawing.Size(46, 20);
             this.nmDSgotRow.TabIndex = 13;
@@ -3204,6 +3614,11 @@
             // nmDBunValue
             // 
             this.nmDBunValue.Location = new System.Drawing.Point(124, 117);
+            this.nmDBunValue.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDBunValue.Name = "nmDBunValue";
             this.nmDBunValue.Size = new System.Drawing.Size(46, 20);
             this.nmDBunValue.TabIndex = 59;
@@ -3226,6 +3641,11 @@
             // nmDBunResult
             // 
             this.nmDBunResult.Location = new System.Drawing.Point(320, 117);
+            this.nmDBunResult.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDBunResult.Name = "nmDBunResult";
             this.nmDBunResult.Size = new System.Drawing.Size(46, 20);
             this.nmDBunResult.TabIndex = 57;
@@ -3248,6 +3668,11 @@
             // nmDBunSummary
             // 
             this.nmDBunSummary.Location = new System.Drawing.Point(425, 117);
+            this.nmDBunSummary.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDBunSummary.Name = "nmDBunSummary";
             this.nmDBunSummary.Size = new System.Drawing.Size(46, 20);
             this.nmDBunSummary.TabIndex = 55;
@@ -3270,6 +3695,11 @@
             // nmDBunCreatinine
             // 
             this.nmDBunCreatinine.Location = new System.Drawing.Point(221, 117);
+            this.nmDBunCreatinine.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDBunCreatinine.Name = "nmDBunCreatinine";
             this.nmDBunCreatinine.Size = new System.Drawing.Size(46, 20);
             this.nmDBunCreatinine.TabIndex = 53;
@@ -3292,6 +3722,11 @@
             // nmDBunNo
             // 
             this.nmDBunNo.Location = new System.Drawing.Point(35, 117);
+            this.nmDBunNo.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDBunNo.Name = "nmDBunNo";
             this.nmDBunNo.Size = new System.Drawing.Size(46, 20);
             this.nmDBunNo.TabIndex = 19;
@@ -3314,6 +3749,11 @@
             // nmDBunRow
             // 
             this.nmDBunRow.Location = new System.Drawing.Point(182, 45);
+            this.nmDBunRow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDBunRow.Name = "nmDBunRow";
             this.nmDBunRow.Size = new System.Drawing.Size(46, 20);
             this.nmDBunRow.TabIndex = 13;
@@ -3395,6 +3835,11 @@
             // nmDUricResult
             // 
             this.nmDUricResult.Location = new System.Drawing.Point(228, 118);
+            this.nmDUricResult.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDUricResult.Name = "nmDUricResult";
             this.nmDUricResult.Size = new System.Drawing.Size(46, 20);
             this.nmDUricResult.TabIndex = 49;
@@ -3417,6 +3862,11 @@
             // nmDUricSummary
             // 
             this.nmDUricSummary.Location = new System.Drawing.Point(333, 118);
+            this.nmDUricSummary.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDUricSummary.Name = "nmDUricSummary";
             this.nmDUricSummary.Size = new System.Drawing.Size(46, 20);
             this.nmDUricSummary.TabIndex = 47;
@@ -3439,6 +3889,11 @@
             // nmDUricValue
             // 
             this.nmDUricValue.Location = new System.Drawing.Point(129, 118);
+            this.nmDUricValue.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDUricValue.Name = "nmDUricValue";
             this.nmDUricValue.Size = new System.Drawing.Size(46, 20);
             this.nmDUricValue.TabIndex = 45;
@@ -3461,6 +3916,11 @@
             // nmDUricNo
             // 
             this.nmDUricNo.Location = new System.Drawing.Point(36, 118);
+            this.nmDUricNo.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDUricNo.Name = "nmDUricNo";
             this.nmDUricNo.Size = new System.Drawing.Size(46, 20);
             this.nmDUricNo.TabIndex = 19;
@@ -3483,6 +3943,11 @@
             // nmDUricRow
             // 
             this.nmDUricRow.Location = new System.Drawing.Point(197, 52);
+            this.nmDUricRow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDUricRow.Name = "nmDUricRow";
             this.nmDUricRow.Size = new System.Drawing.Size(46, 20);
             this.nmDUricRow.TabIndex = 13;
@@ -3534,6 +3999,11 @@
             // nmDOther1Calcium
             // 
             this.nmDOther1Calcium.Location = new System.Drawing.Point(655, 100);
+            this.nmDOther1Calcium.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDOther1Calcium.Name = "nmDOther1Calcium";
             this.nmDOther1Calcium.Size = new System.Drawing.Size(46, 20);
             this.nmDOther1Calcium.TabIndex = 99;
@@ -3556,6 +4026,11 @@
             // nmDOther1Amphetamine
             // 
             this.nmDOther1Amphetamine.Location = new System.Drawing.Point(541, 100);
+            this.nmDOther1Amphetamine.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDOther1Amphetamine.Name = "nmDOther1Amphetamine";
             this.nmDOther1Amphetamine.Size = new System.Drawing.Size(46, 20);
             this.nmDOther1Amphetamine.TabIndex = 97;
@@ -3578,6 +4053,11 @@
             // nmDOther1VDRL
             // 
             this.nmDOther1VDRL.Location = new System.Drawing.Point(434, 99);
+            this.nmDOther1VDRL.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDOther1VDRL.Name = "nmDOther1VDRL";
             this.nmDOther1VDRL.Size = new System.Drawing.Size(46, 20);
             this.nmDOther1VDRL.TabIndex = 95;
@@ -3627,6 +4107,11 @@
             // nmDOther1HBsAb
             // 
             this.nmDOther1HBsAb.Location = new System.Drawing.Point(228, 99);
+            this.nmDOther1HBsAb.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDOther1HBsAb.Name = "nmDOther1HBsAb";
             this.nmDOther1HBsAb.Size = new System.Drawing.Size(46, 20);
             this.nmDOther1HBsAb.TabIndex = 90;
@@ -3649,6 +4134,11 @@
             // nmDOther1AntiHIV
             // 
             this.nmDOther1AntiHIV.Location = new System.Drawing.Point(333, 99);
+            this.nmDOther1AntiHIV.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDOther1AntiHIV.Name = "nmDOther1AntiHIV";
             this.nmDOther1AntiHIV.Size = new System.Drawing.Size(46, 20);
             this.nmDOther1AntiHIV.TabIndex = 88;
@@ -3671,6 +4161,11 @@
             // nmDOther1HBsAg
             // 
             this.nmDOther1HBsAg.Location = new System.Drawing.Point(129, 99);
+            this.nmDOther1HBsAg.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDOther1HBsAg.Name = "nmDOther1HBsAg";
             this.nmDOther1HBsAg.Size = new System.Drawing.Size(46, 20);
             this.nmDOther1HBsAg.TabIndex = 86;
@@ -3693,6 +4188,11 @@
             // nmDOther1No
             // 
             this.nmDOther1No.Location = new System.Drawing.Point(36, 99);
+            this.nmDOther1No.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDOther1No.Name = "nmDOther1No";
             this.nmDOther1No.Size = new System.Drawing.Size(46, 20);
             this.nmDOther1No.TabIndex = 84;
@@ -3715,6 +4215,11 @@
             // nmDOther1Row
             // 
             this.nmDOther1Row.Location = new System.Drawing.Point(197, 33);
+            this.nmDOther1Row.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDOther1Row.Name = "nmDOther1Row";
             this.nmDOther1Row.Size = new System.Drawing.Size(46, 20);
             this.nmDOther1Row.TabIndex = 82;
@@ -3770,6 +4275,11 @@
             // nmDLungSummary
             // 
             this.nmDLungSummary.Location = new System.Drawing.Point(36, 175);
+            this.nmDLungSummary.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDLungSummary.Name = "nmDLungSummary";
             this.nmDLungSummary.Size = new System.Drawing.Size(46, 20);
             this.nmDLungSummary.TabIndex = 122;
@@ -3792,6 +4302,11 @@
             // nmDLungPerFev1
             // 
             this.nmDLungPerFev1.Location = new System.Drawing.Point(769, 100);
+            this.nmDLungPerFev1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDLungPerFev1.Name = "nmDLungPerFev1";
             this.nmDLungPerFev1.Size = new System.Drawing.Size(46, 20);
             this.nmDLungPerFev1.TabIndex = 120;
@@ -3814,6 +4329,11 @@
             // nmDLungFev1Per
             // 
             this.nmDLungFev1Per.Location = new System.Drawing.Point(655, 100);
+            this.nmDLungFev1Per.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDLungFev1Per.Name = "nmDLungFev1Per";
             this.nmDLungFev1Per.Size = new System.Drawing.Size(46, 20);
             this.nmDLungFev1Per.TabIndex = 118;
@@ -3836,6 +4356,11 @@
             // nmDLungFev1Meas
             // 
             this.nmDLungFev1Meas.Location = new System.Drawing.Point(541, 100);
+            this.nmDLungFev1Meas.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDLungFev1Meas.Name = "nmDLungFev1Meas";
             this.nmDLungFev1Meas.Size = new System.Drawing.Size(46, 20);
             this.nmDLungFev1Meas.TabIndex = 116;
@@ -3858,6 +4383,11 @@
             // nmDLungFev1Predic
             // 
             this.nmDLungFev1Predic.Location = new System.Drawing.Point(434, 99);
+            this.nmDLungFev1Predic.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDLungFev1Predic.Name = "nmDLungFev1Predic";
             this.nmDLungFev1Predic.Size = new System.Drawing.Size(46, 20);
             this.nmDLungFev1Predic.TabIndex = 114;
@@ -3907,6 +4437,11 @@
             // nmDLungFvcMeas
             // 
             this.nmDLungFvcMeas.Location = new System.Drawing.Point(228, 99);
+            this.nmDLungFvcMeas.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDLungFvcMeas.Name = "nmDLungFvcMeas";
             this.nmDLungFvcMeas.Size = new System.Drawing.Size(46, 20);
             this.nmDLungFvcMeas.TabIndex = 109;
@@ -3929,6 +4464,11 @@
             // nmDLungFvcPer
             // 
             this.nmDLungFvcPer.Location = new System.Drawing.Point(333, 99);
+            this.nmDLungFvcPer.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDLungFvcPer.Name = "nmDLungFvcPer";
             this.nmDLungFvcPer.Size = new System.Drawing.Size(46, 20);
             this.nmDLungFvcPer.TabIndex = 107;
@@ -3951,6 +4491,11 @@
             // nmDLungFvcPredic
             // 
             this.nmDLungFvcPredic.Location = new System.Drawing.Point(129, 99);
+            this.nmDLungFvcPredic.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDLungFvcPredic.Name = "nmDLungFvcPredic";
             this.nmDLungFvcPredic.Size = new System.Drawing.Size(46, 20);
             this.nmDLungFvcPredic.TabIndex = 105;
@@ -3973,6 +4518,11 @@
             // nmDLungNo
             // 
             this.nmDLungNo.Location = new System.Drawing.Point(36, 99);
+            this.nmDLungNo.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDLungNo.Name = "nmDLungNo";
             this.nmDLungNo.Size = new System.Drawing.Size(46, 20);
             this.nmDLungNo.TabIndex = 103;
@@ -3995,6 +4545,11 @@
             // nmDLungRow
             // 
             this.nmDLungRow.Location = new System.Drawing.Point(197, 33);
+            this.nmDLungRow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDLungRow.Name = "nmDLungRow";
             this.nmDLungRow.Size = new System.Drawing.Size(46, 20);
             this.nmDLungRow.TabIndex = 101;
@@ -4068,6 +4623,11 @@
             // nmDAudiogramExam
             // 
             this.nmDAudiogramExam.Location = new System.Drawing.Point(107, 239);
+            this.nmDAudiogramExam.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAudiogramExam.Name = "nmDAudiogramExam";
             this.nmDAudiogramExam.Size = new System.Drawing.Size(46, 20);
             this.nmDAudiogramExam.TabIndex = 115;
@@ -4090,6 +4650,11 @@
             // nmDAudiogramSummaryR
             // 
             this.nmDAudiogramSummaryR.Location = new System.Drawing.Point(674, 178);
+            this.nmDAudiogramSummaryR.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAudiogramSummaryR.Name = "nmDAudiogramSummaryR";
             this.nmDAudiogramSummaryR.Size = new System.Drawing.Size(46, 20);
             this.nmDAudiogramSummaryR.TabIndex = 113;
@@ -4112,6 +4677,11 @@
             // nmDAudiogram8000R
             // 
             this.nmDAudiogram8000R.Location = new System.Drawing.Point(594, 178);
+            this.nmDAudiogram8000R.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAudiogram8000R.Name = "nmDAudiogram8000R";
             this.nmDAudiogram8000R.Size = new System.Drawing.Size(46, 20);
             this.nmDAudiogram8000R.TabIndex = 111;
@@ -4134,6 +4704,11 @@
             // nmDAudiogram6000R
             // 
             this.nmDAudiogram6000R.Location = new System.Drawing.Point(521, 178);
+            this.nmDAudiogram6000R.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAudiogram6000R.Name = "nmDAudiogram6000R";
             this.nmDAudiogram6000R.Size = new System.Drawing.Size(46, 20);
             this.nmDAudiogram6000R.TabIndex = 109;
@@ -4156,6 +4731,11 @@
             // nmDAudiogram4000R
             // 
             this.nmDAudiogram4000R.Location = new System.Drawing.Point(440, 178);
+            this.nmDAudiogram4000R.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAudiogram4000R.Name = "nmDAudiogram4000R";
             this.nmDAudiogram4000R.Size = new System.Drawing.Size(46, 20);
             this.nmDAudiogram4000R.TabIndex = 107;
@@ -4205,6 +4785,11 @@
             // nmDAudiogram3000R
             // 
             this.nmDAudiogram3000R.Location = new System.Drawing.Point(357, 178);
+            this.nmDAudiogram3000R.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAudiogram3000R.Name = "nmDAudiogram3000R";
             this.nmDAudiogram3000R.Size = new System.Drawing.Size(46, 20);
             this.nmDAudiogram3000R.TabIndex = 102;
@@ -4227,6 +4812,11 @@
             // nmDAudiogram2000R
             // 
             this.nmDAudiogram2000R.Location = new System.Drawing.Point(272, 178);
+            this.nmDAudiogram2000R.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAudiogram2000R.Name = "nmDAudiogram2000R";
             this.nmDAudiogram2000R.Size = new System.Drawing.Size(46, 20);
             this.nmDAudiogram2000R.TabIndex = 100;
@@ -4249,6 +4839,11 @@
             // nmDAudiogram1000R
             // 
             this.nmDAudiogram1000R.Location = new System.Drawing.Point(193, 178);
+            this.nmDAudiogram1000R.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAudiogram1000R.Name = "nmDAudiogram1000R";
             this.nmDAudiogram1000R.Size = new System.Drawing.Size(46, 20);
             this.nmDAudiogram1000R.TabIndex = 98;
@@ -4271,6 +4866,11 @@
             // nmDAudiogram500R
             // 
             this.nmDAudiogram500R.Location = new System.Drawing.Point(110, 178);
+            this.nmDAudiogram500R.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAudiogram500R.Name = "nmDAudiogram500R";
             this.nmDAudiogram500R.Size = new System.Drawing.Size(46, 20);
             this.nmDAudiogram500R.TabIndex = 96;
@@ -4293,6 +4893,11 @@
             // nmDAudiogramSummaryL
             // 
             this.nmDAudiogramSummaryL.Location = new System.Drawing.Point(674, 106);
+            this.nmDAudiogramSummaryL.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAudiogramSummaryL.Name = "nmDAudiogramSummaryL";
             this.nmDAudiogramSummaryL.Size = new System.Drawing.Size(46, 20);
             this.nmDAudiogramSummaryL.TabIndex = 94;
@@ -4315,6 +4920,11 @@
             // nmDAudiogram8000L
             // 
             this.nmDAudiogram8000L.Location = new System.Drawing.Point(594, 106);
+            this.nmDAudiogram8000L.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAudiogram8000L.Name = "nmDAudiogram8000L";
             this.nmDAudiogram8000L.Size = new System.Drawing.Size(46, 20);
             this.nmDAudiogram8000L.TabIndex = 92;
@@ -4337,6 +4947,11 @@
             // nmDAudiogram6000L
             // 
             this.nmDAudiogram6000L.Location = new System.Drawing.Point(521, 106);
+            this.nmDAudiogram6000L.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAudiogram6000L.Name = "nmDAudiogram6000L";
             this.nmDAudiogram6000L.Size = new System.Drawing.Size(46, 20);
             this.nmDAudiogram6000L.TabIndex = 90;
@@ -4359,6 +4974,11 @@
             // nmDAudiogram4000L
             // 
             this.nmDAudiogram4000L.Location = new System.Drawing.Point(440, 106);
+            this.nmDAudiogram4000L.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAudiogram4000L.Name = "nmDAudiogram4000L";
             this.nmDAudiogram4000L.Size = new System.Drawing.Size(46, 20);
             this.nmDAudiogram4000L.TabIndex = 88;
@@ -4381,6 +5001,11 @@
             // nmDAudiogram3000L
             // 
             this.nmDAudiogram3000L.Location = new System.Drawing.Point(357, 106);
+            this.nmDAudiogram3000L.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAudiogram3000L.Name = "nmDAudiogram3000L";
             this.nmDAudiogram3000L.Size = new System.Drawing.Size(46, 20);
             this.nmDAudiogram3000L.TabIndex = 86;
@@ -4403,6 +5028,11 @@
             // nmDAudiogram2000L
             // 
             this.nmDAudiogram2000L.Location = new System.Drawing.Point(272, 106);
+            this.nmDAudiogram2000L.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAudiogram2000L.Name = "nmDAudiogram2000L";
             this.nmDAudiogram2000L.Size = new System.Drawing.Size(46, 20);
             this.nmDAudiogram2000L.TabIndex = 84;
@@ -4425,6 +5055,11 @@
             // nmDAudiogram1000L
             // 
             this.nmDAudiogram1000L.Location = new System.Drawing.Point(193, 106);
+            this.nmDAudiogram1000L.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAudiogram1000L.Name = "nmDAudiogram1000L";
             this.nmDAudiogram1000L.Size = new System.Drawing.Size(46, 20);
             this.nmDAudiogram1000L.TabIndex = 82;
@@ -4447,6 +5082,11 @@
             // nmDAudiogram500L
             // 
             this.nmDAudiogram500L.Location = new System.Drawing.Point(110, 106);
+            this.nmDAudiogram500L.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAudiogram500L.Name = "nmDAudiogram500L";
             this.nmDAudiogram500L.Size = new System.Drawing.Size(46, 20);
             this.nmDAudiogram500L.TabIndex = 80;
@@ -4469,6 +5109,11 @@
             // nmDAudioNo
             // 
             this.nmDAudioNo.Location = new System.Drawing.Point(37, 106);
+            this.nmDAudioNo.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAudioNo.Name = "nmDAudioNo";
             this.nmDAudioNo.Size = new System.Drawing.Size(46, 20);
             this.nmDAudioNo.TabIndex = 78;
@@ -4491,6 +5136,11 @@
             // nmDAudioRow
             // 
             this.nmDAudioRow.Location = new System.Drawing.Point(175, 22);
+            this.nmDAudioRow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDAudioRow.Name = "nmDAudioRow";
             this.nmDAudioRow.Size = new System.Drawing.Size(46, 20);
             this.nmDAudioRow.TabIndex = 76;
@@ -4541,6 +5191,33 @@
             this.tabPage15.Text = "tabPage15";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
+            // label181
+            // 
+            this.label181.AutoSize = true;
+            this.label181.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label181.Location = new System.Drawing.Point(347, 150);
+            this.label181.Name = "label181";
+            this.label181.Size = new System.Drawing.Size(64, 16);
+            this.label181.TabIndex = 147;
+            this.label181.Text = "สายตาทั่วไป";
+            // 
+            // nmDEyeExam
+            // 
+            this.nmDEyeExam.Location = new System.Drawing.Point(357, 178);
+            this.nmDEyeExam.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDEyeExam.Name = "nmDEyeExam";
+            this.nmDEyeExam.Size = new System.Drawing.Size(46, 20);
+            this.nmDEyeExam.TabIndex = 148;
+            this.nmDEyeExam.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
             // label129
             // 
             this.label129.AutoSize = true;
@@ -4581,6 +5258,11 @@
             // nmDEyeSummary
             // 
             this.nmDEyeSummary.Location = new System.Drawing.Point(272, 178);
+            this.nmDEyeSummary.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDEyeSummary.Name = "nmDEyeSummary";
             this.nmDEyeSummary.Size = new System.Drawing.Size(46, 20);
             this.nmDEyeSummary.TabIndex = 141;
@@ -4603,6 +5285,11 @@
             // nmDEyeResult
             // 
             this.nmDEyeResult.Location = new System.Drawing.Point(193, 178);
+            this.nmDEyeResult.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDEyeResult.Name = "nmDEyeResult";
             this.nmDEyeResult.Size = new System.Drawing.Size(46, 20);
             this.nmDEyeResult.TabIndex = 139;
@@ -4625,6 +5312,11 @@
             // nmDEyeBlindness
             // 
             this.nmDEyeBlindness.Location = new System.Drawing.Point(110, 178);
+            this.nmDEyeBlindness.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDEyeBlindness.Name = "nmDEyeBlindness";
             this.nmDEyeBlindness.Size = new System.Drawing.Size(46, 20);
             this.nmDEyeBlindness.TabIndex = 137;
@@ -4647,6 +5339,11 @@
             // nmDEyeOldRight
             // 
             this.nmDEyeOldRight.Location = new System.Drawing.Point(727, 106);
+            this.nmDEyeOldRight.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDEyeOldRight.Name = "nmDEyeOldRight";
             this.nmDEyeOldRight.Size = new System.Drawing.Size(46, 20);
             this.nmDEyeOldRight.TabIndex = 135;
@@ -4669,6 +5366,11 @@
             // nmDEyeOldLeft
             // 
             this.nmDEyeOldLeft.Location = new System.Drawing.Point(594, 106);
+            this.nmDEyeOldLeft.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDEyeOldLeft.Name = "nmDEyeOldLeft";
             this.nmDEyeOldLeft.Size = new System.Drawing.Size(46, 20);
             this.nmDEyeOldLeft.TabIndex = 133;
@@ -4691,6 +5393,11 @@
             // nmDEyeDegreeRight
             // 
             this.nmDEyeDegreeRight.Location = new System.Drawing.Point(521, 106);
+            this.nmDEyeDegreeRight.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDEyeDegreeRight.Name = "nmDEyeDegreeRight";
             this.nmDEyeDegreeRight.Size = new System.Drawing.Size(46, 20);
             this.nmDEyeDegreeRight.TabIndex = 131;
@@ -4713,6 +5420,11 @@
             // nmDEyeDegreeLeft
             // 
             this.nmDEyeDegreeLeft.Location = new System.Drawing.Point(440, 106);
+            this.nmDEyeDegreeLeft.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDEyeDegreeLeft.Name = "nmDEyeDegreeLeft";
             this.nmDEyeDegreeLeft.Size = new System.Drawing.Size(46, 20);
             this.nmDEyeDegreeLeft.TabIndex = 129;
@@ -4735,6 +5447,11 @@
             // nmDEyeSquintRight
             // 
             this.nmDEyeSquintRight.Location = new System.Drawing.Point(357, 106);
+            this.nmDEyeSquintRight.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDEyeSquintRight.Name = "nmDEyeSquintRight";
             this.nmDEyeSquintRight.Size = new System.Drawing.Size(46, 20);
             this.nmDEyeSquintRight.TabIndex = 127;
@@ -4757,6 +5474,11 @@
             // nmDEyeSquintLeft
             // 
             this.nmDEyeSquintLeft.Location = new System.Drawing.Point(272, 106);
+            this.nmDEyeSquintLeft.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDEyeSquintLeft.Name = "nmDEyeSquintLeft";
             this.nmDEyeSquintLeft.Size = new System.Drawing.Size(46, 20);
             this.nmDEyeSquintLeft.TabIndex = 125;
@@ -4779,6 +5501,11 @@
             // nmDEyeShortLongRight
             // 
             this.nmDEyeShortLongRight.Location = new System.Drawing.Point(193, 106);
+            this.nmDEyeShortLongRight.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDEyeShortLongRight.Name = "nmDEyeShortLongRight";
             this.nmDEyeShortLongRight.Size = new System.Drawing.Size(46, 20);
             this.nmDEyeShortLongRight.TabIndex = 123;
@@ -4801,6 +5528,11 @@
             // nmDEyeShortLongLeft
             // 
             this.nmDEyeShortLongLeft.Location = new System.Drawing.Point(110, 106);
+            this.nmDEyeShortLongLeft.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDEyeShortLongLeft.Name = "nmDEyeShortLongLeft";
             this.nmDEyeShortLongLeft.Size = new System.Drawing.Size(46, 20);
             this.nmDEyeShortLongLeft.TabIndex = 121;
@@ -4823,6 +5555,11 @@
             // nmDEyeNo
             // 
             this.nmDEyeNo.Location = new System.Drawing.Point(37, 106);
+            this.nmDEyeNo.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDEyeNo.Name = "nmDEyeNo";
             this.nmDEyeNo.Size = new System.Drawing.Size(46, 20);
             this.nmDEyeNo.TabIndex = 119;
@@ -4845,6 +5582,11 @@
             // nmDEyeRow
             // 
             this.nmDEyeRow.Location = new System.Drawing.Point(175, 22);
+            this.nmDEyeRow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDEyeRow.Name = "nmDEyeRow";
             this.nmDEyeRow.Size = new System.Drawing.Size(46, 20);
             this.nmDEyeRow.TabIndex = 117;
@@ -4952,6 +5694,11 @@
             // nmDToxiMethanol
             // 
             this.nmDToxiMethanol.Location = new System.Drawing.Point(744, 47);
+            this.nmDToxiMethanol.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiMethanol.Name = "nmDToxiMethanol";
             this.nmDToxiMethanol.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiMethanol.TabIndex = 186;
@@ -4974,6 +5721,11 @@
             // nmDToxiEthanol
             // 
             this.nmDToxiEthanol.Location = new System.Drawing.Point(20, 121);
+            this.nmDToxiEthanol.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiEthanol.Name = "nmDToxiEthanol";
             this.nmDToxiEthanol.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiEthanol.TabIndex = 170;
@@ -4996,6 +5748,11 @@
             // nmDToxiIPA
             // 
             this.nmDToxiIPA.Location = new System.Drawing.Point(103, 121);
+            this.nmDToxiIPA.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiIPA.Name = "nmDToxiIPA";
             this.nmDToxiIPA.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiIPA.TabIndex = 172;
@@ -5018,6 +5775,11 @@
             // nmDToxiArsenic
             // 
             this.nmDToxiArsenic.Location = new System.Drawing.Point(182, 121);
+            this.nmDToxiArsenic.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiArsenic.Name = "nmDToxiArsenic";
             this.nmDToxiArsenic.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiArsenic.TabIndex = 174;
@@ -5040,6 +5802,11 @@
             // nmDToxiHexane
             // 
             this.nmDToxiHexane.Location = new System.Drawing.Point(267, 121);
+            this.nmDToxiHexane.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiHexane.Name = "nmDToxiHexane";
             this.nmDToxiHexane.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiHexane.TabIndex = 176;
@@ -5062,6 +5829,11 @@
             // nmDToxiFomaldehyde
             // 
             this.nmDToxiFomaldehyde.Location = new System.Drawing.Point(350, 121);
+            this.nmDToxiFomaldehyde.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiFomaldehyde.Name = "nmDToxiFomaldehyde";
             this.nmDToxiFomaldehyde.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiFomaldehyde.TabIndex = 178;
@@ -5094,6 +5866,11 @@
             // nmDToxiFluoride
             // 
             this.nmDToxiFluoride.Location = new System.Drawing.Point(678, 121);
+            this.nmDToxiFluoride.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiFluoride.Name = "nmDToxiFluoride";
             this.nmDToxiFluoride.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiFluoride.TabIndex = 184;
@@ -5106,6 +5883,11 @@
             // nmDToxiTrichloroethylene
             // 
             this.nmDToxiTrichloroethylene.Location = new System.Drawing.Point(476, 121);
+            this.nmDToxiTrichloroethylene.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiTrichloroethylene.Name = "nmDToxiTrichloroethylene";
             this.nmDToxiTrichloroethylene.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiTrichloroethylene.TabIndex = 180;
@@ -5138,6 +5920,11 @@
             // nmDToxiAntimony
             // 
             this.nmDToxiAntimony.Location = new System.Drawing.Point(598, 121);
+            this.nmDToxiAntimony.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiAntimony.Name = "nmDToxiAntimony";
             this.nmDToxiAntimony.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiAntimony.TabIndex = 182;
@@ -5150,6 +5937,11 @@
             // nmDToxiMandelic
             // 
             this.nmDToxiMandelic.Location = new System.Drawing.Point(654, 47);
+            this.nmDToxiMandelic.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiMandelic.Name = "nmDToxiMandelic";
             this.nmDToxiMandelic.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiMandelic.TabIndex = 168;
@@ -5162,6 +5954,11 @@
             // nmDToxiHippuric
             // 
             this.nmDToxiHippuric.Location = new System.Drawing.Point(20, 47);
+            this.nmDToxiHippuric.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiHippuric.Name = "nmDToxiHippuric";
             this.nmDToxiHippuric.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiHippuric.TabIndex = 152;
@@ -5184,6 +5981,11 @@
             // nmDToxiMethyl
             // 
             this.nmDToxiMethyl.Location = new System.Drawing.Point(103, 47);
+            this.nmDToxiMethyl.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiMethyl.Name = "nmDToxiMethyl";
             this.nmDToxiMethyl.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiMethyl.TabIndex = 154;
@@ -5206,6 +6008,11 @@
             // nmDToxiAcetone
             // 
             this.nmDToxiAcetone.Location = new System.Drawing.Point(182, 47);
+            this.nmDToxiAcetone.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiAcetone.Name = "nmDToxiAcetone";
             this.nmDToxiAcetone.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiAcetone.TabIndex = 156;
@@ -5228,6 +6035,11 @@
             // nmDToxiNickel
             // 
             this.nmDToxiNickel.Location = new System.Drawing.Point(267, 47);
+            this.nmDToxiNickel.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiNickel.Name = "nmDToxiNickel";
             this.nmDToxiNickel.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiNickel.TabIndex = 158;
@@ -5260,6 +6072,11 @@
             // nmDToxiChromium
             // 
             this.nmDToxiChromium.Location = new System.Drawing.Point(350, 47);
+            this.nmDToxiChromium.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiChromium.Name = "nmDToxiChromium";
             this.nmDToxiChromium.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiChromium.TabIndex = 160;
@@ -5292,6 +6109,11 @@
             // nmDToxiBenzene
             // 
             this.nmDToxiBenzene.Location = new System.Drawing.Point(584, 47);
+            this.nmDToxiBenzene.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiBenzene.Name = "nmDToxiBenzene";
             this.nmDToxiBenzene.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiBenzene.TabIndex = 166;
@@ -5304,6 +6126,11 @@
             // nmDToxiPhenol
             // 
             this.nmDToxiPhenol.Location = new System.Drawing.Point(431, 47);
+            this.nmDToxiPhenol.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiPhenol.Name = "nmDToxiPhenol";
             this.nmDToxiPhenol.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiPhenol.TabIndex = 162;
@@ -5336,6 +6163,11 @@
             // nmDToxiKetone
             // 
             this.nmDToxiKetone.Location = new System.Drawing.Point(504, 47);
+            this.nmDToxiKetone.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiKetone.Name = "nmDToxiKetone";
             this.nmDToxiKetone.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiKetone.TabIndex = 164;
@@ -5405,6 +6237,11 @@
             // nmDToxiAmmonia
             // 
             this.nmDToxiAmmonia.Location = new System.Drawing.Point(654, 47);
+            this.nmDToxiAmmonia.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiAmmonia.Name = "nmDToxiAmmonia";
             this.nmDToxiAmmonia.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiAmmonia.TabIndex = 168;
@@ -5417,6 +6254,11 @@
             // nmDToxiLead
             // 
             this.nmDToxiLead.Location = new System.Drawing.Point(20, 47);
+            this.nmDToxiLead.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiLead.Name = "nmDToxiLead";
             this.nmDToxiLead.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiLead.TabIndex = 152;
@@ -5439,6 +6281,11 @@
             // nmDToxiAluminium
             // 
             this.nmDToxiAluminium.Location = new System.Drawing.Point(103, 47);
+            this.nmDToxiAluminium.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiAluminium.Name = "nmDToxiAluminium";
             this.nmDToxiAluminium.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiAluminium.TabIndex = 154;
@@ -5461,6 +6308,11 @@
             // nmDToxiCadmium
             // 
             this.nmDToxiCadmium.Location = new System.Drawing.Point(182, 47);
+            this.nmDToxiCadmium.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiCadmium.Name = "nmDToxiCadmium";
             this.nmDToxiCadmium.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiCadmium.TabIndex = 156;
@@ -5483,6 +6335,11 @@
             // nmDToxiMercury
             // 
             this.nmDToxiMercury.Location = new System.Drawing.Point(267, 47);
+            this.nmDToxiMercury.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiMercury.Name = "nmDToxiMercury";
             this.nmDToxiMercury.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiMercury.TabIndex = 158;
@@ -5515,6 +6372,11 @@
             // nmDToxiTin
             // 
             this.nmDToxiTin.Location = new System.Drawing.Point(350, 47);
+            this.nmDToxiTin.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiTin.Name = "nmDToxiTin";
             this.nmDToxiTin.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiTin.TabIndex = 160;
@@ -5547,6 +6409,11 @@
             // nmDToxiZinc
             // 
             this.nmDToxiZinc.Location = new System.Drawing.Point(584, 47);
+            this.nmDToxiZinc.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiZinc.Name = "nmDToxiZinc";
             this.nmDToxiZinc.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiZinc.TabIndex = 166;
@@ -5559,6 +6426,11 @@
             // nmDToxiCopper
             // 
             this.nmDToxiCopper.Location = new System.Drawing.Point(431, 47);
+            this.nmDToxiCopper.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiCopper.Name = "nmDToxiCopper";
             this.nmDToxiCopper.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiCopper.TabIndex = 162;
@@ -5591,6 +6463,11 @@
             // nmDToxiManganese
             // 
             this.nmDToxiManganese.Location = new System.Drawing.Point(504, 47);
+            this.nmDToxiManganese.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiManganese.Name = "nmDToxiManganese";
             this.nmDToxiManganese.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiManganese.TabIndex = 164;
@@ -5613,6 +6490,11 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(766, 34);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(46, 20);
             this.numericUpDown1.TabIndex = 172;
@@ -5635,6 +6517,11 @@
             // numericUpDown2
             // 
             this.numericUpDown2.Location = new System.Drawing.Point(633, 34);
+            this.numericUpDown2.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(46, 20);
             this.numericUpDown2.TabIndex = 170;
@@ -5657,6 +6544,11 @@
             // nmDToxiNo
             // 
             this.nmDToxiNo.Location = new System.Drawing.Point(37, 74);
+            this.nmDToxiNo.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiNo.Name = "nmDToxiNo";
             this.nmDToxiNo.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiNo.TabIndex = 150;
@@ -5679,6 +6571,11 @@
             // nmDToxiRow
             // 
             this.nmDToxiRow.Location = new System.Drawing.Point(175, 22);
+            this.nmDToxiRow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDToxiRow.Name = "nmDToxiRow";
             this.nmDToxiRow.Size = new System.Drawing.Size(46, 20);
             this.nmDToxiRow.TabIndex = 148;
@@ -5730,6 +6627,11 @@
             // nmDStoolExamSummary
             // 
             this.nmDStoolExamSummary.Location = new System.Drawing.Point(36, 175);
+            this.nmDStoolExamSummary.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDStoolExamSummary.Name = "nmDStoolExamSummary";
             this.nmDStoolExamSummary.Size = new System.Drawing.Size(46, 20);
             this.nmDStoolExamSummary.TabIndex = 145;
@@ -5752,6 +6654,11 @@
             // nmDStoolExamParasite
             // 
             this.nmDStoolExamParasite.Location = new System.Drawing.Point(541, 100);
+            this.nmDStoolExamParasite.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDStoolExamParasite.Name = "nmDStoolExamParasite";
             this.nmDStoolExamParasite.Size = new System.Drawing.Size(46, 20);
             this.nmDStoolExamParasite.TabIndex = 139;
@@ -5774,6 +6681,11 @@
             // nmDStoolExamRBC
             // 
             this.nmDStoolExamRBC.Location = new System.Drawing.Point(434, 99);
+            this.nmDStoolExamRBC.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDStoolExamRBC.Name = "nmDStoolExamRBC";
             this.nmDStoolExamRBC.Size = new System.Drawing.Size(46, 20);
             this.nmDStoolExamRBC.TabIndex = 137;
@@ -5823,6 +6735,11 @@
             // nmDStoolExamAppearance
             // 
             this.nmDStoolExamAppearance.Location = new System.Drawing.Point(228, 99);
+            this.nmDStoolExamAppearance.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDStoolExamAppearance.Name = "nmDStoolExamAppearance";
             this.nmDStoolExamAppearance.Size = new System.Drawing.Size(46, 20);
             this.nmDStoolExamAppearance.TabIndex = 132;
@@ -5845,6 +6762,11 @@
             // nmDStoolExamWBC
             // 
             this.nmDStoolExamWBC.Location = new System.Drawing.Point(333, 99);
+            this.nmDStoolExamWBC.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDStoolExamWBC.Name = "nmDStoolExamWBC";
             this.nmDStoolExamWBC.Size = new System.Drawing.Size(46, 20);
             this.nmDStoolExamWBC.TabIndex = 130;
@@ -5867,6 +6789,11 @@
             // nmDStoolExamColor
             // 
             this.nmDStoolExamColor.Location = new System.Drawing.Point(129, 99);
+            this.nmDStoolExamColor.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDStoolExamColor.Name = "nmDStoolExamColor";
             this.nmDStoolExamColor.Size = new System.Drawing.Size(46, 20);
             this.nmDStoolExamColor.TabIndex = 128;
@@ -5889,6 +6816,11 @@
             // nmDStoolExamNo
             // 
             this.nmDStoolExamNo.Location = new System.Drawing.Point(36, 99);
+            this.nmDStoolExamNo.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDStoolExamNo.Name = "nmDStoolExamNo";
             this.nmDStoolExamNo.Size = new System.Drawing.Size(46, 20);
             this.nmDStoolExamNo.TabIndex = 126;
@@ -5911,32 +6843,15 @@
             // nmDStoolExamRow
             // 
             this.nmDStoolExamRow.Location = new System.Drawing.Point(197, 33);
+            this.nmDStoolExamRow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nmDStoolExamRow.Name = "nmDStoolExamRow";
             this.nmDStoolExamRow.Size = new System.Drawing.Size(46, 20);
             this.nmDStoolExamRow.TabIndex = 124;
             this.nmDStoolExamRow.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // label181
-            // 
-            this.label181.AutoSize = true;
-            this.label181.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label181.Location = new System.Drawing.Point(347, 150);
-            this.label181.Name = "label181";
-            this.label181.Size = new System.Drawing.Size(64, 16);
-            this.label181.TabIndex = 147;
-            this.label181.Text = "สายตาทั่วไป";
-            // 
-            // nmDEyeExam
-            // 
-            this.nmDEyeExam.Location = new System.Drawing.Point(357, 178);
-            this.nmDEyeExam.Name = "nmDEyeExam";
-            this.nmDEyeExam.Size = new System.Drawing.Size(46, 20);
-            this.nmDEyeExam.TabIndex = 148;
-            this.nmDEyeExam.Value = new decimal(new int[] {
             5,
             0,
             0,
@@ -6113,6 +7028,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDAudioRow)).EndInit();
             this.tabPage15.ResumeLayout(false);
             this.tabPage15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeExam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDEyeSummary)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDEyeResult)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDEyeBlindness)).EndInit();
@@ -6173,7 +7089,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDEyeExam)).EndInit();
             this.ResumeLayout(false);
 
         }

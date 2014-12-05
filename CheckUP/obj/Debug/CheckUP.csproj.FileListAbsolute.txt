@@ -41,3 +41,4 @@ D:\source\CheckUP\CheckUP\obj\Debug\CheckUP.Properties.Resources.resources
 D:\source\CheckUP\CheckUP\obj\Debug\CheckUP.csproj.GenerateResource.Cache
 D:\source\CheckUP\CheckUP\obj\Debug\CheckUP.exe
 D:\source\CheckUP\CheckUP\obj\Debug\CheckUP.pdb
+D:\source\CheckUP\CheckUP\obj\Debug\CheckUP.csprojResolveAssemblyReference.cache

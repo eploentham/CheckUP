@@ -2225,6 +2225,8 @@ namespace CheckUP.gui
                 //}
 
             }
+            xlApp.Quit();
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
             cc.cucdb.updateCntImport(cucId, rowCount, row);
             Cursor.Current = cursor;
             pB1.Visible = false;
@@ -2456,6 +2458,7 @@ namespace CheckUP.gui
             }
             xlWorkbook.Close(true, misValue, misValue);
             xlApp.Quit();
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
             pB1.Visible = false;
             cc.cucdb.updatePEImport(txtId.Text, rowCount- int.Parse(nmDRow.Value.ToString()), row , normal);
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
@@ -2516,6 +2519,7 @@ namespace CheckUP.gui
             }
             xlWorkbook.Close(true, misValue, misValue);
             xlApp.Quit();
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdXray(txtId.Text);
@@ -2587,6 +2591,7 @@ namespace CheckUP.gui
             }
             xlWorkbook.Close(true, misValue, misValue);
             xlApp.Quit();
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdFBS(txtId.Text);
@@ -2743,6 +2748,7 @@ namespace CheckUP.gui
             }
             xlWorkbook.Close(true, misValue, misValue);
             xlApp.Quit();
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdCBC(txtId.Text);
@@ -2903,6 +2909,7 @@ namespace CheckUP.gui
             }
             xlWorkbook.Close(true, misValue, misValue);
             xlApp.Quit();
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdUA(txtId.Text);
@@ -2973,6 +2980,7 @@ namespace CheckUP.gui
             }
             xlWorkbook.Close(true, misValue, misValue);
             xlApp.Quit();
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdTri(txtId.Text);
@@ -6215,9 +6223,26 @@ namespace CheckUP.gui
 
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "การตรวจ (Eye)";
-                    rc.LabName = "สายตาผบอดสี ";
+                    rc.LabName = "สายตาบอดสี ";
                     rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.EyeBlindness].ToString();
                     rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.EyeBlindness].ToString();
+                    rc.LInter = "การแปรผล";
+                    rc.LInterAbnormal = "ปกติ";
+                    rc.LInterNormal = "ผิดปกติ";
+                    rc.LNormal = "ค่าปกติ";
+                    rc.lResult = "ผลการตรวจ";
+                    rc.LTypeLab = "ประเภทการตรวจ Eye";
+                    rc.Remark = "";
+                    rc.StatusLab = "eye";
+                    rc.Sort1 = "1021";
+                    rc.Sort2 = "18";
+                    cc.rcdb.insertRCheckUp(rc);
+
+                    rc.Id = r.Next().ToString();
+                    rc.LabGroup = "การตรวจ (Eye)";
+                    rc.LabName = "สายตาทั่วไป ";
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.EyeExam].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.EyeExam].ToString();
                     rc.LInter = "การแปรผล";
                     rc.LInterAbnormal = "ปกติ";
                     rc.LInterNormal = "ผิดปกติ";

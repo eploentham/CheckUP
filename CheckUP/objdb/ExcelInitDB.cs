@@ -436,6 +436,12 @@ namespace CheckUP.objdb
             item.ToxiNo = dt.Rows[0][ei.ToxiNo].ToString();
 
             item.Active = dt.Rows[0][ei.Active].ToString();
+
+            //foreach (PropertyInfo item1 in item.get)
+            //{
+
+            //}
+
             return item;
         }
         public DataTable selectAll()

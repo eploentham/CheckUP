@@ -312,6 +312,7 @@
     <None Include="report\CheckUpDS.xss">
       <DependentUpon>CheckUpDS.xsd</DependentUpon>
     </None>
+    <None Include="report\CheckUpPrint3.rpt" />
     <None Include="report\CheckUpStickerDS.xsc">
       <DependentUpon>CheckUpStickerDS.xsd</DependentUpon>
     </None>
