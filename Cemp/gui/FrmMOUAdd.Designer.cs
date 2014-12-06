@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pB1 = new System.Windows.Forms.ProgressBar();
             this.txtCustName = new System.Windows.Forms.TextBox();
             this.txtCustId = new System.Windows.Forms.TextBox();
             this.cboQuo = new System.Windows.Forms.ComboBox();
@@ -77,7 +78,6 @@
             this.btnUnActive = new System.Windows.Forms.Button();
             this.ChkUnActive = new System.Windows.Forms.RadioButton();
             this.chkActive = new System.Windows.Forms.RadioButton();
-            this.pB1 = new System.Windows.Forms.ProgressBar();
             this.groupBox2.SuspendLayout();
             this.groupBox21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
@@ -110,6 +110,13 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "รายละเอียด ลูกค้า";
+            // 
+            // pB1
+            // 
+            this.pB1.Location = new System.Drawing.Point(11, 187);
+            this.pB1.Name = "pB1";
+            this.pB1.Size = new System.Drawing.Size(539, 23);
+            this.pB1.TabIndex = 54;
             // 
             // txtCustName
             // 
@@ -569,6 +576,7 @@
             this.cboDocType.Name = "cboDocType";
             this.cboDocType.Size = new System.Drawing.Size(76, 25);
             this.cboDocType.TabIndex = 65;
+            this.cboDocType.SelectedIndexChanged += new System.EventHandler(this.cboDocType_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -632,13 +640,6 @@
             this.chkActive.Text = "ใช้งาน";
             this.chkActive.UseVisualStyleBackColor = true;
             this.chkActive.Click += new System.EventHandler(this.chkActive_Click);
-            // 
-            // pB1
-            // 
-            this.pB1.Location = new System.Drawing.Point(11, 187);
-            this.pB1.Name = "pB1";
-            this.pB1.Size = new System.Drawing.Size(539, 23);
-            this.pB1.TabIndex = 54;
             // 
             // FrmMOUAdd
             // 

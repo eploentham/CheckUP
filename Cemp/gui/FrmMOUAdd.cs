@@ -280,18 +280,26 @@ namespace Cemp.gui
             dgvAdd.Columns[colItem].ReadOnly = true;
             dgvAdd.Columns[colRow].ReadOnly = true;
         }
-        private void setGrd(String moNumber,String moId)
+        private void setGrd(String moNumber,String moId, String docType)
         {
             setGrd();
             DataTable dt = new DataTable();
-            if (moNumber.IndexOf("-") <= 0)
+            if (mouNew)
             {
-                dt = cc.moidb.selectByMoiId1( moId);
+
             }
             else
             {
-                dt = cc.moidb.selectByMoNumber(moNumber);
+                if (moNumber.IndexOf("-") <= 0)
+                {
+                    dt = cc.moidb.selectByMoiId1(moId);
+                }
+                else
+                {
+                    dt = cc.moidb.selectByMoNumber(moNumber);
+                }
             }
+            
             
             //DataGridViewComboBoxColumn newColumn = new DataGridViewComboBoxColumn();
             //newColumn.Name = "abc";
@@ -653,6 +661,11 @@ namespace Cemp.gui
             int rowOld = 0, row = 0;
             Boolean chkEdit = false;
             pB1.Visible = true;
+            if (cboDocType.Text.Equals("") && !mouNew)
+            {
+                MessageBox.Show("ไม่เลือก Doc type", "ป้อนข้อมูลไม่ครบ");
+                return;
+            }
             if (cboMOU.Text.Equals("") && !mouNew)
             {
                 MessageBox.Show("ไม่มีเลขที่ MOU", "ป้อนข้อมูลไม่ครบ");
@@ -1298,6 +1311,14 @@ namespace Cemp.gui
         private void dgvAdd_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
             cbo.Visible = false;
+        }
+
+        private void cboDocType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!pageLoad)
+            {
+                setGrd("");
+            }
         }
     }
 }
