@@ -54,6 +54,8 @@ namespace Cemp.objdb
             moi.MOUNumberMain = "mou_number_main";
             moi.ItemType = "item_type";
 
+            moi.TempSave = "temp_save";
+
             moi.pkField = "mou_item_id";
             moi.table = "t_mou_item";
         }
@@ -93,6 +95,8 @@ namespace Cemp.objdb
 
             item.MOUNumberMain = dt.Rows[0][moi.MOUNumberMain].ToString();
             item.ItemType = dt.Rows[0][moi.ItemType].ToString();
+
+            item.TempSave = dt.Rows[0][moi.TempSave].ToString();
 
             return item;
         }
@@ -158,21 +162,57 @@ namespace Cemp.objdb
 
             return dt;
         }
+        public DataTable selectByMoNumber1(String moNumber, String moId)
+        {
+            //MOUItem item = new MOUItem();
+            String sql = "", cnt = "", number = "";
+            if (moNumber.Equals("xxxxx"))
+            {
+                sql = "Select * From " + moi.table + " Where " + moi.MOUId + "='" + moId + "' and " + moi.MOUNumber + "='' Order By " + moi.RowNumber;
+            }
+            else
+            {
+                if (moNumber.IndexOf("-") <= 0)
+                {
+                    cnt = "";
+                }
+                else
+                {
+                    number = moNumber.Substring(0, moNumber.IndexOf("-"));
+                    cnt = moNumber.Substring(moNumber.IndexOf("-"));
+                    cnt = cnt.Replace("-", "");
+                }
+                sql = "Select * From " + moi.table + " Where " + moi.MOUNumber + "='" + number + "' and " + moi.MOUNumberCnt + "=" + cnt + " Order By " + moi.RowNumber;
+            }
+
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+
+            return dt;
+        }
         public DataTable selectByMoNumber(String moNumber)
         {
             //MOUItem item = new MOUItem();
             String sql = "", cnt = "", number = "";
-            if (moNumber.IndexOf("-") <= 0)
+            if (moNumber.Equals("xxxxx"))
             {
-                cnt = "";
+                sql = "Select * From " + moi.table + " Where " + moi.MOUNumber + "='" + number + "' and " + moi.MOUNumberCnt + "=" + cnt + " Order By " + moi.RowNumber;
             }
             else
             {
-                number = moNumber.Substring(0, moNumber.IndexOf("-"));
-                cnt = moNumber.Substring(moNumber.IndexOf("-"));
-                cnt = cnt.Replace("-", "");
+                if (moNumber.IndexOf("-") <= 0)
+                {
+                    cnt = "";
+                }
+                else
+                {
+                    number = moNumber.Substring(0, moNumber.IndexOf("-"));
+                    cnt = moNumber.Substring(moNumber.IndexOf("-"));
+                    cnt = cnt.Replace("-", "");
+                }
+                sql = "Select * From " + moi.table + " Where " + moi.MOUNumber + "='" + number + "' and " + moi.MOUNumberCnt + "=" + cnt + " Order By " + moi.RowNumber;
             }
-            sql = "Select * From " + moi.table + " Where " + moi.MOUNumber + "='" + number + "' and " + moi.MOUNumberCnt + "=" + cnt + " Order By " + moi.RowNumber;
+            
             //dt = conn.selectData(sql);
             DataTable dt = conn.selectData(sql);
 
@@ -198,6 +238,15 @@ namespace Cemp.objdb
             }
             return number;
         }
+        public DataTable selectDistinctByMoId1(String moId)
+        {
+            //MOUItem item = new MOUItem();
+            String sql = "", cnt = "", number = "";
+            sql = "Select " + moi.ItemType + " From " + moi.table + " Where " + moi.MOUId + "='" + moId + "' and "+moi.ItemType+" <> '' and "+moi.TempSave+"='0' and "+moi.DatePlaceRecord+" <> '' Group By " + moi.ItemType;
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+            return dt;
+        }
         public DataTable selectDistinctByMoId(String moId)
         {
             //MOUItem item = new MOUItem();
@@ -212,6 +261,16 @@ namespace Cemp.objdb
             //MOUItem item = new MOUItem();
             String sql = "", cnt = "", number = "";
             sql = "Select max("+moi.MOUNumber+") as cnt From " + moi.table + " Where " + moi.ItemType + "='" + ity + "' ";
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+
+            return dt.Rows[0]["cnt"].ToString();
+        }
+        public String selectMaxCntByMoNumber(String mouNumber, String ity)
+        {
+            //MOUItem item = new MOUItem();
+            String sql = "", cnt = "", number = "";
+            sql = "Select max(" + moi.MOUNumberCnt + ") as cnt From " + moi.table + " Where " + moi.ItemType + "='" + ity + "' and "+moi.MOUId+"='"+mouNumber+"'";
             //dt = conn.selectData(sql);
             DataTable dt = conn.selectData(sql);
 
@@ -247,8 +306,8 @@ namespace Cemp.objdb
                 moi.Sample + "," + moi.ItemGroupNameE + "," + moi.ItemGroupNameT + "," +
                 moi.ItemGroupSort + "," + moi.ItemGroupId + "," + moi.DatePlaceRecord + "," +
                 moi.MOUNumber + "," + moi.MOUNumberCnt + "," + moi.PriceCost + "," +
-                moi.PriceSale + "," + moi.Amount + "," + moi.Discount + "," + 
-                moi.MOUNumberMain + "," + moi.ItemType + ") " +
+                moi.PriceSale + "," + moi.Amount + "," + moi.Discount + "," +
+                moi.MOUNumberMain + "," + moi.ItemType + "," + moi.TempSave + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.ItemDescription + "','" +
                 p.ItemId + "','" + p.MethodDescription + "','" + p.MethodId + "','" +
                 p.MOUId + "','" + p.PlaceRecord + "','" + p.RowNumber + "','" +
@@ -256,7 +315,7 @@ namespace Cemp.objdb
                 p.ItemGroupSort + "','" + p.ItemGroupId + "','" + p.DatePlaceRecord + "','" +
                 p.MOUNumber + "'," + NumberNull1(p.MOUNumberCnt) + "," + NumberNull1(p.PriceCost) + "," +
                 NumberNull1(p.PriceSale) + "," + NumberNull1(p.Amount) + "," + NumberNull1(p.Discount) + ",'" + 
-                p.MOUNumberMain + "','" + p.ItemType + "')";
+                p.MOUNumberMain + "','" + p.ItemType + "','0')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -387,6 +446,30 @@ namespace Cemp.objdb
             //}
             return dt;
         }
+        public ComboBox getCboMOUNumber1(ComboBox c, String mouNumber)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectByNumberMain(mouNumber);
+            c.Items.Clear();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                if (!dt.Rows[i]["num"].ToString().Equals(""))
+                {
+                    item.Value = dt.Rows[i]["num"].ToString() + "-" + dt.Rows[i]["cnt"].ToString();
+                    item.Text = dt.Rows[i]["num"].ToString() + "-" + dt.Rows[i]["cnt"].ToString();
+                }
+                else
+                {
+                    item.Value = "xxxxx";
+                    item.Text = "xxxxx";
+                }
+                c.Items.Add(item);
+                //c.Items.Add(new );
+            }
+            //c.SelectedItem = item;
+            return c;
+        }
         public ComboBox getCboMOUNumberMain(ComboBox c, String mouNumber)
         {
             ComboBoxItem item = new ComboBoxItem();
@@ -395,8 +478,16 @@ namespace Cemp.objdb
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 item = new ComboBoxItem();
-                item.Value = dt.Rows[i]["num"].ToString() + "-" + dt.Rows[i]["cnt"].ToString();
-                item.Text = dt.Rows[i]["num"].ToString() + "-" + dt.Rows[i]["cnt"].ToString();
+                if (!dt.Rows[i]["num"].ToString().Equals(""))
+                {
+                    item.Value = dt.Rows[i]["num"].ToString() + "-" + dt.Rows[i]["cnt"].ToString();
+                    item.Text = dt.Rows[i]["num"].ToString() + "-" + dt.Rows[i]["cnt"].ToString();
+                }
+                else
+                {
+                    item.Value = "xxxxx";
+                    item.Text = "xxxxx";
+                }
                 c.Items.Add(item);
                 //c.Items.Add(new );
             }
@@ -426,8 +517,30 @@ namespace Cemp.objdb
             //    " Where " + moi.MOUId + "='" + moId + "' and "+moi.ItemType+"='"+ity+"'";
             sql = "Update " + moi.table + " " +
                 "Set " + moi.MOUNumber + "='" + doc + "', " +
-                moi.MOUNumberCnt + "=1" +
-                " Where " + moi.MOUId + "='" + moId + "' and " + moi.ItemType + "='" + ity + "' and "+ moi.DatePlaceRecord+" <> '' and "+moi.PlaceRecord+" <> '' ";
+                moi.MOUNumberCnt + "=1, " +
+                moi.TempSave + "='1' " +
+                " Where " + moi.MOUId + "='" + moId + "' and " + moi.ItemType + "='" + ity + "' and "+ moi.DatePlaceRecord+" <> '' and "+moi.PlaceRecord+" <> '' and "+moi.TempSave+"='0'";
+            //dt = conn.selectData(sql);
+            cnt = conn.ExecuteNonQuery(sql);
+
+            return "";
+        }
+        private String UpdateMOUNumberNext(String moId, String ity, String doc1, int max, int cnt1)
+        {
+            //MOUItem item = new MOUItem();
+            String sql = "", cnt = "", doc = "";
+            doc = "00000" + max.ToString();
+            doc = doc1 + doc.Substring(doc.Length - 5);
+            //sql = "Update " + moi.table + " "+
+            //    "Set " + moi.MOUNumber + "='" + doc + "', " +
+            //    moi.MOUNumberCnt+"=1"+
+            //    " Where " + moi.MOUId + "='" + moId + "' and "+moi.ItemType+"='"+ity+"'";
+            sql = "Update " + moi.table + " " +
+                "Set " + moi.MOUNumber + "='" + doc + "', " +
+                moi.MOUNumberCnt + "="+cnt1+", " +
+                moi.TempSave + "='1' " +
+                " Where " + moi.MOUId + "='" + moId + "' and " + moi.ItemType + "='" + ity + "' and " + moi.DatePlaceRecord + " <> '' and " + moi.PlaceRecord + " <> '' and "+
+                moi.MOUNumber+" = '' and "+moi.TempSave+"='0'";
             //dt = conn.selectData(sql);
             cnt = conn.ExecuteNonQuery(sql);
 
@@ -436,7 +549,7 @@ namespace Cemp.objdb
         public void UpdateMOUNumber(String MOUNumberMain, ComboBox cboity)
         {
             String ity = "", max="", doc="";
-            DataTable dt = selectDistinctByMoId(MOUNumberMain);
+            DataTable dt = selectDistinctByMoId1(MOUNumberMain);
             if (dt.Rows.Count > 0)
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
@@ -459,6 +572,36 @@ namespace Cemp.objdb
                     }
 
                     UpdateMOUNumber1(MOUNumberMain, ity, doc, (int.Parse(NumberNull1(max.Substring(2))) + 1));
+                }
+            }
+        }
+        public void UpdateMOUNumberNext(String MOUNumberMain, ComboBox cboity, String dateplace)
+        {
+            String ity = "", max = "", doc = "", cnt="";
+            DataTable dt = selectDistinctByMoId1(MOUNumberMain);
+            if (dt.Rows.Count > 0)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    ity = dt.Rows[i][moi.ItemType].ToString();
+                    doc = getValueCboItem(cboity, ity);
+                    max = selectMaxByMoNumber(ity);
+                    cnt = selectMaxCntByMoNumber(MOUNumberMain,ity);
+                    if (max.Equals(""))
+                    {
+                        max = "00";
+                    }
+                    else if (max.Length > 2)
+                    {
+                        max = max.Substring(2);
+                    }
+
+                    if (max.IndexOf("-") > 0)
+                    {
+                        max = max.Substring(0, max.IndexOf("-"));
+                    }
+
+                    UpdateMOUNumberNext(MOUNumberMain, ity, doc, int.Parse(NumberNull1(max.Substring(2))), (int.Parse(NumberNull1(cnt)) + 1));
                 }
             }
         }
@@ -502,6 +645,39 @@ namespace Cemp.objdb
                 }
             }
             return r.Value;
+        }
+        public String UpdateGroupNameT(String itId, String itgId, String itgNameT, String sort1)
+        {
+            String sql = "", chk = "";
+            sql = "Update " + moi.table + " Set " + moi.ItemGroupNameT + "='" + itgNameT + "', " +
+                moi.ItemGroupId + "='" + itgId + "', " +
+                moi.ItemGroupSort + "='" + sort1 + "' " +
+                "Where " + moi.ItemId + "='" + itId + "'";
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
+        public String UpdateDocType(String itId, String docType)
+        {
+            String sql = "", chk = "";
+            sql = "Update " + moi.table + " Set " + moi.ItemType + "='" + docType + "' " +
+                //qui.ItemGroupId + "='" + itgId + "', " +
+                //qui.ItemGroupSort + "='" + sort1 + "' " +
+                "Where " + moi.ItemId + "='" + itId + "'";
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
+        public String VoidMOUReturn(String moNumber)
+        {
+            String sql = "", chk = "";
+            String[] tmp = moNumber.Split('-');
+            if (tmp.Length > 0)
+            {
+                sql = "Update " + moi.table + " Set " + moi.Active + "='1', " +moi.TempSave+"='0', "+moi.MOUNumber+"='', "+moi.MOUNumberCnt+"=0 " +
+                "Where " + moi.MOUNumber + "='" + tmp[0] + "' and " + moi.MOUNumberCnt + " ='" + tmp[1] + "' ";
+                chk = conn.ExecuteNonQuery(sql);
+
+            }            
+            return chk;
         }
     }
 }

@@ -360,5 +360,15 @@ namespace Cemp.objdb
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
+        public String UpdateDocType(String itId, String docType)
+        {
+            String sql = "", chk = "";
+            sql = "Update " + qui.table + " Set " + qui.ItemType + "='" + docType + "' " +
+                //qui.ItemGroupId + "='" + itgId + "', " +
+                //qui.ItemGroupSort + "='" + sort1 + "' " +
+                "Where " + qui.ItemId + "='" + itId + "'";
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
     }
 }

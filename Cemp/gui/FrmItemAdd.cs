@@ -293,6 +293,9 @@ namespace Cemp.gui
             if (cc.itdb.insertItem(it).Length >= 1)
             {
                 cc.quidb.UpdateGroupNameT(txtId.Text,it.ItemGroupId, cboGroup.Text, txtSort1.Text);
+                cc.moidb.UpdateGroupNameT(txtId.Text, it.ItemGroupId, cboGroup.Text, txtSort1.Text);
+                cc.quidb.UpdateDocType(txtId.Text, cboDocType.Text);
+                cc.moidb.UpdateDocType(txtId.Text, cboDocType.Text);
                 cc.itdb.getListItem(cc.lit);
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 this.Dispose();

@@ -58,7 +58,7 @@ namespace Cemp.gui
             qu = new Quotation();
             sf = new Staff();
             txtMOUNumber.Text = moNumber;
-            cboMOU = cc.moidb.getCboMOUNumberMain(cboMOU, moNumber);
+            cboMOU = cc.moidb.getCboMOUNumber1(cboMOU, moNumber);
             cboQuo = cc.qudb.getCboQuoConfirmNoMOU(cboQuo);
             cboStaffPlaceRecord = cc.sfdb.getCboStaff(cboStaffPlaceRecord);
             cboStaffMOU = cc.sfdb.getCboStaff(cboStaffMOU);
@@ -184,7 +184,7 @@ namespace Cemp.gui
             txtMOUName.Text = mo.MOUName;
             chkActive.Checked =true;
             btnUnActive.Visible = false;
-            setGrd(cc.getValueCboItem(cboMOU), mo.Id);
+            setGrd(cc.getValueCboItem(cboMOU));
             pageLoad = false;
         }
         private void getMOU()
@@ -280,7 +280,7 @@ namespace Cemp.gui
             dgvAdd.Columns[colItem].ReadOnly = true;
             dgvAdd.Columns[colRow].ReadOnly = true;
         }
-        private void setGrd(String moNumber,String moId, String docType)
+        private void setGrd(String moiNumber)
         {
             setGrd();
             DataTable dt = new DataTable();
@@ -290,16 +290,8 @@ namespace Cemp.gui
             }
             else
             {
-                if (moNumber.IndexOf("-") <= 0)
-                {
-                    dt = cc.moidb.selectByMoiId1(moId);
-                }
-                else
-                {
-                    dt = cc.moidb.selectByMoNumber(moNumber);
-                }
+                dt = cc.moidb.selectByMoNumber1(moiNumber, txtMOUId.Text);
             }
-            
             
             //DataGridViewComboBoxColumn newColumn = new DataGridViewComboBoxColumn();
             //newColumn.Name = "abc";
@@ -327,7 +319,7 @@ namespace Cemp.gui
                     dgvAdd[colItemId, i].Value = dt.Rows[i][cc.moidb.moi.ItemId].ToString();
                     dgvAdd[colMethodId, i].Value = dt.Rows[i][cc.moidb.moi.MethodId].ToString();
                     dgvAdd[colId, i].Value = dt.Rows[i][cc.moidb.moi.Id].ToString();
-                    //dgvAdd[colDatePlaceRecord, i].Value = cc.cf.dateDBtoShow1(dt.Rows[i][cc.moidb.moi.DatePlaceRecord].ToString());
+                    //dgvAdd[colItemId, i].Value = cc.cf.dateDBtoShow1(dt.Rows[i][cc.moidb.moi.DatePlaceRecord].ToString());
                     //dgvAdd[colDatePlaceRecord1, i].Value = cc.cf.dateDBtoShow1(dt.Rows[i][cc.moidb.moi.DatePlaceRecord].ToString());
                     dgvAdd[colDatePlaceRecord, i].Value = cc.cf.dateShowMOU(dt.Rows[i][cc.moidb.moi.DatePlaceRecord].ToString());
                     dgvAdd[colDatePlaceRecord1, i].Value = cc.cf.dateShowMOU(dt.Rows[i][cc.moidb.moi.DatePlaceRecord].ToString());
@@ -663,8 +655,12 @@ namespace Cemp.gui
             pB1.Visible = true;
             if (cboDocType.Text.Equals("") && !mouNew)
             {
-                MessageBox.Show("ไม่เลือก Doc type", "ป้อนข้อมูลไม่ครบ");
-                return;
+                //if (!mouNew)
+                //{
+                //    MessageBox.Show("ไม่เลือก Doc type", "ป้อนข้อมูลไม่ครบ");
+                //    return;
+                //}
+                
             }
             if (cboMOU.Text.Equals("") && !mouNew)
             {
@@ -802,7 +798,7 @@ namespace Cemp.gui
                     moi.PriceSale = cc.cf.NumberNull1(it.PriceSale);
                     moi.Discount = "0";
                     moi.Amount = String.Concat(Double.Parse(moi.PriceSale) * int.Parse(moi.Sample));
-                    moi.ItemType = dgvAdd[colItemType, i].Value.ToString();
+                    moi.ItemType = dgvAdd[colItemType, i].Value.ToString();                    
 
                     //if (cboMOU.Text.IndexOf("-"))
                     //{
@@ -833,6 +829,7 @@ namespace Cemp.gui
                     }
                     else
                     {
+                        moi.TempSave = "0";//รอออกเลขที่ข้อตกลง
                         cc.moidb.insertMOUItem(moi);
                     }
                     pB1.Value = i;
@@ -841,14 +838,14 @@ namespace Cemp.gui
                 {
                     cc.moidb.UpdateMOUNumber(moId, cc.cboIty);
                 }
-                else if(chkEdit)
+                else
                 {
-                    cc.moidb.UpdateMaxMOUNumber(moId, cboMOU.Text, ity);
+                    cc.moidb.UpdateMOUNumberNext(moId, cc.cboIty, "");
                 }
                 
                 MOU mo1 = cc.modb.selectByPk(moId);
                 txtMOUNumber.Text = mo1.MOUNumberMain;
-                cboMOU = cc.moidb.getCboMOUNumberMain(cboMOU, mo1.MOUNumberMain);
+                cboMOU = cc.moidb.getCboMOUNumber1(cboMOU, mo1.MOUNumberMain);
                 //cboMOU.Text = mo1.MOUNumberMain + "-" + mo1.MOUNumberCnt;
                 pB1.Visible = false;
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
@@ -1157,6 +1154,19 @@ namespace Cemp.gui
             //frm.ShowDialog(this);
             //setGrd();
         }
+        private void mnuItemEdit_Click(object sender, EventArgs e)
+        {
+            FrmItemAdd frm = new FrmItemAdd(dgvAdd[colItemId, dgvAdd.CurrentCell.RowIndex].Value.ToString(), cc);
+            frm.ShowDialog();
+            if (mouNew)
+            {
+                cboQuo_SelectedIndexChanged(null, null);
+            }
+            else
+            {
+                cboMOU_SelectedIndexChanged(null,null);
+            }
+        }
         private void dgvAdd_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -1197,6 +1207,23 @@ namespace Cemp.gui
                     {
                         m.MenuItems.Add(ltype[i], new EventHandler(mnuCost_Click));
                     }
+                    int xOffset = Cursor.Position.X - this.Location.X;
+                    int yOffset = Cursor.Position.Y - this.Location.Y;
+                    int currentMouseOverRow = dgvAdd.HitTest(Cursor.Position.X, Cursor.Position.Y).RowIndex;
+
+                    m.Show(dgvAdd, new Point(Cursor.Position.X - 80, Cursor.Position.Y - 250));
+                }
+                else if (e.ColumnIndex == colItem)
+                {
+                    ContextMenu m = new ContextMenu();
+                    //m.MenuItems.Add(new MenuItem(" ดูข้อมูลต้นทุน"));
+                    //for (int i = 0; i < ltype.Count; i++)
+                    //{
+                    if (dgvAdd[colItem, e.RowIndex].Value != null)
+                    {
+                        m.MenuItems.Add("ต้องการแก้ไข Parameter " + dgvAdd[colItem, e.RowIndex].Value.ToString(), new EventHandler(mnuItemEdit_Click));
+                    }
+                    //}
                     int xOffset = Cursor.Position.X - this.Location.X;
                     int yOffset = Cursor.Position.Y - this.Location.Y;
                     int currentMouseOverRow = dgvAdd.HitTest(Cursor.Position.X, Cursor.Position.Y).RowIndex;
@@ -1263,7 +1290,8 @@ namespace Cemp.gui
         {
             if (MessageBox.Show("ต้องการยกเลิก", "ยกเลิก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
-                cc.modb.VoidMOU(txtMOUId.Text);
+                //cc.modb.VoidMOU(txtMOUId.Text);
+                cc.moidb.VoidMOUReturn(cboMOU.Text);
                 this.Dispose();
             }
         }
