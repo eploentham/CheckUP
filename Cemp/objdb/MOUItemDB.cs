@@ -56,6 +56,10 @@ namespace Cemp.objdb
 
             moi.TempSave = "temp_save";
 
+            moi.SampleOld = "sample_old";
+            moi.StatusMerge = "sample_old";
+            moi.MergeId = "mou_item_id_merge";
+
             moi.pkField = "mou_item_id";
             moi.table = "t_mou_item";
         }
@@ -97,6 +101,9 @@ namespace Cemp.objdb
             item.ItemType = dt.Rows[0][moi.ItemType].ToString();
 
             item.TempSave = dt.Rows[0][moi.TempSave].ToString();
+            item.StatusMerge = dt.Rows[0][moi.StatusMerge].ToString();
+            item.MergeId = dt.Rows[0][moi.MergeId].ToString();
+            item.SampleOld = dt.Rows[0][moi.SampleOld].ToString();
 
             return item;
         }
@@ -307,15 +314,15 @@ namespace Cemp.objdb
                 moi.ItemGroupSort + "," + moi.ItemGroupId + "," + moi.DatePlaceRecord + "," +
                 moi.MOUNumber + "," + moi.MOUNumberCnt + "," + moi.PriceCost + "," +
                 moi.PriceSale + "," + moi.Amount + "," + moi.Discount + "," +
-                moi.MOUNumberMain + "," + moi.ItemType + "," + moi.TempSave + ") " +
+                moi.MOUNumberMain + "," + moi.ItemType + "," + moi.TempSave + "," + moi.StatusMerge + "," + moi.MergeId + "," + moi.SampleOld + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.ItemDescription + "','" +
                 p.ItemId + "','" + p.MethodDescription + "','" + p.MethodId + "','" +
                 p.MOUId + "','" + p.PlaceRecord + "','" + p.RowNumber + "','" +
                 p.Sample + "','" + p.ItemGroupNameE + "','" + p.ItemGroupNameT + "','" +
                 p.ItemGroupSort + "','" + p.ItemGroupId + "','" + p.DatePlaceRecord + "','" +
                 p.MOUNumber + "'," + NumberNull1(p.MOUNumberCnt) + "," + NumberNull1(p.PriceCost) + "," +
-                NumberNull1(p.PriceSale) + "," + NumberNull1(p.Amount) + "," + NumberNull1(p.Discount) + ",'" + 
-                p.MOUNumberMain + "','" + p.ItemType + "','0')";
+                NumberNull1(p.PriceSale) + "," + NumberNull1(p.Amount) + "," + NumberNull1(p.Discount) + ",'" +
+                p.MOUNumberMain + "','" + p.ItemType + "','0','" + p.StatusMerge + "','" + p.MergeId + "','" + p.SampleOld + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -353,11 +360,11 @@ namespace Cemp.objdb
                 moi.ItemGroupSort + "='" + p.ItemGroupSort + "', " +
                 moi.ItemGroupId + "='" + p.ItemGroupId + "', " +
                 moi.DatePlaceRecord + "='" + p.DatePlaceRecord + "', " +
-                //moi.MOUNumber + "='" + p.MOUNumber + "', " +
-                //moi.MOUNumberCnt + "=" + p.MOUNumberCnt + ", " +
+                moi.StatusMerge + "='" + p.StatusMerge + "', " +
+                moi.MergeId + "='" + p.MergeId + "', " +
                 moi.MOUNumberMain + "='" + p.MOUNumberMain + "', " +
-                moi.ItemType + "='" + p.ItemType + "' " +
-                //moi.Amount + "=" + p.Amount + ", " +
+                moi.ItemType + "='" + p.ItemType + "', " +
+                moi.SampleOld + "='" + p.SampleOld + "' " +
                 //moi.Discount + "=" + p.Discount + " " +
                 "Where " + moi.pkField + "='" + p.Id + "'";
             try

@@ -165,11 +165,11 @@
             // 
             this.dgvAdd.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAdd.Location = new System.Drawing.Point(12, 220);
+            this.dgvAdd.Location = new System.Drawing.Point(12, 161);
             this.dgvAdd.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAdd.Name = "dgvAdd";
             this.dgvAdd.RowTemplate.Height = 24;
-            this.dgvAdd.Size = new System.Drawing.Size(1058, 387);
+            this.dgvAdd.Size = new System.Drawing.Size(1058, 446);
             this.dgvAdd.TabIndex = 4;
             // 
             // FrmMOUPlaceRecord

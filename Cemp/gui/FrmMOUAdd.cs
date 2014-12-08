@@ -19,9 +19,9 @@ namespace Cemp.gui
         Quotation qu;
         Staff sf;
         int colRow = 0, colItem = 1, colMethod = 2, colSample = 3, colPlace = 5, colDatePlaceRecord=4, colMOUNumber=6, colId = 7, colDel =8, colItemId = 9, colMethodId = 10;
-        int colEdit = 11, colMOUNumberCnt=12, colDatePlaceRecord1=13, colItemType=14;
+        int colEdit = 11, colMOUNumberCnt = 12, colDatePlaceRecord1 = 13, colItemType = 14, colStatusMerge = 15, colSampleOld=16, colMergeId=17;
         //int colPriceSale = 14, colPriceCost = 15, colAmount = 16, colDiscount = 17;
-        int colCnt = 15;
+        int colCnt = 18;
         int row = 0;
         Boolean pageLoad = false, mouNew = false, MOUSplit = false;
         //DateTimePicker cellDateTimePicker = new DateTimePicker();
@@ -32,6 +32,7 @@ namespace Cemp.gui
         List<String> ltype;
         //DataGridView dgv;
         String editItemTypeOld = "", editPlaceOld="", editDateOld="";
+        Font fMerge = new Font("Microsoft Sans Serif", 12, FontStyle.Strikeout);
         public FrmMOUAdd(String moNumber, Boolean flagNew, CnviControl c)
         {
             mouNew = flagNew;
@@ -327,11 +328,18 @@ namespace Cemp.gui
                     dgvAdd[colMOUNumberCnt, i].Value = dt.Rows[i][cc.moidb.moi.MOUNumberCnt].ToString();
                     dgvAdd[colDel, i].Value = "";
                     dgvAdd[colEdit, i].Value = "";
+                    dgvAdd[colStatusMerge, i].Value = dt.Rows[i][cc.moidb.moi.StatusMerge].ToString();
+                    dgvAdd[colMergeId, i].Value = dt.Rows[i][cc.moidb.moi.MergeId].ToString();
+                    dgvAdd[colSampleOld, i].Value = dt.Rows[i][cc.moidb.moi.SampleOld].ToString();
                     //setLPace(dgvAdd[colPlace, i].Value.ToString());
                     //setLDate(dgvAdd[colDatePlaceRecord, i].Value.ToString());
                     if ((i % 2) != 0)
                     {
                         dgvAdd.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                    }
+                    if (dt.Rows[i][cc.moidb.moi.StatusMerge].ToString().Equals("1"))
+                    {
+                        dgvAdd.Rows[i].DefaultCellStyle.Font = fMerge;
                     }
                 }
             }
@@ -437,6 +445,7 @@ namespace Cemp.gui
             dgvAdd[colMOUNumber, row].Value = "";
             dgvAdd[colDel, row].Value = "";
             dgvAdd[colEdit, row].Value = "";
+            dgvAdd[colStatusMerge, row].Value = "";
             dgvAdd[colItemType, row].Value = ity;
             //dgvAdd[colPriceCost, row].Value = priceCost;
             //dgvAdd[colAmount, row].Value = amount;
@@ -798,8 +807,29 @@ namespace Cemp.gui
                     moi.PriceSale = cc.cf.NumberNull1(it.PriceSale);
                     moi.Discount = "0";
                     moi.Amount = String.Concat(Double.Parse(moi.PriceSale) * int.Parse(moi.Sample));
-                    moi.ItemType = dgvAdd[colItemType, i].Value.ToString();                    
-
+                    moi.ItemType = dgvAdd[colItemType, i].Value.ToString();
+                    moi.StatusMerge = dgvAdd[colStatusMerge, i].Value.ToString();
+                    if (moi.StatusMerge.Equals(""))
+                    {
+                        moi.StatusMerge="0";
+                    }
+                    if (dgvAdd[colMergeId, i].Value == null)
+                    {
+                        moi.MergeId = "";
+                    }
+                    else
+                    {
+                        moi.MergeId = dgvAdd[colMergeId, i].Value.ToString();
+                    }
+                    if (dgvAdd[colSampleOld, i].Value == null)
+                    {
+                        moi.SampleOld = "";
+                    }
+                    else
+                    {
+                        moi.SampleOld = dgvAdd[colSampleOld, i].Value.ToString();
+                    }
+                    
                     //if (cboMOU.Text.IndexOf("-"))
                     //{
                     //    moi.MOUNumber = cboMOU.Text;
@@ -1167,6 +1197,57 @@ namespace Cemp.gui
                 cboMOU_SelectedIndexChanged(null,null);
             }
         }
+        private void mnuItemGroup_Click(object sender, EventArgs e)
+        {
+            
+            Boolean chk = true;
+            DataGridViewCell rFirst = null;
+            int sample = 0, row=0;
+            List<int> row1 = new List<int>();
+            foreach (DataGridViewCell r in dgvAdd.SelectedCells)
+            {
+                if (chk)
+                {
+                    rFirst = r;
+                    row = r.RowIndex;
+                    chk = false;
+                }
+                row1.Add(r.RowIndex);
+                sample += int.Parse(r.Value.ToString());
+                dgvAdd[colEdit, r.RowIndex].Value = "1";
+            }
+            for (int i = 0; i < row1.Count; i++)
+            {
+                for (int j = 0; j < row1.Count-1; j++)
+                {
+                    int tmp = 0;
+                    if (row1[j] > row1[j + 1])
+                    {
+                        tmp = row1[j + 1];
+                        row1[j + 1] = row1[j];
+                        row1[j] = tmp;
+                    }
+                }
+            }
+            Persistent p = new Persistent();
+            String id = "merge"+p.getGenID();
+            //rFirst.Value = sample.ToString();
+            dgvAdd[colSample, row1[0]].Value = sample;
+            foreach (DataGridViewCell r in dgvAdd.SelectedCells)
+            {
+                if (r.RowIndex != row1[0])
+                {
+                    r.Style.Font = fMerge;
+                    dgvAdd[colStatusMerge, r.RowIndex].Value = "1";
+                }
+                else
+                {
+                    dgvAdd[colStatusMerge, r.RowIndex].Value = "2";
+                }                
+                dgvAdd[colSampleOld, r.RowIndex].Value = 1;
+                dgvAdd[colMergeId, r.RowIndex].Value = id;
+            }
+        }
         private void dgvAdd_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -1222,13 +1303,26 @@ namespace Cemp.gui
                     if (dgvAdd[colItem, e.RowIndex].Value != null)
                     {
                         m.MenuItems.Add("ต้องการแก้ไข Parameter " + dgvAdd[colItem, e.RowIndex].Value.ToString(), new EventHandler(mnuItemEdit_Click));
-                    }
-                    //}
-                    int xOffset = Cursor.Position.X - this.Location.X;
-                    int yOffset = Cursor.Position.Y - this.Location.Y;
-                    int currentMouseOverRow = dgvAdd.HitTest(Cursor.Position.X, Cursor.Position.Y).RowIndex;
+                        int xOffset = Cursor.Position.X - this.Location.X;
+                        int yOffset = Cursor.Position.Y - this.Location.Y;
+                        int currentMouseOverRow = dgvAdd.HitTest(Cursor.Position.X, Cursor.Position.Y).RowIndex;
 
-                    m.Show(dgvAdd, new Point(Cursor.Position.X - 80, Cursor.Position.Y - 250));
+                        m.Show(dgvAdd, new Point(Cursor.Position.X - 80, Cursor.Position.Y - 250));
+                    }
+                    //}                    
+                }
+                else if (e.ColumnIndex == colSample)
+                {
+                    ContextMenu m = new ContextMenu();
+                    if (dgvAdd[colItem, e.RowIndex].Value != null)
+                    {
+                        m.MenuItems.Add("ต้องการรวม Parameter " + dgvAdd[colItem, e.RowIndex].Value.ToString(), new EventHandler(mnuItemGroup_Click));
+                        int xOffset = Cursor.Position.X - this.Location.X;
+                        int yOffset = Cursor.Position.Y - this.Location.Y;
+                        int currentMouseOverRow = dgvAdd.HitTest(Cursor.Position.X, Cursor.Position.Y).RowIndex;
+
+                        m.Show(dgvAdd, new Point(Cursor.Position.X - 80, Cursor.Position.Y - 250));
+                    }
                 }
                 //m.Show(dgvAdd, new Point(xOffset, yOffset));
             }
