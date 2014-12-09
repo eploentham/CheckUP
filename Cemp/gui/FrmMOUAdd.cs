@@ -271,9 +271,9 @@ namespace Cemp.gui
             dgvAdd.Columns[colMOUNumber].Visible = false;
             dgvAdd.Columns[colMOUNumberCnt].Visible = false;
             dgvAdd.Columns[colDatePlaceRecord1].Visible = false;
-            //dgvAdd.Columns[colPriceCost].Visible = false;
-            //dgvAdd.Columns[colPriceSale].Visible = false;
-            //dgvAdd.Columns[colAmount].Visible = false;
+            dgvAdd.Columns[colStatusMerge].Visible = false;
+            dgvAdd.Columns[colMergeId].Visible = false;
+            dgvAdd.Columns[colSampleOld].Visible = false;
             //dgvAdd.Columns[colDiscount].Visible = false;
 
             dgvAdd.Columns[colSample].ReadOnly = true;
@@ -311,6 +311,10 @@ namespace Cemp.gui
                     //dgvAdd.Rows[0].Cells = newColumn;
                     //DataGridViewComboBoxCell cell = (DataGridViewComboBoxCell)(dgvAdd.Rows[i].Cells[colItem]);
                     //cell.DataSource = newColumn;
+                    //if (dt.Rows[i][cc.moidb.moi.StatusMerge].ToString().Equals("1"))
+                    //{
+                    //    continue;
+                    //}
                     dgvAdd[colRow, i].Value = (i + 1);
                     dgvAdd[colItem, i].Value = dt.Rows[i][cc.moidb.moi.ItemDescription].ToString();
                     dgvAdd[colMethod, i].Value = dt.Rows[i][cc.moidb.moi.MethodDescription].ToString();
@@ -1247,6 +1251,20 @@ namespace Cemp.gui
                 dgvAdd[colSampleOld, r.RowIndex].Value = 1;
                 dgvAdd[colMergeId, r.RowIndex].Value = id;
             }
+
+            btnSave_Click(null,null);
+            setGrd(cboMOU.Text);
+        }
+        private void mnuItemGroupCancel_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("ต้องการยกเลิก " + dgvAdd[colMergeId, dgvAdd.CurrentCell.RowIndex].Value.ToString(), "ยกเลิก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                //cc.modb.VoidMOU(txtMOUId.Text);
+                cc.moidb.VoidMerge(dgvAdd[colMergeId, dgvAdd.CurrentCell.RowIndex].Value.ToString());
+                //cboMOU_SelectedIndexChanged(null,null);
+                setGrd(cboMOU.Text);
+                //this.Dispose();
+            }
         }
         private void dgvAdd_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -1309,20 +1327,36 @@ namespace Cemp.gui
 
                         m.Show(dgvAdd, new Point(Cursor.Position.X - 80, Cursor.Position.Y - 250));
                     }
-                    //}                    
+                    //}
                 }
                 else if (e.ColumnIndex == colSample)
                 {
-                    ContextMenu m = new ContextMenu();
-                    if (dgvAdd[colItem, e.RowIndex].Value != null)
+                    if (dgvAdd[colStatusMerge, e.RowIndex].Value != null)
                     {
-                        m.MenuItems.Add("ต้องการรวม Parameter " + dgvAdd[colItem, e.RowIndex].Value.ToString(), new EventHandler(mnuItemGroup_Click));
-                        int xOffset = Cursor.Position.X - this.Location.X;
-                        int yOffset = Cursor.Position.Y - this.Location.Y;
-                        int currentMouseOverRow = dgvAdd.HitTest(Cursor.Position.X, Cursor.Position.Y).RowIndex;
+                        if (dgvAdd[colStatusMerge, e.RowIndex].Value.ToString().Equals("2"))
+                        {
+                            ContextMenu m = new ContextMenu();
+                            m.MenuItems.Add("ต้องการยกเลิกรวม Parameter " + dgvAdd[colItem, e.RowIndex].Value.ToString(), new EventHandler(mnuItemGroupCancel_Click));
+                            int xOffset = Cursor.Position.X - this.Location.X;
+                            int yOffset = Cursor.Position.Y - this.Location.Y;
+                            int currentMouseOverRow = dgvAdd.HitTest(Cursor.Position.X, Cursor.Position.Y).RowIndex;
 
-                        m.Show(dgvAdd, new Point(Cursor.Position.X - 80, Cursor.Position.Y - 250));
-                    }
+                            m.Show(dgvAdd, new Point(Cursor.Position.X - 80, Cursor.Position.Y - 250));
+                        }
+                        else
+                        {
+                            ContextMenu m = new ContextMenu();
+                            if (dgvAdd[colItem, e.RowIndex].Value != null)
+                            {
+                                m.MenuItems.Add("ต้องการรวม Parameter " + dgvAdd[colItem, e.RowIndex].Value.ToString(), new EventHandler(mnuItemGroup_Click));
+                                int xOffset = Cursor.Position.X - this.Location.X;
+                                int yOffset = Cursor.Position.Y - this.Location.Y;
+                                int currentMouseOverRow = dgvAdd.HitTest(Cursor.Position.X, Cursor.Position.Y).RowIndex;
+
+                                m.Show(dgvAdd, new Point(Cursor.Position.X - 80, Cursor.Position.Y - 250));
+                            }
+                        }
+                    }                    
                 }
                 //m.Show(dgvAdd, new Point(xOffset, yOffset));
             }

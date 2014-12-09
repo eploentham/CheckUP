@@ -576,18 +576,20 @@
             this.cboDocType.Name = "cboDocType";
             this.cboDocType.Size = new System.Drawing.Size(76, 25);
             this.cboDocType.TabIndex = 65;
+            this.cboDocType.Visible = false;
             this.cboDocType.SelectedIndexChanged += new System.EventHandler(this.cboDocType_SelectedIndexChanged);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label9.Location = new System.Drawing.Point(371, 179);
+            this.label9.Location = new System.Drawing.Point(440, 181);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(77, 17);
             this.label9.TabIndex = 66;
             this.label9.Text = "Doc Type :";
+            this.label9.Visible = false;
             // 
             // panel1
             // 

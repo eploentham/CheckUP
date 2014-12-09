@@ -427,6 +427,7 @@
             this.dgvAdd.RowTemplate.Height = 24;
             this.dgvAdd.Size = new System.Drawing.Size(839, 265);
             this.dgvAdd.TabIndex = 2;
+            this.dgvAdd.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvAdd_CellBeginEdit);
             this.dgvAdd.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdd_CellDoubleClick);
             this.dgvAdd.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvAdd_CellMouseClick);
             // 

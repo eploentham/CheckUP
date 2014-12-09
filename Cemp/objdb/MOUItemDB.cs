@@ -5,7 +5,10 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+/*
+ * 
+ * 57.12.09.02  ให้สามารถ รวมsample
+ * */
 namespace Cemp.objdb
 {
     public class MOUItemDB
@@ -57,7 +60,7 @@ namespace Cemp.objdb
             moi.TempSave = "temp_save";
 
             moi.SampleOld = "sample_old";
-            moi.StatusMerge = "sample_old";
+            moi.StatusMerge = "status_merge";
             moi.MergeId = "mou_item_id_merge";
 
             moi.pkField = "mou_item_id";
@@ -189,7 +192,9 @@ namespace Cemp.objdb
                     cnt = moNumber.Substring(moNumber.IndexOf("-"));
                     cnt = cnt.Replace("-", "");
                 }
-                sql = "Select * From " + moi.table + " Where " + moi.MOUNumber + "='" + number + "' and " + moi.MOUNumberCnt + "=" + cnt + " Order By " + moi.RowNumber;
+                //sql = "Select * From " + moi.table + " Where " + moi.MOUNumber + "='" + number + "' and " + moi.MOUNumberCnt + "=" + cnt + " Order By " + moi.RowNumber;  // 57.12.09.02 -
+                sql = "Select * From " + moi.table + 
+                    " Where " + moi.MOUNumber + "='" + number + "' and " + moi.MOUNumberCnt + "=" + cnt + " and "+moi.StatusMerge+" in ('0','2') Order By " + moi.RowNumber;    //57.12.09.02 +
             }
 
             //dt = conn.selectData(sql);
@@ -673,6 +678,9 @@ namespace Cemp.objdb
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
+        /**
+         * 
+         * **/
         public String VoidMOUReturn(String moNumber)
         {
             String sql = "", chk = "";
@@ -684,6 +692,17 @@ namespace Cemp.objdb
                 chk = conn.ExecuteNonQuery(sql);
 
             }            
+            return chk;
+        }
+        public String VoidMerge(String mergeNumber)
+        {
+            String sql = "", chk = "";
+            //String[] tmp = moNumber.Split('-');
+
+            sql = "Update " + moi.table + " Set " + moi.StatusMerge + "='0', " + moi.Sample + "=" + moi.SampleOld + ", " + moi.MergeId + "='', "+moi.SampleOld+"='' " +
+                "Where " + moi.MergeId + "='" + mergeNumber + "' ";
+                chk = conn.ExecuteNonQuery(sql);
+
             return chk;
         }
     }

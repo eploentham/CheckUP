@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 /*
- * 
+ * 57.12.09.01 อุยแจ้งว่า อยากให้โปรแกรมสามารถแก้ไข การเรียงข้อมูลในใบเสนอราคาให้
  * */
 
 namespace Cemp.gui
@@ -293,7 +293,7 @@ namespace Cemp.gui
             dgvAdd.Columns[colPriceSale].ReadOnly = true;
             dgvAdd.Columns[colAmount].ReadOnly = true;
             dgvAdd.Columns[colQty].ReadOnly = true;
-            dgvAdd.Columns[colRow].ReadOnly = true;
+            //dgvAdd.Columns[colRow].ReadOnly = true;       //57.12.09.01
 
             //dgvAdd.Columns.Add(newColumn);
             if (dt.Rows.Count > 0)
@@ -304,7 +304,8 @@ namespace Cemp.gui
                     //DataGridViewComboBoxCell cell = (DataGridViewComboBoxCell)(dgvAdd.Rows[i].Cells[colItem]);
                     //cell.DataSource = newColumn;
 
-                    dgvAdd[colRow, i].Value = (i + 1);
+                    //dgvAdd[colRow, i].Value = (i + 1);    //57.12.09.01 -
+                    dgvAdd[colRow, i].Value = dt.Rows[i][cc.quidb.qui.RowNumber].ToString();//57.12.09.01 +
                     dgvAdd[colItemCode, i].Value = dt.Rows[i][cc.quidb.qui.ItemCode].ToString();
                     dgvAdd[colItem, i].Value = dt.Rows[i][cc.quidb.qui.ItemDescription].ToString();
                     dgvAdd[colMethod, i].Value = dt.Rows[i][cc.quidb.qui.MethodDescription].ToString();
@@ -568,7 +569,7 @@ namespace Cemp.gui
                     Item it = cc.getItemByList(dgvAdd[colItemId, i].Value.ToString());
                     ItemGroup itg = cc.getItemGroupByList(it.ItemGroupId);
 
-                    qui.RowNumber = dgvAdd[colRow, i].Value.ToString();
+                    qui.RowNumber = dgvAdd[colRow, i].Value.ToString();//57.12.09.01 +
                     qui.ItemCode = it.Code;
                     qui.PriceSale = cc.cf.NumberNull1(dgvAdd[colPriceSale, i].Value.ToString());
                     //qui.PriceCost = cc.cf.NumberNull1(dgvAdd[colPriceCost, i].Value.ToString());
@@ -661,6 +662,10 @@ namespace Cemp.gui
             {
                 return;
             }
+            //if (row >= dgvAdd.RowCount)
+            //{
+            //    return;
+            //}
             dgvAdd[colRow, row].Value = (row + 1);
             dgvAdd[colItemCode, row].Value = it.Code;
             dgvAdd[colItemId, row].Value = it.Id;
@@ -1310,6 +1315,15 @@ namespace Cemp.gui
             else if (e.KeyCode == Keys.Down)
             {
                 cboItem.DroppedDown = true;
+            }
+        }
+
+        private void dgvAdd_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if (e.ColumnIndex == colRow)
+            {
+                //e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+                dgvAdd[colEdit, e.RowIndex].Value = "1";
             }
         }
     }
