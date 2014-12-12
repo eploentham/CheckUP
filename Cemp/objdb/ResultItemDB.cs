@@ -28,6 +28,7 @@ namespace Cemp.objdb
             rsi.ResultMin = "result_min";
             rsi.ResultValue = "result_value";
             rsi.RowNumber = "row_number";
+            rsi.ItemCode = "item_code";
 
             rsi.pkField = "result_item_id";
             rsi.table = "t_result_item";
@@ -42,7 +43,7 @@ namespace Cemp.objdb
             item.ResultMin = dt.Rows[0][rsi.ResultMin].ToString();
             item.ResultValue = dt.Rows[0][rsi.ResultValue].ToString();
             item.RowNumber = dt.Rows[0][rsi.RowNumber].ToString();
-            //item.MethodMeasure = dt.Rows[0][rsi.MethodMeasure].ToString();
+            item.ItemCode = dt.Rows[0][rsi.ItemCode].ToString();
 
             return item;
         }
@@ -93,10 +94,10 @@ namespace Cemp.objdb
 
             sql = "Insert Into " + rsi.table + " (" + rsi.pkField + "," + rsi.Active + "," + rsi.PlaceMeasure + "," +
                 rsi.ResultId + "," + rsi.ResultMax + "," + rsi.ResultMin + "," +
-                rsi.ResultValue + "," + rsi.RowNumber + ") " +
+                rsi.ResultValue + "," + rsi.RowNumber + "," + rsi.ItemCode + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.PlaceMeasure + "','" +
                 p.ResultId + "','" + p.ResultMax + "','" + p.ResultMin + "','" +
-                p.ResultValue + "'," + p.RowNumber + ")";
+                p.ResultValue + "'," + p.RowNumber + ",'" + p.ItemCode + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -125,8 +126,8 @@ namespace Cemp.objdb
                 rsi.ResultMax + "='" + p.ResultMax + "', " +
                 rsi.ResultMin + "='" + p.ResultMin + "', " +
                 rsi.ResultValue + "='" + p.ResultValue + "', " +
-                rsi.RowNumber + "=" + p.RowNumber + " " +
-                //rsi.MethodMeasure + "='" + p.MethodMeasure + "' " +
+                rsi.RowNumber + "=" + p.RowNumber + ", " +
+                rsi.ItemCode + "='" + p.ItemCode + "' " +
 
                 "Where " + rsi.pkField + "='" + p.Id + "'";
             try

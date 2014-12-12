@@ -39,9 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtpPlaceRecord = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvAdd = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -58,7 +56,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1057, 144);
+            this.groupBox1.Size = new System.Drawing.Size(715, 144);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "เก็บตัวอย่าง";
@@ -69,7 +67,7 @@
             this.txtMouNumber.Location = new System.Drawing.Point(161, 18);
             this.txtMouNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtMouNumber.Name = "txtMouNumber";
-            this.txtMouNumber.Size = new System.Drawing.Size(134, 23);
+            this.txtMouNumber.Size = new System.Drawing.Size(200, 23);
             this.txtMouNumber.TabIndex = 63;
             // 
             // label9
@@ -96,7 +94,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(733, 34);
+            this.btnPrint.Location = new System.Drawing.Point(604, 84);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(81, 39);
@@ -161,32 +159,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "เจ้าหน้าที่ผู้เก็บตัวอย่าง :";
             // 
-            // dgvAdd
-            // 
-            this.dgvAdd.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAdd.Location = new System.Drawing.Point(12, 161);
-            this.dgvAdd.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvAdd.Name = "dgvAdd";
-            this.dgvAdd.RowTemplate.Height = 24;
-            this.dgvAdd.Size = new System.Drawing.Size(1058, 446);
-            this.dgvAdd.TabIndex = 4;
-            // 
             // FrmMOUPlaceRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1081, 793);
-            this.Controls.Add(this.dgvAdd);
+            this.ClientSize = new System.Drawing.Size(751, 176);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmMOUPlaceRecord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMOUPlaceRecord";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMOUPlaceRecord_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -204,6 +188,5 @@
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.TextBox txtMouNumber;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dgvAdd;
     }
 }

@@ -50,6 +50,7 @@ namespace Cemp.objdb
             inv.CustRemark2 = "cust_remark2";
             inv.Plus1 = "plus1";
             inv.Plus1Name = "plus1name";
+            inv.YearId = "year_id";
 
             inv.pkField = "inv_id";
             inv.table = "t_invoice";
@@ -100,6 +101,7 @@ namespace Cemp.objdb
             item.CustRemark2 = dt.Rows[0][inv.CustRemark2].ToString();
             item.Plus1 = dt.Rows[0][inv.Plus1].ToString();
             item.Plus1Name = dt.Rows[0][inv.Plus1Name].ToString();
+            item.YearId = dt.Rows[0][inv.YearId].ToString();
 
             return item;
         }
@@ -187,8 +189,8 @@ namespace Cemp.objdb
                 inv.DiscountPer + "," + inv.Nettotal + "," + inv.Remark + "," +
                 inv.Total + "," + inv.userCancel + "," + inv.userCreate + "," +
                 inv.userModi + "," + inv.Vat + "," + inv.VatRate + "," +
-                inv.dateCreate + "," + inv.StatusInv + "," + inv.InvDuePeriod + "," + 
-                inv.CustRemark2 + "," + inv.Plus1Name + "," + inv.Plus1 + ") " +
+                inv.dateCreate + "," + inv.StatusInv + "," + inv.InvDuePeriod + "," +
+                inv.CustRemark2 + "," + inv.Plus1Name + "," + inv.Plus1 + "," + inv.YearId + ") " +
                 "Values('" + p.Id + "','" + p.Active + "'," + NumberNull1(p.Amount.Replace(",", "")) + "," +
                 NumberNull1(p.AmountDiscount.Replace(",", "")) + ",'" + p.InvDate + "','" + p.InvNumber + "','" +
                 p.CustAddress + "','" + p.CustEmail + "','" + p.CustFax + "','" +
@@ -198,7 +200,7 @@ namespace Cemp.objdb
                 NumberNull1(p.Total.Replace(",", "")) + ",'" + p.userCancel + "','" + p.userCreate + "','" +
                 p.userModi + "'," + NumberNull1(p.Vat.Replace(",", "")) + "," + NumberNull1(p.VatRate.Replace(",", "")) + "," +
                 p.dateGenDB + ",'" + p.StatusInv + "','" + p.InvDuePeriod + "','" +
-                p.CustRemark2 + "','" + p.Plus1Name + "'," + NumberNull1(p.Plus1.Replace(",", "")) + ")";
+                p.CustRemark2 + "','" + p.Plus1Name + "'," + NumberNull1(p.Plus1.Replace(",", "")) + ",'" + p.YearId + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

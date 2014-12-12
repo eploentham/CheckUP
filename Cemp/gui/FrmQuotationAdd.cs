@@ -11,6 +11,7 @@ using System.Text;
 using System.Windows.Forms;
 /*
  * 57.12.09.01 อุยแจ้งว่า อยากให้โปรแกรมสามารถแก้ไข การเรียงข้อมูลในใบเสนอราคาให้
+ * 57.12.09.03 อุยแจ้งว่า ตรงเบอร์โทรขอพนักงาน ให้แสดงเป็นเบอร์ มือถือ
  * */
 
 namespace Cemp.gui
@@ -1125,7 +1126,8 @@ namespace Cemp.gui
             {
                 Staff sf = cc.sfdb.selectByPk(cc.getValueCboItem(cboStaff));
                 txtStaffEmail.Text = sf.Email;
-                txtStaffTel.Text = sf.Tele;
+                //txtStaffTel.Text = sf.Tele;   //57.12.09.03 -
+                txtStaffTel.Text = sf.Mobile;   //57.12.09.03 +
             }
         }
         private void mnuCost_Click(object sender, EventArgs e)

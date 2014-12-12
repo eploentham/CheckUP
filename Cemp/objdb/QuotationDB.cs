@@ -77,6 +77,8 @@ namespace Cemp.objdb
             qu.userModi = "user_modi";
             qu.PathPicConfirm = "pathpicconfirm";
 
+            qu.YearId = "year_id";
+
             qu.table = "t_quotation";
             qu.pkField = "quo_id";
         }
@@ -140,6 +142,7 @@ namespace Cemp.objdb
 
             item.PathPicConfirm = dt.Rows[0][qu.PathPicConfirm].ToString();
             item.PathPicConfirm = item.PathPicConfirm.Replace("@","\\");
+            item.YearId = dt.Rows[0][qu.YearId].ToString();
 
             return item;
         }
@@ -336,7 +339,9 @@ namespace Cemp.objdb
                 qu.StaffName + "," + qu.StaffTel + "," + qu.StatusQuo + "," +
                 qu.Total + "," + qu.Vat + "," + qu.VatRate + "," +
                 qu.StaffApproveId + "," + qu.StaffApproveName + "," + qu.Discount + "," +
-                qu.QuoNumberCnt + "," + qu.StatusMOU + "," + qu.Remark4 + "," + qu.Remark5 + "," + qu.Remark6 + "," + qu.Remark7 + "," + qu.dateCreate + ") " +
+                qu.QuoNumberCnt + "," + qu.StatusMOU + "," + qu.Remark4 + "," + 
+                qu.Remark5 + "," + qu.Remark6 + "," + qu.Remark7 + "," + 
+                qu.dateCreate + "," + qu.YearId + ") " +
                 "Values('" + p.Id + "'," + NumberNull1(p.Amount) + "," + NumberNull1(p.AmountDiscount) + ",'" +
                 p.CompAddress1 + "','" + p.CompAddress2 + "','" + p.CompId + "','" +
                 p.CompName + "','" + p.CompTaxId + "','" + p.ContactName + "','" +
@@ -351,7 +356,9 @@ namespace Cemp.objdb
                 p.StaffName + "','" + p.StaffTel + "','" + p.StatusQuo + "'," +
                 NumberNull1(p.Total) + "," + NumberNull1(p.Vat) + "," + NumberNull1(p.VatRate) + ",'" +
                 p.StaffApproveId + "','" + p.StaffApproveName + "'," + NumberNull1(p.Discount) + "," +
-                NumberNull1(p.QuoNumberCnt) + ",'" + p.StatusMOU + "','" + p.Remark4 + "','" + p.Remark5 + "','" + p.Remark6 + "','" + p.Remark7 + "'," + p.dateGenDB + ")";
+                NumberNull1(p.QuoNumberCnt) + ",'" + p.StatusMOU + "','" + p.Remark4 + "','" + 
+                p.Remark5 + "','" + p.Remark6 + "','" + p.Remark7 + "'," + 
+                p.dateGenDB + ",'" + p.YearId + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

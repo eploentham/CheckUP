@@ -7,6 +7,6 @@ namespace Cemp.object1
 {
     public class ResultItem:Persistent
     {
-        public String Id = "", ResultId = "", RowNumber = "", PlaceMeasure = "", ResultMin = "", ResultMax = "", ResultValue = "", Active = "";
+        public String Id = "", ResultId = "", RowNumber = "", PlaceMeasure = "", ResultMin = "", ResultMax = "", ResultValue = "", Active = "", ItemCode="";
     }
 }

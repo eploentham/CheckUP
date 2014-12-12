@@ -78,6 +78,8 @@
             this.btnUnActive = new System.Windows.Forms.Button();
             this.ChkUnActive = new System.Windows.Forms.RadioButton();
             this.chkActive = new System.Windows.Forms.RadioButton();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtDatePeriod = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
@@ -274,6 +276,8 @@
             // 
             this.groupBox21.Controls.Add(this.txtMOUNumber);
             this.groupBox21.Controls.Add(this.label14);
+            this.groupBox21.Controls.Add(this.label9);
+            this.groupBox21.Controls.Add(this.cboDocType);
             this.groupBox21.Controls.Add(this.btnMOUAdd);
             this.groupBox21.Controls.Add(this.cboMOU);
             this.groupBox21.Controls.Add(this.label16);
@@ -571,7 +575,7 @@
             // 
             this.cboDocType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.cboDocType.FormattingEnabled = true;
-            this.cboDocType.Location = new System.Drawing.Point(472, 174);
+            this.cboDocType.Location = new System.Drawing.Point(471, 9);
             this.cboDocType.Margin = new System.Windows.Forms.Padding(2);
             this.cboDocType.Name = "cboDocType";
             this.cboDocType.Size = new System.Drawing.Size(76, 25);
@@ -583,7 +587,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label9.Location = new System.Drawing.Point(440, 181);
+            this.label9.Location = new System.Drawing.Point(439, 16);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(77, 17);
@@ -643,14 +647,34 @@
             this.chkActive.UseVisualStyleBackColor = true;
             this.chkActive.Click += new System.EventHandler(this.chkActive_Click);
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label17.Location = new System.Drawing.Point(299, 181);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(113, 17);
+            this.label17.TabIndex = 69;
+            this.label17.Text = "วันที่เก็บตัวอย่าง... :";
+            // 
+            // txtDatePeriod
+            // 
+            this.txtDatePeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtDatePeriod.Location = new System.Drawing.Point(409, 176);
+            this.txtDatePeriod.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDatePeriod.Name = "txtDatePeriod";
+            this.txtDatePeriod.Size = new System.Drawing.Size(179, 23);
+            this.txtDatePeriod.TabIndex = 70;
+            // 
             // FrmMOUAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1267, 741);
+            this.Controls.Add(this.txtDatePeriod);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.cboDocType);
             this.Controls.Add(this.txtMOUName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dtpDateMOU);
@@ -732,5 +756,7 @@
         private System.Windows.Forms.TextBox txtMOUNumber;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ProgressBar pB1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtDatePeriod;
     }
 }

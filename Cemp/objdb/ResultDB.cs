@@ -30,6 +30,10 @@ namespace Cemp.objdb
             rs.Measurement = "measurement";
             rs.MethodMeasure = "method_measure";
             rs.Summary = "summary";
+            rs.MouNumber = "mou_number";
+            rs.MouNumberCnt = "mou_number_cnt";
+
+            rs.YearId = "year_id";
 
             rs.pkField = "result_id";
             rs.table = "t_result";
@@ -46,6 +50,9 @@ namespace Cemp.objdb
             item.Measurement = dt.Rows[0][rs.Measurement].ToString();
             item.MethodMeasure = dt.Rows[0][rs.MethodMeasure].ToString();
             item.Summary = dt.Rows[0][rs.Summary].ToString();
+            item.MouNumber = dt.Rows[0][rs.MouNumber].ToString();
+            item.MouNumberCnt = dt.Rows[0][rs.MouNumberCnt].ToString();
+            item.YearId = dt.Rows[0][rs.YearId].ToString();
             
             return item;
         }
@@ -88,10 +95,12 @@ namespace Cemp.objdb
 
             sql = "Insert Into " + rs.table + " (" + rs.pkField + "," + rs.Active + "," + rs.CustAddressT + "," +
                 rs.CustId + "," + rs.CustNameT + "," + rs.Machinery + "," +
-                rs.MeasureDate + "," + rs.Measurement + "," + rs.MethodMeasure + "," + rs.Summary + ") " +
+                rs.MeasureDate + "," + rs.Measurement + "," + rs.MethodMeasure + "," +
+                rs.Summary + "," + rs.MouNumber + "," + rs.MouNumberCnt + "," + rs.YearId + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.CustAddressT + "','" +
                 p.CustId + "','" + p.CustNameT + "','" + p.Machinery + "','" +
-                p.MeasureDate + "','" + p.Measurement + "','" + p.MethodMeasure + "','" + p.Summary + "')";
+                p.MeasureDate + "','" + p.Measurement + "','" + p.MethodMeasure + "','" +
+                p.Summary + "','" + p.MouNumber + "'," + NumberNull1(p.MouNumberCnt) + ",'" + p.YearId + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -124,7 +133,9 @@ namespace Cemp.objdb
                 rs.MeasureDate + "='" + p.MeasureDate + "', " +
                 rs.Measurement + "='" + p.Measurement + "', " +
                 rs.MethodMeasure + "='" + p.MethodMeasure + "', " +
-                rs.Summary + "='" + p.Summary + "' " +
+                rs.Summary + "='" + p.Summary + "', " +
+                rs.MouNumber + "='" + p.MouNumber + "', " +
+                rs.MouNumberCnt + "=" + NumberNull1(p.MouNumberCnt) + " " +
 
                 "Where " + rs.pkField + "='" + p.Id + "'";
             try
@@ -160,6 +171,25 @@ namespace Cemp.objdb
         {
             String sql = "", chk = "";
             sql = "Delete From " + rs.table;
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
+        private String NumberNull1(String o)
+        {
+            if (o.Equals(""))
+            {
+                return "0";
+            }
+            else
+            {
+                return o;
+            }
+        }
+        public String VoidResult(String rsId)
+        {
+            String sql = "", chk = "";
+            sql = "Update " + rs.table + " Set " + rs.Active + "='3' " +
+                "Where " + rs.pkField + "='" + rsId + "'";
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }

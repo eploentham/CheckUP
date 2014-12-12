@@ -16,32 +16,32 @@ namespace Cemp.gui
         CnviControl cc;
         MOU mo;
         Boolean pageLoad = false;
-        public FrmMOUPlaceRecord(String moId, CnviControl c)
+        public FrmMOUPlaceRecord(String moNumber, CnviControl c)
         {
             cc = c;
             InitializeComponent();
-            initConfig(moId, cc);
+            initConfig(moNumber, cc);
         }
-        private void initConfig(String moId, CnviControl c)
+        private void initConfig(String moNumber, CnviControl c)
         {
             pageLoad = true;
             cc = c;
             mo = new MOU();
-            mo = cc.modb.selectByPk(moId);
-            txtMouNumber.Text = mo.MOUNumberMain+"-"+mo.MOUNumberCnt;
+            //mo = cc.modb.selectByPk(moNumber);
+            txtMouNumber.Text = moNumber;
             //qu = new Quotation();
             //cboMOU = cc.modb.getCboMOUNumber(cboMOU, moNumber);
             //cboQuo = cc.qudb.getCboQuotation(cboQuo);
             cboStaffPlaceRecord = cc.sfdb.getCboStaff(cboStaffPlaceRecord);
             cboStaffAnalysis = cc.sfdb.getCboStaff(cboStaffAnalysis);
-            setControl(moId);
+            setControl(moNumber);
             //cboItem = cc.itdb.getCboItemQuotation(cboItem);
             //setGrd("");
             pageLoad = false;
         }
-        private void setControl(String moId)
+        private void setControl(String moNumber)
         {
-            mo = cc.modb.selectByPk(moId);
+            mo = cc.modb.selectByPk(moNumber);
             cboStaffAnalysis.Text = mo.StaffAnalysisName;
             cboStaffPlaceRecord.Text = mo.StaffPlaceRecordName;
         }
@@ -62,7 +62,8 @@ namespace Cemp.gui
         private void btnPrint_Click(object sender, EventArgs e)
         {
             mo = cc.modb.selectByPk(mo.Id);
-            DataTable dt = cc.moidb.selectByMoId(mo.Id);
+            //DataTable dt = cc.moidb.selectByMoId(mo.Id);
+            DataTable dt = cc.moidb.selectByMoNumberPrint(txtMouNumber.Text);
             //MOU mo = cc.modb.selectByPk(mo.Id);
             mo.ContactName = "เรียน :  " + mo.ContactName;
             mo.CustAddress = "ที่อยู่ :   " + mo.CustAddress;
@@ -74,12 +75,13 @@ namespace Cemp.gui
             mo.StaffQuoName = "ผู้เสนอราคา :  " + mo.StaffQuoName;
             mo.StaffMOUTel = "เบอร์โทร : " + mo.StaffMOUTel + " Mobile : " + mo.StaffMOUMobile;
             mo.StaffMOUEmail = "Email : " + mo.StaffMOUEmail;
-            mo.MOUNumberMain = "เลขที่ : " + mo.MOUNumberMain + "-" + mo.MOUNumberCnt;
+            mo.MOUNumberMain = "เลขที่ : " + txtMouNumber.Text;
             mo.StaffMOUName = "ผู้รับผิดชอบข้อตกลง : "+mo.StaffMOUName;
 
             FrmReport frm = new FrmReport(cc);
             frm.setReportMOUSamplePrint(mo, dt);
             frm.ShowDialog(this);
+            this.Dispose();
         }
     }
 }

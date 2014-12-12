@@ -78,6 +78,8 @@ namespace Cemp.gui
             setLPlace1(moNumber);
             pB1.Visible = false;
             pageLoad = false;
+            btnPrintMou.Enabled = false;
+            btnReceive.Enabled = false;
         }
         private void HideMOU()
         {
@@ -159,7 +161,7 @@ namespace Cemp.gui
             txtStaffMOUEmail.Text = mo.StaffMOUEmail;
             txtStaffMOUMobile.Text = mo.StaffMOUMobile;
             txtStaffMOUTel.Text = mo.StaffMOUTel;
-            //txtDatePeriod.Text = mo.DatePeriod;
+            txtDatePeriod.Text = mo.DatePeriod;
             if (!mo.StaffPlaceRecordPosition.Equals(""))
             {
                 txtStaffPlaceRecordPosition.Text = mo.StaffPlaceRecordPosition;
@@ -230,6 +232,7 @@ namespace Cemp.gui
             mo.userModi = cc.sf.Id;
             mo.MOUName = txtMOUName.Text;
             mo.docType = cc.getValueCboItem(cboDocType);
+            mo.DatePeriod = txtDatePeriod.Text;
         }
         private void setGrd()
         {
@@ -347,6 +350,8 @@ namespace Cemp.gui
                     }
                 }
             }
+            btnPrintMou.Enabled = true;
+            btnReceive.Enabled = true;
         }
         private void setLDate1(String moNumber)
         {
@@ -900,6 +905,8 @@ namespace Cemp.gui
                 setControl(txtMOUNumber.Text);
                 //cellDateTimePicker.Visible = false;
                 mouNew=false;
+                //btnPrintMou.Enabled = true;
+                //btnReceive.Enabled = true;
                 Cursor.Current = cursor;
             }
         }
@@ -998,7 +1005,7 @@ namespace Cemp.gui
         {
             String sql = "";
             //OleDbDataAdapter da = new OleDbDataAdapter();
-            DataTable dt = cc.moidb.selectByMoId(txtMOUId.Text);
+            DataTable dt = cc.moidb.selectByMoNumberPrint(cboMOU.Text);
             MOU mo = cc.modb.selectByPk(txtMOUId.Text);
             mo.ContactName = "เรียน :  " + mo.ContactName;
             mo.CustAddress = "ที่อยู่ :   " + mo.CustAddress;
@@ -1006,7 +1013,7 @@ namespace Cemp.gui
             mo.CustEmail = " Email : " + mo.CustEmail;
             mo.Line1 = cc.cp.mouLine1;
             mo.QuoNumber = "เลขที่ : " + mo.MOUNumberMain + "-" + mo.MOUNumberCnt;
-            mo.DatePeriod = "วันที่ :  " + mo.DatePeriod;
+            //mo.DatePeriod = "วันที่ :  " + mo.DatePeriod;
             mo.StaffQuoName = "ผู้เสนอราคา :  " + mo.StaffQuoName;
             mo.StaffMOUTel = "เบอร์โทร : " + mo.StaffMOUTel + " Mobile : " + mo.StaffMOUMobile;
             mo.StaffMOUEmail = "Email : " + mo.StaffMOUEmail;
@@ -1019,7 +1026,7 @@ namespace Cemp.gui
 
         private void btnReceive_Click(object sender, EventArgs e)
         {
-            FrmMOUPlaceRecord frm = new FrmMOUPlaceRecord(txtMOUId.Text,cc);
+            FrmMOUPlaceRecord frm = new FrmMOUPlaceRecord(cboMOU.Text, cc);
             frm.ShowDialog(this);
 
         }

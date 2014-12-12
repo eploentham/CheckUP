@@ -69,6 +69,7 @@ namespace Cemp.objdb
             mo.MOUDate = "mou_date";
             mo.MOUName = "mou_name";
             mo.docType = "doc_type";
+            mo.YearId = "year_id";
 
             mo.pkField = "mou_id";
             mo.table = "t_mou";
@@ -124,6 +125,7 @@ namespace Cemp.objdb
             item.MOUDate = dt.Rows[0][mo.MOUDate].ToString();
             item.MOUName = dt.Rows[0][mo.MOUName].ToString();
             item.docType = dt.Rows[0][mo.docType].ToString();
+            item.YearId = dt.Rows[0][mo.YearId].ToString();
             
             return item;
         }
@@ -307,7 +309,8 @@ namespace Cemp.objdb
                 mo.dateCreate + "," + mo.dateModi + "," + mo.userCancel + "," +
                 mo.userCreate + "," + mo.userModi + "," + mo.StaffPlaceRecordId + "," +
                 mo.StaffPlaceRecordName + "," + mo.StaffAnalysisId + "," + mo.StaffAnalysisName + "," +
-                mo.StaffPlaceRecordPosition + "," + mo.StatusReceiveSample + "," + mo.StatusBill + "," + mo.MOUName + "," + mo.docType + ") " +
+                mo.StaffPlaceRecordPosition + "," + mo.StatusReceiveSample + "," + mo.StatusBill + "," +
+                mo.MOUName + "," + mo.docType + "," + mo.YearId + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.CompAddress1 + "','" +
                 p.CompAddress2 + "','" + p.CompId + "','" + p.CompName + "','" +
                 p.CompTaxId + "','" + p.ContactName + "','" + p.CustAddress + "','" +
@@ -322,7 +325,8 @@ namespace Cemp.objdb
                 p.dateCreate + ",'" + p.dateModi + "','" + p.userCancel + "','" +
                 p.userCreate + "','" + p.userModi + "','" + p.StaffPlaceRecordId + "','" +
                 p.StaffPlaceRecordName + "','" + p.StaffAnalysisId + "','" + p.StaffAnalysisName + "','" +
-                p.StaffPlaceRecordPosition + "','" + p.StatusReceiveSample + "','" + p.StatusBill + "','" + p.MOUName + "','" + p.docType + "')";
+                p.StaffPlaceRecordPosition + "','" + p.StatusReceiveSample + "','" + p.StatusBill + "','" +
+                p.MOUName + "','" + p.docType + "','" + p.YearId + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

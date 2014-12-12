@@ -1376,3 +1376,73 @@ Parameter name: length
 24/11/2557 10:24->rpt.setReportQuotation OK 
 24/11/2557 10:24->rpt.setReportQuotation OK LoadD:\source\CNVI\CNVI.Cemp\Cemp\report\QuotationPrint1.rpt
 24/11/2557 10:24->rpt.setReportQuotation OK SetDataSource
+9/12/2557 17:22->FrmReport setReport D:\source\CNVI\CNVI.Cemp\Cemp\report\ItemList.rpt
+9/12/2557 17:22->rpt.SetParameterValue Error โหลดรายงานไม่สำเร็จ
+9/12/2557 17:22->rpt.setReportMOU OK 
+9/12/2557 17:22->rpt.setReportMOU Error โหลดรายงานไม่สำเร็จ
+9/12/2557 21:15->rpt.setReportMOU OK 
+9/12/2557 21:18->rpt.setReportMOU OK 
+9/12/2557 21:18->rpt.setReportMOU Error โหลดรายงานไม่สำเร็จ
+9/12/2557 21:19->rpt.setReportMOU OK 
+9/12/2557 21:19->rpt.setReportMOU OK SetDataSource
+9/12/2557 21:24->rpt.setReportMOU OK 
+9/12/2557 21:24->rpt.setReportMOU OK SetDataSource
+9/12/2557 21:27->rpt.setReportMOU OK 
+9/12/2557 21:27->rpt.setReportMOU OK SetDataSource
+9/12/2557 21:33->rpt.setReportMOU OK 
+9/12/2557 21:33->rpt.setReportMOU OK SetDataSource
+10/12/2557 12:36->rpt.setReportMOUSamplePrint OK 
+10/12/2557 12:36->rpt.setReportMOUSamplePrint OK SetDataSource
+10/12/2557 13:51->rpt.setReportMOUSamplePrint OK 
+10/12/2557 13:51->rpt.setReportMOUSamplePrint OK SetDataSource
+10/12/2557 13:52->rpt.setReportMOUSamplePrint OK 
+10/12/2557 13:52->rpt.setReportMOUSamplePrint OK SetDataSource
+10/12/2557 14:02->rpt.setReportMOUSamplePrint OK 
+10/12/2557 14:02->rpt.setReportMOUSamplePrint OK SetDataSource
+10/12/2557 14:03->rpt.setReportMOUSamplePrint OK 
+10/12/2557 14:03->rpt.setReportMOUSamplePrint OK SetDataSource
+10/12/2557 14:04->rpt.setReportMOUSamplePrint OK 
+10/12/2557 14:04->rpt.setReportMOUSamplePrint OK SetDataSource
+10/12/2557 14:21->rpt.setReportMOUSamplePrint OK 
+10/12/2557 14:21->rpt.setReportMOUSamplePrint OK SetDataSource
+10/12/2557 17:26->rpt.setReportResult OK 
+10/12/2557 17:26->rpt.setReportResult OK SetDataSource
+10/12/2557 17:26->rpt.setReportResult Error ดัชนีไม่ถูกต้อง (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+10/12/2557 17:26->rpt.setReportResult OK 
+10/12/2557 17:26->rpt.setReportResult OK SetDataSource
+10/12/2557 17:26->rpt.setReportResult Error ดัชนีไม่ถูกต้อง (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+10/12/2557 17:26->rpt.setReportResult OK 
+10/12/2557 17:26->rpt.setReportResult OK SetDataSource
+10/12/2557 17:27->rpt.setReportResult Error ดัชนีไม่ถูกต้อง (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+10/12/2557 17:27->rpt.setReportResult Error ดัชนีไม่ถูกต้อง (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+10/12/2557 17:27->rpt.setReportResult OK 
+10/12/2557 17:27->rpt.setReportResult OK SetDataSource
+10/12/2557 17:27->rpt.setReportResult Error ดัชนีไม่ถูกต้อง (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+10/12/2557 17:30->rpt.setReportResult OK 
+10/12/2557 17:30->rpt.setReportResult OK SetDataSource
+11/12/2557 15:34->rpt.setReportMOU OK 
+11/12/2557 15:34->rpt.setReportMOU OK SetDataSource
+11/12/2557 15:34->rpt.setReportMOU OK 
+11/12/2557 15:34->rpt.setReportMOU OK SetDataSource
+11/12/2557 15:39->rpt.setReportMOU OK 
+11/12/2557 15:39->rpt.setReportMOU OK SetDataSource
+11/12/2557 15:41->rpt.setReportMOU OK 
+11/12/2557 15:41->rpt.setReportMOU OK SetDataSource
+11/12/2557 15:42->rpt.setReportMOU OK 
+11/12/2557 15:43->rpt.setReportMOU OK SetDataSource
+11/12/2557 15:47->rpt.setReportMOU OK 
+11/12/2557 15:47->rpt.setReportMOU OK SetDataSource
+11/12/2557 15:47->rpt.setReportMOU OK 
+11/12/2557 15:47->rpt.setReportMOU OK SetDataSource
+11/12/2557 15:49->rpt.setReportMOU OK 
+11/12/2557 15:49->rpt.setReportMOU OK SetDataSource
+11/12/2557 15:49->rpt.setReportMOU OK 
+11/12/2557 15:49->rpt.setReportMOU OK SetDataSource
+11/12/2557 15:49->rpt.setReportMOU OK 
+11/12/2557 15:49->rpt.setReportMOU OK SetDataSource
+11/12/2557 15:50->rpt.setReportMOU OK 
+11/12/2557 15:50->rpt.setReportMOU OK SetDataSource
+11/12/2557 15:51->rpt.setReportMOU OK 
+11/12/2557 15:51->rpt.setReportMOU OK SetDataSource
+11/12/2557 15:53->rpt.setReportMOU OK 
+11/12/2557 15:53->rpt.setReportMOU OK SetDataSource

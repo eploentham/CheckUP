@@ -16,8 +16,8 @@ namespace Cemp.gui
         CnviControl cc;
         Boolean pageLoad = false;
         Result rs;
-        int colRow = 0, colPlaceMeasure = 1, colResultMin = 2, colResultMax = 3, colResultValue=4, colId = 5, colDel=6;
-        int colCnt = 7;
+        int colRow = 0, colItemCode=1, colPlaceMeasure = 2, colResultMin = 3, colResultMax = 4, colResultValue=5, colId = 6, colDel=7;
+        int colCnt = 8;
         public FrmResultAdd(String rsId, CnviControl c)
         {
             InitializeComponent();
@@ -29,7 +29,8 @@ namespace Cemp.gui
             pageLoad = true;
             rs = new Result();
             dtpDateResult.Format = DateTimePickerFormat.Short;
-            cboCust = cc.cudb.getCboCustomer(cboCust);
+            cboCust = cc.moidb.getCboCustomerMOUnoResult(cboCust);
+            
             setControl(rsId);
             //setGrd();
             pageLoad = false;
@@ -38,8 +39,10 @@ namespace Cemp.gui
         {
             rs = cc.rsdb.selectByPk(rsId);
             txtResultId.Text = rs.Id;
+            cboCust.Text = rs.CustNameT;
+            cboMOU.Text = rs.MouNumber+"-"+rs.MouNumberCnt;
             txtCustAddress.Text = rs.CustAddressT;
-            cboCust.Text = cc.getTextCboItem(cboCust, rs.CustId);
+            //cboCust.Text = cc.getTextCboItem(cboCust, rs.CustId);
             txtMachinery.Text = rs.Machinery;
             cboMachinery.Text = cc.getTextCboItem(cboMachinery, rs.Machinery);
             txtMeasurement.Text = rs.Measurement;
@@ -62,7 +65,12 @@ namespace Cemp.gui
                 }
                 
             }
-            
+            if (!rs.MouNumber.Equals(""))
+            {
+                cboMOU.Enabled = false;
+                cboCust.Enabled = false;
+            }
+            btnUnActive.Visible = false;
             setGrd(rsId);
         }
         private void getResult()
@@ -76,6 +84,12 @@ namespace Cemp.gui
             rs.Measurement = txtMeasurement.Text;
             rs.MethodMeasure = txtCompName.Text;
             rs.Summary = txtSummary.Text;
+            String[] tmp = cboMOU.Text.Split('-');
+            if (tmp.Length > 0)
+            {
+                rs.MouNumber = tmp[0];
+                rs.MouNumberCnt = tmp[1];
+            }
         }
         private void setGrd(String rsId)
         {
@@ -121,7 +135,7 @@ namespace Cemp.gui
                     dgvResult[colPlaceMeasure, i].Value = dt.Rows[i][cc.rsidb.rsi.PlaceMeasure].ToString();
                     dgvResult[colResultMin, i].Value = dt.Rows[i][cc.rsidb.rsi.ResultMin].ToString();
                     dgvResult[colResultMax, i].Value = dt.Rows[i][cc.rsidb.rsi.ResultMax].ToString();
-                    //dgvAdd[colPrice, i].Value = String.Format("{0:#,###,###.00}", dt.Rows[i][cc.quidb.qui.PriceSale]);
+                    dgvResult[colItemCode, i].Value = dt.Rows[i][cc.rsidb.rsi.ItemCode].ToString();
                     dgvResult[colResultValue, i].Value = dt.Rows[i][cc.rsidb.rsi.ResultValue].ToString();
                     dgvResult[colId, i].Value = dt.Rows[i][cc.rsidb.rsi.Id].ToString();
 
@@ -134,57 +148,85 @@ namespace Cemp.gui
                 }
             }
         }
+        private void setGrdMOU(String moiNumber)
+        {
+            dgvResult.ColumnCount = colCnt;
+
+            dgvResult.RowCount = 1;
+            dgvResult.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvResult.Columns[colRow].Width = 50;
+            dgvResult.Columns[colPlaceMeasure].Width = 350;
+            dgvResult.Columns[colResultMin].Width = 80;
+            dgvResult.Columns[colResultMax].Width = 80;
+            dgvResult.Columns[colResultValue].Width = 80;
+            dgvResult.Columns[colId].Width = 350;
+            dgvResult.Columns[colDel].Width = 120;
+
+            dgvResult.Columns[colRow].HeaderText = "ลำดับ";
+            dgvResult.Columns[colPlaceMeasure].HeaderText = "สถานที่ตรวจวัด";
+            dgvResult.Columns[colResultMin].HeaderText = "Min";
+            dgvResult.Columns[colResultMax].HeaderText = "Max";
+            //dgvResult.Columns[colPrice].HeaderText = "Price";
+            dgvResult.Columns[colResultValue].HeaderText = "value";
+            dgvResult.Columns[colId].HeaderText = " ";
+            dgvResult.Columns[colDel].HeaderText = " ";
+            DataTable dt = new DataTable();
+
+            dt = cc.moidb.selectByMoNumber1(moiNumber, "");
+
+            Item it = new Item();
+            if (dt.Rows.Count > 0)
+            {
+                dgvResult.RowCount = dt.Rows.Count + 1;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    it = cc.getItemByList(dt.Rows[i][cc.moidb.moi.ItemId].ToString());
+                    dgvResult[colRow, i].Value = (i + 1);
+                    dgvResult[colItemCode, i].Value = it.Code;
+                    dgvResult[colItemCode, i].ToolTipText = it.NameT;
+                    dgvResult[colPlaceMeasure, i].Value = dt.Rows[i][cc.moidb.moi.PlaceRecord].ToString();
+                    dgvResult[colResultMin, i].Value = it.ValueMin;
+                    dgvResult[colResultMax, i].Value = it.ValueMax;
+                    //dgvAdd[colPrice, i].Value = String.Format("{0:#,###,###.00}", dt.Rows[i][cc.quidb.qui.PriceSale]);
+                    dgvResult[colResultValue, i].Value = "";
+                    dgvResult[colId, i].Value = "";
+
+                    dgvResult[colDel, i].Value = "";
+                    //dgvResult[colEdit, i].Value = "";
+                    if ((i % 2) != 0)
+                    {
+                        dgvResult.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                    }
+                    if ((i % 2) != 0)
+                    {
+                        dgvResult.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
+                    }
+
+                }
+            }
+        }
         private void setResize()
         {
-            dgvResult.Left = this.Width - dgvResult.Width - 80;
+            dgvResult.Left = groupBox1.Width + 40;
             dgvResult.Height = this.Height - 150;
+            dgvResult.Width = this.Width - groupBox1.Width - 100;
             label7.Left = dgvResult.Left;
             btnSave.Left = this.Width - 300;
             btnPrint.Left = btnSave.Left + btnSave.Width + 30;
-            //dgvAdd.Height = this.Height - dgvAdd.Top - 150 + 12 - groupBox3.Height;
 
-            //groupBox2.Left = this.Width - groupBox2.Width - btnSave.Width - 150;
-
-            //btnSave.Left = groupBox2.Left + groupBox2.Width + 20;
-            //btnPrintInv.Left = btnSave.Left;
-            //if (biNew)
-            //{
-            //    dgvAdd.Left = dgvView.Width + 20;
-            //}
-            //else
-            //{
-            //    dgvAdd.Left = dgvView.Left;
-            //}
-
-            //dgvAdd.Width = (this.Width - dgvAdd.Left - 50);
-            //groupBox3.Left = dgvAdd.Left + dgvAdd.Width - groupBox3.Width;
-            //groupBox3.Top = groupBox2.Height + dgvAdd.Height + 20;
-            //groupBox1.Top = groupBox3.Top;
-            //groupBox1.Left = groupBox3.Left - groupBox1.Width - 20;
         }
         private void FrmResultAdd_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void cboCust_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (!pageLoad)
-            {
-                Customer cu;
-                cu = cc.cudb.selectByPk(cc.getValueCboItem(cboCust));
-                txtCustAddress.Text = cu.AddressT;
-                txtCompName.Text = cc.cp.NameT;
-            }
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             String rsId = "", datePlaceRecordTemp = "";
             int rowOld = 0, row = 0;
-            if (cboCust.Text.Equals(""))
+            if (cboMOU.Text.Equals(""))
             {
-                MessageBox.Show("ไม่เลือก บริษัท", "ป้อนข้อมูลไม่ครบ");
+                MessageBox.Show("ไม่เลือก ข้อตกลง", "ป้อนข้อมูลไม่ครบ");
                 return;
             }
             if (txtCompName.Text.Equals(""))
@@ -243,13 +285,13 @@ namespace Cemp.gui
                         {
                             rsi.Id = "";
                         }
-                        
+                        //rsi.Id = dgvResult[colResultMax, i].Value.ToString();
                         rsi.Active = "1";
                         rsi.PlaceMeasure = dgvResult[colPlaceMeasure, i].Value.ToString();
                         rsi.ResultId = rsId;
                         rsi.ResultMax = dgvResult[colResultMax, i].Value.ToString();
                         rsi.ResultMin = dgvResult[colResultMin, i].Value.ToString();
-                        //rsi.ResultValue = rsId;
+                        rsi.ItemCode = dgvResult[colItemCode, i].Value.ToString();
                         rsi.ResultValue = dgvResult[colResultValue, i].Value.ToString();
 
                         if ((dgvResult[colDel, i].Value != null) && dgvResult[colDel, i].Value.ToString().Equals("1"))
@@ -308,6 +350,56 @@ namespace Cemp.gui
             frm.setReportResult(rs1, dt);
             frm.ShowDialog(this);
             Cursor.Current = cursor;
+        }
+
+        private void cboCust_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!pageLoad)
+            {
+                cboMOU = cc.moidb.getCboMOUNumbernoResult(cboMOU, cc.getValueCboItem(cboCust));
+            }
+        }
+
+        private void cboMOU_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!pageLoad)
+            {
+                setGrdMOU(cc.getValueCboItem(cboMOU));
+            }
+        }
+
+        private void chkActive_Click(object sender, EventArgs e)
+        {
+            if (chkActive.Checked)
+            {
+                btnUnActive.Visible = false;
+            }
+            else
+            {
+
+            }
+        }
+
+        private void ChkUnActive_Click(object sender, EventArgs e)
+        {
+            if (chkActive.Checked)
+            {
+                btnUnActive.Visible = true;
+            }
+            else
+            {
+
+            }
+        }
+
+        private void btnUnActive_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("ต้องการยกเลิก", "ยกเลิก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                //cc.modb.VoidMOU(txtMOUId.Text);
+                cc.rsdb.VoidResult(txtResultId.Text);
+                this.Dispose();
+            }
         }
     }
 }

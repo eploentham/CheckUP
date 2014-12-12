@@ -8,6 +8,7 @@ using System.Windows.Forms;
 /*
  * 
  * 57.12.09.02  ให้สามารถ รวมsample
+ * 57.12.11.01 เปาแจ้งว่า  ใบข้อตกลง ควรเรียงตาม สถานที่เก็บ
  * */
 namespace Cemp.objdb
 {
@@ -62,6 +63,8 @@ namespace Cemp.objdb
             moi.SampleOld = "sample_old";
             moi.StatusMerge = "status_merge";
             moi.MergeId = "mou_item_id_merge";
+            moi.StatusBill = "status_bill";
+            moi.StatusResult = "status_result";
 
             moi.pkField = "mou_item_id";
             moi.table = "t_mou_item";
@@ -108,6 +111,9 @@ namespace Cemp.objdb
             item.MergeId = dt.Rows[0][moi.MergeId].ToString();
             item.SampleOld = dt.Rows[0][moi.SampleOld].ToString();
 
+            item.StatusBill = dt.Rows[0][moi.StatusBill].ToString();
+            item.StatusResult = dt.Rows[0][moi.StatusResult].ToString();
+
             return item;
         }
         public DataTable selectAll()
@@ -139,6 +145,18 @@ namespace Cemp.objdb
             String sql = "";
 
             sql = "Select * From " + moi.table + " Where " + moi.MOUId + "='" + moId + "' Order By "+moi.RowNumber;
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectByMoNumberPrint(String moNumber)
+        {
+            //MOUItem item = new MOUItem();
+            String sql = "";
+            String[] tmp = moNumber.Split('-');
+            //sql = "Select * From " + moi.table + " Where " + moi.MOUNumber + "='" + tmp[0] + "' and " + moi.MOUNumberCnt + " =" + tmp[1] + " and " + moi.StatusMerge + " in ('0','2') Order By " + moi.RowNumber;     //57.12.11.01 -
+            sql = "Select * From " + moi.table + " Where " + moi.MOUNumber + "='" + tmp[0] + "' and " + moi.MOUNumberCnt + " =" + tmp[1] + " and " + moi.StatusMerge + " in ('0','2') Order By " + moi.PlaceRecord+","+moi.RowNumber;       //57.12.11.01 +
             //dt = conn.selectData(sql);
             DataTable dt = conn.selectData(sql);
 
@@ -319,7 +337,7 @@ namespace Cemp.objdb
                 moi.ItemGroupSort + "," + moi.ItemGroupId + "," + moi.DatePlaceRecord + "," +
                 moi.MOUNumber + "," + moi.MOUNumberCnt + "," + moi.PriceCost + "," +
                 moi.PriceSale + "," + moi.Amount + "," + moi.Discount + "," +
-                moi.MOUNumberMain + "," + moi.ItemType + "," + moi.TempSave + "," + moi.StatusMerge + "," + moi.MergeId + "," + moi.SampleOld + ") " +
+                moi.MOUNumberMain + "," + moi.ItemType + "," + moi.TempSave + "," + moi.StatusMerge + "," + moi.MergeId + "," + moi.SampleOld + "," + moi.StatusBill + "," + moi.StatusResult + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.ItemDescription + "','" +
                 p.ItemId + "','" + p.MethodDescription + "','" + p.MethodId + "','" +
                 p.MOUId + "','" + p.PlaceRecord + "','" + p.RowNumber + "','" +
@@ -327,7 +345,7 @@ namespace Cemp.objdb
                 p.ItemGroupSort + "','" + p.ItemGroupId + "','" + p.DatePlaceRecord + "','" +
                 p.MOUNumber + "'," + NumberNull1(p.MOUNumberCnt) + "," + NumberNull1(p.PriceCost) + "," +
                 NumberNull1(p.PriceSale) + "," + NumberNull1(p.Amount) + "," + NumberNull1(p.Discount) + ",'" +
-                p.MOUNumberMain + "','" + p.ItemType + "','0','" + p.StatusMerge + "','" + p.MergeId + "','" + p.SampleOld + "')";
+                p.MOUNumberMain + "','" + p.ItemType + "','0','" + p.StatusMerge + "','" + p.MergeId + "','" + p.SampleOld + "','0','0')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -430,6 +448,34 @@ namespace Cemp.objdb
             //}
             return dt;
         }
+        public DataTable selectCustomerNoBill()
+        {
+            String sql = "";
+
+            sql = "Select Distinct mo.cust_name as cust_name From t_mou as mo left Join " + moi.table + " as moi on mo.mou_id = moi."+moi.MOUId+
+                " Where moi." + moi.StatusBill + "='0' and moi." + moi.StatusResult + " = '1' and moi." + moi.Active + "='1'";
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+            //if (dt.Rows.Count > 0)
+            //{
+            //    item = setData(item, conn.dt);
+            //}
+            return dt;
+        }
+        public DataTable selectCustomerNoResult()
+        {
+            String sql = "";
+
+            sql = "Select Distinct mo.cust_name as cust_name, mo.cust_id From t_mou as mo left Join " + moi.table + " as moi on mo.mou_id = moi." + moi.MOUId +
+                " Where moi." + moi.StatusResult + " = '0' and moi." + moi.Active + "='1'";
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+            //if (dt.Rows.Count > 0)
+            //{
+            //    item = setData(item, conn.dt);
+            //}
+            return dt;
+        }
         public ComboBox getCboMOUNumber(ComboBox c, String mouNumber)
         {
             ComboBoxItem item = new ComboBoxItem();
@@ -457,6 +503,44 @@ namespace Cemp.objdb
             //    item = setData(item, conn.dt);
             //}
             return dt;
+        }
+        public DataTable selectByCustName(String custId)
+        {
+            String sql = "";
+
+            sql = "Select Distinct moi." + moi.MOUNumber + " as num, moi." + moi.MOUNumberCnt + " as cnt From t_mou as mo left Join " + moi.table + " as moi on mo.mou_id = moi." + moi.MOUId +" "+
+                "Where mo.cust_id = '" + custId + "' and " + moi.Active + "='1'";
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+            //if (dt.Rows.Count > 0)
+            //{
+            //    item = setData(item, conn.dt);
+            //}
+            return dt;
+        }
+        public ComboBox getCboMOUNumbernoResult(ComboBox c, String custName)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectByCustName(custName);
+            c.Items.Clear();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                if (!dt.Rows[i]["num"].ToString().Equals(""))
+                {
+                    item.Value = dt.Rows[i]["num"].ToString() + "-" + dt.Rows[i]["cnt"].ToString();
+                    item.Text = dt.Rows[i]["num"].ToString() + "-" + dt.Rows[i]["cnt"].ToString();
+                }
+                else
+                {
+                    item.Value = "xxxxx";
+                    item.Text = "xxxxx";
+                }
+                c.Items.Add(item);
+                //c.Items.Add(new );
+            }
+            //c.SelectedItem = item;
+            return c;
         }
         public ComboBox getCboMOUNumber1(ComboBox c, String mouNumber)
         {
@@ -704,6 +788,76 @@ namespace Cemp.objdb
                 chk = conn.ExecuteNonQuery(sql);
 
             return chk;
+        }
+        /*
+         * 
+         **/
+        public String UpdateStatusBill(String moNumber)
+        {
+            String sql = "", chk = "";
+            String[] tmp = moNumber.Split('-');
+            if (tmp.Length > 0)
+            {
+                sql = "Update " + moi.table + " Set " + moi.StatusBill + "='1' " +
+                "Where " + moi.MOUNumber + "='" + tmp[0] + "' and " + moi.MOUNumberCnt + " ='" + tmp[1] + "' ";
+                chk = conn.ExecuteNonQuery(sql);
+
+            }
+            return chk;
+        }
+        /*
+         * 
+         **/
+        public String UpdateStatusResult(String moNumber)
+        {
+            String sql = "", chk = "";
+            String[] tmp = moNumber.Split('-');
+            if (tmp.Length > 0)
+            {
+                sql = "Update " + moi.table + " Set " + moi.StatusResult + "='1' " +
+                "Where " + moi.MOUNumber + "='" + tmp[0] + "' and " + moi.MOUNumberCnt + " ='" + tmp[1] + "' ";
+                chk = conn.ExecuteNonQuery(sql);
+
+            }
+            return chk;
+        }
+        public ComboBox getCboCustomerMOUnoBill(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectCustomerNoBill();
+            //String aaa = "";
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+
+                item.Text = dt.Rows[i][""].ToString();
+
+                item.Value = dt.Rows[i][""].ToString();
+                //item.Text = dt.Rows[i][cu.NameT].ToString();
+                c.Items.Add(item);
+                //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
+                //c.Items.Add(new );
+            }
+            return c;
+        }
+        public ComboBox getCboCustomerMOUnoResult(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectCustomerNoResult();
+            //String aaa = "";
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+
+                item.Text = dt.Rows[i]["cust_name"].ToString();
+
+                item.Value = dt.Rows[i]["cust_id"].ToString();
+                //item.Text = dt.Rows[i][cu.NameT].ToString();
+                c.Items.Add(item);
+                //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
+                //c.Items.Add(new );
+            }
+            return c;
         }
     }
 }

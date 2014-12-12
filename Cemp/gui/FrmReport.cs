@@ -198,7 +198,7 @@ namespace Cemp
                 rpt.SetParameterValue("compName", cc.cp.NameT);
                 rpt.SetParameterValue("compAddress1", cc.cp.AddressT);
                 rpt.SetParameterValue("compAddress2", "Tel "+cc.cp.Tele+" FAX "+cc.cp.Fax+" Email "+cc.cp.Email);
-                rpt.SetParameterValue("taxid", cc.cp.TaxId);
+                rpt.SetParameterValue("compTaxId", cc.cp.TaxId);
 
                 rpt.SetParameterValue("custName", rs.CustNameT);
                 rpt.SetParameterValue("custAddress", rs.CustAddressT);
@@ -208,8 +208,8 @@ namespace Cemp
 
                 rpt.SetParameterValue("summary", rs.Summary);
                 rpt.SetParameterValue("line1", cc.cp.quLine1);
-                rpt.SetParameterValue("line2", cc.cp.quLine1);
-                rpt.SetParameterValue("line3", cc.cp.quLine1);
+                rpt.SetParameterValue("measuredate", rs.MeasureDate);
+                //rpt.SetParameterValue("line3", cc.cp.quLine1);
                 //rpt.SetParameterValue("datedueperiod", rs.InvDuePeriod);
                 ////rpt.SetParameterValue("duedate", "");
                 //rpt.SetParameterValue("amount", rs.Amount);
@@ -354,7 +354,7 @@ namespace Cemp
                 rpt.SetParameterValue("custEmail", mo.CustEmail);
 
                 rpt.SetParameterValue("mouNumber", mo.MOUNumberMain);
-                rpt.SetParameterValue("dateperiod", "เก็บตัวอย่างระหว่างวันที่ : " + mo.DatePlaceRecord);
+                rpt.SetParameterValue("dateperiod", "เก็บตัวอย่างระหว่างวันที่ : " + mo.DatePeriod);
                 rpt.SetParameterValue("staffmouname", mo.StaffMOUName);
                 //rpt.SetParameterValue("staffName", mo.StaffName);
                 rpt.SetParameterValue("staffTel", mo.StaffMOUTel);
@@ -363,7 +363,7 @@ namespace Cemp
                 rpt.SetParameterValue("contactName", mo.ContactName);
                 
                 rpt.SetParameterValue("line1", mo.Line1);
-                //rpt.SetParameterValue("contactName", qu.ContactName);
+                //rpt.SetParameterValue("dateperiod", mo.DatePeriod);
 
                 rpt.SetParameterValue("line2", mo.StaffPlaceRecordPosition);
                 rpt.SetParameterValue("staffplacerecordname", mo.StaffPlaceRecordName);

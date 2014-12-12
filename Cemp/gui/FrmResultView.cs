@@ -84,8 +84,10 @@ namespace Cemp.gui
         private void btnAdd_Click(object sender, EventArgs e)
         {
             FrmResultAdd frm = new FrmResultAdd("",cc);
+            this.Hide();
             frm.ShowDialog(this);
             setGrd();
+            this.Show();
         }
 
         private void dgvView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -101,9 +103,10 @@ namespace Cemp.gui
 
             FrmResultAdd frm = new FrmResultAdd(dgvView[colId, e.RowIndex].Value.ToString(), cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
+            this.Hide();
             frm.ShowDialog(this);
             setGrd();
-
+            this.Show();
         }
     }
 }

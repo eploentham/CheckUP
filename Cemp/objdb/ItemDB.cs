@@ -53,6 +53,8 @@ namespace Cemp.objdb
             {
                 it.dateGenDB = "Now()";
             }
+            it.ValueMax = "value_max";
+            it.ValueMin = "value_min";
             it.table = "b_item";
             it.pkField = "item_id";
         }
@@ -91,6 +93,9 @@ namespace Cemp.objdb
             item.StatusStock = dt.Rows[0][it.StatusStock].ToString();
 
             item.StatusPrice = dt.Rows[0][it.StatusPrice].ToString();
+
+            item.ValueMax = dt.Rows[0][it.ValueMax].ToString();
+            item.ValueMin = dt.Rows[0][it.ValueMin].ToString();
             return item;
         }
         public DataTable selectAll()
@@ -238,7 +243,8 @@ namespace Cemp.objdb
                 it.dateModi + "," + it.userCancel + "," + it.userCreate + "," +
                 it.userModi + "," + it.PriceCostReal + "," + it.ItemType + "," + 
                 it.CustNameT + "," + it.CustId + "," + it.AnalysisId + "," +
-                it.AnalysisNameT + "," + it.StatusReal + "," + it.StatusStock + "," + it.StatusPrice + ") " +
+                it.AnalysisNameT + "," + it.StatusReal + "," + it.StatusStock + "," + 
+                it.StatusPrice + "," + it.ValueMin + "," + it.ValueMax + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.Code + "','" +
                 p.NameE + "','" + p.NameT + "','" + p.Remark + "'," +
                 NumberNull1(p.PriceCost) + "," + NumberNull1(p.PriceSale) + ",'" + p.ItemGroupId + "','" +
@@ -247,7 +253,8 @@ namespace Cemp.objdb
                 p.dateModi + "','" +p.userCancel + "','" + p.userCreate + "','" +
                 p.userModi + "'," + NumberNull1(p.PriceCostReal) + ",'" + p.ItemType + "','" + 
                 p.CustNameT + "','" + p.CustId + "','" + p.AnalysisId + "','" +
-                p.AnalysisNameT + "','" + p.StatusReal + "','" + p.StatusStock + "','" + p.StatusPrice + "')";
+                p.AnalysisNameT + "','" + p.StatusReal + "','" + p.StatusStock + "','" + 
+                p.StatusPrice + "','" + p.ValueMin + "','" + p.ValueMax + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -302,7 +309,9 @@ namespace Cemp.objdb
                 it.AnalysisNameT + "='" + p.AnalysisNameT + "', " +
                 it.StatusReal + "='" + p.StatusReal + "', " +
                 it.StatusStock + "='" + p.StatusStock + "', " +
-                it.StatusPrice + "='" + p.StatusPrice + "' " +
+                it.StatusPrice + "='" + p.StatusPrice + "', " +
+                it.ValueMax + "='" + p.ValueMax + "', " +
+                it.ValueMin + "='" + p.ValueMin + "' " +
                 "Where " + it.pkField + "='" + p.Id + "'";
             try
             {
@@ -438,53 +447,56 @@ namespace Cemp.objdb
             //String aaa = "";
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                Item itg1 = new Item();
-                itg1.Active = dt.Rows[i][it.Active].ToString();
-                itg1.Code = dt.Rows[i][it.Code].ToString();
-                itg1.Id = dt.Rows[i][it.Id].ToString();
-                itg1.NameE = dt.Rows[i][it.NameE].ToString();
-                itg1.NameT = dt.Rows[i][it.NameT].ToString();
-                itg1.PriceCost = dt.Rows[i][it.PriceCost].ToString();
-                itg1.PriceSale = dt.Rows[i][it.PriceSale].ToString();
-                itg1.Remark = dt.Rows[i][it.Remark].ToString();
-                itg1.ItemGroupId = dt.Rows[i][it.ItemGroupId].ToString();
-                itg1.ItemGroupNameT = dt.Rows[i][it.ItemGroupNameT].ToString();
-                itg1.MethodNameT = dt.Rows[i][it.MethodNameT].ToString();
-                itg1.MethodId = dt.Rows[i][it.MethodId].ToString();
-                itg1.MeasuringPoint = dt.Rows[i][it.MeasuringPoint].ToString();
-                itg1.Sort1 = dt.Rows[i][it.Sort1].ToString();
-                itg1.dateCancel = dt.Rows[i][it.dateCancel].ToString();
-                itg1.dateCreate = dt.Rows[i][it.dateCreate].ToString();
-                itg1.dateModi = dt.Rows[i][it.dateModi].ToString();
-                itg1.userCancel = dt.Rows[i][it.userCancel].ToString();
-                itg1.userCreate = dt.Rows[i][it.userCreate].ToString();
-                itg1.userModi = dt.Rows[i][it.userModi].ToString();
-                itg1.PriceCostReal = dt.Rows[i][it.PriceCostReal].ToString();
-                itg1.ItemType = dt.Rows[i][it.ItemType].ToString();
+                Item it1 = new Item();
+                it1.Active = dt.Rows[i][it.Active].ToString();
+                it1.Code = dt.Rows[i][it.Code].ToString();
+                it1.Id = dt.Rows[i][it.Id].ToString();
+                it1.NameE = dt.Rows[i][it.NameE].ToString();
+                it1.NameT = dt.Rows[i][it.NameT].ToString();
+                it1.PriceCost = dt.Rows[i][it.PriceCost].ToString();
+                it1.PriceSale = dt.Rows[i][it.PriceSale].ToString();
+                it1.Remark = dt.Rows[i][it.Remark].ToString();
+                it1.ItemGroupId = dt.Rows[i][it.ItemGroupId].ToString();
+                it1.ItemGroupNameT = dt.Rows[i][it.ItemGroupNameT].ToString();
+                it1.MethodNameT = dt.Rows[i][it.MethodNameT].ToString();
+                it1.MethodId = dt.Rows[i][it.MethodId].ToString();
+                it1.MeasuringPoint = dt.Rows[i][it.MeasuringPoint].ToString();
+                it1.Sort1 = dt.Rows[i][it.Sort1].ToString();
+                it1.dateCancel = dt.Rows[i][it.dateCancel].ToString();
+                it1.dateCreate = dt.Rows[i][it.dateCreate].ToString();
+                it1.dateModi = dt.Rows[i][it.dateModi].ToString();
+                it1.userCancel = dt.Rows[i][it.userCancel].ToString();
+                it1.userCreate = dt.Rows[i][it.userCreate].ToString();
+                it1.userModi = dt.Rows[i][it.userModi].ToString();
+                it1.PriceCostReal = dt.Rows[i][it.PriceCostReal].ToString();
+                it1.ItemType = dt.Rows[i][it.ItemType].ToString();
 
-                itg1.CustId = dt.Rows[i][it.CustId].ToString();
-                itg1.CustNameT = dt.Rows[i][it.CustNameT].ToString();
+                it1.CustId = dt.Rows[i][it.CustId].ToString();
+                it1.CustNameT = dt.Rows[i][it.CustNameT].ToString();
 
-                itg1.AnalysisId = dt.Rows[i][it.AnalysisId].ToString();
-                itg1.AnalysisNameT = dt.Rows[i][it.AnalysisNameT].ToString();
+                it1.AnalysisId = dt.Rows[i][it.AnalysisId].ToString();
+                it1.AnalysisNameT = dt.Rows[i][it.AnalysisNameT].ToString();
 
-                itg1.StatusReal = dt.Rows[i][it.StatusReal].ToString();
-                itg1.StatusStock = dt.Rows[i][it.StatusStock].ToString();
+                it1.StatusReal = dt.Rows[i][it.StatusReal].ToString();
+                it1.StatusStock = dt.Rows[i][it.StatusStock].ToString();
 
-                itg1.StatusPrice = dt.Rows[i][it.StatusPrice].ToString();
-                item.Add(itg1);
+                it1.StatusPrice = dt.Rows[i][it.StatusPrice].ToString();
+
+                it1.ValueMax = dt.Rows[i][it.ValueMax].ToString();
+                it1.ValueMin = dt.Rows[i][it.ValueMin].ToString();
+                item.Add(it1);
                 //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
                 //c.Items.Add(new );
             }
             return item;
         }
-        public ComboBox getCboItemByList(ComboBox c, List<Item> litg)
+        public ComboBox getCboItemByList(ComboBox c, List<Item> lit)
         {
             ComboBoxItem item = new ComboBoxItem();
             //DataTable dt = selectAll();
             c.Items.Clear();
             //String aaa = "";
-            foreach (Item i in litg)
+            foreach (Item i in lit)
             {
                 item = new ComboBoxItem();
                 item.Value = i.Id;
@@ -494,6 +506,19 @@ namespace Cemp.objdb
                 //c.Items.Add(new );
             }
             return c;
+        }
+        public Item getItemByList(String itId, List<Item> lit)
+        {
+            Item it1 = new Item();
+            foreach (Item i in lit)
+            {
+                if (i.Id.Equals(itId))
+                {
+                    it1 = i;
+                    return i;
+                }
+            }
+            return it1;
         }
     }
 }

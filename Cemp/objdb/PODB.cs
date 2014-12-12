@@ -66,6 +66,7 @@ namespace Cemp.objdb
             po.Line1 = "line1";
             po.PODueDate = "po_due_date";
             po.Ref1 = "ref1";
+            po.YearId = "year_id";
 
             po.pkField = "po_id";
             po.table = "t_po";
@@ -121,6 +122,7 @@ namespace Cemp.objdb
 
             item.PODueDate = dt.Rows[0][po.PODueDate].ToString();
             item.Ref1 = dt.Rows[0][po.Ref1].ToString();
+            item.YearId = dt.Rows[0][po.YearId].ToString();
 
             return item;
         }
@@ -182,7 +184,7 @@ namespace Cemp.objdb
                 po.CuAddressT + "," + po.CpAddress1 + "," + po.CpAddress2 + "," +
                 po.CpTaxId + "," + po.Amt + "," + po.VatRate + "," + 
                 po.Vat + "," + po.NetTotal + "," + po.SfApproveId + "," +
-                po.SfApproveName + "," + po.Line1 + "," + po.PODueDate + "," + po.Ref1 + ") " +
+                po.SfApproveName + "," + po.Line1 + "," + po.PODueDate + "," + po.Ref1 + "," + po.YearId + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.ContactName + "','" +
                 p.CpId + "','" + p.CpNameT + "','" + p.CuFax + "','" +
                 p.CuId + "','" + p.CuNameT + "','" + p.CuEmail + "','" +
@@ -197,7 +199,7 @@ namespace Cemp.objdb
                 p.CuAddressT + "','" + p.CpAddress1 + "','" + p.CpAddress2 + "','" +
                 p.CpTaxId + "'," + NumberNull1(p.Amt) + "," + NumberNull1(p.VatRate) + "," +
                 NumberNull1(p.Vat) + "," + NumberNull1(p.NetTotal) + ",'" + p.SfApproveId + "','" +
-                p.SfApproveName + "','" + p.Line1 + "','" + p.PODueDate + "','" + p.Ref1 + "')";
+                p.SfApproveName + "','" + p.Line1 + "','" + p.PODueDate + "','" + p.Ref1 + "','" + p.YearId + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

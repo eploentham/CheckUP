@@ -31,6 +31,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvAdd = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtPriceFree = new System.Windows.Forms.TextBox();
+            this.chkPriceFree = new System.Windows.Forms.RadioButton();
             this.chkPricePeriod = new System.Windows.Forms.RadioButton();
             this.chkPriceNormal = new System.Windows.Forms.RadioButton();
             this.txtPriceSale = new System.Windows.Forms.TextBox();
@@ -77,8 +79,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.chkPriceFree = new System.Windows.Forms.RadioButton();
-            this.txtPriceFree = new System.Windows.Forms.TextBox();
+            this.txtValueMin = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtValueMax = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
             this.panel3.SuspendLayout();
@@ -88,6 +92,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtValueMax);
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.txtValueMin);
+            this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.dgvAdd);
             this.groupBox1.Controls.Add(this.panel3);
             this.groupBox1.Controls.Add(this.panel2);
@@ -157,6 +165,26 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(504, 103);
             this.panel3.TabIndex = 146;
+            // 
+            // txtPriceFree
+            // 
+            this.txtPriceFree.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPriceFree.Location = new System.Drawing.Point(159, 48);
+            this.txtPriceFree.Name = "txtPriceFree";
+            this.txtPriceFree.Size = new System.Drawing.Size(100, 22);
+            this.txtPriceFree.TabIndex = 115;
+            this.txtPriceFree.TabStop = false;
+            // 
+            // chkPriceFree
+            // 
+            this.chkPriceFree.AutoSize = true;
+            this.chkPriceFree.Location = new System.Drawing.Point(12, 51);
+            this.chkPriceFree.Name = "chkPriceFree";
+            this.chkPriceFree.Size = new System.Drawing.Size(65, 17);
+            this.chkPriceFree.TabIndex = 114;
+            this.chkPriceFree.TabStop = true;
+            this.chkPriceFree.Text = "ราคาฟรี ";
+            this.chkPriceFree.UseVisualStyleBackColor = true;
             // 
             // chkPricePeriod
             // 
@@ -647,25 +675,43 @@
             this.label1.TabIndex = 101;
             this.label1.Text = "รหัส  yyxxx:";
             // 
-            // chkPriceFree
+            // txtValueMin
             // 
-            this.chkPriceFree.AutoSize = true;
-            this.chkPriceFree.Location = new System.Drawing.Point(12, 51);
-            this.chkPriceFree.Name = "chkPriceFree";
-            this.chkPriceFree.Size = new System.Drawing.Size(65, 17);
-            this.chkPriceFree.TabIndex = 114;
-            this.chkPriceFree.TabStop = true;
-            this.chkPriceFree.Text = "ราคาฟรี ";
-            this.chkPriceFree.UseVisualStyleBackColor = true;
+            this.txtValueMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValueMin.Location = new System.Drawing.Point(108, 466);
+            this.txtValueMin.Name = "txtValueMin";
+            this.txtValueMin.Size = new System.Drawing.Size(398, 22);
+            this.txtValueMin.TabIndex = 149;
+            this.txtValueMin.TabStop = false;
             // 
-            // txtPriceFree
+            // label16
             // 
-            this.txtPriceFree.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPriceFree.Location = new System.Drawing.Point(159, 48);
-            this.txtPriceFree.Name = "txtPriceFree";
-            this.txtPriceFree.Size = new System.Drawing.Size(100, 22);
-            this.txtPriceFree.TabIndex = 115;
-            this.txtPriceFree.TabStop = false;
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(6, 468);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(38, 16);
+            this.label16.TabIndex = 148;
+            this.label16.Text = "MIN :";
+            // 
+            // txtValueMax
+            // 
+            this.txtValueMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValueMax.Location = new System.Drawing.Point(108, 494);
+            this.txtValueMax.Name = "txtValueMax";
+            this.txtValueMax.Size = new System.Drawing.Size(398, 22);
+            this.txtValueMax.TabIndex = 151;
+            this.txtValueMax.TabStop = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(6, 496);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(42, 16);
+            this.label17.TabIndex = 150;
+            this.label17.Text = "MAX :";
             // 
             // FrmItemAdd
             // 
@@ -744,5 +790,9 @@
         private System.Windows.Forms.DataGridView dgvAdd;
         private System.Windows.Forms.TextBox txtPriceFree;
         private System.Windows.Forms.RadioButton chkPriceFree;
+        private System.Windows.Forms.TextBox txtValueMax;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtValueMin;
+        private System.Windows.Forms.Label label16;
     }
 }

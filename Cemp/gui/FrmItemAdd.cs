@@ -80,6 +80,9 @@ namespace Cemp.gui
             cboCustPO = cc.cudb.getCboVendor(cboCustPO);
             cboCustPO.Text = cc.getVendorNamet(it.CustId);
             txtSort1.Text = it.Sort1;
+            txtValueMax.Text = it.ValueMax;
+            txtValueMin.Text = it.ValueMin;
+
             if (it.StatusReal.Equals("1"))
             {
                 chkItemReal.Checked = true;
@@ -148,6 +151,8 @@ namespace Cemp.gui
             it.AnalysisId = cc.getValueCboItem(cboAnalysis);
             it.AnalysisNameT = cboAnalysis.Text;
             it.Sort1 = txtSort1.Text;
+            it.ValueMax = txtValueMax.Text;
+            it.ValueMin = txtValueMin.Text;
 
             if (chkItemReal.Checked)
             {

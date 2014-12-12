@@ -1,4 +1,5 @@
-﻿namespace Cemp
+﻿using CrystalDecisions.Windows.Forms;
+namespace Cemp
 {
     partial class FrmReport
     {
@@ -28,7 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.crystalReportViewer1 = new CrystalReportViewer();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
