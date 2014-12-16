@@ -1,6 +1,6 @@
 ﻿namespace Cemp.gui
 {
-    partial class FrmInvoiceAdd
+    partial class FrmInvoiceAdd1
     {
         /// <summary>
         /// Required designer variable.
@@ -643,8 +643,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmBillAdd";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmInvoiceAdd_Load);
-            this.Resize += new System.EventHandler(this.FrmInvoiceAdd_Resize);
+            this.Load += new System.EventHandler(this.FrmInvoiceAdd1_Load);
+            this.Resize += new System.EventHandler(this.FrmInvoiceAdd1_Resize);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();

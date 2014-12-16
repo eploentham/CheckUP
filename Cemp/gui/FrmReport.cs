@@ -367,7 +367,7 @@ namespace Cemp
 
                 rpt.SetParameterValue("line2", mo.StaffPlaceRecordPosition);
                 rpt.SetParameterValue("staffplacerecordname", mo.StaffPlaceRecordName);
-                rpt.SetParameterValue("line3", "ลูกค้า/ผู้ประสานงาน/ผู้รัลผิดชอบการตรวจ");
+                rpt.SetParameterValue("line3", cc.cp.mouLine3);
 
                 this.crystalReportViewer1.ReportSource = rpt;
                 this.crystalReportViewer1.Refresh();

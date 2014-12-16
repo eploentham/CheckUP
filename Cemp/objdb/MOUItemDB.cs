@@ -453,7 +453,7 @@ namespace Cemp.objdb
             String sql = "";
 
             sql = "Select Distinct mo.cust_name as cust_name From t_mou as mo left Join " + moi.table + " as moi on mo.mou_id = moi."+moi.MOUId+
-                " Where moi." + moi.StatusBill + "='0' and moi." + moi.StatusResult + " = '1' and moi." + moi.Active + "='1'";
+                " Where moi." + moi.StatusBill + "='0' and moi." + moi.StatusResult + " = '1' and moi." + moi.Active + "='1' and moi." + moi.TempSave + "= '1'";
             //dt = conn.selectData(sql);
             DataTable dt = conn.selectData(sql);
             //if (dt.Rows.Count > 0)
@@ -467,7 +467,7 @@ namespace Cemp.objdb
             String sql = "";
 
             sql = "Select Distinct mo.cust_name as cust_name, mo.cust_id From t_mou as mo left Join " + moi.table + " as moi on mo.mou_id = moi." + moi.MOUId +
-                " Where moi." + moi.StatusResult + " = '0' and moi." + moi.Active + "='1'";
+                " Where moi." + moi.StatusResult + " = '0' and moi." + moi.Active + "='1' and moi."+moi.TempSave+"= '1'";
             //dt = conn.selectData(sql);
             DataTable dt = conn.selectData(sql);
             //if (dt.Rows.Count > 0)

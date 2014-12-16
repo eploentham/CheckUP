@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Cemp.gui
 {
-    public partial class FrmInvoiceAdd : Form
+    public partial class FrmInvoiceAdd1 : Form
     {
         CnviControl cc;
         Invoice bi;
@@ -19,7 +19,7 @@ namespace Cemp.gui
         int colRow = 0, colRow1=1, colMOUDate = 2,colCustName=3, colMOUNumber = 4, colSample=5, colNetTotal = 6, colRemark=7,colMOUId=8, colAdd=9;
         int colCnt = 10;
         int colAddRow = 0, colAddMOUNumber = 1, colAddAmount = 3, colAddMOUName = 2;
-        public FrmInvoiceAdd(String biId, Boolean flagNew,CnviControl c)
+        public FrmInvoiceAdd1(String biId, Boolean flagNew,CnviControl c)
         {
             InitializeComponent();
             cc = c;
@@ -320,7 +320,7 @@ namespace Cemp.gui
             }
         }
 
-        private void FrmInvoiceAdd_Resize(object sender, EventArgs e)
+        private void FrmInvoiceAdd1_Resize(object sender, EventArgs e)
         {
             setResize();
         }
@@ -362,8 +362,8 @@ namespace Cemp.gui
             }
             catch (Exception ex)
             {
-                cc.lw.WriteLog("Error FrmInvoiceAdd dgvView_CellDoubleClick " + ex.Message);
-                MessageBox.Show(" " + ex.Message, "Error FrmInvoiceAdd dgvView_CellDoubleClick");
+                cc.lw.WriteLog("Error FrmInvoiceAdd1 dgvView_CellDoubleClick " + ex.Message);
+                MessageBox.Show(" " + ex.Message, "Error FrmInvoiceAdd1 dgvView_CellDoubleClick");
             }
             Cursor.Current = cursor;
             //dgvView.Enabled = true;
@@ -411,8 +411,8 @@ namespace Cemp.gui
                 }
                 catch (Exception ex)
                 {
-                    cc.lw.WriteLog("Error FrmInvoiceAdd btnSave_Click " + ex.Message);
-                    MessageBox.Show("" + ex.Message, "Error FrmInvoiceAdd btnSave_Click");
+                    cc.lw.WriteLog("Error FrmInvoiceAdd1 btnSave_Click " + ex.Message);
+                    MessageBox.Show("" + ex.Message, "Error FrmInvoiceAdd1 btnSave_Click");
                     return;
                 }
                 
@@ -424,7 +424,7 @@ namespace Cemp.gui
             Cursor.Current = cursor;
         }
 
-        private void FrmInvoiceAdd_Load(object sender, EventArgs e)
+        private void FrmInvoiceAdd1_Load(object sender, EventArgs e)
         {
 
         }

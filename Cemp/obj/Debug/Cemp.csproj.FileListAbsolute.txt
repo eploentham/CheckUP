@@ -3,7 +3,6 @@ D:\source\CNVI.Cemp\Cemp\obj\Debug\Cemp.exe
 D:\source\CNVI.Cemp\Cemp\obj\Debug\Cemp.pdb
 D:\source\CNVI.Cemp\Cemp\bin\Debug\Cemp.exe
 D:\source\CNVI.Cemp\Cemp\bin\Debug\Cemp.pdb
-D:\source\CNVI.Cemp\Cemp\obj\Debug\Cemp.csprojResolveAssemblyReference.cache
 D:\source\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmAnalysisAdd.resources
 D:\source\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmAnalysisView.resources
 D:\source\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmAP.resources
@@ -50,3 +49,5 @@ D:\source\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmStaffAdd.resources
 D:\source\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmStaffView.resources
 D:\source\CNVI.Cemp\Cemp\obj\Debug\Cemp.Properties.Resources.resources
 D:\source\CNVI.Cemp\Cemp\obj\Debug\Cemp.csproj.GenerateResource.Cache
+D:\source\CNVI.Cemp\Cemp\obj\Debug\Cemp.gui.FrmInvoiceAdd1.resources
+D:\source\CNVI.Cemp\Cemp\obj\Debug\Cemp.csprojResolveAssemblyReference.cache
