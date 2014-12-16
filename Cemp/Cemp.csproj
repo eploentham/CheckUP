@@ -187,6 +187,12 @@
     <Compile Include="gui\FrmPOView.Designer.cs">
       <DependentUpon>FrmPOView.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmQuotationEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmQuotationEx.Designer.cs">
+      <DependentUpon>FrmQuotationEx.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmStaffPrefixAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -385,6 +391,7 @@
     <Compile Include="object1\Prefix.cs" />
     <Compile Include="object1\Province.cs" />
     <Compile Include="object1\Quotation.cs" />
+    <Compile Include="object1\QuotationEx.cs" />
     <Compile Include="object1\QuotationItem.cs" />
     <Compile Include="object1\Result.cs" />
     <Compile Include="object1\ResultItem.cs" />
@@ -595,6 +602,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmPOView.resx">
       <DependentUpon>FrmPOView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmQuotationEx.resx">
+      <DependentUpon>FrmQuotationEx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmStaffPrefixAdd.resx">
       <DependentUpon>FrmStaffPrefixAdd.cs</DependentUpon>
