@@ -63,6 +63,15 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtGoSiteN = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.chkRentRoom = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // chkGoSite
@@ -79,7 +88,7 @@
             // chkDistanceDaily
             // 
             this.chkDistanceDaily.AutoSize = true;
-            this.chkDistanceDaily.Location = new System.Drawing.Point(31, 127);
+            this.chkDistanceDaily.Location = new System.Drawing.Point(31, 103);
             this.chkDistanceDaily.Name = "chkDistanceDaily";
             this.chkDistanceDaily.Size = new System.Drawing.Size(158, 17);
             this.chkDistanceDaily.TabIndex = 1;
@@ -90,7 +99,7 @@
             // chkRentCar
             // 
             this.chkRentCar.AutoSize = true;
-            this.chkRentCar.Location = new System.Drawing.Point(31, 223);
+            this.chkRentCar.Location = new System.Drawing.Point(31, 175);
             this.chkRentCar.Name = "chkRentCar";
             this.chkRentCar.Size = new System.Drawing.Size(74, 17);
             this.chkRentCar.TabIndex = 2;
@@ -166,7 +175,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(542, 129);
+            this.label4.Location = new System.Drawing.Point(542, 105);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 15;
@@ -174,7 +183,7 @@
             // 
             // txtDistanceDailyA
             // 
-            this.txtDistanceDailyA.Location = new System.Drawing.Point(597, 126);
+            this.txtDistanceDailyA.Location = new System.Drawing.Point(597, 102);
             this.txtDistanceDailyA.Name = "txtDistanceDailyA";
             this.txtDistanceDailyA.Size = new System.Drawing.Size(84, 20);
             this.txtDistanceDailyA.TabIndex = 14;
@@ -184,7 +193,7 @@
             // 
             // txtDistanceDailyP
             // 
-            this.txtDistanceDailyP.Location = new System.Drawing.Point(421, 127);
+            this.txtDistanceDailyP.Location = new System.Drawing.Point(421, 103);
             this.txtDistanceDailyP.Name = "txtDistanceDailyP";
             this.txtDistanceDailyP.Size = new System.Drawing.Size(59, 20);
             this.txtDistanceDailyP.TabIndex = 13;
@@ -194,7 +203,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(407, 111);
+            this.label5.Location = new System.Drawing.Point(407, 87);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 13);
             this.label5.TabIndex = 12;
@@ -202,7 +211,7 @@
             // 
             // txtDistanceDailyD
             // 
-            this.txtDistanceDailyD.Location = new System.Drawing.Point(301, 127);
+            this.txtDistanceDailyD.Location = new System.Drawing.Point(301, 103);
             this.txtDistanceDailyD.Name = "txtDistanceDailyD";
             this.txtDistanceDailyD.Size = new System.Drawing.Size(59, 20);
             this.txtDistanceDailyD.TabIndex = 11;
@@ -212,7 +221,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(279, 111);
+            this.label6.Location = new System.Drawing.Point(279, 87);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 13);
             this.label6.TabIndex = 10;
@@ -221,7 +230,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(542, 222);
+            this.label7.Location = new System.Drawing.Point(542, 174);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 21;
@@ -229,7 +238,7 @@
             // 
             // txtRentCarA
             // 
-            this.txtRentCarA.Location = new System.Drawing.Point(597, 219);
+            this.txtRentCarA.Location = new System.Drawing.Point(597, 171);
             this.txtRentCarA.Name = "txtRentCarA";
             this.txtRentCarA.Size = new System.Drawing.Size(84, 20);
             this.txtRentCarA.TabIndex = 20;
@@ -239,7 +248,7 @@
             // 
             // txtRentCarP
             // 
-            this.txtRentCarP.Location = new System.Drawing.Point(201, 219);
+            this.txtRentCarP.Location = new System.Drawing.Point(201, 171);
             this.txtRentCarP.Name = "txtRentCarP";
             this.txtRentCarP.Size = new System.Drawing.Size(59, 20);
             this.txtRentCarP.TabIndex = 19;
@@ -249,7 +258,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(203, 203);
+            this.label8.Location = new System.Drawing.Point(203, 155);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(54, 13);
             this.label8.TabIndex = 18;
@@ -257,7 +266,7 @@
             // 
             // txtRentCarD
             // 
-            this.txtRentCarD.Location = new System.Drawing.Point(301, 220);
+            this.txtRentCarD.Location = new System.Drawing.Point(301, 172);
             this.txtRentCarD.Name = "txtRentCarD";
             this.txtRentCarD.Size = new System.Drawing.Size(59, 20);
             this.txtRentCarD.TabIndex = 17;
@@ -267,7 +276,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(298, 204);
+            this.label9.Location = new System.Drawing.Point(298, 156);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 13);
             this.label9.TabIndex = 16;
@@ -340,7 +349,7 @@
             // 
             // txtRentCarN
             // 
-            this.txtRentCarN.Location = new System.Drawing.Point(421, 219);
+            this.txtRentCarN.Location = new System.Drawing.Point(421, 171);
             this.txtRentCarN.Name = "txtRentCarN";
             this.txtRentCarN.Size = new System.Drawing.Size(59, 20);
             this.txtRentCarN.TabIndex = 30;
@@ -350,7 +359,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(425, 203);
+            this.label12.Location = new System.Drawing.Point(425, 155);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(53, 13);
             this.label12.TabIndex = 29;
@@ -358,7 +367,7 @@
             // 
             // txtDistanceDailyN
             // 
-            this.txtDistanceDailyN.Location = new System.Drawing.Point(202, 127);
+            this.txtDistanceDailyN.Location = new System.Drawing.Point(202, 103);
             this.txtDistanceDailyN.Name = "txtDistanceDailyN";
             this.txtDistanceDailyN.Size = new System.Drawing.Size(59, 20);
             this.txtDistanceDailyN.TabIndex = 32;
@@ -368,7 +377,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(206, 111);
+            this.label13.Location = new System.Drawing.Point(206, 87);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(54, 13);
             this.label13.TabIndex = 31;
@@ -392,11 +401,95 @@
             this.label14.TabIndex = 33;
             this.label14.Text = "จำนวนวัน";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(421, 240);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(59, 20);
+            this.textBox1.TabIndex = 43;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(425, 224);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(58, 13);
+            this.label15.TabIndex = 42;
+            this.label15.Text = "จำนวนห้อง";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(542, 243);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(49, 13);
+            this.label16.TabIndex = 41;
+            this.label16.Text = "รวมราคา";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(597, 240);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(84, 20);
+            this.textBox2.TabIndex = 40;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(201, 240);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(59, 20);
+            this.textBox3.TabIndex = 39;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(203, 224);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(54, 13);
+            this.label17.TabIndex = 38;
+            this.label17.Text = "จำนวนวัน";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(301, 241);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(59, 20);
+            this.textBox4.TabIndex = 37;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(298, 225);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(81, 13);
+            this.label18.TabIndex = 36;
+            this.label18.Text = "ค่าเช่าห้องต่อวัน";
+            // 
+            // chkRentRoom
+            // 
+            this.chkRentRoom.AutoSize = true;
+            this.chkRentRoom.Location = new System.Drawing.Point(31, 244);
+            this.chkRentRoom.Name = "chkRentRoom";
+            this.chkRentRoom.Size = new System.Drawing.Size(94, 17);
+            this.chkRentRoom.TabIndex = 35;
+            this.chkRentRoom.Text = "ต้องเช่าห้องพัก";
+            this.chkRentRoom.UseVisualStyleBackColor = true;
+            // 
             // FrmQuotationEx
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 517);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.chkRentRoom);
             this.Controls.Add(this.txtGoSiteN);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtDistanceDailyN);
@@ -478,5 +571,14 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtGoSiteN;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.CheckBox chkRentRoom;
     }
 }
