@@ -134,6 +134,7 @@
             this.btnDoc = new System.Windows.Forms.Button();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
+            this.btnCalEx = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
@@ -1354,11 +1355,23 @@
             this.label42.TabIndex = 69;
             this.label42.Text = "label42";
             // 
+            // btnCalEx
+            // 
+            this.btnCalEx.Location = new System.Drawing.Point(1176, 91);
+            this.btnCalEx.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCalEx.Name = "btnCalEx";
+            this.btnCalEx.Size = new System.Drawing.Size(52, 25);
+            this.btnCalEx.TabIndex = 45;
+            this.btnCalEx.Text = "calEx";
+            this.btnCalEx.UseVisualStyleBackColor = true;
+            this.btnCalEx.Click += new System.EventHandler(this.btnCalEx_Click);
+            // 
             // FrmQuotationAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 832);
+            this.ClientSize = new System.Drawing.Size(1268, 765);
+            this.Controls.Add(this.btnCalEx);
             this.Controls.Add(this.label42);
             this.Controls.Add(this.label41);
             this.Controls.Add(this.btnDoc);
@@ -1539,5 +1552,6 @@
         private System.Windows.Forms.Button btnDoc;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Button btnCalEx;
     }
 }

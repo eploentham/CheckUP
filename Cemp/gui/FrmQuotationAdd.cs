@@ -1328,5 +1328,11 @@ namespace Cemp.gui
                 dgvAdd[colEdit, e.RowIndex].Value = "1";
             }
         }
+
+        private void btnCalEx_Click(object sender, EventArgs e)
+        {
+            FrmQuotationEx frm = new FrmQuotationEx(cc);
+            frm.ShowDialog(this);
+        }
     }
 }
