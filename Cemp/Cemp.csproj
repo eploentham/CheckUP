@@ -193,6 +193,18 @@
     <Compile Include="gui\FrmQuotationEx.Designer.cs">
       <DependentUpon>FrmQuotationEx.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmResultAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmResultAdd.Designer.cs">
+      <DependentUpon>FrmResultAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmResultAdd1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmResultAdd1.Designer.cs">
+      <DependentUpon>FrmResultAdd1.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmStaffPrefixAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,12 +325,6 @@
     <Compile Include="gui\FrmQuotationView.Designer.cs">
       <DependentUpon>FrmQuotationView.cs</DependentUpon>
     </Compile>
-    <Compile Include="gui\FrmResultAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="gui\FrmResultAdd.Designer.cs">
-      <DependentUpon>FrmResultAdd.cs</DependentUpon>
-    </Compile>
     <Compile Include="gui\FrmResultView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -359,6 +365,7 @@
     <Compile Include="objdb\PrefixDB.cs" />
     <Compile Include="objdb\ProvinceDB.cs" />
     <Compile Include="objdb\QuotationDB.cs" />
+    <Compile Include="objdb\QuotationExDB.cs" />
     <Compile Include="objdb\QuotationItemDB.cs" />
     <Compile Include="objdb\ResultDB.cs" />
     <Compile Include="objdb\ResultItemDB.cs" />
@@ -606,6 +613,12 @@
     <EmbeddedResource Include="gui\FrmQuotationEx.resx">
       <DependentUpon>FrmQuotationEx.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmResultAdd.resx">
+      <DependentUpon>FrmResultAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmResultAdd1.resx">
+      <DependentUpon>FrmResultAdd1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmStaffPrefixAdd.resx">
       <DependentUpon>FrmStaffPrefixAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -665,9 +678,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmQuotationView.resx">
       <DependentUpon>FrmQuotationView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="gui\FrmResultAdd.resx">
-      <DependentUpon>FrmResultAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmResultView.resx">
       <DependentUpon>FrmResultView.cs</DependentUpon>

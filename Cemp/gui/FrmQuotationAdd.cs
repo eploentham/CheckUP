@@ -10,8 +10,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 /*
- * 57.12.09.01 อุยแจ้งว่า อยากให้โปรแกรมสามารถแก้ไข การเรียงข้อมูลในใบเสนอราคาให้
- * 57.12.09.03 อุยแจ้งว่า ตรงเบอร์โทรขอพนักงาน ให้แสดงเป็นเบอร์ มือถือ
+ * 57.12.09.01  อุยแจ้งว่า อยากให้โปรแกรมสามารถแก้ไข การเรียงข้อมูลในใบเสนอราคาให้
+ * 57.12.09.03  อุยแจ้งว่า ตรงเบอร์โทรขอพนักงาน ให้แสดงเป็นเบอร์ มือถือ
+ * 57.12.17.01 
+ * 57.12.19.01  Bug พอแก้ไข แล้วจะเป็นการเพิ่ม record ใหม่
  * */
 
 namespace Cemp.gui
@@ -75,6 +77,7 @@ namespace Cemp.gui
             btnDoc.Left = btnSave.Left;
             btnPrint.Left = btnSave.Left;
             btnPrintT.Left = btnSave.Left;
+            btnCalEx.Left = btnSave.Left;
             groupBox2.Left = this.Width - groupBox2.Width - btnSave.Width - 150;
             groupBox3.Left = groupBox2.Left;
             //groupBox1.Height = this.Height = 150;
@@ -588,7 +591,15 @@ namespace Cemp.gui
                     qui.MethodDescription = dgvAdd[colMethod, i].Value.ToString();
                     qui.ItemId = dgvAdd[colItemId, i].Value.ToString();
                     qui.MethodId = dgvAdd[colMethodId, i].Value.ToString();
-                    qui.Id = dgvAdd[colId, i].Value.ToString();
+                    if (dgvAdd[colId, i].Value == null)
+                    {
+                        qui.Id = "";
+                    }
+                    else
+                    {
+                        qui.Id = dgvAdd[colId, i].Value.ToString();
+                    }
+                    
                     qui.Active = "1";
                     qui.QuoId = quId;
                     qui.ItemGroupId = itg.Id;
@@ -658,7 +669,8 @@ namespace Cemp.gui
         private void setItemtoGrd(String itId, int row)
         {
             Item it = new Item();
-            it = cc.itdb.selectByPk(itId);
+            //it = cc.itdb.selectByPk(itId);      //57.12.19.01 -
+            it = cc.getItemByList(itId);        //57.12.19.01 +
             if (it.Id.Equals(""))
             {
                 return;
@@ -674,8 +686,8 @@ namespace Cemp.gui
             dgvAdd[colItem, row].Value = it.NameT;
             dgvAdd[colMethod, row].Value = it.MethodNameT;
             dgvAdd[colQty, row].Value = String.Format("{0:#,###,###.00}", txtItemQty.Text);
-            dgvAdd[colPriceSale, row].Value = String.Format("{0:#,###,###.00}", Double.Parse(txtItemPrice.Text));
-            dgvAdd[colPriceCost, row].Value = String.Format("{0:#,###,###.00}", Double.Parse(txtPriceCost.Text));
+            dgvAdd[colPriceSale, row].Value = String.Format("{0:#,###,###.00}", Double.Parse(cc.cf.NumberNull1(txtItemPrice.Text)));
+            dgvAdd[colPriceCost, row].Value = String.Format("{0:#,###,###.00}", Double.Parse(cc.cf.NumberNull1(txtPriceCost.Text)));
             if (it.StatusPrice.Equals("2"))
             {
                 dgvAdd[colAmount, row].Value = "ฟรี";
@@ -684,8 +696,7 @@ namespace Cemp.gui
             {
                 dgvAdd[colAmount, row].Value = String.Format("{0:#,###,###.00}", txtItemAmount.Text);
             }
-            
-            dgvAdd[colId, row].Value = "";
+            //dgvAdd[colId, row].Value = "";          //57.12.19.01 -
             dgvAdd[colDel, row].Value = "";
             dgvAdd[colEdit, row].Value = "1";
             if ((row % 2) != 0)
@@ -1331,8 +1342,9 @@ namespace Cemp.gui
 
         private void btnCalEx_Click(object sender, EventArgs e)
         {
-            FrmQuotationEx frm = new FrmQuotationEx(cc);
+            FrmQuotationEx frm = new FrmQuotationEx(cc, txtQuId.Text,qu.QuExId);
             frm.ShowDialog(this);
+            qu = cc.qudb.selectByPk(txtQuId.Text);
         }
     }
 }

@@ -316,6 +316,30 @@ namespace Cemp.objdb
 
             return dt.Rows[0]["cnt"].ToString();
         }
+        public DataTable selectNoBillByCust(String cuId)
+        {
+            //MOUItem item = new MOUItem();
+            String sql = "", cnt = "", number = "";
+            if (cuId.Equals(""))
+            {
+                sql = "Select moi." + moi.MOUNumber + ",moi." + moi.MOUNumberCnt + ", mo. cust_name, mo. cust_id, moi." + moi.DatePlaceRecord + ", count(1) as cnt, sum(" + moi.Amount + ") as amt " +
+                "From " + moi.table + " as moi " +
+                " Left Join t_mou mo On moi." + moi.MOUId + " = mo.mou_id " +
+                " Where  moi." + moi.Active + "='1' and mo.mou_active = '1' and moi." + moi.StatusBill + "='0' and moi.temp_save= '1'";
+            }
+            else
+            {
+                sql = "Select moi." + moi.MOUNumber + ",moi." + moi.MOUNumberCnt + ", mo. cust_name, mo. cust_id, moi."+moi.DatePlaceRecord+", count(1) as cnt, sum(" + moi.Amount + ") as amt " +
+                "From " + moi.table + " as moi " +
+                " Left Join t_mou mo On moi." + moi.MOUId + " = mo.mou_id " +
+                " Where mo.cust_id = '" + cuId + "' and moi." + moi.Active + "='1' and mo.mou_active = '1' and moi." + moi.StatusBill + "='0' and moi.temp_save= '1'";
+            }
+            
+            //dt = conn.selectData(sql);
+            DataTable dt = conn.selectData(sql);
+
+            return dt;
+        }
         private String insert(MOUItem p)
         {
             String sql = "", chk = "";
@@ -330,6 +354,8 @@ namespace Cemp.objdb
             p.ItemGroupNameE = p.ItemGroupNameE.Replace("'", "''");
             p.ItemGroupNameT = p.ItemGroupNameT.Replace("'", "''");
 
+            p.dateCreate = p.dateGenDB;
+
             sql = "Insert Into " + moi.table + " (" + moi.pkField + "," + moi.Active + "," + moi.ItemDescription + "," +
                 moi.ItemId + "," + moi.MethodDescription + "," + moi.MethodId + "," +
                 moi.MOUId + "," + moi.PlaceRecord + "," + moi.RowNumber + "," +
@@ -337,7 +363,9 @@ namespace Cemp.objdb
                 moi.ItemGroupSort + "," + moi.ItemGroupId + "," + moi.DatePlaceRecord + "," +
                 moi.MOUNumber + "," + moi.MOUNumberCnt + "," + moi.PriceCost + "," +
                 moi.PriceSale + "," + moi.Amount + "," + moi.Discount + "," +
-                moi.MOUNumberMain + "," + moi.ItemType + "," + moi.TempSave + "," + moi.StatusMerge + "," + moi.MergeId + "," + moi.SampleOld + "," + moi.StatusBill + "," + moi.StatusResult + ") " +
+                moi.MOUNumberMain + "," + moi.ItemType + "," + moi.TempSave + "," + 
+                moi.StatusMerge + "," + moi.MergeId + "," + moi.SampleOld + "," +
+                moi.StatusBill + "," + moi.StatusResult + "," + moi.dateCreate + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.ItemDescription + "','" +
                 p.ItemId + "','" + p.MethodDescription + "','" + p.MethodId + "','" +
                 p.MOUId + "','" + p.PlaceRecord + "','" + p.RowNumber + "','" +
@@ -345,7 +373,9 @@ namespace Cemp.objdb
                 p.ItemGroupSort + "','" + p.ItemGroupId + "','" + p.DatePlaceRecord + "','" +
                 p.MOUNumber + "'," + NumberNull1(p.MOUNumberCnt) + "," + NumberNull1(p.PriceCost) + "," +
                 NumberNull1(p.PriceSale) + "," + NumberNull1(p.Amount) + "," + NumberNull1(p.Discount) + ",'" +
-                p.MOUNumberMain + "','" + p.ItemType + "','0','" + p.StatusMerge + "','" + p.MergeId + "','" + p.SampleOld + "','0','0')";
+                p.MOUNumberMain + "','" + p.ItemType + "','0','" + 
+                p.StatusMerge + "','" + p.MergeId + "','" + p.SampleOld + 
+                "','0','0',"+p.dateCreate+")";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -370,6 +400,8 @@ namespace Cemp.objdb
             p.ItemGroupNameE = p.ItemGroupNameE.Replace("'", "''");
             p.ItemGroupNameT = p.ItemGroupNameT.Replace("'", "''");
 
+            p.dateModi = p.dateGenDB;
+
             sql = "Update " + moi.table + " Set " + moi.ItemDescription + "='" + p.ItemDescription + "', " +
                 moi.ItemId + "='" + p.ItemId + "', " +
                 moi.MethodDescription + "='" + p.MethodDescription + "', " +
@@ -387,8 +419,8 @@ namespace Cemp.objdb
                 moi.MergeId + "='" + p.MergeId + "', " +
                 moi.MOUNumberMain + "='" + p.MOUNumberMain + "', " +
                 moi.ItemType + "='" + p.ItemType + "', " +
-                moi.SampleOld + "='" + p.SampleOld + "' " +
-                //moi.Discount + "=" + p.Discount + " " +
+                moi.SampleOld + "='" + p.SampleOld + "', " +
+                moi.dateModi + "=" + p.dateModi + " " +
                 "Where " + moi.pkField + "='" + p.Id + "'";
             try
             {
@@ -452,8 +484,15 @@ namespace Cemp.objdb
         {
             String sql = "";
 
-            sql = "Select Distinct mo.cust_name as cust_name From t_mou as mo left Join " + moi.table + " as moi on mo.mou_id = moi."+moi.MOUId+
-                " Where moi." + moi.StatusBill + "='0' and moi." + moi.StatusResult + " = '1' and moi." + moi.Active + "='1' and moi." + moi.TempSave + "= '1'";
+            //sql = "Select moi." + moi.MOUNumber + ",moi." + moi.MOUNumberCnt + ", mo. cust_name, mo.mou_date" + ", count(1) as cnt, sum(" + moi.Amount + ") as amt " +
+            //    "From " + moi.table + " as moi " +
+            //    " Left Join t_mou mo On moi." + moi.MOUId + " = mo.mou_id " +
+            //    " Where  moi." + moi.Active + "='1' and mo.mou_active = '1' ";
+
+            //sql = "Select Distinct mo.cust_name as cust_name From t_mou as mo left Join " + moi.table + " as moi on mo.mou_id = moi."+moi.MOUId+
+            //    " Where moi." + moi.StatusBill + "='0' and moi." + moi.StatusResult + " = '1' and moi." + moi.Active + "='1' and moi." + moi.TempSave + "= '1'";
+            sql = "Select Distinct mo.cust_name as cust_name,mo.cust_id From t_mou as mo left Join " + moi.table + " as moi on mo.mou_id = moi." + moi.MOUId +
+                " Where moi." + moi.StatusBill + "='0' and moi." + moi.Active + "='1' and moi." + moi.TempSave + "= '1' and mo.mou_active = '1'";
             //dt = conn.selectData(sql);
             DataTable dt = conn.selectData(sql);
             //if (dt.Rows.Count > 0)
@@ -830,9 +869,32 @@ namespace Cemp.objdb
             {
                 item = new ComboBoxItem();
 
-                item.Text = dt.Rows[i][""].ToString();
+                item.Text = dt.Rows[i]["cust_name"].ToString();
 
-                item.Value = dt.Rows[i][""].ToString();
+                item.Value = dt.Rows[i]["cust_id"].ToString();
+                //item.Text = dt.Rows[i][cu.NameT].ToString();
+                c.Items.Add(item);
+                //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
+                //c.Items.Add(new );
+            }
+            return c;
+        }
+        /**
+         * ต้องแก้ไข เพราะใช้ getCboCustomerMOUnoBill ทำให้ดึงข้อมูล ได้ไม่เท่ากัน น่าจาก Distinct
+         * เลยต้องเปลี่ยน
+         * */
+        public ComboBox getCboCustomerMOUnoBill1(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectNoBillByCust("");//
+            //String aaa = "";
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+
+                item.Text = dt.Rows[i]["cust_name"].ToString();
+
+                item.Value = dt.Rows[i]["cust_id"].ToString();
                 //item.Text = dt.Rows[i][cu.NameT].ToString();
                 c.Items.Add(item);
                 //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";

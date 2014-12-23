@@ -78,6 +78,7 @@ namespace Cemp.objdb
             qu.PathPicConfirm = "pathpicconfirm";
 
             qu.YearId = "year_id";
+            qu.QuExId = "quo_ex_id";
 
             qu.table = "t_quotation";
             qu.pkField = "quo_id";
@@ -143,6 +144,8 @@ namespace Cemp.objdb
             item.PathPicConfirm = dt.Rows[0][qu.PathPicConfirm].ToString();
             item.PathPicConfirm = item.PathPicConfirm.Replace("@","\\");
             item.YearId = dt.Rows[0][qu.YearId].ToString();
+
+            item.QuExId = dt.Rows[0][qu.QuExId].ToString();
 
             return item;
         }
@@ -718,6 +721,15 @@ namespace Cemp.objdb
             String sql = "", chk = "";
 
             sql = "Update " + qu.table + " Set " + qu.StatusQuo + "='2' " +
+                "Where " + qu.pkField + "='" + quId + "'";
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
+        public String updateQuExId(String quId, String quExId)
+        {
+            String sql = "", chk = "";
+
+            sql = "Update " + qu.table + " Set " + qu.QuExId + "='" + quExId + "' " +
                 "Where " + qu.pkField + "='" + quId + "'";
             chk = conn.ExecuteNonQuery(sql);
             return chk;

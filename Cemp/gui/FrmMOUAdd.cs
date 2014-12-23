@@ -797,7 +797,8 @@ namespace Cemp.gui
                     moi.PlaceRecord = dgvAdd[colPlace, i].Value.ToString();
                     moi.Sample = dgvAdd[colSample, i].Value.ToString();
                     moi.DatePlaceRecord = dgvAdd[colDatePlaceRecord, i].Value.ToString();
-                    moi.DatePlaceRecord = cc.cf.datetoDB1(moi.DatePlaceRecord);
+                    //moi.DatePlaceRecord = cc.cf.datetoDB1(moi.DatePlaceRecord);
+                    moi.DatePlaceRecord = cc.cf.datetoDB3(moi.DatePlaceRecord);//ให้เก็บ date 
                     moi.ItemGroupId = itg.Id;
                     moi.ItemGroupNameT = itg.NameT;
                     moi.ItemGroupNameE = itg.NameE;

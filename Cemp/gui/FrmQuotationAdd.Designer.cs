@@ -1357,10 +1357,10 @@
             // 
             // btnCalEx
             // 
-            this.btnCalEx.Location = new System.Drawing.Point(1176, 91);
+            this.btnCalEx.Location = new System.Drawing.Point(1172, 91);
             this.btnCalEx.Margin = new System.Windows.Forms.Padding(2);
             this.btnCalEx.Name = "btnCalEx";
-            this.btnCalEx.Size = new System.Drawing.Size(52, 25);
+            this.btnCalEx.Size = new System.Drawing.Size(56, 29);
             this.btnCalEx.TabIndex = 45;
             this.btnCalEx.Text = "calEx";
             this.btnCalEx.UseVisualStyleBackColor = true;
@@ -1370,6 +1370,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1268, 765);
             this.Controls.Add(this.btnCalEx);
             this.Controls.Add(this.label42);

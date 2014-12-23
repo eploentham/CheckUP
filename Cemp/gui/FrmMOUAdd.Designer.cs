@@ -48,6 +48,8 @@
             this.groupBox21 = new System.Windows.Forms.GroupBox();
             this.txtMOUNumber = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cboDocType = new System.Windows.Forms.ComboBox();
             this.btnMOUAdd = new System.Windows.Forms.Button();
             this.cboMOU = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -72,8 +74,6 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtMOUName = new System.Windows.Forms.TextBox();
-            this.cboDocType = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnUnActive = new System.Windows.Forms.Button();
             this.ChkUnActive = new System.Windows.Forms.RadioButton();
@@ -318,6 +318,30 @@
             this.label14.Size = new System.Drawing.Size(52, 17);
             this.label14.TabIndex = 58;
             this.label14.Text = "MOU  :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label9.Location = new System.Drawing.Point(439, 16);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(77, 17);
+            this.label9.TabIndex = 66;
+            this.label9.Text = "Doc Type :";
+            this.label9.Visible = false;
+            // 
+            // cboDocType
+            // 
+            this.cboDocType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.cboDocType.FormattingEnabled = true;
+            this.cboDocType.Location = new System.Drawing.Point(471, 9);
+            this.cboDocType.Margin = new System.Windows.Forms.Padding(2);
+            this.cboDocType.Name = "cboDocType";
+            this.cboDocType.Size = new System.Drawing.Size(76, 25);
+            this.cboDocType.TabIndex = 65;
+            this.cboDocType.Visible = false;
+            this.cboDocType.SelectedIndexChanged += new System.EventHandler(this.cboDocType_SelectedIndexChanged);
             // 
             // btnMOUAdd
             // 
@@ -571,30 +595,6 @@
             this.txtMOUName.Size = new System.Drawing.Size(387, 23);
             this.txtMOUName.TabIndex = 64;
             // 
-            // cboDocType
-            // 
-            this.cboDocType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.cboDocType.FormattingEnabled = true;
-            this.cboDocType.Location = new System.Drawing.Point(471, 9);
-            this.cboDocType.Margin = new System.Windows.Forms.Padding(2);
-            this.cboDocType.Name = "cboDocType";
-            this.cboDocType.Size = new System.Drawing.Size(76, 25);
-            this.cboDocType.TabIndex = 65;
-            this.cboDocType.Visible = false;
-            this.cboDocType.SelectedIndexChanged += new System.EventHandler(this.cboDocType_SelectedIndexChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label9.Location = new System.Drawing.Point(439, 16);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 17);
-            this.label9.TabIndex = 66;
-            this.label9.Text = "Doc Type :";
-            this.label9.Visible = false;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnUnActive);
@@ -651,7 +651,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label17.Location = new System.Drawing.Point(299, 181);
+            this.label17.Location = new System.Drawing.Point(291, 179);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(113, 17);

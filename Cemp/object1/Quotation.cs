@@ -13,6 +13,7 @@ namespace Cemp.object1
         public String Total = "", VatRate = "", Vat = "", NetTotal = "", Line3 = "", Line4 = "", Line5 = "", Line6 = "", Active = "", StatusQuo = "", Discount="";
         public String StaffApproveId = "", StaffApproveName = "", QuoNumberCnt = "", StatusMOU = "", Remark4 = "", Remark5 = "", Remark6 = "", Remark7 = "";
         public String dateCreate = "", dateModi = "", dateCancel = "", userCreate = "", userModi = "", userCancel = "", ThaiBaht = "", PathPicConfirm="", YearId="";
+        public String QuExId = "";
         public override string ToString()
         {
             return QuoNumber;

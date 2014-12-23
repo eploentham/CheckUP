@@ -264,6 +264,52 @@ namespace Cemp.object1
                 return ex.Message;
             }
         }
+        public String datetoDB3(String dt)
+        {
+            //DateTime dt1 = new DateTime();
+            try
+            {
+                if (dt == null)
+                {
+                    return dt;
+                }
+                else if (dt == "")
+                {
+                    return "";
+                }
+                else
+                {
+                    //return String.Concat(int.Parse(dt.Substring(6))+543) + "-" + dt.Substring(3, 2) + "-" + dt.Substring(0, 2);
+                    if (dt.Length >= 8)
+                    {
+                        if (dt.Substring(6).Length == 2)
+                        {
+                            if (int.Parse(dt.Substring(6)) > 50)
+                            {
+                                return (int.Parse("25"+dt.Substring(6)) - 543) + "-" + dt.Substring(3, 2) + "-" + dt.Substring(0, 2);
+                            }
+                            else
+                            {
+                                return int.Parse("20"+dt.Substring(6)) + "-" + dt.Substring(3, 2) + "-" + dt.Substring(0, 2);
+                            }
+                            
+                        }
+                        else //if (dt.Substring(6).Length == 4)
+                        {
+                            return dt.Substring(6) + "-" + dt.Substring(3, 2) + "-" + dt.Substring(0, 2);
+                        }
+                    }
+                    else
+                    {
+                        return dt.Substring(6) + "-" + dt.Substring(3, 2) + "-" + dt.Substring(0, 2);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
         public String datetoDB2(String dt)
         {
             //DateTime dt1 = new DateTime();

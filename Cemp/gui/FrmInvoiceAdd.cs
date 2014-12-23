@@ -16,7 +16,7 @@ namespace Cemp.gui
         CnviControl cc;
         Invoice bi;
         Boolean pageLoad, biNew = false;
-        int colRow = 0, colRow1=1, colMOUDate = 2,colCustName=3, colMOUNumber = 4, colSample=5, colNetTotal = 6, colRemark=7,colMOUId=8, colAdd=9;
+        int colRow = 0, colRow1=1, colDatePlaceRecord = 2,colCustName=3, colMOUNumber = 4, colSample=5, colNetTotal = 6, colRemark=7,colMOUId=8, colAdd=9;
         int colCnt = 10;
         int colAddRow = 0, colAddMOUNumber = 1, colAddAmount = 3, colAddMOUName = 2;
         public FrmInvoiceAdd(String biId, Boolean flagNew,CnviControl c)
@@ -31,24 +31,25 @@ namespace Cemp.gui
             pageLoad = true;
             bi = new Invoice();
             dtpDateInv.Format = DateTimePickerFormat.Short;
-            cboCust = cc.moidb.getCboCustomerMOUnoBill(cboCust);
+            cboCust = cc.moidb.getCboCustomerMOUnoBill1(cboCust);//ดึง cust ที่ยังไม่ได้ทำบิล แต่ทำข้อตกลงแล้ว     ***selectNoBillByCust
+
             setControl(biId);
             
             //setGrdAdd();
-            if (!biNew)
+            if (biNew)// เป็นบิลใหม่
             {
-                
-                dgvView.Visible = false;
-                groupBox1.Visible = true;
-            }
-            else
-            {
-                setGrdView("");
+                setGrdView("");//ดึงข้อมูลที่ยังไม่ได้ทำบิล ทั้งหมดทุก ลูกค้า ถ้าuser เลือกcboCust แล้วค่อยกรอง
                 setGrdAdd();
-                groupBox1.Visible =true;
+                groupBox1.Visible = true;
                 chkActive.Checked = true;
                 btnUnActive.Visible = false;
                 dtpDateInv.Value = DateTime.Now;
+
+            }
+            else
+            {
+                dgvView.Visible = false;
+                groupBox1.Visible = true;
             }
             pageLoad = false;
         }
@@ -143,7 +144,7 @@ namespace Cemp.gui
             dgvAdd.Columns[colRow].Width = 50;
             dgvAdd.Columns[colRow1].Width = 50;
             dgvAdd.Columns[colMOUNumber].Width = 120;
-            dgvAdd.Columns[colMOUDate].Width = 150;
+            dgvAdd.Columns[colDatePlaceRecord].Width = 150;
             dgvAdd.Columns[colCustName].Width = 300;
             dgvAdd.Columns[colNetTotal].Width = 120;
             dgvAdd.Columns[colRemark].Width = 150;
@@ -152,7 +153,7 @@ namespace Cemp.gui
             dgvAdd.Columns[colRow].HeaderText = "ลำดับ";
             dgvAdd.Columns[colMOUNumber].HeaderText = "เลขที่ข้อตกลง";
             dgvAdd.Columns[colCustName].HeaderText = "ลูกค้า บริษัท";
-            dgvAdd.Columns[colMOUDate].HeaderText = "วันที่เริ่มข้อตกลง";
+            dgvAdd.Columns[colDatePlaceRecord].HeaderText = "วันที่เริ่มข้อตกลง";
             dgvAdd.Columns[colSample].HeaderText = "จน.sample";
             dgvAdd.Columns[colNetTotal].HeaderText = "มูลค่าทั้งหมด";
             dgvAdd.Columns[colRemark].HeaderText = "หมายเหตุ";
@@ -172,7 +173,7 @@ namespace Cemp.gui
         {
             DataTable dt;
 
-            dt = cc.modb.selectByNoBilling(cuId);
+            dt = cc.moidb.selectNoBillByCust(cuId);
             
             dgvView.ColumnCount = colCnt;
             dgvView.Rows.Clear();
@@ -180,7 +181,7 @@ namespace Cemp.gui
             dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvView.Columns[colRow].Width = 50;
             dgvView.Columns[colMOUNumber].Width = 120;
-            dgvView.Columns[colMOUDate].Width = 150;
+            dgvView.Columns[colDatePlaceRecord].Width = 150;
             dgvView.Columns[colCustName].Width = 300;
             dgvView.Columns[colNetTotal].Width = 120;
             dgvView.Columns[colRemark].Width = 150;
@@ -189,7 +190,7 @@ namespace Cemp.gui
             dgvView.Columns[colRow].HeaderText = "ลำดับ";
             dgvView.Columns[colMOUNumber].HeaderText = "เลขที่ข้อตกลง";
             dgvView.Columns[colCustName].HeaderText = "ลูกค้า บริษัท";
-            dgvView.Columns[colMOUDate].HeaderText = "วันที่เริ่มข้อตกลง";
+            dgvView.Columns[colDatePlaceRecord].HeaderText = "วันที่เก็บตัวอย่าง...";
             dgvView.Columns[colSample].HeaderText = "จน.sample";
             dgvView.Columns[colNetTotal].HeaderText = "มูลค่าทั้งหมด";
             dgvView.Columns[colRemark].HeaderText = "หมายเหตุ";
@@ -210,12 +211,12 @@ namespace Cemp.gui
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     dgvView[colRow, i].Value = (i + 1);
-                    dgvView[colMOUId, i].Value = dt.Rows[i][cc.modb.mo.Id].ToString();
-                    dgvView[colMOUNumber, i].Value = dt.Rows[i][cc.modb.mo.MOUNumberMain].ToString();
-                    dgvView[colMOUDate, i].Value = dt.Rows[i][cc.modb.mo.MOUDate].ToString();
-                    dgvView[colCustName, i].Value = dt.Rows[i][cc.modb.mo.CustName].ToString();
-                    dgvView[colNetTotal, i].Value = String.Format("{0:#,###,###.00}", dt.Rows[i]["amount1"]);
-                    dgvView[colRemark, i].Value = String.Format("{0:#,###,###.00}", dt.Rows[i][cc.modb.mo.Remark]);
+                    dgvView[colMOUId, i].Value = "";
+                    dgvView[colMOUNumber, i].Value = dt.Rows[i][cc.moidb.moi.MOUNumber].ToString() + "-" + dt.Rows[i][cc.moidb.moi.MOUNumberCnt].ToString();
+                    dgvView[colDatePlaceRecord, i].Value = dt.Rows[i][cc.moidb.moi.DatePlaceRecord].ToString();
+                    dgvView[colCustName, i].Value = dt.Rows[i]["cust_name"].ToString();
+                    dgvView[colNetTotal, i].Value = String.Format("{0:#,###,###.00}", dt.Rows[i]["amt"]);
+                    //dgvView[colRemark, i].Value = String.Format("{0:#,###,###.00}", dt.Rows[i][cc.modb.mo.Remark]);
                     dgvView[colSample, i].Value = String.Format("{0:#,###,###.00}", dt.Rows[i]["cnt"]);
                     dgvView[colAdd, i].Value = "0";
                     if ((i % 2) != 0)
@@ -308,7 +309,7 @@ namespace Cemp.gui
             if (!pageLoad)
             {
                 Customer cu;
-                cu = cc.cudb.selectByPk(cc.getValueCboItem(cboCust));
+                cu = cc.getCustomerByList(cc.getValueCboItem(cboCust));
                 //txtCustId.Text = cu.Id;
                 txtCustAddress.Text = cu.AddressT;
                 txtCustEmail.Text = cu.Email;
@@ -349,7 +350,7 @@ namespace Cemp.gui
                 dgvAdd[colRow, row].Value = (row + 1);
                 dgvAdd[colRow1, row].Value = dgvView[colRow, e.RowIndex].Value;
                 dgvAdd[colMOUNumber, row].Value = dgvView[colMOUNumber, e.RowIndex].Value;
-                dgvAdd[colMOUDate, row].Value = dgvView[colMOUDate, e.RowIndex].Value;
+                dgvAdd[colDatePlaceRecord, row].Value = dgvView[colDatePlaceRecord, e.RowIndex].Value;
                 dgvAdd[colCustName, row].Value = dgvView[colCustName, e.RowIndex].Value;
                 dgvAdd[colNetTotal, row].Value = dgvView[colNetTotal, e.RowIndex].Value;
                 dgvAdd[colRemark, row].Value = dgvView[colRemark, e.RowIndex].Value;

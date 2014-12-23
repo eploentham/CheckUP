@@ -46,7 +46,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtRentCarA = new System.Windows.Forms.TextBox();
-            this.txtRentCarP = new System.Windows.Forms.TextBox();
+            this.txtRentCarN = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtRentCarD = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -57,21 +57,22 @@
             this.chkEx2 = new System.Windows.Forms.CheckBox();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.txtRentCarN = new System.Windows.Forms.TextBox();
+            this.txtRentCarP = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtDistanceDailyN = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtGoSiteN = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtRentRoomP = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtRentRoomA = new System.Windows.Forms.TextBox();
+            this.txtRentRoomN = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtRentRoomD = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.chkRentRoom = new System.Windows.Forms.CheckBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // chkGoSite
@@ -116,6 +117,7 @@
             this.chkEx1.TabIndex = 3;
             this.chkEx1.Text = "ค่าใช้จ่ายเพิ่ม 1";
             this.chkEx1.UseVisualStyleBackColor = true;
+            this.chkEx1.Click += new System.EventHandler(this.chkEx1_Click);
             // 
             // label1
             // 
@@ -246,14 +248,14 @@
             this.txtRentCarA.TextChanged += new System.EventHandler(this.txtRentCarA_TextChanged);
             this.txtRentCarA.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRentCarA_KeyUp);
             // 
-            // txtRentCarP
+            // txtRentCarN
             // 
-            this.txtRentCarP.Location = new System.Drawing.Point(201, 171);
-            this.txtRentCarP.Name = "txtRentCarP";
-            this.txtRentCarP.Size = new System.Drawing.Size(59, 20);
-            this.txtRentCarP.TabIndex = 19;
-            this.txtRentCarP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRentCarP_KeyPress);
-            this.txtRentCarP.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRentCarP_KeyUp);
+            this.txtRentCarN.Location = new System.Drawing.Point(201, 171);
+            this.txtRentCarN.Name = "txtRentCarN";
+            this.txtRentCarN.Size = new System.Drawing.Size(59, 20);
+            this.txtRentCarN.TabIndex = 19;
+            this.txtRentCarN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRentCarP_KeyPress);
+            this.txtRentCarN.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRentCarP_KeyUp);
             // 
             // label8
             // 
@@ -329,6 +331,7 @@
             this.chkEx2.TabIndex = 24;
             this.chkEx2.Text = "ค่าใช้จ่ายเพิ่ม 2";
             this.chkEx2.UseVisualStyleBackColor = true;
+            this.chkEx2.Click += new System.EventHandler(this.chkEx2_Click);
             // 
             // txtAmount
             // 
@@ -346,15 +349,16 @@
             this.btnSave.TabIndex = 28;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // txtRentCarN
+            // txtRentCarP
             // 
-            this.txtRentCarN.Location = new System.Drawing.Point(421, 171);
-            this.txtRentCarN.Name = "txtRentCarN";
-            this.txtRentCarN.Size = new System.Drawing.Size(59, 20);
-            this.txtRentCarN.TabIndex = 30;
-            this.txtRentCarN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRentCarN_KeyPress);
-            this.txtRentCarN.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRentCarN_KeyUp);
+            this.txtRentCarP.Location = new System.Drawing.Point(421, 171);
+            this.txtRentCarP.Name = "txtRentCarP";
+            this.txtRentCarP.Size = new System.Drawing.Size(59, 20);
+            this.txtRentCarP.TabIndex = 30;
+            this.txtRentCarP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRentCarN_KeyPress);
+            this.txtRentCarP.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRentCarN_KeyUp);
             // 
             // label12
             // 
@@ -401,12 +405,14 @@
             this.label14.TabIndex = 33;
             this.label14.Text = "จำนวนวัน";
             // 
-            // textBox1
+            // txtRentRoomP
             // 
-            this.textBox1.Location = new System.Drawing.Point(421, 240);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(59, 20);
-            this.textBox1.TabIndex = 43;
+            this.txtRentRoomP.Location = new System.Drawing.Point(421, 240);
+            this.txtRentRoomP.Name = "txtRentRoomP";
+            this.txtRentRoomP.Size = new System.Drawing.Size(59, 20);
+            this.txtRentRoomP.TabIndex = 43;
+            this.txtRentRoomP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRentRoomP_KeyPress);
+            this.txtRentRoomP.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRentRoomP_KeyUp);
             // 
             // label15
             // 
@@ -426,20 +432,22 @@
             this.label16.TabIndex = 41;
             this.label16.Text = "รวมราคา";
             // 
-            // textBox2
+            // txtRentRoomA
             // 
-            this.textBox2.Location = new System.Drawing.Point(597, 240);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(84, 20);
-            this.textBox2.TabIndex = 40;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtRentRoomA.Location = new System.Drawing.Point(597, 240);
+            this.txtRentRoomA.Name = "txtRentRoomA";
+            this.txtRentRoomA.Size = new System.Drawing.Size(84, 20);
+            this.txtRentRoomA.TabIndex = 40;
+            this.txtRentRoomA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox3
+            // txtRentRoomN
             // 
-            this.textBox3.Location = new System.Drawing.Point(201, 240);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(59, 20);
-            this.textBox3.TabIndex = 39;
+            this.txtRentRoomN.Location = new System.Drawing.Point(201, 240);
+            this.txtRentRoomN.Name = "txtRentRoomN";
+            this.txtRentRoomN.Size = new System.Drawing.Size(59, 20);
+            this.txtRentRoomN.TabIndex = 39;
+            this.txtRentRoomN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRentRoomN_KeyPress);
+            this.txtRentRoomN.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRentRoomN_KeyUp);
             // 
             // label17
             // 
@@ -450,12 +458,14 @@
             this.label17.TabIndex = 38;
             this.label17.Text = "จำนวนวัน";
             // 
-            // textBox4
+            // txtRentRoomD
             // 
-            this.textBox4.Location = new System.Drawing.Point(301, 241);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(59, 20);
-            this.textBox4.TabIndex = 37;
+            this.txtRentRoomD.Location = new System.Drawing.Point(301, 241);
+            this.txtRentRoomD.Name = "txtRentRoomD";
+            this.txtRentRoomD.Size = new System.Drawing.Size(59, 20);
+            this.txtRentRoomD.TabIndex = 37;
+            this.txtRentRoomD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRentRoomD_KeyPress);
+            this.txtRentRoomD.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRentRoomD_KeyUp);
             // 
             // label18
             // 
@@ -475,26 +485,37 @@
             this.chkRentRoom.TabIndex = 35;
             this.chkRentRoom.Text = "ต้องเช่าห้องพัก";
             this.chkRentRoom.UseVisualStyleBackColor = true;
+            this.chkRentRoom.Click += new System.EventHandler(this.chkRentRoom_Click);
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(687, 27);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(33, 20);
+            this.txtId.TabIndex = 44;
+            this.txtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtId.Visible = false;
             // 
             // FrmQuotationEx
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 517);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.txtRentRoomP);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtRentRoomA);
+            this.Controls.Add(this.txtRentRoomN);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtRentRoomD);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.chkRentRoom);
             this.Controls.Add(this.txtGoSiteN);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtDistanceDailyN);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.txtRentCarN);
+            this.Controls.Add(this.txtRentCarP);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtAmount);
@@ -505,7 +526,7 @@
             this.Controls.Add(this.txtEx1A);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtRentCarA);
-            this.Controls.Add(this.txtRentCarP);
+            this.Controls.Add(this.txtRentCarN);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtRentCarD);
             this.Controls.Add(this.label9);
@@ -554,7 +575,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtRentCarA;
-        private System.Windows.Forms.TextBox txtRentCarP;
+        private System.Windows.Forms.TextBox txtRentCarN;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtRentCarD;
         private System.Windows.Forms.Label label9;
@@ -565,20 +586,21 @@
         private System.Windows.Forms.CheckBox chkEx2;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.TextBox txtRentCarN;
+        private System.Windows.Forms.TextBox txtRentCarP;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtDistanceDailyN;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtGoSiteN;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtRentRoomP;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtRentRoomA;
+        private System.Windows.Forms.TextBox txtRentRoomN;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtRentRoomD;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.CheckBox chkRentRoom;
+        private System.Windows.Forms.TextBox txtId;
     }
 }

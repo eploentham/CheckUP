@@ -33,7 +33,7 @@ namespace Cemp.objdb
             rs.MouNumber = "mou_number";
             rs.MouNumberCnt = "mou_number_cnt";
 
-            rs.YearId = "year_id";
+            rs.YearId = "year_id";            
 
             rs.pkField = "result_id";
             rs.table = "t_result";

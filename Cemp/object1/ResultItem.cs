@@ -8,5 +8,6 @@ namespace Cemp.object1
     public class ResultItem:Persistent
     {
         public String Id = "", ResultId = "", RowNumber = "", PlaceMeasure = "", ResultMin = "", ResultMax = "", ResultValue = "", Active = "", ItemCode="";
+        public String ItemMethodId = "", ItemMethodDescription = "", ItemDescription = "", Remark = "";
     }
 }

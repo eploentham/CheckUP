@@ -94,7 +94,7 @@ namespace Cemp.gui
             dgvView.Columns[colMOURow].HeaderText = "ลำดับ";
             dgvView.Columns[colMOUMOUNumber].HeaderText = "เลขที่ข้อตกลง";
             dgvView.Columns[colMOUCustName].HeaderText = "ลูกค้า บริษัท";
-            dgvView.Columns[colMOUMOUDate].HeaderText = "วันที่ข้อตกลง";
+            dgvView.Columns[colMOUMOUDate].HeaderText = "วันที่เก็บตัวอย่าง...";
             dgvView.Columns[colMOUSample].HeaderText = "sample";
             dgvView.Columns[colMOUNetTotal].HeaderText = "มูลค่าทั้งหมด";
             dgvView.Columns[colMOURemark].HeaderText = "หมายเหตุ";

@@ -57,6 +57,35 @@ namespace Cemp.objdb
 
             return item;
         }
+        public List<Method> getListMethod(List<Method> item)
+        {
+            //ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectAll();
+            //c.Items.Clear();
+            //String aaa = "";
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                Method me1 = new Method();
+                me1.Active = dt.Rows[i][me.Active].ToString();
+                me1.Code = dt.Rows[i][me.Code].ToString();
+                me1.Id = dt.Rows[i][me.Id].ToString();
+                me1.NameE = dt.Rows[i][me.NameE].ToString();
+                me1.NameT = dt.Rows[i][me.NameT].ToString();
+                me1.Remark = dt.Rows[i][me.Remark].ToString();
+                me1.Sort1 = dt.Rows[i][me.Sort1].ToString();
+                me1.dateCancel = dt.Rows[i][me.dateCancel].ToString();
+                me1.dateCreate = dt.Rows[i][me.dateCreate].ToString();
+                me1.dateModi = dt.Rows[i][me.dateModi].ToString();
+                //item.DatePlaceRecord = dt.Rows[0][mo.DatePlaceRecord].ToString();
+                me1.userCancel = dt.Rows[i][me.userCancel].ToString();
+                me1.userCreate = dt.Rows[i][me.userCreate].ToString();
+                me1.userModi = dt.Rows[i][me.userModi].ToString();
+                item.Add(me1);
+                //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
+                //c.Items.Add(new );
+            }
+            return item;
+        }
         public DataTable selectAll()
         {
             String sql = "";

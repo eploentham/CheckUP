@@ -48,6 +48,7 @@ namespace Cemp.Control
         public BankDB bandb;
         public CompanyBankDB cobdb;
         public ItemPricePeriodDB ippdb;
+        public QuotationExDB quexdb;
 
         public Staff sf;
         public Company cp;
@@ -63,6 +64,7 @@ namespace Cemp.Control
         public ComboBox cboIt;
         public List<Customer> lcu;
         public List<ItemGroup> litg;
+        public List<Method> lme;
         public List<Item> lit;
         public CnviControl()
         {
@@ -81,6 +83,8 @@ namespace Cemp.Control
                 itSearch = new Item();
                 litg = new List<ItemGroup>();
                 lit = new List<Item>();
+                lme = new List<Method>();
+                lcu = new List<Customer>();
 
                 conn = new ConnectDB(initC);
 
@@ -109,6 +113,7 @@ namespace Cemp.Control
                 bandb = new BankDB(conn);
                 cobdb = new CompanyBankDB(conn);
                 ippdb = new ItemPricePeriodDB(conn);
+                quexdb = new QuotationExDB(conn);
 
                 lw = new LogWriter();
 
@@ -121,6 +126,8 @@ namespace Cemp.Control
                 cbove = cudb.getCboVendor(cbove);
                 itgdb.getListItemGroup(litg);
                 itdb.getListItem(lit);
+                medb.getListMethod(lme);
+                cudb.getListCustomer(lcu);
 
                 per = new Persistent();
                 per.dateGenDB = "Now()";
@@ -656,6 +663,35 @@ namespace Cemp.Control
             foreach (Item i in lit)
             {
                 if (i.Id.Equals(itId))
+                {
+                    //item = i;
+                    return i;
+                }
+            }
+
+            return item;
+        }
+        public void setCboMethod(ComboBox c)
+        {
+            ComboBoxItem r = new ComboBoxItem();
+            r.Text = "";
+            r.Value = "";
+            foreach (Method me in lme)
+            {
+                r = new ComboBoxItem();
+                r.Text = me.NameT;
+                r.Value = me.Id;
+                c.Items.Add(r);
+            }
+            //return c;
+        }
+        public Customer getCustomerByList(String cuId)
+        {
+            Customer item = new Customer();
+
+            foreach (Customer i in lcu)
+            {
+                if (i.Id.Equals(cuId))
                 {
                     //item = i;
                     return i;

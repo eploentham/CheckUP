@@ -8,10 +8,14 @@ using System.Windows.Forms;
 
 namespace Cemp.objdb
 {
+    /**
+     * 57.12.18.01  เจอBug ที่ทำให้ใน Table t_quotation_item เกิด duplicate key
+     * */
     public class QuotationItemDB
     {
         ConnectDB conn;
         public QuotationItem qui;
+        LogWriter lw;       //57.12.18.01 +
         public QuotationItemDB(ConnectDB c)
         {
             conn = c;
@@ -19,6 +23,7 @@ namespace Cemp.objdb
         }
         private void initConfig()
         {
+            lw = new LogWriter();       //57.12.18.01 +
             qui = new QuotationItem();
             qui.Active = "quo_item_active";
             qui.Amount = "amount1";
@@ -184,7 +189,9 @@ namespace Cemp.objdb
             p.Remark = p.Remark.Replace("'", "''");
             p.ItemGroupNameE = p.ItemGroupNameE.Replace("'", "''");
             p.ItemGroupNameT = p.ItemGroupNameT.Replace("'", "''");
-            
+
+            p.dateCreate = p.dateGenDB;
+
             //p. = p.ItemGroupNameT.Replace("''", "'");
             //p.PriceSale = p.PriceSale.Replace(",", "");
             //p.PriceCost = p.PriceCost.Replace(",", "");
@@ -203,14 +210,14 @@ namespace Cemp.objdb
                 qui.Qty + "," + qui.QuoId + "," + qui.RowNumber + "," +
                 qui.Remark + "," + qui.ItemGroupNameE + "," + qui.ItemGroupNameT + "," +
                 qui.ItemGroupSort + "," + qui.ItemGroupId + "," + qui.PriceCost + "," +
-                qui.ItemCode + "," + qui.ItemType + "," + qui.StatusPrice + ") " +
+                qui.ItemCode + "," + qui.ItemType + "," + qui.StatusPrice + "," + qui.dateCreate + ") " +
                 "Values('" + p.Id + "','" + p.Active + "'," + NumberNull1(p.Amount.Replace(",", "")) + "," +
                 NumberNull1(p.Discount.Replace(",", "")) + ",'" + p.ItemDescription + "','" + p.ItemId + "','" +
                 p.MethodDescription + "','" + p.MethodId + "'," + NumberNull1(p.PriceSale.Replace(",", "")) + "," +
                 NumberNull1(p.Qty.Replace(",", "")) + ",'" + p.QuoId + "'," + NumberNull1(p.RowNumber) + ",'" +
                 p.Remark + "','" + p.ItemGroupNameE + "','" + p.ItemGroupNameT + "','" +
                 p.ItemGroupSort + "','" + p.ItemGroupId + "'," + NumberNull1(p.PriceCost.Replace(",", "")) + ",'" +
-                p.ItemCode + "','" + p.ItemType + "','" + p.StatusPrice + "')";
+                p.ItemCode + "','" + p.ItemType + "','" + p.StatusPrice + "'," + p.dateCreate + ")";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -219,6 +226,8 @@ namespace Cemp.objdb
             catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex.ToString(), "insert QuotationItem");
+                lw.WriteLog("QuotationItemDB.QuotationItem Error " + ex.Message);       //57.12.18.01 +
+                lw.WriteLog("QuotationItemDB.QuotationItem Error " + sql);              //57.12.18.01 +
             }
             finally
             {
@@ -244,6 +253,9 @@ namespace Cemp.objdb
             {
                 p.ItemGroupSort = "999";
             }
+
+            p.dateModi = p.dateGenDB;
+
             sql = "Update " + qui.table + " Set " + qui.Amount + "=" + NumberNull1(p.Amount.Replace(",","")) + ", " +
                 qui.Discount + "=" + NumberNull1(p.Discount.Replace(",", "")) + ", " +
                 qui.ItemDescription + "='" + p.ItemDescription + "', " +
@@ -261,7 +273,7 @@ namespace Cemp.objdb
                 qui.ItemGroupId + "='" + p.ItemGroupId + "', " +
                 qui.PriceCost + "=" + NumberNull1(p.PriceCost.Replace(",", "")) + ", " +
                 qui.ItemCode + "='" + p.ItemCode + "', " +
-                //qui.ItemGroupId + "='" + p.ItemGroupId + "', " +
+                qui.dateModi + "=" + p.dateModi + ", " +
                 qui.ItemType + "='" + p.ItemType + "', " +
                 qui.StatusPrice + "='" + p.StatusPrice + "' " +
                 "Where " + qui.pkField + "='" + p.Id + "'";

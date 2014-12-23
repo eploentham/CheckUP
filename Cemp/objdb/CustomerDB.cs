@@ -450,5 +450,67 @@ namespace Cemp.objdb
                 return o;
             }
         }
+        public List<Customer> getListCustomer(List<Customer> item)
+        {
+            //ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectAll();
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                Customer me1 = new Customer();
+                me1.Id = dt.Rows[i][cu.Id].ToString();
+                me1.Active = dt.Rows[i][cu.Active].ToString();
+                me1.Addr = dt.Rows[i][cu.Addr].ToString();
+                me1.AddressE = dt.Rows[i][cu.AddressE].ToString();
+                me1.AddressT = dt.Rows[i][cu.AddressT].ToString();
+                me1.amphurId = dt.Rows[i][cu.amphurId].ToString();
+                me1.Code = dt.Rows[i][cu.Code].ToString();
+
+                me1.ContactName1 = dt.Rows[i][cu.ContactName1].ToString();
+                me1.ContactName1Tel = dt.Rows[i][cu.ContactName1Tel].ToString();
+                me1.ContactName2 = dt.Rows[i][cu.ContactName2].ToString();
+                me1.ContactName2Tel = dt.Rows[i][cu.ContactName2Tel].ToString();
+                me1.districtId = dt.Rows[i][cu.districtId].ToString();
+                me1.Email = dt.Rows[i][cu.Email].ToString();
+                me1.Fax = dt.Rows[i][cu.Fax].ToString();
+                me1.NameE = dt.Rows[i][cu.NameE].ToString();
+                if (dt.Rows[i][cu.StatusCompany].ToString().Equals("1"))
+                {
+                    me1.NameT = "บริษัท " + dt.Rows[i][cu.NameT].ToString() + " จำกัด";
+                }
+                else if (dt.Rows[i][cu.StatusCompany].ToString().Equals("2"))
+                {
+                    me1.NameT = "บริษัท " + dt.Rows[i][cu.NameT].ToString() + " จำกัด (มหาชน)";
+                }
+                else
+                {
+                    me1.NameT = dt.Rows[i][cu.NameT].ToString();
+                }
+
+                me1.provinceId = dt.Rows[i][cu.provinceId].ToString();
+                me1.Remark = dt.Rows[i][cu.Remark].ToString();
+                me1.saleId = dt.Rows[i][cu.saleId].ToString();
+                me1.saleName = dt.Rows[i][cu.saleName].ToString();
+                me1.TaxId = dt.Rows[i][cu.TaxId].ToString();
+                me1.Tele = dt.Rows[i][cu.Tele].ToString();
+                me1.Zipcode = dt.Rows[i][cu.Zipcode].ToString();
+                me1.StatusCompany = dt.Rows[i][cu.StatusCompany].ToString();
+                me1.StatusVendor = dt.Rows[i][cu.StatusVendor].ToString();
+                me1.dateCancel = dt.Rows[i][cu.dateCancel].ToString();
+                me1.dateCreate = dt.Rows[i][cu.dateCreate].ToString();
+                me1.dateModi = dt.Rows[i][cu.dateModi].ToString();
+                me1.userCancel = dt.Rows[i][cu.userCancel].ToString();
+                me1.userCreate = dt.Rows[i][cu.userCreate].ToString();
+                me1.userModi = dt.Rows[i][cu.userModi].ToString();
+                me1.Remark2 = dt.Rows[i][cu.Remark2].ToString();
+                me1.PODuePeriod = dt.Rows[i][cu.PODuePeriod].ToString();
+                me1.Mobile = dt.Rows[i][cu.Mobile].ToString();
+
+                item.Add(me1);
+                //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
+                //c.Items.Add(new );
+            }
+            return item;
+        }
     }
 }
