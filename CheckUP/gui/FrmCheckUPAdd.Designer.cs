@@ -30,6 +30,16 @@
         {
             this.tC = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnExelUric = new System.Windows.Forms.Button();
+            this.btnExelBun = new System.Windows.Forms.Button();
+            this.btnExelSgot = new System.Windows.Forms.Button();
+            this.btnExelCho = new System.Windows.Forms.Button();
+            this.btnExelTri = new System.Windows.Forms.Button();
+            this.btnExelUA = new System.Windows.Forms.Button();
+            this.btnExelCBC = new System.Windows.Forms.Button();
+            this.btnExelFBS = new System.Windows.Forms.Button();
+            this.btnExelXray = new System.Windows.Forms.Button();
+            this.btnExelPE = new System.Windows.Forms.Button();
             this.txtUricSucess = new System.Windows.Forms.TextBox();
             this.txtBunSucess = new System.Windows.Forms.TextBox();
             this.txtSgotSucess = new System.Windows.Forms.TextBox();
@@ -132,6 +142,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dgvSum = new System.Windows.Forms.DataGridView();
             this.tabPage20 = new System.Windows.Forms.TabPage();
+            this.btnExelStoolExam = new System.Windows.Forms.Button();
+            this.btnExelToxi = new System.Windows.Forms.Button();
+            this.btnExelEye = new System.Windows.Forms.Button();
+            this.btnExelAudio = new System.Windows.Forms.Button();
+            this.btnExelLung = new System.Windows.Forms.Button();
+            this.btnExelOther1 = new System.Windows.Forms.Button();
             this.txtStoolExamSucess = new System.Windows.Forms.TextBox();
             this.txtToxiSucess = new System.Windows.Forms.TextBox();
             this.txtEyeSucess = new System.Windows.Forms.TextBox();
@@ -256,22 +272,6 @@
             this.txtCntSuccess = new System.Windows.Forms.TextBox();
             this.label123 = new System.Windows.Forms.Label();
             this.btnExcel1 = new System.Windows.Forms.Button();
-            this.btnExelPE = new System.Windows.Forms.Button();
-            this.btnExelXray = new System.Windows.Forms.Button();
-            this.btnExelFBS = new System.Windows.Forms.Button();
-            this.btnExelCBC = new System.Windows.Forms.Button();
-            this.btnExelUA = new System.Windows.Forms.Button();
-            this.btnExelTri = new System.Windows.Forms.Button();
-            this.btnExelCho = new System.Windows.Forms.Button();
-            this.btnExelSgot = new System.Windows.Forms.Button();
-            this.btnExelBun = new System.Windows.Forms.Button();
-            this.btnExelUric = new System.Windows.Forms.Button();
-            this.btnExelOther1 = new System.Windows.Forms.Button();
-            this.btnExelLung = new System.Windows.Forms.Button();
-            this.btnExelAudio = new System.Windows.Forms.Button();
-            this.btnExelEye = new System.Windows.Forms.Button();
-            this.btnExelToxi = new System.Windows.Forms.Button();
-            this.btnExelStoolExam = new System.Windows.Forms.Button();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -461,6 +461,116 @@
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Summary";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnExelUric
+            // 
+            this.btnExelUric.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnExelUric.Location = new System.Drawing.Point(842, 536);
+            this.btnExelUric.Name = "btnExelUric";
+            this.btnExelUric.Size = new System.Drawing.Size(40, 28);
+            this.btnExelUric.TabIndex = 183;
+            this.btnExelUric.Text = "...";
+            this.btnExelUric.UseVisualStyleBackColor = true;
+            this.btnExelUric.Click += new System.EventHandler(this.btnExelUric_Click);
+            // 
+            // btnExelBun
+            // 
+            this.btnExelBun.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnExelBun.Location = new System.Drawing.Point(842, 487);
+            this.btnExelBun.Name = "btnExelBun";
+            this.btnExelBun.Size = new System.Drawing.Size(40, 28);
+            this.btnExelBun.TabIndex = 182;
+            this.btnExelBun.Text = "...";
+            this.btnExelBun.UseVisualStyleBackColor = true;
+            this.btnExelBun.Click += new System.EventHandler(this.btnExelBun_Click);
+            // 
+            // btnExelSgot
+            // 
+            this.btnExelSgot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnExelSgot.Location = new System.Drawing.Point(842, 432);
+            this.btnExelSgot.Name = "btnExelSgot";
+            this.btnExelSgot.Size = new System.Drawing.Size(40, 28);
+            this.btnExelSgot.TabIndex = 181;
+            this.btnExelSgot.Text = "...";
+            this.btnExelSgot.UseVisualStyleBackColor = true;
+            this.btnExelSgot.Click += new System.EventHandler(this.btnExelSgot_Click);
+            // 
+            // btnExelCho
+            // 
+            this.btnExelCho.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnExelCho.Location = new System.Drawing.Point(842, 376);
+            this.btnExelCho.Name = "btnExelCho";
+            this.btnExelCho.Size = new System.Drawing.Size(40, 28);
+            this.btnExelCho.TabIndex = 180;
+            this.btnExelCho.Text = "...";
+            this.btnExelCho.UseVisualStyleBackColor = true;
+            this.btnExelCho.Click += new System.EventHandler(this.btnExelCho_Click);
+            // 
+            // btnExelTri
+            // 
+            this.btnExelTri.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnExelTri.Location = new System.Drawing.Point(842, 319);
+            this.btnExelTri.Name = "btnExelTri";
+            this.btnExelTri.Size = new System.Drawing.Size(40, 28);
+            this.btnExelTri.TabIndex = 179;
+            this.btnExelTri.Text = "...";
+            this.btnExelTri.UseVisualStyleBackColor = true;
+            this.btnExelTri.Click += new System.EventHandler(this.btnExelTri_Click);
+            // 
+            // btnExelUA
+            // 
+            this.btnExelUA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnExelUA.Location = new System.Drawing.Point(842, 264);
+            this.btnExelUA.Name = "btnExelUA";
+            this.btnExelUA.Size = new System.Drawing.Size(40, 28);
+            this.btnExelUA.TabIndex = 178;
+            this.btnExelUA.Text = "...";
+            this.btnExelUA.UseVisualStyleBackColor = true;
+            this.btnExelUA.Click += new System.EventHandler(this.btnExelUA_Click);
+            // 
+            // btnExelCBC
+            // 
+            this.btnExelCBC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnExelCBC.Location = new System.Drawing.Point(842, 204);
+            this.btnExelCBC.Name = "btnExelCBC";
+            this.btnExelCBC.Size = new System.Drawing.Size(40, 28);
+            this.btnExelCBC.TabIndex = 177;
+            this.btnExelCBC.Text = "...";
+            this.btnExelCBC.UseVisualStyleBackColor = true;
+            this.btnExelCBC.Click += new System.EventHandler(this.btnExelCBC_Click);
+            // 
+            // btnExelFBS
+            // 
+            this.btnExelFBS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnExelFBS.Location = new System.Drawing.Point(842, 146);
+            this.btnExelFBS.Name = "btnExelFBS";
+            this.btnExelFBS.Size = new System.Drawing.Size(40, 28);
+            this.btnExelFBS.TabIndex = 176;
+            this.btnExelFBS.Text = "...";
+            this.btnExelFBS.UseVisualStyleBackColor = true;
+            this.btnExelFBS.Click += new System.EventHandler(this.btnExelFBS_Click);
+            // 
+            // btnExelXray
+            // 
+            this.btnExelXray.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnExelXray.Location = new System.Drawing.Point(842, 92);
+            this.btnExelXray.Name = "btnExelXray";
+            this.btnExelXray.Size = new System.Drawing.Size(40, 28);
+            this.btnExelXray.TabIndex = 175;
+            this.btnExelXray.Text = "...";
+            this.btnExelXray.UseVisualStyleBackColor = true;
+            this.btnExelXray.Click += new System.EventHandler(this.btnExelXray_Click);
+            // 
+            // btnExelPE
+            // 
+            this.btnExelPE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnExelPE.Location = new System.Drawing.Point(842, 38);
+            this.btnExelPE.Name = "btnExelPE";
+            this.btnExelPE.Size = new System.Drawing.Size(40, 28);
+            this.btnExelPE.TabIndex = 174;
+            this.btnExelPE.Text = "...";
+            this.btnExelPE.UseVisualStyleBackColor = true;
+            this.btnExelPE.Click += new System.EventHandler(this.btnExelPE_Click);
             // 
             // txtUricSucess
             // 
@@ -1451,6 +1561,66 @@
             this.tabPage20.TabIndex = 19;
             this.tabPage20.Text = "Summary2";
             this.tabPage20.UseVisualStyleBackColor = true;
+            // 
+            // btnExelStoolExam
+            // 
+            this.btnExelStoolExam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnExelStoolExam.Location = new System.Drawing.Point(863, 373);
+            this.btnExelStoolExam.Name = "btnExelStoolExam";
+            this.btnExelStoolExam.Size = new System.Drawing.Size(40, 28);
+            this.btnExelStoolExam.TabIndex = 338;
+            this.btnExelStoolExam.Text = "...";
+            this.btnExelStoolExam.UseVisualStyleBackColor = true;
+            // 
+            // btnExelToxi
+            // 
+            this.btnExelToxi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnExelToxi.Location = new System.Drawing.Point(863, 258);
+            this.btnExelToxi.Name = "btnExelToxi";
+            this.btnExelToxi.Size = new System.Drawing.Size(40, 28);
+            this.btnExelToxi.TabIndex = 337;
+            this.btnExelToxi.Text = "...";
+            this.btnExelToxi.UseVisualStyleBackColor = true;
+            // 
+            // btnExelEye
+            // 
+            this.btnExelEye.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnExelEye.Location = new System.Drawing.Point(863, 203);
+            this.btnExelEye.Name = "btnExelEye";
+            this.btnExelEye.Size = new System.Drawing.Size(40, 28);
+            this.btnExelEye.TabIndex = 336;
+            this.btnExelEye.Text = "...";
+            this.btnExelEye.UseVisualStyleBackColor = true;
+            // 
+            // btnExelAudio
+            // 
+            this.btnExelAudio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnExelAudio.Location = new System.Drawing.Point(863, 154);
+            this.btnExelAudio.Name = "btnExelAudio";
+            this.btnExelAudio.Size = new System.Drawing.Size(40, 28);
+            this.btnExelAudio.TabIndex = 335;
+            this.btnExelAudio.Text = "...";
+            this.btnExelAudio.UseVisualStyleBackColor = true;
+            // 
+            // btnExelLung
+            // 
+            this.btnExelLung.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnExelLung.Location = new System.Drawing.Point(863, 97);
+            this.btnExelLung.Name = "btnExelLung";
+            this.btnExelLung.Size = new System.Drawing.Size(40, 28);
+            this.btnExelLung.TabIndex = 334;
+            this.btnExelLung.Text = "...";
+            this.btnExelLung.UseVisualStyleBackColor = true;
+            // 
+            // btnExelOther1
+            // 
+            this.btnExelOther1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnExelOther1.Location = new System.Drawing.Point(863, 45);
+            this.btnExelOther1.Name = "btnExelOther1";
+            this.btnExelOther1.Size = new System.Drawing.Size(40, 28);
+            this.btnExelOther1.TabIndex = 333;
+            this.btnExelOther1.Text = "...";
+            this.btnExelOther1.UseVisualStyleBackColor = true;
             // 
             // txtStoolExamSucess
             // 
@@ -2688,167 +2858,6 @@
             this.btnExcel1.Text = "...";
             this.btnExcel1.UseVisualStyleBackColor = true;
             this.btnExcel1.Click += new System.EventHandler(this.btnExcel1_Click);
-            // 
-            // btnExelPE
-            // 
-            this.btnExelPE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExelPE.Location = new System.Drawing.Point(842, 38);
-            this.btnExelPE.Name = "btnExelPE";
-            this.btnExelPE.Size = new System.Drawing.Size(40, 28);
-            this.btnExelPE.TabIndex = 174;
-            this.btnExelPE.Text = "...";
-            this.btnExelPE.UseVisualStyleBackColor = true;
-            this.btnExelPE.Click += new System.EventHandler(this.btnExelPE_Click);
-            // 
-            // btnExelXray
-            // 
-            this.btnExelXray.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExelXray.Location = new System.Drawing.Point(842, 92);
-            this.btnExelXray.Name = "btnExelXray";
-            this.btnExelXray.Size = new System.Drawing.Size(40, 28);
-            this.btnExelXray.TabIndex = 175;
-            this.btnExelXray.Text = "...";
-            this.btnExelXray.UseVisualStyleBackColor = true;
-            // 
-            // btnExelFBS
-            // 
-            this.btnExelFBS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExelFBS.Location = new System.Drawing.Point(842, 146);
-            this.btnExelFBS.Name = "btnExelFBS";
-            this.btnExelFBS.Size = new System.Drawing.Size(40, 28);
-            this.btnExelFBS.TabIndex = 176;
-            this.btnExelFBS.Text = "...";
-            this.btnExelFBS.UseVisualStyleBackColor = true;
-            // 
-            // btnExelCBC
-            // 
-            this.btnExelCBC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExelCBC.Location = new System.Drawing.Point(842, 204);
-            this.btnExelCBC.Name = "btnExelCBC";
-            this.btnExelCBC.Size = new System.Drawing.Size(40, 28);
-            this.btnExelCBC.TabIndex = 177;
-            this.btnExelCBC.Text = "...";
-            this.btnExelCBC.UseVisualStyleBackColor = true;
-            // 
-            // btnExelUA
-            // 
-            this.btnExelUA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExelUA.Location = new System.Drawing.Point(842, 264);
-            this.btnExelUA.Name = "btnExelUA";
-            this.btnExelUA.Size = new System.Drawing.Size(40, 28);
-            this.btnExelUA.TabIndex = 178;
-            this.btnExelUA.Text = "...";
-            this.btnExelUA.UseVisualStyleBackColor = true;
-            // 
-            // btnExelTri
-            // 
-            this.btnExelTri.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExelTri.Location = new System.Drawing.Point(842, 319);
-            this.btnExelTri.Name = "btnExelTri";
-            this.btnExelTri.Size = new System.Drawing.Size(40, 28);
-            this.btnExelTri.TabIndex = 179;
-            this.btnExelTri.Text = "...";
-            this.btnExelTri.UseVisualStyleBackColor = true;
-            // 
-            // btnExelCho
-            // 
-            this.btnExelCho.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExelCho.Location = new System.Drawing.Point(842, 376);
-            this.btnExelCho.Name = "btnExelCho";
-            this.btnExelCho.Size = new System.Drawing.Size(40, 28);
-            this.btnExelCho.TabIndex = 180;
-            this.btnExelCho.Text = "...";
-            this.btnExelCho.UseVisualStyleBackColor = true;
-            // 
-            // btnExelSgot
-            // 
-            this.btnExelSgot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExelSgot.Location = new System.Drawing.Point(842, 432);
-            this.btnExelSgot.Name = "btnExelSgot";
-            this.btnExelSgot.Size = new System.Drawing.Size(40, 28);
-            this.btnExelSgot.TabIndex = 181;
-            this.btnExelSgot.Text = "...";
-            this.btnExelSgot.UseVisualStyleBackColor = true;
-            // 
-            // btnExelBun
-            // 
-            this.btnExelBun.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExelBun.Location = new System.Drawing.Point(842, 487);
-            this.btnExelBun.Name = "btnExelBun";
-            this.btnExelBun.Size = new System.Drawing.Size(40, 28);
-            this.btnExelBun.TabIndex = 182;
-            this.btnExelBun.Text = "...";
-            this.btnExelBun.UseVisualStyleBackColor = true;
-            // 
-            // btnExelUric
-            // 
-            this.btnExelUric.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExelUric.Location = new System.Drawing.Point(842, 536);
-            this.btnExelUric.Name = "btnExelUric";
-            this.btnExelUric.Size = new System.Drawing.Size(40, 28);
-            this.btnExelUric.TabIndex = 183;
-            this.btnExelUric.Text = "...";
-            this.btnExelUric.UseVisualStyleBackColor = true;
-            // 
-            // btnExelOther1
-            // 
-            this.btnExelOther1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExelOther1.Location = new System.Drawing.Point(863, 45);
-            this.btnExelOther1.Name = "btnExelOther1";
-            this.btnExelOther1.Size = new System.Drawing.Size(40, 28);
-            this.btnExelOther1.TabIndex = 333;
-            this.btnExelOther1.Text = "...";
-            this.btnExelOther1.UseVisualStyleBackColor = true;
-            // 
-            // btnExelLung
-            // 
-            this.btnExelLung.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExelLung.Location = new System.Drawing.Point(863, 97);
-            this.btnExelLung.Name = "btnExelLung";
-            this.btnExelLung.Size = new System.Drawing.Size(40, 28);
-            this.btnExelLung.TabIndex = 334;
-            this.btnExelLung.Text = "...";
-            this.btnExelLung.UseVisualStyleBackColor = true;
-            // 
-            // btnExelAudio
-            // 
-            this.btnExelAudio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExelAudio.Location = new System.Drawing.Point(863, 154);
-            this.btnExelAudio.Name = "btnExelAudio";
-            this.btnExelAudio.Size = new System.Drawing.Size(40, 28);
-            this.btnExelAudio.TabIndex = 335;
-            this.btnExelAudio.Text = "...";
-            this.btnExelAudio.UseVisualStyleBackColor = true;
-            // 
-            // btnExelEye
-            // 
-            this.btnExelEye.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExelEye.Location = new System.Drawing.Point(863, 203);
-            this.btnExelEye.Name = "btnExelEye";
-            this.btnExelEye.Size = new System.Drawing.Size(40, 28);
-            this.btnExelEye.TabIndex = 336;
-            this.btnExelEye.Text = "...";
-            this.btnExelEye.UseVisualStyleBackColor = true;
-            // 
-            // btnExelToxi
-            // 
-            this.btnExelToxi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExelToxi.Location = new System.Drawing.Point(863, 258);
-            this.btnExelToxi.Name = "btnExelToxi";
-            this.btnExelToxi.Size = new System.Drawing.Size(40, 28);
-            this.btnExelToxi.TabIndex = 337;
-            this.btnExelToxi.Text = "...";
-            this.btnExelToxi.UseVisualStyleBackColor = true;
-            // 
-            // btnExelStoolExam
-            // 
-            this.btnExelStoolExam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExelStoolExam.Location = new System.Drawing.Point(863, 373);
-            this.btnExelStoolExam.Name = "btnExelStoolExam";
-            this.btnExelStoolExam.Size = new System.Drawing.Size(40, 28);
-            this.btnExelStoolExam.TabIndex = 338;
-            this.btnExelStoolExam.Text = "...";
-            this.btnExelStoolExam.UseVisualStyleBackColor = true;
             // 
             // FrmCheckUPAdd
             // 

@@ -215,7 +215,7 @@ namespace CheckUP.gui
             {
                 String chk = cc.ccpvndb.UpdateCBC(txtCBCBact.Text, txtCBCEos.Text, txtCBCHbMale.Text, txtCBCHbFemale.Text, txtCBCHctMale.Text, txtCBCHctFemale.Text,
                 txtCBCLy.Text, txtCBCMch.Text, txtCBCMchc.Text, txtCBCMcvMale.Text, txtCBCMcvFemale.Text, txtCBCMono.Text, txtCBCNeu.Text, txtCBCPltC.Text, 
-                txtCBCRbcMale.Text, txtCBCRbcFemale.Text, txtCBCRbcMono.Text, txtCBCWbc.Text, txtCBCPltS.Text);
+                txtCBCRbcMale.Text, txtCBCRbcFemale.Text, txtCBCRbcMono.Text, txtCBCWbc.Text, txtCBCPltS.Text, txtCBCPmn.Text);
                 cc.dtccpvn = cc.ccpvndb.selectByPk();
                 if (chk.Equals("1"))
                 {

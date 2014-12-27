@@ -82,6 +82,7 @@ namespace CheckUP.gui
             txtCBCSummary.Text = dtccp.Rows[0][cc.ccpdb.ccp.cbcSummary].ToString();
             txtCBCWbc.Text = dtccp.Rows[0][cc.ccpdb.ccp.cbcWbc].ToString();
             txtCBCPltS.Text = dtccp.Rows[0][cc.ccpdb.ccp.cbcPlateletSmear].ToString();
+            txtCBCPmn.Text = dtccp.Rows[0][cc.ccpdb.ccp.cbcPmn].ToString();
 
             txtPEBMI.Text = dtccp.Rows[0][cc.ccpdb.ccp.bmi].ToString();
             txtPEHeight.Text = dtccp.Rows[0][cc.ccpdb.ccp.patientHeight].ToString();
@@ -158,6 +159,7 @@ namespace CheckUP.gui
             txtCBCMcvNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMcvMale].ToString();
             txtCBCWbcNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcWbc].ToString();
             txtCBCPltSNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPlateletSmear].ToString();
+            txtCBCPmn.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPmn].ToString();
 
             txtBunCreatinineNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyCreatinineMale].ToString();
             //txtBunResultNormal.Text = dtccp.Rows[0][cc.ccpdb.ccp.kidneyResult].ToString();
@@ -282,7 +284,7 @@ namespace CheckUP.gui
         {
             String chk = cc.ccpdb.UpdateCBC(txtRowNumber.Text, cuc.Id, txtCBCBact.Text, txtCBCEos.Text, txtCBCHb.Text, txtCBCHct.Text, 
                 txtCBCLy.Text, txtCBCMch.Text, txtCBCMchc.Text, txtCBCMcv.Text, txtCBCMono.Text, txtCBCNeu.Text, txtCBCPltC.Text, txtCBCRbc.Text, 
-                txtCBCRbcMono.Text, txtCBCSummary.Text, txtCBCWbc.Text, txtCBCPltS.Text);
+                txtCBCRbcMono.Text, txtCBCSummary.Text, txtCBCWbc.Text, txtCBCPltS.Text, txtCBCPmn.Text);
             if (chk.Equals("1"))
             {
                 MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
@@ -356,7 +358,7 @@ namespace CheckUP.gui
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            String chk = cc.ccpdb.UpdateName(txtRowNumber.Text, cuc.Id, txtFullName.Text);
+            String chk = cc.ccpdb.UpdateName(txtRowNumber.Text, cuc.Id, txtFullName.Text, txtAge.Text);
             if (chk.Equals("1"))
             {
                 MessageBox.Show("บันทึกข้อมูล PE เรียบร้อย", "บันทึกข้อมูล");

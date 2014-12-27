@@ -114,7 +114,7 @@ namespace CheckUP.object1
         public String cbcSummary="";
         public String cbcMch = "";
         public String cbcMchc = "";
-        public String cbcPlateletSmear = "";
+        public String cbcPlateletSmear = "", cbcPmn = "";
 
         public String urineColor="";
         public String urineAppearance="";
@@ -130,6 +130,7 @@ namespace CheckUP.object1
         public String urineEpithelium="";
         public String urineSummary="";
         public String urineResult = "";
+        public String urineGlu = "";
 
         public String lungFvcPredic="";
         public String lungFvcMeas="";

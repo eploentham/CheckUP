@@ -479,6 +479,8 @@
             this.nmDStoolExamNo = new System.Windows.Forms.NumericUpDown();
             this.label163 = new System.Windows.Forms.Label();
             this.nmDStoolExamRow = new System.Windows.Forms.NumericUpDown();
+            this.label182 = new System.Windows.Forms.Label();
+            this.nmDCBCPmn = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDARow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDAPrefix)).BeginInit();
@@ -682,6 +684,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCPmn)).BeginInit();
             this.SuspendLayout();
             // 
             // nmDRow
@@ -1720,6 +1723,8 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label182);
+            this.tabPage4.Controls.Add(this.nmDCBCPmn);
             this.tabPage4.Controls.Add(this.label50);
             this.tabPage4.Controls.Add(this.nmDCBCSummary);
             this.tabPage4.Controls.Add(this.label51);
@@ -1927,7 +1932,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label34.Location = new System.Drawing.Point(676, 85);
+            this.label34.Location = new System.Drawing.Point(734, 85);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(41, 16);
             this.label34.TabIndex = 46;
@@ -1935,7 +1940,7 @@
             // 
             // nmDCBCEos
             // 
-            this.nmDCBCEos.Location = new System.Drawing.Point(672, 113);
+            this.nmDCBCEos.Location = new System.Drawing.Point(730, 113);
             this.nmDCBCEos.Minimum = new decimal(new int[] {
             1,
             0,
@@ -1954,7 +1959,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label37.Location = new System.Drawing.Point(596, 85);
+            this.label37.Location = new System.Drawing.Point(654, 85);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(48, 16);
             this.label37.TabIndex = 44;
@@ -1962,7 +1967,7 @@
             // 
             // nmDCBCMono
             // 
-            this.nmDCBCMono.Location = new System.Drawing.Point(592, 113);
+            this.nmDCBCMono.Location = new System.Drawing.Point(650, 113);
             this.nmDCBCMono.Minimum = new decimal(new int[] {
             1,
             0,
@@ -1981,7 +1986,7 @@
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label38.Location = new System.Drawing.Point(523, 85);
+            this.label38.Location = new System.Drawing.Point(581, 85);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(25, 16);
             this.label38.TabIndex = 42;
@@ -1989,7 +1994,7 @@
             // 
             // nmDCBCLy
             // 
-            this.nmDCBCLy.Location = new System.Drawing.Point(519, 113);
+            this.nmDCBCLy.Location = new System.Drawing.Point(577, 113);
             this.nmDCBCLy.Minimum = new decimal(new int[] {
             1,
             0,
@@ -2008,7 +2013,7 @@
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label39.Location = new System.Drawing.Point(435, 85);
+            this.label39.Location = new System.Drawing.Point(493, 85);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(42, 16);
             this.label39.TabIndex = 40;
@@ -2016,7 +2021,7 @@
             // 
             // nmDCBCNeu
             // 
-            this.nmDCBCNeu.Location = new System.Drawing.Point(438, 113);
+            this.nmDCBCNeu.Location = new System.Drawing.Point(496, 113);
             this.nmDCBCNeu.Minimum = new decimal(new int[] {
             1,
             0,
@@ -6857,6 +6862,33 @@
             0,
             0});
             // 
+            // label182
+            // 
+            this.label182.AutoSize = true;
+            this.label182.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label182.Location = new System.Drawing.Point(423, 85);
+            this.label182.Name = "label182";
+            this.label182.Size = new System.Drawing.Size(44, 16);
+            this.label182.TabIndex = 78;
+            this.label182.Text = "Pmn  :";
+            // 
+            // nmDCBCPmn
+            // 
+            this.nmDCBCPmn.Location = new System.Drawing.Point(426, 113);
+            this.nmDCBCPmn.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDCBCPmn.Name = "nmDCBCPmn";
+            this.nmDCBCPmn.Size = new System.Drawing.Size(46, 20);
+            this.nmDCBCPmn.TabIndex = 79;
+            this.nmDCBCPmn.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
             // FrmExcelInit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -7089,6 +7121,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCPmn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -7546,5 +7579,7 @@
         private System.Windows.Forms.Button btnToxi1Excel;
         private System.Windows.Forms.Label label181;
         private System.Windows.Forms.NumericUpDown nmDEyeExam;
+        private System.Windows.Forms.Label label182;
+        private System.Windows.Forms.NumericUpDown nmDCBCPmn;
     }
 }

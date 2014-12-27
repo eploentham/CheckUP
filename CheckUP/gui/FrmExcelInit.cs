@@ -106,6 +106,7 @@ namespace CheckUP.gui
             nmDCBCRBCmono.Value = int.Parse(cc.cf.NumberNull1(ei.CBCRBCmono));
             nmDCBCSummary.Value = int.Parse(cc.cf.NumberNull1(ei.CBCSummary));
             nmDCBCWBC.Value= int.Parse(cc.cf.NumberNull1(ei.CBCWBC));
+            nmDCBCPmn.Value = int.Parse(cc.cf.NumberNull1(ei.cbcPmn));
 
             nmDFBSRow.Value = int.Parse(cc.cf.NumberNull1(ei.FBSRow));
             nmDFBSNo.Value = int.Parse(cc.cf.NumberNull1(ei.FBSNo));
@@ -2485,7 +2486,7 @@ namespace CheckUP.gui
             Cursor.Current = cursor;
             if (cc.eidb.updateCBC(nmDCBCBact.Value.ToString(), nmDCBCEos.Value.ToString(), nmDCBCHb.Value.ToString(), nmDCBCHct.Value.ToString(),
                 nmDCBCLy.Value.ToString(), nmDCBCMono.Value.ToString(), nmDCBCNeu.Value.ToString(), nmDCBCNo.Value.ToString(), nmDCBCPltC.Value.ToString(), nmDCBCPltS.Value.ToString(),
-                nmDCBCRBC.Value.ToString(), nmDCBCRBCmono.Value.ToString(), nmDCBCRow.Value.ToString(), nmDCBCSummary.Value.ToString(), nmDCBCWBC.Value.ToString()).Length >= 1)
+                nmDCBCRBC.Value.ToString(), nmDCBCRBCmono.Value.ToString(), nmDCBCRow.Value.ToString(), nmDCBCSummary.Value.ToString(), nmDCBCWBC.Value.ToString(), nmDCBCPmn.Value.ToString()).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
             }

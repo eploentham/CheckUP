@@ -210,6 +210,8 @@
             this.label115 = new System.Windows.Forms.Label();
             this.label116 = new System.Windows.Forms.Label();
             this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.txtEyeExam = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
             this.btnEyeSave = new System.Windows.Forms.Button();
             this.txtEyeOldRight = new System.Windows.Forms.TextBox();
             this.txtEyeDegreeRight = new System.Windows.Forms.TextBox();
@@ -298,8 +300,8 @@
             this.label160 = new System.Windows.Forms.Label();
             this.label161 = new System.Windows.Forms.Label();
             this.tabPage15 = new System.Windows.Forms.TabPage();
-            this.txtEyeExam = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
+            this.txtCBCPmn = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
             this.tC.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
@@ -342,6 +344,8 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.txtCBCPmn);
+            this.tabPage5.Controls.Add(this.label30);
             this.tabPage5.Controls.Add(this.txtCBCRbcFemale);
             this.tabPage5.Controls.Add(this.label28);
             this.tabPage5.Controls.Add(this.txtCBCMcvFemale);
@@ -2203,6 +2207,24 @@
             this.tabPage12.Text = "tabPage12";
             this.tabPage12.UseVisualStyleBackColor = true;
             // 
+            // txtEyeExam
+            // 
+            this.txtEyeExam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtEyeExam.Location = new System.Drawing.Point(646, 323);
+            this.txtEyeExam.Name = "txtEyeExam";
+            this.txtEyeExam.Size = new System.Drawing.Size(123, 22);
+            this.txtEyeExam.TabIndex = 202;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label29.Location = new System.Drawing.Point(547, 326);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(46, 16);
+            this.label29.TabIndex = 201;
+            this.label29.Text = "ตาทั่วไป";
+            // 
             // btnEyeSave
             // 
             this.btnEyeSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -3070,23 +3092,23 @@
             this.tabPage15.Text = "tabPage15";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
-            // txtEyeExam
+            // txtCBCPmn
             // 
-            this.txtEyeExam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtEyeExam.Location = new System.Drawing.Point(646, 323);
-            this.txtEyeExam.Name = "txtEyeExam";
-            this.txtEyeExam.Size = new System.Drawing.Size(123, 22);
-            this.txtEyeExam.TabIndex = 202;
+            this.txtCBCPmn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCBCPmn.Location = new System.Drawing.Point(856, 254);
+            this.txtCBCPmn.Name = "txtCBCPmn";
+            this.txtCBCPmn.Size = new System.Drawing.Size(263, 22);
+            this.txtCBCPmn.TabIndex = 118;
             // 
-            // label29
+            // label30
             // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label29.Location = new System.Drawing.Point(547, 326);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(46, 16);
-            this.label29.TabIndex = 201;
-            this.label29.Text = "ตาทั่วไป";
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label30.Location = new System.Drawing.Point(804, 257);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(44, 16);
+            this.label30.TabIndex = 117;
+            this.label30.Text = "Pmn  :";
             // 
             // FrmValueNormal
             // 
@@ -3405,5 +3427,7 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox txtEyeExam;
         private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox txtCBCPmn;
+        private System.Windows.Forms.Label label30;
     }
 }

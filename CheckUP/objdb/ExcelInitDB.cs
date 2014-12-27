@@ -46,6 +46,7 @@ namespace CheckUP.objdb
             ei.CBCRow = "cbc_row";
             ei.CBCSummary = "cbc_summary";
             ei.CBCWBC = "cbc_wbc";
+            ei.cbcPmn = "cbc_pmn";
 
             ei.Cholesteral = "cho_value";
             ei.ChoNo = "cho_no";
@@ -232,208 +233,209 @@ namespace CheckUP.objdb
         private ExcelInit setData(ExcelInit item, DataTable dt)
         {
             item.Id = dt.Rows[0][ei.Id].ToString();
-            item.Bun = dt.Rows[0][ei.Bun].ToString();
-            item.BunCreatinine = dt.Rows[0][ei.BunCreatinine].ToString();
-            item.BunNo = dt.Rows[0][ei.BunNo].ToString();
-            item.BunResult = dt.Rows[0][ei.BunResult].ToString();
-            item.BunRow = dt.Rows[0][ei.BunRow].ToString();
-            item.BunSummary = dt.Rows[0][ei.BunSummary].ToString();
+            item.Bun = NumberNull10(dt.Rows[0][ei.Bun].ToString());
+            item.BunCreatinine = NumberNull10(dt.Rows[0][ei.BunCreatinine].ToString());
+            item.BunNo = NumberNull10(dt.Rows[0][ei.BunNo].ToString());
+            item.BunResult = NumberNull10(dt.Rows[0][ei.BunResult].ToString());
+            item.BunRow = NumberNull10(dt.Rows[0][ei.BunRow].ToString());
+            item.BunSummary = NumberNull10(dt.Rows[0][ei.BunSummary].ToString());
 
-            item.CBCBact = dt.Rows[0][ei.CBCBact].ToString();
-            item.CBCEos = dt.Rows[0][ei.CBCEos].ToString();
-            item.CBCHb = dt.Rows[0][ei.CBCHb].ToString();
-            item.CBCHct = dt.Rows[0][ei.CBCHct].ToString();
-            item.CBCLy = dt.Rows[0][ei.CBCLy].ToString();
-            item.CBCMono = dt.Rows[0][ei.CBCMono].ToString();
-            item.CBCNeu = dt.Rows[0][ei.CBCNeu].ToString();
-            item.CBCNo = dt.Rows[0][ei.CBCNo].ToString();
-            item.CBCPltC = dt.Rows[0][ei.CBCPltC].ToString();
-            item.CBCPltS = dt.Rows[0][ei.CBCPltS].ToString();
-            item.CBCRBC = dt.Rows[0][ei.CBCRBC].ToString();
-            item.CBCRBCmono = dt.Rows[0][ei.CBCRBCmono].ToString();
-            item.CBCRow = dt.Rows[0][ei.CBCRow].ToString();
-            item.CBCSummary = dt.Rows[0][ei.CBCSummary].ToString();
-            item.CBCWBC = dt.Rows[0][ei.CBCWBC].ToString();
+            item.CBCBact = NumberNull10(dt.Rows[0][ei.CBCBact].ToString());
+            item.CBCEos = NumberNull10(dt.Rows[0][ei.CBCEos].ToString());
+            item.CBCHb = NumberNull10(dt.Rows[0][ei.CBCHb].ToString());
+            item.CBCHct = NumberNull10(dt.Rows[0][ei.CBCHct].ToString());
+            item.CBCLy = NumberNull10(dt.Rows[0][ei.CBCLy].ToString());
+            item.CBCMono = NumberNull10(dt.Rows[0][ei.CBCMono].ToString());
+            item.CBCNeu = NumberNull10(dt.Rows[0][ei.CBCNeu].ToString());
+            item.CBCNo = NumberNull10(dt.Rows[0][ei.CBCNo].ToString());
+            item.CBCPltC = NumberNull10(dt.Rows[0][ei.CBCPltC].ToString());
+            item.CBCPltS = NumberNull10(dt.Rows[0][ei.CBCPltS].ToString());
+            item.CBCRBC = NumberNull10(dt.Rows[0][ei.CBCRBC].ToString());
+            item.CBCRBCmono = NumberNull10(dt.Rows[0][ei.CBCRBCmono].ToString());
+            item.CBCRow = NumberNull10(dt.Rows[0][ei.CBCRow].ToString());
+            item.CBCSummary = NumberNull10(dt.Rows[0][ei.CBCSummary].ToString());
+            item.CBCWBC = NumberNull10(dt.Rows[0][ei.CBCWBC].ToString());
+            item.cbcPmn = NumberNull10(dt.Rows[0][ei.cbcPmn].ToString());
 
-            item.Cholesteral = dt.Rows[0][ei.Cholesteral].ToString();
-            item.ChoNo = dt.Rows[0][ei.ChoNo].ToString();
-            item.ChoResult = dt.Rows[0][ei.ChoResult].ToString();
-            item.ChoRow = dt.Rows[0][ei.ChoRow].ToString();
-            item.Chosummary = dt.Rows[0][ei.Chosummary].ToString();
-            item.ChoHDL = dt.Rows[0][ei.ChoHDL].ToString();
-            item.ChoLDL = dt.Rows[0][ei.ChoLDL].ToString();
+            item.Cholesteral = NumberNull10(dt.Rows[0][ei.Cholesteral].ToString());
+            item.ChoNo = NumberNull10(dt.Rows[0][ei.ChoNo].ToString());
+            item.ChoResult = NumberNull10(dt.Rows[0][ei.ChoResult].ToString());
+            item.ChoRow = NumberNull10(dt.Rows[0][ei.ChoRow].ToString());
+            item.Chosummary = NumberNull10(dt.Rows[0][ei.Chosummary].ToString());
+            item.ChoHDL = NumberNull10(dt.Rows[0][ei.ChoHDL].ToString());
+            item.ChoLDL = NumberNull10(dt.Rows[0][ei.ChoLDL].ToString());
 
-            item.FBS = dt.Rows[0][ei.FBS].ToString();
-            item.FBSNo = dt.Rows[0][ei.FBSNo].ToString();
-            item.FBSResult = dt.Rows[0][ei.FBSResult].ToString();
-            item.FBSRow = dt.Rows[0][ei.FBSRow].ToString();
-            item.FBSSummary = dt.Rows[0][ei.FBSSummary].ToString();
+            item.FBS = NumberNull10(dt.Rows[0][ei.FBS].ToString());
+            item.FBSNo = NumberNull10(dt.Rows[0][ei.FBSNo].ToString());
+            item.FBSResult = NumberNull10(dt.Rows[0][ei.FBSResult].ToString());
+            item.FBSRow = NumberNull10(dt.Rows[0][ei.FBSRow].ToString());
+            item.FBSSummary = NumberNull10(dt.Rows[0][ei.FBSSummary].ToString());
 
-            item.PEAge = dt.Rows[0][ei.PEAge].ToString();
-            item.PEBMI = dt.Rows[0][ei.PEBMI].ToString();
-            item.PEHeight = dt.Rows[0][ei.PEHeight].ToString();
-            item.PENo = dt.Rows[0][ei.PENo].ToString();
-            item.PEPulse = dt.Rows[0][ei.PEPulse].ToString();
-            item.PEResult = dt.Rows[0][ei.PEResult].ToString();
-            item.PERow = dt.Rows[0][ei.PERow].ToString();
-            item.PESummary = dt.Rows[0][ei.PESummary].ToString();
-            item.PEVitalSign = dt.Rows[0][ei.PEVitalSign].ToString();
-            item.PEWeight = dt.Rows[0][ei.PEWeight].ToString();
-            item.PEBloodGroup = dt.Rows[0][ei.PEBloodGroup].ToString();
+            item.PEAge = NumberNull10(dt.Rows[0][ei.PEAge].ToString());
+            item.PEBMI = NumberNull10(dt.Rows[0][ei.PEBMI].ToString());
+            item.PEHeight = NumberNull10(dt.Rows[0][ei.PEHeight].ToString());
+            item.PENo = NumberNull10(dt.Rows[0][ei.PENo].ToString());
+            item.PEPulse = NumberNull10(dt.Rows[0][ei.PEPulse].ToString());
+            item.PEResult = NumberNull10(dt.Rows[0][ei.PEResult].ToString());
+            item.PERow = NumberNull10(dt.Rows[0][ei.PERow].ToString());
+            item.PESummary = NumberNull10(dt.Rows[0][ei.PESummary].ToString());
+            item.PEVitalSign = NumberNull10(dt.Rows[0][ei.PEVitalSign].ToString());
+            item.PEWeight = NumberNull10(dt.Rows[0][ei.PEWeight].ToString());
+            item.PEBloodGroup = NumberNull10(dt.Rows[0][ei.PEBloodGroup].ToString());
 
-            item.DepartmentName = dt.Rows[0][ei.DepartmentName].ToString();
+            item.DepartmentName = NumberNull10(dt.Rows[0][ei.DepartmentName].ToString());
 
-            item.SfAAge = dt.Rows[0][ei.SfAAge].ToString();
-            item.SfAFirstName = dt.Rows[0][ei.SfAFirstName].ToString();
-            item.SfALastName = dt.Rows[0][ei.SfALastName].ToString();
-            item.SfANo = dt.Rows[0][ei.SfANo].ToString();
-            item.SfAPrefix = dt.Rows[0][ei.SfAPrefix].ToString();
-            item.SfBAge = dt.Rows[0][ei.SfBAge].ToString();
-            item.SfBFullName = dt.Rows[0][ei.SfBFullName].ToString();
-            item.SfBNo = dt.Rows[0][ei.SfBNo].ToString();
-            item.SfBPrefix = dt.Rows[0][ei.SfBPrefix].ToString();
-            item.SfCAge = dt.Rows[0][ei.SfCAge].ToString();
-            item.SfCFullName = dt.Rows[0][ei.SfCFullName].ToString();
-            item.SfCNo = dt.Rows[0][ei.SfCNo].ToString();
-            item.SfRow = dt.Rows[0][ei.SfRow].ToString();
-            item.SfStatusName = dt.Rows[0][ei.SfStatusName].ToString();
+            item.SfAAge = NumberNull10(dt.Rows[0][ei.SfAAge].ToString());
+            item.SfAFirstName = NumberNull10(dt.Rows[0][ei.SfAFirstName].ToString());
+            item.SfALastName = NumberNull10(dt.Rows[0][ei.SfALastName].ToString());
+            item.SfANo = NumberNull10(dt.Rows[0][ei.SfANo].ToString());
+            item.SfAPrefix = NumberNull10(dt.Rows[0][ei.SfAPrefix].ToString());
+            item.SfBAge = NumberNull10(dt.Rows[0][ei.SfBAge].ToString());
+            item.SfBFullName = NumberNull10(dt.Rows[0][ei.SfBFullName].ToString());
+            item.SfBNo = NumberNull10(dt.Rows[0][ei.SfBNo].ToString());
+            item.SfBPrefix = NumberNull10(dt.Rows[0][ei.SfBPrefix].ToString());
+            item.SfCAge = NumberNull10(dt.Rows[0][ei.SfCAge].ToString());
+            item.SfCFullName = NumberNull10(dt.Rows[0][ei.SfCFullName].ToString());
+            item.SfCNo = NumberNull10(dt.Rows[0][ei.SfCNo].ToString());
+            item.SfRow = NumberNull10(dt.Rows[0][ei.SfRow].ToString());
+            item.SfStatusName = NumberNull10(dt.Rows[0][ei.SfStatusName].ToString());
 
-            item.Sgot = dt.Rows[0][ei.Sgot].ToString();
-            item.SgotNo = dt.Rows[0][ei.SgotNo].ToString();
-            item.SgotResult = dt.Rows[0][ei.SgotResult].ToString();
-            item.SgotRow = dt.Rows[0][ei.SgotRow].ToString();
-            item.Sgpt = dt.Rows[0][ei.Sgpt].ToString();
-            item.SgptSummary = dt.Rows[0][ei.SgptSummary].ToString();
-            item.SgotALP = dt.Rows[0][ei.SgotALP].ToString();
+            item.Sgot = NumberNull10(dt.Rows[0][ei.Sgot].ToString());
+            item.SgotNo = NumberNull10(dt.Rows[0][ei.SgotNo].ToString());
+            item.SgotResult = NumberNull10(dt.Rows[0][ei.SgotResult].ToString());
+            item.SgotRow = NumberNull10(dt.Rows[0][ei.SgotRow].ToString());
+            item.Sgpt = NumberNull10(dt.Rows[0][ei.Sgpt].ToString());
+            item.SgptSummary = NumberNull10(dt.Rows[0][ei.SgptSummary].ToString());
+            item.SgotALP = NumberNull10(dt.Rows[0][ei.SgotALP].ToString());
 
-            item.Triglyceride = dt.Rows[0][ei.Triglyceride].ToString();
-            item.TriNo = dt.Rows[0][ei.TriNo].ToString();
-            item.TriResult = dt.Rows[0][ei.TriResult].ToString();
-            item.TriRow = dt.Rows[0][ei.TriRow].ToString();
-            item.TriSummary = dt.Rows[0][ei.TriSummary].ToString();
+            item.Triglyceride = NumberNull10(dt.Rows[0][ei.Triglyceride].ToString());
+            item.TriNo = NumberNull10(dt.Rows[0][ei.TriNo].ToString());
+            item.TriResult = NumberNull10(dt.Rows[0][ei.TriResult].ToString());
+            item.TriRow = NumberNull10(dt.Rows[0][ei.TriRow].ToString());
+            item.TriSummary = NumberNull10(dt.Rows[0][ei.TriSummary].ToString());
 
-            item.UAAppe = dt.Rows[0][ei.UAAppe].ToString();
-            item.UABact = dt.Rows[0][ei.UABact].ToString();
-            item.UAColor = dt.Rows[0][ei.UAColor].ToString();
-            item.UAEpi = dt.Rows[0][ei.UAEpi].ToString();
-            item.UANo = dt.Rows[0][ei.UANo].ToString();
-            item.UApH = dt.Rows[0][ei.UApH].ToString();
-            item.UAProtein = dt.Rows[0][ei.UAProtein].ToString();
-            item.UARBC = dt.Rows[0][ei.UARBC].ToString();
-            item.UAResult = dt.Rows[0][ei.UAResult].ToString();
-            item.UARow = dt.Rows[0][ei.UARow].ToString();
-            item.UASpgr = dt.Rows[0][ei.UASpgr].ToString();
-            item.UASugar = dt.Rows[0][ei.UASugar].ToString();
-            item.UASummary = dt.Rows[0][ei.UASummary].ToString();
-            item.UAWBC = dt.Rows[0][ei.UAWBC].ToString();
+            item.UAAppe = NumberNull10(dt.Rows[0][ei.UAAppe].ToString());
+            item.UABact = NumberNull10(dt.Rows[0][ei.UABact].ToString());
+            item.UAColor = NumberNull10(dt.Rows[0][ei.UAColor].ToString());
+            item.UAEpi = NumberNull10(dt.Rows[0][ei.UAEpi].ToString());
+            item.UANo = NumberNull10(dt.Rows[0][ei.UANo].ToString());
+            item.UApH = NumberNull10(dt.Rows[0][ei.UApH].ToString());
+            item.UAProtein = NumberNull10(dt.Rows[0][ei.UAProtein].ToString());
+            item.UARBC = NumberNull10(dt.Rows[0][ei.UARBC].ToString());
+            item.UAResult = NumberNull10(dt.Rows[0][ei.UAResult].ToString());
+            item.UARow = NumberNull10(dt.Rows[0][ei.UARow].ToString());
+            item.UASpgr = NumberNull10(dt.Rows[0][ei.UASpgr].ToString());
+            item.UASugar = NumberNull10(dt.Rows[0][ei.UASugar].ToString());
+            item.UASummary = NumberNull10(dt.Rows[0][ei.UASummary].ToString());
+            item.UAWBC = NumberNull10(dt.Rows[0][ei.UAWBC].ToString());
 
-            item.UricAcid = dt.Rows[0][ei.UricAcid].ToString();
-            item.UricNo = dt.Rows[0][ei.UricNo].ToString();
-            item.UricResult = dt.Rows[0][ei.UricResult].ToString();
-            item.UricRow = dt.Rows[0][ei.UricRow].ToString();
-            item.UricSummary = dt.Rows[0][ei.UricSummary].ToString();
+            item.UricAcid = NumberNull10(dt.Rows[0][ei.UricAcid].ToString());
+            item.UricNo = NumberNull10(dt.Rows[0][ei.UricNo].ToString());
+            item.UricResult = NumberNull10(dt.Rows[0][ei.UricResult].ToString());
+            item.UricRow = NumberNull10(dt.Rows[0][ei.UricRow].ToString());
+            item.UricSummary = NumberNull10(dt.Rows[0][ei.UricSummary].ToString());
 
-            item.Xray = dt.Rows[0][ei.Xray].ToString();
-            item.XrayNo = dt.Rows[0][ei.XrayNo].ToString();
-            item.XrayRow = dt.Rows[0][ei.XrayRow].ToString();
-            item.XraySummary = dt.Rows[0][ei.XraySummary].ToString();
+            item.Xray = NumberNull10(dt.Rows[0][ei.Xray].ToString());
+            item.XrayNo = NumberNull10(dt.Rows[0][ei.XrayNo].ToString());
+            item.XrayRow = NumberNull10(dt.Rows[0][ei.XrayRow].ToString());
+            item.XraySummary = NumberNull10(dt.Rows[0][ei.XraySummary].ToString());
 
-            item.Other1Amphetamine = dt.Rows[0][ei.Other1Amphetamine].ToString();
-            item.Other1AntiHIV = dt.Rows[0][ei.Other1AntiHIV].ToString();
-            item.Other1Calcium = dt.Rows[0][ei.Other1Calcium].ToString();
-            item.Other1HBsAb = dt.Rows[0][ei.Other1HBsAb].ToString();
-            item.Other1HBsAg = dt.Rows[0][ei.Other1HBsAg].ToString();
-            item.Other1No = dt.Rows[0][ei.Other1No].ToString();
-            item.Other1Row = dt.Rows[0][ei.Other1Row].ToString();
-            item.Other1VDRL = dt.Rows[0][ei.Other1VDRL].ToString();
+            item.Other1Amphetamine = NumberNull10(dt.Rows[0][ei.Other1Amphetamine].ToString());
+            item.Other1AntiHIV = NumberNull10(dt.Rows[0][ei.Other1AntiHIV].ToString());
+            item.Other1Calcium = NumberNull10(dt.Rows[0][ei.Other1Calcium].ToString());
+            item.Other1HBsAb = NumberNull10(dt.Rows[0][ei.Other1HBsAb].ToString());
+            item.Other1HBsAg = NumberNull10(dt.Rows[0][ei.Other1HBsAg].ToString());
+            item.Other1No = NumberNull10(dt.Rows[0][ei.Other1No].ToString());
+            item.Other1Row = NumberNull10(dt.Rows[0][ei.Other1Row].ToString());
+            item.Other1VDRL = NumberNull10(dt.Rows[0][ei.Other1VDRL].ToString());
 
-            item.LungFev1Meas = dt.Rows[0][ei.LungFev1Meas].ToString();
-            item.LungFev1Per = dt.Rows[0][ei.LungFev1Per].ToString();
-            item.LungFev1Predic = dt.Rows[0][ei.LungFev1Predic].ToString();
-            item.LungFvcMeas = dt.Rows[0][ei.LungFvcMeas].ToString();
-            item.LungFvcPer = dt.Rows[0][ei.LungFvcPer].ToString();
-            item.LungFvcPredic = dt.Rows[0][ei.LungFvcPredic].ToString();
-            item.LungNo = dt.Rows[0][ei.LungNo].ToString();
-            item.LungPerFev1 = dt.Rows[0][ei.LungPerFev1].ToString();
-            item.LungRow = dt.Rows[0][ei.LungRow].ToString();
-            item.LungSummary = dt.Rows[0][ei.LungSummary].ToString();
+            item.LungFev1Meas = NumberNull10(dt.Rows[0][ei.LungFev1Meas].ToString());
+            item.LungFev1Per = NumberNull10(dt.Rows[0][ei.LungFev1Per].ToString());
+            item.LungFev1Predic = NumberNull10(dt.Rows[0][ei.LungFev1Predic].ToString());
+            item.LungFvcMeas = NumberNull10(dt.Rows[0][ei.LungFvcMeas].ToString());
+            item.LungFvcPer = NumberNull10(dt.Rows[0][ei.LungFvcPer].ToString());
+            item.LungFvcPredic = NumberNull10(dt.Rows[0][ei.LungFvcPredic].ToString());
+            item.LungNo = NumberNull10(dt.Rows[0][ei.LungNo].ToString());
+            item.LungPerFev1 = NumberNull10(dt.Rows[0][ei.LungPerFev1].ToString());
+            item.LungRow = NumberNull10(dt.Rows[0][ei.LungRow].ToString());
+            item.LungSummary = NumberNull10(dt.Rows[0][ei.LungSummary].ToString());
 
-            item.Audiogram1000L = dt.Rows[0][ei.Audiogram1000L].ToString();
-            item.Audiogram1000R = dt.Rows[0][ei.Audiogram1000R].ToString();
-            item.Audiogram2000L = dt.Rows[0][ei.Audiogram2000L].ToString();
-            item.Audiogram2000R = dt.Rows[0][ei.Audiogram2000R].ToString();
-            item.Audiogram3000L = dt.Rows[0][ei.Audiogram3000L].ToString();
-            item.Audiogram3000R = dt.Rows[0][ei.Audiogram3000R].ToString();
-            item.Audiogram4000L = dt.Rows[0][ei.Audiogram4000L].ToString();
-            item.Audiogram4000R = dt.Rows[0][ei.Audiogram4000R].ToString();
-            item.Audiogram500L = dt.Rows[0][ei.Audiogram500L].ToString();
-            item.Audiogram500R = dt.Rows[0][ei.Audiogram500R].ToString();
-            item.Audiogram6000L = dt.Rows[0][ei.Audiogram6000L].ToString();
-            item.Audiogram6000R = dt.Rows[0][ei.Audiogram6000R].ToString();
-            item.Audiogram8000L = dt.Rows[0][ei.Audiogram8000L].ToString();
-            item.Audiogram8000R = dt.Rows[0][ei.Audiogram8000R].ToString();
-            item.AudiogramExam = dt.Rows[0][ei.AudiogramExam].ToString();
-            item.AudiogramSummaryL = dt.Rows[0][ei.AudiogramSummaryL].ToString();
-            item.AudiogramSummaryR = dt.Rows[0][ei.AudiogramSummaryR].ToString();
-            item.AudiogramNo = dt.Rows[0][ei.AudiogramNo].ToString();
-            item.AudiogramRow = dt.Rows[0][ei.AudiogramRow].ToString();
+            item.Audiogram1000L = NumberNull10(dt.Rows[0][ei.Audiogram1000L].ToString());
+            item.Audiogram1000R = NumberNull10(dt.Rows[0][ei.Audiogram1000R].ToString());
+            item.Audiogram2000L = NumberNull10(dt.Rows[0][ei.Audiogram2000L].ToString());
+            item.Audiogram2000R = NumberNull10(dt.Rows[0][ei.Audiogram2000R].ToString());
+            item.Audiogram3000L = NumberNull10(dt.Rows[0][ei.Audiogram3000L].ToString());
+            item.Audiogram3000R = NumberNull10(dt.Rows[0][ei.Audiogram3000R].ToString());
+            item.Audiogram4000L = NumberNull10(dt.Rows[0][ei.Audiogram4000L].ToString());
+            item.Audiogram4000R = NumberNull10(dt.Rows[0][ei.Audiogram4000R].ToString());
+            item.Audiogram500L = NumberNull10(dt.Rows[0][ei.Audiogram500L].ToString());
+            item.Audiogram500R = NumberNull10(dt.Rows[0][ei.Audiogram500R].ToString());
+            item.Audiogram6000L = NumberNull10(dt.Rows[0][ei.Audiogram6000L].ToString());
+            item.Audiogram6000R = NumberNull10(dt.Rows[0][ei.Audiogram6000R].ToString());
+            item.Audiogram8000L = NumberNull10(dt.Rows[0][ei.Audiogram8000L].ToString());
+            item.Audiogram8000R = NumberNull10(dt.Rows[0][ei.Audiogram8000R].ToString());
+            item.AudiogramExam = NumberNull10(dt.Rows[0][ei.AudiogramExam].ToString());
+            item.AudiogramSummaryL = NumberNull10(dt.Rows[0][ei.AudiogramSummaryL].ToString());
+            item.AudiogramSummaryR = NumberNull10(dt.Rows[0][ei.AudiogramSummaryR].ToString());
+            item.AudiogramNo = NumberNull10(dt.Rows[0][ei.AudiogramNo].ToString());
+            item.AudiogramRow = NumberNull10(dt.Rows[0][ei.AudiogramRow].ToString());
 
-            item.EyeNo = dt.Rows[0][ei.EyeNo].ToString();
-            item.EyeRow = dt.Rows[0][ei.EyeRow].ToString();
-            item.EyeShortLongLeft = dt.Rows[0][ei.EyeShortLongLeft].ToString();
-            item.EyeShortLongRight = dt.Rows[0][ei.EyeShortLongRight].ToString();
-            item.EyeExam = dt.Rows[0][ei.EyeExam].ToString();
-            item.EyeDegreeLeft = dt.Rows[0][ei.EyeDegreeLeft].ToString();
-            item.EyeDegreeRight = dt.Rows[0][ei.EyeDegreeRight].ToString();
-            item.EyeSquintLeft = dt.Rows[0][ei.EyeSquintLeft].ToString();
-            item.EyeSquintRight = dt.Rows[0][ei.EyeSquintRight].ToString();
-            item.EyeOldLeft = dt.Rows[0][ei.EyeOldLeft].ToString();
-            item.EyeOldRight = dt.Rows[0][ei.EyeOldRight].ToString();
-            item.EyeSummary = dt.Rows[0][ei.EyeSummary].ToString();
-            item.EyeResult = dt.Rows[0][ei.EyeResult].ToString();
-            item.EyeBlindness = dt.Rows[0][ei.EyeBlindness].ToString();
+            item.EyeNo = NumberNull10(dt.Rows[0][ei.EyeNo].ToString());
+            item.EyeRow = NumberNull10(dt.Rows[0][ei.EyeRow].ToString());
+            item.EyeShortLongLeft = NumberNull10(dt.Rows[0][ei.EyeShortLongLeft].ToString());
+            item.EyeShortLongRight = NumberNull10(dt.Rows[0][ei.EyeShortLongRight].ToString());
+            item.EyeExam = NumberNull10(dt.Rows[0][ei.EyeExam].ToString());
+            item.EyeDegreeLeft = NumberNull10(dt.Rows[0][ei.EyeDegreeLeft].ToString());
+            item.EyeDegreeRight = NumberNull10(dt.Rows[0][ei.EyeDegreeRight].ToString());
+            item.EyeSquintLeft = NumberNull10(dt.Rows[0][ei.EyeSquintLeft].ToString());
+            item.EyeSquintRight = NumberNull10(dt.Rows[0][ei.EyeSquintRight].ToString());
+            item.EyeOldLeft = NumberNull10(dt.Rows[0][ei.EyeOldLeft].ToString());
+            item.EyeOldRight = NumberNull10(dt.Rows[0][ei.EyeOldRight].ToString());
+            item.EyeSummary = NumberNull10(dt.Rows[0][ei.EyeSummary].ToString());
+            item.EyeResult = NumberNull10(dt.Rows[0][ei.EyeResult].ToString());
+            item.EyeBlindness = NumberNull10(dt.Rows[0][ei.EyeBlindness].ToString());
 
-            item.StoolExamAppearance = dt.Rows[0][ei.StoolExamAppearance].ToString();
-            item.StoolExamColor = dt.Rows[0][ei.StoolExamColor].ToString();
-            item.StoolExamNo = dt.Rows[0][ei.StoolExamNo].ToString();
-            item.StoolExamParasite = dt.Rows[0][ei.StoolExamParasite].ToString();
-            item.StoolExamRbc = dt.Rows[0][ei.StoolExamRbc].ToString();
-            item.StoolExamRow = dt.Rows[0][ei.StoolExamRow].ToString();
-            item.StoolExamSummary = dt.Rows[0][ei.StoolExamSummary].ToString();
-            item.StoolExamWbc = dt.Rows[0][ei.StoolExamWbc].ToString();
+            item.StoolExamAppearance = NumberNull10(dt.Rows[0][ei.StoolExamAppearance].ToString());
+            item.StoolExamColor = NumberNull10(dt.Rows[0][ei.StoolExamColor].ToString());
+            item.StoolExamNo = NumberNull10(dt.Rows[0][ei.StoolExamNo].ToString());
+            item.StoolExamParasite = NumberNull10(dt.Rows[0][ei.StoolExamParasite].ToString());
+            item.StoolExamRbc = NumberNull10(dt.Rows[0][ei.StoolExamRbc].ToString());
+            item.StoolExamRow = NumberNull10(dt.Rows[0][ei.StoolExamRow].ToString());
+            item.StoolExamSummary = NumberNull10(dt.Rows[0][ei.StoolExamSummary].ToString());
+            item.StoolExamWbc = NumberNull10(dt.Rows[0][ei.StoolExamWbc].ToString());
 
-            item.ToxiLead = dt.Rows[0][ei.ToxiLead].ToString();
-            item.ToxiAluminium = dt.Rows[0][ei.ToxiAluminium].ToString();
-            item.ToxiCadmium = dt.Rows[0][ei.ToxiCadmium].ToString();
-            item.ToxiMercury = dt.Rows[0][ei.ToxiMercury].ToString();
-            item.ToxiTin = dt.Rows[0][ei.ToxiTin].ToString();
-            item.ToxiCopper = dt.Rows[0][ei.ToxiCopper].ToString();
-            item.ToxiManganese = dt.Rows[0][ei.ToxiManganese].ToString();
-            item.ToxiZinc = dt.Rows[0][ei.ToxiZinc].ToString();
-            item.ToxiAmmonia = dt.Rows[0][ei.ToxiAmmonia].ToString();
+            item.ToxiLead = NumberNull10(dt.Rows[0][ei.ToxiLead].ToString());
+            item.ToxiAluminium = NumberNull10(dt.Rows[0][ei.ToxiAluminium].ToString());
+            item.ToxiCadmium = NumberNull10(dt.Rows[0][ei.ToxiCadmium].ToString());
+            item.ToxiMercury = NumberNull10(dt.Rows[0][ei.ToxiMercury].ToString());
+            item.ToxiTin = NumberNull10(dt.Rows[0][ei.ToxiTin].ToString());
+            item.ToxiCopper = NumberNull10(dt.Rows[0][ei.ToxiCopper].ToString());
+            item.ToxiManganese = NumberNull10(dt.Rows[0][ei.ToxiManganese].ToString());
+            item.ToxiZinc = NumberNull10(dt.Rows[0][ei.ToxiZinc].ToString());
+            item.ToxiAmmonia = NumberNull10(dt.Rows[0][ei.ToxiAmmonia].ToString());
 
-            item.ToxiHippuric = dt.Rows[0][ei.ToxiHippuric].ToString();
-            item.ToxiMethyl = dt.Rows[0][ei.ToxiMethyl].ToString();
-            item.ToxiAcetone = dt.Rows[0][ei.ToxiAcetone].ToString();
-            item.ToxiNickel = dt.Rows[0][ei.ToxiNickel].ToString();
-            item.ToxiChromium = dt.Rows[0][ei.ToxiChromium].ToString();
-            item.ToxiPhenol = dt.Rows[0][ei.ToxiPhenol].ToString();
-            item.ToxiKetone = dt.Rows[0][ei.ToxiKetone].ToString();
-            item.ToxiBenzene = dt.Rows[0][ei.ToxiBenzene].ToString();
-            item.ToxiMandelic = dt.Rows[0][ei.ToxiMandelic].ToString();
+            item.ToxiHippuric = NumberNull10(dt.Rows[0][ei.ToxiHippuric].ToString());
+            item.ToxiMethyl = NumberNull10(dt.Rows[0][ei.ToxiMethyl].ToString());
+            item.ToxiAcetone = NumberNull10(dt.Rows[0][ei.ToxiAcetone].ToString());
+            item.ToxiNickel = NumberNull10(dt.Rows[0][ei.ToxiNickel].ToString());
+            item.ToxiChromium = NumberNull10(dt.Rows[0][ei.ToxiChromium].ToString());
+            item.ToxiPhenol = NumberNull10(dt.Rows[0][ei.ToxiPhenol].ToString());
+            item.ToxiKetone = NumberNull10(dt.Rows[0][ei.ToxiKetone].ToString());
+            item.ToxiBenzene = NumberNull10(dt.Rows[0][ei.ToxiBenzene].ToString());
+            item.ToxiMandelic = NumberNull10(dt.Rows[0][ei.ToxiMandelic].ToString());
 
-            item.ToxiMethanol = dt.Rows[0][ei.ToxiMethanol].ToString();
-            item.ToxiEthanol = dt.Rows[0][ei.ToxiEthanol].ToString();
-            item.ToxiIPA = dt.Rows[0][ei.ToxiIPA].ToString();
-            item.ToxiArsenic = dt.Rows[0][ei.ToxiArsenic].ToString();
-            item.ToxiHexane = dt.Rows[0][ei.ToxiHexane].ToString();
-            item.ToxiFomaldehyde = dt.Rows[0][ei.ToxiFomaldehyde].ToString();
-            item.ToxiTrichloroethylene = dt.Rows[0][ei.ToxiTrichloroethylene].ToString();
-            item.ToxiAntimony = dt.Rows[0][ei.ToxiAntimony].ToString();
-            item.ToxiFluoride = dt.Rows[0][ei.ToxiFluoride].ToString();
+            item.ToxiMethanol = NumberNull10(dt.Rows[0][ei.ToxiMethanol].ToString());
+            item.ToxiEthanol = NumberNull10(dt.Rows[0][ei.ToxiEthanol].ToString());
+            item.ToxiIPA = NumberNull10(dt.Rows[0][ei.ToxiIPA].ToString());
+            item.ToxiArsenic = NumberNull10(dt.Rows[0][ei.ToxiArsenic].ToString());
+            item.ToxiHexane = NumberNull10(dt.Rows[0][ei.ToxiHexane].ToString());
+            item.ToxiFomaldehyde = NumberNull10(dt.Rows[0][ei.ToxiFomaldehyde].ToString());
+            item.ToxiTrichloroethylene = NumberNull10(dt.Rows[0][ei.ToxiTrichloroethylene].ToString());
+            item.ToxiAntimony = NumberNull10(dt.Rows[0][ei.ToxiAntimony].ToString());
+            item.ToxiFluoride = NumberNull10(dt.Rows[0][ei.ToxiFluoride].ToString());
 
-            item.ToxiRow = dt.Rows[0][ei.ToxiRow].ToString();
-            item.ToxiNo = dt.Rows[0][ei.ToxiNo].ToString();
+            item.ToxiRow = NumberNull10(dt.Rows[0][ei.ToxiRow].ToString());
+            item.ToxiNo = NumberNull10(dt.Rows[0][ei.ToxiNo].ToString());
 
             item.Active = dt.Rows[0][ei.Active].ToString();
 
@@ -491,7 +493,7 @@ namespace CheckUP.objdb
             return chk;
         }
         public String updateCBC(String CBCBact, String CBCEos, String CBCHb, String CBCHct, String CBCLy, String CBCMono,
-            String CBCNeu, String CBCNo, String CBCPltC, String CBCPltS, String CBCRBC, String CBCRBCmono, String CBCRow, String CBCSummary, String CBCWBC)
+            String CBCNeu, String CBCNo, String CBCPltC, String CBCPltS, String CBCRBC, String CBCRBCmono, String CBCRow, String CBCSummary, String CBCWBC, String Pmn)
         {
             String sql = "", chk = "";
 
@@ -513,7 +515,8 @@ namespace CheckUP.objdb
                 ei.CBCRBCmono + "='" + CBCRBCmono + "', " +
                 ei.CBCRow + "='" + CBCRow + "', " +
                 ei.CBCSummary + "='" + CBCSummary + "', " +
-                ei.CBCWBC + "='" + CBCWBC + "' " ;
+                ei.CBCWBC + "='" + CBCWBC + "', "+
+                ei.cbcPmn + "='" + Pmn + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -1099,6 +1102,17 @@ namespace CheckUP.objdb
             {
             }
             return chk;
+        }
+        public String NumberNull10(String o)
+        {
+            if (o.Equals(""))
+            {
+                return "10";
+            }
+            else
+            {
+                return o;
+            }
         }
     }
 }

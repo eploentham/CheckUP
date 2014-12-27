@@ -144,6 +144,7 @@ namespace CheckUP.objdb
             ccpvn.cbcPlateletCount = "cbc_platelet_count";
             ccpvn.cbcRbcMorpholog = "cbc_rbc_morpholog";
             ccpvn.cbcSummary = "cbc_summary";
+            ccpvn.cbcPmn = "cbc_pmn";
 
             ccpvn.urineColor = "urine_color";
             ccpvn.urineAppearance = "urine_appearance";
@@ -159,6 +160,8 @@ namespace CheckUP.objdb
             ccpvn.urineEpithelium = "urine_epithelium";
             ccpvn.urineSummary = "urine_summary";
             ccpvn.urineResult = "urine_result";
+            ccpvn.urineGlu = "urine_glu";
+
             ccpvn.lungFvcPredic = "lung_fvc_predic";
             ccpvn.lungFvcMeas = "lung_fvc_meas";
             ccpvn.lungFvcPer = "lung_fvc_per";
@@ -339,7 +342,7 @@ namespace CheckUP.objdb
         }
         public String UpdateCBC(String Basophil, String Eosinophil, String HbMale, String HbFemale, String HctMale, String HctFemale, String Lymphocyte,
             String Mch, String Mchc, String McvMale, String McvFemale, String Monocyte, String Neutrophil, String PlateletCount, String RbcMale, String RbcFemale, String RbcMorpholog,
-            String Wbc, String PlateletSmear)
+            String Wbc, String PlateletSmear, String Pmn)
         {
             String chk = "", sql = "";
             try
@@ -362,7 +365,7 @@ namespace CheckUP.objdb
                 ccpvn.cbcRbcMale + "='" + RbcMale + "', " +
                 ccpvn.cbcRbcFemale + "='" + RbcFemale + "', " +
                 ccpvn.cbcRbcMorpholog + "='" + RbcMorpholog + "', " +
-                //ccpvn.cbcSummary + "='" + Summary + "', " +
+                ccpvn.cbcPmn + "='" + Pmn + "', " +
                 ccpvn.cbcWbc + "='" + Wbc + "' " ;
                 chk = conn.ExecuteNonQuery(sql);
             }

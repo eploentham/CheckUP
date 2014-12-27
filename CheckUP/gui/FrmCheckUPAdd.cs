@@ -28,9 +28,9 @@ namespace CheckUP.gui
         int colXrayRow = 0, colXrayId = 1, colXrayName = 2, colXrayResult = 3, coLXraySummary = 4;
         int colXrayCnt = 5;
 
-        int colCBCRow = 0, colCBCId = 1, colCBCName = 2, colCBCWBC = 3, colCBCRBC = 4, colCBCHb = 5, colCBCHct = 6, colCBCNeu = 7, colCBCLy = 8, colCBCMono = 9, colCBCEo = 10;
-        int colCBCBa = 11, colCBCPlt_c = 12, colCBCPlt_s = 13, colCBCRBC_mo = 14, colCBCSummary = 15;
-        int colCBCCnt = 16;
+        int colCBCRow = 0, colCBCId = 1, colCBCName = 2, colCBCWBC = 3, colCBCRBC = 4, colCBCHb = 5, colCBCHct = 6, colCBCPmn=7, colCBCNeu = 8, colCBCLy = 9, colCBCMono = 10, colCBCEo = 11;
+        int colCBCBa = 12, colCBCPlt_c = 13, colCBCPlt_s = 14, colCBCRBC_mo = 15, colCBCSummary = 16;
+        int colCBCCnt = 17;
 
         int colFBSRow = 0, colFBSId = 1, colFBSName = 2, colFBSValue=3, colFBSResult = 4, coLFBSSummary = 5;
         int colFBSCnt = 6;
@@ -479,6 +479,7 @@ namespace CheckUP.gui
             dgvCBC.Columns[colCBCRBC].HeaderText = "RBC";
             dgvCBC.Columns[colCBCHb].HeaderText = "Hb";
             dgvCBC.Columns[colCBCHct].HeaderText = "Hct";
+            dgvCBC.Columns[colCBCPmn].HeaderText = "Pmn";
             dgvCBC.Columns[colCBCNeu].HeaderText = "Neutrophil";
             dgvCBC.Columns[colCBCLy].HeaderText = "Lymphocyte";
             dgvCBC.Columns[colCBCMono].HeaderText = "Mono";
@@ -1199,6 +1200,7 @@ namespace CheckUP.gui
                     dgvCBC[colCBCPlt_s, i].Value = dt.Rows[i][cc.ccpdb.ccp.cbcPlateletSmear].ToString();
                     dgvCBC[colCBCRBC_mo, i].Value = dt.Rows[i][cc.ccpdb.ccp.cbcRbcMorpholog].ToString();
                     dgvCBC[colCBCSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.cbcSummary].ToString();
+                    dgvCBC[colCBCPmn, i].Value = dt.Rows[i][cc.ccpdb.ccp.cbcPmn].ToString();
                     dgvCBC[colCBCId, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
                     if ((i % 2) != 0)
                     {
@@ -2452,7 +2454,15 @@ namespace CheckUP.gui
                 {
                     summary = "";
                 }
-                chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, vitalSign, height, weight, string.Format("{0:f2}", Double.Parse(cc.cf.NumberNull1(bmi))), pulse, result, summary, bloodgroup);
+                if (bmi.Trim().Equals("-") || bmi.Trim().Equals(""))
+                {
+                    chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, vitalSign, height, weight, bmi, pulse, result, summary, bloodgroup);
+                }
+                else
+                {
+                    chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, vitalSign, height, weight, string.Format("{0:f2}", Double.Parse(cc.cf.NumberNull1(bmi))), pulse, result, summary, bloodgroup);
+                }
+                
                 pB1.Value = i;
                 row++;
             }
@@ -2605,7 +2615,7 @@ namespace CheckUP.gui
         private void btnCBCImport_Click(object sender, EventArgs e)
         {
             String rowNumber = "", chk = "", wbc = "", rbc = "", hb = "", hct="", neu="", lym="", mch="", mchc="", mvc="", mono="", plaC="", rbcmono="";
-            String summary = "", eos="", bas="", plaS="";
+            String summary = "", eos="", bas="", plaS="", pmn="";
             pB1.Visible = true;
             pB1.Minimum = 0;
             Cursor cursor = Cursor.Current;
@@ -2733,6 +2743,14 @@ namespace CheckUP.gui
                 {
                     summary = "";
                 }
+                if (xlRange.Cells[i, int.Parse(ei.cbcPmn)].Value2 != null)
+                {
+                    pmn = xlRange.Cells[i, int.Parse(ei.cbcPmn)].Value2.ToString();
+                }
+                else
+                {
+                    pmn = "";
+                }
                 //if (xlRange.Cells[i, 13].Value2 != null)
                 //{
                 //    bas = xlRange.Cells[i, 13].Value2.ToString();
@@ -2742,7 +2760,7 @@ namespace CheckUP.gui
                 //    bas = "";
                 //}
 
-                chk = cc.ccpdb.UpdateCBC(rowNumber, txtId.Text, bas, eos, hb, hct, lym, mch, mchc, mvc, mono, neu, plaC, rbc, rbcmono, summary, wbc, plaS);
+                chk = cc.ccpdb.UpdateCBC(rowNumber, txtId.Text, bas, eos, hb, hct, lym, mch, mchc, mvc, mono, neu, plaC, rbc, rbcmono, summary, wbc, plaS, pmn);
                 pB1.Value = i;
                 row++;
             }
@@ -6782,8 +6800,8 @@ namespace CheckUP.gui
             FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colPEId, e.RowIndex].Value.ToString(), cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdPE(cuc.Id);
-
         }
 
         private void dgvXRay_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -6800,6 +6818,7 @@ namespace CheckUP.gui
             FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colXrayId, e.RowIndex].Value.ToString(), cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdXray(cuc.Id);
         }
 
@@ -6817,6 +6836,7 @@ namespace CheckUP.gui
             FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colCBCId, e.RowIndex].Value.ToString(), cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdCBC(cuc.Id);
         }
 
@@ -6834,6 +6854,7 @@ namespace CheckUP.gui
             FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colFBSId, e.RowIndex].Value.ToString(), cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdFBS(cuc.Id);
         }
 
@@ -6851,6 +6872,7 @@ namespace CheckUP.gui
             FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colUAId, e.RowIndex].Value.ToString(), cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdUA(cuc.Id);
         }
 
@@ -6868,6 +6890,7 @@ namespace CheckUP.gui
             FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colTriId, e.RowIndex].Value.ToString(), cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdTri(cuc.Id);
         }
 
@@ -6885,6 +6908,7 @@ namespace CheckUP.gui
             FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colChoId, e.RowIndex].Value.ToString(), cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdCholes(cuc.Id);
         }
 
@@ -6902,6 +6926,7 @@ namespace CheckUP.gui
             FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colSgotId, e.RowIndex].Value.ToString(), cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdSgot(cuc.Id);
         }
 
@@ -6919,6 +6944,7 @@ namespace CheckUP.gui
             FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colBunId, e.RowIndex].Value.ToString(), cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdBun(cuc.Id);
         }
 
@@ -6936,6 +6962,7 @@ namespace CheckUP.gui
             FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colUricId, e.RowIndex].Value.ToString(), cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdUric(cuc.Id);
         }
 
@@ -7367,6 +7394,7 @@ namespace CheckUP.gui
             FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colOther1Id, e.RowIndex].Value.ToString(), cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdOther1(cuc.Id);
         }
 
@@ -7384,6 +7412,7 @@ namespace CheckUP.gui
             FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colLungId, e.RowIndex].Value.ToString(), cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdLung(cuc.Id);
         }
 
@@ -7400,7 +7429,8 @@ namespace CheckUP.gui
 
             FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colAudiogramId, e.RowIndex].Value.ToString(), cc);
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
-            frm.ShowDialog(this);            
+            frm.ShowDialog(this);
+            dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdAudoigram(cuc.Id);
         }
 
@@ -7956,6 +7986,51 @@ namespace CheckUP.gui
         private void btnExelPE_Click(object sender, EventArgs e)
         {
             OpenExcelInit("pe");
+        }
+
+        private void btnExelXray_Click(object sender, EventArgs e)
+        {
+            OpenExcelInit("xray");
+        }
+
+        private void btnExelFBS_Click(object sender, EventArgs e)
+        {
+            OpenExcelInit("fbs");
+        }
+
+        private void btnExelCBC_Click(object sender, EventArgs e)
+        {
+            OpenExcelInit("cbc");
+        }
+
+        private void btnExelUA_Click(object sender, EventArgs e)
+        {
+            OpenExcelInit("ua");
+        }
+
+        private void btnExelTri_Click(object sender, EventArgs e)
+        {
+            OpenExcelInit("tri");
+        }
+
+        private void btnExelCho_Click(object sender, EventArgs e)
+        {
+            OpenExcelInit("cho");
+        }
+
+        private void btnExelSgot_Click(object sender, EventArgs e)
+        {
+            OpenExcelInit("sgot");
+        }
+
+        private void btnExelBun_Click(object sender, EventArgs e)
+        {
+            OpenExcelInit("bun");
+        }
+
+        private void btnExelUric_Click(object sender, EventArgs e)
+        {
+            OpenExcelInit("uric");
         }
     }
 }

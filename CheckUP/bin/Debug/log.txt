@@ -980,3 +980,4 @@ Failed to load database information.
 1/12/2557 14:37->FrmCheckUPAdd.btnPrint_Click 01 
 1/12/2557 14:37->FrmCheckUPAdd.btnPrint_Click 02 
 1/12/2557 14:37->FrmCheckUPAdd.btnPrint_Click 03 
+26/12/2557 10:16->ccp.UpdatePE Error ExecuteNonQuery::Error occured.

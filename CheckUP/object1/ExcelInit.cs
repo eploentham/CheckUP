@@ -15,7 +15,7 @@ namespace CheckUP.object1
 
         public String XrayRow = "", XrayNo = "", Xray = "", XraySummary = "";
 
-        public String CBCRow = "", CBCNo = "", CBCWBC = "", CBCRBC = "", CBCHb = "", CBCHct = "", CBCNeu = "", CBCLy = "", CBCMono = "", CBCEos = "", CBCBact = "", CBCPltC = "", CBCPltS = "", CBCRBCmono = "", CBCSummary = "";
+        public String CBCRow = "", CBCNo = "", CBCWBC = "", CBCRBC = "", CBCHb = "", CBCHct = "", CBCNeu = "", CBCLy = "", CBCMono = "", CBCEos = "", CBCBact = "", CBCPltC = "", CBCPltS = "", CBCRBCmono = "", CBCSummary = "", cbcPmn = "";
 
         public String FBSRow = "", FBSNo = "", FBS = "", FBSResult="", FBSSummary = "";
 
