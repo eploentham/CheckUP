@@ -8,27 +8,29 @@ namespace CheckUP.object1
     public class CustCheckUpPatientValueNormal:Persistent
     {
         public String Id="";
-        public String CustCheckUpId="";    
-        public String ChecklistId="";    
-        public String visitHn="";    
-        public String patientFullname="";    
-        public String patientAge="";    
-        public String departmentName="";    
-        public String pid="";    
+        public String CustCheckUpId="";
+        public String ChecklistId="";
+        public String visitHn="";
+        public String patientFullname="";
+        public String patientAge="";
+        public String departmentName="";
+        public String pid="";
         public String patientNumber="";    
-        public String sectionName="";    
-        public String vitalsign="";    
-        public String patientHeight="";    
-        public String patientPulse="";    
+        public String sectionName="";
+        public String vitalsign="";
+        public String patientHeight="";
+        public String patientPulse="";
         public String patientWeight="";
         public String EyeShortLongLeft = "", EyeShortLongRight = "", EyeSquintLeft = "", EyeSquintRight = "", EyeDegreeLeft = "", EyeDegreeRight = "", EyeOldLeft = "", EyeOldRight = "", EyeResult = "", EyeSummary = "", EyeBlindness = "", EyeExam = "";
-        public String fSexId="";    
-        public String summaryPhysicalExam="";    
-        public String StoolExamColor="", StoolExamAppearance="", StoolExamWbc="", StoolExamRbc="", StoolExamParasite="", StoolExamSummary="";
+        public String fSexId="";
+        public String summaryPhysicalExam="";
+        public String StoolExamColor = "", StoolExamAppearance = "", StoolExamWbc = "", StoolExamRbc = "", StoolExamParasite = "", StoolExamSummary = "", StoolExamCulture = "", StoolExamTyphoidO = "", StoolExamTyphoidH = "";
 
         public String ToxiLead = "", ToxiAluminium = "", ToxiCadmium = "", ToxiMercury = "", ToxiTin = "", ToxiCopper = "", ToxiManganese = "", ToxiZinc = "", ToxiAmmonia = "";
         public String ToxiHippuric = "", ToxiMethyl = "", ToxiAcetone = "", ToxiNickel = "", ToxiChromium = "", ToxiPhenol = "", ToxiKetone = "", ToxiBenzene = "", ToxiMandelic = "", ToxiMethanol = "";
         public String ToxiEthanol = "", ToxiIPA = "", ToxiArsenic = "", ToxiHexane = "", ToxiFomaldehyde = "", ToxiTrichloroethylene = "", ToxiAntimony = "", ToxiFluoride = "";
+
+        public String CAAFP = "", CACEA = "", CAPSA = "", CAHCG = "", CA153 = "", CA125 = "", CA199 = "";
 
         //public String toxicologyLead = "", toxicologyMercury = "", toxicologyBenzene = "", toxicologyXylene = "";
         //public String toxicologyLead="";
@@ -56,22 +58,20 @@ namespace CheckUP.object1
         public String xrayChestSummary="";
         public String eyesExam="";
         public String ekgExam="";
-        public String caAfp="";
-        public String caCea="";
-        public String caPsa="";
-        public String caHcg="";
-        public String ca153="";
-        public String ca125="";
-        public String ca199="";
+        //public String caAfp="";
+        //public String caCea="";
+        //public String caPsa="";
+        //public String caHcg="";
+        //public String ca153="";
+        //public String ca125="";
+        //public String ca199="";
         public String thyroidT3="";
         public String thyroidT4="";
         public String thyroidTsh="";
         public String fPatientBloodGroupId="";
-        public String vdrl="";
-        public String antiHiv="";
-        public String hbsag="";
-        public String hbsab="";
-        public String amphetamine="";
+
+        public String vdrl = "", antiHiv = "", hbsag = "", hbsab = "", amphetamine = "", hbtyping = "", AntiHav = "";
+
         public String disscusExam="";
         public String suggestExam="";
         public String sugar="";
@@ -86,7 +86,7 @@ namespace CheckUP.object1
 
         public String liverSgot="";
         public String liverSgpt="";
-        public String liverAlp="";
+        public String liverAlp = "", liverAlkaline = "";
         public String liverResult = "";
         public String liverSummary = "";
         public String uricAcid="";
@@ -179,7 +179,7 @@ namespace CheckUP.object1
         public String visitComment="";
         public String bmi="";
         public String caFt3="";
-        public String hbtyping="";
+        
         //public String toxicologyHexane="";
         //public String toxicologyMethanol="";
         //public String toxicologyMek="";

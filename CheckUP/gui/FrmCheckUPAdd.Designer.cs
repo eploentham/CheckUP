@@ -211,6 +211,9 @@
             this.label95 = new System.Windows.Forms.Label();
             this.label96 = new System.Windows.Forms.Label();
             this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.btnPrintPE = new System.Windows.Forms.Button();
+            this.btnPrintXray = new System.Windows.Forms.Button();
+            this.chkStoolExamTyphoid = new System.Windows.Forms.RadioButton();
             this.btnPrintSticker = new System.Windows.Forms.Button();
             this.label88 = new System.Windows.Forms.Label();
             this.label87 = new System.Windows.Forms.Label();
@@ -892,7 +895,7 @@
             // 
             this.label68.AutoSize = true;
             this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label68.Location = new System.Drawing.Point(10, 422);
+            this.label68.Location = new System.Drawing.Point(9, 422);
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(158, 25);
             this.label68.TabIndex = 107;
@@ -1036,7 +1039,7 @@
             // 
             this.label52.AutoSize = true;
             this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label52.Location = new System.Drawing.Point(12, 312);
+            this.label52.Location = new System.Drawing.Point(9, 312);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(148, 25);
             this.label52.TabIndex = 77;
@@ -1108,7 +1111,7 @@
             // 
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label44.Location = new System.Drawing.Point(12, 257);
+            this.label44.Location = new System.Drawing.Point(9, 257);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(65, 25);
             this.label44.TabIndex = 62;
@@ -1180,7 +1183,7 @@
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label36.Location = new System.Drawing.Point(13, 202);
+            this.label36.Location = new System.Drawing.Point(9, 202);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(80, 25);
             this.label36.TabIndex = 47;
@@ -1252,7 +1255,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label28.Location = new System.Drawing.Point(13, 147);
+            this.label28.Location = new System.Drawing.Point(9, 147);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(83, 25);
             this.label28.TabIndex = 32;
@@ -1324,7 +1327,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label20.Location = new System.Drawing.Point(13, 92);
+            this.label20.Location = new System.Drawing.Point(9, 92);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(94, 25);
             this.label20.TabIndex = 17;
@@ -1466,7 +1469,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label5.Location = new System.Drawing.Point(13, 37);
+            this.label5.Location = new System.Drawing.Point(9, 37);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(228, 25);
             this.label5.TabIndex = 2;
@@ -1571,6 +1574,7 @@
             this.btnExelStoolExam.TabIndex = 338;
             this.btnExelStoolExam.Text = "...";
             this.btnExelStoolExam.UseVisualStyleBackColor = true;
+            this.btnExelStoolExam.Click += new System.EventHandler(this.btnExelStoolExam_Click);
             // 
             // btnExelToxi
             // 
@@ -1581,6 +1585,7 @@
             this.btnExelToxi.TabIndex = 337;
             this.btnExelToxi.Text = "...";
             this.btnExelToxi.UseVisualStyleBackColor = true;
+            this.btnExelToxi.Click += new System.EventHandler(this.btnExelToxi_Click);
             // 
             // btnExelEye
             // 
@@ -1591,6 +1596,7 @@
             this.btnExelEye.TabIndex = 336;
             this.btnExelEye.Text = "...";
             this.btnExelEye.UseVisualStyleBackColor = true;
+            this.btnExelEye.Click += new System.EventHandler(this.btnExelEye_Click);
             // 
             // btnExelAudio
             // 
@@ -1601,6 +1607,7 @@
             this.btnExelAudio.TabIndex = 335;
             this.btnExelAudio.Text = "...";
             this.btnExelAudio.UseVisualStyleBackColor = true;
+            this.btnExelAudio.Click += new System.EventHandler(this.btnExelAudio_Click);
             // 
             // btnExelLung
             // 
@@ -1611,6 +1618,7 @@
             this.btnExelLung.TabIndex = 334;
             this.btnExelLung.Text = "...";
             this.btnExelLung.UseVisualStyleBackColor = true;
+            this.btnExelLung.Click += new System.EventHandler(this.btnExelLung_Click);
             // 
             // btnExelOther1
             // 
@@ -1621,6 +1629,7 @@
             this.btnExelOther1.TabIndex = 333;
             this.btnExelOther1.Text = "...";
             this.btnExelOther1.UseVisualStyleBackColor = true;
+            this.btnExelOther1.Click += new System.EventHandler(this.btnExelOther1_Click);
             // 
             // txtStoolExamSucess
             // 
@@ -2184,6 +2193,9 @@
             // 
             // tabPage12
             // 
+            this.tabPage12.Controls.Add(this.btnPrintPE);
+            this.tabPage12.Controls.Add(this.btnPrintXray);
+            this.tabPage12.Controls.Add(this.chkStoolExamTyphoid);
             this.tabPage12.Controls.Add(this.btnPrintSticker);
             this.tabPage12.Controls.Add(this.label88);
             this.tabPage12.Controls.Add(this.label87);
@@ -2197,6 +2209,39 @@
             this.tabPage12.TabIndex = 1;
             this.tabPage12.Text = "Print";
             this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // btnPrintPE
+            // 
+            this.btnPrintPE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnPrintPE.Location = new System.Drawing.Point(583, 29);
+            this.btnPrintPE.Name = "btnPrintPE";
+            this.btnPrintPE.Size = new System.Drawing.Size(152, 34);
+            this.btnPrintPE.TabIndex = 77;
+            this.btnPrintPE.Text = " พิมพ์เล่มใหญ่ PE";
+            this.btnPrintPE.UseVisualStyleBackColor = true;
+            this.btnPrintPE.Click += new System.EventHandler(this.btnPrintPE_Click);
+            // 
+            // btnPrintXray
+            // 
+            this.btnPrintXray.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnPrintXray.Location = new System.Drawing.Point(583, 69);
+            this.btnPrintXray.Name = "btnPrintXray";
+            this.btnPrintXray.Size = new System.Drawing.Size(152, 34);
+            this.btnPrintXray.TabIndex = 76;
+            this.btnPrintXray.Text = " พิมพ์เล่มใหญ่ X-Ray";
+            this.btnPrintXray.UseVisualStyleBackColor = true;
+            this.btnPrintXray.Click += new System.EventHandler(this.btnPrintXray_Click);
+            // 
+            // chkStoolExamTyphoid
+            // 
+            this.chkStoolExamTyphoid.AutoSize = true;
+            this.chkStoolExamTyphoid.Location = new System.Drawing.Point(410, 307);
+            this.chkStoolExamTyphoid.Name = "chkStoolExamTyphoid";
+            this.chkStoolExamTyphoid.Size = new System.Drawing.Size(243, 17);
+            this.chkStoolExamTyphoid.TabIndex = 75;
+            this.chkStoolExamTyphoid.TabStop = true;
+            this.chkStoolExamTyphoid.Text = "แยกการตรวจ Typhoid จากอุจาระ เป็นกลุ่มใหม่";
+            this.chkStoolExamTyphoid.UseVisualStyleBackColor = true;
             // 
             // btnPrintSticker
             // 
@@ -3187,6 +3232,9 @@
         private System.Windows.Forms.Button btnExelAudio;
         private System.Windows.Forms.Button btnExelLung;
         private System.Windows.Forms.Button btnExelOther1;
+        private System.Windows.Forms.RadioButton chkStoolExamTyphoid;
+        private System.Windows.Forms.Button btnPrintPE;
+        private System.Windows.Forms.Button btnPrintXray;
 
     }
 }

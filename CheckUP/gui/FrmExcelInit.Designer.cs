@@ -65,6 +65,8 @@
             this.txtPrefixTest = new System.Windows.Forms.TextBox();
             this.btnSfExcel = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtPESheetName = new System.Windows.Forms.TextBox();
+            this.label189 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.nmDPEBloodGroup = new System.Windows.Forms.NumericUpDown();
@@ -92,6 +94,8 @@
             this.lbPE = new System.Windows.Forms.Label();
             this.nmDPERow = new System.Windows.Forms.NumericUpDown();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.txtXRaySheetName = new System.Windows.Forms.TextBox();
+            this.label190 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.txtXRayTest = new System.Windows.Forms.TextBox();
             this.btnXRayExcel = new System.Windows.Forms.Button();
@@ -104,6 +108,10 @@
             this.lbXRay = new System.Windows.Forms.Label();
             this.nmDXRayRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.txtCBCSheetName = new System.Windows.Forms.TextBox();
+            this.label191 = new System.Windows.Forms.Label();
+            this.label182 = new System.Windows.Forms.Label();
+            this.nmDCBCPmn = new System.Windows.Forms.NumericUpDown();
             this.label50 = new System.Windows.Forms.Label();
             this.nmDCBCSummary = new System.Windows.Forms.NumericUpDown();
             this.label51 = new System.Windows.Forms.Label();
@@ -138,6 +146,8 @@
             this.lbCBC = new System.Windows.Forms.Label();
             this.nmDCBCRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.txtFBSSheetName = new System.Windows.Forms.TextBox();
+            this.label192 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label66 = new System.Windows.Forms.Label();
             this.txtFBSTest = new System.Windows.Forms.TextBox();
@@ -153,6 +163,14 @@
             this.lbFBS = new System.Windows.Forms.Label();
             this.nmDFBSRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.txtUASheetName = new System.Windows.Forms.TextBox();
+            this.label193 = new System.Windows.Forms.Label();
+            this.label185 = new System.Windows.Forms.Label();
+            this.nmDUABlood = new System.Windows.Forms.NumericUpDown();
+            this.label184 = new System.Windows.Forms.Label();
+            this.nmDUAKetone = new System.Windows.Forms.NumericUpDown();
+            this.label183 = new System.Windows.Forms.Label();
+            this.nmDUAGlu = new System.Windows.Forms.NumericUpDown();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label67 = new System.Windows.Forms.Label();
             this.txtUATest = new System.Windows.Forms.TextBox();
@@ -186,6 +204,8 @@
             this.lbUA = new System.Windows.Forms.Label();
             this.nmDUARow = new System.Windows.Forms.NumericUpDown();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.txtTriSheetName = new System.Windows.Forms.TextBox();
+            this.label194 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label85 = new System.Windows.Forms.Label();
             this.txtTriTest = new System.Windows.Forms.TextBox();
@@ -201,6 +221,8 @@
             this.lbTri = new System.Windows.Forms.Label();
             this.nmDTriRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.txtChoSheetName = new System.Windows.Forms.TextBox();
+            this.label195 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.nmDChoHDL = new System.Windows.Forms.NumericUpDown();
@@ -220,6 +242,10 @@
             this.lbCho = new System.Windows.Forms.Label();
             this.nmDChoRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.label205 = new System.Windows.Forms.Label();
+            this.nmDSgotAakalineValue = new System.Windows.Forms.NumericUpDown();
+            this.txtSgotSheetName = new System.Windows.Forms.TextBox();
+            this.label196 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.nmDSgotALPValue = new System.Windows.Forms.NumericUpDown();
@@ -239,6 +265,8 @@
             this.lbSgot = new System.Windows.Forms.Label();
             this.nmDSgotRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.txtBunSheetName = new System.Windows.Forms.TextBox();
+            this.label197 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label88 = new System.Windows.Forms.Label();
             this.txtBunTest = new System.Windows.Forms.TextBox();
@@ -256,6 +284,8 @@
             this.lbBun = new System.Windows.Forms.Label();
             this.nmDBunRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.txtUricSheetName = new System.Windows.Forms.TextBox();
+            this.label198 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label89 = new System.Windows.Forms.Label();
             this.txtUricTest = new System.Windows.Forms.TextBox();
@@ -271,6 +301,10 @@
             this.lbUric = new System.Windows.Forms.Label();
             this.nmDUricRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.label206 = new System.Windows.Forms.Label();
+            this.nmDOther1AntiHav = new System.Windows.Forms.NumericUpDown();
+            this.txtOther1SheetName = new System.Windows.Forms.TextBox();
+            this.label199 = new System.Windows.Forms.Label();
             this.label92 = new System.Windows.Forms.Label();
             this.nmDOther1Calcium = new System.Windows.Forms.NumericUpDown();
             this.label91 = new System.Windows.Forms.Label();
@@ -291,6 +325,8 @@
             this.label24 = new System.Windows.Forms.Label();
             this.nmDOther1Row = new System.Windows.Forms.NumericUpDown();
             this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.txtLungSheetName = new System.Windows.Forms.TextBox();
+            this.label200 = new System.Windows.Forms.Label();
             this.label103 = new System.Windows.Forms.Label();
             this.nmDLungSummary = new System.Windows.Forms.NumericUpDown();
             this.label102 = new System.Windows.Forms.Label();
@@ -315,6 +351,8 @@
             this.label101 = new System.Windows.Forms.Label();
             this.nmDLungRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.txtAudioSheetName = new System.Windows.Forms.TextBox();
+            this.label201 = new System.Windows.Forms.Label();
             this.label123 = new System.Windows.Forms.Label();
             this.nmDAudiogramExam = new System.Windows.Forms.NumericUpDown();
             this.label122 = new System.Windows.Forms.Label();
@@ -357,6 +395,8 @@
             this.label118 = new System.Windows.Forms.Label();
             this.nmDAudioRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.txtEyeSheetName = new System.Windows.Forms.TextBox();
+            this.label202 = new System.Windows.Forms.Label();
             this.label181 = new System.Windows.Forms.Label();
             this.nmDEyeExam = new System.Windows.Forms.NumericUpDown();
             this.label129 = new System.Windows.Forms.Label();
@@ -389,6 +429,8 @@
             this.label143 = new System.Windows.Forms.Label();
             this.nmDEyeRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.txtToxiSheetName = new System.Windows.Forms.TextBox();
+            this.label203 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label124 = new System.Windows.Forms.Label();
             this.txtToxi2Test = new System.Windows.Forms.TextBox();
@@ -460,6 +502,14 @@
             this.label151 = new System.Windows.Forms.Label();
             this.nmDToxiRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage17 = new System.Windows.Forms.TabPage();
+            this.txtStoolExamSheetName = new System.Windows.Forms.TextBox();
+            this.label204 = new System.Windows.Forms.Label();
+            this.label188 = new System.Windows.Forms.Label();
+            this.nmDStoolExamTyHoidH = new System.Windows.Forms.NumericUpDown();
+            this.label187 = new System.Windows.Forms.Label();
+            this.nmDStoolExamTyHoidO = new System.Windows.Forms.NumericUpDown();
+            this.label186 = new System.Windows.Forms.Label();
+            this.nmDStoolExamCulture = new System.Windows.Forms.NumericUpDown();
             this.label153 = new System.Windows.Forms.Label();
             this.nmDStoolExamSummary = new System.Windows.Forms.NumericUpDown();
             this.label156 = new System.Windows.Forms.Label();
@@ -479,8 +529,20 @@
             this.nmDStoolExamNo = new System.Windows.Forms.NumericUpDown();
             this.label163 = new System.Windows.Forms.Label();
             this.nmDStoolExamRow = new System.Windows.Forms.NumericUpDown();
-            this.label182 = new System.Windows.Forms.Label();
-            this.nmDCBCPmn = new System.Windows.Forms.NumericUpDown();
+            this.label207 = new System.Windows.Forms.Label();
+            this.nmDOther1CA199 = new System.Windows.Forms.NumericUpDown();
+            this.label208 = new System.Windows.Forms.Label();
+            this.nmDOther1CA125 = new System.Windows.Forms.NumericUpDown();
+            this.label209 = new System.Windows.Forms.Label();
+            this.nmDOther1CA153 = new System.Windows.Forms.NumericUpDown();
+            this.label210 = new System.Windows.Forms.Label();
+            this.nmDOther1CAHCG = new System.Windows.Forms.NumericUpDown();
+            this.label211 = new System.Windows.Forms.Label();
+            this.nmDOther1CACEA = new System.Windows.Forms.NumericUpDown();
+            this.label212 = new System.Windows.Forms.Label();
+            this.nmDOther1CAPSA = new System.Windows.Forms.NumericUpDown();
+            this.label213 = new System.Windows.Forms.Label();
+            this.nmDOther1CAAFP = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDARow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDAPrefix)).BeginInit();
@@ -515,6 +577,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDXRayNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDXRayRow)).BeginInit();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCPmn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCSummary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCRBCmono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCPltS)).BeginInit();
@@ -537,6 +600,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDFBSNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDFBSRow)).BeginInit();
             this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDUABlood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDUAKetone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDUAGlu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDUASummary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDUAResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDUABact)).BeginInit();
@@ -566,6 +632,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDChoNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDChoRow)).BeginInit();
             this.tabPage9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDSgotAakalineValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDSgotALPValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDSgotvalue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDSgotResult)).BeginInit();
@@ -587,6 +654,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDUricNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDUricRow)).BeginInit();
             this.tabPage12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1AntiHav)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOther1Calcium)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOther1Amphetamine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOther1VDRL)).BeginInit();
@@ -676,6 +744,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDToxiNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDToxiRow)).BeginInit();
             this.tabPage17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamTyHoidH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamTyHoidO)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamCulture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamSummary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamParasite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRBC)).BeginInit();
@@ -684,7 +755,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCPmn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1CA199)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1CA125)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1CA153)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1CAHCG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1CACEA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1CAPSA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1CAAFP)).BeginInit();
             this.SuspendLayout();
             // 
             // nmDRow
@@ -1199,6 +1276,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.txtPESheetName);
+            this.tabPage2.Controls.Add(this.label189);
             this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.nmDPEBloodGroup);
@@ -1232,6 +1311,23 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // txtPESheetName
+            // 
+            this.txtPESheetName.Location = new System.Drawing.Point(373, 25);
+            this.txtPESheetName.Name = "txtPESheetName";
+            this.txtPESheetName.Size = new System.Drawing.Size(128, 20);
+            this.txtPESheetName.TabIndex = 69;
+            this.txtPESheetName.Text = "pe";
+            // 
+            // label189
+            // 
+            this.label189.AutoSize = true;
+            this.label189.Location = new System.Drawing.Point(319, 29);
+            this.label189.Name = "label189";
+            this.label189.Size = new System.Drawing.Size(48, 13);
+            this.label189.TabIndex = 68;
+            this.label189.Text = "ชื่อSheet";
             // 
             // textBox1
             // 
@@ -1567,6 +1663,8 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.txtXRaySheetName);
+            this.tabPage3.Controls.Add(this.label190);
             this.tabPage3.Controls.Add(this.label44);
             this.tabPage3.Controls.Add(this.txtXRayTest);
             this.tabPage3.Controls.Add(this.btnXRayExcel);
@@ -1585,6 +1683,23 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // txtXRaySheetName
+            // 
+            this.txtXRaySheetName.Location = new System.Drawing.Point(374, 30);
+            this.txtXRaySheetName.Name = "txtXRaySheetName";
+            this.txtXRaySheetName.Size = new System.Drawing.Size(128, 20);
+            this.txtXRaySheetName.TabIndex = 71;
+            this.txtXRaySheetName.Text = "xray";
+            // 
+            // label190
+            // 
+            this.label190.AutoSize = true;
+            this.label190.Location = new System.Drawing.Point(320, 34);
+            this.label190.Name = "label190";
+            this.label190.Size = new System.Drawing.Size(48, 13);
+            this.label190.TabIndex = 70;
+            this.label190.Text = "ชื่อSheet";
             // 
             // label44
             // 
@@ -1723,6 +1838,8 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.txtCBCSheetName);
+            this.tabPage4.Controls.Add(this.label191);
             this.tabPage4.Controls.Add(this.label182);
             this.tabPage4.Controls.Add(this.nmDCBCPmn);
             this.tabPage4.Controls.Add(this.label50);
@@ -1765,6 +1882,50 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // txtCBCSheetName
+            // 
+            this.txtCBCSheetName.Location = new System.Drawing.Point(316, 34);
+            this.txtCBCSheetName.Name = "txtCBCSheetName";
+            this.txtCBCSheetName.Size = new System.Drawing.Size(128, 20);
+            this.txtCBCSheetName.TabIndex = 81;
+            this.txtCBCSheetName.Text = "cbc";
+            // 
+            // label191
+            // 
+            this.label191.AutoSize = true;
+            this.label191.Location = new System.Drawing.Point(262, 38);
+            this.label191.Name = "label191";
+            this.label191.Size = new System.Drawing.Size(48, 13);
+            this.label191.TabIndex = 80;
+            this.label191.Text = "ชื่อSheet";
+            // 
+            // label182
+            // 
+            this.label182.AutoSize = true;
+            this.label182.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label182.Location = new System.Drawing.Point(423, 85);
+            this.label182.Name = "label182";
+            this.label182.Size = new System.Drawing.Size(44, 16);
+            this.label182.TabIndex = 78;
+            this.label182.Text = "Pmn  :";
+            // 
+            // nmDCBCPmn
+            // 
+            this.nmDCBCPmn.Location = new System.Drawing.Point(426, 113);
+            this.nmDCBCPmn.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDCBCPmn.Name = "nmDCBCPmn";
+            this.nmDCBCPmn.Size = new System.Drawing.Size(46, 20);
+            this.nmDCBCPmn.TabIndex = 79;
+            this.nmDCBCPmn.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // label50
             // 
@@ -2200,6 +2361,8 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.txtFBSSheetName);
+            this.tabPage5.Controls.Add(this.label192);
             this.tabPage5.Controls.Add(this.textBox2);
             this.tabPage5.Controls.Add(this.label66);
             this.tabPage5.Controls.Add(this.txtFBSTest);
@@ -2221,6 +2384,23 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // txtFBSSheetName
+            // 
+            this.txtFBSSheetName.Location = new System.Drawing.Point(291, 33);
+            this.txtFBSSheetName.Name = "txtFBSSheetName";
+            this.txtFBSSheetName.Size = new System.Drawing.Size(128, 20);
+            this.txtFBSSheetName.TabIndex = 73;
+            this.txtFBSSheetName.Text = "fbs";
+            // 
+            // label192
+            // 
+            this.label192.AutoSize = true;
+            this.label192.Location = new System.Drawing.Point(237, 37);
+            this.label192.Name = "label192";
+            this.label192.Size = new System.Drawing.Size(48, 13);
+            this.label192.TabIndex = 72;
+            this.label192.Text = "ชื่อSheet";
             // 
             // textBox2
             // 
@@ -2394,6 +2574,14 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.txtUASheetName);
+            this.tabPage6.Controls.Add(this.label193);
+            this.tabPage6.Controls.Add(this.label185);
+            this.tabPage6.Controls.Add(this.nmDUABlood);
+            this.tabPage6.Controls.Add(this.label184);
+            this.tabPage6.Controls.Add(this.nmDUAKetone);
+            this.tabPage6.Controls.Add(this.label183);
+            this.tabPage6.Controls.Add(this.nmDUAGlu);
             this.tabPage6.Controls.Add(this.textBox3);
             this.tabPage6.Controls.Add(this.label67);
             this.tabPage6.Controls.Add(this.txtUATest);
@@ -2433,6 +2621,104 @@
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "tabPage6";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // txtUASheetName
+            // 
+            this.txtUASheetName.Location = new System.Drawing.Point(316, 36);
+            this.txtUASheetName.Name = "txtUASheetName";
+            this.txtUASheetName.Size = new System.Drawing.Size(128, 20);
+            this.txtUASheetName.TabIndex = 83;
+            this.txtUASheetName.Text = "ua";
+            // 
+            // label193
+            // 
+            this.label193.AutoSize = true;
+            this.label193.Location = new System.Drawing.Point(262, 40);
+            this.label193.Name = "label193";
+            this.label193.Size = new System.Drawing.Size(48, 13);
+            this.label193.TabIndex = 82;
+            this.label193.Text = "ชื่อSheet";
+            // 
+            // label185
+            // 
+            this.label185.AutoSize = true;
+            this.label185.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label185.Location = new System.Drawing.Point(678, 165);
+            this.label185.Name = "label185";
+            this.label185.Size = new System.Drawing.Size(44, 16);
+            this.label185.TabIndex = 80;
+            this.label185.Text = "Blood";
+            // 
+            // nmDUABlood
+            // 
+            this.nmDUABlood.Location = new System.Drawing.Point(674, 193);
+            this.nmDUABlood.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDUABlood.Name = "nmDUABlood";
+            this.nmDUABlood.Size = new System.Drawing.Size(46, 20);
+            this.nmDUABlood.TabIndex = 81;
+            this.nmDUABlood.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label184
+            // 
+            this.label184.AutoSize = true;
+            this.label184.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label184.Location = new System.Drawing.Point(598, 165);
+            this.label184.Name = "label184";
+            this.label184.Size = new System.Drawing.Size(50, 16);
+            this.label184.TabIndex = 78;
+            this.label184.Text = "Ketone";
+            // 
+            // nmDUAKetone
+            // 
+            this.nmDUAKetone.Location = new System.Drawing.Point(594, 193);
+            this.nmDUAKetone.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDUAKetone.Name = "nmDUAKetone";
+            this.nmDUAKetone.Size = new System.Drawing.Size(46, 20);
+            this.nmDUAKetone.TabIndex = 79;
+            this.nmDUAKetone.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label183
+            // 
+            this.label183.AutoSize = true;
+            this.label183.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label183.Location = new System.Drawing.Point(525, 165);
+            this.label183.Name = "label183";
+            this.label183.Size = new System.Drawing.Size(28, 16);
+            this.label183.TabIndex = 76;
+            this.label183.Text = "Glu";
+            // 
+            // nmDUAGlu
+            // 
+            this.nmDUAGlu.Location = new System.Drawing.Point(521, 193);
+            this.nmDUAGlu.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDUAGlu.Name = "nmDUAGlu";
+            this.nmDUAGlu.Size = new System.Drawing.Size(46, 20);
+            this.nmDUAGlu.TabIndex = 77;
+            this.nmDUAGlu.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // textBox3
             // 
@@ -2849,6 +3135,8 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.txtTriSheetName);
+            this.tabPage7.Controls.Add(this.label194);
             this.tabPage7.Controls.Add(this.textBox4);
             this.tabPage7.Controls.Add(this.label85);
             this.tabPage7.Controls.Add(this.txtTriTest);
@@ -2870,6 +3158,23 @@
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "tabPage7";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // txtTriSheetName
+            // 
+            this.txtTriSheetName.Location = new System.Drawing.Point(327, 44);
+            this.txtTriSheetName.Name = "txtTriSheetName";
+            this.txtTriSheetName.Size = new System.Drawing.Size(128, 20);
+            this.txtTriSheetName.TabIndex = 80;
+            this.txtTriSheetName.Text = "trig";
+            // 
+            // label194
+            // 
+            this.label194.AutoSize = true;
+            this.label194.Location = new System.Drawing.Point(273, 48);
+            this.label194.Name = "label194";
+            this.label194.Size = new System.Drawing.Size(48, 13);
+            this.label194.TabIndex = 79;
+            this.label194.Text = "ชื่อSheet";
             // 
             // textBox4
             // 
@@ -3043,6 +3348,8 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.txtChoSheetName);
+            this.tabPage8.Controls.Add(this.label195);
             this.tabPage8.Controls.Add(this.textBox5);
             this.tabPage8.Controls.Add(this.label16);
             this.tabPage8.Controls.Add(this.nmDChoHDL);
@@ -3068,6 +3375,23 @@
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "tabPage8";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // txtChoSheetName
+            // 
+            this.txtChoSheetName.Location = new System.Drawing.Point(315, 46);
+            this.txtChoSheetName.Name = "txtChoSheetName";
+            this.txtChoSheetName.Size = new System.Drawing.Size(128, 20);
+            this.txtChoSheetName.TabIndex = 87;
+            this.txtChoSheetName.Text = "choles";
+            // 
+            // label195
+            // 
+            this.label195.AutoSize = true;
+            this.label195.Location = new System.Drawing.Point(261, 50);
+            this.label195.Name = "label195";
+            this.label195.Size = new System.Drawing.Size(48, 13);
+            this.label195.TabIndex = 86;
+            this.label195.Text = "ชื่อSheet";
             // 
             // textBox5
             // 
@@ -3295,6 +3619,10 @@
             // 
             // tabPage9
             // 
+            this.tabPage9.Controls.Add(this.label205);
+            this.tabPage9.Controls.Add(this.nmDSgotAakalineValue);
+            this.tabPage9.Controls.Add(this.txtSgotSheetName);
+            this.tabPage9.Controls.Add(this.label196);
             this.tabPage9.Controls.Add(this.textBox6);
             this.tabPage9.Controls.Add(this.label18);
             this.tabPage9.Controls.Add(this.nmDSgotALPValue);
@@ -3321,9 +3649,53 @@
             this.tabPage9.Text = "tabPage9";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
+            // label205
+            // 
+            this.label205.AutoSize = true;
+            this.label205.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label205.Location = new System.Drawing.Point(418, 96);
+            this.label205.Name = "label205";
+            this.label205.Size = new System.Drawing.Size(56, 16);
+            this.label205.TabIndex = 86;
+            this.label205.Text = "Alkaline";
+            // 
+            // nmDSgotAakalineValue
+            // 
+            this.nmDSgotAakalineValue.Location = new System.Drawing.Point(414, 124);
+            this.nmDSgotAakalineValue.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDSgotAakalineValue.Name = "nmDSgotAakalineValue";
+            this.nmDSgotAakalineValue.Size = new System.Drawing.Size(46, 20);
+            this.nmDSgotAakalineValue.TabIndex = 87;
+            this.nmDSgotAakalineValue.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // txtSgotSheetName
+            // 
+            this.txtSgotSheetName.Location = new System.Drawing.Point(322, 41);
+            this.txtSgotSheetName.Name = "txtSgotSheetName";
+            this.txtSgotSheetName.Size = new System.Drawing.Size(128, 20);
+            this.txtSgotSheetName.TabIndex = 85;
+            this.txtSgotSheetName.Text = "sgot";
+            // 
+            // label196
+            // 
+            this.label196.AutoSize = true;
+            this.label196.Location = new System.Drawing.Point(268, 45);
+            this.label196.Name = "label196";
+            this.label196.Size = new System.Drawing.Size(48, 13);
+            this.label196.TabIndex = 84;
+            this.label196.Text = "ชื่อSheet";
+            // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(417, 161);
+            this.textBox6.Location = new System.Drawing.Point(553, 161);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(46, 20);
             this.textBox6.TabIndex = 83;
@@ -3414,7 +3786,7 @@
             // 
             this.label74.AutoSize = true;
             this.label74.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label74.Location = new System.Drawing.Point(414, 96);
+            this.label74.Location = new System.Drawing.Point(550, 96);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(72, 16);
             this.label74.TabIndex = 48;
@@ -3422,7 +3794,7 @@
             // 
             // nmDSgotResult
             // 
-            this.nmDSgotResult.Location = new System.Drawing.Point(417, 124);
+            this.nmDSgotResult.Location = new System.Drawing.Point(553, 124);
             this.nmDSgotResult.Minimum = new decimal(new int[] {
             1,
             0,
@@ -3441,7 +3813,7 @@
             // 
             this.label75.AutoSize = true;
             this.label75.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label75.Location = new System.Drawing.Point(507, 96);
+            this.label75.Location = new System.Drawing.Point(643, 96);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(92, 16);
             this.label75.TabIndex = 46;
@@ -3449,7 +3821,7 @@
             // 
             // nmDSgotSummary
             // 
-            this.nmDSgotSummary.Location = new System.Drawing.Point(522, 124);
+            this.nmDSgotSummary.Location = new System.Drawing.Point(658, 124);
             this.nmDSgotSummary.Minimum = new decimal(new int[] {
             1,
             0,
@@ -3547,6 +3919,8 @@
             // 
             // tabPage10
             // 
+            this.tabPage10.Controls.Add(this.txtBunSheetName);
+            this.tabPage10.Controls.Add(this.label197);
             this.tabPage10.Controls.Add(this.textBox7);
             this.tabPage10.Controls.Add(this.label88);
             this.tabPage10.Controls.Add(this.txtBunTest);
@@ -3570,6 +3944,23 @@
             this.tabPage10.TabIndex = 9;
             this.tabPage10.Text = "tabPage10";
             this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // txtBunSheetName
+            // 
+            this.txtBunSheetName.Location = new System.Drawing.Point(320, 45);
+            this.txtBunSheetName.Name = "txtBunSheetName";
+            this.txtBunSheetName.Size = new System.Drawing.Size(128, 20);
+            this.txtBunSheetName.TabIndex = 83;
+            this.txtBunSheetName.Text = "bun";
+            // 
+            // label197
+            // 
+            this.label197.AutoSize = true;
+            this.label197.Location = new System.Drawing.Point(266, 49);
+            this.label197.Name = "label197";
+            this.label197.Size = new System.Drawing.Size(48, 13);
+            this.label197.TabIndex = 82;
+            this.label197.Text = "ชื่อSheet";
             // 
             // textBox7
             // 
@@ -3770,6 +4161,8 @@
             // 
             // tabPage11
             // 
+            this.tabPage11.Controls.Add(this.txtUricSheetName);
+            this.tabPage11.Controls.Add(this.label198);
             this.tabPage11.Controls.Add(this.textBox8);
             this.tabPage11.Controls.Add(this.label89);
             this.tabPage11.Controls.Add(this.txtUricTest);
@@ -3791,6 +4184,23 @@
             this.tabPage11.TabIndex = 10;
             this.tabPage11.Text = "tabPage11";
             this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // txtUricSheetName
+            // 
+            this.txtUricSheetName.Location = new System.Drawing.Point(333, 52);
+            this.txtUricSheetName.Name = "txtUricSheetName";
+            this.txtUricSheetName.Size = new System.Drawing.Size(128, 20);
+            this.txtUricSheetName.TabIndex = 83;
+            this.txtUricSheetName.Text = "uric";
+            // 
+            // label198
+            // 
+            this.label198.AutoSize = true;
+            this.label198.Location = new System.Drawing.Point(279, 56);
+            this.label198.Name = "label198";
+            this.label198.Size = new System.Drawing.Size(48, 13);
+            this.label198.TabIndex = 82;
+            this.label198.Text = "ชื่อSheet";
             // 
             // textBox8
             // 
@@ -3964,6 +4374,24 @@
             // 
             // tabPage12
             // 
+            this.tabPage12.Controls.Add(this.label207);
+            this.tabPage12.Controls.Add(this.nmDOther1CA199);
+            this.tabPage12.Controls.Add(this.label208);
+            this.tabPage12.Controls.Add(this.nmDOther1CA125);
+            this.tabPage12.Controls.Add(this.label209);
+            this.tabPage12.Controls.Add(this.nmDOther1CA153);
+            this.tabPage12.Controls.Add(this.label210);
+            this.tabPage12.Controls.Add(this.nmDOther1CAHCG);
+            this.tabPage12.Controls.Add(this.label211);
+            this.tabPage12.Controls.Add(this.nmDOther1CACEA);
+            this.tabPage12.Controls.Add(this.label212);
+            this.tabPage12.Controls.Add(this.nmDOther1CAPSA);
+            this.tabPage12.Controls.Add(this.label213);
+            this.tabPage12.Controls.Add(this.nmDOther1CAAFP);
+            this.tabPage12.Controls.Add(this.label206);
+            this.tabPage12.Controls.Add(this.nmDOther1AntiHav);
+            this.tabPage12.Controls.Add(this.txtOther1SheetName);
+            this.tabPage12.Controls.Add(this.label199);
             this.tabPage12.Controls.Add(this.label92);
             this.tabPage12.Controls.Add(this.nmDOther1Calcium);
             this.tabPage12.Controls.Add(this.label91);
@@ -3990,6 +4418,50 @@
             this.tabPage12.TabIndex = 11;
             this.tabPage12.Text = "tabPage12";
             this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // label206
+            // 
+            this.label206.AutoSize = true;
+            this.label206.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label206.Location = new System.Drawing.Point(734, 70);
+            this.label206.Name = "label206";
+            this.label206.Size = new System.Drawing.Size(58, 16);
+            this.label206.TabIndex = 102;
+            this.label206.Text = "Anti Hav";
+            // 
+            // nmDOther1AntiHav
+            // 
+            this.nmDOther1AntiHav.Location = new System.Drawing.Point(740, 99);
+            this.nmDOther1AntiHav.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDOther1AntiHav.Name = "nmDOther1AntiHav";
+            this.nmDOther1AntiHav.Size = new System.Drawing.Size(46, 20);
+            this.nmDOther1AntiHav.TabIndex = 103;
+            this.nmDOther1AntiHav.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // txtOther1SheetName
+            // 
+            this.txtOther1SheetName.Location = new System.Drawing.Point(333, 32);
+            this.txtOther1SheetName.Name = "txtOther1SheetName";
+            this.txtOther1SheetName.Size = new System.Drawing.Size(128, 20);
+            this.txtOther1SheetName.TabIndex = 101;
+            this.txtOther1SheetName.Text = "other1";
+            // 
+            // label199
+            // 
+            this.label199.AutoSize = true;
+            this.label199.Location = new System.Drawing.Point(279, 36);
+            this.label199.Name = "label199";
+            this.label199.Size = new System.Drawing.Size(48, 13);
+            this.label199.TabIndex = 100;
+            this.label199.Text = "ชื่อSheet";
             // 
             // label92
             // 
@@ -4236,6 +4708,8 @@
             // 
             // tabPage13
             // 
+            this.tabPage13.Controls.Add(this.txtLungSheetName);
+            this.tabPage13.Controls.Add(this.label200);
             this.tabPage13.Controls.Add(this.label103);
             this.tabPage13.Controls.Add(this.nmDLungSummary);
             this.tabPage13.Controls.Add(this.label102);
@@ -4266,6 +4740,23 @@
             this.tabPage13.TabIndex = 12;
             this.tabPage13.Text = "tabPage13";
             this.tabPage13.UseVisualStyleBackColor = true;
+            // 
+            // txtLungSheetName
+            // 
+            this.txtLungSheetName.Location = new System.Drawing.Point(333, 32);
+            this.txtLungSheetName.Name = "txtLungSheetName";
+            this.txtLungSheetName.Size = new System.Drawing.Size(128, 20);
+            this.txtLungSheetName.TabIndex = 124;
+            this.txtLungSheetName.Text = "lung";
+            // 
+            // label200
+            // 
+            this.label200.AutoSize = true;
+            this.label200.Location = new System.Drawing.Point(279, 36);
+            this.label200.Name = "label200";
+            this.label200.Size = new System.Drawing.Size(48, 13);
+            this.label200.TabIndex = 123;
+            this.label200.Text = "ชื่อSheet";
             // 
             // label103
             // 
@@ -4566,6 +5057,8 @@
             // 
             // tabPage14
             // 
+            this.tabPage14.Controls.Add(this.txtAudioSheetName);
+            this.tabPage14.Controls.Add(this.label201);
             this.tabPage14.Controls.Add(this.label123);
             this.tabPage14.Controls.Add(this.nmDAudiogramExam);
             this.tabPage14.Controls.Add(this.label122);
@@ -4614,6 +5107,23 @@
             this.tabPage14.TabIndex = 13;
             this.tabPage14.Text = "tabPage14";
             this.tabPage14.UseVisualStyleBackColor = true;
+            // 
+            // txtAudioSheetName
+            // 
+            this.txtAudioSheetName.Location = new System.Drawing.Point(357, 22);
+            this.txtAudioSheetName.Name = "txtAudioSheetName";
+            this.txtAudioSheetName.Size = new System.Drawing.Size(128, 20);
+            this.txtAudioSheetName.TabIndex = 117;
+            this.txtAudioSheetName.Text = "audio";
+            // 
+            // label201
+            // 
+            this.label201.AutoSize = true;
+            this.label201.Location = new System.Drawing.Point(303, 26);
+            this.label201.Name = "label201";
+            this.label201.Size = new System.Drawing.Size(48, 13);
+            this.label201.TabIndex = 116;
+            this.label201.Text = "ชื่อSheet";
             // 
             // label123
             // 
@@ -5157,6 +5667,8 @@
             // 
             // tabPage15
             // 
+            this.tabPage15.Controls.Add(this.txtEyeSheetName);
+            this.tabPage15.Controls.Add(this.label202);
             this.tabPage15.Controls.Add(this.label181);
             this.tabPage15.Controls.Add(this.nmDEyeExam);
             this.tabPage15.Controls.Add(this.label129);
@@ -5195,6 +5707,23 @@
             this.tabPage15.TabIndex = 14;
             this.tabPage15.Text = "tabPage15";
             this.tabPage15.UseVisualStyleBackColor = true;
+            // 
+            // txtEyeSheetName
+            // 
+            this.txtEyeSheetName.Location = new System.Drawing.Point(350, 22);
+            this.txtEyeSheetName.Name = "txtEyeSheetName";
+            this.txtEyeSheetName.Size = new System.Drawing.Size(128, 20);
+            this.txtEyeSheetName.TabIndex = 150;
+            this.txtEyeSheetName.Text = "eye";
+            // 
+            // label202
+            // 
+            this.label202.AutoSize = true;
+            this.label202.Location = new System.Drawing.Point(296, 26);
+            this.label202.Name = "label202";
+            this.label202.Size = new System.Drawing.Size(48, 13);
+            this.label202.TabIndex = 149;
+            this.label202.Text = "ชื่อSheet";
             // 
             // label181
             // 
@@ -5603,6 +6132,8 @@
             // 
             // tabPage16
             // 
+            this.tabPage16.Controls.Add(this.txtToxiSheetName);
+            this.tabPage16.Controls.Add(this.label203);
             this.tabPage16.Controls.Add(this.groupBox2);
             this.tabPage16.Controls.Add(this.groupBox1);
             this.tabPage16.Controls.Add(this.label125);
@@ -5620,6 +6151,23 @@
             this.tabPage16.TabIndex = 15;
             this.tabPage16.Text = "tabPage16";
             this.tabPage16.UseVisualStyleBackColor = true;
+            // 
+            // txtToxiSheetName
+            // 
+            this.txtToxiSheetName.Location = new System.Drawing.Point(334, 22);
+            this.txtToxiSheetName.Name = "txtToxiSheetName";
+            this.txtToxiSheetName.Size = new System.Drawing.Size(128, 20);
+            this.txtToxiSheetName.TabIndex = 179;
+            this.txtToxiSheetName.Text = "toxi";
+            // 
+            // label203
+            // 
+            this.label203.AutoSize = true;
+            this.label203.Location = new System.Drawing.Point(280, 26);
+            this.label203.Name = "label203";
+            this.label203.Size = new System.Drawing.Size(48, 13);
+            this.label203.TabIndex = 178;
+            this.label203.Text = "ชื่อSheet";
             // 
             // groupBox2
             // 
@@ -6592,6 +7140,14 @@
             // 
             // tabPage17
             // 
+            this.tabPage17.Controls.Add(this.txtStoolExamSheetName);
+            this.tabPage17.Controls.Add(this.label204);
+            this.tabPage17.Controls.Add(this.label188);
+            this.tabPage17.Controls.Add(this.nmDStoolExamTyHoidH);
+            this.tabPage17.Controls.Add(this.label187);
+            this.tabPage17.Controls.Add(this.nmDStoolExamTyHoidO);
+            this.tabPage17.Controls.Add(this.label186);
+            this.tabPage17.Controls.Add(this.nmDStoolExamCulture);
             this.tabPage17.Controls.Add(this.label153);
             this.tabPage17.Controls.Add(this.nmDStoolExamSummary);
             this.tabPage17.Controls.Add(this.label156);
@@ -6618,6 +7174,104 @@
             this.tabPage17.TabIndex = 16;
             this.tabPage17.Text = "tabPage17";
             this.tabPage17.UseVisualStyleBackColor = true;
+            // 
+            // txtStoolExamSheetName
+            // 
+            this.txtStoolExamSheetName.Location = new System.Drawing.Point(333, 32);
+            this.txtStoolExamSheetName.Name = "txtStoolExamSheetName";
+            this.txtStoolExamSheetName.Size = new System.Drawing.Size(128, 20);
+            this.txtStoolExamSheetName.TabIndex = 153;
+            this.txtStoolExamSheetName.Text = "stoolexam";
+            // 
+            // label204
+            // 
+            this.label204.AutoSize = true;
+            this.label204.Location = new System.Drawing.Point(279, 36);
+            this.label204.Name = "label204";
+            this.label204.Size = new System.Drawing.Size(48, 13);
+            this.label204.TabIndex = 152;
+            this.label204.Text = "ชื่อSheet";
+            // 
+            // label188
+            // 
+            this.label188.AutoSize = true;
+            this.label188.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label188.Location = new System.Drawing.Point(843, 71);
+            this.label188.Name = "label188";
+            this.label188.Size = new System.Drawing.Size(71, 16);
+            this.label188.TabIndex = 150;
+            this.label188.Text = "Typhoid H";
+            // 
+            // nmDStoolExamTyHoidH
+            // 
+            this.nmDStoolExamTyHoidH.Location = new System.Drawing.Point(854, 100);
+            this.nmDStoolExamTyHoidH.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDStoolExamTyHoidH.Name = "nmDStoolExamTyHoidH";
+            this.nmDStoolExamTyHoidH.Size = new System.Drawing.Size(46, 20);
+            this.nmDStoolExamTyHoidH.TabIndex = 151;
+            this.nmDStoolExamTyHoidH.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label187
+            // 
+            this.label187.AutoSize = true;
+            this.label187.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label187.Location = new System.Drawing.Point(748, 71);
+            this.label187.Name = "label187";
+            this.label187.Size = new System.Drawing.Size(71, 16);
+            this.label187.TabIndex = 148;
+            this.label187.Text = "Typhoid O";
+            // 
+            // nmDStoolExamTyHoidO
+            // 
+            this.nmDStoolExamTyHoidO.Location = new System.Drawing.Point(762, 100);
+            this.nmDStoolExamTyHoidO.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDStoolExamTyHoidO.Name = "nmDStoolExamTyHoidO";
+            this.nmDStoolExamTyHoidO.Size = new System.Drawing.Size(46, 20);
+            this.nmDStoolExamTyHoidO.TabIndex = 149;
+            this.nmDStoolExamTyHoidO.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label186
+            // 
+            this.label186.AutoSize = true;
+            this.label186.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label186.Location = new System.Drawing.Point(649, 71);
+            this.label186.Name = "label186";
+            this.label186.Size = new System.Drawing.Size(49, 16);
+            this.label186.TabIndex = 146;
+            this.label186.Text = "Culture";
+            // 
+            // nmDStoolExamCulture
+            // 
+            this.nmDStoolExamCulture.Location = new System.Drawing.Point(655, 100);
+            this.nmDStoolExamCulture.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDStoolExamCulture.Name = "nmDStoolExamCulture";
+            this.nmDStoolExamCulture.Size = new System.Drawing.Size(46, 20);
+            this.nmDStoolExamCulture.TabIndex = 147;
+            this.nmDStoolExamCulture.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // label153
             // 
@@ -6862,28 +7516,190 @@
             0,
             0});
             // 
-            // label182
+            // label207
             // 
-            this.label182.AutoSize = true;
-            this.label182.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label182.Location = new System.Drawing.Point(423, 85);
-            this.label182.Name = "label182";
-            this.label182.Size = new System.Drawing.Size(44, 16);
-            this.label182.TabIndex = 78;
-            this.label182.Text = "Pmn  :";
+            this.label207.AutoSize = true;
+            this.label207.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label207.Location = new System.Drawing.Point(731, 155);
+            this.label207.Name = "label207";
+            this.label207.Size = new System.Drawing.Size(54, 16);
+            this.label207.TabIndex = 116;
+            this.label207.Text = "CA 19-9";
             // 
-            // nmDCBCPmn
+            // nmDOther1CA199
             // 
-            this.nmDCBCPmn.Location = new System.Drawing.Point(426, 113);
-            this.nmDCBCPmn.Minimum = new decimal(new int[] {
+            this.nmDOther1CA199.Location = new System.Drawing.Point(737, 184);
+            this.nmDOther1CA199.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nmDCBCPmn.Name = "nmDCBCPmn";
-            this.nmDCBCPmn.Size = new System.Drawing.Size(46, 20);
-            this.nmDCBCPmn.TabIndex = 79;
-            this.nmDCBCPmn.Value = new decimal(new int[] {
+            this.nmDOther1CA199.Name = "nmDOther1CA199";
+            this.nmDOther1CA199.Size = new System.Drawing.Size(46, 20);
+            this.nmDOther1CA199.TabIndex = 117;
+            this.nmDOther1CA199.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label208
+            // 
+            this.label208.AutoSize = true;
+            this.label208.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label208.Location = new System.Drawing.Point(646, 156);
+            this.label208.Name = "label208";
+            this.label208.Size = new System.Drawing.Size(50, 16);
+            this.label208.TabIndex = 114;
+            this.label208.Text = "CA 125";
+            // 
+            // nmDOther1CA125
+            // 
+            this.nmDOther1CA125.Location = new System.Drawing.Point(652, 185);
+            this.nmDOther1CA125.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDOther1CA125.Name = "nmDOther1CA125";
+            this.nmDOther1CA125.Size = new System.Drawing.Size(46, 20);
+            this.nmDOther1CA125.TabIndex = 115;
+            this.nmDOther1CA125.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label209
+            // 
+            this.label209.AutoSize = true;
+            this.label209.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label209.Location = new System.Drawing.Point(532, 156);
+            this.label209.Name = "label209";
+            this.label209.Size = new System.Drawing.Size(50, 16);
+            this.label209.TabIndex = 112;
+            this.label209.Text = "CA 153";
+            // 
+            // nmDOther1CA153
+            // 
+            this.nmDOther1CA153.Location = new System.Drawing.Point(538, 185);
+            this.nmDOther1CA153.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDOther1CA153.Name = "nmDOther1CA153";
+            this.nmDOther1CA153.Size = new System.Drawing.Size(46, 20);
+            this.nmDOther1CA153.TabIndex = 113;
+            this.nmDOther1CA153.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label210
+            // 
+            this.label210.AutoSize = true;
+            this.label210.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label210.Location = new System.Drawing.Point(425, 155);
+            this.label210.Name = "label210";
+            this.label210.Size = new System.Drawing.Size(58, 16);
+            this.label210.TabIndex = 110;
+            this.label210.Text = "CA HCG";
+            // 
+            // nmDOther1CAHCG
+            // 
+            this.nmDOther1CAHCG.Location = new System.Drawing.Point(431, 184);
+            this.nmDOther1CAHCG.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDOther1CAHCG.Name = "nmDOther1CAHCG";
+            this.nmDOther1CAHCG.Size = new System.Drawing.Size(46, 20);
+            this.nmDOther1CAHCG.TabIndex = 111;
+            this.nmDOther1CAHCG.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label211
+            // 
+            this.label211.AutoSize = true;
+            this.label211.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label211.Location = new System.Drawing.Point(229, 156);
+            this.label211.Name = "label211";
+            this.label211.Size = new System.Drawing.Size(56, 16);
+            this.label211.TabIndex = 108;
+            this.label211.Text = "CA CEA";
+            // 
+            // nmDOther1CACEA
+            // 
+            this.nmDOther1CACEA.Location = new System.Drawing.Point(225, 184);
+            this.nmDOther1CACEA.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDOther1CACEA.Name = "nmDOther1CACEA";
+            this.nmDOther1CACEA.Size = new System.Drawing.Size(46, 20);
+            this.nmDOther1CACEA.TabIndex = 109;
+            this.nmDOther1CACEA.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label212
+            // 
+            this.label212.AutoSize = true;
+            this.label212.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label212.Location = new System.Drawing.Point(324, 155);
+            this.label212.Name = "label212";
+            this.label212.Size = new System.Drawing.Size(56, 16);
+            this.label212.TabIndex = 106;
+            this.label212.Text = "CA PSA";
+            // 
+            // nmDOther1CAPSA
+            // 
+            this.nmDOther1CAPSA.Location = new System.Drawing.Point(330, 184);
+            this.nmDOther1CAPSA.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDOther1CAPSA.Name = "nmDOther1CAPSA";
+            this.nmDOther1CAPSA.Size = new System.Drawing.Size(46, 20);
+            this.nmDOther1CAPSA.TabIndex = 107;
+            this.nmDOther1CAPSA.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label213
+            // 
+            this.label213.AutoSize = true;
+            this.label213.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label213.Location = new System.Drawing.Point(130, 156);
+            this.label213.Name = "label213";
+            this.label213.Size = new System.Drawing.Size(55, 16);
+            this.label213.TabIndex = 104;
+            this.label213.Text = "CA AFP";
+            // 
+            // nmDOther1CAAFP
+            // 
+            this.nmDOther1CAAFP.Location = new System.Drawing.Point(126, 184);
+            this.nmDOther1CAAFP.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDOther1CAAFP.Name = "nmDOther1CAAFP";
+            this.nmDOther1CAAFP.Size = new System.Drawing.Size(46, 20);
+            this.nmDOther1CAAFP.TabIndex = 105;
+            this.nmDOther1CAAFP.Value = new decimal(new int[] {
             5,
             0,
             0,
@@ -6937,6 +7753,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDXRayRow)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCPmn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCSummary)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCRBCmono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCPltS)).EndInit();
@@ -6961,6 +7778,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDFBSRow)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDUABlood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDUAKetone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDUAGlu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDUASummary)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDUAResult)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDUABact)).EndInit();
@@ -6993,6 +7813,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDChoRow)).EndInit();
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDSgotAakalineValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDSgotALPValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDSgotvalue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDSgotResult)).EndInit();
@@ -7017,6 +7838,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDUricRow)).EndInit();
             this.tabPage12.ResumeLayout(false);
             this.tabPage12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1AntiHav)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOther1Calcium)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOther1Amphetamine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOther1VDRL)).EndInit();
@@ -7113,6 +7935,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDToxiRow)).EndInit();
             this.tabPage17.ResumeLayout(false);
             this.tabPage17.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamTyHoidH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamTyHoidO)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamCulture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamSummary)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamParasite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRBC)).EndInit();
@@ -7121,7 +7946,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCPmn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1CA199)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1CA125)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1CA153)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1CAHCG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1CACEA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1CAPSA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1CAAFP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -7581,5 +8412,67 @@
         private System.Windows.Forms.NumericUpDown nmDEyeExam;
         private System.Windows.Forms.Label label182;
         private System.Windows.Forms.NumericUpDown nmDCBCPmn;
+        private System.Windows.Forms.Label label183;
+        private System.Windows.Forms.NumericUpDown nmDUAGlu;
+        private System.Windows.Forms.Label label185;
+        private System.Windows.Forms.NumericUpDown nmDUABlood;
+        private System.Windows.Forms.Label label184;
+        private System.Windows.Forms.NumericUpDown nmDUAKetone;
+        private System.Windows.Forms.Label label186;
+        private System.Windows.Forms.NumericUpDown nmDStoolExamCulture;
+        private System.Windows.Forms.Label label188;
+        private System.Windows.Forms.NumericUpDown nmDStoolExamTyHoidH;
+        private System.Windows.Forms.Label label187;
+        private System.Windows.Forms.NumericUpDown nmDStoolExamTyHoidO;
+        private System.Windows.Forms.TextBox txtPESheetName;
+        private System.Windows.Forms.Label label189;
+        private System.Windows.Forms.TextBox txtXRaySheetName;
+        private System.Windows.Forms.Label label190;
+        private System.Windows.Forms.TextBox txtCBCSheetName;
+        private System.Windows.Forms.Label label191;
+        private System.Windows.Forms.TextBox txtFBSSheetName;
+        private System.Windows.Forms.Label label192;
+        private System.Windows.Forms.TextBox txtUASheetName;
+        private System.Windows.Forms.Label label193;
+        private System.Windows.Forms.TextBox txtTriSheetName;
+        private System.Windows.Forms.Label label194;
+        private System.Windows.Forms.TextBox txtChoSheetName;
+        private System.Windows.Forms.Label label195;
+        private System.Windows.Forms.TextBox txtSgotSheetName;
+        private System.Windows.Forms.Label label196;
+        private System.Windows.Forms.TextBox txtBunSheetName;
+        private System.Windows.Forms.Label label197;
+        private System.Windows.Forms.TextBox txtUricSheetName;
+        private System.Windows.Forms.Label label198;
+        private System.Windows.Forms.TextBox txtOther1SheetName;
+        private System.Windows.Forms.Label label199;
+        private System.Windows.Forms.TextBox txtLungSheetName;
+        private System.Windows.Forms.Label label200;
+        private System.Windows.Forms.TextBox txtAudioSheetName;
+        private System.Windows.Forms.Label label201;
+        private System.Windows.Forms.TextBox txtEyeSheetName;
+        private System.Windows.Forms.Label label202;
+        private System.Windows.Forms.TextBox txtToxiSheetName;
+        private System.Windows.Forms.Label label203;
+        private System.Windows.Forms.TextBox txtStoolExamSheetName;
+        private System.Windows.Forms.Label label204;
+        private System.Windows.Forms.Label label205;
+        private System.Windows.Forms.NumericUpDown nmDSgotAakalineValue;
+        private System.Windows.Forms.Label label206;
+        private System.Windows.Forms.NumericUpDown nmDOther1AntiHav;
+        private System.Windows.Forms.Label label207;
+        private System.Windows.Forms.NumericUpDown nmDOther1CA199;
+        private System.Windows.Forms.Label label208;
+        private System.Windows.Forms.NumericUpDown nmDOther1CA125;
+        private System.Windows.Forms.Label label209;
+        private System.Windows.Forms.NumericUpDown nmDOther1CA153;
+        private System.Windows.Forms.Label label210;
+        private System.Windows.Forms.NumericUpDown nmDOther1CAHCG;
+        private System.Windows.Forms.Label label211;
+        private System.Windows.Forms.NumericUpDown nmDOther1CACEA;
+        private System.Windows.Forms.Label label212;
+        private System.Windows.Forms.NumericUpDown nmDOther1CAPSA;
+        private System.Windows.Forms.Label label213;
+        private System.Windows.Forms.NumericUpDown nmDOther1CAAFP;
     }
 }

@@ -37,6 +37,7 @@ namespace CheckUP.objdb
             ccp.patientHeight = "patient_height";
             ccp.patientPulse = "patient_pulse";
             ccp.patientWeight = "patient_weight";
+            ccp.PeResult = "pe_result";
 
             //ccp.EyeShortLongLeft = "eye_short_long_left";
             //ccp.EyeShortLongRight = "eye_short_long_right";
@@ -63,6 +64,9 @@ namespace CheckUP.objdb
             ccp.StoolExamRbc = "stool_exam_rbc";
             ccp.StoolExamParasite = "stool_exam_parasite";
             ccp.StoolExamSummary = "stool_exam_summary";
+            ccp.StoolExamCulture = "stool_exam_culture";
+            ccp.StoolExamTyphoidH = "stool_exam_typhoidh";
+            ccp.StoolExamTyphoidO = "stool_exam_typhoido";
 
             //ccp.toxicologyLead = "toxicology_lead";
             //ccp.toxicologyMercury = "toxicology_mercury";
@@ -90,22 +94,29 @@ namespace CheckUP.objdb
             ccp.xrayChestSummary = "xray_chest_summary";
             ccp.eyesExam = "eyes_exam";
             ccp.ekgExam = "ekg_exam";
-            ccp.caAfp = "ca_afp";
-            ccp.caCea = "ca_cea";
-            ccp.caPsa = "ca_psa";
-            ccp.caHcg = "ca_hcg";
-            ccp.ca153 = "ca_153";
-            ccp.ca125 = "ca_125";
-            ccp.ca199 = "ca_19_9";
+
+            ccp.CAAFP = "ca_afp";
+            ccp.CACEA = "ca_cea";
+            ccp.CAPSA = "ca_psa";
+            ccp.CAHCG = "ca_hcg";
+            ccp.CA153 = "ca_153";
+            ccp.CA125 = "ca_125";
+            ccp.CA199 = "ca_19_9";
+
             ccp.thyroidT3 = "thyroid_t3";
             ccp.thyroidT4 = "thyroid_t4";
             ccp.thyroidTsh = "thyroid_tsh";
             ccp.BloodGroup = "blood_group";
+
             ccp.vdrl = "vdrl";
             ccp.antiHiv = "anti_hiv";
             ccp.hbsag = "hbsag";
             ccp.hbsab = "hbsab";
             ccp.amphetamine = "amphetamine";
+            ccp.hbtyping = "hbtyping";
+            ccp.AntiHav = "anti_hav";
+            ccp.antiHbc = "anti_hbc";
+
             ccp.disscusExam = "disscus_exam";
             ccp.suggestExam = "suggest_exam";
             ccp.sugar = "sugar";
@@ -121,6 +132,8 @@ namespace CheckUP.objdb
             ccp.liverAlp = "liver_alp";
             ccp.liverResult = "liver_result";
             ccp.liverSummary = "liver_summary";
+            ccp.liverAlkaline = "liver_alkaline";
+
             ccp.uricAcid = "uric_acid";
             ccp.cholesterol = "cholesterol";
             ccp.triglyceride = "triglyceride";
@@ -158,6 +171,8 @@ namespace CheckUP.objdb
             ccp.urineSummary = "urine_summary";
             ccp.urineResult = "urine_result";
             ccp.urineGlu = "urine_glu";
+            ccp.urineKetone = "urine_ketone";
+            ccp.urineBlood = "urine_blood";
 
             ccp.lungFvcPredic = "lung_fvc_predic";
             ccp.lungFvcMeas = "lung_fvc_meas";
@@ -212,9 +227,9 @@ namespace CheckUP.objdb
 
             ccp.visitComment = "visit_comment";
             ccp.bmi = "bmi";
-            ccp.antiHbc = "anti_hbc";
+            
             ccp.caFt3 = "ca_ft3";
-            ccp.hbtyping = "hbtyping";
+            
             //ccp.toxicologyHexane = "toxicology_hexane";
             //ccp.toxicologyMethanol = "toxicology_methanol";
             //ccp.toxicologyMek = "toxicology_mek";
@@ -382,10 +397,10 @@ namespace CheckUP.objdb
                 + ccp.Audiogram500L + "," + ccp.Audiogram500R + ","
                 + ccp.AudiogramSummaryL + "," + ccp.AudiogramSummaryR + ","
 
-                + ccp.ca125 + "," + ccp.cbcPlateletSmear + ","
-                + ccp.ca199 + "," + ccp.caAfp + ","
-                + ccp.caCea + "," + ccp.caHcg + ","
-                + ccp.calcium + "," + ccp.caPsa + ","
+                + ccp.CA125 + "," + ccp.cbcPlateletSmear + ","
+                + ccp.CA199 + "," + ccp.CAAFP + ","
+                + ccp.CACEA + "," + ccp.CAHCG + ","
+                + ccp.calcium + "," + ccp.CAPSA + ","
                 + ccp.cbcBasophil + "," + ccp.cbcEosinophil + ","
 
                 + ccp.cbcHb + "," + ccp.cbcHct + ","
@@ -465,10 +480,10 @@ namespace CheckUP.objdb
                 + p.Audiogram500L + "','" + p.Audiogram500R + "','"
                 + p.AudiogramSummaryL + "','" + p.AudiogramSummaryR + "','"
 
-                + p.ca125 + "','" + p.cbcPlateletSmear + "','"
-                + p.ca199 + "','" + p.caAfp + "','"
-                + p.caCea + "','" + p.caHcg + "','"
-                + p.calcium + "','" + p.caPsa + "','"
+                + p.CA125 + "','" + p.cbcPlateletSmear + "','"
+                + p.CA199 + "','" + p.CAAFP + "','"
+                + p.CACEA + "','" + p.CAHCG + "','"
+                + p.calcium + "','" + p.CAPSA + "','"
                 + p.cbcBasophil + "','" + p.cbcEosinophil + "','"
 
                 + p.cbcHb + "','" + p.cbcHct + "','"
@@ -606,7 +621,9 @@ namespace CheckUP.objdb
                 ccp.patientWeight + "='" + weight + "'," +
                 ccp.bmi + "='" + bmi + "'," +
                 ccp.patientPulse + "='" + pulse + "', " +
-                ccp.BloodGroup + "='" + bloodgroup + "' " +
+                ccp.BloodGroup + "='" + bloodgroup + "', " +
+                ccp.PeResult + "='" + result + "', " +
+                ccp.summaryPhysicalExam + "='" + summary + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             }
@@ -706,7 +723,7 @@ namespace CheckUP.objdb
             return chk;
         }
         public String UpdateUA(String rowNumber, String cucId, String Color, String Appe, String Sugar, String spgr, String pH,
-            String Protein, String Wbc, String Rbc, String Epi, String Bact, String Result,String Summary)
+            String Protein, String Wbc, String Rbc, String Epi, String Bact, String Result, String Summary, String Glu, String Ketone, String Blood)
         {
             String chk = "", sql = "";
             try
@@ -721,10 +738,11 @@ namespace CheckUP.objdb
                 ccp.urineRbc + "='" + Rbc + "', " +
                 ccp.urineEpithelium + "='" + Epi + "', " +
                 ccp.urineBacteria + "='" + Bact + "', " +
-                //ccp.urineSummary + "='" + Result + "', " +                
-                //ccp.urineRbc + "='" + Rbc + "', " +
+                ccp.urineGlu + "='" + Glu + "', " +
+                ccp.urineKetone + "='" + Ketone + "', " +
                 ccp.urineSummary + "='" + Summary + "', " +
-                ccp.urineResult + "='" + Result + "' " +
+                ccp.urineResult + "='" + Result + "', " +
+                ccp.urineBlood + "='" + Blood + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql); ;
             }
@@ -771,7 +789,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String UpdateSgot(String rowNumber, String cucId, String sgot, String sgpt, String alt, String result, String summary)
+        public String UpdateSgot(String rowNumber, String cucId, String sgot, String sgpt, String alt, String result, String summary, String alkaline)
         {
             String chk = "", sql = "";
             try
@@ -780,7 +798,8 @@ namespace CheckUP.objdb
                 ccp.liverResult + "='" + result + "', " +
                 ccp.liverSummary + "='" + summary + "', " +
                 ccp.liverAlp + "='" + sgpt + "', " +
-                ccp.liverSgpt + "='" + alt + "' " +
+                ccp.liverSgpt + "='" + alt + "', " +
+                ccp.liverAlkaline + "='" + alkaline + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql); ;
             }
@@ -826,7 +845,8 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String UpdateOther1(String rowNumber, String cucId, String HBsAg, String HbsAb, String AntiHIV, String VDRL, String Amphetamine, String Calcium)
+        public String UpdateOther1(String rowNumber, String cucId, String HBsAg, String HbsAb, String AntiHIV, String VDRL, String Amphetamine, String Calcium, String AntiHav,
+            String CAAFP = "", String CACEA = "", String CAPSA = "", String CAHCG = "", String CA153 = "", String CA125 = "", String CA199 = "")
         {
             String chk = "", sql = "";
             try
@@ -836,7 +856,15 @@ namespace CheckUP.objdb
                 ccp.antiHiv + "='" + AntiHIV + "', " +
                 ccp.vdrl + "='" + VDRL + "', " +
                 ccp.amphetamine + "='" + Amphetamine + "', " +
-                ccp.calcium + "='" + Calcium + "' " +
+                ccp.calcium + "='" + Calcium + "', " +
+                ccp.AntiHav + "='" + AntiHav + "', " +
+                ccp.CAAFP + "='" + CAAFP + "', " +
+                ccp.CACEA + "='" + CACEA + "', " +
+                ccp.CAPSA + "='" + CAPSA + "', " +
+                ccp.CAHCG + "='" + CAHCG + "', " +
+                ccp.CA153 + "='" + CA153 + "', " +
+                ccp.CA125 + "='" + CA125 + "', " +
+                ccp.CA199 + "='" + CA199 + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql); ;
             }
@@ -945,7 +973,8 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateStoolExam(String rowNumber, String cucId, String StoolExamAppearance, String StoolExamColor, String StoolExamWbc, String StoolExamRbc, String StoolExamParasite, String StoolExamSummary)
+        public String updateStoolExam(String rowNumber, String cucId, String StoolExamAppearance, String StoolExamColor, String StoolExamWbc, String StoolExamRbc,
+            String StoolExamParasite, String StoolExamSummary, String StoolExamCulture, String StoolExamTyhoidH, String StoolExamTyhoidO)
         {
             String sql = "", chk = "";
 
@@ -954,7 +983,10 @@ namespace CheckUP.objdb
                 ccp.StoolExamWbc + "='" + StoolExamWbc + "', " +
                 ccp.StoolExamRbc + "='" + StoolExamRbc + "', " +
                 ccp.StoolExamParasite + "='" + StoolExamParasite + "', " +
-                ccp.StoolExamSummary + "='" + StoolExamSummary + "' "+
+                ccp.StoolExamSummary + "='" + StoolExamSummary + "', "+
+                ccp.StoolExamCulture + "='" + StoolExamCulture + "', " +
+                ccp.StoolExamTyphoidH + "='" + StoolExamTyhoidH + "', " +
+                ccp.StoolExamTyphoidO + "='" + StoolExamTyhoidO + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
             try
             {

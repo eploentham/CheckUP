@@ -304,7 +304,7 @@ namespace CheckUP.gui
         {
             String chk = cc.ccpdb.UpdateUA(txtRowNumber.Text, cuc.Id, txtUAColor.Text, txtUAAppe.Text, txtUASugar.Text, 
                 txtUASpgr.Text, txtUApH.Text, txtUAProtein.Text, txtUAWBC.Text, txtUARbc.Text, txtUAEpi.Text, txtUABact.Text, 
-                txtUAResult.Text, txtUASpgr.Text);
+                txtUAResult.Text, txtUASpgr.Text, txtUAGlu.Text,txtUAKetone.Text, txtUABlood.Text);
             if (chk.Equals("1"))
             {
                 MessageBox.Show("บันทึกข้อมูล UA เรียบร้อย", "บันทึกข้อมูล");
@@ -331,7 +331,7 @@ namespace CheckUP.gui
 
         private void btnSgotSave_Click(object sender, EventArgs e)
         {
-            String chk = cc.ccpdb.UpdateSgot(txtRowNumber.Text, cuc.Id, txtSgotValue.Text, txtSgotSgptValue.Text,"", txtSgotResult.Text, txtSgotSummary.Text);
+            String chk = cc.ccpdb.UpdateSgot(txtRowNumber.Text, cuc.Id, txtSgotValue.Text.Trim(), txtSgotSgptValue.Text.Trim(), "", txtSgotResult.Text.Trim(), txtSgotSummary.Text.Trim(), txtSgotAlkaline.Text.Trim());
             if (chk.Equals("1"))
             {
                 MessageBox.Show("บันทึกข้อมูล SGOT เรียบร้อย", "บันทึกข้อมูล");

@@ -56,6 +56,9 @@ namespace CheckUP.objdb
             ccpvn.StoolExamRbc = "stool_exam_rbc";
             ccpvn.StoolExamParasite = "stool_exam_parasite";
             ccpvn.StoolExamSummary = "stool_exam_summary";
+            ccpvn.StoolExamCulture = "stool_exam_culture";
+            ccpvn.StoolExamTyphoidH = "stool_exam_typhoidh";
+            ccpvn.StoolExamTyphoidO = "stool_exam_typhoido";
 
             //ccpvn.toxicologyLead = "toxicology_lead";
             //ccpvn.toxicologyMercury = "toxicology_mercury";
@@ -82,22 +85,27 @@ namespace CheckUP.objdb
             ccpvn.xrayChestSummary = "xray_chest_summary";
             ccpvn.eyesExam = "eyes_exam";
             ccpvn.ekgExam = "ekg_exam";
-            ccpvn.caAfp = "ca_afp";
-            ccpvn.caCea = "ca_cea";
-            ccpvn.caPsa = "ca_psa";
-            ccpvn.caHcg = "ca_hcg";
-            ccpvn.ca153 = "ca_153";
-            ccpvn.ca125 = "ca_125";
-            ccpvn.ca199 = "ca_19_9";
+
+            ccpvn.CAAFP = "ca_afp";
+            ccpvn.CACEA = "ca_cea";
+            ccpvn.CAPSA = "ca_psa";
+            ccpvn.CAHCG = "ca_hcg";
+            ccpvn.CA153 = "ca_153";
+            ccpvn.CA125 = "ca_125";
+            ccpvn.CA199 = "ca_19_9";
+
             ccpvn.thyroidT3 = "thyroid_t3";
             ccpvn.thyroidT4 = "thyroid_t4";
             ccpvn.thyroidTsh = "thyroid_tsh";
             ccpvn.fPatientBloodGroupId = "f_patient_blood_group_id";
+            
             ccpvn.vdrl = "vdrl";
             ccpvn.antiHiv = "anti_hiv";
             ccpvn.hbsag = "hbsag";
             ccpvn.hbsab = "hbsab";
             ccpvn.amphetamine = "amphetamine";
+            ccpvn.AntiHav = "anti_hav";
+
             ccpvn.disscusExam = "disscus_exam";
             ccpvn.suggestExam = "suggest_exam";
             ccpvn.sugar = "sugar";
@@ -116,6 +124,8 @@ namespace CheckUP.objdb
             ccpvn.liverAlp = "liver_alp";
             ccpvn.liverResult = "liver_result";
             ccpvn.liverSummary = "liver_summary";
+            ccpvn.liverAlkaline = "liver_alkaline";
+
             ccpvn.uricAcid = "uric_acid";
             ccpvn.cholesterol = "cholesterol";
             ccpvn.triglyceride = "triglyceride";
@@ -376,7 +386,7 @@ namespace CheckUP.objdb
             return chk;
         }
         public String UpdateUA(String Color, String Appe, String Sugar, String spgr, String pH,
-            String Protein, String Wbc, String Rbc, String Epi, String Bact, String ketone, String leu, String blood)
+            String Protein, String Wbc, String Rbc, String Epi, String Bact, String ketone, String leu, String blood, String glu)
         {
             String chk = "", sql = "";
             try
@@ -393,8 +403,8 @@ namespace CheckUP.objdb
                 ccpvn.urineBacteria + "='" + Bact + "', " +
                 ccpvn.urineLeu + "='" + leu + "', " +
                 ccpvn.urineKetone + "='" + ketone + "', " +
-                ccpvn.urineBlood + "='" + blood + "' ";
-                //ccpvn.urineResult + "='" + Result + "' " ;
+                ccpvn.urineBlood + "='" + blood + "', "+
+                ccpvn.urineGlu + "='" + glu + "' ";
                 chk = conn.ExecuteNonQuery(sql);
             }
             catch (Exception ex)
@@ -440,7 +450,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String UpdateSgot(String sgot, String sgpt, String alt)
+        public String UpdateSgot(String sgot, String sgpt, String alt, String alkaline)
         {
             String chk = "", sql = "";
             try
@@ -449,7 +459,8 @@ namespace CheckUP.objdb
                     //ccp.liverResult + "='" + result + "', " +
                     //ccp.liverSummary + "='" + summary + "', " +
                 ccpvn.liverAlp + "='" + alt + "', " +
-                ccpvn.liverSgpt + "='" + sgpt + "' ";
+                ccpvn.liverSgpt + "='" + sgpt + "', "+
+                ccpvn.liverAlkaline + "='" + alkaline + "' ";
                 //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             }
@@ -495,7 +506,8 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String UpdateOther1(String HBsAg, String HbsAb, String AntiHIV, String VDRL, String Amphetamine, String Calcium)
+        public String UpdateOther1(String HBsAg, String HbsAb, String AntiHIV, String VDRL, String Amphetamine, String Calcium, String AntiHav,
+            String CAAFP = "", String CACEA = "", String CAPSA = "", String CAHCG = "", String CA153 = "", String CA125 = "", String CA199 = "")
         {
             String chk = "", sql = "";
             try
@@ -505,7 +517,15 @@ namespace CheckUP.objdb
                 ccpvn.antiHiv + "='" + AntiHIV + "', " +
                 ccpvn.vdrl + "='" + VDRL + "', " +
                 ccpvn.amphetamine + "='" + Amphetamine + "', " +
-                ccpvn.calcium + "='" + Calcium + "' ";
+                ccpvn.calcium + "='" + Calcium + "', " +
+                ccpvn.AntiHav + "='" + AntiHav + "', " +
+                ccpvn.CAAFP + "='" + CAAFP + "', " +
+                ccpvn.CACEA + "='" + CACEA + "', " +
+                ccpvn.CAPSA + "='" + CAPSA + "', " +
+                ccpvn.CAHCG + "='" + CAHCG + "', " +
+                ccpvn.CA153 + "='" + CA153 + "', " +
+                ccpvn.CA125 + "='" + CA125 + "', " +
+                ccpvn.CA199 + "='" + CA199 + "' ";
                 //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             }
@@ -612,7 +632,8 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateStoolExam(String StoolExamAppearance, String StoolExamColor, String StoolExamWbc, String StoolExamRbc, String StoolExamParasite)
+        public String updateStoolExam(String StoolExamAppearance, String StoolExamColor, String StoolExamWbc, String StoolExamRbc, String StoolExamParasite,
+            String StoolExamCulture, String StoolExamTyhoidH, String StoolExamTyhoidO)
         {
             String sql = "", chk = "";
 
@@ -620,8 +641,10 @@ namespace CheckUP.objdb
                 ccpvn.StoolExamColor + "='" + StoolExamColor + "', " +
                 ccpvn.StoolExamWbc + "='" + StoolExamWbc + "', " +
                 ccpvn.StoolExamRbc + "='" + StoolExamRbc + "', " +
-                ccpvn.StoolExamParasite + "='" + StoolExamParasite + "' ";
-                //ccp.StoolExamSummary + "='" + StoolExamSummary + "' " +
+                ccpvn.StoolExamParasite + "='" + StoolExamParasite + "', "+
+                ccpvn.StoolExamCulture + "='" + StoolExamCulture + "', "+
+                ccpvn.StoolExamTyphoidH + "='" + StoolExamTyhoidH + "', " +
+                ccpvn.StoolExamTyphoidO + "='" + StoolExamTyhoidO + "' ";
                 //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
             try
             {

@@ -30,6 +30,7 @@ namespace CheckUP.objdb
             ei.BunResult = "bun_result";
             ei.BunRow = "bun_row";
             ei.BunSummary = "bun_summary";
+            ei.BunSheetname = "bun_sheetname";
 
             ei.CBCBact = "cbc_bact";
             ei.CBCEos = "cbc_eos";
@@ -47,6 +48,7 @@ namespace CheckUP.objdb
             ei.CBCSummary = "cbc_summary";
             ei.CBCWBC = "cbc_wbc";
             ei.cbcPmn = "cbc_pmn";
+            ei.CBCSheetname = "cbc_sheetname";
 
             ei.Cholesteral = "cho_value";
             ei.ChoNo = "cho_no";
@@ -55,12 +57,14 @@ namespace CheckUP.objdb
             ei.Chosummary = "cho_summary";
             ei.ChoHDL = "hdl";
             ei.ChoLDL = "ldl";
+            ei.ChoSheetname = "cho_sheetname";
 
             ei.FBS = "fbs_value";
             ei.FBSNo = "fbs_no";
             ei.FBSResult = "fbs_result";
             ei.FBSRow = "fbs_row";
             ei.FBSSummary = "fbs_summary";
+            ei.FBSSheetname = "fbs_sheetname";
 
             ei.PEAge = "pe_age";
             ei.PEBMI = "pe_bmi";
@@ -73,6 +77,7 @@ namespace CheckUP.objdb
             ei.PEVitalSign = "pe_vitalsign";
             ei.PEWeight = "pe_weight";
             ei.PEBloodGroup = "pe_bloodgroup";
+            ei.PESheetname = "pe_sheetname";
 
             ei.SfAAge = "sf_a_age";
             ei.SfAFirstName = "sf_a_first_name";
@@ -96,12 +101,15 @@ namespace CheckUP.objdb
             ei.Sgpt = "sgot_sgpt_value";
             ei.SgptSummary = "sgot_summary";
             ei.SgotALP = "sgot_alt_vaule";
+            ei.SgotSheetname = "sgot_sheetname";
+            ei.SgotAlkaline = "sgot_alkaline_value";
 
             ei.Triglyceride = "tri_value";
             ei.TriNo = "tri_no";
             ei.TriResult = "tri_result";
             ei.TriRow = "tri_row";
             ei.TriSummary = "tri_summary";
+            ei.TriSheetname = "tri_sheetname";
 
             ei.UAAppe = "ua_appe";
             ei.UABact = "ua_bact";
@@ -111,24 +119,30 @@ namespace CheckUP.objdb
             ei.UApH = "ua_ph";
             ei.UAProtein = "ua_protein";
             ei.UARBC = "ua_rbc";
-            ei.UAResult = "ua_rasult";
+            ei.UAResult = "ua_result";
             ei.UARow = "ua_row";
             ei.UASpgr = "ua_spgr";
             ei.UASugar = "ua_sugar";
             ei.UASummary = "ua_summary";
             ei.UAWBC = "ua_wbc";
+            ei.UAGlu = "ua_glu";
+            ei.UABlood = "ua_blood";
+            ei.UAKetone = "ua_ketone";
+            ei.UASheetname = "ua_sheetname";
 
             ei.UricAcid = "uric_acid_value";
             ei.UricNo = "uric_no";
             ei.UricResult = "uric_result";
             ei.UricRow = "uric_row";
             ei.UricSummary = "uric_summary";
+            ei.UricSheetname = "uric_sheetname";
 
             ei.Xray = "xray_value";
             ei.XrayNo = "xray_no";
             ei.XrayRow = "xray_row";
             ei.XraySummary = "xray_summary";
             ei.Active = "active";
+            ei.XraySheetname = "xray_sheetname";
 
             ei.Other1Amphetamine = "other1_amphetamine";
             ei.Other1AntiHIV = "other1_antihiv";
@@ -138,6 +152,8 @@ namespace CheckUP.objdb
             ei.Other1No = "other1_no";
             ei.Other1Row = "other1_row";
             ei.Other1VDRL = "other1_vdrl";
+            ei.Other1Sheetname = "other1_sheetname";
+            ei.Other1AntiHav = "other1_antihav";
 
             ei.LungFev1Meas = "lung_fev1_meas";
             ei.LungFev1Per = "lung_fev1_per";
@@ -149,6 +165,7 @@ namespace CheckUP.objdb
             ei.LungPerFev1 = "lung_per_fev1";
             ei.LungRow = "lung_row";
             ei.LungSummary = "lung_summary";
+            ei.LungSheetname = "lung_sheetname";
 
             ei.Audiogram1000L = "audiogram_1000_left";
             ei.Audiogram1000R = "audiogram_1000_right";
@@ -169,6 +186,7 @@ namespace CheckUP.objdb
             ei.AudiogramSummaryR = "audiogram_summary_right";
             ei.AudiogramNo = "audiogram_no";
             ei.AudiogramRow = "audiogram_row";
+            ei.AudiogramSheetname = "audiogram_sheetname";
 
             ei.EyeNo = "eye_no";
             ei.EyeRow = "eye_row";
@@ -186,6 +204,7 @@ namespace CheckUP.objdb
             ei.EyeResult = "eye_result";
             ei.EyeBlindness = "eye_blindness";
             ei.EyeExam = "eyes_exam";
+            ei.EyeSheetname = "eye_sheetname";
 
 
             ei.StoolExamAppearance = "stool_exam_appearance";
@@ -196,6 +215,10 @@ namespace CheckUP.objdb
             ei.StoolExamRow = "stool_exam_row";
             ei.StoolExamSummary = "stool_exam_summary";
             ei.StoolExamWbc = "stool_exam_wbc";
+            ei.StoolExamCulture = "stool_exam_culture";
+            ei.StoolExamTyphoidH = "stool_exam_typhoidh";
+            ei.StoolExamTyphoidO = "stool_exam_typhoido";
+            ei.StoolExamSheetname = "stool_exam_sheetname";
 
             ei.ToxiAcetone = "toxicology_acetone";
             ei.ToxiAluminium = "toxicology_aluminium";
@@ -226,6 +249,15 @@ namespace CheckUP.objdb
             ei.ToxiZinc = "toxicology_zinc";
             ei.ToxiRow = "toxicology_row";
             ei.ToxiNo = "toxicology_no";
+            ei.ToxiSheetname = "toxicology_sheetname";
+
+            ei.CAAFP = "ca_afp";
+            ei.CACEA = "ca_cea";
+            ei.CAPSA = "ca_psa";
+            ei.CAHCG = "ca_hcg";
+            ei.CA153 = "ca_153";
+            ei.CA125 = "ca_125";
+            ei.CA199 = "ca_19_9";
 
             ei.pkField = "id";
             ei.table = "b_excel_init";
@@ -239,6 +271,7 @@ namespace CheckUP.objdb
             item.BunResult = NumberNull10(dt.Rows[0][ei.BunResult].ToString());
             item.BunRow = NumberNull10(dt.Rows[0][ei.BunRow].ToString());
             item.BunSummary = NumberNull10(dt.Rows[0][ei.BunSummary].ToString());
+            item.BunSheetname = NumberNull10(dt.Rows[0][ei.BunSheetname].ToString());
 
             item.CBCBact = NumberNull10(dt.Rows[0][ei.CBCBact].ToString());
             item.CBCEos = NumberNull10(dt.Rows[0][ei.CBCEos].ToString());
@@ -256,6 +289,7 @@ namespace CheckUP.objdb
             item.CBCSummary = NumberNull10(dt.Rows[0][ei.CBCSummary].ToString());
             item.CBCWBC = NumberNull10(dt.Rows[0][ei.CBCWBC].ToString());
             item.cbcPmn = NumberNull10(dt.Rows[0][ei.cbcPmn].ToString());
+            item.CBCSheetname = NumberNull10(dt.Rows[0][ei.CBCSheetname].ToString());
 
             item.Cholesteral = NumberNull10(dt.Rows[0][ei.Cholesteral].ToString());
             item.ChoNo = NumberNull10(dt.Rows[0][ei.ChoNo].ToString());
@@ -264,12 +298,14 @@ namespace CheckUP.objdb
             item.Chosummary = NumberNull10(dt.Rows[0][ei.Chosummary].ToString());
             item.ChoHDL = NumberNull10(dt.Rows[0][ei.ChoHDL].ToString());
             item.ChoLDL = NumberNull10(dt.Rows[0][ei.ChoLDL].ToString());
+            item.ChoSheetname = NumberNull10(dt.Rows[0][ei.ChoSheetname].ToString());
 
             item.FBS = NumberNull10(dt.Rows[0][ei.FBS].ToString());
             item.FBSNo = NumberNull10(dt.Rows[0][ei.FBSNo].ToString());
             item.FBSResult = NumberNull10(dt.Rows[0][ei.FBSResult].ToString());
             item.FBSRow = NumberNull10(dt.Rows[0][ei.FBSRow].ToString());
             item.FBSSummary = NumberNull10(dt.Rows[0][ei.FBSSummary].ToString());
+            item.FBSSheetname = NumberNull10(dt.Rows[0][ei.FBSSheetname].ToString());
 
             item.PEAge = NumberNull10(dt.Rows[0][ei.PEAge].ToString());
             item.PEBMI = NumberNull10(dt.Rows[0][ei.PEBMI].ToString());
@@ -282,6 +318,7 @@ namespace CheckUP.objdb
             item.PEVitalSign = NumberNull10(dt.Rows[0][ei.PEVitalSign].ToString());
             item.PEWeight = NumberNull10(dt.Rows[0][ei.PEWeight].ToString());
             item.PEBloodGroup = NumberNull10(dt.Rows[0][ei.PEBloodGroup].ToString());
+            item.PESheetname = NumberNull10(dt.Rows[0][ei.PESheetname].ToString());
 
             item.DepartmentName = NumberNull10(dt.Rows[0][ei.DepartmentName].ToString());
 
@@ -307,12 +344,15 @@ namespace CheckUP.objdb
             item.Sgpt = NumberNull10(dt.Rows[0][ei.Sgpt].ToString());
             item.SgptSummary = NumberNull10(dt.Rows[0][ei.SgptSummary].ToString());
             item.SgotALP = NumberNull10(dt.Rows[0][ei.SgotALP].ToString());
+            item.SgotSheetname = NumberNull10(dt.Rows[0][ei.SgotSheetname].ToString());
+            item.SgotAlkaline = NumberNull10(dt.Rows[0][ei.SgotAlkaline].ToString());
 
             item.Triglyceride = NumberNull10(dt.Rows[0][ei.Triglyceride].ToString());
             item.TriNo = NumberNull10(dt.Rows[0][ei.TriNo].ToString());
             item.TriResult = NumberNull10(dt.Rows[0][ei.TriResult].ToString());
             item.TriRow = NumberNull10(dt.Rows[0][ei.TriRow].ToString());
             item.TriSummary = NumberNull10(dt.Rows[0][ei.TriSummary].ToString());
+            item.TriSheetname = NumberNull10(dt.Rows[0][ei.TriSheetname].ToString());
 
             item.UAAppe = NumberNull10(dt.Rows[0][ei.UAAppe].ToString());
             item.UABact = NumberNull10(dt.Rows[0][ei.UABact].ToString());
@@ -328,26 +368,42 @@ namespace CheckUP.objdb
             item.UASugar = NumberNull10(dt.Rows[0][ei.UASugar].ToString());
             item.UASummary = NumberNull10(dt.Rows[0][ei.UASummary].ToString());
             item.UAWBC = NumberNull10(dt.Rows[0][ei.UAWBC].ToString());
+            item.UAGlu = NumberNull10(dt.Rows[0][ei.UAGlu].ToString());
+            item.UAKetone = NumberNull10(dt.Rows[0][ei.UAKetone].ToString());
+            item.UABlood = NumberNull10(dt.Rows[0][ei.UABlood].ToString());
+            item.UASheetname = NumberNull10(dt.Rows[0][ei.UASheetname].ToString());
 
             item.UricAcid = NumberNull10(dt.Rows[0][ei.UricAcid].ToString());
             item.UricNo = NumberNull10(dt.Rows[0][ei.UricNo].ToString());
             item.UricResult = NumberNull10(dt.Rows[0][ei.UricResult].ToString());
             item.UricRow = NumberNull10(dt.Rows[0][ei.UricRow].ToString());
             item.UricSummary = NumberNull10(dt.Rows[0][ei.UricSummary].ToString());
+            item.UricSheetname = NumberNull10(dt.Rows[0][ei.UricSheetname].ToString());
 
             item.Xray = NumberNull10(dt.Rows[0][ei.Xray].ToString());
             item.XrayNo = NumberNull10(dt.Rows[0][ei.XrayNo].ToString());
             item.XrayRow = NumberNull10(dt.Rows[0][ei.XrayRow].ToString());
             item.XraySummary = NumberNull10(dt.Rows[0][ei.XraySummary].ToString());
+            item.XraySheetname = NumberNull10(dt.Rows[0][ei.XraySheetname].ToString());
 
             item.Other1Amphetamine = NumberNull10(dt.Rows[0][ei.Other1Amphetamine].ToString());
             item.Other1AntiHIV = NumberNull10(dt.Rows[0][ei.Other1AntiHIV].ToString());
+            item.Other1AntiHav = NumberNull10(dt.Rows[0][ei.Other1AntiHav].ToString());
             item.Other1Calcium = NumberNull10(dt.Rows[0][ei.Other1Calcium].ToString());
             item.Other1HBsAb = NumberNull10(dt.Rows[0][ei.Other1HBsAb].ToString());
             item.Other1HBsAg = NumberNull10(dt.Rows[0][ei.Other1HBsAg].ToString());
             item.Other1No = NumberNull10(dt.Rows[0][ei.Other1No].ToString());
             item.Other1Row = NumberNull10(dt.Rows[0][ei.Other1Row].ToString());
             item.Other1VDRL = NumberNull10(dt.Rows[0][ei.Other1VDRL].ToString());
+            item.Other1Sheetname = NumberNull10(dt.Rows[0][ei.Other1Sheetname].ToString());
+            item.CA125 = NumberNull10(dt.Rows[0][ei.CA125].ToString());
+            item.CA153 = NumberNull10(dt.Rows[0][ei.CA153].ToString());
+            item.CA199 = NumberNull10(dt.Rows[0][ei.CA199].ToString());
+            item.CAAFP = NumberNull10(dt.Rows[0][ei.CAAFP].ToString());
+            item.CACEA = NumberNull10(dt.Rows[0][ei.CACEA].ToString());
+            item.CAHCG = NumberNull10(dt.Rows[0][ei.CAHCG].ToString());
+            item.CAPSA = NumberNull10(dt.Rows[0][ei.CAPSA].ToString());
+            
 
             item.LungFev1Meas = NumberNull10(dt.Rows[0][ei.LungFev1Meas].ToString());
             item.LungFev1Per = NumberNull10(dt.Rows[0][ei.LungFev1Per].ToString());
@@ -359,6 +415,7 @@ namespace CheckUP.objdb
             item.LungPerFev1 = NumberNull10(dt.Rows[0][ei.LungPerFev1].ToString());
             item.LungRow = NumberNull10(dt.Rows[0][ei.LungRow].ToString());
             item.LungSummary = NumberNull10(dt.Rows[0][ei.LungSummary].ToString());
+            item.LungSheetname = NumberNull10(dt.Rows[0][ei.LungSheetname].ToString());
 
             item.Audiogram1000L = NumberNull10(dt.Rows[0][ei.Audiogram1000L].ToString());
             item.Audiogram1000R = NumberNull10(dt.Rows[0][ei.Audiogram1000R].ToString());
@@ -379,6 +436,7 @@ namespace CheckUP.objdb
             item.AudiogramSummaryR = NumberNull10(dt.Rows[0][ei.AudiogramSummaryR].ToString());
             item.AudiogramNo = NumberNull10(dt.Rows[0][ei.AudiogramNo].ToString());
             item.AudiogramRow = NumberNull10(dt.Rows[0][ei.AudiogramRow].ToString());
+            item.AudiogramSheetname = NumberNull10(dt.Rows[0][ei.AudiogramSheetname].ToString());
 
             item.EyeNo = NumberNull10(dt.Rows[0][ei.EyeNo].ToString());
             item.EyeRow = NumberNull10(dt.Rows[0][ei.EyeRow].ToString());
@@ -394,6 +452,7 @@ namespace CheckUP.objdb
             item.EyeSummary = NumberNull10(dt.Rows[0][ei.EyeSummary].ToString());
             item.EyeResult = NumberNull10(dt.Rows[0][ei.EyeResult].ToString());
             item.EyeBlindness = NumberNull10(dt.Rows[0][ei.EyeBlindness].ToString());
+            item.EyeSheetname = NumberNull10(dt.Rows[0][ei.EyeSheetname].ToString());
 
             item.StoolExamAppearance = NumberNull10(dt.Rows[0][ei.StoolExamAppearance].ToString());
             item.StoolExamColor = NumberNull10(dt.Rows[0][ei.StoolExamColor].ToString());
@@ -403,6 +462,10 @@ namespace CheckUP.objdb
             item.StoolExamRow = NumberNull10(dt.Rows[0][ei.StoolExamRow].ToString());
             item.StoolExamSummary = NumberNull10(dt.Rows[0][ei.StoolExamSummary].ToString());
             item.StoolExamWbc = NumberNull10(dt.Rows[0][ei.StoolExamWbc].ToString());
+            item.StoolExamCulture = NumberNull10(dt.Rows[0][ei.StoolExamCulture].ToString());
+            item.StoolExamTyphoidH = NumberNull10(dt.Rows[0][ei.StoolExamTyphoidH].ToString());
+            item.StoolExamTyphoidO = NumberNull10(dt.Rows[0][ei.StoolExamTyphoidO].ToString());
+            item.StoolExamSheetname = NumberNull10(dt.Rows[0][ei.StoolExamSheetname].ToString());
 
             item.ToxiLead = NumberNull10(dt.Rows[0][ei.ToxiLead].ToString());
             item.ToxiAluminium = NumberNull10(dt.Rows[0][ei.ToxiAluminium].ToString());
@@ -413,6 +476,7 @@ namespace CheckUP.objdb
             item.ToxiManganese = NumberNull10(dt.Rows[0][ei.ToxiManganese].ToString());
             item.ToxiZinc = NumberNull10(dt.Rows[0][ei.ToxiZinc].ToString());
             item.ToxiAmmonia = NumberNull10(dt.Rows[0][ei.ToxiAmmonia].ToString());
+            item.ToxiSheetname = NumberNull10(dt.Rows[0][ei.ToxiSheetname].ToString());
 
             item.ToxiHippuric = NumberNull10(dt.Rows[0][ei.ToxiHippuric].ToString());
             item.ToxiMethyl = NumberNull10(dt.Rows[0][ei.ToxiMethyl].ToString());
@@ -469,7 +533,7 @@ namespace CheckUP.objdb
             }
             return item;
         }
-        public String updateBun(String bunRow, String bunNo,String bunValue, String bunCreatinine, String bunResult,  String bunSummary)
+        public String updateBun(String bunRow, String bunNo,String bunValue, String bunCreatinine, String bunResult,  String bunSummary, String sheetname)
         {
             String sql = "", chk = "";
 
@@ -478,7 +542,8 @@ namespace CheckUP.objdb
                 ei.BunNo + "='" + bunNo + "', " +
                 ei.BunResult + "='" + bunResult + "', " +
                 ei.BunRow + "='" + bunRow + "', " +
-                ei.BunSummary + "='" + bunSummary + "' ";
+                ei.BunSummary + "='" + bunSummary + "', "+
+                ei.BunSheetname + "='" + sheetname + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -493,7 +558,7 @@ namespace CheckUP.objdb
             return chk;
         }
         public String updateCBC(String CBCBact, String CBCEos, String CBCHb, String CBCHct, String CBCLy, String CBCMono,
-            String CBCNeu, String CBCNo, String CBCPltC, String CBCPltS, String CBCRBC, String CBCRBCmono, String CBCRow, String CBCSummary, String CBCWBC, String Pmn)
+            String CBCNeu, String CBCNo, String CBCPltC, String CBCPltS, String CBCRBC, String CBCRBCmono, String CBCRow, String CBCSummary, String CBCWBC, String Pmn, String sheetname)
         {
             String sql = "", chk = "";
 
@@ -516,7 +581,8 @@ namespace CheckUP.objdb
                 ei.CBCRow + "='" + CBCRow + "', " +
                 ei.CBCSummary + "='" + CBCSummary + "', " +
                 ei.CBCWBC + "='" + CBCWBC + "', "+
-                ei.cbcPmn + "='" + Pmn + "' ";
+                ei.cbcPmn + "='" + Pmn + "', "+
+                ei.CBCSheetname + "='" + sheetname + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -530,7 +596,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateCholes(String ChoRow, String ChoNo,String Cholesteral, String ChoResult,  String Chosummary, String ChoLDL, String ChoHDL)
+        public String updateCholes(String ChoRow, String ChoNo, String Cholesteral, String ChoResult, String Chosummary, String ChoLDL, String ChoHDL, String sheetname)
         {
             String sql = "", chk = "";
 
@@ -544,7 +610,8 @@ namespace CheckUP.objdb
                 ei.ChoRow + "='" + ChoRow + "', " +
                 ei.Chosummary + "='" + Chosummary + "', "+
                 ei.ChoHDL + "='" + ChoLDL + "', " +
-                ei.ChoLDL + "='" + ChoHDL + "' ";
+                ei.ChoLDL + "='" + ChoHDL + "', "+
+                ei.ChoSheetname + "='" + sheetname + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -558,7 +625,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateFBS(String FBS, String FBSNo, String FBSResult, String FBSRow, String FBSSummary)
+        public String updateFBS(String FBS, String FBSNo, String FBSResult, String FBSRow, String FBSSummary, String sheetname)
         {
             String sql = "", chk = "";
 
@@ -566,7 +633,8 @@ namespace CheckUP.objdb
                 ei.FBSNo + "='" + FBSNo + "', " +
                 ei.FBSResult + "='" + FBSResult + "', " +
                 ei.FBSRow + "='" + FBSRow + "', " +
-                ei.FBSSummary + "='" + FBSSummary + "' " ;
+                ei.FBSSummary + "='" + FBSSummary + "', " +
+                ei.FBSSheetname + "='" + sheetname + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -580,8 +648,8 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updatePE( String PENo, String PERow, String PEAge, String PEBMI, String PEHeight, String PEWeight,  String PEPulse, 
-            String PEVitalSign, String PEResult, String PESummary, String PEBloodGroup)
+        public String updatePE( String PENo, String PERow, String PEAge, String PEBMI, String PEHeight, String PEWeight,  String PEPulse,
+            String PEVitalSign, String PEResult, String PESummary, String PEBloodGroup, String sheetname)
         {
             String sql = "", chk = "";
 
@@ -599,7 +667,8 @@ namespace CheckUP.objdb
                 ei.PESummary + "='" + PESummary + "', " +
                 ei.PEVitalSign + "='" + PEVitalSign + "', " +
                 ei.PEWeight + "='" + PEWeight + "', " +
-                ei.PEBloodGroup + "='" + PEBloodGroup + "' ";
+                ei.PEBloodGroup + "='" + PEBloodGroup + "', "+
+                ei.PESheetname + "='" + sheetname + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -739,15 +808,17 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateSgot(String Sgot, String SgotNo, String SgotResult, String SgotRow, String Sgpt, String SgptSummary)
+        public String updateSgot(String Sgot, String SgotNo, String SgotResult, String SgotRow, String Sgpt, String SgptSummary, String sheetname, String alkaline)
         {
             String sql = "", chk = "";
-            sql = "Update " + ei.table + " Set " + ei.Sgot + "='" + Sgot + "', " +
-                ei.SgotNo + "='" + SgotNo + "', " +
-                ei.SgotResult + "='" + SgotResult + "', " +
-                ei.SgotRow + "='" + SgotRow + "', " +
-                ei.Sgpt + "='" + Sgpt + "', " +
-                ei.SgptSummary + "='" + SgptSummary + "' " ;
+            sql = "Update " + ei.table + " Set " + ei.Sgot + "='" + NumberNull10(Sgot) + "', " +
+                ei.SgotNo + "='" + NumberNull10(SgotNo) + "', " +
+                ei.SgotResult + "='" + NumberNull10(SgotResult) + "', " +
+                ei.SgotRow + "='" + NumberNull10(SgotRow) + "', " +
+                ei.Sgpt + "='" + NumberNull10(Sgpt) + "', " +
+                ei.SgptSummary + "='" + NumberNull10(SgptSummary) + "', "+
+                ei.SgotSheetname + "='" + sheetname + "', "+
+                ei.SgotAlkaline + "='" + NumberNull10(alkaline) + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -761,15 +832,16 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateTrig(String Triglyceride, String TriNo, String TriResult, String TriRow, String TriSummary)
+        public String updateTrig(String Triglyceride, String TriNo, String TriResult, String TriRow, String TriSummary, String sheetname)
         {
             String sql = "", chk = "";            
 
-            sql = "Update " + ei.table + " Set " + ei.Triglyceride + "='" + Triglyceride + "', " +
-                ei.TriNo + "='" + TriNo + "', " +
-                ei.TriResult + "='" + TriResult + "', " +
-                ei.TriRow + "='" + TriRow + "', " +
-                ei.TriSummary + "='" + TriSummary + "' " ;
+            sql = "Update " + ei.table + " Set " + ei.Triglyceride + "='" + NumberNull10(Triglyceride) + "', " +
+                ei.TriNo + "='" + NumberNull10(TriNo) + "', " +
+                ei.TriResult + "='" + NumberNull10(TriResult) + "', " +
+                ei.TriRow + "='" + NumberNull10(TriRow) + "', " +
+                ei.TriSummary + "='" + NumberNull10(TriSummary) + "', " +
+                ei.TriSheetname + "='" + sheetname + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -784,7 +856,7 @@ namespace CheckUP.objdb
             return chk;
         }
         public String updateUA(String UAAppe, String UABact, String UAColor, String UAEpi, String UANo, String UApH,
-            String UAProtein, String UARBC, String UAResult, String UARow, String UASpgr, String UASugar, String UASummary, String UAWBC)
+            String UAProtein, String UARBC, String UAResult, String UARow, String UASpgr, String UASugar, String UASummary, String UAWBC, String UAGlu, String UAKetone, String UABlood, String sheetname)
         {
             String sql = "", chk = "";
 
@@ -792,20 +864,24 @@ namespace CheckUP.objdb
             //p.Remark = p.Remark.Replace("'", "''");
             //p.PositionName = p.PositionName.Replace("'", "''");
 
-            sql = "Update " + ei.table + " Set " + ei.UAAppe + "='" + UAAppe + "', " +
-                ei.UABact + "='" + UABact + "', " +
-                ei.UAColor + "='" + UAColor + "', " +
-                ei.UAEpi + "='" + UAEpi + "', " +
-                ei.UANo + "='" + UANo + "', " +
-                ei.UApH + "='" + UApH + "', " +
-                ei.UAProtein + "='" + UAProtein + "', " +
-                ei.UARBC + "='" + UARBC + "', " +
-                ei.UAResult + "='" + UAResult + "', " +
-                ei.UARow + "='" + UARow + "', " +
-                ei.UASpgr + "='" + UASpgr + "', " +
-                ei.UASugar + "='" + UASugar + "', " +
-                ei.UASummary + "='" + UASummary + "', " +
-                ei.UAWBC + "='" + UAWBC + "' ";
+            sql = "Update " + ei.table + " Set " + ei.UAAppe + "='" + NumberNull10(UAAppe) + "', " +
+                ei.UABact + "='" + NumberNull10(UABact) + "', " +
+                ei.UAColor + "='" + NumberNull10(UAColor) + "', " +
+                ei.UAEpi + "='" + NumberNull10(UAEpi) + "', " +
+                ei.UANo + "='" + NumberNull10(UANo) + "', " +
+                ei.UApH + "='" + NumberNull10(UApH)+ "', " +
+                ei.UAProtein + "='" + NumberNull10(UAProtein) + "', " +
+                ei.UARBC + "='" + NumberNull10(UARBC) + "', " +
+                ei.UAResult + "='" + NumberNull10(UAResult) + "', " +
+                ei.UARow + "='" + NumberNull10(UARow) + "', " +
+                ei.UASpgr + "='" + NumberNull10(UASpgr) + "', " +
+                ei.UASugar + "='" + NumberNull10(UASugar) + "', " +
+                ei.UASummary + "='" + NumberNull10(UASummary) + "', " +
+                ei.UAWBC + "='" + NumberNull10(UAWBC) + "', "+
+                ei.UAGlu + "='" + NumberNull10(UAGlu) + "', "+
+                ei.UAKetone + "='" + NumberNull10(UAKetone) + "', " +
+                ei.UABlood + "='" + NumberNull10(UABlood) + "', "+
+                ei.UASheetname + "='" + sheetname + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -819,7 +895,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateUric(String UricRow, String UricNo,String UricAcid, String UricResult,  String UricSummary)
+        public String updateUric(String UricRow, String UricNo, String UricAcid, String UricResult, String UricSummary, String sheetname)
         {
             String sql = "", chk = "";
 
@@ -827,11 +903,12 @@ namespace CheckUP.objdb
             //p.Remark = p.Remark.Replace("'", "''");
             //p.PositionName = p.PositionName.Replace("'", "''");
 
-            sql = "Update " + ei.table + " Set " + ei.UricAcid + "='" + UricAcid + "', " +
-                ei.UricNo + "='" + UricNo + "', " +
-                ei.UricResult + "='" + UricResult + "', " +
-                ei.UricRow + "='" + UricRow + "', " +
-                ei.UricSummary + "='" + UricSummary + "' ";
+            sql = "Update " + ei.table + " Set " + ei.UricAcid + "='" + NumberNull10(UricAcid) + "', " +
+                ei.UricNo + "='" + NumberNull10(UricNo) + "', " +
+                ei.UricResult + "='" + NumberNull10(UricResult) + "', " +
+                ei.UricRow + "='" + NumberNull10(UricRow) + "', " +
+                ei.UricSummary + "='" + NumberNull10(UricSummary) + "', "+
+                ei.UricSheetname + "='" + sheetname + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -845,13 +922,14 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateXray(String Xray, String XrayNo, String XrayRow, String XraySummary)
+        public String updateXray(String Xray, String XrayNo, String XrayRow, String XraySummary, String sheetname)
         {
             String sql = "", chk = "";
-            sql = "Update " + ei.table + " Set " + ei.Xray + "='" + Xray + "', " +
-                ei.XrayNo + "='" + XrayNo + "', " +
-                ei.XrayRow + "='" + XrayRow + "', " +
-                ei.XraySummary + "='" + XraySummary + "' ";
+            sql = "Update " + ei.table + " Set " + ei.Xray + "='" +NumberNull10(Xray) + "', " +
+                ei.XrayNo + "='" + NumberNull10(XrayNo) + "', " +
+                ei.XrayRow + "='" + NumberNull10(XrayRow) + "', " +
+                ei.XraySummary + "='" + NumberNull10(XraySummary) + "', "+
+                ei.XraySheetname + "='" + sheetname + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -865,7 +943,8 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateOther1(String Amphetamine, String AntiHIV, String Calcium, String HBsAb, String HBsAg, String No, String Row, String VDRL)
+        public String UpdateOther1(String Amphetamine, String AntiHIV, String Calcium, String HBsAb, String HBsAg, String No, String Row, String VDRL, String sheetname, String AntiHav,
+            String CAAFP = "", String CACEA = "", String CAPSA = "", String CAHCG = "", String CA153 = "", String CA125 = "", String CA199 = "")
         {
             String sql = "", chk = "";
 
@@ -873,14 +952,23 @@ namespace CheckUP.objdb
             //p.Remark = p.Remark.Replace("'", "''");
             //p.PositionName = p.PositionName.Replace("'", "''");
 
-            sql = "Update " + ei.table + " Set " + ei.Other1Amphetamine + "='" + Amphetamine + "', " +
-                ei.Other1AntiHIV + "='" + AntiHIV + "', " +
-                ei.Other1Calcium + "='" + Calcium + "', " +
-                ei.Other1HBsAb + "='" + HBsAb + "', " +
-                ei.Other1HBsAg + "='" + HBsAg + "', " +
-                ei.Other1No + "='" + No + "', " +
-                ei.Other1Row + "='" + Row + "', " +
-                ei.Other1VDRL + "='" + VDRL + "' ";
+            sql = "Update " + ei.table + " Set " + ei.Other1Amphetamine + "='" + NumberNull10(Amphetamine) + "', " +
+                ei.Other1AntiHIV + "='" + NumberNull10(AntiHIV) + "', " +
+                ei.Other1Calcium + "='" + NumberNull10(Calcium) + "', " +
+                ei.Other1HBsAb + "='" + NumberNull10(HBsAb) + "', " +
+                ei.Other1HBsAg + "='" + NumberNull10(HBsAg) + "', " +
+                ei.Other1No + "='" + NumberNull10(No )+ "', " +
+                ei.Other1Row + "='" + NumberNull10(Row) + "', " +
+                ei.Other1VDRL + "='" + NumberNull10(VDRL) + "', "+
+                ei.Other1Sheetname + "='" + sheetname + "', "+
+                ei.Other1AntiHav + "='" + AntiHav + "', "+
+                ei.CAAFP + "='" + CAAFP + "', " +
+                ei.CACEA + "='" + CACEA + "', " +
+                ei.CAPSA + "='" + CAPSA + "', " +
+                ei.CAHCG + "='" + CAHCG + "', " +
+                ei.CA153 + "='" + CA153 + "', " +
+                ei.CA125 + "='" + CA125 + "', " +
+                ei.CA199 + "='" + CA199 + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -894,8 +982,8 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateLung(String LungRow, String LungNo, String LungFvcPredic, String LungFvcMeas, String LungFvcPer, String LungFev1Predic, String LungFev1Meas, 
-            String LungFev1Per, String LungPerFev1, String LungSummary)
+        public String updateLung(String LungRow, String LungNo, String LungFvcPredic, String LungFvcMeas, String LungFvcPer, String LungFev1Predic, String LungFev1Meas,
+            String LungFev1Per, String LungPerFev1, String LungSummary, String sheetname)
         {
             String sql = "", chk = "";
 
@@ -903,16 +991,17 @@ namespace CheckUP.objdb
             //p.Remark = p.Remark.Replace("'", "''");
             //p.PositionName = p.PositionName.Replace("'", "''");
 
-            sql = "Update " + ei.table + " Set " + ei.LungRow + "='" + LungRow + "', " +
-                ei.LungNo + "='" + LungNo + "', " +
-                ei.LungFvcPredic + "='" + LungFvcPredic + "', " +
-                ei.LungFvcMeas + "='" + LungFvcMeas + "', " +
-                ei.LungFvcPer + "='" + LungFvcPer + "', " +
-                ei.LungFev1Predic + "='" + LungFev1Predic + "', " +
-                ei.LungFev1Meas + "='" + LungFev1Meas + "', " +
-                ei.LungFev1Per + "='" + LungFev1Per + "', " +
-                ei.LungPerFev1 + "='" + LungPerFev1 + "', " +
-                ei.LungSummary + "='" + LungSummary + "' ";
+            sql = "Update " + ei.table + " Set " + ei.LungRow + "='" + NumberNull10(LungRow) + "', " +
+                ei.LungNo + "='" + NumberNull10(LungNo) + "', " +
+                ei.LungFvcPredic + "='" + NumberNull10(LungFvcPredic) + "', " +
+                ei.LungFvcMeas + "='" + NumberNull10(LungFvcMeas) + "', " +
+                ei.LungFvcPer + "='" + NumberNull10(LungFvcPer) + "', " +
+                ei.LungFev1Predic + "='" + NumberNull10(LungFev1Predic) + "', " +
+                ei.LungFev1Meas + "='" + NumberNull10(LungFev1Meas) + "', " +
+                ei.LungFev1Per + "='" + NumberNull10(LungFev1Per) + "', " +
+                ei.LungPerFev1 + "='" + NumberNull10(LungPerFev1) + "', " +
+                ei.LungSummary + "='" + NumberNull10(LungSummary) + "', "+
+                ei.LungSheetname + "='" + sheetname + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -928,7 +1017,7 @@ namespace CheckUP.objdb
         }
         public String updateAudioGram(String AudiogramRow, String AudiogramNo, String Audiogram500L, String Audiogram500R, String Audiogram1000L, String Audiogram1000R, String Audiogram2000L, String Audiogram2000R,
             String Audiogram3000L, String Audiogram3000R, String Audiogram4000L, String Audiogram4000R, String Audiogram6000L, String Audiogram6000R, String Audiogram8000L, String Audiogram8000R,
-            String AudiogramSummaryL, String AudiogramSummaryR, String AudiogramExam)
+            String AudiogramSummaryL, String AudiogramSummaryR, String AudiogramExam, String sheetname)
         {
             String sql = "", chk = "";
 
@@ -936,25 +1025,26 @@ namespace CheckUP.objdb
             //p.Remark = p.Remark.Replace("'", "''");
             //p.PositionName = p.PositionName.Replace("'", "''");
 
-            sql = "Update " + ei.table + " Set " + ei.AudiogramRow + "='" + AudiogramRow + "', " +
-                ei.AudiogramNo + "='" + AudiogramNo + "', " +
-                ei.Audiogram500L + "='" + Audiogram500L + "', " +
-                ei.Audiogram500R + "='" + Audiogram500R + "', " +
-                ei.Audiogram1000L + "='" + Audiogram1000L + "', " +
-                ei.Audiogram1000R + "='" + Audiogram1000R + "', " +
-                ei.Audiogram2000L + "='" + Audiogram2000L + "', " +
-                ei.Audiogram2000R + "='" + Audiogram2000R + "', " +
-                ei.Audiogram3000L + "='" + Audiogram3000L + "', " +
-                ei.Audiogram3000R + "='" + Audiogram3000R + "', " +
-                ei.Audiogram4000L + "='" + Audiogram4000L + "', " +
-                ei.Audiogram4000R + "='" + Audiogram4000R + "', " +
-                ei.Audiogram6000L + "='" + Audiogram6000L + "', " +
-                ei.Audiogram6000R + "='" + Audiogram6000R + "', " +
-                ei.Audiogram8000L + "='" + Audiogram8000L + "', " +
-                ei.Audiogram8000R + "='" + Audiogram8000R + "', " +
-                ei.AudiogramSummaryL + "='" + AudiogramSummaryL + "', " +
-                ei.AudiogramSummaryR + "='" + AudiogramSummaryR + "', " +
-                ei.AudiogramExam + "='" + AudiogramExam + "' ";
+            sql = "Update " + ei.table + " Set " + ei.AudiogramRow + "='" + NumberNull10(AudiogramRow) + "', " +
+                ei.AudiogramNo + "='" + NumberNull10(AudiogramNo) + "', " +
+                ei.Audiogram500L + "='" + NumberNull10(Audiogram500L) + "', " +
+                ei.Audiogram500R + "='" + NumberNull10(Audiogram500R) + "', " +
+                ei.Audiogram1000L + "='" + NumberNull10(Audiogram1000L) + "', " +
+                ei.Audiogram1000R + "='" + NumberNull10(Audiogram1000R) + "', " +
+                ei.Audiogram2000L + "='" + NumberNull10(Audiogram2000L) + "', " +
+                ei.Audiogram2000R + "='" + NumberNull10(Audiogram2000R) + "', " +
+                ei.Audiogram3000L + "='" + NumberNull10(Audiogram3000L) + "', " +
+                ei.Audiogram3000R + "='" + NumberNull10(Audiogram3000R) + "', " +
+                ei.Audiogram4000L + "='" + NumberNull10(Audiogram4000L) + "', " +
+                ei.Audiogram4000R + "='" + NumberNull10(Audiogram4000R) + "', " +
+                ei.Audiogram6000L + "='" + NumberNull10(Audiogram6000L) + "', " +
+                ei.Audiogram6000R + "='" + NumberNull10(Audiogram6000R) + "', " +
+                ei.Audiogram8000L + "='" + NumberNull10(Audiogram8000L) + "', " +
+                ei.Audiogram8000R + "='" + NumberNull10(Audiogram8000R) + "', " +
+                ei.AudiogramSummaryL + "='" + NumberNull10(AudiogramSummaryL) + "', " +
+                ei.AudiogramSummaryR + "='" + NumberNull10(AudiogramSummaryR) + "', " +
+                ei.AudiogramExam + "='" + NumberNull10(AudiogramExam) + "', "+
+                ei.AudiogramSheetname + "='" + sheetname + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -969,7 +1059,7 @@ namespace CheckUP.objdb
             return chk;
         }
         public String updateEye(String EyeRow, String EyeNo, String EyeShortLongLeft, String EyeShortLongRight, String EyeSquintLeft, String EyeSquintRight,
-            String EyedegreeLeft, String EyeDegreeRight, String EyeOldLeft, String EyeOldRight, String EyeResult, String EyeSummary, String EyeBlindness, String EyeExam)
+            String EyedegreeLeft, String EyeDegreeRight, String EyeOldLeft, String EyeOldRight, String EyeResult, String EyeSummary, String EyeBlindness, String EyeExam, String sheetname)
         {
             String sql = "", chk = "";
 
@@ -977,20 +1067,21 @@ namespace CheckUP.objdb
             //p.Remark = p.Remark.Replace("'", "''");
             //p.PositionName = p.PositionName.Replace("'", "''");
 
-            sql = "Update " + ei.table + " Set " + ei.EyeRow + "='" + EyeRow + "', " +
-                ei.EyeNo + "='" + EyeNo + "', " +
-                ei.EyeShortLongLeft + "='" + EyeShortLongLeft + "', " +
-                ei.EyeShortLongRight + "='" + EyeShortLongRight + "', " +
-                ei.EyeSquintLeft + "='" + EyeSquintLeft + "', " +
-                ei.EyeSquintRight + "='" + EyeSquintRight + "', " +
-                ei.EyeDegreeLeft + "='" + EyedegreeLeft + "', " +
-                ei.EyeDegreeRight + "='" + EyeDegreeRight + "', " +
-                ei.EyeOldLeft + "='" + EyeOldLeft + "', " +
-                ei.EyeOldRight + "='" + EyeOldRight + "', " +
-                ei.EyeResult + "='" + EyeResult + "', " +
-                ei.EyeSummary + "='" + EyeSummary + "', " +
-                ei.EyeExam + "='" + EyeExam + "', " +
-                ei.EyeBlindness + "='" + EyeBlindness + "' " ;
+            sql = "Update " + ei.table + " Set " + ei.EyeRow + "='" + NumberNull10(EyeRow) + "', " +
+                ei.EyeNo + "='" + NumberNull10(EyeNo) + "', " +
+                ei.EyeShortLongLeft + "='" + NumberNull10(EyeShortLongLeft) + "', " +
+                ei.EyeShortLongRight + "='" + NumberNull10(EyeShortLongRight) + "', " +
+                ei.EyeSquintLeft + "='" + NumberNull10(EyeSquintLeft) + "', " +
+                ei.EyeSquintRight + "='" + NumberNull10(EyeSquintRight) + "', " +
+                ei.EyeDegreeLeft + "='" + NumberNull10(EyedegreeLeft) + "', " +
+                ei.EyeDegreeRight + "='" + NumberNull10(EyeDegreeRight) + "', " +
+                ei.EyeOldLeft + "='" + NumberNull10(EyeOldLeft) + "', " +
+                ei.EyeOldRight + "='" + NumberNull10(EyeOldRight) + "', " +
+                ei.EyeResult + "='" + NumberNull10(EyeResult) + "', " +
+                ei.EyeSummary + "='" + NumberNull10(EyeSummary) + "', " +
+                ei.EyeExam + "='" + NumberNull10(EyeExam) + "', " +
+                ei.EyeBlindness + "='" + NumberNull10(EyeBlindness) + "', "+
+                ei.EyeSheetname + "='" + sheetname + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -1004,18 +1095,23 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateStoolExam(String StoolExamRow, String StoolExamNo, String StoolExamAppearance, String StoolExamColor, String StoolExamWbc, String StoolExamRbc, String StoolExamParasite, String StoolExamSummary)
+        public String updateStoolExam(String StoolExamRow, String StoolExamNo, String StoolExamAppearance, String StoolExamColor, String StoolExamWbc, String StoolExamRbc,
+            String StoolExamParasite, String StoolExamSummary, String StoolExamCulture, String StoolExamTyhoidH, String StoolExamTyhoidO, String sheetname)
         {
             String sql = "", chk = "";
 
-            sql = "Update " + ei.table + " Set " + ei.StoolExamRow + "='" + StoolExamRow + "', " +
-                ei.StoolExamNo + "='" + StoolExamNo + "', " +
-                ei.StoolExamAppearance + "='" + StoolExamAppearance + "', " +
-                ei.StoolExamColor + "='" + StoolExamColor + "', " +
-                ei.StoolExamWbc + "='" + StoolExamWbc + "', " +
-                ei.StoolExamRbc + "='" + StoolExamRbc + "', " +
-                ei.StoolExamParasite + "='" + StoolExamParasite + "', " +
-                ei.StoolExamSummary + "='" + StoolExamSummary + "' ";
+            sql = "Update " + ei.table + " Set " + ei.StoolExamRow + "='" + NumberNull10(StoolExamRow) + "', " +
+                ei.StoolExamNo + "='" + NumberNull10(StoolExamNo) + "', " +
+                ei.StoolExamAppearance + "='" + NumberNull10(StoolExamAppearance) + "', " +
+                ei.StoolExamColor + "='" + NumberNull10(StoolExamColor) + "', " +
+                ei.StoolExamWbc + "='" + NumberNull10(StoolExamWbc) + "', " +
+                ei.StoolExamRbc + "='" + NumberNull10(StoolExamRbc) + "', " +
+                ei.StoolExamParasite + "='" + NumberNull10(StoolExamParasite) + "', " +
+                ei.StoolExamSummary + "='" + NumberNull10(StoolExamSummary) + "', " +
+                ei.StoolExamCulture + "='" + NumberNull10(StoolExamCulture) + "', " +
+                ei.StoolExamTyphoidH + "='" + StoolExamTyhoidH + "', " +
+                ei.StoolExamTyphoidO + "='" + StoolExamTyhoidO + "', "+
+                ei.StoolExamSheetname + "='" + sheetname + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -1038,17 +1134,17 @@ namespace CheckUP.objdb
             //p.Remark = p.Remark.Replace("'", "''");
             //p.PositionName = p.PositionName.Replace("'", "''");
 
-            sql = "Update " + ei.table + " Set " + ei.ToxiRow + "='" + ToxiRow + "', " +
-                ei.ToxiNo + "='" + ToxiNo + "', " +
-                ei.ToxiLead + "='" + ToxiLead + "', " +
-                ei.ToxiAluminium + "='" + ToxiAluminium + "', " +
-                ei.ToxiCadmium + "='" + ToxiCadmium + "', " +
-                ei.ToxiMercury + "='" + ToxiMercury + "', " +
-                ei.ToxiTin + "='" + ToxiTin + "', " +
-                ei.ToxiCopper + "='" + ToxiCopper + "', " +
-                ei.ToxiManganese + "='" + ToxiManganese + "', " +
-                ei.ToxiZinc + "='" + ToxiZinc + "', " +
-                ei.ToxiAmmonia + "='" + ToxiAmmonia + "' ";
+            sql = "Update " + ei.table + " Set " + ei.ToxiRow + "='" + NumberNull10(ToxiRow) + "', " +
+                ei.ToxiNo + "='" + NumberNull10(ToxiNo) + "', " +
+                ei.ToxiLead + "='" + NumberNull10(ToxiLead) + "', " +
+                ei.ToxiAluminium + "='" + NumberNull10(ToxiAluminium) + "', " +
+                ei.ToxiCadmium + "='" + NumberNull10(ToxiCadmium) + "', " +
+                ei.ToxiMercury + "='" + NumberNull10(ToxiMercury) + "', " +
+                ei.ToxiTin + "='" + NumberNull10(ToxiTin) + "', " +
+                ei.ToxiCopper + "='" + NumberNull10(ToxiCopper) + "', " +
+                ei.ToxiManganese + "='" + NumberNull10(ToxiManganese) + "', " +
+                ei.ToxiZinc + "='" + NumberNull10(ToxiZinc) + "', " +
+                ei.ToxiAmmonia + "='" + NumberNull10(ToxiAmmonia) + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -1064,7 +1160,7 @@ namespace CheckUP.objdb
         }
         public String updateToxi2(String ToxiHippuric, String ToxiMethyl, String ToxiAcetone, String ToxiNickel, String ToxiChromium,
             String ToxiPhenol, String ToxiKetone, String ToxiBenzene, String ToxiMandelic, String ToxiMethanol, String ToxiEthanol, String ToxiIPA,
-            String ToxiArsenic, String ToxiHexane, String ToxiFomaldehyde, String ToxiTrichloroethylene, String ToxiAntimony, String ToxiFluoride)
+            String ToxiArsenic, String ToxiHexane, String ToxiFomaldehyde, String ToxiTrichloroethylene, String ToxiAntimony, String ToxiFluoride, String sheetname)
         {
             String sql = "", chk = "";
 
@@ -1072,24 +1168,25 @@ namespace CheckUP.objdb
             //p.Remark = p.Remark.Replace("'", "''");
             //p.PositionName = p.PositionName.Replace("'", "''");
 
-            sql = "Update " + ei.table + " Set " + ei.ToxiHippuric + "='" + ToxiHippuric + "', " +
-                ei.ToxiMethyl + "='" + ToxiMethyl + "', " +
-                ei.ToxiAcetone + "='" + ToxiAcetone + "', " +
-                ei.ToxiNickel + "='" + ToxiNickel + "', " +
-                ei.ToxiChromium + "='" + ToxiChromium + "', " +
-                ei.ToxiPhenol + "='" + ToxiPhenol + "', " +
-                ei.ToxiKetone + "='" + ToxiKetone + "', " +
-                ei.ToxiBenzene + "='" + ToxiBenzene + "', " +
-                ei.ToxiMandelic + "='" + ToxiMandelic + "', " +
-                ei.ToxiMethanol + "='" + ToxiMethanol + "', " +
-                ei.ToxiEthanol + "='" + ToxiEthanol + "', " +
-                ei.ToxiIPA + "='" + ToxiIPA + "', " +
-                ei.ToxiArsenic + "='" + ToxiArsenic + "', " +
-                ei.ToxiHexane + "='" + ToxiHexane + "', " +
-                ei.ToxiFomaldehyde + "='" + ToxiFomaldehyde + "', " +
-                ei.ToxiTrichloroethylene + "='" + ToxiTrichloroethylene + "', " +
-                ei.ToxiAntimony + "='" + ToxiAntimony + "', " +
-                ei.ToxiFluoride + "='" + ToxiFluoride + "' ";
+            sql = "Update " + ei.table + " Set " + ei.ToxiHippuric + "='" + NumberNull10(ToxiHippuric) + "', " +
+                ei.ToxiMethyl + "='" + NumberNull10(ToxiMethyl) + "', " +
+                ei.ToxiAcetone + "='" + NumberNull10(ToxiAcetone) + "', " +
+                ei.ToxiNickel + "='" + NumberNull10(ToxiNickel) + "', " +
+                ei.ToxiChromium + "='" + NumberNull10(ToxiChromium) + "', " +
+                ei.ToxiPhenol + "='" + NumberNull10(ToxiPhenol) + "', " +
+                ei.ToxiKetone + "='" + NumberNull10(ToxiKetone) + "', " +
+                ei.ToxiBenzene + "='" + NumberNull10(ToxiBenzene) + "', " +
+                ei.ToxiMandelic + "='" + NumberNull10(ToxiMandelic) + "', " +
+                ei.ToxiMethanol + "='" + NumberNull10(ToxiMethanol) + "', " +
+                ei.ToxiEthanol + "='" + NumberNull10(ToxiEthanol) + "', " +
+                ei.ToxiIPA + "='" + NumberNull10(ToxiIPA) + "', " +
+                ei.ToxiArsenic + "='" + NumberNull10(ToxiArsenic) + "', " +
+                ei.ToxiHexane + "='" + NumberNull10(ToxiHexane) + "', " +
+                ei.ToxiFomaldehyde + "='" + NumberNull10(ToxiFomaldehyde) + "', " +
+                ei.ToxiTrichloroethylene + "='" + NumberNull10(ToxiTrichloroethylene) + "', " +
+                ei.ToxiAntimony + "='" + NumberNull10(ToxiAntimony) + "', " +
+                ei.ToxiFluoride + "='" + NumberNull10(ToxiFluoride) + "', "+
+                ei.ToxiSheetname + "='" + sheetname + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

@@ -981,3 +981,409 @@ Failed to load database information.
 1/12/2557 14:37->FrmCheckUPAdd.btnPrint_Click 02 
 1/12/2557 14:37->FrmCheckUPAdd.btnPrint_Click 03 
 26/12/2557 10:16->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+5/1/2558 14:36->FrmCheckUPAdd.btnPrint_Click 01 
+5/1/2558 14:36->FrmCheckUPAdd.btnPrint_Click 02 
+5/1/2558 14:36->FrmCheckUPAdd.btnPrint_Click 03 
+5/1/2558 14:36->rpt.setReportCheckUp OK 
+5/1/2558 14:36->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+5/1/2558 14:36->rpt.setReportCheckUp OK SetDataSource
+5/1/2558 14:40->FrmCheckUPAdd.btnPrint_Click 01 
+5/1/2558 14:40->FrmCheckUPAdd.btnPrint_Click 02 
+5/1/2558 14:40->FrmCheckUPAdd.btnPrint_Click 03 
+5/1/2558 14:40->rpt.setReportCheckUp OK 
+5/1/2558 14:40->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+5/1/2558 14:40->rpt.setReportCheckUp OK SetDataSource
+7/1/2558 10:36->FrmCheckUPAdd.btnPrint_Click 01 
+7/1/2558 10:36->FrmCheckUPAdd.btnPrint_Click 02 
+7/1/2558 10:36->FrmCheckUPAdd.btnPrint_Click 03 
+7/1/2558 10:36->rpt.setReportCheckUp OK 
+7/1/2558 10:37->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+7/1/2558 10:37->rpt.setReportCheckUp OK SetDataSource
+7/1/2558 10:37->FrmCheckUPAdd.btnPrint_Click 01 
+7/1/2558 10:37->FrmCheckUPAdd.btnPrint_Click 02 
+7/1/2558 10:37->FrmCheckUPAdd.btnPrint_Click 03 
+7/1/2558 10:39->rpt.setReportCheckUp OK 
+7/1/2558 10:39->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+7/1/2558 10:39->rpt.setReportCheckUp OK SetDataSource
+7/1/2558 10:41->FrmCheckUPAdd.btnPrint_Click 01 
+7/1/2558 10:41->FrmCheckUPAdd.btnPrint_Click 02 
+7/1/2558 10:41->FrmCheckUPAdd.btnPrint_Click 03 
+7/1/2558 10:41->rpt.setReportCheckUp OK 
+7/1/2558 10:41->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+7/1/2558 10:41->rpt.setReportCheckUp OK SetDataSource
+8/1/2558 9:13->FrmCheckUPAdd.btnPrint_Click 01 
+8/1/2558 9:13->FrmCheckUPAdd.btnPrint_Click 02 
+8/1/2558 9:13->FrmCheckUPAdd.btnPrint_Click 03 
+8/1/2558 9:15->FrmCheckUPAdd.btnPrint_Click 01 
+8/1/2558 9:15->FrmCheckUPAdd.btnPrint_Click 02 
+8/1/2558 9:15->FrmCheckUPAdd.btnPrint_Click 03 
+8/1/2558 9:17->rpt.setReportCheckUp OK 
+8/1/2558 9:17->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+8/1/2558 9:17->rpt.setReportCheckUp OK SetDataSource
+8/1/2558 9:18->FrmCheckUPAdd.btnPrint_Click 01 
+8/1/2558 9:18->FrmCheckUPAdd.btnPrint_Click 02 
+8/1/2558 9:18->FrmCheckUPAdd.btnPrint_Click 03 
+8/1/2558 9:18->rpt.setReportCheckUp OK 
+8/1/2558 9:18->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+8/1/2558 9:18->rpt.setReportCheckUp OK SetDataSource
+8/1/2558 9:24->FrmCheckUPAdd.btnPrint_Click 01 
+8/1/2558 9:24->FrmCheckUPAdd.btnPrint_Click 02 
+8/1/2558 9:24->FrmCheckUPAdd.btnPrint_Click 03 
+8/1/2558 9:24->rpt.setReportCheckUp OK 
+8/1/2558 9:24->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+8/1/2558 9:24->rpt.setReportCheckUp OK SetDataSource
+8/1/2558 9:25->FrmCheckUPAdd.btnPrint_Click 01 
+8/1/2558 9:25->FrmCheckUPAdd.btnPrint_Click 02 
+8/1/2558 9:25->FrmCheckUPAdd.btnPrint_Click 03 
+8/1/2558 9:26->rpt.setReportCheckUp OK 
+8/1/2558 9:26->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+8/1/2558 9:26->rpt.setReportCheckUp OK SetDataSource
+8/1/2558 10:29->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+9/1/2558 11:14->FrmCheckUPAdd.btnPrint_Click 01 
+9/1/2558 11:14->FrmCheckUPAdd.btnPrint_Click 02 
+9/1/2558 11:14->FrmCheckUPAdd.btnPrint_Click 03 
+9/1/2558 11:15->rpt.setReportCheckUp OK 
+9/1/2558 11:15->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+9/1/2558 11:15->rpt.setReportCheckUp OK SetDataSource
+9/1/2558 11:20->FrmCheckUPAdd.btnPrint_Click 01 
+9/1/2558 11:20->FrmCheckUPAdd.btnPrint_Click 02 
+9/1/2558 11:20->FrmCheckUPAdd.btnPrint_Click 03 
+9/1/2558 11:20->rpt.setReportCheckUp OK 
+9/1/2558 11:20->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+9/1/2558 11:20->rpt.setReportCheckUp OK SetDataSource
+9/1/2558 12:03->FrmCheckUPAdd.btnPrint_Click 01 
+9/1/2558 12:03->FrmCheckUPAdd.btnPrint_Click 02 
+9/1/2558 12:03->FrmCheckUPAdd.btnPrint_Click 03 
+9/1/2558 12:03->rpt.setReportCheckUp OK 
+9/1/2558 12:03->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+9/1/2558 12:03->rpt.setReportCheckUp OK SetDataSource
+9/1/2558 12:06->FrmCheckUPAdd.btnPrint_Click 01 
+9/1/2558 12:06->FrmCheckUPAdd.btnPrint_Click 02 
+9/1/2558 12:06->FrmCheckUPAdd.btnPrint_Click 03 
+9/1/2558 12:06->rpt.setReportCheckUp OK 
+9/1/2558 12:06->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+9/1/2558 12:06->rpt.setReportCheckUp OK SetDataSource
+9/1/2558 12:13->FrmCheckUPAdd.btnPrint_Click 01 
+9/1/2558 12:13->FrmCheckUPAdd.btnPrint_Click 02 
+9/1/2558 12:13->FrmCheckUPAdd.btnPrint_Click 03 
+9/1/2558 12:13->rpt.setReportCheckUp OK 
+9/1/2558 12:13->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+9/1/2558 12:13->rpt.setReportCheckUp OK SetDataSource
+9/1/2558 13:51->FrmCheckUPAdd.btnPrint_Click 01 
+9/1/2558 13:51->FrmCheckUPAdd.btnPrint_Click 02 
+9/1/2558 13:51->FrmCheckUPAdd.btnPrint_Click 03 
+9/1/2558 13:51->rpt.setReportCheckUp OK 
+9/1/2558 13:51->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+9/1/2558 13:51->rpt.setReportCheckUp OK SetDataSource
+9/1/2558 13:51->FrmCheckUPAdd.btnPrint_Click 01 
+9/1/2558 13:51->FrmCheckUPAdd.btnPrint_Click 02 
+9/1/2558 13:51->FrmCheckUPAdd.btnPrint_Click 03 
+9/1/2558 13:52->rpt.setReportCheckUp OK 
+9/1/2558 13:52->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+9/1/2558 13:52->rpt.setReportCheckUp OK SetDataSource
+9/1/2558 13:55->FrmCheckUPAdd.btnPrint_Click 01 
+9/1/2558 13:55->FrmCheckUPAdd.btnPrint_Click 02 
+9/1/2558 13:55->FrmCheckUPAdd.btnPrint_Click 03 
+9/1/2558 13:55->rpt.setReportCheckUp OK 
+9/1/2558 13:55->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+9/1/2558 13:55->rpt.setReportCheckUp OK SetDataSource
+9/1/2558 13:58->FrmCheckUPAdd.btnPrint_Click 01 
+9/1/2558 13:58->FrmCheckUPAdd.btnPrint_Click 02 
+9/1/2558 13:58->FrmCheckUPAdd.btnPrint_Click 03 
+9/1/2558 13:58->rpt.setReportCheckUp OK 
+9/1/2558 13:58->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+9/1/2558 13:58->rpt.setReportCheckUp OK SetDataSource
+9/1/2558 13:58->FrmCheckUPAdd.btnPrint_Click 01 
+9/1/2558 13:58->FrmCheckUPAdd.btnPrint_Click 02 
+9/1/2558 13:58->FrmCheckUPAdd.btnPrint_Click 03 
+9/1/2558 13:58->rpt.setReportCheckUp OK 
+9/1/2558 13:58->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+9/1/2558 13:58->rpt.setReportCheckUp OK SetDataSource
+9/1/2558 16:11->FrmCheckUPAdd.btnPrint_Click 01 
+9/1/2558 16:11->FrmCheckUPAdd.btnPrint_Click 02 
+9/1/2558 16:11->FrmCheckUPAdd.btnPrint_Click 03 
+9/1/2558 16:11->rpt.setReportCheckUp OK 
+9/1/2558 16:11->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+9/1/2558 16:11->rpt.setReportCheckUp OK SetDataSource
+12/1/2558 16:25->FrmCheckUPAdd.btnPrint_Click 01 
+12/1/2558 16:25->FrmCheckUPAdd.btnPrint_Click 02 
+12/1/2558 16:25->FrmCheckUPAdd.btnPrint_Click 03 
+12/1/2558 16:25->rpt.setReportCheckUp OK 
+12/1/2558 16:25->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+12/1/2558 16:25->rpt.setReportCheckUp OK SetDataSource
+13/1/2558 10:22->FrmCheckUPAdd.btnPrint_Click 01 
+13/1/2558 10:22->FrmCheckUPAdd.btnPrint_Click 02 
+13/1/2558 10:22->FrmCheckUPAdd.btnPrint_Click 03 
+13/1/2558 10:22->rpt.setReportCheckUp OK 
+13/1/2558 10:22->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+13/1/2558 10:22->rpt.setReportCheckUp OK SetDataSource
+13/1/2558 10:23->FrmCheckUPAdd.btnPrint_Click 01 
+13/1/2558 10:23->FrmCheckUPAdd.btnPrint_Click 02 
+13/1/2558 10:23->FrmCheckUPAdd.btnPrint_Click 03 
+13/1/2558 10:23->rpt.setReportCheckUp OK 
+13/1/2558 10:23->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+13/1/2558 10:23->rpt.setReportCheckUp OK SetDataSource
+13/1/2558 10:24->FrmCheckUPAdd.btnPrint_Click 01 
+13/1/2558 10:24->FrmCheckUPAdd.btnPrint_Click 02 
+13/1/2558 10:24->FrmCheckUPAdd.btnPrint_Click 03 
+13/1/2558 10:25->rpt.setReportCheckUp OK 
+13/1/2558 10:25->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+13/1/2558 10:25->rpt.setReportCheckUp OK SetDataSource
+13/1/2558 10:30->FrmCheckUPAdd.btnPrint_Click 01 
+13/1/2558 10:30->FrmCheckUPAdd.btnPrint_Click 02 
+13/1/2558 10:30->FrmCheckUPAdd.btnPrint_Click 03 
+13/1/2558 10:30->rpt.setReportCheckUp OK 
+13/1/2558 10:30->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+13/1/2558 10:30->rpt.setReportCheckUp OK SetDataSource
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+15/1/2558 9:46->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+20/1/2558 15:12->FrmCheckUPAdd.btnPrint_Click 01 
+20/1/2558 15:12->FrmCheckUPAdd.btnPrint_Click 02 
+20/1/2558 15:12->FrmCheckUPAdd.btnPrint_Click 03 
+20/1/2558 15:12->rpt.setReportCheckUp OK 
+20/1/2558 15:12->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+20/1/2558 15:12->rpt.setReportCheckUp OK SetDataSource
+20/1/2558 15:14->FrmCheckUPAdd.btnPrint_Click 01 
+20/1/2558 15:14->FrmCheckUPAdd.btnPrint_Click 02 
+20/1/2558 15:14->FrmCheckUPAdd.btnPrint_Click 03 
+20/1/2558 15:14->rpt.setReportCheckUp OK 
+20/1/2558 15:14->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+20/1/2558 15:14->rpt.setReportCheckUp OK SetDataSource
+29/1/2558 14:16->FrmCheckUPAdd.btnPrint_Click 01 
+29/1/2558 14:16->FrmCheckUPAdd.btnPrint_Click 02 
+29/1/2558 14:16->FrmCheckUPAdd.btnPrint_Click 03 
+29/1/2558 14:18->FrmCheckUPAdd.btnPrint_Click 01 
+29/1/2558 14:18->FrmCheckUPAdd.btnPrint_Click 02 
+29/1/2558 14:18->FrmCheckUPAdd.btnPrint_Click 03 
+29/1/2558 14:18->rpt.setReportCheckUp OK 
+29/1/2558 14:18->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+29/1/2558 14:18->rpt.setReportCheckUp OK SetDataSource
+29/1/2558 14:28->FrmCheckUPAdd.btnPrint_Click 01 
+29/1/2558 14:28->FrmCheckUPAdd.btnPrint_Click 02 
+29/1/2558 14:28->FrmCheckUPAdd.btnPrint_Click 03 
+29/1/2558 14:28->rpt.setReportCheckUp OK 
+29/1/2558 14:28->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+29/1/2558 14:28->rpt.setReportCheckUp OK SetDataSource
+30/1/2558 9:03->FrmCheckUPAdd.btnPrint_Click 01 
+30/1/2558 9:03->FrmCheckUPAdd.btnPrint_Click 02 
+30/1/2558 9:03->FrmCheckUPAdd.btnPrint_Click 03 
+30/1/2558 9:03->rpt.setReportCheckUp OK 
+30/1/2558 9:03->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+30/1/2558 9:03->rpt.setReportCheckUp OK SetDataSource
+30/1/2558 9:15->FrmCheckUPAdd.btnPrint_Click 01 
+30/1/2558 9:15->FrmCheckUPAdd.btnPrint_Click 02 
+30/1/2558 9:15->FrmCheckUPAdd.btnPrint_Click 03 
+30/1/2558 9:15->rpt.setReportCheckUp OK 
+30/1/2558 9:15->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+30/1/2558 9:15->rpt.setReportCheckUp OK SetDataSource
+30/1/2558 9:20->FrmCheckUPAdd.btnPrint_Click 01 
+30/1/2558 9:20->FrmCheckUPAdd.btnPrint_Click 02 
+30/1/2558 9:20->FrmCheckUPAdd.btnPrint_Click 03 
+30/1/2558 9:20->rpt.setReportCheckUp OK 
+30/1/2558 9:20->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+30/1/2558 9:20->rpt.setReportCheckUp OK SetDataSource
+30/1/2558 9:25->FrmCheckUPAdd.btnPrint_Click 01 
+30/1/2558 9:25->FrmCheckUPAdd.btnPrint_Click 02 
+30/1/2558 9:25->FrmCheckUPAdd.btnPrint_Click 03 
+30/1/2558 9:25->rpt.setReportCheckUp OK 
+30/1/2558 9:25->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+30/1/2558 9:25->rpt.setReportCheckUp OK SetDataSource
+30/1/2558 9:26->FrmCheckUPAdd.btnPrint_Click 01 
+30/1/2558 9:26->FrmCheckUPAdd.btnPrint_Click 02 
+30/1/2558 9:26->FrmCheckUPAdd.btnPrint_Click 03 
+30/1/2558 9:26->rpt.setReportCheckUp OK 
+30/1/2558 9:26->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+30/1/2558 9:26->rpt.setReportCheckUp OK SetDataSource
+30/1/2558 9:27->FrmCheckUPAdd.btnPrint_Click 01 
+30/1/2558 9:27->FrmCheckUPAdd.btnPrint_Click 02 
+30/1/2558 9:27->FrmCheckUPAdd.btnPrint_Click 03 
+30/1/2558 9:28->rpt.setReportCheckUp OK 
+30/1/2558 9:28->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+30/1/2558 9:28->rpt.setReportCheckUp OK SetDataSource
+30/1/2558 9:30->FrmCheckUPAdd.btnPrint_Click 01 
+30/1/2558 9:30->FrmCheckUPAdd.btnPrint_Click 02 
+30/1/2558 9:30->FrmCheckUPAdd.btnPrint_Click 03 
+30/1/2558 9:30->rpt.setReportCheckUp OK 
+30/1/2558 9:30->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+30/1/2558 9:30->rpt.setReportCheckUp OK SetDataSource
+30/1/2558 9:34->FrmCheckUPAdd.btnPrint_Click 01 
+30/1/2558 9:34->FrmCheckUPAdd.btnPrint_Click 02 
+30/1/2558 9:34->FrmCheckUPAdd.btnPrint_Click 03 
+30/1/2558 9:34->rpt.setReportCheckUp OK 
+30/1/2558 9:34->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+30/1/2558 9:34->rpt.setReportCheckUp OK SetDataSource
+30/1/2558 13:26->rpt.setReportCheckUpSticker OK 
+30/1/2558 13:26->rpt.setReportCheckUpSticker OK LoadD:\source\CheckUP\CheckUP\report\CheckUpSticker.rpt
+30/1/2558 13:26->rpt.setReportCheckUpSticker OK SetDataSource
+30/1/2558 13:27->rpt.setReportCheckUpXRay OK 
+30/1/2558 13:27->rpt.setReportCheckUpXRays OK LoadD:\source\CheckUP\CheckUP\report\XrayDetailPrint.rpt
+30/1/2558 13:27->rpt.setReportCheckUpXRays OK SetDataSource
+30/1/2558 13:30->rpt.setReportCheckUpPE OK 
+30/1/2558 13:30->rpt.setReportCheckUpSticker Error โหลดรายงานไม่สำเร็จ
+30/1/2558 13:31->rpt.setReportCheckUpXRay OK 
+30/1/2558 13:31->rpt.setReportCheckUpXRays OK LoadD:\source\CheckUP\CheckUP\report\XrayDetailPrint.rpt
+30/1/2558 13:31->rpt.setReportCheckUpXRays OK SetDataSource
+30/1/2558 13:31->rpt.setReportCheckUpXRay OK 
+30/1/2558 13:31->rpt.setReportCheckUpXRays OK LoadD:\source\CheckUP\CheckUP\report\XrayDetailPrint.rpt
+30/1/2558 13:31->rpt.setReportCheckUpXRays OK SetDataSource
+30/1/2558 13:33->rpt.setReportCheckUpXRay OK 
+30/1/2558 13:33->rpt.setReportCheckUpXRays OK LoadD:\source\CheckUP\CheckUP\report\XrayDetailPrint.rpt
+30/1/2558 13:33->rpt.setReportCheckUpXRays OK SetDataSource
+30/1/2558 13:36->rpt.setReportCheckUpXRay OK 
+30/1/2558 13:36->rpt.setReportCheckUpXRays OK LoadD:\source\CheckUP\CheckUP\report\XrayDetailPrint.rpt
+30/1/2558 13:36->rpt.setReportCheckUpXRays OK SetDataSource
+30/1/2558 13:37->rpt.setReportCheckUpXRay OK 
+30/1/2558 13:37->rpt.setReportCheckUpXRays OK LoadD:\source\CheckUP\CheckUP\report\XrayDetailPrint.rpt
+30/1/2558 13:37->rpt.setReportCheckUpXRays OK SetDataSource
+30/1/2558 13:38->rpt.setReportCheckUpXRay OK 
+30/1/2558 13:38->rpt.setReportCheckUpXRays OK LoadD:\source\CheckUP\CheckUP\report\XrayDetailPrint.rpt
+30/1/2558 13:38->rpt.setReportCheckUpXRays OK SetDataSource
+30/1/2558 13:53->rpt.setReportCheckUpPE OK 
+30/1/2558 13:53->rpt.setReportCheckUpSticker Error โหลดรายงานไม่สำเร็จ
+30/1/2558 13:56->rpt.setReportCheckUpPE OK 
+30/1/2558 13:56->rpt.setReportCheckUpXRays OK LoadD:\source\CheckUP\CheckUP\report\PEDetailPrint.rpt
+30/1/2558 13:56->rpt.setReportCheckUpPE OK SetDataSource
+30/1/2558 13:56->rpt.setReportCheckUpPE OK 
+30/1/2558 13:56->rpt.setReportCheckUpXRays OK LoadD:\source\CheckUP\CheckUP\report\PEDetailPrint.rpt
+30/1/2558 13:56->rpt.setReportCheckUpPE OK SetDataSource
+30/1/2558 13:57->rpt.setReportCheckUpPE OK 
+30/1/2558 13:57->rpt.setReportCheckUpXRays OK LoadD:\source\CheckUP\CheckUP\report\PEDetailPrint.rpt
+30/1/2558 13:57->rpt.setReportCheckUpPE OK SetDataSource
+30/1/2558 13:57->rpt.setReportCheckUpXRay OK 
+30/1/2558 13:57->rpt.setReportCheckUpXRays OK LoadD:\source\CheckUP\CheckUP\report\XrayDetailPrint.rpt
+30/1/2558 13:57->rpt.setReportCheckUpXRays OK SetDataSource
+30/1/2558 15:50->FrmCheckUPAdd.btnPrint_Click 01 
+30/1/2558 15:50->FrmCheckUPAdd.btnPrint_Click 02 
+30/1/2558 15:50->FrmCheckUPAdd.btnPrint_Click 03 
+30/1/2558 15:50->rpt.setReportCheckUp OK 
+30/1/2558 15:50->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+30/1/2558 15:50->rpt.setReportCheckUp OK SetDataSource
+30/1/2558 15:51->FrmCheckUPAdd.btnPrint_Click 01 
+30/1/2558 15:51->FrmCheckUPAdd.btnPrint_Click 02 
+30/1/2558 15:51->FrmCheckUPAdd.btnPrint_Click 03 
+30/1/2558 15:52->FrmCheckUPAdd.btnPrint_Click 01 
+30/1/2558 15:52->FrmCheckUPAdd.btnPrint_Click 02 
+30/1/2558 15:52->FrmCheckUPAdd.btnPrint_Click 03 
+30/1/2558 15:52->rpt.setReportCheckUp OK 
+30/1/2558 15:52->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+30/1/2558 15:52->rpt.setReportCheckUp OK SetDataSource
+2/2/2558 15:20->FrmCheckUPAdd.btnPrint_Click 01 
+2/2/2558 15:20->FrmCheckUPAdd.btnPrint_Click 02 
+2/2/2558 15:20->FrmCheckUPAdd.btnPrint_Click 03 
+2/2/2558 15:20->rpt.setReportCheckUp OK 
+2/2/2558 15:20->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+2/2/2558 15:20->rpt.setReportCheckUp OK SetDataSource
+2/2/2558 15:20->FrmCheckUPAdd.btnPrint_Click 01 
+2/2/2558 15:20->FrmCheckUPAdd.btnPrint_Click 02 
+2/2/2558 15:20->FrmCheckUPAdd.btnPrint_Click 03 
+2/2/2558 15:20->rpt.setReportCheckUp OK 
+2/2/2558 15:20->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+2/2/2558 15:20->rpt.setReportCheckUp OK SetDataSource
+2/2/2558 15:21->FrmCheckUPAdd.btnPrint_Click 01 
+2/2/2558 15:21->FrmCheckUPAdd.btnPrint_Click 02 
+2/2/2558 15:21->FrmCheckUPAdd.btnPrint_Click 03 
+2/2/2558 15:21->rpt.setReportCheckUp OK 
+2/2/2558 15:21->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+2/2/2558 15:21->rpt.setReportCheckUp OK SetDataSource
+2/2/2558 15:22->FrmCheckUPAdd.btnPrint_Click 01 
+2/2/2558 15:22->FrmCheckUPAdd.btnPrint_Click 02 
+2/2/2558 15:22->FrmCheckUPAdd.btnPrint_Click 03 
+2/2/2558 15:22->rpt.setReportCheckUp OK 
+2/2/2558 15:22->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+2/2/2558 15:22->rpt.setReportCheckUp OK SetDataSource
+2/2/2558 16:19->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+2/2/2558 16:19->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+2/2/2558 16:19->ccp.UpdatePE Error ExecuteNonQuery::Error occured.
+9/2/2558 9:58->FrmCheckUPAdd.btnPrint_Click 01 
+9/2/2558 9:58->FrmCheckUPAdd.btnPrint_Click 02 
+9/2/2558 9:58->FrmCheckUPAdd.btnPrint_Click 03 
+9/2/2558 9:58->rpt.setReportCheckUp OK 
+9/2/2558 9:58->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+9/2/2558 9:58->rpt.setReportCheckUp OK SetDataSource
+9/2/2558 10:06->FrmCheckUPAdd.btnPrint_Click 01 
+9/2/2558 10:06->FrmCheckUPAdd.btnPrint_Click 02 
+9/2/2558 10:06->FrmCheckUPAdd.btnPrint_Click 03 
+9/2/2558 10:06->rpt.setReportCheckUp OK 
+9/2/2558 10:06->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+9/2/2558 10:06->rpt.setReportCheckUp OK SetDataSource
+9/2/2558 10:08->FrmCheckUPAdd.btnPrint_Click 01 
+9/2/2558 10:08->FrmCheckUPAdd.btnPrint_Click 02 
+9/2/2558 10:08->FrmCheckUPAdd.btnPrint_Click 03 
+9/2/2558 10:08->rpt.setReportCheckUp OK 
+9/2/2558 10:08->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+9/2/2558 10:08->rpt.setReportCheckUp OK SetDataSource
+9/2/2558 10:09->FrmCheckUPAdd.btnPrint_Click 01 
+9/2/2558 10:09->FrmCheckUPAdd.btnPrint_Click 02 
+9/2/2558 10:09->FrmCheckUPAdd.btnPrint_Click 03 
+9/2/2558 10:10->rpt.setReportCheckUp OK 
+9/2/2558 10:10->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+9/2/2558 10:10->rpt.setReportCheckUp OK SetDataSource
+9/2/2558 10:14->FrmCheckUPAdd.btnPrint_Click 01 
+9/2/2558 10:14->FrmCheckUPAdd.btnPrint_Click 02 
+9/2/2558 10:14->FrmCheckUPAdd.btnPrint_Click 03 
+9/2/2558 10:15->rpt.setReportCheckUp OK 
+9/2/2558 10:15->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+9/2/2558 10:15->rpt.setReportCheckUp OK SetDataSource
+9/2/2558 10:16->FrmCheckUPAdd.btnPrint_Click 01 
+9/2/2558 10:16->FrmCheckUPAdd.btnPrint_Click 02 
+9/2/2558 10:16->FrmCheckUPAdd.btnPrint_Click 03 
+9/2/2558 10:16->rpt.setReportCheckUp OK 
+9/2/2558 10:16->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+9/2/2558 10:16->rpt.setReportCheckUp OK SetDataSource
+12/2/2558 10:04->FrmCheckUPAdd.btnPrint_Click 01 
+12/2/2558 10:04->FrmCheckUPAdd.btnPrint_Click 02 
+12/2/2558 10:04->FrmCheckUPAdd.btnPrint_Click 03 
+12/2/2558 10:04->rpt.setReportCheckUp OK 
+12/2/2558 10:04->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+12/2/2558 10:04->rpt.setReportCheckUp OK SetDataSource
+13/2/2558 10:46->rpt.setReportCheckUpSticker OK 
+13/2/2558 10:46->rpt.setReportCheckUpSticker OK LoadD:\source\CheckUP\CheckUP\report\CheckUpSticker.rpt
+13/2/2558 10:46->rpt.setReportCheckUpSticker OK SetDataSource

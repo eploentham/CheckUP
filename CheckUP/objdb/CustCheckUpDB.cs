@@ -391,6 +391,14 @@ namespace CheckUP.objdb
             }
             return c;
         }
+        public String UpdateCustCheckUp(String saleId, String date, String year)
+        {
+            String sql = "", chk = "";
+            sql = "Update " + cuc.table + " Set " + cuc.CheckUpDate + "='" + date + "', "+cuc.YearId+"='"+year+"' " +
+                "Where " + cuc.pkField + "='" + saleId + "'";
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
         public String VoidCustCheckUp(String saleId)
         {
             String sql = "", chk = "";

@@ -436,6 +436,71 @@ namespace CheckUP
                 cc.lw.WriteLog("rpt.setReportCheckUpSticker Error " + chk);
             }
         }
+        public void setReportCheckUpPE(CustCheckUp cuc, DataTable dt)
+        {
+            String chk = "";
+            ReportDocument rpt = new ReportDocument();
+            try
+            {
+                cc.lw.WriteLog("rpt.setReportCheckUpPE OK ");
+                rpt.Load(cc.initC.PathReport + "\\PEDetailPrint.rpt");
+                cc.lw.WriteLog("rpt.setReportCheckUpXRays OK Load" + cc.initC.PathReport + "\\PEDetailPrint.rpt");
+                rpt.SetDataSource(dt);
+                rpt.SetParameterValue("line1", "ผลตรวจสุขภาพประจำปี 2557");
+                rpt.SetParameterValue("compName", "โรงพยาบาล บางนา5");
+                rpt.SetParameterValue("compAddress", "55 หมู่4 ถนนเทพารักษ์ ตำบลบางพลีใหญ่ อำเภอบางพลี จังหวัดสมุทรปราการ 10540");
+                rpt.SetParameterValue("custName", cuc.CustNameT);
+                cc.lw.WriteLog("rpt.setReportCheckUpPE OK SetDataSource");
+
+                //rpt.SetParameterValue("line1", "ผลตรวจสุขภาพประจำปี 2557");
+                //rpt.SetParameterValue("compName", "โรงพบาบาล บางนา5");
+                //rpt.SetParameterValue("compAddress", "55 หมู่4 ");
+
+                //rpt.SetParameterValue("custName", "Test Company");
+
+
+                this.crystalReportViewer1.ReportSource = rpt;
+                this.crystalReportViewer1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                chk = ex.Message.ToString();
+                cc.lw.WriteLog("rpt.setReportCheckUpSticker Error " + chk);
+            }
+        }
+        public void setReportCheckUpXRay(CustCheckUp cuc, DataTable dt)
+        {
+            String chk = "";
+            ReportDocument rpt = new ReportDocument();
+            try
+            {
+                cc.lw.WriteLog("rpt.setReportCheckUpXRay OK ");
+                rpt.Load(cc.initC.PathReport + "\\XrayDetailPrint.rpt");
+                cc.lw.WriteLog("rpt.setReportCheckUpXRays OK Load" + cc.initC.PathReport + "\\XrayDetailPrint.rpt");
+                rpt.SetDataSource(dt);
+                rpt.SetParameterValue("line1", "ผลตรวจสุขภาพประจำปี 2557");
+                rpt.SetParameterValue("compName", "โรงพยาบาล บางนา5");
+                rpt.SetParameterValue("compAddress", "55 หมู่4 ถนนเทพารักษ์ ตำบลบางพลีใหญ่ อำเภอบางพลี จังหวัดสมุทรปราการ 10540");
+
+                rpt.SetParameterValue("custName", cuc.CustNameT);
+                cc.lw.WriteLog("rpt.setReportCheckUpXRays OK SetDataSource");
+
+                //rpt.SetParameterValue("line1", "ผลตรวจสุขภาพประจำปี 2557");
+                //rpt.SetParameterValue("compName", "โรงพบาบาล บางนา5");
+                //rpt.SetParameterValue("compAddress", "55 หมู่4 ");
+
+                //rpt.SetParameterValue("custName", "Test Company");
+
+
+                this.crystalReportViewer1.ReportSource = rpt;
+                this.crystalReportViewer1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                chk = ex.Message.ToString();
+                cc.lw.WriteLog("rpt.setReportCheckUpSticker Error " + chk);
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             

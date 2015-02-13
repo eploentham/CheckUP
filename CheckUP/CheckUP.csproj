@@ -221,6 +221,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckUpStickerDS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="report\PEDetail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PEDetail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="report\PEDetailPrint.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PEDetailPrint.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\XrayDetailDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XrayDetailDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="report\XrayDetailPrint.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XrayDetailPrint.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="gui\FrmCheckUPAdd.resx">
       <DependentUpon>FrmCheckUPAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -292,6 +314,14 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CheckUpSticker.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="report\PEDetailPrint.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PEDetailPrint.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\XrayDetailPrint.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>XrayDetailPrint.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -323,6 +353,28 @@
     </None>
     <None Include="report\CheckUpStickerDS.xss">
       <DependentUpon>CheckUpStickerDS.xsd</DependentUpon>
+    </None>
+    <None Include="report\PEDetail.xsc">
+      <DependentUpon>PEDetail.xsd</DependentUpon>
+    </None>
+    <None Include="report\PEDetail.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PEDetail.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="report\PEDetail.xss">
+      <DependentUpon>PEDetail.xsd</DependentUpon>
+    </None>
+    <None Include="report\XrayDetailDS.xsc">
+      <DependentUpon>XrayDetailDS.xsd</DependentUpon>
+    </None>
+    <None Include="report\XrayDetailDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>XrayDetailDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="report\XrayDetailDS.xss">
+      <DependentUpon>XrayDetailDS.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

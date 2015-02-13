@@ -128,6 +128,9 @@ namespace CheckUP.gui
             nmDUASugar.Value = int.Parse(cc.cf.NumberNull1(ei.UASugar));
             nmDUASummary.Value = int.Parse(cc.cf.NumberNull1(ei.UASummary));
             nmDUAWBC.Value = int.Parse(cc.cf.NumberNull1(ei.UAWBC));
+            nmDUAGlu.Value = int.Parse(cc.cf.NumberNull1(ei.UAGlu));
+            nmDUAKetone.Value = int.Parse(cc.cf.NumberNull1(ei.UAKetone));
+            nmDUABlood.Value = int.Parse(cc.cf.NumberNull1(ei.UABlood));
 
             nmDTriRow.Value = int.Parse(cc.cf.NumberNull1(ei.TriRow));
             nmDTriNo.Value = int.Parse(cc.cf.NumberNull1(ei.TriNo));
@@ -150,6 +153,7 @@ namespace CheckUP.gui
             nmDSgotSummary.Value = int.Parse(cc.cf.NumberNull1(ei.SgptSummary));
             nmDSgotvalue.Value = int.Parse(cc.cf.NumberNull1(ei.Sgot));
             nmDSgotALPValue.Value = int.Parse(cc.cf.NumberNull1(ei.SgotALP));
+            nmDSgotAakalineValue.Value = int.Parse(cc.cf.NumberNull1(ei.SgotAlkaline));
 
             nmDBunRow.Value = int.Parse(cc.cf.NumberNull1(ei.BunRow));
             nmDBunNo.Value = int.Parse(cc.cf.NumberNull1(ei.BunNo));
@@ -172,6 +176,15 @@ namespace CheckUP.gui
             nmDOther1Calcium.Value = int.Parse(cc.cf.NumberNull1(ei.Other1Calcium));
             nmDOther1VDRL.Value = int.Parse(cc.cf.NumberNull1(ei.Other1VDRL));
             nmDOther1AntiHIV.Value = int.Parse(cc.cf.NumberNull1(ei.Other1AntiHIV));
+            nmDOther1AntiHav.Value = int.Parse(cc.cf.NumberNull1(ei.Other1AntiHav));
+            nmDOther1CAAFP.Value = int.Parse(cc.cf.NumberNull13(ei.CAAFP));
+            nmDOther1CACEA.Value = int.Parse(cc.cf.NumberNull13(ei.CACEA));
+            nmDOther1CAPSA.Value = int.Parse(cc.cf.NumberNull13(ei.CAPSA));
+            nmDOther1CAHCG.Value = int.Parse(cc.cf.NumberNull13(ei.CAHCG));
+            nmDOther1CA153.Value = int.Parse(cc.cf.NumberNull13(ei.CA153));
+            nmDOther1CA125.Value = int.Parse(cc.cf.NumberNull13(ei.CA125));
+            nmDOther1CA199.Value = int.Parse(cc.cf.NumberNull13(ei.CA199));
+            
 
             nmDLungRow.Value = int.Parse(cc.cf.NumberNull1(ei.LungRow));
             nmDLungNo.Value = int.Parse(cc.cf.NumberNull1(ei.LungNo));
@@ -227,6 +240,9 @@ namespace CheckUP.gui
             nmDStoolExamRow.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamRow));
             nmDStoolExamSummary.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamSummary));
             nmDStoolExamWBC.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamWbc));
+            nmDStoolExamCulture.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamCulture));
+            nmDStoolExamTyHoidH.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamTyphoidH));
+            nmDStoolExamTyHoidO.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamTyphoidO));
 
             nmDToxiLead.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiLead));
             nmDToxiAluminium.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiAluminium));
@@ -256,6 +272,22 @@ namespace CheckUP.gui
             nmDToxiTrichloroethylene.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiTrichloroethylene));
             nmDToxiAntimony.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiAntimony));
             nmDToxiFluoride.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiFluoride));
+
+            txtPESheetName.Text = ei.PESheetname;
+            txtXRaySheetName.Text = ei.XraySheetname;
+            txtCBCSheetName.Text = ei.CBCSheetname;
+            txtFBSSheetName.Text = ei.FBSSheetname;
+            txtUASheetName.Text = ei.UASheetname;
+            txtTriSheetName.Text = ei.TriSheetname;
+            txtChoSheetName.Text = ei.ChoSheetname;
+            txtSgotSheetName.Text = ei.SgotSheetname;
+            txtBunSheetName.Text = ei.BunSheetname;
+            txtUricSheetName.Text = ei.UricSheetname;
+            txtStoolExamSheetName.Text = ei.StoolExamSheetname;
+            txtToxiSheetName.Text = ei.ToxiSheetname;
+            txtEyeSheetName.Text = ei.EyeSheetname;
+            txtAudioSheetName.Text = ei.AudiogramSheetname;
+            txtLungSheetName.Text = ei.LungSheetname;
 
             lbPE.Left = label3.Left;
             lbXRay.Left = label3.Left;
@@ -344,14 +376,14 @@ namespace CheckUP.gui
         }
         private void SaveSgot()
         {
-            String No = "", sgot = "", sgpt = "", result = "", summary = "";
+            String No = "", sgot = "", sgpt = "", result = "", summary = "", alkaline="";
             ofd.ShowDialog();
 
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[txtSgotSheetName.Text];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
 
             if (xlRange.Cells[nmDSgotRow.Value, nmDSgotNo.Value].Value2 != null)
@@ -399,10 +431,20 @@ namespace CheckUP.gui
                 summary = "";
             }
             summary = summary.Trim();
+            if (xlRange.Cells[nmDSgotRow.Value, nmDSgotAakalineValue.Value].Value2 != null)
+            {
+                alkaline = xlRange.Cells[nmDSgotRow.Value, nmDSgotAakalineValue.Value].Value2.ToString();
+            }
+            else
+            {
+                alkaline = "";
+            }
+            alkaline = alkaline.Trim();
             txtSgotTest.Text = "ลำดับ " + No + " sgot " + sgot + " sgpt " + sgpt + " result " + result + " summary " + summary;
 
             Cursor.Current = cursor;
-            if (cc.eidb.updateSgot(nmDSgotvalue.Value.ToString(), nmDSgotNo.Value.ToString(), nmDSgotResult.Value.ToString(), nmDSgotRow.Value.ToString(), nmDSgotSgptValue.Value.ToString(), nmDSgotSummary.Value.ToString()).Length >= 1)
+            if (cc.eidb.updateSgot(nmDSgotvalue.Value.ToString(), nmDSgotNo.Value.ToString(), nmDSgotResult.Value.ToString(), nmDSgotRow.Value.ToString(), nmDSgotSgptValue.Value.ToString(),
+                nmDSgotSummary.Value.ToString(), txtSgotSheetName.Text, nmDSgotAakalineValue.Value.ToString()).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล Sgot เรียบร้อย", "บันทึกข้อมูล");
             }
@@ -416,7 +458,7 @@ namespace CheckUP.gui
             Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[txtBunSheetName.Text];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
 
             if (xlRange.Cells[nmDBunRow.Value, nmDBunNo.Value].Value2 != null)
@@ -467,7 +509,8 @@ namespace CheckUP.gui
             txtBunTest.Text = "ลำดับ " + No + " bun " + bun + " sgpt " + creatinine + " result " + result + " summary " + summary;
 
             Cursor.Current = cursor;
-            if (cc.eidb.updateBun(nmDBunRow.Value.ToString(), nmDBunNo.Value.ToString(),nmDBunValue.Value.ToString(),  nmDBunCreatinine.Value.ToString(), nmDBunResult.Value.ToString(), nmDBunSummary.Value.ToString()).Length >= 1)
+            if (cc.eidb.updateBun(nmDBunRow.Value.ToString(), nmDBunNo.Value.ToString(),nmDBunValue.Value.ToString(),  nmDBunCreatinine.Value.ToString(), nmDBunResult.Value.ToString(), 
+                nmDBunSummary.Value.ToString(),txtBunSheetName.Text).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล BUN เรียบร้อย", "บันทึกข้อมูล");
             }
@@ -481,7 +524,7 @@ namespace CheckUP.gui
             Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[txtUricSheetName.Text];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
 
             if (xlRange.Cells[nmDUricRow.Value, nmDUricNo.Value].Value2 != null)
@@ -523,7 +566,7 @@ namespace CheckUP.gui
             txtUricTest.Text = "ลำดับ " + No + " Uric " + uric + " result " + result + " summary " + summary;
 
             Cursor.Current = cursor;
-            if (cc.eidb.updateUric(nmDUricRow.Value.ToString(), nmDUricNo.Value.ToString(),nmDUricValue.Value.ToString(), nmDUricResult.Value.ToString(),  nmDUricSummary.Value.ToString()).Length >= 1)
+            if (cc.eidb.updateUric(nmDUricRow.Value.ToString(), nmDUricNo.Value.ToString(),nmDUricValue.Value.ToString(), nmDUricResult.Value.ToString(),  nmDUricSummary.Value.ToString(),txtUricSheetName.Text).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล Uric Acid เรียบร้อย", "บันทึกข้อมูล");
             }
@@ -537,7 +580,7 @@ namespace CheckUP.gui
             Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[txtChoSheetName.Text];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
 
             if (xlRange.Cells[nmDChoRow.Value, nmDChoNo.Value].Value2 != null)
@@ -600,7 +643,7 @@ namespace CheckUP.gui
             Cursor.Current = cursor;
             txtChoTest.Text = "ลำดับ " + No + " choles " + cho + " LDL " + ldl + " HDL " + hdl + " result " + result + " summary " + summary;
             if (cc.eidb.updateCholes(nmDChoRow.Value.ToString(), nmDChoNo.Value.ToString(),nmDChoValue.Value.ToString(), nmDChoResult.Value.ToString(), 
-                nmDChoSummary.Value.ToString(), nmDChoLDL.Value.ToString(), nmDChoHDL.Value.ToString()).Length >= 1)
+                nmDChoSummary.Value.ToString(), nmDChoLDL.Value.ToString(), nmDChoHDL.Value.ToString(),txtChoSheetName.Text).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล Choles เรียบร้อย", "บันทึกข้อมูล");
             }
@@ -614,7 +657,7 @@ namespace CheckUP.gui
             Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[txtTriSheetName.Text];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
 
             if (xlRange.Cells[nmDTriRow.Value, nmDTriNo.Value].Value2 != null)
@@ -656,21 +699,21 @@ namespace CheckUP.gui
             txtTriTest.Text = "ลำดับ " + No + " Trig " + tri + " result " + result + " summary " + summary;
 
             Cursor.Current = cursor;
-            if (cc.eidb.updateTrig(nmDTriValue.Value.ToString(), nmDTriNo.Value.ToString(), nmDTriResult.Value.ToString(), nmDTriRow.Value.ToString(), nmDTriSummary.Value.ToString()).Length >= 1)
+            if (cc.eidb.updateTrig(nmDTriValue.Value.ToString(), nmDTriNo.Value.ToString(), nmDTriResult.Value.ToString(), nmDTriRow.Value.ToString(), nmDTriSummary.Value.ToString(),txtTriSheetName.Text).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล Trig เรียบร้อย", "บันทึกข้อมูล");
             }
         }
         private void SaveUA()
         {
-            String No = "", color = "", appe = "", sugar = "", spgr = "", pH = "", protein = "", wbc = "", rbc = "", epi = "", bact = "", result = "", rbcmono = "", summary = "";
+            String No = "", color = "", appe = "", sugar = "", spgr = "", pH = "", protein = "", wbc = "", rbc = "", epi = "", bact = "", result = "", rbcmono = "", summary = "", glu = "";
             ofd.ShowDialog();
 
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[txtUASheetName.Text];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
 
             if (xlRange.Cells[nmDUARow.Value, nmDUANo.Value].Value2 != null)
@@ -791,27 +834,39 @@ namespace CheckUP.gui
                 summary = "";
             }
             summary = summary.Trim();
+
+            if (xlRange.Cells[nmDUARow.Value, nmDUAGlu.Value].Value2 != null)
+            {
+                glu = xlRange.Cells[nmDUARow.Value, nmDUAGlu.Value].Value2.ToString();
+            }
+            else
+            {
+                glu = "";
+            }
+            glu = glu.Trim();
             txtUATest.Text = "ลำดับ " + No + " color " + color + " spgr " + spgr + " sugar " + sugar + " appe " + appe + " protein " + protein + " pH " + pH + " wbc " + wbc +
-                " rbc " + rbc + " epi " + epi + " bact " + bact + " result " + result + " rbcmono " + rbcmono + " Summary " + summary;
+                " rbc " + rbc + " epi " + epi + " bact " + bact + " result " + result + " rbcmono " + rbcmono + " Glu " + glu + " Summary " + summary;
 
             Cursor.Current = cursor;
             if (cc.eidb.updateUA(nmDUAAppe.Value.ToString(), nmDUABact.Value.ToString(), nmDUAColor.Value.ToString(), nmDUAEpi.Value.ToString(),
                 nmDUANo.Value.ToString(), nmDUApH.Value.ToString(), nmDUAProtein.Value.ToString(), nmDUARBC.Value.ToString(), nmDUAResult.Value.ToString(), nmDUARow.Value.ToString(),
-                nmDUASpgr.Value.ToString(), nmDUASugar.Value.ToString(), nmDUASummary.Value.ToString(), nmDUAWBC.Value.ToString()).Length >= 1)
+                nmDUASpgr.Value.ToString(), nmDUASugar.Value.ToString(), nmDUASummary.Value.ToString(), nmDUAWBC.Value.ToString(), nmDUAGlu.Value.ToString(), nmDUAKetone.Value.ToString(), 
+                nmDUABlood.Value.ToString(),txtUASheetName.Text).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล UA เรียบร้อย", "บันทึกข้อมูล");
             }
         }
         private void SaveOther1()
         {
-            String No = "", HBsAg = "", HbsAb = "", AntiHIV = "", VDRL = "", Amphetamine = "", Calcium = "";
+            String No = "", HBsAg = "", HbsAb = "", AntiHIV = "", VDRL = "", Amphetamine = "", Calcium = "", AntiHav="";
+            String CAAFP = "", CACEA = "", CAPSA = "", CAHCG = "", CA153 = "", CA125 = "", CA199 = "";
             ofd.ShowDialog();
 
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[txtOther1SheetName.Text.Trim()];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
 
             if (xlRange.Cells[nmDOther1Row.Value, nmDOther1No.Value].Value2 != null)
@@ -877,11 +932,86 @@ namespace CheckUP.gui
                 Calcium = "";
             }
             Calcium = Calcium.Trim();
-            txtOther1Test.Text = "ลำดับ " + No + " HBsAg " + HBsAg + " HbsAb " + HbsAb + " AntiHIV " + AntiHIV + " VDRL " + VDRL + " Amphetamine " + Amphetamine + " Calcium " + Calcium;
+            if (xlRange.Cells[nmDOther1Row.Value, nmDOther1AntiHav.Value].Value2 != null)
+            {
+                AntiHav = xlRange.Cells[nmDOther1Row.Value, nmDOther1AntiHav.Value].Value2.ToString();
+            }
+            else
+            {
+                AntiHav = "";
+            }
+            AntiHav = AntiHav.Trim();
+
+            if (xlRange.Cells[nmDOther1Row.Value, nmDOther1CAAFP.Value].Value2 != null)
+            {
+                CAAFP = xlRange.Cells[nmDOther1Row.Value, nmDOther1CAAFP.Value].Value2.ToString();
+            }
+            else
+            {
+                CAAFP = "";
+            }
+            CAAFP = CAAFP.Trim();
+            if (xlRange.Cells[nmDOther1Row.Value, nmDOther1CACEA.Value].Value2 != null)
+            {
+                CACEA = xlRange.Cells[nmDOther1Row.Value, nmDOther1CACEA.Value].Value2.ToString();
+            }
+            else
+            {
+                CACEA = "";
+            }
+            CACEA = CACEA.Trim();
+            if (xlRange.Cells[nmDOther1Row.Value, nmDOther1CAPSA.Value].Value2 != null)
+            {
+                CAPSA = xlRange.Cells[nmDOther1Row.Value, nmDOther1CAPSA.Value].Value2.ToString();
+            }
+            else
+            {
+                CAPSA = "";
+            }
+            CAPSA = CAPSA.Trim();
+            if (xlRange.Cells[nmDOther1Row.Value, nmDOther1CAHCG.Value].Value2 != null)
+            {
+                CAHCG = xlRange.Cells[nmDOther1Row.Value, nmDOther1CAHCG.Value].Value2.ToString();
+            }
+            else
+            {
+                CAHCG = "";
+            }
+            CAHCG = CAHCG.Trim();
+            if (xlRange.Cells[nmDOther1Row.Value, nmDOther1CA153.Value].Value2 != null)
+            {
+                CA153 = xlRange.Cells[nmDOther1Row.Value, nmDOther1CA153.Value].Value2.ToString();
+            }
+            else
+            {
+                CA153 = "";
+            }
+            CA153 = CA153.Trim();
+            if (xlRange.Cells[nmDOther1Row.Value, nmDOther1CA125.Value].Value2 != null)
+            {
+                CA125 = xlRange.Cells[nmDOther1Row.Value, nmDOther1CA125.Value].Value2.ToString();
+            }
+            else
+            {
+                CA125 = "";
+            }
+            CA125 = CA125.Trim();
+            if (xlRange.Cells[nmDOther1Row.Value, nmDOther1CA199.Value].Value2 != null)
+            {
+                CA199 = xlRange.Cells[nmDOther1Row.Value, nmDOther1CA199.Value].Value2.ToString();
+            }
+            else
+            {
+                CA199 = "";
+            }
+            CA199 = CA199.Trim();
+            txtOther1Test.Text = "ลำดับ " + No + " HBsAg " + HBsAg + " HbsAb " + HbsAb + " AntiHIV " + AntiHIV + " VDRL " + VDRL + " Amphetamine " + Amphetamine + " Calcium " + Calcium + " AntiHav " + AntiHav+
+                " CAAFP " + CAAFP+" CACEA " + CACEA+" CAPSA " + CAPSA+" CAHCG " + CAHCG+" CA153 " + CA153+" CA125 " + CA125+" CA199 " + CA199;
 
             Cursor.Current = cursor;
-            if (cc.eidb.updateOther1(nmDOther1Amphetamine.Value.ToString(), nmDOther1AntiHIV.Value.ToString(), nmDOther1Calcium.Value.ToString(), nmDOther1HBsAb.Value.ToString(),
-                nmDOther1HBsAg.Value.ToString(), nmDOther1No.Value.ToString(), nmDOther1Row.Value.ToString(), nmDOther1VDRL.Value.ToString()).Length >= 1)
+            if (cc.eidb.UpdateOther1(nmDOther1Amphetamine.Value.ToString(), nmDOther1AntiHIV.Value.ToString(), nmDOther1Calcium.Value.ToString(), nmDOther1HBsAb.Value.ToString(),
+                nmDOther1HBsAg.Value.ToString(), nmDOther1No.Value.ToString(), nmDOther1Row.Value.ToString(), nmDOther1VDRL.Value.ToString(),txtOther1SheetName.Text, nmDOther1AntiHav.Value.ToString(),
+                nmDOther1CAAFP.Value.ToString(), nmDOther1CACEA.Value.ToString(), nmDOther1CAPSA.Value.ToString(), nmDOther1CAHCG.Value.ToString(), nmDOther1CA153.Value.ToString(), nmDOther1CA125.Value.ToString(), nmDOther1CA199.Value.ToString()).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล Other เรียบร้อย", "บันทึกข้อมูล");
             }
@@ -895,7 +1025,7 @@ namespace CheckUP.gui
             Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[txtLungSheetName.Text];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
 
             if (xlRange.Cells[nmDLungRow.Value, nmDLungNo.Value].Value2 != null)
@@ -985,7 +1115,7 @@ namespace CheckUP.gui
             Cursor.Current = cursor;
             if (cc.eidb.updateLung(nmDLungRow.Value.ToString(), nmDLungNo.Value.ToString(), nmDLungFvcPredic.Value.ToString(), nmDLungFvcMeas.Value.ToString(),
                 nmDLungFvcPer.Value.ToString(), nmDLungFev1Predic.Value.ToString(), nmDLungFev1Meas.Value.ToString(), nmDLungFev1Per.Value.ToString(), 
-                nmDLungPerFev1.Value.ToString(), nmDLungSummary.Value.ToString()).Length >= 1)
+                nmDLungPerFev1.Value.ToString(), nmDLungSummary.Value.ToString(),txtLungSheetName.Text).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล Lung เรียบร้อย", "บันทึกข้อมูล");
             }
@@ -1000,7 +1130,7 @@ namespace CheckUP.gui
             Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[txtAudioSheetName.Text];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
 
             if (xlRange.Cells[nmDAudioRow.Value, nmDAudioNo.Value].Value2 != null)
@@ -1172,7 +1302,8 @@ namespace CheckUP.gui
             Cursor.Current = cursor;
             if (cc.eidb.updateAudioGram(nmDAudioRow.Value.ToString(), nmDAudioNo.Value.ToString(),nmDAudiogram500L.Value.ToString(), nmDAudiogram500R.Value.ToString(), nmDAudiogram1000L.Value.ToString(), nmDAudiogram1000R.Value.ToString(),
                 nmDAudiogram2000L.Value.ToString(), nmDAudiogram2000R.Value.ToString(), nmDAudiogram3000L.Value.ToString(), nmDAudiogram3000R.Value.ToString(), nmDAudiogram4000L.Value.ToString(), nmDAudiogram4000R.Value.ToString(),
-                nmDAudiogram6000L.Value.ToString(), nmDAudiogram6000R.Value.ToString(), nmDAudiogram8000L.Value.ToString(), nmDAudiogram8000R.Value.ToString(), nmDAudiogramSummaryL.Value.ToString(), nmDAudiogramSummaryR.Value.ToString(), nmDAudiogramExam.Value.ToString()).Length >= 1)
+                nmDAudiogram6000L.Value.ToString(), nmDAudiogram6000R.Value.ToString(), nmDAudiogram8000L.Value.ToString(), nmDAudiogram8000R.Value.ToString(), nmDAudiogramSummaryL.Value.ToString(), nmDAudiogramSummaryR.Value.ToString(), 
+                nmDAudiogramExam.Value.ToString(),txtAudioSheetName.Text).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล AudioGram เรียบร้อย", "บันทึกข้อมูล");
             }
@@ -1186,7 +1317,7 @@ namespace CheckUP.gui
             Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[txtEyeSheetName.Text];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
 
             if (xlRange.Cells[nmDEyeRow.Value, nmDEyeNo.Value].Value2 != null)
@@ -1316,7 +1447,7 @@ namespace CheckUP.gui
             if (cc.eidb.updateEye(nmDEyeRow.Value.ToString(), nmDEyeNo.Value.ToString(), nmDEyeShortLongLeft.Value.ToString(), nmDEyeShortLongRight.Value.ToString(), nmDEyeSquintLeft.Value.ToString(), 
                 nmDEyeSquintRight.Value.ToString(),
                 nmDEyeDegreeLeft.Value.ToString(), nmDEyeDegreeRight.Value.ToString(), nmDEyeOldLeft.Value.ToString(), nmDEyeOldRight.Value.ToString(), nmDEyeResult.Value.ToString(),
-                nmDEyeSummary.Value.ToString(), nmDEyeBlindness.Value.ToString(), nmDEyeExam.Value.ToString()).Length >= 1)
+                nmDEyeSummary.Value.ToString(), nmDEyeBlindness.Value.ToString(), nmDEyeExam.Value.ToString(),txtEyeSheetName.Text).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล Eye เรียบร้อย", "บันทึกข้อมูล");
             }
@@ -1334,7 +1465,7 @@ namespace CheckUP.gui
             Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[txtToxiSheetName.Text];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
 
             if (xlRange.Cells[nmDToxiRow.Value, nmDToxiNo.Value].Value2 != null)
@@ -1621,7 +1752,7 @@ namespace CheckUP.gui
             Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[txtToxiSheetName.Text];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
 
             if (xlRange.Cells[nmDToxiRow.Value, nmDToxiNo.Value].Value2 != null)
@@ -1891,7 +2022,8 @@ namespace CheckUP.gui
             if (cc.eidb.updateToxi2(nmDToxiHippuric.Value.ToString(), nmDToxiMethyl.Value.ToString(), nmDToxiAcetone.Value.ToString(), nmDToxiNickel.Value.ToString(),
                 nmDToxiChromium.Value.ToString(), nmDToxiPhenol.Value.ToString(), nmDToxiKetone.Value.ToString(), nmDToxiBenzene.Value.ToString(),
                 nmDToxiMandelic.Value.ToString(), nmDToxiMethanol.Value.ToString(), nmDToxiEthanol.Value.ToString(), nmDToxiIPA.Value.ToString(), nmDToxiArsenic.Value.ToString(),
-                nmDToxiHexane.Value.ToString(), nmDToxiFomaldehyde.Value.ToString(), nmDToxiTrichloroethylene.Value.ToString(), nmDToxiAntimony.Value.ToString(), nmDToxiFluoride.Value.ToString()).Length >= 1)
+                nmDToxiHexane.Value.ToString(), nmDToxiFomaldehyde.Value.ToString(), nmDToxiTrichloroethylene.Value.ToString(), nmDToxiAntimony.Value.ToString(), 
+                nmDToxiFluoride.Value.ToString(),txtToxiSheetName.Text).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล Toxi2 เรียบร้อย", "บันทึกข้อมูล");
             }
@@ -1924,7 +2056,7 @@ namespace CheckUP.gui
             Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.PESheetname];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
 
             if (xlRange.Cells[nmDRow.Value, nmDDepartment.Value].Value2 != null)
@@ -2101,7 +2233,7 @@ namespace CheckUP.gui
 
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[txtPESheetName.Text];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
 
             if (xlRange.Cells[nmDPERow.Value, nmDPENo.Value].Value2 != null)
@@ -2202,14 +2334,14 @@ namespace CheckUP.gui
             Cursor.Current = cursor;
             if (cc.eidb.updatePE(nmDPENo.Value.ToString(), nmDPERow.Value.ToString(), nmDPEAge.Value.ToString(), nmDPEBMI.Value.ToString(),
                 nmDPEHeight.Value.ToString(), nmDPEWeight.Value.ToString(), nmDPEPulse.Value.ToString(), nmDPEVi.Value.ToString(), nmDPEResult.Value.ToString(),
-                nmDPESummary.Value.ToString(), nmDPEBloodGroup.Value.ToString()).Length >= 1)
+                nmDPESummary.Value.ToString(), nmDPEBloodGroup.Value.ToString(),txtPESheetName.Text).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล PE เรียบร้อย", "บันทึกข้อมูล");
             }
         }
         private void SaveStoolExam()
         {
-            String StoolExamRow = "", StoolExamNo = "", StoolExamColor = "", StoolExamAppearance = "", StoolExamWBC = "", StoolExamRBC = "", Parasite = "", StoolExamSummary = "";
+            String StoolExamRow = "", StoolExamNo = "", StoolExamColor = "", StoolExamAppearance = "", StoolExamWBC = "", StoolExamRBC = "", Parasite = "", StoolExamSummary = "", Culture="";
             ofd.ShowDialog();
 
             Cursor cursor = Cursor.Current;
@@ -2283,12 +2415,24 @@ namespace CheckUP.gui
                 StoolExamSummary = "";
             }
             StoolExamSummary = StoolExamSummary.Trim();
+
+            if (xlRange.Cells[nmDStoolExamRow.Value, nmDStoolExamCulture.Value].Value2 != null)
+            {
+                Culture = xlRange.Cells[nmDStoolExamRow.Value, nmDStoolExamCulture.Value].Value2.ToString();
+            }
+            else
+            {
+                Culture = "";
+            }
+            Parasite = Parasite.Trim();
+
             txtStoolExamTest.Text = "ลำดับ " + StoolExamNo + " Color " + StoolExamColor + " Appearance " + StoolExamAppearance + " WBC " + StoolExamWBC +
-                " RBC " + StoolExamRBC + " Parasite " + Parasite + " Summary " + StoolExamSummary;
+                " RBC " + StoolExamRBC + " Parasite " + Parasite + " Culture " + Culture + " Summary " + StoolExamSummary;
 
             Cursor.Current = cursor;
             if (cc.eidb.updateStoolExam(nmDStoolExamRow.Value.ToString(), nmDStoolExamNo.Value.ToString(), nmDStoolExamAppearance.Value.ToString(), nmDStoolExamColor.Value.ToString(),
-                nmDStoolExamWBC.Value.ToString(), nmDStoolExamRBC.Value.ToString(), nmDStoolExamParasite.Value.ToString(), nmDStoolExamSummary.Value.ToString()).Length >= 1)
+                nmDStoolExamWBC.Value.ToString(), nmDStoolExamRBC.Value.ToString(), nmDStoolExamParasite.Value.ToString(), nmDStoolExamSummary.Value.ToString(), 
+                nmDStoolExamCulture.Value.ToString(), nmDStoolExamTyHoidH.Value.ToString(), nmDStoolExamTyHoidO.Value.ToString(),txtStoolExamSheetName.Text).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล StoolExam เรียบร้อย", "บันทึกข้อมูล");
             }
@@ -2303,7 +2447,7 @@ namespace CheckUP.gui
             Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[txtXRaySheetName.Text];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
 
             if (xlRange.Cells[nmDPERow.Value, nmDXRayNo.Value].Value2 != null)
@@ -2336,7 +2480,7 @@ namespace CheckUP.gui
             txtXRayTest.Text = "ลำดับ " + No + " XRay " + xray + " summary " + summary;
 
             Cursor.Current = cursor;
-            if (cc.eidb.updateXray(nmDXRayValue.Value.ToString(), nmDXRayNo.Value.ToString(), nmDXRayRow.Value.ToString(), nmDXRaySummary.Value.ToString()).Length >= 1)
+            if (cc.eidb.updateXray(nmDXRayValue.Value.ToString(), nmDXRayNo.Value.ToString(), nmDXRayRow.Value.ToString(), nmDXRaySummary.Value.ToString(),txtXRaySheetName.Text).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล XRay เรียบร้อย", "บันทึกข้อมูล");
             }
@@ -2351,7 +2495,7 @@ namespace CheckUP.gui
             Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[txtCBCSheetName.Text];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
 
             if (xlRange.Cells[nmDCBCRow.Value, nmDCBCNo.Value].Value2 != null)
@@ -2486,7 +2630,8 @@ namespace CheckUP.gui
             Cursor.Current = cursor;
             if (cc.eidb.updateCBC(nmDCBCBact.Value.ToString(), nmDCBCEos.Value.ToString(), nmDCBCHb.Value.ToString(), nmDCBCHct.Value.ToString(),
                 nmDCBCLy.Value.ToString(), nmDCBCMono.Value.ToString(), nmDCBCNeu.Value.ToString(), nmDCBCNo.Value.ToString(), nmDCBCPltC.Value.ToString(), nmDCBCPltS.Value.ToString(),
-                nmDCBCRBC.Value.ToString(), nmDCBCRBCmono.Value.ToString(), nmDCBCRow.Value.ToString(), nmDCBCSummary.Value.ToString(), nmDCBCWBC.Value.ToString(), nmDCBCPmn.Value.ToString()).Length >= 1)
+                nmDCBCRBC.Value.ToString(), nmDCBCRBCmono.Value.ToString(), nmDCBCRow.Value.ToString(), nmDCBCSummary.Value.ToString(), nmDCBCWBC.Value.ToString(), 
+                nmDCBCPmn.Value.ToString(),txtCBCSheetName.Text).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
             }
@@ -2501,7 +2646,7 @@ namespace CheckUP.gui
             Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[txtFBSSheetName.Text];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
 
             if (xlRange.Cells[nmDFBSRow.Value, nmDXRayNo.Value].Value2 != null)
@@ -2543,7 +2688,7 @@ namespace CheckUP.gui
             txtFBSTest.Text = "ลำดับ " + No + " fbs " + fbs + " result " + result + " summary " + summary;
 
             Cursor.Current = cursor;
-            if (cc.eidb.updateFBS(nmDFBSValue.Value.ToString(), nmDFBSNo.Value.ToString(), nmDFBSResult.Value.ToString(), nmDFBSRow.Value.ToString(), nmDFBSSummary.Value.ToString()).Length >= 1)
+            if (cc.eidb.updateFBS(nmDFBSValue.Value.ToString(), nmDFBSNo.Value.ToString(), nmDFBSResult.Value.ToString(), nmDFBSRow.Value.ToString(), nmDFBSSummary.Value.ToString(),txtFBSSheetName.Text).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล FBS เรียบร้อย", "บันทึกข้อมูล");
             }
