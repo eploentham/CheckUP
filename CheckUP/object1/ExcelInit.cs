@@ -23,7 +23,7 @@ namespace CheckUP.object1
 
         public String TriRow = "", TriNo = "", Triglyceride = "", TriResult = "", TriSummary = "", TriSheetname = "";
 
-        public String ChoRow = "", ChoNo = "", Cholesteral = "", ChoResult = "", Chosummary = "", ChoLDL = "", ChoHDL = "", ChoSheetname = "";
+        public String ChoRow = "", ChoNo = "", Cholesteral = "", ChoResult = "", Chosummary = "", ChoLDL = "", ChoLDLResult = "", ChoLDLsummary = "", ChoHDL = "", ChoHDLResult = "", ChoHDLsummary = "", ChoSheetname = "";
 
         public String SgotRow = "", SgotNo = "", Sgot = "", Sgpt = "", SgotResult = "", SgptSummary = "", SgotALP = "", SgotSheetname = "", SgotAlkaline = "";
 
@@ -32,7 +32,7 @@ namespace CheckUP.object1
         public String UricRow = "", UricNo = "", UricAcid = "", UricResult = "", UricSummary = "", UricSheetname = "";
 
         public String Other1Row = "", Other1No = "", Other1HBsAg = "", Other1HBsAb = "", Other1AntiHIV = "", Other1VDRL = "", Other1Calcium = "", Other1Amphetamine = "", Other1Sheetname = "", Other1AntiHav = "", Other1Hbtyping="";
-        public String CAAFP = "", CACEA = "", CAPSA = "", CAHCG = "", CA153 = "", CA125 = "", CA199 = "";
+        public String CAAFP = "", CACEA = "", CAPSA = "", CAHCG = "", CA153 = "", CA125 = "", CA199 = "", Other1HBsAgResult = "", Other1HBsAgSummary = "", Other1HBsAbResult = "", Other1HBsAbSummary = "";
 
         public String LungRow = "", LungNo = "", LungFvcPredic = "", LungFvcMeas = "", LungFvcPer = "", LungFev1Predic = "", LungFev1Meas = "", LungFev1Per = "", LungPerFev1 = "", LungSummary = "", LungSheetname = "";
 

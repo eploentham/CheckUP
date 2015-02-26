@@ -188,6 +188,9 @@
             this.label72 = new System.Windows.Forms.Label();
             this.label73 = new System.Windows.Forms.Label();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.txtSgotAlkalineNormal = new System.Windows.Forms.TextBox();
+            this.txtSgotAlkaline = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.txtSgotALTNormal = new System.Windows.Forms.TextBox();
             this.txtSgotSgptNormal = new System.Windows.Forms.TextBox();
             this.txtSgotNormal = new System.Windows.Forms.TextBox();
@@ -469,9 +472,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtAge = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtSgotAlkalineNormal = new System.Windows.Forms.TextBox();
-            this.txtSgotAlkaline = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
+            this.txtLDLResult = new System.Windows.Forms.TextBox();
+            this.txtLDLSummary = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtHDLResult = new System.Windows.Forms.TextBox();
+            this.txtHDLSummary = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
             this.tC.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -2014,6 +2022,14 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.txtHDLResult);
+            this.tabPage8.Controls.Add(this.txtHDLSummary);
+            this.tabPage8.Controls.Add(this.label33);
+            this.tabPage8.Controls.Add(this.label44);
+            this.tabPage8.Controls.Add(this.txtLDLResult);
+            this.tabPage8.Controls.Add(this.txtLDLSummary);
+            this.tabPage8.Controls.Add(this.label23);
+            this.tabPage8.Controls.Add(this.label24);
             this.tabPage8.Controls.Add(this.txtChoHDLNormal);
             this.tabPage8.Controls.Add(this.txtChoHDL);
             this.tabPage8.Controls.Add(this.label13);
@@ -2041,7 +2057,7 @@
             this.txtChoHDLNormal.BackColor = System.Drawing.SystemColors.Control;
             this.txtChoHDLNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtChoHDLNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtChoHDLNormal.Location = new System.Drawing.Point(309, 128);
+            this.txtChoHDLNormal.Location = new System.Drawing.Point(309, 294);
             this.txtChoHDLNormal.Name = "txtChoHDLNormal";
             this.txtChoHDLNormal.Size = new System.Drawing.Size(173, 13);
             this.txtChoHDLNormal.TabIndex = 118;
@@ -2049,7 +2065,7 @@
             // txtChoHDL
             // 
             this.txtChoHDL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtChoHDL.Location = new System.Drawing.Point(203, 126);
+            this.txtChoHDL.Location = new System.Drawing.Point(203, 292);
             this.txtChoHDL.Name = "txtChoHDL";
             this.txtChoHDL.Size = new System.Drawing.Size(100, 22);
             this.txtChoHDL.TabIndex = 117;
@@ -2058,7 +2074,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label13.Location = new System.Drawing.Point(54, 126);
+            this.label13.Location = new System.Drawing.Point(54, 292);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(35, 16);
             this.label13.TabIndex = 116;
@@ -2069,7 +2085,7 @@
             this.txtChoLDLNormal.BackColor = System.Drawing.SystemColors.Control;
             this.txtChoLDLNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtChoLDLNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtChoLDLNormal.Location = new System.Drawing.Point(309, 100);
+            this.txtChoLDLNormal.Location = new System.Drawing.Point(309, 176);
             this.txtChoLDLNormal.Name = "txtChoLDLNormal";
             this.txtChoLDLNormal.Size = new System.Drawing.Size(173, 13);
             this.txtChoLDLNormal.TabIndex = 115;
@@ -2077,7 +2093,7 @@
             // txtChoLDL
             // 
             this.txtChoLDL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtChoLDL.Location = new System.Drawing.Point(203, 98);
+            this.txtChoLDL.Location = new System.Drawing.Point(203, 174);
             this.txtChoLDL.Name = "txtChoLDL";
             this.txtChoLDL.Size = new System.Drawing.Size(100, 22);
             this.txtChoLDL.TabIndex = 114;
@@ -2086,7 +2102,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label12.Location = new System.Drawing.Point(54, 98);
+            this.label12.Location = new System.Drawing.Point(54, 174);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(32, 16);
             this.label12.TabIndex = 113;
@@ -2124,7 +2140,7 @@
             // txtChoResult
             // 
             this.txtChoResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtChoResult.Location = new System.Drawing.Point(203, 217);
+            this.txtChoResult.Location = new System.Drawing.Point(203, 98);
             this.txtChoResult.Name = "txtChoResult";
             this.txtChoResult.Size = new System.Drawing.Size(519, 22);
             this.txtChoResult.TabIndex = 52;
@@ -2132,7 +2148,7 @@
             // txtChoSummary
             // 
             this.txtChoSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtChoSummary.Location = new System.Drawing.Point(203, 290);
+            this.txtChoSummary.Location = new System.Drawing.Point(203, 126);
             this.txtChoSummary.Name = "txtChoSummary";
             this.txtChoSummary.Size = new System.Drawing.Size(924, 22);
             this.txtChoSummary.TabIndex = 51;
@@ -2141,7 +2157,7 @@
             // 
             this.label71.AutoSize = true;
             this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label71.Location = new System.Drawing.Point(54, 220);
+            this.label71.Location = new System.Drawing.Point(54, 101);
             this.label71.Name = "label71";
             this.label71.Size = new System.Drawing.Size(72, 16);
             this.label71.TabIndex = 45;
@@ -2151,7 +2167,7 @@
             // 
             this.label72.AutoSize = true;
             this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label72.Location = new System.Drawing.Point(54, 293);
+            this.label72.Location = new System.Drawing.Point(54, 129);
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(92, 16);
             this.label72.TabIndex = 44;
@@ -2193,6 +2209,34 @@
             this.tabPage9.TabIndex = 9;
             this.tabPage9.Text = "tabPage9";
             this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // txtSgotAlkalineNormal
+            // 
+            this.txtSgotAlkalineNormal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtSgotAlkalineNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSgotAlkalineNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtSgotAlkalineNormal.Location = new System.Drawing.Point(635, 130);
+            this.txtSgotAlkalineNormal.Name = "txtSgotAlkalineNormal";
+            this.txtSgotAlkalineNormal.Size = new System.Drawing.Size(173, 13);
+            this.txtSgotAlkalineNormal.TabIndex = 117;
+            // 
+            // txtSgotAlkaline
+            // 
+            this.txtSgotAlkaline.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtSgotAlkaline.Location = new System.Drawing.Point(529, 127);
+            this.txtSgotAlkaline.Name = "txtSgotAlkaline";
+            this.txtSgotAlkaline.Size = new System.Drawing.Size(100, 22);
+            this.txtSgotAlkaline.TabIndex = 116;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label19.Location = new System.Drawing.Point(448, 130);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(56, 16);
+            this.label19.TabIndex = 115;
+            this.label19.Text = "Alkaline";
             // 
             // txtSgotALTNormal
             // 
@@ -5070,33 +5114,77 @@
             this.label8.TabIndex = 66;
             this.label8.Text = "อายุ :";
             // 
-            // txtSgotAlkalineNormal
+            // txtLDLResult
             // 
-            this.txtSgotAlkalineNormal.BackColor = System.Drawing.SystemColors.Control;
-            this.txtSgotAlkalineNormal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSgotAlkalineNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtSgotAlkalineNormal.Location = new System.Drawing.Point(635, 130);
-            this.txtSgotAlkalineNormal.Name = "txtSgotAlkalineNormal";
-            this.txtSgotAlkalineNormal.Size = new System.Drawing.Size(173, 13);
-            this.txtSgotAlkalineNormal.TabIndex = 117;
+            this.txtLDLResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtLDLResult.Location = new System.Drawing.Point(203, 202);
+            this.txtLDLResult.Name = "txtLDLResult";
+            this.txtLDLResult.Size = new System.Drawing.Size(519, 22);
+            this.txtLDLResult.TabIndex = 122;
             // 
-            // txtSgotAlkaline
+            // txtLDLSummary
             // 
-            this.txtSgotAlkaline.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtSgotAlkaline.Location = new System.Drawing.Point(529, 127);
-            this.txtSgotAlkaline.Name = "txtSgotAlkaline";
-            this.txtSgotAlkaline.Size = new System.Drawing.Size(100, 22);
-            this.txtSgotAlkaline.TabIndex = 116;
+            this.txtLDLSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtLDLSummary.Location = new System.Drawing.Point(203, 230);
+            this.txtLDLSummary.Name = "txtLDLSummary";
+            this.txtLDLSummary.Size = new System.Drawing.Size(924, 22);
+            this.txtLDLSummary.TabIndex = 121;
             // 
-            // label19
+            // label23
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label19.Location = new System.Drawing.Point(448, 130);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(56, 16);
-            this.label19.TabIndex = 115;
-            this.label19.Text = "Alkaline";
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label23.Location = new System.Drawing.Point(54, 205);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(72, 16);
+            this.label23.TabIndex = 120;
+            this.label23.Text = "ผลการตรวจ  :";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label24.Location = new System.Drawing.Point(54, 233);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(92, 16);
+            this.label24.TabIndex = 119;
+            this.label24.Text = "สรุปผลการตรวจ  :";
+            // 
+            // txtHDLResult
+            // 
+            this.txtHDLResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtHDLResult.Location = new System.Drawing.Point(203, 320);
+            this.txtHDLResult.Name = "txtHDLResult";
+            this.txtHDLResult.Size = new System.Drawing.Size(519, 22);
+            this.txtHDLResult.TabIndex = 126;
+            // 
+            // txtHDLSummary
+            // 
+            this.txtHDLSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtHDLSummary.Location = new System.Drawing.Point(203, 348);
+            this.txtHDLSummary.Name = "txtHDLSummary";
+            this.txtHDLSummary.Size = new System.Drawing.Size(924, 22);
+            this.txtHDLSummary.TabIndex = 125;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label33.Location = new System.Drawing.Point(54, 323);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(72, 16);
+            this.label33.TabIndex = 124;
+            this.label33.Text = "ผลการตรวจ  :";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label44.Location = new System.Drawing.Point(54, 351);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(92, 16);
+            this.label44.TabIndex = 123;
+            this.label44.Text = "สรุปผลการตรวจ  :";
             // 
             // FrmCheckUpEdit
             // 
@@ -5601,5 +5689,13 @@
         private System.Windows.Forms.TextBox txtSgotAlkalineNormal;
         private System.Windows.Forms.TextBox txtSgotAlkaline;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txtHDLResult;
+        private System.Windows.Forms.TextBox txtHDLSummary;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox txtLDLResult;
+        private System.Windows.Forms.TextBox txtLDLSummary;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
     }
 }

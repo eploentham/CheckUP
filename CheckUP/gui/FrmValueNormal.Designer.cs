@@ -147,10 +147,33 @@
             this.label78 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.txtUricFeMaleValue = new System.Windows.Forms.TextBox();
+            this.label83 = new System.Windows.Forms.Label();
             this.btnUricSave = new System.Windows.Forms.Button();
-            this.txtUricValue = new System.Windows.Forms.TextBox();
+            this.txtUricMaleValue = new System.Windows.Forms.TextBox();
             this.label84 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label80 = new System.Windows.Forms.Label();
+            this.txtCA199 = new System.Windows.Forms.TextBox();
+            this.label82 = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
+            this.txtCA125 = new System.Windows.Forms.TextBox();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
+            this.txtCA153 = new System.Windows.Forms.TextBox();
+            this.label74 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
+            this.txtCAPSA = new System.Windows.Forms.TextBox();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.txtCAHCF = new System.Windows.Forms.TextBox();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.txtCACEA = new System.Windows.Forms.TextBox();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.txtCAAFP = new System.Windows.Forms.TextBox();
+            this.label62 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.txtAntiHav = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
@@ -317,27 +340,8 @@
             this.label160 = new System.Windows.Forms.Label();
             this.label161 = new System.Windows.Forms.Label();
             this.tabPage15 = new System.Windows.Forms.TabPage();
-            this.label53 = new System.Windows.Forms.Label();
-            this.txtCAAFP = new System.Windows.Forms.TextBox();
-            this.label62 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.txtCACEA = new System.Windows.Forms.TextBox();
-            this.label66 = new System.Windows.Forms.Label();
-            this.label67 = new System.Windows.Forms.Label();
-            this.txtCAHCF = new System.Windows.Forms.TextBox();
-            this.label68 = new System.Windows.Forms.Label();
-            this.label69 = new System.Windows.Forms.Label();
-            this.txtCAPSA = new System.Windows.Forms.TextBox();
-            this.label71 = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
-            this.txtCA153 = new System.Windows.Forms.TextBox();
-            this.label74 = new System.Windows.Forms.Label();
-            this.label75 = new System.Windows.Forms.Label();
-            this.txtCA125 = new System.Windows.Forms.TextBox();
-            this.label79 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
-            this.txtCA199 = new System.Windows.Forms.TextBox();
-            this.label82 = new System.Windows.Forms.Label();
+            this.label85 = new System.Windows.Forms.Label();
+            this.label86 = new System.Windows.Forms.Label();
             this.tC.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
@@ -1210,6 +1214,8 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.label86);
+            this.tabPage8.Controls.Add(this.label85);
             this.tabPage8.Controls.Add(this.label3);
             this.tabPage8.Controls.Add(this.txtChoHDL);
             this.tabPage8.Controls.Add(this.label13);
@@ -1232,9 +1238,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label3.Location = new System.Drawing.Point(493, 73);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 16);
+            this.label3.Size = new System.Drawing.Size(220, 16);
             this.label3.TabIndex = 118;
-            this.label3.Text = "<200@mg/dl";
+            this.label3.Text = "<200@mg/dl ไม่ต้องใส่เครื่องหมายน้อยกว่า";
             // 
             // txtChoHDL
             // 
@@ -1573,8 +1579,10 @@
             // 
             // tabPage11
             // 
+            this.tabPage11.Controls.Add(this.txtUricFeMaleValue);
+            this.tabPage11.Controls.Add(this.label83);
             this.tabPage11.Controls.Add(this.btnUricSave);
-            this.tabPage11.Controls.Add(this.txtUricValue);
+            this.tabPage11.Controls.Add(this.txtUricMaleValue);
             this.tabPage11.Controls.Add(this.label84);
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
@@ -1583,6 +1591,24 @@
             this.tabPage11.TabIndex = 11;
             this.tabPage11.Text = "tabPage11";
             this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // txtUricFeMaleValue
+            // 
+            this.txtUricFeMaleValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtUricFeMaleValue.Location = new System.Drawing.Point(210, 111);
+            this.txtUricFeMaleValue.Name = "txtUricFeMaleValue";
+            this.txtUricFeMaleValue.Size = new System.Drawing.Size(255, 22);
+            this.txtUricFeMaleValue.TabIndex = 95;
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label83.Location = new System.Drawing.Point(58, 114);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(111, 16);
+            this.label83.TabIndex = 94;
+            this.label83.Text = "Uric Acid Female";
             // 
             // btnUricSave
             // 
@@ -1595,13 +1621,13 @@
             this.btnUricSave.UseVisualStyleBackColor = true;
             this.btnUricSave.Click += new System.EventHandler(this.btnUricSave_Click);
             // 
-            // txtUricValue
+            // txtUricMaleValue
             // 
-            this.txtUricValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtUricValue.Location = new System.Drawing.Point(210, 50);
-            this.txtUricValue.Name = "txtUricValue";
-            this.txtUricValue.Size = new System.Drawing.Size(255, 22);
-            this.txtUricValue.TabIndex = 92;
+            this.txtUricMaleValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtUricMaleValue.Location = new System.Drawing.Point(210, 50);
+            this.txtUricMaleValue.Name = "txtUricMaleValue";
+            this.txtUricMaleValue.Size = new System.Drawing.Size(255, 22);
+            this.txtUricMaleValue.TabIndex = 92;
             // 
             // label84
             // 
@@ -1609,9 +1635,9 @@
             this.label84.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label84.Location = new System.Drawing.Point(58, 53);
             this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(62, 16);
+            this.label84.Size = new System.Drawing.Size(95, 16);
             this.label84.TabIndex = 49;
-            this.label84.Text = "Uric Acid";
+            this.label84.Text = "Uric Acid Male";
             // 
             // tabPage2
             // 
@@ -1660,6 +1686,202 @@
             this.tabPage2.TabIndex = 12;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label80.Location = new System.Drawing.Point(744, 358);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(63, 16);
+            this.label80.TabIndex = 148;
+            this.label80.Text = "Negative";
+            // 
+            // txtCA199
+            // 
+            this.txtCA199.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCA199.Location = new System.Drawing.Point(599, 355);
+            this.txtCA199.Name = "txtCA199";
+            this.txtCA199.Size = new System.Drawing.Size(123, 22);
+            this.txtCA199.TabIndex = 147;
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label82.Location = new System.Drawing.Point(483, 358);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(54, 16);
+            this.label82.TabIndex = 146;
+            this.label82.Text = "CA 19-9";
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label75.Location = new System.Drawing.Point(744, 307);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(63, 16);
+            this.label75.TabIndex = 145;
+            this.label75.Text = "Negative";
+            // 
+            // txtCA125
+            // 
+            this.txtCA125.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCA125.Location = new System.Drawing.Point(599, 304);
+            this.txtCA125.Name = "txtCA125";
+            this.txtCA125.Size = new System.Drawing.Size(123, 22);
+            this.txtCA125.TabIndex = 144;
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label79.Location = new System.Drawing.Point(483, 307);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(50, 16);
+            this.label79.TabIndex = 143;
+            this.label79.Text = "CA 125";
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label72.Location = new System.Drawing.Point(744, 249);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(63, 16);
+            this.label72.TabIndex = 142;
+            this.label72.Text = "Negative";
+            // 
+            // txtCA153
+            // 
+            this.txtCA153.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCA153.Location = new System.Drawing.Point(599, 246);
+            this.txtCA153.Name = "txtCA153";
+            this.txtCA153.Size = new System.Drawing.Size(123, 22);
+            this.txtCA153.TabIndex = 141;
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label74.Location = new System.Drawing.Point(483, 249);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(50, 16);
+            this.label74.TabIndex = 140;
+            this.label74.Text = "CA 153";
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label69.Location = new System.Drawing.Point(744, 200);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(63, 16);
+            this.label69.TabIndex = 139;
+            this.label69.Text = "Negative";
+            // 
+            // txtCAPSA
+            // 
+            this.txtCAPSA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCAPSA.Location = new System.Drawing.Point(599, 197);
+            this.txtCAPSA.Name = "txtCAPSA";
+            this.txtCAPSA.Size = new System.Drawing.Size(123, 22);
+            this.txtCAPSA.TabIndex = 138;
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label71.Location = new System.Drawing.Point(483, 200);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(56, 16);
+            this.label71.TabIndex = 137;
+            this.label71.Text = "CA PSA";
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label67.Location = new System.Drawing.Point(744, 145);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(63, 16);
+            this.label67.TabIndex = 136;
+            this.label67.Text = "Negative";
+            // 
+            // txtCAHCF
+            // 
+            this.txtCAHCF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCAHCF.Location = new System.Drawing.Point(599, 142);
+            this.txtCAHCF.Name = "txtCAHCF";
+            this.txtCAHCF.Size = new System.Drawing.Size(123, 22);
+            this.txtCAHCF.TabIndex = 135;
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label68.Location = new System.Drawing.Point(483, 145);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(58, 16);
+            this.label68.TabIndex = 134;
+            this.label68.Text = "CA HCG";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label65.Location = new System.Drawing.Point(744, 94);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(63, 16);
+            this.label65.TabIndex = 133;
+            this.label65.Text = "Negative";
+            // 
+            // txtCACEA
+            // 
+            this.txtCACEA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCACEA.Location = new System.Drawing.Point(599, 91);
+            this.txtCACEA.Name = "txtCACEA";
+            this.txtCACEA.Size = new System.Drawing.Size(123, 22);
+            this.txtCACEA.TabIndex = 132;
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label66.Location = new System.Drawing.Point(483, 94);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(56, 16);
+            this.label66.TabIndex = 131;
+            this.label66.Text = "CA CEA";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label53.Location = new System.Drawing.Point(744, 42);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(63, 16);
+            this.label53.TabIndex = 130;
+            this.label53.Text = "Negative";
+            // 
+            // txtCAAFP
+            // 
+            this.txtCAAFP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCAAFP.Location = new System.Drawing.Point(599, 39);
+            this.txtCAAFP.Name = "txtCAAFP";
+            this.txtCAAFP.Size = new System.Drawing.Size(123, 22);
+            this.txtCAAFP.TabIndex = 129;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label62.Location = new System.Drawing.Point(483, 42);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(55, 16);
+            this.label62.TabIndex = 128;
+            this.label62.Text = "CA AFP";
             // 
             // label50
             // 
@@ -3320,201 +3542,25 @@
             this.tabPage15.Text = "tabPage15";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
-            // label53
+            // label85
             // 
-            this.label53.AutoSize = true;
-            this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label53.Location = new System.Drawing.Point(744, 42);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(63, 16);
-            this.label53.TabIndex = 130;
-            this.label53.Text = "Negative";
+            this.label85.AutoSize = true;
+            this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label85.Location = new System.Drawing.Point(493, 104);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(212, 16);
+            this.label85.TabIndex = 119;
+            this.label85.Text = ">60@mg/dl ไม่ต้องใส่เครื่องหมายมากกว่า";
             // 
-            // txtCAAFP
+            // label86
             // 
-            this.txtCAAFP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCAAFP.Location = new System.Drawing.Point(599, 39);
-            this.txtCAAFP.Name = "txtCAAFP";
-            this.txtCAAFP.Size = new System.Drawing.Size(123, 22);
-            this.txtCAAFP.TabIndex = 129;
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label62.Location = new System.Drawing.Point(483, 42);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(55, 16);
-            this.label62.TabIndex = 128;
-            this.label62.Text = "CA AFP";
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label65.Location = new System.Drawing.Point(744, 94);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(63, 16);
-            this.label65.TabIndex = 133;
-            this.label65.Text = "Negative";
-            // 
-            // txtCACEA
-            // 
-            this.txtCACEA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCACEA.Location = new System.Drawing.Point(599, 91);
-            this.txtCACEA.Name = "txtCACEA";
-            this.txtCACEA.Size = new System.Drawing.Size(123, 22);
-            this.txtCACEA.TabIndex = 132;
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label66.Location = new System.Drawing.Point(483, 94);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(56, 16);
-            this.label66.TabIndex = 131;
-            this.label66.Text = "CA CEA";
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label67.Location = new System.Drawing.Point(744, 145);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(63, 16);
-            this.label67.TabIndex = 136;
-            this.label67.Text = "Negative";
-            // 
-            // txtCAHCF
-            // 
-            this.txtCAHCF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCAHCF.Location = new System.Drawing.Point(599, 142);
-            this.txtCAHCF.Name = "txtCAHCF";
-            this.txtCAHCF.Size = new System.Drawing.Size(123, 22);
-            this.txtCAHCF.TabIndex = 135;
-            // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label68.Location = new System.Drawing.Point(483, 145);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(58, 16);
-            this.label68.TabIndex = 134;
-            this.label68.Text = "CA HCG";
-            // 
-            // label69
-            // 
-            this.label69.AutoSize = true;
-            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label69.Location = new System.Drawing.Point(744, 200);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(63, 16);
-            this.label69.TabIndex = 139;
-            this.label69.Text = "Negative";
-            // 
-            // txtCAPSA
-            // 
-            this.txtCAPSA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCAPSA.Location = new System.Drawing.Point(599, 197);
-            this.txtCAPSA.Name = "txtCAPSA";
-            this.txtCAPSA.Size = new System.Drawing.Size(123, 22);
-            this.txtCAPSA.TabIndex = 138;
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label71.Location = new System.Drawing.Point(483, 200);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(56, 16);
-            this.label71.TabIndex = 137;
-            this.label71.Text = "CA PSA";
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label72.Location = new System.Drawing.Point(744, 249);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(63, 16);
-            this.label72.TabIndex = 142;
-            this.label72.Text = "Negative";
-            // 
-            // txtCA153
-            // 
-            this.txtCA153.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCA153.Location = new System.Drawing.Point(599, 246);
-            this.txtCA153.Name = "txtCA153";
-            this.txtCA153.Size = new System.Drawing.Size(123, 22);
-            this.txtCA153.TabIndex = 141;
-            // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label74.Location = new System.Drawing.Point(483, 249);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(50, 16);
-            this.label74.TabIndex = 140;
-            this.label74.Text = "CA 153";
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label75.Location = new System.Drawing.Point(744, 307);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(63, 16);
-            this.label75.TabIndex = 145;
-            this.label75.Text = "Negative";
-            // 
-            // txtCA125
-            // 
-            this.txtCA125.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCA125.Location = new System.Drawing.Point(599, 304);
-            this.txtCA125.Name = "txtCA125";
-            this.txtCA125.Size = new System.Drawing.Size(123, 22);
-            this.txtCA125.TabIndex = 144;
-            // 
-            // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label79.Location = new System.Drawing.Point(483, 307);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(50, 16);
-            this.label79.TabIndex = 143;
-            this.label79.Text = "CA 125";
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label80.Location = new System.Drawing.Point(744, 358);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(63, 16);
-            this.label80.TabIndex = 148;
-            this.label80.Text = "Negative";
-            // 
-            // txtCA199
-            // 
-            this.txtCA199.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCA199.Location = new System.Drawing.Point(599, 355);
-            this.txtCA199.Name = "txtCA199";
-            this.txtCA199.Size = new System.Drawing.Size(123, 22);
-            this.txtCA199.TabIndex = 147;
-            // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label82.Location = new System.Drawing.Point(483, 358);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(54, 16);
-            this.label82.TabIndex = 146;
-            this.label82.Text = "CA 19-9";
+            this.label86.AutoSize = true;
+            this.label86.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label86.Location = new System.Drawing.Point(493, 129);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(220, 16);
+            this.label86.TabIndex = 120;
+            this.label86.Text = "<100@mg/dl ไม่ต้องใส่เครื่องหมายน้อยกว่า";
             // 
             // FrmValueNormal
             // 
@@ -3654,7 +3700,7 @@
         private System.Windows.Forms.Label label81;
         private System.Windows.Forms.TabPage tabPage11;
         private System.Windows.Forms.Button btnUricSave;
-        private System.Windows.Forms.TextBox txtUricValue;
+        private System.Windows.Forms.TextBox txtUricMaleValue;
         private System.Windows.Forms.Label label84;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
@@ -3871,5 +3917,9 @@
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.TextBox txtCAAFP;
         private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.TextBox txtUricFeMaleValue;
+        private System.Windows.Forms.Label label83;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.Label label85;
     }
 }

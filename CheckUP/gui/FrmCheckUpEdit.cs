@@ -126,6 +126,10 @@ namespace CheckUP.gui
             txtChoHDL.Text = dtccp.Rows[0][cc.ccpdb.ccp.hdl].ToString();
             txtChoResult.Text = dtccp.Rows[0][cc.ccpdb.ccp.cholesterolSuggess].ToString();
             txtChoSummary.Text = dtccp.Rows[0][cc.ccpdb.ccp.cholesterolSummary].ToString();
+            txtLDLResult.Text = dtccp.Rows[0][cc.ccpdb.ccp.ChoLDLResult].ToString();
+            txtLDLSummary.Text = dtccp.Rows[0][cc.ccpdb.ccp.ChoLDLsummary].ToString();
+            txtHDLResult.Text = dtccp.Rows[0][cc.ccpdb.ccp.ChoHDLResult].ToString();
+            txtHDLSummary.Text = dtccp.Rows[0][cc.ccpdb.ccp.ChoHDLsummary].ToString();
 
             txtSgotValue.Text = dtccp.Rows[0][cc.ccpdb.ccp.liverSgot].ToString();
             txtSgotSgptValue.Text = dtccp.Rows[0][cc.ccpdb.ccp.liverSgpt].ToString();
@@ -138,7 +142,7 @@ namespace CheckUP.gui
             //txtCBCLy.Text = dtccp.Rows[0][cc.ccpdb.ccp.cbcLymphocyte].ToString();
             //txtCBCLy.Text = dtccp.Rows[0][cc.ccpdb.ccp.cbcLymphocyte].ToString();
 
-            txtUricValue.Text = dtccp.Rows[0][cc.ccpvndb.ccpvn.uricAcid].ToString();
+            txtUricValue.Text = dtccp.Rows[0][cc.ccpdb.ccp.uricAcid].ToString();
             txtUricResult.Text = dtccp.Rows[0][cc.ccpdb.ccp.uricAcidSuggess].ToString();
             txtUricSummary.Text = dtccp.Rows[0][cc.ccpdb.ccp.uricAcidSummary].ToString();
 
@@ -159,7 +163,7 @@ namespace CheckUP.gui
             txtCBCMcvNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMcvMale].ToString();
             txtCBCWbcNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcWbc].ToString();
             txtCBCPltSNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPlateletSmear].ToString();
-            txtCBCPmn.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPmn].ToString();
+            txtCBCPmnNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPmn].ToString();
 
             txtBunCreatinineNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyCreatinineMale].ToString();
             //txtBunResultNormal.Text = dtccp.Rows[0][cc.ccpdb.ccp.kidneyResult].ToString();
@@ -197,7 +201,7 @@ namespace CheckUP.gui
             //txtSgotSummary.Text = dtccp.Rows[0][cc.ccpdb.ccp.liverSummary].ToString();
             txtSgotALTNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverAlp].ToString();
 
-            txtUricNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.uricAcid].ToString();
+            txtUricNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.uricAcidMale].ToString();
 
             txtHBsAgNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.hbsag].ToString();
             txtHBsAbNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.hbsab].ToString();
@@ -322,7 +326,7 @@ namespace CheckUP.gui
 
         private void btnChoSave_Click(object sender, EventArgs e)
         {
-            String chk = cc.ccpdb.UpdateCholes(txtRowNumber.Text, cuc.Id, txtChoValue.Text, txtChoResult.Text, txtChoSummary.Text, txtChoLDL.Text, txtChoHDL.Text);
+            String chk = cc.ccpdb.UpdateCholes(txtRowNumber.Text, cuc.Id, txtChoValue.Text, txtChoResult.Text, txtChoSummary.Text, txtChoLDL.Text, txtChoHDL.Text, txtLDLResult.Text, txtLDLSummary.Text, txtHDLResult.Text, txtHDLSummary.Text);
             if (chk.Equals("1"))
             {
                 MessageBox.Show("บันทึกข้อมูล Choles เรียบร้อย", "บันทึกข้อมูล");

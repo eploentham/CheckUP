@@ -58,6 +58,10 @@ namespace CheckUP.objdb
             ei.ChoHDL = "hdl";
             ei.ChoLDL = "ldl";
             ei.ChoSheetname = "cho_sheetname";
+            ei.ChoLDLResult = "ldl_result";
+            ei.ChoLDLsummary = "ldl_summary";
+            ei.ChoHDLResult = "hdl_result";
+            ei.ChoHDLsummary = "hdl_summary";
 
             ei.FBS = "fbs_value";
             ei.FBSNo = "fbs_no";
@@ -131,6 +135,8 @@ namespace CheckUP.objdb
             ei.UASheetname = "ua_sheetname";
 
             ei.UricAcid = "uric_acid_value";
+            //ei.UricAcidFeMale = "uric_acid_female_value";
+
             ei.UricNo = "uric_no";
             ei.UricResult = "uric_result";
             ei.UricRow = "uric_row";
@@ -154,6 +160,11 @@ namespace CheckUP.objdb
             ei.Other1VDRL = "other1_vdrl";
             ei.Other1Sheetname = "other1_sheetname";
             ei.Other1AntiHav = "other1_antihav";
+
+            ei.Other1HBsAbResult = "other1_hbsab_result";
+            ei.Other1HBsAgResult = "other1_hbsag_result";
+            ei.Other1HBsAbSummary = "other1_hbsab_summary";
+            ei.Other1HBsAgSummary = "other1_hbsag_summary";
 
             ei.LungFev1Meas = "lung_fev1_meas";
             ei.LungFev1Per = "lung_fev1_per";
@@ -299,6 +310,10 @@ namespace CheckUP.objdb
             item.ChoHDL = NumberNull10(dt.Rows[0][ei.ChoHDL].ToString());
             item.ChoLDL = NumberNull10(dt.Rows[0][ei.ChoLDL].ToString());
             item.ChoSheetname = NumberNull10(dt.Rows[0][ei.ChoSheetname].ToString());
+            item.ChoHDLResult = NumberNull10(dt.Rows[0][ei.ChoHDLResult].ToString());
+            item.ChoHDLsummary = NumberNull10(dt.Rows[0][ei.ChoHDLsummary].ToString());
+            item.ChoLDLResult = NumberNull10(dt.Rows[0][ei.ChoLDLResult].ToString());
+            item.ChoLDLsummary = NumberNull10(dt.Rows[0][ei.ChoLDLsummary].ToString());
 
             item.FBS = NumberNull10(dt.Rows[0][ei.FBS].ToString());
             item.FBSNo = NumberNull10(dt.Rows[0][ei.FBSNo].ToString());
@@ -374,6 +389,7 @@ namespace CheckUP.objdb
             item.UASheetname = NumberNull10(dt.Rows[0][ei.UASheetname].ToString());
 
             item.UricAcid = NumberNull10(dt.Rows[0][ei.UricAcid].ToString());
+            //item.UricAcidFeMale = NumberNull10(dt.Rows[0][ei.UricAcidFeMale].ToString());
             item.UricNo = NumberNull10(dt.Rows[0][ei.UricNo].ToString());
             item.UricResult = NumberNull10(dt.Rows[0][ei.UricResult].ToString());
             item.UricRow = NumberNull10(dt.Rows[0][ei.UricRow].ToString());
@@ -396,6 +412,12 @@ namespace CheckUP.objdb
             item.Other1Row = NumberNull10(dt.Rows[0][ei.Other1Row].ToString());
             item.Other1VDRL = NumberNull10(dt.Rows[0][ei.Other1VDRL].ToString());
             item.Other1Sheetname = NumberNull10(dt.Rows[0][ei.Other1Sheetname].ToString());
+
+            item.Other1HBsAbResult = NumberNull10(dt.Rows[0][ei.Other1HBsAbResult].ToString());
+            item.Other1HBsAgResult = NumberNull10(dt.Rows[0][ei.Other1HBsAgResult].ToString());
+            item.Other1HBsAbSummary = NumberNull10(dt.Rows[0][ei.Other1HBsAbSummary].ToString());
+            item.Other1HBsAgSummary = NumberNull10(dt.Rows[0][ei.Other1HBsAgSummary].ToString());
+
             item.CA125 = NumberNull10(dt.Rows[0][ei.CA125].ToString());
             item.CA153 = NumberNull10(dt.Rows[0][ei.CA153].ToString());
             item.CA199 = NumberNull10(dt.Rows[0][ei.CA199].ToString());
@@ -596,7 +618,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateCholes(String ChoRow, String ChoNo, String Cholesteral, String ChoResult, String Chosummary, String ChoLDL, String ChoHDL, String sheetname)
+        public String updateCholes(String ChoRow, String ChoNo, String Cholesteral, String ChoResult, String Chosummary, String ChoLDL, String ChoHDL, String sheetname, String ChoLDLResult,String ChoLDlSummary, String ChoHDLResult, String ChoHDLSummary)
         {
             String sql = "", chk = "";
 
@@ -611,6 +633,10 @@ namespace CheckUP.objdb
                 ei.Chosummary + "='" + Chosummary + "', "+
                 ei.ChoHDL + "='" + ChoLDL + "', " +
                 ei.ChoLDL + "='" + ChoHDL + "', "+
+                ei.ChoLDLResult + "='" + ChoLDLResult + "', " +
+                ei.ChoLDLsummary + "='" + ChoLDlSummary + "', " +
+                ei.ChoHDLResult + "='" + ChoHDLResult + "', " +
+                ei.ChoHDLsummary + "='" + ChoHDLSummary + "', " +
                 ei.ChoSheetname + "='" + sheetname + "' ";
             try
             {
@@ -908,7 +934,7 @@ namespace CheckUP.objdb
                 ei.UricResult + "='" + NumberNull10(UricResult) + "', " +
                 ei.UricRow + "='" + NumberNull10(UricRow) + "', " +
                 ei.UricSummary + "='" + NumberNull10(UricSummary) + "', "+
-                ei.UricSheetname + "='" + sheetname + "' ";
+                ei.UricSheetname + "='" + sheetname + "' " ;
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -944,7 +970,7 @@ namespace CheckUP.objdb
             return chk;
         }
         public String UpdateOther1(String Amphetamine, String AntiHIV, String Calcium, String HBsAb, String HBsAg, String No, String Row, String VDRL, String sheetname, String AntiHav,
-            String CAAFP = "", String CACEA = "", String CAPSA = "", String CAHCG = "", String CA153 = "", String CA125 = "", String CA199 = "")
+            String CAAFP, String CACEA, String CAPSA, String CAHCG, String CA153, String CA125, String CA199, String HBsAbResult, String HBsAgResult, String HBsAbSummary, String HBsAgSummary)
         {
             String sql = "", chk = "";
 
@@ -968,7 +994,11 @@ namespace CheckUP.objdb
                 ei.CAHCG + "='" + CAHCG + "', " +
                 ei.CA153 + "='" + CA153 + "', " +
                 ei.CA125 + "='" + CA125 + "', " +
-                ei.CA199 + "='" + CA199 + "' ";
+                ei.CA199 + "='" + CA199 + "', "+
+                ei.Other1HBsAbResult + "='" + HBsAbResult + "', " +
+                ei.Other1HBsAgResult + "='" + HBsAgResult + "', " +
+                ei.Other1HBsAbSummary + "='" + HBsAbSummary + "', " +
+                ei.Other1HBsAgSummary + "='" + HBsAgSummary + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

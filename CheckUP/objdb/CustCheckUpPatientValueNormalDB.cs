@@ -126,7 +126,8 @@ namespace CheckUP.objdb
             ccpvn.liverSummary = "liver_summary";
             ccpvn.liverAlkaline = "liver_alkaline";
 
-            ccpvn.uricAcid = "uric_acid";
+            ccpvn.uricAcidMale = "uric_acid_male";
+            ccpvn.uricAcidFemale = "uric_acid_female";
             ccpvn.cholesterol = "cholesterol";
             ccpvn.triglyceride = "triglyceride";
             ccpvn.triglycerideResult = "triglyceride_result";
@@ -488,13 +489,13 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String UpdateUric(String value)
+        public String UpdateUric(String male, String Female)
         {
             String chk = "", sql = "";
             try
             {
-                sql = "Update " + ccpvn.table + " Set " + ccpvn.uricAcid + "='" + value + "' ";
-                //ccp.uricAcidSuggess + "='" + result + "', " +
+                sql = "Update " + ccpvn.table + " Set " + ccpvn.uricAcidMale + "='" + male + "', " +
+                ccpvn.uricAcidFemale + "='" + Female + "' ";
                 //ccp.uricAcidSummary + "='" + summary + "' " +
                     //ccp.sugarSuggess + "='" + suggess + "' " +
                 //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";

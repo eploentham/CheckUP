@@ -99,7 +99,8 @@ namespace CheckUP.gui
             txtBunFemaleValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.kidneyBunFemale].ToString();
             txtBunCreatinineFemaleValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.kidneyCreatinineFemale].ToString();
 
-            txtUricValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.uricAcid].ToString();
+            txtUricMaleValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.uricAcidMale].ToString();
+            txtUricFeMaleValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.uricAcidFemale].ToString();
 
             txtHBsAb.Text = dt.Rows[0][cc.ccpvndb.ccpvn.hbsab].ToString();
             txtHBsAg.Text = dt.Rows[0][cc.ccpvndb.ccpvn.hbsag].ToString();
@@ -324,8 +325,8 @@ namespace CheckUP.gui
                 String cholesUnit = "";
                 if (choles.Length == 2)
                 {
-                    String[] aa = choles[0].ToString().Split('<');
-                    cholesMax = int.Parse(aa[0]);
+                    //String[] aa = choles[0].ToString().Split('<');
+                    //cholesMax = int.Parse(aa[0]);
                     //fbsMax = int.Parse(aa[1]);
                     cholesUnit = choles[1];
                 }
@@ -394,7 +395,7 @@ namespace CheckUP.gui
 
                 if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                 {
-                    String chk = cc.ccpvndb.UpdateBun(txtBunMaleValue.Text, txtBunCreatinineMaleValue.Text, txtBunFemaleValue.Text, txtBunCreatinineFemaleValue.Text);
+                    String chk = cc.ccpvndb.UpdateBun(txtBunMaleValue.Text, txtBunCreatinineMaleValue.Text.Trim(), txtBunFemaleValue.Text.Trim(), txtBunCreatinineFemaleValue.Text.Trim());
                     cc.dtccpvn = cc.ccpvndb.selectByPk();
                     if (chk.Equals("1"))
                     {
@@ -413,7 +414,7 @@ namespace CheckUP.gui
         {
             if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
-                String chk = cc.ccpvndb.UpdateUric(txtUricValue.Text);
+                String chk = cc.ccpvndb.UpdateUric(txtUricMaleValue.Text.Trim(), txtUricFeMaleValue.Text.Trim());
                 cc.dtccpvn = cc.ccpvndb.selectByPk();
                 if (chk.Equals("1"))
                 {

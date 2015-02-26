@@ -42,8 +42,8 @@ namespace CheckUP.gui
         int colTriRow = 0, colTriId = 1, colTriName = 2, colTriValue = 3, colTriResult = 4, coLTriSummary = 5;
         int colTriCnt = 6;
 
-        int colChoRow = 0, colChoId = 1, colChoName = 2, colChoValue = 3, colChoLDL=4, colChoHDL=5, colChoResult = 6, coLChoSummary = 7;
-        int colChoCnt = 8;
+        int colChoRow = 0, colChoId = 1, colChoName = 2, colChoValue = 3, colChoResult = 4, coLChoSummary = 5, colChoLDL=6, colChoLDLResult=7,colChoLDLSummary=8, colChoHDL=9, colChoHDLResult=10, colChoHDLSummary=11;
+        int colChoCnt = 12;
 
         int colSgotRow = 0, colSgotId = 1, colSgotName = 2, colSgotValue = 3, colSgotSgptValue = 4, colSgotAlkalone=5, colSgotResult = 6, colSgptResult = 7, coLSgotSummary = 8;
         int colSgotCnt = 9;
@@ -54,9 +54,9 @@ namespace CheckUP.gui
         int colUricRow = 0, colUricId = 1, colUricName = 2, colUricValue = 3, colUricResult = 4, coLUricSummary = 5;
         int colUricCnt = 6;
 
-        int colOther1Row = 0, colOther1Id = 1, colOther1Name = 2, colOther1HBsAg = 3, colOther1HBsAb = 4, colOther1AntiHIV = 5, colOther1VDRL = 6, colOther1Amphetamine = 7, colOther1Calcium = 8, colOther1AntiHav=9;
-        int colCAAFP = 10, colCACEA = 11, colCAHCG = 12, colCAPSA = 13, colCA153 = 14, colCA125 = 15, colCA199 = 16;
-        int colOther1Cnt = 17;
+        int colOther1Row = 0, colOther1Id = 1, colOther1Name = 2, colOther1HBsAg = 3, colOther1HBsAgResult = 4, colOther1HBsAgSummary = 5, colOther1HBsAb = 6, colOther1HBsAbResult = 7, colOther1HBsAbSummary = 8, colOther1AntiHIV = 9, colOther1VDRL = 10, colOther1Amphetamine = 11, colOther1Calcium = 12, colOther1AntiHav = 13;
+        int colCAAFP = 14, colCACEA = 15, colCAHCG = 16, colCAPSA = 17, colCA153 = 18, colCA125 = 19, colCA199 = 20;
+        int colOther1Cnt = 21;
 
         int colLungRow = 0, colLungId = 1, colLungName = 2, colLungFvcPredic = 3, colLungFvcMeas = 4, colLungFvcPer = 5, colLungFev1Predic = 6, colLungFev1Meas = 7, colLungFev1Per = 8, colLungPerFev1 = 9, colLungSummary = 10;
         int colLungCnt = 11;
@@ -585,6 +585,10 @@ namespace CheckUP.gui
             dgvCho.Columns[colChoLDL].Width = 80;
             dgvCho.Columns[colChoResult].Width = 300;
             dgvCho.Columns[coLChoSummary].Width = 180;
+            dgvCho.Columns[colChoLDLResult].Width = 300;
+            dgvCho.Columns[colChoLDLSummary].Width = 180;
+            dgvCho.Columns[colChoHDLResult].Width = 300;
+            dgvCho.Columns[colChoHDLSummary].Width = 180;
 
             dgvCho.Columns[colChoRow].HeaderText = "ลำดับ";
             dgvCho.Columns[colChoId].HeaderText = "code";
@@ -592,9 +596,12 @@ namespace CheckUP.gui
             dgvCho.Columns[colChoValue].HeaderText = "ค่า";
             dgvCho.Columns[colChoLDL].HeaderText = "LDL";
             dgvCho.Columns[colChoHDL].HeaderText = "HDL";
-            dgvCho.Columns[colChoResult].HeaderText = "ผล Choles [" + cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cholesterol].ToString()+"]";
-            dgvCho.Columns[coLChoSummary].HeaderText = "สรุปผลตรวจ";
-
+            dgvCho.Columns[colChoResult].HeaderText = "ผล Choles [" + cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cholesterol].ToString() + "]";
+            dgvCho.Columns[coLChoSummary].HeaderText = "สรุปผลตรวจ Choles";
+            dgvCho.Columns[colChoLDLResult].HeaderText = "ผล Choles [" + cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ldl].ToString() + "]";
+            dgvCho.Columns[colChoLDLSummary].HeaderText = "สรุปผลตรวจ LDL";
+            dgvCho.Columns[colChoHDLResult].HeaderText = "ผล Choles [" + cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.hdl].ToString() + "]";
+            dgvCho.Columns[colChoHDLSummary].HeaderText = "สรุปผลตรวจ HDL";
             //dgvSum.Columns[colPEId].HeaderText = "id";
             //Font font = new Font("Microsoft Sans Serif", 12);
 
@@ -664,6 +671,28 @@ namespace CheckUP.gui
         }
         private void setGrdUric()
         {
+            ////Uric Male
+            //String[] uricMale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.uricAcidMale].ToString().Split('@');
+            //Double uricMaleMin = 0, uricMaleMax = 0;
+            //String uricMaleUnit = "";
+            //if (uricMale.Length == 2)
+            //{
+            //    String[] aa = uricMale[0].ToString().Split('-');
+            //    uricMaleMin = Double.Parse(aa[0]);
+            //    uricMaleMax = Double.Parse(aa[1]);
+            //    uricMaleUnit = uricMale[1];
+            //}
+            ////Uric FeMale
+            //String[] uricFemale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.uricAcidFemale].ToString().Split('@');
+            //Double uricFemaleMin = 0, uricFemaleMax = 0;
+            //String uricFemaleUnit = "";
+            //if (uricFemale.Length == 2)
+            //{
+            //    String[] aa = uricFemale[0].ToString().Split('-');
+            //    uricFemaleMin = Double.Parse(aa[0]);
+            //    uricFemaleMax = Double.Parse(aa[1]);
+            //    uricFemaleUnit = uricFemale[1];
+            //}
             dgvUric.ColumnCount = colUricCnt;
             dgvUric.Rows.Clear();
             dgvUric.RowCount = 1;
@@ -679,7 +708,7 @@ namespace CheckUP.gui
             dgvUric.Columns[colUricId].HeaderText = "code";
             dgvUric.Columns[colUricName].HeaderText = "ชื่อ นามสกุล";
             dgvUric.Columns[colUricValue].HeaderText = "ค่า";
-            dgvUric.Columns[colUricResult].HeaderText = "ผล";
+            dgvUric.Columns[colUricResult].HeaderText = "ผล ";
             dgvUric.Columns[coLUricSummary].HeaderText = "สรุปผลตรวจ";
 
             //dgvSum.Columns[colPEId].HeaderText = "id";
@@ -715,7 +744,13 @@ namespace CheckUP.gui
             dgvOther1.Columns[colOther1Id].HeaderText = "id";
             dgvOther1.Columns[colOther1Name].HeaderText = "ชื่อ นามสกุล";
             dgvOther1.Columns[colOther1HBsAg].HeaderText = "HBsAg";
+            dgvOther1.Columns[colOther1HBsAgResult].HeaderText = "HBsAg ผล";
+            dgvOther1.Columns[colOther1HBsAgSummary].HeaderText = "HBsAg สรุป";
+
             dgvOther1.Columns[colOther1HBsAb].HeaderText = "HbsAb";
+            dgvOther1.Columns[colOther1HBsAbResult].HeaderText = "HbsAb ผล";
+            dgvOther1.Columns[colOther1HBsAbSummary].HeaderText = "HbsAb สรุป";
+
             dgvOther1.Columns[colOther1AntiHIV].HeaderText = "AntiHIV";
             dgvOther1.Columns[colOther1VDRL].HeaderText = "VDRL";
             dgvOther1.Columns[colOther1Amphetamine].HeaderText = "Amphetamine";
@@ -1386,12 +1421,34 @@ namespace CheckUP.gui
             String[] choles = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cholesterol].ToString().Split('@');
             Double cholesMax = 0;
             String cholesUnit = "";
+
+            String[] ldl = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ldl].ToString().Split('@');
+            Double ldlMax = 0;
+            String ldlUnit = "";
+
+            String[] hdl = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.hdl].ToString().Split('@');
+            Double hdlMax = 0;
+            String hdlUnit = "";
             if (choles.Length == 2)
             {
-                String[] aa = choles[0].ToString().Split('<');
-                cholesMax = Double.Parse(aa[1]);
+                //String[] aa = choles[0].ToString().Split('<');
+                cholesMax = Double.Parse(choles[0]);
                 //fbsMax = int.Parse(aa[1]);
                 cholesUnit = choles[1];
+            }
+            if (ldl.Length == 2)
+            {
+                //String[] aa = choles[0].ToString().Split('<');
+                ldlMax = Double.Parse(ldl[0]);
+                //fbsMax = int.Parse(aa[1]);
+                ldlUnit = choles[1];
+            }
+            if (hdl.Length == 2)
+            {
+                //String[] aa = choles[0].ToString().Split('<');
+                hdlMax = Double.Parse(hdl[0]);
+                //fbsMax = int.Parse(aa[1]);
+                hdlUnit = choles[1];
             }
             dgvCho.Rows.Clear();
             if (flagNew)
@@ -1418,7 +1475,15 @@ namespace CheckUP.gui
                         dgvCho[colChoHDL, i].Value = dt.Rows[i][cc.ccpdb.ccp.hdl].ToString();
                         //dgvCho[colChoResult, i].Value = dt.Rows[i][cc.ccpdb.ccp.cholesterolSuggess].ToString();
                         dgvCho[coLChoSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.cholesterolSummary].ToString();
+                        dgvCho[colChoLDLSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.ChoLDLsummary].ToString();
+                        dgvCho[colChoHDLSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.ChoHDLsummary].ToString();
+                    }
+                    catch (Exception ex)
+                    {
 
+                    }
+                    try
+                    {
                         if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.cholesterol].ToString().Trim())) > 0)
                         {
                             if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.cholesterol].ToString().Trim())) >= cholesMax)
@@ -1439,6 +1504,50 @@ namespace CheckUP.gui
                     {
 
                     }
+                    try
+                    {
+                        if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.ldl].ToString().Trim())) > 0)
+                        {
+                            if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.ldl].ToString().Trim())) >= ldlMax)
+                            {
+                                dgvCho[colChoLDLResult, i].Value = "สูงกว่าปกติ";
+                            }
+                            else if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.ldl].ToString().Trim())) < ldlMax)
+                            {
+                                dgvCho[colChoLDLResult, i].Value = "ปกติ";
+                            }
+                        }
+                        else
+                        {
+                            dgvCho[colChoLDLResult, i].Value = "";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                    try
+                    {
+                        if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.hdl].ToString().Trim())) > 0)
+                        {
+                            if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.hdl].ToString().Trim())) >= hdlMax)
+                            {
+                                dgvCho[colChoHDLResult, i].Value = "สูงกว่าปกติ";
+                            }
+                            else if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.hdl].ToString().Trim())) < hdlMax)
+                            {
+                                dgvCho[colChoHDLResult, i].Value = "ปกติ";
+                            }
+                        }
+                        else
+                        {
+                            dgvCho[colChoHDLResult, i].Value = "";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }                    
                     
 
                     dgvCho[colChoId, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
@@ -1608,6 +1717,28 @@ namespace CheckUP.gui
             {
                 dt = dtAll;
             }
+            //Uric Male
+            String[] uricMale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.uricAcidMale].ToString().Split('@');
+            Double uricMaleMin = 0, uricMaleMax = 0;
+            String uricMaleUnit = "";
+            if (uricMale.Length == 2)
+            {
+                String[] aa = uricMale[0].ToString().Split('-');
+                uricMaleMin = Double.Parse(aa[0]);
+                uricMaleMax = Double.Parse(aa[1]);
+                uricMaleUnit = uricMale[1];
+            }
+            //Uric FeMale
+            String[] uricFemale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.uricAcidFemale].ToString().Split('@');
+            Double uricFemaleMin = 0, uricFemaleMax = 0;
+            String uricFemaleUnit = "";
+            if (uricFemale.Length == 2)
+            {
+                String[] aa = uricFemale[0].ToString().Split('-');
+                uricFemaleMin = Double.Parse(aa[0]);
+                uricFemaleMax = Double.Parse(aa[1]);
+                uricFemaleUnit = uricFemale[1];
+            }
 
             if (dt.Rows.Count > 0)
             {
@@ -1621,6 +1752,65 @@ namespace CheckUP.gui
                     dgvUric[colUricResult, i].Value = dt.Rows[i][cc.ccpdb.ccp.uricAcidSuggess].ToString();
                     dgvUric[coLUricSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.uricAcidSummary].ToString();
                     dgvUric[colUricId, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                    try
+                    {
+                        if (dt.Rows[i][cc.ccpdb.ccp.fSexId].ToString().Equals("1"))//male
+                        {
+                            //rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.uricAcidMale].ToString().Replace("@", " ");
+                            if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.uricAcid].ToString())) > 0)
+                            {
+                                if ((Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.uricAcid].ToString())) >= uricMaleMin) && (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.uricAcid].ToString())) <= uricMaleMax))
+                                {
+                                    dgvUric[colUricResult, i].Value = "ปกติ [" + uricMale[0] +"/"+ uricMale[1] + "]";
+                                }
+                                else
+                                {
+                                    if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.uricAcid].ToString())) > uricMaleMax)
+                                    {
+                                        dgvUric[colUricResult, i].Value = "สูงกว่ามาตรฐาน [" + uricMale[0] + "/" + uricMale[1] + "]";
+                                    }
+                                    else
+                                    {
+                                        dgvUric[colUricResult, i].Value = "ต่ำกว่ามาตรฐาน [" + uricMale[0] + "/" + uricMale[1] + "]";
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                dgvUric[colUricResult, i].Value = "";
+                            }
+                        }
+                        else
+                        {
+                            //rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.uricAcidFemale].ToString().Replace("@", " ");
+                            if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.uricAcid].ToString())) > 0)
+                            {
+                                if ((Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.uricAcid].ToString())) >= uricFemaleMin) && (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.uricAcid].ToString())) <= uricFemaleMax))
+                                {
+                                    dgvUric[colUricResult, i].Value = "ปกติ [" + uricMale[0] + "/" + uricFemale[1] + "]";
+                                }
+                                else
+                                {
+                                    if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.uricAcid].ToString())) > uricFemaleMax)
+                                    {
+                                        dgvUric[colUricResult, i].Value = "สูงกว่ามาตรฐาน [" + uricFemale[0] + "/" + uricFemale[1] + "]";
+                                    }
+                                    else
+                                    {
+                                        dgvUric[colUricResult, i].Value = "ต่ำกว่ามาตรฐาน [" + uricFemale[0] + "/" + uricFemale[1] + "]";
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                dgvUric[colUricResult, i].Value = "";
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        dgvUric[colUricResult, i].Value = "แปลผลไม่ได้ " + dgvUric[colUricValue, i].Value.ToString();
+                    }
                     if ((i % 2) != 0)
                     {
                         dgvUric.Rows[i].DefaultCellStyle.BackColor = Color.LightSalmon;
@@ -1655,6 +1845,12 @@ namespace CheckUP.gui
                     dgvOther1[colOther1Calcium, i].Value = dt.Rows[i][cc.ccpdb.ccp.antiHiv].ToString();
                     dgvOther1[colOther1HBsAb, i].Value = dt.Rows[i][cc.ccpdb.ccp.hbsag].ToString();
                     dgvOther1[colOther1HBsAg, i].Value = dt.Rows[i][cc.ccpdb.ccp.hbsab].ToString();
+
+                    dgvOther1[colOther1HBsAgResult, i].Value = dt.Rows[i][cc.ccpdb.ccp.hbsagResult].ToString();
+                    dgvOther1[colOther1HBsAbResult, i].Value = dt.Rows[i][cc.ccpdb.ccp.hbsabResult].ToString();
+                    dgvOther1[colOther1HBsAgSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.hbsagSummary].ToString();
+                    dgvOther1[colOther1HBsAbSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.hbsabSummary].ToString();
+
                     dgvOther1[colOther1VDRL, i].Value = dt.Rows[i][cc.ccpdb.ccp.vdrl].ToString();
                     dgvOther1[colOther1Id, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
                     dgvOther1[colOther1AntiHav, i].Value = dt.Rows[i][cc.ccpdb.ccp.AntiHav].ToString();
@@ -3145,7 +3341,7 @@ namespace CheckUP.gui
 
         private void btnChoImport_Click(object sender, EventArgs e)
         {
-            String rowNumber = "", chk = "", result = "", summary = "", value = "", ldl="", hdl="";
+            String rowNumber = "", chk = "", result = "", summary = "", value = "", ldl="", hdl="", ldlresult="", ldlsummary="", hdlresult="", hdlsummary="";
 
             pB1.Visible = true;
             pB1.Minimum = 0;
@@ -3186,7 +3382,8 @@ namespace CheckUP.gui
                 else
                 {
                     ldl = "";
-                } if (xlRange.Cells[i, int.Parse(ei.ChoHDL)].Value2 != null)
+                } 
+                if (xlRange.Cells[i, int.Parse(ei.ChoHDL)].Value2 != null)
                 {
                     hdl = xlRange.Cells[i, int.Parse(ei.ChoHDL)].Value2.ToString();
                 }
@@ -3216,8 +3413,41 @@ namespace CheckUP.gui
                     summary = "";
                 }
 
+                if (xlRange.Cells[i, int.Parse(ei.ChoLDLResult)].Value2 != null)
+                {
+                    ldlresult = xlRange.Cells[i, int.Parse(ei.ChoLDLResult)].Value2.ToString();
+                }
+                else
+                {
+                    ldlresult = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ChoLDLsummary)].Value2 != null)
+                {
+                    ldlsummary = xlRange.Cells[i, int.Parse(ei.ChoLDLsummary)].Value2.ToString();
+                }
+                else
+                {
+                    ldlsummary = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ChoHDLResult)].Value2 != null)
+                {
+                    hdlresult = xlRange.Cells[i, int.Parse(ei.ChoHDLResult)].Value2.ToString();
+                }
+                else
+                {
+                    hdlresult = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ChoHDLsummary)].Value2 != null)
+                {
+                    hdlsummary = xlRange.Cells[i, int.Parse(ei.ChoHDLsummary)].Value2.ToString();
+                }
+                else
+                {
+                    hdlsummary = "";
+                }
 
-                chk = cc.ccpdb.UpdateCholes(rowNumber, txtId.Text, value, result, summary, ldl,hdl);
+
+                chk = cc.ccpdb.UpdateCholes(rowNumber, txtId.Text, value.Trim(), result, summary, ldl.Trim(), hdl.Trim(), ldlresult.Trim(), ldlsummary.Trim(), hdlresult.Trim(), hdlsummary.Trim());
                 pB1.Value = i;
                 row++;
             }
@@ -3694,6 +3924,17 @@ namespace CheckUP.gui
                 cbcneuMax = Double.Parse(aa[1]);
                 cbcneuUnit = cbcneu[1];
             }
+            //CBC pmn
+            String[] cbcpmn = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPmn].ToString().Split('@');
+            Double cbcpmnuMin = 0, cbcpmnMax = 0;
+            String cbcpmnUnit = "";
+            if (cbcpmn.Length == 2)
+            {
+                String[] aa = cbcpmn[0].ToString().Split('-');
+                cbcpmnuMin = Double.Parse(aa[0]);
+                cbcpmnMax = Double.Parse(aa[1]);
+                cbcpmnUnit = cbcpmn[1];
+            }
             ////CBC plts
             String cbcplts = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPlateletSmear].ToString();
             //CBC rbc mono
@@ -3737,10 +3978,26 @@ namespace CheckUP.gui
             String cholesUnit = "";
             if (choles.Length == 2)
             {
-                String[] aa = choles[0].ToString().Split('<');
-                cholesMax = int.Parse(aa[1]);
-                //fbsMax = int.Parse(aa[1]);
+                cholesMax = int.Parse(choles[0]);
                 cholesUnit = choles[1];
+            }
+            //ldl
+            String[] ldl = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ldl].ToString().Split('@');
+            int ldlMax = 0;
+            String ldlUnit = "";
+            if (ldl.Length == 2)
+            {
+                ldlMax = int.Parse(ldl[0]);
+                ldlUnit = ldl[1];
+            }
+            //hdl
+            String[] hdl = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.hdl].ToString().Split('@');
+            int hdlMax = 0;
+            String hdlUnit = "";
+            if (hdl.Length == 2)
+            {
+                hdlMax = int.Parse(hdl[0]);
+                hdlUnit = hdl[1];
             }
             //Sgot
             String[] sgot = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgot].ToString().Split('@');
@@ -3814,6 +4071,10 @@ namespace CheckUP.gui
             String uasugar = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineSugar].ToString();
             String uaprotein = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineProtein].ToString();
             String uaappear = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineAppearance].ToString();
+            String uablood = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineBlood].ToString();
+            String uaketone = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineKetone].ToString();
+            String uaglu = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineGlu].ToString();
+
             //UA pH
             String[] uapH = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urinePh].ToString().Split('@');
             Double uapHMin = 0, uapHMax = 0;
@@ -3980,6 +4241,29 @@ namespace CheckUP.gui
                 CALCIUMMax = Double.Parse(aa[1]);
                 CALCIUMUnit = CALCIUM[1];
             }
+
+            //Uric Male
+            String[] uricMale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.uricAcidMale].ToString().Split('@');
+            Double uricMaleMin = 0, uricMaleMax = 0;
+            String uricMaleUnit = "";
+            if (uricMale.Length == 2)
+            {
+                String[] aa = uricMale[0].ToString().Split('-');
+                uricMaleMin = Double.Parse(aa[0]);
+                uricMaleMax = Double.Parse(aa[1]);
+                uricMaleUnit = uricMale[1];
+            }
+            //Uric FeMale
+            String[] uricFemale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.uricAcidFemale].ToString().Split('@');
+            Double uricFemaleMin = 0, uricFemaleMax = 0;
+            String uricFemaleUnit = "";
+            if (uricFemale.Length == 2)
+            {
+                String[] aa = uricFemale[0].ToString().Split('-');
+                uricFemaleMin = Double.Parse(aa[0]);
+                uricFemaleMax = Double.Parse(aa[1]);
+                uricFemaleUnit = uricFemale[1];
+            }
             //String hbsag = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.StoolExamCulture].ToString();
             //String hbsab = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.StoolExamCulture].ToString();
             //Double creatinineFemaleMin = 0, creatinineFemaleMax = 0;
@@ -4106,7 +4390,7 @@ namespace CheckUP.gui
                                     }
                                     else
                                     {
-                                        if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbchbmaleMax)
+                                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbchbmaleMax)
                                         {
                                             rc.Remark = "สูงกว่ามาตรฐาน";
                                         }
@@ -4920,7 +5204,7 @@ namespace CheckUP.gui
                         {
                             if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
                             {
-                                if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbcpltcMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbcpltcMax))
+                                if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbcpmnuMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbcpmnMax))
                                 {
                                     rc.Remark = "ปกติ";
                                 }
@@ -4968,8 +5252,9 @@ namespace CheckUP.gui
                     rc.Remark = "";
                     rc.StatusLab = "sum";
                     rc.Sort1 = "1010";
-                    rc.Sort2 = "26";
+                    rc.Sort2 = "27";
                     cc.rcdb.insertRCheckUp(rc);
+                    //System.Threading.Thread.Sleep(500);
                 }
 
                 //FBS
@@ -5256,25 +5541,25 @@ namespace CheckUP.gui
                         cc.rcdb.insertRCheckUp(rc);
                     }
 
-                    if ((dtAll.Rows[i][cc.ccpdb.ccp.uricAcid] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.uricAcid].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
-                    {
-                        rc.Id = r.Next().ToString();
-                        rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
-                        rc.LabName = "Uric Acid ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.uricAcid].ToString().Replace("@", " ");
-                        rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.uricAcid].ToString();
-                        rc.LInter = "การแปรผล";
-                        rc.LInterAbnormal = "ปกติ";
-                        rc.LInterNormal = "ผิดปกติ";
-                        rc.LNormal = "ค่าปกติ";
-                        rc.lResult = "ผลการตรวจ";
-                        rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                        rc.Remark = "";
-                        rc.StatusLab = "ua";
-                        rc.Sort1 = "1012";
-                        rc.Sort2 = "16";
-                        cc.rcdb.insertRCheckUp(rc);
-                    }
+                    //if ((dtAll.Rows[i][cc.ccpdb.ccp.uricAcidMale] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.uricAcidMale].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
+                    //{
+                    //    rc.Id = r.Next().ToString();
+                    //    rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
+                    //    rc.LabName = "Uric Acid ";
+                    //    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.uricAcidMale].ToString().Replace("@", " ");
+                    //    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.uricAcidMale].ToString();
+                    //    rc.LInter = "การแปรผล";
+                    //    rc.LInterAbnormal = "ปกติ";
+                    //    rc.LInterNormal = "ผิดปกติ";
+                    //    rc.LNormal = "ค่าปกติ";
+                    //    rc.lResult = "ผลการตรวจ";
+                    //    rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
+                    //    rc.Remark = "";
+                    //    rc.StatusLab = "ua";
+                    //    rc.Sort1 = "1012";
+                    //    rc.Sort2 = "16";
+                    //    cc.rcdb.insertRCheckUp(rc);
+                    //}
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineBacteria] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineBacteria].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -5303,13 +5588,21 @@ namespace CheckUP.gui
                         rc.LabName = "Blood ";
                         rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineBlood].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineBlood].ToString();
+                        if (rc.LabResult.Trim().ToLower().Equals(uablood.ToLower()))
+                        {
+                            rc.Remark = "ปกติ";
+                        }
+                        else
+                        {
+                            rc.Remark = "ผิดปกติ";
+                        }
                         rc.LInter = "การแปรผล";
                         rc.LInterAbnormal = "ปกติ";
                         rc.LInterNormal = "ผิดปกติ";
                         rc.LNormal = "ค่าปกติ";
                         rc.lResult = "ผลการตรวจ";
                         rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                        rc.Remark = "";
+                        //rc.Remark = "";
                         rc.StatusLab = "ua";
                         rc.Sort1 = "1012";
                         rc.Sort2 = "18";
@@ -5442,13 +5735,21 @@ namespace CheckUP.gui
                         rc.LabName = "Ketone ";
                         rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineKetone].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineKetone].ToString();
+                        if (rc.LabResult.Trim().ToLower().Equals(uaketone.ToLower()))
+                        {
+                            rc.Remark = "ปกติ";
+                        }
+                        else
+                        {
+                            rc.Remark = "ผิดปกติ";
+                        }
                         rc.LInter = "การแปรผล";
                         rc.LInterAbnormal = "ปกติ";
                         rc.LInterNormal = "ผิดปกติ";
                         rc.LNormal = "ค่าปกติ";
                         rc.lResult = "ผลการตรวจ";
                         rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                        rc.Remark = "";
+                        //rc.Remark = "";
                         rc.StatusLab = "ua";
                         rc.Sort1 = "1012";
                         rc.Sort2 = "22";
@@ -5676,16 +5977,75 @@ namespace CheckUP.gui
                 {
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "การตรวจ (Uric)";
-                    rc.LabName = "Bacteria ";
-                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.uricAcid].ToString().Replace("@", " ");
+                    rc.LabName = "Uric Acid ";
+                    //rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.uricAcidMale].ToString().Replace("@", " ");
                     rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.uricAcid].ToString();
+                    try
+                    {
+                        if (rc.Sex.Equals("1"))//male
+                        {
+                            rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.uricAcidMale].ToString().Replace("@", " ");
+                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                            {
+                                if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= uricMaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= uricMaleMax))
+                                {
+                                    rc.Remark = "ปกติ";
+                                }
+                                else
+                                {
+                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > uricMaleMax)
+                                    {
+                                        rc.Remark = "สูงกว่ามาตรฐาน";
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                rc.Remark = "";
+                            }
+                        }
+                        else
+                        {
+                            rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.uricAcidFemale].ToString().Replace("@", " ");
+                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                            {
+                                if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= uricFemaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= uricFemaleMax))
+                                {
+                                    rc.Remark = "ปกติ";
+                                }
+                                else
+                                {
+                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > uricFemaleMax)
+                                    {
+                                        rc.Remark = "สูงกว่ามาตรฐาน";
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                rc.Remark = "";
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                    }
                     rc.LInter = "การแปรผล";
                     rc.LInterAbnormal = "ปกติ";
                     rc.LInterNormal = "ผิดปกติ";
                     rc.LNormal = "ค่าปกติ";
                     rc.lResult = "ผลการตรวจ";
                     rc.LTypeLab = "ประเภทการตรวจ Uric";
-                    rc.Remark = "";
+                    //rc.Remark = "";
                     rc.StatusLab = "uric";
                     rc.Sort1 = "1014";
                     rc.Sort2 = "10";
@@ -5803,7 +6163,7 @@ namespace CheckUP.gui
                         rc.LInterNormal = "ผิดปกติ";
                         rc.LNormal = "ค่าปกติ";
                         rc.lResult = "ผลการตรวจ";
-                        rc.LTypeLab = "ประเภทการตรวจ SGOT";
+                        rc.LTypeLab = "ประเภทการตรวจ เอ็นไซน์ของตับ";
                         if (!rc.LabResult.Equals("") && !rc.LabResult.Equals("-"))
                         {
                             try
@@ -5978,34 +6338,174 @@ namespace CheckUP.gui
                         rc.Sort2 = "10";
                         cc.rcdb.insertRCheckUp(rc);
                         chkcholes = true;
+
+                        //choles
+                        rc.Id = r.Next().ToString();
+                        rc.LabGroup = "การตรวจ (Cholesterol)";
+                        //rc.LabName = "สรุป ";
+                        if (!chkcholes)
+                        {
+                            rc.LabName = "สรุป ไม่ได้รับการตรวจ";
+                        }
+                        else
+                        {
+                            rc.LabName = "สรุป ";
+                        }
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cholesterolSummary].ToString();
+                        rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cholesterolSummary].ToString();
+                        //rc.LabResult = "";
+                        rc.LInter = "การแปรผล";
+                        rc.LInterAbnormal = "ปกติ";
+                        rc.LInterNormal = "ผิดปกติ";
+                        rc.LNormal = "ค่าปกติ";
+                        rc.lResult = "ผลการตรวจ";
+                        rc.LTypeLab = "ประเภทการตรวจ Cholesterol";
+                        rc.Remark = "";
+                        rc.StatusLab = "sum";
+                        rc.Sort1 = "1017";
+                        rc.Sort2 = "11";
+                        cc.rcdb.insertRCheckUp(rc);
                     }
                     
 
-                    rc.Id = r.Next().ToString();
-                    rc.LabGroup = "การตรวจ (Cholesterol)";
-                    //rc.LabName = "สรุป ";
-                    if (!chkcholes)
+                    if ((dtAll.Rows[i][cc.ccpdb.ccp.ldl] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ldl].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
-                        rc.LabName = "สรุป ไม่ได้รับการตรวจ";
+                        rc.Id = r.Next().ToString();
+                        rc.LabGroup = "การตรวจ (Cholesterol)";
+                        rc.LabName = "LDL ";
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ldl].ToString().Replace("@", " ");
+                        rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ldl].ToString();
+                        //rc.Remark = dtAll.Rows[i][cc.ccpdb.ccp.cholesterolSummary].ToString();
+                        rc.LInter = "การแปรผล";
+                        rc.LInterAbnormal = "ปกติ";
+                        rc.LInterNormal = "ผิดปกติ";
+                        rc.LNormal = "ค่าปกติ";
+                        rc.lResult = "ผลการตรวจ";
+                        rc.LTypeLab = "ประเภทการตรวจ Cholesterol";
+                        try
+                        {
+                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                            {
+                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= ldlMax)
+                                {
+                                    rc.Remark = "สูงกว่าปกติ";
+                                }
+                                else if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) < ldlMax)
+                                {
+                                    rc.Remark = "ปกติ";
+                                }
+                            }
+                            else
+                            {
+                                rc.Remark = "";
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                        }
+
+                        rc.StatusLab = "cho";
+                        rc.Sort1 = "10171";
+                        rc.Sort2 = "12";
+                        cc.rcdb.insertRCheckUp(rc);
+                        chkcholes = true;
+                        //ldl
+                        rc.Id = r.Next().ToString();
+                        rc.LabGroup = "การตรวจ (Cholesterol)";
+                        //rc.LabName = "สรุป ";
+                        if (!chkcholes)
+                        {
+                            rc.LabName = "สรุป ไม่ได้รับการตรวจ";
+                        }
+                        else
+                        {
+                            rc.LabName = "สรุป ";
+                        }
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ldl].ToString();
+                        rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ChoLDLsummary].ToString();
+                        //rc.LabResult = "";
+                        rc.LInter = "การแปรผล";
+                        rc.LInterAbnormal = "ปกติ";
+                        rc.LInterNormal = "ผิดปกติ";
+                        rc.LNormal = "ค่าปกติ";
+                        rc.lResult = "ผลการตรวจ";
+                        rc.LTypeLab = "ประเภทการตรวจ Cholesterol";
+                        rc.Remark = "";
+                        rc.StatusLab = "sum";
+                        rc.Sort1 = "10171";
+                        rc.Sort2 = "13";
+                        cc.rcdb.insertRCheckUp(rc);
                     }
-                    else
+                    if ((dtAll.Rows[i][cc.ccpdb.ccp.hdl] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.hdl].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
-                        rc.LabName = "สรุป ";
+                        rc.Id = r.Next().ToString();
+                        rc.LabGroup = "การตรวจ (Cholesterol)";
+                        rc.LabName = "HDL ";
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.hdl].ToString().Replace("@", " ");
+                        rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.hdl].ToString();
+                        //rc.Remark = dtAll.Rows[i][cc.ccpdb.ccp.cholesterolSummary].ToString();
+                        rc.LInter = "การแปรผล";
+                        rc.LInterAbnormal = "ปกติ";
+                        rc.LInterNormal = "ผิดปกติ";
+                        rc.LNormal = "ค่าปกติ";
+                        rc.lResult = "ผลการตรวจ";
+                        rc.LTypeLab = "ประเภทการตรวจ Cholesterol";
+                        try
+                        {
+                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                            {
+                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= hdlMax)
+                                {
+                                    rc.Remark = "สูงกว่าปกติ";
+                                }
+                                else if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) < hdlMax)
+                                {
+                                    rc.Remark = "ปกติ";
+                                }
+                            }
+                            else
+                            {
+                                rc.Remark = "";
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                        }
+
+                        rc.StatusLab = "cho";
+                        rc.Sort1 = "10172";
+                        rc.Sort2 = "14";
+                        cc.rcdb.insertRCheckUp(rc);
+                        chkcholes = true;
+                        //hdl
+                        rc.Id = r.Next().ToString();
+                        rc.LabGroup = "การตรวจ (Cholesterol)";
+                        //rc.LabName = "สรุป ";
+                        if (!chkcholes)
+                        {
+                            rc.LabName = "สรุป ไม่ได้รับการตรวจ";
+                        }
+                        else
+                        {
+                            rc.LabName = "สรุป ";
+                        }
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.hdl].ToString();
+                        rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ChoHDLsummary].ToString();
+                        //rc.LabResult = "";
+                        rc.LInter = "การแปรผล";
+                        rc.LInterAbnormal = "ปกติ";
+                        rc.LInterNormal = "ผิดปกติ";
+                        rc.LNormal = "ค่าปกติ";
+                        rc.lResult = "ผลการตรวจ";
+                        rc.LTypeLab = "ประเภทการตรวจ Cholesterol";
+                        rc.Remark = "";
+                        rc.StatusLab = "sum";
+                        rc.Sort1 = "10172";
+                        rc.Sort2 = "15";
+                        cc.rcdb.insertRCheckUp(rc);
                     }
-                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.sugarSummary].ToString();
-                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cholesterolSummary].ToString();
-                    //rc.LabResult = "";
-                    rc.LInter = "การแปรผล";
-                    rc.LInterAbnormal = "ปกติ";
-                    rc.LInterNormal = "ผิดปกติ";
-                    rc.LNormal = "ค่าปกติ";
-                    rc.lResult = "ผลการตรวจ";
-                    rc.LTypeLab = "ประเภทการตรวจ Cholesterol";
-                    rc.Remark = "";
-                    rc.StatusLab = "sum";
-                    rc.Sort1 = "1017";
-                    rc.Sort2 = "11";
-                    cc.rcdb.insertRCheckUp(rc);
                 }
 
                 //Other1
@@ -6031,19 +6531,28 @@ namespace CheckUP.gui
                         rc.LInterNormal = "ผิดปกติ";
                         rc.LNormal = "ค่าปกติ";
                         rc.lResult = "ผลการตรวจ";
-                        rc.LTypeLab = "ประเภทการตรวจ HBsAg";
-                        //if (rc.LabResult.ToLower().Equals(hbsag.ToLower()))
-                        //{
-                        //    rc.Remark = "ปกติ";
-                        //}
-                        //else
-                        //{
-                        //    rc.Remark = "ผิดปกติ";
-                        //}
-                        
+                        rc.LTypeLab = "ประเภทการตรวจ HBsAg";                     
                         rc.StatusLab = "other1";
-                        rc.Sort1 = "1018";
+                        rc.Sort1 = "101810";
                         rc.Sort2 = "10";
+                        cc.rcdb.insertRCheckUp(rc);
+
+                        rc.Id = r.Next().ToString();
+                        rc.LabGroup = "การตรวจ (Other1)";
+                        rc.LabName = "สรุป HBsAg";
+                        //rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.sugarSummary].ToString();
+                        rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.hbsagSummary].ToString();
+                        //rc.LabResult = "";
+                        rc.LInter = "การแปรผล";
+                        rc.LInterAbnormal = "ปกติ";
+                        rc.LInterNormal = "ผิดปกติ";
+                        rc.LNormal = "ค่าปกติ";
+                        rc.lResult = "ผลการตรวจ";
+                        rc.LTypeLab = "ประเภทการตรวจ HBsAg";
+                        rc.Remark = "";
+                        rc.StatusLab = "sum";
+                        rc.Sort1 = "101810";
+                        rc.Sort2 = "11";
                         cc.rcdb.insertRCheckUp(rc);
                     }
 
@@ -6067,18 +6576,27 @@ namespace CheckUP.gui
                         rc.LInterNormal = "ผิดปกติ";
                         rc.LNormal = "ค่าปกติ";
                         rc.lResult = "ผลการตรวจ";
-                        rc.LTypeLab = "ประเภทการตรวจ HBsAb";
-                        //if (rc.LabResult.ToLower().Equals(hbsab.ToLower()))
-                        //{
-                        //    rc.Remark = "ปกติ";
-                        //}
-                        //else
-                        //{
-                        //    rc.Remark = "ผิดปกติ";
-                        //}
-                        
+                        rc.LTypeLab = "ประเภทการตรวจ HBsAb";                        
                         rc.StatusLab = "other1";
-                        rc.Sort1 = "1018";
+                        rc.Sort1 = "101811";
+                        rc.Sort2 = "10";
+                        cc.rcdb.insertRCheckUp(rc);
+
+                        rc.Id = r.Next().ToString();
+                        rc.LabGroup = "การตรวจ (Other1)";
+                        rc.LabName = "สรุป HBsAb";
+                        //rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.sugarSummary].ToString();
+                        rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.hbsabSummary].ToString();
+                        //rc.LabResult = "";
+                        rc.LInter = "การแปรผล";
+                        rc.LInterAbnormal = "ปกติ";
+                        rc.LInterNormal = "ผิดปกติ";
+                        rc.LNormal = "ค่าปกติ";
+                        rc.lResult = "ผลการตรวจ";
+                        rc.LTypeLab = "ประเภทการตรวจ HBsAb";
+                        rc.Remark = "";
+                        rc.StatusLab = "sum";
+                        rc.Sort1 = "101811";
                         rc.Sort2 = "11";
                         cc.rcdb.insertRCheckUp(rc);
                     }
@@ -6114,8 +6632,8 @@ namespace CheckUP.gui
                         //}
                         
                         rc.StatusLab = "other1";
-                        rc.Sort1 = "1018.8";
-                        rc.Sort2 = "12";
+                        rc.Sort1 = "101812";
+                        rc.Sort2 = "10";
                         cc.rcdb.insertRCheckUp(rc);
                     }
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.AntiHav] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.AntiHav].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -6149,8 +6667,8 @@ namespace CheckUP.gui
                         //}
 
                         rc.StatusLab = "other1";
-                        rc.Sort1 = "1018.9";
-                        rc.Sort2 = "13";
+                        rc.Sort1 = "101812";
+                        rc.Sort2 = "11";
                         cc.rcdb.insertRCheckUp(rc);
                     }
 
@@ -6169,8 +6687,8 @@ namespace CheckUP.gui
                         rc.LTypeLab = "ประเภทการตรวจ VDRL";
                         rc.Remark = "";
                         rc.StatusLab = "other1";
-                        rc.Sort1 = "1018";
-                        rc.Sort2 = "14";
+                        rc.Sort1 = "101812";
+                        rc.Sort2 = "12";
                         cc.rcdb.insertRCheckUp(rc);
                     }
 
@@ -6189,8 +6707,8 @@ namespace CheckUP.gui
                         rc.LTypeLab = "ประเภทการตรวจ Amphetamine";
                         rc.Remark = "";
                         rc.StatusLab = "other1";
-                        rc.Sort1 = "1018";
-                        rc.Sort2 = "15";
+                        rc.Sort1 = "101812";
+                        rc.Sort2 = "13";
                         cc.rcdb.insertRCheckUp(rc);
                     }
                     Boolean calcium = false;        // ใช้Check ว่า เวลาพนักงานมาตรวจ  แต่คนนี้ไม่ได้ตรวจ 
@@ -6231,8 +6749,8 @@ namespace CheckUP.gui
                         }
                         //rc.Remark = "";
                         rc.StatusLab = "other1";
-                        rc.Sort1 = "1018.10";
-                        rc.Sort2 = "16";
+                        rc.Sort1 = "101812";
+                        rc.Sort2 = "14";
                         cc.rcdb.insertRCheckUp(rc);
                     }
 
@@ -6274,8 +6792,8 @@ namespace CheckUP.gui
                         }
 
                         rc.StatusLab = "other1";
-                        rc.Sort1 = "1018.1";
-                        rc.Sort2 = "17";
+                        rc.Sort1 = "101813";
+                        rc.Sort2 = "10";
                         cc.rcdb.insertRCheckUp(rc);
                         caafp = true;
                     }
@@ -6317,8 +6835,8 @@ namespace CheckUP.gui
                         }
 
                         rc.StatusLab = "other1";
-                        rc.Sort1 = "1018.2";
-                        rc.Sort2 = "18";
+                        rc.Sort1 = "101813";
+                        rc.Sort2 = "11";
                         cc.rcdb.insertRCheckUp(rc);
                         cacea = true;
                     }
@@ -6360,8 +6878,8 @@ namespace CheckUP.gui
                         }
 
                         rc.StatusLab = "other1";
-                        rc.Sort1 = "1018.3";
-                        rc.Sort2 = "19";
+                        rc.Sort1 = "101813";
+                        rc.Sort2 = "12";
                         cc.rcdb.insertRCheckUp(rc);
                         cahcg = true;
                     }
@@ -6403,8 +6921,8 @@ namespace CheckUP.gui
                         }
 
                         rc.StatusLab = "other1";
-                        rc.Sort1 = "1018.4";
-                        rc.Sort2 = "20";
+                        rc.Sort1 = "101813";
+                        rc.Sort2 = "13";
                         cc.rcdb.insertRCheckUp(rc);
                         capsa = true;
                     }
@@ -6446,8 +6964,8 @@ namespace CheckUP.gui
                         }
 
                         rc.StatusLab = "other1";
-                        rc.Sort1 = "1018.5";
-                        rc.Sort2 = "21";
+                        rc.Sort1 = "101813";
+                        rc.Sort2 = "14";
                         cc.rcdb.insertRCheckUp(rc);
                         ca153 = true;
                     }
@@ -6489,8 +7007,8 @@ namespace CheckUP.gui
                         }
 
                         rc.StatusLab = "other1";
-                        rc.Sort1 = "1018.6";
-                        rc.Sort2 = "22";
+                        rc.Sort1 = "101813";
+                        rc.Sort2 = "15";
                         cc.rcdb.insertRCheckUp(rc);
                         ca125 = true;
                     }
@@ -6507,7 +7025,7 @@ namespace CheckUP.gui
                         rc.LInterNormal = "ผิดปกติ";
                         rc.LNormal = "ค่าปกติ";
                         rc.lResult = "ผลการตรวจ";
-                        rc.LTypeLab = "ประเภทการตรวจ CA 199";
+                        rc.LTypeLab = "ประเภทการตรวจ CA 19-9";
                         try
                         {
                             if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
@@ -6532,8 +7050,8 @@ namespace CheckUP.gui
                         }
                         
                         rc.StatusLab = "other1";
-                        rc.Sort1 = "1018.7";
-                        rc.Sort2 = "23";
+                        rc.Sort1 = "101813";
+                        rc.Sort2 = "16";
                         cc.rcdb.insertRCheckUp(rc);
                         ca199 = true;
                     }
@@ -7955,7 +8473,7 @@ namespace CheckUP.gui
                     rc.LabGroup = "การตรวจ (StoolExam)";
                     rc.LabName = "สรุป ";
                     rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.sugarSummary].ToString();
-                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.cholesterolSummary].ToString();
+                    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.sugarSummary].ToString();
                     //rc.LabResult = "";
                     rc.LInter = "การแปรผล";
                     rc.LInterAbnormal = "ปกติ";
@@ -8274,7 +8792,7 @@ namespace CheckUP.gui
         private void btnOtherImport_Click(object sender, EventArgs e)
         {
             String rowNumber = "", chk = "", result = "", summary = "", HBsAg = "", HbsAb="", AntiHIV="", VDRL="", Amphetamine="", Calcium="", AntiHav="";
-            String CAAFP = "", CACEA = "", CAPSA = "", CAHCG = "", CA153 = "", CA125 = "", CA199 = "";
+            String CAAFP = "", CACEA = "", CAPSA = "", CAHCG = "", CA153 = "", CA125 = "", CA199 = "", HBsAgResult = "", HbsAbResult = "", HBsAgSummary = "", HbsAbSummary = "";
 
             pB1.Visible = true;
             pB1.Minimum = 0;
@@ -8411,6 +8929,39 @@ namespace CheckUP.gui
                 {
                     CA199 = "";
                 }
+
+                if (xlRange.Cells[i, int.Parse(ei.Other1HBsAgResult)].Value2 != null)
+                {
+                    HBsAgResult = xlRange.Cells[i, int.Parse(ei.Other1HBsAgResult)].Value2.ToString();
+                }
+                else
+                {
+                    HBsAgResult = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Other1HBsAbResult)].Value2 != null)
+                {
+                    HbsAbResult = xlRange.Cells[i, int.Parse(ei.Other1HBsAbResult)].Value2.ToString();
+                }
+                else
+                {
+                    HbsAbResult = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Other1HBsAgSummary)].Value2 != null)
+                {
+                    HBsAgSummary = xlRange.Cells[i, int.Parse(ei.Other1HBsAgSummary)].Value2.ToString();
+                }
+                else
+                {
+                    HBsAgSummary = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.Other1HBsAbSummary)].Value2 != null)
+                {
+                    HbsAbSummary = xlRange.Cells[i, int.Parse(ei.Other1HBsAbSummary)].Value2.ToString();
+                }
+                else
+                {
+                    HbsAbSummary = "";
+                }
                 //if (xlRange.Cells[i, ei.UricSummary].Value2 != null)
                 //{
                 //    summary = xlRange.Cells[i, ei.UricSummary].Value2.ToString();
@@ -8421,7 +8972,7 @@ namespace CheckUP.gui
                 //}
 
                 chk = cc.ccpdb.UpdateOther1(rowNumber, txtId.Text, HBsAg.Trim(), HbsAb.Trim(), AntiHIV.Trim(), VDRL.Trim(), Amphetamine.Trim(), Calcium.Trim(), AntiHav.Trim(),
-                    CAAFP.Trim(), CACEA.Trim(), CAPSA.Trim(), CAHCG.Trim(), CA153.Trim(), CA125.Trim(), CA199.Trim());
+                    CAAFP.Trim(), CACEA.Trim(), CAPSA.Trim(), CAHCG.Trim(), CA153.Trim(), CA125.Trim(), CA199.Trim(), HBsAgResult.Trim(), HBsAgSummary.Trim(), HbsAbResult.Trim(), HbsAbSummary.Trim());
                 pB1.Value = i;
                 row++;
             }

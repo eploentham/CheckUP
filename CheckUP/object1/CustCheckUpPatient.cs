@@ -66,8 +66,7 @@ namespace CheckUP.object1
         public String thyroidTsh="";
         public String BloodGroup="";
 
-        public String vdrl="", antiHiv="", hbsag="", hbsab="", antiHbc = "", hbtyping = "", AntiHav="";
-
+        public String vdrl = "", antiHiv = "", hbsag = "", hbsab = "", antiHbc = "", hbtyping = "", AntiHav = "", hbsagResult = "", hbsagSummary = "", hbsabResult = "", hbsabSummary = "";
 
         public String amphetamine="";
         public String disscusExam="";
@@ -91,8 +90,7 @@ namespace CheckUP.object1
         public String triglyceride="";
         public String triglycerideResult = "";
         public String triglycerideSummary = "";
-        public String hdl="";
-        public String ldl="";
+        public String hdl="", ldl = "", ChoLDLResult = "", ChoLDLsummary = "", ChoHDL = "", ChoHDLResult = "", ChoHDLsummary = "";
 
         public String calcium="";
         public String cbcHb="";
@@ -154,8 +152,7 @@ namespace CheckUP.object1
         public String cholesterolSuggess="";
         public String statusCholes="";
         public String StatusHbsag="";
-        public String hbsagSuggess="";
-        public String hbsagSummary="";
+        
         public String cbcRbc="";
     
         public String Active="";

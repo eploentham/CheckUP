@@ -116,6 +116,10 @@ namespace CheckUP.objdb
             ccp.hbtyping = "hbtyping";
             ccp.AntiHav = "anti_hav";
             ccp.antiHbc = "anti_hbc";
+            ccp.hbsagResult = "hbsag_result";
+            ccp.hbsagSummary = "hbsag_summary";
+            ccp.hbsabResult = "hbsab_result";
+            ccp.hbsabSummary = "hbsab_summary";
 
             ccp.disscusExam = "disscus_exam";
             ccp.suggestExam = "suggest_exam";
@@ -135,12 +139,18 @@ namespace CheckUP.objdb
             ccp.liverAlkaline = "liver_alkaline";
 
             ccp.uricAcid = "uric_acid";
+            //ccp.uricAcidFemale = "uric_acid_female";
             ccp.cholesterol = "cholesterol";
             ccp.triglyceride = "triglyceride";
             ccp.triglycerideResult = "triglyceride_result";
             ccp.triglycerideSummary = "triglyceride_summary";
             ccp.hdl = "hdl";
             ccp.ldl = "ldl";
+            ccp.ChoLDLResult = "ldl_result";
+            ccp.ChoLDLsummary = "ldl_summary";
+            ccp.ChoHDLResult = "hdl_result";
+            ccp.ChoHDLsummary = "hdl_summary";
+
             ccp.calcium = "calcium";
             ccp.cbcMcv = "cbc_mcv";
             ccp.cbcHb = "cbc_hb";
@@ -209,8 +219,7 @@ namespace CheckUP.objdb
             ccp.cholesterolSummary = "cholesterol_summary";
             ccp.cholesterolSuggess = "cholesterol_suggess";
 
-            ccp.hbsagSuggess = "hbsag_suggess";
-            ccp.hbsagSummary = "hbsag_summary";
+            
             ccp.cbcRbc = "cbc_rbc";
             ccp.cbcMch = "cbc_mch";
             ccp.cbcMchc = "cbc_mchc";
@@ -458,7 +467,7 @@ namespace CheckUP.objdb
                     + ccp.statusStool+","+ccp.StoolExamSummary+","
                     + ccp.cholesterolSuggess+","+ccp.cholesterolSummary+","
                     + ccp.cbcMch+","+ccp.cbcMchc+","
-                    + ccp.hbsagSuggess+","+ccp.hbsagSummary+","
+                    + ccp.hbsagResult+","+ccp.hbsagSummary+","
                     + ccp.statusCholes+","+ccp.StatusHbsag+","
                     + ccp.cbcRbc+","+ccp.Active+","
                     + ccp.eyeBio+","+ccp.amphetamineSuggess+","
@@ -541,7 +550,7 @@ namespace CheckUP.objdb
                     + p.statusStool + "','" + p.StoolExamSummary + "','"
                     + p.cholesterolSuggess + "','" + p.cholesterolSummary + "','"
                     + p.cbcMch + "','" + p.cbcMchc + "','"
-                    + p.hbsagSuggess + "','" + p.hbsagSummary + "','"
+                    + p.hbsagResult + "','" + p.hbsagSummary + "','"
                     + p.statusCholes + "','" + p.StatusHbsag + "','"
                     + p.cbcRbc + "','" + p.Active + "','"
                     + p.eyeBio + "','" + p.amphetamineSuggess + "','"
@@ -770,7 +779,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String UpdateCholes(String rowNumber, String cucId, String value, String result, String summary, String ldl, String hdl)
+        public String UpdateCholes(String rowNumber, String cucId, String value, String result, String summary, String ldl, String hdl, String ldlresult, String ldlsummary, String hdlresult, String hdlsummary)
         {
             String chk = "", sql = "";
             try
@@ -779,7 +788,11 @@ namespace CheckUP.objdb
                 ccp.cholesterolSuggess + "='" + result + "', " +
                 ccp.cholesterolSummary + "='" + summary + "', " +
                 ccp.ldl + "='" + ldl + "', " +
-                ccp.hdl + "='" + hdl + "' " +
+                ccp.hdl + "='" + hdl + "', " +
+                ccp.ChoLDLResult + "='" + ldlresult + "', " +
+                ccp.ChoLDLsummary + "='" + ldlsummary + "', " +
+                ccp.ChoHDLResult + "='" + hdlresult + "', " +
+                ccp.ChoHDLsummary + "='" + hdlsummary + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql); ;
             }
@@ -846,7 +859,8 @@ namespace CheckUP.objdb
             return chk;
         }
         public String UpdateOther1(String rowNumber, String cucId, String HBsAg, String HbsAb, String AntiHIV, String VDRL, String Amphetamine, String Calcium, String AntiHav,
-            String CAAFP = "", String CACEA = "", String CAPSA = "", String CAHCG = "", String CA153 = "", String CA125 = "", String CA199 = "")
+            String CAAFP, String CACEA, String CAPSA, String CAHCG, String CA153, String CA125, String CA199, String HBsAgResult, 
+            String HBsAgSummary, String HbsAbResult, String HbsAbSummary)
         {
             String chk = "", sql = "";
             try
@@ -864,9 +878,13 @@ namespace CheckUP.objdb
                 ccp.CAHCG + "='" + CAHCG + "', " +
                 ccp.CA153 + "='" + CA153 + "', " +
                 ccp.CA125 + "='" + CA125 + "', " +
-                ccp.CA199 + "='" + CA199 + "' " +
+                ccp.CA199 + "='" + CA199 + "', " +
+                ccp.hbsagResult + "='" + HBsAgResult + "', " +
+                ccp.hbsagSummary + "='" + HBsAgSummary + "', " +
+                ccp.hbsabResult + "='" + HbsAbResult + "', " +
+                ccp.hbsabSummary + "='" + HbsAbSummary + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQuery(sql); ;
+                chk = conn.ExecuteNonQuery(sql);
             }
             catch (Exception ex)
             {
