@@ -540,6 +540,8 @@
             this.label151 = new System.Windows.Forms.Label();
             this.nmDToxiRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage17 = new System.Windows.Forms.TabPage();
+            this.label216 = new System.Windows.Forms.Label();
+            this.nmDStoolExamCultureSummary = new System.Windows.Forms.NumericUpDown();
             this.txtStoolExamSheetName = new System.Windows.Forms.TextBox();
             this.label204 = new System.Windows.Forms.Label();
             this.label188 = new System.Windows.Forms.Label();
@@ -567,8 +569,7 @@
             this.nmDStoolExamNo = new System.Windows.Forms.NumericUpDown();
             this.label163 = new System.Windows.Forms.Label();
             this.nmDStoolExamRow = new System.Windows.Forms.NumericUpDown();
-            this.nmDStoolExamCultureSummary = new System.Windows.Forms.NumericUpDown();
-            this.label216 = new System.Windows.Forms.Label();
+            this.nmDOtherAmphetamineSummary = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDARow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDAPrefix)).BeginInit();
@@ -799,6 +800,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDToxiNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDToxiRow)).BeginInit();
             this.tabPage17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamCultureSummary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamTyHoidH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamTyHoidO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamCulture)).BeginInit();
@@ -810,7 +812,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamCultureSummary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOtherAmphetamineSummary)).BeginInit();
             this.SuspendLayout();
             // 
             // nmDRow
@@ -4495,6 +4497,7 @@
             // 
             // tabPage12
             // 
+            this.tabPage12.Controls.Add(this.nmDOtherAmphetamineSummary);
             this.tabPage12.Controls.Add(this.nmDOther1CA199Result);
             this.tabPage12.Controls.Add(this.nmDOther1CA199Summary);
             this.tabPage12.Controls.Add(this.nmDOther1CA125Result);
@@ -5150,7 +5153,7 @@
             // 
             this.label91.AutoSize = true;
             this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label91.Location = new System.Drawing.Point(731, 99);
+            this.label91.Location = new System.Drawing.Point(102, 347);
             this.label91.Name = "label91";
             this.label91.Size = new System.Drawing.Size(91, 16);
             this.label91.TabIndex = 96;
@@ -5158,7 +5161,7 @@
             // 
             // nmDOther1Amphetamine
             // 
-            this.nmDOther1Amphetamine.Location = new System.Drawing.Point(737, 128);
+            this.nmDOther1Amphetamine.Location = new System.Drawing.Point(197, 347);
             this.nmDOther1Amphetamine.Minimum = new decimal(new int[] {
             1,
             0,
@@ -7833,6 +7836,33 @@
             this.tabPage17.Text = "tabPage17";
             this.tabPage17.UseVisualStyleBackColor = true;
             // 
+            // label216
+            // 
+            this.label216.AutoSize = true;
+            this.label216.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label216.Location = new System.Drawing.Point(222, 128);
+            this.label216.Name = "label216";
+            this.label216.Size = new System.Drawing.Size(72, 16);
+            this.label216.TabIndex = 155;
+            this.label216.Text = "สรุป Culture";
+            // 
+            // nmDStoolExamCultureSummary
+            // 
+            this.nmDStoolExamCultureSummary.Location = new System.Drawing.Point(228, 149);
+            this.nmDStoolExamCultureSummary.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDStoolExamCultureSummary.Name = "nmDStoolExamCultureSummary";
+            this.nmDStoolExamCultureSummary.Size = new System.Drawing.Size(46, 20);
+            this.nmDStoolExamCultureSummary.TabIndex = 154;
+            this.nmDStoolExamCultureSummary.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
             // txtStoolExamSheetName
             // 
             this.txtStoolExamSheetName.Location = new System.Drawing.Point(333, 32);
@@ -8174,32 +8204,22 @@
             0,
             0});
             // 
-            // nmDStoolExamCultureSummary
+            // nmDOtherAmphetamineSummary
             // 
-            this.nmDStoolExamCultureSummary.Location = new System.Drawing.Point(228, 149);
-            this.nmDStoolExamCultureSummary.Minimum = new decimal(new int[] {
+            this.nmDOtherAmphetamineSummary.Location = new System.Drawing.Point(415, 347);
+            this.nmDOtherAmphetamineSummary.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nmDStoolExamCultureSummary.Name = "nmDStoolExamCultureSummary";
-            this.nmDStoolExamCultureSummary.Size = new System.Drawing.Size(46, 20);
-            this.nmDStoolExamCultureSummary.TabIndex = 154;
-            this.nmDStoolExamCultureSummary.Value = new decimal(new int[] {
+            this.nmDOtherAmphetamineSummary.Name = "nmDOtherAmphetamineSummary";
+            this.nmDOtherAmphetamineSummary.Size = new System.Drawing.Size(46, 20);
+            this.nmDOtherAmphetamineSummary.TabIndex = 138;
+            this.nmDOtherAmphetamineSummary.Value = new decimal(new int[] {
             5,
             0,
             0,
             0});
-            // 
-            // label216
-            // 
-            this.label216.AutoSize = true;
-            this.label216.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label216.Location = new System.Drawing.Point(222, 128);
-            this.label216.Name = "label216";
-            this.label216.Size = new System.Drawing.Size(72, 16);
-            this.label216.TabIndex = 155;
-            this.label216.Text = "สรุป Culture";
             // 
             // FrmExcelInit
             // 
@@ -8460,6 +8480,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDToxiRow)).EndInit();
             this.tabPage17.ResumeLayout(false);
             this.tabPage17.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamCultureSummary)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamTyHoidH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamTyHoidO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamCulture)).EndInit();
@@ -8471,7 +8492,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamCultureSummary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOtherAmphetamineSummary)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -9019,5 +9040,6 @@
         private System.Windows.Forms.NumericUpDown nmDOther1CAAFPSummary;
         private System.Windows.Forms.Label label216;
         private System.Windows.Forms.NumericUpDown nmDStoolExamCultureSummary;
+        private System.Windows.Forms.NumericUpDown nmDOtherAmphetamineSummary;
     }
 }

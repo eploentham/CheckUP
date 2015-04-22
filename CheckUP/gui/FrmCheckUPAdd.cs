@@ -4172,6 +4172,9 @@ namespace CheckUP.gui
                 //uaspgrUnit = uaepi[1];
             }
             String culture = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.StoolExamCulture].ToString();
+
+            String amphetamine = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.amphetamine].ToString();
+
             //Toxi Lead
             String[] lead = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiLead].ToString().Split('@');
             int leadMax = 0;
@@ -6907,9 +6910,47 @@ namespace CheckUP.gui
                         rc.lResult = "ผลการตรวจ";
                         rc.LTypeLab = "ประเภทการตรวจ Amphetamine";
                         rc.Remark = "";
+                        try
+                        {
+                            if (rc.LabResult.Trim().ToLower().Equals(amphetamine.ToLower()))
+                            {
+                                rc.Remark = "ปกติ";
+                            }
+                            else if (rc.LabResult.Equals(""))
+                            {
+                                rc.Remark = "";
+                            }
+                            else
+                            {
+                                rc.Remark = "พบเชื้อทางเดินอาหาร";
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                        }                        
+
                         rc.StatusLab = "other1";
-                        rc.Sort1 = "101812";
+                        rc.Sort1 = "1018121";
                         rc.Sort2 = "13";
+                        cc.rcdb.insertRCheckUp(rc);
+
+                        rc.Id = r.Next().ToString();
+                        rc.LabGroup = "การตรวจ (Other1)";
+                        rc.LabName = "สรุป Amphetamine";
+                        //rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.sugarSummary].ToString();
+                        rc.LabResult = dtOther.Rows[i][cc.ccpdb.ccp1db.ccp1.AmphetamineSummary].ToString();
+                        //rc.LabResult = "";
+                        rc.LInter = "การแปลผล";
+                        rc.LInterAbnormal = "ปกติ";
+                        rc.LInterNormal = "ผิดปกติ";
+                        rc.LNormal = "ค่าปกติ";
+                        rc.lResult = "ผลการตรวจ";
+                        rc.LTypeLab = "ประเภทการตรวจ Amphetamine";
+                        rc.Remark = "";
+                        rc.StatusLab = "sum";
+                        rc.Sort1 = "1018121";
+                        rc.Sort2 = "14";
                         cc.rcdb.insertRCheckUp(rc);
                     }
                     Boolean calcium = false;        // ใช้Check ว่า เวลาพนักงานมาตรวจ  แต่คนนี้ไม่ได้ตรวจ 
@@ -9024,7 +9065,7 @@ namespace CheckUP.gui
             String rowNumber = "", chk = "", result = "", summary = "", HBsAg = "", HbsAb="", AntiHIV="", VDRL="", Amphetamine="", Calcium="", AntiHav="";
             String CAAFP = "", CACEA = "", CAPSA = "", CAHCG = "", CA153 = "", CA125 = "", CA199 = "", HBsAgResult = "", HbsAbResult = "", HBsAgSummary = "", HbsAbSummary = "";
             String CAAFPResult = "", CAAFPSummary = "", CACEAResult = "", CACEASummary = "", CAPSAResult = "", CAPSASummary = "", CAHCGResult = "", CAHCGSummary = "";
-            String CA153Result = "", CA153Summary = "", CA125Result = "", CA125Summary = "", CA199Result = "", CA199Summary = "";
+            String CA153Result = "", CA153Summary = "", CA125Result = "", CA125Summary = "", CA199Result = "", CA199Summary = "", AmphetamineSummary = "";
 
             pB1.Visible = true;
             pB1.Minimum = 0;
@@ -9312,6 +9353,14 @@ namespace CheckUP.gui
                 {
                     HbsAbSummary = "";
                 }
+                if (xlRange.Cells[i, int.Parse(ei.AmphetamineSummary)].Value2 != null)
+                {
+                    AmphetamineSummary = xlRange.Cells[i, int.Parse(ei.AmphetamineSummary)].Value2.ToString();
+                }
+                else
+                {
+                    AmphetamineSummary = "";
+                }
                 //if (xlRange.Cells[i, ei.UricSummary].Value2 != null)
                 //{
                 //    summary = xlRange.Cells[i, ei.UricSummary].Value2.ToString();
@@ -9323,7 +9372,8 @@ namespace CheckUP.gui
 
                 chk = cc.ccpdb.UpdateOther1(rowNumber, txtId.Text, HBsAg.Trim(), HbsAb.Trim(), AntiHIV.Trim(), VDRL.Trim(), Amphetamine.Trim(), Calcium.Trim(), AntiHav.Trim(),
                     CAAFP.Trim(), CAAFPResult.Trim(), CAAFPSummary.Trim(), CACEA.Trim(), CACEAResult, CACEASummary, CAPSA.Trim(), CAPSAResult.Trim(), CAPSASummary.Trim(), CAHCG.Trim(), CAHCGResult.Trim(), CAHCGSummary.Trim(),
-                    CA153.Trim(), CA153Result.Trim(), CA153Summary.Trim(), CA125.Trim(), CA125Result.Trim(), CA125Summary.Trim(), CA199Result.Trim(), CA199Summary.Trim(), CA199.Trim(), HBsAgResult.Trim(), HBsAgSummary.Trim(), HbsAbResult.Trim(), HbsAbSummary.Trim());
+                    CA153.Trim(), CA153Result.Trim(), CA153Summary.Trim(), CA125.Trim(), CA125Result.Trim(), CA125Summary.Trim(), CA199Result.Trim(), CA199Summary.Trim(), CA199.Trim(), HBsAgResult.Trim(), HBsAgSummary.Trim(),
+                    HbsAbResult.Trim(), HbsAbSummary.Trim(), AmphetamineSummary.Trim());
                 pB1.Value = i;
                 row++;
             }

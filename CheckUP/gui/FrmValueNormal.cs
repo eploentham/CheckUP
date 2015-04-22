@@ -117,7 +117,7 @@ namespace CheckUP.gui
             txtCA125.Text = dt.Rows[0][cc.ccpvndb.ccpvn.CA125].ToString();
             txtCA199.Text = dt.Rows[0][cc.ccpvndb.ccpvn.CA199].ToString();
 
-            //txtUAAppe.Text = dt.Rows[0][cc.ccpvndb.ccpvn.ua].ToString();
+            txtAmphetamine.Text = dt.Rows[0][cc.ccpvndb.ccpvn.amphetamine].ToString();
 
             txtFvcPredic.Text = dt.Rows[0][cc.ccpvndb.ccpvn.lungFvcPredic].ToString();
             txtFvcMeas.Text = dt.Rows[0][cc.ccpvndb.ccpvn.lungFvcMeas].ToString();

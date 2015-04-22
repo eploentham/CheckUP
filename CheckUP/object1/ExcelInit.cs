@@ -34,6 +34,7 @@ namespace CheckUP.object1
         public String Other1Row = "", Other1No = "", Other1HBsAg = "", Other1HBsAb = "", Other1AntiHIV = "", Other1VDRL = "", Other1Calcium = "", Other1Amphetamine = "", Other1Sheetname = "", Other1AntiHav = "", Other1Hbtyping="";
         public String CAAFP = "", CACEA = "", CAPSA = "", CAHCG = "", CA153 = "", CA125 = "", CA199 = "", Other1HBsAgResult = "", Other1HBsAgSummary = "", Other1HBsAbResult = "", Other1HBsAbSummary = "";
         public String CAAFPResult = "", CAAFPSummary = "", CACEAResult = "", CACEASummary = "", CAPSAResult = "", CAPSASummary = "", CAHCGResult = "", CAHCGSummary = "", CA153Result = "", CA153Summary = "", CA125Result = "", CA125Summary = "", CA199Result = "", CA199Summary = "";
+        public String AmphetamineSummary = "";
 
         public String LungRow = "", LungNo = "", LungFvcPredic = "", LungFvcMeas = "", LungFvcPer = "", LungFev1Predic = "", LungFev1Meas = "", LungFev1Per = "", LungPerFev1 = "", LungSummary = "", LungSheetname = "";
 

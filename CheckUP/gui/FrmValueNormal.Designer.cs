@@ -197,6 +197,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label89 = new System.Windows.Forms.Label();
             this.btnLungSave = new System.Windows.Forms.Button();
             this.txtPerFev1 = new System.Windows.Forms.TextBox();
             this.txtFev1Per = new System.Windows.Forms.TextBox();
@@ -345,7 +346,7 @@
             this.label160 = new System.Windows.Forms.Label();
             this.label161 = new System.Windows.Forms.Label();
             this.tabPage15 = new System.Windows.Forms.TabPage();
-            this.label89 = new System.Windows.Forms.Label();
+            this.label96 = new System.Windows.Forms.Label();
             this.tC.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
@@ -1696,6 +1697,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label96);
             this.tabPage2.Controls.Add(this.label80);
             this.tabPage2.Controls.Add(this.txtCA199);
             this.tabPage2.Controls.Add(this.label82);
@@ -2120,6 +2122,16 @@
             this.tabPage3.TabIndex = 13;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label89.Location = new System.Drawing.Point(273, 148);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(55, 16);
+            this.label89.TabIndex = 156;
+            this.label89.Text = ">80@%";
             // 
             // btnLungSave
             // 
@@ -3598,15 +3610,15 @@
             this.tabPage15.Text = "tabPage15";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
-            // label89
+            // label96
             // 
-            this.label89.AutoSize = true;
-            this.label89.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label89.Location = new System.Drawing.Point(273, 148);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(55, 16);
-            this.label89.TabIndex = 156;
-            this.label89.Text = ">80@%";
+            this.label96.AutoSize = true;
+            this.label96.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label96.Location = new System.Drawing.Point(304, 255);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(63, 16);
+            this.label96.TabIndex = 149;
+            this.label96.Text = "Negative";
             // 
             // FrmValueNormal
             // 
@@ -3971,5 +3983,6 @@
         private System.Windows.Forms.TextBox txtChoHDLFeMale;
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.Label label96;
     }
 }
