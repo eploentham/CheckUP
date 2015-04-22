@@ -230,6 +230,7 @@ namespace CheckUP.objdb
             ei.StoolExamTyphoidH = "stool_exam_typhoidh";
             ei.StoolExamTyphoidO = "stool_exam_typhoido";
             ei.StoolExamSheetname = "stool_exam_sheetname";
+            ei.StoolExamCultureSummary = "stool_exam_culture_summary";
 
             ei.ToxiAcetone = "toxicology_acetone";
             ei.ToxiAluminium = "toxicology_aluminium";
@@ -263,12 +264,27 @@ namespace CheckUP.objdb
             ei.ToxiSheetname = "toxicology_sheetname";
 
             ei.CAAFP = "ca_afp";
+            ei.CAAFPResult = "ca_afp_result";
+            ei.CAAFPSummary = "ca_afp_summary";
             ei.CACEA = "ca_cea";
+            ei.CACEAResult = "ca_cea_result";
+            ei.CACEASummary = "ca_cea_summary";
             ei.CAPSA = "ca_psa";
+            ei.CAPSAResult = "ca_psa_result";
+            ei.CAPSASummary = "ca_psa_summary";
             ei.CAHCG = "ca_hcg";
+            ei.CAHCGResult = "ca_hcg_result";
+            ei.CAHCGSummary = "ca_hcg_summary";
             ei.CA153 = "ca_153";
+            ei.CA153Result = "ca_153_result";
+            ei.CA153Summary = "ca_153_summary";
             ei.CA125 = "ca_125";
+            ei.CA125Result = "ca_125_result";
+            ei.CA125Summary = "ca_125_summary";
             ei.CA199 = "ca_19_9";
+            ei.CA199Result = "ca_19_9_result";
+            ei.CA199Summary = "ca_19_9_summary";
+
 
             ei.pkField = "id";
             ei.table = "b_excel_init";
@@ -419,12 +435,26 @@ namespace CheckUP.objdb
             item.Other1HBsAgSummary = NumberNull10(dt.Rows[0][ei.Other1HBsAgSummary].ToString());
 
             item.CA125 = NumberNull10(dt.Rows[0][ei.CA125].ToString());
+            item.CA125Result = NumberNull10(dt.Rows[0][ei.CA125Result].ToString());
+            item.CA125Summary = NumberNull10(dt.Rows[0][ei.CA125Summary].ToString());
             item.CA153 = NumberNull10(dt.Rows[0][ei.CA153].ToString());
+            item.CA153Result = NumberNull10(dt.Rows[0][ei.CA153Result].ToString());
+            item.CA153Summary = NumberNull10(dt.Rows[0][ei.CA153Summary].ToString());
             item.CA199 = NumberNull10(dt.Rows[0][ei.CA199].ToString());
+            item.CA199Result = NumberNull10(dt.Rows[0][ei.CA199Result].ToString());
+            item.CA199Summary = NumberNull10(dt.Rows[0][ei.CA199Summary].ToString());
             item.CAAFP = NumberNull10(dt.Rows[0][ei.CAAFP].ToString());
+            item.CAAFPResult = NumberNull10(dt.Rows[0][ei.CAAFPResult].ToString());
+            item.CAAFPSummary = NumberNull10(dt.Rows[0][ei.CAAFPSummary].ToString());
             item.CACEA = NumberNull10(dt.Rows[0][ei.CACEA].ToString());
+            item.CACEAResult = NumberNull10(dt.Rows[0][ei.CACEAResult].ToString());
+            item.CACEASummary = NumberNull10(dt.Rows[0][ei.CACEASummary].ToString());
             item.CAHCG = NumberNull10(dt.Rows[0][ei.CAHCG].ToString());
+            item.CAHCGResult = NumberNull10(dt.Rows[0][ei.CAHCGResult].ToString());
+            item.CAHCGSummary = NumberNull10(dt.Rows[0][ei.CAHCGSummary].ToString());
             item.CAPSA = NumberNull10(dt.Rows[0][ei.CAPSA].ToString());
+            item.CAPSAResult = NumberNull10(dt.Rows[0][ei.CAPSAResult].ToString());
+            item.CAPSASummary = NumberNull10(dt.Rows[0][ei.CAPSASummary].ToString());
             
 
             item.LungFev1Meas = NumberNull10(dt.Rows[0][ei.LungFev1Meas].ToString());
@@ -488,6 +518,8 @@ namespace CheckUP.objdb
             item.StoolExamTyphoidH = NumberNull10(dt.Rows[0][ei.StoolExamTyphoidH].ToString());
             item.StoolExamTyphoidO = NumberNull10(dt.Rows[0][ei.StoolExamTyphoidO].ToString());
             item.StoolExamSheetname = NumberNull10(dt.Rows[0][ei.StoolExamSheetname].ToString());
+
+            item.StoolExamCultureSummary = NumberNull10(dt.Rows[0][ei.StoolExamCultureSummary].ToString());
 
             item.ToxiLead = NumberNull10(dt.Rows[0][ei.ToxiLead].ToString());
             item.ToxiAluminium = NumberNull10(dt.Rows[0][ei.ToxiAluminium].ToString());
@@ -618,7 +650,8 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateCholes(String ChoRow, String ChoNo, String Cholesteral, String ChoResult, String Chosummary, String ChoLDL, String ChoHDL, String sheetname, String ChoLDLResult,String ChoLDlSummary, String ChoHDLResult, String ChoHDLSummary)
+        public String updateCholes(String ChoRow, String ChoNo, String Cholesteral, String ChoResult, String Chosummary, String ChoLDL, String ChoHDL, String sheetname, 
+            String ChoLDLResult,String ChoLDlSummary, String ChoHDLResult, String ChoHDLSummary)
         {
             String sql = "", chk = "";
 
@@ -631,8 +664,8 @@ namespace CheckUP.objdb
                 ei.ChoResult + "='" + ChoResult + "', " +
                 ei.ChoRow + "='" + ChoRow + "', " +
                 ei.Chosummary + "='" + Chosummary + "', "+
-                ei.ChoHDL + "='" + ChoLDL + "', " +
-                ei.ChoLDL + "='" + ChoHDL + "', "+
+                ei.ChoLDL + "='" + ChoLDL + "', " +
+                ei.ChoHDL + "='" + ChoHDL + "', "+
                 ei.ChoLDLResult + "='" + ChoLDLResult + "', " +
                 ei.ChoLDLsummary + "='" + ChoLDlSummary + "', " +
                 ei.ChoHDLResult + "='" + ChoHDLResult + "', " +
@@ -970,7 +1003,9 @@ namespace CheckUP.objdb
             return chk;
         }
         public String UpdateOther1(String Amphetamine, String AntiHIV, String Calcium, String HBsAb, String HBsAg, String No, String Row, String VDRL, String sheetname, String AntiHav,
-            String CAAFP, String CACEA, String CAPSA, String CAHCG, String CA153, String CA125, String CA199, String HBsAbResult, String HBsAgResult, String HBsAbSummary, String HBsAgSummary)
+            String CAAFP, String CAAFPResult, String CAAFPSummary, String CACEA, String CACEAResult, String CACEASummary, String CAPSA, String CAPSAResult, String CAPSASummary,
+            String CAHCG, String CAHCGResult, String CAHCGSummary, String CA153, String CA153Result, String CA153Summary, String CA125, String CA125Result, String CA125Summary,
+            String CA199, String CA199Result, String CA199Summary, String HBsAbResult, String HBsAgResult, String HBsAbSummary, String HBsAgSummary)
         {
             String sql = "", chk = "";
 
@@ -989,12 +1024,26 @@ namespace CheckUP.objdb
                 ei.Other1Sheetname + "='" + sheetname + "', "+
                 ei.Other1AntiHav + "='" + AntiHav + "', "+
                 ei.CAAFP + "='" + CAAFP + "', " +
+                ei.CAAFPResult + "='" + CAAFPResult + "', " +
+                ei.CAAFPSummary + "='" + CAAFPSummary + "', " +
                 ei.CACEA + "='" + CACEA + "', " +
+                ei.CACEAResult + "='" + CACEAResult + "', " +
+                ei.CACEASummary + "='" + CACEASummary + "', " +
                 ei.CAPSA + "='" + CAPSA + "', " +
+                ei.CAPSAResult + "='" + CAPSAResult + "', " +
+                ei.CAPSASummary + "='" + CAPSASummary + "', " +
                 ei.CAHCG + "='" + CAHCG + "', " +
+                ei.CAHCGResult + "='" + CAHCGResult + "', " +
+                ei.CAHCGSummary + "='" + CAHCGSummary + "', " +
                 ei.CA153 + "='" + CA153 + "', " +
+                ei.CA153Result + "='" + CA153Result + "', " +
+                ei.CA153Summary + "='" + CA153Summary + "', " +
                 ei.CA125 + "='" + CA125 + "', " +
-                ei.CA199 + "='" + CA199 + "', "+
+                ei.CA125Result + "='" + CA125Result + "', " +
+                ei.CA125Summary + "='" + CA125Summary + "', " +
+                ei.CA199 + "='" + CA199 + "', " +
+                ei.CA199Result + "='" + CA199Result + "', " +
+                ei.CA199Summary + "='" + CA199Summary + "', " +
                 ei.Other1HBsAbResult + "='" + HBsAbResult + "', " +
                 ei.Other1HBsAgResult + "='" + HBsAgResult + "', " +
                 ei.Other1HBsAbSummary + "='" + HBsAbSummary + "', " +
@@ -1126,7 +1175,7 @@ namespace CheckUP.objdb
             return chk;
         }
         public String updateStoolExam(String StoolExamRow, String StoolExamNo, String StoolExamAppearance, String StoolExamColor, String StoolExamWbc, String StoolExamRbc,
-            String StoolExamParasite, String StoolExamSummary, String StoolExamCulture, String StoolExamTyhoidH, String StoolExamTyhoidO, String sheetname)
+            String StoolExamParasite, String StoolExamSummary, String StoolExamCulture, String StoolExamTyhoidH, String StoolExamTyhoidO, String sheetname, String StoolExamCultureSummary)
         {
             String sql = "", chk = "";
 
@@ -1141,6 +1190,7 @@ namespace CheckUP.objdb
                 ei.StoolExamCulture + "='" + NumberNull10(StoolExamCulture) + "', " +
                 ei.StoolExamTyphoidH + "='" + StoolExamTyhoidH + "', " +
                 ei.StoolExamTyphoidO + "='" + StoolExamTyhoidO + "', "+
+                ei.StoolExamCultureSummary + "='" + StoolExamCultureSummary + "', " +
                 ei.StoolExamSheetname + "='" + sheetname + "' ";
             try
             {

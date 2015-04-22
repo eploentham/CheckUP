@@ -85,7 +85,8 @@ namespace CheckUP.gui
 
             txtTriValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.triglyceride].ToString();
 
-            txtChoHDL.Text = dt.Rows[0][cc.ccpvndb.ccpvn.hdl].ToString();
+            txtChoHDLMale.Text = dt.Rows[0][cc.ccpvndb.ccpvn.hdlMale].ToString();
+            txtChoHDLFeMale.Text = dt.Rows[0][cc.ccpvndb.ccpvn.hdlFemale].ToString();
             txtChoLDL.Text = dt.Rows[0][cc.ccpvndb.ccpvn.ldl].ToString();
             txtChoValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cholesterol].ToString();
 
@@ -332,7 +333,7 @@ namespace CheckUP.gui
                 }
                 if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                 {
-                    String chk = cc.ccpvndb.UpdateCholes(txtChoValue.Text.Trim(), txtChoLDL.Text.Trim(), txtChoHDL.Text.Trim());
+                    String chk = cc.ccpvndb.UpdateCholes(txtChoValue.Text.Trim(), txtChoLDL.Text.Trim(), txtChoHDLMale.Text.Trim(), txtChoHDLFeMale.Text.Trim());
                     cc.dtccpvn = cc.ccpvndb.selectByPk();
                     if (chk.Equals("1"))
                     {

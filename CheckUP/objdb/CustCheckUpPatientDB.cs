@@ -13,6 +13,8 @@ namespace CheckUP.objdb
     {
         ConnectDB conn;
         public CustCheckUpPatient ccp;
+        public CustCheckUpPatient1 ccp1;
+        public CustCheckUpPatient1DB ccp1db;
         LogWriter lw;
         public CustCheckUpPatientDB(ConnectDB c)
         {
@@ -23,6 +25,8 @@ namespace CheckUP.objdb
         {
             lw = new LogWriter();
             ccp = new CustCheckUpPatient();
+            ccp1 = new CustCheckUpPatient1();
+            ccp1db = new CustCheckUpPatient1DB(conn);
             ccp.Id="patient_id";
             ccp.CustCheckUpId="cust_checkup_id";    
             ccp.ChecklistId="t_checklist_id";    
@@ -67,6 +71,7 @@ namespace CheckUP.objdb
             ccp.StoolExamCulture = "stool_exam_culture";
             ccp.StoolExamTyphoidH = "stool_exam_typhoidh";
             ccp.StoolExamTyphoidO = "stool_exam_typhoido";
+            ccp.StoolExamCultureSummary = "stool_exam_culture_summary";
 
             //ccp.toxicologyLead = "toxicology_lead";
             //ccp.toxicologyMercury = "toxicology_mercury";
@@ -144,7 +149,7 @@ namespace CheckUP.objdb
             ccp.triglyceride = "triglyceride";
             ccp.triglycerideResult = "triglyceride_result";
             ccp.triglycerideSummary = "triglyceride_summary";
-            ccp.hdl = "hdl";
+            ccp.hdl = "hdl_male";
             ccp.ldl = "ldl";
             ccp.ChoLDLResult = "ldl_result";
             ccp.ChoLDLsummary = "ldl_summary";
@@ -360,7 +365,18 @@ namespace CheckUP.objdb
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + ccp.table + " Where " + ccp.Active + "='1' and "+ccp.CustCheckUpId+" = '"+cucId+"' Order By "+ccp.rowNumber;
+            sql = "Select * From " + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "' Order By " + ccp.rowNumber;
+            //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectOtherByCucId(String cucId)
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            //sql = "Select * From " + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "' Order By " + ccp.rowNumber;
+            sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
             dt = conn.selectData(sql);
 
             return dt;
@@ -560,7 +576,10 @@ namespace CheckUP.objdb
                     p.triglycerideResult + "','" + p.triglycerideSummary + "','" +
                     p.liverResult + "','" + p.liverSummary + "','" +
                     p.kidneyResult + "','" + p.kidneySummary + "','" + p.SexName + "') ";
-            chk = conn.ExecuteNonQuery(sql);
+                chk = conn.ExecuteNonQuery(sql);
+                sql = "Insert Into " + ccp1db.ccp1.table + "(" + ccp1db.ccp1.Id + "," + ccp1db.ccp1.CustCheckUpId + "," + ccp1db.ccp1.rowNumber +","+ccp1db.ccp1.Active+","+ccp1db.ccp1.patientFullname+
+                    ") Values ('" + p.Id + "','" + p.CustCheckUpId + "'," + p.rowNumber + ",'1','"+p.patientFullname+"')";
+                chk = conn.ExecuteNonQuery(sql);
     //            conn.close;
             } catch (Exception ex) {
                 //Logger.getLogger(MarketingTCheckupDB.class.getName).log(Level.SEVERE, null, ex);
@@ -858,32 +877,71 @@ namespace CheckUP.objdb
             }
             return chk;
         }
+        //public String UpdateOther1(String rowNumber, String cucId, String HBsAg, String HbsAb, String AntiHIV, String VDRL, String Amphetamine, String Calcium, String AntiHav,
+        //    String CAAFP, String CACEA, String CAPSA, String CAHCG, String CA153, String CA125, String CA199, String HBsAgResult, 
+        //    String HBsAgSummary, String HbsAbResult, String HbsAbSummary)
         public String UpdateOther1(String rowNumber, String cucId, String HBsAg, String HbsAb, String AntiHIV, String VDRL, String Amphetamine, String Calcium, String AntiHav,
-            String CAAFP, String CACEA, String CAPSA, String CAHCG, String CA153, String CA125, String CA199, String HBsAgResult, 
+            String CAAFP, String CAAFPResult, String CAAFPSummary, String CACEA, String CACEAResult, String CACEASummary, String CAPSA, String CAPSAResult, String CAPSASummary,
+            String CAHCG, String CAHCGResult, String CAHCGSummary, String CA153, String CA153Result, String CA153Summary, String CA125, String CA125Result, String CA125Summary,
+            String CA199, String CA199Result, String CA199Summary, String HBsAgResult,
             String HBsAgSummary, String HbsAbResult, String HbsAbSummary)
         {
             String chk = "", sql = "";
             try
             {
-                sql = "Update " + ccp.table + " Set " + ccp.hbsag + "='" + HBsAg + "'," +
-                ccp.hbsab + "='" + HbsAb + "', " +
-                ccp.antiHiv + "='" + AntiHIV + "', " +
-                ccp.vdrl + "='" + VDRL + "', " +
-                ccp.amphetamine + "='" + Amphetamine + "', " +
-                ccp.calcium + "='" + Calcium + "', " +
-                ccp.AntiHav + "='" + AntiHav + "', " +
-                ccp.CAAFP + "='" + CAAFP + "', " +
-                ccp.CACEA + "='" + CACEA + "', " +
-                ccp.CAPSA + "='" + CAPSA + "', " +
-                ccp.CAHCG + "='" + CAHCG + "', " +
-                ccp.CA153 + "='" + CA153 + "', " +
-                ccp.CA125 + "='" + CA125 + "', " +
-                ccp.CA199 + "='" + CA199 + "', " +
-                ccp.hbsagResult + "='" + HBsAgResult + "', " +
-                ccp.hbsagSummary + "='" + HBsAgSummary + "', " +
-                ccp.hbsabResult + "='" + HbsAbResult + "', " +
-                ccp.hbsabSummary + "='" + HbsAbSummary + "' " +
-                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                //sql = "Update " + ccp.table + " Set " + ccp.hbsag + "='" + HBsAg + "'," +
+                //ccp.hbsab + "='" + HbsAb + "', " +
+                //ccp.antiHiv + "='" + AntiHIV + "', " +
+                //ccp.vdrl + "='" + VDRL + "', " +
+                //ccp.amphetamine + "='" + Amphetamine + "', " +
+                //ccp.calcium + "='" + Calcium + "', " +
+                //ccp.AntiHav + "='" + AntiHav + "', " +
+                //ccp.CAAFP + "='" + CAAFP + "', " +
+                //ccp.CACEA + "='" + CACEA + "', " +
+                //ccp.CAPSA + "='" + CAPSA + "', " +
+                //ccp.CAHCG + "='" + CAHCG + "', " +
+                //ccp.CA153 + "='" + CA153 + "', " +
+                //ccp.CA125 + "='" + CA125 + "', " +
+                //ccp.CA199 + "='" + CA199 + "', " +
+                //ccp.hbsagResult + "='" + HBsAgResult + "', " +
+                //ccp.hbsagSummary + "='" + HBsAgSummary + "', " +
+                //ccp.hbsabResult + "='" + HbsAbResult + "', " +
+                //ccp.hbsabSummary + "='" + HbsAbSummary + "' " +
+                //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+
+                sql = "Update " + ccp1db.ccp1.table + " Set " + ccp1db.ccp1.hbsag + "='" + HBsAg + "'," +
+                ccp1db.ccp1.hbsab + "='" + HbsAb + "', " +
+                ccp1db.ccp1.antiHiv + "='" + AntiHIV + "', " +
+                ccp1db.ccp1.vdrl + "='" + VDRL + "', " +
+                ccp1db.ccp1.amphetamine + "='" + Amphetamine + "', " +
+                ccp1db.ccp1.calcium + "='" + Calcium + "', " +
+                ccp1db.ccp1.AntiHav + "='" + AntiHav + "', " +
+                ccp1db.ccp1.CAAFP + "='" + CAAFP + "', " +
+                ccp1db.ccp1.CAAFPResult + "='" + CAAFPResult + "', " +
+                ccp1db.ccp1.CAAFPSummary + "='" + CAAFPSummary + "', " +
+                ccp1db.ccp1.CACEA + "='" + CACEA + "', " +
+                ccp1db.ccp1.CACEAResult + "='" + CACEAResult + "', " +
+                ccp1db.ccp1.CACEASummary + "='" + CACEASummary + "', " +
+                ccp1db.ccp1.CAPSA + "='" + CAPSA + "', " +
+                ccp1db.ccp1.CAPSAResult + "='" + CAPSAResult + "', " +
+                ccp1db.ccp1.CAPSASummary + "='" + CAPSASummary + "', " +
+                ccp1db.ccp1.CAHCG + "='" + CAHCG + "', " +
+                ccp1db.ccp1.CAHCGResult + "='" + CAHCGResult + "', " +
+                ccp1db.ccp1.CAHCGSummary + "='" + CAHCGSummary + "', " +
+                ccp1db.ccp1.CA153 + "='" + CA153 + "', " +
+                ccp1db.ccp1.CA153Result + "='" + CA153Result + "', " +
+                ccp1db.ccp1.CA153Summary + "='" + CA153Summary + "', " +
+                ccp1db.ccp1.CA125 + "='" + CA125 + "', " +
+                ccp1db.ccp1.CA125Result + "='" + CA125Result + "', " +
+                ccp1db.ccp1.CA125Summary + "='" + CA125Summary + "', " +
+                ccp1db.ccp1.CA199 + "='" + CA199 + "', " +
+                ccp1db.ccp1.CA199Result + "='" + CA199Result + "', " +
+                ccp1db.ccp1.CA199Summary + "='" + CA199Summary + "', " +
+                ccp1db.ccp1.hbsagResult + "='" + HBsAgResult + "', " +
+                ccp1db.ccp1.hbsagSummary + "='" + HBsAgSummary + "', " +
+                ccp1db.ccp1.hbsabResult + "='" + HbsAbResult + "', " +
+                ccp1db.ccp1.hbsabSummary + "='" + HbsAbSummary + "' " +
+                "Where " + ccp1db.ccp1.CustCheckUpId + "='" + cucId + "' and " + ccp1db.ccp1.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             }
             catch (Exception ex)
@@ -992,7 +1050,7 @@ namespace CheckUP.objdb
             return chk;
         }
         public String updateStoolExam(String rowNumber, String cucId, String StoolExamAppearance, String StoolExamColor, String StoolExamWbc, String StoolExamRbc,
-            String StoolExamParasite, String StoolExamSummary, String StoolExamCulture, String StoolExamTyhoidH, String StoolExamTyhoidO)
+            String StoolExamParasite, String StoolExamSummary, String StoolExamCulture, String StoolExamTyhoidH, String StoolExamTyhoidO, String StoolExamCultureSummary)
         {
             String sql = "", chk = "";
 
@@ -1004,7 +1062,8 @@ namespace CheckUP.objdb
                 ccp.StoolExamSummary + "='" + StoolExamSummary + "', "+
                 ccp.StoolExamCulture + "='" + StoolExamCulture + "', " +
                 ccp.StoolExamTyphoidH + "='" + StoolExamTyhoidH + "', " +
-                ccp.StoolExamTyphoidO + "='" + StoolExamTyhoidO + "' " +
+                ccp.StoolExamTyphoidO + "='" + StoolExamTyhoidO + "', " +
+                ccp.StoolExamCultureSummary + "='" + StoolExamCultureSummary + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
             try
             {

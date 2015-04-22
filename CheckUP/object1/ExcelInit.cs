@@ -33,6 +33,7 @@ namespace CheckUP.object1
 
         public String Other1Row = "", Other1No = "", Other1HBsAg = "", Other1HBsAb = "", Other1AntiHIV = "", Other1VDRL = "", Other1Calcium = "", Other1Amphetamine = "", Other1Sheetname = "", Other1AntiHav = "", Other1Hbtyping="";
         public String CAAFP = "", CACEA = "", CAPSA = "", CAHCG = "", CA153 = "", CA125 = "", CA199 = "", Other1HBsAgResult = "", Other1HBsAgSummary = "", Other1HBsAbResult = "", Other1HBsAbSummary = "";
+        public String CAAFPResult = "", CAAFPSummary = "", CACEAResult = "", CACEASummary = "", CAPSAResult = "", CAPSASummary = "", CAHCGResult = "", CAHCGSummary = "", CA153Result = "", CA153Summary = "", CA125Result = "", CA125Summary = "", CA199Result = "", CA199Summary = "";
 
         public String LungRow = "", LungNo = "", LungFvcPredic = "", LungFvcMeas = "", LungFvcPer = "", LungFev1Predic = "", LungFev1Meas = "", LungFev1Per = "", LungPerFev1 = "", LungSummary = "", LungSheetname = "";
 
@@ -42,7 +43,7 @@ namespace CheckUP.object1
 
         public String EyeRow = "", EyeNo = "", EyeShortLongLeft = "", EyeShortLongRight = "", EyeSquintLeft = "", EyeSquintRight = "", EyeDegreeLeft = "", EyeDegreeRight = "", EyeOldLeft = "", EyeOldRight = "", EyeBlindness = "", EyeResult = "", EyeSummary = "", EyeExam = "", EyeSheetname = "";
 
-        public String StoolExamRow = "", StoolExamNo = "", StoolExamColor = "", StoolExamAppearance = "", StoolExamWbc = "", StoolExamRbc = "", StoolExamParasite = "", StoolExamSummary = "", StoolExamCulture = "", StoolExamTyphoidO = "", StoolExamTyphoidH = "", StoolExamSheetname = "";
+        public String StoolExamRow = "", StoolExamNo = "", StoolExamColor = "", StoolExamAppearance = "", StoolExamWbc = "", StoolExamRbc = "", StoolExamParasite = "", StoolExamSummary = "", StoolExamCulture = "", StoolExamTyphoidO = "", StoolExamTyphoidH = "", StoolExamSheetname = "", StoolExamCultureSummary = "";
 
         public String ToxiRow = "", ToxiNo = "", ToxiLead = "", ToxiAluminium = "", ToxiCadmium = "", ToxiMercury = "", ToxiTin = "", ToxiCopper = "", ToxiManganese = "", ToxiZinc = "", ToxiAmmonia = "";
         public String ToxiHippuric = "", ToxiMethyl = "", ToxiAcetone = "", ToxiNickel = "", ToxiChromium = "", ToxiPhenol = "", ToxiKetone = "", ToxiBenzene = "", ToxiMandelic = "", ToxiMethanol = "";

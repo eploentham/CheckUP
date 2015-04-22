@@ -132,7 +132,8 @@ namespace CheckUP.objdb
             ccpvn.triglyceride = "triglyceride";
             ccpvn.triglycerideResult = "triglyceride_result";
             ccpvn.triglycerideSummary = "triglyceride_summary";
-            ccpvn.hdl = "hdl";
+            ccpvn.hdlMale = "hdl_male";
+            ccpvn.hdlFemale = "hdl_female";
             ccpvn.ldl = "ldl";
             ccpvn.calcium = "calcium";
 
@@ -432,16 +433,16 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String UpdateCholes(String value, String ldl, String hdl)
+        public String UpdateCholes(String value, String ldl, String hdlMale, String hdlFemale)
         {
             String chk = "", sql = "";
             try
             {
                 sql = "Update " + ccpvn.table + " Set " + ccpvn.cholesterol + "='" + value + "'," +
                     //ccp.cholesterolSuggess + "='" + result + "', " +
-                    //ccp.cholesterolSummary + "='" + summary + "', " +
+                ccpvn.hdlFemale + "='" + hdlFemale + "', " +
                 ccpvn.ldl + "='" + ldl + "', " +
-                ccpvn.hdl + "='" + hdl + "' ";
+                ccpvn.hdlMale + "='" + hdlMale + "' ";
                 //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             }

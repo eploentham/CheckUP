@@ -94,7 +94,7 @@ namespace CheckUP.object1
         public String triglyceride="";
         public String triglycerideResult = "";
         public String triglycerideSummary = "";
-        public String hdl="";
+        public String hdlMale="", hdlFemale="";
         public String ldl="";
 
         public String calcium="";

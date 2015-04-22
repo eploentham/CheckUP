@@ -252,6 +252,7 @@ namespace CheckUP.gui
             nmDStoolExamCulture.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamCulture));
             nmDStoolExamTyHoidH.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamTyphoidH));
             nmDStoolExamTyHoidO.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamTyphoidO));
+            nmDStoolExamCultureSummary.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamCultureSummary));
 
             nmDToxiLead.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiLead));
             nmDToxiAluminium.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiAluminium));
@@ -1106,8 +1107,11 @@ namespace CheckUP.gui
             Cursor.Current = cursor;
             if (cc.eidb.UpdateOther1(nmDOther1Amphetamine.Value.ToString(), nmDOther1AntiHIV.Value.ToString(), nmDOther1Calcium.Value.ToString(), nmDOther1HBsAb.Value.ToString(),
                 nmDOther1HBsAg.Value.ToString(), nmDOther1No.Value.ToString(), nmDOther1Row.Value.ToString(), nmDOther1VDRL.Value.ToString(),txtOther1SheetName.Text, nmDOther1AntiHav.Value.ToString(),
-                nmDOther1CAAFP.Value.ToString(), nmDOther1CACEA.Value.ToString(), nmDOther1CAPSA.Value.ToString(), nmDOther1CAHCG.Value.ToString(), nmDOther1CA153.Value.ToString(), nmDOther1CA125.Value.ToString(),
-                nmDOther1CA199.Value.ToString(), nmDOther1HBsAbResult.Value.ToString(), nmDOther1HBsAgResult.Value.ToString(), nmDOther1HBsAbSummary.Value.ToString(), nmDOther1HBsAgSummary.Value.ToString()).Length >= 1)
+                nmDOther1CAAFP.Value.ToString(), nmDOther1CAAFPResult.Value.ToString(), nmDOther1CAAFPSummary.Value.ToString(), nmDOther1CACEA.Value.ToString(), nmDOther1CACEAResult.Value.ToString(),
+                nmDOther1CACEASummary.Value.ToString(), nmDOther1CAPSA.Value.ToString(), nmDOther1CAPSAResult.Value.ToString(), nmDOther1CAPSASummary.Value.ToString(), nmDOther1CAHCG.Value.ToString(),
+                nmDOther1CAHCGResult.Value.ToString(), nmDOther1CAHCGSummary.Value.ToString(), nmDOther1CA153.Value.ToString(), nmDOther1CA153Result.Value.ToString(), 
+                nmDOther1CA153Summary.Value.ToString(), nmDOther1CA125.Value.ToString(), nmDOther1CA125Result.Value.ToString(), nmDOther1CA125Summary.Value.ToString(),
+                nmDOther1CA199.Value.ToString(), nmDOther1CA199Result.Value.ToString(), nmDOther1CA199Summary.Value.ToString(), nmDOther1HBsAbResult.Value.ToString(), nmDOther1HBsAgResult.Value.ToString(), nmDOther1HBsAbSummary.Value.ToString(), nmDOther1HBsAgSummary.Value.ToString()).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล Other เรียบร้อย", "บันทึกข้อมูล");
             }
@@ -2528,7 +2532,7 @@ namespace CheckUP.gui
             Cursor.Current = cursor;
             if (cc.eidb.updateStoolExam(nmDStoolExamRow.Value.ToString(), nmDStoolExamNo.Value.ToString(), nmDStoolExamAppearance.Value.ToString(), nmDStoolExamColor.Value.ToString(),
                 nmDStoolExamWBC.Value.ToString(), nmDStoolExamRBC.Value.ToString(), nmDStoolExamParasite.Value.ToString(), nmDStoolExamSummary.Value.ToString(), 
-                nmDStoolExamCulture.Value.ToString(), nmDStoolExamTyHoidH.Value.ToString(), nmDStoolExamTyHoidO.Value.ToString(),txtStoolExamSheetName.Text).Length >= 1)
+                nmDStoolExamCulture.Value.ToString(), nmDStoolExamTyHoidH.Value.ToString(), nmDStoolExamTyHoidO.Value.ToString(),txtStoolExamSheetName.Text, nmDStoolExamCultureSummary.Value.ToString()).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล StoolExam เรียบร้อย", "บันทึกข้อมูล");
             }

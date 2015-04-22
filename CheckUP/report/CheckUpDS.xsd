@@ -396,6 +396,9 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="bmi_summary" msprop:Generator_ColumnVarNameInTable="columnbmi_summary" msprop:Generator_ColumnPropNameInRow="bmi_summary" msprop:Generator_ColumnPropNameInTable="bmi_summaryColumn" msprop:Generator_UserColumnName="bmi_summary" type="xs:string" minOccurs="0" />
+              <xs:element name="pulse_summary" msprop:Generator_ColumnVarNameInTable="columnpulse_summary" msprop:Generator_ColumnPropNameInRow="pulse_summary" msprop:Generator_ColumnPropNameInTable="pulse_summaryColumn" msprop:Generator_UserColumnName="pulse_summary" type="xs:string" minOccurs="0" />
+              <xs:element name="bloodname" msprop:Generator_ColumnVarNameInTable="columnbloodname" msprop:Generator_ColumnPropNameInRow="bloodname" msprop:Generator_ColumnPropNameInTable="bloodnameColumn" msprop:Generator_UserColumnName="bloodname" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

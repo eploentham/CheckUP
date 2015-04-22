@@ -193,7 +193,7 @@ namespace CheckUP.gui
 
             txtChoNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cholesterol].ToString();
             txtChoLDLNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ldl].ToString();
-            txtChoHDLNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.hdl].ToString();
+            txtChoHDLNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.hdlMale].ToString();
 
             txtSgotNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgot].ToString();
             txtSgotSgptNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgpt].ToString();

@@ -194,6 +194,7 @@ namespace CheckUP.gui
             }
             if (cc.cudb.insertCustomer(cu).Length >= 1)
             {
+                cc.cucdb.UpdateCustNameT(cu.Id, cu.NameT);
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 this.Dispose();
                 //this.Hide();

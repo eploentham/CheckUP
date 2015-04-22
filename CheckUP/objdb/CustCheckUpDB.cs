@@ -1185,5 +1185,14 @@ namespace CheckUP.objdb
             }
             return chk;
         }
+        public String UpdateCustNameT(String cuId, String name)
+        {
+            String sql = "", chk = "";
+            sql = "Update " + cuc.table + " Set " + cuc.CustNameT + "='" + name + "' " +
+                "Where " + cuc.CustId + "='" + cuId + "'";
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
+
     }
 }

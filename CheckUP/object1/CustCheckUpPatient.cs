@@ -27,7 +27,7 @@ namespace CheckUP.object1
         public String fSexId="", SexName="";    
         public String summaryPhysicalExam="", PeResult="";
 
-        public String StoolExamColor = "", StoolExamAppearance = "", StoolExamWbc = "", StoolExamRbc = "", StoolExamParasite = "", StoolExamSummary = "", StoolExamCulture = "", StoolExamTyphoidO = "", StoolExamTyphoidH = "";
+        public String StoolExamColor = "", StoolExamAppearance = "", StoolExamWbc = "", StoolExamRbc = "", StoolExamParasite = "", StoolExamSummary = "", StoolExamCulture = "", StoolExamTyphoidO = "", StoolExamTyphoidH = "", StoolExamCultureSummary = "";
         
         public String ToxiLead = "", ToxiAluminium = "", ToxiCadmium = "", ToxiMercury = "", ToxiTin = "", ToxiCopper = "", ToxiManganese = "", ToxiZinc = "", ToxiAmmonia = "";
         public String ToxiHippuric = "", ToxiMethyl = "", ToxiAcetone="", ToxiNickel="", ToxiChromium="", ToxiPhenol="", ToxiKetone="", ToxiBenzene="", ToxiMandelic="", ToxiMethanol="";

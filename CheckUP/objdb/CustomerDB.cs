@@ -320,6 +320,7 @@ namespace CheckUP.objdb
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
+        
         public String selectCodeMax()
         {
             //Customer item = new Customer();

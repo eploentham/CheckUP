@@ -156,6 +156,7 @@
     <Compile Include="objdb\CompanyDB.cs" />
     <Compile Include="objdb\ConnectDB.cs" />
     <Compile Include="objdb\CustCheckUpDB.cs" />
+    <Compile Include="objdb\CustCheckUpPatient1DB.cs" />
     <Compile Include="objdb\CustCheckUpPatientDB.cs" />
     <Compile Include="objdb\CustCheckUpPatientValueNormalDB.cs" />
     <Compile Include="objdb\CustomerDB.cs" />
@@ -170,6 +171,7 @@
     <Compile Include="object1\Config1.cs" />
     <Compile Include="object1\CustCheckUp.cs" />
     <Compile Include="object1\CustCheckUpPatient.cs" />
+    <Compile Include="object1\CustCheckUpPatient1.cs" />
     <Compile Include="object1\CustCheckUpPatientValueNormal.cs" />
     <Compile Include="object1\Customer.cs" />
     <Compile Include="object1\District.cs" />

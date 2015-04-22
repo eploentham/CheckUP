@@ -112,8 +112,13 @@
             this.txtTriValue = new System.Windows.Forms.TextBox();
             this.label70 = new System.Windows.Forms.Label();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.label87 = new System.Windows.Forms.Label();
+            this.txtChoHDLFeMale = new System.Windows.Forms.TextBox();
+            this.label88 = new System.Windows.Forms.Label();
+            this.label86 = new System.Windows.Forms.Label();
+            this.label85 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtChoHDL = new System.Windows.Forms.TextBox();
+            this.txtChoHDLMale = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtChoLDL = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -340,8 +345,7 @@
             this.label160 = new System.Windows.Forms.Label();
             this.label161 = new System.Windows.Forms.Label();
             this.tabPage15 = new System.Windows.Forms.TabPage();
-            this.label85 = new System.Windows.Forms.Label();
-            this.label86 = new System.Windows.Forms.Label();
+            this.label89 = new System.Windows.Forms.Label();
             this.tC.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
@@ -1214,10 +1218,13 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.label87);
+            this.tabPage8.Controls.Add(this.txtChoHDLFeMale);
+            this.tabPage8.Controls.Add(this.label88);
             this.tabPage8.Controls.Add(this.label86);
             this.tabPage8.Controls.Add(this.label85);
             this.tabPage8.Controls.Add(this.label3);
-            this.tabPage8.Controls.Add(this.txtChoHDL);
+            this.tabPage8.Controls.Add(this.txtChoHDLMale);
             this.tabPage8.Controls.Add(this.label13);
             this.tabPage8.Controls.Add(this.txtChoLDL);
             this.tabPage8.Controls.Add(this.label12);
@@ -1232,6 +1239,54 @@
             this.tabPage8.Text = "tabPage8";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label87.Location = new System.Drawing.Point(493, 154);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(212, 16);
+            this.label87.TabIndex = 123;
+            this.label87.Text = ">60@mg/dl ไม่ต้องใส่เครื่องหมายมากกว่า";
+            // 
+            // txtChoHDLFeMale
+            // 
+            this.txtChoHDLFeMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtChoHDLFeMale.Location = new System.Drawing.Point(203, 154);
+            this.txtChoHDLFeMale.Name = "txtChoHDLFeMale";
+            this.txtChoHDLFeMale.Size = new System.Drawing.Size(261, 22);
+            this.txtChoHDLFeMale.TabIndex = 122;
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label88.Location = new System.Drawing.Point(54, 154);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(84, 16);
+            this.label88.TabIndex = 121;
+            this.label88.Text = "HDL Female";
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label86.Location = new System.Drawing.Point(493, 101);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(220, 16);
+            this.label86.TabIndex = 120;
+            this.label86.Text = "<100@mg/dl ไม่ต้องใส่เครื่องหมายน้อยกว่า";
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label85.Location = new System.Drawing.Point(493, 126);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(212, 16);
+            this.label85.TabIndex = 119;
+            this.label85.Text = ">60@mg/dl ไม่ต้องใส่เครื่องหมายมากกว่า";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -1242,13 +1297,13 @@
             this.label3.TabIndex = 118;
             this.label3.Text = "<200@mg/dl ไม่ต้องใส่เครื่องหมายน้อยกว่า";
             // 
-            // txtChoHDL
+            // txtChoHDLMale
             // 
-            this.txtChoHDL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtChoHDL.Location = new System.Drawing.Point(203, 126);
-            this.txtChoHDL.Name = "txtChoHDL";
-            this.txtChoHDL.Size = new System.Drawing.Size(261, 22);
-            this.txtChoHDL.TabIndex = 117;
+            this.txtChoHDLMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtChoHDLMale.Location = new System.Drawing.Point(203, 126);
+            this.txtChoHDLMale.Name = "txtChoHDLMale";
+            this.txtChoHDLMale.Size = new System.Drawing.Size(261, 22);
+            this.txtChoHDLMale.TabIndex = 117;
             // 
             // label13
             // 
@@ -1256,9 +1311,9 @@
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label13.Location = new System.Drawing.Point(54, 126);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(35, 16);
+            this.label13.Size = new System.Drawing.Size(68, 16);
             this.label13.TabIndex = 116;
-            this.label13.Text = "HDL";
+            this.label13.Text = "HDL Male";
             // 
             // txtChoLDL
             // 
@@ -2042,6 +2097,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label89);
             this.tabPage3.Controls.Add(this.btnLungSave);
             this.tabPage3.Controls.Add(this.txtPerFev1);
             this.tabPage3.Controls.Add(this.txtFev1Per);
@@ -3542,25 +3598,15 @@
             this.tabPage15.Text = "tabPage15";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
-            // label85
+            // label89
             // 
-            this.label85.AutoSize = true;
-            this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label85.Location = new System.Drawing.Point(493, 104);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(212, 16);
-            this.label85.TabIndex = 119;
-            this.label85.Text = ">60@mg/dl ไม่ต้องใส่เครื่องหมายมากกว่า";
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label86.Location = new System.Drawing.Point(493, 129);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(220, 16);
-            this.label86.TabIndex = 120;
-            this.label86.Text = "<100@mg/dl ไม่ต้องใส่เครื่องหมายน้อยกว่า";
+            this.label89.AutoSize = true;
+            this.label89.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label89.Location = new System.Drawing.Point(273, 148);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(55, 16);
+            this.label89.TabIndex = 156;
+            this.label89.Text = ">80@%";
             // 
             // FrmValueNormal
             // 
@@ -3677,7 +3723,7 @@
         private System.Windows.Forms.TextBox txtTriValue;
         private System.Windows.Forms.Label label70;
         private System.Windows.Forms.TabPage tabPage8;
-        private System.Windows.Forms.TextBox txtChoHDL;
+        private System.Windows.Forms.TextBox txtChoHDLMale;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtChoLDL;
         private System.Windows.Forms.Label label12;
@@ -3921,5 +3967,9 @@
         private System.Windows.Forms.Label label83;
         private System.Windows.Forms.Label label86;
         private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.TextBox txtChoHDLFeMale;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.Label label89;
     }
 }

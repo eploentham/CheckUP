@@ -329,6 +329,12 @@ namespace CheckUP.report {
             
             private global::System.Data.DataColumn columnsort2;
             
+            private global::System.Data.DataColumn columnbmi_summary;
+            
+            private global::System.Data.DataColumn columnpulse_summary;
+            
+            private global::System.Data.DataColumn columnbloodname;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public r_checkupDataTable() {
@@ -564,6 +570,30 @@ namespace CheckUP.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn bmi_summaryColumn {
+                get {
+                    return this.columnbmi_summary;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pulse_summaryColumn {
+                get {
+                    return this.columnpulse_summary;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn bloodnameColumn {
+                get {
+                    return this.columnbloodname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -624,7 +654,10 @@ namespace CheckUP.report {
                         string status_lab, 
                         string remark, 
                         string sort1, 
-                        string sort2) {
+                        string sort2, 
+                        string bmi_summary, 
+                        string pulse_summary, 
+                        string bloodname) {
                 r_checkupRow rowr_checkupRow = ((r_checkupRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -651,7 +684,10 @@ namespace CheckUP.report {
                         status_lab,
                         remark,
                         sort1,
-                        sort2};
+                        sort2,
+                        bmi_summary,
+                        pulse_summary,
+                        bloodname};
                 rowr_checkupRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowr_checkupRow);
                 return rowr_checkupRow;
@@ -706,6 +742,9 @@ namespace CheckUP.report {
                 this.columnremark = base.Columns["remark"];
                 this.columnsort1 = base.Columns["sort1"];
                 this.columnsort2 = base.Columns["sort2"];
+                this.columnbmi_summary = base.Columns["bmi_summary"];
+                this.columnpulse_summary = base.Columns["pulse_summary"];
+                this.columnbloodname = base.Columns["bloodname"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -761,6 +800,12 @@ namespace CheckUP.report {
                 base.Columns.Add(this.columnsort1);
                 this.columnsort2 = new global::System.Data.DataColumn("sort2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsort2);
+                this.columnbmi_summary = new global::System.Data.DataColumn("bmi_summary", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbmi_summary);
+                this.columnpulse_summary = new global::System.Data.DataColumn("pulse_summary", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpulse_summary);
+                this.columnbloodname = new global::System.Data.DataColumn("bloodname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbloodname);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AllowDBNull = false;
@@ -1326,6 +1371,54 @@ namespace CheckUP.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string bmi_summary {
+                get {
+                    try {
+                        return ((string)(this[this.tabler_checkup.bmi_summaryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'bmi_summary\' in table \'r_checkup\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabler_checkup.bmi_summaryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pulse_summary {
+                get {
+                    try {
+                        return ((string)(this[this.tabler_checkup.pulse_summaryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pulse_summary\' in table \'r_checkup\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabler_checkup.pulse_summaryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string bloodname {
+                get {
+                    try {
+                        return ((string)(this[this.tabler_checkup.bloodnameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'bloodname\' in table \'r_checkup\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabler_checkup.bloodnameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isrow_numberNull() {
                 return this.IsNull(this.tabler_checkup.row_numberColumn);
             }
@@ -1610,6 +1703,42 @@ namespace CheckUP.report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setsort2Null() {
                 this[this.tabler_checkup.sort2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isbmi_summaryNull() {
+                return this.IsNull(this.tabler_checkup.bmi_summaryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setbmi_summaryNull() {
+                this[this.tabler_checkup.bmi_summaryColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispulse_summaryNull() {
+                return this.IsNull(this.tabler_checkup.pulse_summaryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpulse_summaryNull() {
+                this[this.tabler_checkup.pulse_summaryColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsbloodnameNull() {
+                return this.IsNull(this.tabler_checkup.bloodnameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetbloodnameNull() {
+                this[this.tabler_checkup.bloodnameColumn] = global::System.Convert.DBNull;
             }
         }
         
