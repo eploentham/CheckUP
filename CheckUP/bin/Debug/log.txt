@@ -1885,3 +1885,9 @@ Failed to load database information.
 27/3/2558 11:28->rpt.setReportCheckUp OK 
 27/3/2558 11:28->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
 27/3/2558 11:28->rpt.setReportCheckUp OK SetDataSource
+13/7/2558 9:58->FrmCheckUPAdd.btnPrint_Click 01 
+13/7/2558 9:58->FrmCheckUPAdd.btnPrint_Click 02 
+13/7/2558 9:58->FrmCheckUPAdd.btnPrint_Click 03 
+13/7/2558 9:58->rpt.setReportCheckUp OK 
+13/7/2558 9:58->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+13/7/2558 9:58->rpt.setReportCheckUp OK SetDataSource

@@ -158,6 +158,7 @@
             this.txtUricMaleValue = new System.Windows.Forms.TextBox();
             this.label84 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label96 = new System.Windows.Forms.Label();
             this.label80 = new System.Windows.Forms.Label();
             this.txtCA199 = new System.Windows.Forms.TextBox();
             this.label82 = new System.Windows.Forms.Label();
@@ -346,7 +347,7 @@
             this.label160 = new System.Windows.Forms.Label();
             this.label161 = new System.Windows.Forms.Label();
             this.tabPage15 = new System.Windows.Forms.TabPage();
-            this.label96 = new System.Windows.Forms.Label();
+            this.label100 = new System.Windows.Forms.Label();
             this.tC.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
@@ -1365,6 +1366,7 @@
             // 
             // tabPage9
             // 
+            this.tabPage9.Controls.Add(this.label100);
             this.tabPage9.Controls.Add(this.txtSgotAlkaline);
             this.tabPage9.Controls.Add(this.label45);
             this.tabPage9.Controls.Add(this.label14);
@@ -1743,6 +1745,16 @@
             this.tabPage2.TabIndex = 12;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label96.Location = new System.Drawing.Point(304, 255);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(63, 16);
+            this.label96.TabIndex = 149;
+            this.label96.Text = "Negative";
             // 
             // label80
             // 
@@ -3610,15 +3622,15 @@
             this.tabPage15.Text = "tabPage15";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
-            // label96
+            // label100
             // 
-            this.label96.AutoSize = true;
-            this.label96.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label96.Location = new System.Drawing.Point(304, 255);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(63, 16);
-            this.label96.TabIndex = 149;
-            this.label96.Text = "Negative";
+            this.label100.AutoSize = true;
+            this.label100.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label100.Location = new System.Drawing.Point(399, 270);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(89, 16);
+            this.label100.TabIndex = 123;
+            this.label100.Text = "30 – 120@U/L";
             // 
             // FrmValueNormal
             // 
@@ -3984,5 +3996,6 @@
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.Label label89;
         private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.Label label100;
     }
 }

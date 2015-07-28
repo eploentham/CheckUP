@@ -4033,6 +4033,16 @@ namespace CheckUP.gui
                 sgptMax = int.Parse(aa[1]);
                 sgptUnit = sgpt[1];
             }
+            String[] alkaline = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverAlkaline].ToString().Split('@');
+            int alkalineMin = 0, alkalineMax = 0;
+            String akalineUnit = "";
+            if (alkaline.Length == 2)
+            {
+                String[] aa = alkaline[0].ToString().Split('-');
+                alkalineMin = int.Parse(aa[0]);
+                alkalineMax = int.Parse(aa[1]);
+                akalineUnit = alkaline[1];
+            }
             //Bun Male
             String[] bunMale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyBunMale].ToString().Split('@');
             Double bunMaleMin = 0, bunMaleMax = 0;
@@ -6357,7 +6367,6 @@ namespace CheckUP.gui
                         }
                     }
                     
-                    
 
                     //Sgpt
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.liverSgpt] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.liverSgpt].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -6414,6 +6423,61 @@ namespace CheckUP.gui
                             chksgot = true;
                         }
                     }
+                    //Alkaline
+                    if ((dtAll.Rows[i][cc.ccpdb.ccp.liverAlkaline] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.liverAlkaline].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
+                    {
+                        rc.Id = r.Next().ToString();
+                        rc.LabGroup = "การตรวจ (SGOT/SGPT)";
+                        rc.LabName = "Alkaline ";
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverAlkaline].ToString().Replace("@", " ");
+                        rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.liverAlkaline].ToString();
+                        //rc.Remark = dtAll.Rows[i][cc.ccpdb.ccp.liverSummary].ToString();
+                        rc.LInter = "การแปลผล";
+                        rc.LInterAbnormal = "ปกติ";
+                        rc.LInterNormal = "ผิดปกติ";
+                        rc.LNormal = "ค่าปกติ";
+                        rc.lResult = "ผลการตรวจ";
+                        rc.LTypeLab = "ประเภทการตรวจ Alkaline";
+                        if (!rc.LabResult.Equals("") && !rc.LabResult.Equals("-"))
+                        {
+                            try
+                            {
+                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                                {
+                                    if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= alkalineMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= alkalineMax))
+                                    {
+                                        rc.Remark = "ปกติ";
+                                    }
+                                    else
+                                    {
+                                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > alkalineMax)
+                                        {
+                                            rc.Remark = "สูงกว่ามาตรฐาน";
+                                        }
+                                        else
+                                        {
+                                            rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    rc.Remark = "";
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
+                            }
+
+                            //rc.Remark = "";
+                            rc.StatusLab = "alkaline";
+                            rc.Sort1 = "1016";
+                            rc.Sort2 = "12";
+                            cc.rcdb.insertRCheckUp(rc);
+                            chksgot = true;
+                        }
+                    }
                                         
 
                     rc.Id = r.Next().ToString();
@@ -6439,7 +6503,7 @@ namespace CheckUP.gui
                     rc.Remark = "";
                     rc.StatusLab = "sum";
                     rc.Sort1 = "1016";
-                    rc.Sort2 = "12";
+                    rc.Sort2 = "13";
                     cc.rcdb.insertRCheckUp(rc);
                 }
                 
