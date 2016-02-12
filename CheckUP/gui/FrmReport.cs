@@ -142,7 +142,8 @@ namespace CheckUP
         //        //ParameterField myParam = new ParameterField();
         //        //myParam.Name = "header1";
         //        //myParam.
-                rpt.SetParameterValue("line1", "ผลตรวจสุขภาพประจำปี 2558");
+        
+                rpt.SetParameterValue("line1", "ผลตรวจสุขภาพประจำปี "+ cc.cucdb.cuc.YearId);
                 rpt.SetParameterValue("compName", "โรงพยาบาล บางนา5");
                 rpt.SetParameterValue("compAddress", "55 หมู่4 ถนนเทพารักษ์ ตำบลบางพลีใหญ่ อำเภอบางพลี จังหวัดสมุทรปราการ 10540");
 
