@@ -84,9 +84,9 @@ namespace CheckUP.object1
         public String kidneyResult = "";
         public String kidneySummary = "";
 
-        public String liverSgot="";
-        public String liverSgpt="";
-        public String liverAlp = "", liverAlkaline = "";
+        public String liverSgotMale="", liverSgotFeMale = "";
+        public String liverSgptMale="", liverSgptFeMale = "";
+        public String liverAlpMale = "", liverAlpFeMale = "", liverAlkalineMale = "", liverAlkalineFeMale = "";
         public String liverResult = "";
         public String liverSummary = "";
         public String uricAcidMale="", uricAcidFemale="";
@@ -242,6 +242,9 @@ namespace CheckUP.object1
         public String albuminGlobulin="";
         public String directBillirubin="";
         public String colorBlindness="";
+        public String StatusCBCNotsplitMaleFemale = "";
+        public String StatusSgotNotsplitMaleFemale = "";
+        public String StatusBunNotsplitMaleFemale = "";
         public override String ToString()
         {
             return patientFullname;

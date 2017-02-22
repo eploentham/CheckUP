@@ -2717,6 +2717,7 @@
             // dtpCheckUpDate
             // 
             this.dtpCheckUpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.dtpCheckUpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpCheckUpDate.Location = new System.Drawing.Point(516, 21);
             this.dtpCheckUpDate.Name = "dtpCheckUpDate";
             this.dtpCheckUpDate.Size = new System.Drawing.Size(125, 22);

@@ -192,7 +192,7 @@ namespace CheckUP.gui
             nmDOther1HBsAbResult.Value = int.Parse(cc.cf.NumberNull1(ei.Other1HBsAbResult));
             nmDOther1HBsAgResult.Value = int.Parse(cc.cf.NumberNull1(ei.Other1HBsAgResult));
             nmDOther1HBsAbSummary.Value = int.Parse(cc.cf.NumberNull1(ei.Other1HBsAbSummary));
-            nmDOther1HBsAgSummary.Value = int.Parse(cc.cf.NumberNull1(ei.Other1HBsAgSummary));
+            nmDOther1AntiHavSummary.Value = int.Parse(cc.cf.NumberNull1(ei.Other1AntiHavSummary));
 
             nmDOtherAmphetamineSummary.Value = int.Parse(cc.cf.NumberNull1(ei.AmphetamineSummary));
 
@@ -299,6 +299,7 @@ namespace CheckUP.gui
             txtEyeSheetName.Text = ei.EyeSheetname;
             txtAudioSheetName.Text = ei.AudiogramSheetname;
             txtLungSheetName.Text = ei.LungSheetname;
+            txtOther1SheetName.Text = ei.Other1Sheetname;
 
             lbPE.Left = label3.Left;
             lbXRay.Left = label3.Left;
@@ -919,7 +920,7 @@ namespace CheckUP.gui
         private void SaveOther1()
         {
             String No = "", HBsAg = "", HbsAb = "", AntiHIV = "", VDRL = "", Amphetamine = "", Calcium = "", AntiHav = "", HBsAgResult = "", HbsAbResult = "", HBsAgSummary = "", HbsAbSummary = "";
-            String CAAFP = "", CACEA = "", CAPSA = "", CAHCG = "", CA153 = "", CA125 = "", CA199 = "", AmphetamineSummary = "";
+            String CAAFP = "", CACEA = "", CAPSA = "", CAHCG = "", CA153 = "", CA125 = "", CA199 = "", AmphetamineSummary = "", AntiHavSummary="";
             ofd.ShowDialog();
 
             Cursor cursor = Cursor.Current;
@@ -1113,6 +1114,16 @@ namespace CheckUP.gui
             }
             AmphetamineSummary = AmphetamineSummary.Trim();
 
+            if (xlRange.Cells[nmDOther1Row.Value, nmDOther1AntiHavSummary.Value].Value2 != null)
+            {
+                AntiHavSummary = xlRange.Cells[nmDOther1Row.Value, nmDOther1AntiHavSummary.Value].Value2.ToString();
+            }
+            else
+            {
+                AntiHavSummary = "";
+            }
+            AntiHavSummary = AntiHavSummary.Trim();
+
             txtOther1Test.Text = "ลำดับ " + No + " HBsAg " + HBsAg + " HbsAb " + HbsAb + " AntiHIV " + AntiHIV + " VDRL " + VDRL + " Amphetamine " + Amphetamine + " Calcium " + Calcium + " AntiHav " + AntiHav+
                 " CAAFP " + CAAFP+" CACEA " + CACEA+" CAPSA " + CAPSA+" CAHCG " + CAHCG+" CA153 " + CA153+" CA125 " + CA125+" CA199 " + CA199;
 
@@ -1124,7 +1135,7 @@ namespace CheckUP.gui
                 nmDOther1CAHCGResult.Value.ToString(), nmDOther1CAHCGSummary.Value.ToString(), nmDOther1CA153.Value.ToString(), nmDOther1CA153Result.Value.ToString(), 
                 nmDOther1CA153Summary.Value.ToString(), nmDOther1CA125.Value.ToString(), nmDOther1CA125Result.Value.ToString(), nmDOther1CA125Summary.Value.ToString(),
                 nmDOther1CA199.Value.ToString(), nmDOther1CA199Result.Value.ToString(), nmDOther1CA199Summary.Value.ToString(), nmDOther1HBsAbResult.Value.ToString(),
-                nmDOther1HBsAgResult.Value.ToString(), nmDOther1HBsAbSummary.Value.ToString(), nmDOther1HBsAgSummary.Value.ToString(), nmDOtherAmphetamineSummary.Value.ToString()).Length >= 1)
+                nmDOther1HBsAgResult.Value.ToString(), nmDOther1HBsAbSummary.Value.ToString(), nmDOther1HBsAgSummary.Value.ToString(), nmDOtherAmphetamineSummary.Value.ToString(), nmDOther1AntiHavSummary.Value.ToString()).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล Other เรียบร้อย", "บันทึกข้อมูล");
             }

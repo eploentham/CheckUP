@@ -234,6 +234,7 @@ namespace CheckUP.objdb
             ccp.amphetamineSuggess = "amphetamine_suggess";
 
             ccp.antiHivSummary = "anti_hiv_summary";
+            ccp.antiHavSummary = "anti_hav_summary";
             ccp.antiHivSuggess = "anti_hiv_suggess";
             //ccp.eyesExam = "";
             ccp.uricAcidSuggess = "uric_acid_suggess";
@@ -884,7 +885,7 @@ namespace CheckUP.objdb
             String CAAFP, String CAAFPResult, String CAAFPSummary, String CACEA, String CACEAResult, String CACEASummary, String CAPSA, String CAPSAResult, String CAPSASummary,
             String CAHCG, String CAHCGResult, String CAHCGSummary, String CA153, String CA153Result, String CA153Summary, String CA125, String CA125Result, String CA125Summary,
             String CA199, String CA199Result, String CA199Summary, String HBsAgResult,
-            String HBsAgSummary, String HbsAbResult, String HbsAbSummary, String AmphetamineSummary)
+            String HBsAgSummary, String HbsAbResult, String HbsAbSummary, String AmphetamineSummary, String AntiHavSummary)
         {
             String chk = "", sql = "";
             try
@@ -941,7 +942,8 @@ namespace CheckUP.objdb
                 ccp1db.ccp1.hbsagSummary + "='" + HBsAgSummary + "', " +
                 ccp1db.ccp1.hbsabResult + "='" + HbsAbResult + "', " +
                 ccp1db.ccp1.hbsabSummary + "='" + HbsAbSummary + "', " +
-                ccp1db.ccp1.AmphetamineSummary + "='" + AmphetamineSummary + "' " +
+                ccp1db.ccp1.AmphetamineSummary + "='" + AmphetamineSummary + "', " +
+                ccp1db.ccp1.AntiHavSummary + "='" + AntiHavSummary + "' " +
                 "Where " + ccp1db.ccp1.CustCheckUpId + "='" + cucId + "' and " + ccp1db.ccp1.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             }

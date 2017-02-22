@@ -160,6 +160,7 @@ namespace CheckUP.objdb
             ei.Other1VDRL = "other1_vdrl";
             ei.Other1Sheetname = "other1_sheetname";
             ei.Other1AntiHav = "other1_antihav";
+            ei.Other1AntiHavSummary = "other1_antihav_summary";
 
             ei.Other1HBsAbResult = "other1_hbsab_result";
             ei.Other1HBsAgResult = "other1_hbsag_result";
@@ -435,6 +436,7 @@ namespace CheckUP.objdb
             item.Other1HBsAgResult = NumberNull10(dt.Rows[0][ei.Other1HBsAgResult].ToString());
             item.Other1HBsAbSummary = NumberNull10(dt.Rows[0][ei.Other1HBsAbSummary].ToString());
             item.Other1HBsAgSummary = NumberNull10(dt.Rows[0][ei.Other1HBsAgSummary].ToString());
+            item.Other1AntiHavSummary = NumberNull10(dt.Rows[0][ei.Other1AntiHavSummary].ToString());
 
             item.AmphetamineSummary = NumberNull10(dt.Rows[0][ei.AmphetamineSummary].ToString());
 
@@ -1009,7 +1011,8 @@ namespace CheckUP.objdb
         public String UpdateOther1(String Amphetamine, String AntiHIV, String Calcium, String HBsAb, String HBsAg, String No, String Row, String VDRL, String sheetname, String AntiHav,
             String CAAFP, String CAAFPResult, String CAAFPSummary, String CACEA, String CACEAResult, String CACEASummary, String CAPSA, String CAPSAResult, String CAPSASummary,
             String CAHCG, String CAHCGResult, String CAHCGSummary, String CA153, String CA153Result, String CA153Summary, String CA125, String CA125Result, String CA125Summary,
-            String CA199, String CA199Result, String CA199Summary, String HBsAbResult, String HBsAgResult, String HBsAbSummary, String HBsAgSummary, String AmphetamineSummary)
+            String CA199, String CA199Result, String CA199Summary, String HBsAbResult, String HBsAgResult, String HBsAbSummary, String HBsAgSummary, String AmphetamineSummary,
+            String AntiHavSummary)
         {
             String sql = "", chk = "";
 
@@ -1052,7 +1055,8 @@ namespace CheckUP.objdb
                 ei.Other1HBsAgResult + "='" + HBsAgResult + "', " +
                 ei.Other1HBsAbSummary + "='" + HBsAbSummary + "', " +
                 ei.Other1HBsAgSummary + "='" + HBsAgSummary + "', "+
-                ei.AmphetamineSummary + "='" + AmphetamineSummary + "' ";
+                ei.AmphetamineSummary + "='" + AmphetamineSummary + "', "+
+                ei.Other1AntiHavSummary + "='" + AntiHavSummary + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

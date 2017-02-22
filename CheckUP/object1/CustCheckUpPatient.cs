@@ -160,7 +160,7 @@ namespace CheckUP.object1
         public String amphetamineSummary="";
         public String amphetamineSuggess="";
         public String statusAmphetamine="";
-        public String antiHivSummary="";
+        public String antiHivSummary="", antiHavSummary="";
         public String antiHivSuggess="";
         public String statusAntiHiv="";
         public String statusUricAcid="";

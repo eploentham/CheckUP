@@ -143,11 +143,12 @@ namespace CheckUP
         //        //myParam.Name = "header1";
         //        //myParam.
         
-                rpt.SetParameterValue("line1", "ผลตรวจสุขภาพประจำปี "+ cc.cucdb.cuc.YearId);
+                rpt.SetParameterValue("line1", "ผลตรวจสุขภาพประจำปี "+ cuc.YearId);
                 rpt.SetParameterValue("compName", "โรงพยาบาล บางนา5");
                 rpt.SetParameterValue("compAddress", "55 หมู่4 ถนนเทพารักษ์ ตำบลบางพลีใหญ่ อำเภอบางพลี จังหวัดสมุทรปราการ 10540");
 
                 rpt.SetParameterValue("custName", cuc.CustNameT);
+                //rpt.SetParameterValue("year_id",cuc.YearId);
 
                 this.crystalReportViewer1.ReportSource = rpt;
                 this.crystalReportViewer1.Refresh();

@@ -44,6 +44,8 @@ namespace CheckUP.gui
         }
         private void setControl()
         {
+            chkCBCNotsplitMaleFemale.Text = "ไม่แยก ชาย-หญิง";
+            chkCBCsplitMaleFemale.Text = "แยก ชาย-หญิง";
             DataTable dt = cc.ccpvndb.selectByPk();
             txtCBCBact.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcBasophil].ToString();
             txtCBCEos.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcEosinophil].ToString();
@@ -90,10 +92,14 @@ namespace CheckUP.gui
             txtChoLDL.Text = dt.Rows[0][cc.ccpvndb.ccpvn.ldl].ToString();
             txtChoValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cholesterol].ToString();
 
-            txtSgotALT.Text = dt.Rows[0][cc.ccpvndb.ccpvn.liverAlp].ToString();
-            txtSgotSgptValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.liverSgpt].ToString();
-            txtSgotValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.liverSgot].ToString();
-            txtSgotAlkaline.Text = dt.Rows[0][cc.ccpvndb.ccpvn.liverAlkaline].ToString();
+            txtSgotALTMale.Text = dt.Rows[0][cc.ccpvndb.ccpvn.liverAlpMale].ToString();
+            txtSgotSgptMaleValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.liverSgptMale].ToString();
+            txtSgotMaleValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.liverSgotMale].ToString();
+            txtSgotAlkalineMale.Text = dt.Rows[0][cc.ccpvndb.ccpvn.liverAlkalineMale].ToString();
+            txtSgotALTFeMale.Text =  dt.Rows[0][cc.ccpvndb.ccpvn.liverAlpFeMale] == null ? "" : dt.Rows[0][cc.ccpvndb.ccpvn.liverAlpFeMale].ToString();
+            txtSgotSgptFeMaleValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.liverSgptFeMale] == null ? "" : dt.Rows[0][cc.ccpvndb.ccpvn.liverSgptFeMale].ToString();
+            txtSgotFeMaleValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.liverSgotFeMale] == null ? "" : dt.Rows[0][cc.ccpvndb.ccpvn.liverSgotFeMale].ToString();
+            txtSgotAlkalineFeMale.Text = dt.Rows[0][cc.ccpvndb.ccpvn.liverAlkalineFeMale] == null ? "" : dt.Rows[0][cc.ccpvndb.ccpvn.liverAlkalineFeMale].ToString();
 
             txtBunMaleValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.kidneyBunMale].ToString();
             txtBunCreatinineMaleValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.kidneyCreatinineMale].ToString();
@@ -163,7 +169,45 @@ namespace CheckUP.gui
             txtStoolExamCulture.Text = dt.Rows[0][cc.ccpvndb.ccpvn.StoolExamCulture].ToString();
             txtStoolExamTyhoidH.Text = dt.Rows[0][cc.ccpvndb.ccpvn.StoolExamTyphoidH].ToString();
             txtStoolExamTyhoidO.Text = dt.Rows[0][cc.ccpvndb.ccpvn.StoolExamTyphoidO].ToString();
-            
+            if ((dt.Rows[0][cc.ccpvndb.ccpvn.StatusCBCNotsplitMaleFemale] == null) || (dt.Rows[0][cc.ccpvndb.ccpvn.StatusCBCNotsplitMaleFemale].ToString().Equals(""))
+                || (dt.Rows[0][cc.ccpvndb.ccpvn.StatusCBCNotsplitMaleFemale].ToString().Equals("1")))//ไม่แยก ชายหญิง=1 แยกชายหญิง=2
+            {
+                setCBCsplitMale();
+                chkCBCsplitMaleFemale.Checked = false;
+                chkCBCNotsplitMaleFemale.Checked = true;
+            }
+            else
+            {
+                setCBCsplitMaleFemale();
+                chkCBCsplitMaleFemale.Checked = true;
+                chkCBCNotsplitMaleFemale.Checked = false;
+            }
+            if ((dt.Rows[0][cc.ccpvndb.ccpvn.StatusSgotNotsplitMaleFemale] == null) || (dt.Rows[0][cc.ccpvndb.ccpvn.StatusSgotNotsplitMaleFemale].ToString().Equals(""))
+                || (dt.Rows[0][cc.ccpvndb.ccpvn.StatusSgotNotsplitMaleFemale].ToString().Equals("1")))//ไม่แยก ชายหญิง=1 แยกชายหญิง=2
+            {
+                setSgotsplitMale();
+                chkSgotsplitMaleFemale.Checked = false;
+                chkSgotNotsplitMaleFemale.Checked = true;
+            }
+            else
+            {
+                setSgotsplitFemale();
+                chkSgotsplitMaleFemale.Checked = true;
+                chkSgotNotsplitMaleFemale.Checked = false;
+            }
+            if ((dt.Rows[0][cc.ccpvndb.ccpvn.StatusBunNotsplitMaleFemale] == null) || (dt.Rows[0][cc.ccpvndb.ccpvn.StatusBunNotsplitMaleFemale].ToString().Equals(""))
+                || (dt.Rows[0][cc.ccpvndb.ccpvn.StatusBunNotsplitMaleFemale].ToString().Equals("1")))//ไม่แยก ชายหญิง=1 แยกชายหญิง=2
+            {
+                setBunsplitMale();
+                chkBunsplitMaleFemale.Checked = false;
+                chkBunNotsplitMaleFemale.Checked = true;
+            }
+            else
+            {
+                setBunsplitFemale();
+                chkBunsplitMaleFemale.Checked = true;
+                chkBunNotsplitMaleFemale.Checked = false;
+            }
         }
         private void FrmValueNormal_Load(object sender, EventArgs e)
         {
@@ -183,12 +227,140 @@ namespace CheckUP.gui
                 }
             }
         }
+        private void setCBCsplitMale()
+        {
+            label42.Text = "RBC  :";
+            label28.Hide();
+            txtCBCRbcFemale.Hide();
+
+            label41.Text = "Hb  :";
+            label25.Hide();
+            txtCBCHbFemale.Hide();
+
+            label11.Text = "Hb  :";
+            label27.Hide();
+            txtCBCMcvFemale.Hide();
+
+            label40.Text = "Hb  :";
+            label26.Hide();
+            txtCBCHctFemale.Hide();
+        }
+        private void setCBCsplitFemale()
+        {
+            label42.Text = "RBC  Male :";
+            label28.Show();
+            txtCBCRbcFemale.Show();
+
+            label41.Text = "Hb Male :";
+            label25.Show();
+            txtCBCHbFemale.Show();
+
+
+            label11.Text = "Mcv Male :";
+            label27.Show();
+            txtCBCMcvFemale.Show();
+
+            label40.Text = "Hct  Male :";
+            label26.Show();
+            txtCBCHctFemale.Show();
+        }
+        private void setSgotsplitMale()
+        {
+            label77.Text = "SGOT :";
+            label103.Hide();
+            txtSgotFeMaleValue.Hide();
+            label101.Hide();
+
+            label76.Text = "SGPT :";
+            label117.Hide();
+            txtSgotSgptFeMaleValue.Hide();
+            label104.Hide();
+
+            label7.Text = "ALT :";
+            label118.Hide();
+            txtSgotALTFeMale.Hide();
+
+            label45.Text = "Alkaline ";
+            label124.Hide();
+            txtSgotAlkalineFeMale.Hide();
+            label123.Hide();
+        }
+        private void setSgotsplitFemale()
+        {
+            label77.Text = "SGOT Male :";
+            label103.Show();
+            txtSgotFeMaleValue.Show();
+            label101.Show();
+
+            label76.Text = "SGPT Male :";
+            label117.Show();
+            txtSgotSgptFeMaleValue.Show();
+            label104.Show();
+
+            label7.Text = "ALT Male :";
+            label118.Show();
+            txtSgotALTFeMale.Show();
+
+            label45.Text = "Alkaline Male:";
+            label124.Show();
+            txtSgotAlkalineFeMale.Show();
+            label123.Show();
+        }
+        private void setBunsplitMale()
+        {
+            label78.Text = "BUN :";
+            label24.Hide();
+            txtBunFemaleValue.Hide();
+            label18.Hide();
+
+        }
+        private void setBunsplitFemale()
+        {
+            label78.Text = "BUN Male :";
+            label24.Show();
+            txtBunFemaleValue.Show();
+            label18.Show();
+
+        }
+        private void setCBCsplitMaleFemale()
+        {
+            
+        }
+        private void chkCBCNotsplitMaleFemale_Click(object sender, EventArgs e)
+        {
+            setCBCsplitMale();
+        }
+
+        private void chkCBCsplitMaleFemale_Click(object sender, EventArgs e)
+        {
+            setCBCsplitFemale();
+        }
+
+        private void chkSgotNotsplitMaleFemale_Click(object sender, EventArgs e)
+        {
+            setSgotsplitMale();
+        }
+
+        private void chkSgotsplitMaleFemale_Click(object sender, EventArgs e)
+        {
+            setSgotsplitFemale();
+        }
+
+        private void chkBunNotsplitMaleFemale_Click(object sender, EventArgs e)
+        {
+            setBunsplitMale();
+        }
+
+        private void chkBunsplitMaleFemale_Click(object sender, EventArgs e)
+        {
+            setBunsplitFemale();
+        }
 
         private void btnSgotSave_Click(object sender, EventArgs e)
         {
             try
             {
-                String[] sgot = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgot].ToString().Split('@');
+                String[] sgot = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgotMale].ToString().Split('@');
                 int sgotMin = 0, sgotMax = 0;
                 String sgotUnit = "";
                 if (sgot.Length == 2)
@@ -198,7 +370,7 @@ namespace CheckUP.gui
                     sgotMax = int.Parse(aa[1]);
                     sgotUnit = sgot[1];
                 }
-                String[] sgpt = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgot].ToString().Split('@');
+                String[] sgpt = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgotMale].ToString().Split('@');
                 int sgptMin = 0, sgptMax = 0;
                 String sgptUnit = "";
                 if (sgot.Length == 2)
@@ -210,7 +382,8 @@ namespace CheckUP.gui
                 }
                 if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                 {
-                    String chk = cc.ccpvndb.UpdateSgot(txtSgotValue.Text.Trim(), txtSgotSgptValue.Text.Trim(), txtSgotALT.Text.Trim(), txtSgotAlkaline.Text.Trim());
+                    String chk = cc.ccpvndb.UpdateSgot(txtSgotMaleValue.Text.Trim(), txtSgotSgptMaleValue.Text.Trim(), txtSgotALTMale.Text.Trim(), txtSgotAlkalineMale.Text.Trim(),
+                        txtSgotFeMaleValue.Text.Trim(), txtSgotSgptFeMaleValue.Text.Trim(), txtSgotALTFeMale.Text.Trim(), txtSgotAlkalineFeMale.Text.Trim(), chkSgotNotsplitMaleFemale.Checked ? "1" : "2");
                     cc.dtccpvn = cc.ccpvndb.selectByPk();
                     if (chk.Equals("1"))
                     {
@@ -232,7 +405,7 @@ namespace CheckUP.gui
             {
                 String chk = cc.ccpvndb.UpdateCBC(txtCBCBact.Text.Trim(), txtCBCEos.Text.Trim(), txtCBCHbMale.Text.Trim(), txtCBCHbFemale.Text.Trim(), txtCBCHctMale.Text.Trim(), txtCBCHctFemale.Text.Trim(),
                 txtCBCLy.Text, txtCBCMch.Text.Trim(), txtCBCMchc.Text.Trim(), txtCBCMcvMale.Text.Trim(), txtCBCMcvFemale.Text.Trim(), txtCBCMono.Text.Trim(), txtCBCNeu.Text.Trim(), txtCBCPltC.Text.Trim(),
-                txtCBCRbcMale.Text.Trim(), txtCBCRbcFemale.Text.Trim(), txtCBCRbcMono.Text.Trim(), txtCBCWbc.Text.Trim(), txtCBCPltS.Text.Trim(), txtCBCPmn.Text.Trim());
+                txtCBCRbcMale.Text.Trim(), txtCBCRbcFemale.Text.Trim(), txtCBCRbcMono.Text.Trim(), txtCBCWbc.Text.Trim(), txtCBCPltS.Text.Trim(), txtCBCPmn.Text.Trim(), chkCBCNotsplitMaleFemale.Checked ? "1":"2");
                 cc.dtccpvn = cc.ccpvndb.selectByPk();
                 if (chk.Equals("1"))
                 {
@@ -354,49 +527,50 @@ namespace CheckUP.gui
             try
             {
                 String[] bunMale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyBunMale].ToString().Split('@');
-                int bunMaleMin = 0,bunMaleMax = 0;
+                Double bunMaleMin = 0,bunMaleMax = 0;
                 String bunMaleUnit = "";
                 if (bunMale.Length == 2)
                 {
-                    String[] aa = bunMale[0].ToString().Split('<');
-                    bunMaleMin = int.Parse(aa[0]);
-                    bunMaleMax = int.Parse(aa[1]);
+                    String[] aa = bunMale[0].ToString().Split('-');
+                    bunMaleMin = Double.Parse(aa[0]);
+                    bunMaleMax = Double.Parse(aa[1]);
                     bunMaleUnit = bunMale[1];
                 }
                 String[] bunFemale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyBunFemale].ToString().Split('@');
-                int bunFemaleMin = 0, bunFemaleMax = 0;
+                Double bunFemaleMin = 0, bunFemaleMax = 0;
                 String bunFemaleUnit = "";
                 if (bunFemale.Length == 2)
                 {
-                    String[] aa = bunFemale[0].ToString().Split('<');
-                    bunFemaleMin = int.Parse(aa[0]);
-                    bunFemaleMax = int.Parse(aa[1]);
+                    String[] aa = bunFemale[0].ToString().Split('-');
+                    bunFemaleMin = Double.Parse(aa[0]);
+                    bunFemaleMax = Double.Parse(aa[1]);
                     bunFemaleUnit = bunFemale[1];
                 }
                 String[] CreatinineMale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyCreatinineMale].ToString().Split('@');
-                int CreatinineMaleMin = 0, CreatinineMaleMax = 0;
+                Double CreatinineMaleMin = 0, CreatinineMaleMax = 0;
                 String CreatinineMaleUnit = "";
                 if (CreatinineMale.Length == 2)
                 {
-                    String[] aa = CreatinineMale[0].ToString().Split('<');
-                    CreatinineMaleMin = int.Parse(aa[0]);
-                    CreatinineMaleMax = int.Parse(aa[1]);
+                    String[] aa = CreatinineMale[0].ToString().Split('-');
+                    CreatinineMaleMin = Double.Parse(aa[0]);
+                    CreatinineMaleMax = Double.Parse(aa[1]);
                     CreatinineMaleUnit = CreatinineMale[1];
                 }
                 String[] CreatinineFemale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyCreatinineFemale].ToString().Split('@');
-                int CreatinineFemaleMin = 0, CreatinineFemaleMax = 0;
+                Double CreatinineFemaleMin = 0, CreatinineFemaleMax = 0;
                 String CreatinineFemaleUnit = "";
                 if (CreatinineFemale.Length == 2)
                 {
-                    String[] aa = CreatinineFemale[0].ToString().Split('<');
-                    CreatinineFemaleMin = int.Parse(aa[0]);
-                    CreatinineFemaleMax = int.Parse(aa[1]);
+                    String[] aa = CreatinineFemale[0].ToString().Split('-');
+                    CreatinineFemaleMin = Double.Parse(aa[0]);
+                    CreatinineFemaleMax = Double.Parse(aa[1]);
                     CreatinineFemaleUnit = CreatinineFemale[1];
                 }
 
                 if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                 {
-                    String chk = cc.ccpvndb.UpdateBun(txtBunMaleValue.Text, txtBunCreatinineMaleValue.Text.Trim(), txtBunFemaleValue.Text.Trim(), txtBunCreatinineFemaleValue.Text.Trim());
+                    String chk = cc.ccpvndb.UpdateBun(txtBunMaleValue.Text, txtBunCreatinineMaleValue.Text.Trim(), txtBunFemaleValue.Text.Trim()
+                        , txtBunCreatinineFemaleValue.Text.Trim(), chkBunNotsplitMaleFemale.Checked ? "1" : "2");//1= ไม่แยก 2= แยก
                     cc.dtccpvn = cc.ccpvndb.selectByPk();
                     if (chk.Equals("1"))
                     {

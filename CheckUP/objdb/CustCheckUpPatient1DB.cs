@@ -50,6 +50,7 @@ namespace CheckUP.objdb
             ccp1.AntiHav = "anti_hav";
             ccp1.antiHbc = "anti_hbc";
             ccp1.antiHiv = "anti_hiv";
+            ccp1.AntiHavSummary = "anti_hav_summary";
             ccp1.hbsab = "hbsab";
             ccp1.hbsabResult = "hbsab_result";
             ccp1.hbsabSummary = "hbsab_summary";
@@ -70,7 +71,7 @@ namespace CheckUP.objdb
             String CAAFP, String CAAFPResult, String CAAFPSummary, String CACEA, String CACEAResult, String CACEASummary, String CAPSA, String CAPSAResult, String CAPSASummary,
             String CAHCG, String CAHCGResult, String CAHCGSummary, String CA153, String CA153Result, String CA153Summary, String CA125, String CA125Result, String CA125Summary,
             String CA199, String CA199Result, String CA199Summary, String HBsAgResult,
-            String HBsAgSummary, String HbsAbResult, String HbsAbSummary, String AmphetamineSummary)
+            String HBsAgSummary, String HbsAbResult, String HbsAbSummary, String AmphetamineSummary,String AntiHavSummary)
         {
             String chk = "", sql = "";
             try
@@ -107,7 +108,8 @@ namespace CheckUP.objdb
                 ccp1.hbsagSummary + "='" + HBsAgSummary + "', " +
                 ccp1.hbsabResult + "='" + HbsAbResult + "', " +
                 ccp1.hbsabSummary + "='" + HbsAbSummary + "', " +
-                ccp1.AmphetamineSummary + "='" + AmphetamineSummary + "' " +
+                ccp1.AmphetamineSummary + "='" + AmphetamineSummary + "', " +
+                ccp1.AntiHavSummary + "='" + AntiHavSummary + "' " +
                 "Where " + ccp1.CustCheckUpId + "='" + cucId + "' and " + ccp1.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             }

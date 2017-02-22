@@ -1891,3 +1891,57 @@ Failed to load database information.
 13/7/2558 9:58->rpt.setReportCheckUp OK 
 13/7/2558 9:58->rpt.setReportCheckUp OK LoadD:\source\CheckUP\CheckUP\report\CheckUpPrint3.rpt
 13/7/2558 9:58->rpt.setReportCheckUp OK SetDataSource
+01/02/2560 14:32->rpt.setReportCheckUpPE OK 
+01/02/2560 14:32->rpt.setReportCheckUpSticker Error โหลดรายงานไม่สำเร็จ
+01/02/2560 14:33->rpt.setReportCheckUpXRay OK 
+01/02/2560 14:33->rpt.setReportCheckUpSticker Error โหลดรายงานไม่สำเร็จ
+01/02/2560 14:33->FrmCheckUPAdd.btnPrint_Click 01 
+01/02/2560 14:33->FrmCheckUPAdd.btnPrint_Click 02 
+01/02/2560 14:33->FrmCheckUPAdd.btnPrint_Click 03 
+01/02/2560 14:33->rpt.setReportCheckUp OK 
+01/02/2560 14:33->rpt.setReportCheckUp Error โหลดรายงานไม่สำเร็จ
+01/02/2560 14:33->FrmCheckUPAdd.btnPrint_Click 01 
+01/02/2560 14:33->FrmCheckUPAdd.btnPrint_Click 02 
+01/02/2560 14:33->FrmCheckUPAdd.btnPrint_Click 03 
+01/02/2560 14:33->rpt.setReportCheckUp OK 
+01/02/2560 14:33->rpt.setReportCheckUp Error โหลดรายงานไม่สำเร็จ
+01/02/2560 14:33->FrmCheckUPAdd.btnPrint_Click 01 
+01/02/2560 14:33->FrmCheckUPAdd.btnPrint_Click 02 
+01/02/2560 14:33->FrmCheckUPAdd.btnPrint_Click 03 
+01/02/2560 14:33->rpt.setReportCheckUp OK 
+01/02/2560 14:33->rpt.setReportCheckUp Error โหลดรายงานไม่สำเร็จ
+01/02/2560 14:33->FrmCheckUPAdd.btnPrint_Click 01 
+01/02/2560 14:33->FrmCheckUPAdd.btnPrint_Click 02 
+01/02/2560 14:33->FrmCheckUPAdd.btnPrint_Click 03 
+01/02/2560 14:33->rpt.setReportCheckUp OK 
+01/02/2560 14:33->rpt.setReportCheckUp Error โหลดรายงานไม่สำเร็จ
+01/02/2560 16:42->FrmCheckUPAdd.btnPrint_Click 01 
+01/02/2560 16:42->FrmCheckUPAdd.btnPrint_Click 02 
+01/02/2560 16:42->FrmCheckUPAdd.btnPrint_Click 03 
+01/02/2560 16:42->rpt.setReportCheckUp OK 
+01/02/2560 16:42->rpt.setReportCheckUp Error โหลดรายงานไม่สำเร็จ
+01/02/2560 16:49->FrmCheckUPAdd.btnPrint_Click 01 
+01/02/2560 16:49->FrmCheckUPAdd.btnPrint_Click 02 
+01/02/2560 16:49->FrmCheckUPAdd.btnPrint_Click 03 
+01/02/2560 16:49->rpt.setReportCheckUp OK 
+01/02/2560 16:49->rpt.setReportCheckUp Error โหลดรายงานไม่สำเร็จ
+01/02/2560 16:55->FrmCheckUPAdd.btnPrint_Click 01 
+01/02/2560 16:55->FrmCheckUPAdd.btnPrint_Click 02 
+01/02/2560 16:55->FrmCheckUPAdd.btnPrint_Click 03 
+01/02/2560 16:55->rpt.setReportCheckUp OK 
+01/02/2560 16:55->rpt.setReportCheckUp Error โหลดรายงานไม่สำเร็จ
+16/02/2560 13:25->FrmCheckUPAdd.btnPrint_Click 01 
+16/02/2560 13:25->FrmCheckUPAdd.btnPrint_Click 02 
+16/02/2560 13:25->FrmCheckUPAdd.btnPrint_Click 03 
+16/02/2560 13:25->rpt.setReportCheckUp OK 
+16/02/2560 13:25->rpt.setReportCheckUp Error โหลดรายงานไม่สำเร็จ
+16/02/2560 13:25->FrmCheckUPAdd.btnPrint_Click 01 
+16/02/2560 13:25->FrmCheckUPAdd.btnPrint_Click 02 
+16/02/2560 13:25->FrmCheckUPAdd.btnPrint_Click 03 
+16/02/2560 13:25->rpt.setReportCheckUp OK 
+16/02/2560 13:25->rpt.setReportCheckUp Error โหลดรายงานไม่สำเร็จ
+16/02/2560 13:35->FrmCheckUPAdd.btnPrint_Click 01 
+16/02/2560 13:35->FrmCheckUPAdd.btnPrint_Click 02 
+16/02/2560 13:35->FrmCheckUPAdd.btnPrint_Click 03 
+16/02/2560 13:37->rpt.setReportCheckUp OK 
+16/02/2560 13:37->rpt.setReportCheckUp Error โหลดรายงานไม่สำเร็จ

@@ -119,12 +119,16 @@ namespace CheckUP.objdb
 
             ccpvn.kidneyResult = "kidney_result";
             ccpvn.kidneySummary = "kidney_summary";
-            ccpvn.liverSgot = "liver_sgot";
-            ccpvn.liverSgpt = "liver_sgpt";
-            ccpvn.liverAlp = "liver_alp";
+            ccpvn.liverSgotMale = "liver_sgot_male";
+            ccpvn.liverSgotFeMale = "liver_sgot_female";
+            ccpvn.liverSgptMale = "liver_sgpt_male";
+            ccpvn.liverSgptFeMale = "liver_sgpt_female";
+            ccpvn.liverAlpMale = "liver_alp_male";
+            ccpvn.liverAlpFeMale = "liver_alp_female";
             ccpvn.liverResult = "liver_result";
             ccpvn.liverSummary = "liver_summary";
-            ccpvn.liverAlkaline = "liver_alkaline";
+            ccpvn.liverAlkalineMale = "liver_alkaline_male";
+            ccpvn.liverAlkalineFeMale = "liver_alkaline_female";
 
             ccpvn.uricAcidMale = "uric_acid_male";
             ccpvn.uricAcidFemale = "uric_acid_female";
@@ -321,6 +325,9 @@ namespace CheckUP.objdb
             ccpvn.ToxiTin = "toxicology_tin";
             ccpvn.ToxiTrichloroethylene = "toxicology_trichloroethylenel";
             ccpvn.ToxiZinc = "toxicology_zinc";
+            ccpvn.StatusCBCNotsplitMaleFemale = "status_cbcnotsplitmalefemale";
+            ccpvn.StatusSgotNotsplitMaleFemale = "status_sgotnotsplitmalefemale";
+            ccpvn.StatusBunNotsplitMaleFemale = "status_bunnotsplitmalefemale";
 
             ccpvn.pkField = "patient_id";
             ccpvn.table = "b_cust_checkup_patient_value_normal";
@@ -354,7 +361,7 @@ namespace CheckUP.objdb
         }
         public String UpdateCBC(String Basophil, String Eosinophil, String HbMale, String HbFemale, String HctMale, String HctFemale, String Lymphocyte,
             String Mch, String Mchc, String McvMale, String McvFemale, String Monocyte, String Neutrophil, String PlateletCount, String RbcMale, String RbcFemale, String RbcMorpholog,
-            String Wbc, String PlateletSmear, String Pmn)
+            String Wbc, String PlateletSmear, String Pmn, String statCBCsplitMaleFemale)
         {
             String chk = "", sql = "";
             try
@@ -378,7 +385,8 @@ namespace CheckUP.objdb
                 ccpvn.cbcRbcFemale + "='" + RbcFemale + "', " +
                 ccpvn.cbcRbcMorpholog + "='" + RbcMorpholog + "', " +
                 ccpvn.cbcPmn + "='" + Pmn + "', " +
-                ccpvn.cbcWbc + "='" + Wbc + "' " ;
+                ccpvn.cbcWbc + "='" + Wbc + "', " +
+                ccpvn.StatusCBCNotsplitMaleFemale + "='"+ statCBCsplitMaleFemale+"'";
                 chk = conn.ExecuteNonQuery(sql);
             }
             catch (Exception ex)
@@ -452,17 +460,23 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String UpdateSgot(String sgot, String sgpt, String alt, String alkaline)
+        public String UpdateSgot(String sgotmale, String sgptmale, String altmale, String alkalinemale
+            , String sgotfemale, String sgptfemale, String altfemale, String alkalinefemale, String statSgotsplitMaleFemale)
         {
             String chk = "", sql = "";
             try
             {
-                sql = "Update " + ccpvn.table + " Set " + ccpvn.liverSgot + "='" + sgot + "'," +
+                sql = "Update " + ccpvn.table + " Set " + ccpvn.liverSgotMale + "='" + sgotmale + "'," +
                     //ccp.liverResult + "='" + result + "', " +
                     //ccp.liverSummary + "='" + summary + "', " +
-                ccpvn.liverAlp + "='" + alt + "', " +
-                ccpvn.liverSgpt + "='" + sgpt + "', "+
-                ccpvn.liverAlkaline + "='" + alkaline + "' ";
+                ccpvn.liverAlpMale + "='" + altmale + "', " +
+                ccpvn.liverSgptMale + "='" + sgptmale + "', "+
+                ccpvn.liverAlkalineMale + "='" + alkalinemale + "', "+
+                ccpvn.liverSgotFeMale + "='" + sgotfemale + "', " +
+                ccpvn.liverSgptFeMale + "='" + sgptfemale + "', " +
+                ccpvn.liverAlkalineFeMale + "='" + alkalinefemale + "', "+
+                ccpvn.liverAlpFeMale + "='" + altfemale + "', "+
+                ccpvn.StatusSgotNotsplitMaleFemale + "='" + statSgotsplitMaleFemale + "' ";
                 //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             }
@@ -472,7 +486,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String UpdateBun(String bunMale, String creatinineMale, String bunFemale, String creatinineFemale)
+        public String UpdateBun(String bunMale, String creatinineMale, String bunFemale, String creatinineFemale, String statBunsplitMaleFemale)
         {
             String chk = "", sql = "";
             try
@@ -480,7 +494,8 @@ namespace CheckUP.objdb
                 sql = "Update " + ccpvn.table + " Set " + ccpvn.kidneyBunMale + "='" + bunMale + "'," +
                     ccpvn.kidneyBunFemale + "='" + bunFemale + "', " +
                     ccpvn.kidneyCreatinineFemale + "='" + creatinineFemale + "', " +
-                ccpvn.kidneyCreatinineMale + "='" + creatinineMale + "' ";
+                    ccpvn.kidneyCreatinineMale + "='" + creatinineMale + "', "+
+                    ccpvn.StatusBunNotsplitMaleFemale + "='" + statBunsplitMaleFemale + "' ";
                 //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             }

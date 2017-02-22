@@ -195,11 +195,11 @@ namespace CheckUP.gui
             txtChoLDLNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ldl].ToString();
             txtChoHDLNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.hdlMale].ToString();
 
-            txtSgotNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgot].ToString();
-            txtSgotSgptNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgpt].ToString();
+            txtSgotNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgotMale].ToString();
+            txtSgotSgptNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgptMale].ToString();
             //txtSgotResult.Text = dtccp.Rows[0][cc.ccpdb.ccp.liverResult].ToString();
             //txtSgotSummary.Text = dtccp.Rows[0][cc.ccpdb.ccp.liverSummary].ToString();
-            txtSgotALTNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverAlp].ToString();
+            txtSgotALTNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverAlpMale].ToString();
 
             txtUricNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.uricAcidMale].ToString();
 

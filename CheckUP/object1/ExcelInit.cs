@@ -32,7 +32,7 @@ namespace CheckUP.object1
         public String UricRow = "", UricNo = "", UricAcid = "", UricResult = "", UricSummary = "", UricSheetname = "";
 
         public String Other1Row = "", Other1No = "", Other1HBsAg = "", Other1HBsAb = "", Other1AntiHIV = "", Other1VDRL = "", Other1Calcium = "", Other1Amphetamine = "", Other1Sheetname = "", Other1AntiHav = "", Other1Hbtyping="";
-        public String CAAFP = "", CACEA = "", CAPSA = "", CAHCG = "", CA153 = "", CA125 = "", CA199 = "", Other1HBsAgResult = "", Other1HBsAgSummary = "", Other1HBsAbResult = "", Other1HBsAbSummary = "";
+        public String CAAFP = "", CACEA = "", CAPSA = "", CAHCG = "", CA153 = "", CA125 = "", CA199 = "", Other1HBsAgResult = "", Other1HBsAgSummary = "", Other1HBsAbResult = "", Other1HBsAbSummary = "", Other1AntiHavSummary = "";
         public String CAAFPResult = "", CAAFPSummary = "", CACEAResult = "", CACEASummary = "", CAPSAResult = "", CAPSASummary = "", CAHCGResult = "", CAHCGSummary = "", CA153Result = "", CA153Summary = "", CA125Result = "", CA125Summary = "", CA199Result = "", CA199Summary = "";
         public String AmphetamineSummary = "";
 
