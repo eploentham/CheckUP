@@ -1945,3 +1945,23 @@ Failed to load database information.
 16/02/2560 13:35->FrmCheckUPAdd.btnPrint_Click 03 
 16/02/2560 13:37->rpt.setReportCheckUp OK 
 16/02/2560 13:37->rpt.setReportCheckUp Error โหลดรายงานไม่สำเร็จ
+27/02/2560 09:44->FrmCheckUPAdd.btnPrint_Click 01 
+27/02/2560 09:44->FrmCheckUPAdd.btnPrint_Click 02 
+27/02/2560 09:44->FrmCheckUPAdd.btnPrint_Click 03 
+27/02/2560 09:44->rpt.setReportCheckUp OK 
+27/02/2560 09:44->rpt.setReportCheckUp Error โหลดรายงานไม่สำเร็จ
+27/02/2560 09:47->FrmCheckUPAdd.btnPrint_Click 01 
+27/02/2560 09:47->FrmCheckUPAdd.btnPrint_Click 02 
+27/02/2560 09:47->FrmCheckUPAdd.btnPrint_Click 03 
+27/02/2560 09:47->rpt.setReportCheckUp OK 
+27/02/2560 09:47->rpt.setReportCheckUp Error โหลดรายงานไม่สำเร็จ
+27/02/2560 10:30->FrmCheckUPAdd.btnPrint_Click 01 
+27/02/2560 10:30->FrmCheckUPAdd.btnPrint_Click 02 
+27/02/2560 10:30->FrmCheckUPAdd.btnPrint_Click 03 
+27/02/2560 10:31->rpt.setReportCheckUp OK 
+27/02/2560 10:31->rpt.setReportCheckUp Error โหลดรายงานไม่สำเร็จ
+27/02/2560 10:31->FrmCheckUPAdd.btnPrint_Click 01 
+27/02/2560 10:31->FrmCheckUPAdd.btnPrint_Click 02 
+27/02/2560 10:31->FrmCheckUPAdd.btnPrint_Click 03 
+27/02/2560 10:39->rpt.setReportCheckUp OK 
+27/02/2560 10:39->rpt.setReportCheckUp Error โหลดรายงานไม่สำเร็จ

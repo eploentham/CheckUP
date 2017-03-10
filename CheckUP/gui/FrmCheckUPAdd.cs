@@ -2239,6 +2239,11 @@ namespace CheckUP.gui
                             sexId = "2";
                             ccp.SexName = "หญิง";
                         }
+                        else if (prefix.IndexOf("นางสาว") >= 0)
+                        {
+                            sexId = "2";
+                            ccp.SexName = "หญิง";
+                        }
                         else
                         {
                             sexId = "3";
@@ -4027,6 +4032,17 @@ namespace CheckUP.gui
                 sgotMax = int.Parse(aa[1].Replace(".0", ""));
                 sgotUnit = sgot[1];
             }
+            String[] sgotfemale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgotFeMale].ToString().Split('@');
+            int sgotMinfemale = 0, sgotMaxfemale = 0;
+            String sgotUnitfemale = "";
+            if (sgot.Length == 2)
+            {
+                String[] aa = sgotfemale[0].ToString().Split('-');
+                sgotMinfemale = int.Parse(aa[0].Replace(".0", ""));
+                sgotMaxfemale = int.Parse(aa[1].Replace(".0", ""));
+                sgotUnitfemale = sgotfemale[1];
+            }
+
             String[] sgpt = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgptMale].ToString().Split('@');
             int sgptMin = 0, sgptMax = 0;
             String sgptUnit = "";
@@ -4036,6 +4052,16 @@ namespace CheckUP.gui
                 sgptMin = int.Parse(aa[0].Replace(".0", ""));
                 sgptMax = int.Parse(aa[1].Replace(".0", ""));
                 sgptUnit = sgpt[1];
+            }
+            String[] sgptfemale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgptFeMale].ToString().Split('@');
+            int sgptMinfemale = 0, sgptMaxfemale = 0;
+            String sgptUnitfemale = "";
+            if (sgpt.Length == 2)
+            {
+                String[] aa = sgptfemale[0].ToString().Split('-');
+                sgptMinfemale = int.Parse(aa[0].Replace(".0", ""));
+                sgptMaxfemale = int.Parse(aa[1].Replace(".0", ""));
+                sgptUnitfemale = sgptfemale[1];
             }
             String[] alkaline = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverAlkalineMale].ToString().Split('@');
             int alkalineMin = 0, alkalineMax = 0;
@@ -4486,7 +4512,7 @@ namespace CheckUP.gui
                         rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
                         try
                         {
-                            if (rc.Sex.Equals("1"))//male
+                            if (cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.StatusCBCNotsplitMaleFemale].ToString().Equals("1")) // ไม่แยก
                             {
                                 rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHbMale].ToString().Replace("@", " ");
                                 if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
@@ -4512,32 +4538,62 @@ namespace CheckUP.gui
                                     rc.Remark = "";
                                 }
                             }
-                            else
+                            else//แยก
                             {
-                                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHbFemale].ToString().Replace("@", " ");
-                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                                if (rc.Sex.Equals("1"))//male
                                 {
-                                    if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbchbfemaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbchbfemaleMax))
+                                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHbMale].ToString().Replace("@", " ");
+                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
                                     {
-                                        rc.Remark = "ปกติ";
-                                    }
-                                    else
-                                    {
-                                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbchbfemaleMax)
+                                        if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbchbmaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbchbmaleMax))
                                         {
-                                            rc.Remark = "สูงกว่ามาตรฐาน";
+                                            rc.Remark = "ปกติ";
                                         }
                                         else
                                         {
-                                            rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbchbmaleMax)
+                                            {
+                                                rc.Remark = "สูงกว่ามาตรฐาน";
+                                            }
+                                            else
+                                            {
+                                                rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                            }
                                         }
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "";
                                     }
                                 }
                                 else
                                 {
-                                    rc.Remark = "";
+                                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHbFemale].ToString().Replace("@", " ");
+                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                                    {
+                                        if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbchbfemaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbchbfemaleMax))
+                                        {
+                                            rc.Remark = "ปกติ";
+                                        }
+                                        else
+                                        {
+                                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbchbfemaleMax)
+                                            {
+                                                rc.Remark = "สูงกว่ามาตรฐาน";
+                                            }
+                                            else
+                                            {
+                                                rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "";
+                                    }
                                 }
                             }
+                            
                         }
                         catch (Exception ex)
                         {
@@ -4567,7 +4623,7 @@ namespace CheckUP.gui
                         rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
                         try
                         {
-                            if (rc.Sex.Equals("1"))//male
+                            if (cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.StatusCBCNotsplitMaleFemale].ToString().Equals("1")) // ไม่แยก
                             {
                                 rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHctMale].ToString().Replace("@", " ");
                                 if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
@@ -4593,32 +4649,62 @@ namespace CheckUP.gui
                                     rc.Remark = "";
                                 }
                             }
-                            else
+                            else// แยก
                             {
-                                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHctFemale].ToString().Replace("@", " ");
-                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                                if (rc.Sex.Equals("1"))//male
                                 {
-                                    if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbchctfemaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbchctfemaleMax))
+                                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHctMale].ToString().Replace("@", " ");
+                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
                                     {
-                                        rc.Remark = "ปกติ";
-                                    }
-                                    else
-                                    {
-                                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbchctfemaleMax)
+                                        if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbchctmaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbchctmaleMax))
                                         {
-                                            rc.Remark = "สูงกว่ามาตรฐาน";
+                                            rc.Remark = "ปกติ";
                                         }
                                         else
                                         {
-                                            rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbchctmaleMax)
+                                            {
+                                                rc.Remark = "สูงกว่ามาตรฐาน";
+                                            }
+                                            else
+                                            {
+                                                rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                            }
                                         }
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "";
                                     }
                                 }
                                 else
                                 {
-                                    rc.Remark = "";
+                                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHctFemale].ToString().Replace("@", " ");
+                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                                    {
+                                        if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbchctfemaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbchctfemaleMax))
+                                        {
+                                            rc.Remark = "ปกติ";
+                                        }
+                                        else
+                                        {
+                                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbchctfemaleMax)
+                                            {
+                                                rc.Remark = "สูงกว่ามาตรฐาน";
+                                            }
+                                            else
+                                            {
+                                                rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "";
+                                    }
                                 }
                             }
+                            
                         }
                         catch (Exception ex)
                         {
@@ -4947,7 +5033,7 @@ namespace CheckUP.gui
                         rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
                         try
                         {
-                            if (rc.Sex.Equals("1"))//male
+                            if (cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.StatusCBCNotsplitMaleFemale].ToString().Equals("1")) // ไม่แยก
                             {
                                 rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbcMale].ToString().Replace("@", " ");
                                 if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
@@ -4975,30 +5061,60 @@ namespace CheckUP.gui
                             }
                             else
                             {
-                                rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbcFemale].ToString().Replace("@", " ");
-                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                                if (rc.Sex.Equals("1"))//male
                                 {
-                                    if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbcrbcfemaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbcrbcfemaleMax))
+                                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbcMale].ToString().Replace("@", " ");
+                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
                                     {
-                                        rc.Remark = "ปกติ";
-                                    }
-                                    else
-                                    {
-                                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbcrbcfemaleMax)
+                                        if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbcrbcmaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbcrbcmaleMax))
                                         {
-                                            rc.Remark = "สูงกว่ามาตรฐาน";
+                                            rc.Remark = "ปกติ";
                                         }
                                         else
                                         {
-                                            rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbcrbcmaleMax)
+                                            {
+                                                rc.Remark = "สูงกว่ามาตรฐาน";
+                                            }
+                                            else
+                                            {
+                                                rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                            }
                                         }
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "";
                                     }
                                 }
                                 else
                                 {
-                                    rc.Remark = "";
+                                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbcFemale].ToString().Replace("@", " ");
+                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                                    {
+                                        if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbcrbcfemaleMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbcrbcfemaleMax))
+                                        {
+                                            rc.Remark = "ปกติ";
+                                        }
+                                        else
+                                        {
+                                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > cbcrbcfemaleMax)
+                                            {
+                                                rc.Remark = "สูงกว่ามาตรฐาน";
+                                            }
+                                            else
+                                            {
+                                                rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        rc.Remark = "";
+                                    }
                                 }
                             }
+                            
                         }
                         catch (Exception ex)
                         {
@@ -5648,25 +5764,33 @@ namespace CheckUP.gui
                         cc.rcdb.insertRCheckUp(rc);
                     }
 
-                    //if ((dtAll.Rows[i][cc.ccpdb.ccp.uricAcidMale] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.uricAcidMale].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
-                    //{
-                    //    rc.Id = r.Next().ToString();
-                    //    rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
-                    //    rc.LabName = "Uric Acid ";
-                    //    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.uricAcidMale].ToString().Replace("@", " ");
-                    //    rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.uricAcidMale].ToString();
-                    //    rc.LInter = "การแปลผล";
-                    //    rc.LInterAbnormal = "ปกติ";
-                    //    rc.LInterNormal = "ผิดปกติ";
-                    //    rc.LNormal = "ค่าปกติ";
-                    //    rc.lResult = "ผลการตรวจ";
-                    //    rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
-                    //    rc.Remark = "";
-                    //    rc.StatusLab = "ua";
-                    //    rc.Sort1 = "1012";
-                    //    rc.Sort2 = "16";
-                    //    cc.rcdb.insertRCheckUp(rc);
-                    //}
+                    if ((dtAll.Rows[i][cc.ccpdb.ccp.urineGlu] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineGlu].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
+                    {
+                        rc.Id = r.Next().ToString();
+                        rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
+                        rc.LabName = "GLU ";
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineGlu].ToString().Replace("@", " ");
+                        rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineGlu].ToString();
+                        rc.LInter = "การแปลผล";
+                        rc.LInterAbnormal = "ปกติ";
+                        rc.LInterNormal = "ผิดปกติ";
+                        rc.LNormal = "ค่าปกติ";
+                        rc.lResult = "ผลการตรวจ";
+                        rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
+                        //rc.Remark = "";
+                        if (rc.LabResult.ToLower().Equals(uaglu.ToLower()))
+                        {
+                            rc.Remark = "ปกติ";
+                        }
+                        else
+                        {
+                            rc.Remark = "ผิดปกติ";
+                        }
+                        rc.StatusLab = "ua";
+                        rc.Sort1 = "1012";
+                        rc.Sort2 = "16";
+                        cc.rcdb.insertRCheckUp(rc);
+                    }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineBacteria] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineBacteria].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -6354,21 +6478,64 @@ namespace CheckUP.gui
                             {
                                 if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
                                 {
-                                    if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= sgotMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= sgotMax))
+                                    if (cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.StatusSgotNotsplitMaleFemale].ToString().Equals("1")) // ไม่แยก
                                     {
-                                        rc.Remark = "ปกติ";
-                                    }
-                                    else
-                                    {
-                                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > sgotMax)
+                                        if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= sgotMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= sgotMax))
                                         {
-                                            rc.Remark = "สูงกว่ามาตรฐาน";
+                                            rc.Remark = "ปกติ";
                                         }
                                         else
                                         {
-                                            rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > sgotMax)
+                                            {
+                                                rc.Remark = "สูงกว่ามาตรฐาน";
+                                            }
+                                            else
+                                            {
+                                                rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                            }
                                         }
                                     }
+                                    else
+                                    {
+                                        if (rc.Sex.Equals("1"))//male
+                                        {
+                                            if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= sgotMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= sgotMax))
+                                            {
+                                                rc.Remark = "ปกติ";
+                                            }
+                                            else
+                                            {
+                                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > sgotMax)
+                                                {
+                                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                                }
+                                                else
+                                                {
+                                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= sgotMinfemale) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= sgotMaxfemale))
+                                            {
+                                                rc.Remark = "ปกติ";
+                                            }
+                                            else
+                                            {
+                                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > sgotMaxfemale)
+                                                {
+                                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                                }
+                                                else
+                                                {
+                                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                                }
+                                            }
+                                        }
+                                    }
+                                    
                                 }
                                 else
                                 {
@@ -6426,21 +6593,63 @@ namespace CheckUP.gui
                             {
                                 if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
                                 {
-                                    if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= sgptMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= sgptMax))
+                                    if (cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.StatusSgotNotsplitMaleFemale].ToString().Equals("1")) // ไม่แยก
                                     {
-                                        rc.Remark = "ปกติ";
-                                    }
-                                    else
-                                    {
-                                        if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > sgptMax)
+                                        if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= sgptMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= sgptMax))
                                         {
-                                            rc.Remark = "สูงกว่ามาตรฐาน";
+                                            rc.Remark = "ปกติ";
                                         }
                                         else
                                         {
-                                            rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > sgptMax)
+                                            {
+                                                rc.Remark = "สูงกว่ามาตรฐาน";
+                                            }
+                                            else
+                                            {
+                                                rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                            }
+                                        }
+                                    }else
+                                    {
+                                        if (rc.Sex.Equals("1"))//male
+                                        {
+                                            if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= sgptMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= sgptMax))
+                                            {
+                                                rc.Remark = "ปกติ";
+                                            }
+                                            else
+                                            {
+                                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > sgptMax)
+                                                {
+                                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                                }
+                                                else
+                                                {
+                                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= sgptMinfemale) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= sgptMaxfemale))
+                                            {
+                                                rc.Remark = "ปกติ";
+                                            }
+                                            else
+                                            {
+                                                if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > sgptMaxfemale)
+                                                {
+                                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                                }
+                                                else
+                                                {
+                                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                                }
+                                            }
                                         }
                                     }
+                                    
                                 }
                                 else
                                 {

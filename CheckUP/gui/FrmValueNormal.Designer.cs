@@ -128,6 +128,19 @@
             this.txtChoValue = new System.Windows.Forms.TextBox();
             this.label73 = new System.Windows.Forms.Label();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.label123 = new System.Windows.Forms.Label();
+            this.txtSgotAlkalineFeMale = new System.Windows.Forms.TextBox();
+            this.label124 = new System.Windows.Forms.Label();
+            this.txtSgotALTFeMale = new System.Windows.Forms.TextBox();
+            this.label118 = new System.Windows.Forms.Label();
+            this.label104 = new System.Windows.Forms.Label();
+            this.txtSgotSgptFeMaleValue = new System.Windows.Forms.TextBox();
+            this.label117 = new System.Windows.Forms.Label();
+            this.label101 = new System.Windows.Forms.Label();
+            this.txtSgotFeMaleValue = new System.Windows.Forms.TextBox();
+            this.label103 = new System.Windows.Forms.Label();
+            this.chkSgotsplitMaleFemale = new System.Windows.Forms.RadioButton();
+            this.chkSgotNotsplitMaleFemale = new System.Windows.Forms.RadioButton();
             this.label100 = new System.Windows.Forms.Label();
             this.txtSgotAlkalineMale = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
@@ -141,6 +154,10 @@
             this.label77 = new System.Windows.Forms.Label();
             this.label76 = new System.Windows.Forms.Label();
             this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.label125 = new System.Windows.Forms.Label();
+            this.label126 = new System.Windows.Forms.Label();
+            this.chkBunsplitMaleFemale = new System.Windows.Forms.RadioButton();
+            this.chkBunNotsplitMaleFemale = new System.Windows.Forms.RadioButton();
             this.label24 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -349,23 +366,6 @@
             this.label160 = new System.Windows.Forms.Label();
             this.label161 = new System.Windows.Forms.Label();
             this.tabPage15 = new System.Windows.Forms.TabPage();
-            this.chkSgotsplitMaleFemale = new System.Windows.Forms.RadioButton();
-            this.chkSgotNotsplitMaleFemale = new System.Windows.Forms.RadioButton();
-            this.label101 = new System.Windows.Forms.Label();
-            this.txtSgotFeMaleValue = new System.Windows.Forms.TextBox();
-            this.label103 = new System.Windows.Forms.Label();
-            this.label104 = new System.Windows.Forms.Label();
-            this.txtSgotSgptFeMaleValue = new System.Windows.Forms.TextBox();
-            this.label117 = new System.Windows.Forms.Label();
-            this.txtSgotALTFeMale = new System.Windows.Forms.TextBox();
-            this.label118 = new System.Windows.Forms.Label();
-            this.label123 = new System.Windows.Forms.Label();
-            this.txtSgotAlkalineFeMale = new System.Windows.Forms.TextBox();
-            this.label124 = new System.Windows.Forms.Label();
-            this.chkBunsplitMaleFemale = new System.Windows.Forms.RadioButton();
-            this.chkBunNotsplitMaleFemale = new System.Windows.Forms.RadioButton();
-            this.label125 = new System.Windows.Forms.Label();
-            this.label126 = new System.Windows.Forms.Label();
             this.tC.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
@@ -481,6 +481,7 @@
             this.chkCBCNotsplitMaleFemale.TabStop = true;
             this.chkCBCNotsplitMaleFemale.Text = "ไม่แยก ชาย-หญิง";
             this.chkCBCNotsplitMaleFemale.UseVisualStyleBackColor = true;
+            this.chkCBCNotsplitMaleFemale.CheckedChanged += new System.EventHandler(this.chkCBCNotsplitMaleFemale_CheckedChanged);
             this.chkCBCNotsplitMaleFemale.Click += new System.EventHandler(this.chkCBCNotsplitMaleFemale_Click);
             // 
             // txtCBCPmn
@@ -1443,6 +1444,132 @@
             this.tabPage9.Text = "tabPage9";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
+            // label123
+            // 
+            this.label123.AutoSize = true;
+            this.label123.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label123.Location = new System.Drawing.Point(431, 402);
+            this.label123.Name = "label123";
+            this.label123.Size = new System.Drawing.Size(89, 16);
+            this.label123.TabIndex = 136;
+            this.label123.Text = "30 – 120@U/L";
+            // 
+            // txtSgotAlkalineFeMale
+            // 
+            this.txtSgotAlkalineFeMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtSgotAlkalineFeMale.Location = new System.Drawing.Point(156, 399);
+            this.txtSgotAlkalineFeMale.Name = "txtSgotAlkalineFeMale";
+            this.txtSgotAlkalineFeMale.Size = new System.Drawing.Size(259, 22);
+            this.txtSgotAlkalineFeMale.TabIndex = 135;
+            // 
+            // label124
+            // 
+            this.label124.AutoSize = true;
+            this.label124.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label124.Location = new System.Drawing.Point(22, 402);
+            this.label124.Name = "label124";
+            this.label124.Size = new System.Drawing.Size(105, 16);
+            this.label124.TabIndex = 134;
+            this.label124.Text = "Alkaline Female";
+            // 
+            // txtSgotALTFeMale
+            // 
+            this.txtSgotALTFeMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtSgotALTFeMale.Location = new System.Drawing.Point(156, 300);
+            this.txtSgotALTFeMale.Name = "txtSgotALTFeMale";
+            this.txtSgotALTFeMale.Size = new System.Drawing.Size(259, 22);
+            this.txtSgotALTFeMale.TabIndex = 133;
+            // 
+            // label118
+            // 
+            this.label118.AutoSize = true;
+            this.label118.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label118.Location = new System.Drawing.Point(22, 303);
+            this.label118.Name = "label118";
+            this.label118.Size = new System.Drawing.Size(82, 16);
+            this.label118.TabIndex = 132;
+            this.label118.Text = "ALT FeMale";
+            // 
+            // label104
+            // 
+            this.label104.AutoSize = true;
+            this.label104.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label104.Location = new System.Drawing.Point(431, 196);
+            this.label104.Name = "label104";
+            this.label104.Size = new System.Drawing.Size(68, 16);
+            this.label104.TabIndex = 131;
+            this.label104.Text = "0-55@U/L";
+            // 
+            // txtSgotSgptFeMaleValue
+            // 
+            this.txtSgotSgptFeMaleValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtSgotSgptFeMaleValue.Location = new System.Drawing.Point(156, 193);
+            this.txtSgotSgptFeMaleValue.Name = "txtSgotSgptFeMaleValue";
+            this.txtSgotSgptFeMaleValue.Size = new System.Drawing.Size(259, 22);
+            this.txtSgotSgptFeMaleValue.TabIndex = 130;
+            // 
+            // label117
+            // 
+            this.label117.AutoSize = true;
+            this.label117.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label117.Location = new System.Drawing.Point(22, 194);
+            this.label117.Name = "label117";
+            this.label117.Size = new System.Drawing.Size(94, 16);
+            this.label117.TabIndex = 129;
+            this.label117.Text = "SGPT Female";
+            // 
+            // label101
+            // 
+            this.label101.AutoSize = true;
+            this.label101.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label101.Location = new System.Drawing.Point(431, 96);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(68, 16);
+            this.label101.TabIndex = 128;
+            this.label101.Text = "5-34@U/L";
+            // 
+            // txtSgotFeMaleValue
+            // 
+            this.txtSgotFeMaleValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtSgotFeMaleValue.Location = new System.Drawing.Point(156, 93);
+            this.txtSgotFeMaleValue.Name = "txtSgotFeMaleValue";
+            this.txtSgotFeMaleValue.Size = new System.Drawing.Size(259, 22);
+            this.txtSgotFeMaleValue.TabIndex = 127;
+            // 
+            // label103
+            // 
+            this.label103.AutoSize = true;
+            this.label103.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label103.Location = new System.Drawing.Point(22, 96);
+            this.label103.Name = "label103";
+            this.label103.Size = new System.Drawing.Size(95, 16);
+            this.label103.TabIndex = 126;
+            this.label103.Text = "SGOT Female";
+            // 
+            // chkSgotsplitMaleFemale
+            // 
+            this.chkSgotsplitMaleFemale.AutoSize = true;
+            this.chkSgotsplitMaleFemale.Location = new System.Drawing.Point(321, 24);
+            this.chkSgotsplitMaleFemale.Name = "chkSgotsplitMaleFemale";
+            this.chkSgotsplitMaleFemale.Size = new System.Drawing.Size(93, 17);
+            this.chkSgotsplitMaleFemale.TabIndex = 125;
+            this.chkSgotsplitMaleFemale.TabStop = true;
+            this.chkSgotsplitMaleFemale.Text = "แยก ชาย-หญิง";
+            this.chkSgotsplitMaleFemale.UseVisualStyleBackColor = true;
+            this.chkSgotsplitMaleFemale.Click += new System.EventHandler(this.chkSgotsplitMaleFemale_Click);
+            // 
+            // chkSgotNotsplitMaleFemale
+            // 
+            this.chkSgotNotsplitMaleFemale.AutoSize = true;
+            this.chkSgotNotsplitMaleFemale.Location = new System.Drawing.Point(177, 24);
+            this.chkSgotNotsplitMaleFemale.Name = "chkSgotNotsplitMaleFemale";
+            this.chkSgotNotsplitMaleFemale.Size = new System.Drawing.Size(106, 17);
+            this.chkSgotNotsplitMaleFemale.TabIndex = 124;
+            this.chkSgotNotsplitMaleFemale.TabStop = true;
+            this.chkSgotNotsplitMaleFemale.Text = "ไม่แยก ชาย-หญิง";
+            this.chkSgotNotsplitMaleFemale.UseVisualStyleBackColor = true;
+            this.chkSgotNotsplitMaleFemale.Click += new System.EventHandler(this.chkSgotNotsplitMaleFemale_Click);
+            // 
             // label100
             // 
             this.label100.AutoSize = true;
@@ -1581,6 +1708,50 @@
             this.tabPage10.TabIndex = 10;
             this.tabPage10.Text = "tabPage10";
             this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // label125
+            // 
+            this.label125.AutoSize = true;
+            this.label125.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label125.Location = new System.Drawing.Point(739, 235);
+            this.label125.Name = "label125";
+            this.label125.Size = new System.Drawing.Size(61, 16);
+            this.label125.TabIndex = 131;
+            this.label125.Text = "FEMALE";
+            // 
+            // label126
+            // 
+            this.label126.AutoSize = true;
+            this.label126.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label126.Location = new System.Drawing.Point(298, 235);
+            this.label126.Name = "label126";
+            this.label126.Size = new System.Drawing.Size(38, 16);
+            this.label126.TabIndex = 130;
+            this.label126.Text = "Male";
+            // 
+            // chkBunsplitMaleFemale
+            // 
+            this.chkBunsplitMaleFemale.AutoSize = true;
+            this.chkBunsplitMaleFemale.Location = new System.Drawing.Point(358, 30);
+            this.chkBunsplitMaleFemale.Name = "chkBunsplitMaleFemale";
+            this.chkBunsplitMaleFemale.Size = new System.Drawing.Size(93, 17);
+            this.chkBunsplitMaleFemale.TabIndex = 127;
+            this.chkBunsplitMaleFemale.TabStop = true;
+            this.chkBunsplitMaleFemale.Text = "แยก ชาย-หญิง";
+            this.chkBunsplitMaleFemale.UseVisualStyleBackColor = true;
+            this.chkBunsplitMaleFemale.Click += new System.EventHandler(this.chkBunsplitMaleFemale_Click);
+            // 
+            // chkBunNotsplitMaleFemale
+            // 
+            this.chkBunNotsplitMaleFemale.AutoSize = true;
+            this.chkBunNotsplitMaleFemale.Location = new System.Drawing.Point(214, 30);
+            this.chkBunNotsplitMaleFemale.Name = "chkBunNotsplitMaleFemale";
+            this.chkBunNotsplitMaleFemale.Size = new System.Drawing.Size(106, 17);
+            this.chkBunNotsplitMaleFemale.TabIndex = 126;
+            this.chkBunNotsplitMaleFemale.TabStop = true;
+            this.chkBunNotsplitMaleFemale.Text = "ไม่แยก ชาย-หญิง";
+            this.chkBunNotsplitMaleFemale.UseVisualStyleBackColor = true;
+            this.chkBunNotsplitMaleFemale.Click += new System.EventHandler(this.chkBunNotsplitMaleFemale_Click);
             // 
             // label24
             // 
@@ -3681,176 +3852,6 @@
             this.tabPage15.TabIndex = 18;
             this.tabPage15.Text = "tabPage15";
             this.tabPage15.UseVisualStyleBackColor = true;
-            // 
-            // chkSgotsplitMaleFemale
-            // 
-            this.chkSgotsplitMaleFemale.AutoSize = true;
-            this.chkSgotsplitMaleFemale.Location = new System.Drawing.Point(321, 24);
-            this.chkSgotsplitMaleFemale.Name = "chkSgotsplitMaleFemale";
-            this.chkSgotsplitMaleFemale.Size = new System.Drawing.Size(93, 17);
-            this.chkSgotsplitMaleFemale.TabIndex = 125;
-            this.chkSgotsplitMaleFemale.TabStop = true;
-            this.chkSgotsplitMaleFemale.Text = "แยก ชาย-หญิง";
-            this.chkSgotsplitMaleFemale.UseVisualStyleBackColor = true;
-            this.chkSgotsplitMaleFemale.Click += new System.EventHandler(this.chkSgotsplitMaleFemale_Click);
-            // 
-            // chkSgotNotsplitMaleFemale
-            // 
-            this.chkSgotNotsplitMaleFemale.AutoSize = true;
-            this.chkSgotNotsplitMaleFemale.Location = new System.Drawing.Point(177, 24);
-            this.chkSgotNotsplitMaleFemale.Name = "chkSgotNotsplitMaleFemale";
-            this.chkSgotNotsplitMaleFemale.Size = new System.Drawing.Size(106, 17);
-            this.chkSgotNotsplitMaleFemale.TabIndex = 124;
-            this.chkSgotNotsplitMaleFemale.TabStop = true;
-            this.chkSgotNotsplitMaleFemale.Text = "ไม่แยก ชาย-หญิง";
-            this.chkSgotNotsplitMaleFemale.UseVisualStyleBackColor = true;
-            this.chkSgotNotsplitMaleFemale.Click += new System.EventHandler(this.chkSgotNotsplitMaleFemale_Click);
-            // 
-            // label101
-            // 
-            this.label101.AutoSize = true;
-            this.label101.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label101.Location = new System.Drawing.Point(431, 96);
-            this.label101.Name = "label101";
-            this.label101.Size = new System.Drawing.Size(68, 16);
-            this.label101.TabIndex = 128;
-            this.label101.Text = "5-34@U/L";
-            // 
-            // txtSgotFeMaleValue
-            // 
-            this.txtSgotFeMaleValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtSgotFeMaleValue.Location = new System.Drawing.Point(156, 93);
-            this.txtSgotFeMaleValue.Name = "txtSgotFeMaleValue";
-            this.txtSgotFeMaleValue.Size = new System.Drawing.Size(259, 22);
-            this.txtSgotFeMaleValue.TabIndex = 127;
-            // 
-            // label103
-            // 
-            this.label103.AutoSize = true;
-            this.label103.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label103.Location = new System.Drawing.Point(22, 96);
-            this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(95, 16);
-            this.label103.TabIndex = 126;
-            this.label103.Text = "SGOT Female";
-            // 
-            // label104
-            // 
-            this.label104.AutoSize = true;
-            this.label104.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label104.Location = new System.Drawing.Point(431, 196);
-            this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(68, 16);
-            this.label104.TabIndex = 131;
-            this.label104.Text = "0-55@U/L";
-            // 
-            // txtSgotSgptFeMaleValue
-            // 
-            this.txtSgotSgptFeMaleValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtSgotSgptFeMaleValue.Location = new System.Drawing.Point(156, 193);
-            this.txtSgotSgptFeMaleValue.Name = "txtSgotSgptFeMaleValue";
-            this.txtSgotSgptFeMaleValue.Size = new System.Drawing.Size(259, 22);
-            this.txtSgotSgptFeMaleValue.TabIndex = 130;
-            // 
-            // label117
-            // 
-            this.label117.AutoSize = true;
-            this.label117.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label117.Location = new System.Drawing.Point(22, 194);
-            this.label117.Name = "label117";
-            this.label117.Size = new System.Drawing.Size(94, 16);
-            this.label117.TabIndex = 129;
-            this.label117.Text = "SGPT Female";
-            // 
-            // txtSgotALTFeMale
-            // 
-            this.txtSgotALTFeMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtSgotALTFeMale.Location = new System.Drawing.Point(156, 300);
-            this.txtSgotALTFeMale.Name = "txtSgotALTFeMale";
-            this.txtSgotALTFeMale.Size = new System.Drawing.Size(259, 22);
-            this.txtSgotALTFeMale.TabIndex = 133;
-            // 
-            // label118
-            // 
-            this.label118.AutoSize = true;
-            this.label118.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label118.Location = new System.Drawing.Point(22, 303);
-            this.label118.Name = "label118";
-            this.label118.Size = new System.Drawing.Size(82, 16);
-            this.label118.TabIndex = 132;
-            this.label118.Text = "ALT FeMale";
-            // 
-            // label123
-            // 
-            this.label123.AutoSize = true;
-            this.label123.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label123.Location = new System.Drawing.Point(431, 402);
-            this.label123.Name = "label123";
-            this.label123.Size = new System.Drawing.Size(89, 16);
-            this.label123.TabIndex = 136;
-            this.label123.Text = "30 – 120@U/L";
-            // 
-            // txtSgotAlkalineFeMale
-            // 
-            this.txtSgotAlkalineFeMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtSgotAlkalineFeMale.Location = new System.Drawing.Point(156, 399);
-            this.txtSgotAlkalineFeMale.Name = "txtSgotAlkalineFeMale";
-            this.txtSgotAlkalineFeMale.Size = new System.Drawing.Size(259, 22);
-            this.txtSgotAlkalineFeMale.TabIndex = 135;
-            // 
-            // label124
-            // 
-            this.label124.AutoSize = true;
-            this.label124.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label124.Location = new System.Drawing.Point(22, 402);
-            this.label124.Name = "label124";
-            this.label124.Size = new System.Drawing.Size(105, 16);
-            this.label124.TabIndex = 134;
-            this.label124.Text = "Alkaline Female";
-            // 
-            // chkBunsplitMaleFemale
-            // 
-            this.chkBunsplitMaleFemale.AutoSize = true;
-            this.chkBunsplitMaleFemale.Location = new System.Drawing.Point(358, 30);
-            this.chkBunsplitMaleFemale.Name = "chkBunsplitMaleFemale";
-            this.chkBunsplitMaleFemale.Size = new System.Drawing.Size(93, 17);
-            this.chkBunsplitMaleFemale.TabIndex = 127;
-            this.chkBunsplitMaleFemale.TabStop = true;
-            this.chkBunsplitMaleFemale.Text = "แยก ชาย-หญิง";
-            this.chkBunsplitMaleFemale.UseVisualStyleBackColor = true;
-            this.chkBunsplitMaleFemale.Click += new System.EventHandler(this.chkBunsplitMaleFemale_Click);
-            // 
-            // chkBunNotsplitMaleFemale
-            // 
-            this.chkBunNotsplitMaleFemale.AutoSize = true;
-            this.chkBunNotsplitMaleFemale.Location = new System.Drawing.Point(214, 30);
-            this.chkBunNotsplitMaleFemale.Name = "chkBunNotsplitMaleFemale";
-            this.chkBunNotsplitMaleFemale.Size = new System.Drawing.Size(106, 17);
-            this.chkBunNotsplitMaleFemale.TabIndex = 126;
-            this.chkBunNotsplitMaleFemale.TabStop = true;
-            this.chkBunNotsplitMaleFemale.Text = "ไม่แยก ชาย-หญิง";
-            this.chkBunNotsplitMaleFemale.UseVisualStyleBackColor = true;
-            this.chkBunNotsplitMaleFemale.Click += new System.EventHandler(this.chkBunNotsplitMaleFemale_Click);
-            // 
-            // label125
-            // 
-            this.label125.AutoSize = true;
-            this.label125.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label125.Location = new System.Drawing.Point(739, 235);
-            this.label125.Name = "label125";
-            this.label125.Size = new System.Drawing.Size(61, 16);
-            this.label125.TabIndex = 131;
-            this.label125.Text = "FEMALE";
-            // 
-            // label126
-            // 
-            this.label126.AutoSize = true;
-            this.label126.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label126.Location = new System.Drawing.Point(298, 235);
-            this.label126.Name = "label126";
-            this.label126.Size = new System.Drawing.Size(38, 16);
-            this.label126.TabIndex = 130;
-            this.label126.Text = "Male";
             // 
             // FrmValueNormal
             // 

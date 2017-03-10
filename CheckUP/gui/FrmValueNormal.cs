@@ -237,11 +237,11 @@ namespace CheckUP.gui
             label25.Hide();
             txtCBCHbFemale.Hide();
 
-            label11.Text = "Hb  :";
+            label11.Text = "Mcv Male :";
             label27.Hide();
             txtCBCMcvFemale.Hide();
 
-            label40.Text = "Hb  :";
+            label40.Text = "Hct :";
             label26.Hide();
             txtCBCHctFemale.Hide();
         }
@@ -354,6 +354,11 @@ namespace CheckUP.gui
         private void chkBunsplitMaleFemale_Click(object sender, EventArgs e)
         {
             setBunsplitFemale();
+        }
+
+        private void chkCBCNotsplitMaleFemale_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void btnSgotSave_Click(object sender, EventArgs e)
