@@ -1292,9 +1292,9 @@
             this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label87.Location = new System.Drawing.Point(493, 154);
             this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(212, 16);
+            this.label87.Size = new System.Drawing.Size(230, 16);
             this.label87.TabIndex = 123;
-            this.label87.Text = ">60@mg/dl ไม่ต้องใส่เครื่องหมายมากกว่า";
+            this.label87.Text = ">40-60@mg/dl ไม่ต้องใส่เครื่องหมายมากกว่า";
             // 
             // txtChoHDLFeMale
             // 
@@ -1330,9 +1330,9 @@
             this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label85.Location = new System.Drawing.Point(493, 126);
             this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(212, 16);
+            this.label85.Size = new System.Drawing.Size(230, 16);
             this.label85.TabIndex = 119;
-            this.label85.Text = ">60@mg/dl ไม่ต้องใส่เครื่องหมายมากกว่า";
+            this.label85.Text = ">40-60@mg/dl ไม่ต้องใส่เครื่องหมายมากกว่า";
             // 
             // label3
             // 
