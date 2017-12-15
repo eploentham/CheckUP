@@ -87,5 +87,6 @@ C:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.gui.FrmStaffView.resources
 C:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.gui.FrmValueNormal.resources
 C:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.Properties.Resources.resources
 C:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csproj.GenerateResource.Cache
-C:\source\bangna\CheckUP\CheckUP\bin\Debug\stdole.dll
 C:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csprojResolveAssemblyReference.cache
+C:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csproj.CoreCompileInputs.cache
+C:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csproj.ResolveComReference.cache
