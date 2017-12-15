@@ -17,11 +17,12 @@ namespace CheckUP.gui
         int tabCBC = 0, tabFBS = 1, tabUA = 2, tabTri = 3, tabCho = 4, tabSgot = 5, tabBun = 6, tabUric = 7, tabOther1 = 8, tabLung = 9, tabAudio = 10, tabEye = 11, tabToxi = 12, tabStoolExam = 13;
         int tabCnt = 14;
         CustCheckUpPatientValueNormal ccpvn;
-        public FrmValueNormal(CheckControl c)
+        public FrmValueNormal(CheckControl c, String tab)
         {
             InitializeComponent();
             cc = c;
             initConfig();
+            setTabShow(tab);
         }
         private void initConfig()
         {
@@ -41,6 +42,97 @@ namespace CheckUP.gui
             tC.TabPages[tabToxi].Text = "Toxicology";
             tC.TabPages[tabStoolExam].Text = "Stool Exam";
             setControl();
+        }
+        private void setTabShow(String tab)
+        {
+            if (tab.Equals(""))
+            {
+                return;
+            }
+            for (int i = 0; i < tabCnt; i++)
+            {
+                //tC.TabPages[i]
+                if (tab.Equals("pe"))
+                {
+                    //TabPage t = tC.TabPages[tabPE];
+                    //tC.SelectedTab = t;
+                }
+                else if (tab.Equals("cbc"))
+                {
+                    TabPage t = tC.TabPages[tabCBC];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("xray"))
+                {
+                    //TabPage t = tC.TabPages[tabXRay];
+                    //tC.SelectedTab = t;
+                }
+                else if (tab.Equals("fbs"))
+                {
+                    TabPage t = tC.TabPages[tabFBS];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("ua"))
+                {
+                    TabPage t = tC.TabPages[tabUA];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("tri"))
+                {
+                    TabPage t = tC.TabPages[tabTri];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("cho"))
+                {
+                    TabPage t = tC.TabPages[tabCho];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("sgot"))
+                {
+                    TabPage t = tC.TabPages[tabSgot];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("bun"))
+                {
+                    TabPage t = tC.TabPages[tabBun];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("uric"))
+                {
+                    TabPage t = tC.TabPages[tabUric];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("other1"))
+                {
+                    TabPage t = tC.TabPages[tabOther1];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("lung"))
+                {
+                    TabPage t = tC.TabPages[tabLung];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("audio"))
+                {
+                    TabPage t = tC.TabPages[tabAudio];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("eye"))
+                {
+                    TabPage t = tC.TabPages[tabEye];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("toxi"))
+                {
+                    TabPage t = tC.TabPages[tabToxi];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("stoolexam"))
+                {
+                    TabPage t = tC.TabPages[tabStoolExam];
+                    tC.SelectedTab = t;
+                }
+            }
         }
         private void setControl()
         {

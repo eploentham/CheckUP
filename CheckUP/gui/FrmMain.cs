@@ -110,7 +110,7 @@ namespace CheckUP
             }
             else if (e.Node.Name.ToString() == "nValueNormal")
             {
-                FrmValueNormal frm = new FrmValueNormal(cc);
+                FrmValueNormal frm = new FrmValueNormal(cc,"");
                 showFrame(frm);
             }
             //else if (e.Node.Name.ToString() == "nInputResult")

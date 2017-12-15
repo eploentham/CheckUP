@@ -36,6 +36,86 @@ namespace CheckUP.gui
             for (int i = 0; i < tabCnt; i++)
             {
                 //tC.TabPages[i]
+                if (tab.Equals("pe"))
+                {
+                    TabPage t = tC.TabPages[tabPE];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("cbc"))
+                {
+                    TabPage t = tC.TabPages[tabCBC];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("xray"))
+                {
+                    TabPage t = tC.TabPages[tabXRay];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("fbs"))
+                {
+                    TabPage t = tC.TabPages[tabFBS];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("ua"))
+                {
+                    TabPage t = tC.TabPages[tabUA];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("tri"))
+                {
+                    TabPage t = tC.TabPages[tabTri];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("cho"))
+                {
+                    TabPage t = tC.TabPages[tabCho];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("sgot"))
+                {
+                    TabPage t = tC.TabPages[tabSgot];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("bun"))
+                {
+                    TabPage t = tC.TabPages[tabBun];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("uric"))
+                {
+                    TabPage t = tC.TabPages[tabUric];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("other1"))
+                {
+                    TabPage t = tC.TabPages[tabOther1];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("lung"))
+                {
+                    TabPage t = tC.TabPages[tabLung];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("audio"))
+                {
+                    TabPage t = tC.TabPages[tabAudio];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("eye"))
+                {
+                    TabPage t = tC.TabPages[tabEye];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("toxi"))
+                {
+                    TabPage t = tC.TabPages[tabToxi];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("stoolexam"))
+                {
+                    TabPage t = tC.TabPages[tabStoolExam];
+                    tC.SelectedTab = t;
+                }
             }
         }
         private void initConfig()
