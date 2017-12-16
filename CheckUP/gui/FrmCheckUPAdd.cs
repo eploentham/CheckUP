@@ -2595,7 +2595,6 @@ namespace CheckUP.gui
             {
                 btnUnActive.Visible = true;
             }
-
         }
 
         private void chkActive_Click(object sender, EventArgs e)
