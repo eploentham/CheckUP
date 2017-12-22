@@ -275,6 +275,7 @@
             this.txtCntSuccess = new System.Windows.Forms.TextBox();
             this.label123 = new System.Windows.Forms.Label();
             this.btnExcel1 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -2193,6 +2194,7 @@
             // 
             // tabPage12
             // 
+            this.tabPage12.Controls.Add(this.button1);
             this.tabPage12.Controls.Add(this.btnPrintPE);
             this.tabPage12.Controls.Add(this.btnPrintXray);
             this.tabPage12.Controls.Add(this.chkStoolExamTyphoid);
@@ -2235,7 +2237,7 @@
             // chkStoolExamTyphoid
             // 
             this.chkStoolExamTyphoid.AutoSize = true;
-            this.chkStoolExamTyphoid.Location = new System.Drawing.Point(410, 307);
+            this.chkStoolExamTyphoid.Location = new System.Drawing.Point(410, 424);
             this.chkStoolExamTyphoid.Name = "chkStoolExamTyphoid";
             this.chkStoolExamTyphoid.Size = new System.Drawing.Size(243, 17);
             this.chkStoolExamTyphoid.TabIndex = 75;
@@ -2305,7 +2307,7 @@
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(152, 34);
             this.btnPrint.TabIndex = 69;
-            this.btnPrint.Text = " พิมพ์";
+            this.btnPrint.Text = " พิมพ์ เล่มเล็ก A4";
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
@@ -2905,6 +2907,16 @@
             this.btnExcel1.UseVisualStyleBackColor = true;
             this.btnExcel1.Click += new System.EventHandler(this.btnExcel1_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button1.Location = new System.Drawing.Point(410, 294);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(152, 34);
+            this.button1.TabIndex = 78;
+            this.button1.Text = " พิมพ์ เล่มเล็ก A4";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FrmCheckUPAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3236,6 +3248,6 @@
         private System.Windows.Forms.RadioButton chkStoolExamTyphoid;
         private System.Windows.Forms.Button btnPrintPE;
         private System.Windows.Forms.Button btnPrintXray;
-
+        private System.Windows.Forms.Button button1;
     }
 }
