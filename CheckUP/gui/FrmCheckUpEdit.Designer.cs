@@ -173,6 +173,14 @@
             this.label69 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.txtHDLResult = new System.Windows.Forms.TextBox();
+            this.txtHDLSummary = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.txtLDLResult = new System.Windows.Forms.TextBox();
+            this.txtLDLSummary = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.txtChoHDLNormal = new System.Windows.Forms.TextBox();
             this.txtChoHDL = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -472,14 +480,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtAge = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtLDLResult = new System.Windows.Forms.TextBox();
-            this.txtLDLSummary = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.txtHDLResult = new System.Windows.Forms.TextBox();
-            this.txtHDLSummary = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
+            this.txtCBCBaso = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
             this.tC.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -786,6 +788,8 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.txtCBCBaso);
+            this.tabPage5.Controls.Add(this.label45);
             this.tabPage5.Controls.Add(this.txtCBCPmnNormal);
             this.tabPage5.Controls.Add(this.txtCBCPmn);
             this.tabPage5.Controls.Add(this.label14);
@@ -2051,6 +2055,78 @@
             this.tabPage8.TabIndex = 8;
             this.tabPage8.Text = "tabPage8";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // txtHDLResult
+            // 
+            this.txtHDLResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtHDLResult.Location = new System.Drawing.Point(203, 320);
+            this.txtHDLResult.Name = "txtHDLResult";
+            this.txtHDLResult.Size = new System.Drawing.Size(519, 22);
+            this.txtHDLResult.TabIndex = 126;
+            // 
+            // txtHDLSummary
+            // 
+            this.txtHDLSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtHDLSummary.Location = new System.Drawing.Point(203, 348);
+            this.txtHDLSummary.Name = "txtHDLSummary";
+            this.txtHDLSummary.Size = new System.Drawing.Size(924, 22);
+            this.txtHDLSummary.TabIndex = 125;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label33.Location = new System.Drawing.Point(54, 323);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(72, 16);
+            this.label33.TabIndex = 124;
+            this.label33.Text = "ผลการตรวจ  :";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label44.Location = new System.Drawing.Point(54, 351);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(92, 16);
+            this.label44.TabIndex = 123;
+            this.label44.Text = "สรุปผลการตรวจ  :";
+            // 
+            // txtLDLResult
+            // 
+            this.txtLDLResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtLDLResult.Location = new System.Drawing.Point(203, 202);
+            this.txtLDLResult.Name = "txtLDLResult";
+            this.txtLDLResult.Size = new System.Drawing.Size(519, 22);
+            this.txtLDLResult.TabIndex = 122;
+            // 
+            // txtLDLSummary
+            // 
+            this.txtLDLSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtLDLSummary.Location = new System.Drawing.Point(203, 230);
+            this.txtLDLSummary.Name = "txtLDLSummary";
+            this.txtLDLSummary.Size = new System.Drawing.Size(924, 22);
+            this.txtLDLSummary.TabIndex = 121;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label23.Location = new System.Drawing.Point(54, 205);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(72, 16);
+            this.label23.TabIndex = 120;
+            this.label23.Text = "ผลการตรวจ  :";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label24.Location = new System.Drawing.Point(54, 233);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(92, 16);
+            this.label24.TabIndex = 119;
+            this.label24.Text = "สรุปผลการตรวจ  :";
             // 
             // txtChoHDLNormal
             // 
@@ -5114,77 +5190,23 @@
             this.label8.TabIndex = 66;
             this.label8.Text = "อายุ :";
             // 
-            // txtLDLResult
+            // txtCBCBaso
             // 
-            this.txtLDLResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtLDLResult.Location = new System.Drawing.Point(203, 202);
-            this.txtLDLResult.Name = "txtLDLResult";
-            this.txtLDLResult.Size = new System.Drawing.Size(519, 22);
-            this.txtLDLResult.TabIndex = 122;
+            this.txtCBCBaso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCBCBaso.Location = new System.Drawing.Point(856, 193);
+            this.txtCBCBaso.Name = "txtCBCBaso";
+            this.txtCBCBaso.Size = new System.Drawing.Size(100, 22);
+            this.txtCBCBaso.TabIndex = 128;
             // 
-            // txtLDLSummary
+            // label45
             // 
-            this.txtLDLSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtLDLSummary.Location = new System.Drawing.Point(203, 230);
-            this.txtLDLSummary.Name = "txtLDLSummary";
-            this.txtLDLSummary.Size = new System.Drawing.Size(924, 22);
-            this.txtLDLSummary.TabIndex = 121;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label23.Location = new System.Drawing.Point(54, 205);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(72, 16);
-            this.label23.TabIndex = 120;
-            this.label23.Text = "ผลการตรวจ  :";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label24.Location = new System.Drawing.Point(54, 233);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(92, 16);
-            this.label24.TabIndex = 119;
-            this.label24.Text = "สรุปผลการตรวจ  :";
-            // 
-            // txtHDLResult
-            // 
-            this.txtHDLResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtHDLResult.Location = new System.Drawing.Point(203, 320);
-            this.txtHDLResult.Name = "txtHDLResult";
-            this.txtHDLResult.Size = new System.Drawing.Size(519, 22);
-            this.txtHDLResult.TabIndex = 126;
-            // 
-            // txtHDLSummary
-            // 
-            this.txtHDLSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtHDLSummary.Location = new System.Drawing.Point(203, 348);
-            this.txtHDLSummary.Name = "txtHDLSummary";
-            this.txtHDLSummary.Size = new System.Drawing.Size(924, 22);
-            this.txtHDLSummary.TabIndex = 125;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label33.Location = new System.Drawing.Point(54, 323);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(72, 16);
-            this.label33.TabIndex = 124;
-            this.label33.Text = "ผลการตรวจ  :";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label44.Location = new System.Drawing.Point(54, 351);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(92, 16);
-            this.label44.TabIndex = 123;
-            this.label44.Text = "สรุปผลการตรวจ  :";
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label45.Location = new System.Drawing.Point(801, 196);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(46, 16);
+            this.label45.TabIndex = 127;
+            this.label45.Text = "Baso :";
             // 
             // FrmCheckUpEdit
             // 
@@ -5697,5 +5719,7 @@
         private System.Windows.Forms.TextBox txtLDLSummary;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox txtCBCBaso;
+        private System.Windows.Forms.Label label45;
     }
 }

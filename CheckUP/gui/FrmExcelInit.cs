@@ -120,6 +120,7 @@ namespace CheckUP.gui
         }
         private void initConfig()
         {
+            int chk = 0;
             ei = cc.eidb.selectByPk();
             tC.TabPages[tabSum].Text = "Summary";
             tC.TabPages[tabPE].Text = "PE";
@@ -187,6 +188,10 @@ namespace CheckUP.gui
             nmDCBCSummary.Value = int.Parse(cc.cf.NumberNull1(ei.CBCSummary));
             nmDCBCWBC.Value= int.Parse(cc.cf.NumberNull1(ei.CBCWBC));
             nmDCBCPmn.Value = int.Parse(cc.cf.NumberNull1(ei.cbcPmn));
+            nmDCBCMCH.Value = int.TryParse(ei.CBCMCH, out chk) ? chk : 0;
+            nmDCBCMCHC.Value = int.TryParse(ei.CBCMCHC, out chk) ? chk : 0;
+            nmDCBCMCV.Value = int.TryParse(ei.CBCMCV, out chk) ? chk : 0;
+            nmDCBCBaso.Value = int.TryParse(ei.CBCBASO, out chk) ? chk : 0;
 
             nmDFBSRow.Value = int.Parse(cc.cf.NumberNull1(ei.FBSRow));
             nmDFBSNo.Value = int.Parse(cc.cf.NumberNull1(ei.FBSNo));
@@ -540,6 +545,8 @@ namespace CheckUP.gui
             {
                 MessageBox.Show("บันทึกข้อมูล Sgot เรียบร้อย", "บันทึกข้อมูล");
             }
+            xlWorkbook.Close(true, null, null);
+            xlApp.Quit();
         }
         private void SaveBun()
         {
@@ -606,6 +613,8 @@ namespace CheckUP.gui
             {
                 MessageBox.Show("บันทึกข้อมูล BUN เรียบร้อย", "บันทึกข้อมูล");
             }
+            xlWorkbook.Close(true, null, null);
+            xlApp.Quit();
         }
         private void SaveUric()
         {
@@ -674,6 +683,8 @@ namespace CheckUP.gui
             {
                 MessageBox.Show("บันทึกข้อมูล Uric Acid เรียบร้อย", "บันทึกข้อมูล");
             }
+            xlWorkbook.Close(true, null, null);
+            xlApp.Quit();
         }
         private void SaveCholes()
         {
@@ -788,6 +799,8 @@ namespace CheckUP.gui
             {
                 MessageBox.Show("บันทึกข้อมูล Choles เรียบร้อย", "บันทึกข้อมูล");
             }
+            xlWorkbook.Close(true, null, null);
+            xlApp.Quit();
         }
         private void SaveTrig()
         {
@@ -844,6 +857,8 @@ namespace CheckUP.gui
             {
                 MessageBox.Show("บันทึกข้อมูล Trig เรียบร้อย", "บันทึกข้อมูล");
             }
+            xlWorkbook.Close(true, null, null);
+            xlApp.Quit();
         }
         private void SaveUA()
         {
@@ -996,6 +1011,8 @@ namespace CheckUP.gui
             {
                 MessageBox.Show("บันทึกข้อมูล UA เรียบร้อย", "บันทึกข้อมูล");
             }
+            xlWorkbook.Close(true, null, null);
+            xlApp.Quit();
         }
         private void SaveOther1()
         {
@@ -1219,6 +1236,8 @@ namespace CheckUP.gui
             {
                 MessageBox.Show("บันทึกข้อมูล Other เรียบร้อย", "บันทึกข้อมูล");
             }
+            xlWorkbook.Close(true, null, null);
+            xlApp.Quit();
         }
         private void SaveLung()
         {
@@ -1323,6 +1342,8 @@ namespace CheckUP.gui
             {
                 MessageBox.Show("บันทึกข้อมูล Lung เรียบร้อย", "บันทึกข้อมูล");
             }
+            xlWorkbook.Close(true, null, null);
+            xlApp.Quit();
         }
         private void SaveAudio()
         {
@@ -1511,6 +1532,8 @@ namespace CheckUP.gui
             {
                 MessageBox.Show("บันทึกข้อมูล AudioGram เรียบร้อย", "บันทึกข้อมูล");
             }
+            xlWorkbook.Close(true, null, null);
+            xlApp.Quit();
         }
         private void SaveEye()
         {
@@ -1655,6 +1678,8 @@ namespace CheckUP.gui
             {
                 MessageBox.Show("บันทึกข้อมูล Eye เรียบร้อย", "บันทึกข้อมูล");
             }
+            xlWorkbook.Close(true, null, null);
+            xlApp.Quit();
         }
         private void SaveToxi1()
         {
@@ -1942,6 +1967,8 @@ namespace CheckUP.gui
             //{
             //    MessageBox.Show("บันทึกข้อมูล Toxi เรียบร้อย", "บันทึกข้อมูล");
             //}
+            xlWorkbook.Close(true, null, null);
+            xlApp.Quit();
         }
         private void SaveToxi2()
         {
@@ -2231,6 +2258,8 @@ namespace CheckUP.gui
             {
                 MessageBox.Show("บันทึกข้อมูล Toxi2 เรียบร้อย", "บันทึกข้อมูล");
             }
+            xlWorkbook.Close(true, null, null);
+            xlApp.Quit();
         }
         private void FrmExcelInit_Load(object sender, EventArgs e)
         {
@@ -2419,6 +2448,8 @@ namespace CheckUP.gui
                     MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 }
             }
+            xlWorkbook.Close(true, null, null);
+            xlApp.Quit();
             //if (cc.sfdb.insertStaff(s).Length >= 1)
             //{
             //    MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
@@ -2542,6 +2573,8 @@ namespace CheckUP.gui
             {
                 MessageBox.Show("บันทึกข้อมูล PE เรียบร้อย", "บันทึกข้อมูล");
             }
+            xlWorkbook.Close(true, null, null);
+            xlApp.Quit();
         }
         private void SaveStoolExam()
         {
@@ -2640,6 +2673,8 @@ namespace CheckUP.gui
             {
                 MessageBox.Show("บันทึกข้อมูล StoolExam เรียบร้อย", "บันทึกข้อมูล");
             }
+            xlWorkbook.Close(true, null, null);
+            xlApp.Quit();
         }
 
         private void btnXRayExcel_Click(object sender, EventArgs e)
@@ -2688,6 +2723,8 @@ namespace CheckUP.gui
             {
                 MessageBox.Show("บันทึกข้อมูล XRay เรียบร้อย", "บันทึกข้อมูล");
             }
+            xlWorkbook.Close(true, null, null);
+            xlApp.Quit();
         }
 
         private void btnCBCExcel_Click(object sender, EventArgs e)
@@ -2835,10 +2872,12 @@ namespace CheckUP.gui
             if (cc.eidb.updateCBC(nmDCBCBact.Value.ToString(), nmDCBCEos.Value.ToString(), nmDCBCHb.Value.ToString(), nmDCBCHct.Value.ToString(),
                 nmDCBCLy.Value.ToString(), nmDCBCMono.Value.ToString(), nmDCBCNeu.Value.ToString(), nmDCBCNo.Value.ToString(), nmDCBCPltC.Value.ToString(), nmDCBCPltS.Value.ToString(),
                 nmDCBCRBC.Value.ToString(), nmDCBCRBCmono.Value.ToString(), nmDCBCRow.Value.ToString(), nmDCBCSummary.Value.ToString(), nmDCBCWBC.Value.ToString(), 
-                nmDCBCPmn.Value.ToString(),txtCBCSheetName.Text).Length >= 1)
+                nmDCBCPmn.Value.ToString(),txtCBCSheetName.Text, nmDCBCMCV.Value.ToString(), nmDCBCMCH.Value.ToString(), nmDCBCMCHC.Value.ToString(), nmDCBCBaso.Value.ToString()).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
             }
+            xlWorkbook.Close(true, null, null);
+            xlApp.Quit();
         }
 
         private void btnFBSExcel_Click(object sender, EventArgs e)
@@ -2896,6 +2935,8 @@ namespace CheckUP.gui
             {
                 MessageBox.Show("บันทึกข้อมูล FBS เรียบร้อย", "บันทึกข้อมูล");
             }
+            xlWorkbook.Close(true, null, null);
+            xlApp.Quit();
         }
 
         private void btnUAExcel_Click(object sender, EventArgs e)

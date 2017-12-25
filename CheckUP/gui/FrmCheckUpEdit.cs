@@ -286,9 +286,9 @@ namespace CheckUP.gui
 
         private void btnCBCSave_Click(object sender, EventArgs e)
         {
-            String chk = cc.ccpdb.UpdateCBC(txtRowNumber.Text, cuc.Id, txtCBCBact.Text, txtCBCEos.Text, txtCBCHb.Text, txtCBCHct.Text, 
+            String chk = cc.ccpdb.UpdateCBC(txtRowNumber.Text, cuc.Id, txtCBCBaso.Text, txtCBCEos.Text, txtCBCHb.Text, txtCBCHct.Text, 
                 txtCBCLy.Text, txtCBCMch.Text, txtCBCMchc.Text, txtCBCMcv.Text, txtCBCMono.Text, txtCBCNeu.Text, txtCBCPltC.Text, txtCBCRbc.Text, 
-                txtCBCRbcMono.Text, txtCBCSummary.Text, txtCBCWbc.Text, txtCBCPltS.Text, txtCBCPmn.Text);
+                txtCBCRbcMono.Text, txtCBCSummary.Text, txtCBCWbc.Text, txtCBCPltS.Text, txtCBCPmn.Text, txtCBCBact.Text);
             if (chk.Equals("1"))
             {
                 MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");

@@ -49,6 +49,10 @@ namespace CheckUP.objdb
             ei.CBCWBC = "cbc_wbc";
             ei.cbcPmn = "cbc_pmn";
             ei.CBCSheetname = "cbc_sheetname";
+            ei.CBCMCH = "cbc_mch";
+            ei.CBCMCHC = "cbc_mchc";
+            ei.CBCMCV = "cbc_mcv";
+            ei.CBCBASO = "cbc_baso";
 
             ei.Cholesteral = "cho_value";
             ei.ChoNo = "cho_no";
@@ -319,6 +323,12 @@ namespace CheckUP.objdb
             item.CBCSummary = NumberNull10(dt.Rows[0][ei.CBCSummary].ToString());
             item.CBCWBC = NumberNull10(dt.Rows[0][ei.CBCWBC].ToString());
             item.cbcPmn = NumberNull10(dt.Rows[0][ei.cbcPmn].ToString());
+
+            item.CBCMCH = NumberNull10(dt.Rows[0][ei.CBCMCH].ToString());
+            item.CBCMCHC = NumberNull10(dt.Rows[0][ei.CBCMCHC].ToString());
+            item.CBCMCV = NumberNull10(dt.Rows[0][ei.CBCMCV].ToString());
+            item.CBCBASO = NumberNull10(dt.Rows[0][ei.CBCBASO].ToString());
+
             item.CBCSheetname = NumberNull10(dt.Rows[0][ei.CBCSheetname].ToString());
 
             item.Cholesteral = NumberNull10(dt.Rows[0][ei.Cholesteral].ToString());
@@ -618,7 +628,8 @@ namespace CheckUP.objdb
             return chk;
         }
         public String updateCBC(String CBCBact, String CBCEos, String CBCHb, String CBCHct, String CBCLy, String CBCMono,
-            String CBCNeu, String CBCNo, String CBCPltC, String CBCPltS, String CBCRBC, String CBCRBCmono, String CBCRow, String CBCSummary, String CBCWBC, String Pmn, String sheetname)
+            String CBCNeu, String CBCNo, String CBCPltC, String CBCPltS, String CBCRBC, String CBCRBCmono, String CBCRow, 
+            String CBCSummary, String CBCWBC, String Pmn, String sheetname, String CBCMCV, String CBCMCH, String CBCMCHC, String CBCBASO)
         {
             String sql = "", chk = "";
 
@@ -642,6 +653,10 @@ namespace CheckUP.objdb
                 ei.CBCSummary + "='" + CBCSummary + "', " +
                 ei.CBCWBC + "='" + CBCWBC + "', "+
                 ei.cbcPmn + "='" + Pmn + "', "+
+                ei.CBCMCH + "='" + CBCMCH + "', "+
+                ei.CBCMCHC + "='" + CBCMCHC + "', "+
+                ei.CBCMCV + "='" + CBCMCV + "', "+
+                ei.CBCBASO + "='" + CBCBASO + "', "+
                 ei.CBCSheetname + "='" + sheetname + "' ";
             try
             {

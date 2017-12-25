@@ -170,6 +170,7 @@ namespace CheckUP.objdb
             ccp.cbcRbcMorpholog = "cbc_rbc_morpholog";
             ccp.cbcSummary = "cbc_summary";
             ccp.cbcPmn = "cbc_pmn";
+            ccp.cbcBact = "cbc_bact";
 
             ccp.urineColor = "urine_color";
             ccp.urineAppearance = "urine_appearance";
@@ -720,7 +721,7 @@ namespace CheckUP.objdb
         }
         public String UpdateCBC(String rowNumber, String cucId, String Basophil, String Eosinophil, String Hb, String Hct, String Lymphocyte,
             String Mch, String Mchc, String Mcv, String Monocyte, String Neutrophil, String PlateletCount, String Rbc, String RbcMorpholog, 
-            String Summary, String Wbc, String PlateletSmear, String Pmn)
+            String Summary, String Wbc, String PlateletSmear, String Pmn, String bact)
         {
             String chk = "", sql = "";
             try
@@ -741,7 +742,8 @@ namespace CheckUP.objdb
                 ccp.cbcRbcMorpholog + "='" + RbcMorpholog + "', " +
                 ccp.cbcSummary + "='" + Summary + "', " +
                 ccp.cbcWbc + "='" + Wbc + "', " +
-                ccp.cbcPmn + "='" + Pmn + "' " +
+                ccp.cbcPmn + "='" + Pmn + "', " +
+                ccp.cbcBact + "='" + bact + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql); ;
             }

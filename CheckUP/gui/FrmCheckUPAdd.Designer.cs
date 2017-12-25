@@ -211,6 +211,7 @@
             this.label95 = new System.Windows.Forms.Label();
             this.label96 = new System.Windows.Forms.Label();
             this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnPrintPE = new System.Windows.Forms.Button();
             this.btnPrintXray = new System.Windows.Forms.Button();
             this.chkStoolExamTyphoid = new System.Windows.Forms.RadioButton();
@@ -275,7 +276,7 @@
             this.txtCntSuccess = new System.Windows.Forms.TextBox();
             this.label123 = new System.Windows.Forms.Label();
             this.btnExcel1 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -2194,6 +2195,7 @@
             // 
             // tabPage12
             // 
+            this.tabPage12.Controls.Add(this.button2);
             this.tabPage12.Controls.Add(this.button1);
             this.tabPage12.Controls.Add(this.btnPrintPE);
             this.tabPage12.Controls.Add(this.btnPrintXray);
@@ -2212,10 +2214,20 @@
             this.tabPage12.Text = "Print";
             this.tabPage12.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button1.Location = new System.Drawing.Point(410, 294);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(197, 34);
+            this.button1.TabIndex = 78;
+            this.button1.Text = " พิมพ์ เล่มเล็ก A4 Form  หน้า";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // btnPrintPE
             // 
             this.btnPrintPE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnPrintPE.Location = new System.Drawing.Point(583, 29);
+            this.btnPrintPE.Location = new System.Drawing.Point(677, 22);
             this.btnPrintPE.Name = "btnPrintPE";
             this.btnPrintPE.Size = new System.Drawing.Size(152, 34);
             this.btnPrintPE.TabIndex = 77;
@@ -2226,7 +2238,7 @@
             // btnPrintXray
             // 
             this.btnPrintXray.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnPrintXray.Location = new System.Drawing.Point(583, 69);
+            this.btnPrintXray.Location = new System.Drawing.Point(677, 62);
             this.btnPrintXray.Name = "btnPrintXray";
             this.btnPrintXray.Size = new System.Drawing.Size(152, 34);
             this.btnPrintXray.TabIndex = 76;
@@ -2907,15 +2919,15 @@
             this.btnExcel1.UseVisualStyleBackColor = true;
             this.btnExcel1.Click += new System.EventHandler(this.btnExcel1_Click);
             // 
-            // button1
+            // button2
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button1.Location = new System.Drawing.Point(410, 294);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 34);
-            this.button1.TabIndex = 78;
-            this.button1.Text = " พิมพ์ เล่มเล็ก A4";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button2.Location = new System.Drawing.Point(410, 334);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(197, 34);
+            this.button2.TabIndex = 79;
+            this.button2.Text = " พิมพ์ เล่มเล็ก A4 Form  หลัง";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // FrmCheckUPAdd
             // 
@@ -3249,5 +3261,6 @@
         private System.Windows.Forms.Button btnPrintPE;
         private System.Windows.Forms.Button btnPrintXray;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

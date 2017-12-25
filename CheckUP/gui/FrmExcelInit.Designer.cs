@@ -305,6 +305,9 @@
             this.lbUric = new System.Windows.Forms.Label();
             this.nmDUricRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.nmDOther1AntiHavSummary = new System.Windows.Forms.NumericUpDown();
+            this.label218 = new System.Windows.Forms.Label();
+            this.label217 = new System.Windows.Forms.Label();
             this.nmDOtherAmphetamineSummary = new System.Windows.Forms.NumericUpDown();
             this.nmDOther1CA199Result = new System.Windows.Forms.NumericUpDown();
             this.nmDOther1CA199Summary = new System.Windows.Forms.NumericUpDown();
@@ -570,9 +573,14 @@
             this.nmDStoolExamNo = new System.Windows.Forms.NumericUpDown();
             this.label163 = new System.Windows.Forms.Label();
             this.nmDStoolExamRow = new System.Windows.Forms.NumericUpDown();
-            this.label217 = new System.Windows.Forms.Label();
-            this.label218 = new System.Windows.Forms.Label();
-            this.nmDOther1AntiHavSummary = new System.Windows.Forms.NumericUpDown();
+            this.label219 = new System.Windows.Forms.Label();
+            this.nmDCBCMCHC = new System.Windows.Forms.NumericUpDown();
+            this.label220 = new System.Windows.Forms.Label();
+            this.nmDCBCMCH = new System.Windows.Forms.NumericUpDown();
+            this.label221 = new System.Windows.Forms.Label();
+            this.nmDCBCMCV = new System.Windows.Forms.NumericUpDown();
+            this.label222 = new System.Windows.Forms.Label();
+            this.nmDCBCBaso = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDARow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDAPrefix)).BeginInit();
@@ -688,6 +696,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDUricNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDUricRow)).BeginInit();
             this.tabPage12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1AntiHavSummary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOtherAmphetamineSummary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOther1CA199Result)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOther1CA199Summary)).BeginInit();
@@ -816,7 +825,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1AntiHavSummary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCHC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCBaso)).BeginInit();
             this.SuspendLayout();
             // 
             // nmDRow
@@ -1893,6 +1905,14 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label219);
+            this.tabPage4.Controls.Add(this.nmDCBCMCHC);
+            this.tabPage4.Controls.Add(this.label220);
+            this.tabPage4.Controls.Add(this.nmDCBCMCH);
+            this.tabPage4.Controls.Add(this.label221);
+            this.tabPage4.Controls.Add(this.nmDCBCMCV);
+            this.tabPage4.Controls.Add(this.label222);
+            this.tabPage4.Controls.Add(this.nmDCBCBaso);
             this.tabPage4.Controls.Add(this.txtCBCSheetName);
             this.tabPage4.Controls.Add(this.label191);
             this.tabPage4.Controls.Add(this.label182);
@@ -1986,7 +2006,7 @@
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label50.Location = new System.Drawing.Point(523, 169);
+            this.label50.Location = new System.Drawing.Point(936, 169);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(92, 16);
             this.label50.TabIndex = 76;
@@ -1994,7 +2014,7 @@
             // 
             // nmDCBCSummary
             // 
-            this.nmDCBCSummary.Location = new System.Drawing.Point(519, 197);
+            this.nmDCBCSummary.Location = new System.Drawing.Point(932, 197);
             this.nmDCBCSummary.Minimum = new decimal(new int[] {
             1,
             0,
@@ -4569,6 +4589,43 @@
             this.tabPage12.TabIndex = 11;
             this.tabPage12.Text = "tabPage12";
             this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // nmDOther1AntiHavSummary
+            // 
+            this.nmDOther1AntiHavSummary.Location = new System.Drawing.Point(764, 99);
+            this.nmDOther1AntiHavSummary.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDOther1AntiHavSummary.Name = "nmDOther1AntiHavSummary";
+            this.nmDOther1AntiHavSummary.Size = new System.Drawing.Size(46, 20);
+            this.nmDOther1AntiHavSummary.TabIndex = 141;
+            this.nmDOther1AntiHavSummary.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label218
+            // 
+            this.label218.AutoSize = true;
+            this.label218.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label218.Location = new System.Drawing.Point(761, 67);
+            this.label218.Name = "label218";
+            this.label218.Size = new System.Drawing.Size(89, 16);
+            this.label218.TabIndex = 140;
+            this.label218.Text = "สรุปผลการตรวจ  ";
+            // 
+            // label217
+            // 
+            this.label217.AutoSize = true;
+            this.label217.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label217.Location = new System.Drawing.Point(636, 67);
+            this.label217.Name = "label217";
+            this.label217.Size = new System.Drawing.Size(69, 16);
+            this.label217.TabIndex = 139;
+            this.label217.Text = "ผลการตรวจ  ";
             // 
             // nmDOtherAmphetamineSummary
             // 
@@ -8228,38 +8285,109 @@
             0,
             0});
             // 
-            // label217
+            // label219
             // 
-            this.label217.AutoSize = true;
-            this.label217.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label217.Location = new System.Drawing.Point(636, 67);
-            this.label217.Name = "label217";
-            this.label217.Size = new System.Drawing.Size(69, 16);
-            this.label217.TabIndex = 139;
-            this.label217.Text = "ผลการตรวจ  ";
+            this.label219.AutoSize = true;
+            this.label219.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label219.Location = new System.Drawing.Point(734, 169);
+            this.label219.Name = "label219";
+            this.label219.Size = new System.Drawing.Size(53, 16);
+            this.label219.TabIndex = 88;
+            this.label219.Text = "MCHC :";
             // 
-            // label218
+            // nmDCBCMCHC
             // 
-            this.label218.AutoSize = true;
-            this.label218.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label218.Location = new System.Drawing.Point(761, 67);
-            this.label218.Name = "label218";
-            this.label218.Size = new System.Drawing.Size(89, 16);
-            this.label218.TabIndex = 140;
-            this.label218.Text = "สรุปผลการตรวจ  ";
-            // 
-            // nmDOther1AntiHavSummary
-            // 
-            this.nmDOther1AntiHavSummary.Location = new System.Drawing.Point(764, 99);
-            this.nmDOther1AntiHavSummary.Minimum = new decimal(new int[] {
+            this.nmDCBCMCHC.Location = new System.Drawing.Point(730, 197);
+            this.nmDCBCMCHC.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nmDOther1AntiHavSummary.Name = "nmDOther1AntiHavSummary";
-            this.nmDOther1AntiHavSummary.Size = new System.Drawing.Size(46, 20);
-            this.nmDOther1AntiHavSummary.TabIndex = 141;
-            this.nmDOther1AntiHavSummary.Value = new decimal(new int[] {
+            this.nmDCBCMCHC.Name = "nmDCBCMCHC";
+            this.nmDCBCMCHC.Size = new System.Drawing.Size(46, 20);
+            this.nmDCBCMCHC.TabIndex = 89;
+            this.nmDCBCMCHC.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label220
+            // 
+            this.label220.AutoSize = true;
+            this.label220.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label220.Location = new System.Drawing.Point(647, 169);
+            this.label220.Name = "label220";
+            this.label220.Size = new System.Drawing.Size(47, 16);
+            this.label220.TabIndex = 86;
+            this.label220.Text = "MCH  :";
+            // 
+            // nmDCBCMCH
+            // 
+            this.nmDCBCMCH.Location = new System.Drawing.Point(650, 197);
+            this.nmDCBCMCH.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDCBCMCH.Name = "nmDCBCMCH";
+            this.nmDCBCMCH.Size = new System.Drawing.Size(46, 20);
+            this.nmDCBCMCH.TabIndex = 87;
+            this.nmDCBCMCH.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label221
+            // 
+            this.label221.AutoSize = true;
+            this.label221.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label221.Location = new System.Drawing.Point(567, 169);
+            this.label221.Name = "label221";
+            this.label221.Size = new System.Drawing.Size(43, 16);
+            this.label221.TabIndex = 84;
+            this.label221.Text = "MCV :";
+            // 
+            // nmDCBCMCV
+            // 
+            this.nmDCBCMCV.Location = new System.Drawing.Point(563, 197);
+            this.nmDCBCMCV.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDCBCMCV.Name = "nmDCBCMCV";
+            this.nmDCBCMCV.Size = new System.Drawing.Size(46, 20);
+            this.nmDCBCMCV.TabIndex = 85;
+            this.nmDCBCMCV.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label222
+            // 
+            this.label222.AutoSize = true;
+            this.label222.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label222.Location = new System.Drawing.Point(494, 169);
+            this.label222.Name = "label222";
+            this.label222.Size = new System.Drawing.Size(46, 16);
+            this.label222.TabIndex = 82;
+            this.label222.Text = "Baso :";
+            // 
+            // nmDCBCBaso
+            // 
+            this.nmDCBCBaso.Location = new System.Drawing.Point(490, 197);
+            this.nmDCBCBaso.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDCBCBaso.Name = "nmDCBCBaso";
+            this.nmDCBCBaso.Size = new System.Drawing.Size(46, 20);
+            this.nmDCBCBaso.TabIndex = 83;
+            this.nmDCBCBaso.Value = new decimal(new int[] {
             5,
             0,
             0,
@@ -8402,6 +8530,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDUricRow)).EndInit();
             this.tabPage12.ResumeLayout(false);
             this.tabPage12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1AntiHavSummary)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOtherAmphetamineSummary)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOther1CA199Result)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDOther1CA199Summary)).EndInit();
@@ -8537,7 +8666,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDOther1AntiHavSummary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCHC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCBaso)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -9089,5 +9221,13 @@
         private System.Windows.Forms.Label label218;
         private System.Windows.Forms.Label label217;
         private System.Windows.Forms.NumericUpDown nmDOther1AntiHavSummary;
+        private System.Windows.Forms.Label label219;
+        private System.Windows.Forms.NumericUpDown nmDCBCMCHC;
+        private System.Windows.Forms.Label label220;
+        private System.Windows.Forms.NumericUpDown nmDCBCMCH;
+        private System.Windows.Forms.Label label221;
+        private System.Windows.Forms.NumericUpDown nmDCBCMCV;
+        private System.Windows.Forms.Label label222;
+        private System.Windows.Forms.NumericUpDown nmDCBCBaso;
     }
 }

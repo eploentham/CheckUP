@@ -29,8 +29,8 @@ namespace CheckUP.gui
         int colXrayCnt = 5;
 
         int colCBCRow = 0, colCBCId = 1, colCBCName = 2, colCBCWBC = 3, colCBCRBC = 4, colCBCHb = 5, colCBCHct = 6, colCBCPmn=7, colCBCNeu = 8, colCBCLy = 9, colCBCMono = 10, colCBCEo = 11;
-        int colCBCBa = 12, colCBCPlt_c = 13, colCBCPlt_s = 14, colCBCRBC_mo = 15, colCBCSummary = 16;
-        int colCBCCnt = 17;
+        int colCBCBa = 12, colCBCPlt_c = 13, colCBCPlt_s = 14, colCBCRBC_mo = 15, colCBCMCV=16, colCBCMCH=17, colCBCMCHC=18, colCBCBaso=19, colCBCSummary = 20;
+        int colCBCCnt = 21;
 
         int colFBSRow = 0, colFBSId = 1, colFBSName = 2, colFBSValue=3, colFBSResult = 4, coLFBSSummary = 5;
         int colFBSCnt = 6;
@@ -472,6 +472,10 @@ namespace CheckUP.gui
             dgvCBC.Columns[colCBCPlt_c].Width = 150;
             dgvCBC.Columns[colCBCPlt_s].Width = 150;
             dgvCBC.Columns[colCBCRBC_mo].Width = 150;
+            dgvCBC.Columns[colCBCMCH].Width = 150;
+            dgvCBC.Columns[colCBCMCHC].Width = 150;
+            dgvCBC.Columns[colCBCMCV].Width = 150;
+            dgvCBC.Columns[colCBCBaso].Width = 150;
             dgvCBC.Columns[colCBCSummary].Width = 200;
 
             dgvCBC.Columns[colCBCRow].HeaderText = "ลำดับ";
@@ -490,6 +494,10 @@ namespace CheckUP.gui
             dgvCBC.Columns[colCBCPlt_c].HeaderText = "Plt.count";
             dgvCBC.Columns[colCBCPlt_s].HeaderText = "Plt.smear";
             dgvCBC.Columns[colCBCRBC_mo].HeaderText = "RBC mor";
+            dgvCBC.Columns[colCBCMCH].HeaderText = "MCH";
+            dgvCBC.Columns[colCBCMCHC].HeaderText = "MCHC";
+            dgvCBC.Columns[colCBCMCV].HeaderText = "MCV";
+            dgvCBC.Columns[colCBCBaso].HeaderText = "Baso";
             dgvCBC.Columns[colCBCSummary].HeaderText = "สรุปผลตรวจ";
 
             dgvCBC.Columns[colUAId].HeaderText = "id";
@@ -1032,9 +1040,10 @@ namespace CheckUP.gui
             {
                 String bbb = cuc.CheckUpDate.Substring(8, 2) + "-" + cuc.CheckUpDate.Substring(5, 2) + "-" + String.Concat(Int16.Parse(cuc.CheckUpDate.Substring(0, 4)) + 543);
                 String ccc = cuc.CheckUpDate.Substring(5, 2) + "-" + cuc.CheckUpDate.Substring(8, 2) + "-" +  String.Concat(Int16.Parse(cuc.CheckUpDate.Substring(0, 4)) + 543);
-                DateTime aa = DateTime.Parse(cc.cf.dateDBtoShow(cuc.CheckUpDate));
+                //DateTime aa = DateTime.Parse(cc.cf.dateDBtoShow(cuc.CheckUpDate));
                 //dtpCheckUpDate.Value = DateTime.Parse(ccc);
-                dtpCheckUpDate.Value = DateTime.Parse(cc.cf.dateDBtoShow(cuc.CheckUpDate));
+                //dtpCheckUpDate.Value = DateTime.Parse(cc.cf.dateDBtoShow(cuc.CheckUpDate));
+                dtpCheckUpDate.Value = DateTime.Parse(cuc.CheckUpDate);
             }
             
             txtYear.Text = cuc.YearId;
@@ -1297,6 +1306,12 @@ namespace CheckUP.gui
                     dgvCBC[colCBCRBC_mo, i].Value = dt.Rows[i][cc.ccpdb.ccp.cbcRbcMorpholog].ToString();
                     dgvCBC[colCBCSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.cbcSummary].ToString();
                     dgvCBC[colCBCPmn, i].Value = dt.Rows[i][cc.ccpdb.ccp.cbcPmn].ToString();
+
+                    dgvCBC[colCBCMCH, i].Value = dt.Rows[i][cc.ccpdb.ccp.cbcMch].ToString();
+                    dgvCBC[colCBCMCHC, i].Value = dt.Rows[i][cc.ccpdb.ccp.cbcMchc].ToString();
+                    dgvCBC[colCBCMCV, i].Value = dt.Rows[i][cc.ccpdb.ccp.cbcMcv].ToString();
+                    //dgvCBC[colCBCBaso, i].Value = dt.Rows[i][cc.ccpdb.ccp.cbcBasophil].ToString();
+
                     dgvCBC[colCBCId, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
                     if ((i % 2) != 0)
                     {
@@ -2912,8 +2927,8 @@ namespace CheckUP.gui
 
         private void btnCBCImport_Click(object sender, EventArgs e)
         {
-            String rowNumber = "", chk = "", wbc = "", rbc = "", hb = "", hct="", neu="", lym="", mch="", mchc="", mvc="", mono="", plaC="", rbcmono="";
-            String summary = "", eos="", bas="", plaS="", pmn="";
+            String rowNumber = "", chk = "", wbc = "", rbc = "", hb = "", hct="", neu="", lym="", mch="", mchc="", mcv="", mono="", plaC="", rbcmono="";
+            String summary = "", eos="", bas="", plaS="", pmn="", bact="";
             pB1.Visible = true;
             pB1.Minimum = 0;
             Cursor cursor = Cursor.Current;
@@ -3001,13 +3016,21 @@ namespace CheckUP.gui
                 {
                     eos = "";
                 }
-                if (xlRange.Cells[i, int.Parse(ei.CBCBact)].Value2 != null)
+                if (xlRange.Cells[i, int.Parse(ei.CBCBASO)].Value2 != null)
                 {
-                    bas = xlRange.Cells[i, int.Parse(ei.CBCBact)].Value2.ToString();
+                    bas = xlRange.Cells[i, int.Parse(ei.CBCBASO)].Value2.ToString();
                 }
                 else
                 {
                     bas = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.CBCBact)].Value2 != null)
+                {
+                    bact = xlRange.Cells[i, int.Parse(ei.CBCBact)].Value2.ToString();
+                }
+                else
+                {
+                    bact = "";
                 }
                 if (xlRange.Cells[i, int.Parse(ei.CBCPltC)].Value2 != null)
                 {
@@ -3049,6 +3072,30 @@ namespace CheckUP.gui
                 {
                     pmn = "";
                 }
+                if (xlRange.Cells[i, int.Parse(ei.CBCMCH)].Value2 != null)
+                {
+                    mch = xlRange.Cells[i, int.Parse(ei.CBCMCH)].Value2.ToString();
+                }
+                else
+                {
+                    mch = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.CBCMCHC)].Value2 != null)
+                {
+                    mchc = xlRange.Cells[i, int.Parse(ei.CBCMCHC)].Value2.ToString();
+                }
+                else
+                {
+                    mchc = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.CBCMCV)].Value2 != null)
+                {
+                    mcv = xlRange.Cells[i, int.Parse(ei.CBCMCV)].Value2.ToString();
+                }
+                else
+                {
+                    mcv = "";
+                }
                 //if (xlRange.Cells[i, 13].Value2 != null)
                 //{
                 //    bas = xlRange.Cells[i, 13].Value2.ToString();
@@ -3058,7 +3105,7 @@ namespace CheckUP.gui
                 //    bas = "";
                 //}
 
-                chk = cc.ccpdb.UpdateCBC(rowNumber, txtId.Text, bas, eos, hb, hct, lym, mch, mchc, mvc, mono, neu, plaC, rbc, rbcmono, summary, wbc, plaS, pmn);
+                chk = cc.ccpdb.UpdateCBC(rowNumber, txtId.Text, bas, eos, hb, hct, lym, mch, mchc, mcv, mono, neu, plaC, rbc, rbcmono, summary, wbc, plaS, pmn, bact);
                 pB1.Value = i;
                 row++;
             }

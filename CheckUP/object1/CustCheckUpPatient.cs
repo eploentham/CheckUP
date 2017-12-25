@@ -100,13 +100,14 @@ namespace CheckUP.object1
         public String cbcLymphocyte="";
         public String cbcEosinophil="";
         public String cbcMonocyte="";
-        public String cbcBasophil="";
+        public String cbcBasophil="", cbcBact="";
         public String cbcPlateletCount="";
         public String cbcRbcMorpholog="";
         public String cbcSummary="";
         public String cbcMch = "";
         public String cbcMchc = "";
         public String cbcPlateletSmear = "", cbcPmn="";
+        public String cbcMcv = "";
 
         public String urineColor="";
         public String urineAppearance="";
@@ -135,7 +136,7 @@ namespace CheckUP.object1
         public String lungSuggess="";
         public String statusName="";
         public String rowNumber = "";
-        public String cbcMcv="";
+        
         
         public String thyroidRubellaLgg="";
         public String billirubin="";
