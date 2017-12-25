@@ -1238,22 +1238,27 @@ namespace CheckUP.gui
                     dgvFBS[colFBSValue, i].Value = dt.Rows[i][cc.ccpdb.ccp.sugar].ToString();
                     dgvFBS[colFBSResult, i].Value = dt.Rows[i][cc.ccpdb.ccp.sugarDiagnosis].ToString();
                     dgvFBS[coLFBSSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.sugarSummary].ToString();
-
-                    if (int.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.sugar].ToString().Trim())) > 0)
+                    String fbs1 = "";
+                    fbs1 = dt.Rows[i][cc.ccpdb.ccp.sugar].ToString().Trim();
+                    int fbs2 = 0;
+                    if(int.TryParse(fbs1, out fbs2))
                     {
-                        if ((int.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.sugar].ToString())) > fbsMin) && (int.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.sugar].ToString())) < fbsMax))
+                        if (fbs2 > 0)
                         {
-                            dgvFBS[colFBSResult, i].Value = "ปกติ";
-                        }
-                        else
-                        {
-                            if (int.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.sugar].ToString())) > fbsMax)
+                            if ((fbs2 > fbsMin) && (fbs2 < fbsMax))
                             {
-                                dgvFBS[colFBSResult, i].Value = "สูงกว่ามาตรฐาน";
+                                dgvFBS[colFBSResult, i].Value = "ปกติ";
                             }
                             else
                             {
-                                dgvFBS[colFBSResult, i].Value = "ต่ำกว่ามาตรฐาน";
+                                if (int.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.sugar].ToString())) > fbsMax)
+                                {
+                                    dgvFBS[colFBSResult, i].Value = "สูงกว่ามาตรฐาน";
+                                }
+                                else
+                                {
+                                    dgvFBS[colFBSResult, i].Value = "ต่ำกว่ามาตรฐาน";
+                                }
                             }
                         }
                     }
