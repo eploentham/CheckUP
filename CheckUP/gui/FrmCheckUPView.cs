@@ -46,7 +46,7 @@ namespace CheckUP
             dgvView.RowCount = dt.Rows.Count + 1;
             dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvView.Columns[colRow].Width = 50;
-            dgvView.Columns[colCustNameT].Width = 250;
+            dgvView.Columns[colCustNameT].Width = 450;
             dgvView.Columns[colDesc].Width = 150;
             dgvView.Columns[colRemark].Width = 120;
             dgvView.Columns[colId].Width = 80;

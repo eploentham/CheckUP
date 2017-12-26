@@ -4,12 +4,13 @@ using CheckUP.object1;
 using CrystalDecisions.CrystalReports.Engine;
 //using CrystalDecisions.CrystalReports.Engine;
 //using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.Shared;
+//using CrystalDecisions.Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -161,11 +162,23 @@ namespace CheckUP
         }
         public void setReportCheckUpSticker(DataTable dt)
         {
+            MessageBox.Show(" 1111 ", "");
             String chk = "";
             ReportDocument rpt = new ReportDocument();
+            MessageBox.Show(" 22222 ", "");
             try
             {
                 cc.lw.WriteLog("rpt.setReportCheckUpSticker OK ");
+                if(!File.Exists(cc.initC.PathReport + "\\CheckUpSticker.rpt"))
+                {
+                    MessageBox.Show(" path "+cc.initC.PathReport + "\\CheckUpSticker.rpt", "");
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show(" OK " , "");
+                }
+
                 rpt.Load(cc.initC.PathReport + "\\CheckUpSticker.rpt");
                 cc.lw.WriteLog("rpt.setReportCheckUpSticker OK Load" + cc.initC.PathReport + "\\CheckUpSticker.rpt");
                 rpt.SetDataSource(dt);

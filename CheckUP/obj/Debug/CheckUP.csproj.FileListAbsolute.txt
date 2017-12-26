@@ -65,7 +65,6 @@ D:\source\CheckUP\CheckUP\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjec
 D:\source\CheckUP\CheckUP\bin\Debug\ShockwaveFlashObjects.dll
 D:\source\CheckUP\CheckUP\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\source\CheckUP\CheckUP\bin\Debug\stdole.dll
-C:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csprojResolveAssemblyReference.cache
 C:\source\bangna\CheckUP\CheckUP\bin\Debug\CheckUP.exe.config
 C:\source\bangna\CheckUP\CheckUP\bin\Debug\CheckUP.exe
 C:\source\bangna\CheckUP\CheckUP\bin\Debug\CheckUP.pdb
@@ -91,3 +90,4 @@ C:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csproj.GenerateResource.Cache
 C:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csproj.CoreCompileInputs.cache
 C:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.exe
 C:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.pdb
+C:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csprojResolveAssemblyReference.cache

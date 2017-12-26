@@ -21,6 +21,7 @@ namespace CheckUP.object1
         public String FBSRow = "", FBSNo = "", FBS = "", FBSResult = "", FBSSummary = "", FBSSheetname = "";
 
         public String UARow = "", UANo = "", UAColor = "", UAAppe = "", UASugar = "", UASpgr = "", UApH = "", UAProtein = "", UAWBC = "", UARBC = "", UAEpi = "", UABact = "", UAResult = "", UASummary = "", UAGlu = "", UAKetone = "", UABlood = "", UASheetname = "";
+        public String UALeu = "", UANit = "", UAUro = "", UABil = "";
 
         public String TriRow = "", TriNo = "", Triglyceride = "", TriResult = "", TriSummary = "", TriSheetname = "";
 

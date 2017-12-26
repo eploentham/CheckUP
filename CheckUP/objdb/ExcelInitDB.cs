@@ -137,6 +137,10 @@ namespace CheckUP.objdb
             ei.UABlood = "ua_blood";
             ei.UAKetone = "ua_ketone";
             ei.UASheetname = "ua_sheetname";
+            ei.UALeu = "ua_leu";
+            ei.UANit = "ua_nit";
+            ei.UAUro = "ua_uro";
+            ei.UABil = "ua_bili";
 
             ei.UricAcid = "uric_acid_value";
             //ei.UricAcidFeMale = "uric_acid_female_value";
@@ -416,6 +420,11 @@ namespace CheckUP.objdb
             item.UAKetone = NumberNull10(dt.Rows[0][ei.UAKetone].ToString());
             item.UABlood = NumberNull10(dt.Rows[0][ei.UABlood].ToString());
             item.UASheetname = NumberNull10(dt.Rows[0][ei.UASheetname].ToString());
+
+            item.UALeu = NumberNull10(dt.Rows[0][ei.UALeu].ToString());
+            item.UANit = NumberNull10(dt.Rows[0][ei.UANit].ToString());
+            item.UAUro = NumberNull10(dt.Rows[0][ei.UAUro].ToString());
+            item.UABil = NumberNull10(dt.Rows[0][ei.UABil].ToString());
 
             item.UricAcid = NumberNull10(dt.Rows[0][ei.UricAcid].ToString());
             //item.UricAcidFeMale = NumberNull10(dt.Rows[0][ei.UricAcidFeMale].ToString());
@@ -936,7 +945,8 @@ namespace CheckUP.objdb
             return chk;
         }
         public String updateUA(String UAAppe, String UABact, String UAColor, String UAEpi, String UANo, String UApH,
-            String UAProtein, String UARBC, String UAResult, String UARow, String UASpgr, String UASugar, String UASummary, String UAWBC, String UAGlu, String UAKetone, String UABlood, String sheetname)
+            String UAProtein, String UARBC, String UAResult, String UARow, String UASpgr, String UASugar, String UASummary, String UAWBC, 
+            String UAGlu, String UAKetone, String UABlood, String sheetname, String UALeu, String UANit, String UAUro, String UABil)
         {
             String sql = "", chk = "";
 
@@ -961,6 +971,10 @@ namespace CheckUP.objdb
                 ei.UAGlu + "='" + NumberNull10(UAGlu) + "', "+
                 ei.UAKetone + "='" + NumberNull10(UAKetone) + "', " +
                 ei.UABlood + "='" + NumberNull10(UABlood) + "', "+
+                ei.UALeu + "='" + NumberNull10(UALeu) + "', "+
+                ei.UANit + "='" + NumberNull10(UANit) + "', "+
+                ei.UAUro + "='" + NumberNull10(UAUro) + "', "+
+                ei.UABil + "='" + NumberNull10(UABil) + "', "+
                 ei.UASheetname + "='" + sheetname + "' ";
             try
             {

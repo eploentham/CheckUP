@@ -308,7 +308,7 @@ namespace CheckUP.gui
         {
             String chk = cc.ccpdb.UpdateUA(txtRowNumber.Text, cuc.Id, txtUAColor.Text, txtUAAppe.Text, txtUASugar.Text, 
                 txtUASpgr.Text, txtUApH.Text, txtUAProtein.Text, txtUAWBC.Text, txtUARbc.Text, txtUAEpi.Text, txtUABact.Text, 
-                txtUAResult.Text, txtUASpgr.Text, txtUAGlu.Text,txtUAKetone.Text, txtUABlood.Text);
+                txtUAResult.Text, txtUASpgr.Text, txtUAGlu.Text,txtUAKetone.Text, txtUABlood.Text, txtUALeu.Text, txtUANit.Text,txtUAUro.Text, txtUABil.Text);
             if (chk.Equals("1"))
             {
                 MessageBox.Show("บันทึกข้อมูล UA เรียบร้อย", "บันทึกข้อมูล");

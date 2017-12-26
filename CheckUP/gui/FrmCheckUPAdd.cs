@@ -36,8 +36,8 @@ namespace CheckUP.gui
         int colFBSCnt = 6;
 
         int colUARow = 0, colUAId = 1, colUAName = 2, colUColor = 3, colUAAppe = 4, colUASugar = 5, colUASpgr = 6, colUAPh = 7, colUAProtein = 8, colUAWBC = 9, colUARBC = 10;
-        int colUAEpi = 11, colUABact = 12, colUAGlu = 13, colUAKetone = 14, colUABlood = 15, colUAResult = 16, colUASummary = 17;
-        int colUACnt = 18;
+        int colUAEpi = 11, colUABact = 12, colUAGlu = 13, colUAKetone = 14, colUABlood = 15, colUaLeu=16, colUaNit=17, colUaUro=18, colUaBil=19, colUAResult = 20, colUASummary = 21;
+        int colUACnt = 22;
 
         int colTriRow = 0, colTriId = 1, colTriName = 2, colTriValue = 3, colTriResult = 4, coLTriSummary = 5;
         int colTriCnt = 6;
@@ -524,6 +524,11 @@ namespace CheckUP.gui
             dgvUA.Columns[colUARBC].Width = 80;
             dgvUA.Columns[colUAEpi].Width = 80;
             dgvUA.Columns[colUABact].Width = 80;
+            dgvUA.Columns[colUaLeu].Width = 80;
+            dgvUA.Columns[colUaNit].Width = 80;
+            dgvUA.Columns[colUaUro].Width = 80;
+            dgvUA.Columns[colUaBil].Width = 80;
+
             dgvUA.Columns[colUAResult].Width = 80;
             dgvUA.Columns[colUASummary].Width = 180;
             //dgvUA.Columns[colUASummary].Width = 180;
@@ -543,6 +548,11 @@ namespace CheckUP.gui
             dgvUA.Columns[colUAGlu].HeaderText = "GLU";
             dgvUA.Columns[colUAKetone].HeaderText = "Ketone";
             dgvUA.Columns[colUABlood].HeaderText = "Blood";
+            dgvUA.Columns[colUaLeu].HeaderText = "Leu";
+            dgvUA.Columns[colUaNit].HeaderText = "Nit";
+            dgvUA.Columns[colUaUro].HeaderText = "Uro";
+            dgvUA.Columns[colUaBil].HeaderText = "Bil";
+
             dgvUA.Columns[colUAResult].HeaderText = "ผล";
             dgvUA.Columns[colUASummary].HeaderText = "สรุปผลตรวจ";
             //dgvUA.Columns[colUASummary].HeaderText = "  ";
@@ -1362,6 +1372,12 @@ namespace CheckUP.gui
                     dgvUA[colUAGlu, i].Value = dt.Rows[i][cc.ccpdb.ccp.urineGlu].ToString();
                     dgvUA[colUABlood, i].Value = dt.Rows[i][cc.ccpdb.ccp.urineBlood].ToString();
                     dgvUA[colUAKetone, i].Value = dt.Rows[i][cc.ccpdb.ccp.urineKetone].ToString();
+
+                    dgvUA[colUaLeu, i].Value = dt.Rows[i][cc.ccpdb.ccp.urineLeu].ToString();
+                    dgvUA[colUaNit, i].Value = dt.Rows[i][cc.ccpdb.ccp.urineNit].ToString();
+                    dgvUA[colUaUro, i].Value = dt.Rows[i][cc.ccpdb.ccp.urineUro].ToString();
+                    dgvUA[colUaBil, i].Value = dt.Rows[i][cc.ccpdb.ccp.urineBil].ToString();
+
                     dgvUA[colUAId, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
                     if ((i % 2) != 0)
                     {
@@ -2680,7 +2696,7 @@ namespace CheckUP.gui
 
         private void btnPEImport_Click(object sender, EventArgs e)
         {
-            String rowNumber = "", chk="",vitalSign="", height="", weight="", bmi="", pulse="", result="", summary="", bloodgroup="";
+            String rowNumber = "", chk="",vitalSign="", height="", weight="", bmi="", pulse="", result="", summary="", bloodgroup="", age="";
 
             pB1.Visible = true;
             pB1.Minimum = 0;
@@ -2693,7 +2709,7 @@ namespace CheckUP.gui
             int rowCount = xlRange.Rows.Count, row=0, normal=0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
-            for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
+            for (int i = int.Parse(ei.PERow); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
                 if (xlRange.Cells[i, int.Parse(ei.PENo)].Value2 != null)
@@ -2772,14 +2788,25 @@ namespace CheckUP.gui
                 {
                     summary = "";
                 }
-                if (bmi.Trim().Equals("-") || bmi.Trim().Equals(""))
+                if (xlRange.Cells[i, int.Parse(ei.PEAge)].Value2 != null)
                 {
-                    chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, vitalSign, height, weight, bmi, pulse, result, summary, bloodgroup);
+                    age = xlRange.Cells[i, int.Parse(ei.PEAge)].Value2.ToString();
                 }
                 else
                 {
-                    chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, vitalSign.Trim(), height.Trim(), weight.Trim(), string.Format("{0:f2}", Double.Parse(cc.cf.NumberNull1(bmi))), pulse.Trim(), result.Trim(), summary.Trim(), bloodgroup.Trim());
+                    age = "";
                 }
+
+                if (bmi.Trim().Equals("-") || bmi.Trim().Equals(""))
+                {
+                    //chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, vitalSign, height, weight, bmi, pulse, result, summary, bloodgroup);
+                    chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, age, vitalSign, height, weight, bmi, pulse, result, summary, bloodgroup);
+                }
+                else
+                {
+                    chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, age, vitalSign.Trim(), height.Trim(), weight.Trim(), string.Format("{0:f2}", Double.Parse(cc.cf.NumberNull1(bmi))), pulse.Trim(), result.Trim(), summary.Trim(), bloodgroup.Trim());
+                }
+
                 
                 pB1.Value = i;
                 row++;
@@ -3129,7 +3156,7 @@ namespace CheckUP.gui
         private void btnUAImport_Click(object sender, EventArgs e)
         {
             String rowNumber = "", chk = "", Color = "", Appe = "", Sugar = "", spgr = "", pH = "", Protein = "", Wbc = "", Rbc = "", Epi = "", Bact = "", Result = "", Summary = "", Glu="", Ketone="", Blood="";
-            //String summary = "", eos = "", bas = "", plaS = "";
+            String leu = "", nit = "", uro = "", bil = "";
             pB1.Visible = true;
             pB1.Minimum = 0;
             Cursor cursor = Cursor.Current;
@@ -3279,6 +3306,38 @@ namespace CheckUP.gui
                 {
                     Ketone = "";
                 }
+                if (xlRange.Cells[i, int.Parse(ei.UALeu)].Value2 != null)
+                {
+                    leu = xlRange.Cells[i, int.Parse(ei.UALeu)].Value2.ToString();
+                }
+                else
+                {
+                    leu = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.UANit)].Value2 != null)
+                {
+                    nit = xlRange.Cells[i, int.Parse(ei.UANit)].Value2.ToString();
+                }
+                else
+                {
+                    nit = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.UAUro)].Value2 != null)
+                {
+                    uro = xlRange.Cells[i, int.Parse(ei.UAUro)].Value2.ToString();
+                }
+                else
+                {
+                    uro = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.UABil)].Value2 != null)
+                {
+                    bil = xlRange.Cells[i, int.Parse(ei.UABil)].Value2.ToString();
+                }
+                else
+                {
+                    bil = "";
+                }
                 //if (xlRange.Cells[i, 17].Value2 != null)
                 //{
                 //    summary = xlRange.Cells[i, 17].Value2.ToString();
@@ -3296,7 +3355,8 @@ namespace CheckUP.gui
                 //    bas = "";
                 //}
 
-                chk = cc.ccpdb.UpdateUA(rowNumber, txtId.Text, Color.Trim(), Appe.Trim(), Sugar.Trim(), spgr.Trim(), pH.Trim(), Protein.Trim(), Wbc.Trim(), Rbc.Trim(), Epi.Trim(), Bact.Trim(), Result.Trim(), Summary, Glu.Trim(), Ketone.Trim(), Blood.Trim());
+                chk = cc.ccpdb.UpdateUA(rowNumber, txtId.Text, Color.Trim(), Appe.Trim(), Sugar.Trim(), spgr.Trim(), pH.Trim(), Protein.Trim(), Wbc.Trim(), Rbc.Trim(), 
+                    Epi.Trim(), Bact.Trim(), Result.Trim(), Summary, Glu.Trim(), Ketone.Trim(), Blood.Trim(), leu.Trim(), nit.Trim(), uro.Trim(), bil.Trim());
                 pB1.Value = i;
                 row++;
             }
