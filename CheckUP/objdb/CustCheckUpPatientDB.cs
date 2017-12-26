@@ -645,6 +645,39 @@ namespace CheckUP.objdb
 
             return chk;
         }
+        public String UpdateName(String rowNumber, String cucId, String name, String age, String sex)
+        {
+            String chk = "", sql = "", sexname="";
+            try
+            {
+                if (sex.Equals("1"))
+                {
+                    sexname = "ชาย";
+                }
+                else if (sex.Equals("2"))
+                {
+                    sexname = "หญิง";
+                }
+                else if (sex.Equals("3"))
+                {
+                    sexname = "ไม่ระบุ";
+                }
+                sql = "Update " + ccp.table + " Set " + ccp.patientFullname + "='" + name + "', " +
+                ccp.patientAge + "='" + age + "', " +
+                ccp.fSexId + "='" + sex + "', " +
+                ccp.SexName + "='" + sexname + "' " +
+
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                lw.WriteLog("ccp.UpdatePE Error " + ex.Message);
+                //max = ex.getMessage;
+            }
+
+            return chk;
+        }
         public String UpdatePE(String rowNumber, String cucId, String vitalSign, String height, String weight, String bmi, String pulse, String result, String summary, String bloodgroup)
         {
             String chk = "", sql = "";

@@ -253,6 +253,24 @@ namespace CheckUP.gui
             txtStoolExamRbcNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.StoolExamRbc].ToString();
             txtStoolExamParasiteNormal.Text = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.StoolExamParasite].ToString();
 
+            if (dtccp.Rows[0][cc.ccpvndb.ccpvn.fSexId].ToString().Equals("3"))
+            {
+                chkOther.Checked = true;
+                chkMale.Checked = false;
+                chkFemale.Checked = false;
+            }
+            else if (dtccp.Rows[0][cc.ccpvndb.ccpvn.fSexId].ToString().Equals("2"))
+            {
+                chkOther.Checked = false;
+                chkMale.Checked = false;
+                chkFemale.Checked = true;
+            }
+            else if (dtccp.Rows[0][cc.ccpvndb.ccpvn.fSexId].ToString().Equals("1"))
+            {
+                chkOther.Checked = false;
+                chkMale.Checked = true;
+                chkFemale.Checked = false;
+            }
         }
 
         private void FrmCheckUpEdit_Load(object sender, EventArgs e)
@@ -362,7 +380,20 @@ namespace CheckUP.gui
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            String chk = cc.ccpdb.UpdateName(txtRowNumber.Text, cuc.Id, txtFullName.Text, txtAge.Text);
+            String sex = "";
+            if (chkMale.Checked)
+            {
+                sex = "1";
+            }
+            else if (chkFemale.Checked)
+            {
+                sex = "2";
+            }
+            else if (chkOther.Checked)
+            {
+                sex = "3";
+            }
+            String chk = cc.ccpdb.UpdateName(txtRowNumber.Text, cuc.Id, txtFullName.Text, txtAge.Text, sex);
             if (chk.Equals("1"))
             {
                 MessageBox.Show("บันทึกข้อมูล PE เรียบร้อย", "บันทึกข้อมูล");

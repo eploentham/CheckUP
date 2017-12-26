@@ -145,8 +145,8 @@ namespace CheckUP
         //        //myParam.
         
                 rpt.SetParameterValue("line1", "ผลตรวจสุขภาพประจำปี "+ cuc.YearId);
-                rpt.SetParameterValue("compName", "โรงพยาบาล บางนา5");
-                rpt.SetParameterValue("compAddress", "55 หมู่4 ถนนเทพารักษ์ ตำบลบางพลีใหญ่ อำเภอบางพลี จังหวัดสมุทรปราการ 10540");
+                rpt.SetParameterValue("compName", "โรงพยาบาล อรวรรณ");
+                rpt.SetParameterValue("compAddress", "8/8 หมู่ 6 ต.แพรกษา อ.เมือง จ.สมุทรปราการ 10280 โทร : 02-3342555  Fax.02-3342684");
 
                 rpt.SetParameterValue("custName", cuc.CustNameT);
                 //rpt.SetParameterValue("year_id",cuc.YearId);
@@ -162,16 +162,16 @@ namespace CheckUP
         }
         public void setReportCheckUpSticker(DataTable dt)
         {
-            MessageBox.Show(" 1111 ", "");
+            //MessageBox.Show(" 1111 ", "");
             String chk = "";
             ReportDocument rpt = new ReportDocument();
-            MessageBox.Show(" 22222 ", "");
+            //MessageBox.Show(" 22222 ", "");
             try
             {
                 cc.lw.WriteLog("rpt.setReportCheckUpSticker OK ");
                 if(!File.Exists(cc.initC.PathReport + "\\CheckUpSticker.rpt"))
                 {
-                    MessageBox.Show(" path "+cc.initC.PathReport + "\\CheckUpSticker.rpt", "");
+                    //MessageBox.Show(" path "+cc.initC.PathReport + "\\CheckUpSticker.rpt", "");
                     return;
                 }
                 else
