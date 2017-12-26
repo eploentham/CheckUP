@@ -216,6 +216,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckUpStickerDS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="report\PEDetail.cs">
+      <DependentUpon>PEDetail.xsd</DependentUpon>
+    </Compile>
     <Compile Include="report\PEDetail.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

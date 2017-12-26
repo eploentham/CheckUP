@@ -109,3 +109,4 @@ C:\source\bangna\CheckUP\CheckUP\bin\Debug\FlashControlV71.dll
 C:\source\bangna\CheckUP\CheckUP\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\source\bangna\CheckUP\CheckUP\bin\Debug\stdole.dll
 C:\source\bangna\CheckUP\CheckUP\bin\Debug\ShockwaveFlashObjects.dll
+C:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csprojResolveAssemblyReference.cache
