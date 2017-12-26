@@ -217,6 +217,11 @@ namespace CheckUP.gui
             nmDUAKetone.Value = int.Parse(cc.cf.NumberNull1(ei.UAKetone));
             nmDUABlood.Value = int.Parse(cc.cf.NumberNull1(ei.UABlood));
 
+            nmDUALeu.Value = int.Parse(cc.cf.NumberNull1(ei.UALeu));
+            nmDUANit.Value = int.Parse(cc.cf.NumberNull1(ei.UANit));
+            nmDUAUro.Value = int.Parse(cc.cf.NumberNull1(ei.UAUro));
+            nmDUABili.Value = int.Parse(cc.cf.NumberNull1(ei.UABil));
+
             nmDTriRow.Value = int.Parse(cc.cf.NumberNull1(ei.TriRow));
             nmDTriNo.Value = int.Parse(cc.cf.NumberNull1(ei.TriNo));
             nmDTriResult.Value = int.Parse(cc.cf.NumberNull1(ei.TriResult));
@@ -1007,7 +1012,7 @@ namespace CheckUP.gui
             if (cc.eidb.updateUA(nmDUAAppe.Value.ToString(), nmDUABact.Value.ToString(), nmDUAColor.Value.ToString(), nmDUAEpi.Value.ToString(),
                 nmDUANo.Value.ToString(), nmDUApH.Value.ToString(), nmDUAProtein.Value.ToString(), nmDUARBC.Value.ToString(), nmDUAResult.Value.ToString(), nmDUARow.Value.ToString(),
                 nmDUASpgr.Value.ToString(), nmDUASugar.Value.ToString(), nmDUASummary.Value.ToString(), nmDUAWBC.Value.ToString(), nmDUAGlu.Value.ToString(), nmDUAKetone.Value.ToString(), 
-                nmDUABlood.Value.ToString(),txtUASheetName.Text).Length >= 1)
+                nmDUABlood.Value.ToString(),txtUASheetName.Text, nmDUALeu.Value.ToString(), nmDUANit.Value.ToString(), nmDUAUro.Value.ToString(), nmDUABili.Value.ToString()).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล UA เรียบร้อย", "บันทึกข้อมูล");
             }

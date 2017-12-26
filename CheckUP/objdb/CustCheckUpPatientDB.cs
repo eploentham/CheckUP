@@ -189,6 +189,10 @@ namespace CheckUP.objdb
             ccp.urineGlu = "urine_glu";
             ccp.urineKetone = "urine_ketone";
             ccp.urineBlood = "urine_blood";
+            ccp.urineNit = "urine_nit";
+            ccp.urineLeu = "urine_leu";
+            ccp.urineUro = "urine_uro";
+            ccp.urineBil = "urine_bil";
 
             ccp.lungFvcPredic = "lung_fvc_predic";
             ccp.lungFvcMeas = "lung_fvc_meas";
@@ -293,7 +297,7 @@ namespace CheckUP.objdb
             //ccp.toxicologyMekOld = "toxicology_mek_old";
             //ccp.toxicologyAcetoneOld = "toxicology_acetone_old";
             //ccp.toxicologyTolueneOld = "toxicology_toluene_old";
-            ccp.urineLeu = "urine_leu";
+            
             ccp.urineOther = "urine_other";
             ccp.cultureStool = "culture_stool";
             ccp.cultureUrine = "culture_urine";
@@ -641,6 +645,39 @@ namespace CheckUP.objdb
 
             return chk;
         }
+        public String UpdateName(String rowNumber, String cucId, String name, String age, String sex)
+        {
+            String chk = "", sql = "", sexname="";
+            try
+            {
+                if (sex.Equals("1"))
+                {
+                    sexname = "ชาย";
+                }
+                else if (sex.Equals("2"))
+                {
+                    sexname = "หญิง";
+                }
+                else if (sex.Equals("3"))
+                {
+                    sexname = "ไม่ระบุ";
+                }
+                sql = "Update " + ccp.table + " Set " + ccp.patientFullname + "='" + name + "', " +
+                ccp.patientAge + "='" + age + "', " +
+                ccp.fSexId + "='" + sex + "', " +
+                ccp.SexName + "='" + sexname + "' " +
+
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                lw.WriteLog("ccp.UpdatePE Error " + ex.Message);
+                //max = ex.getMessage;
+            }
+
+            return chk;
+        }
         public String UpdatePE(String rowNumber, String cucId, String vitalSign, String height, String weight, String bmi, String pulse, String result, String summary, String bloodgroup)
         {
             String chk = "", sql = "";
@@ -754,7 +791,8 @@ namespace CheckUP.objdb
             return chk;
         }
         public String UpdateUA(String rowNumber, String cucId, String Color, String Appe, String Sugar, String spgr, String pH,
-            String Protein, String Wbc, String Rbc, String Epi, String Bact, String Result, String Summary, String Glu, String Ketone, String Blood)
+            String Protein, String Wbc, String Rbc, String Epi, String Bact, String Result, String Summary, String Glu, String Ketone, 
+            String Blood, String leu, String nit, String uro, String bil)
         {
             String chk = "", sql = "";
             try
@@ -773,7 +811,11 @@ namespace CheckUP.objdb
                 ccp.urineKetone + "='" + Ketone + "', " +
                 ccp.urineSummary + "='" + Summary + "', " +
                 ccp.urineResult + "='" + Result + "', " +
-                ccp.urineBlood + "='" + Blood + "' " +
+                ccp.urineBlood + "='" + Blood + "', " +
+                ccp.urineLeu + "='" + leu + "', " +
+                ccp.urineNit + "='" + nit + "', " +
+                ccp.urineUro + "='" + uro + "', " +
+                ccp.urineBil + "='" + bil + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql); ;
             }

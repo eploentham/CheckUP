@@ -55,6 +55,8 @@
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.txtCBCBaso = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
             this.txtCBCPmnNormal = new System.Windows.Forms.TextBox();
             this.txtCBCPmn = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -116,6 +118,15 @@
             this.label49 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtUABil = new System.Windows.Forms.TextBox();
+            this.label86 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtUAUro = new System.Windows.Forms.TextBox();
+            this.label85 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtUANit = new System.Windows.Forms.TextBox();
+            this.label67 = new System.Windows.Forms.Label();
             this.txtUAGluNormal = new System.Windows.Forms.TextBox();
             this.txtUAGlu = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -480,8 +491,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtAge = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtCBCBaso = new System.Windows.Forms.TextBox();
-            this.label45 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkMale = new System.Windows.Forms.RadioButton();
+            this.chkFemale = new System.Windows.Forms.RadioButton();
+            this.chkOther = new System.Windows.Forms.RadioButton();
             this.tC.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -499,6 +512,7 @@
             this.tabPage15.SuspendLayout();
             this.tabPage16.SuspendLayout();
             this.tabPage17.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tC
@@ -848,6 +862,24 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // txtCBCBaso
+            // 
+            this.txtCBCBaso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCBCBaso.Location = new System.Drawing.Point(856, 193);
+            this.txtCBCBaso.Name = "txtCBCBaso";
+            this.txtCBCBaso.Size = new System.Drawing.Size(100, 22);
+            this.txtCBCBaso.TabIndex = 128;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label45.Location = new System.Drawing.Point(801, 196);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(46, 16);
+            this.label45.TabIndex = 127;
+            this.label45.Text = "Baso :";
             // 
             // txtCBCPmnNormal
             // 
@@ -1437,6 +1469,15 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.textBox7);
+            this.tabPage7.Controls.Add(this.txtUABil);
+            this.tabPage7.Controls.Add(this.label86);
+            this.tabPage7.Controls.Add(this.textBox5);
+            this.tabPage7.Controls.Add(this.txtUAUro);
+            this.tabPage7.Controls.Add(this.label85);
+            this.tabPage7.Controls.Add(this.textBox3);
+            this.tabPage7.Controls.Add(this.txtUANit);
+            this.tabPage7.Controls.Add(this.label67);
             this.tabPage7.Controls.Add(this.txtUAGluNormal);
             this.tabPage7.Controls.Add(this.txtUAGlu);
             this.tabPage7.Controls.Add(this.label15);
@@ -1491,6 +1532,90 @@
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "tabPage7";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox7.Location = new System.Drawing.Point(560, 290);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(173, 13);
+            this.textBox7.TabIndex = 138;
+            // 
+            // txtUABil
+            // 
+            this.txtUABil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtUABil.Location = new System.Drawing.Point(454, 290);
+            this.txtUABil.Name = "txtUABil";
+            this.txtUABil.Size = new System.Drawing.Size(100, 22);
+            this.txtUABil.TabIndex = 137;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label86.Location = new System.Drawing.Point(398, 292);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(23, 16);
+            this.label86.TabIndex = 136;
+            this.label86.Text = "Bil";
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox5.Location = new System.Drawing.Point(951, 290);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(173, 13);
+            this.textBox5.TabIndex = 135;
+            // 
+            // txtUAUro
+            // 
+            this.txtUAUro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtUAUro.Location = new System.Drawing.Point(845, 290);
+            this.txtUAUro.Name = "txtUAUro";
+            this.txtUAUro.Size = new System.Drawing.Size(100, 22);
+            this.txtUAUro.TabIndex = 134;
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label85.Location = new System.Drawing.Point(770, 293);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(30, 16);
+            this.label85.TabIndex = 133;
+            this.label85.Text = "Uro";
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox3.Location = new System.Drawing.Point(951, 241);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(173, 13);
+            this.textBox3.TabIndex = 132;
+            // 
+            // txtUANit
+            // 
+            this.txtUANit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtUANit.Location = new System.Drawing.Point(845, 241);
+            this.txtUANit.Name = "txtUANit";
+            this.txtUANit.Size = new System.Drawing.Size(100, 22);
+            this.txtUANit.TabIndex = 131;
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label67.Location = new System.Drawing.Point(770, 244);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(24, 16);
+            this.label67.TabIndex = 130;
+            this.label67.Text = "Nit";
             // 
             // txtUAGluNormal
             // 
@@ -5190,29 +5315,56 @@
             this.label8.TabIndex = 66;
             this.label8.Text = "อายุ :";
             // 
-            // txtCBCBaso
+            // groupBox1
             // 
-            this.txtCBCBaso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCBCBaso.Location = new System.Drawing.Point(856, 193);
-            this.txtCBCBaso.Name = "txtCBCBaso";
-            this.txtCBCBaso.Size = new System.Drawing.Size(100, 22);
-            this.txtCBCBaso.TabIndex = 128;
+            this.groupBox1.Controls.Add(this.chkOther);
+            this.groupBox1.Controls.Add(this.chkFemale);
+            this.groupBox1.Controls.Add(this.chkMale);
+            this.groupBox1.Location = new System.Drawing.Point(637, 31);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(264, 54);
+            this.groupBox1.TabIndex = 68;
+            this.groupBox1.TabStop = false;
             // 
-            // label45
+            // chkMale
             // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label45.Location = new System.Drawing.Point(801, 196);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(46, 16);
-            this.label45.TabIndex = 127;
-            this.label45.Text = "Baso :";
+            this.chkMale.AutoSize = true;
+            this.chkMale.Location = new System.Drawing.Point(26, 20);
+            this.chkMale.Name = "chkMale";
+            this.chkMale.Size = new System.Drawing.Size(44, 17);
+            this.chkMale.TabIndex = 0;
+            this.chkMale.TabStop = true;
+            this.chkMale.Text = "ชาย";
+            this.chkMale.UseVisualStyleBackColor = true;
+            // 
+            // chkFemale
+            // 
+            this.chkFemale.AutoSize = true;
+            this.chkFemale.Location = new System.Drawing.Point(120, 20);
+            this.chkFemale.Name = "chkFemale";
+            this.chkFemale.Size = new System.Drawing.Size(46, 17);
+            this.chkFemale.TabIndex = 1;
+            this.chkFemale.TabStop = true;
+            this.chkFemale.Text = "หญิง";
+            this.chkFemale.UseVisualStyleBackColor = true;
+            // 
+            // chkOther
+            // 
+            this.chkOther.AutoSize = true;
+            this.chkOther.Location = new System.Drawing.Point(189, 20);
+            this.chkOther.Name = "chkOther";
+            this.chkOther.Size = new System.Drawing.Size(56, 17);
+            this.chkOther.TabIndex = 2;
+            this.chkOther.TabStop = true;
+            this.chkOther.Text = "ไม่ระบุ";
+            this.chkOther.UseVisualStyleBackColor = true;
             // 
             // FrmCheckUpEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1222, 595);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtAge);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtRowNumber);
@@ -5260,6 +5412,8 @@
             this.tabPage16.PerformLayout();
             this.tabPage17.ResumeLayout(false);
             this.tabPage17.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5273,7 +5427,6 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.TabPage tabPage9;
@@ -5320,18 +5473,6 @@
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.Label label61;
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.Label label70;
@@ -5353,8 +5494,6 @@
         private System.Windows.Forms.TextBox txtCBCSummary;
         private System.Windows.Forms.TextBox txtFBSResult;
         private System.Windows.Forms.TextBox txtFBSSummary;
-        private System.Windows.Forms.TextBox txtUAResult;
-        private System.Windows.Forms.TextBox txtUASummary;
         private System.Windows.Forms.TextBox txtTriResult;
         private System.Windows.Forms.TextBox txtTriSummary;
         private System.Windows.Forms.TextBox txtChoResult;
@@ -5378,16 +5517,6 @@
         private System.Windows.Forms.TextBox txtCBCPltC;
         private System.Windows.Forms.TextBox txtCBCMono;
         private System.Windows.Forms.TextBox txtFBSValue;
-        private System.Windows.Forms.TextBox txtUABact;
-        private System.Windows.Forms.TextBox txtUAEpi;
-        private System.Windows.Forms.TextBox txtUARbc;
-        private System.Windows.Forms.TextBox txtUAWBC;
-        private System.Windows.Forms.TextBox txtUAProtein;
-        private System.Windows.Forms.TextBox txtUApH;
-        private System.Windows.Forms.TextBox txtUASpgr;
-        private System.Windows.Forms.TextBox txtUASugar;
-        private System.Windows.Forms.TextBox txtUAAppe;
-        private System.Windows.Forms.TextBox txtUAColor;
         private System.Windows.Forms.TextBox txtTriValue;
         private System.Windows.Forms.TextBox txtChoValue;
         private System.Windows.Forms.TextBox txtSgotSgptValue;
@@ -5399,18 +5528,11 @@
         private System.Windows.Forms.Button btnXraySave;
         private System.Windows.Forms.Button btnCBCSave;
         private System.Windows.Forms.Button btnFBSSave;
-        private System.Windows.Forms.Button btnUASave;
         private System.Windows.Forms.Button btnTriSave;
         private System.Windows.Forms.Button btnChoSave;
         private System.Windows.Forms.Button btnSgotSave;
         private System.Windows.Forms.Button btnBunSave;
         private System.Windows.Forms.Button btnUricSave;
-        private System.Windows.Forms.TextBox txtUALeu;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtUAKetone;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtUABlood;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSgotALT;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtAge;
@@ -5437,19 +5559,6 @@
         private System.Windows.Forms.TextBox txtCBCMchcNormal;
         private System.Windows.Forms.TextBox txtCBCMchNormal;
         private System.Windows.Forms.TextBox txtFBSNormal;
-        private System.Windows.Forms.TextBox txtUASugarNormal;
-        private System.Windows.Forms.TextBox txtUAAppeNormal;
-        private System.Windows.Forms.TextBox txtUAColorNormal;
-        private System.Windows.Forms.TextBox txtUAProteinNormal;
-        private System.Windows.Forms.TextBox txtUApHNormal;
-        private System.Windows.Forms.TextBox txtUASpgrNormal;
-        private System.Windows.Forms.TextBox txtUABloodNormal;
-        private System.Windows.Forms.TextBox txtUABactNormal;
-        private System.Windows.Forms.TextBox txtUAEpiNormal;
-        private System.Windows.Forms.TextBox txtUARbcNormal;
-        private System.Windows.Forms.TextBox txtUAWBCNormal;
-        private System.Windows.Forms.TextBox txtUALeuNormal;
-        private System.Windows.Forms.TextBox txtUAKetoneNormal;
         private System.Windows.Forms.TextBox txtTriNormal;
         private System.Windows.Forms.TextBox txtChoNormal;
         private System.Windows.Forms.TextBox txtSgotALTNormal;
@@ -5696,9 +5805,6 @@
         private System.Windows.Forms.TextBox txtCBCPmnNormal;
         private System.Windows.Forms.TextBox txtCBCPmn;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtUAGluNormal;
-        private System.Windows.Forms.TextBox txtUAGlu;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtStoolExamCultureNormal;
         private System.Windows.Forms.TextBox txtStoolExamCulture;
         private System.Windows.Forms.Label label16;
@@ -5721,5 +5827,66 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txtCBCBaso;
         private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtUABil;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtUAUro;
+        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtUANit;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.TextBox txtUAGluNormal;
+        private System.Windows.Forms.TextBox txtUAGlu;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtUALeuNormal;
+        private System.Windows.Forms.TextBox txtUAKetoneNormal;
+        private System.Windows.Forms.TextBox txtUABloodNormal;
+        private System.Windows.Forms.TextBox txtUABactNormal;
+        private System.Windows.Forms.TextBox txtUAEpiNormal;
+        private System.Windows.Forms.TextBox txtUARbcNormal;
+        private System.Windows.Forms.TextBox txtUAWBCNormal;
+        private System.Windows.Forms.TextBox txtUAProteinNormal;
+        private System.Windows.Forms.TextBox txtUApHNormal;
+        private System.Windows.Forms.TextBox txtUASpgrNormal;
+        private System.Windows.Forms.TextBox txtUASugarNormal;
+        private System.Windows.Forms.TextBox txtUAAppeNormal;
+        private System.Windows.Forms.TextBox txtUAColorNormal;
+        private System.Windows.Forms.TextBox txtUALeu;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtUAKetone;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtUABlood;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnUASave;
+        private System.Windows.Forms.TextBox txtUABact;
+        private System.Windows.Forms.TextBox txtUAEpi;
+        private System.Windows.Forms.TextBox txtUARbc;
+        private System.Windows.Forms.TextBox txtUAWBC;
+        private System.Windows.Forms.TextBox txtUAProtein;
+        private System.Windows.Forms.TextBox txtUApH;
+        private System.Windows.Forms.TextBox txtUASpgr;
+        private System.Windows.Forms.TextBox txtUASugar;
+        private System.Windows.Forms.TextBox txtUAAppe;
+        private System.Windows.Forms.TextBox txtUAColor;
+        private System.Windows.Forms.TextBox txtUAResult;
+        private System.Windows.Forms.TextBox txtUASummary;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton chkFemale;
+        private System.Windows.Forms.RadioButton chkMale;
+        private System.Windows.Forms.RadioButton chkOther;
     }
 }

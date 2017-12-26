@@ -181,7 +181,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="report\CheckUpDS.cs">
       <DependentUpon>CheckUpDS.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="report\CheckUpDS.Designer.cs">
       <AutoGen>True</AutoGen>

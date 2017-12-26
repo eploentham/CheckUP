@@ -232,6 +232,7 @@ namespace CheckUP.objdb
             item.userCreate = dt.Rows[0][cuc.userCreate].ToString();
             item.userModi = dt.Rows[0][cuc.userModi].ToString();
 
+            
             return item;
         }
         public DataTable selectAll()

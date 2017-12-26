@@ -1965,3 +1965,4 @@ Failed to load database information.
 27/02/2560 10:31->FrmCheckUPAdd.btnPrint_Click 03 
 27/02/2560 10:39->rpt.setReportCheckUp OK 
 27/02/2560 10:39->rpt.setReportCheckUp Error โหลดรายงานไม่สำเร็จ
+12/26/2017 4:57 PM->rpt.setReportCheckUpSticker OK 

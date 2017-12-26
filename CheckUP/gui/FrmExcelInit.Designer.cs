@@ -108,6 +108,14 @@
             this.lbXRay = new System.Windows.Forms.Label();
             this.nmDXRayRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label219 = new System.Windows.Forms.Label();
+            this.nmDCBCMCHC = new System.Windows.Forms.NumericUpDown();
+            this.label220 = new System.Windows.Forms.Label();
+            this.nmDCBCMCH = new System.Windows.Forms.NumericUpDown();
+            this.label221 = new System.Windows.Forms.Label();
+            this.nmDCBCMCV = new System.Windows.Forms.NumericUpDown();
+            this.label222 = new System.Windows.Forms.Label();
+            this.nmDCBCBaso = new System.Windows.Forms.NumericUpDown();
             this.txtCBCSheetName = new System.Windows.Forms.TextBox();
             this.label191 = new System.Windows.Forms.Label();
             this.label182 = new System.Windows.Forms.Label();
@@ -573,14 +581,14 @@
             this.nmDStoolExamNo = new System.Windows.Forms.NumericUpDown();
             this.label163 = new System.Windows.Forms.Label();
             this.nmDStoolExamRow = new System.Windows.Forms.NumericUpDown();
-            this.label219 = new System.Windows.Forms.Label();
-            this.nmDCBCMCHC = new System.Windows.Forms.NumericUpDown();
-            this.label220 = new System.Windows.Forms.Label();
-            this.nmDCBCMCH = new System.Windows.Forms.NumericUpDown();
-            this.label221 = new System.Windows.Forms.Label();
-            this.nmDCBCMCV = new System.Windows.Forms.NumericUpDown();
-            this.label222 = new System.Windows.Forms.Label();
-            this.nmDCBCBaso = new System.Windows.Forms.NumericUpDown();
+            this.label223 = new System.Windows.Forms.Label();
+            this.nmDUAUro = new System.Windows.Forms.NumericUpDown();
+            this.label224 = new System.Windows.Forms.Label();
+            this.nmDUANit = new System.Windows.Forms.NumericUpDown();
+            this.label225 = new System.Windows.Forms.Label();
+            this.nmDUALeu = new System.Windows.Forms.NumericUpDown();
+            this.label226 = new System.Windows.Forms.Label();
+            this.nmDUABili = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDARow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDAPrefix)).BeginInit();
@@ -615,6 +623,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDXRayNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDXRayRow)).BeginInit();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCHC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCBaso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCPmn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCSummary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCRBCmono)).BeginInit();
@@ -825,10 +837,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCHC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCBaso)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDUAUro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDUANit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDUALeu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDUABili)).BeginInit();
             this.SuspendLayout();
             // 
             // nmDRow
@@ -1958,6 +1970,114 @@
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // label219
+            // 
+            this.label219.AutoSize = true;
+            this.label219.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label219.Location = new System.Drawing.Point(734, 169);
+            this.label219.Name = "label219";
+            this.label219.Size = new System.Drawing.Size(53, 16);
+            this.label219.TabIndex = 88;
+            this.label219.Text = "MCHC :";
+            // 
+            // nmDCBCMCHC
+            // 
+            this.nmDCBCMCHC.Location = new System.Drawing.Point(730, 197);
+            this.nmDCBCMCHC.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDCBCMCHC.Name = "nmDCBCMCHC";
+            this.nmDCBCMCHC.Size = new System.Drawing.Size(46, 20);
+            this.nmDCBCMCHC.TabIndex = 89;
+            this.nmDCBCMCHC.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label220
+            // 
+            this.label220.AutoSize = true;
+            this.label220.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label220.Location = new System.Drawing.Point(647, 169);
+            this.label220.Name = "label220";
+            this.label220.Size = new System.Drawing.Size(47, 16);
+            this.label220.TabIndex = 86;
+            this.label220.Text = "MCH  :";
+            // 
+            // nmDCBCMCH
+            // 
+            this.nmDCBCMCH.Location = new System.Drawing.Point(650, 197);
+            this.nmDCBCMCH.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDCBCMCH.Name = "nmDCBCMCH";
+            this.nmDCBCMCH.Size = new System.Drawing.Size(46, 20);
+            this.nmDCBCMCH.TabIndex = 87;
+            this.nmDCBCMCH.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label221
+            // 
+            this.label221.AutoSize = true;
+            this.label221.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label221.Location = new System.Drawing.Point(567, 169);
+            this.label221.Name = "label221";
+            this.label221.Size = new System.Drawing.Size(43, 16);
+            this.label221.TabIndex = 84;
+            this.label221.Text = "MCV :";
+            // 
+            // nmDCBCMCV
+            // 
+            this.nmDCBCMCV.Location = new System.Drawing.Point(563, 197);
+            this.nmDCBCMCV.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDCBCMCV.Name = "nmDCBCMCV";
+            this.nmDCBCMCV.Size = new System.Drawing.Size(46, 20);
+            this.nmDCBCMCV.TabIndex = 85;
+            this.nmDCBCMCV.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label222
+            // 
+            this.label222.AutoSize = true;
+            this.label222.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label222.Location = new System.Drawing.Point(494, 169);
+            this.label222.Name = "label222";
+            this.label222.Size = new System.Drawing.Size(46, 16);
+            this.label222.TabIndex = 82;
+            this.label222.Text = "Baso :";
+            // 
+            // nmDCBCBaso
+            // 
+            this.nmDCBCBaso.Location = new System.Drawing.Point(490, 197);
+            this.nmDCBCBaso.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDCBCBaso.Name = "nmDCBCBaso";
+            this.nmDCBCBaso.Size = new System.Drawing.Size(46, 20);
+            this.nmDCBCBaso.TabIndex = 83;
+            this.nmDCBCBaso.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
             // txtCBCSheetName
             // 
             this.txtCBCSheetName.Location = new System.Drawing.Point(316, 34);
@@ -2649,6 +2769,14 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.label226);
+            this.tabPage6.Controls.Add(this.nmDUABili);
+            this.tabPage6.Controls.Add(this.label223);
+            this.tabPage6.Controls.Add(this.nmDUAUro);
+            this.tabPage6.Controls.Add(this.label224);
+            this.tabPage6.Controls.Add(this.nmDUANit);
+            this.tabPage6.Controls.Add(this.label225);
+            this.tabPage6.Controls.Add(this.nmDUALeu);
             this.tabPage6.Controls.Add(this.txtUASheetName);
             this.tabPage6.Controls.Add(this.label193);
             this.tabPage6.Controls.Add(this.label185);
@@ -8285,109 +8413,109 @@
             0,
             0});
             // 
-            // label219
+            // label223
             // 
-            this.label219.AutoSize = true;
-            this.label219.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label219.Location = new System.Drawing.Point(734, 169);
-            this.label219.Name = "label219";
-            this.label219.Size = new System.Drawing.Size(53, 16);
-            this.label219.TabIndex = 88;
-            this.label219.Text = "MCHC :";
+            this.label223.AutoSize = true;
+            this.label223.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label223.Location = new System.Drawing.Point(671, 233);
+            this.label223.Name = "label223";
+            this.label223.Size = new System.Drawing.Size(39, 16);
+            this.label223.TabIndex = 88;
+            this.label223.Text = "Uro  :";
             // 
-            // nmDCBCMCHC
+            // nmDUAUro
             // 
-            this.nmDCBCMCHC.Location = new System.Drawing.Point(730, 197);
-            this.nmDCBCMCHC.Minimum = new decimal(new int[] {
+            this.nmDUAUro.Location = new System.Drawing.Point(667, 261);
+            this.nmDUAUro.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nmDCBCMCHC.Name = "nmDCBCMCHC";
-            this.nmDCBCMCHC.Size = new System.Drawing.Size(46, 20);
-            this.nmDCBCMCHC.TabIndex = 89;
-            this.nmDCBCMCHC.Value = new decimal(new int[] {
+            this.nmDUAUro.Name = "nmDUAUro";
+            this.nmDUAUro.Size = new System.Drawing.Size(46, 20);
+            this.nmDUAUro.TabIndex = 89;
+            this.nmDUAUro.Value = new decimal(new int[] {
             5,
             0,
             0,
             0});
             // 
-            // label220
+            // label224
             // 
-            this.label220.AutoSize = true;
-            this.label220.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label220.Location = new System.Drawing.Point(647, 169);
-            this.label220.Name = "label220";
-            this.label220.Size = new System.Drawing.Size(47, 16);
-            this.label220.TabIndex = 86;
-            this.label220.Text = "MCH  :";
+            this.label224.AutoSize = true;
+            this.label224.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label224.Location = new System.Drawing.Point(591, 233);
+            this.label224.Name = "label224";
+            this.label224.Size = new System.Drawing.Size(30, 16);
+            this.label224.TabIndex = 86;
+            this.label224.Text = "Nit :";
             // 
-            // nmDCBCMCH
+            // nmDUANit
             // 
-            this.nmDCBCMCH.Location = new System.Drawing.Point(650, 197);
-            this.nmDCBCMCH.Minimum = new decimal(new int[] {
+            this.nmDUANit.Location = new System.Drawing.Point(587, 261);
+            this.nmDUANit.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nmDCBCMCH.Name = "nmDCBCMCH";
-            this.nmDCBCMCH.Size = new System.Drawing.Size(46, 20);
-            this.nmDCBCMCH.TabIndex = 87;
-            this.nmDCBCMCH.Value = new decimal(new int[] {
+            this.nmDUANit.Name = "nmDUANit";
+            this.nmDUANit.Size = new System.Drawing.Size(46, 20);
+            this.nmDUANit.TabIndex = 87;
+            this.nmDUANit.Value = new decimal(new int[] {
             5,
             0,
             0,
             0});
             // 
-            // label221
+            // label225
             // 
-            this.label221.AutoSize = true;
-            this.label221.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label221.Location = new System.Drawing.Point(567, 169);
-            this.label221.Name = "label221";
-            this.label221.Size = new System.Drawing.Size(43, 16);
-            this.label221.TabIndex = 84;
-            this.label221.Text = "MCV :";
+            this.label225.AutoSize = true;
+            this.label225.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label225.Location = new System.Drawing.Point(518, 233);
+            this.label225.Name = "label225";
+            this.label225.Size = new System.Drawing.Size(30, 16);
+            this.label225.TabIndex = 84;
+            this.label225.Text = "Leu";
             // 
-            // nmDCBCMCV
+            // nmDUALeu
             // 
-            this.nmDCBCMCV.Location = new System.Drawing.Point(563, 197);
-            this.nmDCBCMCV.Minimum = new decimal(new int[] {
+            this.nmDUALeu.Location = new System.Drawing.Point(514, 261);
+            this.nmDUALeu.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nmDCBCMCV.Name = "nmDCBCMCV";
-            this.nmDCBCMCV.Size = new System.Drawing.Size(46, 20);
-            this.nmDCBCMCV.TabIndex = 85;
-            this.nmDCBCMCV.Value = new decimal(new int[] {
+            this.nmDUALeu.Name = "nmDUALeu";
+            this.nmDUALeu.Size = new System.Drawing.Size(46, 20);
+            this.nmDUALeu.TabIndex = 85;
+            this.nmDUALeu.Value = new decimal(new int[] {
             5,
             0,
             0,
             0});
             // 
-            // label222
+            // label226
             // 
-            this.label222.AutoSize = true;
-            this.label222.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label222.Location = new System.Drawing.Point(494, 169);
-            this.label222.Name = "label222";
-            this.label222.Size = new System.Drawing.Size(46, 16);
-            this.label222.TabIndex = 82;
-            this.label222.Text = "Baso :";
+            this.label226.AutoSize = true;
+            this.label226.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label226.Location = new System.Drawing.Point(437, 233);
+            this.label226.Name = "label226";
+            this.label226.Size = new System.Drawing.Size(35, 16);
+            this.label226.TabIndex = 90;
+            this.label226.Text = "Bili  :";
             // 
-            // nmDCBCBaso
+            // nmDUABili
             // 
-            this.nmDCBCBaso.Location = new System.Drawing.Point(490, 197);
-            this.nmDCBCBaso.Minimum = new decimal(new int[] {
+            this.nmDUABili.Location = new System.Drawing.Point(440, 261);
+            this.nmDUABili.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nmDCBCBaso.Name = "nmDCBCBaso";
-            this.nmDCBCBaso.Size = new System.Drawing.Size(46, 20);
-            this.nmDCBCBaso.TabIndex = 83;
-            this.nmDCBCBaso.Value = new decimal(new int[] {
+            this.nmDUABili.Name = "nmDUABili";
+            this.nmDUABili.Size = new System.Drawing.Size(46, 20);
+            this.nmDUABili.TabIndex = 91;
+            this.nmDUABili.Value = new decimal(new int[] {
             5,
             0,
             0,
@@ -8441,6 +8569,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDXRayRow)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCHC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCBaso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCPmn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCSummary)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCRBCmono)).EndInit();
@@ -8666,10 +8798,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCHC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCBaso)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDUAUro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDUANit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDUALeu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDUABili)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -9229,5 +9361,13 @@
         private System.Windows.Forms.NumericUpDown nmDCBCMCV;
         private System.Windows.Forms.Label label222;
         private System.Windows.Forms.NumericUpDown nmDCBCBaso;
+        private System.Windows.Forms.Label label223;
+        private System.Windows.Forms.NumericUpDown nmDUAUro;
+        private System.Windows.Forms.Label label224;
+        private System.Windows.Forms.NumericUpDown nmDUANit;
+        private System.Windows.Forms.Label label225;
+        private System.Windows.Forms.NumericUpDown nmDUALeu;
+        private System.Windows.Forms.Label label226;
+        private System.Windows.Forms.NumericUpDown nmDUABili;
     }
 }
