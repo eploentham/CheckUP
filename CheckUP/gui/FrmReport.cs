@@ -73,8 +73,8 @@ namespace CheckUP
             //rpt.Load(Environment.CurrentDirectory + "\\report\\test.rpt");
             try
             {
-                cc.lw.WriteLog("FrmReport setReport " + cc.initC.PathReport + "\\" + rptName + ".rpt");
-                rpt.Load(cc.initC.PathReport+"\\" + rptName + ".rpt");
+                cc.lw.WriteLog("FrmReport setReport " + cc.initC.PathReport + rptName + ".rpt");
+                rpt.Load(cc.initC.PathReport+ rptName + ".rpt");
                 cc.lw.WriteLog("rpt.Load OK.");
                 rpt.SetDataSource(dt);
                 cc.lw.WriteLog("rpt.SetDataSource OK.");
@@ -104,7 +104,7 @@ namespace CheckUP
             ReportDocument rpt = new ReportDocument();
             try
             {
-                rpt.Load(cc.initC.PathReport + "\\" + rptName + ".rpt");
+                rpt.Load(cc.initC.PathReport + rptName + ".rpt");
                 rpt.SetDataSource(ds);
                 //rpt.SetDataSource(dt2);
                 //ParameterField myParam = new ParameterField();
@@ -135,8 +135,8 @@ namespace CheckUP
             try
             {
                 cc.lw.WriteLog("rpt.setReportCheckUp OK ");
-                rpt.Load(cc.initC.PathReport + "\\CheckUpPrint3.rpt");
-                cc.lw.WriteLog("rpt.setReportCheckUp OK Load" + cc.initC.PathReport + "\\CheckUpPrint3.rpt");
+                rpt.Load(cc.initC.PathReport + "CheckUpPrint3.rpt");
+                cc.lw.WriteLog("rpt.setReportCheckUp OK Load" + cc.initC.PathReport + "CheckUpPrint3.rpt");
                 rpt.SetDataSource(dt);
                 cc.lw.WriteLog("rpt.setReportCheckUp OK SetDataSource");
         //        //rpt.SetDataSource(dt2);
@@ -169,7 +169,7 @@ namespace CheckUP
             try
             {
                 cc.lw.WriteLog("rpt.setReportCheckUpSticker OK ");
-                if(!File.Exists(cc.initC.PathReport + "\\CheckUpSticker.rpt"))
+                if(!File.Exists(cc.initC.PathReport + "CheckUpSticker.rpt"))
                 {
                     //MessageBox.Show(" path "+cc.initC.PathReport + "\\CheckUpSticker.rpt", "");
                     return;
@@ -179,8 +179,8 @@ namespace CheckUP
                     MessageBox.Show(" OK " , "");
                 }
 
-                rpt.Load(cc.initC.PathReport + "\\CheckUpSticker.rpt");
-                cc.lw.WriteLog("rpt.setReportCheckUpSticker OK Load" + cc.initC.PathReport + "\\CheckUpSticker.rpt");
+                rpt.Load(cc.initC.PathReport + "CheckUpSticker.rpt");
+                cc.lw.WriteLog("rpt.setReportCheckUpSticker OK Load" + cc.initC.PathReport + "CheckUpSticker.rpt");
                 rpt.SetDataSource(dt);
                 cc.lw.WriteLog("rpt.setReportCheckUpSticker OK SetDataSource");
 
@@ -207,13 +207,14 @@ namespace CheckUP
             try
             {
                 cc.lw.WriteLog("rpt.setReportCheckUpPE OK ");
-                rpt.Load(cc.initC.PathReport + "\\PEDetailPrint.rpt");
-                cc.lw.WriteLog("rpt.setReportCheckUpXRays OK Load" + cc.initC.PathReport + "\\PEDetailPrint.rpt");
+                //rpt.Load(cc.initC.PathReport + "\\PEDetailPrint.rpt");
+                rpt.Load(cc.initC.PathReport + "SumPE.rpt");
+                cc.lw.WriteLog("rpt.setReportCheckUpXRays OK Load" + cc.initC.PathReport + "SumPE.rpt");
                 rpt.SetDataSource(dt);
-                rpt.SetParameterValue("line1", "ผลตรวจสุขภาพประจำปี 2557");
-                rpt.SetParameterValue("compName", "โรงพยาบาล บางนา5");
-                rpt.SetParameterValue("compAddress", "55 หมู่4 ถนนเทพารักษ์ ตำบลบางพลีใหญ่ อำเภอบางพลี จังหวัดสมุทรปราการ 10540");
-                rpt.SetParameterValue("custName", cuc.CustNameT);
+                rpt.SetParameterValue("line1", cuc.CustNameT);
+                rpt.SetParameterValue("line2", "โรงพยาบาล บางนา5");
+                rpt.SetParameterValue("line3", "55 หมู่4 ถนนเทพารักษ์ ตำบลบางพลีใหญ่ อำเภอบางพลี จังหวัดสมุทรปราการ 10540");
+                //rpt.SetParameterValue("custName", cuc.CustNameT);
                 cc.lw.WriteLog("rpt.setReportCheckUpPE OK SetDataSource");
 
                 //rpt.SetParameterValue("line1", "ผลตรวจสุขภาพประจำปี 2557");
@@ -239,8 +240,8 @@ namespace CheckUP
             try
             {
                 cc.lw.WriteLog("rpt.setReportCheckUpXRay OK ");
-                rpt.Load(cc.initC.PathReport + "\\XrayDetailPrint.rpt");
-                cc.lw.WriteLog("rpt.setReportCheckUpXRays OK Load" + cc.initC.PathReport + "\\XrayDetailPrint.rpt");
+                rpt.Load(cc.initC.PathReport + "XrayDetailPrint.rpt");
+                cc.lw.WriteLog("rpt.setReportCheckUpXRays OK Load" + cc.initC.PathReport + "XrayDetailPrint.rpt");
                 rpt.SetDataSource(dt);
                 rpt.SetParameterValue("line1", "ผลตรวจสุขภาพประจำปี 2557");
                 rpt.SetParameterValue("compName", "โรงพยาบาล บางนา5");
