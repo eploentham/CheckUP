@@ -30,6 +30,9 @@ namespace CheckUP.Control
         public CompanyDB cpdb;
         public CustomerDB cudb;
         public CustCheckUpPatientDB ccpdb;
+
+        public CustCheckUpPatient1DB ccp1db;
+
         public CustCheckUpDB cucdb;
         public ExcelInitDB eidb;
         public RCheckUpDB rcdb;
@@ -77,6 +80,9 @@ namespace CheckUP.Control
                 cpdb = new CompanyDB(conn);
                 cudb = new CustomerDB(conn);
                 ccpdb = new CustCheckUpPatientDB(conn);
+
+                ccp1db = new CustCheckUpPatient1DB(conn);
+
                 cucdb = new CustCheckUpDB(conn);
                 eidb = new ExcelInitDB(conn);
                 rcdb = new RCheckUpDB(conn);

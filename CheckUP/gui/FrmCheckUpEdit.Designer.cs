@@ -492,9 +492,12 @@
             this.txtAge = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.chkMale = new System.Windows.Forms.RadioButton();
-            this.chkFemale = new System.Windows.Forms.RadioButton();
             this.chkOther = new System.Windows.Forms.RadioButton();
+            this.chkFemale = new System.Windows.Forms.RadioButton();
+            this.chkMale = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkVitalSignNormal = new System.Windows.Forms.RadioButton();
+            this.chkVitalSignAbNormal = new System.Windows.Forms.RadioButton();
             this.tC.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -513,6 +516,7 @@
             this.tabPage16.SuspendLayout();
             this.tabPage17.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tC
@@ -552,6 +556,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.groupBox2);
             this.tabPage3.Controls.Add(this.txtPEAge);
             this.tabPage3.Controls.Add(this.btnSavePE);
             this.tabPage3.Controls.Add(this.txtPESummary);
@@ -5326,16 +5331,16 @@
             this.groupBox1.TabIndex = 68;
             this.groupBox1.TabStop = false;
             // 
-            // chkMale
+            // chkOther
             // 
-            this.chkMale.AutoSize = true;
-            this.chkMale.Location = new System.Drawing.Point(26, 20);
-            this.chkMale.Name = "chkMale";
-            this.chkMale.Size = new System.Drawing.Size(44, 17);
-            this.chkMale.TabIndex = 0;
-            this.chkMale.TabStop = true;
-            this.chkMale.Text = "ชาย";
-            this.chkMale.UseVisualStyleBackColor = true;
+            this.chkOther.AutoSize = true;
+            this.chkOther.Location = new System.Drawing.Point(189, 20);
+            this.chkOther.Name = "chkOther";
+            this.chkOther.Size = new System.Drawing.Size(56, 17);
+            this.chkOther.TabIndex = 2;
+            this.chkOther.TabStop = true;
+            this.chkOther.Text = "ไม่ระบุ";
+            this.chkOther.UseVisualStyleBackColor = true;
             // 
             // chkFemale
             // 
@@ -5348,16 +5353,48 @@
             this.chkFemale.Text = "หญิง";
             this.chkFemale.UseVisualStyleBackColor = true;
             // 
-            // chkOther
+            // chkMale
             // 
-            this.chkOther.AutoSize = true;
-            this.chkOther.Location = new System.Drawing.Point(189, 20);
-            this.chkOther.Name = "chkOther";
-            this.chkOther.Size = new System.Drawing.Size(56, 17);
-            this.chkOther.TabIndex = 2;
-            this.chkOther.TabStop = true;
-            this.chkOther.Text = "ไม่ระบุ";
-            this.chkOther.UseVisualStyleBackColor = true;
+            this.chkMale.AutoSize = true;
+            this.chkMale.Location = new System.Drawing.Point(26, 20);
+            this.chkMale.Name = "chkMale";
+            this.chkMale.Size = new System.Drawing.Size(44, 17);
+            this.chkMale.TabIndex = 0;
+            this.chkMale.TabStop = true;
+            this.chkMale.Text = "ชาย";
+            this.chkMale.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.chkVitalSignAbNormal);
+            this.groupBox2.Controls.Add(this.chkVitalSignNormal);
+            this.groupBox2.Location = new System.Drawing.Point(422, 187);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(405, 50);
+            this.groupBox2.TabIndex = 62;
+            this.groupBox2.TabStop = false;
+            // 
+            // chkVitalSignNormal
+            // 
+            this.chkVitalSignNormal.AutoSize = true;
+            this.chkVitalSignNormal.Location = new System.Drawing.Point(19, 20);
+            this.chkVitalSignNormal.Name = "chkVitalSignNormal";
+            this.chkVitalSignNormal.Size = new System.Drawing.Size(46, 17);
+            this.chkVitalSignNormal.TabIndex = 0;
+            this.chkVitalSignNormal.TabStop = true;
+            this.chkVitalSignNormal.Text = "ปกติ";
+            this.chkVitalSignNormal.UseVisualStyleBackColor = true;
+            // 
+            // chkVitalSignAbNormal
+            // 
+            this.chkVitalSignAbNormal.AutoSize = true;
+            this.chkVitalSignAbNormal.Location = new System.Drawing.Point(158, 20);
+            this.chkVitalSignAbNormal.Name = "chkVitalSignAbNormal";
+            this.chkVitalSignAbNormal.Size = new System.Drawing.Size(60, 17);
+            this.chkVitalSignAbNormal.TabIndex = 1;
+            this.chkVitalSignAbNormal.TabStop = true;
+            this.chkVitalSignAbNormal.Text = "ผิดปกติ";
+            this.chkVitalSignAbNormal.UseVisualStyleBackColor = true;
             // 
             // FrmCheckUpEdit
             // 
@@ -5414,6 +5451,8 @@
             this.tabPage17.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5888,5 +5927,8 @@
         private System.Windows.Forms.RadioButton chkFemale;
         private System.Windows.Forms.RadioButton chkMale;
         private System.Windows.Forms.RadioButton chkOther;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton chkVitalSignAbNormal;
+        private System.Windows.Forms.RadioButton chkVitalSignNormal;
     }
 }

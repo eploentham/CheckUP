@@ -63,6 +63,7 @@ namespace CheckUP.objdb
             ccp1.calcium = "calcium";
             ccp1.Id = "patient_id";
             ccp1.Active = "cust_checkup_patient_active";
+            ccp1.StatusVitalSign = "status_vitalsign";
 
             ccp1.table = "t_cust_checkup_patient1";
             
@@ -112,6 +113,22 @@ namespace CheckUP.objdb
                 ccp1.AntiHavSummary + "='" + AntiHavSummary + "' " +
                 "Where " + ccp1.CustCheckUpId + "='" + cucId + "' and " + ccp1.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateStatusVitalSign(String rowNumber, String cucId, String value)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp1.table + " Set " + ccp1.StatusVitalSign + "='" + value + "' " +
+                
+                "Where " + ccp1.CustCheckUpId + "='" + cucId + "' and " + ccp1.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
             }
             catch (Exception ex)
             {

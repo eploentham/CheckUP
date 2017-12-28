@@ -17,5 +17,7 @@ namespace CheckUP.object1
 
         public String vdrl = "", antiHiv = "", hbsag = "", hbsab = "", antiHbc = "", hbtyping = "", AntiHav = "", hbsagResult = "", hbsagSummary = "", hbsabResult = "", hbsabSummary = "", amphetamine = "",calcium="";
         public String CustCheckUpId = "", rowNumber = "", Active = "", patientFullname = "", AntiHavSummary="";
+
+        public String StatusVitalSign = "";
     }
 }

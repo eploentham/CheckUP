@@ -20,11 +20,12 @@ namespace CheckUP.gui
         int tabSum = 0, tabPE = 1, tabXRay = 2, tabCBC = 3, tabFBS = 4, tabUA = 5, tabTri = 6, tabCho = 7, tabSgot = 8, tabBun = 9, tabUric = 10, tabOther1 = 11, tabLung = 12, tabAudio = 13, tabEye = 14, tabToxi = 15, tabStoolExam = 16;
         int tabCnt = 17;
 
-        public FrmCheckUpEdit(String ccpId,CheckControl c)
+        public FrmCheckUpEdit(String ccpId,CheckControl c, String tab)
         {
             InitializeComponent();
             cc = c;
             initConfig(ccpId);
+            setTabShow(tab);
         }
         private void initConfig(String ccpId)
         {
@@ -272,7 +273,97 @@ namespace CheckUP.gui
                 chkFemale.Checked = false;
             }
         }
-
+        private void setTabShow(String tab)
+        {
+            if (tab.Equals(""))
+            {
+                return;
+            }
+            for (int i = 0; i < tabCnt; i++)
+            {
+                //tC.TabPages[i]
+                if (tab.Equals("pe"))
+                {
+                    TabPage t = tC.TabPages[tabPE];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("cbc"))
+                {
+                    TabPage t = tC.TabPages[tabCBC];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("xray"))
+                {
+                    TabPage t = tC.TabPages[tabXRay];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("fbs"))
+                {
+                    TabPage t = tC.TabPages[tabFBS];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("ua"))
+                {
+                    TabPage t = tC.TabPages[tabUA];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("tri"))
+                {
+                    TabPage t = tC.TabPages[tabTri];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("cho"))
+                {
+                    TabPage t = tC.TabPages[tabCho];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("sgot"))
+                {
+                    TabPage t = tC.TabPages[tabSgot];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("bun"))
+                {
+                    TabPage t = tC.TabPages[tabBun];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("uric"))
+                {
+                    TabPage t = tC.TabPages[tabUric];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("other1"))
+                {
+                    TabPage t = tC.TabPages[tabOther1];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("lung"))
+                {
+                    TabPage t = tC.TabPages[tabLung];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("audio"))
+                {
+                    TabPage t = tC.TabPages[tabAudio];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("eye"))
+                {
+                    TabPage t = tC.TabPages[tabEye];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("toxi"))
+                {
+                    TabPage t = tC.TabPages[tabToxi];
+                    tC.SelectedTab = t;
+                }
+                else if (tab.Equals("stoolexam"))
+                {
+                    TabPage t = tC.TabPages[tabStoolExam];
+                    tC.SelectedTab = t;
+                }
+            }
+        }
         private void FrmCheckUpEdit_Load(object sender, EventArgs e)
         {
 
@@ -289,6 +380,23 @@ namespace CheckUP.gui
                 txtPEBMI.Text, txtPEPulse.Text, txtPEResult.Text, txtPESummary.Text);
             if (chk.Equals("1"))
             {
+                String chk1 = "";
+                if (chkVitalSignNormal.Checked)
+                {
+                    chk1 = "1";
+                }
+                else
+                {
+                    if (chkVitalSignAbNormal.Checked)
+                    {
+                        chk = "3";
+                    }
+                    else if (chkVitalSignAbNormal.Checked)
+                    {
+                        chk1 = "";
+                    }
+                }
+                chk = cc.ccp1db.UpdateStatusVitalSign(txtRowNumber.Text, cuc.Id, chk);
                 MessageBox.Show("บันทึกข้อมูล PE เรียบร้อย", "บันทึกข้อมูล");
             }
         }

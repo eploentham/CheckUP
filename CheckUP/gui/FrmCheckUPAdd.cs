@@ -9422,7 +9422,7 @@ namespace CheckUP.gui
                 return;
             }
 
-            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colPEId, e.RowIndex].Value.ToString(), cc);
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colPEId, e.RowIndex].Value.ToString(), cc, "pe");
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
@@ -9440,7 +9440,7 @@ namespace CheckUP.gui
                 return;
             }
 
-            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colXrayId, e.RowIndex].Value.ToString(), cc);
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colXrayId, e.RowIndex].Value.ToString(), cc, "xray");
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
@@ -9458,7 +9458,7 @@ namespace CheckUP.gui
                 return;
             }
 
-            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colCBCId, e.RowIndex].Value.ToString(), cc);
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colCBCId, e.RowIndex].Value.ToString(), cc,"cbc");
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
@@ -9476,7 +9476,7 @@ namespace CheckUP.gui
                 return;
             }
 
-            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colFBSId, e.RowIndex].Value.ToString(), cc);
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colFBSId, e.RowIndex].Value.ToString(), cc, "fbs");
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
@@ -9494,7 +9494,7 @@ namespace CheckUP.gui
                 return;
             }
 
-            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colUAId, e.RowIndex].Value.ToString(), cc);
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colUAId, e.RowIndex].Value.ToString(), cc, "ua");
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
@@ -9512,7 +9512,7 @@ namespace CheckUP.gui
                 return;
             }
 
-            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colTriId, e.RowIndex].Value.ToString(), cc);
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colTriId, e.RowIndex].Value.ToString(), cc, "tri");
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
@@ -9530,7 +9530,7 @@ namespace CheckUP.gui
                 return;
             }
 
-            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colChoId, e.RowIndex].Value.ToString(), cc);
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colChoId, e.RowIndex].Value.ToString(), cc, "cho");
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
@@ -9548,7 +9548,7 @@ namespace CheckUP.gui
                 return;
             }
 
-            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colSgotId, e.RowIndex].Value.ToString(), cc);
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colSgotId, e.RowIndex].Value.ToString(), cc, "sgot");
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
@@ -9566,7 +9566,7 @@ namespace CheckUP.gui
                 return;
             }
 
-            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colBunId, e.RowIndex].Value.ToString(), cc);
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colBunId, e.RowIndex].Value.ToString(), cc,"bun");
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
@@ -9584,7 +9584,7 @@ namespace CheckUP.gui
                 return;
             }
 
-            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colUricId, e.RowIndex].Value.ToString(), cc);
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colUricId, e.RowIndex].Value.ToString(), cc, "uric");
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
@@ -10247,7 +10247,7 @@ namespace CheckUP.gui
                 return;
             }
 
-            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colOther1Id, e.RowIndex].Value.ToString(), cc);
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colOther1Id, e.RowIndex].Value.ToString(), cc, "other1");
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
@@ -10265,7 +10265,7 @@ namespace CheckUP.gui
                 return;
             }
 
-            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colLungId, e.RowIndex].Value.ToString(), cc);
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colLungId, e.RowIndex].Value.ToString(), cc, "lung");
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
@@ -10283,7 +10283,7 @@ namespace CheckUP.gui
                 return;
             }
 
-            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colAudiogramId, e.RowIndex].Value.ToString(), cc);
+            FrmCheckUpEdit frm = new FrmCheckUpEdit(dgvPE[colAudiogramId, e.RowIndex].Value.ToString(), cc, "audio");
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
