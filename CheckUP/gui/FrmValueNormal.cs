@@ -161,6 +161,11 @@ namespace CheckUP.gui
             txtCBCPmn.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cbcPmn].ToString();
 
             txtFBSValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.sugar].ToString();
+            txtFBSValueNormal.Text = dt.Rows[0][cc.ccpvndb.ccpvn.sugarValueNormal].ToString();
+            txtFBSValueLower.Text = dt.Rows[0][cc.ccpvndb.ccpvn.sugarValueLower].ToString();
+            txtFBSValueUpper.Text = dt.Rows[0][cc.ccpvndb.ccpvn.sugarValueUpper].ToString();
+            txtFBSValueLowerSuggess.Text = dt.Rows[0][cc.ccpvndb.ccpvn.sugarValueLowerSuggess].ToString();
+            txtFBSValueUpperSuggess.Text = dt.Rows[0][cc.ccpvndb.ccpvn.sugarValueUpperSuggess].ToString();
 
             txtUAAppe.Text = dt.Rows[0][cc.ccpvndb.ccpvn.urineAppearance].ToString();
             txtUABact.Text = dt.Rows[0][cc.ccpvndb.ccpvn.urineBacteria].ToString();
@@ -178,11 +183,23 @@ namespace CheckUP.gui
             txtUAGlu.Text = dt.Rows[0][cc.ccpvndb.ccpvn.urineGlu].ToString();
 
             txtTriValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.triglyceride].ToString();
+            txtTriValueNormal.Text = dt.Rows[0][cc.ccpvndb.ccpvn.triglycerideValueNormal].ToString();
+            txtTriValueUpper.Text = dt.Rows[0][cc.ccpvndb.ccpvn.triglycerideValueUpper].ToString();
+            txtTriValueUpperSuggess.Text = dt.Rows[0][cc.ccpvndb.ccpvn.triglycerideValueUpperSuggess].ToString();
 
             txtChoHDLMale.Text = dt.Rows[0][cc.ccpvndb.ccpvn.hdlMale].ToString();
             txtChoHDLFeMale.Text = dt.Rows[0][cc.ccpvndb.ccpvn.hdlFemale].ToString();
+
             txtChoLDL.Text = dt.Rows[0][cc.ccpvndb.ccpvn.ldl].ToString();
+            txtChoLDLValueNormal.Text = dt.Rows[0][cc.ccpvndb.ccpvn.ldlValueNormal].ToString();
+            txtChoLDLValueUpper.Text = dt.Rows[0][cc.ccpvndb.ccpvn.ldlValueUpper].ToString();
+            txtChoLDLValueUpperSuggess.Text = dt.Rows[0][cc.ccpvndb.ccpvn.ldlValueUpperSuggess].ToString();
+
             txtChoValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cholesterol].ToString();
+            txtChoValueNormal.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cholesterolValueNormal].ToString();
+            txtChoValueUpper.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cholesterolValueUpper].ToString();
+            txtChoValueUpperSuggess.Text = dt.Rows[0][cc.ccpvndb.ccpvn.cholesterolValueUpperSuggess].ToString();
+
 
             txtSgotALTMale.Text = dt.Rows[0][cc.ccpvndb.ccpvn.liverAlpMale].ToString();
             txtSgotSgptMaleValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.liverSgptMale].ToString();
@@ -527,7 +544,8 @@ namespace CheckUP.gui
                 }
                 if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                 {
-                    String chk = cc.ccpvndb.UpdateFBS(txtFBSValue.Text.Trim());
+                    String chk = cc.ccpvndb.UpdateFBS1(txtFBSValue.Text.Trim(), txtFBSValueNormal.Text.Trim(), txtFBSValueLower.Text.Trim()
+                        , txtFBSValueUpper.Text.Trim(), txtFBSValueLowerSuggess.Text.Trim(), txtFBSValueUpperSuggess.Text.Trim());
                     cc.dtccpvn = cc.ccpvndb.selectByPk();
                     if (chk.Equals("1"))
                     {
@@ -560,19 +578,20 @@ namespace CheckUP.gui
         {
             try
             {
-                String[] tri = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.triglyceride].ToString().Split('@');
+                //String[] tri = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.triglyceride].ToString().Split('@');
+                String[] tri = txtTriValue.Text.Trim().Split('@');
                 int triMax = 0;
                 String triUnit = "";
                 if (tri.Length == 2)
                 {
-                    String[] aa = tri[0].ToString().Split('<');
-                    triMax = int.Parse(aa[0]);
+                    //String[] aa = tri[0].ToString().Split('<');
+                    triMax = int.Parse(tri[0]);
                     //fbsMax = int.Parse(aa[1]);
                     triUnit = tri[1];
                 }
                 if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                 {
-                    String chk = cc.ccpvndb.UpdateTrigly(txtTriValue.Text.Trim());
+                    String chk = cc.ccpvndb.UpdateTrigly(txtTriValue.Text.Trim(), txtTriValueNormal.Text.Trim(), txtTriValueUpper.Text.Trim(), txtTriValueUpperSuggess.Text.Trim());
                     cc.dtccpvn = cc.ccpvndb.selectByPk();
                     if (chk.Equals("1"))
                     {
@@ -603,7 +622,10 @@ namespace CheckUP.gui
                 }
                 if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                 {
-                    String chk = cc.ccpvndb.UpdateCholes(txtChoValue.Text.Trim(), txtChoLDL.Text.Trim(), txtChoHDLMale.Text.Trim(), txtChoHDLFeMale.Text.Trim());
+                    String chk = cc.ccpvndb.UpdateCholes(txtChoValue.Text.Trim(), txtChoHDLMale.Text.Trim(), txtChoHDLFeMale.Text.Trim()
+                        ,txtChoValueNormal.Text.Trim(), txtChoValueUpper.Text.Trim(), txtChoValueUpperSuggess.Text.Trim());
+                    String chk1 = cc.ccpvndb.UpdateLDL(txtChoLDL.Text.Trim(), txtChoLDLValueNormal.Text.Trim()
+                        , txtChoLDLValueUpper.Text.Trim(), txtChoLDLValueUpperSuggess.Text.Trim());
                     cc.dtccpvn = cc.ccpvndb.selectByPk();
                     if (chk.Equals("1"))
                     {

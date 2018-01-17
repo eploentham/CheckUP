@@ -53,6 +53,11 @@ namespace CheckUP.Control
         public InitConfig initC;
         public String PathLogo;
 
+        public ValueNormalCholes vCholes;
+        public ValueNormalLDL vLDL;
+        public ValueNormalSugar vSugar;
+        public ValueNormalTrigly vTrig;
+
         public LogWriter lw;
         public DataTable dtccpvn;
         public CheckControl()
@@ -67,6 +72,11 @@ namespace CheckUP.Control
                 initC = new InitConfig();
                 GetConfig();
                 cf = new Config1();
+
+                vCholes = new ValueNormalCholes();
+                vLDL = new ValueNormalLDL();
+                vSugar = new ValueNormalSugar();
+                vTrig = new ValueNormalTrigly();
 
                 sf = new Staff();
                 //itSearch = new Item();
@@ -107,6 +117,29 @@ namespace CheckUP.Control
                 MessageBox.Show(""+ex.Message, "Error");
             }
             
+        }
+        private void setValueNormal()
+        {
+            DataTable dt = new DataTable();
+            dt = ccpvndb.selectByPk();
+
+            vCholes.cholesterolValueNormal = dt.Rows[0][ccpvndb.ccpvn.cholesterolValueNormal].ToString();
+            vCholes.cholesterolValueUpper = dt.Rows[0][ccpvndb.ccpvn.cholesterolValueUpper].ToString();
+            vCholes.cholesterolValueUpperSuggess = dt.Rows[0][ccpvndb.ccpvn.cholesterolValueUpperSuggess].ToString();
+
+            vLDL.ldlValueNormal = dt.Rows[0][ccpvndb.ccpvn.ldlValueNormal].ToString();
+            vLDL.ldlValueUpper = dt.Rows[0][ccpvndb.ccpvn.ldlValueUpper].ToString();
+            vLDL.ldlValueUpperSuggess= dt.Rows[0][ccpvndb.ccpvn.ldlValueUpperSuggess].ToString();
+
+            vSugar.sugarValueNormal = dt.Rows[0][ccpvndb.ccpvn.sugarValueNormal].ToString();
+            vSugar.sugarValueLower = dt.Rows[0][ccpvndb.ccpvn.sugarValueLower].ToString();
+            vSugar.sugarValueLowerSuggess = dt.Rows[0][ccpvndb.ccpvn.sugarValueLowerSuggess].ToString();
+            vSugar.sugarValueUpper = dt.Rows[0][ccpvndb.ccpvn.sugarValueUpper].ToString();
+            vSugar.sugarValueUpperSuggess = dt.Rows[0][ccpvndb.ccpvn.sugarValueUpperSuggess].ToString();
+
+            vTrig.triglycerideValueNormal = dt.Rows[0][ccpvndb.ccpvn.triglycerideValueNormal].ToString();
+            vTrig.triglycerideValueUpper = dt.Rows[0][ccpvndb.ccpvn.triglycerideValueUpper].ToString();
+            vTrig.triglycerideValueUpperSuggess = dt.Rows[0][ccpvndb.ccpvn.triglycerideValueUpperSuggess].ToString();
         }
         public String getTextCboItem(ComboBox c, String valueId)
         {

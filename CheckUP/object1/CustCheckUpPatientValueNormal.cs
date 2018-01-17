@@ -77,7 +77,7 @@ namespace CheckUP.object1
         public String sugar="";
         public String sugarDiagnosis="";
         public String sugarSummary="";
-        public String sugarSuggess="";
+        public String sugarSuggess="", sugarValueNormal="", sugarValueLower="", sugarValueUpper="", sugarValueLowerSuggess="", sugarValueUpperSuggess="";
 
         public String kidneyBunMale = "", kidneyBunFemale = "";
         public String kidneyCreatinineMale = "", kidneyCreatinineFemale = "";
@@ -90,12 +90,12 @@ namespace CheckUP.object1
         public String liverResult = "";
         public String liverSummary = "";
         public String uricAcidMale="", uricAcidFemale="";
-        public String cholesterol="";
-        public String triglyceride="";
+        public String cholesterol="", cholesterolValueNormal="", cholesterolValueUpper="", cholesterolValueUpperSuggess="";
+        public String triglyceride="", triglycerideValueNormal="", triglycerideValueUpper= "", triglycerideValueUpperSuggess = "";
         public String triglycerideResult = "";
         public String triglycerideSummary = "";
         public String hdlMale="", hdlFemale="";
-        public String ldl="";
+        public String ldl="", ldlValueNormal = "", ldlValueUpper = "", ldlValueUpperSuggess = "";
 
         public String calcium="";
 

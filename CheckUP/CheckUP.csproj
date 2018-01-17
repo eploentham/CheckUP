@@ -177,6 +177,10 @@
     <Compile Include="object1\Province.cs" />
     <Compile Include="object1\RCheckUp.cs" />
     <Compile Include="object1\Staff.cs" />
+    <Compile Include="object1\ValueNormalCholes.cs" />
+    <Compile Include="object1\ValueNormalLDL.cs" />
+    <Compile Include="object1\ValueNormalSugar.cs" />
+    <Compile Include="object1\ValueNormalTrigly.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="report\CheckUpDS.cs">

@@ -5611,17 +5611,20 @@ namespace CheckUP.gui
                         {
                             if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= fbsMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= fbsMax))
                             {
-                                rc.Remark = "ปกติ";
+                                //rc.Remark = "ปกติ";
+                                rc.Remark = cc.vSugar.sugarValueNormal;
                             }
                             else
                             {
                                 if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > fbsMax)
                                 {
-                                    rc.Remark = "สูงกว่ามาตรฐาน";
+                                    //rc.Remark = "สูงกว่ามาตรฐาน";
+                                    rc.Remark = cc.vSugar.sugarValueUpper;
                                 }
                                 else
                                 {
-                                    rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                    //rc.Remark = "ต่ำกว่ามาตรฐาน";
+                                    rc.Remark = cc.vSugar.sugarValueLower;
                                 }
                             }
                         }
@@ -6499,11 +6502,12 @@ namespace CheckUP.gui
                             {
                                 if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) >= triMax)
                                 {
-                                    rc.Remark = "สูงกว่าปกติ";
+                                    //rc.Remark = "สูงกว่าปกติ";
+                                    rc.Remark = cc.vTrig.triglycerideValueUpper;
                                 }
                                 else if (int.Parse(cc.cf.NumberNull1(rc.LabResult)) < triMax)
                                 {
-                                    rc.Remark = "ปกติ";
+                                    rc.Remark = cc.vTrig.triglycerideValueNormal;
                                 }
                             }
                             else
@@ -6904,11 +6908,13 @@ namespace CheckUP.gui
                             {
                                 if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cholesMax)
                                 {
-                                    rc.Remark = "สูงกว่าปกติ";
+                                    //rc.Remark = "สูงกว่าปกติ";
+                                    rc.Remark = cc.vCholes.cholesterolValueUpper;
                                 }
                                 else if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) < cholesMax)
                                 {
-                                    rc.Remark = "ปกติ";
+                                    //rc.Remark = "ปกติ";
+                                    rc.Remark = cc.vCholes.cholesterolValueNormal;
                                 }
                             }
                             else
@@ -6976,11 +6982,13 @@ namespace CheckUP.gui
                             {
                                 if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= ldlMax)
                                 {
-                                    rc.Remark = "สูงกว่าปกติ";
+                                    //rc.Remark = "สูงกว่าปกติ";
+                                    rc.Remark = cc.vLDL.ldlValueUpper;
                                 }
                                 else if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) < ldlMax)
                                 {
-                                    rc.Remark = "ปกติ";
+                                    //rc.Remark = "ปกติ";
+                                    rc.Remark = cc.vLDL.ldlValueNormal;
                                 }
                             }
                             else

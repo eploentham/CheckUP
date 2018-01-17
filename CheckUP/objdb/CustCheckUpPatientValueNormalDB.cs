@@ -112,6 +112,12 @@ namespace CheckUP.objdb
             ccpvn.sugarDiagnosis = "sugar_diagnosis";
             ccpvn.sugarSummary = "sugar_summary";
             ccpvn.sugarSuggess = "sugar_suggess";
+            ccpvn.sugarValueNormal = "sugar_value_normal";
+            ccpvn.sugarValueLower = "sugar_value_lower";
+            ccpvn.sugarValueUpper = "sugar_value_upper";
+            ccpvn.sugarValueLowerSuggess = "sugar_value_lower_suggess";
+            ccpvn.sugarValueUpperSuggess = "sugar_value_upper_suggess";
+
             ccpvn.kidneyBunMale = "kidney_bun_male";
             ccpvn.kidneyCreatinineMale = "kidney_creatinine_male";
             ccpvn.kidneyBunFemale = "kidney_bun_female";
@@ -133,12 +139,24 @@ namespace CheckUP.objdb
             ccpvn.uricAcidMale = "uric_acid_male";
             ccpvn.uricAcidFemale = "uric_acid_female";
             ccpvn.cholesterol = "cholesterol";
+            ccpvn.cholesterolValueNormal = "cholesterol_value_normal";
+            ccpvn.cholesterolValueUpper = "cholesterol_value_upper";
+            ccpvn.cholesterolValueUpperSuggess = "cholesterol_value_upper_suggess";
+
             ccpvn.triglyceride = "triglyceride";
+            ccpvn.triglycerideValueNormal = "triglyceride_value_normal";
+            ccpvn.triglycerideValueUpper = "triglyceride_value_upper";
+            ccpvn.triglycerideValueUpperSuggess = "triglyceride_value_upper_suggess";
+
             ccpvn.triglycerideResult = "triglyceride_result";
             ccpvn.triglycerideSummary = "triglyceride_summary";
             ccpvn.hdlMale = "hdl_male";
             ccpvn.hdlFemale = "hdl_female";
             ccpvn.ldl = "ldl";
+            ccpvn.ldlValueNormal = "ldl_value_normal";
+            ccpvn.ldlValueUpper = "ldl_value_upper";
+            ccpvn.ldlValueUpperSuggess = "ldl_value_upper_suggess";
+
             ccpvn.calcium = "calcium";
 
             ccpvn.cbcMcvMale = "cbc_mcv_male";
@@ -359,6 +377,26 @@ namespace CheckUP.objdb
             }
             return chk;
         }
+        public String UpdateFBS1(String value, String valueNormal, String valueLower, String valueUpper, String lowerSuggess, String upperSuggess)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccpvn.table + " Set " + ccpvn.sugar + "='" + value + "', "+
+                ccpvn.sugarValueNormal + "='" + valueNormal + "', " +
+                ccpvn.sugarValueLower + "='" + valueLower + "', " +
+                ccpvn.sugarValueUpper + "='" + valueUpper + "', " +
+                ccpvn.sugarValueLowerSuggess + "='" + lowerSuggess + "', "+
+                ccpvn.sugarValueUpperSuggess + "='" + upperSuggess + "' ";
+                //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
         public String UpdateCBC(String Basophil, String Eosinophil, String HbMale, String HbFemale, String HctMale, String HctFemale, String Lymphocyte,
             String Mch, String Mchc, String McvMale, String McvFemale, String Monocyte, String Neutrophil, String PlateletCount, String RbcMale, String RbcFemale, String RbcMorpholog,
             String Wbc, String PlateletSmear, String Pmn, String statCBCsplitMaleFemale)
@@ -423,15 +461,36 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String UpdateTrigly(String value)
+        public String UpdateTrigly(String value, String valueNormal, String valueUpper, String upperSuggess)
         {
             String chk = "", sql = "";
             try
             {
-                sql = "Update " + ccpvn.table + " Set " + ccpvn.triglyceride + "='" + value + "' ";
-                //ccp.triglycerideResult + "='" + result + "', " +
-                //ccp.triglycerideSummary + "='" + summary + "' " +
-                //    //ccp.sugarSuggess + "='" + suggess + "' " +
+                sql = "Update " + ccpvn.table + " Set " + ccpvn.triglyceride + "='" + value + "', "+
+                ccpvn.triglycerideValueNormal + "='" + valueNormal + "', " +
+                ccpvn.triglycerideValueUpper + "='" + valueUpper + "', " +
+                ccpvn.triglycerideValueUpperSuggess + "='" + upperSuggess + "' ";
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateCholes(String value, String hdlMale, String hdlFemale, String cholesValueNormal
+            , String cholesValueUpper, String cholesValueUpperSuggess)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccpvn.table + " Set " + ccpvn.cholesterol + "='" + value + "'," +
+                    //ccp.cholesterolSuggess + "='" + result + "', " +
+                ccpvn.hdlFemale + "='" + hdlFemale + "', " +                
+                ccpvn.cholesterolValueNormal + "='" + cholesValueNormal + "', "+
+                ccpvn.cholesterolValueUpper + "='" + cholesValueUpper + "', "+
+                ccpvn.cholesterolValueUpperSuggess + "='" + cholesValueUpperSuggess + "', "+
+                ccpvn.hdlMale + "='" + hdlMale + "' ";
                 //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             }
@@ -441,17 +500,17 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String UpdateCholes(String value, String ldl, String hdlMale, String hdlFemale)
+        public String UpdateLDL(String value, String valueNormal
+            , String valueUpper, String valueUpperSuggess)
         {
             String chk = "", sql = "";
             try
             {
-                sql = "Update " + ccpvn.table + " Set " + ccpvn.cholesterol + "='" + value + "'," +
-                    //ccp.cholesterolSuggess + "='" + result + "', " +
-                ccpvn.hdlFemale + "='" + hdlFemale + "', " +
-                ccpvn.ldl + "='" + ldl + "', " +
-                ccpvn.hdlMale + "='" + hdlMale + "' ";
-                //"Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                sql = "Update " + ccpvn.table + " Set " + ccpvn.ldl + "='" + value + "'," +
+                ccpvn.ldlValueNormal + "='" + valueNormal + "', " +
+                ccpvn.ldlValueUpper + "='" + valueUpper + "', " +
+                ccpvn.ldlValueUpperSuggess + "='" + valueUpperSuggess + "' ";
+                
                 chk = conn.ExecuteNonQuery(sql);
             }
             catch (Exception ex)
