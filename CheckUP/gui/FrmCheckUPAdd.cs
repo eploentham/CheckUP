@@ -1396,8 +1396,8 @@ namespace CheckUP.gui
             String triUnit = "";
             if (tri.Length == 2)
             {
-                String[] aa = tri[0].ToString().Split('<');
-                triMax = Double.Parse(aa[1]);
+                //String[] aa = tri[0].ToString().Split('<');
+                triMax = Double.Parse(tri[0]);
                 //fbsMax = int.Parse(aa[1]);
                 triUnit = tri[1];
             }
@@ -4088,8 +4088,9 @@ namespace CheckUP.gui
             String triUnit = "";
             if (tri.Length == 2)
             {
-                String[] aa = tri[0].ToString().Split('<');
-                triMax = Double.Parse(aa[1].Replace(".0", ""));
+                //String[] aa = tri[0].ToString().Split('<');
+                //triMax = Double.Parse(aa[1].Replace(".0", ""));
+                triMax = Double.Parse(tri[0].Replace(".0", ""));
                 //fbsMax = int.Parse(aa[1]);
                 triUnit = tri[1];
             }
@@ -4127,7 +4128,7 @@ namespace CheckUP.gui
             String hdlfemaleUnit = "";
             if (hdlfemale.Length == 2)
             {
-                String[] aa = hdlmale[0].ToString().Split('-');
+                String[] aa = hdlfemale[0].ToString().Split('-');
                 hdlfemaleMin = int.Parse(aa[0].Replace(".0", ""));
                 hdlfemaleMax = int.Parse(aa[1].Replace(".0", ""));
                 hdlfemaleUnit = hdlfemale[1];
@@ -4239,6 +4240,7 @@ namespace CheckUP.gui
             String uaketone = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineKetone].ToString();
             String uaglu = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineGlu].ToString();
             String uabact = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineBacteria].ToString();
+            String ualeu = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineLeu].ToString();
 
             //UA pH
             String[] uapH = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urinePh].ToString().Split('@');
@@ -4995,7 +4997,7 @@ namespace CheckUP.gui
                         rc.LTypeLab = "ประเภทการตรวจเลือดทั่วไป";
                         try
                         {
-                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= 0)
                             {
                                 if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= cbcbasMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= cbcbasMax))
                                 {
@@ -5930,7 +5932,7 @@ namespace CheckUP.gui
                         rc.LNormal = "ค่าปกติ";
                         rc.lResult = "ผลการตรวจ";
                         rc.LTypeLab = "ประเภทการตรวจปัสสาวะ (Urine Analysis)";
-                        rc.Remark = "";
+                        //rc.Remark = "";
                         rc.StatusLab = "ua";
                         rc.Sort1 = "1012";
                         rc.Sort2 = "17";
@@ -6156,13 +6158,21 @@ namespace CheckUP.gui
                         rc.LabName = "Leu ";
                         rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineLeu].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineLeu].ToString();
+                        if (rc.LabResult.Trim().ToLower().Equals(ualeu.ToLower()))
+                        {
+                            rc.Remark = "ปกติ";
+                        }
+                        else
+                        {
+                            rc.Remark = "ผิดปกติ";
+                        }
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
                         rc.LInterNormal = "ผิดปกติ";
                         rc.LNormal = "ค่าปกติ";
                         rc.lResult = "ผลการตรวจ";
                         rc.LTypeLab = "ประเภทการตรวจปัสสาวะ (Urine Analysis)";
-                        rc.Remark = "";
+                        //rc.Remark = "";
                         rc.StatusLab = "ua";
                         rc.Sort1 = "1012";
                         rc.Sort2 = "23";
@@ -7138,7 +7148,7 @@ namespace CheckUP.gui
                         {
                             rc.LabName = "สรุป ";
                         }
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.hdlMale].ToString();
+                        //rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.hdlMale].ToString();
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ChoHDLsummary].ToString();
                         //rc.LabResult = "";
                         rc.LInter = "การแปลผล";

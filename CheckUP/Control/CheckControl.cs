@@ -110,6 +110,7 @@ namespace CheckUP.Control
                 cp = cpdb.selectByPk();
                 PathLogo = Environment.CurrentDirectory;
                 dtccpvn = ccpvndb.selectByPk();
+                setValueNormal();
             }
             catch (Exception ex)
             {
@@ -118,7 +119,7 @@ namespace CheckUP.Control
             }
             
         }
-        private void setValueNormal()
+        public void setValueNormal()
         {
             DataTable dt = new DataTable();
             dt = ccpvndb.selectByPk();

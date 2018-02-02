@@ -333,6 +333,7 @@ namespace CheckUP.gui
                 if (chk.Equals("1"))
                 {
                     MessageBox.Show("บันทึกข้อมูล StoolExam เรียบร้อย", "บันทึกข้อมูล");
+                    cc.setValueNormal();
                 }
             }
         }
@@ -502,6 +503,7 @@ namespace CheckUP.gui
                     if (chk.Equals("1"))
                     {
                         MessageBox.Show("บันทึกข้อมูล SGOT เรียบร้อย", "บันทึกข้อมูล");
+                        cc.setValueNormal();
                     }
                 }
             }
@@ -524,6 +526,7 @@ namespace CheckUP.gui
                 if (chk.Equals("1"))
                 {
                     MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
+                    cc.setValueNormal();
                 }
             }            
         }
@@ -550,6 +553,7 @@ namespace CheckUP.gui
                     if (chk.Equals("1"))
                     {
                         MessageBox.Show("บันทึกข้อมูล FBS เรียบร้อย", "บันทึกข้อมูล");
+                        cc.setValueNormal();
                     }
                 }
             }
@@ -570,6 +574,7 @@ namespace CheckUP.gui
                 if (chk.Equals("1"))
                 {
                     MessageBox.Show("บันทึกข้อมูล UA เรียบร้อย", "บันทึกข้อมูล");
+                    cc.setValueNormal();
                 }
             }   
         }
@@ -596,6 +601,7 @@ namespace CheckUP.gui
                     if (chk.Equals("1"))
                     {
                         MessageBox.Show("บันทึกข้อมูล Trigly เรียบร้อย", "บันทึกข้อมูล");
+                        cc.setValueNormal();
                     }
                 }
             }
@@ -630,6 +636,7 @@ namespace CheckUP.gui
                     if (chk.Equals("1"))
                     {
                         MessageBox.Show("บันทึกข้อมูล Choles เรียบร้อย", "บันทึกข้อมูล");
+                        cc.setValueNormal();
                     }
                 }
             }
@@ -694,6 +701,7 @@ namespace CheckUP.gui
                     if (chk.Equals("1"))
                     {
                         MessageBox.Show("บันทึกข้อมูล Bun เรียบร้อย", "บันทึกข้อมูล");
+                        cc.setValueNormal();
                     }
                 }
             }
@@ -713,6 +721,7 @@ namespace CheckUP.gui
                 if (chk.Equals("1"))
                 {
                     MessageBox.Show("บันทึกข้อมูล Uric เรียบร้อย", "บันทึกข้อมูล");
+                    cc.setValueNormal();
                 }
             }
         }
@@ -727,6 +736,7 @@ namespace CheckUP.gui
                 if (chk.Equals("1"))
                 {
                     MessageBox.Show("บันทึกข้อมูล Other1 เรียบร้อย", "บันทึกข้อมูล");
+                    cc.setValueNormal();
                 }
             }
         }
@@ -740,6 +750,7 @@ namespace CheckUP.gui
                 if (chk.Equals("1"))
                 {
                     MessageBox.Show("บันทึกข้อมูล Lung เรียบร้อย", "บันทึกข้อมูล");
+                    cc.setValueNormal();
                 }
             }
         }
@@ -759,8 +770,8 @@ namespace CheckUP.gui
                         txtToxiFluoride.Text.Trim());
                     if (chk.Equals("1"))
                     {
-
                         MessageBox.Show("บันทึกข้อมูล Toxi เรียบร้อย", "บันทึกข้อมูล");
+                        cc.setValueNormal();
                     }
                     //MessageBox.Show("บันทึกข้อมูล Lung เรียบร้อย", "บันทึกข้อมูล");
                 }
@@ -777,6 +788,7 @@ namespace CheckUP.gui
                 if (chk.Equals("1"))
                 {
                     MessageBox.Show("บันทึกข้อมูล Eye เรียบร้อย", "บันทึกข้อมูล");
+                    cc.setValueNormal();
                 }
             }
         }
@@ -792,6 +804,7 @@ namespace CheckUP.gui
                 if (chk.Equals("1"))
                 {
                     MessageBox.Show("บันทึกข้อมูล AudioGram เรียบร้อย", "บันทึกข้อมูล");
+                    cc.setValueNormal();
                 }
             }
         }
