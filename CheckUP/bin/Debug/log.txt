@@ -1985,3 +1985,51 @@ Failed to load database information.
 12/27/2017 12:54 AM->rpt.setReportCheckUpXRay OK 
 12/27/2017 12:54 AM->rpt.setReportCheckUpXRays OK LoadC:\source\bangna\CheckUP\CheckUP\report\XrayDetailPrint.rpt
 12/27/2017 12:54 AM->rpt.setReportCheckUpXRays OK SetDataSource
+2/2/2018 8:56 AM->FrmCheckUPAdd.btnPrint_Click 01 
+2/2/2018 8:56 AM->FrmCheckUPAdd.btnPrint_Click 02 
+2/2/2018 8:56 AM->FrmCheckUPAdd.btnPrint_Click 03 
+2/2/2018 8:56 AM->rpt.setReportCheckUp OK 
+2/2/2018 8:56 AM->rpt.setReportCheckUp OK LoadC:\source\bangna\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+2/2/2018 8:56 AM->rpt.setReportCheckUp OK SetDataSource
+2/2/2018 8:58 AM->FrmCheckUPAdd.btnPrint_Click 01 
+2/2/2018 8:58 AM->FrmCheckUPAdd.btnPrint_Click 02 
+2/2/2018 8:58 AM->FrmCheckUPAdd.btnPrint_Click 03 
+2/2/2018 8:58 AM->rpt.setReportCheckUp OK 
+2/2/2018 8:58 AM->rpt.setReportCheckUp OK LoadC:\source\bangna\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+2/2/2018 8:58 AM->rpt.setReportCheckUp OK SetDataSource
+2/2/2018 8:59 AM->FrmCheckUPAdd.btnPrint_Click 01 
+2/2/2018 8:59 AM->FrmCheckUPAdd.btnPrint_Click 02 
+2/2/2018 8:59 AM->FrmCheckUPAdd.btnPrint_Click 03 
+2/2/2018 8:59 AM->rpt.setReportCheckUp OK 
+2/2/2018 8:59 AM->rpt.setReportCheckUp OK LoadC:\source\bangna\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+2/2/2018 8:59 AM->rpt.setReportCheckUp OK SetDataSource
+2/2/2018 9:00 AM->FrmCheckUPAdd.btnPrint_Click 01 
+2/2/2018 9:00 AM->FrmCheckUPAdd.btnPrint_Click 02 
+2/2/2018 9:00 AM->FrmCheckUPAdd.btnPrint_Click 03 
+2/2/2018 9:00 AM->rpt.setReportCheckUp OK 
+2/2/2018 9:00 AM->rpt.setReportCheckUp OK LoadC:\source\bangna\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+2/2/2018 9:00 AM->rpt.setReportCheckUp OK SetDataSource
+2/2/2018 9:02 AM->FrmCheckUPAdd.btnPrint_Click 01 
+2/2/2018 9:02 AM->FrmCheckUPAdd.btnPrint_Click 02 
+2/2/2018 9:02 AM->FrmCheckUPAdd.btnPrint_Click 03 
+2/2/2018 9:02 AM->rpt.setReportCheckUp OK 
+2/2/2018 9:02 AM->rpt.setReportCheckUp OK LoadC:\source\bangna\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+2/2/2018 9:02 AM->rpt.setReportCheckUp OK SetDataSource
+2/2/2018 9:02 AM->FrmCheckUPAdd.btnPrint_Click 01 
+2/2/2018 9:02 AM->FrmCheckUPAdd.btnPrint_Click 02 
+2/2/2018 9:02 AM->FrmCheckUPAdd.btnPrint_Click 03 
+2/2/2018 9:02 AM->rpt.setReportCheckUp OK 
+2/2/2018 9:02 AM->rpt.setReportCheckUp OK LoadC:\source\bangna\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+2/2/2018 9:02 AM->rpt.setReportCheckUp OK SetDataSource
+2/2/2018 9:03 AM->FrmCheckUPAdd.btnPrint_Click 01 
+2/2/2018 9:03 AM->FrmCheckUPAdd.btnPrint_Click 02 
+2/2/2018 9:03 AM->FrmCheckUPAdd.btnPrint_Click 03 
+2/2/2018 9:03 AM->rpt.setReportCheckUp OK 
+2/2/2018 9:03 AM->rpt.setReportCheckUp OK LoadC:\source\bangna\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+2/2/2018 9:03 AM->rpt.setReportCheckUp OK SetDataSource
+2/2/2018 9:46 AM->FrmCheckUPAdd.btnPrint_Click 01 
+2/2/2018 9:46 AM->FrmCheckUPAdd.btnPrint_Click 02 
+2/2/2018 9:46 AM->FrmCheckUPAdd.btnPrint_Click 03 
+2/2/2018 9:46 AM->rpt.setReportCheckUp OK 
+2/2/2018 9:46 AM->rpt.setReportCheckUp OK LoadC:\source\bangna\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+2/2/2018 9:46 AM->rpt.setReportCheckUp OK SetDataSource

@@ -4238,6 +4238,7 @@ namespace CheckUP.gui
             String uablood = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineBlood].ToString();
             String uaketone = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineKetone].ToString();
             String uaglu = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineGlu].ToString();
+            String uabact = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineBacteria].ToString();
 
             //UA pH
             String[] uapH = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urinePh].ToString().Split('@');
@@ -5913,6 +5914,16 @@ namespace CheckUP.gui
                         rc.LabName = "Bacteria ";
                         rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineBacteria].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineBacteria].ToString();
+
+                        if (rc.LabResult.Trim().ToLower().Equals(uabact.ToLower()))
+                        {
+                            rc.Remark = "ปกติ";
+                        }
+                        else
+                        {
+                            rc.Remark = "ผิดปกติ";
+                        }
+
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
                         rc.LInterNormal = "ผิดปกติ";
