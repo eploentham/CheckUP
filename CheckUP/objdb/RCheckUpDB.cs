@@ -61,6 +61,24 @@ namespace CheckUP.objdb
 
             return dt;
         }
+        public DataTable selectMini1()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From " + rcu.table + " Where sort1='1009' and sort2= '10' Order By " + rcu.RowNumber + "," + rcu.Sort1 + "," + rcu.Sort2;
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectMini2()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From " + rcu.table + " Where sort1='1010'  Order By " + rcu.RowNumber + "," + rcu.Sort1 + "," + rcu.Sort2;
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
         //private RCheckUp setData(RCheckUp item, DataTable dt)
         //{
         //    item.Id = dt.Rows[0][rcu.Id].ToString();
@@ -76,7 +94,7 @@ namespace CheckUP.objdb
         //    item.dateModi = dt.Rows[0][rcu.dateModi].ToString();
         //    item.userCancel = dt.Rows[0][rcu.userCancel].ToString();
         //    item.userCreate = dt.Rows[0][rcu.userCreate].ToString();
-            
+
         //    return item;
         //}
         //public DataTable selectAll()

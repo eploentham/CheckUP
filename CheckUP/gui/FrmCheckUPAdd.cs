@@ -56,6 +56,7 @@ namespace CheckUP.gui
 
         int colOther1Row = 0, colOther1Id = 1, colOther1Name = 2, colOther1HBsAg = 3, colOther1HBsAgResult = 4, colOther1HBsAgSummary = 5, colOther1HBsAb = 6, colOther1HBsAbResult = 7, colOther1HBsAbSummary = 8, colOther1AntiHIV = 9, colOther1VDRL = 10, colOther1Amphetamine = 11, colOther1Calcium = 12, colOther1AntiHav = 13;
         int colCAAFP = 14, colCACEA = 15, colCAHCG = 16, colCAPSA = 17, colCA153 = 18, colCA125 = 19, colCA199 = 20;
+
         int colOther1Cnt = 21;
 
         int colLungRow = 0, colLungId = 1, colLungName = 2, colLungFvcPredic = 3, colLungFvcMeas = 4, colLungFvcPer = 5, colLungFev1Predic = 6, colLungFev1Meas = 7, colLungFev1Per = 8, colLungPerFev1 = 9, colLungSummary = 10;
@@ -3852,8 +3853,37 @@ namespace CheckUP.gui
             FrmExcelInit frm = new FrmExcelInit(cc,"");
             frm.ShowDialog(this);
         }
-
+        private void btnMIni1_Click(object sender, EventArgs e)
+        {
+            setPrint();
+            DataTable dt = new DataTable();
+            dt = cc.rcdb.selectMini1();
+            FrmReport frm = new FrmReport(cc);
+            frm.setReportCheckUpMini1(cuc, dt);
+            frm.ShowDialog(this);
+        }
+        private void btnMini2_Click(object sender, EventArgs e)
+        {
+            setPrint();
+            DataTable dt = new DataTable();
+            dt = cc.rcdb.selectMini2();
+            FrmReport frm = new FrmReport(cc);
+            frm.setReportCheckUpMini2(cuc, dt);
+            frm.ShowDialog(this);
+        }
         private void btnPrint_Click(object sender, EventArgs e)
+        {
+
+            setPrint();
+
+            DataTable dt = new DataTable();
+            dt = cc.rcdb.selectAll();
+            FrmReport frm = new FrmReport(cc);
+            frm.setReportCheckUp(cuc, dt);
+            frm.ShowDialog(this);
+
+        }
+        private void setPrint()
         {
             Random r = new Random();
             RCheckUp rc = new RCheckUp();
@@ -4073,7 +4103,7 @@ namespace CheckUP.gui
 
             //FBS
             String[] fbs = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.sugar].ToString().Split('@');
-            Double fbsMin = 0, fbsMax = 0;            
+            Double fbsMin = 0, fbsMax = 0;
             String fbsUnit = "";
             if (fbs.Length == 2)
             {
@@ -4114,7 +4144,7 @@ namespace CheckUP.gui
             }
             //hdl
             String[] hdlmale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.hdlMale].ToString().Split('@');
-            int hdlmaleMin = 0,hdlmaleMax = 0;
+            int hdlmaleMin = 0, hdlmaleMax = 0;
             String hdlmaleUnit = "";
             if (hdlmale.Length == 2)
             {
@@ -4124,7 +4154,7 @@ namespace CheckUP.gui
                 hdlmaleUnit = hdlmale[1];
             }
             String[] hdlfemale = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.hdlFemale].ToString().Split('@');
-            int hdlfemaleMin = 0,hdlfemaleMax = 0;
+            int hdlfemaleMin = 0, hdlfemaleMax = 0;
             String hdlfemaleUnit = "";
             if (hdlfemale.Length == 2)
             {
@@ -4135,7 +4165,7 @@ namespace CheckUP.gui
             }
             //Sgot
             String[] sgot = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgotMale].ToString().Split('@');
-            int sgotMin = 0, sgotMax = 0;  
+            int sgotMin = 0, sgotMax = 0;
             String sgotUnit = "";
             if (sgot.Length == 2)
             {
@@ -4229,7 +4259,7 @@ namespace CheckUP.gui
                 creatinineFemaleMax = Double.Parse(aa[1]);
                 creatinineFemaleUnit = creatinineFemale[1];
             }
-            
+
 
             //UA Color
             String uacolor = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineColor].ToString();
@@ -4266,7 +4296,7 @@ namespace CheckUP.gui
             String[] uawbc = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineWbc].ToString().Split('@');
             Double uawbcMin = 0, uawbcMax = 0;
             String uawbcUnit = "";
-            if (uawbc.Length == 2)//มีหน่วย
+            if (uawbc.Length == 1)//มีหน่วย
             {
                 String[] aa = uawbc[0].ToString().Split('-');
                 uawbcMin = Double.Parse(aa[0]);
@@ -4340,7 +4370,7 @@ namespace CheckUP.gui
                 //fbsMax = int.Parse(aa[1]);
                 leadUnit = lead[1];
             }
-            
+
             //CAAFP
             String[] CAAFP = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.CAAFP].ToString().Split('@');
             double CAAFPMax = 0;
@@ -4360,7 +4390,7 @@ namespace CheckUP.gui
                 String[] aa = CACEA[0].ToString().Split('-');
                 CACEAMax = Double.Parse(aa[1]);
                 CACEAUnit = CACEA[1];
-            }            
+            }
             //CAHCG
             String[] CAHCG = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.CAHCG].ToString().Split('@');
             double CAHCGMax = 0;
@@ -4370,7 +4400,7 @@ namespace CheckUP.gui
                 String[] aa = CAHCG[0].ToString().Split('-');
                 CAHCGMax = Double.Parse(aa[1]);
                 CAHCGUnit = CAHCG[1];
-            }            
+            }
             //CAPSA
             String[] CAPSA = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.CAPSA].ToString().Split('@');
             double CAPSAMax = 0;
@@ -4390,7 +4420,7 @@ namespace CheckUP.gui
                 String[] aa = CA153[0].ToString().Split('-');
                 CA153Max = Double.Parse(aa[1]);
                 CA153Unit = CA153[1];
-            }            
+            }
             //CA125
             String[] CA125 = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.CA125].ToString().Split('@');
             double CA125Max = 0;
@@ -4400,7 +4430,7 @@ namespace CheckUP.gui
                 String[] aa = CA125[0].ToString().Split('-');
                 CA125Max = Double.Parse(aa[1]);
                 CA125Unit = CA125[1];
-            }            
+            }
             //CA199
             String[] CA199 = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.CA199].ToString().Split('@');
             double CA199Max = 0;
@@ -4555,7 +4585,7 @@ namespace CheckUP.gui
                     {
 
                     }
-                    
+
                 }
                 else
                 {
@@ -4608,7 +4638,7 @@ namespace CheckUP.gui
                     cc.rcdb.insertRCheckUp(rc);
                 }
                 //CBC
-                if (int.Parse(cuc.CBCSuccess)>0)
+                if (int.Parse(cuc.CBCSuccess) > 0)
                 {
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcHb] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcHb].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -4707,7 +4737,7 @@ namespace CheckUP.gui
                                     }
                                 }
                             }
-                            
+
                         }
                         catch (Exception ex)
                         {
@@ -4818,7 +4848,7 @@ namespace CheckUP.gui
                                     }
                                 }
                             }
-                            
+
                         }
                         catch (Exception ex)
                         {
@@ -5228,7 +5258,7 @@ namespace CheckUP.gui
                                     }
                                 }
                             }
-                            
+
                         }
                         catch (Exception ex)
                         {
@@ -5573,7 +5603,7 @@ namespace CheckUP.gui
                         rc.Sort2 = "26";
                         cc.rcdb.insertRCheckUp(rc);
                     }
-                    
+
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
                     rc.LabName = "สรุป ";
@@ -5600,7 +5630,7 @@ namespace CheckUP.gui
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "ระดับน้ำตาลในเลือด (Fasting Blood Sugar)";
                     rc.LabName = "FBS ";
-                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.sugar].ToString().Replace("@"," ");
+                    rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.sugar].ToString().Replace("@", " ");
                     rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.sugar].ToString();
                     rc.LInter = "การแปลผล";
                     rc.LInterAbnormal = "ปกติ";
@@ -5640,8 +5670,8 @@ namespace CheckUP.gui
                     {
                         rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
                     }
-                    
-                    
+
+
                     rc.StatusLab = "fbs";
                     rc.Sort1 = "1011";
                     rc.Sort2 = "10";
@@ -5967,7 +5997,7 @@ namespace CheckUP.gui
                         cc.rcdb.insertRCheckUp(rc);
                     }
 
-                    if ((dtAll.Rows[i][cc.ccpdb.ccp.urineEpithelium] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineEpithelium].ToString().Equals(""))&& (!dtAll.Rows[i][cc.ccpdb.ccp.urineEpithelium].ToString().Equals("-")))//ไม่ได้ตรวจ ไม่ต้องแสดง
+                    if ((dtAll.Rows[i][cc.ccpdb.ccp.urineEpithelium] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineEpithelium].ToString().Equals("")) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineEpithelium].ToString().Equals("-")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (Urine Analysis)";
@@ -5982,15 +6012,16 @@ namespace CheckUP.gui
                         rc.LTypeLab = "ประเภทการตรวจปัสสาวะ";
                         try
                         {
-                            if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > 0)
+                            String[] aa = rc.LabResult.Split('-');
+                            if (Double.Parse(cc.cf.NumberNull1(aa[1])) > 0)
                             {
-                                if ((Double.Parse(cc.cf.NumberNull1(rc.LabResult)) >= uaepiMin) && (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) <= uaepiMax))
+                                if ((Double.Parse(cc.cf.NumberNull1(aa[1])) >= uaepiMin) && (Double.Parse(cc.cf.NumberNull1(aa[1])) <= uaepiMax))
                                 {
                                     rc.Remark = "ปกติ";
                                 }
                                 else
                                 {
-                                    if (Double.Parse(cc.cf.NumberNull1(rc.LabResult)) > uaepiMax)
+                                    if (Double.Parse(cc.cf.NumberNull1(aa[1])) > uaepiMax)
                                     {
                                         rc.Remark = "สูงกว่ามาตรฐาน";
                                     }
@@ -6056,7 +6087,7 @@ namespace CheckUP.gui
                         {
                             rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
                         }
-                        
+
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
                         rc.LInterNormal = "ผิดปกติ";
@@ -6178,7 +6209,7 @@ namespace CheckUP.gui
                         rc.Sort2 = "23";
                         cc.rcdb.insertRCheckUp(rc);
                     }
-                    
+
 
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (UA)";
@@ -6291,14 +6322,14 @@ namespace CheckUP.gui
                             {
                                 rc.Remark = "ไม่มีค่าตรวจ";
                             }
-                            
+
                         }
                     }
                     catch (Exception ex)
                     {
                         rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
                     }
-                    
+
                     //rc.Remark = "";
                     rc.StatusLab = "bun";
                     rc.Sort1 = "1013";
@@ -6375,7 +6406,7 @@ namespace CheckUP.gui
                     {
                         rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
                     }
-                    
+
                     //rc.Remark = "";
                     rc.StatusLab = "bun";
                     rc.Sort1 = "1013";
@@ -6498,7 +6529,7 @@ namespace CheckUP.gui
                     rc.Sort2 = "11";
                     cc.rcdb.insertRCheckUp(rc);
                 }
-                
+
 
                 //Trig
                 if (int.Parse(cuc.TriSuccess) > 0)
@@ -6574,7 +6605,7 @@ namespace CheckUP.gui
                         rc.Sort2 = "11";
                         cc.rcdb.insertRCheckUp(rc);
                     }
-                    
+
                 }
 
                 //Sgot
@@ -6595,12 +6626,13 @@ namespace CheckUP.gui
                             if (rc.Sex.Equals("1"))//male
                             {
                                 rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgotMale].ToString().Replace("@", " ");
-                            }else
+                            }
+                            else
                             {
                                 rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgotFeMale].ToString().Replace("@", " ");
                             }
                         }
-                        
+
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.liverSgot].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -6671,7 +6703,7 @@ namespace CheckUP.gui
                                             }
                                         }
                                     }
-                                    
+
                                 }
                                 else
                                 {
@@ -6691,7 +6723,7 @@ namespace CheckUP.gui
                             chksgot = true;
                         }
                     }
-                    
+
 
                     //Sgpt
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.liverSgpt] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.liverSgpt].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -6746,7 +6778,8 @@ namespace CheckUP.gui
                                                 rc.Remark = "ต่ำกว่ามาตรฐาน";
                                             }
                                         }
-                                    }else
+                                    }
+                                    else
                                     {
                                         if (rc.Sex.Equals("1"))//male
                                         {
@@ -6785,7 +6818,7 @@ namespace CheckUP.gui
                                             }
                                         }
                                     }
-                                    
+
                                 }
                                 else
                                 {
@@ -6875,7 +6908,7 @@ namespace CheckUP.gui
                             chksgot = true;
                         }
                     }
-                                        
+
 
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "การตรวจ (SGPT)";
@@ -6887,7 +6920,7 @@ namespace CheckUP.gui
                     {
                         rc.LabName = "สรุป ";
                     }
-                    
+
                     //rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.sugarSummary].ToString();
                     rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.liverSummary].ToString();
                     //rc.LabResult = "";
@@ -6903,7 +6936,7 @@ namespace CheckUP.gui
                     rc.Sort2 = "13";
                     cc.rcdb.insertRCheckUp(rc);
                 }
-                
+
 
                 //Choles
                 if (int.Parse(cuc.ChoSuccess) > 0)
@@ -6981,7 +7014,7 @@ namespace CheckUP.gui
                         rc.Sort2 = "11";
                         cc.rcdb.insertRCheckUp(rc);
                     }
-                    
+
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ldl] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ldl].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -7054,13 +7087,13 @@ namespace CheckUP.gui
                         rc.Sort2 = "13";
                         cc.rcdb.insertRCheckUp(rc);
                     }
-                    
+
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.hdl] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.hdl].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Cholesterol)";
                         rc.LabName = "HDL ";
-                        
+
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.hdl].ToString();
                         //rc.Remark = dtAll.Rows[i][cc.ccpdb.ccp.cholesterolSummary].ToString();
                         rc.LInter = "การแปลผล";
@@ -7129,7 +7162,7 @@ namespace CheckUP.gui
                                 rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
                             }
                         }
-                        
+
 
                         rc.StatusLab = "cho";
                         rc.Sort1 = "10172";
@@ -7184,13 +7217,13 @@ namespace CheckUP.gui
                         {
                             rc.Remark = "ผิดปกติ";
                         }
-                        
+
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
                         rc.LInterNormal = "ผิดปกติ";
                         rc.LNormal = "ค่าปกติ";
                         rc.lResult = "ผลการตรวจ";
-                        rc.LTypeLab = "ประเภทการตรวจ HBsAg";                     
+                        rc.LTypeLab = "ประเภทการตรวจ HBsAg";
                         rc.StatusLab = "other1";
                         rc.Sort1 = "101810";
                         rc.Sort2 = "10";
@@ -7245,7 +7278,7 @@ namespace CheckUP.gui
                         rc.LInterNormal = "ผิดปกติ";
                         rc.LNormal = "ค่าปกติ";
                         rc.lResult = "ผลการตรวจ";
-                        rc.LTypeLab = "ประเภทการตรวจ HBsAb";                        
+                        rc.LTypeLab = "ประเภทการตรวจ HBsAb";
                         rc.StatusLab = "other1";
                         rc.Sort1 = "101811";
                         rc.Sort2 = "10";
@@ -7299,7 +7332,7 @@ namespace CheckUP.gui
                         //{
                         //    rc.Remark = "ผิดปกติ";
                         //}
-                        
+
                         rc.StatusLab = "other1";
                         rc.Sort1 = "101812";
                         rc.Sort2 = "10";
@@ -7351,7 +7384,7 @@ namespace CheckUP.gui
                         //}
                         //else
                         //{
-                            rc.LabName = "สรุป ";
+                        rc.LabName = "สรุป ";
                         //}
 
                         //rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.sugarSummary].ToString();
@@ -7427,7 +7460,7 @@ namespace CheckUP.gui
                         catch (Exception ex)
                         {
                             rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
-                        }                        
+                        }
 
                         rc.StatusLab = "other1";
                         rc.Sort1 = "1018121";
@@ -7789,14 +7822,14 @@ namespace CheckUP.gui
                         {
                             rc.Remark = "แปลผลไม่ได้ " + rc.LabResult;
                         }
-                        
+
                         rc.StatusLab = "other1";
                         rc.Sort1 = "101813";
                         rc.Sort2 = "16";
                         cc.rcdb.insertRCheckUp(rc);
                         ca199 = true;
                     }
-                    
+
                 }
 
                 //Lung
@@ -7847,7 +7880,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Lung)";
                         rc.LabName = "FvcPer ";
-                        rc.LabNormal = ">"+cc.dtccpvn.Rows[0][cc.ccpdb.ccp.lungFvcPer].ToString().Replace("@", " ");
+                        rc.LabNormal = ">" + cc.dtccpvn.Rows[0][cc.ccpdb.ccp.lungFvcPer].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.lungFvcPer].ToString();
                         try
                         {
@@ -7963,7 +7996,7 @@ namespace CheckUP.gui
                         rc.Sort2 = "16";
                         cc.rcdb.insertRCheckUp(rc);
                     }
-                    
+
 
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "การตรวจ (Lung)";
@@ -8552,7 +8585,7 @@ namespace CheckUP.gui
                         rc.Sort2 = "19";
                         cc.rcdb.insertRCheckUp(rc);
                     }
-                    
+
 
                     //rc.Id = r.Next().ToString();
                     //rc.LabGroup = "การตรวจ (Eye)";
@@ -9157,7 +9190,7 @@ namespace CheckUP.gui
                         rc.Sort2 = "36";
                         cc.rcdb.insertRCheckUp(rc);
                     }
-                    
+
 
                 }
                 //StoolExam
@@ -9266,7 +9299,7 @@ namespace CheckUP.gui
                             rc.Sort2 = "11";
                             cc.rcdb.insertRCheckUp(rc);
                         }
-                        
+
                     }
 
                     rc.Id = r.Next().ToString();
@@ -9430,14 +9463,6 @@ namespace CheckUP.gui
             pB1.Visible = false;
             cc.rcdb.conn.CloseConnection();
             label86.Text = System.DateTime.Now.ToShortTimeString();
-            
-
-            DataTable dt = new DataTable();
-            dt = cc.rcdb.selectAll();
-            FrmReport frm = new FrmReport(cc);
-            frm.setReportCheckUp(cuc, dt);
-            frm.ShowDialog(this);
-
         }
 
         private void dgvPE_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
