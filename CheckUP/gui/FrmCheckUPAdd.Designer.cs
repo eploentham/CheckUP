@@ -211,7 +211,8 @@
             this.label95 = new System.Windows.Forms.Label();
             this.label96 = new System.Windows.Forms.Label();
             this.tabPage12 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnMini2 = new System.Windows.Forms.Button();
+            this.btnMIni1 = new System.Windows.Forms.Button();
             this.btnPrintPE = new System.Windows.Forms.Button();
             this.btnPrintXray = new System.Windows.Forms.Button();
             this.chkStoolExamTyphoid = new System.Windows.Forms.RadioButton();
@@ -276,7 +277,6 @@
             this.txtCntSuccess = new System.Windows.Forms.TextBox();
             this.label123 = new System.Windows.Forms.Label();
             this.btnExcel1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -2195,8 +2195,8 @@
             // 
             // tabPage12
             // 
-            this.tabPage12.Controls.Add(this.button2);
-            this.tabPage12.Controls.Add(this.button1);
+            this.tabPage12.Controls.Add(this.btnMini2);
+            this.tabPage12.Controls.Add(this.btnMIni1);
             this.tabPage12.Controls.Add(this.btnPrintPE);
             this.tabPage12.Controls.Add(this.btnPrintXray);
             this.tabPage12.Controls.Add(this.chkStoolExamTyphoid);
@@ -2214,15 +2214,27 @@
             this.tabPage12.Text = "Print";
             this.tabPage12.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnMini2
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button1.Location = new System.Drawing.Point(410, 294);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(197, 34);
-            this.button1.TabIndex = 78;
-            this.button1.Text = " พิมพ์ เล่มเล็ก A4 Form  หน้า";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnMini2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnMini2.Location = new System.Drawing.Point(410, 334);
+            this.btnMini2.Name = "btnMini2";
+            this.btnMini2.Size = new System.Drawing.Size(197, 34);
+            this.btnMini2.TabIndex = 79;
+            this.btnMini2.Text = " พิมพ์ เล่มเล็ก mini 2";
+            this.btnMini2.UseVisualStyleBackColor = true;
+            this.btnMini2.Click += new System.EventHandler(this.btnMini2_Click);
+            // 
+            // btnMIni1
+            // 
+            this.btnMIni1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnMIni1.Location = new System.Drawing.Point(410, 294);
+            this.btnMIni1.Name = "btnMIni1";
+            this.btnMIni1.Size = new System.Drawing.Size(197, 34);
+            this.btnMIni1.TabIndex = 78;
+            this.btnMIni1.Text = " พิมพ์ เล่มเล็ก mini 1";
+            this.btnMIni1.UseVisualStyleBackColor = true;
+            this.btnMIni1.Click += new System.EventHandler(this.btnMIni1_Click);
             // 
             // btnPrintPE
             // 
@@ -2919,16 +2931,6 @@
             this.btnExcel1.UseVisualStyleBackColor = true;
             this.btnExcel1.Click += new System.EventHandler(this.btnExcel1_Click);
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button2.Location = new System.Drawing.Point(410, 334);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(197, 34);
-            this.button2.TabIndex = 79;
-            this.button2.Text = " พิมพ์ เล่มเล็ก A4 Form  หลัง";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // FrmCheckUPAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3260,7 +3262,7 @@
         private System.Windows.Forms.RadioButton chkStoolExamTyphoid;
         private System.Windows.Forms.Button btnPrintPE;
         private System.Windows.Forms.Button btnPrintXray;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnMIni1;
+        private System.Windows.Forms.Button btnMini2;
     }
 }

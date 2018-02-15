@@ -127,7 +127,72 @@ namespace CheckUP
                 chk = ex.Message.ToString();
             }
         }
+        public void setReportCheckUpMini1(CustCheckUp cuc, DataTable dt)
+        {
+            String chk = "";
+            CrystalDecisions.CrystalReports.Engine.ReportDocument rpt = new CrystalDecisions.CrystalReports.Engine.ReportDocument();
+            try
+            {
+                cc.lw.WriteLog("rpt.setReportCheckUp OK ");
+                rpt.Load(cc.initC.PathReport + "CheckUp_mini_1.rpt");
+                cc.lw.WriteLog("rpt.setReportCheckUp OK Load" + cc.initC.PathReport + "CheckUp_mini_1.rpt");
+                rpt.SetDataSource(dt);
+                cc.lw.WriteLog("rpt.setReportCheckUp OK SetDataSource");
+                //        //rpt.SetDataSource(dt2);
+                //        //ParameterField myParam = new ParameterField();
+                //        //myParam.Name = "header1";
+                //        //myParam.
 
+                rpt.SetParameterValue("line1", "ผลตรวจสุขภาพประจำปี " + cuc.YearId);
+                rpt.SetParameterValue("compName", "โรงพยาบาล อรวรรณ");
+                rpt.SetParameterValue("compAddress", "8/8 หมู่ 6 ต.แพรกษา อ.เมือง จ.สมุทรปราการ 10280 โทร : 02-3342555  Fax.02-3342684");
+
+
+                rpt.SetParameterValue("custName", cuc.CustNameT);
+                //rpt.SetParameterValue("year_id",cuc.YearId);
+
+                this.crystalReportViewer1.ReportSource = rpt;
+                this.crystalReportViewer1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                chk = ex.Message.ToString();
+                cc.lw.WriteLog("rpt.setReportCheckUp Error " + chk);
+            }
+        }
+        public void setReportCheckUpMini2(CustCheckUp cuc, DataTable dt)
+        {
+            String chk = "";
+            CrystalDecisions.CrystalReports.Engine.ReportDocument rpt = new CrystalDecisions.CrystalReports.Engine.ReportDocument();
+            try
+            {
+                cc.lw.WriteLog("rpt.setReportCheckUp OK ");
+                rpt.Load(cc.initC.PathReport + "CheckUp_mini_2.rpt");
+                cc.lw.WriteLog("rpt.setReportCheckUp OK Load" + cc.initC.PathReport + "CheckUp_mini_2.rpt");
+                rpt.SetDataSource(dt);
+                cc.lw.WriteLog("rpt.setReportCheckUp OK SetDataSource");
+                //        //rpt.SetDataSource(dt2);
+                //        //ParameterField myParam = new ParameterField();
+                //        //myParam.Name = "header1";
+                //        //myParam.
+
+                //rpt.SetParameterValue("line1", "ผลตรวจสุขภาพประจำปี " + cuc.YearId);
+                //rpt.SetParameterValue("compName", "โรงพยาบาล อรวรรณ");
+                //rpt.SetParameterValue("compAddress", "8/8 หมู่ 6 ต.แพรกษา อ.เมือง จ.สมุทรปราการ 10280 โทร : 02-3342555  Fax.02-3342684");
+
+
+                rpt.SetParameterValue("custName", cuc.CustNameT);
+                //rpt.SetParameterValue("year_id",cuc.YearId);
+
+                this.crystalReportViewer1.ReportSource = rpt;
+                this.crystalReportViewer1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                chk = ex.Message.ToString();
+                cc.lw.WriteLog("rpt.setReportCheckUp Error " + chk);
+            }
+        }
         public void setReportCheckUp(CustCheckUp cuc, DataTable dt)
         {
             String chk = "";
@@ -147,6 +212,7 @@ namespace CheckUP
                 rpt.SetParameterValue("line1", "ผลตรวจสุขภาพประจำปี "+ cuc.YearId);
                 rpt.SetParameterValue("compName", "โรงพยาบาล อรวรรณ");
                 rpt.SetParameterValue("compAddress", "8/8 หมู่ 6 ต.แพรกษา อ.เมือง จ.สมุทรปราการ 10280 โทร : 02-3342555  Fax.02-3342684");
+
 
                 rpt.SetParameterValue("custName", cuc.CustNameT);
                 //rpt.SetParameterValue("year_id",cuc.YearId);
@@ -244,6 +310,8 @@ namespace CheckUP
                 cc.lw.WriteLog("rpt.setReportCheckUpXRays OK Load" + cc.initC.PathReport + "XrayDetailPrint.rpt");
                 rpt.SetDataSource(dt);
                 rpt.SetParameterValue("line1", "ผลตรวจสุขภาพประจำปี 2557");
+                //rpt.SetParameterValue("compName", "โรงพยาบาล บางนา5");
+                //rpt.SetParameterValue("compAddress", "55 หมู่4 ถนนเทพารักษ์ ตำบลบางพลีใหญ่ อำเภอบางพลี จังหวัดสมุทรปราการ 10540");
                 rpt.SetParameterValue("compName", "โรงพยาบาล บางนา5");
                 rpt.SetParameterValue("compAddress", "55 หมู่4 ถนนเทพารักษ์ ตำบลบางพลีใหญ่ อำเภอบางพลี จังหวัดสมุทรปราการ 10540");
 
