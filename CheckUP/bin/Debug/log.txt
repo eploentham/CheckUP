@@ -2111,6 +2111,14 @@ Failed to load database information.
 2/2/2018 10:13 PM->rpt.setReportCheckUp OK 
 2/2/2018 10:13 PM->rpt.setReportCheckUp OK LoadC:\source\bangna\CheckUP\CheckUP\report\CheckUpPrint3.rpt
 2/2/2018 10:13 PM->rpt.setReportCheckUp OK SetDataSource
+<<<<<<< HEAD
+2/4/2018 6:44 AM->FrmCheckUPAdd.btnPrint_Click 01 
+2/4/2018 6:44 AM->FrmCheckUPAdd.btnPrint_Click 02 
+2/4/2018 6:44 AM->FrmCheckUPAdd.btnPrint_Click 03 
+2/4/2018 6:44 AM->rpt.setReportCheckUp OK 
+2/4/2018 6:44 AM->rpt.setReportCheckUp OK LoadC:\source\bangna\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+2/4/2018 6:44 AM->rpt.setReportCheckUp OK SetDataSource
+=======
 2/4/2018 11:55 AM->FrmCheckUPAdd.btnPrint_Click 01 
 2/4/2018 11:55 AM->FrmCheckUPAdd.btnPrint_Click 02 
 2/4/2018 11:55 AM->FrmCheckUPAdd.btnPrint_Click 03 
@@ -2380,3 +2388,4 @@ Failed to load database information.
 2/15/2018 5:02 PM->rpt.setReportCheckUp OK LoadC:\source\bangna\CheckUP\CheckUP\report\CheckUp_mini_2.rpt
 2/15/2018 5:02 PM->rpt.setReportCheckUp OK SetDataSource
 2/15/2018 5:02 PM->rpt.setReportCheckUp Error Invalid index. (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+>>>>>>> origin/master
