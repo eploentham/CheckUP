@@ -4750,6 +4750,7 @@ namespace CheckUP.gui
                         rc.Sort2 = "10";
                         //rc.LabNormal = dtN.Rows[0][cc.ccpvndb.ccpvn.cbcHb].ToString();
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCBCHbRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcHct] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcHct].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -4860,6 +4861,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1010";
                         rc.Sort2 = "11";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCBCHctRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcWbc] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcWbc].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -4910,6 +4912,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1010";
                         rc.Sort2 = "13";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCBCWbcRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcNeutrophil] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcNeutrophil].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -4960,6 +4963,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1010";
                         rc.Sort2 = "14";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCBCNeutrophilRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcEosinophil] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcEosinophil].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5010,6 +5014,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1010";
                         rc.Sort2 = "15";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCBCEosinophilRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcBasophil] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcBasophil].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5060,6 +5065,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1010";
                         rc.Sort2 = "16";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCBCBasophilRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcLymphocyte] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcLymphocyte].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5110,6 +5116,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1010";
                         rc.Sort2 = "17";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCBCLymphocyteRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcMonocyte] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcMonocyte].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5160,6 +5167,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1010";
                         rc.Sort2 = "18";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCBCMonocyteRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcRbc] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcRbc].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5270,6 +5278,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1010";
                         rc.Sort2 = "19";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCBCRbcRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcMcv] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcMcv].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5350,6 +5359,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1010";
                         rc.Sort2 = "20";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCBCMcvRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcMch] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcMch].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5400,6 +5410,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1010";
                         rc.Sort2 = "21";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCBCMchRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcMchc] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcMchc].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5451,6 +5462,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1010";
                         rc.Sort2 = "22";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCBCMchcRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcPlateletCount] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcPlateletCount].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5526,6 +5538,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1010";
                         rc.Sort2 = "24";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCBCPlateletCountRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcRbcMorpholog] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcRbcMorpholog].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5602,6 +5615,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1010";
                         rc.Sort2 = "26";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCBCRbcMorphologRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     rc.Id = r.Next().ToString();
@@ -8626,6 +8640,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "10";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiAcetoneRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiAluminium] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiAluminium].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8646,6 +8661,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "11";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiAluminiumRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiAmmonia] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiAmmonia].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8666,6 +8682,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "12";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiAmmoniaRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiAntimony] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiAntimony].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8686,6 +8703,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "13";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiAntimonyRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiAntimony] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiAntimony].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8705,7 +8723,7 @@ namespace CheckUP.gui
                         rc.StatusLab = "toxi";
                         rc.Sort1 = "1022";
                         rc.Sort2 = "13";
-                        cc.rcdb.insertRCheckUp(rc);
+                        //cc.rcdb.insertRCheckUp(rc);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiArsenic] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiArsenic].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8726,6 +8744,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "14";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiArsenicRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiBenzene] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiBenzene].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8746,6 +8765,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "15";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiBenzeneRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiCadmium] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiCadmium].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8766,6 +8786,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "16";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiCadmiumRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiChromium] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiChromium].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8786,6 +8807,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "17";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiChromiumRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiCopper] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiCopper].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8806,6 +8828,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "18";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiCopperRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiEthanol] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiEthanol].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8826,6 +8849,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "19";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiEthanolRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiFluoride] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiFluoride].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8846,6 +8870,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "20";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiFluorideRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiFomaldehyde] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiFomaldehyde].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8866,6 +8891,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "21";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiFomaldehydeRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiHexane] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiHexane].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8886,6 +8912,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "22";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiHexaneRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiHippuric] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiHippuric].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8906,6 +8933,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "23";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiHippuricRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiIPA] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiIPA].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8926,6 +8954,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "24";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiIPARemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiKetone] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiKetone].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8946,6 +8975,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "25";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiKetoneRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiLead] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiLead].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8989,6 +9019,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "26";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiLeadRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiMandelic] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiMandelic].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9009,6 +9040,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "27";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiMandelicRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiManganese] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiManganese].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9029,6 +9061,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "28";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiManganeseRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiMercury] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiMercury].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9049,6 +9082,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "29";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiMercuryRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiMethanol] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiMethanol].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9069,6 +9103,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "30";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiMethanolRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiMethyl] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiMethyl].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9089,6 +9124,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "31";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiMethanolRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiNickel] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiNickel].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9109,6 +9145,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "32";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiNickelRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiPhenol] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiPhenol].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9129,6 +9166,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "33";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiPhenolRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiTin] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiTin].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9149,6 +9187,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "34";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiTinRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiTrichloroethylene] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiTrichloroethylene].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9169,6 +9208,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "35";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiTrichloroethyleneRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiZinc] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiZinc].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9189,8 +9229,8 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "36";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiZincRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
-
 
                 }
                 //StoolExam

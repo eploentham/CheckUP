@@ -19,7 +19,8 @@ namespace CheckUP.objdb
         public OleDbConnection cntemp = new OleDbConnection();
         public int portnumber = 0;
         public String UName = "", User1 = "", SS = "";
-        public OleDbConnection _mainConnection = new OleDbConnection();
+        //public OleDbConnection _mainConnection = new OleDbConnection();
+        public SqlConnection _mainConnection = new SqlConnection();
         public MySql.Data.MySqlClient.MySqlConnection cMysql;
 
         public int _rowsAffected = 0;
@@ -45,57 +46,60 @@ namespace CheckUP.objdb
         public ConnectDB(InitConfig i)
         {
             initc = i;
-            if (initc.use32Bit.Equals("yes"))
-            {
-                if (initc.StatusServer.ToLower().Equals("yes"))
-                {
-                    _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\cemp.mdb;Persist Security Info=False";
-                }
-                else
-                {
-                    _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\cemp.mdb;Persist Security Info=False";
-                }
-            }
-            else
-            {
-                if (initc.StatusServer.ToLower().Equals("yes"))
-                {
-                    if (initc.connectDatabaseServer.ToLower().Equals("yes"))
-                    {
-                        cMysql = new MySql.Data.MySqlClient.MySqlConnection();
-                        cMysql.ConnectionString = "server=" + initc.ServerIP + ";uid=" + initc.User + ";pwd=" + initc.Password + ";database=test;";
-                    }
-                    else
-                    {
-                        if (Environment.Is64BitOperatingSystem)
-                        {
-                            _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
-                            _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\CheckUP.mdb;Persist Security Info=False";
-                        }
-                        else
-                        {
-                            _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
-                            _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\CheckUP.mdb;Persist Security Info=False";
-                        }
-                    }
-                }
-                else
-                {
-                    if (Environment.Is64BitOperatingSystem)
-                    {
-                        //_mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
-                        //_mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\lottory.mdb;Persist Security Info=False";
-                        _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + "\\\\" +initc.IPServer+"\\" + initc.ConnectShareData + "\\Database\\checkup.accdb;Persist Security Info=False";
-                    }
-                    else
-                    {
-                        //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
-                        //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\lottory.mdb;Persist Security Info=False";
-                        _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + "\\\\" + initc.IPServer + "\\" + initc.ConnectShareData + "\\Database\\checkup.mdb;Persist Security Info=False";
-                    }
-                }
-            }
-            
+            //if (initc.use32Bit.Equals("yes"))
+            //{
+            //    if (initc.StatusServer.ToLower().Equals("yes"))
+            //    {
+            //        _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\cemp.mdb;Persist Security Info=False";
+            //    }
+            //    else
+            //    {
+            //        _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\cemp.mdb;Persist Security Info=False";
+            //    }
+            //}
+            //else
+            //{
+            //    if (initc.StatusServer.ToLower().Equals("yes"))
+            //    {
+            //        if (initc.connectDatabaseServer.ToLower().Equals("yes"))
+            //        {
+            //            cMysql = new MySql.Data.MySqlClient.MySqlConnection();
+            //            cMysql.ConnectionString = "server=" + initc.ServerIP + ";uid=" + initc.User + ";pwd=" + initc.Password + ";database=test;";
+            //        }
+            //        else
+            //        {
+            //            if (Environment.Is64BitOperatingSystem)
+            //            {
+            //                _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
+            //                _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\CheckUP.mdb;Persist Security Info=False";
+            //            }
+            //            else
+            //            {
+            //                _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
+            //                _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\CheckUP.mdb;Persist Security Info=False";
+            //            }
+            //        }
+            //    }
+            //    else
+            //    {
+            //        if (Environment.Is64BitOperatingSystem)
+            //        {
+            //            //_mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
+            //            //_mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\lottory.mdb;Persist Security Info=False";
+            //            _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + "\\\\" +initc.IPServer+"\\" + initc.ConnectShareData + "\\Database\\checkup.accdb;Persist Security Info=False";
+            //        }
+            //        else
+            //        {
+            //            //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
+            //            //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\lottory.mdb;Persist Security Info=False";
+            //            _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + "\\\\" + initc.IPServer + "\\" + initc.ConnectShareData + "\\Database\\checkup.mdb;Persist Security Info=False";
+            //        }
+            //    }
+            //}
+            //SqlConnection connBIT = new SqlConnection();
+            //connMainHIS.ConnectionString = GetConfig(hostName);
+            _mainConnection.ConnectionString = "Server=" + initc.Host + ";Database=" + initc.Database + ";Uid=" + initc.User + ";Pwd=" + initc.Password + ";Connection Timeout=300;";
+
             //_mainConnection = new OleDbConnection();
             //_mainConnection.ConnectionString = GetConfig("Main.ConnectionString");
 
@@ -120,17 +124,18 @@ namespace CheckUP.objdb
             }
             else
             {
-                _mainConnection = new OleDbConnection();
-                //_mainConnection.ConnectionString = GetConfig("Main.ConnectionString");
-                if (Environment.Is64BitOperatingSystem)
-                {
-                    _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\\source\\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
-                }
-                else
-                {
-                    _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
-                }
+                //_mainConnection = new OleDbConnection();
+                ////_mainConnection.ConnectionString = GetConfig("Main.ConnectionString");
+                //if (Environment.Is64BitOperatingSystem)
+                //{
+                //    _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\\source\\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
+                //}
+                //else
+                //{
+                //    _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
+                //}
                 //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
+                _mainConnection.ConnectionString = "Server=" + initc.Host + ";Database=" + initc.Database + ";Uid=" + initc.User + ";Pwd=" + initc.Password + ";Connection Timeout=300;";
                 _isDisposed = false;
             }
         }
@@ -170,7 +175,8 @@ namespace CheckUP.objdb
                 }
                 else
                 {
-                    OleDbDataAdapter adapter = new OleDbDataAdapter(sql, _mainConnection);
+                    //OleDbDataAdapter adapter = new OleDbDataAdapter(sql, _mainConnection);
+                    SqlDataAdapter adapter = new SqlDataAdapter(sql, _mainConnection);
                     //cmdToExecute.Connection = _mainConnection;
                     try
                     {
@@ -193,7 +199,8 @@ namespace CheckUP.objdb
             }
             else
             {
-                OleDbDataAdapter adapter = new OleDbDataAdapter(sql, _mainConnection);
+                //OleDbDataAdapter adapter = new OleDbDataAdapter(sql, _mainConnection);
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, _mainConnection);
                 //cmdToExecute.Connection = _mainConnection;
                 try
                 {
@@ -243,7 +250,8 @@ namespace CheckUP.objdb
                 }
                 else
                 {
-                    OleDbDataAdapter adapter = new OleDbDataAdapter(sql, _mainConnection);
+                    //OleDbDataAdapter adapter = new OleDbDataAdapter(sql, _mainConnection);
+                    SqlDataAdapter adapter = new SqlDataAdapter(sql, _mainConnection);
                     try
                     {
                         _mainConnection.Open();
@@ -265,7 +273,8 @@ namespace CheckUP.objdb
             }
             else
             {
-                OleDbDataAdapter adapter = new OleDbDataAdapter(sql, _mainConnection);
+                //OleDbDataAdapter adapter = new OleDbDataAdapter(sql, _mainConnection);
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, _mainConnection);
                 try
                 {
                     _mainConnection.Open();
@@ -281,7 +290,7 @@ namespace CheckUP.objdb
                     _mainConnection.Close();
                     //cmdToExecute.Dispose();
                     adapter.Dispose();
-                }
+                }                
             }
             //return toReturn;
         }
@@ -313,7 +322,8 @@ namespace CheckUP.objdb
                 }
                 else
                 {
-                    OleDbCommand cmdToExecute = new OleDbCommand();
+                    //OleDbCommand cmdToExecute = new OleDbCommand();
+                    SqlCommand cmdToExecute = new SqlCommand();
                     cmdToExecute.CommandText = sql;
                     cmdToExecute.CommandType = CommandType.Text;
                     cmdToExecute.Connection = _mainConnection;
@@ -338,7 +348,8 @@ namespace CheckUP.objdb
             }
             else
             {
-                OleDbCommand cmdToExecute = new OleDbCommand();
+                //OleDbCommand cmdToExecute = new OleDbCommand();
+                SqlCommand cmdToExecute = new SqlCommand();
                 cmdToExecute.CommandText = sql;
                 cmdToExecute.CommandType = CommandType.Text;
                 cmdToExecute.Connection = _mainConnection;
@@ -388,7 +399,8 @@ namespace CheckUP.objdb
                 }
                 else
                 {
-                    OleDbCommand cmdToExecute = new OleDbCommand();
+                    //OleDbCommand cmdToExecute = new OleDbCommand();
+                    SqlCommand cmdToExecute = new SqlCommand();
                     cmdToExecute.CommandText = sql;
                     cmdToExecute.CommandType = CommandType.Text;
                     cmdToExecute.Connection = _mainConnection;
@@ -412,7 +424,8 @@ namespace CheckUP.objdb
             }
             else
             {
-                OleDbCommand cmdToExecute = new OleDbCommand();
+                //OleDbCommand cmdToExecute = new OleDbCommand();
+                SqlCommand cmdToExecute = new SqlCommand();
                 cmdToExecute.CommandText = sql;
                 cmdToExecute.CommandType = CommandType.Text;
                 cmdToExecute.Connection = _mainConnection;

@@ -28,10 +28,34 @@ namespace CheckUP.object1
         public String summaryPhysicalExam="", PeResult="";
 
         public String StoolExamColor = "", StoolExamAppearance = "", StoolExamWbc = "", StoolExamRbc = "", StoolExamParasite = "", StoolExamSummary = "", StoolExamCulture = "", StoolExamTyphoidO = "", StoolExamTyphoidH = "", StoolExamCultureSummary = "";
-        
-        public String ToxiLead = "", ToxiAluminium = "", ToxiCadmium = "", ToxiMercury = "", ToxiTin = "", ToxiCopper = "", ToxiManganese = "", ToxiZinc = "", ToxiAmmonia = "";
-        public String ToxiHippuric = "", ToxiMethyl = "", ToxiAcetone="", ToxiNickel="", ToxiChromium="", ToxiPhenol="", ToxiKetone="", ToxiBenzene="", ToxiMandelic="", ToxiMethanol="";
-        public String ToxiEthanol="", ToxiIPA="", ToxiArsenic="", ToxiHexane="", ToxiFomaldehyde="", ToxiTrichloroethylene="", ToxiAntimony="", ToxiFluoride="";
+
+        public String ToxiLead = "", ToxiLeadRemark = "", ToxiLeadLabName = "", ToxiLeadLabNormal = "";
+        public String ToxiAluminium = "", ToxiAluminiumRemark = "", ToxiAluminiumLabName = "", ToxiAluminiumLabNormal = "";
+        public String ToxiCadmium = "", ToxiCadmiumRemark = "", ToxiCadmiumLabName = "", ToxiCadmiumLabNormal = "";
+        public String ToxiMercury = "", ToxiMercuryRemark = "", ToxiMercuryLabName = "", ToxiMercuryLabNormal = "";
+        public String ToxiTin = "", ToxiTinRemark = "", ToxiTinLabName = "", ToxiTinLabNormal = "";
+        public String ToxiCopper = "", ToxiCopperRemark = "", ToxiCopperLabName = "", ToxiCopperLabNormal = "";
+        public String ToxiManganese = "", ToxiManganeseRemark = "", ToxiManganeseLabName = "", ToxiManganeseLabNormal = "";
+        public String ToxiZinc = "", ToxiZincRemark = "", ToxiZincLabName = "", ToxiZincLabNormal = "";
+        public String ToxiAmmonia = "", ToxiAmmoniaRemark = "", ToxiAmmoniaLabName = "", ToxiAmmoniaLabNormal = "";
+        public String ToxiHippuric = "", ToxiHippuricRemark = "", ToxiHippuricLabName = "", ToxiHippuricLabNormal = "";
+        public String ToxiMethyl = "", ToxiMethylRemark = "", ToxiMethylLabName = "", ToxiMethylLabNormal = "";
+        public String ToxiAcetone = "", ToxiAcetoneRemark = "", ToxiAcetoneLabName = "", ToxiAcetoneLabNormal = "";
+        public String ToxiNickel = "", ToxiNickelRemark = "", ToxiNickelLabName = "", ToxiNickelLabNormal = "";
+        public String ToxiChromium = "", ToxiChromiumRemark = "", ToxiChromiumLabName = "", ToxiChromiumLabNormal = "";
+        public String ToxiPhenol = "", ToxiPhenolRemark = "", ToxiPhenolLabName = "", ToxiPhenolLabNormal = "";
+        public String ToxiKetone = "", ToxiKetoneRemark = "", ToxiKetoneLabName = "", ToxiKetoneLabNormal = "";
+        public String ToxiBenzene = "", ToxiBenzeneRemark = "", ToxiBenzeneLabName = "", ToxiBenzeneLabNormal = "";
+        public String ToxiMandelic = "", ToxiMandelicRemark = "", ToxiMandelicLabName = "", ToxiMandelicLabNormal = "";
+        public String ToxiMethanol = "", ToxiMethanolRemark = "", ToxiMethanolLabName = "", ToxiMethanolLabNormal = "";
+        public String ToxiEthanol = "", ToxiEthanolRemark = "", ToxiEthanolLabName = "", ToxiEthanolLabNormal = "";
+        public String ToxiIPA = "", ToxiIPARemark = "", ToxiIPALabName = "", ToxiIPALabNormal = "";
+        public String ToxiArsenic = "", ToxiArsenicRemark = "", ToxiArsenicLabName = "", ToxiArsenicLabNormal = "";
+        public String ToxiHexane = "", ToxiHexaneRemark = "", ToxiHexaneLabName = "", ToxiHexaneLabNormal = "";
+        public String ToxiFomaldehyde = "", ToxiFomaldehydeRemark = "", ToxiFomaldehydeLabName = "", ToxiFomaldehydeLabNormal = "";
+        public String ToxiTrichloroethylene = "", ToxiTrichloroethyleneRemark = "", ToxiTrichloroethyleneLabName = "", ToxiTrichloroethyleneLabNormal = "";
+        public String ToxiAntimony = "", ToxiAntimonyRemark = "", ToxiAntimonyLabName = "", ToxiAntimonyLabNormal = "";
+        public String ToxiFluoride = "", ToxiFluorideRemark = "", ToxiFluorideLabName = "", ToxiFluorideLabNormal = "";
                 
         //public String toxicologyLead="",toxicologyMercury="",toxicologyBenzene="",toxicologyXylene="";
 
@@ -93,21 +117,24 @@ namespace CheckUP.object1
         public String hdl="", ldl = "", ChoLDLResult = "", ChoLDLsummary = "", ChoHDL = "", ChoHDLResult = "", ChoHDLsummary = "";
 
         public String calcium="";
-        public String cbcHb="";
-        public String cbcHct="";
-        public String cbcWbc="";
-        public String cbcNeutrophil="";
-        public String cbcLymphocyte="";
-        public String cbcEosinophil="";
-        public String cbcMonocyte="";
-        public String cbcBasophil="", cbcBact="";
-        public String cbcPlateletCount="";
-        public String cbcRbcMorpholog="";
+        public String cbcHb="", cbcHbRemark="", cbcHbLabName="", cbcHbLabNormal="";
+        public String cbcHct="", cbcHctRemark = "", cbcHctLabName = "", cbcHctLabNormal = "";
+        public String cbcWbc="", cbcWbcRemark = "", cbcWbcLabName = "", cbcWbcLabNormal = "";
+        public String cbcNeutrophil="", cbcNeutrophilRemark = "", cbcNeutrophilLabName = "", cbcNeutrophilLabNormal = "";
+        public String cbcLymphocyte="", cbcLymphocyteRemark = "", cbcLymphocyteLabName = "", cbcLymphocyteLabNormal = "";
+        public String cbcEosinophil="", cbcEosinophilRemark = "", cbcEosinophilLabName = "", cbcEosinophilLabNormal = "";
+        public String cbcMonocyte="", cbcMonocyteRemark = "", cbcMonocyteLabName = "", cbcMonocyteLabNormal = "";
+        public String cbcBasophil = "", cbcBasophilRemark = "", cbcBasophilLabName = "", cbcBasophilLabNormal = "";
+        public String cbcBact="", cbcBactRemark = "", cbcBactLabName = "", cbcBactLabNormal = "";
+        public String cbcPlateletCount="", cbcPlateletCountRemark = "", cbcPlateletCountLabName = "", cbcPlateletCountLabNormal = "";
+        public String cbcRbcMorpholog="", cbcRbcMorphologRemark = "", cbcRbcMorphologLabName = "", cbcRbcMorphologLabNormal = "";
         public String cbcSummary="";
-        public String cbcMch = "";
-        public String cbcMchc = "";
-        public String cbcPlateletSmear = "", cbcPmn="";
-        public String cbcMcv = "";
+        public String cbcMch = "", cbcMchRemark = "", cbcMchLabName = "", cbcMchLabNormal = "";
+        public String cbcMchc = "", cbcMchcRemark = "", cbcMchcLabName = "", cbcMchcLabNormal = "";
+        public String cbcPlateletSmear = "", cbcPlateletSmearRemark = "", cbcPlateletSmearLabName = "", cbcPlateletSmearLabNormal = "";
+        public String cbcPmn="", cbcPmnRemark = "", cbcPmnLabName = "", cbcPmnLabNormal = "";
+        public String cbcMcv = "", cbcMcvRemark = "", cbcMcvLabName = "", cbcMcvLabNormal = "";
+        public String cbcRbc = "", cbcRbcRemark = "", cbcRbcLabName = "", cbcRbcLabNormal = "";
 
         public String urineColor="";
         public String urineAppearance="";
@@ -158,7 +185,7 @@ namespace CheckUP.object1
         public String statusCholes="";
         public String StatusHbsag="";
         
-        public String cbcRbc="";
+        
     
         public String Active="";
         public String eyeBio="";

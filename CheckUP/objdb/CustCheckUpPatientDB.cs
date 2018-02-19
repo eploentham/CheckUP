@@ -171,6 +171,45 @@ namespace CheckUP.objdb
             ccp.cbcSummary = "cbc_summary";
             ccp.cbcPmn = "cbc_pmn";
             ccp.cbcBact = "cbc_bact";
+            ccp.cbcMcvLabName = "cbc_mcv_lab_name";
+            ccp.cbcMcvLabNormal = "cbc_mcv_lab_normal";
+            ccp.cbcMcvRemark = "cbc_mcv_remark";
+            ccp.cbcHbLabName = "cbc_hb_lab_name";
+            ccp.cbcHbLabNormal = "cbc_hb_lab_normal";
+            ccp.cbcHbRemark = "cbc_hb_remark";
+            ccp.cbcHctLabName = "cbc_hct_lab_name";
+            ccp.cbcHctLabNormal = "cbc_hct_lab_normak";
+            ccp.cbcHctRemark = "cbc_hct_remark";
+            ccp.cbcWbcLabName = "cbc_wbc_lab_name";
+            ccp.cbcWbcLabNormal = "cbc_wbc_lab_normal";
+            ccp.cbcWbcRemark = "cbc_wbc_remark";
+            ccp.cbcNeutrophilLabName = "cbc_neutrophil_lab_name";
+            ccp.cbcNeutrophilLabNormal = "cbc_neutrophil_lab_normal";
+            ccp.cbcNeutrophilRemark = "cbc_neutrophil_remark";
+            ccp.cbcLymphocyteLabName = "cbc_lymphocyte_lab_name";
+            ccp.cbcLymphocyteLabNormal = "cbc_lymphocyte_lab_normal";
+            ccp.cbcLymphocyteRemark = "cbc_lymphocyte_remark";
+            ccp.cbcEosinophilLabName = "cbc_eosinophil_lab_name";
+            ccp.cbcEosinophilLabNormal = "cbc_eosinophil_lab_normal";
+            ccp.cbcEosinophilRemark = "cbc_eosinophil_remark";
+            ccp.cbcMonocyteLabName = "cbc_monocyte_lab_name";
+            ccp.cbcMonocyteLabNormal = "cbc_monocyte_lab_normal";
+            ccp.cbcMonocyteRemark = "cbc_monocyte_remark";
+            ccp.cbcBasophilLabName = "cbc_basophil_lab_name";
+            ccp.cbcBasophilLabNormal = "cbc_basophil_lab_normal";
+            ccp.cbcBasophilRemark = "cbc_basophil_remark";
+            ccp.cbcPlateletCountLabName = "cbc_platelet_count_lab_name";
+            ccp.cbcPlateletCountLabNormal = "cbc_platelet_count_lab_normal";
+            ccp.cbcPlateletCountRemark = "cbc_platelet_count_remark";
+            ccp.cbcRbcMorphologLabName = "cbc_rbc_morpholog_lab_name";
+            ccp.cbcRbcMorphologLabNormal = "cbc_rbc_morpholog_lab_normal";
+            ccp.cbcRbcMorphologRemark = "cbc_rbc_morpholog_remark";
+            ccp.cbcPmnLabName = "cbc_pmn_lab_name";
+            ccp.cbcPmnLabNormal = "cbc_pmn_lab_normal";
+            ccp.cbcPmnRemark = "cbc_pmn_remark";
+            ccp.cbcBactLabName = "cbc_bact_lab_name";
+            ccp.cbcBactLabNormal = "cbc_bact_lab_normal";
+            ccp.cbcBactRemark = "cbc_bact_remark";
 
             ccp.urineColor = "urine_color";
             ccp.urineAppearance = "urine_appearance";
@@ -341,6 +380,87 @@ namespace CheckUP.objdb
             ccp.ToxiTin = "toxi_tin";
             ccp.ToxiTrichloroethylene = "toxi_trichloroethylenel";
             ccp.ToxiZinc = "toxi_zinc";
+            ccp.ToxiAcetoneLabName = "toxi_acetone_lab_name";
+            ccp.ToxiAcetoneLabNormal = "toxi_acetone_lab_normal";
+            ccp.ToxiAcetoneRemark = "toxi_acetone_remark";
+            ccp.ToxiAluminiumLabName = "toxi_aluminium_lab_name";
+            ccp.ToxiAluminiumLabNormal = "toxi_aluminium_lab_normal";
+            ccp.ToxiAluminiumRemark = "toxi_aluminium_remark";
+            ccp.ToxiAmmoniaLabName = "toxi_ammonia_lab_name";
+            ccp.ToxiAmmoniaLabNormal = "toxi_ammonia_lab_normal";
+            ccp.ToxiAmmoniaRemark = "toxi_ammonia_remark";
+            ccp.ToxiAntimonyLabName = "toxi_antimony_lab_name";
+            ccp.ToxiAntimonyLabNormal = "toxi_antimony_lab_normal";
+            ccp.ToxiAntimonyRemark = "toxi_antimony_remark";
+            ccp.ToxiArsenicLabName = "toxi_arsenic_lab_name";
+            ccp.ToxiArsenicLabNormal = "toxi_arsenic_lab_normal";
+            ccp.ToxiArsenicRemark = "toxi_arsenic_remark";
+            ccp.ToxiBenzeneLabName = "toxi_benzene_lab_name";
+            ccp.ToxiBenzeneLabNormal = "toxi_benzene_normal";
+            ccp.ToxiBenzeneRemark = "toxi_benzene_remark";
+            ccp.ToxiCadmiumLabName = "toxi_cadmium_lab_name";
+            ccp.ToxiCadmiumLabNormal = "toxi_cadmium_lab_normal";
+            ccp.ToxiCadmiumRemark = "toxi_cadmium_remark";
+            ccp.ToxiChromiumLabName = "toxi_chromium_lab_name";
+            ccp.ToxiChromiumLabNormal = "toxi_chromium_lab_normal";
+            ccp.ToxiChromiumRemark = "toxi_chromium_remark";
+            ccp.ToxiCopperLabName = "toxi_copper_lab_name";
+            ccp.ToxiCopperLabNormal = "toxi_copper_lab_normal";
+            ccp.ToxiCopperRemark = "toxi_copper_remark";
+            ccp.ToxiEthanolLabName = "toxi_ethanol_lab_name";
+            ccp.ToxiEthanolLabNormal = "toxi_ethanol_lab_normal";
+            ccp.ToxiEthanolRemark = "toxi_ethanol_remark";
+            ccp.ToxiFluorideLabName = "toxi_fluoride_lab_name";
+            ccp.ToxiFluorideLabNormal = "toxi_fluoride_lab_normal";
+            ccp.ToxiFluorideRemark = "toxi_fluoride_remark";
+            ccp.ToxiFomaldehydeLabName = "toxi_fomaldehyde_lab_name";
+            ccp.ToxiFomaldehydeLabNormal = "toxi_fomaldehyde_lab_normal";
+            ccp.ToxiFomaldehydeRemark = "toxi_fomaldehyde_remark";
+            ccp.ToxiHexaneLabName = "toxi_hexane_lab_name";
+            ccp.ToxiHexaneLabNormal = "toxi_hexane_lab_normal";
+            ccp.ToxiHexaneRemark = "toxi_hexane_remark";
+            ccp.ToxiHippuricLabName = "toxi_hippuric_lab_name";
+            ccp.ToxiHippuricLabNormal = "toxi_hippuric_lab_normal";
+            ccp.ToxiHippuricRemark = "toxi_hippuric_remark";
+            ccp.ToxiIPALabName = "toxi_ipa_lab_name";
+            ccp.ToxiIPALabNormal = "toxi_ipa_lab_normal";
+            ccp.ToxiIPARemark = "toxi_ipa_remark";
+            ccp.ToxiKetoneLabName = "toxi_ketone_lab_name";
+            ccp.ToxiKetoneLabNormal = "toxi_ketone_lab_normal";
+            ccp.ToxiKetoneRemark = "toxi_ketone_remark";
+            ccp.ToxiLeadLabName = "toxi_lead_lab_name";
+            ccp.ToxiLeadLabNormal = "toxi_lead_lab_normal";
+            ccp.ToxiLeadRemark = "toxi_lead_remark";
+            ccp.ToxiMandelicLabName = "toxi_mandelic_lab_name";
+            ccp.ToxiMandelicLabNormal = "toxi_mandelic_lab_normal";
+            ccp.ToxiMandelicRemark = "toxi_mandelic_remark";
+            ccp.ToxiManganeseLabName = "toxi_manganese_lab_name";
+            ccp.ToxiManganeseLabNormal = "toxi_manganese_lab_normal";
+            ccp.ToxiManganeseRemark = "toxi_manganese_remark";
+            ccp.ToxiMercuryLabName = "toxi_mercury_lab_name";
+            ccp.ToxiMercuryLabNormal = "toxi_mercury_lab_normal";
+            ccp.ToxiMercuryRemark = "toxi_mercury_remark";
+            ccp.ToxiMethanolLabName = "toxi_methanol_lab_name";
+            ccp.ToxiMethanolLabNormal = "toxi_methanol_lab_normal";
+            ccp.ToxiMethanolRemark = "toxi_methanol_remark";
+            ccp.ToxiMethylLabName = "toxi_methyl_lab_name";
+            ccp.ToxiMethylLabNormal = "toxi_methyl_lab_normal";
+            ccp.ToxiMethylRemark = "toxi_methyl_remark";
+            ccp.ToxiNickelLabName = "toxi_nickel_lab_name";
+            ccp.ToxiNickelLabNormal = "toxi_nickel_lab_normal";
+            ccp.ToxiNickelRemark = "toxi_nickel_remark";
+            ccp.ToxiPhenolLabName = "toxi_phenol_lab_name";
+            ccp.ToxiPhenolLabNormal = "toxi_phenol_lab_normal";
+            ccp.ToxiPhenolRemark = "toxi_phenol_remark";
+            ccp.ToxiTinLabName = "toxi_tin_lab_name";
+            ccp.ToxiTinLabNormal = "toxi_tin_lab_normal";
+            ccp.ToxiTinRemark = "toxi_tin_remark";
+            ccp.ToxiTrichloroethyleneLabName = "toxi_trichloroethylenel_lab_name";
+            ccp.ToxiTrichloroethyleneLabNormal = "toxi_trichloroethylenel_lab_normal";
+            ccp.ToxiTrichloroethyleneRemark = "toxi_trichloroethylenel_remark";
+            ccp.ToxiZincLabName = "toxi_zinc_lab_name";
+            ccp.ToxiZincLabNormal = "toxi_zinc_lab_normal";
+            ccp.ToxiZincRemark = "toxi_zinc_remark";
 
             ccp.pkField = "patient_id";
             ccp.table = "t_cust_checkup_patient";
@@ -783,6 +903,703 @@ namespace CheckUP.objdb
                 ccp.cbcBact + "='" + bact + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateCBCHbRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.cbcHbLabName + "='" + labName + "' " +
+                ", "+ccp.cbcHbLabNormal + "='" + labNormal + "' " +
+                ", "+ccp.cbcHbRemark + "='" + remark + "' " +                
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateCBCHctRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.cbcHctLabName + "='" + labName + "' " +
+                ", " + ccp.cbcHctLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.cbcHctRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateCBCWbcRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.cbcWbcLabName + "='" + labName + "' " +
+                ", " + ccp.cbcWbcLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.cbcWbcRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateCBCNeutrophilRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.cbcNeutrophilLabName + "='" + labName + "' " +
+                ", " + ccp.cbcNeutrophilLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.cbcNeutrophilRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateCBCEosinophilRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.cbcEosinophilLabName + "='" + labName + "' " +
+                ", " + ccp.cbcEosinophilLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.cbcEosinophilRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateCBCBasophilRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.cbcBasophilLabName + "='" + labName + "' " +
+                ", " + ccp.cbcBasophilLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.cbcBasophilRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateCBCLymphocyteRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.cbcLymphocyteLabName + "='" + labName + "' " +
+                ", " + ccp.cbcLymphocyteLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.cbcLymphocyteRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateCBCMonocyteRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.cbcMonocyteLabName + "='" + labName + "' " +
+                ", " + ccp.cbcMonocyteLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.cbcMonocyteRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateCBCRbcRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.cbcRbcLabName + "='" + labName + "' " +
+                ", " + ccp.cbcRbcLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.cbcRbcRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateCBCMcvRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.cbcMcvLabName + "='" + labName + "' " +
+                ", " + ccp.cbcMcvLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.cbcMcvRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateCBCMchRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.cbcMchLabName + "='" + labName + "' " +
+                ", " + ccp.cbcMchLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.cbcMchRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateCBCMchcRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.cbcMchcLabName + "='" + labName + "' " +
+                ", " + ccp.cbcMchcLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.cbcMchcRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateCBCPlateletCountRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.cbcPlateletCountLabName + "='" + labName + "' " +
+                ", " + ccp.cbcPlateletCountLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.cbcPlateletCountRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateCBCRbcMorphologRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.cbcRbcMorphologLabName + "='" + labName + "' " +
+                ", " + ccp.cbcRbcMorphologLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.cbcRbcMorphologRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiAcetoneRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiAcetoneLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiAcetoneLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiAcetoneRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiAluminiumRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiAluminiumLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiAluminiumLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiAluminiumRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiAmmoniaRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiAmmoniaLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiAmmoniaLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiAmmoniaRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiAntimonyRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiAntimonyLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiAntimonyLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiAntimonyRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiArsenicRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiArsenicLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiArsenicLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiArsenicRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiBenzeneRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiBenzeneLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiBenzeneLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiBenzeneRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiCadmiumRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiCadmiumLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiCadmiumLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiCadmiumRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiChromiumRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiChromiumLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiChromiumLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiChromiumRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiCopperRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiCopperLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiCopperLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiCopperRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiEthanolRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiEthanolLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiEthanolLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiEthanolRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiFluorideRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiFluorideLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiFluorideLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiFluorideRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiFomaldehydeRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiFomaldehydeLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiFomaldehydeLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiFomaldehydeRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiHexaneRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiHexaneLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiHexaneLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiHexaneRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiHippuricRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiHippuricLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiHippuricLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiHippuricRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiIPARemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiIPALabName + "='" + labName + "' " +
+                ", " + ccp.ToxiIPALabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiIPARemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiKetoneRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiKetoneLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiKetoneLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiKetoneRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiLeadRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiLeadLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiLeadLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiLeadRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiMandelicRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiMandelicLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiMandelicLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiMandelicRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiManganeseRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiManganeseLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiManganeseLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiManganeseRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiMercuryRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiMercuryLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiMercuryLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiMercuryRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiMethanolRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiMethanolLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiMethanolLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiMethanolRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiMethylRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiMethylLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiMethylLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiMethylRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiNickelRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiNickelLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiNickelLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiNickelRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiPhenolRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiPhenolLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiPhenolLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiPhenolRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiTinRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiTinLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiTinLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiTinRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiTrichloroethyleneRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiTrichloroethyleneLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiTrichloroethyleneLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiTrichloroethyleneRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateToxiZincRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ToxiZincLabName + "='" + labName + "' " +
+                ", " + ccp.ToxiZincLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.ToxiZincRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql); ;
             }
             catch (Exception ex)
             {

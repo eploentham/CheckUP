@@ -196,6 +196,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckUpMini_1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="report\CheckUpMini_2.cs">
+      <DependentUpon>CheckUpMini_2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="report\CheckUpMini_2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckUpMini_2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="report\CheckUpPrint.cs">
       <DependentUpon>CheckUpPrint.rpt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -359,6 +367,17 @@
     </None>
     <None Include="report\CheckUpMini_1.xss">
       <DependentUpon>CheckUpMini_1.xsd</DependentUpon>
+    </None>
+    <None Include="report\CheckUpMini_2.xsc">
+      <DependentUpon>CheckUpMini_2.xsd</DependentUpon>
+    </None>
+    <None Include="report\CheckUpMini_2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CheckUpMini_2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="report\CheckUpMini_2.xss">
+      <DependentUpon>CheckUpMini_2.xsd</DependentUpon>
     </None>
     <None Include="report\CheckUpPrint3.rpt" />
     <None Include="report\CheckUpStickerDS.xsc">

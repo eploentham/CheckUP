@@ -163,6 +163,9 @@ namespace CheckUP.Control
             initC.ServerIP = iniFile.Read("host");
             initC.User = iniFile.Read("username");
             initC.Password = iniFile.Read("password");
+            initC.Port = iniFile.Read("port");
+            initC.Database = iniFile.Read("database");
+            initC.Host = initC.ServerIP;
 
             initC.PathData = iniFile.Read("pathimage");
             initC.pathImageLogo = iniFile.Read("pathimagelogo");

@@ -2389,3 +2389,30 @@ Failed to load database information.
 2/15/2018 5:02 PM->rpt.setReportCheckUp OK SetDataSource
 2/15/2018 5:02 PM->rpt.setReportCheckUp Error Invalid index. (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
 >>>>>>> origin/master
+2/19/2018 1:19 PM->FrmCheckUPAdd.btnPrint_Click 01 
+2/19/2018 1:19 PM->FrmCheckUPAdd.btnPrint_Click 02 
+2/19/2018 1:19 PM->FrmCheckUPAdd.btnPrint_Click 03 
+2/19/2018 1:24 PM->FrmCheckUPAdd.btnPrint_Click 01 
+2/19/2018 1:24 PM->FrmCheckUPAdd.btnPrint_Click 02 
+2/19/2018 1:24 PM->FrmCheckUPAdd.btnPrint_Click 03 
+2/19/2018 1:27 PM->FrmCheckUPAdd.btnPrint_Click 01 
+2/19/2018 1:27 PM->FrmCheckUPAdd.btnPrint_Click 02 
+2/19/2018 1:27 PM->FrmCheckUPAdd.btnPrint_Click 03 
+2/19/2018 1:28 PM->FrmCheckUPAdd.btnPrint_Click 01 
+2/19/2018 1:28 PM->FrmCheckUPAdd.btnPrint_Click 02 
+2/19/2018 1:28 PM->FrmCheckUPAdd.btnPrint_Click 03 
+2/19/2018 1:28 PM->FrmCheckUPAdd.btnPrint_Click 01 
+2/19/2018 1:28 PM->FrmCheckUPAdd.btnPrint_Click 02 
+2/19/2018 1:28 PM->FrmCheckUPAdd.btnPrint_Click 03 
+2/19/2018 1:30 PM->FrmCheckUPAdd.btnPrint_Click 01 
+2/19/2018 1:30 PM->FrmCheckUPAdd.btnPrint_Click 02 
+2/19/2018 1:30 PM->FrmCheckUPAdd.btnPrint_Click 03 
+2/19/2018 1:30 PM->rpt.setReportCheckUp OK 
+2/19/2018 1:30 PM->rpt.setReportCheckUp OK LoadC:\source\bangna\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+2/19/2018 1:30 PM->rpt.setReportCheckUp OK SetDataSource
+2/19/2018 1:49 PM->FrmCheckUPAdd.btnPrint_Click 01 
+2/19/2018 1:49 PM->FrmCheckUPAdd.btnPrint_Click 02 
+2/19/2018 1:49 PM->FrmCheckUPAdd.btnPrint_Click 03 
+2/19/2018 1:49 PM->rpt.setReportCheckUp OK 
+2/19/2018 1:49 PM->rpt.setReportCheckUp OK LoadC:\source\bangna\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+2/19/2018 1:49 PM->rpt.setReportCheckUp OK SetDataSource
