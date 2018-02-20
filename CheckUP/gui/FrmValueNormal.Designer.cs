@@ -132,6 +132,13 @@
             this.txtTriValue = new System.Windows.Forms.TextBox();
             this.label70 = new System.Windows.Forms.Label();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label162 = new System.Windows.Forms.Label();
+            this.txtChoLDLValueUpperSuggess = new System.Windows.Forms.TextBox();
+            this.txtChoLDLValueUpper = new System.Windows.Forms.TextBox();
+            this.txtChoLDLValueNormal = new System.Windows.Forms.TextBox();
+            this.label163 = new System.Windows.Forms.Label();
+            this.label180 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label150 = new System.Windows.Forms.Label();
             this.txtChoValueUpperSuggess = new System.Windows.Forms.TextBox();
@@ -391,13 +398,12 @@
             this.label160 = new System.Windows.Forms.Label();
             this.label161 = new System.Windows.Forms.Label();
             this.tabPage15 = new System.Windows.Forms.TabPage();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label162 = new System.Windows.Forms.Label();
-            this.txtChoLDLValueUpperSuggess = new System.Windows.Forms.TextBox();
-            this.txtChoLDLValueUpper = new System.Windows.Forms.TextBox();
-            this.txtChoLDLValueNormal = new System.Windows.Forms.TextBox();
-            this.label163 = new System.Windows.Forms.Label();
-            this.label180 = new System.Windows.Forms.Label();
+            this.txtUABil = new System.Windows.Forms.TextBox();
+            this.label181 = new System.Windows.Forms.Label();
+            this.txtUAUro = new System.Windows.Forms.TextBox();
+            this.label182 = new System.Windows.Forms.Label();
+            this.txtUANit = new System.Windows.Forms.TextBox();
+            this.label183 = new System.Windows.Forms.Label();
             this.tC.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
@@ -406,6 +412,7 @@
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage8.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabPage9.SuspendLayout();
             this.tabPage10.SuspendLayout();
@@ -416,7 +423,6 @@
             this.tabPage12.SuspendLayout();
             this.tabPage13.SuspendLayout();
             this.tabPage14.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tC
@@ -1051,6 +1057,12 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.txtUANit);
+            this.tabPage7.Controls.Add(this.label183);
+            this.tabPage7.Controls.Add(this.txtUAUro);
+            this.tabPage7.Controls.Add(this.label182);
+            this.tabPage7.Controls.Add(this.txtUABil);
+            this.tabPage7.Controls.Add(this.label181);
             this.tabPage7.Controls.Add(this.txtUAGlu);
             this.tabPage7.Controls.Add(this.label31);
             this.tabPage7.Controls.Add(this.txtUALeu);
@@ -1154,7 +1166,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label4.Location = new System.Drawing.Point(398, 244);
+            this.label4.Location = new System.Drawing.Point(392, 244);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 16);
             this.label4.TabIndex = 103;
@@ -1255,7 +1267,7 @@
             // 
             this.label63.AutoSize = true;
             this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label63.Location = new System.Drawing.Point(398, 198);
+            this.label63.Location = new System.Drawing.Point(392, 198);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(44, 16);
             this.label63.TabIndex = 80;
@@ -1265,7 +1277,7 @@
             // 
             this.label64.AutoSize = true;
             this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label64.Location = new System.Drawing.Point(398, 149);
+            this.label64.Location = new System.Drawing.Point(392, 149);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(34, 16);
             this.label64.TabIndex = 79;
@@ -1275,7 +1287,7 @@
             // 
             this.label54.AutoSize = true;
             this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label54.Location = new System.Drawing.Point(398, 101);
+            this.label54.Location = new System.Drawing.Point(392, 101);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(45, 16);
             this.label54.TabIndex = 78;
@@ -1285,7 +1297,7 @@
             // 
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label55.Location = new System.Drawing.Point(398, 54);
+            this.label55.Location = new System.Drawing.Point(392, 54);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(45, 16);
             this.label55.TabIndex = 77;
@@ -1495,6 +1507,72 @@
             this.tabPage8.TabIndex = 8;
             this.tabPage8.Text = "tabPage8";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label162);
+            this.groupBox4.Controls.Add(this.txtChoLDLValueUpperSuggess);
+            this.groupBox4.Controls.Add(this.txtChoLDLValueUpper);
+            this.groupBox4.Controls.Add(this.txtChoLDLValueNormal);
+            this.groupBox4.Controls.Add(this.label163);
+            this.groupBox4.Controls.Add(this.label180);
+            this.groupBox4.Location = new System.Drawing.Point(636, 129);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(483, 85);
+            this.groupBox4.TabIndex = 125;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "การแปรผล LDL";
+            // 
+            // label162
+            // 
+            this.label162.AutoSize = true;
+            this.label162.Location = new System.Drawing.Point(19, 52);
+            this.label162.Name = "label162";
+            this.label162.Size = new System.Drawing.Size(53, 13);
+            this.label162.TabIndex = 104;
+            this.label162.Text = "คำแนะนำ";
+            // 
+            // txtChoLDLValueUpperSuggess
+            // 
+            this.txtChoLDLValueUpperSuggess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtChoLDLValueUpperSuggess.Location = new System.Drawing.Point(102, 47);
+            this.txtChoLDLValueUpperSuggess.Name = "txtChoLDLValueUpperSuggess";
+            this.txtChoLDLValueUpperSuggess.Size = new System.Drawing.Size(369, 22);
+            this.txtChoLDLValueUpperSuggess.TabIndex = 102;
+            // 
+            // txtChoLDLValueUpper
+            // 
+            this.txtChoLDLValueUpper.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtChoLDLValueUpper.Location = new System.Drawing.Point(375, 19);
+            this.txtChoLDLValueUpper.Name = "txtChoLDLValueUpper";
+            this.txtChoLDLValueUpper.Size = new System.Drawing.Size(96, 22);
+            this.txtChoLDLValueUpper.TabIndex = 100;
+            // 
+            // txtChoLDLValueNormal
+            // 
+            this.txtChoLDLValueNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtChoLDLValueNormal.Location = new System.Drawing.Point(102, 19);
+            this.txtChoLDLValueNormal.Name = "txtChoLDLValueNormal";
+            this.txtChoLDLValueNormal.Size = new System.Drawing.Size(96, 22);
+            this.txtChoLDLValueNormal.TabIndex = 98;
+            // 
+            // label163
+            // 
+            this.label163.AutoSize = true;
+            this.label163.Location = new System.Drawing.Point(20, 24);
+            this.label163.Name = "label163";
+            this.label163.Size = new System.Drawing.Size(72, 13);
+            this.label163.TabIndex = 95;
+            this.label163.Text = "พิมพ์ ค่าปกติ :";
+            // 
+            // label180
+            // 
+            this.label180.AutoSize = true;
+            this.label180.Location = new System.Drawing.Point(241, 24);
+            this.label180.Name = "label180";
+            this.label180.Size = new System.Drawing.Size(124, 13);
+            this.label180.TabIndex = 97;
+            this.label180.Text = "พิมพ์ ค่าสูงกว่ามาตรฐาน :";
             // 
             // groupBox3
             // 
@@ -4129,71 +4207,59 @@
             this.tabPage15.Text = "tabPage15";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
-            // groupBox4
+            // txtUABil
             // 
-            this.groupBox4.Controls.Add(this.label162);
-            this.groupBox4.Controls.Add(this.txtChoLDLValueUpperSuggess);
-            this.groupBox4.Controls.Add(this.txtChoLDLValueUpper);
-            this.groupBox4.Controls.Add(this.txtChoLDLValueNormal);
-            this.groupBox4.Controls.Add(this.label163);
-            this.groupBox4.Controls.Add(this.label180);
-            this.groupBox4.Location = new System.Drawing.Point(636, 129);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(483, 85);
-            this.groupBox4.TabIndex = 125;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "การแปรผล LDL";
+            this.txtUABil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtUABil.Location = new System.Drawing.Point(845, 143);
+            this.txtUABil.Name = "txtUABil";
+            this.txtUABil.Size = new System.Drawing.Size(267, 22);
+            this.txtUABil.TabIndex = 112;
             // 
-            // label162
+            // label181
             // 
-            this.label162.AutoSize = true;
-            this.label162.Location = new System.Drawing.Point(19, 52);
-            this.label162.Name = "label162";
-            this.label162.Size = new System.Drawing.Size(53, 13);
-            this.label162.TabIndex = 104;
-            this.label162.Text = "คำแนะนำ";
+            this.label181.AutoSize = true;
+            this.label181.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label181.Location = new System.Drawing.Point(770, 144);
+            this.label181.Name = "label181";
+            this.label181.Size = new System.Drawing.Size(23, 16);
+            this.label181.TabIndex = 111;
+            this.label181.Text = "Bil";
             // 
-            // txtChoLDLValueUpperSuggess
+            // txtUAUro
             // 
-            this.txtChoLDLValueUpperSuggess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtChoLDLValueUpperSuggess.Location = new System.Drawing.Point(102, 47);
-            this.txtChoLDLValueUpperSuggess.Name = "txtChoLDLValueUpperSuggess";
-            this.txtChoLDLValueUpperSuggess.Size = new System.Drawing.Size(369, 22);
-            this.txtChoLDLValueUpperSuggess.TabIndex = 102;
+            this.txtUAUro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtUAUro.Location = new System.Drawing.Point(845, 198);
+            this.txtUAUro.Name = "txtUAUro";
+            this.txtUAUro.Size = new System.Drawing.Size(267, 22);
+            this.txtUAUro.TabIndex = 114;
             // 
-            // txtChoLDLValueUpper
+            // label182
             // 
-            this.txtChoLDLValueUpper.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtChoLDLValueUpper.Location = new System.Drawing.Point(375, 19);
-            this.txtChoLDLValueUpper.Name = "txtChoLDLValueUpper";
-            this.txtChoLDLValueUpper.Size = new System.Drawing.Size(96, 22);
-            this.txtChoLDLValueUpper.TabIndex = 100;
+            this.label182.AutoSize = true;
+            this.label182.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label182.Location = new System.Drawing.Point(770, 199);
+            this.label182.Name = "label182";
+            this.label182.Size = new System.Drawing.Size(30, 16);
+            this.label182.TabIndex = 113;
+            this.label182.Text = "Uro";
             // 
-            // txtChoLDLValueNormal
+            // txtUANit
             // 
-            this.txtChoLDLValueNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtChoLDLValueNormal.Location = new System.Drawing.Point(102, 19);
-            this.txtChoLDLValueNormal.Name = "txtChoLDLValueNormal";
-            this.txtChoLDLValueNormal.Size = new System.Drawing.Size(96, 22);
-            this.txtChoLDLValueNormal.TabIndex = 98;
+            this.txtUANit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtUANit.Location = new System.Drawing.Point(845, 247);
+            this.txtUANit.Name = "txtUANit";
+            this.txtUANit.Size = new System.Drawing.Size(267, 22);
+            this.txtUANit.TabIndex = 116;
             // 
-            // label163
+            // label183
             // 
-            this.label163.AutoSize = true;
-            this.label163.Location = new System.Drawing.Point(20, 24);
-            this.label163.Name = "label163";
-            this.label163.Size = new System.Drawing.Size(72, 13);
-            this.label163.TabIndex = 95;
-            this.label163.Text = "พิมพ์ ค่าปกติ :";
-            // 
-            // label180
-            // 
-            this.label180.AutoSize = true;
-            this.label180.Location = new System.Drawing.Point(241, 24);
-            this.label180.Name = "label180";
-            this.label180.Size = new System.Drawing.Size(124, 13);
-            this.label180.TabIndex = 97;
-            this.label180.Text = "พิมพ์ ค่าสูงกว่ามาตรฐาน :";
+            this.label183.AutoSize = true;
+            this.label183.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label183.Location = new System.Drawing.Point(770, 248);
+            this.label183.Name = "label183";
+            this.label183.Size = new System.Drawing.Size(24, 16);
+            this.label183.TabIndex = 115;
+            this.label183.Text = "Nit";
             // 
             // FrmValueNormal
             // 
@@ -4220,6 +4286,8 @@
             this.groupBox2.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tabPage9.ResumeLayout(false);
@@ -4240,8 +4308,6 @@
             this.tabPage13.PerformLayout();
             this.tabPage14.ResumeLayout(false);
             this.tabPage14.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -4618,5 +4684,11 @@
         private System.Windows.Forms.TextBox txtChoLDLValueNormal;
         private System.Windows.Forms.Label label163;
         private System.Windows.Forms.Label label180;
+        private System.Windows.Forms.TextBox txtUANit;
+        private System.Windows.Forms.Label label183;
+        private System.Windows.Forms.TextBox txtUAUro;
+        private System.Windows.Forms.Label label182;
+        private System.Windows.Forms.TextBox txtUABil;
+        private System.Windows.Forms.Label label181;
     }
 }

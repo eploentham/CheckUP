@@ -59,7 +59,12 @@ namespace CheckUP.gui
 
         int colOther1Cnt = 21;
 
+        
+
         int colLungRow = 0, colLungId = 1, colLungName = 2, colLungFvcPredic = 3, colLungFvcMeas = 4, colLungFvcPer = 5, colLungFev1Predic = 6, colLungFev1Meas = 7, colLungFev1Per = 8, colLungPerFev1 = 9, colLungSummary = 10;
+
+        
+
         int colLungCnt = 11;
 
         int colAudiogramRow = 0, colAudiogramId = 1, colAudiogramName = 2, colAudiogram500L = 3, colAudiogram1000L = 4, colAudiogram2000L = 5, colAudiogram3000L = 6, colAudiogram4000L = 7;
@@ -3864,9 +3869,17 @@ namespace CheckUP.gui
         }
         private void btnMini2_Click(object sender, EventArgs e)
         {
+            String rowNumber = "";
+            for(int i = (int)nmDPrintFirst.Value; i <= (int)nmDPrintEnd.Value; i++)
+            {
+                rowNumber += "'"+i+"',";
+            }
+            rowNumber = rowNumber.Length > 0 ? rowNumber.Substring(0, rowNumber.Length - 1) : "";
+            
             setPrint();
             DataTable dt = new DataTable();
-            dt = cc.rcdb.selectMini2();
+            //dt = cc.rcdb.selectMini2();
+            dt = cc.ccpdb.selectPrintByCucId(cuc.Id, rowNumber);
             FrmReport frm = new FrmReport(cc);
             frm.setReportCheckUpMini2(cuc, dt);
             frm.ShowDialog(this);
@@ -4259,7 +4272,6 @@ namespace CheckUP.gui
                 creatinineFemaleMax = Double.Parse(aa[1]);
                 creatinineFemaleUnit = creatinineFemale[1];
             }
-
 
             //UA Color
             String uacolor = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineColor].ToString();
@@ -4737,7 +4749,6 @@ namespace CheckUP.gui
                                     }
                                 }
                             }
-
                         }
                         catch (Exception ex)
                         {
@@ -5568,7 +5579,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1010";
                         rc.Sort2 = "25";
                         cc.rcdb.insertRCheckUp(rc);
-
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.cbcRbcMorphologLabName, rc.LabName
+                            , cc.ccpdb.ccp.cbcRbcMorphologLabNormal, rc.LabNormal
+                            , cc.ccpdb.ccp.cbcRbcMorphologRemark, rc.Remark);
+                    }
+                    if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcPmn] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcPmn].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
+                    {
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
                         rc.LabName = "PMN ";
@@ -5615,7 +5632,11 @@ namespace CheckUP.gui
                         rc.Sort1 = "1010";
                         rc.Sort2 = "26";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateCBCRbcMorphologRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        //cc.ccpdb.UpdateCBCPm(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.cbcPmnLabName, rc.LabName
+                            , cc.ccpdb.ccp.cbcPmnLabNormal, rc.LabNormal
+                            , cc.ccpdb.ccp.cbcPmnRemark, rc.Remark);
                     }
 
                     rc.Id = r.Next().ToString();
@@ -5739,6 +5760,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1012";
                         rc.Sort2 = "10";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateurineColorRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineAppearance] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineAppearance].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5767,6 +5789,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1012";
                         rc.Sort2 = "11";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateurineAppearanceRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urinePh] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urinePh].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5817,6 +5840,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1012";
                         rc.Sort2 = "12";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateurinePhRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineSugar] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineSugar].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5845,6 +5869,7 @@ namespace CheckUP.gui
                         rc.Sort1 = "1012";
                         rc.Sort2 = "13";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateurineSugarRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineProtein] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineProtein].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5873,6 +5898,10 @@ namespace CheckUP.gui
                         rc.Sort1 = "1012";
                         rc.Sort2 = "14";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineProteinLabName, rc.LabName
+                            , cc.ccpdb.ccp.urineProteinLabNormal, rc.LabNormal
+                            , cc.ccpdb.ccp.urineProteinRemark, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineSpGr] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineSpGr].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5923,6 +5952,10 @@ namespace CheckUP.gui
                         rc.Sort1 = "1012";
                         rc.Sort2 = "15";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineSpGrLabName, rc.LabName
+                            , cc.ccpdb.ccp.urineSpGrLabNormal, rc.LabNormal
+                            , cc.ccpdb.ccp.urineSpGrRemark, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineGlu] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineGlu].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5951,6 +5984,10 @@ namespace CheckUP.gui
                         rc.Sort1 = "1012";
                         rc.Sort2 = "16";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineGluLabName, rc.LabName
+                            , cc.ccpdb.ccp.urineGluLabNormal, rc.LabNormal
+                            , cc.ccpdb.ccp.urineGluRemark, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineBacteria] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineBacteria].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5981,6 +6018,10 @@ namespace CheckUP.gui
                         rc.Sort1 = "1012";
                         rc.Sort2 = "17";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineBacteriaLabName, rc.LabName
+                            , cc.ccpdb.ccp.urineBacteriaLabNormal, rc.LabNormal
+                            , cc.ccpdb.ccp.urineBacteriaRemark, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineBlood] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineBlood].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -6009,6 +6050,10 @@ namespace CheckUP.gui
                         rc.Sort1 = "1012";
                         rc.Sort2 = "18";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineBloodLabName, rc.LabName
+                            , cc.ccpdb.ccp.urineBloodLabNormal, rc.LabNormal
+                            , cc.ccpdb.ccp.urineBloodRemark, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineEpithelium] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineEpithelium].ToString().Equals("")) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineEpithelium].ToString().Equals("-")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -6060,6 +6105,10 @@ namespace CheckUP.gui
                         rc.Sort1 = "1012";
                         rc.Sort2 = "19";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineEpitheliumLabName, rc.LabName
+                            , cc.ccpdb.ccp.urineEpitheliumLabNormal, rc.LabNormal
+                            , cc.ccpdb.ccp.urineEpitheliumRemark, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineRbc] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineRbc].ToString().Equals("")) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineRbc].ToString().Equals("-")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -6113,6 +6162,10 @@ namespace CheckUP.gui
                         rc.Sort1 = "1012";
                         rc.Sort2 = "20";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineRbcLabName, rc.LabName
+                            , cc.ccpdb.ccp.urineRbcLabNormal, rc.LabNormal
+                            , cc.ccpdb.ccp.urineRbcRemark, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineWbc] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineWbc].ToString().Equals("")) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineWbc].ToString().Equals("-")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -6166,6 +6219,10 @@ namespace CheckUP.gui
                         rc.Sort1 = "1012";
                         rc.Sort2 = "21";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineWbcLabName, rc.LabName
+                            , cc.ccpdb.ccp.urineWbcLabNormal, rc.LabNormal
+                            , cc.ccpdb.ccp.urineWbcRemark, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineKetone] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineKetone].ToString().Equals("")) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineKetone].ToString().Equals("-")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -6194,6 +6251,10 @@ namespace CheckUP.gui
                         rc.Sort1 = "1012";
                         rc.Sort2 = "22";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineKetoneLabName, rc.LabName
+                            , cc.ccpdb.ccp.urineKetoneLabNormal, rc.LabNormal
+                            , cc.ccpdb.ccp.urineKetoneRemark, rc.Remark);
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineLeu] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineLeu].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -6222,6 +6283,103 @@ namespace CheckUP.gui
                         rc.Sort1 = "1012";
                         rc.Sort2 = "23";
                         cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineLeuLabName, rc.LabName
+                            , cc.ccpdb.ccp.urineLeuLabNormal, rc.LabNormal
+                            , cc.ccpdb.ccp.urineLeuRemark, rc.Remark);
+                    }
+                    if ((dtAll.Rows[i][cc.ccpdb.ccp.urineLeu] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineBil].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
+                    {
+                        rc.Id = r.Next().ToString();
+                        rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (Urine Analysis)";
+                        rc.LabName = "Bit ";
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineBil].ToString().Replace("@", " ");
+                        rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineBil].ToString();
+                        if (rc.LabResult.Trim().ToLower().Equals(ualeu.ToLower()))
+                        {
+                            rc.Remark = "ปกติ";
+                        }
+                        else
+                        {
+                            rc.Remark = "ผิดปกติ";
+                        }
+                        rc.LInter = "การแปลผล";
+                        rc.LInterAbnormal = "ปกติ";
+                        rc.LInterNormal = "ผิดปกติ";
+                        rc.LNormal = "ค่าปกติ";
+                        rc.lResult = "ผลการตรวจ";
+                        rc.LTypeLab = "ประเภทการตรวจปัสสาวะ (Urine Analysis)";
+                        //rc.Remark = "";
+                        rc.StatusLab = "ua";
+                        rc.Sort1 = "1012";
+                        rc.Sort2 = "24";
+                        cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineBilLabName, rc.LabName
+                            , cc.ccpdb.ccp.urineBilLabNormal, rc.LabNormal
+                            , cc.ccpdb.ccp.urineBilRemark, rc.Remark);
+                    }
+                    if ((dtAll.Rows[i][cc.ccpdb.ccp.urineLeu] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineNit].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
+                    {
+                        rc.Id = r.Next().ToString();
+                        rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (Urine Analysis)";
+                        rc.LabName = "Nit ";
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineNit].ToString().Replace("@", " ");
+                        rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineNit].ToString();
+                        if (rc.LabResult.Trim().ToLower().Equals(ualeu.ToLower()))
+                        {
+                            rc.Remark = "ปกติ";
+                        }
+                        else
+                        {
+                            rc.Remark = "ผิดปกติ";
+                        }
+                        rc.LInter = "การแปลผล";
+                        rc.LInterAbnormal = "ปกติ";
+                        rc.LInterNormal = "ผิดปกติ";
+                        rc.LNormal = "ค่าปกติ";
+                        rc.lResult = "ผลการตรวจ";
+                        rc.LTypeLab = "ประเภทการตรวจปัสสาวะ (Urine Analysis)";
+                        //rc.Remark = "";
+                        rc.StatusLab = "ua";
+                        rc.Sort1 = "1012";
+                        rc.Sort2 = "25";
+                        cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineNitLabName, rc.LabName
+                            , cc.ccpdb.ccp.urineNitLabNormal, rc.LabNormal
+                            , cc.ccpdb.ccp.urineNitRemark, rc.Remark);
+                    }
+                    if ((dtAll.Rows[i][cc.ccpdb.ccp.urineLeu] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineUro].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
+                    {
+                        rc.Id = r.Next().ToString();
+                        rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (Urine Analysis)";
+                        rc.LabName = "Uro ";
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineUro].ToString().Replace("@", " ");
+                        rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineUro].ToString();
+                        if (rc.LabResult.Trim().ToLower().Equals(ualeu.ToLower()))
+                        {
+                            rc.Remark = "ปกติ";
+                        }
+                        else
+                        {
+                            rc.Remark = "ผิดปกติ";
+                        }
+                        rc.LInter = "การแปลผล";
+                        rc.LInterAbnormal = "ปกติ";
+                        rc.LInterNormal = "ผิดปกติ";
+                        rc.LNormal = "ค่าปกติ";
+                        rc.lResult = "ผลการตรวจ";
+                        rc.LTypeLab = "ประเภทการตรวจปัสสาวะ (Urine Analysis)";
+                        //rc.Remark = "";
+                        rc.StatusLab = "ua";
+                        rc.Sort1 = "1012";
+                        rc.Sort2 = "26";
+                        cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineUroLabName, rc.LabName
+                            , cc.ccpdb.ccp.urineUroLabNormal, rc.LabNormal
+                            , cc.ccpdb.ccp.urineUroRemark, rc.Remark);
                     }
 
 
@@ -6240,7 +6398,7 @@ namespace CheckUP.gui
                     rc.Remark = "";
                     rc.StatusLab = "sum";
                     rc.Sort1 = "1012";
-                    rc.Sort2 = "24";
+                    rc.Sort2 = "27";
                     cc.rcdb.insertRCheckUp(rc);
                 }
 
@@ -11063,6 +11221,38 @@ namespace CheckUP.gui
             dt = cc.ccpdb.selectPEByCucId(txtId.Text);
             FrmReport frm = new FrmReport(cc);
             frm.setReportCheckUpXRay(cuc, dt);
+            frm.ShowDialog(this);
+        }
+        private void btnMini3_Click(object sender, EventArgs e)
+        {
+            String rowNumber = "";
+            for (int i = (int)nmDPrintFirst.Value; i <= (int)nmDPrintEnd.Value; i++)
+            {
+                rowNumber += "'" + i + "',";
+            }
+            rowNumber = rowNumber.Length > 0 ? rowNumber.Substring(0, rowNumber.Length - 1) : "";
+
+            setPrint();
+            DataTable dt = new DataTable();
+            dt = cc.ccpdb.selectPrintByCucId(cuc.Id, rowNumber);
+            FrmReport frm = new FrmReport(cc);
+            frm.setReportCheckUpMini3(cuc, dt);
+            frm.ShowDialog(this);
+        }
+        private void btnMini4_Click(object sender, EventArgs e)
+        {
+            String rowNumber = "";
+            for (int i = (int)nmDPrintFirst.Value; i <= (int)nmDPrintEnd.Value; i++)
+            {
+                rowNumber += "'" + i + "',";
+            }
+            rowNumber = rowNumber.Length > 0 ? rowNumber.Substring(0, rowNumber.Length - 1) : "";
+
+            setPrint();
+            DataTable dt = new DataTable();
+            dt = cc.ccpdb.selectPrintByCucId(cuc.Id, rowNumber);
+            FrmReport frm = new FrmReport(cc);
+            frm.setReportCheckUpMini3(cuc, dt);
             frm.ShowDialog(this);
         }
     }

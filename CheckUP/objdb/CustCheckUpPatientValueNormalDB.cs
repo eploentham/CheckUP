@@ -195,6 +195,10 @@ namespace CheckUP.objdb
             ccpvn.urineSummary = "urine_summary";
             ccpvn.urineResult = "urine_result";
             ccpvn.urineGlu = "urine_glu";
+            ccpvn.urineNit = "urine_nit";
+            ccpvn.urineBil = "urine_bil";
+            ccpvn.urineUro = "urine_uro";
+            ccpvn.urineLeu = "urine_leu";
 
             ccpvn.lungFvcPredic = "lung_fvc_predic";
             ccpvn.lungFvcMeas = "lung_fvc_meas";
@@ -299,7 +303,7 @@ namespace CheckUP.objdb
             //ccpvn.toxicologyMekOld = "toxicology_mek_old";
             //ccpvn.toxicologyAcetoneOld = "toxicology_acetone_old";
             //ccpvn.toxicologyTolueneOld = "toxicology_toluene_old";
-            ccpvn.urineLeu = "urine_leu";
+            
             ccpvn.urineOther = "urine_other";
             ccpvn.cultureStool = "culture_stool";
             ccpvn.cultureUrine = "culture_urine";
@@ -434,7 +438,8 @@ namespace CheckUP.objdb
             return chk;
         }
         public String UpdateUA(String Color, String Appe, String Sugar, String spgr, String pH,
-            String Protein, String Wbc, String Rbc, String Epi, String Bact, String ketone, String leu, String blood, String glu)
+            String Protein, String Wbc, String Rbc, String Epi, String Bact, String ketone, String leu, String blood
+            , String glu, String bil, String nit, String uro)
         {
             String chk = "", sql = "";
             try
@@ -452,7 +457,10 @@ namespace CheckUP.objdb
                 ccpvn.urineLeu + "='" + leu + "', " +
                 ccpvn.urineKetone + "='" + ketone + "', " +
                 ccpvn.urineBlood + "='" + blood + "', "+
-                ccpvn.urineGlu + "='" + glu + "' ";
+                ccpvn.urineGlu + "='" + glu + "' " +
+                ", "+ccpvn.urineBil + "='" + bil + "' " +
+                ", "+ccpvn.urineNit + "='" + nit + "' " +
+                ", "+ccpvn.urineUro + "='" + uro + "' " ;
                 chk = conn.ExecuteNonQuery(sql);
             }
             catch (Exception ex)

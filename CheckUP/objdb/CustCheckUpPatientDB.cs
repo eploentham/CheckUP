@@ -101,12 +101,39 @@ namespace CheckUP.objdb
             ccp.ekgExam = "ekg_exam";
 
             ccp.CAAFP = "ca_afp";
+            ccp.CAAFPLabName = "ca_afp_lab_name";
+            ccp.CAAFPLabNormal = "ca_afp_lab_normal";
+            ccp.CAAFPRemark = "ca_afp_remark";
+
             ccp.CACEA = "ca_cea";
+            ccp.CACEALabName = "ca_cea_lab_name";
+            ccp.CACEALabNormal = "ca_cea_lab_normal";
+            ccp.CACEARemark = "ca_cea_remark";
+
             ccp.CAPSA = "ca_psa";
+            ccp.CAPSALabName = "ca_psa_lab_name";
+            ccp.CAPSALabNormal = "ca_psa_lab_normal";
+            ccp.CAPSARemark = "ca_psa_remark";
+
             ccp.CAHCG = "ca_hcg";
+            ccp.CAHCGLabName = "ca_hcg_lab_name";
+            ccp.CAHCGLabNormal = "ca_hcg_lab_normal";
+            ccp.CAHCGRemark = "ca_hcg_remark";
+
             ccp.CA153 = "ca_153";
+            ccp.CA153LabName = "ca_153_lab_name";
+            ccp.CA153LabNormal = "ca_153_lab_normal";
+            ccp.CA153Remark = "ca_153_remark";
+
             ccp.CA125 = "ca_125";
+            ccp.CA125LabName = "ca_125_lab_name";
+            ccp.CA125LabNormal = "ca_125_lab_normal";
+            ccp.CA125Remark = "ca_125_remark";
+
             ccp.CA199 = "ca_19_9";
+            ccp.CA199LabName = "ca_19_9_lab_name";
+            ccp.CA199LabNormal = "ca_19_9_lab_normal";
+            ccp.CA199Remark = "ca_19_9_remark";
 
             ccp.thyroidT3 = "thyroid_t3";
             ccp.thyroidT4 = "thyroid_t4";
@@ -129,28 +156,72 @@ namespace CheckUP.objdb
             ccp.disscusExam = "disscus_exam";
             ccp.suggestExam = "suggest_exam";
             ccp.sugar = "sugar";
+            ccp.sugarLabName = "sugar_lab_name";
+            ccp.sugarLabNormal = "sugar_lab_normal";
+            ccp.sugarRemark = "sugar_remark";
+
             ccp.sugarDiagnosis = "sugar_diagnosis";
             ccp.sugarSummary = "sugar_summary";
             ccp.sugarSuggess = "sugar_suggess";
             ccp.kidneyBun = "kidney_bun";
+            ccp.kidneyBunLabName = "kidney_bun_lab_name";
+            ccp.kidneyBunLabNormal = "kidney_bun_lab_normal";
+            ccp.kidneyBunRemark = "kidney_bun_remark";
+
             ccp.kidneyCreatinine = "kidney_creatinine";
+            ccp.kidneyCreatinineLabName = "kidney_creatinine_lab_name";
+            ccp.kidneyCreatinineLabNormal = "kidney_creatinine_lab_normal";
+            ccp.kidneyCreatinineRemark = "kidney_creatinine_remark";
+
             ccp.kidneyResult = "kidney_result";
             ccp.kidneySummary = "kidney_summary";
             ccp.liverSgot = "liver_sgot";
+            ccp.liverSgotLabName = "liver_sgot_lab_name";
+            ccp.liverSgotLabNormal = "liver_sgot_lab_normal";
+            ccp.liverSgotRemark = "liver_sgot_remark";
+
             ccp.liverSgpt = "liver_sgpt";
+            ccp.liverSgptLabName = "liver_sgpt_lab_name";
+            ccp.liverSgptLabNormal = "liver_sgpt_lab_normal";
+            ccp.liverSgptRemark = "liver_sgpt_remark";
+
             ccp.liverAlp = "liver_alp";
+            ccp.liverAlpLabName = "liver_alp_lab_name";
+            ccp.liverAlpLabNormal = "liver_alp_lab_normal";
+            ccp.liverAlpRemark = "liver_alp_remark";
+
             ccp.liverResult = "liver_result";
             ccp.liverSummary = "liver_summary";
             ccp.liverAlkaline = "liver_alkaline";
 
             ccp.uricAcid = "uric_acid";
+            ccp.uricAcidLabName = "uric_acid_lab_name";
+            ccp.uricAcidLabNormal = "uric_acid_lab_normal";
+            ccp.uricAcidRemark = "uric_acid_remark";
+
             //ccp.uricAcidFemale = "uric_acid_female";
             ccp.cholesterol = "cholesterol";
+            ccp.cholesterolLabName = "cholesterol_lab_name";
+            ccp.cholesterolLabNormal = "cholesterol_lab_normal";
+            ccp.cholesterolRemark = "cholesterol_remark";
+
             ccp.triglyceride = "triglyceride";
+            ccp.triglycerideLabName = "triglyceride_lab_name";
+            ccp.triglycerideLabNormal = "triglyceride_lab_normal";
+            ccp.triglycerideRemark = "triglyceride_remark";
+
             ccp.triglycerideResult = "triglyceride_result";
             ccp.triglycerideSummary = "triglyceride_summary";
             ccp.hdl = "hdl_male";
+            ccp.hdlLabName = "hdl_lab_name";
+            ccp.hdlLabNormal = "hdl_normal";
+            ccp.hdlRemark = "hdl_remark";
+
             ccp.ldl = "ldl";
+            ccp.ldlLabName = "ldl_lab_name";
+            ccp.ldlLabNormal = "ldl_lab_normal";
+            ccp.ldlRemark = "ldl_remark";
+
             ccp.ChoLDLResult = "ldl_result";
             ccp.ChoLDLsummary = "ldl_summary";
             ccp.ChoHDLResult = "hdl_result";
@@ -178,7 +249,7 @@ namespace CheckUP.objdb
             ccp.cbcHbLabNormal = "cbc_hb_lab_normal";
             ccp.cbcHbRemark = "cbc_hb_remark";
             ccp.cbcHctLabName = "cbc_hct_lab_name";
-            ccp.cbcHctLabNormal = "cbc_hct_lab_normak";
+            ccp.cbcHctLabNormal = "cbc_hct_lab_normal";
             ccp.cbcHctRemark = "cbc_hct_remark";
             ccp.cbcWbcLabName = "cbc_wbc_lab_name";
             ccp.cbcWbcLabNormal = "cbc_wbc_lab_normal";
@@ -210,6 +281,15 @@ namespace CheckUP.objdb
             ccp.cbcBactLabName = "cbc_bact_lab_name";
             ccp.cbcBactLabNormal = "cbc_bact_lab_normal";
             ccp.cbcBactRemark = "cbc_bact_remark";
+            ccp.cbcRbcLabName = "cbc_rbc_lab_name";
+            ccp.cbcRbcLabNormal = "cbc_rbc_lab_normal";
+            ccp.cbcRbcRemark = "cbc_rbc_remark";
+            ccp.cbcMchLabName = "cbc_mch_lab_name";
+            ccp.cbcMchLabNormal = "cbc_mch_lab_normal";
+            ccp.cbcMchRemark = "cbc_mch_remark";
+            ccp.cbcMchcLabName = "cbc_mchc_lab_name";
+            ccp.cbcMchcLabNormal = "cbc_mchc_lab_normal";
+            ccp.cbcMchcRemark = "cbc_mchc_remark";
 
             ccp.urineColor = "urine_color";
             ccp.urineAppearance = "urine_appearance";
@@ -225,13 +305,62 @@ namespace CheckUP.objdb
             ccp.urineEpithelium = "urine_epithelium";
             ccp.urineSummary = "urine_summary";
             ccp.urineResult = "urine_result";
-            ccp.urineGlu = "urine_glu";
-            ccp.urineKetone = "urine_ketone";
-            ccp.urineBlood = "urine_blood";
+            ccp.urineGlu = "urine_glu";            
             ccp.urineNit = "urine_nit";
             ccp.urineLeu = "urine_leu";
             ccp.urineUro = "urine_uro";
             ccp.urineBil = "urine_bil";
+            ccp.urineColorLabName = "urine_color_lab_name";
+            ccp.urineColorLabNormal = "urine_color_lab_normal";
+            ccp.urineColorRemark = "urine_color_remark";
+            ccp.urineAppearanceLabName = "urine_appearance_lab_name";
+            ccp.urineAppearanceLabNormal = "urine_appearance_lab_normal";
+            ccp.urineAppearanceRemark = "urine_appearance_remark";
+            ccp.urinePhLabName = "urine_ph_lab_name";
+            ccp.urinePhLabNormal = "urine_ph_lab_normal";
+            ccp.urinePhRemark = "urine_ph_remark";
+            ccp.urineSpGrLabName = "urine_sp_gr_lab_name";
+            ccp.urineSpGrLabNormal = "urine_sp_gr_lab_normal";
+            ccp.urineSpGrRemark = "urine_sp_gr_remark";
+            ccp.urineSugarLabName = "urine_sugar_lab_name";
+            ccp.urineSugarLabNormal = "urine_sugar_lab_normal";
+            ccp.urineSugarRemark = "urine_sugar_remark";
+            ccp.urineProteinLabName = "urine_protein_lab_name";
+            ccp.urineProteinLabNormal = "urine_protein_lab_normal";
+            ccp.urineProteinRemark = "urine_protein_remark";
+            ccp.urineBloodLabName = "urine_blood_lab_name";
+            ccp.urineBloodLabNormal = "urine_blood_lab_normal";
+            ccp.urineBloodRemark = "urine_blood_remark";
+            ccp.urineKetoneLabName = "urine_ketone_lab_name";
+            ccp.urineKetoneLabNormal = "urine_ketone_lab_normal";
+            ccp.urineKetoneRemark = "urine_ketone_remark";
+            ccp.urineBacteriaLabName = "urine_bacteria_lab_name";
+            ccp.urineBacteriaLabNormal = "urine_bacteria_lab_normal";
+            ccp.urineBacteriaRemark = "urine_bacteria_remark";
+            ccp.urineWbcLabName = "urine_wbc_lab_name";
+            ccp.urineWbcLabNormal = "urine_wbc_lab_normal";
+            ccp.urineWbcRemark = "urine_wbc_remark";
+            ccp.urineRbcLabName = "urine_rbc_lab_name";
+            ccp.urineRbcLabNormal = "urine_rbc_lab_normal";
+            ccp.urineRbcRemark = "urine_rbc_remark";
+            ccp.urineEpitheliumLabName = "urine_epithelium_lab_name";
+            ccp.urineEpitheliumLabNormal = "urine_epithelium_lab_normal";
+            ccp.urineEpitheliumRemark = "urine_epithelium_remark";
+            ccp.urineGluLabName = "urine_glu_lab_name";
+            ccp.urineGluLabNormal = "urine_glu_lab_normal";
+            ccp.urineGluRemark = "urine_glu_remark";
+            ccp.urineNitLabName = "urine_nit_lab_name";
+            ccp.urineNitLabNormal = "urine_nit_lab_normal";
+            ccp.urineNitRemark = "urine_nit_remark";
+            ccp.urineLeuLabName = "urine_leu_lab_name";
+            ccp.urineLeuLabNormal = "urine_leu_lab_normal";
+            ccp.urineLeuRemark = "urine_leu_remark";
+            ccp.urineUroLabName = "urine_uro_lab_name";
+            ccp.urineUroLabNormal = "urine_uro_lab_normal";
+            ccp.urineUroRemark = "urine_uro_remark";
+            ccp.urineBilLabName = "urine_bil_lab_name";
+            ccp.urineBilLabNormal = "urine_bil_lab_normal";
+            ccp.urineBilRemark = "urine_bil_remark";
 
             ccp.lungFvcPredic = "lung_fvc_predic";
             ccp.lungFvcMeas = "lung_fvc_meas";
@@ -492,6 +621,19 @@ namespace CheckUP.objdb
             String sql = "";
             DataTable dt = new DataTable();
             sql = "Select * From " + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "' Order By " + ccp.rowNumber;
+            //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectPrintByCucId(String cucId, String rowNumber)
+        {
+            String sql = "", where="";
+            DataTable dt = new DataTable();
+            where = " and row_number in (" + rowNumber + ") ";
+            sql = "Select * From " + ccp.table + " " +
+                "Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "' " + where + 
+                " Order By " + ccp.rowNumber;
             //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
             dt = conn.selectData(sql);
 
@@ -919,7 +1061,7 @@ namespace CheckUP.objdb
                 ", "+ccp.cbcHbLabNormal + "='" + labNormal + "' " +
                 ", "+ccp.cbcHbRemark + "='" + remark + "' " +                
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -936,7 +1078,7 @@ namespace CheckUP.objdb
                 ", " + ccp.cbcHctLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.cbcHctRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -953,7 +1095,7 @@ namespace CheckUP.objdb
                 ", " + ccp.cbcWbcLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.cbcWbcRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -970,7 +1112,7 @@ namespace CheckUP.objdb
                 ", " + ccp.cbcNeutrophilLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.cbcNeutrophilRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -987,7 +1129,7 @@ namespace CheckUP.objdb
                 ", " + ccp.cbcEosinophilLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.cbcEosinophilRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1004,7 +1146,7 @@ namespace CheckUP.objdb
                 ", " + ccp.cbcBasophilLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.cbcBasophilRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1021,7 +1163,7 @@ namespace CheckUP.objdb
                 ", " + ccp.cbcLymphocyteLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.cbcLymphocyteRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1038,7 +1180,7 @@ namespace CheckUP.objdb
                 ", " + ccp.cbcMonocyteLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.cbcMonocyteRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1055,7 +1197,7 @@ namespace CheckUP.objdb
                 ", " + ccp.cbcRbcLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.cbcRbcRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1072,7 +1214,7 @@ namespace CheckUP.objdb
                 ", " + ccp.cbcMcvLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.cbcMcvRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1089,7 +1231,7 @@ namespace CheckUP.objdb
                 ", " + ccp.cbcMchLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.cbcMchRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1106,7 +1248,7 @@ namespace CheckUP.objdb
                 ", " + ccp.cbcMchcLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.cbcMchcRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1123,7 +1265,7 @@ namespace CheckUP.objdb
                 ", " + ccp.cbcPlateletCountLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.cbcPlateletCountRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1140,7 +1282,7 @@ namespace CheckUP.objdb
                 ", " + ccp.cbcRbcMorphologLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.cbcRbcMorphologRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1157,7 +1299,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiAcetoneLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiAcetoneRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1174,7 +1316,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiAluminiumLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiAluminiumRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1191,7 +1333,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiAmmoniaLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiAmmoniaRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1208,7 +1350,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiAntimonyLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiAntimonyRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1225,7 +1367,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiArsenicLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiArsenicRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1242,7 +1384,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiBenzeneLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiBenzeneRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1259,7 +1401,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiCadmiumLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiCadmiumRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1276,7 +1418,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiChromiumLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiChromiumRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1293,7 +1435,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiCopperLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiCopperRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1310,7 +1452,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiEthanolLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiEthanolRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1327,7 +1469,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiFluorideLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiFluorideRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1344,7 +1486,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiFomaldehydeLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiFomaldehydeRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1361,7 +1503,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiHexaneLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiHexaneRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1378,7 +1520,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiHippuricLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiHippuricRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1395,7 +1537,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiIPALabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiIPARemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1412,7 +1554,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiKetoneLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiKetoneRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1429,7 +1571,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiLeadLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiLeadRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1446,7 +1588,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiMandelicLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiMandelicRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1463,7 +1605,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiManganeseLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiManganeseRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1480,7 +1622,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiMercuryLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiMercuryRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1497,7 +1639,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiMethanolLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiMethanolRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1514,7 +1656,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiMethylLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiMethylRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1531,7 +1673,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiNickelLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiNickelRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1548,7 +1690,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiPhenolLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiPhenolRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1565,7 +1707,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiTinLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiTinRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1582,7 +1724,7 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiTrichloroethyleneLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiTrichloroethyleneRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {
@@ -1599,7 +1741,109 @@ namespace CheckUP.objdb
                 ", " + ccp.ToxiZincLabNormal + "='" + labNormal + "' " +
                 ", " + ccp.ToxiZincRemark + "='" + remark + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQueryNoClose(sql); ;
+                chk = conn.ExecuteNonQueryNoClose(sql);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateurineColorRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.urineColorLabName + "='" + labName + "' " +
+                ", " + ccp.urineColorLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.urineColorRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateurineAppearanceRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.urineAppearanceLabName + "='" + labName + "' " +
+                ", " + ccp.urineAppearanceLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.urineAppearanceRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateurinePhRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.urinePhLabName + "='" + labName + "' " +
+                ", " + ccp.urinePhLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.urinePhRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateurineSugarRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.urineSugarLabName + "='" + labName + "' " +
+                ", " + ccp.urineSugarLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.urineSugarRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateurineProteinRemark(String rowNumber, String cucId, String labName, String labNormal, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.urineProteinLabName + "='" + labName + "' " +
+                ", " + ccp.urineProteinLabNormal + "='" + labNormal + "' " +
+                ", " + ccp.urineProteinRemark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateCheckupPatientRemark(String rowNumber, String cucId, String FlabName, String labName, String FlabNormal, String labNormal, String Fremark, String remark)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + FlabName + "='" + labName + "' " +
+                ", " + FlabNormal + "='" + labNormal + "' " +
+                ", " + Fremark + "='" + remark + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQueryNoClose(sql);
             }
             catch (Exception ex)
             {

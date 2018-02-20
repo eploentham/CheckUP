@@ -82,8 +82,14 @@ namespace CheckUP.object1
         public String xrayChestSummary="";
         public String eyesExam="";
         public String ekgExam="";
-        
-        public String CAAFP="", CACEA="",CAPSA="", CAHCG="",CA153="", CA125="", CA199="";
+
+        public String CAAFP = "", CAAFPLabName = "", CAAFPLabNormal = "", CAAFPRemark = "";
+        public String CACEA = "", CACEALabName = "", CACEALabNormal = "", CACEARemark = "";
+        public String CAPSA = "", CAPSALabName = "", CAPSALabNormal = "", CAPSARemark = "";
+        public String CAHCG = "", CAHCGLabName = "", CAHCGLabNormal = "", CAHCGRemark = "";
+        public String CA153 = "", CA153LabName = "", CA153LabNormal = "", CA153Remark = "";
+        public String CA125 = "", CA125LabName = "", CA125LabNormal = "", CA125Remark = "";
+        public String CA199 = "", CA199LabName = "", CA199LabNormal = "", CA199Remark = "";
 
         public String thyroidT3="";
         public String thyroidT4="";
@@ -95,28 +101,31 @@ namespace CheckUP.object1
         public String amphetamine="";
         public String disscusExam="";
         public String suggestExam="";
-        public String sugar="";
+        public String sugar="", sugarLabName = "", sugarLabNormal = "", sugarRemark = "";
         public String sugarDiagnosis="";
         public String sugarSummary="";
         public String sugarSuggess="";
-        public String kidneyBun="";
-        public String kidneyCreatinine="";
+        public String kidneyBun="", kidneyBunLabName = "", kidneyBunLabNormal = "", kidneyBunRemark = "";
+        public String kidneyCreatinine="", kidneyCreatinineLabName = "", kidneyCreatinineLabNormal = "", kidneyCreatinineRemark = "";
         public String kidneyResult = "";
         public String kidneySummary = "";
 
-        public String liverSgot="";
-        public String liverSgpt="";
-        public String liverAlp="", liverAlkaline="";
+        public String liverSgot="", liverSgotLabName = "", liverSgotLabNormal = "", liverSgotRemark = "";
+        public String liverSgpt="", liverSgptLabName = "", liverSgptLabNormal = "", liverSgptRemark = "";
+        public String liverAlp = "", liverAlpLabName = "", liverAlpLabNormal = "", liverAlpRemark = "";
+        public String liverAlkaline="", liverAlkalineLabName = "", liverAlkalineLabNormal = "", liverAlkalineRemark = "";
         public String liverResult = "";
         public String liverSummary = "";
-        public String uricAcid="";
-        public String cholesterol="";
-        public String triglyceride="";
+        public String uricAcid="", uricAcidLabName = "", uricAcidLabNormal = "", uricAcidRemark = "";
+        public String cholesterol="", cholesterolLabName = "", cholesterolLabNormal = "", cholesterolRemark = "";
+        public String triglyceride="", triglycerideLabName = "", triglycerideLabNormal = "", triglycerideRemark = "";
         public String triglycerideResult = "";
         public String triglycerideSummary = "";
-        public String hdl="", ldl = "", ChoLDLResult = "", ChoLDLsummary = "", ChoHDL = "", ChoHDLResult = "", ChoHDLsummary = "";
+        public String hdl = "", hdlLabName = "", hdlLabNormal = "", hdlRemark = "";
+        public String ldl = "", ldlLabName = "", ldlLabNormal = "", ldlRemark = "";
+        public String ChoLDLResult = "", ChoLDLsummary = "", ChoHDL = "", ChoHDLResult = "", ChoHDLsummary = "";
 
-        public String calcium="";
+        public String calcium="", calciumLabName = "", calciumLabNormal = "", calciumRemark = "";
         public String cbcHb="", cbcHbRemark="", cbcHbLabName="", cbcHbLabNormal="";
         public String cbcHct="", cbcHctRemark = "", cbcHctLabName = "", cbcHctLabNormal = "";
         public String cbcWbc="", cbcWbcRemark = "", cbcWbcLabName = "", cbcWbcLabNormal = "";
@@ -136,25 +145,25 @@ namespace CheckUP.object1
         public String cbcMcv = "", cbcMcvRemark = "", cbcMcvLabName = "", cbcMcvLabNormal = "";
         public String cbcRbc = "", cbcRbcRemark = "", cbcRbcLabName = "", cbcRbcLabNormal = "";
 
-        public String urineColor="";
-        public String urineAppearance="";
-        public String urinePh="";
-        public String urineSpGr="";
-        public String urineSugar="";
-        public String urineProtein="";
-        public String urineBlood="";
-        public String urineKetone="";
-        public String urineBacteria="";
-        public String urineWbc="";
-        public String urineRbc="";
-        public String urineEpithelium="";
-        public String urineGlu = "";
+        public String urineColor="", urineColorRemark = "", urineColorLabName = "", urineColorLabNormal = "";
+        public String urineAppearance="", urineAppearanceRemark = "", urineAppearanceLabName = "", urineAppearanceLabNormal = "";
+        public String urinePh="", urinePhRemark = "", urinePhLabName = "", urinePhLabNormal = "";
+        public String urineSpGr="", urineSpGrRemark = "", urineSpGrLabName = "", urineSpGrLabNormal = "";
+        public String urineSugar="", urineSugarRemark = "", urineSugarLabName = "", urineSugarLabNormal = "";
+        public String urineProtein="", urineProteinRemark = "", urineProteinLabName = "", urineProteinLabNormal = "";
+        public String urineBlood="", urineBloodRemark = "", urineBloodLabName = "", urineBloodLabNormal = "";
+        public String urineKetone="", urineKetoneRemark = "", urineKetoneLabName = "", urineKetoneLabNormal = "";
+        public String urineBacteria="", urineBacteriaRemark = "", urineBacteriaLabName = "", urineBacteriaLabNormal = "";
+        public String urineWbc="", urineWbcRemark = "", urineWbcLabName = "", urineWbcLabNormal = "";
+        public String urineRbc="", urineRbcRemark = "", urineRbcLabName = "", urineRbcLabNormal = "";
+        public String urineEpithelium="", urineEpitheliumRemark = "", urineEpitheliumLabName = "", urineEpitheliumLabNormal = "";
+        public String urineGlu = "", urineGluRemark = "", urineGluLabName = "", urineGluLabNormal = "";
         public String urineSummary="";
         public String urineResult = "";
-        public String urineLeu = "";
-        public String urineNit = "";
-        public String urineBil = "";
-        public String urineUro = "";
+        public String urineLeu = "", urineLeuRemark = "", urineLeuLabName = "", urineLeuLabNormal = "";
+        public String urineNit = "", urineNitRemark = "", urineNitLabName = "", urineNitLabNormal = "";
+        public String urineBil = "", urineBilRemark = "", urineBilLabName = "", urineBilLabNormal = "";
+        public String urineUro = "", urineUroRemark = "", urineUroLabName = "", urineUroLabNormal = "";
 
         public String lungFvcPredic="";
         public String lungFvcMeas="";

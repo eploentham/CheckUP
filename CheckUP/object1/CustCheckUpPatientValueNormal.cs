@@ -131,6 +131,10 @@ namespace CheckUP.object1
         public String urineSummary="";
         public String urineResult = "";
         public String urineGlu = "";
+        public String urineLeu = "";
+        public String urineNit = "";
+        public String urineBil = "";
+        public String urineUro = "";
 
         public String lungFvcPredic="";
         public String lungFvcMeas="";
@@ -226,7 +230,7 @@ namespace CheckUP.object1
         //public String toxicologyMekOld="";
         //public String toxicologyAcetoneOld="";
         //public String toxicologyTolueneOld="";
-        public String urineLeu="";
+        
         public String urineOther="";
         public String cultureStool="";
         public String cultureUrine="";

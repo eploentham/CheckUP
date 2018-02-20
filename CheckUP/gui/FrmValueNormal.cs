@@ -181,6 +181,9 @@ namespace CheckUP.gui
             txtUASugar.Text = dt.Rows[0][cc.ccpvndb.ccpvn.urineSugar].ToString();
             txtUAWBC.Text = dt.Rows[0][cc.ccpvndb.ccpvn.urineWbc].ToString();
             txtUAGlu.Text = dt.Rows[0][cc.ccpvndb.ccpvn.urineGlu].ToString();
+            txtUABil.Text = dt.Rows[0][cc.ccpvndb.ccpvn.urineBil].ToString();
+            txtUANit.Text = dt.Rows[0][cc.ccpvndb.ccpvn.urineNit].ToString();
+            txtUAUro.Text = dt.Rows[0][cc.ccpvndb.ccpvn.urineUro].ToString();
 
             txtTriValue.Text = dt.Rows[0][cc.ccpvndb.ccpvn.triglyceride].ToString();
             txtTriValueNormal.Text = dt.Rows[0][cc.ccpvndb.ccpvn.triglycerideValueNormal].ToString();
@@ -569,7 +572,8 @@ namespace CheckUP.gui
             if (MessageBox.Show("ต้องการแก้ไข", "บันทึก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
                 String chk = cc.ccpvndb.UpdateUA(txtUAColor.Text.Trim(), txtUAAppe.Text.Trim(), txtUASugar.Text.Trim(), txtUASpgr.Text.Trim(), txtUApH.Text.Trim(), txtUAProtein.Text.Trim(),
-                    txtUAWBC.Text.Trim(), txtUARbc.Text.Trim(), txtUAEpi.Text.Trim(), txtUABact.Text.Trim(), txtUAKetone.Text.Trim(), txtUALeu.Text.Trim(), txtUABlood.Text.Trim(), txtUAGlu.Text.Trim());
+                    txtUAWBC.Text.Trim(), txtUARbc.Text.Trim(), txtUAEpi.Text.Trim(), txtUABact.Text.Trim(), txtUAKetone.Text.Trim(), txtUALeu.Text.Trim()
+                    , txtUABlood.Text.Trim(), txtUAGlu.Text.Trim(), txtUABil.Text.Trim(), txtUANit.Text.Trim(), txtUANit.Text.Trim());
                 cc.dtccpvn = cc.ccpvndb.selectByPk();
                 if (chk.Equals("1"))
                 {
