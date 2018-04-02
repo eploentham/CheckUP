@@ -4761,7 +4761,24 @@ namespace CheckUP.gui
                         rc.Sort2 = "10";
                         //rc.LabNormal = dtN.Rows[0][cc.ccpvndb.ccpvn.cbcHb].ToString();
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateCBCHbRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateCBCHbRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        if (chkPrintNoTest.Checked)
+                        {
+                            if (cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.StatusCBCNotsplitMaleFemale].ToString().Equals("1")) // ไม่แยก
+                            {
+                                cc.ccpdb.UpdateCBCHbRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                , "Hb", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHbMale].ToString().Replace("@", " "), "no_test");
+                            }
+                            else
+                            {
+                                cc.ccpdb.UpdateCBCHbRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                , "Hb", rc.Sex.Equals("1") ? cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHbMale].ToString().Replace("@", " ") : cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHbFemale].ToString().Replace("@", " "), "no_test");
+                            }
+                        }
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcHct] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcHct].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -4874,6 +4891,23 @@ namespace CheckUP.gui
                         cc.rcdb.insertRCheckUp(rc);
                         cc.ccpdb.UpdateCBCHctRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
+                    else
+                    {
+                        if (chkPrintNoTest.Checked)
+                        {
+                            if (cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.StatusCBCNotsplitMaleFemale].ToString().Equals("1")) // ไม่แยก
+                            {
+                                cc.ccpdb.UpdateCBCHctRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                , "Hct", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHctMale].ToString().Replace("@", " "), "no_test");
+                            }
+                            else
+                            {
+                                cc.ccpdb.UpdateCBCHctRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                , "Hct", rc.Sex.Equals("1") ? cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHctMale].ToString().Replace("@", " ") : cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcHctFemale].ToString().Replace("@", " "), "no_test");
+                            }
+                                
+                        }
+                    }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcWbc] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcWbc].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -4924,6 +4958,14 @@ namespace CheckUP.gui
                         rc.Sort2 = "13";
                         cc.rcdb.insertRCheckUp(rc);
                         cc.ccpdb.UpdateCBCWbcRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        if (chkPrintNoTest.Checked)
+                        {
+                            cc.ccpdb.UpdateCBCWbcRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                , "WBC", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcWbc].ToString().Replace("@", " "), "no_test");
+                        }
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcNeutrophil] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcNeutrophil].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -4976,6 +5018,14 @@ namespace CheckUP.gui
                         cc.rcdb.insertRCheckUp(rc);
                         cc.ccpdb.UpdateCBCNeutrophilRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
+                    else
+                    {
+                        if (chkPrintNoTest.Checked)
+                        {
+                            cc.ccpdb.UpdateCBCNeutrophilRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                , "Neutrophils", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcNeutrophil].ToString().Replace("@", " "), "no_test");
+                        }
+                    }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcEosinophil] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcEosinophil].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -5026,6 +5076,14 @@ namespace CheckUP.gui
                         rc.Sort2 = "15";
                         cc.rcdb.insertRCheckUp(rc);
                         cc.ccpdb.UpdateCBCEosinophilRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        if (chkPrintNoTest.Checked)
+                        {
+                            cc.ccpdb.UpdateCBCEosinophilRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                , "Eosinophils ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcEosinophil].ToString().Replace("@", " "), "no_test");
+                        }
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcBasophil] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcBasophil].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5078,6 +5136,14 @@ namespace CheckUP.gui
                         cc.rcdb.insertRCheckUp(rc);
                         cc.ccpdb.UpdateCBCBasophilRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
+                    else
+                    {
+                        if (chkPrintNoTest.Checked)
+                        {
+                            cc.ccpdb.UpdateCBCBasophilRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                , "Basophils ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcBasophil].ToString().Replace("@", " "), "no_test");
+                        }
+                    }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcLymphocyte] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcLymphocyte].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -5129,6 +5195,14 @@ namespace CheckUP.gui
                         cc.rcdb.insertRCheckUp(rc);
                         cc.ccpdb.UpdateCBCLymphocyteRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
+                    else
+                    {
+                        if (chkPrintNoTest.Checked)
+                        {
+                            cc.ccpdb.UpdateCBCLymphocyteRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                , "Lymphocyte ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcLymphocyte].ToString().Replace("@", " "), "no_test");
+                        }
+                    }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcMonocyte] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcMonocyte].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -5179,6 +5253,14 @@ namespace CheckUP.gui
                         rc.Sort2 = "18";
                         cc.rcdb.insertRCheckUp(rc);
                         cc.ccpdb.UpdateCBCMonocyteRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        if (chkPrintNoTest.Checked)
+                        {
+                            cc.ccpdb.UpdateCBCMonocyteRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                , "Monocyte ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMonocyte].ToString().Replace("@", " "), "no_test");
+                        }
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcRbc] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcRbc].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5291,6 +5373,23 @@ namespace CheckUP.gui
                         cc.rcdb.insertRCheckUp(rc);
                         cc.ccpdb.UpdateCBCRbcRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
+                    else
+                    {
+                        if (chkPrintNoTest.Checked)
+                        {
+                            if (cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.StatusCBCNotsplitMaleFemale].ToString().Equals("1")) // ไม่แยก
+                            {
+                                cc.ccpdb.UpdateCBCRbcRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                , "RBC ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbcMale].ToString().Replace("@", " ") , "no_test");
+                            }
+                            else
+                            {
+                                cc.ccpdb.UpdateCBCRbcRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                , "RBC ", rc.Sex.Equals("1") ? cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbcMale].ToString().Replace("@", " ") : cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbcFemale].ToString().Replace("@", " "), "no_test");
+                            }
+                                
+                        }
+                    }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcMcv] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcMcv].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -5372,6 +5471,14 @@ namespace CheckUP.gui
                         cc.rcdb.insertRCheckUp(rc);
                         cc.ccpdb.UpdateCBCMcvRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
+                    else
+                    {
+                        if (chkPrintNoTest.Checked)
+                        {
+                            cc.ccpdb.UpdateCBCMcvRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                , "MCV ", rc.Sex.Equals("1") ? cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMcvMale].ToString().Replace("@", " ") : cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMcvFemale].ToString().Replace("@", " "), "no_test");
+                        }
+                    }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcMch] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcMch].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -5422,6 +5529,14 @@ namespace CheckUP.gui
                         rc.Sort2 = "21";
                         cc.rcdb.insertRCheckUp(rc);
                         cc.ccpdb.UpdateCBCMchRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        if (chkPrintNoTest.Checked)
+                        {
+                            cc.ccpdb.UpdateCBCMchRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                , "MCH ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMch].ToString().Replace("@", " "), "no_test");
+                        }
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcMchc] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcMchc].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5475,6 +5590,14 @@ namespace CheckUP.gui
                         cc.rcdb.insertRCheckUp(rc);
                         cc.ccpdb.UpdateCBCMchcRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
                     }
+                    else
+                    {
+                        if (chkPrintNoTest.Checked)
+                        {
+                            cc.ccpdb.UpdateCBCMchcRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                , "MCHC ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcMchc].ToString().Replace("@", " "), "no_test");
+                        }
+                    }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcPlateletCount] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcPlateletCount].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -5523,8 +5646,19 @@ namespace CheckUP.gui
                         rc.StatusLab = "cbc";
                         rc.Sort1 = "1010";
                         rc.Sort2 = "23";
-                        cc.rcdb.insertRCheckUp(rc);
-
+                        cc.rcdb.insertRCheckUp(rc);                        
+                        cc.ccpdb.UpdateCBCPlateletCountRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        if (chkPrintNoTest.Checked)
+                        {
+                            cc.ccpdb.UpdateCBCPlateletCountRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                , "Platelet Count ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPlateletCount].ToString().Replace("@", " "), "no_test");
+                        }
+                    }
+                    if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcRbcMorpholog] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcRbcMorpholog].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
+                    {
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "ความสมบรูณ์ของเม็ดเลือด (C.B.C.)";
                         rc.LabName = "Platelet smear ";
@@ -5549,7 +5683,17 @@ namespace CheckUP.gui
                         rc.Sort1 = "1010";
                         rc.Sort2 = "24";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateCBCPlateletCountRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.cbcPlateletSmearLabName, rc.LabName
+                            , cc.ccpdb.ccp.cbcPlateletSmearLabNormal, rc.LabNormal
+                            , cc.ccpdb.ccp.cbcPlateletSmearRemark, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.cbcPlateletSmearLabName, "Platelet smear "
+                            , cc.ccpdb.ccp.cbcPlateletSmearLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPlateletSmear].ToString()
+                            , cc.ccpdb.ccp.cbcPlateletSmearRemark, "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcRbcMorpholog] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcRbcMorpholog].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5583,6 +5727,16 @@ namespace CheckUP.gui
                             , cc.ccpdb.ccp.cbcRbcMorphologLabName, rc.LabName
                             , cc.ccpdb.ccp.cbcRbcMorphologLabNormal, rc.LabNormal
                             , cc.ccpdb.ccp.cbcRbcMorphologRemark, rc.Remark);
+                    }
+                    else
+                    {
+                        if (chkPrintNoTest.Checked)
+                        {
+                            cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.cbcRbcMorphologLabName, "RBC morphology "
+                            , cc.ccpdb.ccp.cbcRbcMorphologLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcRbcMorpholog].ToString()
+                            , cc.ccpdb.ccp.cbcRbcMorphologRemark, "no_test");
+                        }
                     }
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcPmn] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcPmn].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -5637,6 +5791,16 @@ namespace CheckUP.gui
                             , cc.ccpdb.ccp.cbcPmnLabName, rc.LabName
                             , cc.ccpdb.ccp.cbcPmnLabNormal, rc.LabNormal
                             , cc.ccpdb.ccp.cbcPmnRemark, rc.Remark);
+                    }
+                    else
+                    {
+                        if (chkPrintNoTest.Checked)
+                        {
+                            cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.cbcPmnLabName, "PMN "
+                            , cc.ccpdb.ccp.cbcPmnLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cbcPmn].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.cbcPmnRemark, "no_test");
+                        }
                     }
 
                     rc.Id = r.Next().ToString();
@@ -5711,6 +5875,10 @@ namespace CheckUP.gui
                     rc.Sort1 = "1011";
                     rc.Sort2 = "10";
                     cc.rcdb.insertRCheckUp(rc);
+                    cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.sugarLabName, "FBS "
+                            , cc.ccpdb.ccp.sugarLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.sugar].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.sugarRemark, rc.Remark);
 
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "ระดับน้ำตาลในเลือด (Fasting Blood Sugar)";
@@ -5729,6 +5897,14 @@ namespace CheckUP.gui
                     rc.Sort1 = "1011";
                     rc.Sort2 = "11";
                     cc.rcdb.insertRCheckUp(rc);
+                    
+                }
+                else
+                {
+                    cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.sugarLabName, "FBS "
+                            , cc.ccpdb.ccp.sugarLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.sugar].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.sugarRemark, "no_test");
                 }
 
                 //UA
@@ -5760,7 +5936,15 @@ namespace CheckUP.gui
                         rc.Sort1 = "1012";
                         rc.Sort2 = "10";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateurineColorRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateurineColorRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineColorLabName, "Color "
+                            , cc.ccpdb.ccp.urineColorLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineColor].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.urineColorRemark, "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineAppearance] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineAppearance].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5790,6 +5974,13 @@ namespace CheckUP.gui
                         rc.Sort2 = "11";
                         cc.rcdb.insertRCheckUp(rc);
                         cc.ccpdb.UpdateurineAppearanceRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineAppearanceLabName, "Appearance "
+                            , cc.ccpdb.ccp.urineAppearanceLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineAppearance].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.urineAppearanceRemark, "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urinePh] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urinePh].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5840,7 +6031,15 @@ namespace CheckUP.gui
                         rc.Sort1 = "1012";
                         rc.Sort2 = "12";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateurinePhRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateurinePhRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urinePhLabName, "pH. "
+                            , cc.ccpdb.ccp.urinePhLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urinePh].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.urinePhRemark, "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineSugar] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineSugar].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5870,6 +6069,13 @@ namespace CheckUP.gui
                         rc.Sort2 = "13";
                         cc.rcdb.insertRCheckUp(rc);
                         cc.ccpdb.UpdateurineSugarRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineSugarLabName, "Sugar "
+                            , cc.ccpdb.ccp.urineSugarLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineSugar].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.urineSugarRemark, "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineProtein] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineProtein].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5902,6 +6108,13 @@ namespace CheckUP.gui
                             , cc.ccpdb.ccp.urineProteinLabName, rc.LabName
                             , cc.ccpdb.ccp.urineProteinLabNormal, rc.LabNormal
                             , cc.ccpdb.ccp.urineProteinRemark, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineProteinLabName, "Protein "
+                            , cc.ccpdb.ccp.urineProteinLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineProtein].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.urineProteinRemark, "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineSpGr] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineSpGr].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -5957,6 +6170,13 @@ namespace CheckUP.gui
                             , cc.ccpdb.ccp.urineSpGrLabNormal, rc.LabNormal
                             , cc.ccpdb.ccp.urineSpGrRemark, rc.Remark);
                     }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineSpGrLabName, "SpGr "
+                            , cc.ccpdb.ccp.urineSpGrLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineSpGr].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.urineSpGrRemark, "no_test");
+                    }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineGlu] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineGlu].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -5988,6 +6208,13 @@ namespace CheckUP.gui
                             , cc.ccpdb.ccp.urineGluLabName, rc.LabName
                             , cc.ccpdb.ccp.urineGluLabNormal, rc.LabNormal
                             , cc.ccpdb.ccp.urineGluRemark, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineGluLabName, "GLU "
+                            , cc.ccpdb.ccp.urineGluLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineGlu].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.urineGluRemark, "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineBacteria] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineBacteria].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -6023,6 +6250,13 @@ namespace CheckUP.gui
                             , cc.ccpdb.ccp.urineBacteriaLabNormal, rc.LabNormal
                             , cc.ccpdb.ccp.urineBacteriaRemark, rc.Remark);
                     }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineBacteriaLabName, "Bacteria "
+                            , cc.ccpdb.ccp.urineBacteriaLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineBacteria].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.urineBacteriaRemark, "no_test");
+                    }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineBlood] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineBlood].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -6054,6 +6288,13 @@ namespace CheckUP.gui
                             , cc.ccpdb.ccp.urineBloodLabName, rc.LabName
                             , cc.ccpdb.ccp.urineBloodLabNormal, rc.LabNormal
                             , cc.ccpdb.ccp.urineBloodRemark, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineBloodLabName, "Blood "
+                            , cc.ccpdb.ccp.urineBloodLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineBlood].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.urineBloodRemark, "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineEpithelium] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineEpithelium].ToString().Equals("")) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineEpithelium].ToString().Equals("-")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -6109,6 +6350,13 @@ namespace CheckUP.gui
                             , cc.ccpdb.ccp.urineEpitheliumLabName, rc.LabName
                             , cc.ccpdb.ccp.urineEpitheliumLabNormal, rc.LabNormal
                             , cc.ccpdb.ccp.urineEpitheliumRemark, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineEpitheliumLabName, "Epithelium "
+                            , cc.ccpdb.ccp.urineEpitheliumLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineEpithelium].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.urineEpitheliumRemark, "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineRbc] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineRbc].ToString().Equals("")) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineRbc].ToString().Equals("-")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -6167,6 +6415,13 @@ namespace CheckUP.gui
                             , cc.ccpdb.ccp.urineRbcLabNormal, rc.LabNormal
                             , cc.ccpdb.ccp.urineRbcRemark, rc.Remark);
                     }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineRbcLabName, "RBC "
+                            , cc.ccpdb.ccp.urineRbcLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineRbc].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.urineRbcRemark, "no_test");
+                    }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineWbc] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineWbc].ToString().Equals("")) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineWbc].ToString().Equals("-")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -6224,6 +6479,13 @@ namespace CheckUP.gui
                             , cc.ccpdb.ccp.urineWbcLabNormal, rc.LabNormal
                             , cc.ccpdb.ccp.urineWbcRemark, rc.Remark);
                     }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineWbcLabName, "WBC "
+                            , cc.ccpdb.ccp.urineWbcLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineWbc].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.urineWbcRemark, "no_test");
+                    }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineKetone] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineKetone].ToString().Equals("")) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineKetone].ToString().Equals("-")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -6255,6 +6517,13 @@ namespace CheckUP.gui
                             , cc.ccpdb.ccp.urineKetoneLabName, rc.LabName
                             , cc.ccpdb.ccp.urineKetoneLabNormal, rc.LabNormal
                             , cc.ccpdb.ccp.urineKetoneRemark, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineKetoneLabName, "Ketone "
+                            , cc.ccpdb.ccp.urineKetoneLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineKetone].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.urineKetoneRemark, "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineLeu] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineLeu].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -6288,11 +6557,18 @@ namespace CheckUP.gui
                             , cc.ccpdb.ccp.urineLeuLabNormal, rc.LabNormal
                             , cc.ccpdb.ccp.urineLeuRemark, rc.Remark);
                     }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineLeuLabName, "Leu "
+                            , cc.ccpdb.ccp.urineLeuLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineLeu].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.urineLeuRemark, "no_test");
+                    }
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineLeu] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineBil].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจความสมบรูณ์ของปัสสาวะ (Urine Analysis)";
-                        rc.LabName = "Bit ";
+                        rc.LabName = "Bil ";
                         rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineBil].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.urineBil].ToString();
                         if (rc.LabResult.Trim().ToLower().Equals(ualeu.ToLower()))
@@ -6318,6 +6594,13 @@ namespace CheckUP.gui
                             , cc.ccpdb.ccp.urineBilLabName, rc.LabName
                             , cc.ccpdb.ccp.urineBilLabNormal, rc.LabNormal
                             , cc.ccpdb.ccp.urineBilRemark, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineBilLabName, "Bil "
+                            , cc.ccpdb.ccp.urineBilLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineBil].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.urineBilRemark, "no_test");
                     }
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineLeu] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineNit].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -6348,6 +6631,13 @@ namespace CheckUP.gui
                         cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
                             , cc.ccpdb.ccp.urineNitLabName, rc.LabName
                             , cc.ccpdb.ccp.urineNitLabNormal, rc.LabNormal
+                            , cc.ccpdb.ccp.urineNitRemark, "no_test");
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineNitLabName, "Nit "
+                            , cc.ccpdb.ccp.urineNitLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineNit].ToString().Replace("@", " ")
                             , cc.ccpdb.ccp.urineNitRemark, rc.Remark);
                     }
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineLeu] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineUro].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -6380,6 +6670,13 @@ namespace CheckUP.gui
                             , cc.ccpdb.ccp.urineUroLabName, rc.LabName
                             , cc.ccpdb.ccp.urineUroLabNormal, rc.LabNormal
                             , cc.ccpdb.ccp.urineUroRemark, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineUroLabName, "Uro "
+                            , cc.ccpdb.ccp.urineUroLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineUro].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.urineUroRemark, "no_test");
                     }
 
 
@@ -6507,6 +6804,20 @@ namespace CheckUP.gui
                     rc.Sort1 = "1013";
                     rc.Sort2 = "10";
                     cc.rcdb.insertRCheckUp(rc);
+                    if (rc.Sex.Equals("1"))//male
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.kidneyBunLabName, "Bun "
+                            , cc.ccpdb.ccp.kidneyBunLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyBunMale].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.kidneyBunRemark, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.kidneyBunLabName, "Bun "
+                            , cc.ccpdb.ccp.kidneyBunLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyBunFemale].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.kidneyBunRemark, rc.Remark);
+                    }
 
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "การตรวจ (Bun)";
@@ -6584,6 +6895,20 @@ namespace CheckUP.gui
                     rc.Sort1 = "1013";
                     rc.Sort2 = "11";
                     cc.rcdb.insertRCheckUp(rc);
+                    if (rc.Sex.Equals("1"))//male
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.kidneyCreatinineLabName, "Creatinine "
+                            , cc.ccpdb.ccp.kidneyCreatinineLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyCreatinineMale].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.kidneyCreatinineRemark, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.kidneyCreatinineLabName, "Creatinine "
+                            , cc.ccpdb.ccp.kidneyCreatinineLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.kidneyCreatinineFemale].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.kidneyCreatinineRemark, rc.Remark);
+                    }
 
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "การตรวจ (Bun)";
@@ -6605,7 +6930,8 @@ namespace CheckUP.gui
                 }
 
                 //Uric
-                if (int.Parse(cuc.UricSuccess) > 0)
+                //if (int.Parse(cuc.UricSuccess) > 0)
+                if ((chkPrintNoTest.Checked) || (int.Parse(cuc.UricSuccess) > 0))
                 {
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "การตรวจ (Uric)";
@@ -6682,6 +7008,20 @@ namespace CheckUP.gui
                     rc.Sort1 = "1014";
                     rc.Sort2 = "10";
                     cc.rcdb.insertRCheckUp(rc);
+                    if (rc.Sex.Equals("1"))//male
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.uricAcidLabName, "Uric Acid "
+                            , cc.ccpdb.ccp.uricAcidLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.uricAcidMale].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.uricAcidRemark, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.uricAcidLabName, "Uric Acid "
+                            , cc.ccpdb.ccp.uricAcidLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.uricAcidFemale].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.uricAcidRemark, rc.Remark);
+                    }
 
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "การตรวจ (Uric)";
@@ -6704,7 +7044,8 @@ namespace CheckUP.gui
 
 
                 //Trig
-                if (int.Parse(cuc.TriSuccess) > 0)
+                //if (int.Parse(cuc.TriSuccess) > 0)
+                if ((chkPrintNoTest.Checked) || (int.Parse(cuc.TriSuccess) > 0))
                 {
                     Boolean chktrig = false;        // ใช้Check ว่า เวลาพนักงานมาตรวจ  แต่คนนี้ไม่ได้ตรวจ 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.triglyceride] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.triglyceride].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -6750,6 +7091,10 @@ namespace CheckUP.gui
                         rc.Sort2 = "10";
                         cc.rcdb.insertRCheckUp(rc);
                         chktrig = true;
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.triglycerideLabName, "Triglyceride "
+                            , cc.ccpdb.ccp.triglycerideLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.triglyceride].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.triglycerideRemark, rc.Remark);
 
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Triglyceride)";
@@ -6781,7 +7126,8 @@ namespace CheckUP.gui
                 }
 
                 //Sgot
-                if (int.Parse(cuc.SgotSuccess) > 0)
+                //if (int.Parse(cuc.SgotSuccess) > 0)
+                if ((chkPrintNoTest.Checked) || (int.Parse(cuc.SgotSuccess) > 0))
                 {
                     Boolean chksgot = false;        // ใช้Check ว่า เวลาพนักงานมาตรวจ  แต่คนนี้ไม่ได้ตรวจ 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.liverSgot] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.liverSgot].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -6892,6 +7238,30 @@ namespace CheckUP.gui
                             rc.Sort1 = "1016";
                             rc.Sort2 = "10";
                             cc.rcdb.insertRCheckUp(rc);
+                            if (cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.StatusSgotNotsplitMaleFemale].ToString().Equals("1")) // ไม่แยก
+                            {
+                                cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                    , cc.ccpdb.ccp.liverSgotLabName, "SGOT "
+                                    , cc.ccpdb.ccp.liverSgotLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgotMale].ToString().Replace("@", " ")
+                                    , cc.ccpdb.ccp.liverSgotRemark, rc.Remark);
+                            }
+                            else
+                            {
+                                if (rc.Sex.Equals("1"))//male
+                                {
+                                    cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                    , cc.ccpdb.ccp.liverSgotLabName, "SGOT "
+                                    , cc.ccpdb.ccp.liverSgotLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgotMale].ToString().Replace("@", " ")
+                                    , cc.ccpdb.ccp.liverSgotRemark, rc.Remark);
+                                }
+                                else
+                                {
+                                    cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                    , cc.ccpdb.ccp.liverSgotLabName, "SGOT "
+                                    , cc.ccpdb.ccp.liverSgotLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgotFeMale].ToString().Replace("@", " ")
+                                    , cc.ccpdb.ccp.liverSgotRemark, rc.Remark);
+                                }
+                            }
                             chksgot = true;
                         }
                     }
@@ -7007,6 +7377,30 @@ namespace CheckUP.gui
                             rc.Sort1 = "1016";
                             rc.Sort2 = "11";
                             cc.rcdb.insertRCheckUp(rc);
+                            if (cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.StatusSgotNotsplitMaleFemale].ToString().Equals("1")) // ไม่แยก
+                            {
+                                cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                    , cc.ccpdb.ccp.liverSgptLabName, "SGPT "
+                                    , cc.ccpdb.ccp.liverSgptLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgptMale].ToString().Replace("@", " ")
+                                    , cc.ccpdb.ccp.liverSgptRemark, rc.Remark);
+                            }
+                            else
+                            {
+                                if (rc.Sex.Equals("1"))//male
+                                {
+                                    cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                    , cc.ccpdb.ccp.liverSgptLabName, "SGPT "
+                                    , cc.ccpdb.ccp.liverSgptLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgptMale].ToString().Replace("@", " ")
+                                    , cc.ccpdb.ccp.liverSgptRemark, rc.Remark);
+                                }
+                                else
+                                {
+                                    cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                                    , cc.ccpdb.ccp.liverSgptLabName, "SGPT "
+                                    , cc.ccpdb.ccp.liverSgptLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.liverSgptFeMale].ToString().Replace("@", " ")
+                                    , cc.ccpdb.ccp.liverSgptRemark, rc.Remark);
+                                }
+                            }
                             chksgot = true;
                         }
                     }
@@ -7111,7 +7505,8 @@ namespace CheckUP.gui
 
 
                 //Choles
-                if (int.Parse(cuc.ChoSuccess) > 0)
+                //if (int.Parse(cuc.ChoSuccess) > 0)
+                if ((chkPrintNoTest.Checked) || (int.Parse(cuc.ChoSuccess) > 0))
                 {
                     Boolean chkcholes = false;        // ใช้Check ว่า เวลาพนักงานมาตรวจ  แต่คนนี้ไม่ได้ตรวจ 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cholesterol] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cholesterol].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -7158,6 +7553,10 @@ namespace CheckUP.gui
                         rc.Sort2 = "10";
                         cc.rcdb.insertRCheckUp(rc);
                         chkcholes = true;
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.cholesterolLabName, "Cholesterol "
+                            , cc.ccpdb.ccp.cholesterolLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cholesterol].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.cholesterolRemark, rc.Remark);
 
                         //choles
                         rc.Id = r.Next().ToString();
@@ -7185,6 +7584,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1017";
                         rc.Sort2 = "11";
                         cc.rcdb.insertRCheckUp(rc);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.cholesterolLabName, "Cholesterol "
+                            , cc.ccpdb.ccp.cholesterolLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.cholesterol].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.cholesterolRemark, "no_test");
                     }
 
 
@@ -7232,6 +7638,11 @@ namespace CheckUP.gui
                         rc.Sort2 = "12";
                         cc.rcdb.insertRCheckUp(rc);
                         chkcholes = true;
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.ldlLabName, "LDL "
+                            , cc.ccpdb.ccp.ldlLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ldl].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.ldlRemark, rc.Remark);
+
                         //ldl
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Cholesterol)";
@@ -7258,6 +7669,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "10171";
                         rc.Sort2 = "13";
                         cc.rcdb.insertRCheckUp(rc);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.ldlLabName, "LDL "
+                            , cc.ccpdb.ccp.ldlLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ldl].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.ldlRemark, "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.hdl] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.hdl].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -7341,8 +7759,23 @@ namespace CheckUP.gui
                         rc.Sort2 = "14";
                         cc.rcdb.insertRCheckUp(rc);
                         chkcholes = true;
-                        //hdl
-                        rc.Id = r.Next().ToString();
+                        if (rc.Sex.Equals("1"))//male
+                        {
+                            cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.hdlLabName, "HDL "
+                            , cc.ccpdb.ccp.hdlLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.hdlMale].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.hdlRemark, rc.Remark);
+                        }
+                        else
+                        {
+                            cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.hdlLabName, "HDL "
+                            , cc.ccpdb.ccp.hdlLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.hdlFemale].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.hdlRemark, rc.Remark);
+                        }
+
+                            //hdl
+                            rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Cholesterol)";
                         //rc.LabName = "สรุป ";
                         if (!chkcholes)
@@ -7367,6 +7800,23 @@ namespace CheckUP.gui
                         rc.Sort1 = "10172";
                         rc.Sort2 = "15";
                         cc.rcdb.insertRCheckUp(rc);
+                    }
+                    else
+                    {
+                        if (rc.Sex.Equals("1"))//male
+                        {
+                            cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.hdlLabName, "HDL "
+                            , cc.ccpdb.ccp.hdlLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.hdlMale].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.hdlRemark, "no_test");
+                        }
+                        else
+                        {
+                            cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.hdlLabName, "HDL "
+                            , cc.ccpdb.ccp.hdlLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.hdlFemale].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.hdlRemark, "no_test");
+                        }
                     }
                 }
 
@@ -8778,14 +9228,15 @@ namespace CheckUP.gui
                     //cc.rcdb.insertRCheckUp(rc);
                 }
                 //Toxi
-                if (int.Parse(cuc.ToxiSuccess) > 0)
+                //if (int.Parse(cuc.ToxiSuccess) > 0)
+                if ((chkPrintNoTest.Checked) || (int.Parse(cuc.ToxiSuccess) > 0))
                 {
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiAcetone] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiAcetone].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiAcetone ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiAcetone].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiAcetone].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiAcetone].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -8798,7 +9249,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "10";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiAcetoneRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiAcetoneRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiAcetoneRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiAcetone ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiAcetone].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiAluminium] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiAluminium].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8806,7 +9263,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiAluminium ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiAluminium].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiAluminium].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiAluminium].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -8819,7 +9276,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "11";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiAluminiumRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiAluminiumRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiAluminiumRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiAluminium ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiAluminium].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiAmmonia] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiAmmonia].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8827,7 +9290,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiAmmonia ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiAmmonia].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiAmmonia].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiAmmonia].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -8840,7 +9303,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "12";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiAmmoniaRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiAmmoniaRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiAmmoniaRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiAmmonia ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiAmmonia].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiAntimony] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiAntimony].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8848,7 +9317,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiAntimony ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiAntimony].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiAntimony].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiAntimony].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -8861,7 +9330,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "13";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiAntimonyRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiAntimonyRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiAntimonyRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiAntimony ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiAntimony].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiAntimony] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiAntimony].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8869,7 +9344,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiAntimony ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiAntimony].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiAntimony].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiAntimony].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -8889,7 +9364,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiArsenic ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiArsenic].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiArsenic].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiArsenic].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -8902,7 +9377,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "14";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiArsenicRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiArsenicRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiArsenicRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiArsenic ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiArsenic].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiBenzene] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiBenzene].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8910,7 +9391,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiBenzene ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiBenzene].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiBenzene].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiBenzene].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -8923,7 +9404,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "15";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiBenzeneRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiBenzeneRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiBenzeneRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiBenzene ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiBenzene].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiCadmium] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiCadmium].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8931,7 +9418,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiCadmium ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiCadmium].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiCadmium].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiCadmium].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -8944,7 +9431,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "16";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiCadmiumRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiCadmiumRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiCadmiumRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiCadmium ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiCadmium].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiChromium] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiChromium].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8952,7 +9445,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiChromium ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiChromium].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiChromium].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiChromium].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -8965,7 +9458,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "17";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiChromiumRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiChromiumRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiChromiumRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiChromium ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiChromium].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiCopper] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiCopper].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8973,7 +9472,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiCopper ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiCopper].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiCopper].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiCopper].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -8986,7 +9485,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "18";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiCopperRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiCopperRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiCopperRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiCopper ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiCopper].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiEthanol] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiEthanol].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8994,7 +9499,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiEthanol ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiEthanol].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiEthanol].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiEthanol].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -9007,7 +9512,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "19";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiEthanolRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiEthanolRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiEthanolRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiEthanol ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiEthanol].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiFluoride] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiFluoride].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9015,7 +9526,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiFluoride ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiFluoride].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiFluoride].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiFluoride].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -9028,7 +9539,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "20";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiFluorideRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiFluorideRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiFluorideRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiFluoride ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiFluoride].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiFomaldehyde] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiFomaldehyde].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9036,7 +9553,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiFomaldehyde ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiFomaldehyde].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiFomaldehyde].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiFomaldehyde].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -9049,7 +9566,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "21";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiFomaldehydeRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiFomaldehydeRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiFomaldehydeRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiFomaldehyde ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiFomaldehyde].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiHexane] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiHexane].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9057,7 +9580,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiHexane ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiHexane].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiHexane].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiHexane].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -9070,7 +9593,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "22";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiHexaneRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiHexaneRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiHexaneRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiHexane ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiHexane].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiHippuric] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiHippuric].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9078,7 +9607,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiHippuric ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiHippuric].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiHippuric].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiHippuric].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -9091,7 +9620,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "23";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiHippuricRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiHippuricRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiHippuricRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiHippuric ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiHippuric].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiIPA] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiIPA].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9099,7 +9634,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiIPA ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiIPA].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiIPA].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiIPA].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -9112,7 +9647,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "24";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiIPARemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiIPARemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiIPARemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiIPA ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiIPA].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiKetone] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiKetone].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9120,7 +9661,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiKetone ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiKetone].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiKetone].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiKetone].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -9133,7 +9674,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "25";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiKetoneRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiKetoneRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiKetoneRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiKetone ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiKetone].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiLead] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiLead].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9141,7 +9688,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "Toxicology Lead ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiLead].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiLead].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiLead].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -9177,7 +9724,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "26";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiLeadRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiLeadRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiLeadRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "Toxicology Lead ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiLead].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiMandelic] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiMandelic].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9185,7 +9738,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiMandelic ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiMandelic].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiMandelic].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiMandelic].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -9198,7 +9751,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "27";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiMandelicRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiMandelicRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiMandelicRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiMandelic ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiMandelic].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiManganese] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiManganese].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9206,7 +9765,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiManganese ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiManganese].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiManganese].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiManganese].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -9219,7 +9778,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "28";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiManganeseRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiManganeseRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiManganeseRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiManganese ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiManganese].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiMercury] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiMercury].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9227,7 +9792,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiMercury ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiMercury].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiMercury].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiMercury].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -9240,7 +9805,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "29";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiMercuryRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiMercuryRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiMercuryRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiMercury ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiMercury].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiMethanol] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiMethanol].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9248,7 +9819,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiMethanol ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiMethanol].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiMethanol].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiMethanol].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -9261,7 +9832,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "30";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiMethanolRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiMethanolRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiMethanolRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiMethanol ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiMethanol].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiMethyl] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiMethyl].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9269,7 +9846,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiMethyl ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiMethyl].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiMethyl].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiMethyl].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -9282,7 +9859,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "31";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiMethanolRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiMethylRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                               , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiMethanolRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiMethyl ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiMethyl].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiNickel] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiNickel].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9290,7 +9873,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiNickel ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiNickel].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiNickel].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiNickel].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -9303,7 +9886,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "32";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiNickelRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiNickelRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiNickelRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiNickel ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiNickel].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiPhenol] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiPhenol].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9311,7 +9900,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiPhenol ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiPhenol].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiPhenol].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiPhenol].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -9324,7 +9913,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "33";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiPhenolRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiPhenolRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiPhenolRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiPhenol ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiPhenol].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiTin] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiTin].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9332,7 +9927,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiTin ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiTin].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiTin].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiTin].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -9345,7 +9940,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "34";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiTinRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiTinRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiTinRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiTin ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiTin].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiTrichloroethylene] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiTrichloroethylene].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9353,7 +9954,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiTrichloroethylene ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiTrichloroethylene].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiTrichloroethylene].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiTrichloroethylene].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -9366,7 +9967,13 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "35";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiTrichloroethyleneRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiTrichloroethyleneRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiTrichloroethyleneRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiTrichloroethylene ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiTrichloroethylene].ToString().Replace("@", " "), "no_test");
                     }
 
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiZinc] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiZinc].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -9374,7 +9981,7 @@ namespace CheckUP.gui
                         rc.Id = r.Next().ToString();
                         rc.LabGroup = "การตรวจ (Toxicology)";
                         rc.LabName = "ToxiZinc ";
-                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpdb.ccp.ToxiZinc].ToString().Replace("@", " ");
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiZinc].ToString().Replace("@", " ");
                         rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiZinc].ToString();
                         rc.LInter = "การแปลผล";
                         rc.LInterAbnormal = "ปกติ";
@@ -9387,7 +9994,41 @@ namespace CheckUP.gui
                         rc.Sort1 = "1022";
                         rc.Sort2 = "36";
                         cc.rcdb.insertRCheckUp(rc);
-                        cc.ccpdb.UpdateToxiZincRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString(), rc.LabName, rc.LabNormal, rc.Remark);
+                        cc.ccpdb.UpdateToxiZincRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateToxiZincRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , "ToxiZinc ", cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiZinc].ToString().Replace("@", " "), "no_test");
+                    }
+                    if ((dtAll.Rows[i][cc.ccpdb.ccp.ToxiZinc] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.ToxiZinc].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
+                    {
+                        rc.Id = r.Next().ToString();
+                        rc.LabGroup = "การตรวจ (Toxicology)";
+                        rc.LabName = "ToxiXylene ";
+                        rc.LabNormal = cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.ToxiZinc].ToString().Replace("@", " ");
+                        rc.LabResult = dtAll.Rows[i][cc.ccpdb.ccp.ToxiZinc].ToString();
+                        rc.LInter = "การแปลผล";
+                        rc.LInterAbnormal = "ปกติ";
+                        rc.LInterNormal = "ผิดปกติ";
+                        rc.LNormal = "ค่าปกติ";
+                        rc.lResult = "ผลการตรวจ";
+                        rc.LTypeLab = "ประเภทการตรวจ Toxicology";
+                        rc.Remark = "";
+                        rc.StatusLab = "toxi";
+                        rc.Sort1 = "1022";
+                        rc.Sort2 = "37";
+                        cc.rcdb.insertRCheckUp(rc);
+                        cc.ccpdb.UpdateToxiZincRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , rc.LabName, rc.LabNormal, rc.Remark);
+                    }
+                    else
+                    {
+                        cc.ccpdb.UpdateCheckupPatientRemark(dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString(), dtAll.Rows[i][cc.ccpdb.ccp.CustCheckUpId].ToString()
+                            , cc.ccpdb.ccp.urineUroLabName, "ToxiXylene "
+                            , cc.ccpdb.ccp.urineUroLabNormal, cc.dtccpvn.Rows[0][cc.ccpvndb.ccpvn.urineUro].ToString().Replace("@", " ")
+                            , cc.ccpdb.ccp.urineUroRemark, rc.Remark);
                     }
 
                 }
@@ -11252,7 +11893,7 @@ namespace CheckUP.gui
             DataTable dt = new DataTable();
             dt = cc.ccpdb.selectPrintByCucId(cuc.Id, rowNumber);
             FrmReport frm = new FrmReport(cc);
-            frm.setReportCheckUpMini3(cuc, dt);
+            frm.setReportCheckUpMini4(cuc, dt);
             frm.ShowDialog(this);
         }
     }

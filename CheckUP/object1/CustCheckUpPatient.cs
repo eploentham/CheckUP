@@ -56,7 +56,8 @@ namespace CheckUP.object1
         public String ToxiTrichloroethylene = "", ToxiTrichloroethyleneRemark = "", ToxiTrichloroethyleneLabName = "", ToxiTrichloroethyleneLabNormal = "";
         public String ToxiAntimony = "", ToxiAntimonyRemark = "", ToxiAntimonyLabName = "", ToxiAntimonyLabNormal = "";
         public String ToxiFluoride = "", ToxiFluorideRemark = "", ToxiFluorideLabName = "", ToxiFluorideLabNormal = "";
-                
+        public String ToxiXylene = "", ToxiXyleneRemark = "", ToxiXyleneLabName = "", ToxiXyleneLabNormal = "";
+
         //public String toxicologyLead="",toxicologyMercury="",toxicologyBenzene="",toxicologyXylene="";
 
         //public String toxicologyToluene = "", toxicologyThinner = "", toxicologyAlcohol = "", toxicologyHexane = "", toxicologyMethanol = "", toxicologyMek = "", toxicologyAcetone = "";

@@ -211,9 +211,11 @@
             this.label95 = new System.Windows.Forms.Label();
             this.label96 = new System.Windows.Forms.Label();
             this.tabPage12 = new System.Windows.Forms.TabPage();
-            this.btnMini3 = new System.Windows.Forms.Button();
-            this.btnMini2 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnMIni1 = new System.Windows.Forms.Button();
+            this.btnMini4 = new System.Windows.Forms.Button();
+            this.btnMini2 = new System.Windows.Forms.Button();
+            this.btnMini3 = new System.Windows.Forms.Button();
             this.btnPrintPE = new System.Windows.Forms.Button();
             this.btnPrintXray = new System.Windows.Forms.Button();
             this.chkStoolExamTyphoid = new System.Windows.Forms.RadioButton();
@@ -278,13 +280,13 @@
             this.txtCntSuccess = new System.Windows.Forms.TextBox();
             this.label123 = new System.Windows.Forms.Label();
             this.btnExcel1 = new System.Windows.Forms.Button();
-            this.btnMini4 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkPrintNoTest = new System.Windows.Forms.CheckBox();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
             this.tabPage20.SuspendLayout();
             this.tabPage12.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDPrintFirst)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDPrintEnd)).BeginInit();
             this.tabPage3.SuspendLayout();
@@ -320,7 +322,6 @@
             this.tabPage19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStoolExam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tC
@@ -2217,21 +2218,46 @@
             this.tabPage12.Text = "Print";
             this.tabPage12.UseVisualStyleBackColor = true;
             // 
-            // btnMini3
+            // groupBox1
             // 
-            this.btnMini3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnMini3.Location = new System.Drawing.Point(6, 99);
-            this.btnMini3.Name = "btnMini3";
-            this.btnMini3.Size = new System.Drawing.Size(197, 34);
-            this.btnMini3.TabIndex = 80;
-            this.btnMini3.Text = " พิมพ์ เล่มเล็ก mini 3";
-            this.btnMini3.UseVisualStyleBackColor = true;
-            this.btnMini3.Click += new System.EventHandler(this.btnMini3_Click);
+            this.groupBox1.Controls.Add(this.chkPrintNoTest);
+            this.groupBox1.Controls.Add(this.btnMIni1);
+            this.groupBox1.Controls.Add(this.btnMini4);
+            this.groupBox1.Controls.Add(this.btnMini2);
+            this.groupBox1.Controls.Add(this.btnMini3);
+            this.groupBox1.Location = new System.Drawing.Point(25, 119);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(233, 373);
+            this.groupBox1.TabIndex = 82;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "เล่มเล็ก แบบที่1";
+            // 
+            // btnMIni1
+            // 
+            this.btnMIni1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnMIni1.Location = new System.Drawing.Point(6, 95);
+            this.btnMIni1.Name = "btnMIni1";
+            this.btnMIni1.Size = new System.Drawing.Size(197, 34);
+            this.btnMIni1.TabIndex = 78;
+            this.btnMIni1.Text = " พิมพ์ เล่มเล็ก mini 1";
+            this.btnMIni1.UseVisualStyleBackColor = true;
+            this.btnMIni1.Click += new System.EventHandler(this.btnMIni1_Click);
+            // 
+            // btnMini4
+            // 
+            this.btnMini4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnMini4.Location = new System.Drawing.Point(6, 215);
+            this.btnMini4.Name = "btnMini4";
+            this.btnMini4.Size = new System.Drawing.Size(197, 34);
+            this.btnMini4.TabIndex = 81;
+            this.btnMini4.Text = " พิมพ์ เล่มเล็ก mini 4";
+            this.btnMini4.UseVisualStyleBackColor = true;
+            this.btnMini4.Click += new System.EventHandler(this.btnMini4_Click);
             // 
             // btnMini2
             // 
             this.btnMini2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnMini2.Location = new System.Drawing.Point(6, 59);
+            this.btnMini2.Location = new System.Drawing.Point(6, 135);
             this.btnMini2.Name = "btnMini2";
             this.btnMini2.Size = new System.Drawing.Size(197, 34);
             this.btnMini2.TabIndex = 79;
@@ -2239,16 +2265,16 @@
             this.btnMini2.UseVisualStyleBackColor = true;
             this.btnMini2.Click += new System.EventHandler(this.btnMini2_Click);
             // 
-            // btnMIni1
+            // btnMini3
             // 
-            this.btnMIni1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnMIni1.Location = new System.Drawing.Point(6, 19);
-            this.btnMIni1.Name = "btnMIni1";
-            this.btnMIni1.Size = new System.Drawing.Size(197, 34);
-            this.btnMIni1.TabIndex = 78;
-            this.btnMIni1.Text = " พิมพ์ เล่มเล็ก mini 1";
-            this.btnMIni1.UseVisualStyleBackColor = true;
-            this.btnMIni1.Click += new System.EventHandler(this.btnMIni1_Click);
+            this.btnMini3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnMini3.Location = new System.Drawing.Point(6, 175);
+            this.btnMini3.Name = "btnMini3";
+            this.btnMini3.Size = new System.Drawing.Size(197, 34);
+            this.btnMini3.TabIndex = 80;
+            this.btnMini3.Text = " พิมพ์ เล่มเล็ก mini 3";
+            this.btnMini3.UseVisualStyleBackColor = true;
+            this.btnMini3.Click += new System.EventHandler(this.btnMini3_Click);
             // 
             // btnPrintPE
             // 
@@ -2945,29 +2971,17 @@
             this.btnExcel1.UseVisualStyleBackColor = true;
             this.btnExcel1.Click += new System.EventHandler(this.btnExcel1_Click);
             // 
-            // btnMini4
+            // chkPrintNoTest
             // 
-            this.btnMini4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnMini4.Location = new System.Drawing.Point(6, 139);
-            this.btnMini4.Name = "btnMini4";
-            this.btnMini4.Size = new System.Drawing.Size(197, 34);
-            this.btnMini4.TabIndex = 81;
-            this.btnMini4.Text = " พิมพ์ เล่มเล็ก mini 4";
-            this.btnMini4.UseVisualStyleBackColor = true;
-            this.btnMini4.Click += new System.EventHandler(this.btnMini4_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnMIni1);
-            this.groupBox1.Controls.Add(this.btnMini4);
-            this.groupBox1.Controls.Add(this.btnMini2);
-            this.groupBox1.Controls.Add(this.btnMini3);
-            this.groupBox1.Location = new System.Drawing.Point(25, 119);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(233, 373);
-            this.groupBox1.TabIndex = 82;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "เล่มเล็ก แบบที่1";
+            this.chkPrintNoTest.AutoSize = true;
+            this.chkPrintNoTest.Checked = true;
+            this.chkPrintNoTest.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkPrintNoTest.Location = new System.Drawing.Point(22, 29);
+            this.chkPrintNoTest.Name = "chkPrintNoTest";
+            this.chkPrintNoTest.Size = new System.Drawing.Size(152, 17);
+            this.chkPrintNoTest.TabIndex = 82;
+            this.chkPrintNoTest.Text = "Test ที่ไม่ได้ตรวจ ต้องพิมพ์";
+            this.chkPrintNoTest.UseVisualStyleBackColor = true;
             // 
             // FrmCheckUPAdd
             // 
@@ -3011,6 +3025,8 @@
             this.tabPage20.PerformLayout();
             this.tabPage12.ResumeLayout(false);
             this.tabPage12.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDPrintFirst)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDPrintEnd)).EndInit();
             this.tabPage3.ResumeLayout(false);
@@ -3046,7 +3062,6 @@
             this.tabPage19.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStoolExam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3306,5 +3321,6 @@
         private System.Windows.Forms.Button btnMini3;
         private System.Windows.Forms.Button btnMini4;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox chkPrintNoTest;
     }
 }

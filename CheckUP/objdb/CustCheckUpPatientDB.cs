@@ -214,7 +214,7 @@ namespace CheckUP.objdb
             ccp.triglycerideSummary = "triglyceride_summary";
             ccp.hdl = "hdl_male";
             ccp.hdlLabName = "hdl_lab_name";
-            ccp.hdlLabNormal = "hdl_normal";
+            ccp.hdlLabNormal = "hdl_lab_normal";
             ccp.hdlRemark = "hdl_remark";
 
             ccp.ldl = "ldl";
@@ -443,6 +443,10 @@ namespace CheckUP.objdb
             ccp.cbcMchcOld = "cbc_mchc_old";
             ccp.cbcMchOld = "cbc_mch_old";
             ccp.cbcPlateletSmear = "cbc_platelet_smear";
+            ccp.cbcPlateletSmearLabName = "cbc_platelet_smear_lab_name";
+            ccp.cbcPlateletSmearLabNormal = "cbc_platelet_smear_lab_normal";
+            ccp.cbcPlateletSmearRemark = "cbc_platelet_smear_remark";
+
             ccp.sugarOld = "sugar_old";
             ccp.kidneyBunOld = "kidney_bun_old";
             ccp.kidneyCreatinineOld = "kidney_creatinine_old";
