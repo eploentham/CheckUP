@@ -980,6 +980,8 @@ namespace CheckUP.objdb
                 ccp.patientPulse + "='" + pulse + "', " +
                 ccp.patientAge + "='" + age + "', " +
                 ccp.BloodGroup + "='" + bloodgroup + "' " +
+                ","+ccp.PeResult + "='" + result + "' " +
+                "," + ccp.summaryPhysicalExam + "='" + summary + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             } catch (Exception ex) {

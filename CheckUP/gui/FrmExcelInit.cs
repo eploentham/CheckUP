@@ -474,7 +474,15 @@ namespace CheckUP.gui
             nmDBunNo.Left = nmDPENo.Left;
             nmDSgotNo.Left = nmDPENo.Left;
             nmDUricNo.Left = nmDPENo.Left;
-
+            Decimal chk1 = 0;
+            if (Decimal.TryParse(ei.SfRow, out chk1))
+            {
+                nmDRow.Value = chk1;
+            }
+            else
+            {
+                MessageBox.Show("ลำดับ row ไม่ได้ set", "error");
+            }
         }
         private void SaveSgot()
         {

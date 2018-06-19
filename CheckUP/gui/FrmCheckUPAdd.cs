@@ -202,6 +202,15 @@ namespace CheckUP.gui
             setGrdEye(cucId);
             setGrdStoolExam(cucId);
             setGrdToxi(cucId);
+            Decimal chk = 0;
+            if (Decimal.TryParse(ei.SfRow, out chk))
+            {
+                nmDRow.Value = chk;
+            }
+            else
+            {
+                MessageBox.Show("ลำดับ row ไม่ได้ set", "error");
+            }
         }
 
         private void setResize()
@@ -1175,8 +1184,8 @@ namespace CheckUP.gui
                     dgvPE[colPEvitalsign, i].Value = dt.Rows[i][cc.ccpdb.ccp.vitalsign].ToString();
                     dgvPE[colPEPulse, i].Value = dt.Rows[i][cc.ccpdb.ccp.patientPulse].ToString();
                     dgvPE[colPEBloodGroup, i].Value = dt.Rows[i][cc.ccpdb.ccp.BloodGroup].ToString();
-                    dgvPE[colPEResult, i].Value = dt.Rows[i][cc.ccpdb.ccp.lungSuggess].ToString();
-                    dgvPE[colPESummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.lungSuggess].ToString();
+                    dgvPE[colPEResult, i].Value = dt.Rows[i][cc.ccpdb.ccp.PeResult].ToString();
+                    dgvPE[colPESummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.summaryPhysicalExam].ToString();
                     dgvPE[colPEId, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
 
                     if ((i % 2) != 0)
@@ -2568,6 +2577,8 @@ namespace CheckUP.gui
                 //}
 
             }
+            xlWorkbook.Close();
+            
             xlApp.Quit();
             System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
             cc.cucdb.updateCntImport(cucId, rowCount, row);
@@ -11759,6 +11770,15 @@ namespace CheckUP.gui
             FrmExcelInit frm = new FrmExcelInit(cc,"");
             frm.ShowDialog();
             ei = cc.eidb.selectByPk();
+            Decimal chk = 0;
+            if(Decimal.TryParse(ei.SfRow, out chk))
+            {
+                nmDRow.Value = chk;
+            }
+            else
+            {
+                MessageBox.Show("ลำดับ row ไม่ได้ set", "error");
+            }
         }
         private void OpenExcelInit(String tab)
         {
