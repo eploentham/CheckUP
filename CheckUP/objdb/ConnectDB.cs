@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using CheckUP.object1;
-using MySql.Data.MySqlClient;
+//using MySql.Data.MySqlClient;
 
 namespace CheckUP.objdb
 {
@@ -21,7 +21,7 @@ namespace CheckUP.objdb
         public String UName = "", User1 = "", SS = "";
         //public OleDbConnection _mainConnection = new OleDbConnection();
         public SqlConnection _mainConnection = new SqlConnection();
-        public MySql.Data.MySqlClient.MySqlConnection cMysql;
+        //public MySql.Data.MySqlClient.MySqlConnection cMysql;
 
         public int _rowsAffected = 0;
         public SqlInt32 _errorCode = 0;
@@ -150,394 +150,126 @@ namespace CheckUP.objdb
         {
             DataTable toReturn = new DataTable();
             //toReturn.Clear();
-            if (initc.StatusServer.Equals("yes"))
+            
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, _mainConnection);
+            //cmdToExecute.Connection = _mainConnection;
+            try
             {
-                if (initc.connectDatabaseServer.Equals("yes"))
-                {
-                    MySqlCommand cmd = new MySqlCommand(sql, cMysql);
-                    //SqlDataAdapter adapMainhis = new SqlDataAdapter(comMainhis);
-                    try
-                    {
-                        if (cMysql.State != ConnectionState.Open) cMysql.Open();
-                        MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                        da.Fill(toReturn);
-                        //return toReturn;
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new Exception("", ex);
-                    }
-                    finally
-                    {
-                        if (cMysql.State != ConnectionState.Open) cMysql.Close();
-                        cmd.Dispose();
-                    }
-                }
-                else
-                {
-                    //OleDbDataAdapter adapter = new OleDbDataAdapter(sql, _mainConnection);
-                    SqlDataAdapter adapter = new SqlDataAdapter(sql, _mainConnection);
-                    //cmdToExecute.Connection = _mainConnection;
-                    try
-                    {
-                        _mainConnection.Open();
-                        adapter.Fill(toReturn);
-                        //return toReturn;
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new Exception("", ex);
-                    }
-                    finally
-                    {
-                        _mainConnection.Close();
-                        //cmdToExecute.Dispose();
-                        adapter.Dispose();
-                    }
-                }
-
+                _mainConnection.Open();
+                adapter.Fill(toReturn);
+                //return toReturn;
             }
-            else
+            catch (Exception ex)
             {
-                //OleDbDataAdapter adapter = new OleDbDataAdapter(sql, _mainConnection);
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, _mainConnection);
-                //cmdToExecute.Connection = _mainConnection;
-                try
-                {
-                    _mainConnection.Open();
-                    adapter.Fill(toReturn);
-                    //return toReturn;
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("", ex);
-                }
-                finally
-                {
-                    _mainConnection.Close();
-                    //cmdToExecute.Dispose();
-                    adapter.Dispose();
-                }
+                throw new Exception("", ex);
             }
+            finally
+            {
+                _mainConnection.Close();
+                //cmdToExecute.Dispose();
+                adapter.Dispose();
+            }
+            
             return toReturn;
         }
         public void selectDataN(String sql)
         {
-            //DataTable toReturn = new DataTable();
-            dt.Clear();
-            if (initc.StatusServer.Equals("yes"))
+            //OleDbDataAdapter adapter = new OleDbDataAdapter(sql, _mainConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, _mainConnection);
+            try
             {
-                if (initc.connectDatabaseServer.Equals("yes"))
-                {
-                    MySqlCommand cmd = new MySqlCommand(sql, cMysql);
-                    //SqlDataAdapter adapMainhis = new SqlDataAdapter(comMainhis);
-                    try
-                    {
-                        if (cMysql.State != ConnectionState.Open) cMysql.Open();
-                        MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                        da.Fill(dt);
-                        //return toReturn;
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new Exception("", ex);
-                    }
-                    finally
-                    {
-                        if (cMysql.State != ConnectionState.Open) cMysql.Close();
-                        cmd.Dispose();
-                    }
-                }
-                else
-                {
-                    //OleDbDataAdapter adapter = new OleDbDataAdapter(sql, _mainConnection);
-                    SqlDataAdapter adapter = new SqlDataAdapter(sql, _mainConnection);
-                    try
-                    {
-                        _mainConnection.Open();
-                        adapter.Fill(dt);
-                        //return toReturn;
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new Exception("", ex);
-                    }
-                    finally
-                    {
-                        _mainConnection.Close();
-                        //cmdToExecute.Dispose();
-                        adapter.Dispose();
-                    }
-                }
-
+                _mainConnection.Open();
+                adapter.Fill(dt);
+                //return toReturn;
             }
-            else
+            catch (Exception ex)
             {
-                //OleDbDataAdapter adapter = new OleDbDataAdapter(sql, _mainConnection);
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, _mainConnection);
-                try
-                {
-                    _mainConnection.Open();
-                    adapter.Fill(dt);
-                    //return toReturn;
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("", ex);
-                }
-                finally
-                {
-                    _mainConnection.Close();
-                    //cmdToExecute.Dispose();
-                    adapter.Dispose();
-                }                
+                throw new Exception("", ex);
+            }
+            finally
+            {
+                _mainConnection.Close();
+                //cmdToExecute.Dispose();
+                adapter.Dispose();
             }
             //return toReturn;
         }
         public String ExecuteNonQuery(String sql)
         {
             String toReturn = "";
-            if (initc.StatusServer.Equals("yes"))
+            SqlCommand cmdToExecute = new SqlCommand();
+            cmdToExecute.CommandText = sql;
+            cmdToExecute.CommandType = CommandType.Text;
+            cmdToExecute.Connection = _mainConnection;
+            try
             {
-                if (initc.connectDatabaseServer.Equals("yes"))
-                {
-                    MySqlCommand cmd = new MySqlCommand(sql, cMysql);
-                    try
-                    {
-                        if (cMysql.State != ConnectionState.Open) cMysql.Open();
-                        _rowsAffected = cmd.ExecuteNonQuery();
-                        toReturn = _rowsAffected.ToString();
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new Exception("ExecuteNonQuery::Error occured.", ex);
-                        toReturn = ex.Message;
-                    }
-                    finally
-                    {
-                        //_mainConnection.Close();
-                        if (cMysql.State != ConnectionState.Open) cMysql.Close();
-                        cmd.Dispose();
-                    }
-                }
-                else
-                {
-                    //OleDbCommand cmdToExecute = new OleDbCommand();
-                    SqlCommand cmdToExecute = new SqlCommand();
-                    cmdToExecute.CommandText = sql;
-                    cmdToExecute.CommandType = CommandType.Text;
-                    cmdToExecute.Connection = _mainConnection;
-                    try
-                    {
-                        _mainConnection.Open();
-                        _rowsAffected = cmdToExecute.ExecuteNonQuery();
-                        toReturn = _rowsAffected.ToString();
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new Exception("ExecuteNonQuery::Error occured.", ex);
-                        toReturn = ex.Message;
-                    }
-                    finally
-                    {
-                        _mainConnection.Close();
-                        cmdToExecute.Dispose();
-                    }
-                }
-
+                _mainConnection.Open();
+                _rowsAffected = cmdToExecute.ExecuteNonQuery();
+                toReturn = _rowsAffected.ToString();
             }
-            else
+            catch (Exception ex)
             {
-                //OleDbCommand cmdToExecute = new OleDbCommand();
-                SqlCommand cmdToExecute = new SqlCommand();
-                cmdToExecute.CommandText = sql;
-                cmdToExecute.CommandType = CommandType.Text;
-                cmdToExecute.Connection = _mainConnection;
-                try
-                {
-                    _mainConnection.Open();
-                    _rowsAffected = cmdToExecute.ExecuteNonQuery();
-                    toReturn = _rowsAffected.ToString();
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("ExecuteNonQuery::Error occured.", ex);
-                    toReturn = ex.Message;
-                }
-                finally
-                {
-                    _mainConnection.Close();
-                    cmdToExecute.Dispose();
-                }
+                throw new Exception("ExecuteNonQuery::Error occured.", ex);
+                toReturn = ex.Message;
             }
+            finally
+            {
+                _mainConnection.Close();
+                cmdToExecute.Dispose();
+            }
+            
             return toReturn;
         }
         public String ExecuteNonQueryNoClose(String sql)
         {
             String toReturn = "";
-            if (initc.StatusServer.Equals("yes"))
+            SqlCommand cmdToExecute = new SqlCommand();
+            cmdToExecute.CommandText = sql;
+            cmdToExecute.CommandType = CommandType.Text;
+            cmdToExecute.Connection = _mainConnection;
+            try
             {
-                if (initc.connectDatabaseServer.Equals("yes"))
-                {
-                    MySqlCommand cmd = new MySqlCommand(sql, cMysql);
-                    try
-                    {
-                        if (cMysql.State != ConnectionState.Open) cMysql.Open();
-                        _rowsAffected = cmd.ExecuteNonQuery();
-                        toReturn = _rowsAffected.ToString();
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new Exception("ExecuteNonQuery::Error occured.", ex);
-                        toReturn = ex.Message;
-                    }
-                    finally
-                    {
-                        //_mainConnection.Close();
-                        //comMainhis.Dispose();
-                    }
-                }
-                else
-                {
-                    //OleDbCommand cmdToExecute = new OleDbCommand();
-                    SqlCommand cmdToExecute = new SqlCommand();
-                    cmdToExecute.CommandText = sql;
-                    cmdToExecute.CommandType = CommandType.Text;
-                    cmdToExecute.Connection = _mainConnection;
-                    try
-                    {
-                        //_mainConnection.Open();
-                        _rowsAffected = cmdToExecute.ExecuteNonQuery();
-                        toReturn = _rowsAffected.ToString();
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new Exception("ExecuteNonQuery::Error occured.", ex);
-                        toReturn = ex.Message;
-                    }
-                    finally
-                    {
-                        //_mainConnection.Close();
-                        //cmdToExecute.Dispose();
-                    }
-                }
+                //_mainConnection.Open();
+                _rowsAffected = cmdToExecute.ExecuteNonQuery();
+                toReturn = _rowsAffected.ToString();
             }
-            else
+            catch (Exception ex)
             {
-                //OleDbCommand cmdToExecute = new OleDbCommand();
-                SqlCommand cmdToExecute = new SqlCommand();
-                cmdToExecute.CommandText = sql;
-                cmdToExecute.CommandType = CommandType.Text;
-                cmdToExecute.Connection = _mainConnection;
-                try
-                {
-                    //_mainConnection.Open();
-                    _rowsAffected = cmdToExecute.ExecuteNonQuery();
-                    toReturn = _rowsAffected.ToString();
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("ExecuteNonQuery::Error occured.", ex);
-                    toReturn = ex.Message;
-                }
-                finally
-                {
-                    //_mainConnection.Close();
-                    //cmdToExecute.Dispose();
-                }
+                throw new Exception("ExecuteNonQuery::Error occured.", ex);
+                toReturn = ex.Message;
+            }
+            finally
+            {
+                //_mainConnection.Close();
+                //cmdToExecute.Dispose();
             }
             return toReturn;
         }
         public String OpenConnection()
         {
-            String toReturn = "";
-            if (initc.StatusServer.Equals("yes"))
+            String toReturn = "";            
+            //cmdToExecute.Connection = _mainConnection;
+            try
             {
-                if (initc.connectDatabaseServer.Equals("yes"))
-                {
-                    try
-                    {
-                        if (cMysql.State != ConnectionState.Open) cMysql.Open();
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new Exception("ExecuteNonQuery::Error occured.", ex);
-                        toReturn = ex.Message;
-                    }
-                    finally
-                    {
-                        //_mainConnection.Close();
-                        //comMainhis.Dispose();
-                    }
-                }
-                else
-                {
-                    //OleDbCommand cmdToExecute = new OleDbCommand();
-                    ////cmdToExecute.CommandText = sql;
-                    //cmdToExecute.CommandType = CommandType.Text;
-                    //cmdToExecute.Connection = _mainConnection;
-                    try
-                    {
-                        _mainConnection.Open();
-                        //_rowsAffected = cmdToExecute.ExecuteNonQuery();
-                        //toReturn = _rowsAffected.ToString();
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new Exception("ExecuteNonQuery::Error occured.", ex);
-                        toReturn = ex.Message;
-                    }
-                    finally
-                    {
-                        //_mainConnection.Close();
-                        //cmdToExecute.Dispose();
-                    }
-                }
+                _mainConnection.Open();
+                //_rowsAffected = cmdToExecute.ExecuteNonQuery();
+                //toReturn = _rowsAffected.ToString();
             }
-            else
+            catch (Exception ex)
             {
-                //OleDbCommand cmdToExecute = new OleDbCommand();
-                ////cmdToExecute.CommandText = sql;
-                //cmdToExecute.CommandType = CommandType.Text;
-                //cmdToExecute.Connection = _mainConnection;
-                try
-                {
-                    _mainConnection.Open();
-                    //_rowsAffected = cmdToExecute.ExecuteNonQuery();
-                    //toReturn = _rowsAffected.ToString();
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("ExecuteNonQuery::Error occured.", ex);
-                    toReturn = ex.Message;
-                }
-                finally
-                {
-                    //_mainConnection.Close();
-                    //cmdToExecute.Dispose();
-                }
+                throw new Exception("ExecuteNonQuery::Error occured.", ex);
+                toReturn = ex.Message;
+            }
+            finally
+            {
+                //_mainConnection.Close();
+                //cmdToExecute.Dispose();
             }
             return toReturn;
         }
         public void CloseConnection()
         {
-            if (initc.connectDatabaseServer.Equals("yes"))
-            {
-                if (initc.connectDatabaseServer.Equals("yes"))
-                {
-                    cMysql.Close();
-                }
-                else
-                {
-                    connMainHIS.Close();
-                }
-
-            }
-            else
-            {
-                //connMainHIS.Close();
-                _mainConnection.Close();
-            }
+            _mainConnection.Close();            
         }
     }
 }

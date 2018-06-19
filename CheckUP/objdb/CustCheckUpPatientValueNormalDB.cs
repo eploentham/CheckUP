@@ -363,6 +363,16 @@ namespace CheckUP.objdb
 
             return dt;
         }
+        public CustCheckUpPatientValueNormal selectByPk1()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            CustCheckUpPatientValueNormal ccpvn1 = new CustCheckUpPatientValueNormal();
+            sql = "Select * From " + ccpvn.table + " ";
+            dt = conn.selectData(sql);
+            ccpvn1 = setCustCheckUpPatientValueNormal(dt);
+            return ccpvn1;
+        }
         public String UpdateFBS(String value)
         {
             String chk = "", sql = "";
@@ -816,6 +826,345 @@ namespace CheckUP.objdb
             {
             }
             return chk;
+        }
+        public CustCheckUpPatientValueNormal setCustCheckUpPatientValueNormal(DataTable dt)
+        {
+            CustCheckUpPatientValueNormal ccpvn1 = new CustCheckUpPatientValueNormal();
+            if (dt.Rows.Count > 0)
+            {
+                ccpvn1.Id = "";
+                ccpvn1.CustCheckUpId = "";
+                ccpvn1.ChecklistId = "";
+                ccpvn1.visitHn = "";
+                ccpvn1.patientFullname = "";
+                ccpvn1.patientAge = "";
+                ccpvn1.departmentName = "";
+                ccpvn1.pid = "";
+                ccpvn1.patientNumber = "";
+                ccpvn1.sectionName = "";
+                ccpvn1.vitalsign = "";
+                ccpvn1.patientHeight = "";
+                ccpvn1.patientPulse = "";
+                ccpvn1.patientWeight = "";
+                //ccpvn1.EyeShortLongLeft = "eye_short_long_left";
+                ccpvn1.EyeExam = "";
+                ccpvn1.EyeDegreeLeft = "";
+                ccpvn1.EyeDegreeRight = "";
+                ccpvn1.EyeShortLongLeft = "";
+                ccpvn1.EyeShortLongRight = "";
+                ccpvn1.EyeSquintLeft = "";
+                ccpvn1.EyeSquintRight = "";
+                ccpvn1.EyeOldLeft = "";
+                ccpvn1.EyeOldRight = "";
+                ccpvn1.EyeSummary = "";
+                ccpvn1.EyeResult = "";
+                ccpvn1.EyeBlindness = "";
+
+                ccpvn1.fSexId = "";
+                ccpvn1.summaryPhysicalExam = "";
+
+                ccpvn1.StoolExamColor = "";
+                ccpvn1.StoolExamAppearance = "";
+                ccpvn1.StoolExamWbc = "";
+                ccpvn1.StoolExamRbc = "";
+                ccpvn1.StoolExamParasite = "";
+                ccpvn1.StoolExamSummary = "";
+                ccpvn1.StoolExamCulture = "";
+                ccpvn1.StoolExamTyphoidH = "";
+                ccpvn1.StoolExamTyphoidO = "";
+
+                //ccpvn1.toxicologyLead = "toxicology_lead";
+                //ccpvn1.toxicologyMercury = "toxicology_mercury";
+                //ccpvn1.toxicologyBenzene = "toxicology_benzene";
+                //ccpvn1.toxicologyXylene = "toxicology_xylene";
+                ccpvn1.Audiogram500L = "";
+                ccpvn1.Audiogram1000L = "";
+                ccpvn1.Audiogram2000L = "";
+                ccpvn1.Audiogram3000L = "";
+                ccpvn1.Audiogram4000L = "";
+                ccpvn1.Audiogram6000L = "";
+                ccpvn1.Audiogram8000L = "";
+                ccpvn1.AudiogramSummaryL = "";
+                ccpvn1.Audiogram500R = "";
+                ccpvn1.Audiogram1000R = "";
+                ccpvn1.Audiogram2000R = "";
+                ccpvn1.Audiogram3000R = "";
+                ccpvn1.Audiogram4000R = "";
+                ccpvn1.Audiogram6000R = "";
+                ccpvn1.Audiogram8000R = "";
+                ccpvn1.AudiogramSummaryR = "";
+                ccpvn1.AudiogramExam = "";
+                ccpvn1.xrayChestExam = "";
+                ccpvn1.xrayChestSummary = "";
+                ccpvn1.eyesExam = "";
+                ccpvn1.ekgExam = "";
+
+                ccpvn1.CAAFP = "";
+                ccpvn1.CACEA = "";
+                ccpvn1.CAPSA = "";
+                ccpvn1.CAHCG = "";
+                ccpvn1.CA153 = "";
+                ccpvn1.CA125 = "";
+                ccpvn1.CA199 = "";
+
+                ccpvn1.thyroidT3 = "";
+                ccpvn1.thyroidT4 = "";
+                ccpvn1.thyroidTsh = "";
+                ccpvn1.fPatientBloodGroupId = "";
+
+                ccpvn1.vdrl = "";
+                ccpvn1.antiHiv = "";
+                ccpvn1.hbsag = "";
+                ccpvn1.hbsab = "";
+                ccpvn1.amphetamine = "";
+                ccpvn1.AntiHav = "";
+
+                ccpvn1.disscusExam = "";
+                ccpvn1.suggestExam = "";
+                ccpvn1.sugar = "";
+                ccpvn1.sugarDiagnosis = "";
+                ccpvn1.sugarSummary = dt.Rows[0][ccpvn.sugarSummary].ToString();
+                ccpvn1.sugarSuggess = "";
+                ccpvn1.sugarValueNormal = dt.Rows[0][ccpvn.sugarValueNormal].ToString();
+                ccpvn1.sugarValueLower = dt.Rows[0][ccpvn.sugarValueLower].ToString();
+                ccpvn1.sugarValueUpper = dt.Rows[0][ccpvn.sugarValueUpper].ToString();
+                ccpvn1.sugarValueLowerSuggess = dt.Rows[0][ccpvn.sugarValueLowerSuggess].ToString();
+                ccpvn1.sugarValueUpperSuggess = dt.Rows[0][ccpvn.sugarValueUpperSuggess].ToString();
+
+                ccpvn1.kidneyBunMale = "";
+                ccpvn1.kidneyCreatinineMale = "";
+                ccpvn1.kidneyBunFemale = "";
+                ccpvn1.kidneyCreatinineFemale = "";
+
+                ccpvn1.kidneyResult = "";
+                ccpvn1.kidneySummary = "";
+                ccpvn1.liverSgotMale = "";
+                ccpvn1.liverSgotFeMale = "";
+                ccpvn1.liverSgptMale = "";
+                ccpvn1.liverSgptFeMale = "";
+                ccpvn1.liverAlpMale = "";
+                ccpvn1.liverAlpFeMale = "";
+                ccpvn1.liverResult = "";
+                ccpvn1.liverSummary = "";
+                ccpvn1.liverAlkalineMale = "";
+                ccpvn1.liverAlkalineFeMale = "";
+
+                ccpvn1.uricAcidMale = "";
+                ccpvn1.uricAcidFemale = "";
+                ccpvn1.cholesterol = "";
+                ccpvn1.cholesterolValueNormal = "";
+                ccpvn1.cholesterolValueUpper = "";
+                ccpvn1.cholesterolValueUpperSuggess = "";
+
+                ccpvn1.triglyceride = "";
+                ccpvn1.triglycerideValueNormal = "";
+                ccpvn1.triglycerideValueUpper = "";
+                ccpvn1.triglycerideValueUpperSuggess = "";
+
+                ccpvn1.triglycerideResult = "";
+                ccpvn1.triglycerideSummary = "";
+                ccpvn1.hdlMale = "";
+                ccpvn1.hdlFemale = "";
+                ccpvn1.ldl = "";
+                ccpvn1.ldlValueNormal = "";
+                ccpvn1.ldlValueUpper = "";
+                ccpvn1.ldlValueUpperSuggess = "";
+
+                ccpvn1.calcium = "";
+
+                ccpvn1.cbcMcvMale = "";
+                ccpvn1.cbcHbMale = "";
+                ccpvn1.cbcHctMale = "";
+                ccpvn1.cbcRbcMale = "";
+                ccpvn1.cbcMcvFemale = "";
+                ccpvn1.cbcHbFemale = "";
+                ccpvn1.cbcHctFemale = "";
+                ccpvn1.cbcRbcFemale = "";
+                ccpvn1.cbcWbc = "";
+                ccpvn1.cbcMch = "";
+                ccpvn1.cbcMchc = "";
+                ccpvn1.cbcNeutrophil = "";
+                ccpvn1.cbcLymphocyte = "";
+                ccpvn1.cbcEosinophil = "";
+                ccpvn1.cbcMonocyte = "";
+                ccpvn1.cbcBasophil = "";
+                ccpvn1.cbcPlateletCount = "";
+                ccpvn1.cbcRbcMorpholog = "";
+                ccpvn1.cbcSummary = "";
+                ccpvn1.cbcPmn = "";
+
+                ccpvn1.urineColor = "";
+                ccpvn1.urineAppearance = "";
+                ccpvn1.urinePh = "";
+                ccpvn1.urineSpGr = "";
+                ccpvn1.urineSugar = "";
+                ccpvn1.urineProtein = "";
+                ccpvn1.urineBlood = "";
+                ccpvn1.urineKetone = "";
+                ccpvn1.urineBacteria = "";
+                ccpvn1.urineWbc = "";
+                ccpvn1.urineRbc = "";
+                ccpvn1.urineEpithelium = "";
+                ccpvn1.urineSummary = "";
+                ccpvn1.urineResult = "";
+                ccpvn1.urineGlu = "";
+                ccpvn1.urineNit = "";
+                ccpvn1.urineBil = "";
+                ccpvn1.urineUro = "";
+                ccpvn1.urineLeu = "";
+
+                ccpvn1.lungFvcPredic = "";
+                ccpvn1.lungFvcMeas = "";
+                ccpvn1.lungFvcPer = "";
+                ccpvn1.lungFev1Predic = "";
+                ccpvn1.lungFev1Meas = "";
+                ccpvn1.lungFev1Per = "";
+                ccpvn1.lungPerFev1 = "";
+                ccpvn1.lungSummary = "";
+                ccpvn1.lungSuggess = "";
+                ccpvn1.statusName = "";
+                ccpvn1.rowNumber = "";
+
+                //ccpvn1.cbcMcv="";
+                //ccpvn1.toxicologyToluene = "toxicology_toluene";
+
+                ccpvn1.thyroidRubellaLgg = "";
+                ccpvn1.billirubin = "";
+                //ccpvn1.toxicologyThinner = "toxicology_thinner";
+                //ccpvn1.toxicologyAlcohol = "toxicology_alcohol";
+                ccpvn1.stickerQty = "";
+                ccpvn1.statusCbc = "";
+                ccpvn1.statusUa = "";
+                ccpvn1.statusFbs = "";
+                ccpvn1.statusPe = "";
+                ccpvn1.statusXray = "";
+                ccpvn1.statusStool = "";
+                ccpvn1.statusAntiHiv = "";
+                ccpvn1.statusUricAcid = "";
+                ccpvn1.statusAmphetamine = "";
+                ccpvn1.statusVisit = "";
+                ccpvn1.statusCholes = "";
+                ccpvn1.StatusHbsag = "";
+
+
+                ccpvn1.cholesterolSummary = "";
+                ccpvn1.cholesterolSuggess = "";
+
+                ccpvn1.hbsagSuggess = "";
+                ccpvn1.hbsagSummary = "";
+
+                ccpvn1.Active = "";
+                ccpvn1.eyeBio = "";
+                ccpvn1.amphetamineSummary = "";
+                ccpvn1.amphetamineSuggess = "";
+
+                ccpvn1.antiHivSummary = "";
+                ccpvn1.antiHivSuggess = "";
+                //ccpvn1.eyesExam = "";
+                ccpvn1.uricAcidSuggess = "";
+                ccpvn1.uricAcidSummary = "";
+
+                ccpvn1.visitComment = "";
+                ccpvn1.bmi = "";
+                ccpvn1.antiHbc = "";
+                ccpvn1.caFt3 = "";
+                ccpvn1.hbtyping = "";
+                //ccpvn1.toxicologyHexane = "toxicology_hexane";
+                //ccpvn1.toxicologyMethanol = "toxicology_methanol";
+                //ccpvn1.toxicologyMek = "toxicology_mek";
+                //ccpvn1.toxicologyAcetone = "toxicology_acetone";
+                //ccpvn1.antiHbc="";
+                ccpvn1.eyeLeft = "";
+                ccpvn1.eyeRight = "";
+                ccpvn1.opticalLeftAngle = "";
+                ccpvn1.opticalRightAngle = "";
+                ccpvn1.cbcMcvOld = "";
+                ccpvn1.cbcHbOld = "";
+                ccpvn1.cbcHctOld = "";
+                ccpvn1.cbcWbcOld = "";
+                ccpvn1.cbcNeutrophilOld = "";
+                ccpvn1.cbcLymphocyteOld = "";
+                ccpvn1.cbcEosinophilOld = "";
+                ccpvn1.cbcMonocyteOld = "";
+                ccpvn1.cbcBasophilOld = "";
+                ccpvn1.cbcPlateletCountOld = "";
+                ccpvn1.cbcRbcMorphologOld = "";
+                ccpvn1.cbcSummaryOld = "";
+                ccpvn1.cbcRbcOld = "";
+                ccpvn1.cbcMchcOld = "";
+                ccpvn1.cbcMchOld = "";
+                ccpvn1.cbcPlateletSmear = "";
+                ccpvn1.sugarOld = "";
+                ccpvn1.kidneyBunOld = "";
+                ccpvn1.kidneyCreatinineOld = "";
+                ccpvn1.liverSgotOld = "";
+                ccpvn1.liverSgptOld = "";
+                ccpvn1.liverAlpOld = "";
+                ccpvn1.uricAcidOld = "";
+                ccpvn1.cholesterolOld = "";
+                ccpvn1.triglycerideOld = "";
+                ccpvn1.hdlOld = "";
+                ccpvn1.ldlOld = "";
+                //ccpvn1.toxicologyLeadOld = "toxicology_lead_old";
+                //ccpvn1.toxicologyMercuryOld = "toxicology_mercury_old";
+                //ccpvn1.toxicologyBenzeneOld = "toxicology_benzene_old";
+                //ccpvn1.toxicologyXyleneOld = "toxicology_xylene_old";
+                //ccpvn1.toxicologyThinnerOld = "toxicology_thinner_old";
+                //ccpvn1.toxicologyAlcoholOld = "toxicology_alcohol_old";
+                //ccpvn1.toxicologyHexaneOld = "toxicology_hexane_old";
+                //ccpvn1.toxicologyMethanolOld = "toxicology_methanol_old";
+                //ccpvn1.toxicologyMekOld = "toxicology_mek_old";
+                //ccpvn1.toxicologyAcetoneOld = "toxicology_acetone_old";
+                //ccpvn1.toxicologyTolueneOld = "toxicology_toluene_old";
+
+                ccpvn1.urineOther = "";
+                ccpvn1.cultureStool = "";
+                ccpvn1.cultureUrine = "";
+                ccpvn1.cultureBacteria = "";
+                ccpvn1.cultureSputum = "";
+                ccpvn1.marketingCheckupPatientOldId = "";
+                ccpvn1.thyroidFt3 = "";
+                ccpvn1.thyroidFt4 = "";
+                ccpvn1.amylase = "";
+                ccpvn1.totalProtein = "";
+                ccpvn1.albumin = "";
+                ccpvn1.globulin = "";
+                ccpvn1.albuminGlobulin = "";
+                ccpvn1.directBillirubin = "";
+                ccpvn1.colorBlindness = "";
+
+                ccpvn1.ToxiAcetone = "";
+                ccpvn1.ToxiAluminium = "";
+                ccpvn1.ToxiAmmonia = "";
+                ccpvn1.ToxiAntimony = "";
+                ccpvn1.ToxiArsenic = "";
+                ccpvn1.ToxiBenzene = "";
+                ccpvn1.ToxiCadmium = "";
+                ccpvn1.ToxiChromium = "";
+                ccpvn1.ToxiCopper = "";
+                ccpvn1.ToxiEthanol = "";
+                ccpvn1.ToxiFluoride = "";
+                ccpvn1.ToxiFomaldehyde = "";
+                ccpvn1.ToxiHexane = "";
+                ccpvn1.ToxiHippuric = "";
+                ccpvn1.ToxiIPA = "";
+                ccpvn1.ToxiKetone = "";
+                ccpvn1.ToxiLead = "";
+                ccpvn1.ToxiMandelic = "";
+                ccpvn1.ToxiManganese = "";
+                ccpvn1.ToxiMercury = "";
+                ccpvn1.ToxiMethanol = "";
+                ccpvn1.ToxiMethyl = "";
+                ccpvn1.ToxiNickel = "";
+                ccpvn1.ToxiPhenol = "";
+                ccpvn1.ToxiTin = "";
+                ccpvn1.ToxiTrichloroethylene = "";
+                ccpvn1.ToxiZinc = "";
+                ccpvn1.StatusCBCNotsplitMaleFemale = "";
+                ccpvn1.StatusSgotNotsplitMaleFemale = "";
+                ccpvn1.StatusBunNotsplitMaleFemale = "";
+            }
+            return ccpvn1;
         }
     }
 }

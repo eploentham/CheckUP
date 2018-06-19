@@ -93,6 +93,7 @@ namespace CheckUP.gui
         OpenFileDialog ofd = new OpenFileDialog();
         object misValue = System.Reflection.Missing.Value;
         ExcelInit ei;
+        CustCheckUpPatientValueNormal ccpvn;
         public FrmCheckUPAdd(String cucId,Boolean flagnew,CheckControl c)
         {
             InitializeComponent();
@@ -103,6 +104,8 @@ namespace CheckUP.gui
         private void iniConfig(String cucId)
         {
             cuc = new CustCheckUp();
+            ccpvn = new CustCheckUpPatientValueNormal();
+            ccpvn = cc.ccpvndb.selectByPk1();
             cuc.Id = cucId;
             dtpCheckUpDate.Format = DateTimePickerFormat.Short;
             dtAll = cc.ccpdb.selectAllByCucId(cucId);
@@ -1272,17 +1275,23 @@ namespace CheckUP.gui
                         {
                             if ((fbs2 > fbsMin) && (fbs2 < fbsMax))
                             {
-                                dgvFBS[colFBSResult, i].Value = "ปกติ";
+                                //dgvFBS[colFBSResult, i].Value = "ปกติ";
+                                dgvFBS[colFBSResult, i].Value = cc.ccpvndb.ccpvn.sugarValueNormal;
                             }
                             else
                             {
                                 if (int.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.sugar].ToString())) > fbsMax)
                                 {
-                                    dgvFBS[colFBSResult, i].Value = "สูงกว่ามาตรฐาน";
+                                    
+                                    //dgvFBS[colFBSResult, i].Value = "สูงกว่ามาตรฐาน";
+                                    dgvFBS[colFBSResult, i].Value = cc.ccpvndb.ccpvn.sugarValueUpper;
+                                    dgvFBS[coLFBSSummary, i].Value = cc.ccpvndb.ccpvn.sugarValueUpperSuggess;
                                 }
                                 else
                                 {
-                                    dgvFBS[colFBSResult, i].Value = "ต่ำกว่ามาตรฐาน";
+                                    //dgvFBS[colFBSResult, i].Value = "ต่ำกว่ามาตรฐาน";
+                                    dgvFBS[colFBSResult, i].Value = cc.ccpvndb.ccpvn.sugarValueLower;
+                                    dgvFBS[coLFBSSummary, i].Value = cc.ccpvndb.ccpvn.sugarValueLowerSuggess;
                                 }
                             }
                         }
