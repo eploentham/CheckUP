@@ -300,17 +300,17 @@ namespace CheckUP
             //MessageBox.Show(" 22222 ", "");
             try
             {
-                cc.lw.WriteLog("rpt.setReportCheckUpSticker OK ");
+                cc.lw.WriteLog("rpt.setReportCheckUpSticker OK dt="+dt.Rows.Count+ " path " + cc.initC.PathReport + "CheckUpSticker.rpt");
                 if(!File.Exists(cc.initC.PathReport + "CheckUpSticker.rpt"))
                 {
-                    //MessageBox.Show(" path "+cc.initC.PathReport + "\\CheckUpSticker.rpt", "");
+                    MessageBox.Show(" File not found " + cc.initC.PathReport + "CheckUpSticker.rpt", "");
                     return;
                 }
                 else
                 {
-                    MessageBox.Show(" OK " , "");
+                    //MessageBox.Show(" OK " , "");
                 }
-
+                //MessageBox.Show(" OK 1", "");
                 rpt.Load(cc.initC.PathReport + "CheckUpSticker.rpt");
                 cc.lw.WriteLog("rpt.setReportCheckUpSticker OK Load" + cc.initC.PathReport + "CheckUpSticker.rpt");
                 rpt.SetDataSource(dt);

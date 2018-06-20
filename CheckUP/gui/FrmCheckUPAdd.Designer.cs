@@ -212,6 +212,7 @@
             this.label96 = new System.Windows.Forms.Label();
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkPrintNoTest = new System.Windows.Forms.CheckBox();
             this.btnMIni1 = new System.Windows.Forms.Button();
             this.btnMini4 = new System.Windows.Forms.Button();
             this.btnMini2 = new System.Windows.Forms.Button();
@@ -280,7 +281,6 @@
             this.txtCntSuccess = new System.Windows.Forms.TextBox();
             this.label123 = new System.Windows.Forms.Label();
             this.btnExcel1 = new System.Windows.Forms.Button();
-            this.chkPrintNoTest = new System.Windows.Forms.CheckBox();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -2232,6 +2232,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "เล่มเล็ก แบบที่1";
             // 
+            // chkPrintNoTest
+            // 
+            this.chkPrintNoTest.AutoSize = true;
+            this.chkPrintNoTest.Checked = true;
+            this.chkPrintNoTest.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkPrintNoTest.Location = new System.Drawing.Point(22, 29);
+            this.chkPrintNoTest.Name = "chkPrintNoTest";
+            this.chkPrintNoTest.Size = new System.Drawing.Size(152, 17);
+            this.chkPrintNoTest.TabIndex = 82;
+            this.chkPrintNoTest.Text = "Test ที่ไม่ได้ตรวจ ต้องพิมพ์";
+            this.chkPrintNoTest.UseVisualStyleBackColor = true;
+            // 
             // btnMIni1
             // 
             this.btnMIni1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -2371,7 +2383,7 @@
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(152, 34);
             this.btnPrint.TabIndex = 69;
-            this.btnPrint.Text = " พิมพ์ เล่มเล็ก A5";
+            this.btnPrint.Text = " พิมพ์ เล่มเล็ก A4";
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
@@ -2970,18 +2982,6 @@
             this.btnExcel1.Text = "...";
             this.btnExcel1.UseVisualStyleBackColor = true;
             this.btnExcel1.Click += new System.EventHandler(this.btnExcel1_Click);
-            // 
-            // chkPrintNoTest
-            // 
-            this.chkPrintNoTest.AutoSize = true;
-            this.chkPrintNoTest.Checked = true;
-            this.chkPrintNoTest.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkPrintNoTest.Location = new System.Drawing.Point(22, 29);
-            this.chkPrintNoTest.Name = "chkPrintNoTest";
-            this.chkPrintNoTest.Size = new System.Drawing.Size(152, 17);
-            this.chkPrintNoTest.TabIndex = 82;
-            this.chkPrintNoTest.Text = "Test ที่ไม่ได้ตรวจ ต้องพิมพ์";
-            this.chkPrintNoTest.UseVisualStyleBackColor = true;
             // 
             // FrmCheckUPAdd
             // 

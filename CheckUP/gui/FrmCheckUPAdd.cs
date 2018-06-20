@@ -1267,7 +1267,7 @@ namespace CheckUP.gui
                     dgvFBS[colFBSResult, i].Value = dt.Rows[i][cc.ccpdb.ccp.sugarDiagnosis].ToString();
                     dgvFBS[coLFBSSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.sugarSummary].ToString();
                     String fbs1 = "";
-                    fbs1 = dt.Rows[i][cc.ccpdb.ccp.sugar].ToString().Trim();
+                    fbs1 = cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.sugar].ToString().Trim());
                     int fbs2 = 0;
                     if(int.TryParse(fbs1, out fbs2))
                     {
@@ -1276,22 +1276,23 @@ namespace CheckUP.gui
                             if ((fbs2 > fbsMin) && (fbs2 < fbsMax))
                             {
                                 //dgvFBS[colFBSResult, i].Value = "ปกติ";
-                                dgvFBS[colFBSResult, i].Value = cc.ccpvndb.ccpvn.sugarValueNormal;
+                                dgvFBS[colFBSResult, i].Value = ccpvn.sugarValueNormal;
+                                dgvFBS[coLFBSSummary, i].Value = "";
                             }
                             else
                             {
-                                if (int.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.sugar].ToString())) > fbsMax)
+                                if (fbs2 > fbsMax)
                                 {
                                     
                                     //dgvFBS[colFBSResult, i].Value = "สูงกว่ามาตรฐาน";
-                                    dgvFBS[colFBSResult, i].Value = cc.ccpvndb.ccpvn.sugarValueUpper;
-                                    dgvFBS[coLFBSSummary, i].Value = cc.ccpvndb.ccpvn.sugarValueUpperSuggess;
+                                    dgvFBS[colFBSResult, i].Value = ccpvn.sugarValueUpper;
+                                    dgvFBS[coLFBSSummary, i].Value = ccpvn.sugarValueUpperSuggess;
                                 }
                                 else
                                 {
                                     //dgvFBS[colFBSResult, i].Value = "ต่ำกว่ามาตรฐาน";
-                                    dgvFBS[colFBSResult, i].Value = cc.ccpvndb.ccpvn.sugarValueLower;
-                                    dgvFBS[coLFBSSummary, i].Value = cc.ccpvndb.ccpvn.sugarValueLowerSuggess;
+                                    dgvFBS[colFBSResult, i].Value = ccpvn.sugarValueLower;
+                                    dgvFBS[coLFBSSummary, i].Value = ccpvn.sugarValueLowerSuggess;
                                 }
                             }
                         }
@@ -1450,15 +1451,29 @@ namespace CheckUP.gui
                         dgvTri[coLTriSummary, i].Value = dt.Rows[i][cc.ccpdb.ccp.triglycerideSummary].ToString();
                         dgvTri[colTriId, i].Value = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
 
-                        if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.triglyceride].ToString().Trim())) > 0)
+                        String trig1 = "";
+                        Double trig2 = 0;
+                        trig1 = cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.triglyceride].ToString().Trim());
+                        if(Double.TryParse(trig1, out trig2))
                         {
-                            if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.triglyceride].ToString().Trim())) >= triMax)
+                            if (trig2 > 0)
                             {
-                                dgvTri[colTriResult, i].Value = "สูงกว่าปกติ";
+                                if (trig2 >= triMax)
+                                {
+                                    //dgvTri[colTriResult, i].Value = "สูงกว่าปกติ";
+                                    dgvTri[colTriResult, i].Value = ccpvn.triglycerideValueUpper;
+                                    dgvTri[coLTriSummary, i].Value = ccpvn.triglycerideValueUpperSuggess;
+                                }
+                                else if (trig2 < triMax)
+                                {
+                                    //dgvTri[colTriResult, i].Value = "ปกติ";
+                                    dgvTri[colTriResult, i].Value = ccpvn.triglycerideValueNormal;
+                                    dgvTri[coLTriSummary, i].Value = "";
+                                }
                             }
-                            else if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.triglyceride].ToString().Trim())) < triMax)
+                            else
                             {
-                                dgvTri[colTriResult, i].Value = "ปกติ";
+                                dgvTri[colTriResult, i].Value = "";
                             }
                         }
                         else
@@ -1549,15 +1564,29 @@ namespace CheckUP.gui
                     }
                     try
                     {
-                        if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.cholesterol].ToString().Trim())) > 0)
+                        String choles1 = "";
+                        Double choles2 = 0;
+                        choles1 = cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.cholesterol].ToString().Trim());
+                        if (Double.TryParse(choles1, out choles2))
                         {
-                            if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.cholesterol].ToString().Trim())) >= cholesMax)
+                            if (choles2 > 0)
                             {
-                                dgvCho[colChoResult, i].Value = "สูงกว่าปกติ";
+                                if (choles2 >= cholesMax)
+                                {
+                                    //dgvCho[colChoResult, i].Value = "สูงกว่าปกติ";
+                                    dgvCho[colChoResult, i].Value = ccpvn.cholesterolValueUpper;
+                                    dgvCho[coLChoSummary, i].Value = ccpvn.cholesterolValueUpperSuggess;
+                                }
+                                else if (choles2 < cholesMax)
+                                {
+                                    //dgvCho[colChoResult, i].Value = "ปกติ";
+                                    dgvCho[colChoResult, i].Value = ccpvn.cholesterolValueNormal;
+                                    dgvCho[coLChoSummary, i].Value = "";
+                                }
                             }
-                            else if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.cholesterol].ToString().Trim())) < cholesMax)
+                            else
                             {
-                                dgvCho[colChoResult, i].Value = "ปกติ";
+                                dgvCho[colChoResult, i].Value = "";
                             }
                         }
                         else
@@ -1571,15 +1600,29 @@ namespace CheckUP.gui
                     }
                     try
                     {
-                        if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.ldl].ToString().Trim())) > 0)
+                        String ldl1 = "";
+                        Double ldl2 = 0;
+                        ldl1 = cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.ldl].ToString().Trim());
+                        if (Double.TryParse(ldl1, out ldl2))
                         {
-                            if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.ldl].ToString().Trim())) >= ldlMax)
+                            if (ldl2 > 0)
                             {
-                                dgvCho[colChoLDLResult, i].Value = "สูงกว่าปกติ";
+                                if (ldl2 >= ldlMax)
+                                {
+                                    //dgvCho[colChoLDLResult, i].Value = "สูงกว่าปกติ";
+                                    dgvCho[colChoLDLResult, i].Value = ccpvn.ldlValueUpper;
+                                    dgvCho[colChoLDLSummary, i].Value = ccpvn.ldlValueUpperSuggess;
+                                }
+                                else if (ldl2 < ldlMax)
+                                {
+                                    //dgvCho[colChoLDLResult, i].Value = "ปกติ";
+                                    dgvCho[colChoLDLResult, i].Value = ccpvn.ldlValueNormal;
+                                    dgvCho[colChoLDLSummary, i].Value = "";
+                                }
                             }
-                            else if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.ldl].ToString().Trim())) < ldlMax)
+                            else
                             {
-                                dgvCho[colChoLDLResult, i].Value = "ปกติ";
+                                dgvCho[colChoLDLResult, i].Value = "";
                             }
                         }
                         else
@@ -1593,15 +1636,26 @@ namespace CheckUP.gui
                     }
                     try
                     {
-                        if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.hdl].ToString().Trim())) > 0)
+                        String hdl1 = "";
+                        Double hdl2 = 0;
+                        hdl1 = cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.hdl].ToString().Trim());
+                        if (Double.TryParse(hdl1, out hdl2))
                         {
-                            if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.hdl].ToString().Trim())) >= hdlMax)
+                            if (hdl2 > 0)
                             {
-                                //dgvCho[colChoHDLResult, i].Value = "สูงกว่าปกติ";        ต้องแยก ชาย หญิง ก่อน
+                                if (hdl2 >= hdlMax)
+                                {
+                                    //dgvCho[colChoHDLResult, i].Value = "สูงกว่าปกติ";        ต้องแยก ชาย หญิง ก่อน
+                                    //dgvCho[colChoHDLResult, i].Value = ccpvn.hdl;
+                                }
+                                else if (hdl2 < hdlMax)
+                                {
+                                    //dgvCho[colChoHDLResult, i].Value = "ปกติ";         ต้องแยก ชาย หญิง ก่อน
+                                }
                             }
-                            else if (Double.Parse(cc.cf.NumberNull1(dt.Rows[i][cc.ccpdb.ccp.hdl].ToString().Trim())) < hdlMax)
+                            else
                             {
-                                //dgvCho[colChoHDLResult, i].Value = "ปกติ";         ต้องแยก ชาย หญิง ก่อน
+                                dgvCho[colChoHDLResult, i].Value = "";
                             }
                         }
                         else
@@ -4632,7 +4686,7 @@ namespace CheckUP.gui
                     rc.PulseSummary = "";
                 }
                 //Xray
-                if (int.Parse(cuc.XraySuccess) > 0)
+                if (int.Parse(cc.cf.NumberNull1(cuc.XraySuccess)) > 0)
                 {
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "Xray";
@@ -6720,7 +6774,7 @@ namespace CheckUP.gui
                 }
 
                 //Bun
-                if (int.Parse(cuc.BunSuccess) > 0)
+                if (int.Parse(cc.cf.NumberNull1(cuc.BunSuccess)) > 0)
                 {
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "การตรวจ (Bun)";
@@ -7841,7 +7895,7 @@ namespace CheckUP.gui
                 }
 
                 //Other1
-                if (int.Parse(cuc.Other1Success) > 0 && (dtOther.Rows.Count > 0))
+                if (int.Parse(cc.cf.NumberNull1(cuc.Other1Success)) > 0 && (dtOther.Rows.Count > 0))
                 {
 
                     if ((dtOther.Rows[i][cc.ccpdb.ccp1db.ccp1.hbsag] != null) && (!dtOther.Rows[i][cc.ccpdb.ccp1db.ccp1.hbsag].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
@@ -8475,7 +8529,7 @@ namespace CheckUP.gui
                 }
 
                 //Lung
-                if (int.Parse(cuc.LungSuccess) > 0)
+                if (int.Parse(cc.cf.NumberNull1(cuc.LungSuccess)) > 0)
                 {
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.lungFvcPredic] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.lungFvcPredic].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -8660,7 +8714,7 @@ namespace CheckUP.gui
                 }
 
                 //Audiogram
-                if (int.Parse(cuc.AudioSuccess) > 0)
+                if (int.Parse(cc.cf.NumberNull1(cuc.AudioSuccess)) > 0)
                 {
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.Audiogram500L] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.Audiogram500L].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -9006,7 +9060,7 @@ namespace CheckUP.gui
 
                 }
                 //Eye
-                if (int.Parse(cuc.EyeSuccess) > 0)
+                if (int.Parse(cc.cf.NumberNull1(cuc.EyeSuccess)) > 0)
                 {
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.EyeShortLongLeft] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.EyeShortLongLeft].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -10053,7 +10107,7 @@ namespace CheckUP.gui
 
                 }
                 //StoolExam
-                if (int.Parse(cuc.StoolExamSuccess) > 0)
+                if (int.Parse(cc.cf.NumberNull1(cuc.StoolExamSuccess)) > 0)
                 {
                     if (!chkStoolExamTyphoid.Checked)
                     {

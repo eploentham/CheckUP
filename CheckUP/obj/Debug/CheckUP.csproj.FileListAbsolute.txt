@@ -132,7 +132,6 @@ D:\source\bangna\CheckUP\CheckUP\bin\Debug\FlashControlV71.dll
 D:\source\bangna\CheckUP\CheckUP\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\source\bangna\CheckUP\CheckUP\bin\Debug\stdole.dll
 D:\source\bangna\CheckUP\CheckUP\bin\Debug\ShockwaveFlashObjects.dll
-D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csprojAssemblyReference.cache
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csproj.ResolveComReference.cache
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.gui.FrmCheckUPAdd.resources
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.gui.FrmCheckUpEdit.resources
@@ -155,4 +154,3 @@ D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csproj.CoreCompileInputs.cach
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csproj.CopyComplete
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.exe
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.pdb
-D:\source\bangna\CheckUP\CheckUP\obj\Debug\Interop.Microsoft.Office.Core.dll
