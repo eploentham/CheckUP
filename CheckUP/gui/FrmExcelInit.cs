@@ -488,6 +488,7 @@ namespace CheckUP.gui
         {
             String No = "", sgot = "", sgpt = "", result = "", summary = "", alkaline="";
             ofd.ShowDialog();
+            if (ofd.FileName.Equals("")) return;
 
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
@@ -565,6 +566,7 @@ namespace CheckUP.gui
         {
             String No = "", bun = "", creatinine = "", result = "", summary = "";
             ofd.ShowDialog();
+            if (ofd.FileName.Equals("")) return;
 
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
@@ -633,6 +635,7 @@ namespace CheckUP.gui
         {
             String No = "", uricMale = "", uricFeMale = "", result = "", summary = "";
             ofd.ShowDialog();
+            if (ofd.FileName.Equals("")) return;
 
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
@@ -703,6 +706,7 @@ namespace CheckUP.gui
         {
             String No = "", cho = "", result = "", summary = "", ldl="", hdl="", ldlresult="", ldlsummary="", hdlresult="", hdlsummary="";
             ofd.ShowDialog();
+            if (ofd.FileName.Equals("")) return;
 
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
@@ -819,6 +823,7 @@ namespace CheckUP.gui
         {
             String No = "", tri = "", result = "", summary = "";
             ofd.ShowDialog();
+            if (ofd.FileName.Equals("")) return;
 
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
@@ -877,6 +882,7 @@ namespace CheckUP.gui
         {
             String No = "", color = "", appe = "", sugar = "", spgr = "", pH = "", protein = "", wbc = "", rbc = "", epi = "", bact = "", result = "", rbcmono = "", summary = "", glu = "";
             ofd.ShowDialog();
+            if (ofd.FileName.Equals("")) return;
 
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
@@ -1032,6 +1038,7 @@ namespace CheckUP.gui
             String No = "", HBsAg = "", HbsAb = "", AntiHIV = "", VDRL = "", Amphetamine = "", Calcium = "", AntiHav = "", HBsAgResult = "", HbsAbResult = "", HBsAgSummary = "", HbsAbSummary = "";
             String CAAFP = "", CACEA = "", CAPSA = "", CAHCG = "", CA153 = "", CA125 = "", CA199 = "", AmphetamineSummary = "", AntiHavSummary="";
             ofd.ShowDialog();
+            if (ofd.FileName.Equals("")) return;
 
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
@@ -1256,6 +1263,7 @@ namespace CheckUP.gui
         {
             String LungRow = "", LungNo = "", LungFvcPredic = "", LungFvcMeas = "", LungFvcPer = "", LungFev1Predic = "", LungFev1Meas = "", LungFev1Per = "", LungPerFev1 = "", LungSummary = "";
             ofd.ShowDialog();
+            if (ofd.FileName.Equals("")) return;
 
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
@@ -1363,6 +1371,7 @@ namespace CheckUP.gui
             String No = "", Audiogram500L = "", Audiogram1000L = "", Audiogram2000L = "", Audiogram3000L = "", Audiogram4000L="",Audiogram6000L="", Audiogram8000L="", AudiogramSummaryL="";
             String Audiogram500R = "", Audiogram1000R = "", Audiogram2000R = "", Audiogram3000R="", Audiogram4000R="", Audiogram6000R="", Audiogram8000R="", AudiogramSummaryR="", AudiogramExam="";
             ofd.ShowDialog();
+            if (ofd.FileName.Equals("")) return;
 
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
@@ -1552,6 +1561,7 @@ namespace CheckUP.gui
         {
             String No = "", EyeShortLongLeft = "", EyeShortLongRight = "", EyeSquintLeft = "", EyeSquintRight = "", EyedegreeLeft = "", EyeDegreeRight = "", EyeOldLeft = "", EyeOldRight = "", EyeBlindness = "", EyeResult = "", EyeSummary = "", EyeExam="";
             ofd.ShowDialog();
+            if (ofd.FileName.Equals("")) return;
 
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
@@ -1702,6 +1712,7 @@ namespace CheckUP.gui
             //String ToxiHippuric = "", ToxiMethyl = "", ToxiAcetone = "", ToxiNickel = "", ToxiChromium = "", ToxiPhenol = "", ToxiKetone = "", ToxiBenzene = "", ToxiMandelic = "", ToxiMethanol = "";
             //String ToxiEthanol = "", ToxiIPA = "", ToxiArsenic = "", ToxiHexane = "", ToxiFomaldehyde = "", ToxiTrichloroethylene = "", ToxiAntimony = "", ToxiFluoride = "";
             ofd.ShowDialog();
+            if (ofd.FileName.Equals("")) return;
 
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
@@ -1991,6 +2002,7 @@ namespace CheckUP.gui
             String ToxiHippuric = "", ToxiMethyl = "", ToxiAcetone = "", ToxiNickel = "", ToxiChromium = "", ToxiPhenol = "", ToxiKetone = "", ToxiBenzene = "", ToxiMandelic = "", ToxiMethanol = "";
             String ToxiEthanol = "", ToxiIPA = "", ToxiArsenic = "", ToxiHexane = "", ToxiFomaldehyde = "", ToxiTrichloroethylene = "", ToxiAntimony = "", ToxiFluoride = "";
             ofd.ShowDialog();
+            if (ofd.FileName.Equals("")) return;
 
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
@@ -2297,6 +2309,7 @@ namespace CheckUP.gui
 
             //}
             ofd.ShowDialog();
+            if (ofd.FileName.Equals("")) return;
 
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
@@ -2475,6 +2488,7 @@ namespace CheckUP.gui
         {
             String No = "", age="", bmi="", height="", weight="", pulse="", vi="", result="", summary="", bloodGroup="";
             ofd.ShowDialog();
+            if (ofd.FileName.Equals("")) return;
 
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
@@ -2593,6 +2607,7 @@ namespace CheckUP.gui
         {
             String StoolExamRow = "", StoolExamNo = "", StoolExamColor = "", StoolExamAppearance = "", StoolExamWBC = "", StoolExamRBC = "", Parasite = "", StoolExamSummary = "", Culture="";
             ofd.ShowDialog();
+            if (ofd.FileName.Equals("")) return;
 
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
@@ -2694,6 +2709,7 @@ namespace CheckUP.gui
         {
             String No = "", xray = "", summary = "";
             ofd.ShowDialog();
+            if (ofd.FileName.Equals("")) return;
 
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
@@ -2744,6 +2760,7 @@ namespace CheckUP.gui
         {
             String No = "", wbc = "", rbc = "", Hb = "", Hct = "", neu = "", ly = "", mono = "", eos="", bact="", pltc="", plts="", rbcmono="", summary = "";
             ofd.ShowDialog();
+            if (ofd.FileName.Equals("")) return;
 
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
@@ -2897,6 +2914,7 @@ namespace CheckUP.gui
         {
             String No = "", fbs = "", result="", summary = "";
             ofd.ShowDialog();
+            if (ofd.FileName.Equals("")) return;
 
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;

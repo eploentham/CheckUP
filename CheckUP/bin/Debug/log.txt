@@ -3021,3 +3021,30 @@ Failed to load database information.
 6/20/2018 2:08 PM->rpt.setReportCheckUp OK 
 6/20/2018 2:08 PM->rpt.setReportCheckUp OK LoadD:\source\bangna\CheckUP\CheckUP\report\CheckUpPrint3.rpt
 6/20/2018 2:08 PM->rpt.setReportCheckUp OK SetDataSource
+7/2/2018 2:06 PM->FrmCheckUPAdd.btnPrint_Click 01 
+7/2/2018 2:06 PM->FrmCheckUPAdd.btnPrint_Click 02 
+7/2/2018 2:06 PM->FrmCheckUPAdd.btnPrint_Click 03 
+7/2/2018 2:08 PM->FrmCheckUPAdd.btnPrint_Click 01 
+7/2/2018 2:08 PM->FrmCheckUPAdd.btnPrint_Click 02 
+7/2/2018 2:08 PM->FrmCheckUPAdd.btnPrint_Click 03 
+7/2/2018 2:10 PM->FrmCheckUPAdd.btnPrint_Click 01 
+7/2/2018 2:10 PM->FrmCheckUPAdd.btnPrint_Click 02 
+7/2/2018 2:10 PM->FrmCheckUPAdd.btnPrint_Click 03 
+7/2/2018 2:10 PM->rpt.setReportCheckUp OK 
+7/2/2018 2:10 PM->rpt.setReportCheckUp OK LoadD:\source\bangna\CheckUP\CheckUP\report\CheckUpPrint3.rpt
+7/2/2018 2:10 PM->rpt.setReportCheckUp OK SetDataSource
+7/10/2018 11:14 AM->rpt.setReportCheckUpSticker OK dt=68 path D:\source\bangna\CheckUP\CheckUP\report\CheckUpSticker.rpt
+7/10/2018 11:15 AM->rpt.setReportCheckUpSticker OK LoadD:\source\bangna\CheckUP\CheckUP\report\CheckUpSticker.rpt
+7/10/2018 11:15 AM->rpt.setReportCheckUpSticker OK SetDataSource
+7/10/2018 11:27 AM->FrmCheckUPAdd.btnPrint_Click 01 
+7/10/2018 11:27 AM->FrmCheckUPAdd.btnPrint_Click 02 
+7/10/2018 11:27 AM->FrmCheckUPAdd.btnPrint_Click 03 
+7/10/2018 11:27 AM->rpt.setReportCheckUp OK 
+7/10/2018 11:27 AM->rpt.setReportCheckUp OK LoadD:\source\bangna\CheckUP\CheckUP\report\CheckUp_mini_1.rpt
+7/10/2018 11:27 AM->rpt.setReportCheckUp OK SetDataSource
+7/10/2018 11:27 AM->FrmCheckUPAdd.btnPrint_Click 01 
+7/10/2018 11:27 AM->FrmCheckUPAdd.btnPrint_Click 02 
+7/10/2018 11:27 AM->FrmCheckUPAdd.btnPrint_Click 03 
+7/10/2018 11:27 AM->rpt.setReportCheckUp OK 
+7/10/2018 11:27 AM->rpt.setReportCheckUp OK LoadD:\source\bangna\CheckUP\CheckUP\report\CheckUp_mini_2.rpt
+7/10/2018 11:27 AM->rpt.setReportCheckUp OK SetDataSource

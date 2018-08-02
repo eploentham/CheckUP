@@ -188,6 +188,11 @@ namespace CheckUP.Control
             initC.HideCostQuotation = iniFile.Read("hidecostquotation");
             //initC.Password = regE.getPassword();
         }
+        public Boolean fileExit(String path)
+        {
+            bool folderExists = File.Exists(path);
+            return folderExists;
+        }
         public void SetPathImage(String path)
         {
             iniFile.Write("pathimage", path);

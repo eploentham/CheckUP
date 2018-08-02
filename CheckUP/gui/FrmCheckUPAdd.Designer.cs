@@ -281,6 +281,8 @@
             this.txtCntSuccess = new System.Windows.Forms.TextBox();
             this.label123 = new System.Windows.Forms.Label();
             this.btnExcel1 = new System.Windows.Forms.Button();
+            this.btnPrnA5 = new System.Windows.Forms.Button();
+            this.btnProcess = new System.Windows.Forms.Button();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -1496,6 +1498,7 @@
             // 
             // tabPage20
             // 
+            this.tabPage20.Controls.Add(this.btnProcess);
             this.tabPage20.Controls.Add(this.btnExelStoolExam);
             this.tabPage20.Controls.Add(this.btnExelToxi);
             this.tabPage20.Controls.Add(this.btnExelEye);
@@ -2200,6 +2203,7 @@
             // 
             // tabPage12
             // 
+            this.tabPage12.Controls.Add(this.btnPrnA5);
             this.tabPage12.Controls.Add(this.groupBox1);
             this.tabPage12.Controls.Add(this.btnPrintPE);
             this.tabPage12.Controls.Add(this.btnPrintXray);
@@ -2892,7 +2896,6 @@
             this.ChkUnActive.Name = "ChkUnActive";
             this.ChkUnActive.Size = new System.Drawing.Size(60, 21);
             this.ChkUnActive.TabIndex = 66;
-            this.ChkUnActive.TabStop = true;
             this.ChkUnActive.Text = "ยกเลิก";
             this.ChkUnActive.UseVisualStyleBackColor = true;
             this.ChkUnActive.Click += new System.EventHandler(this.ChkUnActive_Click);
@@ -2900,6 +2903,7 @@
             // chkActive
             // 
             this.chkActive.AutoSize = true;
+            this.chkActive.Checked = true;
             this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.chkActive.Location = new System.Drawing.Point(945, 54);
             this.chkActive.Margin = new System.Windows.Forms.Padding(2);
@@ -2982,6 +2986,27 @@
             this.btnExcel1.Text = "...";
             this.btnExcel1.UseVisualStyleBackColor = true;
             this.btnExcel1.Click += new System.EventHandler(this.btnExcel1_Click);
+            // 
+            // btnPrnA5
+            // 
+            this.btnPrnA5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnPrnA5.Location = new System.Drawing.Point(361, 107);
+            this.btnPrnA5.Name = "btnPrnA5";
+            this.btnPrnA5.Size = new System.Drawing.Size(152, 34);
+            this.btnPrnA5.TabIndex = 83;
+            this.btnPrnA5.Text = " พิมพ์ เล่มเล็ก A5";
+            this.btnPrnA5.UseVisualStyleBackColor = true;
+            // 
+            // btnProcess
+            // 
+            this.btnProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnProcess.Location = new System.Drawing.Point(295, 433);
+            this.btnProcess.Name = "btnProcess";
+            this.btnProcess.Size = new System.Drawing.Size(138, 44);
+            this.btnProcess.TabIndex = 339;
+            this.btnProcess.Text = "ประมวลผล";
+            this.btnProcess.UseVisualStyleBackColor = true;
+            this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
             // 
             // FrmCheckUPAdd
             // 
@@ -3322,5 +3347,7 @@
         private System.Windows.Forms.Button btnMini4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox chkPrintNoTest;
+        private System.Windows.Forms.Button btnPrnA5;
+        private System.Windows.Forms.Button btnProcess;
     }
 }

@@ -62,9 +62,7 @@ namespace CheckUP.gui
         
 
         int colLungRow = 0, colLungId = 1, colLungName = 2, colLungFvcPredic = 3, colLungFvcMeas = 4, colLungFvcPer = 5, colLungFev1Predic = 6, colLungFev1Meas = 7, colLungFev1Per = 8, colLungPerFev1 = 9, colLungSummary = 10;
-
         
-
         int colLungCnt = 11;
 
         int colAudiogramRow = 0, colAudiogramId = 1, colAudiogramName = 2, colAudiogram500L = 3, colAudiogram1000L = 4, colAudiogram2000L = 5, colAudiogram3000L = 6, colAudiogram4000L = 7;
@@ -2777,6 +2775,11 @@ namespace CheckUP.gui
         private void btnPEImport_Click(object sender, EventArgs e)
         {
             String rowNumber = "", chk="",vitalSign="", height="", weight="", bmi="", pulse="", result="", summary="", bloodgroup="", age="";
+            if (!cc.fileExit(fileNamePE))
+            {
+                MessageBox.Show("ไม่พบ file Excel","");
+                return;
+            }
 
             pB1.Visible = true;
             pB1.Minimum = 0;
@@ -2786,7 +2789,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNamePE);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.PESheetname.Trim()];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row=0, normal=0;
+            int rowCount = xlRange.Rows.Count, row=0, normal=0, rowE = 0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             for (int i = int.Parse(ei.PERow); i <= rowCount; i++)
@@ -2799,6 +2802,8 @@ namespace CheckUP.gui
                 else
                 {
                     rowNumber = "";
+                    rowE++;
+                    continue;
                 }
                 if (xlRange.Cells[i, int.Parse(ei.PEWeight)].Value2 != null)
                 {
@@ -2895,11 +2900,11 @@ namespace CheckUP.gui
             xlApp.Quit();
             System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
             pB1.Visible = false;
-            cc.cucdb.updatePEImport(txtId.Text, rowCount- int.Parse(nmDRow.Value.ToString()), row , normal);
+            cc.cucdb.updatePEImport(txtId.Text, rowCount- int.Parse(ei.PERow)-rowE+1, row , normal);
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdPE(txtId.Text);
             txtPESucess.Text = row.ToString();
-            txtPECntEmp.Text = String.Concat(rowCount - int.Parse(nmDRow.Value.ToString()));
+            txtPECntEmp.Text = (rowCount - int.Parse(ei.PERow)-rowE+1).ToString();
             txtPECntNormal.Text = normal.ToString();
             Cursor.Current = cursor;
         }
@@ -2907,6 +2912,11 @@ namespace CheckUP.gui
         private void btnXrayImport_Click(object sender, EventArgs e)
         {
             String rowNumber = "", chk = "", result = "", summary = "";
+            if (!cc.fileExit(fileNameXray))
+            {
+                MessageBox.Show("ไม่พบ file Excel", "");
+                return;
+            }
 
             pB1.Visible = true;
             pB1.Minimum = 0;
@@ -2916,7 +2926,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameXray);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.XraySheetname.Trim()];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row = 0;
+            int rowCount = xlRange.Rows.Count, row = 0, rowE = 0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             //for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
@@ -2930,6 +2940,8 @@ namespace CheckUP.gui
                 else
                 {
                     rowNumber = "";
+                    rowE++;
+                    continue;
                 }
                 if (xlRange.Cells[i, int.Parse(ei.Xray)].Value2 != null)
                 {
@@ -2958,8 +2970,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdXray(txtId.Text);
-            cc.cucdb.updateXrayImport(txtId.Text, rowCount-int.Parse(nmDRow.Value.ToString()), row);
-            txtXrayCntEmp.Text = rowCount.ToString();
+            cc.cucdb.updateXrayImport(txtId.Text, rowCount- int.Parse(ei.XrayRow)-rowE+1, row);
+            txtXrayCntEmp.Text = (rowCount - int.Parse(ei.XrayRow)-rowE+1).ToString();
             txtXraySucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
@@ -2967,6 +2979,11 @@ namespace CheckUP.gui
         private void btnFBSImport_Click(object sender, EventArgs e)
         {
             String rowNumber = "", chk = "", result = "", summary = "", value="";
+            if (!cc.fileExit(fileNameFBS))
+            {
+                MessageBox.Show("ไม่พบ file Excel", "");
+                return;
+            }
 
             pB1.Visible = true;
             pB1.Minimum = 0;
@@ -2976,7 +2993,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameFBS);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.FBSSheetname.Trim()];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row = 0, normal=0;
+            int rowCount = xlRange.Rows.Count, row = 0, normal=0, rowE = 0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             //for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
@@ -2990,6 +3007,8 @@ namespace CheckUP.gui
                 else
                 {
                     rowNumber = "";
+                    rowE++;
+                    continue;
                 }
                 if (xlRange.Cells[i, int.Parse(ei.FBS)].Value2 != null)
                 {
@@ -3030,8 +3049,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdFBS(txtId.Text);
-            cc.cucdb.updateFBSImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row, normal);
-            txtFBSCntEmp.Text = String.Concat(rowCount - int.Parse(nmDRow.Value.ToString()));
+            cc.cucdb.updateFBSImport(txtId.Text, rowCount - int.Parse(ei.FBSRow) - rowE+1, row, normal);
+            txtFBSCntEmp.Text = (rowCount - int.Parse(ei.FBSRow) - rowE +1).ToString();
             txtFBSSucess.Text = row.ToString();
             txtFBSNormal.Text = normal.ToString();
             Cursor.Current = cursor;
@@ -3041,6 +3060,12 @@ namespace CheckUP.gui
         {
             String rowNumber = "", chk = "", wbc = "", rbc = "", hb = "", hct="", neu="", lym="", mch="", mchc="", mcv="", mono="", plaC="", rbcmono="";
             String summary = "", eos="", bas="", plaS="", pmn="", bact="";
+            if (!cc.fileExit(fileNameCBC))
+            {
+                MessageBox.Show("ไม่พบ file Excel", "");
+                return;
+            }
+
             pB1.Visible = true;
             pB1.Minimum = 0;
             Cursor cursor = Cursor.Current;
@@ -3049,7 +3074,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameCBC);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.CBCSheetname.Trim()];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row = 0;
+            int rowCount = xlRange.Rows.Count, row = 0, rowE=0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             //for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
@@ -3063,6 +3088,8 @@ namespace CheckUP.gui
                 else
                 {
                     rowNumber = "";
+                    rowE++;
+                    continue;
                 }
                 if (xlRange.Cells[i, int.Parse(ei.CBCHb)].Value2 != null)
                 {
@@ -3227,8 +3254,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdCBC(txtId.Text);
-            cc.cucdb.updateCBCImport(txtId.Text, rowCount- int.Parse(nmDRow.Value.ToString()), row );
-            txtCBCCntEmp.Text = rowCount.ToString();
+            cc.cucdb.updateCBCImport(txtId.Text, rowCount- int.Parse(ei.CBCRow)- rowE + 1, row );
+            txtCBCCntEmp.Text = (rowCount - int.Parse(ei.CBCRow)- rowE+1).ToString();
             txtCBCSucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
@@ -3237,6 +3264,12 @@ namespace CheckUP.gui
         {
             String rowNumber = "", chk = "", Color = "", Appe = "", Sugar = "", spgr = "", pH = "", Protein = "", Wbc = "", Rbc = "", Epi = "", Bact = "", Result = "", Summary = "", Glu="", Ketone="", Blood="";
             String leu = "", nit = "", uro = "", bil = "";
+            if (!cc.fileExit(fileNameUA))
+            {
+                MessageBox.Show("ไม่พบ file Excel", "");
+                return;
+            }
+
             pB1.Visible = true;
             pB1.Minimum = 0;
             Cursor cursor = Cursor.Current;
@@ -3245,7 +3278,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameUA);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.UASheetname.Trim()];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row = 0, normal=0;
+            int rowCount = xlRange.Rows.Count, row = 0, normal=0, rowE = 0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             //xlWorkbook.
@@ -3260,6 +3293,8 @@ namespace CheckUP.gui
                 else
                 {
                     rowNumber = "";
+                    rowE++;
+                    continue;
                 }
                 if (xlRange.Cells[i, int.Parse(ei.UASugar)].Value2 != null)
                 {
@@ -3446,8 +3481,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdUA(txtId.Text);
-            cc.cucdb.updateUAImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row, normal);
-            txtUACntEmp.Text = rowCount.ToString();
+            cc.cucdb.updateUAImport(txtId.Text, rowCount - int.Parse(ei.UARow)-rowE+1, row, normal);
+            txtUACntEmp.Text = (rowCount - int.Parse(ei.UARow)-rowE+1).ToString();
             txtUASucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
@@ -3455,6 +3490,11 @@ namespace CheckUP.gui
         private void btnTriImport_Click(object sender, EventArgs e)
         {
             String rowNumber = "", chk = "", result = "", summary = "", value = "";
+            if (!cc.fileExit(fileNameTri))
+            {
+                MessageBox.Show("ไม่พบ file Excel", "");
+                return;
+            }
 
             pB1.Visible = true;
             pB1.Minimum = 0;
@@ -3464,10 +3504,10 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameTri);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.TriSheetname.Trim()];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row = 0, normal=0;
+            int rowCount = xlRange.Rows.Count, row = 0, normal=0, rowE = 0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
-            for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
+            for (int i = int.Parse(ei.TriRow); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
                 if (xlRange.Cells[i, int.Parse(ei.TriNo)].Value2 != null)
@@ -3477,6 +3517,8 @@ namespace CheckUP.gui
                 else
                 {
                     rowNumber = "";
+                    rowE++;
+                    continue;
                 }
                 if (xlRange.Cells[i, int.Parse(ei.Triglyceride)].Value2 != null)
                 {
@@ -3517,8 +3559,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdTri(txtId.Text);
-            cc.cucdb.updateTriImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row, normal);
-            txtTriCntEmp.Text = rowCount.ToString();
+            cc.cucdb.updateTriImport(txtId.Text, rowCount - int.Parse(ei.TriRow)-rowE+1, row, normal);
+            txtTriCntEmp.Text = (rowCount - int.Parse(ei.TriRow)-rowE+1).ToString();
             txtTriSucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
@@ -3543,6 +3585,11 @@ namespace CheckUP.gui
         private void btnChoImport_Click(object sender, EventArgs e)
         {
             String rowNumber = "", chk = "", result = "", summary = "", value = "", ldl="", hdl="", ldlresult="", ldlsummary="", hdlresult="", hdlsummary="";
+            if (!cc.fileExit(fileNameCho))
+            {
+                MessageBox.Show("ไม่พบ file Excel", "");
+                return;
+            }
 
             pB1.Visible = true;
             pB1.Minimum = 0;
@@ -3552,7 +3599,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameCho);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.ChoSheetname.Trim()];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row = 0, normal=0;
+            int rowCount = xlRange.Rows.Count, row = 0, normal=0, rowE = 0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             for (int i = int.Parse(ei.ChoRow); i <= rowCount; i++)
@@ -3566,6 +3613,8 @@ namespace CheckUP.gui
                 else
                 {
                     rowNumber = "";
+                    rowE++;
+                    continue;
                 }
                 if (xlRange.Cells[i, int.Parse(ei.Cholesteral)].Value2 != null)
                 {
@@ -3657,8 +3706,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdCholes(txtId.Text);
-            cc.cucdb.updateChoImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row, normal);
-            txtChoCntEmp.Text = rowCount.ToString();
+            cc.cucdb.updateChoImport(txtId.Text, rowCount - int.Parse(ei.ChoRow)-rowE+1, row, normal);
+            txtChoCntEmp.Text = (rowCount - int.Parse(ei.ChoRow)-rowE+1).ToString();
             txtChoSucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
@@ -3687,6 +3736,11 @@ namespace CheckUP.gui
         private void btnSgotImport_Click(object sender, EventArgs e)
         {
             String rowNumber = "", chk = "", result = "", summary = "", sgot = "", sgpt="", alt="", alkaline="";
+            if (!cc.fileExit(fileNameSgot))
+            {
+                MessageBox.Show("ไม่พบ file Excel", "");
+                return;
+            }
 
             pB1.Visible = true;
             pB1.Minimum = 0;
@@ -3696,7 +3750,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameSgot);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.SgotSheetname.Trim()];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row = 0, normal=0;
+            int rowCount = xlRange.Rows.Count, row = 0, normal=0, rowE = 0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             //for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
@@ -3710,6 +3764,8 @@ namespace CheckUP.gui
                 else
                 {
                     rowNumber = "";
+                    rowE++;
+                    continue;
                 }
                 if (xlRange.Cells[i, int.Parse(ei.Sgot)].Value2 != null)
                 {
@@ -3773,8 +3829,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdSgot(txtId.Text);
-            cc.cucdb.updateSgotImport(txtId.Text, rowCount- int.Parse(nmDRow.Value.ToString()), row , normal);
-            txtSgotCntEmp.Text = rowCount.ToString();
+            cc.cucdb.updateSgotImport(txtId.Text, rowCount - int.Parse(ei.SgotRow)-rowE+1, row , normal);
+            txtSgotCntEmp.Text = (rowCount - int.Parse(ei.SgotRow)-rowE+1).ToString();
             txtSgotSucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
@@ -3782,6 +3838,11 @@ namespace CheckUP.gui
         private void btnBunImport_Click(object sender, EventArgs e)
         {
             String rowNumber = "", chk = "", result = "", summary = "", bun = "", creatinine = "";
+            if (!cc.fileExit(fileNameBun))
+            {
+                MessageBox.Show("ไม่พบ file Excel", "");
+                return;
+            }
 
             pB1.Visible = true;
             pB1.Minimum = 0;
@@ -3791,10 +3852,10 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameBun);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.BunSheetname.Trim()];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row = 0, normal=0;
+            int rowCount = xlRange.Rows.Count, row = 0, normal=0, rowE = 0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
-            for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
+            for (int i = int.Parse(ei.BunRow); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
                 if (xlRange.Cells[i,int.Parse(ei.BunNo)].Value2 != null)
@@ -3851,8 +3912,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdBun(txtId.Text);
-            cc.cucdb.updateBunImport(txtId.Text, rowCount- int.Parse(nmDRow.Value.ToString()), row ,normal);
-            txtBunCntEmp.Text = rowCount.ToString();
+            cc.cucdb.updateBunImport(txtId.Text, rowCount - int.Parse(ei.BunRow)-rowE+1, row ,normal);
+            txtBunCntEmp.Text = (rowCount - int.Parse(ei.BunRow)-rowE+1).ToString();
             txtBunSucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
@@ -3860,6 +3921,11 @@ namespace CheckUP.gui
         private void btnUricImport_Click(object sender, EventArgs e)
         {
             String rowNumber = "", chk = "", result = "", summary = "", value = "";
+            if (!cc.fileExit(fileNameUric))
+            {
+                MessageBox.Show("ไม่พบ file Excel", "");
+                return;
+            }
 
             pB1.Visible = true;
             pB1.Minimum = 0;
@@ -3869,10 +3935,10 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameUric);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.UricSheetname.Trim()];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row = 0, normal=0;
+            int rowCount = xlRange.Rows.Count, row = 0, normal=0, rowE = 0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
-            for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
+            for (int i = int.Parse(ei.UricRow); i <= rowCount; i++)
             {
                 //rowNumber = dtAll.Rows[i][cc.ccpdb.ccp.rowNumber].ToString();
                 if (xlRange.Cells[i, int.Parse(ei.UricNo)].Value2 != null)
@@ -3882,6 +3948,8 @@ namespace CheckUP.gui
                 else
                 {
                     rowNumber = "";
+                    rowE++;
+                    continue;
                 }
                 if (xlRange.Cells[i, int.Parse(ei.UricAcid)].Value2 != null)
                 {
@@ -3921,8 +3989,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdUric(txtId.Text);
-            cc.cucdb.updateUricImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row, normal);
-            txtUricCntEmp.Text = rowCount.ToString();
+            cc.cucdb.updateUricImport(txtId.Text, rowCount - int.Parse(ei.UricRow)-rowE+1, row, normal);
+            txtUricCntEmp.Text = (rowCount- int.Parse(ei.UricRow)-rowE+1).ToString();
             txtUricSucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
@@ -4724,7 +4792,7 @@ namespace CheckUP.gui
                     cc.rcdb.insertRCheckUp(rc);
                 }
                 //CBC
-                if (int.Parse(cuc.CBCSuccess) > 0)
+                if (int.Parse(cc.cf.NumberNull1(cuc.CBCSuccess)) > 0)
                 {
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.cbcHb] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.cbcHb].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -5898,7 +5966,7 @@ namespace CheckUP.gui
                 }
 
                 //FBS
-                if (int.Parse(cuc.FBSSuccess) > 0)
+                if (int.Parse(cc.cf.NumberNull1(cuc.FBSSuccess)) > 0)
                 {
                     rc.Id = r.Next().ToString();
                     rc.LabGroup = "ระดับน้ำตาลในเลือด (Fasting Blood Sugar)";
@@ -5982,7 +6050,7 @@ namespace CheckUP.gui
                 }
 
                 //UA
-                if (int.Parse(cuc.UASuccess) > 0)
+                if (int.Parse(cc.cf.NumberNull1(cuc.UASuccess)) > 0)
                 {
                     if ((dtAll.Rows[i][cc.ccpdb.ccp.urineColor] != null) && (!dtAll.Rows[i][cc.ccpdb.ccp.urineColor].ToString().Equals("")))//ไม่ได้ตรวจ ไม่ต้องแสดง
                     {
@@ -10571,6 +10639,11 @@ namespace CheckUP.gui
             String CAAFP = "", CACEA = "", CAPSA = "", CAHCG = "", CA153 = "", CA125 = "", CA199 = "", HBsAgResult = "", HbsAbResult = "", HBsAgSummary = "", HbsAbSummary = "";
             String CAAFPResult = "", CAAFPSummary = "", CACEAResult = "", CACEASummary = "", CAPSAResult = "", CAPSASummary = "", CAHCGResult = "", CAHCGSummary = "";
             String CA153Result = "", CA153Summary = "", CA125Result = "", CA125Summary = "", CA199Result = "", CA199Summary = "", AmphetamineSummary = "";
+            if (!cc.fileExit(fileNameOther1))
+            {
+                MessageBox.Show("ไม่พบ file Excel", "");
+                return;
+            }
 
             pB1.Visible = true;
             pB1.Minimum = 0;
@@ -10580,7 +10653,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameOther1);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.Other1Sheetname.Trim()];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row=0;
+            int rowCount = xlRange.Rows.Count, row=0, rowE = 0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             for (int i = int.Parse(ei.Other1Row); i <= rowCount; i++)
@@ -10593,6 +10666,8 @@ namespace CheckUP.gui
                 else
                 {
                     rowNumber = "";
+                    rowE++;
+                    continue;
                 }
                 if (xlRange.Cells[i, int.Parse(ei.Other1HBsAg)].Value2 != null)
                 {
@@ -10896,8 +10971,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdOther1(txtId.Text);
-            cc.cucdb.updateOther1Import(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row);
-            txtOther1CntEmp.Text = rowCount.ToString();
+            cc.cucdb.updateOther1Import(txtId.Text, rowCount - int.Parse(ei.Other1Row)-rowE+1, row);
+            txtOther1CntEmp.Text = (rowCount - int.Parse(ei.Other1Row)-rowE+1).ToString();
             txtOther1Sucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
@@ -10912,6 +10987,11 @@ namespace CheckUP.gui
         private void btnLungImport_Click(object sender, EventArgs e)
         {
             String rowNumber = "", chk = "", result = "", summary = "", LungFvcPredic = "", LungFvcMeas = "", LungFvcPer = "", LungFev1Predic = "", LungFev1Meas = "", LungFev1Per = "", LungPerFev1 = "";
+            if (!cc.fileExit(fileNameLung))
+            {
+                MessageBox.Show("ไม่พบ file Excel", "");
+                return;
+            }
 
             pB1.Visible = true;
             pB1.Minimum = 0;
@@ -10921,7 +11001,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameLung);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.LungSheetname.Trim()];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row = 0;
+            int rowCount = xlRange.Rows.Count, row = 0, rowE = 0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             for (int i = int.Parse(ei.LungRow); i <= rowCount; i++)
@@ -10934,6 +11014,8 @@ namespace CheckUP.gui
                 else
                 {
                     rowNumber = "";
+                    rowE++;
+                    continue;
                 }
                 if (xlRange.Cells[i, int.Parse(ei.LungFvcPredic)].Value2 != null)
                 {
@@ -11009,8 +11091,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdLung(txtId.Text);
-            cc.cucdb.updateLungImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row);
-            txtLungCntEmp.Text = rowCount.ToString();
+            cc.cucdb.updateLungImport(txtId.Text, rowCount - int.Parse(ei.LungRow)-rowE+1, row);
+            txtLungCntEmp.Text = (rowCount - int.Parse(ei.LungRow)-rowE+1).ToString();
             txtLungSucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
@@ -11028,6 +11110,12 @@ namespace CheckUP.gui
             
             String Audiogram500L = "", Audiogram1000L = "", Audiogram2000L = "", Audiogram3000L = "", Audiogram4000L="",Audiogram6000L="", Audiogram8000L="", AudiogramSummaryL="";
             String Audiogram500R = "", Audiogram1000R = "", Audiogram2000R = "", Audiogram3000R="", Audiogram4000R="", Audiogram6000R="", Audiogram8000R="", AudiogramSummaryR="", AudiogramExam="";
+            if (!cc.fileExit(fileNameAudio))
+            {
+                MessageBox.Show("ไม่พบ file Excel", "");
+                return;
+            }
+
             pB1.Visible = true;
             pB1.Minimum = 0;
             Cursor cursor = Cursor.Current;
@@ -11036,7 +11124,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameAudio);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.AudiogramSheetname.Trim()];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row = 0;
+            int rowCount = xlRange.Rows.Count, row = 0, rowE = 0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             for (int i = int.Parse(ei.AudiogramRow); i <= rowCount; i++)
@@ -11049,6 +11137,8 @@ namespace CheckUP.gui
                 else
                 {
                     rowNumber = "";
+                    rowE++;
+                    continue;
                 }
                 if (xlRange.Cells[i, int.Parse(ei.Audiogram500L)].Value2 != null)
                 {
@@ -11197,8 +11287,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdAudoigram(txtId.Text);
-            cc.cucdb.updateAudioImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row);
-            txtAudioCntEmp.Text = rowCount.ToString();
+            cc.cucdb.updateAudioImport(txtId.Text, rowCount - int.Parse(ei.AudiogramRow)-rowE+1, row);
+            txtAudioCntEmp.Text = (rowCount - int.Parse(ei.AudiogramRow)-rowE+1).ToString();
             txtAudioSucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
@@ -11269,6 +11359,12 @@ namespace CheckUP.gui
             String rowNumber = "", chk = "";
 
             String EyeShortLongLeft = "", EyeShortLongRight = "", EyeSquintLeft = "", EyeSquintRight = "", EyedegreeLeft = "", EyeDegreeRight = "", EyeOldLeft = "", EyeOldRight = "", EyeBlindness = "", EyeResult = "", EyeSummary = "", EyeExam="";
+            if (!cc.fileExit(fileNameEye))
+            {
+                MessageBox.Show("ไม่พบ file Excel", "");
+                return;
+            }
+
             pB1.Visible = true;
             pB1.Minimum = 0;
             Cursor cursor = Cursor.Current;
@@ -11277,7 +11373,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameEye);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.EyeSheetname.Trim()];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, row = 0;
+            int rowCount = xlRange.Rows.Count, row = 0, rowE = 0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             for (int i = int.Parse(ei.EyeRow); i <= rowCount; i++)
@@ -11290,6 +11386,8 @@ namespace CheckUP.gui
                 else
                 {
                     rowNumber = "";
+                    rowE++;
+                    continue;
                 }
                 if (xlRange.Cells[i, int.Parse(ei.EyeShortLongLeft)].Value2 != null)
                 {
@@ -11398,8 +11496,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdEye(txtId.Text);
-            cc.cucdb.updateEyeImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), row);
-            txtEyeCntEmp.Text = rowCount.ToString();
+            cc.cucdb.updateEyeImport(txtId.Text, rowCount - int.Parse(ei.EyeRow)-rowE+1, row);
+            txtEyeCntEmp.Text = (rowCount - int.Parse(ei.EyeRow)-rowE+1).ToString();
             txtEyeSucess.Text = row.ToString();
             Cursor.Current = cursor;
         }
@@ -11428,6 +11526,12 @@ namespace CheckUP.gui
 
             String StoolExamRow = "", StoolExamNo = "", StoolExamColor = "", StoolExamAppearance = "", StoolExamWBC = "", StoolExamRBC = "", Parasite = "", StoolExamSummary = "", Culture="";
             String TyhoidH = "", TyhoidO = "", CultureSummary = "";
+            if (!cc.fileExit(fileNameStoolExam))
+            {
+                MessageBox.Show("ไม่พบ file Excel", "");
+                return;
+            }
+
             pB1.Visible = true;
             pB1.Minimum = 0;
             Cursor cursor = Cursor.Current;
@@ -11436,7 +11540,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameStoolExam);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.StoolExamSheetname.Trim()];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, rowStoolExam = 0;
+            int rowCount = xlRange.Rows.Count, rowStoolExam = 0, rowE = 0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             for (int i = int.Parse(ei.StoolExamRow); i <= rowCount; i++)
@@ -11449,6 +11553,8 @@ namespace CheckUP.gui
                 else
                 {
                     rowNumber = "";
+                    rowE++;
+                    continue;
                 }
                 if (xlRange.Cells[i, int.Parse(ei.StoolExamColor)].Value2 != null)
                 {
@@ -11542,8 +11648,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdStoolExam(txtId.Text);
-            cc.cucdb.updateStoolExamImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), rowStoolExam);
-            txtStoolExamCntEmp.Text = rowCount.ToString();
+            cc.cucdb.updateStoolExamImport(txtId.Text, rowCount - int.Parse(ei.StoolExamRow)-rowE+1, rowStoolExam);
+            txtStoolExamCntEmp.Text = (rowCount - int.Parse(ei.StoolExamRow)-rowE+1).ToString();
             txtStoolExamSucess.Text = rowStoolExam.ToString();
             Cursor.Current = cursor;
         }
@@ -11562,6 +11668,11 @@ namespace CheckUP.gui
             String ToxiLead = "", ToxiAluminium = "", ToxiCadmium = "", ToxiMercury = "", ToxiTin = "", ToxiCopper = "", ToxiManganese = "", ToxiZinc = "", ToxiAmmonia = "";
             String ToxiHippuric = "", ToxiMethyl = "", ToxiAcetone="", ToxiNickel="", ToxiChromium="", ToxiPhenol="", ToxiKetone="", ToxiBenzene="", ToxiMandelic="", ToxiMethanol="";
             String ToxiEthanol="", ToxiIPA="", ToxiArsenic="", ToxiHexane="", ToxiFomaldehyde="", ToxiTrichloroethylene="", ToxiAntimony="", ToxiFluoride="";
+            if (!cc.fileExit(fileNameToxi))
+            {
+                MessageBox.Show("ไม่พบ file Excel", "");
+                return;
+            }
 
             pB1.Visible = true;
             pB1.Minimum = 0;
@@ -11571,7 +11682,7 @@ namespace CheckUP.gui
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileNameToxi);
             Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.ToxiSheetname.Trim()];
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            int rowCount = xlRange.Rows.Count, rowToxi = 0;
+            int rowCount = xlRange.Rows.Count, rowToxi = 0, rowE = 0;
             pB1.Maximum = rowCount;
             xlApp.Visible = false;
             for (int i = int.Parse(ei.StoolExamRow); i <= rowCount; i++)
@@ -11584,6 +11695,8 @@ namespace CheckUP.gui
                 else
                 {
                     rowNumber = "";
+                    rowE++;
+                    continue;
                 }
                 if (xlRange.Cells[i, int.Parse(ei.ToxiLead)].Value2 != null)
                 {
@@ -11815,8 +11928,8 @@ namespace CheckUP.gui
             pB1.Visible = false;
             dtAll = cc.ccpdb.selectAllByCucId(txtId.Text);
             setGrdStoolExam(txtId.Text);
-            cc.cucdb.updateToxiImport(txtId.Text, rowCount - int.Parse(nmDRow.Value.ToString()), rowToxi);
-            txtToxiCntEmp.Text = rowCount.ToString();
+            cc.cucdb.updateToxiImport(txtId.Text, rowCount - int.Parse(ei.StoolExamRow)-rowE+1, rowToxi);
+            txtToxiCntEmp.Text = (rowCount - int.Parse(ei.StoolExamRow)-rowE+1).ToString();
             txtToxiSucess.Text = rowToxi.ToString();
             Cursor.Current = cursor;
         }
@@ -11978,6 +12091,22 @@ namespace CheckUP.gui
             FrmReport frm = new FrmReport(cc);
             frm.setReportCheckUpMini4(cuc, dt);
             frm.ShowDialog(this);
+        }
+        private void btnProcess_Click(object sender, EventArgs e)
+        {
+            //ใน setPrint() ได้ update remark ซึ่งเป็น ค่าแปรผล ให้แล้ว
+            //
+            Decimal first = nmDPrintFirst.Value;
+            Decimal end = nmDPrintEnd.Value;
+
+            String chk = cc.ccpdb.selectCntByCucId(txtId.Text);
+
+            nmDPrintFirst.Value = 1;
+            nmDPrintEnd.Value = Decimal.Parse(chk);
+            setPrint();
+
+            nmDPrintFirst.Value = first;
+            nmDPrintEnd.Value = end;
         }
     }
 }

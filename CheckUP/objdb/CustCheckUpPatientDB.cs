@@ -630,6 +630,19 @@ namespace CheckUP.objdb
 
             return dt;
         }
+        public String selectCntByCucId(String cucId)
+        {
+            String sql = "", chk="0";
+            DataTable dt = new DataTable();
+            sql = "Select count(1) as cnt From " + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "' ";
+            //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
+            dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                chk = dt.Rows.Count.ToString();
+            }
+            return chk;
+        }
         public DataTable selectPrintByCucId(String cucId, String rowNumber)
         {
             String sql = "", where="";
