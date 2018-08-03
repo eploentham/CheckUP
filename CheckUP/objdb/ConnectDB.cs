@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using CheckUP.object1;
+using System.Windows.Forms;
 //using MySql.Data.MySqlClient;
 
 namespace CheckUP.objdb
@@ -42,6 +43,9 @@ namespace CheckUP.objdb
         private InitConfig initc;
         public DataTable toReturn = new DataTable();
         public DataTable dt = new DataTable();
+
+        public LogWriter lw;
+
         //OleDbCommand cmdToExecute = new OleDbCommand();
         public ConnectDB(InitConfig i)
         {
@@ -108,6 +112,7 @@ namespace CheckUP.objdb
         }
         public ConnectDB(String hostName)
         {
+            lw = new LogWriter();
             if (hostName == "mainhis")
             {
                 hostname = "mainhis";
@@ -155,13 +160,17 @@ namespace CheckUP.objdb
             //cmdToExecute.Connection = _mainConnection;
             try
             {
+                //MessageBox.Show("333 "+ sql, "333 " );
+                //MessageBox.Show("444 " + _mainConnection.ConnectionString, "444 ");
                 _mainConnection.Open();
                 adapter.Fill(toReturn);
                 //return toReturn;
             }
             catch (Exception ex)
             {
-                throw new Exception("", ex);
+                //throw new Exception("", ex);
+                //MessageBox.Show("ex "+ ex.InnerException, "error "+ex.Message);
+                lw.WriteLog("selectData " + "ex " + ex.InnerException+ " error " + ex.Message);
             }
             finally
             {
@@ -209,8 +218,10 @@ namespace CheckUP.objdb
             }
             catch (Exception ex)
             {
-                throw new Exception("ExecuteNonQuery::Error occured.", ex);
-                toReturn = ex.Message;
+                //throw new Exception("ExecuteNonQuery::Error occured.", ex);
+                //toReturn = ex.Message;
+                //MessageBox.Show("ex " + ex.InnerException, "error " + ex.Message);
+                lw.WriteLog("ExecuteNonQuery " + "ex " + ex.InnerException + " error " + ex.Message);
             }
             finally
             {
@@ -235,8 +246,10 @@ namespace CheckUP.objdb
             }
             catch (Exception ex)
             {
-                throw new Exception("ExecuteNonQuery::Error occured.", ex);
-                toReturn = ex.Message;
+                //throw new Exception("ExecuteNonQuery::Error occured.", ex);
+                //toReturn = ex.Message;
+                //MessageBox.Show("ex " + ex.InnerException, "error " + ex.Message);
+                lw.WriteLog("ExecuteNonQueryNoClose " + "ex " + ex.InnerException + " error " + ex.Message);
             }
             finally
             {
@@ -257,6 +270,7 @@ namespace CheckUP.objdb
             }
             catch (Exception ex)
             {
+                lw.WriteLog("OpenConnection " + "ex " + ex.InnerException + " error " + ex.Message);
                 throw new Exception("ExecuteNonQuery::Error occured.", ex);
                 toReturn = ex.Message;
             }

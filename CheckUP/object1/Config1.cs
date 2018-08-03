@@ -406,6 +406,21 @@ namespace CheckUP.object1
                 return o;
             }
         }
+        public String NumberNull11(String o)
+        {
+            if (o.Equals(""))
+            {
+                return "1";
+            }
+            else if (o.Equals("-"))
+            {
+                return "1";
+            }
+            else
+            {
+                return o;
+            }
+        }
         public String NumberNull13(String o)
         {
             if (o.Equals(""))

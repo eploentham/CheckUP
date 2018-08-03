@@ -153,124 +153,124 @@ namespace CheckUP.gui
                 chkC.Checked = true;
             }
 
-            nmDDepartment.Value = int.Parse(cc.cf.NumberNull1(ei.DepartmentName));
+            nmDDepartment.Value = int.Parse(cc.cf.NumberNull11(ei.DepartmentName));
 
-            nmDPERow.Value = int.Parse(cc.cf.NumberNull1(ei.PERow));
-            nmDPENo.Value = int.Parse(cc.cf.NumberNull1(ei.PENo));
-            nmDPEAge.Value = int.Parse(cc.cf.NumberNull1(ei.PEAge));
-            nmDPEBMI.Value = int.Parse(cc.cf.NumberNull1(ei.PEBMI));
-            nmDPEHeight.Value = int.Parse(cc.cf.NumberNull1(ei.PEHeight));
-            nmDPEPulse.Value = int.Parse(cc.cf.NumberNull1(ei.PEPulse));
-            nmDPEResult.Value = int.Parse(cc.cf.NumberNull1(ei.PEResult));
-            nmDPESummary.Value = int.Parse(cc.cf.NumberNull1(ei.PESummary));
-            nmDPEVi.Value = int.Parse(cc.cf.NumberNull1(ei.PEVitalSign));
-            nmDPEWeight.Value = int.Parse(cc.cf.NumberNull1(ei.PEWeight));
-            nmDPEBloodGroup.Value = int.Parse(cc.cf.NumberNull1(ei.PEBloodGroup));
+            nmDPERow.Value = int.Parse(cc.cf.NumberNull11(ei.PERow));
+            nmDPENo.Value = int.Parse(cc.cf.NumberNull11(ei.PENo));
+            nmDPEAge.Value = int.Parse(cc.cf.NumberNull11(ei.PEAge));
+            nmDPEBMI.Value = int.Parse(cc.cf.NumberNull11(ei.PEBMI));
+            nmDPEHeight.Value = int.Parse(cc.cf.NumberNull11(ei.PEHeight));
+            nmDPEPulse.Value = int.Parse(cc.cf.NumberNull11(ei.PEPulse));
+            nmDPEResult.Value = int.Parse(cc.cf.NumberNull11(ei.PEResult));
+            nmDPESummary.Value = int.Parse(cc.cf.NumberNull11(ei.PESummary));
+            nmDPEVi.Value = int.Parse(cc.cf.NumberNull11(ei.PEVitalSign));
+            nmDPEWeight.Value = int.Parse(cc.cf.NumberNull11(ei.PEWeight));
+            nmDPEBloodGroup.Value = int.Parse(cc.cf.NumberNull11(ei.PEBloodGroup));
 
-            nmDXRayRow.Value = int.Parse(cc.cf.NumberNull1(ei.XrayRow));
-            nmDXRayNo.Value = int.Parse(cc.cf.NumberNull1(ei.XrayNo));
-            nmDXRaySummary.Value = int.Parse(cc.cf.NumberNull1(ei.XraySummary));
-            nmDXRayValue.Value = int.Parse(cc.cf.NumberNull1(ei.Xray));
+            nmDXRayRow.Value = int.Parse(cc.cf.NumberNull11(ei.XrayRow));
+            nmDXRayNo.Value = int.Parse(cc.cf.NumberNull11(ei.XrayNo));
+            nmDXRaySummary.Value = int.Parse(cc.cf.NumberNull11(ei.XraySummary));
+            nmDXRayValue.Value = int.Parse(cc.cf.NumberNull11(ei.Xray));
 
-            nmDCBCRow.Value = int.Parse(cc.cf.NumberNull1(ei.CBCRow));
-            nmDCBCNo.Value = int.Parse(cc.cf.NumberNull1(ei.CBCNo));
-            nmDCBCBact.Value = int.Parse(cc.cf.NumberNull1(ei.CBCBact));
-            nmDCBCEos.Value = int.Parse(cc.cf.NumberNull1(ei.CBCEos));
-            nmDCBCHb.Value = int.Parse(cc.cf.NumberNull1(ei.CBCHb));
-            nmDCBCHct.Value = int.Parse(cc.cf.NumberNull1(ei.CBCHct));
-            nmDCBCLy.Value = int.Parse(cc.cf.NumberNull1(ei.CBCLy));
-            nmDCBCMono.Value = int.Parse(cc.cf.NumberNull1(ei.CBCMono));
-            nmDCBCNeu.Value = int.Parse(cc.cf.NumberNull1(ei.CBCNeu));
-            nmDCBCPltC.Value = int.Parse(cc.cf.NumberNull1(ei.CBCPltC));
-            nmDCBCPltS.Value = int.Parse(cc.cf.NumberNull1(ei.CBCPltS));
-            nmDCBCRBC.Value = int.Parse(cc.cf.NumberNull1(ei.CBCRBC));
-            nmDCBCRBCmono.Value = int.Parse(cc.cf.NumberNull1(ei.CBCRBCmono));
-            nmDCBCSummary.Value = int.Parse(cc.cf.NumberNull1(ei.CBCSummary));
-            nmDCBCWBC.Value= int.Parse(cc.cf.NumberNull1(ei.CBCWBC));
-            nmDCBCPmn.Value = int.Parse(cc.cf.NumberNull1(ei.cbcPmn));
-            nmDCBCMCH.Value = int.TryParse(ei.CBCMCH, out chk) ? chk : 0;
-            nmDCBCMCHC.Value = int.TryParse(ei.CBCMCHC, out chk) ? chk : 0;
-            nmDCBCMCV.Value = int.TryParse(ei.CBCMCV, out chk) ? chk : 0;
-            nmDCBCBaso.Value = int.TryParse(ei.CBCBASO, out chk) ? chk : 0;
+            nmDCBCRow.Value = int.Parse(cc.cf.NumberNull11(ei.CBCRow));
+            nmDCBCNo.Value = int.Parse(cc.cf.NumberNull11(ei.CBCNo));
+            nmDCBCBact.Value = int.Parse(cc.cf.NumberNull11(ei.CBCBact));
+            nmDCBCEos.Value = int.Parse(cc.cf.NumberNull11(ei.CBCEos));
+            nmDCBCHb.Value = int.Parse(cc.cf.NumberNull11(ei.CBCHb));
+            nmDCBCHct.Value = int.Parse(cc.cf.NumberNull11(ei.CBCHct));
+            nmDCBCLy.Value = int.Parse(cc.cf.NumberNull11(ei.CBCLy));
+            nmDCBCMono.Value = int.Parse(cc.cf.NumberNull11(ei.CBCMono));
+            nmDCBCNeu.Value = int.Parse(cc.cf.NumberNull11(ei.CBCNeu));
+            nmDCBCPltC.Value = int.Parse(cc.cf.NumberNull11(ei.CBCPltC));
+            nmDCBCPltS.Value = int.Parse(cc.cf.NumberNull11(ei.CBCPltS));
+            nmDCBCRBC.Value = int.Parse(cc.cf.NumberNull11(ei.CBCRBC));
+            nmDCBCRBCmono.Value = int.Parse(cc.cf.NumberNull11(ei.CBCRBCmono));
+            nmDCBCSummary.Value = int.Parse(cc.cf.NumberNull11(ei.CBCSummary));
+            nmDCBCWBC.Value= int.Parse(cc.cf.NumberNull11(ei.CBCWBC));
+            nmDCBCPmn.Value = int.Parse(cc.cf.NumberNull11(ei.cbcPmn));
+            nmDCBCMCH.Value = int.TryParse(cc.cf.NumberNull11(ei.CBCMCH), out chk) ? chk : 0;
+            nmDCBCMCHC.Value = int.TryParse(cc.cf.NumberNull11(ei.CBCMCHC), out chk) ? chk : 0;
+            nmDCBCMCV.Value = int.TryParse(cc.cf.NumberNull11(ei.CBCMCV), out chk) ? chk : 0;
+            nmDCBCBaso.Value = int.TryParse(cc.cf.NumberNull11(ei.CBCBASO), out chk) ? chk : 0;
 
-            nmDFBSRow.Value = int.Parse(cc.cf.NumberNull1(ei.FBSRow));
-            nmDFBSNo.Value = int.Parse(cc.cf.NumberNull1(ei.FBSNo));
-            nmDFBSResult.Value = int.Parse(cc.cf.NumberNull1(ei.FBSResult));
-            nmDFBSSummary.Value = int.Parse(cc.cf.NumberNull1(ei.FBSSummary));
-            nmDFBSValue.Value = int.Parse(cc.cf.NumberNull1(ei.FBS));
+            nmDFBSRow.Value = int.Parse(cc.cf.NumberNull11(ei.FBSRow));
+            nmDFBSNo.Value = int.Parse(cc.cf.NumberNull11(ei.FBSNo));
+            nmDFBSResult.Value = int.Parse(cc.cf.NumberNull11(ei.FBSResult));
+            nmDFBSSummary.Value = int.Parse(cc.cf.NumberNull11(ei.FBSSummary));
+            nmDFBSValue.Value = int.Parse(cc.cf.NumberNull11(ei.FBS));
 
-            nmDUARow.Value = int.Parse(cc.cf.NumberNull1(ei.UARow));
-            nmDUANo.Value = int.Parse(cc.cf.NumberNull1(ei.UANo));
-            nmDUAAppe.Value = int.Parse(cc.cf.NumberNull1(ei.UAAppe));
-            nmDUABact.Value = int.Parse(cc.cf.NumberNull1(ei.UABact));
-            nmDUAColor.Value = int.Parse(cc.cf.NumberNull1(ei.UAColor));
-            nmDUAEpi.Value = int.Parse(cc.cf.NumberNull1(ei.UAEpi));
-            nmDUApH.Value = int.Parse(cc.cf.NumberNull1(ei.UApH));
-            nmDUAProtein.Value = int.Parse(cc.cf.NumberNull1(ei.UAProtein));
-            nmDUARBC.Value = int.Parse(cc.cf.NumberNull1(ei.UARBC));
-            nmDUAResult.Value = int.Parse(cc.cf.NumberNull1(ei.UAResult));
-            nmDUASpgr.Value = int.Parse(cc.cf.NumberNull1(ei.UASpgr));
-            nmDUASugar.Value = int.Parse(cc.cf.NumberNull1(ei.UASugar));
-            nmDUASummary.Value = int.Parse(cc.cf.NumberNull1(ei.UASummary));
-            nmDUAWBC.Value = int.Parse(cc.cf.NumberNull1(ei.UAWBC));
-            nmDUAGlu.Value = int.Parse(cc.cf.NumberNull1(ei.UAGlu));
-            nmDUAKetone.Value = int.Parse(cc.cf.NumberNull1(ei.UAKetone));
-            nmDUABlood.Value = int.Parse(cc.cf.NumberNull1(ei.UABlood));
+            nmDUARow.Value = int.Parse(cc.cf.NumberNull11(ei.UARow));
+            nmDUANo.Value = int.Parse(cc.cf.NumberNull11(ei.UANo));
+            nmDUAAppe.Value = int.Parse(cc.cf.NumberNull11(ei.UAAppe));
+            nmDUABact.Value = int.Parse(cc.cf.NumberNull11(ei.UABact));
+            nmDUAColor.Value = int.Parse(cc.cf.NumberNull11(ei.UAColor));
+            nmDUAEpi.Value = int.Parse(cc.cf.NumberNull11(ei.UAEpi));
+            nmDUApH.Value = int.Parse(cc.cf.NumberNull11(ei.UApH));
+            nmDUAProtein.Value = int.Parse(cc.cf.NumberNull11(ei.UAProtein));
+            nmDUARBC.Value = int.Parse(cc.cf.NumberNull11(ei.UARBC));
+            nmDUAResult.Value = int.Parse(cc.cf.NumberNull11(ei.UAResult));
+            nmDUASpgr.Value = int.Parse(cc.cf.NumberNull11(ei.UASpgr));
+            nmDUASugar.Value = int.Parse(cc.cf.NumberNull11(ei.UASugar));
+            nmDUASummary.Value = int.Parse(cc.cf.NumberNull11(ei.UASummary));
+            nmDUAWBC.Value = int.Parse(cc.cf.NumberNull11(ei.UAWBC));
+            nmDUAGlu.Value = int.Parse(cc.cf.NumberNull11(ei.UAGlu));
+            nmDUAKetone.Value = int.Parse(cc.cf.NumberNull11(ei.UAKetone));
+            nmDUABlood.Value = int.Parse(cc.cf.NumberNull11(ei.UABlood));
 
-            nmDUALeu.Value = int.Parse(cc.cf.NumberNull1(ei.UALeu));
-            nmDUANit.Value = int.Parse(cc.cf.NumberNull1(ei.UANit));
-            nmDUAUro.Value = int.Parse(cc.cf.NumberNull1(ei.UAUro));
-            nmDUABili.Value = int.Parse(cc.cf.NumberNull1(ei.UABil));
+            nmDUALeu.Value = int.Parse(cc.cf.NumberNull11(ei.UALeu));
+            nmDUANit.Value = int.Parse(cc.cf.NumberNull11(ei.UANit));
+            nmDUAUro.Value = int.Parse(cc.cf.NumberNull11(ei.UAUro));
+            nmDUABili.Value = int.Parse(cc.cf.NumberNull11(ei.UABil));
 
-            nmDTriRow.Value = int.Parse(cc.cf.NumberNull1(ei.TriRow));
-            nmDTriNo.Value = int.Parse(cc.cf.NumberNull1(ei.TriNo));
-            nmDTriResult.Value = int.Parse(cc.cf.NumberNull1(ei.TriResult));
-            nmDTriSummary.Value = int.Parse(cc.cf.NumberNull1(ei.TriSummary));
-            nmDTriValue.Value = int.Parse(cc.cf.NumberNull1(ei.Triglyceride));
+            nmDTriRow.Value = int.Parse(cc.cf.NumberNull11(ei.TriRow));
+            nmDTriNo.Value = int.Parse(cc.cf.NumberNull11(ei.TriNo));
+            nmDTriResult.Value = int.Parse(cc.cf.NumberNull11(ei.TriResult));
+            nmDTriSummary.Value = int.Parse(cc.cf.NumberNull11(ei.TriSummary));
+            nmDTriValue.Value = int.Parse(cc.cf.NumberNull11(ei.Triglyceride));
 
-            nmDChoNo.Value = int.Parse(cc.cf.NumberNull1(ei.ChoNo));
-            nmDChoResult.Value = int.Parse(cc.cf.NumberNull1(ei.ChoResult));
-            nmDChoRow.Value = int.Parse(cc.cf.NumberNull1(ei.ChoRow));
-            nmDChoSummary.Value = int.Parse(cc.cf.NumberNull1(ei.Chosummary));
-            nmDChoValue.Value = int.Parse(cc.cf.NumberNull1(ei.Cholesteral));
-            nmDChoLDL.Value = int.Parse(cc.cf.NumberNull1(ei.ChoLDL));
-            nmDChoHDL.Value = int.Parse(cc.cf.NumberNull1(ei.ChoHDL));
-            nmDLDLResult.Value = int.Parse(cc.cf.NumberNull1(ei.ChoLDLResult));
-            nmDLDLSummary.Value = int.Parse(cc.cf.NumberNull1(ei.ChoLDLsummary));
-            nmDHDLResult.Value = int.Parse(cc.cf.NumberNull1(ei.ChoHDLResult));
-            nmDHDLSummary.Value = int.Parse(cc.cf.NumberNull1(ei.ChoHDLsummary));
+            nmDChoNo.Value = int.Parse(cc.cf.NumberNull11(ei.ChoNo));
+            nmDChoResult.Value = int.Parse(cc.cf.NumberNull11(ei.ChoResult));
+            nmDChoRow.Value = int.Parse(cc.cf.NumberNull11(ei.ChoRow));
+            nmDChoSummary.Value = int.Parse(cc.cf.NumberNull11(ei.Chosummary));
+            nmDChoValue.Value = int.Parse(cc.cf.NumberNull11(ei.Cholesteral));
+            nmDChoLDL.Value = int.Parse(cc.cf.NumberNull11(ei.ChoLDL));
+            nmDChoHDL.Value = int.Parse(cc.cf.NumberNull11(ei.ChoHDL));
+            nmDLDLResult.Value = int.Parse(cc.cf.NumberNull11(ei.ChoLDLResult));
+            nmDLDLSummary.Value = int.Parse(cc.cf.NumberNull11(ei.ChoLDLsummary));
+            nmDHDLResult.Value = int.Parse(cc.cf.NumberNull11(ei.ChoHDLResult));
+            nmDHDLSummary.Value = int.Parse(cc.cf.NumberNull11(ei.ChoHDLsummary));
 
-            nmDSgotRow.Value = int.Parse(cc.cf.NumberNull1(ei.SgotRow));
-            nmDSgotNo.Value = int.Parse(cc.cf.NumberNull1(ei.SgotNo));
-            nmDSgotResult.Value = int.Parse(cc.cf.NumberNull1(ei.SgotResult));
-            nmDSgotSgptValue.Value = int.Parse(cc.cf.NumberNull1(ei.Sgpt));
-            nmDSgotSummary.Value = int.Parse(cc.cf.NumberNull1(ei.SgptSummary));
-            nmDSgotvalue.Value = int.Parse(cc.cf.NumberNull1(ei.Sgot));
-            nmDSgotALPValue.Value = int.Parse(cc.cf.NumberNull1(ei.SgotALP));
-            nmDSgotAakalineValue.Value = int.Parse(cc.cf.NumberNull1(ei.SgotAlkaline));
+            nmDSgotRow.Value = int.Parse(cc.cf.NumberNull11(ei.SgotRow));
+            nmDSgotNo.Value = int.Parse(cc.cf.NumberNull11(ei.SgotNo));
+            nmDSgotResult.Value = int.Parse(cc.cf.NumberNull11(ei.SgotResult));
+            nmDSgotSgptValue.Value = int.Parse(cc.cf.NumberNull11(ei.Sgpt));
+            nmDSgotSummary.Value = int.Parse(cc.cf.NumberNull11(ei.SgptSummary));
+            nmDSgotvalue.Value = int.Parse(cc.cf.NumberNull11(ei.Sgot));
+            nmDSgotALPValue.Value = int.Parse(cc.cf.NumberNull11(ei.SgotALP));
+            nmDSgotAakalineValue.Value = int.Parse(cc.cf.NumberNull11(ei.SgotAlkaline));
 
-            nmDBunRow.Value = int.Parse(cc.cf.NumberNull1(ei.BunRow));
-            nmDBunNo.Value = int.Parse(cc.cf.NumberNull1(ei.BunNo));
-            nmDBunCreatinine.Value = int.Parse(cc.cf.NumberNull1(ei.BunCreatinine));
-            nmDBunResult.Value = int.Parse(cc.cf.NumberNull1(ei.BunResult));
-            nmDBunSummary.Value = int.Parse(cc.cf.NumberNull1(ei.BunSummary));
-            nmDBunValue.Value = int.Parse(cc.cf.NumberNull1(ei.Bun));
+            nmDBunRow.Value = int.Parse(cc.cf.NumberNull11(ei.BunRow));
+            nmDBunNo.Value = int.Parse(cc.cf.NumberNull11(ei.BunNo));
+            nmDBunCreatinine.Value = int.Parse(cc.cf.NumberNull11(ei.BunCreatinine));
+            nmDBunResult.Value = int.Parse(cc.cf.NumberNull11(ei.BunResult));
+            nmDBunSummary.Value = int.Parse(cc.cf.NumberNull11(ei.BunSummary));
+            nmDBunValue.Value = int.Parse(cc.cf.NumberNull11(ei.Bun));
             
-            nmDUricRow.Value = int.Parse(cc.cf.NumberNull1(ei.UricRow));
-            nmDUricNo.Value = int.Parse(cc.cf.NumberNull1(ei.UricNo));
-            nmDUricResult.Value = int.Parse(cc.cf.NumberNull1(ei.UricResult));
-            nmDUricSummary.Value = int.Parse(cc.cf.NumberNull1(ei.UricSummary));
-            nmDUricValue.Value = int.Parse(cc.cf.NumberNull1(ei.UricAcid));
+            nmDUricRow.Value = int.Parse(cc.cf.NumberNull11(ei.UricRow));
+            nmDUricNo.Value = int.Parse(cc.cf.NumberNull11(ei.UricNo));
+            nmDUricResult.Value = int.Parse(cc.cf.NumberNull11(ei.UricResult));
+            nmDUricSummary.Value = int.Parse(cc.cf.NumberNull11(ei.UricSummary));
+            nmDUricValue.Value = int.Parse(cc.cf.NumberNull11(ei.UricAcid));
 
-            nmDOther1No.Value = int.Parse(cc.cf.NumberNull1(ei.Other1No));
-            nmDOther1Row.Value = int.Parse(cc.cf.NumberNull1(ei.Other1Row));
-            nmDOther1HBsAb.Value = int.Parse(cc.cf.NumberNull1(ei.Other1HBsAb));
-            nmDOther1HBsAg.Value = int.Parse(cc.cf.NumberNull1(ei.Other1HBsAg));
-            nmDOther1Amphetamine.Value = int.Parse(cc.cf.NumberNull1(ei.Other1Amphetamine));
-            nmDOther1Calcium.Value = int.Parse(cc.cf.NumberNull1(ei.Other1Calcium));
-            nmDOther1VDRL.Value = int.Parse(cc.cf.NumberNull1(ei.Other1VDRL));
-            nmDOther1AntiHIV.Value = int.Parse(cc.cf.NumberNull1(ei.Other1AntiHIV));
-            nmDOther1AntiHav.Value = int.Parse(cc.cf.NumberNull1(ei.Other1AntiHav));
+            nmDOther1No.Value = int.Parse(cc.cf.NumberNull11(ei.Other1No));
+            nmDOther1Row.Value = int.Parse(cc.cf.NumberNull11(ei.Other1Row));
+            nmDOther1HBsAb.Value = int.Parse(cc.cf.NumberNull11(ei.Other1HBsAb));
+            nmDOther1HBsAg.Value = int.Parse(cc.cf.NumberNull11(ei.Other1HBsAg));
+            nmDOther1Amphetamine.Value = int.Parse(cc.cf.NumberNull11(ei.Other1Amphetamine));
+            nmDOther1Calcium.Value = int.Parse(cc.cf.NumberNull11(ei.Other1Calcium));
+            nmDOther1VDRL.Value = int.Parse(cc.cf.NumberNull11(ei.Other1VDRL));
+            nmDOther1AntiHIV.Value = int.Parse(cc.cf.NumberNull11(ei.Other1AntiHIV));
+            nmDOther1AntiHav.Value = int.Parse(cc.cf.NumberNull11(ei.Other1AntiHav));
             nmDOther1CAAFP.Value = int.Parse(cc.cf.NumberNull13(ei.CAAFP));
             nmDOther1CACEA.Value = int.Parse(cc.cf.NumberNull13(ei.CACEA));
             nmDOther1CAPSA.Value = int.Parse(cc.cf.NumberNull13(ei.CAPSA));
@@ -279,100 +279,100 @@ namespace CheckUP.gui
             nmDOther1CA125.Value = int.Parse(cc.cf.NumberNull13(ei.CA125));
             nmDOther1CA199.Value = int.Parse(cc.cf.NumberNull13(ei.CA199));
 
-            nmDOther1HBsAbResult.Value = int.Parse(cc.cf.NumberNull1(ei.Other1HBsAbResult));
-            nmDOther1HBsAgResult.Value = int.Parse(cc.cf.NumberNull1(ei.Other1HBsAgResult));
-            nmDOther1HBsAbSummary.Value = int.Parse(cc.cf.NumberNull1(ei.Other1HBsAbSummary));
-            nmDOther1AntiHavSummary.Value = int.Parse(cc.cf.NumberNull1(ei.Other1AntiHavSummary));
+            nmDOther1HBsAbResult.Value = int.Parse(cc.cf.NumberNull11(ei.Other1HBsAbResult));
+            nmDOther1HBsAgResult.Value = int.Parse(cc.cf.NumberNull11(ei.Other1HBsAgResult));
+            nmDOther1HBsAbSummary.Value = int.Parse(cc.cf.NumberNull11(ei.Other1HBsAbSummary));
+            nmDOther1AntiHavSummary.Value = int.Parse(cc.cf.NumberNull11(ei.Other1AntiHavSummary));
 
-            nmDOtherAmphetamineSummary.Value = int.Parse(cc.cf.NumberNull1(ei.AmphetamineSummary));
+            nmDOtherAmphetamineSummary.Value = int.Parse(cc.cf.NumberNull11(ei.AmphetamineSummary));
 
-            nmDLungRow.Value = int.Parse(cc.cf.NumberNull1(ei.LungRow));
-            nmDLungNo.Value = int.Parse(cc.cf.NumberNull1(ei.LungNo));
-            nmDLungFvcPredic.Value = int.Parse(cc.cf.NumberNull1(ei.LungFvcPredic));
-            nmDLungFvcMeas.Value = int.Parse(cc.cf.NumberNull1(ei.LungFvcMeas));
-            nmDLungFvcPer.Value = int.Parse(cc.cf.NumberNull1(ei.LungFvcPer));
-            nmDLungFev1Predic.Value = int.Parse(cc.cf.NumberNull1(ei.LungFev1Predic));
-            nmDLungFev1Meas.Value = int.Parse(cc.cf.NumberNull1(ei.LungFev1Meas));
-            nmDLungFev1Per.Value = int.Parse(cc.cf.NumberNull1(ei.LungFev1Per));
-            nmDLungPerFev1.Value = int.Parse(cc.cf.NumberNull1(ei.LungPerFev1));
-            nmDLungSummary.Value = int.Parse(cc.cf.NumberNull1(ei.LungSummary));
+            nmDLungRow.Value = int.Parse(cc.cf.NumberNull11(ei.LungRow));
+            nmDLungNo.Value = int.Parse(cc.cf.NumberNull11(ei.LungNo));
+            nmDLungFvcPredic.Value = int.Parse(cc.cf.NumberNull11(ei.LungFvcPredic));
+            nmDLungFvcMeas.Value = int.Parse(cc.cf.NumberNull11(ei.LungFvcMeas));
+            nmDLungFvcPer.Value = int.Parse(cc.cf.NumberNull11(ei.LungFvcPer));
+            nmDLungFev1Predic.Value = int.Parse(cc.cf.NumberNull11(ei.LungFev1Predic));
+            nmDLungFev1Meas.Value = int.Parse(cc.cf.NumberNull11(ei.LungFev1Meas));
+            nmDLungFev1Per.Value = int.Parse(cc.cf.NumberNull11(ei.LungFev1Per));
+            nmDLungPerFev1.Value = int.Parse(cc.cf.NumberNull11(ei.LungPerFev1));
+            nmDLungSummary.Value = int.Parse(cc.cf.NumberNull11(ei.LungSummary));
 
-            nmDAudioNo.Value = int.Parse(cc.cf.NumberNull1(ei.AudiogramNo));
-            nmDAudioRow.Value = int.Parse(cc.cf.NumberNull1(ei.AudiogramRow));
-            nmDAudiogram500L.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram500L));
-            nmDAudiogram500R.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram500R));
-            nmDAudiogram1000L.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram1000L));
-            nmDAudiogram1000R.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram1000R));
-            nmDAudiogram2000L.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram2000L));
-            nmDAudiogram2000R.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram2000R));
-            nmDAudiogram3000L.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram3000L));
-            nmDAudiogram3000R.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram3000R));
-            nmDAudiogram4000L.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram4000L));
-            nmDAudiogram4000R.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram4000R));
-            nmDAudiogram6000L.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram6000L));
-            nmDAudiogram6000R.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram6000R));
-            nmDAudiogram8000L.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram8000L));
-            nmDAudiogram8000R.Value = int.Parse(cc.cf.NumberNull1(ei.Audiogram8000R));
-            nmDAudiogramSummaryL.Value = int.Parse(cc.cf.NumberNull1(ei.AudiogramSummaryL));
-            nmDAudiogramSummaryR.Value = int.Parse(cc.cf.NumberNull1(ei.AudiogramSummaryR));
-            nmDAudiogramExam.Value = int.Parse(cc.cf.NumberNull1(ei.AudiogramExam));
+            nmDAudioNo.Value = int.Parse(cc.cf.NumberNull11(ei.AudiogramNo));
+            nmDAudioRow.Value = int.Parse(cc.cf.NumberNull11(ei.AudiogramRow));
+            nmDAudiogram500L.Value = int.Parse(cc.cf.NumberNull11(ei.Audiogram500L));
+            nmDAudiogram500R.Value = int.Parse(cc.cf.NumberNull11(ei.Audiogram500R));
+            nmDAudiogram1000L.Value = int.Parse(cc.cf.NumberNull11(ei.Audiogram1000L));
+            nmDAudiogram1000R.Value = int.Parse(cc.cf.NumberNull11(ei.Audiogram1000R));
+            nmDAudiogram2000L.Value = int.Parse(cc.cf.NumberNull11(ei.Audiogram2000L));
+            nmDAudiogram2000R.Value = int.Parse(cc.cf.NumberNull11(ei.Audiogram2000R));
+            nmDAudiogram3000L.Value = int.Parse(cc.cf.NumberNull11(ei.Audiogram3000L));
+            nmDAudiogram3000R.Value = int.Parse(cc.cf.NumberNull11(ei.Audiogram3000R));
+            nmDAudiogram4000L.Value = int.Parse(cc.cf.NumberNull11(ei.Audiogram4000L));
+            nmDAudiogram4000R.Value = int.Parse(cc.cf.NumberNull11(ei.Audiogram4000R));
+            nmDAudiogram6000L.Value = int.Parse(cc.cf.NumberNull11(ei.Audiogram6000L));
+            nmDAudiogram6000R.Value = int.Parse(cc.cf.NumberNull11(ei.Audiogram6000R));
+            nmDAudiogram8000L.Value = int.Parse(cc.cf.NumberNull11(ei.Audiogram8000L));
+            nmDAudiogram8000R.Value = int.Parse(cc.cf.NumberNull11(ei.Audiogram8000R));
+            nmDAudiogramSummaryL.Value = int.Parse(cc.cf.NumberNull11(ei.AudiogramSummaryL));
+            nmDAudiogramSummaryR.Value = int.Parse(cc.cf.NumberNull11(ei.AudiogramSummaryR));
+            nmDAudiogramExam.Value = int.Parse(cc.cf.NumberNull11(ei.AudiogramExam));
 
-            nmDEyeNo.Value = int.Parse(cc.cf.NumberNull1(ei.EyeNo));
-            nmDEyeRow.Value = int.Parse(cc.cf.NumberNull1(ei.EyeRow));
-            nmDEyeShortLongLeft.Value = int.Parse(cc.cf.NumberNull1(ei.EyeShortLongLeft));
-            nmDEyeShortLongRight.Value = int.Parse(cc.cf.NumberNull1(ei.EyeShortLongRight));
-            nmDEyeSquintLeft.Value = int.Parse(cc.cf.NumberNull1(ei.EyeSquintLeft));
-            nmDEyeSquintRight.Value = int.Parse(cc.cf.NumberNull1(ei.EyeSquintRight));
-            nmDEyeDegreeLeft.Value = int.Parse(cc.cf.NumberNull1(ei.EyeDegreeLeft));
-            nmDEyeDegreeRight.Value = int.Parse(cc.cf.NumberNull1(ei.EyeDegreeRight));
-            nmDEyeOldLeft.Value = int.Parse(cc.cf.NumberNull1(ei.EyeOldLeft));
-            nmDEyeOldRight.Value = int.Parse(cc.cf.NumberNull1(ei.EyeOldRight));
-            nmDEyeBlindness.Value = int.Parse(cc.cf.NumberNull1(ei.EyeBlindness));
-            nmDEyeResult.Value = int.Parse(cc.cf.NumberNull1(ei.EyeResult));
-            nmDEyeSummary.Value = int.Parse(cc.cf.NumberNull1(ei.EyeSummary));
-            nmDEyeExam.Value = int.Parse(cc.cf.NumberNull1(ei.EyeExam));
+            nmDEyeNo.Value = int.Parse(cc.cf.NumberNull11(ei.EyeNo));
+            nmDEyeRow.Value = int.Parse(cc.cf.NumberNull11(ei.EyeRow));
+            nmDEyeShortLongLeft.Value = int.Parse(cc.cf.NumberNull11(ei.EyeShortLongLeft));
+            nmDEyeShortLongRight.Value = int.Parse(cc.cf.NumberNull11(ei.EyeShortLongRight));
+            nmDEyeSquintLeft.Value = int.Parse(cc.cf.NumberNull11(ei.EyeSquintLeft));
+            nmDEyeSquintRight.Value = int.Parse(cc.cf.NumberNull11(ei.EyeSquintRight));
+            nmDEyeDegreeLeft.Value = int.Parse(cc.cf.NumberNull11(ei.EyeDegreeLeft));
+            nmDEyeDegreeRight.Value = int.Parse(cc.cf.NumberNull11(ei.EyeDegreeRight));
+            nmDEyeOldLeft.Value = int.Parse(cc.cf.NumberNull11(ei.EyeOldLeft));
+            nmDEyeOldRight.Value = int.Parse(cc.cf.NumberNull11(ei.EyeOldRight));
+            nmDEyeBlindness.Value = int.Parse(cc.cf.NumberNull11(ei.EyeBlindness));
+            nmDEyeResult.Value = int.Parse(cc.cf.NumberNull11(ei.EyeResult));
+            nmDEyeSummary.Value = int.Parse(cc.cf.NumberNull11(ei.EyeSummary));
+            nmDEyeExam.Value = int.Parse(cc.cf.NumberNull11(ei.EyeExam));
 
-            nmDStoolExamAppearance.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamAppearance));
-            nmDStoolExamColor.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamColor));
-            nmDStoolExamNo.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamNo));
-            nmDStoolExamParasite.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamParasite));
-            nmDStoolExamRBC.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamRbc));
-            nmDStoolExamRow.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamRow));
-            nmDStoolExamSummary.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamSummary));
-            nmDStoolExamWBC.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamWbc));
-            nmDStoolExamCulture.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamCulture));
-            nmDStoolExamTyHoidH.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamTyphoidH));
-            nmDStoolExamTyHoidO.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamTyphoidO));
-            nmDStoolExamCultureSummary.Value = int.Parse(cc.cf.NumberNull1(ei.StoolExamCultureSummary));
+            nmDStoolExamAppearance.Value = int.Parse(cc.cf.NumberNull11(ei.StoolExamAppearance));
+            nmDStoolExamColor.Value = int.Parse(cc.cf.NumberNull11(ei.StoolExamColor));
+            nmDStoolExamNo.Value = int.Parse(cc.cf.NumberNull11(ei.StoolExamNo));
+            nmDStoolExamParasite.Value = int.Parse(cc.cf.NumberNull11(ei.StoolExamParasite));
+            nmDStoolExamRBC.Value = int.Parse(cc.cf.NumberNull11(ei.StoolExamRbc));
+            nmDStoolExamRow.Value = int.Parse(cc.cf.NumberNull11(ei.StoolExamRow));
+            nmDStoolExamSummary.Value = int.Parse(cc.cf.NumberNull11(ei.StoolExamSummary));
+            nmDStoolExamWBC.Value = int.Parse(cc.cf.NumberNull11(ei.StoolExamWbc));
+            nmDStoolExamCulture.Value = int.Parse(cc.cf.NumberNull11(ei.StoolExamCulture));
+            nmDStoolExamTyHoidH.Value = int.Parse(cc.cf.NumberNull11(ei.StoolExamTyphoidH));
+            nmDStoolExamTyHoidO.Value = int.Parse(cc.cf.NumberNull11(ei.StoolExamTyphoidO));
+            nmDStoolExamCultureSummary.Value = int.Parse(cc.cf.NumberNull11(ei.StoolExamCultureSummary));
 
-            nmDToxiLead.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiLead));
-            nmDToxiAluminium.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiAluminium));
-            nmDToxiCadmium.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiCadmium));
-            nmDToxiMercury.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiMercury));
-            nmDToxiTin.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiTin));
-            nmDToxiCopper.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiCopper));
-            nmDToxiManganese.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiManganese));
-            nmDToxiZinc.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiZinc));
-            nmDToxiAmmonia.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiAmmonia));
+            nmDToxiLead.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiLead));
+            nmDToxiAluminium.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiAluminium));
+            nmDToxiCadmium.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiCadmium));
+            nmDToxiMercury.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiMercury));
+            nmDToxiTin.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiTin));
+            nmDToxiCopper.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiCopper));
+            nmDToxiManganese.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiManganese));
+            nmDToxiZinc.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiZinc));
+            nmDToxiAmmonia.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiAmmonia));
 
-            nmDToxiHippuric.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiHippuric));
-            nmDToxiMethyl.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiMethyl));
-            nmDToxiAcetone.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiAcetone));
-            nmDToxiNickel.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiNickel));
-            nmDToxiChromium.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiChromium));
-            nmDToxiPhenol.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiPhenol));
-            nmDToxiKetone.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiKetone));
-            nmDToxiBenzene.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiBenzene));
-            nmDToxiMandelic.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiMandelic));
-            nmDToxiMethanol.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiMethanol));
-            nmDToxiEthanol.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiEthanol));
-            nmDToxiIPA.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiIPA));
-            nmDToxiArsenic.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiArsenic));
-            nmDToxiHexane.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiHexane));
-            nmDToxiFomaldehyde.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiFomaldehyde));
-            nmDToxiTrichloroethylene.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiTrichloroethylene));
-            nmDToxiAntimony.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiAntimony));
-            nmDToxiFluoride.Value = int.Parse(cc.cf.NumberNull1(ei.ToxiFluoride));
+            nmDToxiHippuric.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiHippuric));
+            nmDToxiMethyl.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiMethyl));
+            nmDToxiAcetone.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiAcetone));
+            nmDToxiNickel.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiNickel));
+            nmDToxiChromium.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiChromium));
+            nmDToxiPhenol.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiPhenol));
+            nmDToxiKetone.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiKetone));
+            nmDToxiBenzene.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiBenzene));
+            nmDToxiMandelic.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiMandelic));
+            nmDToxiMethanol.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiMethanol));
+            nmDToxiEthanol.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiEthanol));
+            nmDToxiIPA.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiIPA));
+            nmDToxiArsenic.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiArsenic));
+            nmDToxiHexane.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiHexane));
+            nmDToxiFomaldehyde.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiFomaldehyde));
+            nmDToxiTrichloroethylene.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiTrichloroethylene));
+            nmDToxiAntimony.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiAntimony));
+            nmDToxiFluoride.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiFluoride));
 
             txtPESheetName.Text = ei.PESheetname;
             txtXRaySheetName.Text = ei.XraySheetname;
@@ -557,6 +557,7 @@ namespace CheckUP.gui
             if (cc.eidb.updateSgot(nmDSgotvalue.Value.ToString(), nmDSgotNo.Value.ToString(), nmDSgotResult.Value.ToString(), nmDSgotRow.Value.ToString(), nmDSgotSgptValue.Value.ToString(),
                 nmDSgotSummary.Value.ToString(), txtSgotSheetName.Text, nmDSgotAakalineValue.Value.ToString()).Length >= 1)
             {
+                ei = cc.eidb.selectByPk();
                 MessageBox.Show("บันทึกข้อมูล Sgot เรียบร้อย", "บันทึกข้อมูล");
             }
             xlWorkbook.Close(true, null, null);
@@ -626,6 +627,7 @@ namespace CheckUP.gui
             if (cc.eidb.updateBun(nmDBunRow.Value.ToString(), nmDBunNo.Value.ToString(),nmDBunValue.Value.ToString(),  nmDBunCreatinine.Value.ToString(), nmDBunResult.Value.ToString(), 
                 nmDBunSummary.Value.ToString(),txtBunSheetName.Text).Length >= 1)
             {
+                ei = cc.eidb.selectByPk();
                 MessageBox.Show("บันทึกข้อมูล BUN เรียบร้อย", "บันทึกข้อมูล");
             }
             xlWorkbook.Close(true, null, null);
@@ -697,6 +699,7 @@ namespace CheckUP.gui
             if (cc.eidb.updateUric(nmDUricRow.Value.ToString().Trim(), nmDUricNo.Value.ToString().Trim(), nmDUricValue.Value.ToString().Trim(), nmDUricResult.Value.ToString().Trim(),
                 nmDUricSummary.Value.ToString().Trim(), txtUricSheetName.Text.Trim()).Length >= 1)
             {
+                ei = cc.eidb.selectByPk();
                 MessageBox.Show("บันทึกข้อมูล Uric Acid เรียบร้อย", "บันทึกข้อมูล");
             }
             xlWorkbook.Close(true, null, null);
@@ -814,6 +817,7 @@ namespace CheckUP.gui
                 nmDChoSummary.Value.ToString(), nmDChoLDL.Value.ToString(), nmDChoHDL.Value.ToString(), txtChoSheetName.Text, nmDLDLResult.Value.ToString(), 
                 nmDLDLSummary.Value.ToString(), nmDHDLResult.Value.ToString(), nmDHDLSummary.Value.ToString()).Length >= 1)
             {
+                ei = cc.eidb.selectByPk();
                 MessageBox.Show("บันทึกข้อมูล Choles เรียบร้อย", "บันทึกข้อมูล");
             }
             xlWorkbook.Close(true, null, null);
@@ -873,6 +877,7 @@ namespace CheckUP.gui
             Cursor.Current = cursor;
             if (cc.eidb.updateTrig(nmDTriValue.Value.ToString(), nmDTriNo.Value.ToString(), nmDTriResult.Value.ToString(), nmDTriRow.Value.ToString(), nmDTriSummary.Value.ToString(),txtTriSheetName.Text).Length >= 1)
             {
+                ei = cc.eidb.selectByPk();
                 MessageBox.Show("บันทึกข้อมูล Trig เรียบร้อย", "บันทึกข้อมูล");
             }
             xlWorkbook.Close(true, null, null);
@@ -1028,6 +1033,7 @@ namespace CheckUP.gui
                 nmDUASpgr.Value.ToString(), nmDUASugar.Value.ToString(), nmDUASummary.Value.ToString(), nmDUAWBC.Value.ToString(), nmDUAGlu.Value.ToString(), nmDUAKetone.Value.ToString(), 
                 nmDUABlood.Value.ToString(),txtUASheetName.Text, nmDUALeu.Value.ToString(), nmDUANit.Value.ToString(), nmDUAUro.Value.ToString(), nmDUABili.Value.ToString()).Length >= 1)
             {
+                ei = cc.eidb.selectByPk();
                 MessageBox.Show("บันทึกข้อมูล UA เรียบร้อย", "บันทึกข้อมูล");
             }
             xlWorkbook.Close(true, null, null);
@@ -1254,6 +1260,7 @@ namespace CheckUP.gui
                 nmDOther1CA199.Value.ToString(), nmDOther1CA199Result.Value.ToString(), nmDOther1CA199Summary.Value.ToString(), nmDOther1HBsAbResult.Value.ToString(),
                 nmDOther1HBsAgResult.Value.ToString(), nmDOther1HBsAbSummary.Value.ToString(), nmDOther1HBsAgSummary.Value.ToString(), nmDOtherAmphetamineSummary.Value.ToString(), nmDOther1AntiHavSummary.Value.ToString()).Length >= 1)
             {
+                ei = cc.eidb.selectByPk();
                 MessageBox.Show("บันทึกข้อมูล Other เรียบร้อย", "บันทึกข้อมูล");
             }
             xlWorkbook.Close(true, null, null);
@@ -1361,6 +1368,7 @@ namespace CheckUP.gui
                 nmDLungFvcPer.Value.ToString(), nmDLungFev1Predic.Value.ToString(), nmDLungFev1Meas.Value.ToString(), nmDLungFev1Per.Value.ToString(), 
                 nmDLungPerFev1.Value.ToString(), nmDLungSummary.Value.ToString(),txtLungSheetName.Text).Length >= 1)
             {
+                ei = cc.eidb.selectByPk();
                 MessageBox.Show("บันทึกข้อมูล Lung เรียบร้อย", "บันทึกข้อมูล");
             }
             xlWorkbook.Close(true, null, null);
@@ -1552,6 +1560,7 @@ namespace CheckUP.gui
                 nmDAudiogram6000L.Value.ToString(), nmDAudiogram6000R.Value.ToString(), nmDAudiogram8000L.Value.ToString(), nmDAudiogram8000R.Value.ToString(), nmDAudiogramSummaryL.Value.ToString(), nmDAudiogramSummaryR.Value.ToString(), 
                 nmDAudiogramExam.Value.ToString(),txtAudioSheetName.Text).Length >= 1)
             {
+                ei = cc.eidb.selectByPk();
                 MessageBox.Show("บันทึกข้อมูล AudioGram เรียบร้อย", "บันทึกข้อมูล");
             }
             xlWorkbook.Close(true, null, null);
@@ -1699,6 +1708,7 @@ namespace CheckUP.gui
                 nmDEyeDegreeLeft.Value.ToString(), nmDEyeDegreeRight.Value.ToString(), nmDEyeOldLeft.Value.ToString(), nmDEyeOldRight.Value.ToString(), nmDEyeResult.Value.ToString(),
                 nmDEyeSummary.Value.ToString(), nmDEyeBlindness.Value.ToString(), nmDEyeExam.Value.ToString(),txtEyeSheetName.Text).Length >= 1)
             {
+                ei = cc.eidb.selectByPk();
                 MessageBox.Show("บันทึกข้อมูล Eye เรียบร้อย", "บันทึกข้อมูล");
             }
             xlWorkbook.Close(true, null, null);
@@ -1982,6 +1992,7 @@ namespace CheckUP.gui
                 nmDToxiCadmium.Value.ToString(), nmDToxiMercury.Value.ToString(), nmDToxiTin.Value.ToString(), nmDToxiCopper.Value.ToString(),
                 nmDToxiManganese.Value.ToString(), nmDToxiZinc.Value.ToString(), nmDToxiAmmonia.Value.ToString()).Length >= 1)
             {
+                ei = cc.eidb.selectByPk();
                 MessageBox.Show("บันทึกข้อมูล Toxi1 เรียบร้อย", "บันทึกข้อมูล");
             }
             //if (cc.eidb.updateToxi2(nmDToxiHippuric.Value.ToString(), nmDToxiMethyl.Value.ToString(), nmDToxiAcetone.Value.ToString(), nmDToxiNickel.Value.ToString(),
@@ -2281,6 +2292,7 @@ namespace CheckUP.gui
                 nmDToxiHexane.Value.ToString(), nmDToxiFomaldehyde.Value.ToString(), nmDToxiTrichloroethylene.Value.ToString(), nmDToxiAntimony.Value.ToString(), 
                 nmDToxiFluoride.Value.ToString(),txtToxiSheetName.Text).Length >= 1)
             {
+                ei = cc.eidb.selectByPk();
                 MessageBox.Show("บันทึกข้อมูล Toxi2 เรียบร้อย", "บันทึกข้อมูล");
             }
             xlWorkbook.Close(true, null, null);
@@ -2379,6 +2391,7 @@ namespace CheckUP.gui
                 if (cc.eidb.updateSfA(nmDAAge.Value.ToString(), nmDAPrefix.Value.ToString(), nmDAFirstName.Value.ToString(), nmDALastName.Value.ToString(),
                     nmDARow.Value.ToString(), nmDRow.Value.ToString(), nmDDepartment.Value.ToString()).Length >= 1)
                 {
+                    ei = cc.eidb.selectByPk();
                     MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 }
             }
@@ -2433,6 +2446,7 @@ namespace CheckUP.gui
                 Cursor.Current = cursor;
                 if (cc.eidb.updateSfB(nmDBAge.Value.ToString(), nmDBPrefix.Value.ToString(), nmDBFullName.Value.ToString(), nmDBRow.Value.ToString(), nmDRow.Value.ToString(), nmDDepartment.Value.ToString()).Length >= 1)
                 {
+                    ei = cc.eidb.selectByPk();
                     MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 }
             }
@@ -2471,6 +2485,7 @@ namespace CheckUP.gui
                 Cursor.Current = cursor;
                 if (cc.eidb.updateSfC(nmDCAge.Value.ToString(), nmDCPrefix.Value.ToString(), nmDCRow.Value.ToString(), nmDRow.Value.ToString(), nmDDepartment.Value.ToString()).Length >= 1)
                 {
+                    ei = cc.eidb.selectByPk();
                     MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 }
             }
@@ -2598,6 +2613,7 @@ namespace CheckUP.gui
                 nmDPEHeight.Value.ToString(), nmDPEWeight.Value.ToString(), nmDPEPulse.Value.ToString(), nmDPEVi.Value.ToString(), nmDPEResult.Value.ToString(),
                 nmDPESummary.Value.ToString(), nmDPEBloodGroup.Value.ToString(),txtPESheetName.Text).Length >= 1)
             {
+                ei = cc.eidb.selectByPk();
                 MessageBox.Show("บันทึกข้อมูล PE เรียบร้อย", "บันทึกข้อมูล");
             }
             xlWorkbook.Close(true, null, null);
@@ -2699,6 +2715,7 @@ namespace CheckUP.gui
                 nmDStoolExamWBC.Value.ToString(), nmDStoolExamRBC.Value.ToString(), nmDStoolExamParasite.Value.ToString(), nmDStoolExamSummary.Value.ToString(), 
                 nmDStoolExamCulture.Value.ToString(), nmDStoolExamTyHoidH.Value.ToString(), nmDStoolExamTyHoidO.Value.ToString(),txtStoolExamSheetName.Text, nmDStoolExamCultureSummary.Value.ToString()).Length >= 1)
             {
+                ei = cc.eidb.selectByPk();
                 MessageBox.Show("บันทึกข้อมูล StoolExam เรียบร้อย", "บันทึกข้อมูล");
             }
             xlWorkbook.Close(true, null, null);
@@ -2751,6 +2768,7 @@ namespace CheckUP.gui
             if (cc.eidb.updateXray(nmDXRayValue.Value.ToString(), nmDXRayNo.Value.ToString(), nmDXRayRow.Value.ToString(), nmDXRaySummary.Value.ToString(),txtXRaySheetName.Text).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล XRay เรียบร้อย", "บันทึกข้อมูล");
+                ei = cc.eidb.selectByPk();
             }
             xlWorkbook.Close(true, null, null);
             xlApp.Quit();
@@ -2904,6 +2922,7 @@ namespace CheckUP.gui
                 nmDCBCRBC.Value.ToString(), nmDCBCRBCmono.Value.ToString(), nmDCBCRow.Value.ToString(), nmDCBCSummary.Value.ToString(), nmDCBCWBC.Value.ToString(), 
                 nmDCBCPmn.Value.ToString(),txtCBCSheetName.Text, nmDCBCMCV.Value.ToString(), nmDCBCMCH.Value.ToString(), nmDCBCMCHC.Value.ToString(), nmDCBCBaso.Value.ToString()).Length >= 1)
             {
+                ei = cc.eidb.selectByPk();
                 MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");
             }
             xlWorkbook.Close(true, null, null);
@@ -2964,6 +2983,7 @@ namespace CheckUP.gui
             Cursor.Current = cursor;
             if (cc.eidb.updateFBS(nmDFBSValue.Value.ToString(), nmDFBSNo.Value.ToString(), nmDFBSResult.Value.ToString(), nmDFBSRow.Value.ToString(), nmDFBSSummary.Value.ToString(),txtFBSSheetName.Text).Length >= 1)
             {
+                ei = cc.eidb.selectByPk();
                 MessageBox.Show("บันทึกข้อมูล FBS เรียบร้อย", "บันทึกข้อมูล");
             }
             xlWorkbook.Close(true, null, null);

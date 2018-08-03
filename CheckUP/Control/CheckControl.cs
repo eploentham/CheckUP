@@ -27,7 +27,7 @@ namespace CheckUP.Control
         public DistrictDB didb;
         public AmphurDB amdb;
         public ProvinceDB prdb;
-        public CompanyDB cpdb;
+        public CompanyDB copdb;
         public CustomerDB cudb;
         public CustCheckUpPatientDB ccpdb;
 
@@ -46,7 +46,7 @@ namespace CheckUP.Control
         //public DocTypeDB docdb;
 
         public Staff sf;
-        public Company cp;
+        public Company cop;
         //public Item itSearch;
 
         private IniFile iniFile;
@@ -87,7 +87,7 @@ namespace CheckUP.Control
                 didb = new DistrictDB(conn);
                 amdb = new AmphurDB(conn);
                 prdb = new ProvinceDB(conn);
-                cpdb = new CompanyDB(conn);
+                copdb = new CompanyDB(conn);
                 cudb = new CustomerDB(conn);
                 ccpdb = new CustCheckUpPatientDB(conn);
 
@@ -106,8 +106,13 @@ namespace CheckUP.Control
                 //docdb = new DocTypeDB(conn);
 
                 lw = new LogWriter();
-
-                cp = cpdb.selectByPk();
+                //Console.WriteLine("111");
+                //Debug.WriteLine("111");
+                //MessageBox.Show("111 ", "111 ");
+                cop = copdb.selectByPk();
+                //MessageBox.Show("222 ", "222 ");
+                //Console.WriteLine("222");
+                //Debug.WriteLine("222");
                 PathLogo = Environment.CurrentDirectory;
                 dtccpvn = ccpvndb.selectByPk();
                 setValueNormal();
@@ -117,7 +122,6 @@ namespace CheckUP.Control
                 //lw.WriteLog("CnviControl.initConfig Error " + ex.Message);
                 MessageBox.Show(""+ex.Message, "Error");
             }
-            
         }
         public void setValueNormal()
         {
