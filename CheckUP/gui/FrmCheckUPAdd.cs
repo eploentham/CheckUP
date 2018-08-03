@@ -154,11 +154,13 @@ namespace CheckUP.gui
                 btnImport.Text = "นำเข้ารายชื่อ";
                 btnExcel.Enabled = true;
                 btnImport.Enabled = false;
+                tC.Enabled = false;
             }
             else
             {
                 btnImport.Text = "บันทึก";
                 btnExcel.Enabled = false;
+                tC.Enabled = true;
             }
             nmDPrintEnd.Maximum = dtAll.Rows.Count;
             nmDPrintEnd.Minimum = 1;
@@ -2673,6 +2675,7 @@ namespace CheckUP.gui
                 String cucId = ImportExcel();
                 txtId.Text = cucId;
                 setGrdPE(cucId);
+                tC.Enabled = true;
             }
             else
             {

@@ -51,7 +51,7 @@ namespace CheckUP.gui
         }
         private void setControl()
         {
-            cp = cc.cpdb.selectByPk();
+            cp = cc.copdb.selectByPk();
             txtCode.Text = cp.Code;
             txtId.Text = cp.Id;
             txtNameE.Text = cp.NameE;
@@ -330,7 +330,7 @@ namespace CheckUP.gui
             }
 
             getCompany();
-            if (cc.cpdb.insertCompany(cp).Length >= 1)
+            if (cc.copdb.insertCompany(cp).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 this.Dispose();
@@ -371,7 +371,7 @@ namespace CheckUP.gui
             }
             //cc.padb.UpdatePathPicCertify(txtPaId.Text, fileName + ex);
             viewImage(cc.PathLogo + "\\" + ofd.SafeFileName);
-            cc.cpdb.UpdateLogo(ofd.SafeFileName);
+            cc.copdb.UpdateLogo(ofd.SafeFileName);
         }
 
         private void cboDistrict_SelectedIndexChanged(object sender, EventArgs e)

@@ -82,7 +82,7 @@ namespace CheckUP
                 //ParameterField myParam = new ParameterField();
                 //myParam.Name = "header1";
                 //myParam.
-                rpt.SetParameterValue("header1", cc.cp.NameT);
+                rpt.SetParameterValue("header1", cc.cop.NameT);
                 rpt.SetParameterValue("header2", reportName);
                 rpt.SetParameterValue("header3", condition);
                 cc.lw.WriteLog("rpt.SetParameterValue OK.");
@@ -110,7 +110,7 @@ namespace CheckUP
                 //ParameterField myParam = new ParameterField();
                 //myParam.Name = "header1";
                 //myParam.
-                rpt.SetParameterValue("header1", cc.cp.NameT);
+                rpt.SetParameterValue("header1", cc.cop.NameT);
                 rpt.SetParameterValue("header2", reportName);
                 rpt.SetParameterValue("header3", condition);
 
