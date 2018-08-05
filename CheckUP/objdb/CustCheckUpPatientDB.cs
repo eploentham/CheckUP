@@ -290,6 +290,14 @@ namespace CheckUP.objdb
             ccp.cbcMchcLabName = "cbc_mchc_lab_name";
             ccp.cbcMchcLabNormal = "cbc_mchc_lab_normal";
             ccp.cbcMchcRemark = "cbc_mchc_remark";
+            ccp.cbcRbc = "cbc_rbc";
+            ccp.cbcMch = "cbc_mch";
+            ccp.cbcMchc = "cbc_mchc";
+            ccp.cbcPlateletSmear = "cbc_platelet_smear";
+            ccp.cbcPlateletSmearLabName = "cbc_platelet_smear_lab_name";
+            ccp.cbcPlateletSmearLabNormal = "cbc_platelet_smear_lab_normal";
+            ccp.cbcPlateletSmearRemark = "cbc_platelet_smear_remark";
+            ccp.cbcResult = "cbc_result";
 
             ccp.urineColor = "urine_color";
             ccp.urineAppearance = "urine_appearance";
@@ -392,15 +400,12 @@ namespace CheckUP.objdb
             ccp.statusVisit = "status_visit";
             ccp.statusCholes = "status_choles";
             ccp.StatusHbsag = "status_hbsag";
-
             
             ccp.cholesterolSummary = "cholesterol_summary";
             ccp.cholesterolSuggess = "cholesterol_suggess";
 
             
-            ccp.cbcRbc = "cbc_rbc";
-            ccp.cbcMch = "cbc_mch";
-            ccp.cbcMchc = "cbc_mchc";
+            
             ccp.Active = "cust_checkup_patient_active";
             ccp.eyeBio = "eye_bio";
             ccp.amphetamineSummary = "amphetamine_summary";
@@ -442,10 +447,8 @@ namespace CheckUP.objdb
             ccp.cbcRbcOld = "cbc_rbc_old";
             ccp.cbcMchcOld = "cbc_mchc_old";
             ccp.cbcMchOld = "cbc_mch_old";
-            ccp.cbcPlateletSmear = "cbc_platelet_smear";
-            ccp.cbcPlateletSmearLabName = "cbc_platelet_smear_lab_name";
-            ccp.cbcPlateletSmearLabNormal = "cbc_platelet_smear_lab_normal";
-            ccp.cbcPlateletSmearRemark = "cbc_platelet_smear_remark";
+            
+            
 
             ccp.sugarOld = "sugar_old";
             ccp.kidneyBunOld = "kidney_bun_old";
@@ -968,8 +971,8 @@ namespace CheckUP.objdb
                 ccp.bmi + "='" + bmi + "'," +
                 ccp.patientPulse + "='" + pulse + "', " +
                 ccp.BloodGroup + "='" + bloodgroup + "', " +
-                ccp.PeResult + "='" + result + "', " +
-                ccp.summaryPhysicalExam + "='" + summary + "' " +
+                ccp.PeResult + "='" + result.Replace("'", "''") + "', " +
+                ccp.summaryPhysicalExam + "='" + summary.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             }
@@ -993,8 +996,8 @@ namespace CheckUP.objdb
                 ccp.patientPulse + "='" + pulse + "', " +
                 ccp.patientAge + "='" + age + "', " +
                 ccp.BloodGroup + "='" + bloodgroup + "' " +
-                ","+ccp.PeResult + "='" + result + "' " +
-                "," + ccp.summaryPhysicalExam + "='" + summary + "' " +
+                ","+ccp.PeResult + "='" + result.Replace("'", "''") + "' " +
+                "," + ccp.summaryPhysicalExam + "='" + summary.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             } catch (Exception ex) {
@@ -1008,8 +1011,8 @@ namespace CheckUP.objdb
             String chk = "", sql = "";
             try
             {
-                sql = "Update "+ccp.table+" Set "+ccp.xrayChestExam+"='"+result+"',"+
-                ccp.xrayChestSummary+"='"+summary+"' "+
+                sql = "Update "+ccp.table+" Set "+ccp.xrayChestExam+"='"+result+"' "+
+                ","+ccp.xrayChestSummary+"='"+summary.Replace("'", "''") + "' "+
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);;
             }
@@ -1026,8 +1029,8 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.sugar + "='" + value + "'," +
                 ccp.sugarDiagnosis + "='" + result + "', " +
-                ccp.sugarSummary + "='" + summary + "', " +
-                ccp.sugarSuggess + "='" + suggess + "' " +
+                ccp.sugarSummary + "='" + summary.Replace("'", "''") + "', " +
+                ccp.sugarSuggess + "='" + suggess.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql); ;
             }
@@ -1039,7 +1042,7 @@ namespace CheckUP.objdb
         }
         public String UpdateCBC(String rowNumber, String cucId, String Basophil, String Eosinophil, String Hb, String Hct, String Lymphocyte,
             String Mch, String Mchc, String Mcv, String Monocyte, String Neutrophil, String PlateletCount, String Rbc, String RbcMorpholog, 
-            String Summary, String Wbc, String PlateletSmear, String Pmn, String bact)
+            String Summary, String Wbc, String PlateletSmear, String Pmn, String bact, String result)
         {
             String chk = "", sql = "";
             try
@@ -1058,10 +1061,11 @@ namespace CheckUP.objdb
                 ccp.cbcPlateletSmear + "='" + PlateletSmear + "', " +
                 ccp.cbcRbc + "='" + Rbc + "', " +
                 ccp.cbcRbcMorpholog + "='" + RbcMorpholog + "', " +
-                ccp.cbcSummary + "='" + Summary + "', " +
+                ccp.cbcSummary + "='" + Summary.Replace("'", "''") + "', " +
                 ccp.cbcWbc + "='" + Wbc + "', " +
                 ccp.cbcPmn + "='" + Pmn + "', " +
-                ccp.cbcBact + "='" + bact + "' " +
+                ccp.cbcBact + "='" + bact + "', " +
+                ccp.cbcResult + "='" + result.Replace("'","''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql); ;
             }
@@ -1077,8 +1081,8 @@ namespace CheckUP.objdb
             try
             {
                 sql = "Update " + ccp.table + " Set " + ccp.cbcHbLabName + "='" + labName + "' " +
-                ", "+ccp.cbcHbLabNormal + "='" + labNormal + "' " +
-                ", "+ccp.cbcHbRemark + "='" + remark + "' " +                
+                ", "+ccp.cbcHbLabNormal + "='" + labNormal.Replace("'", "''") + "' " +
+                ", "+ccp.cbcHbRemark + "='" + remark.Replace("'", "''") + "' " +                
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1094,8 +1098,8 @@ namespace CheckUP.objdb
             try
             {
                 sql = "Update " + ccp.table + " Set " + ccp.cbcHctLabName + "='" + labName + "' " +
-                ", " + ccp.cbcHctLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.cbcHctRemark + "='" + remark + "' " +
+                ", " + ccp.cbcHctLabNormal + "='" + labNormal.Replace("'", "''") + "' " +
+                ", " + ccp.cbcHctRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1111,8 +1115,8 @@ namespace CheckUP.objdb
             try
             {
                 sql = "Update " + ccp.table + " Set " + ccp.cbcWbcLabName + "='" + labName + "' " +
-                ", " + ccp.cbcWbcLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.cbcWbcRemark + "='" + remark + "' " +
+                ", " + ccp.cbcWbcLabNormal + "='" + labNormal.Replace("'", "''") + "' " +
+                ", " + ccp.cbcWbcRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1128,8 +1132,8 @@ namespace CheckUP.objdb
             try
             {
                 sql = "Update " + ccp.table + " Set " + ccp.cbcNeutrophilLabName + "='" + labName + "' " +
-                ", " + ccp.cbcNeutrophilLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.cbcNeutrophilRemark + "='" + remark + "' " +
+                ", " + ccp.cbcNeutrophilLabNormal + "='" + labNormal.Replace("'", "''") + "' " +
+                ", " + ccp.cbcNeutrophilRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1145,8 +1149,8 @@ namespace CheckUP.objdb
             try
             {
                 sql = "Update " + ccp.table + " Set " + ccp.cbcEosinophilLabName + "='" + labName + "' " +
-                ", " + ccp.cbcEosinophilLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.cbcEosinophilRemark + "='" + remark + "' " +
+                ", " + ccp.cbcEosinophilLabNormal + "='" + labNormal.Replace("'", "''") + "' " +
+                ", " + ccp.cbcEosinophilRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1162,8 +1166,8 @@ namespace CheckUP.objdb
             try
             {
                 sql = "Update " + ccp.table + " Set " + ccp.cbcBasophilLabName + "='" + labName + "' " +
-                ", " + ccp.cbcBasophilLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.cbcBasophilRemark + "='" + remark + "' " +
+                ", " + ccp.cbcBasophilLabNormal + "='" + labNormal.Replace("'", "''") + "' " +
+                ", " + ccp.cbcBasophilRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1179,8 +1183,8 @@ namespace CheckUP.objdb
             try
             {
                 sql = "Update " + ccp.table + " Set " + ccp.cbcLymphocyteLabName + "='" + labName + "' " +
-                ", " + ccp.cbcLymphocyteLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.cbcLymphocyteRemark + "='" + remark + "' " +
+                ", " + ccp.cbcLymphocyteLabNormal + "='" + labNormal.Replace("'", "''") + "' " +
+                ", " + ccp.cbcLymphocyteRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1196,8 +1200,8 @@ namespace CheckUP.objdb
             try
             {
                 sql = "Update " + ccp.table + " Set " + ccp.cbcMonocyteLabName + "='" + labName + "' " +
-                ", " + ccp.cbcMonocyteLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.cbcMonocyteRemark + "='" + remark + "' " +
+                ", " + ccp.cbcMonocyteLabNormal + "='" + labNormal.Replace("'", "''") + "' " +
+                ", " + ccp.cbcMonocyteRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1213,8 +1217,8 @@ namespace CheckUP.objdb
             try
             {
                 sql = "Update " + ccp.table + " Set " + ccp.cbcRbcLabName + "='" + labName + "' " +
-                ", " + ccp.cbcRbcLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.cbcRbcRemark + "='" + remark + "' " +
+                ", " + ccp.cbcRbcLabNormal + "='" + labNormal.Replace("'", "''") + "' " +
+                ", " + ccp.cbcRbcRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1230,8 +1234,8 @@ namespace CheckUP.objdb
             try
             {
                 sql = "Update " + ccp.table + " Set " + ccp.cbcMcvLabName + "='" + labName + "' " +
-                ", " + ccp.cbcMcvLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.cbcMcvRemark + "='" + remark + "' " +
+                ", " + ccp.cbcMcvLabNormal + "='" + labNormal.Replace("'", "''") + "' " +
+                ", " + ccp.cbcMcvRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1248,7 +1252,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.cbcMchLabName + "='" + labName + "' " +
                 ", " + ccp.cbcMchLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.cbcMchRemark + "='" + remark + "' " +
+                ", " + ccp.cbcMchRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1265,7 +1269,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.cbcMchcLabName + "='" + labName + "' " +
                 ", " + ccp.cbcMchcLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.cbcMchcRemark + "='" + remark + "' " +
+                ", " + ccp.cbcMchcRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1282,7 +1286,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.cbcPlateletCountLabName + "='" + labName + "' " +
                 ", " + ccp.cbcPlateletCountLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.cbcPlateletCountRemark + "='" + remark + "' " +
+                ", " + ccp.cbcPlateletCountRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1299,7 +1303,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.cbcRbcMorphologLabName + "='" + labName + "' " +
                 ", " + ccp.cbcRbcMorphologLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.cbcRbcMorphologRemark + "='" + remark + "' " +
+                ", " + ccp.cbcRbcMorphologRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1316,7 +1320,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiAcetoneLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiAcetoneLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiAcetoneRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiAcetoneRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1333,7 +1337,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiAluminiumLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiAluminiumLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiAluminiumRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiAluminiumRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1350,7 +1354,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiAmmoniaLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiAmmoniaLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiAmmoniaRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiAmmoniaRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1367,7 +1371,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiAntimonyLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiAntimonyLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiAntimonyRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiAntimonyRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1384,7 +1388,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiArsenicLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiArsenicLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiArsenicRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiArsenicRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1401,7 +1405,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiBenzeneLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiBenzeneLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiBenzeneRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiBenzeneRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1418,7 +1422,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiCadmiumLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiCadmiumLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiCadmiumRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiCadmiumRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1435,7 +1439,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiChromiumLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiChromiumLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiChromiumRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiChromiumRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1452,7 +1456,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiCopperLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiCopperLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiCopperRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiCopperRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1469,7 +1473,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiEthanolLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiEthanolLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiEthanolRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiEthanolRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1486,7 +1490,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiFluorideLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiFluorideLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiFluorideRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiFluorideRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1503,7 +1507,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiFomaldehydeLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiFomaldehydeLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiFomaldehydeRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiFomaldehydeRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1520,7 +1524,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiHexaneLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiHexaneLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiHexaneRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiHexaneRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1537,7 +1541,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiHippuricLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiHippuricLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiHippuricRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiHippuricRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1554,7 +1558,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiIPALabName + "='" + labName + "' " +
                 ", " + ccp.ToxiIPALabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiIPARemark + "='" + remark + "' " +
+                ", " + ccp.ToxiIPARemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1571,7 +1575,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiKetoneLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiKetoneLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiKetoneRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiKetoneRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1588,7 +1592,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiLeadLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiLeadLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiLeadRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiLeadRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1605,7 +1609,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiMandelicLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiMandelicLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiMandelicRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiMandelicRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1622,7 +1626,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiManganeseLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiManganeseLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiManganeseRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiManganeseRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1639,7 +1643,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiMercuryLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiMercuryLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiMercuryRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiMercuryRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1690,7 +1694,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiNickelLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiNickelLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiNickelRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiNickelRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1707,7 +1711,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiPhenolLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiPhenolLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiPhenolRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiPhenolRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1724,7 +1728,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiTinLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiTinLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiTinRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiTinRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1741,7 +1745,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiTrichloroethyleneLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiTrichloroethyleneLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiTrichloroethyleneRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiTrichloroethyleneRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1758,7 +1762,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.ToxiZincLabName + "='" + labName + "' " +
                 ", " + ccp.ToxiZincLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.ToxiZincRemark + "='" + remark + "' " +
+                ", " + ccp.ToxiZincRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1775,7 +1779,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.urineColorLabName + "='" + labName + "' " +
                 ", " + ccp.urineColorLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.urineColorRemark + "='" + remark + "' " +
+                ", " + ccp.urineColorRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1792,7 +1796,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.urineAppearanceLabName + "='" + labName + "' " +
                 ", " + ccp.urineAppearanceLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.urineAppearanceRemark + "='" + remark + "' " +
+                ", " + ccp.urineAppearanceRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1809,7 +1813,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.urinePhLabName + "='" + labName + "' " +
                 ", " + ccp.urinePhLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.urinePhRemark + "='" + remark + "' " +
+                ", " + ccp.urinePhRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1826,7 +1830,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.urineSugarLabName + "='" + labName + "' " +
                 ", " + ccp.urineSugarLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.urineSugarRemark + "='" + remark + "' " +
+                ", " + ccp.urineSugarRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1843,7 +1847,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + ccp.urineProteinLabName + "='" + labName + "' " +
                 ", " + ccp.urineProteinLabNormal + "='" + labNormal + "' " +
-                ", " + ccp.urineProteinRemark + "='" + remark + "' " +
+                ", " + ccp.urineProteinRemark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1860,7 +1864,7 @@ namespace CheckUP.objdb
             {
                 sql = "Update " + ccp.table + " Set " + FlabName + "='" + labName + "' " +
                 ", " + FlabNormal + "='" + labNormal + "' " +
-                ", " + Fremark + "='" + remark + "' " +
+                ", " + Fremark + "='" + remark.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQueryNoClose(sql);
             }
@@ -1889,8 +1893,8 @@ namespace CheckUP.objdb
                 ccp.urineBacteria + "='" + Bact + "', " +
                 ccp.urineGlu + "='" + Glu + "', " +
                 ccp.urineKetone + "='" + Ketone + "', " +
-                ccp.urineSummary + "='" + Summary + "', " +
-                ccp.urineResult + "='" + Result + "', " +
+                ccp.urineSummary + "='" + Summary.Replace("'", "''") + "', " +
+                ccp.urineResult + "='" + Result.Replace("'", "''") + "', " +
                 ccp.urineBlood + "='" + Blood + "', " +
                 ccp.urineLeu + "='" + leu + "', " +
                 ccp.urineNit + "='" + nit + "', " +
@@ -1911,8 +1915,8 @@ namespace CheckUP.objdb
             try
             {
                 sql = "Update " + ccp.table + " Set " + ccp.triglyceride + "='" + value + "'," +
-                ccp.triglycerideResult + "='" + result + "', " +
-                ccp.triglycerideSummary + "='" + summary + "' " +
+                ccp.triglycerideResult + "='" + result.Replace("'", "''") + "', " +
+                ccp.triglycerideSummary + "='" + summary.Replace("'", "''") + "' " +
                 //ccp.sugarSuggess + "='" + suggess + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql); ;
@@ -1929,14 +1933,14 @@ namespace CheckUP.objdb
             try
             {
                 sql = "Update " + ccp.table + " Set " + ccp.cholesterol + "='" + value + "'," +
-                ccp.cholesterolSuggess + "='" + result + "', " +
-                ccp.cholesterolSummary + "='" + summary + "', " +
+                ccp.cholesterolSuggess + "='" + result.Replace("'", "''") + "', " +
+                ccp.cholesterolSummary + "='" + summary.Replace("'", "''") + "', " +
                 ccp.ldl + "='" + ldl + "', " +
                 ccp.hdl + "='" + hdl + "', " +
-                ccp.ChoLDLResult + "='" + ldlresult + "', " +
-                ccp.ChoLDLsummary + "='" + ldlsummary + "', " +
-                ccp.ChoHDLResult + "='" + hdlresult + "', " +
-                ccp.ChoHDLsummary + "='" + hdlsummary + "' " +
+                ccp.ChoLDLResult + "='" + ldlresult.Replace("'", "''") + "', " +
+                ccp.ChoLDLsummary + "='" + ldlsummary.Replace("'", "''") + "', " +
+                ccp.ChoHDLResult + "='" + hdlresult.Replace("'", "''") + "', " +
+                ccp.ChoHDLsummary + "='" + hdlsummary.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql); ;
             }
@@ -1952,8 +1956,8 @@ namespace CheckUP.objdb
             try
             {
                 sql = "Update " + ccp.table + " Set " + ccp.liverSgot + "='" + sgot + "'," +
-                ccp.liverResult + "='" + result + "', " +
-                ccp.liverSummary + "='" + summary + "', " +
+                ccp.liverResult + "='" + result.Replace("'", "''") + "', " +
+                ccp.liverSummary + "='" + summary.Replace("'", "''") + "', " +
                 ccp.liverAlp + "='" + sgpt + "', " +
                 ccp.liverSgpt + "='" + alt + "', " +
                 ccp.liverAlkaline + "='" + alkaline + "' " +
@@ -1972,8 +1976,8 @@ namespace CheckUP.objdb
             try
             {
                 sql = "Update " + ccp.table + " Set " + ccp.kidneyBun + "='" + bun + "'," +
-                ccp.kidneyResult + "='" + result + "', " +
-                ccp.kidneySummary + "='" + summary + "', " +
+                ccp.kidneyResult + "='" + result.Replace("'", "''") + "', " +
+                ccp.kidneySummary + "='" + summary.Replace("'", "''") + "', " +
                 ccp.kidneyCreatinine + "='" + creatinine + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql); ;
@@ -1990,8 +1994,8 @@ namespace CheckUP.objdb
             try
             {
                 sql = "Update " + ccp.table + " Set " + ccp.uricAcid + "='" + value + "'," +
-                ccp.uricAcidSuggess + "='" + result + "', " +
-                ccp.uricAcidSummary + "='" + summary + "' " +
+                ccp.uricAcidSuggess + "='" + result.Replace("'", "''") + "', " +
+                ccp.uricAcidSummary + "='" + summary.Replace("'", "''") + "' " +
                     //ccp.sugarSuggess + "='" + suggess + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql); ;
@@ -2042,32 +2046,32 @@ namespace CheckUP.objdb
                 ccp1db.ccp1.calcium + "='" + Calcium + "', " +
                 ccp1db.ccp1.AntiHav + "='" + AntiHav + "', " +
                 ccp1db.ccp1.CAAFP + "='" + CAAFP + "', " +
-                ccp1db.ccp1.CAAFPResult + "='" + CAAFPResult + "', " +
-                ccp1db.ccp1.CAAFPSummary + "='" + CAAFPSummary + "', " +
+                ccp1db.ccp1.CAAFPResult + "='" + CAAFPResult.Replace("'", "''") + "', " +
+                ccp1db.ccp1.CAAFPSummary + "='" + CAAFPSummary.Replace("'", "''") + "', " +
                 ccp1db.ccp1.CACEA + "='" + CACEA + "', " +
-                ccp1db.ccp1.CACEAResult + "='" + CACEAResult + "', " +
-                ccp1db.ccp1.CACEASummary + "='" + CACEASummary + "', " +
+                ccp1db.ccp1.CACEAResult + "='" + CACEAResult.Replace("'", "''") + "', " +
+                ccp1db.ccp1.CACEASummary + "='" + CACEASummary.Replace("'", "''") + "', " +
                 ccp1db.ccp1.CAPSA + "='" + CAPSA + "', " +
-                ccp1db.ccp1.CAPSAResult + "='" + CAPSAResult + "', " +
-                ccp1db.ccp1.CAPSASummary + "='" + CAPSASummary + "', " +
+                ccp1db.ccp1.CAPSAResult + "='" + CAPSAResult.Replace("'", "''") + "', " +
+                ccp1db.ccp1.CAPSASummary + "='" + CAPSASummary.Replace("'", "''") + "', " +
                 ccp1db.ccp1.CAHCG + "='" + CAHCG + "', " +
-                ccp1db.ccp1.CAHCGResult + "='" + CAHCGResult + "', " +
-                ccp1db.ccp1.CAHCGSummary + "='" + CAHCGSummary + "', " +
+                ccp1db.ccp1.CAHCGResult + "='" + CAHCGResult.Replace("'", "''") + "', " +
+                ccp1db.ccp1.CAHCGSummary + "='" + CAHCGSummary.Replace("'", "''") + "', " +
                 ccp1db.ccp1.CA153 + "='" + CA153 + "', " +
-                ccp1db.ccp1.CA153Result + "='" + CA153Result + "', " +
-                ccp1db.ccp1.CA153Summary + "='" + CA153Summary + "', " +
+                ccp1db.ccp1.CA153Result + "='" + CA153Result.Replace("'", "''") + "', " +
+                ccp1db.ccp1.CA153Summary + "='" + CA153Summary.Replace("'", "''") + "', " +
                 ccp1db.ccp1.CA125 + "='" + CA125 + "', " +
-                ccp1db.ccp1.CA125Result + "='" + CA125Result + "', " +
-                ccp1db.ccp1.CA125Summary + "='" + CA125Summary + "', " +
+                ccp1db.ccp1.CA125Result + "='" + CA125Result.Replace("'", "''") + "', " +
+                ccp1db.ccp1.CA125Summary + "='" + CA125Summary.Replace("'", "''") + "', " +
                 ccp1db.ccp1.CA199 + "='" + CA199 + "', " +
-                ccp1db.ccp1.CA199Result + "='" + CA199Result + "', " +
-                ccp1db.ccp1.CA199Summary + "='" + CA199Summary + "', " +
-                ccp1db.ccp1.hbsagResult + "='" + HBsAgResult + "', " +
-                ccp1db.ccp1.hbsagSummary + "='" + HBsAgSummary + "', " +
-                ccp1db.ccp1.hbsabResult + "='" + HbsAbResult + "', " +
-                ccp1db.ccp1.hbsabSummary + "='" + HbsAbSummary + "', " +
-                ccp1db.ccp1.AmphetamineSummary + "='" + AmphetamineSummary + "', " +
-                ccp1db.ccp1.AntiHavSummary + "='" + AntiHavSummary + "' " +
+                ccp1db.ccp1.CA199Result + "='" + CA199Result.Replace("'", "''") + "', " +
+                ccp1db.ccp1.CA199Summary + "='" + CA199Summary.Replace("'", "''") + "', " +
+                ccp1db.ccp1.hbsagResult + "='" + HBsAgResult.Replace("'", "''") + "', " +
+                ccp1db.ccp1.hbsagSummary + "='" + HBsAgSummary.Replace("'", "''") + "', " +
+                ccp1db.ccp1.hbsabResult + "='" + HbsAbResult.Replace("'", "''") + "', " +
+                ccp1db.ccp1.hbsabSummary + "='" + HbsAbSummary.Replace("'", "''") + "', " +
+                ccp1db.ccp1.AmphetamineSummary + "='" + AmphetamineSummary.Replace("'", "''") + "', " +
+                ccp1db.ccp1.AntiHavSummary + "='" + AntiHavSummary.Replace("'", "''") + "' " +
                 "Where " + ccp1db.ccp1.CustCheckUpId + "='" + cucId + "' and " + ccp1db.ccp1.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             }
@@ -2090,7 +2094,7 @@ namespace CheckUP.objdb
                 ccp.lungFev1Meas + "='" + LungFev1Meas + "', " +
                 ccp.lungFev1Per + "='" + LungFev1Per + "', " +
                 ccp.lungPerFev1 + "='" + LungPerFev1 + "', " +
-                ccp.lungSummary + "='" + LungSummary + "' " +
+                ccp.lungSummary + "='" + LungSummary.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql); ;
             }
@@ -2124,9 +2128,9 @@ namespace CheckUP.objdb
                 ccp.Audiogram6000R + "='" + Audiogram6000R + "', " +
                 ccp.Audiogram8000L + "='" + Audiogram8000L + "', " +
                 ccp.Audiogram8000R + "='" + Audiogram8000R + "', " +
-                ccp.AudiogramSummaryL + "='" + AudiogramSummaryL + "', " +
-                ccp.AudiogramSummaryR + "='" + AudiogramSummaryR + "', " +
-                ccp.AudiogramExam + "='" + AudiogramExam + "' " +
+                ccp.AudiogramSummaryL + "='" + AudiogramSummaryL.Replace("'", "''") + "', " +
+                ccp.AudiogramSummaryR + "='" + AudiogramSummaryR.Replace("'", "''") + "', " +
+                ccp.AudiogramExam + "='" + AudiogramExam.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
             try
             {
@@ -2158,8 +2162,8 @@ namespace CheckUP.objdb
                 ccp.EyeDegreeRight + "='" + EyeDegreeRight + "', " +
                 ccp.EyeOldLeft + "='" + EyeOldLeft + "', " +
                 ccp.EyeOldRight + "='" + EyeOldRight + "', " +
-                ccp.EyeResult + "='" + EyeResult + "', " +
-                ccp.EyeSummary + "='" + EyeSummary + "', " +
+                ccp.EyeResult + "='" + EyeResult.Replace("'", "''") + "', " +
+                ccp.EyeSummary + "='" + EyeSummary.Replace("'", "''") + "', " +
                 ccp.EyeBlindness + "='" + EyeBlindness + "', "+
                 ccp.EyeExam + "='" + EyeExam + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
@@ -2186,11 +2190,11 @@ namespace CheckUP.objdb
                 ccp.StoolExamWbc + "='" + StoolExamWbc + "', " +
                 ccp.StoolExamRbc + "='" + StoolExamRbc + "', " +
                 ccp.StoolExamParasite + "='" + StoolExamParasite + "', " +
-                ccp.StoolExamSummary + "='" + StoolExamSummary + "', "+
+                ccp.StoolExamSummary + "='" + StoolExamSummary.Replace("'", "''") + "', "+
                 ccp.StoolExamCulture + "='" + StoolExamCulture + "', " +
                 ccp.StoolExamTyphoidH + "='" + StoolExamTyhoidH + "', " +
                 ccp.StoolExamTyphoidO + "='" + StoolExamTyhoidO + "', " +
-                ccp.StoolExamCultureSummary + "='" + StoolExamCultureSummary + "' " +
+                ccp.StoolExamCultureSummary + "='" + StoolExamCultureSummary.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
             try
             {
