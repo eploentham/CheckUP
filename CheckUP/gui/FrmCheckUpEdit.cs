@@ -414,7 +414,7 @@ namespace CheckUP.gui
         {
             String chk = cc.ccpdb.UpdateCBC(txtRowNumber.Text, cuc.Id, txtCBCBaso.Text, txtCBCEos.Text, txtCBCHb.Text, txtCBCHct.Text, 
                 txtCBCLy.Text, txtCBCMch.Text, txtCBCMchc.Text, txtCBCMcv.Text, txtCBCMono.Text, txtCBCNeu.Text, txtCBCPltC.Text, txtCBCRbc.Text, 
-                txtCBCRbcMono.Text, txtCBCSummary.Text, txtCBCWbc.Text, txtCBCPltS.Text, txtCBCPmn.Text, txtCBCBact.Text);
+                txtCBCRbcMono.Text, txtCBCSummary.Text, txtCBCWbc.Text, txtCBCPltS.Text, txtCBCPmn.Text, txtCBCBact.Text, txtCBCResult.Text);
             if (chk.Equals("1"))
             {
                 MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");

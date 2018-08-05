@@ -53,6 +53,7 @@ namespace CheckUP.objdb
             ei.CBCMCHC = "cbc_mchc";
             ei.CBCMCV = "cbc_mcv";
             ei.CBCBASO = "cbc_baso";
+            ei.CBCResult = "cbc_result";
 
             ei.Cholesteral = "cho_value";
             ei.ChoNo = "cho_no";
@@ -332,6 +333,7 @@ namespace CheckUP.objdb
             item.CBCMCHC = NumberNull10(dt.Rows[0][ei.CBCMCHC].ToString());
             item.CBCMCV = NumberNull10(dt.Rows[0][ei.CBCMCV].ToString());
             item.CBCBASO = NumberNull10(dt.Rows[0][ei.CBCBASO].ToString());
+            item.CBCResult = NumberNull10(dt.Rows[0][ei.CBCResult].ToString());
 
             item.CBCSheetname = NumberNull10(dt.Rows[0][ei.CBCSheetname].ToString());
 
@@ -638,7 +640,7 @@ namespace CheckUP.objdb
         }
         public String updateCBC(String CBCBact, String CBCEos, String CBCHb, String CBCHct, String CBCLy, String CBCMono,
             String CBCNeu, String CBCNo, String CBCPltC, String CBCPltS, String CBCRBC, String CBCRBCmono, String CBCRow, 
-            String CBCSummary, String CBCWBC, String Pmn, String sheetname, String CBCMCV, String CBCMCH, String CBCMCHC, String CBCBASO)
+            String CBCSummary, String CBCWBC, String Pmn, String sheetname, String CBCMCV, String CBCMCH, String CBCMCHC, String CBCBASO, String result)
         {
             String sql = "", chk = "";
 
@@ -647,26 +649,27 @@ namespace CheckUP.objdb
             //p.PositionName = p.PositionName.Replace("'", "''");
 
             sql = "Update " + ei.table + " Set " + ei.CBCBact + "='" + CBCBact + "', " +
-                ei.CBCEos + "='" + CBCEos + "', " +
-                ei.CBCHb + "='" + CBCHb + "', " +
-                ei.CBCHct + "='" + CBCHct + "', " +
-                ei.CBCLy + "='" + CBCLy + "', " +
-                ei.CBCMono + "='" + CBCMono + "', " +
-                ei.CBCNeu + "='" + CBCNeu + "', " +
-                ei.CBCNo + "='" + CBCNo + "', " +
-                ei.CBCPltC + "='" + CBCPltC + "', " +
-                ei.CBCPltS + "='" + CBCPltS + "', " +
-                ei.CBCRBC + "='" + CBCRBC + "', " +
-                ei.CBCRBCmono + "='" + CBCRBCmono + "', " +
-                ei.CBCRow + "='" + CBCRow + "', " +
-                ei.CBCSummary + "='" + CBCSummary + "', " +
-                ei.CBCWBC + "='" + CBCWBC + "', "+
-                ei.cbcPmn + "='" + Pmn + "', "+
-                ei.CBCMCH + "='" + CBCMCH + "', "+
-                ei.CBCMCHC + "='" + CBCMCHC + "', "+
-                ei.CBCMCV + "='" + CBCMCV + "', "+
-                ei.CBCBASO + "='" + CBCBASO + "', "+
-                ei.CBCSheetname + "='" + sheetname + "' ";
+                ","+ei.CBCEos + "='" + CBCEos + "' " +
+                "," + ei.CBCHb + "='" + CBCHb + "' " +
+                "," + ei.CBCHct + "='" + CBCHct + "' " +
+                "," + ei.CBCLy + "='" + CBCLy + "' " +
+                "," + ei.CBCMono + "='" + CBCMono + "' " +
+                "," + ei.CBCNeu + "='" + CBCNeu + "' " +
+                "," + ei.CBCNo + "='" + CBCNo + "' " +
+                "," + ei.CBCPltC + "='" + CBCPltC + "' " +
+                "," + ei.CBCPltS + "='" + CBCPltS + "' " +
+                "," + ei.CBCRBC + "='" + CBCRBC + "' " +
+                "," + ei.CBCRBCmono + "='" + CBCRBCmono + "' " +
+                "," + ei.CBCRow + "='" + CBCRow + "' " +
+                "," + ei.CBCSummary + "='" + CBCSummary + "' " +
+                "," + ei.CBCWBC + "='" + CBCWBC + "' "+
+                "," + ei.cbcPmn + "='" + Pmn + "' "+
+                "," + ei.CBCMCH + "='" + CBCMCH + "' "+
+                "," + ei.CBCMCHC + "='" + CBCMCHC + "' "+
+                "," + ei.CBCMCV + "='" + CBCMCV + "' "+
+                "," + ei.CBCBASO + "='" + CBCBASO + "' "+
+                "," + ei.CBCResult + "='" + result + "' " +
+                "," + ei.CBCSheetname + "='" + sheetname + "' ";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);

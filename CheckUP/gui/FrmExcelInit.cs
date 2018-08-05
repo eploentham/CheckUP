@@ -2776,7 +2776,7 @@ namespace CheckUP.gui
 
         private void btnCBCExcel_Click(object sender, EventArgs e)
         {
-            String No = "", wbc = "", rbc = "", Hb = "", Hct = "", neu = "", ly = "", mono = "", eos="", bact="", pltc="", plts="", rbcmono="", summary = "";
+            String No = "", wbc = "", rbc = "", Hb = "", Hct = "", neu = "", ly = "", mono = "", eos="", bact="", pltc="", plts="", rbcmono="", summary = "",result="";
             ofd.ShowDialog();
             if (ofd.FileName.Equals("")) return;
 
@@ -2913,14 +2913,24 @@ namespace CheckUP.gui
                 summary = "";
             }
             summary = summary.Trim();
+            if (xlRange.Cells[nmDCBCRow.Value, nmDCBCResult.Value].Value2 != null)
+            {
+                result = xlRange.Cells[nmDCBCRow.Value, nmDCBCResult.Value].Value2.ToString();
+            }
+            else
+            {
+                result = "";
+            }
+            result = result.Trim();
+
             txtCBCTest.Text = "ลำดับ " + No + " WBC " + wbc + " Hct " + Hct + " Hb " + Hb + " RBC " + rbc + " Ly " + ly + " Neu " + neu + " mono " + mono +
-                " Eos " + eos + " bact " + bact + " pltc " + pltc + " plts " + plts + " rbcmono " + rbcmono + " Summary " + summary;
+                " Eos " + eos + " bact " + bact + " pltc " + pltc + " plts " + plts + " rbcmono " + rbcmono + " Summary " + summary + " Result " + result;
 
             Cursor.Current = cursor;
             if (cc.eidb.updateCBC(nmDCBCBact.Value.ToString(), nmDCBCEos.Value.ToString(), nmDCBCHb.Value.ToString(), nmDCBCHct.Value.ToString(),
                 nmDCBCLy.Value.ToString(), nmDCBCMono.Value.ToString(), nmDCBCNeu.Value.ToString(), nmDCBCNo.Value.ToString(), nmDCBCPltC.Value.ToString(), nmDCBCPltS.Value.ToString(),
                 nmDCBCRBC.Value.ToString(), nmDCBCRBCmono.Value.ToString(), nmDCBCRow.Value.ToString(), nmDCBCSummary.Value.ToString(), nmDCBCWBC.Value.ToString(), 
-                nmDCBCPmn.Value.ToString(),txtCBCSheetName.Text, nmDCBCMCV.Value.ToString(), nmDCBCMCH.Value.ToString(), nmDCBCMCHC.Value.ToString(), nmDCBCBaso.Value.ToString()).Length >= 1)
+                nmDCBCPmn.Value.ToString(),txtCBCSheetName.Text, nmDCBCMCV.Value.ToString(), nmDCBCMCH.Value.ToString(), nmDCBCMCHC.Value.ToString(), nmDCBCBaso.Value.ToString(), nmDCBCResult.Value.ToString()).Length >= 1)
             {
                 ei = cc.eidb.selectByPk();
                 MessageBox.Show("บันทึกข้อมูล CBC เรียบร้อย", "บันทึกข้อมูล");

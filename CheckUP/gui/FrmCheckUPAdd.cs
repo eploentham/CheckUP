@@ -3062,7 +3062,7 @@ namespace CheckUP.gui
         private void btnCBCImport_Click(object sender, EventArgs e)
         {
             String rowNumber = "", chk = "", wbc = "", rbc = "", hb = "", hct="", neu="", lym="", mch="", mchc="", mcv="", mono="", plaC="", rbcmono="";
-            String summary = "", eos="", bas="", plaS="", pmn="", bact="";
+            String summary = "", eos="", bas="", plaS="", pmn="", bact="", result="";
             if (!cc.fileExit(fileNameCBC))
             {
                 MessageBox.Show("ไม่พบ file Excel", "");
@@ -3238,16 +3238,16 @@ namespace CheckUP.gui
                 {
                     mcv = "";
                 }
-                //if (xlRange.Cells[i, 13].Value2 != null)
-                //{
-                //    bas = xlRange.Cells[i, 13].Value2.ToString();
-                //}
-                //else
-                //{
-                //    bas = "";
-                //}
+                if (xlRange.Cells[i, int.Parse(ei.CBCResult)].Value2 != null)
+                {
+                    result = xlRange.Cells[i, int.Parse(ei.CBCResult)].Value2.ToString();
+                }
+                else
+                {
+                    result = "";
+                }
 
-                chk = cc.ccpdb.UpdateCBC(rowNumber, txtId.Text, bas, eos, hb, hct, lym, mch, mchc, mcv, mono, neu, plaC, rbc, rbcmono, summary, wbc, plaS, pmn, bact);
+                chk = cc.ccpdb.UpdateCBC(rowNumber, txtId.Text, bas, eos, hb, hct, lym, mch, mchc, mcv, mono, neu, plaC, rbc, rbcmono, summary, wbc, plaS, pmn, bact,result);
                 pB1.Value = i;
                 row++;
             }
