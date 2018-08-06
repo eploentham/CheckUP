@@ -154,6 +154,7 @@ namespace CheckUP.gui
             btnUnActive.Visible = false;
             btnPeSave.Click += BtnPeSave_Click;
             btnXraySave.Click += BtnPeSave_Click;
+            btnFbsSave.Click += BtnPeSave_Click;
             btnCbcSave.Click += BtnPeSave_Click;
             btnUaSave.Click += BtnPeSave_Click;
             btnTriSave.Click += BtnPeSave_Click;
@@ -167,6 +168,13 @@ namespace CheckUP.gui
             btnEyeSave.Click += BtnPeSave_Click;
             btnToxiSave.Click += BtnPeSave_Click;
             btnStoolExamSave.Click += BtnPeSave_Click;
+
+            btnExcelPE.Click += BtnExcelPE_Click;
+            btnExcelXray.Click += BtnExcelPE_Click;
+            btnExcelFBS.Click += BtnExcelPE_Click;
+            btnExcelCBC.Click += BtnExcelPE_Click;
+            btnExcelUA.Click += BtnExcelPE_Click;
+            btnExcelTri.Click += BtnExcelPE_Click;
 
             if (flagNew)
             {
@@ -235,35 +243,48 @@ namespace CheckUP.gui
             }
         }
         
+        private void BtnExcelPE_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            if (sender.Equals(btnExcelPE))
+            {
+
+            }
+            else if (sender.Equals(btnExcelXray))
+            {
+
+            }
+        }
+
         private void BtnPeSave_Click(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
-            if (MessageBox.Show("ต้องการ บันทึกช้อมูล ค่าใช้จ่าย ", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.OK)
+            if (MessageBox.Show("ต้องการ บันทึกช้อมูล ", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.OK)
             {
                 int chk = 0;
                 String re = "";
                 if (sender.Equals(btnPeSave))
                 {
-                    re = cc.cucdb.updatePE(txtId.Text, txtPECntAbNormal.Text, txtPECntEmp.Text, txtPECntNormal.Text, txtPECheckup.Text, txtPETest.Text);
+                    re = cc.cucdb.updatePE(txtId.Text, txtPECntAbNormal.Text != "" ? txtPECntAbNormal.Text : "0", txtPECntEmp.Text != "" ? txtPECntEmp.Text : "0", txtPECntNormal.Text != "" ? txtPECntNormal.Text : "0", txtPECheckup.Text != "" ? txtPECheckup.Text : "0", txtPETest.Text != "" ? txtPETest.Text : "0");
                     if(int.TryParse(re, out chk))
                     {
-                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกช้อมูล");
                     }
                 }
                 else if (sender.Equals(btnXraySave))
                 {
-                    re = cc.cucdb.updateXray(txtId.Text, txtXrayCntAbNormal.Text, txtXrayCntEmp.Text, txtXrayCntNormal.Text, txtXrayCheckup.Text, txtXrayTest.Text);
+                    re = cc.cucdb.updateXray(txtId.Text, txtXrayCntAbNormal.Text != "" ? txtXrayCntAbNormal.Text : "0", txtXrayCntEmp.Text != "" ? txtXrayCntEmp.Text : "0", txtXrayCntNormal.Text != "" ? txtXrayCntNormal.Text : "0", txtXrayCheckup.Text != "" ? txtXrayCheckup.Text : "0", txtXrayTest.Text != "" ? txtXrayTest.Text : "0");
                     if (int.TryParse(re, out chk))
                     {
-                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกช้อมูล");
                     }
                 }
                 else if (sender.Equals(btnFbsSave))
                 {
-                    re = cc.cucdb.updateFBS(txtId.Text, txtFBSCntAbNormal.Text, txtFBSCntEmp.Text, txtFBSNormal.Text, txtFBSCheckup.Text, txtFBSTest.Text);
+                    re = cc.cucdb.updateFBS(txtId.Text, txtFBSCntAbNormal.Text != "" ? txtFBSCntAbNormal.Text : "0", txtFBSCntEmp.Text != "" ? txtFBSCntEmp.Text : "0", txtFBSNormal.Text != "" ? txtFBSNormal.Text : "0", txtFBSCheckup.Text != "" ? txtFBSCheckup.Text : "0", txtFBSTest.Text != "" ? txtFBSTest.Text : "0");
                     if (int.TryParse(re, out chk))
                     {
-                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกช้อมูล");
                     }
                 }
                 else if (sender.Equals(btnCbcSave))
@@ -271,106 +292,107 @@ namespace CheckUP.gui
                     re = cc.cucdb.updateCBC(txtId.Text, txtCBCCntAbNormal.Text != "" ? txtCBCCntAbNormal.Text : "0", txtCBCCntEmp.Text != "" ? txtCBCCntEmp.Text : "0", txtCBCNormal.Text != "" ? txtCBCNormal.Text : "0", txtCBCCheckup.Text != "" ? txtCBCCheckup.Text : "0", txtCBCTest.Text != "" ?  txtCBCTest.Text : "0");
                     if (int.TryParse(re, out chk))
                     {
-                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกช้อมูล");
                     }
                 }
                 else if (sender.Equals(btnUaSave))
                 {
-                    re = cc.cucdb.updateUA(txtId.Text, txtUACntAbNormal.Text, txtUACntEmp.Text, txtUANormal.Text, txtUACheckup.Text, txtUATest.Text);
+                    re = cc.cucdb.updateUA(txtId.Text, txtUACntAbNormal.Text != "" ? txtUACntAbNormal.Text : "0", txtUACntEmp.Text != "" ? txtUACntEmp.Text : "0", txtUANormal.Text != "" ? txtUANormal.Text : "0", txtUACheckup.Text != "" ? txtUACheckup.Text : "0", txtUATest.Text != "" ? txtUATest.Text : "0");
                     if (int.TryParse(re, out chk))
                     {
-                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกช้อมูล");
                     }
                 }
                 else if (sender.Equals(btnTriSave))
                 {
-                    re = cc.cucdb.updateTri(txtId.Text, txtTriCntAbNormal.Text, txtTriCntEmp.Text, txtTriNormal.Text, txtTriCheckup.Text, txtTriTest.Text);
+                    re = cc.cucdb.updateTri(txtId.Text, txtTriCntAbNormal.Text != "" ? txtTriCntAbNormal.Text : "0", txtTriCntEmp.Text != "" ? txtTriCntEmp.Text : "0", txtTriNormal.Text != "" ? txtTriNormal.Text : "0", txtTriCheckup.Text != "" ? txtTriCheckup.Text : "0", txtTriTest.Text != "" ? txtTriTest.Text : "0");
                     if (int.TryParse(re, out chk))
                     {
-                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกช้อมูล");
                     }
                 }
                 else if (sender.Equals(btnChoSave))
                 {
-                    re = cc.cucdb.updateCho(txtId.Text, txtChoCntAbNormal.Text, txtChoCntEmp.Text, txtChoNormal.Text, txtChoCheckup.Text, txtChoTest.Text);
+                    re = cc.cucdb.updateCho(txtId.Text, txtChoCntAbNormal.Text != "" ? txtChoCntAbNormal.Text : "0", txtChoCntEmp.Text != "" ? txtChoCntEmp.Text : "0", txtChoNormal.Text != "" ? txtChoNormal.Text : "0", txtChoCheckup.Text != "" ? txtChoCheckup.Text : "0", txtChoTest.Text != "" ? txtChoTest.Text : "0");
                     if (int.TryParse(re, out chk))
                     {
-                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกช้อมูล");
                     }
                 }
                 else if (sender.Equals(btnSgotSave))
                 {
-                    re = cc.cucdb.updateSgot(txtId.Text, txtSgotCntAbNormal.Text, txtSgotCntEmp.Text, txtSgotNormal.Text, txtSgotCheckup.Text, txtSgotTest.Text);
+                    re = cc.cucdb.updateSgot(txtId.Text, txtSgotCntAbNormal.Text != "" ? txtSgotCntAbNormal.Text : "0", txtSgotCntEmp.Text != "" ? txtSgotCntEmp.Text : "0", txtSgotNormal.Text != "" ? txtSgotNormal.Text : "0", txtSgotCheckup.Text != "" ? txtSgotCheckup.Text : "0", txtSgotTest.Text != "" ? txtSgotTest.Text : "0");
                     if (int.TryParse(re, out chk))
                     {
-                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกช้อมูล");
                     }
                 }
                 else if (sender.Equals(btnBunSave))
                 {
-                    re = cc.cucdb.updateBun(txtId.Text, txtBunCntAbNormal.Text, txtBunCntEmp.Text, txtBunNormal.Text, txtBunCheckup.Text, txtBunTest.Text);
+                    re = cc.cucdb.updateBun(txtId.Text, txtBunCntAbNormal.Text != "" ? txtBunCntAbNormal.Text : "0", txtBunCntEmp.Text != "" ? txtBunCntEmp.Text : "0", txtBunNormal.Text != "" ? txtBunNormal.Text : "0", txtBunCheckup.Text != "" ? txtBunCheckup.Text : "0", txtBunTest.Text != "" ? txtBunTest.Text : "0");
                     if (int.TryParse(re, out chk))
                     {
-                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกช้อมูล");
                     }
                 }
                 else if (sender.Equals(btnUricSave))
                 {
-                    re = cc.cucdb.updateUric(txtId.Text, txtUricCntAbNormal.Text, txtUricCntEmp.Text, txtUricNormal.Text, txtUricCheckup.Text, txtUricTest.Text);
+                    re = cc.cucdb.updateUric(txtId.Text, txtUricCntAbNormal.Text != "" ? txtUricCntAbNormal.Text : "0", txtUricCntEmp.Text != "" ? txtUricCntEmp.Text : "0", txtUricNormal.Text != "" ? txtUricNormal.Text : "0", txtUricCheckup.Text != "" ? txtUricCheckup.Text : "0", txtUricTest.Text != "" ? txtUricTest.Text : "0");
                     if (int.TryParse(re, out chk))
                     {
-                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกช้อมูล");
                     }
                 }
                 else if (sender.Equals(btnOther1Save))
                 {
-                    re = cc.cucdb.updateOther1(txtId.Text, txtOther1CntAbNormal.Text, txtOther1CntEmp.Text, txtOther1Normal.Text, txtOther1Checkup.Text, txtOther1Test.Text);
+                    re = cc.cucdb.updateOther1(txtId.Text, txtOther1CntAbNormal.Text != "" ? txtOther1CntAbNormal.Text : "0", txtOther1CntEmp.Text != "" ? txtOther1CntEmp.Text:"0", txtOther1Normal.Text != "" ? txtOther1Normal.Text : "0", txtOther1Checkup.Text != "" ? txtOther1Checkup.Text : "0", txtOther1Test.Text != "" ? txtOther1Test.Text : "0");
                     if (int.TryParse(re, out chk))
                     {
-                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกช้อมูล");
                     }
                 }
                 else if (sender.Equals(btnLungSave))
                 {
-                    re = cc.cucdb.updateLung(txtId.Text, txtLungCntAbNormal.Text, txtLungCntEmp.Text, txtLungNormal.Text, txtLungCheckup.Text, txtLungTest.Text);
+                    re = cc.cucdb.updateLung(txtId.Text, txtLungCntAbNormal.Text != "" ? txtLungCntAbNormal.Text : "0", txtLungCntEmp.Text != "" ? txtLungCntEmp.Text : "0", txtLungNormal.Text != "" ? txtLungNormal.Text : "0", txtLungCheckup.Text != "" ? txtLungCheckup.Text : "0", txtLungTest.Text != "" ? txtLungTest.Text : "0");
                     if (int.TryParse(re, out chk))
                     {
-                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกช้อมูล");
                     }
                 }
                 else if (sender.Equals(btnAudioSave))
                 {
-                    re = cc.cucdb.updateAudio(txtId.Text, txtUricCntAbNormal.Text, txtAudioCntEmp.Text, txtAudioCntAbNormal.Text, txtAudioCheckup.Text, txtAudioTest.Text);
+                    re = cc.cucdb.updateAudio(txtId.Text, txtAudioCntAbNormal.Text != "" ? txtAudioCntAbNormal.Text : "0", txtAudioCntEmp.Text != "" ? txtAudioCntEmp.Text : "0", txtAudioNormal.Text != "" ? txtAudioNormal.Text : "0", txtAudioCheckup.Text != "" ? txtAudioCheckup.Text : "0", txtAudioTest.Text != "" ? txtAudioTest.Text : "0");
                     if (int.TryParse(re, out chk))
                     {
-                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกช้อมูล");
                     }
                 }
                 else if (sender.Equals(btnEyeSave))
                 {
-                    re = cc.cucdb.updateEye(txtId.Text, txtEyeCntAbNormal.Text, txtEyeTest.Text, txtEyeCntAbNormal.Text, txtEyeCheckup.Text, txtEyeTest.Text);
+                    re = cc.cucdb.updateEye(txtId.Text, txtEyeCntAbNormal.Text != "" ? txtEyeCntAbNormal.Text : "0", txtEyeTest.Text != "" ? txtEyeTest.Text : "0", txtEyeNormal.Text != "" ? txtEyeNormal.Text : "0", txtEyeCheckup.Text != "" ? txtEyeCheckup.Text : "0", txtEyeTest.Text != "" ? txtEyeTest.Text : "0");
                     if (int.TryParse(re, out chk))
                     {
-                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกช้อมูล");
                     }
                 }
                 else if (sender.Equals(btnToxiSave))
                 {
-                    re = cc.cucdb.updateToxi(txtId.Text, txtEyeCntAbNormal.Text, txtEyeTest.Text, txtEyeCntAbNormal.Text, txtEyeCheckup.Text, txtEyeTest.Text);
+                    re = cc.cucdb.updateToxi(txtId.Text, txtToxiCntAbNormal.Text != "" ? txtToxiCntAbNormal.Text : "0", txtToxiTest.Text != "" ? txtToxiTest.Text: "0", txtToxiNormal.Text != "" ? txtToxiNormal.Text : "0", txtToxiCheckup.Text != "" ? txtToxiCheckup.Text : "0", txtToxiTest.Text != "" ? txtToxiTest.Text : "0");
                     if (int.TryParse(re, out chk))
                     {
-                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกช้อมูล");
                     }
                 }
                 else if (sender.Equals(btnStoolExamSave))
                 {
-                    re = cc.cucdb.updateStoolExam(txtId.Text, txtStoolExamCntAbNormal.Text, txtStoolExamTest.Text, txtStoolExamCntAbNormal.Text, txtStoolExamCheckup.Text, txtStoolExamTest.Text);
+                    re = cc.cucdb.updateStoolExam(txtId.Text, txtStoolExamCntAbNormal.Text != "" ? txtStoolExamCntAbNormal.Text : "0", txtStoolExamTest.Text != "" ? txtStoolExamTest.Text : "0", txtStoolExamNormal.Text != "" ? txtStoolExamNormal.Text : "0", txtStoolExamCheckup.Text != "" ? txtStoolExamCheckup.Text : "0", txtStoolExamTest.Text != "" ? txtStoolExamTest.Text : "0");
                     if (int.TryParse(re, out chk))
                     {
-                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกช้อมูล");
                     }
                 }
             }
+            setTextNormal();
         }
 
         private void setResize()
@@ -1352,23 +1374,40 @@ namespace CheckUP.gui
             txtEyeCntAbNormal.Text = cuc.EyeAbNormal;
             txtToxiCntAbNormal.Text = cuc.ToxiAbNormal;
             txtStoolExamCntAbNormal.Text = cuc.StoolExamAbNormal;
-                        
+
+            setTextNormal();
+
+            if (cuc.Active.Equals("1"))
+            {
+                chkActive.Checked = true;
+                ChkUnActive.Checked = false;
+                btnUnActive.Visible = false;
+            }
+            else 
+            {
+                chkActive.Checked = true;
+                ChkUnActive.Checked = false;
+                btnUnActive.Visible = true;
+            }
+        }
+        private void setTextNormal()
+        {
             txtPECntNormalPer.Text = chkNormal(txtPETest.Text, txtPECntNormal.Text);
-            txtXrayCntNormalPer.Text = chkNormal(txtXrayTest.Text, txtPECntNormal.Text);
-            txtFBSCntNormalPer.Text = chkNormal(txtFBSTest.Text, txtPECntNormal.Text);
-            txtCBCCntNormalPer.Text = chkNormal(txtCBCTest.Text, txtPECntNormal.Text);
-            txtUACntNormalPer.Text = chkNormal(txtUATest.Text, txtPECntNormal.Text);
-            txtTriCntNormalPer.Text = chkNormal(txtTriTest.Text, txtPECntNormal.Text);
-            txtChoCntNormalPer.Text = chkNormal(txtChoTest.Text, txtPECntNormal.Text);
-            txtSgotCntNormalPer.Text = chkNormal(txtSgotTest.Text, txtPECntNormal.Text);
-            txtBunCntNormalPer.Text = chkNormal(txtBunTest.Text, txtPECntNormal.Text);
-            txtUricCntNormalPer.Text = chkNormal(txtUricTest.Text, txtPECntNormal.Text);
-            txtOther1CntNormalPer.Text = chkNormal(txtOther1Test.Text, txtPECntNormal.Text);
-            txtLungCntNormalPer.Text = chkNormal(txtLungTest.Text, txtPECntNormal.Text);
-            txtAudioCntNormalPer.Text = chkNormal(txtAudioTest.Text, txtPECntNormal.Text);
-            txtEyeCntNormalPer.Text = chkNormal(txtEyeTest.Text, txtPECntNormal.Text);
-            txtToxiCntNormalPer.Text = chkNormal(txtToxiTest.Text, txtPECntNormal.Text);
-            txtStoolExamCntNormalPer.Text = chkNormal(txtStoolExamTest.Text, txtPECntNormal.Text);
+            txtXrayCntNormalPer.Text = chkNormal(txtXrayTest.Text, txtXrayCntNormal.Text);
+            txtFBSCntNormalPer.Text = chkNormal(txtFBSTest.Text, txtFBSNormal.Text);
+            txtCBCCntNormalPer.Text = chkNormal(txtCBCTest.Text, txtCBCNormal.Text);
+            txtUACntNormalPer.Text = chkNormal(txtUATest.Text, txtUANormal.Text);
+            txtTriCntNormalPer.Text = chkNormal(txtTriTest.Text, txtTriNormal.Text);
+            txtChoCntNormalPer.Text = chkNormal(txtChoTest.Text, txtChoNormal.Text);
+            txtSgotCntNormalPer.Text = chkNormal(txtSgotTest.Text, txtSgotNormal.Text);
+            txtBunCntNormalPer.Text = chkNormal(txtBunTest.Text, txtBunNormal.Text);
+            txtUricCntNormalPer.Text = chkNormal(txtUricTest.Text, txtUricNormal.Text);
+            txtOther1CntNormalPer.Text = chkNormal(txtOther1Test.Text, txtOther1Normal.Text);
+            txtLungCntNormalPer.Text = chkNormal(txtLungTest.Text, txtLungNormal.Text);
+            txtAudioCntNormalPer.Text = chkNormal(txtAudioTest.Text, txtAudioNormal.Text);
+            txtEyeCntNormalPer.Text = chkNormal(txtEyeTest.Text, txtEyeNormal.Text);
+            txtToxiCntNormalPer.Text = chkNormal(txtToxiTest.Text, txtToxiNormal.Text);
+            txtStoolExamCntNormalPer.Text = chkNormal(txtStoolExamTest.Text, txtStoolExamNormal.Text);
 
             txtPECntAbNormalPer.Text = chkNormal(txtPETest.Text, txtPECntAbNormal.Text);
             txtXrayCntAbNormalPer.Text = chkNormal(txtXrayTest.Text, txtXrayCntAbNormal.Text);
@@ -1386,19 +1425,6 @@ namespace CheckUP.gui
             txtEyeCntAbNormalPer.Text = chkNormal(txtEyeTest.Text, txtEyeCntAbNormal.Text);
             txtToxiCntAbNormalPer.Text = chkNormal(txtToxiTest.Text, txtToxiCntAbNormal.Text);
             txtStoolExamCntAbNormalPer.Text = chkNormal(txtStoolExamTest.Text, txtStoolExamCntAbNormal.Text);
-
-            if (cuc.Active.Equals("1"))
-            {
-                chkActive.Checked = true;
-                ChkUnActive.Checked = false;
-                btnUnActive.Visible = false;
-            }
-            else 
-            {
-                chkActive.Checked = true;
-                ChkUnActive.Checked = false;
-                btnUnActive.Visible = true;
-            }
         }
         private String chkNormal(String test, String normal)
         {
@@ -2517,332 +2543,119 @@ namespace CheckUP.gui
             }
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
-            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
-            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.PESheetname];
-            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            String prefix = "", firstName = "", lastName = "", department="";
-            int rowCount = xlRange.Rows.Count, row = 0;
-            int colCount = xlRange.Columns.Count;
-
-            if (cboCust.Text.Equals(""))
+            Microsoft.Office.Interop.Excel.Application xlApp = null;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = null;
+            
+            try
             {
-                pB1.Visible = false;
-                MessageBox.Show("ไม่ได้ป้อนชื่อ", "ป้อนข้อมูลไม่ครบ");
-                return "";
-            }
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlWorkbook = xlApp.Workbooks.Open(fileName);
+                Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.PESheetname];
+                Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+                String prefix = "", firstName = "", lastName = "", department = "";
+                int rowCount = xlRange.Rows.Count, row = 0;
+                int colCount = xlRange.Columns.Count;
 
-            getCustCheckUp();
-            cucId = cc.cucdb.insertCustCheckUp(cuc);
-            if (cucId.Length < 1)
-            {
-                pB1.Visible = false;
-                MessageBox.Show("ไม่สามารถบันทึกข้อมูลได้ ", "Error ");
-                return "";
-            }
-
-            pB1.Maximum = rowCount;
-            for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
-            {
-                try
+                if (cboCust.Text.Equals(""))
                 {
-                    CustCheckUpPatient ccp = new CustCheckUpPatient();
-                    ccp.CustCheckUpId = cucId;
-                    ccp.Active = "1";
-                    ccp.Id = "";
-                    prefix = "";
-                    firstName = "";
-                    lastName = "";
-                    if (ei.SfStatusName.Equals("A"))
-                    {
-                        if (xlRange.Cells[i, int.Parse(ei.SfAPrefix)].Value2 != null)
-                        {
-                            prefix = xlRange.Cells[i, int.Parse(ei.SfAPrefix)].Value2.ToString();
-                        }
-                        else
-                        {
-                            prefix = "";
-                        }
-                        prefix = prefix.Trim();
-                        if (prefix.Equals("นาย"))
-                        {
-                            sexId = "1";
-                            ccp.SexName = "ชาย";
-                        }
-                        else if (prefix.Equals("นาย."))
-                        {
-                            sexId = "1";
-                            ccp.SexName = "ชาย";
-                        }
-                        else if (prefix.Equals("น.ส."))
-                        {
-                            sexId = "2";
-                            ccp.SexName = "หญิง";
-                        }
-                        else if (prefix.Equals("น.ส"))
-                        {
-                            sexId = "2";
-                            ccp.SexName = "หญิง";
-                        }
-                        else if (prefix.Equals("นส"))
-                        {
-                            sexId = "2";
-                            ccp.SexName = "หญิง";
-                        }
-                        else if (prefix.Equals("นส."))
-                        {
-                            sexId = "2";
-                            ccp.SexName = "หญิง";
-                        }
-                        else if (prefix.Equals("นาง"))
-                        {
-                            sexId = "2";
-                            ccp.SexName = "หญิง";
-                        }
-                        else if (prefix.Equals("Mr."))
-                        {
-                            sexId = "1";
-                            ccp.SexName = "ชาย";
-                        }
-                        else if (prefix.Equals("Mrs."))
-                        {
-                            sexId = "2";
-                            ccp.SexName = "หญิง";
-                        }
-                        else if (prefix.Equals("Mr"))
-                        {
-                            sexId = "1";
-                            ccp.SexName = "ชาย";
-                        }
-                        else if (prefix.Equals("Miss"))
-                        {
-                            sexId = "2";
-                            ccp.SexName = "หญิง";
-                        }
-                        else if (prefix.IndexOf("หญิง")>=0)
-                        {
-                            sexId = "2";
-                            ccp.SexName = "หญิง";
-                        }
-                        else if (prefix.IndexOf("นางสาว") >= 0)
-                        {
-                            sexId = "2";
-                            ccp.SexName = "หญิง";
-                        }
-                        else
-                        {
-                            sexId = "3";
-                            ccp.SexName = "ไม่ระบุ";
-                        }
-                        ccp.fSexId = sexId;
-                        if (xlRange.Cells[i, int.Parse(ei.SfAFirstName)].Value2 != null)
-                        {
-                            firstName = xlRange.Cells[i, int.Parse(ei.SfAFirstName)].Value2.ToString();
-                        }
-                        else
-                        {
-                            firstName = "";
-                            continue;
-                        }
-                        if (xlRange.Cells[i, int.Parse(ei.SfALastName)].Value2 != null)
-                        {
-                            lastName = xlRange.Cells[i, int.Parse(ei.SfALastName)].Value2.ToString();
-                        }
-                        else
-                        {
-                            lastName = "";
-                        }
-                        if (xlRange.Cells[i, int.Parse(ei.SfANo)].Value2 != null)
-                        {
-                            ccp.rowNumber = xlRange.Cells[i, int.Parse(ei.SfANo)].Value2.ToString();
-                        }
-                        else
-                        {
-                            ccp.rowNumber = "";
-                        }
-                        if (xlRange.Cells[i, int.Parse(ei.SfAAge)].Value2 != null)
-                        {
-                            ccp.patientAge = xlRange.Cells[i, int.Parse(ei.SfAAge)].Value2.ToString();
-                        }
-                        else
-                        {
+                    pB1.Visible = false;
+                    MessageBox.Show("ไม่ได้ป้อนชื่อ", "ป้อนข้อมูลไม่ครบ");
+                    return "";
+                }
 
-                        }
-                        ccp.patientFullname = prefix + " " + firstName + " " + lastName;
-                    }
-                    else if (ei.SfStatusName.Equals("B"))
-                    {
-                        if (xlRange.Cells[i, int.Parse(ei.SfBPrefix)].Value2 != null)
-                        {
-                            prefix = xlRange.Cells[i, int.Parse(ei.SfBPrefix)].Value2.ToString();
-                        }
-                        else
-                        {
-                            prefix = "";
-                        }
-                        prefix = prefix.Trim();
-                        if (prefix.Equals("นาย"))
-                        {
-                            sexId = "1";
-                            ccp.SexName = "ชาย";
-                        }
-                        else if (prefix.Equals("นาย."))
-                        {
-                            sexId = "1";
-                            ccp.SexName = "ชาย";
-                        }
-                        else if (prefix.Equals("น.ส."))
-                        {
-                            sexId = "2";
-                            ccp.SexName = "หญิง";
-                        }
-                        else if (prefix.Equals("น.ส"))
-                        {
-                            sexId = "2";
-                            ccp.SexName = "หญิง";
-                        }
-                        else if (prefix.Equals("นส"))
-                        {
-                            sexId = "2";
-                            ccp.SexName = "หญิง";
-                        }
-                        else if (prefix.Equals("นส."))
-                        {
-                            sexId = "2";
-                            ccp.SexName = "หญิง";
-                        }
-                        else if (prefix.Equals("นาง"))
-                        {
-                            sexId = "2";
-                            ccp.SexName = "หญิง";
-                        }
-                        else if (prefix.Equals("Mr."))
-                        {
-                            sexId = "1";
-                            ccp.SexName = "ชาย";
-                        }
-                        else if (prefix.Equals("Mrs."))
-                        {
-                            sexId = "2";
-                            ccp.SexName = "หญิง";
-                        }
-                        else if (prefix.Equals("Mr"))
-                        {
-                            sexId = "1";
-                            ccp.SexName = "ชาย";
-                        }
-                        else if (prefix.Equals("Miss"))
-                        {
-                            sexId = "2";
-                            ccp.SexName = "หญิง";
-                        }
-                        else
-                        {
-                            sexId = "3";
-                            ccp.SexName = "ไม่ระบุ";
-                        }
-                        ccp.fSexId = sexId;
-                        if (xlRange.Cells[i, int.Parse(ei.SfBFullName)].Value2 != null)
-                        {
-                            firstName = xlRange.Cells[i, int.Parse(ei.SfBFullName)].Value2.ToString();
-                        }
-                        else
-                        {
-                            firstName = "";
-                            continue;
-                        }
-                        //if (xlRange.Cells[i, int.Parse(ei.SfALastName)].Value2 != null)
-                        //{
-                        //    lastName = xlRange.Cells[i, int.Parse(ei.SfALastName)].Value2.ToString();
-                        //}
-                        //else
-                        //{
-                        //    lastName = "";
-                        //}
-                        if (xlRange.Cells[i, int.Parse(ei.SfBNo)].Value2 != null)
-                        {
-                            ccp.rowNumber = xlRange.Cells[i, int.Parse(ei.SfBNo)].Value2.ToString();
-                        }
-                        else
-                        {
-                            ccp.rowNumber = "";
-                        }
-                        if (xlRange.Cells[i, int.Parse(ei.SfBAge)].Value2 != null)
-                        {
-                            ccp.patientAge = xlRange.Cells[i, int.Parse(ei.SfBAge)].Value2.ToString();
-                        }
-                        else
-                        {
+                getCustCheckUp();
+                cucId = cc.cucdb.insertCustCheckUp(cuc);
+                if (cucId.Length < 1)
+                {
+                    pB1.Visible = false;
+                    MessageBox.Show("ไม่สามารถบันทึกข้อมูลได้ ", "Error ");
+                    return "";
+                }
 
-                        }
-                        ccp.patientFullname = prefix + " " + firstName ;
-                    }
-                    else if (ei.SfStatusName.Equals("C"))
+                pB1.Maximum = rowCount;
+                for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
+                {
+                    try
                     {
-                        //if (xlRange.Cells[i, int.Parse(ei.SfBPrefix)].Value2 != null)
-                        //{
-                        //    prefix = xlRange.Cells[i, int.Parse(ei.SfBPrefix)].Value2.ToString();
-                        //}
-                        //else
-                        //{
-                        //    prefix = "";
-                        //}
-                        //prefix = prefix.Trim();
-                        
-                        if (xlRange.Cells[i, int.Parse(ei.SfCFullName)].Value2 != null)
+                        CustCheckUpPatient ccp = new CustCheckUpPatient();
+                        ccp.CustCheckUpId = cucId;
+                        ccp.Active = "1";
+                        ccp.Id = "";
+                        prefix = "";
+                        firstName = "";
+                        lastName = "";
+                        if (ei.SfStatusName.Equals("A"))
                         {
-                            firstName = xlRange.Cells[i, int.Parse(ei.SfCFullName)].Value2.ToString();
-                            if (firstName.IndexOf("นาย")>=0)
+                            if (xlRange.Cells[i, int.Parse(ei.SfAPrefix)].Value2 != null)
+                            {
+                                prefix = xlRange.Cells[i, int.Parse(ei.SfAPrefix)].Value2.ToString();
+                            }
+                            else
+                            {
+                                prefix = "";
+                            }
+                            prefix = prefix.Trim();
+                            if (prefix.Equals("นาย"))
                             {
                                 sexId = "1";
                                 ccp.SexName = "ชาย";
                             }
-                            else if (firstName.IndexOf("นาย.") >= 0)
+                            else if (prefix.Equals("นาย."))
                             {
                                 sexId = "1";
                                 ccp.SexName = "ชาย";
                             }
-                            else if (firstName.IndexOf("น.ส.") >= 0)
+                            else if (prefix.Equals("น.ส."))
                             {
                                 sexId = "2";
                                 ccp.SexName = "หญิง";
                             }
-                            else if (firstName.IndexOf("น.ส") >= 0)
+                            else if (prefix.Equals("น.ส"))
                             {
                                 sexId = "2";
                                 ccp.SexName = "หญิง";
                             }
-                            else if (firstName.IndexOf("นส") >= 0)
+                            else if (prefix.Equals("นส"))
                             {
                                 sexId = "2";
                                 ccp.SexName = "หญิง";
                             }
-                            else if (firstName.IndexOf("นส.") >= 0)
+                            else if (prefix.Equals("นส."))
                             {
                                 sexId = "2";
                                 ccp.SexName = "หญิง";
                             }
-                            else if (firstName.IndexOf("นาง") >= 0)
+                            else if (prefix.Equals("นาง"))
                             {
                                 sexId = "2";
                                 ccp.SexName = "หญิง";
                             }
-                            else if (firstName.IndexOf("Mr.") >= 0)
+                            else if (prefix.Equals("Mr."))
                             {
                                 sexId = "1";
                                 ccp.SexName = "ชาย";
                             }
-                            else if (firstName.IndexOf("Mrs.") >= 0)
+                            else if (prefix.Equals("Mrs."))
                             {
                                 sexId = "2";
                                 ccp.SexName = "หญิง";
                             }
-                            else if (firstName.IndexOf("Mr") >= 0)
+                            else if (prefix.Equals("Mr"))
                             {
                                 sexId = "1";
                                 ccp.SexName = "ชาย";
                             }
-                            else if (firstName.IndexOf("Miss") >= 0)
+                            else if (prefix.Equals("Miss"))
+                            {
+                                sexId = "2";
+                                ccp.SexName = "หญิง";
+                            }
+                            else if (prefix.IndexOf("หญิง") >= 0)
+                            {
+                                sexId = "2";
+                                ccp.SexName = "หญิง";
+                            }
+                            else if (prefix.IndexOf("นางสาว") >= 0)
                             {
                                 sexId = "2";
                                 ccp.SexName = "หญิง";
@@ -2853,69 +2666,296 @@ namespace CheckUP.gui
                                 ccp.SexName = "ไม่ระบุ";
                             }
                             ccp.fSexId = sexId;
-                            
-                        }
-                        else
-                        {
-                            firstName = "";
-                            continue;
-                        }
-                        //if (xlRange.Cells[i, int.Parse(ei.SfALastName)].Value2 != null)
-                        //{
-                        //    lastName = xlRange.Cells[i, int.Parse(ei.SfALastName)].Value2.ToString();
-                        //}
-                        //else
-                        //{
-                        //    lastName = "";
-                        //}
-                        if (xlRange.Cells[i, int.Parse(ei.SfCNo)].Value2 != null)
-                        {
-                            ccp.rowNumber = xlRange.Cells[i, int.Parse(ei.SfCNo)].Value2.ToString();
-                        }
-                        else
-                        {
-                            ccp.rowNumber = "";
-                        }
-                        if (xlRange.Cells[i, int.Parse(ei.SfCAge)].Value2 != null)
-                        {
-                            ccp.patientAge = xlRange.Cells[i, int.Parse(ei.SfCAge)].Value2.ToString();
-                        }
-                        else
-                        {
+                            if (xlRange.Cells[i, int.Parse(ei.SfAFirstName)].Value2 != null)
+                            {
+                                firstName = xlRange.Cells[i, int.Parse(ei.SfAFirstName)].Value2.ToString();
+                            }
+                            else
+                            {
+                                firstName = "";
+                                continue;
+                            }
+                            if (xlRange.Cells[i, int.Parse(ei.SfALastName)].Value2 != null)
+                            {
+                                lastName = xlRange.Cells[i, int.Parse(ei.SfALastName)].Value2.ToString();
+                            }
+                            else
+                            {
+                                lastName = "";
+                            }
+                            if (xlRange.Cells[i, int.Parse(ei.SfANo)].Value2 != null)
+                            {
+                                ccp.rowNumber = xlRange.Cells[i, int.Parse(ei.SfANo)].Value2.ToString();
+                            }
+                            else
+                            {
+                                ccp.rowNumber = "";
+                            }
+                            if (xlRange.Cells[i, int.Parse(ei.SfAAge)].Value2 != null)
+                            {
+                                ccp.patientAge = xlRange.Cells[i, int.Parse(ei.SfAAge)].Value2.ToString();
+                            }
+                            else
+                            {
 
+                            }
+                            ccp.patientFullname = prefix + " " + firstName + " " + lastName;
                         }
-                        ccp.patientFullname = firstName;
+                        else if (ei.SfStatusName.Equals("B"))
+                        {
+                            if (xlRange.Cells[i, int.Parse(ei.SfBPrefix)].Value2 != null)
+                            {
+                                prefix = xlRange.Cells[i, int.Parse(ei.SfBPrefix)].Value2.ToString();
+                            }
+                            else
+                            {
+                                prefix = "";
+                            }
+                            prefix = prefix.Trim();
+                            if (prefix.Equals("นาย"))
+                            {
+                                sexId = "1";
+                                ccp.SexName = "ชาย";
+                            }
+                            else if (prefix.Equals("นาย."))
+                            {
+                                sexId = "1";
+                                ccp.SexName = "ชาย";
+                            }
+                            else if (prefix.Equals("น.ส."))
+                            {
+                                sexId = "2";
+                                ccp.SexName = "หญิง";
+                            }
+                            else if (prefix.Equals("น.ส"))
+                            {
+                                sexId = "2";
+                                ccp.SexName = "หญิง";
+                            }
+                            else if (prefix.Equals("นส"))
+                            {
+                                sexId = "2";
+                                ccp.SexName = "หญิง";
+                            }
+                            else if (prefix.Equals("นส."))
+                            {
+                                sexId = "2";
+                                ccp.SexName = "หญิง";
+                            }
+                            else if (prefix.Equals("นาง"))
+                            {
+                                sexId = "2";
+                                ccp.SexName = "หญิง";
+                            }
+                            else if (prefix.Equals("Mr."))
+                            {
+                                sexId = "1";
+                                ccp.SexName = "ชาย";
+                            }
+                            else if (prefix.Equals("Mrs."))
+                            {
+                                sexId = "2";
+                                ccp.SexName = "หญิง";
+                            }
+                            else if (prefix.Equals("Mr"))
+                            {
+                                sexId = "1";
+                                ccp.SexName = "ชาย";
+                            }
+                            else if (prefix.Equals("Miss"))
+                            {
+                                sexId = "2";
+                                ccp.SexName = "หญิง";
+                            }
+                            else
+                            {
+                                sexId = "3";
+                                ccp.SexName = "ไม่ระบุ";
+                            }
+                            ccp.fSexId = sexId;
+                            if (xlRange.Cells[i, int.Parse(ei.SfBFullName)].Value2 != null)
+                            {
+                                firstName = xlRange.Cells[i, int.Parse(ei.SfBFullName)].Value2.ToString();
+                            }
+                            else
+                            {
+                                firstName = "";
+                                continue;
+                            }
+                            //if (xlRange.Cells[i, int.Parse(ei.SfALastName)].Value2 != null)
+                            //{
+                            //    lastName = xlRange.Cells[i, int.Parse(ei.SfALastName)].Value2.ToString();
+                            //}
+                            //else
+                            //{
+                            //    lastName = "";
+                            //}
+                            if (xlRange.Cells[i, int.Parse(ei.SfBNo)].Value2 != null)
+                            {
+                                ccp.rowNumber = xlRange.Cells[i, int.Parse(ei.SfBNo)].Value2.ToString();
+                            }
+                            else
+                            {
+                                ccp.rowNumber = "";
+                            }
+                            if (xlRange.Cells[i, int.Parse(ei.SfBAge)].Value2 != null)
+                            {
+                                ccp.patientAge = xlRange.Cells[i, int.Parse(ei.SfBAge)].Value2.ToString();
+                            }
+                            else
+                            {
+
+                            }
+                            ccp.patientFullname = prefix + " " + firstName;
+                        }
+                        else if (ei.SfStatusName.Equals("C"))
+                        {
+                            //if (xlRange.Cells[i, int.Parse(ei.SfBPrefix)].Value2 != null)
+                            //{
+                            //    prefix = xlRange.Cells[i, int.Parse(ei.SfBPrefix)].Value2.ToString();
+                            //}
+                            //else
+                            //{
+                            //    prefix = "";
+                            //}
+                            //prefix = prefix.Trim();
+
+                            if (xlRange.Cells[i, int.Parse(ei.SfCFullName)].Value2 != null)
+                            {
+                                firstName = xlRange.Cells[i, int.Parse(ei.SfCFullName)].Value2.ToString();
+                                if (firstName.IndexOf("นาย") >= 0)
+                                {
+                                    sexId = "1";
+                                    ccp.SexName = "ชาย";
+                                }
+                                else if (firstName.IndexOf("นาย.") >= 0)
+                                {
+                                    sexId = "1";
+                                    ccp.SexName = "ชาย";
+                                }
+                                else if (firstName.IndexOf("น.ส.") >= 0)
+                                {
+                                    sexId = "2";
+                                    ccp.SexName = "หญิง";
+                                }
+                                else if (firstName.IndexOf("น.ส") >= 0)
+                                {
+                                    sexId = "2";
+                                    ccp.SexName = "หญิง";
+                                }
+                                else if (firstName.IndexOf("นส") >= 0)
+                                {
+                                    sexId = "2";
+                                    ccp.SexName = "หญิง";
+                                }
+                                else if (firstName.IndexOf("นส.") >= 0)
+                                {
+                                    sexId = "2";
+                                    ccp.SexName = "หญิง";
+                                }
+                                else if (firstName.IndexOf("นาง") >= 0)
+                                {
+                                    sexId = "2";
+                                    ccp.SexName = "หญิง";
+                                }
+                                else if (firstName.IndexOf("Mr.") >= 0)
+                                {
+                                    sexId = "1";
+                                    ccp.SexName = "ชาย";
+                                }
+                                else if (firstName.IndexOf("Mrs.") >= 0)
+                                {
+                                    sexId = "2";
+                                    ccp.SexName = "หญิง";
+                                }
+                                else if (firstName.IndexOf("Mr") >= 0)
+                                {
+                                    sexId = "1";
+                                    ccp.SexName = "ชาย";
+                                }
+                                else if (firstName.IndexOf("Miss") >= 0)
+                                {
+                                    sexId = "2";
+                                    ccp.SexName = "หญิง";
+                                }
+                                else
+                                {
+                                    sexId = "3";
+                                    ccp.SexName = "ไม่ระบุ";
+                                }
+                                ccp.fSexId = sexId;
+
+                            }
+                            else
+                            {
+                                firstName = "";
+                                continue;
+                            }
+                            //if (xlRange.Cells[i, int.Parse(ei.SfALastName)].Value2 != null)
+                            //{
+                            //    lastName = xlRange.Cells[i, int.Parse(ei.SfALastName)].Value2.ToString();
+                            //}
+                            //else
+                            //{
+                            //    lastName = "";
+                            //}
+                            if (xlRange.Cells[i, int.Parse(ei.SfCNo)].Value2 != null)
+                            {
+                                ccp.rowNumber = xlRange.Cells[i, int.Parse(ei.SfCNo)].Value2.ToString();
+                            }
+                            else
+                            {
+                                ccp.rowNumber = "";
+                            }
+                            if (xlRange.Cells[i, int.Parse(ei.SfCAge)].Value2 != null)
+                            {
+                                ccp.patientAge = xlRange.Cells[i, int.Parse(ei.SfCAge)].Value2.ToString();
+                            }
+                            else
+                            {
+
+                            }
+                            ccp.patientFullname = firstName;
+                        }
+
+                        if (xlRange.Cells[i, int.Parse(ei.DepartmentName)].Value2 != null)
+                        {
+                            ccp.departmentName = xlRange.Cells[i, int.Parse(ei.DepartmentName)].Value2.ToString();
+                        }
+                        else
+                        {
+                            ccp.departmentName = "";
+                        }
+
+                        cc.ccpdb.InsertCustCheckUpPatient1(ccp);
+                        row++;
                     }
-
-                    if (xlRange.Cells[i, int.Parse(ei.DepartmentName)].Value2 != null)
+                    catch (Exception ex)
                     {
-                        ccp.departmentName = xlRange.Cells[i, int.Parse(ei.DepartmentName)].Value2.ToString();
-                    }
-                    else
-                    {
-                        ccp.departmentName = "";
-                    }
-                    
-                    cc.ccpdb.InsertCustCheckUpPatient1(ccp);
-                    row++;
-                }
-                catch (Exception ex)
-                {
 
-                }
-                
-                pB1.Value = i;
-                //for (int j = 1; j <= colCount; j++)
-                //{
-                //    MessageBox.Show(xlRange.Cells[i, j].Value2.ToString());
-                //}
+                    }
 
+                    pB1.Value = i;
+                    //for (int j = 1; j <= colCount; j++)
+                    //{
+                    //    MessageBox.Show(xlRange.Cells[i, j].Value2.ToString());
+                    //}
+                    cc.cucdb.updateCntImport(cucId, rowCount, row);
+                }
             }
-            xlWorkbook.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error ImportExcel "+ex.InnerException, "message "+ex.Message);
+            }
+            finally
+            {
+                if (xlWorkbook != null)
+                    xlWorkbook.Close();
+                if (xlApp != null)
+                    xlApp.Quit();
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
+            }
             
-            xlApp.Quit();
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
-            cc.cucdb.updateCntImport(cucId, rowCount, row);
             Cursor.Current = cursor;
             pB1.Visible = false;
             return cucId;
@@ -2964,11 +3004,25 @@ namespace CheckUP.gui
             //object misval = System.Reflection.Missing.Value;
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
-            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
-            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.PESheetname];
-            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-            fileName = ofd.FileName;
+            Microsoft.Office.Interop.Excel.Application xlApp = null;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = null;
+            try
+            {
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
+                Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.PESheetname];
+                Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+                fileName = ofd.FileName;
+            }
+            catch (Exception ex){
+                MessageBox.Show("Error "+ex.InnerException, " message "+ex.Message);
+            }
+            finally
+            {
+                if (xlWorkbook != null) xlWorkbook.Close();
+                if (xlApp != null) xlApp.Quit();
+            }
+            
             Cursor.Current = cursor;
             btnImport.Enabled = true;
         }
