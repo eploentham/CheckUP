@@ -52,7 +52,7 @@ namespace CheckUP.objdb
             ei.CBCMCH = "cbc_mch";
             ei.CBCMCHC = "cbc_mchc";
             ei.CBCMCV = "cbc_mcv";
-            ei.CBCBASO = "cbc_baso";
+            ei.CBCBASO = "cbc_baso";  
             ei.CBCResult = "cbc_result";
 
             ei.Cholesteral = "cho_value";

@@ -21,7 +21,11 @@ namespace CheckUP.object1
         public String StoolExamCnt = "", StoolExamSuccess = "", StoolExamNormal = "", StoolExamAbNormal = "";
 
         public String dateCreate = "", dateModi = "", dateCancel = "", userCreate = "", userModi = "", userCancel = "";
-        
+        public String pe_checkup = "", xray_checkup = "", cbc_checkup = "", ua_checkup = "", tri_checkup = "", cho_checkup = "", sgot_checkup = "", bun_checkup = "", uric_checkup = "";
+        public String other1_checkup = "", lung_checkup = "", audio_checkup = "", eye_checkup = "", stoolexam_checkup = "", toxi_checkup = "", fbs_checkup="";
+        public String pe_test = "", xray_test = "", cbc_test = "", ua_test = "", tri_test = "", cho_test = "", sgot_test = "", bun_test = "", uric_test = "";
+        public String other1_test = "", lung_test = "", audio_test = "", eye_test = "", stoolexam_test = "", toxi_test = "", fbs_test = "";
+
         public override String ToString()
         {
             return Description;

@@ -62,7 +62,12 @@ namespace CheckUP.gui
         
 
         int colLungRow = 0, colLungId = 1, colLungName = 2, colLungFvcPredic = 3, colLungFvcMeas = 4, colLungFvcPer = 5, colLungFev1Predic = 6, colLungFev1Meas = 7, colLungFev1Per = 8, colLungPerFev1 = 9, colLungSummary = 10;
-        
+
+        private void tabPage20_Click(object sender, EventArgs e)
+        {
+
+        }
+
         int colLungCnt = 11;
 
         int colAudiogramRow = 0, colAudiogramId = 1, colAudiogramName = 2, colAudiogram500L = 3, colAudiogram1000L = 4, colAudiogram2000L = 5, colAudiogram3000L = 6, colAudiogram4000L = 7;
@@ -146,8 +151,22 @@ namespace CheckUP.gui
             btnStoolExamImport.Enabled = false;
             btnToxiImport.Enabled = false;
             //btnChemUImport.Enabled = false;
-
             btnUnActive.Visible = false;
+            btnPeSave.Click += BtnPeSave_Click;
+            btnXraySave.Click += BtnPeSave_Click;
+            btnCbcSave.Click += BtnPeSave_Click;
+            btnUaSave.Click += BtnPeSave_Click;
+            btnTriSave.Click += BtnPeSave_Click;
+            btnChoSave.Click += BtnPeSave_Click;
+            btnSgotSave.Click += BtnPeSave_Click;
+            btnBunSave.Click += BtnPeSave_Click;
+            btnUricSave.Click += BtnPeSave_Click;
+            btnOther1Save.Click += BtnPeSave_Click;
+            btnLungSave.Click += BtnPeSave_Click;
+            btnAudioSave.Click += BtnPeSave_Click;
+            btnEyeSave.Click += BtnPeSave_Click;
+            btnToxiSave.Click += BtnPeSave_Click;
+            btnStoolExamSave.Click += BtnPeSave_Click;
 
             if (flagNew)
             {
@@ -213,6 +232,144 @@ namespace CheckUP.gui
             else
             {
                 MessageBox.Show("ลำดับ row ไม่ได้ set", "error");
+            }
+        }
+        
+        private void BtnPeSave_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            if (MessageBox.Show("ต้องการ บันทึกช้อมูล ค่าใช้จ่าย ", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.OK)
+            {
+                int chk = 0;
+                String re = "";
+                if (sender.Equals(btnPeSave))
+                {
+                    re = cc.cucdb.updatePE(txtId.Text, txtPECntAbNormal.Text, txtPECntEmp.Text, txtPECntNormal.Text, txtPECheckup.Text, txtPETest.Text);
+                    if(int.TryParse(re, out chk))
+                    {
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                    }
+                }
+                else if (sender.Equals(btnXraySave))
+                {
+                    re = cc.cucdb.updateXray(txtId.Text, txtXrayCntAbNormal.Text, txtXrayCntEmp.Text, txtXrayCntNormal.Text, txtXrayCheckup.Text, txtXrayTest.Text);
+                    if (int.TryParse(re, out chk))
+                    {
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                    }
+                }
+                else if (sender.Equals(btnFbsSave))
+                {
+                    re = cc.cucdb.updateFBS(txtId.Text, txtFBSCntAbNormal.Text, txtFBSCntEmp.Text, txtFBSNormal.Text, txtFBSCheckup.Text, txtFBSTest.Text);
+                    if (int.TryParse(re, out chk))
+                    {
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                    }
+                }
+                else if (sender.Equals(btnCbcSave))
+                {
+                    re = cc.cucdb.updateCBC(txtId.Text, txtCBCCntAbNormal.Text != "" ? txtCBCCntAbNormal.Text : "0", txtCBCCntEmp.Text != "" ? txtCBCCntEmp.Text : "0", txtCBCNormal.Text != "" ? txtCBCNormal.Text : "0", txtCBCCheckup.Text != "" ? txtCBCCheckup.Text : "0", txtCBCTest.Text != "" ?  txtCBCTest.Text : "0");
+                    if (int.TryParse(re, out chk))
+                    {
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                    }
+                }
+                else if (sender.Equals(btnUaSave))
+                {
+                    re = cc.cucdb.updateUA(txtId.Text, txtUACntAbNormal.Text, txtUACntEmp.Text, txtUANormal.Text, txtUACheckup.Text, txtUATest.Text);
+                    if (int.TryParse(re, out chk))
+                    {
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                    }
+                }
+                else if (sender.Equals(btnTriSave))
+                {
+                    re = cc.cucdb.updateTri(txtId.Text, txtTriCntAbNormal.Text, txtTriCntEmp.Text, txtTriNormal.Text, txtTriCheckup.Text, txtTriTest.Text);
+                    if (int.TryParse(re, out chk))
+                    {
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                    }
+                }
+                else if (sender.Equals(btnChoSave))
+                {
+                    re = cc.cucdb.updateCho(txtId.Text, txtChoCntAbNormal.Text, txtChoCntEmp.Text, txtChoNormal.Text, txtChoCheckup.Text, txtChoTest.Text);
+                    if (int.TryParse(re, out chk))
+                    {
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                    }
+                }
+                else if (sender.Equals(btnSgotSave))
+                {
+                    re = cc.cucdb.updateSgot(txtId.Text, txtSgotCntAbNormal.Text, txtSgotCntEmp.Text, txtSgotNormal.Text, txtSgotCheckup.Text, txtSgotTest.Text);
+                    if (int.TryParse(re, out chk))
+                    {
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                    }
+                }
+                else if (sender.Equals(btnBunSave))
+                {
+                    re = cc.cucdb.updateBun(txtId.Text, txtBunCntAbNormal.Text, txtBunCntEmp.Text, txtBunNormal.Text, txtBunCheckup.Text, txtBunTest.Text);
+                    if (int.TryParse(re, out chk))
+                    {
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                    }
+                }
+                else if (sender.Equals(btnUricSave))
+                {
+                    re = cc.cucdb.updateUric(txtId.Text, txtUricCntAbNormal.Text, txtUricCntEmp.Text, txtUricNormal.Text, txtUricCheckup.Text, txtUricTest.Text);
+                    if (int.TryParse(re, out chk))
+                    {
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                    }
+                }
+                else if (sender.Equals(btnOther1Save))
+                {
+                    re = cc.cucdb.updateOther1(txtId.Text, txtOther1CntAbNormal.Text, txtOther1CntEmp.Text, txtOther1Normal.Text, txtOther1Checkup.Text, txtOther1Test.Text);
+                    if (int.TryParse(re, out chk))
+                    {
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                    }
+                }
+                else if (sender.Equals(btnLungSave))
+                {
+                    re = cc.cucdb.updateLung(txtId.Text, txtLungCntAbNormal.Text, txtLungCntEmp.Text, txtLungNormal.Text, txtLungCheckup.Text, txtLungTest.Text);
+                    if (int.TryParse(re, out chk))
+                    {
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                    }
+                }
+                else if (sender.Equals(btnAudioSave))
+                {
+                    re = cc.cucdb.updateAudio(txtId.Text, txtUricCntAbNormal.Text, txtAudioCntEmp.Text, txtAudioCntAbNormal.Text, txtAudioCheckup.Text, txtAudioTest.Text);
+                    if (int.TryParse(re, out chk))
+                    {
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                    }
+                }
+                else if (sender.Equals(btnEyeSave))
+                {
+                    re = cc.cucdb.updateEye(txtId.Text, txtEyeCntAbNormal.Text, txtEyeTest.Text, txtEyeCntAbNormal.Text, txtEyeCheckup.Text, txtEyeTest.Text);
+                    if (int.TryParse(re, out chk))
+                    {
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                    }
+                }
+                else if (sender.Equals(btnToxiSave))
+                {
+                    re = cc.cucdb.updateToxi(txtId.Text, txtEyeCntAbNormal.Text, txtEyeTest.Text, txtEyeCntAbNormal.Text, txtEyeCheckup.Text, txtEyeTest.Text);
+                    if (int.TryParse(re, out chk))
+                    {
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                    }
+                }
+                else if (sender.Equals(btnStoolExamSave))
+                {
+                    re = cc.cucdb.updateStoolExam(txtId.Text, txtStoolExamCntAbNormal.Text, txtStoolExamTest.Text, txtStoolExamCntAbNormal.Text, txtStoolExamCheckup.Text, txtStoolExamTest.Text);
+                    if (int.TryParse(re, out chk))
+                    {
+                        MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "Error");
+                    }
+                }
             }
         }
 
@@ -1096,7 +1253,7 @@ namespace CheckUP.gui
 
             txtChoCntEmp.Text = cuc.ChoCnt;
             txtChoSucess.Text = cuc.ChoSuccess;
-            txtchoNormal.Text = cuc.ChoNormal;
+            txtChoNormal.Text = cuc.ChoNormal;
 
             txtTriCntEmp.Text = cuc.TriCnt;
             txtTriSucess.Text = cuc.TriSuccess;
@@ -1129,6 +1286,107 @@ namespace CheckUP.gui
             txtStoolExamCntEmp.Text = cuc.StoolExamCnt;
             txtStoolExamSucess.Text = cuc.StoolExamSuccess;
 
+            txtPECheckup.Text = cuc.pe_checkup;
+            txtXrayCheckup.Text = cuc.xray_checkup;
+            txtFBSCheckup.Text = cuc.fbs_checkup;
+            txtCBCCheckup.Text = cuc.cbc_checkup;
+            txtUACheckup.Text = cuc.ua_checkup;
+            txtTriCheckup.Text = cuc.tri_checkup;
+            txtChoCheckup.Text = cuc.cho_checkup;
+            txtSgotCheckup.Text = cuc.sgot_checkup;
+            txtBunCheckup.Text = cuc.bun_checkup;
+            txtUricCheckup.Text = cuc.uric_checkup;
+            txtOther1Checkup.Text = cuc.other1_checkup;
+            txtLungCheckup.Text = cuc.lung_checkup;
+            txtAudioCheckup.Text = cuc.audio_checkup;
+            txtEyeCheckup.Text = cuc.eye_checkup;
+            txtToxiCheckup.Text = cuc.toxi_checkup;
+            txtStoolExamCheckup.Text = cuc.stoolexam_checkup;
+            txtPETest.Text = cuc.pe_test;
+            txtXrayTest.Text = cuc.xray_test;
+            txtFBSTest.Text = cuc.fbs_test;
+            txtCBCTest.Text = cuc.cbc_test;
+            txtUATest.Text = cuc.ua_test;
+            txtTriTest.Text = cuc.tri_test;
+            txtChoTest.Text = cuc.cho_test;
+            txtSgotTest.Text = cuc.sgot_test;
+            txtBunTest.Text = cuc.bun_test;
+            txtUricTest.Text = cuc.uric_test;
+            txtOther1Test.Text = cuc.other1_test;
+            txtLungTest.Text = cuc.lung_test;
+            txtAudioTest.Text = cuc.audio_test;
+            txtEyeTest.Text = cuc.eye_test;
+            txtToxiTest.Text = cuc.toxi_test;
+            txtStoolExamTest.Text = cuc.stoolexam_test;
+
+            txtPECntNormal.Text = cuc.PENormal;
+            txtXrayCntNormal.Text = cuc.XrayNormal;
+            txtFBSNormal.Text = cuc.FBSNormal;
+            txtCBCNormal.Text = cuc.CBCNormal;
+            txtUANormal.Text = cuc.UANormal;
+            txtTriNormal.Text = cuc.TriNormal;
+            txtChoNormal.Text = cuc.ChoNormal;
+            txtSgotNormal.Text = cuc.SgotNormal;
+            txtBunNormal.Text = cuc.BunNormal;
+            txtUricNormal.Text = cuc.UricNormal;
+            txtOther1Normal.Text = cuc.Other1Normal;
+            txtLungNormal.Text = cuc.LungNormal;
+            txtAudioNormal.Text = cuc.AudioNormal;
+            txtEyeNormal.Text = cuc.EyeNormal;
+            txtToxiNormal.Text = cuc.ToxiNormal;
+            txtStoolExamNormal.Text = cuc.StoolExamNormal;
+
+            txtPECntAbNormal.Text = cuc.PEAbNormal;
+            txtXrayCntAbNormal.Text = cuc.XrayAbNormal;
+            txtFBSCntAbNormal.Text = cuc.FBSAbNormal;
+            txtCBCCntAbNormal.Text = cuc.CBCAbNormal;
+            txtUACntAbNormal.Text = cuc.UAAbNormal;
+            txtTriCntAbNormal.Text = cuc.TriAbNormal;
+            txtChoCntAbNormal.Text = cuc.ChoAbNormal;
+            txtSgotCntAbNormal.Text = cuc.SgotAbNormal;
+            txtBunCntAbNormal.Text = cuc.BunAbNormal;
+            txtUricCntAbNormal.Text = cuc.UricAbNormal;
+            txtOther1CntAbNormal.Text = cuc.Other1AbNormal;
+            txtLungCntAbNormal.Text = cuc.LungAbNormal;
+            txtAudioCntAbNormal.Text = cuc.AudioNormal;
+            txtEyeCntAbNormal.Text = cuc.EyeAbNormal;
+            txtToxiCntAbNormal.Text = cuc.ToxiAbNormal;
+            txtStoolExamCntAbNormal.Text = cuc.StoolExamAbNormal;
+                        
+            txtPECntNormalPer.Text = chkNormal(txtPETest.Text, txtPECntNormal.Text);
+            txtXrayCntNormalPer.Text = chkNormal(txtXrayTest.Text, txtPECntNormal.Text);
+            txtFBSCntNormalPer.Text = chkNormal(txtFBSTest.Text, txtPECntNormal.Text);
+            txtCBCCntNormalPer.Text = chkNormal(txtCBCTest.Text, txtPECntNormal.Text);
+            txtUACntNormalPer.Text = chkNormal(txtUATest.Text, txtPECntNormal.Text);
+            txtTriCntNormalPer.Text = chkNormal(txtTriTest.Text, txtPECntNormal.Text);
+            txtChoCntNormalPer.Text = chkNormal(txtChoTest.Text, txtPECntNormal.Text);
+            txtSgotCntNormalPer.Text = chkNormal(txtSgotTest.Text, txtPECntNormal.Text);
+            txtBunCntNormalPer.Text = chkNormal(txtBunTest.Text, txtPECntNormal.Text);
+            txtUricCntNormalPer.Text = chkNormal(txtUricTest.Text, txtPECntNormal.Text);
+            txtOther1CntNormalPer.Text = chkNormal(txtOther1Test.Text, txtPECntNormal.Text);
+            txtLungCntNormalPer.Text = chkNormal(txtLungTest.Text, txtPECntNormal.Text);
+            txtAudioCntNormalPer.Text = chkNormal(txtAudioTest.Text, txtPECntNormal.Text);
+            txtEyeCntNormalPer.Text = chkNormal(txtEyeTest.Text, txtPECntNormal.Text);
+            txtToxiCntNormalPer.Text = chkNormal(txtToxiTest.Text, txtPECntNormal.Text);
+            txtStoolExamCntNormalPer.Text = chkNormal(txtStoolExamTest.Text, txtPECntNormal.Text);
+
+            txtPECntAbNormalPer.Text = chkNormal(txtPETest.Text, txtPECntAbNormal.Text);
+            txtXrayCntAbNormalPer.Text = chkNormal(txtXrayTest.Text, txtXrayCntAbNormal.Text);
+            txtFBSCntAbNormalPer.Text = chkNormal(txtFBSTest.Text, txtFBSCntAbNormal.Text);
+            txtCBCCntAbNormalPer.Text = chkNormal(txtCBCTest.Text, txtCBCCntAbNormal.Text);
+            txtUACntAbNormalPer.Text = chkNormal(txtUATest.Text, txtUACntAbNormal.Text);
+            txtTriCntAbNormalPer.Text = chkNormal(txtTriTest.Text, txtTriCntAbNormal.Text);
+            txtChoCntAbNormalPer.Text = chkNormal(txtChoTest.Text, txtChoCntAbNormal.Text);
+            txtSgotCntAbNormalPer.Text = chkNormal(txtSgotTest.Text, txtSgotCntAbNormal.Text);
+            txtBunCntAbNormalPer.Text = chkNormal(txtBunTest.Text, txtBunCntAbNormal.Text);
+            txtUricCntAbNormalPer.Text = chkNormal(txtUricTest.Text, txtUricCntAbNormal.Text);
+            txtOther1CntAbNormalPer.Text = chkNormal(txtOther1Test.Text, txtOther1CntAbNormal.Text);
+            txtlungCntAbNormalPer.Text = chkNormal(txtLungTest.Text, txtLungCntAbNormal.Text);
+            txtAudioCntAbNormalPer.Text = chkNormal(txtAudioTest.Text, txtAudioCntAbNormal.Text);
+            txtEyeCntAbNormalPer.Text = chkNormal(txtEyeTest.Text, txtEyeCntAbNormal.Text);
+            txtToxiCntAbNormalPer.Text = chkNormal(txtToxiTest.Text, txtToxiCntAbNormal.Text);
+            txtStoolExamCntAbNormalPer.Text = chkNormal(txtStoolExamTest.Text, txtStoolExamCntAbNormal.Text);
+
             if (cuc.Active.Equals("1"))
             {
                 chkActive.Checked = true;
@@ -1141,6 +1399,19 @@ namespace CheckUP.gui
                 ChkUnActive.Checked = false;
                 btnUnActive.Visible = true;
             }
+        }
+        private String chkNormal(String test, String normal)
+        {
+            Decimal chkTest = 0, chkNor = 0, perNor = 0;
+            if (Decimal.TryParse(test, out chkTest))
+            {
+                if (Decimal.TryParse(normal, out chkNor))
+                {
+                    //perNor = System.Math.Ceiling((chkNor / chkTest) * 100);
+                    perNor = System.Math.Round((chkNor / chkTest) * 100,2);
+                }
+            }
+            return perNor.ToString();
         }
         private void setGrdPE(String cucId)
         {

@@ -113,10 +113,6 @@ C:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csprojResolveAssemblyReferenc
 D:\source\bangna\CheckUP\CheckUP\bin\Debug\CheckUP.exe.config
 D:\source\bangna\CheckUP\CheckUP\bin\Debug\CheckUP.exe
 D:\source\bangna\CheckUP\CheckUP\bin\Debug\CheckUP.pdb
-D:\source\bangna\CheckUP\CheckUP\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
-D:\source\bangna\CheckUP\CheckUP\bin\Debug\CrystalDecisions.ReportSource.dll
-D:\source\bangna\CheckUP\CheckUP\bin\Debug\CrystalDecisions.Shared.dll
-D:\source\bangna\CheckUP\CheckUP\bin\Debug\CrystalDecisions.Windows.Forms.dll
 D:\source\bangna\CheckUP\CheckUP\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
 D:\source\bangna\CheckUP\CheckUP\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
 D:\source\bangna\CheckUP\CheckUP\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll

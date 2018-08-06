@@ -123,6 +123,39 @@ namespace CheckUP.objdb
             cuc.userCreate = "user_create";
             cuc.userModi = "user_modi";
 
+            cuc.pe_checkup = "pe_checkup";
+            cuc.xray_checkup = "xray_checkup";
+            cuc.fbs_checkup = "fbs_checkup";
+            cuc.cbc_checkup = "cbc_checkup";
+            cuc.ua_checkup = "ua_checkup";
+            cuc.tri_checkup = "tri_checkup";
+            cuc.cho_checkup = "cho_checkup";
+            cuc.sgot_checkup = "sgot_checkup";
+            cuc.bun_checkup = "bun_checkup";
+            cuc.uric_checkup = "uric_checkup";
+            cuc.other1_checkup = "other1_checkup";
+            cuc.lung_checkup = "lung_checkup";
+            cuc.audio_checkup = "audio_checkup";
+            cuc.eye_checkup = "eye_checkup";
+            cuc.stoolexam_checkup = "stoolexam_checkup";
+            cuc.toxi_checkup = "toxi_checkup";
+            cuc.pe_test = "pe_test";
+            cuc.xray_test = "xray_test";
+            cuc.fbs_test = "fbs_test";
+            cuc.cbc_test  = "cbc_test";
+            cuc.ua_test = "ua_test";
+            cuc.tri_test = "tri_test";
+            cuc.cho_test = "cho_test";
+            cuc.sgot_test = "sgot_test";
+            cuc.bun_test = "bun_test";
+            cuc.uric_test = "uric_test";
+            cuc.other1_test = "other1_test";
+            cuc.lung_test = "lung_test";
+            cuc.audio_test = "audio_test";
+            cuc.eye_test = "eye_test";
+            cuc.stoolexam_test = "stoolexam_test";
+            cuc.toxi_test = "toxi_test";
+
             cuc.pkField = "cust_checkup_patient_id";
             cuc.table = "t_cust_checkup";
         }
@@ -232,7 +265,39 @@ namespace CheckUP.objdb
             item.userCreate = dt.Rows[0][cuc.userCreate].ToString();
             item.userModi = dt.Rows[0][cuc.userModi].ToString();
 
-            
+            item.pe_checkup = dt.Rows[0][cuc.pe_checkup].ToString();
+            item.xray_checkup = dt.Rows[0][cuc.xray_checkup].ToString();
+            item.fbs_checkup = dt.Rows[0][cuc.fbs_checkup].ToString();
+            item.cbc_checkup = dt.Rows[0][cuc.cbc_checkup].ToString();
+            item.ua_checkup = dt.Rows[0][cuc.ua_checkup].ToString();
+            item.tri_checkup = dt.Rows[0][cuc.tri_checkup].ToString();
+            item.cho_checkup = dt.Rows[0][cuc.cho_checkup].ToString();
+            item.sgot_checkup = dt.Rows[0][cuc.sgot_checkup].ToString();
+            item.bun_checkup = dt.Rows[0][cuc.userModi].ToString();
+            item.uric_checkup = dt.Rows[0][cuc.uric_checkup].ToString();
+            item.other1_checkup = dt.Rows[0][cuc.other1_checkup].ToString();
+            item.lung_checkup = dt.Rows[0][cuc.lung_checkup].ToString();
+            item.audio_checkup = dt.Rows[0][cuc.audio_checkup].ToString();
+            item.eye_checkup = dt.Rows[0][cuc.eye_checkup].ToString();
+            item.stoolexam_checkup = dt.Rows[0][cuc.stoolexam_checkup].ToString();
+            item.toxi_checkup = dt.Rows[0][cuc.toxi_checkup].ToString();
+            item.pe_test = dt.Rows[0][cuc.pe_test].ToString();
+            item.xray_test = dt.Rows[0][cuc.xray_test].ToString();
+            item.fbs_test = dt.Rows[0][cuc.fbs_test].ToString();
+            item.cbc_test = dt.Rows[0][cuc.cbc_test].ToString();
+            item.ua_test = dt.Rows[0][cuc.ua_test].ToString();
+            item.tri_test = dt.Rows[0][cuc.tri_test].ToString();
+            item.cho_test = dt.Rows[0][cuc.cho_test].ToString();
+            item.sgot_test = dt.Rows[0][cuc.sgot_test].ToString();
+            item.bun_test = dt.Rows[0][cuc.userModi].ToString();
+            item.uric_test = dt.Rows[0][cuc.uric_test].ToString();
+            item.other1_test = dt.Rows[0][cuc.other1_test].ToString();
+            item.lung_test = dt.Rows[0][cuc.lung_test].ToString();
+            item.audio_test = dt.Rows[0][cuc.audio_test].ToString();
+            item.eye_test = dt.Rows[0][cuc.eye_test].ToString();
+            item.stoolexam_test = dt.Rows[0][cuc.stoolexam_test].ToString();
+            item.toxi_test = dt.Rows[0][cuc.toxi_test].ToString();
+
             return item;
         }
         public DataTable selectAll()
@@ -419,7 +484,7 @@ namespace CheckUP.objdb
                 return o;
             }
         }
-        public String updatePE(String cucId, String PEAbNormal, String PECnt, String PENormal)
+        public String updatePE(String cucId, String PEAbNormal, String PECnt, String PENormal, String pecheckup, String test)
         {
             String sql = "", chk = "";
 
@@ -429,7 +494,8 @@ namespace CheckUP.objdb
             sql = "Update " + cuc.table + " Set " + cuc.PEAbNormal + "=" + PEAbNormal + ", " +
                 cuc.PECnt + "=" + PECnt + ", " +
                 cuc.PENormal + "=" + PENormal + " " +
-
+                ","+cuc.pe_checkup + "='" + pecheckup + "' " +
+                "," + cuc.pe_test + "='" + test + "' " +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
@@ -444,7 +510,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateXray(String cucId, String XrayAbNormal, String XrayCnt, String XrayNormal)
+        public String updateXray(String cucId, String XrayAbNormal, String XrayCnt, String XrayNormal, String xraycheckup, String test)
         {
             String sql = "", chk = "";
 
@@ -454,7 +520,8 @@ namespace CheckUP.objdb
             sql = "Update " + cuc.table + " Set " + cuc.XrayAbNormal + "=" + XrayAbNormal + ", " +
                 cuc.XrayCnt + "=" + XrayCnt + ", " +
                 cuc.XrayNormal + "=" + XrayNormal + " " +
-
+                "," + cuc.xray_checkup + "='" + xraycheckup + "' " +
+                "," + cuc.xray_test + "='" + test + "' " +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
@@ -469,7 +536,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateFBS(String cucId, String FBSAbNormal, String FBSCnt, String FBSNormal)
+        public String updateFBS(String cucId, String FBSAbNormal, String FBSCnt, String FBSNormal, String checkup, String test)
         {
             String sql = "", chk = "";
 
@@ -479,7 +546,8 @@ namespace CheckUP.objdb
             sql = "Update " + cuc.table + " Set " + cuc.FBSAbNormal + "=" + FBSAbNormal + ", " +
                 cuc.FBSCnt + "=" + FBSCnt + ", " +
                 cuc.FBSNormal + "=" + FBSNormal + " " +
-
+                "," + cuc.fbs_checkup + "='" + checkup + "' " +
+                "," + cuc.fbs_test + "='" + test + "' " +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
@@ -494,7 +562,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateCBC(String cucId, String CBCAbNormal, String CBCSCnt, String CBCNormal)
+        public String updateCBC(String cucId, String CBCAbNormal, String CBCSCnt, String CBCNormal, String checkup, String test)
         {
             String sql = "", chk = "";
 
@@ -504,7 +572,8 @@ namespace CheckUP.objdb
             sql = "Update " + cuc.table + " Set " + cuc.CBCAbNormal + "=" + CBCAbNormal + ", " +
                 cuc.CBCCnt + "=" + CBCSCnt + ", " +
                 cuc.CBCNormal + "=" + CBCNormal + " " +
-
+                "," + cuc.cbc_checkup + "='" + checkup + "' " +
+                "," + cuc.cbc_test + "='" + test + "' " +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
@@ -519,7 +588,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateUA(String cucId, String UAAbNormal, String UACnt, String UANormal)
+        public String updateUA(String cucId, String UAAbNormal, String UACnt, String UANormal, String checkup, String test)
         {
             String sql = "", chk = "";
 
@@ -529,7 +598,8 @@ namespace CheckUP.objdb
             sql = "Update " + cuc.table + " Set " + cuc.UAAbNormal + "=" + UAAbNormal + ", " +
                 cuc.UACnt + "=" + UACnt + ", " +
                 cuc.UANormal + "=" + UANormal + " " +
-
+                "," + cuc.ua_checkup + "='" + checkup + "' " +
+                "," + cuc.ua_test + "='" + test + "' " +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
@@ -544,7 +614,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateTri(String cucId, String TriAbNormal, String TriCnt, String TriNormal)
+        public String updateTri(String cucId, String TriAbNormal, String TriCnt, String TriNormal, String checkup, String test)
         {
             String sql = "", chk = "";
 
@@ -554,7 +624,8 @@ namespace CheckUP.objdb
             sql = "Update " + cuc.table + " Set " + cuc.TriAbNormal + "=" + TriAbNormal + ", " +
                 cuc.TriCnt + "=" + TriCnt + ", " +
                 cuc.TriNormal + "=" + TriNormal + " " +
-
+                "," + cuc.tri_checkup + "='" + checkup + "' " +
+                "," + cuc.tri_test + "='" + test + "' " +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
@@ -569,7 +640,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateCho(String cucId, String ChoAbNormal, String ChoCnt, String ChoNormal)
+        public String updateCho(String cucId, String ChoAbNormal, String ChoCnt, String ChoNormal, String checkup, String test)
         {
             String sql = "", chk = "";
 
@@ -579,7 +650,8 @@ namespace CheckUP.objdb
             sql = "Update " + cuc.table + " Set " + cuc.ChoAbNormal + "=" + ChoAbNormal + ", " +
                 cuc.ChoCnt + "=" + ChoCnt + ", " +
                 cuc.ChoNormal + "=" + ChoNormal + " " +
-
+                "," + cuc.cho_checkup + "='" + checkup + "' " +
+                "," + cuc.cho_test + "='" + test + "' " +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
@@ -594,7 +666,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateSgot(String cucId, String SgotAbNormal, String SgotCnt, String SgotNormal)
+        public String updateSgot(String cucId, String SgotAbNormal, String SgotCnt, String SgotNormal, String checkup, String test)
         {
             String sql = "", chk = "";
 
@@ -604,7 +676,8 @@ namespace CheckUP.objdb
             sql = "Update " + cuc.table + " Set " + cuc.SgotAbNormal + "=" + SgotAbNormal + ", " +
                 cuc.SgotCnt + "=" + SgotCnt + ", " +
                 cuc.SgotNormal + "=" + SgotNormal + " " +
-
+                "," + cuc.sgot_checkup + "='" + checkup + "' " +
+                "," + cuc.sgot_test + "='" + test + "' " +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
@@ -619,7 +692,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateBun(String cucId, String BunAbNormal, String BunCnt, String BunNormal)
+        public String updateBun(String cucId, String BunAbNormal, String BunCnt, String BunNormal, String checkup, String test)
         {
             String sql = "", chk = "";
 
@@ -629,7 +702,8 @@ namespace CheckUP.objdb
             sql = "Update " + cuc.table + " Set " + cuc.BunAbNormal + "=" + BunAbNormal + ", " +
                 cuc.BunCnt + "=" + BunCnt + ", " +
                 cuc.BunNormal + "=" + BunNormal + " " +
-
+                "," + cuc.bun_checkup + "='" + checkup + "' " +
+                "," + cuc.bun_test + "='" + test + "' " +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
@@ -644,7 +718,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateUric(String cucId, String UricAbNormal, String UricCnt, String UricNormal)
+        public String updateUric(String cucId, String UricAbNormal, String UricCnt, String UricNormal, String checkup, String test)
         {
             String sql = "", chk = "";
 
@@ -654,7 +728,8 @@ namespace CheckUP.objdb
             sql = "Update " + cuc.table + " Set " + cuc.UricAbNormal + "=" + UricAbNormal + ", " +
                 cuc.UricCnt + "=" + UricCnt + ", " +
                 cuc.UricNormal + "=" + UricNormal + " " +
-
+                "," + cuc.uric_checkup + "='" + checkup + "' " +
+                "," + cuc.uric_test + "='" + test + "' " +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
@@ -669,7 +744,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateOther1(String cucId, String Other1AbNormal, String Other1Cnt, String Other1Normal)
+        public String updateOther1(String cucId, String Other1AbNormal, String Other1Cnt, String Other1Normal, String checkup, String test)
         {
             String sql = "", chk = "";
 
@@ -679,7 +754,8 @@ namespace CheckUP.objdb
             sql = "Update " + cuc.table + " Set " + cuc.Other1AbNormal + "=" + Other1AbNormal + ", " +
                 cuc.Other1Cnt + "=" + Other1Cnt + ", " +
                 cuc.Other1Normal + "=" + Other1Normal + " " +
-
+                "," + cuc.other1_checkup + "='" + checkup + "' " +
+                "," + cuc.other1_test + "='" + test + "' " +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
@@ -694,7 +770,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateLung(String cucId, String LungAbNormal, String LungCnt, String LungNormal)
+        public String updateLung(String cucId, String LungAbNormal, String LungCnt, String LungNormal, String checkup, String test)
         {
             String sql = "", chk = "";
 
@@ -704,7 +780,8 @@ namespace CheckUP.objdb
             sql = "Update " + cuc.table + " Set " + cuc.LungAbNormal + "=" + LungAbNormal + ", " +
                 cuc.LungCnt + "=" + LungCnt + ", " +
                 cuc.LungNormal + "=" + LungNormal + " " +
-
+                "," + cuc.lung_checkup + "='" + checkup + "' " +
+                "," + cuc.lung_test + "='" + test + "' " +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
@@ -719,7 +796,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateAudio(String cucId, String AudioAbNormal, String AudioCnt, String AudioNormal)
+        public String updateAudio(String cucId, String AudioAbNormal, String AudioCnt, String AudioNormal, String checkup, String test)
         {
             String sql = "", chk = "";
 
@@ -729,7 +806,8 @@ namespace CheckUP.objdb
             sql = "Update " + cuc.table + " Set " + cuc.AudioAbNormal + "=" + AudioAbNormal + ", " +
                 cuc.AudioCnt + "=" + AudioCnt + ", " +
                 cuc.AudioNormal + "=" + AudioNormal + " " +
-
+                "," + cuc.audio_checkup + "='" + checkup + "' " +
+                "," + cuc.audio_test + "='" + test + "' " +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
@@ -744,7 +822,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateEye(String cucId, String EyeAbNormal, String EyeCnt, String EyeNormal)
+        public String updateEye(String cucId, String EyeAbNormal, String EyeCnt, String EyeNormal, String checkup, String test)
         {
             String sql = "", chk = "";
 
@@ -754,7 +832,60 @@ namespace CheckUP.objdb
             sql = "Update " + cuc.table + " Set " + cuc.EyeAbNormal + "=" + EyeAbNormal + ", " +
                 cuc.EyeCnt + "=" + EyeCnt + ", " +
                 cuc.EyeNormal + "=" + EyeNormal + " " +
+                "," + cuc.eye_checkup + "='" + checkup + "' " +
+                "," + cuc.eye_test + "='" + test + "' " +
+                "Where " + cuc.pkField + "='" + cucId + "'";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateEye");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateToxi(String cucId, String ToxiAbNormal, String ToxiCnt, String ToxiNormal, String checkup, String test)
+        {
+            String sql = "", chk = "";
 
+            //p.Description = p.Description.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+
+            sql = "Update " + cuc.table + " Set " + cuc.ToxiAbNormal + "=" + ToxiAbNormal + ", " +
+                cuc.ToxiCnt + "=" + ToxiCnt + ", " +
+                cuc.ToxiNormal + "=" + ToxiNormal + " " +
+                "," + cuc.toxi_checkup + "='" + checkup + "' " +
+                "," + cuc.toxi_test + "='" + test + "' " +
+                "Where " + cuc.pkField + "='" + cucId + "'";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updateEye");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
+        public String updateStoolExam(String cucId, String StoolExamAbNormal, String StoolExamCnt, String StoolExamNormal, String checkup, String test)
+        {
+            String sql = "", chk = "";
+
+            //p.Description = p.Description.Replace("'", "''");
+            //p.Remark = p.Remark.Replace("'", "''");
+
+            sql = "Update " + cuc.table + " Set " + cuc.StoolExamAbNormal + "=" + StoolExamAbNormal + ", " +
+                cuc.StoolExamCnt + "=" + StoolExamCnt + ", " +
+                cuc.StoolExamNormal + "=" + StoolExamNormal + " " +
+                "," + cuc.stoolexam_checkup + "='" + checkup + "' " +
+                "," + cuc.stoolexam_test + "='" + test + "' " +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
