@@ -138,7 +138,7 @@ namespace CheckUP.object1
         public String cbcBact="", cbcBactRemark = "", cbcBactLabName = "", cbcBactLabNormal = "";
         public String cbcPlateletCount="", cbcPlateletCountRemark = "", cbcPlateletCountLabName = "", cbcPlateletCountLabNormal = "";
         public String cbcRbcMorpholog="", cbcRbcMorphologRemark = "", cbcRbcMorphologLabName = "", cbcRbcMorphologLabNormal = "";
-        public String cbcSummary="";
+        public String cbcSummary="", cbcResult="";
         public String cbcMch = "", cbcMchRemark = "", cbcMchLabName = "", cbcMchLabNormal = "";
         public String cbcMchc = "", cbcMchcRemark = "", cbcMchcLabName = "", cbcMchcLabNormal = "";
         public String cbcPlateletSmear = "", cbcPlateletSmearRemark = "", cbcPlateletSmearLabName = "", cbcPlateletSmearLabNormal = "";

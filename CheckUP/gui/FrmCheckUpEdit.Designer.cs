@@ -31,6 +31,9 @@
             this.tC = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkVitalSignAbNormal = new System.Windows.Forms.RadioButton();
+            this.chkVitalSignNormal = new System.Windows.Forms.RadioButton();
             this.txtPEAge = new System.Windows.Forms.TextBox();
             this.btnSavePE = new System.Windows.Forms.Button();
             this.txtPESummary = new System.Windows.Forms.TextBox();
@@ -495,11 +498,11 @@
             this.chkOther = new System.Windows.Forms.RadioButton();
             this.chkFemale = new System.Windows.Forms.RadioButton();
             this.chkMale = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.chkVitalSignNormal = new System.Windows.Forms.RadioButton();
-            this.chkVitalSignAbNormal = new System.Windows.Forms.RadioButton();
+            this.txtCBCResult = new System.Windows.Forms.TextBox();
+            this.label66 = new System.Windows.Forms.Label();
             this.tC.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
@@ -516,7 +519,6 @@
             this.tabPage16.SuspendLayout();
             this.tabPage17.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tC
@@ -581,6 +583,38 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.chkVitalSignAbNormal);
+            this.groupBox2.Controls.Add(this.chkVitalSignNormal);
+            this.groupBox2.Location = new System.Drawing.Point(422, 187);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(405, 50);
+            this.groupBox2.TabIndex = 62;
+            this.groupBox2.TabStop = false;
+            // 
+            // chkVitalSignAbNormal
+            // 
+            this.chkVitalSignAbNormal.AutoSize = true;
+            this.chkVitalSignAbNormal.Location = new System.Drawing.Point(158, 20);
+            this.chkVitalSignAbNormal.Name = "chkVitalSignAbNormal";
+            this.chkVitalSignAbNormal.Size = new System.Drawing.Size(60, 17);
+            this.chkVitalSignAbNormal.TabIndex = 1;
+            this.chkVitalSignAbNormal.TabStop = true;
+            this.chkVitalSignAbNormal.Text = "ผิดปกติ";
+            this.chkVitalSignAbNormal.UseVisualStyleBackColor = true;
+            // 
+            // chkVitalSignNormal
+            // 
+            this.chkVitalSignNormal.AutoSize = true;
+            this.chkVitalSignNormal.Location = new System.Drawing.Point(19, 20);
+            this.chkVitalSignNormal.Name = "chkVitalSignNormal";
+            this.chkVitalSignNormal.Size = new System.Drawing.Size(46, 17);
+            this.chkVitalSignNormal.TabIndex = 0;
+            this.chkVitalSignNormal.TabStop = true;
+            this.chkVitalSignNormal.Text = "ปกติ";
+            this.chkVitalSignNormal.UseVisualStyleBackColor = true;
             // 
             // txtPEAge
             // 
@@ -807,6 +841,8 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.txtCBCResult);
+            this.tabPage5.Controls.Add(this.label66);
             this.tabPage5.Controls.Add(this.txtCBCBaso);
             this.tabPage5.Controls.Add(this.label45);
             this.tabPage5.Controls.Add(this.txtCBCPmnNormal);
@@ -1244,7 +1280,7 @@
             // txtCBCSummary
             // 
             this.txtCBCSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCBCSummary.Location = new System.Drawing.Point(148, 380);
+            this.txtCBCSummary.Location = new System.Drawing.Point(148, 407);
             this.txtCBCSummary.Name = "txtCBCSummary";
             this.txtCBCSummary.Size = new System.Drawing.Size(953, 22);
             this.txtCBCSummary.TabIndex = 90;
@@ -1253,7 +1289,7 @@
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label50.Location = new System.Drawing.Point(36, 380);
+            this.label50.Location = new System.Drawing.Point(36, 407);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(92, 16);
             this.label50.TabIndex = 89;
@@ -5364,37 +5400,23 @@
             this.chkMale.Text = "ชาย";
             this.chkMale.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // txtCBCResult
             // 
-            this.groupBox2.Controls.Add(this.chkVitalSignAbNormal);
-            this.groupBox2.Controls.Add(this.chkVitalSignNormal);
-            this.groupBox2.Location = new System.Drawing.Point(422, 187);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(405, 50);
-            this.groupBox2.TabIndex = 62;
-            this.groupBox2.TabStop = false;
+            this.txtCBCResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCBCResult.Location = new System.Drawing.Point(148, 379);
+            this.txtCBCResult.Name = "txtCBCResult";
+            this.txtCBCResult.Size = new System.Drawing.Size(953, 22);
+            this.txtCBCResult.TabIndex = 130;
             // 
-            // chkVitalSignNormal
+            // label66
             // 
-            this.chkVitalSignNormal.AutoSize = true;
-            this.chkVitalSignNormal.Location = new System.Drawing.Point(19, 20);
-            this.chkVitalSignNormal.Name = "chkVitalSignNormal";
-            this.chkVitalSignNormal.Size = new System.Drawing.Size(46, 17);
-            this.chkVitalSignNormal.TabIndex = 0;
-            this.chkVitalSignNormal.TabStop = true;
-            this.chkVitalSignNormal.Text = "ปกติ";
-            this.chkVitalSignNormal.UseVisualStyleBackColor = true;
-            // 
-            // chkVitalSignAbNormal
-            // 
-            this.chkVitalSignAbNormal.AutoSize = true;
-            this.chkVitalSignAbNormal.Location = new System.Drawing.Point(158, 20);
-            this.chkVitalSignAbNormal.Name = "chkVitalSignAbNormal";
-            this.chkVitalSignAbNormal.Size = new System.Drawing.Size(60, 17);
-            this.chkVitalSignAbNormal.TabIndex = 1;
-            this.chkVitalSignAbNormal.TabStop = true;
-            this.chkVitalSignAbNormal.Text = "ผิดปกติ";
-            this.chkVitalSignAbNormal.UseVisualStyleBackColor = true;
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label66.Location = new System.Drawing.Point(36, 379);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(72, 16);
+            this.label66.TabIndex = 129;
+            this.label66.Text = "ผลการตรวจ  :";
             // 
             // FrmCheckUpEdit
             // 
@@ -5419,6 +5441,8 @@
             this.tC.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
@@ -5451,8 +5475,6 @@
             this.tabPage17.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5930,5 +5952,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton chkVitalSignAbNormal;
         private System.Windows.Forms.RadioButton chkVitalSignNormal;
+        private System.Windows.Forms.TextBox txtCBCResult;
+        private System.Windows.Forms.Label label66;
     }
 }
