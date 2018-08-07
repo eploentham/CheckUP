@@ -175,6 +175,7 @@ namespace CheckUP.gui
             btnExcelCBC.Click += BtnExcelPE_Click;
             btnExcelUA.Click += BtnExcelPE_Click;
             btnExcelTri.Click += BtnExcelPE_Click;
+            btnExcelSum.Click += BtnExcelPE_Click;
 
             if (flagNew)
             {
@@ -248,11 +249,15 @@ namespace CheckUP.gui
             //throw new NotImplementedException();
             if (sender.Equals(btnExcelPE))
             {
-
+                cc.excelPE(txtId.Text);
             }
             else if (sender.Equals(btnExcelXray))
             {
 
+            }
+            else if (sender.Equals(btnExcelSum))
+            {
+                cc.excelSum(txtId.Text);
             }
         }
 

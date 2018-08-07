@@ -296,7 +296,7 @@ namespace CheckUP.objdb
             ei.CA199 = "ca_19_9";
             ei.CA199Result = "ca_19_9_result";
             ei.CA199Summary = "ca_19_9_summary";
-
+            ei.patient_number = "patient_number";
 
             ei.pkField = "id";
             ei.table = "b_excel_init";
@@ -581,7 +581,7 @@ namespace CheckUP.objdb
 
             item.ToxiRow = NumberNull10(dt.Rows[0][ei.ToxiRow].ToString());
             item.ToxiNo = NumberNull10(dt.Rows[0][ei.ToxiNo].ToString());
-
+            item.patient_number = dt.Rows[0][ei.patient_number].ToString();
             item.Active = dt.Rows[0][ei.Active].ToString();
 
             //foreach (PropertyInfo item1 in item.get)
@@ -812,7 +812,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateSfA(String SfAAge, String SfAPrefix, String SfAFirstName, String SfALastName, String SfANo, String SfRow, String department)
+        public String updateSfA(String SfAAge, String SfAPrefix, String SfAFirstName, String SfALastName, String SfANo, String SfRow, String department, String patient_number)
         {
             String sql = "", chk = "";
 
@@ -832,7 +832,8 @@ namespace CheckUP.objdb
                 //ei.SfCAge + "='" + SfCAge + "', " +
                 //ei.SfCFullName + "='" + SfCFullName + "', " +
                 //ei.SfCNo + "='" + SfCNo + "', " +
-                ei.SfRow + "='" + SfRow + "', " +
+                ei.SfRow + "='" + SfRow + "' " +
+                "," + ei.patient_number + "='" + patient_number + "', " +
                 ei.SfStatusName + "='A' ";
 
                 //"Where " + ei.pkField + "='" + id + "'";
@@ -849,7 +850,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateSfB(String SfBAge, String SfBPrefix, String SfBFullName, String SfBNo, String SfRow, String department)
+        public String updateSfB(String SfBAge, String SfBPrefix, String SfBFullName, String SfBNo, String SfRow, String department, String patient_number)
         {
             String sql = "", chk = "";
             
@@ -858,7 +859,8 @@ namespace CheckUP.objdb
                 ei.SfBNo + "='" + SfBNo + "', " +
                 ei.SfBPrefix + "='" + SfBPrefix + "', " +
                 ei.SfRow + "='" + SfRow + "', " +
-                ei.DepartmentName + "='" + department + "', " +
+                ei.DepartmentName + "='" + department + "' " +
+                "," + ei.patient_number + "='" + patient_number + "', " +
                 ei.SfStatusName + "='B' ";
 
             //"Where " + ei.pkField + "='" + id + "'";
@@ -875,7 +877,7 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String updateSfC(String SfCAge, String SfCAllName, String SfCNo, String SfRow, String department)
+        public String updateSfC(String SfCAge, String SfCAllName, String SfCNo, String SfRow, String department, String patient_number)
         {
             String sql = "", chk = "";
             
@@ -883,7 +885,8 @@ namespace CheckUP.objdb
                 ei.SfCFullName + "='" + SfCAllName + "', " +
                 ei.SfCNo + "='" + SfCNo + "', " +
                 ei.DepartmentName + "='" + department + "', " +
-                ei.SfRow + "='" + SfRow + "', " +
+                ei.SfRow + "='" + SfRow + "' " +
+                ","+ei.patient_number + "='" + patient_number + "', " +
                 ei.SfStatusName + "='C' ";
 
             //"Where " + ei.pkField + "='" + id + "'";

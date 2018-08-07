@@ -2305,7 +2305,7 @@ namespace CheckUP.gui
 
         private void btnSfExcel_Click(object sender, EventArgs e)
         {
-            String prefix = "", No="", FirstName="", LastName="", Age="", FullName="", AllName="", StatusSf="",department="";
+            String prefix = "", No="", FirstName="", LastName="", Age="", FullName="", AllName="", StatusSf="",department="", patientNumber="";
             if ((!chkA.Checked) &&(!chkB.Checked)&&(!chkC.Checked))
             {
                 MessageBox.Show("เลือกประเภทคำนำหน้าชื่อ ", "เลือกข้อมูล");
@@ -2337,6 +2337,14 @@ namespace CheckUP.gui
             else
             {
                 department = "";
+            }
+            if (xlRange.Cells[nmDRow.Value, nmDPatientNumber.Value].Value2 != null)
+            {
+                patientNumber = xlRange.Cells[nmDRow.Value, nmDPatientNumber.Value].Value2.ToString();
+            }
+            else
+            {
+                patientNumber = "";
             }
 
             if (chkA.Checked)
@@ -2386,10 +2394,10 @@ namespace CheckUP.gui
                     Age = "";
                 }
                 LastName = LastName.Trim();
-                txtPrefixTest.Text = "ลำดับ " + No + " ชื่อ นามสกุล " + prefix + " " + FirstName + " " + LastName + " อายุ " + Age + " " + " แผนก " + department;
+                txtPrefixTest.Text = "ลำดับ " + No + " ชื่อ นามสกุล " + prefix + " " + FirstName + " " + LastName + " อายุ " + Age + " " + " แผนก " + department + " รหัสพนักงาน " + patientNumber;
                 Cursor.Current = cursor;
                 if (cc.eidb.updateSfA(nmDAAge.Value.ToString(), nmDAPrefix.Value.ToString(), nmDAFirstName.Value.ToString(), nmDALastName.Value.ToString(),
-                    nmDARow.Value.ToString(), nmDRow.Value.ToString(), nmDDepartment.Value.ToString()).Length >= 1)
+                    nmDARow.Value.ToString(), nmDRow.Value.ToString(), nmDDepartment.Value.ToString(), nmDPatientNumber.Value.ToString()).Length >= 1)
                 {
                     ei = cc.eidb.selectByPk();
                     MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
@@ -2444,7 +2452,7 @@ namespace CheckUP.gui
                 LastName = LastName.Trim();
                 txtPrefixTest.Text = "ลำดับ " + No + " ชื่อ นามสกุล " + prefix + " " + FullName + " อายุ " + Age + " " + " แผนก " + department;
                 Cursor.Current = cursor;
-                if (cc.eidb.updateSfB(nmDBAge.Value.ToString(), nmDBPrefix.Value.ToString(), nmDBFullName.Value.ToString(), nmDBRow.Value.ToString(), nmDRow.Value.ToString(), nmDDepartment.Value.ToString()).Length >= 1)
+                if (cc.eidb.updateSfB(nmDBAge.Value.ToString(), nmDBPrefix.Value.ToString(), nmDBFullName.Value.ToString(), nmDBRow.Value.ToString(), nmDRow.Value.ToString(), nmDDepartment.Value.ToString(), nmDPatientNumber.Value.ToString()).Length >= 1)
                 {
                     ei = cc.eidb.selectByPk();
                     MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
@@ -2483,7 +2491,7 @@ namespace CheckUP.gui
                 txtPrefixTest.Text = "ลำดับ " + No + " ชื่อ นามสกุล " + AllName + " อายุ " + Age + " " + " แผนก " + department;
 
                 Cursor.Current = cursor;
-                if (cc.eidb.updateSfC(nmDCAge.Value.ToString(), nmDCPrefix.Value.ToString(), nmDCRow.Value.ToString(), nmDRow.Value.ToString(), nmDDepartment.Value.ToString()).Length >= 1)
+                if (cc.eidb.updateSfC(nmDCAge.Value.ToString(), nmDCPrefix.Value.ToString(), nmDCRow.Value.ToString(), nmDRow.Value.ToString(), nmDDepartment.Value.ToString(), nmDPatientNumber.Value.ToString()).Length >= 1)
                 {
                     ei = cc.eidb.selectByPk();
                     MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");

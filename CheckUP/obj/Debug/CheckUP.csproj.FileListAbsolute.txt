@@ -151,7 +151,3 @@ D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csproj.CopyComplete
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.exe
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.pdb
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csprojAssemblyReference.cache
-D:\source\bangna\CheckUP\CheckUP\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
-D:\source\bangna\CheckUP\CheckUP\bin\Debug\CrystalDecisions.ReportSource.dll
-D:\source\bangna\CheckUP\CheckUP\bin\Debug\CrystalDecisions.Shared.dll
-D:\source\bangna\CheckUP\CheckUP\bin\Debug\CrystalDecisions.Windows.Forms.dll

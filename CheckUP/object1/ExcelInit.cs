@@ -9,7 +9,7 @@ namespace CheckUP.object1
     {
         public String Id = "", DepartmentName="";
         public String SfRow = "", SfStatusName = "", SfANo = "", SfAPrefix = "", SfAFirstName = "", SfALastName = "", SfAAge = "", SfBNo = "", SfBPrefix = "", SfBFullName = "", SfBAge = "";
-        public String SfCNo = "", SfCFullName = "", SfCAge = "", Active="";
+        public String SfCNo = "", SfCFullName = "", SfCAge = "", Active="", patient_number="";
         
         public String PERow = "", PENo="", PEAge="", PEWeight="", PEHeight="", PEBMI="", PEVitalSign="", PEPulse="", PEResult="", PESummary="", PEBloodGroup="", PESheetname="";
 

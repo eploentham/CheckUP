@@ -15,6 +15,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Management;
 using System.Data;
+using System.Reflection;
+using System.Drawing;
 
 namespace CheckUP.Control
 {
@@ -190,6 +192,9 @@ namespace CheckUP.Control
             initC.quoLine6 = iniFile.Read("quotationline6");
 
             initC.HideCostQuotation = iniFile.Read("hidecostquotation");
+            initC.reportSumNameCBC = iniFile.Read("reportSumNameCBC");
+            initC.reportSumNameFBS = iniFile.Read("reportSumNameFBS");
+            initC.reportSumNamePE = iniFile.Read("reportSumNamePE");
             //initC.Password = regE.getPassword();
         }
         public Boolean fileExit(String path)
@@ -578,6 +583,415 @@ namespace CheckUP.Control
 
             // Return UTF16 bytes as UTF16 string
             return Encoding.Unicode.GetString(utf16Bytes);
+        }
+        public void excelSum(String cucId)
+        {
+            CustCheckUp cuc = new CustCheckUp();
+            cuc = cucdb.selectByPk(cucId);
+            DataTable dt = new DataTable();
+
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
+            Microsoft.Office.Interop.Excel.Application xlApp = null;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = null;
+            
+            try
+            {
+                int pageCnt = 1, pagemod=0, pageRow=18;
+
+                dt = ccpdb.selectAllByCucId(cucId);
+                pageCnt = dt.Rows.Count / pageRow;
+                pagemod = dt.Rows.Count % pageRow;
+                if (pagemod > 0)
+                {
+                    pageCnt++;
+                }
+
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlWorkbook = (xlApp.Workbooks.Add(Missing.Value));
+                Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.ActiveSheet;
+                
+                xlWorksheet.Name = "summary";
+                
+                //xlWorksheet.Cells.Font.Size = 15;
+                xlWorksheet.Cells.HorizontalAlignment = HorizontalAlignment.Center;
+
+                Microsoft.Office.Interop.Excel.Range range;
+                Microsoft.Office.Interop.Excel.Range rg;
+                range = xlWorksheet.Range[xlWorksheet.Cells[1, 1], xlWorksheet.Cells[1, 8]];
+                //range = xlWorksheet.get_Range("A1", "H1");
+                range.Cells[1, 1] = "ตารางรายงานสรุปจำนวนผู้ที่มีผลการตรวจเป็นปกติ และผิดปกติ ประจำปี "+cuc.YearId;
+                range.Merge();
+                range.HorizontalAlignment = HorizontalAlignment.Center;
+                range.Font.Size = 20;
+                range.Font.Name = "Angsana New";
+
+                //Microsoft.Office.Interop.Excel.Range range1;
+                //range = xlWorksheet.Range[xlWorksheet.Cells[2, 1], xlWorksheet.Cells[2, 8]];
+                range = xlWorksheet.get_Range("A2", "H2");
+                range.Cells[1, 1] = " " + cuc.CustNameT;
+                range.Merge();
+                range.HorizontalAlignment = HorizontalAlignment.Center;
+                range.Font.Size = 20;
+                range.Font.Name = "Angsana New";
+
+                range = xlWorksheet.Range[xlWorksheet.Cells[3, 1], xlWorksheet.Cells[3, 8]];
+                range.Cells[1, 1] = " วันที่  " + cuc.CheckUpDate;
+                //range.Value2 = " วันที่  " + cuc.CheckUpDate;
+                range.Merge();
+                range.HorizontalAlignment = HorizontalAlignment.Center;                
+                range.Font.Size = 20;
+                range.Font.Name = "Angsana New";
+
+                //xlWorksheet.Cells[1, 1] = "Student Report Card";
+                //xlWorksheet.Cells[1, 2] = "รายการตรวจสุขภาพ " ;
+                //xlWorksheet.Cells[1, 3] = "จำนวนผู้รับการตรวจ ";
+                //range.HorizontalAlignment = HorizontalAlignment.Center;
+                
+
+                int row = 4;
+                for(int i = 1; i <= pageCnt; i++)
+                {
+                    //row = 5 + pageCnt;
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row, 1];
+                    rg.ColumnWidth = 10;
+                    rg.Value2 = "ลำดับ";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row, 2];
+                    rg.ColumnWidth = 40;
+                    rg.Value2 = "รายการตรวจสุขภาพ";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row, 3];
+                    rg.ColumnWidth = 20;
+                    rg.Value2 = "จำนวนผู้รับการตรวจ";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row+1, 3];
+                    rg.ColumnWidth = 20;
+                    rg.Value2 = "(คน)";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row, 4];
+                    rg.ColumnWidth = 20;
+                    rg.Value2 = "จำนวนผู้รับการตรวจ";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row+1, 4];
+                    rg.ColumnWidth = 20;
+                    rg.Value2 = "(%)";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row, 5];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "จำนวนผู้ที่ผมีผลการตรวจปกติ";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row+1, 5];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "(คน)";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row, 6];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "จำนวนผู้ที่ผมีผลการตรวจปกติ";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row+1, 6];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "(%)";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row, 7];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "จำนวนผู้ที่ผมีผลการตรวจผิดปกติ";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row+1, 7];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "(คน)";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row, 8];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "จำนวนผู้ที่ผมีผลการตรวจผิดปกติ";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row+1, 8];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "(%)";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+
+                    //range.Merge();
+                    range = xlWorksheet.Range[xlWorksheet.Cells[row, 1], xlWorksheet.Cells[row+1, 8]];
+                    range.Font.Size = 14;
+                    range.Font.Name = "Angsana New";
+                    range.BorderAround(Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous, Microsoft.Office.Interop.Excel.XlBorderWeight.xlThin);
+
+
+                    Microsoft.Office.Interop.Excel.Range rgPage;
+                    rgPage = xlWorksheet.Range[xlWorksheet.Cells[row+2, 1], xlWorksheet.Cells[row + pageRow, 8]];
+                    rgPage.BorderAround(Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous, Microsoft.Office.Interop.Excel.XlBorderWeight.xlThin);
+                    rgPage.Font.Size = 14;
+                    rgPage.Font.Name = "Angsana New";
+                    for(int j = 1; j < pageRow; j++)
+                    {
+                        xlWorksheet.Cells[row + j+1, 1] = j;
+                    }
+
+                    //Microsoft.Office.Interop.Excel.Range rgPage1;
+                    //rgPage1 = xlWorksheet.Range[xlWorksheet.Cells[row+1, 1], xlWorksheet.Cells[row + 22+1, 8]];
+                    //rgPage1.Font.Size = 14;
+                    //rgPage1.Font.Name = "Angsana New";
+
+                    row += (pageRow+2);
+                }
+                //int.TryParse(dt.Rows.Count)
+
+                //range. = "Student Report Card";
+
+
+                //xlWorksheet.Cells[1, 1] = "Testing";
+
+                //Microsoft.Office.Interop.Excel.Range range = xlWorksheet.get_Range(xlWorksheet.Cells[1, 1], xlWorksheet.Cells[1, 2]);
+
+                //range.Merge(true);
+
+                //range.Interior.ColorIndex = 36;
+
+                xlApp.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error excelSum " + ex.InnerException, "message " + ex.Message);
+            }
+            finally
+            {
+                //if (xlWorkbook != null)
+                //    xlWorkbook.Close();
+                //if (xlApp != null)
+                //    xlApp.Quit();
+                //System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
+            }
+            Cursor.Current = cursor;
+        }
+        public void excelPE(String cucId)
+        {
+            CustCheckUp cuc = new CustCheckUp();
+            cuc = cucdb.selectByPk(cucId);
+            DataTable dt = new DataTable();
+
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
+            Microsoft.Office.Interop.Excel.Application xlApp = null;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = null;
+
+            try
+            {
+                int pageCnt = 1, pagemod = 0, pageRow = 18;
+
+                dt = ccpdb.selectAllByCucId(cucId);
+                pageCnt = dt.Rows.Count / pageRow;
+                pagemod = dt.Rows.Count % pageRow;
+                if (pagemod > 0)
+                {
+                    pageCnt++;
+                }
+
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlWorkbook = (xlApp.Workbooks.Add(Missing.Value));
+                Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.ActiveSheet;
+
+                xlWorksheet.Name = "pe";
+
+                //xlWorksheet.Cells.Font.Size = 15;
+                //xlWorksheet.Cells.HorizontalAlignment = HorizontalAlignment.Center;                
+
+                //xlWorksheet.Cells[1, 1] = "Student Report Card";
+                //xlWorksheet.Cells[1, 2] = "รายการตรวจสุขภาพ " ;
+                //xlWorksheet.Cells[1, 3] = "จำนวนผู้รับการตรวจ ";
+                //range.HorizontalAlignment = HorizontalAlignment.Center;
+
+                int row = 1,k=0, colCnt=11;
+                for (int i = 1; i <= pageCnt; i++)
+                {
+                    Microsoft.Office.Interop.Excel.Range range;
+                    Microsoft.Office.Interop.Excel.Range rg;
+                    range = xlWorksheet.Range[xlWorksheet.Cells[row, 1], xlWorksheet.Cells[row, colCnt]];
+                    //range = xlWorksheet.get_Range("A1", "H1");
+                    range.Cells[1, 1] = initC.reportSumNamePE+" ประจำปี " + cuc.YearId;
+                    range.Merge();
+                    range.HorizontalAlignment = HorizontalAlignment.Center;
+                    range.Font.Size = 20;
+                    range.Font.Name = "Angsana New";
+
+                    //Microsoft.Office.Interop.Excel.Range range1;
+                    //range = xlWorksheet.Range[xlWorksheet.Cells[2, 1], xlWorksheet.Cells[2, 8]];
+                    range = xlWorksheet.Range[xlWorksheet.Cells[row + 1, 1], xlWorksheet.Cells[row + 1, colCnt]];
+                    range.Cells[1, 1] = " " + cuc.CustNameT;
+                    range.Merge();
+                    range.HorizontalAlignment = HorizontalAlignment.Center;
+                    range.Font.Size = 20;
+                    range.Font.Name = "Angsana New";
+
+                    range = xlWorksheet.Range[xlWorksheet.Cells[row+2, 1], xlWorksheet.Cells[row+2, colCnt]];
+                    range.Cells[1, 1] = "วันที่ตรวจ " + cuc.CheckUpDate+" แผ่นที่  "+i+" จำนวนผู้เข้าตรวจทั้งหมด "+cuc.pe_checkup +" มาตรวจ "+cuc.pe_test + " ปกติ "+cuc.PENormal +" ผิดปกติ "+cuc.PEAbNormal;
+                    //range.Value2 = " วันที่  " + cuc.CheckUpDate;
+                    range.Merge();
+                    range.HorizontalAlignment = HorizontalAlignment.Center;
+                    range.Font.Size = 20;
+                    range.Font.Name = "Angsana New";
+
+                    //row = 5 + pageCnt;
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row+3, 1];
+                    rg.ColumnWidth = 10;
+                    rg.Value2 = "ลำดับ";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row + 3, 2];
+                    rg.ColumnWidth = 40;
+                    rg.Value2 = "รหัส";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row + 3, 3];
+                    rg.ColumnWidth = 20;
+                    rg.Value2 = "ชื่อ-นามสกุล";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row + 4, 3];
+                    rg.ColumnWidth = 20;
+                    rg.Value2 = "";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row + 3, 4];
+                    rg.ColumnWidth = 20;
+                    rg.Value2 = "หมู่โลหิต";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row + 4, 4];
+                    rg.ColumnWidth = 20;
+                    rg.Value2 = "";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row + 3, 5];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "อายุ";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row + 4, 5];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row + 3, 6];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row + 4, 6];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "น้ำหนัก";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row + 3, 7];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row + 4, 7];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "ส่วนสูง";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row + 3, 8];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row + 4, 8];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "BMI";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row + 3, 9];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row + 4, 9];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "ความดันโลหิต";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row + 3, 10];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row + 4, 10];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "ชีพจร";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row + 3, 11];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+                    rg = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[row + 4, 11];
+                    rg.ColumnWidth = 23;
+                    rg.Value2 = "สรุปผลการตรวจ";
+                    rg.HorizontalAlignment = HorizontalAlignment.Center;
+
+                    //range.Merge();
+                    range = xlWorksheet.Range[xlWorksheet.Cells[row + 3, 1], xlWorksheet.Cells[row + 4, colCnt]];
+                    range.Font.Size = 14;
+                    range.Font.Name = "Angsana New";
+                    range.BorderAround(Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous, Microsoft.Office.Interop.Excel.XlBorderWeight.xlThin);
+
+
+                    Microsoft.Office.Interop.Excel.Range rgPage;
+                    rgPage = xlWorksheet.Range[xlWorksheet.Cells[row + 5, 1], xlWorksheet.Cells[row + pageRow+3, colCnt]];
+                    rgPage.BorderAround(Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous, Microsoft.Office.Interop.Excel.XlBorderWeight.xlThin);
+                    rgPage.Font.Size = 14;
+                    rgPage.Font.Name = "Angsana New";
+                    for (int j = 1; j < pageRow; j++)
+                    {
+                        xlWorksheet.Cells[row + j + 1+3, 1] = (k+1);
+                        xlWorksheet.Cells[row + j + 1 + 3, 2] = dt.Rows[k][ccpdb.ccp.patientNumber].ToString();
+                        xlWorksheet.Cells[row + j + 1 + 3, 3] = dt.Rows[k][ccpdb.ccp.patientFullname].ToString();
+                        xlWorksheet.Cells[row + j + 1 + 3, 4] = dt.Rows[k][ccpdb.ccp.BloodGroup].ToString();
+                        xlWorksheet.Cells[row + j + 1 + 3, 5] = dt.Rows[k][ccpdb.ccp.patientAge].ToString();
+                        xlWorksheet.Cells[row + j + 1 + 3, 6] = dt.Rows[k][ccpdb.ccp.patientWeight].ToString();
+                        xlWorksheet.Cells[row + j + 1 + 3, 7] = dt.Rows[k][ccpdb.ccp.patientHeight].ToString();
+                        xlWorksheet.Cells[row + j + 1 + 3, 8] = dt.Rows[k][ccpdb.ccp.bmi].ToString();
+                        xlWorksheet.Cells[row + j + 1 + 3, 9] = dt.Rows[k][ccpdb.ccp.vitalsign].ToString();
+                        xlWorksheet.Cells[row + j + 1 + 3, 10] = dt.Rows[k][ccpdb.ccp.patientPulse].ToString();
+                        xlWorksheet.Cells[row + j + 1 + 3, 11] = dt.Rows[k][ccpdb.ccp.summaryPhysicalExam].ToString();
+                        k++;
+                    }
+
+                    //Microsoft.Office.Interop.Excel.Range rgPage1;
+                    //rgPage1 = xlWorksheet.Range[xlWorksheet.Cells[row+1, 1], xlWorksheet.Cells[row + 22+1, 8]];
+                    //rgPage1.Font.Size = 14;
+                    //rgPage1.Font.Name = "Angsana New";
+
+                    row = row + (pageRow + 5);
+                }
+                //int.TryParse(dt.Rows.Count)
+
+                //range. = "Student Report Card";
+
+
+                //xlWorksheet.Cells[1, 1] = "Testing";
+
+                //Microsoft.Office.Interop.Excel.Range range = xlWorksheet.get_Range(xlWorksheet.Cells[1, 1], xlWorksheet.Cells[1, 2]);
+
+                //range.Merge(true);
+
+                //range.Interior.ColorIndex = 36;
+
+                xlApp.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error excelSum " + ex.InnerException, "message " + ex.Message);
+            }
+            finally
+            {
+                //if (xlWorkbook != null)
+                //    xlWorkbook.Close();
+                //if (xlApp != null)
+                //    xlApp.Quit();
+                //System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
+            }
+            Cursor.Current = cursor;
         }
     }
 }

@@ -108,6 +108,9 @@
             this.lbXRay = new System.Windows.Forms.Label();
             this.nmDXRayRow = new System.Windows.Forms.NumericUpDown();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label227 = new System.Windows.Forms.Label();
+            this.nmDCBCResult = new System.Windows.Forms.NumericUpDown();
             this.label219 = new System.Windows.Forms.Label();
             this.nmDCBCMCHC = new System.Windows.Forms.NumericUpDown();
             this.label220 = new System.Windows.Forms.Label();
@@ -589,9 +592,8 @@
             this.nmDStoolExamNo = new System.Windows.Forms.NumericUpDown();
             this.label163 = new System.Windows.Forms.Label();
             this.nmDStoolExamRow = new System.Windows.Forms.NumericUpDown();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label227 = new System.Windows.Forms.Label();
-            this.nmDCBCResult = new System.Windows.Forms.NumericUpDown();
+            this.label228 = new System.Windows.Forms.Label();
+            this.nmDPatientNumber = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDARow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDAPrefix)).BeginInit();
@@ -626,6 +628,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDXRayNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDXRayRow)).BeginInit();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCHC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCV)).BeginInit();
@@ -844,7 +847,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCResult)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDPatientNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // nmDRow
@@ -1261,6 +1264,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label228);
+            this.tabPage1.Controls.Add(this.nmDPatientNumber);
             this.tabPage1.Controls.Add(this.label152);
             this.tabPage1.Controls.Add(this.nmDDepartment);
             this.tabPage1.Controls.Add(this.label14);
@@ -1976,6 +1981,41 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(932, 127);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(46, 20);
+            this.textBox9.TabIndex = 92;
+            this.textBox9.Text = "ปกติ";
+            // 
+            // label227
+            // 
+            this.label227.AutoSize = true;
+            this.label227.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label227.Location = new System.Drawing.Point(936, 61);
+            this.label227.Name = "label227";
+            this.label227.Size = new System.Drawing.Size(30, 16);
+            this.label227.TabIndex = 90;
+            this.label227.Text = "ผล  :";
+            // 
+            // nmDCBCResult
+            // 
+            this.nmDCBCResult.Location = new System.Drawing.Point(932, 89);
+            this.nmDCBCResult.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDCBCResult.Name = "nmDCBCResult";
+            this.nmDCBCResult.Size = new System.Drawing.Size(46, 20);
+            this.nmDCBCResult.TabIndex = 91;
+            this.nmDCBCResult.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // label219
             // 
@@ -8528,36 +8568,28 @@
             0,
             0});
             // 
-            // textBox9
+            // label228
             // 
-            this.textBox9.Location = new System.Drawing.Point(932, 127);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(46, 20);
-            this.textBox9.TabIndex = 92;
-            this.textBox9.Text = "ปกติ";
+            this.label228.AutoSize = true;
+            this.label228.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label228.Location = new System.Drawing.Point(466, 28);
+            this.label228.Name = "label228";
+            this.label228.Size = new System.Drawing.Size(68, 16);
+            this.label228.TabIndex = 64;
+            this.label228.Text = "รหัสพนักงาน";
             // 
-            // label227
+            // nmDPatientNumber
             // 
-            this.label227.AutoSize = true;
-            this.label227.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label227.Location = new System.Drawing.Point(936, 61);
-            this.label227.Name = "label227";
-            this.label227.Size = new System.Drawing.Size(30, 16);
-            this.label227.TabIndex = 90;
-            this.label227.Text = "ผล  :";
-            // 
-            // nmDCBCResult
-            // 
-            this.nmDCBCResult.Location = new System.Drawing.Point(932, 89);
-            this.nmDCBCResult.Minimum = new decimal(new int[] {
+            this.nmDPatientNumber.Location = new System.Drawing.Point(540, 28);
+            this.nmDPatientNumber.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nmDCBCResult.Name = "nmDCBCResult";
-            this.nmDCBCResult.Size = new System.Drawing.Size(46, 20);
-            this.nmDCBCResult.TabIndex = 91;
-            this.nmDCBCResult.Value = new decimal(new int[] {
+            this.nmDPatientNumber.Name = "nmDPatientNumber";
+            this.nmDPatientNumber.Size = new System.Drawing.Size(46, 20);
+            this.nmDPatientNumber.TabIndex = 65;
+            this.nmDPatientNumber.Value = new decimal(new int[] {
             5,
             0,
             0,
@@ -8611,6 +8643,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDXRayRow)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCResult)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCHC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDCBCMCV)).EndInit();
@@ -8844,7 +8877,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDCBCResult)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDPatientNumber)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -9415,5 +9448,7 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label227;
         private System.Windows.Forms.NumericUpDown nmDCBCResult;
+        private System.Windows.Forms.Label label228;
+        private System.Windows.Forms.NumericUpDown nmDPatientNumber;
     }
 }
