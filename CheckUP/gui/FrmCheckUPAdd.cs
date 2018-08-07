@@ -259,6 +259,10 @@ namespace CheckUP.gui
             {
                 cc.excelSum(txtId.Text);
             }
+            else if (sender.Equals(btnExcelFBS))
+            {
+                cc.excelFBS(txtId.Text, chkCalResult.Checked);
+            }
         }
 
         private void BtnPeSave_Click(object sender, EventArgs e)

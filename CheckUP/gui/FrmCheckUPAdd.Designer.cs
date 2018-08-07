@@ -266,6 +266,7 @@
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnExcelSum = new System.Windows.Forms.Button();
             this.btnExcelStoolExam = new System.Windows.Forms.Button();
             this.btnExcelEye = new System.Windows.Forms.Button();
             this.btnExcelToxi = new System.Windows.Forms.Button();
@@ -352,7 +353,7 @@
             this.txtCntSuccess = new System.Windows.Forms.TextBox();
             this.label123 = new System.Windows.Forms.Label();
             this.btnExcel1 = new System.Windows.Forms.Button();
-            this.btnExcelSum = new System.Windows.Forms.Button();
+            this.chkCalResult = new System.Windows.Forms.CheckBox();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -2827,6 +2828,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chkCalResult);
             this.groupBox2.Controls.Add(this.btnExcelSum);
             this.groupBox2.Controls.Add(this.btnExcelStoolExam);
             this.groupBox2.Controls.Add(this.btnExcelEye);
@@ -2850,10 +2852,20 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "พิมพ์เล่มใหญ่ Excel";
             // 
+            // btnExcelSum
+            // 
+            this.btnExcelSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnExcelSum.Location = new System.Drawing.Point(164, 320);
+            this.btnExcelSum.Name = "btnExcelSum";
+            this.btnExcelSum.Size = new System.Drawing.Size(152, 34);
+            this.btnExcelSum.TabIndex = 94;
+            this.btnExcelSum.Text = " พิมพ์เล่มใหญ่ Summary";
+            this.btnExcelSum.UseVisualStyleBackColor = true;
+            // 
             // btnExcelStoolExam
             // 
             this.btnExcelStoolExam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExcelStoolExam.Location = new System.Drawing.Point(166, 259);
+            this.btnExcelStoolExam.Location = new System.Drawing.Point(164, 280);
             this.btnExcelStoolExam.Name = "btnExcelStoolExam";
             this.btnExcelStoolExam.Size = new System.Drawing.Size(152, 34);
             this.btnExcelStoolExam.TabIndex = 93;
@@ -2863,7 +2875,7 @@
             // btnExcelEye
             // 
             this.btnExcelEye.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExcelEye.Location = new System.Drawing.Point(166, 179);
+            this.btnExcelEye.Location = new System.Drawing.Point(164, 200);
             this.btnExcelEye.Name = "btnExcelEye";
             this.btnExcelEye.Size = new System.Drawing.Size(152, 34);
             this.btnExcelEye.TabIndex = 91;
@@ -2873,7 +2885,7 @@
             // btnExcelToxi
             // 
             this.btnExcelToxi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExcelToxi.Location = new System.Drawing.Point(166, 219);
+            this.btnExcelToxi.Location = new System.Drawing.Point(164, 240);
             this.btnExcelToxi.Name = "btnExcelToxi";
             this.btnExcelToxi.Size = new System.Drawing.Size(152, 34);
             this.btnExcelToxi.TabIndex = 90;
@@ -2883,7 +2895,7 @@
             // btnExcelOther1
             // 
             this.btnExcelOther1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExcelOther1.Location = new System.Drawing.Point(166, 99);
+            this.btnExcelOther1.Location = new System.Drawing.Point(164, 120);
             this.btnExcelOther1.Name = "btnExcelOther1";
             this.btnExcelOther1.Size = new System.Drawing.Size(152, 34);
             this.btnExcelOther1.TabIndex = 89;
@@ -2893,7 +2905,7 @@
             // btnExcelLung
             // 
             this.btnExcelLung.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExcelLung.Location = new System.Drawing.Point(166, 139);
+            this.btnExcelLung.Location = new System.Drawing.Point(164, 160);
             this.btnExcelLung.Name = "btnExcelLung";
             this.btnExcelLung.Size = new System.Drawing.Size(152, 34);
             this.btnExcelLung.TabIndex = 88;
@@ -2903,7 +2915,7 @@
             // btnExcelBun
             // 
             this.btnExcelBun.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExcelBun.Location = new System.Drawing.Point(166, 19);
+            this.btnExcelBun.Location = new System.Drawing.Point(164, 40);
             this.btnExcelBun.Name = "btnExcelBun";
             this.btnExcelBun.Size = new System.Drawing.Size(152, 34);
             this.btnExcelBun.TabIndex = 87;
@@ -2913,7 +2925,7 @@
             // btnExcelUric
             // 
             this.btnExcelUric.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExcelUric.Location = new System.Drawing.Point(166, 59);
+            this.btnExcelUric.Location = new System.Drawing.Point(164, 80);
             this.btnExcelUric.Name = "btnExcelUric";
             this.btnExcelUric.Size = new System.Drawing.Size(152, 34);
             this.btnExcelUric.TabIndex = 86;
@@ -2923,7 +2935,7 @@
             // btnExcelCho
             // 
             this.btnExcelCho.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExcelCho.Location = new System.Drawing.Point(8, 259);
+            this.btnExcelCho.Location = new System.Drawing.Point(6, 280);
             this.btnExcelCho.Name = "btnExcelCho";
             this.btnExcelCho.Size = new System.Drawing.Size(152, 34);
             this.btnExcelCho.TabIndex = 85;
@@ -2933,7 +2945,7 @@
             // btnExcelSgot
             // 
             this.btnExcelSgot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExcelSgot.Location = new System.Drawing.Point(8, 299);
+            this.btnExcelSgot.Location = new System.Drawing.Point(6, 320);
             this.btnExcelSgot.Name = "btnExcelSgot";
             this.btnExcelSgot.Size = new System.Drawing.Size(152, 34);
             this.btnExcelSgot.TabIndex = 84;
@@ -2943,7 +2955,7 @@
             // btnExcelUA
             // 
             this.btnExcelUA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExcelUA.Location = new System.Drawing.Point(8, 179);
+            this.btnExcelUA.Location = new System.Drawing.Point(6, 200);
             this.btnExcelUA.Name = "btnExcelUA";
             this.btnExcelUA.Size = new System.Drawing.Size(152, 34);
             this.btnExcelUA.TabIndex = 83;
@@ -2953,7 +2965,7 @@
             // btnExcelTri
             // 
             this.btnExcelTri.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExcelTri.Location = new System.Drawing.Point(8, 219);
+            this.btnExcelTri.Location = new System.Drawing.Point(6, 240);
             this.btnExcelTri.Name = "btnExcelTri";
             this.btnExcelTri.Size = new System.Drawing.Size(152, 34);
             this.btnExcelTri.TabIndex = 82;
@@ -2963,7 +2975,7 @@
             // btnExcelFBS
             // 
             this.btnExcelFBS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExcelFBS.Location = new System.Drawing.Point(8, 99);
+            this.btnExcelFBS.Location = new System.Drawing.Point(6, 120);
             this.btnExcelFBS.Name = "btnExcelFBS";
             this.btnExcelFBS.Size = new System.Drawing.Size(152, 34);
             this.btnExcelFBS.TabIndex = 81;
@@ -2973,7 +2985,7 @@
             // btnExcelCBC
             // 
             this.btnExcelCBC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExcelCBC.Location = new System.Drawing.Point(8, 139);
+            this.btnExcelCBC.Location = new System.Drawing.Point(6, 160);
             this.btnExcelCBC.Name = "btnExcelCBC";
             this.btnExcelCBC.Size = new System.Drawing.Size(152, 34);
             this.btnExcelCBC.TabIndex = 80;
@@ -2983,7 +2995,7 @@
             // btnExcelPE
             // 
             this.btnExcelPE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExcelPE.Location = new System.Drawing.Point(8, 19);
+            this.btnExcelPE.Location = new System.Drawing.Point(6, 40);
             this.btnExcelPE.Name = "btnExcelPE";
             this.btnExcelPE.Size = new System.Drawing.Size(152, 34);
             this.btnExcelPE.TabIndex = 79;
@@ -2993,7 +3005,7 @@
             // btnExcelXray
             // 
             this.btnExcelXray.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExcelXray.Location = new System.Drawing.Point(8, 59);
+            this.btnExcelXray.Location = new System.Drawing.Point(6, 80);
             this.btnExcelXray.Name = "btnExcelXray";
             this.btnExcelXray.Size = new System.Drawing.Size(152, 34);
             this.btnExcelXray.TabIndex = 78;
@@ -3775,15 +3787,17 @@
             this.btnExcel1.UseVisualStyleBackColor = true;
             this.btnExcel1.Click += new System.EventHandler(this.btnExcel1_Click);
             // 
-            // btnExcelSum
+            // chkCalResult
             // 
-            this.btnExcelSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnExcelSum.Location = new System.Drawing.Point(166, 299);
-            this.btnExcelSum.Name = "btnExcelSum";
-            this.btnExcelSum.Size = new System.Drawing.Size(152, 34);
-            this.btnExcelSum.TabIndex = 94;
-            this.btnExcelSum.Text = " พิมพ์เล่มใหญ่ Summary";
-            this.btnExcelSum.UseVisualStyleBackColor = true;
+            this.chkCalResult.AutoSize = true;
+            this.chkCalResult.Checked = true;
+            this.chkCalResult.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkCalResult.Location = new System.Drawing.Point(16, 17);
+            this.chkCalResult.Name = "chkCalResult";
+            this.chkCalResult.Size = new System.Drawing.Size(119, 17);
+            this.chkCalResult.TabIndex = 95;
+            this.chkCalResult.Text = "ให้โปรแกรมแปรผล";
+            this.chkCalResult.UseVisualStyleBackColor = true;
             // 
             // FrmCheckUPAdd
             // 
@@ -3828,6 +3842,7 @@
             this.tabPage12.ResumeLayout(false);
             this.tabPage12.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDPrintFirst)).EndInit();
@@ -4197,5 +4212,6 @@
         private System.Windows.Forms.Button btnExcelStoolExam;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnExcelSum;
+        private System.Windows.Forms.CheckBox chkCalResult;
     }
 }
