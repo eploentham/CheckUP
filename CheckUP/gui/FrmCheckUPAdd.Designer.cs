@@ -266,6 +266,7 @@
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkCalResult = new System.Windows.Forms.CheckBox();
             this.btnExcelSum = new System.Windows.Forms.Button();
             this.btnExcelStoolExam = new System.Windows.Forms.Button();
             this.btnExcelEye = new System.Windows.Forms.Button();
@@ -353,7 +354,6 @@
             this.txtCntSuccess = new System.Windows.Forms.TextBox();
             this.label123 = new System.Windows.Forms.Label();
             this.btnExcel1 = new System.Windows.Forms.Button();
-            this.chkCalResult = new System.Windows.Forms.CheckBox();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -2845,12 +2845,24 @@
             this.groupBox2.Controls.Add(this.btnExcelCBC);
             this.groupBox2.Controls.Add(this.btnExcelPE);
             this.groupBox2.Controls.Add(this.btnExcelXray);
-            this.groupBox2.Location = new System.Drawing.Point(525, 119);
+            this.groupBox2.Location = new System.Drawing.Point(525, 99);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(393, 373);
+            this.groupBox2.Size = new System.Drawing.Size(347, 373);
             this.groupBox2.TabIndex = 84;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "พิมพ์เล่มใหญ่ Excel";
+            // 
+            // chkCalResult
+            // 
+            this.chkCalResult.AutoSize = true;
+            this.chkCalResult.Checked = true;
+            this.chkCalResult.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkCalResult.Location = new System.Drawing.Point(16, 17);
+            this.chkCalResult.Name = "chkCalResult";
+            this.chkCalResult.Size = new System.Drawing.Size(119, 17);
+            this.chkCalResult.TabIndex = 95;
+            this.chkCalResult.Text = "ให้โปรแกรมแปรผล";
+            this.chkCalResult.UseVisualStyleBackColor = true;
             // 
             // btnExcelSum
             // 
@@ -3786,18 +3798,6 @@
             this.btnExcel1.Text = "...";
             this.btnExcel1.UseVisualStyleBackColor = true;
             this.btnExcel1.Click += new System.EventHandler(this.btnExcel1_Click);
-            // 
-            // chkCalResult
-            // 
-            this.chkCalResult.AutoSize = true;
-            this.chkCalResult.Checked = true;
-            this.chkCalResult.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkCalResult.Location = new System.Drawing.Point(16, 17);
-            this.chkCalResult.Name = "chkCalResult";
-            this.chkCalResult.Size = new System.Drawing.Size(119, 17);
-            this.chkCalResult.TabIndex = 95;
-            this.chkCalResult.Text = "ให้โปรแกรมแปรผล";
-            this.chkCalResult.UseVisualStyleBackColor = true;
             // 
             // FrmCheckUPAdd
             // 

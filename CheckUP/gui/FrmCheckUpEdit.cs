@@ -272,6 +272,7 @@ namespace CheckUP.gui
                 chkMale.Checked = true;
                 chkFemale.Checked = false;
             }
+            txtPatientNumber.Text = dtccp.Rows[0][cc.ccpdb.ccp.patientNumber] != null ? dtccp.Rows[0][cc.ccpdb.ccp.patientNumber].ToString() : "";
         }
         private void setTabShow(String tab)
         {
@@ -377,7 +378,7 @@ namespace CheckUP.gui
         private void btnSavePE_Click(object sender, EventArgs e)
         {
             String chk = cc.ccpdb.UpdatePE(txtRowNumber.Text, cuc.Id, txtPEAge.Text, txtPEVitalSign.Text, txtPEHeight.Text, txtPEWeight.Text, 
-                txtPEBMI.Text, txtPEPulse.Text, txtPEResult.Text, txtPESummary.Text);
+                txtPEBMI.Text, txtPEPulse.Text, txtPEResult.Text, txtPESummary.Text, txtPatientNumber.Text);
             if (chk.Equals("1"))
             {
                 String chk1 = "";

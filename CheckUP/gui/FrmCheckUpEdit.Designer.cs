@@ -58,6 +58,8 @@
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.txtCBCResult = new System.Windows.Forms.TextBox();
+            this.label66 = new System.Windows.Forms.Label();
             this.txtCBCBaso = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
             this.txtCBCPmnNormal = new System.Windows.Forms.TextBox();
@@ -498,8 +500,8 @@
             this.chkOther = new System.Windows.Forms.RadioButton();
             this.chkFemale = new System.Windows.Forms.RadioButton();
             this.chkMale = new System.Windows.Forms.RadioButton();
-            this.txtCBCResult = new System.Windows.Forms.TextBox();
-            this.label66 = new System.Windows.Forms.Label();
+            this.txtPatientNumber = new System.Windows.Forms.TextBox();
+            this.label87 = new System.Windows.Forms.Label();
             this.tC.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -903,6 +905,24 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // txtCBCResult
+            // 
+            this.txtCBCResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtCBCResult.Location = new System.Drawing.Point(148, 379);
+            this.txtCBCResult.Name = "txtCBCResult";
+            this.txtCBCResult.Size = new System.Drawing.Size(953, 22);
+            this.txtCBCResult.TabIndex = 130;
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label66.Location = new System.Drawing.Point(36, 379);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(72, 16);
+            this.label66.TabIndex = 129;
+            this.label66.Text = "ผลการตรวจ  :";
             // 
             // txtCBCBaso
             // 
@@ -5350,7 +5370,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(466, 57);
+            this.label8.Location = new System.Drawing.Point(455, 57);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(31, 13);
             this.label8.TabIndex = 66;
@@ -5400,29 +5420,29 @@
             this.chkMale.Text = "ชาย";
             this.chkMale.UseVisualStyleBackColor = true;
             // 
-            // txtCBCResult
+            // txtPatientNumber
             // 
-            this.txtCBCResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtCBCResult.Location = new System.Drawing.Point(148, 379);
-            this.txtCBCResult.Name = "txtCBCResult";
-            this.txtCBCResult.Size = new System.Drawing.Size(953, 22);
-            this.txtCBCResult.TabIndex = 130;
+            this.txtPatientNumber.Location = new System.Drawing.Point(540, 28);
+            this.txtPatientNumber.Name = "txtPatientNumber";
+            this.txtPatientNumber.Size = new System.Drawing.Size(59, 20);
+            this.txtPatientNumber.TabIndex = 70;
             // 
-            // label66
+            // label87
             // 
-            this.label66.AutoSize = true;
-            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label66.Location = new System.Drawing.Point(36, 379);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(72, 16);
-            this.label66.TabIndex = 129;
-            this.label66.Text = "ผลการตรวจ  :";
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(455, 31);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(73, 13);
+            this.label87.TabIndex = 69;
+            this.label87.Text = "รหัสพนักงาน :";
             // 
             // FrmCheckUpEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1222, 595);
+            this.Controls.Add(this.txtPatientNumber);
+            this.Controls.Add(this.label87);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtAge);
             this.Controls.Add(this.label8);
@@ -5954,5 +5974,7 @@
         private System.Windows.Forms.RadioButton chkVitalSignNormal;
         private System.Windows.Forms.TextBox txtCBCResult;
         private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.TextBox txtPatientNumber;
+        private System.Windows.Forms.Label label87;
     }
 }

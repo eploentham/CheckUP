@@ -960,7 +960,7 @@ namespace CheckUP.objdb
 
             return chk;
         }
-        public String UpdatePE(String rowNumber, String cucId, String vitalSign, String height, String weight, String bmi, String pulse, String result, String summary, String bloodgroup)
+        public String UpdatePE(String rowNumber, String cucId, String vitalSign, String height, String weight, String bmi, String pulse, String result, String summary, String bloodgroup, String patientnumber)
         {
             String chk = "", sql = "";
             try
@@ -973,6 +973,7 @@ namespace CheckUP.objdb
                 ccp.BloodGroup + "='" + bloodgroup + "', " +
                 ccp.PeResult + "='" + result.Replace("'", "''") + "', " +
                 ccp.summaryPhysicalExam + "='" + summary.Replace("'", "''") + "' " +
+                ","+ccp.patientNumber + "='" + patientnumber.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             }
@@ -984,7 +985,7 @@ namespace CheckUP.objdb
 
             return chk;
         }
-        public String UpdatePE(String rowNumber, String cucId, String age, String vitalSign, String height, String weight, String bmi, String pulse, String result, String summary, String bloodgroup)
+        public String UpdatePE(String rowNumber, String cucId, String age, String vitalSign, String height, String weight, String bmi, String pulse, String result, String summary, String bloodgroup, String patientnumber)
         {
             String chk = "", sql="";
             try
@@ -998,6 +999,7 @@ namespace CheckUP.objdb
                 ccp.BloodGroup + "='" + bloodgroup + "' " +
                 ","+ccp.PeResult + "='" + result.Replace("'", "''") + "' " +
                 "," + ccp.summaryPhysicalExam + "='" + summary.Replace("'", "''") + "' " +
+                "," + ccp.patientNumber + "='" + patientnumber.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             } catch (Exception ex) {

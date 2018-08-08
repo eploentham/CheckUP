@@ -176,6 +176,9 @@ namespace CheckUP.gui
             btnExcelUA.Click += BtnExcelPE_Click;
             btnExcelTri.Click += BtnExcelPE_Click;
             btnExcelSum.Click += BtnExcelPE_Click;
+            btnExcelCho.Click += BtnExcelPE_Click;
+            btnExcelSgot.Click += BtnExcelPE_Click;
+            btnExcelBun.Click += BtnExcelPE_Click;
 
             if (flagNew)
             {
@@ -263,8 +266,36 @@ namespace CheckUP.gui
             {
                 cc.excelFBS(txtId.Text, chkCalResult.Checked);
             }
+            else if (sender.Equals(btnExcelCBC))
+            {
+                cc.excelCBC(txtId.Text, chkCalResult.Checked);
+            }
+            else if (sender.Equals(btnExcelUA))
+            {
+                cc.excelUA(txtId.Text, chkCalResult.Checked);
+            }
+            else if (sender.Equals(btnExcelUric))
+            {
+                cc.excelUric(txtId.Text, chkCalResult.Checked);
+            }
+            else if (sender.Equals(btnExcelTri))
+            {
+                cc.excelTri(txtId.Text, chkCalResult.Checked);
+            }
+            else if (sender.Equals(btnExcelCho))
+            {
+                cc.excelCho(txtId.Text, chkCalResult.Checked);
+            }
+            else if (sender.Equals(btnExcelSgot))
+            {
+                cc.excelSgot(txtId.Text, chkCalResult.Checked);
+            }
+            else if (sender.Equals(btnExcelBun))
+            {
+                cc.excelBUN(txtId.Text, chkCalResult.Checked);
+            }
         }
-
+        
         private void BtnPeSave_Click(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
@@ -3111,7 +3142,7 @@ namespace CheckUP.gui
 
         private void btnPEImport_Click(object sender, EventArgs e)
         {
-            String rowNumber = "", chk="",vitalSign="", height="", weight="", bmi="", pulse="", result="", summary="", bloodgroup="", age="";
+            String rowNumber = "", chk="",vitalSign="", height="", weight="", bmi="", pulse="", result="", summary="", bloodgroup="", age="", patientNumber="";
             if (!cc.fileExit(fileNamePE))
             {
                 MessageBox.Show("ไม่พบ file Excel","");
@@ -3218,15 +3249,23 @@ namespace CheckUP.gui
                 {
                     age = "";
                 }
+                if (xlRange.Cells[i, int.Parse(ei.patient_number)].Value2 != null)
+                {
+                    patientNumber = xlRange.Cells[i, int.Parse(ei.patient_number)].Value2.ToString();
+                }
+                else
+                {
+                    patientNumber = "";
+                }
 
                 if (bmi.Trim().Equals("-") || bmi.Trim().Equals(""))
                 {
                     //chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, vitalSign, height, weight, bmi, pulse, result, summary, bloodgroup);
-                    chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, age, vitalSign, height, weight, bmi, pulse, result, summary, bloodgroup);
+                    chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, age, vitalSign, height, weight, bmi, pulse, result, summary, bloodgroup, patientNumber);
                 }
                 else
                 {
-                    chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, age, vitalSign.Trim(), height.Trim(), weight.Trim(), string.Format("{0:f2}", Double.Parse(cc.cf.NumberNull1(bmi))), pulse.Trim(), result.Trim(), summary.Trim(), bloodgroup.Trim());
+                    chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, age, vitalSign.Trim(), height.Trim(), weight.Trim(), string.Format("{0:f2}", Double.Parse(cc.cf.NumberNull1(bmi))), pulse.Trim(), result.Trim(), summary.Trim(), bloodgroup.Trim(), patientNumber);
                 }
 
                 
