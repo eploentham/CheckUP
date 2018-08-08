@@ -597,6 +597,7 @@ namespace CheckUP.objdb
             ccp.ToxiZincLabName = "toxi_zinc_lab_name";
             ccp.ToxiZincLabNormal = "toxi_zinc_lab_normal";
             ccp.ToxiZincRemark = "toxi_zinc_remark";
+            
 
             ccp.pkField = "patient_id";
             ccp.table = "t_cust_checkup_patient";
@@ -628,6 +629,26 @@ namespace CheckUP.objdb
             String sql = "";
             DataTable dt = new DataTable();
             sql = "Select * From " + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "' Order By " + ccp.rowNumber;
+            //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectAllStatusVisit1ByCucId(String cucId)
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From " + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "' and " + ccp.statusVisit + "='1' Order By " + ccp.rowNumber;
+            //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectAllStatusVisit0ByCucId(String cucId)
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From " + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "' and "+ccp.statusVisit+"='0' Order By " + ccp.rowNumber;
             //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
             dt = conn.selectData(sql);
 
@@ -696,7 +717,20 @@ namespace CheckUP.objdb
                 //p.xrayChestExam = p.xrayChestExam.Replace("'", "''"));
                 //p.xrayChestExam = p.xrayChestExam.Replace("'", "''"));
 
-                    //max = getMaxRowMarketingTCheckupPatient(st);
+                //max = getMaxRowMarketingTCheckupPatient(st);
+                p.statusAmphetamine = "0";
+                p.statusAntiHiv = "0";
+                p.statusCbc = "0";
+                p.statusCholes = "0";
+                p.statusFbs = "0";
+                p.StatusHbsag = "0";
+                p.statusPe = "0";
+                p.statusName = "0";
+                p.statusStool = "0";
+                p.statusUa = "0";
+                p.statusUricAcid = "0";
+                p.statusVisit = "0";
+                p.statusXray = "0";
             sql = "Insert Into " + ccp.table+ "(" 
                 + ccp.Id + ", " + ccp.amphetamine + ", "
                 + ccp.antiHiv + "," + ccp.AudiogramExam + ","
@@ -925,6 +959,38 @@ namespace CheckUP.objdb
                 //max = ex.getMessage;
             }
 
+            return chk;
+        }
+        public String UpdateStatusVisit0(String ccpId)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.statusVisit + "='0' " +
+                "Where " + ccp.pkField + "='" + ccpId + "'  ";
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                lw.WriteLog("ccp.UpdatePE Error " + ex.Message);
+                //max = ex.getMessage;
+            }
+            return chk;
+        }
+        public String UpdateStatusVisit1(String ccpId)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.statusVisit + "='1' " +
+                "Where " + ccp.pkField + "='" + ccpId + "'  ";
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                lw.WriteLog("ccp.UpdatePE Error " + ex.Message);
+                //max = ex.getMessage;
+            }
             return chk;
         }
         public String UpdateName(String rowNumber, String cucId, String name, String age, String sex)

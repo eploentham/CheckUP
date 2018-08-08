@@ -16,7 +16,7 @@ namespace CheckUP.object1
         public String patientAge="";    
         public String departmentName="";    
         public String pid="";    
-        public String patientNumber="";    
+        public String patientNumber="";
         public String sectionName="";    
         public String vitalsign="";    
         public String patientHeight="";    
@@ -271,6 +271,8 @@ namespace CheckUP.object1
         public String albuminGlobulin="";
         public String directBillirubin="";
         public String colorBlindness="";
+        //public String status_visit = "", status_cbc = "", status_ua = "", status_fbs = "", status_pe = "", status_xray = "", status_stool = "", status_anti_hiv = "";
+        //public String status_uric_acid = "", status_amphetamine = "";
         public override String ToString()
         {
             return patientFullname;

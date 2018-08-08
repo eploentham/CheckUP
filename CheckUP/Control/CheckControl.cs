@@ -62,6 +62,8 @@ namespace CheckUP.Control
 
         public LogWriter lw;
         public DataTable dtccpvn;
+        public int grdViewFontSize = 0;
+
         public CheckControl()
         {
             initConfig();
@@ -192,6 +194,15 @@ namespace CheckUP.Control
             initC.quoLine6 = iniFile.Read("quotationline6");
 
             initC.HideCostQuotation = iniFile.Read("hidecostquotation");
+
+            initC.grdViewFontSize = iniFile.Read("grdViewFontSize");
+            initC.grdViewFontName = iniFile.Read("grdViewFontName");
+            initC.themeApplication = iniFile.Read("themeApplication");
+            initC.txtFocus = iniFile.Read("txtFocus");
+            initC.grfRowColor = iniFile.Read("grfRowColor");
+
+            initC.grdViewFontName = initC.grdViewFontName.Equals("") ? "Microsoft Sans Serif" : initC.grdViewFontName;
+            int.TryParse(initC.grdViewFontSize, out grdViewFontSize);
             //initC.reportSumNameCBC = iniFile.Read("reportSumNameCBC");
             //initC.reportSumNameFBS = iniFile.Read("reportSumNameFBS");
             //initC.reportSumNamePE = iniFile.Read("reportSumNamePE");
@@ -958,6 +969,7 @@ namespace CheckUP.Control
                     rgPage.Font.Name = "Angsana New";
                     for (int j = 1; j < pageRow; j++)
                     {
+                        if (k >= dt.Rows.Count) continue;
                         xlWorksheet.Cells[row + j + 1 + 4, 1] = (k+1);
                         xlWorksheet.Cells[row + j + 1 + 4, 2] = dt.Rows[k][ccpdb.ccp.patientNumber].ToString();
                         xlWorksheet.Cells[row + j + 1 + 4, 3] = dt.Rows[k][ccpdb.ccp.patientFullname].ToString();
@@ -1189,6 +1201,7 @@ namespace CheckUP.Control
                     rgPage.Font.Name = "Angsana New";
                     for (int j = 1; j < pageRow; j++)
                     {
+                        if (k >= dt.Rows.Count) continue;
                         xlWorksheet.Cells[row + j + 1 + 4, 1] = (k + 1);
                         xlWorksheet.Cells[row + j + 1 + 4, 2] = dt.Rows[k][ccpdb.ccp.patientNumber].ToString();
                         xlWorksheet.Cells[row + j + 1 + 4, 3] = dt.Rows[k][ccpdb.ccp.patientFullname].ToString();
@@ -1465,6 +1478,7 @@ namespace CheckUP.Control
                     rgPage.Font.Name = "Angsana New";
                     for (int j = 1; j < pageRow; j++)
                     {
+                        if (k >= dt.Rows.Count) continue;
                         xlWorksheet.Cells[row + j + 1 + 4, 1] = (k + 1);
                         xlWorksheet.Cells[row + j + 1 + 4, 2] = dt.Rows[k][ccpdb.ccp.patientNumber].ToString();
                         xlWorksheet.Cells[row + j + 1 + 4, 3] = dt.Rows[k][ccpdb.ccp.patientFullname].ToString();
@@ -1718,6 +1732,7 @@ namespace CheckUP.Control
                     rgPage.Font.Name = "Angsana New";
                     for (int j = 1; j < pageRow; j++)
                     {
+                        if (k >= dt.Rows.Count) continue;
                         xlWorksheet.Cells[row + j + 1 + 4, 1] = (k + 1);
                         xlWorksheet.Cells[row + j + 1 + 4, 2] = dt.Rows[k][ccpdb.ccp.patientNumber].ToString();
                         xlWorksheet.Cells[row + j + 1 + 4, 3] = dt.Rows[k][ccpdb.ccp.patientFullname].ToString();
@@ -1905,6 +1920,7 @@ namespace CheckUP.Control
                     rgPage.Font.Name = "Angsana New";
                     for (int j = 1; j < pageRow; j++)
                     {
+                        if (k >= dt.Rows.Count) continue;
                         xlWorksheet.Cells[row + j + 1 + 4, 1] = (k + 1);
                         xlWorksheet.Cells[row + j + 1 + 4, 2] = dt.Rows[k][ccpdb.ccp.patientNumber].ToString();
                         xlWorksheet.Cells[row + j + 1 + 4, 3] = dt.Rows[k][ccpdb.ccp.patientFullname].ToString();
@@ -2123,6 +2139,7 @@ namespace CheckUP.Control
                     rgPage.Font.Name = "Angsana New";
                     for (int j = 1; j < pageRow; j++)
                     {
+                        if (k >= dt.Rows.Count) continue;
                         xlWorksheet.Cells[row + j + 1 + 4, 1] = (k + 1);
                         xlWorksheet.Cells[row + j + 1 + 4, 2] = dt.Rows[k][ccpdb.ccp.patientNumber].ToString();
                         xlWorksheet.Cells[row + j + 1 + 4, 3] = dt.Rows[k][ccpdb.ccp.patientFullname].ToString();
@@ -2340,6 +2357,7 @@ namespace CheckUP.Control
                     rgPage.Font.Name = "Angsana New";
                     for (int j = 1; j < pageRow; j++)
                     {
+                        if (k >= dt.Rows.Count) continue;
                         xlWorksheet.Cells[row + j + 1 + 4, 1] = (k + 1);
                         xlWorksheet.Cells[row + j + 1 + 4, 2] = dt.Rows[k][ccpdb.ccp.patientNumber].ToString();
                         xlWorksheet.Cells[row + j + 1 + 4, 3] = dt.Rows[k][ccpdb.ccp.patientFullname].ToString();
@@ -2527,6 +2545,7 @@ namespace CheckUP.Control
                     rgPage.Font.Name = "Angsana New";
                     for (int j = 1; j < pageRow; j++)
                     {
+                        if (k >= dt.Rows.Count) continue;
                         xlWorksheet.Cells[row + j + 1 + 4, 1] = (k + 1);
                         xlWorksheet.Cells[row + j + 1 + 4, 2] = dt.Rows[k][ccpdb.ccp.patientNumber].ToString();
                         xlWorksheet.Cells[row + j + 1 + 4, 3] = dt.Rows[k][ccpdb.ccp.patientFullname].ToString();
@@ -2715,6 +2734,7 @@ namespace CheckUP.Control
                     rgPage.Font.Name = "Angsana New";
                     for (int j = 1; j < pageRow; j++)
                     {
+                        if (k >= dt.Rows.Count) continue;
                         xlWorksheet.Cells[row + j + 1 + 4, 1] = (k + 1);
                         xlWorksheet.Cells[row + j + 1 + 4, 2] = dt.Rows[k][ccpdb.ccp.patientNumber].ToString();
                         xlWorksheet.Cells[row + j + 1 + 4, 3] = dt.Rows[k][ccpdb.ccp.patientFullname].ToString();

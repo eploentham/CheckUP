@@ -1,4 +1,5 @@
-﻿using CheckUP.Control;
+﻿using C1.Win.C1FlexGrid;
+using CheckUP.Control;
 using CheckUP.object1;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,11 @@ namespace CheckUP.gui
     {
         CheckControl cc;
         CustCheckUp cuc;
+        Font fEdit, fEditB;
 
         int tabSum = 0, tabSum2=1, tabPrint=2, tabPE=3, tabXRay=4, tabCBC=5, tabFBS=6, tabUA=7,tabTri=8, tabCho=9, tabSgot=10, tabBun=11, tabUric=12, tabOther1=13, tabLung=14, tabAudio=15, tabEye=16, tabToxi=17, tabStoolExam=18;
-        int tabCnt = 20;
+        int tabCheckList = 19;
+        int tabCnt = 21;
 
         int colPERow = 0, colPEId = 1, colPEName = 2, colPESex=3, colPEAge = 4, colPEDepartment=5, colPEWeight = 6, colPEHeight = 7, colPEBMI = 8, colPEvitalsign = 9, colPEPulse = 10, colPEBloodGroup=11, colPEResult = 12, colPESummary = 13;
         int colPECnt = 14;
@@ -58,9 +61,7 @@ namespace CheckUP.gui
         int colCAAFP = 14, colCACEA = 15, colCAHCG = 16, colCAPSA = 17, colCA153 = 18, colCA125 = 19, colCA199 = 20;
 
         int colOther1Cnt = 21;
-
-        
-
+                
         int colLungRow = 0, colLungId = 1, colLungName = 2, colLungFvcPredic = 3, colLungFvcMeas = 4, colLungFvcPer = 5, colLungFev1Predic = 6, colLungFev1Meas = 7, colLungFev1Per = 8, colLungPerFev1 = 9, colLungSummary = 10;
 
         private void tabPage20_Click(object sender, EventArgs e)
@@ -86,6 +87,8 @@ namespace CheckUP.gui
         int colToxiHippuric = 12, colToxiMethyl = 13, colToxiAcetone = 14, colToxiNickel = 15, colToxiChromium = 16, colToxiPhenol = 17, colToxiKetone = 18, colToxiBenzene = 19, colToxiMandelic = 20, colToxiMethanol = 21;
         int colToxiEthanol = 22, colToxiIPA = 23, colToxiArsenic = 24, colToxiHexane = 25, colToxiFomaldehyde = 26, colToxiTrichloroethylene = 27, colToxiAntimony = 28, colToxiFluoride = 29;
         int colToxiCnt = 30;
+        int colVId = 1, colVvisitHn = 2, colVname = 3;
+        int colEId = 1, colEvisitHn = 2, colEname = 3;
 
         Font font = new Font("Microsoft Sans Serif", 12);
         Boolean flagNew=false;
@@ -97,6 +100,8 @@ namespace CheckUP.gui
         object misValue = System.Reflection.Missing.Value;
         ExcelInit ei;
         CustCheckUpPatientValueNormal ccpvn;
+        C1FlexGrid grfView, grfEmp, grfTest;
+        Color color;
         public FrmCheckUPAdd(String cucId,Boolean flagnew,CheckControl c)
         {
             InitializeComponent();
@@ -108,6 +113,10 @@ namespace CheckUP.gui
         {
             cuc = new CustCheckUp();
             ccpvn = new CustCheckUpPatientValueNormal();
+            fEdit = new Font(cc.initC.grdViewFontName, cc.grdViewFontSize, FontStyle.Regular);
+            fEditB = new Font(cc.initC.grdViewFontName, cc.grdViewFontSize, FontStyle.Bold);
+            color = ColorTranslator.FromHtml(cc.initC.grfRowColor);
+
             ccpvn = cc.ccpvndb.selectByPk1();
             cuc.Id = cucId;
             dtpCheckUpDate.Format = DateTimePickerFormat.Short;
@@ -130,7 +139,7 @@ namespace CheckUP.gui
             tC.TabPages[tabAudio].Text = "Audio";
             tC.TabPages[tabEye].Text = "Eye";
             tC.TabPages[tabToxi].Text = "Toxicology";
-            //tC.TabPages[tabChemU].Text = "Chem Uric";
+            tC.TabPages[tabCheckList].Text = "รายชื่อพนักงาน";
             tC.TabPages[tabStoolExam].Text = "Stool Exam";
 
             pB1.Visible = false;
@@ -236,6 +245,10 @@ namespace CheckUP.gui
             setGrdEye(cucId);
             setGrdStoolExam(cucId);
             setGrdToxi(cucId);
+            initGrfView();
+            setGrfView(cucId);
+            initGrfEmp();
+            setGrfEmp(cucId);
             Decimal chk = 0;
             if (Decimal.TryParse(ei.SfRow, out chk))
             {
@@ -246,7 +259,202 @@ namespace CheckUP.gui
                 MessageBox.Show("ลำดับ row ไม่ได้ set", "error");
             }
         }
-        
+        private void setGrfColor()
+        {
+            int i = 1;
+
+            grfEmp.BackColor = Color.White;
+            grfView.BackColor = Color.White;
+            foreach (Row row1 in grfEmp.Rows)
+            {
+                if (row1[colEId] == null) continue;
+                if (row1[colEId].ToString().Equals("")) continue;               
+                row1.StyleNew.BackColor = Color.White;
+            }
+            foreach (Row row1 in grfEmp.Rows)
+            {
+                if (row1[colEId] == null) continue;
+                if (row1[colEId].ToString().Equals("")) continue;
+                row1[0] = i;
+                if (i % 2 == 0)
+                    row1.StyleNew.BackColor = color;
+                i++;
+            }
+            i = 1;
+            foreach (Row row1 in grfView.Rows)
+            {
+                if (row1[colVId] == null) continue;
+                if (row1[colVId].ToString().Equals("")) continue;
+                row1.StyleNew.BackColor = Color.White;
+            }
+            foreach (Row row1 in grfView.Rows)
+            {
+                if (row1[colVId] == null) continue;
+                if (row1[colVId].ToString().Equals("")) continue;
+                row1[0] = i;
+                if (i % 2 == 0)
+                    row1.StyleNew.BackColor = color;
+                i++;
+            }
+        }
+        private void initGrfView()
+        {
+            grfView = new C1FlexGrid();
+            grfView.Font = fEdit;
+            grfView.Dock = System.Windows.Forms.DockStyle.Fill;
+            grfView.Location = new System.Drawing.Point(0, 0);
+
+            FilterRow fr = new FilterRow(grfView);
+
+            //grfJob.AfterRowColChange += GrfJob_AfterRowColChange;
+            grfView.DoubleClick += GrfView_DoubleClick;
+            //grfExpnC.CellButtonClick += new C1.Win.C1FlexGrid.RowColEventHandler(this.grfDept_CellButtonClick);
+            //grfExpnC.CellChanged += new C1.Win.C1FlexGrid.RowColEventHandler(this.grfDept_CellChanged);
+            //grfJob.CellChanged += GrfExpnD_CellChanged;
+            gbView.Controls.Add(grfView);
+            grfView.Clear();
+            grfView.Rows.Count = 2;
+            grfView.Cols.Count = 4;
+            grfView.Cols[colVvisitHn].Width = 80;
+            grfView.Cols[colVname].Width = 200;
+            
+            grfView.Cols[colVvisitHn].Caption = "barcode";
+            grfView.Cols[colVname].Caption = "ชื่อ-นามสกุล";
+            
+            grfView.Cols[colVId].Visible = false;
+            grfView.AllowEditing = false;
+            //theme1.SetTheme(grfJob, "Office2013Red");
+        }
+
+        private void GrfView_DoubleClick(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            if (grfView[grfView.Row, colVId] == null) return;
+
+            int row = grfView.Row;
+            if (row < 1) return;
+            
+            Row rrr = grfEmp.Rows.Add();
+            rrr[colEId] = grfView[row, colVId].ToString();
+            rrr[colEvisitHn] = grfView[row, colVvisitHn].ToString();
+            rrr[colEname] = grfView[row, colVname].ToString();
+            cc.ccpdb.UpdateStatusVisit1(grfView[row, colVId].ToString());
+            grfView.Rows.Remove(row);            
+            setGrfColor();
+        }
+
+        private void setGrfView(String cucid)
+        {
+            grfView.DataSource = null;
+            grfView.Rows.Count = 2;
+            grfView.Clear();
+            if (cucid.Equals("")) return;
+            DataTable dt = new DataTable();
+            dt = cc.ccpdb.selectAllStatusVisit0ByCucId(cucid);            
+            grfView.Rows.Count = 2;
+            grfView.Cols.Count = 4;
+            TextBox txt = new TextBox();
+
+            grfView.Cols[colVvisitHn].Editor = txt;
+            grfView.Cols[colVname].Editor = txt;            
+
+            grfView.Cols[colVvisitHn].Width = 80;
+            grfView.Cols[colVname].Width = 200;
+
+            grfView.Cols[colVvisitHn].Caption = "barcode";
+            grfView.Cols[colVname].Caption = "ชื่อ-นามสกุล";
+
+            grfView.Cols[colVId].Visible = false;
+            
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                Row row = grfView.Rows.Add();
+                row[0] = i + 1;
+                if (i % 2 == 0)
+                    row.StyleNew.BackColor = color;
+                row[colVId] = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                row[colVvisitHn] = dt.Rows[i][cc.ccpdb.ccp.visitHn].ToString();
+                row[colVname] = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
+            }            
+            grfView.Cols[colVId].Visible = false;
+        }
+        private void initGrfEmp()
+        {
+            grfEmp = new C1FlexGrid();
+            grfEmp.Font = fEdit;
+            grfEmp.Dock = System.Windows.Forms.DockStyle.Fill;
+            grfEmp.Location = new System.Drawing.Point(0, 0);
+
+            FilterRow fr = new FilterRow(grfEmp);
+
+            //grfJob.AfterRowColChange += GrfJob_AfterRowColChange;
+            grfEmp.DoubleClick += GrfEmp_DoubleClick;
+            //grfExpnC.CellButtonClick += new C1.Win.C1FlexGrid.RowColEventHandler(this.grfDept_CellButtonClick);
+            //grfExpnC.CellChanged += new C1.Win.C1FlexGrid.RowColEventHandler(this.grfDept_CellChanged);
+            //grfJob.CellChanged += GrfExpnD_CellChanged;
+            gbEmp.Controls.Add(grfEmp);
+            grfEmp.Clear();
+            grfEmp.Rows.Count = 2;
+            grfEmp.Cols.Count = 4;
+            grfEmp.Cols[colEvisitHn].Width = 80;
+            grfEmp.Cols[colEname].Width = 200;
+
+            grfEmp.Cols[colEvisitHn].Caption = "barcode";
+            grfEmp.Cols[colEname].Caption = "ชื่อ-นามสกุล";
+
+            grfEmp.Cols[colEId].Visible = false;
+            grfEmp.Cols[colVId].Visible = false;
+            //theme1.SetTheme(grfJob, "Office2013Red");
+        }
+        private void setGrfEmp(String cucid)
+        {
+            grfEmp.DataSource = null;
+            grfEmp.Rows.Count = 2;
+            grfEmp.Clear();
+            if (cucid.Equals("")) return;
+            DataTable dt = new DataTable();
+            dt = cc.ccpdb.selectAllStatusVisit1ByCucId(cucid);
+            grfEmp.Rows.Count = 2;
+            grfEmp.Cols.Count = 4;
+            TextBox txt = new TextBox();
+
+            grfEmp.Cols[colVvisitHn].Editor = txt;
+            grfEmp.Cols[colVname].Editor = txt;
+
+            grfEmp.Cols[colVvisitHn].Width = 80;
+            grfEmp.Cols[colVname].Width = 200;
+
+            grfEmp.Cols[colVvisitHn].Caption = "barcode";
+            grfEmp.Cols[colVname].Caption = "ชื่อ-นามสกุล";
+
+            grfEmp.Cols[colVId].Visible = false;
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                Row row = grfEmp.Rows.Add();
+                row[0] = i + 1;
+                if (i % 2 == 0)
+                    row.StyleNew.BackColor = color;
+                row[colVId] = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                row[colVvisitHn] = dt.Rows[i][cc.ccpdb.ccp.visitHn].ToString();
+                row[colVname] = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
+            }
+            grfEmp.Cols[colVId].Visible = false;
+        }
+        private void GrfEmp_DoubleClick(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            int row = 0;
+            row = grfEmp.Row;
+            Row rrr = grfView.Rows.Add();
+            rrr[colVId] = grfEmp[row, colEId].ToString();
+            rrr[colVvisitHn] = grfEmp[row, colEvisitHn].ToString();
+            rrr[colVname] = grfEmp[row, colEname].ToString();
+            cc.ccpdb.UpdateStatusVisit0(grfEmp[row, colEId].ToString());
+            grfEmp.Rows.Remove(row);
+            setGrfColor();
+        }
+
         private void BtnExcelPE_Click(object sender, EventArgs e)
         {
             //throw new NotImplementedException();

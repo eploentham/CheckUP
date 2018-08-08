@@ -331,6 +331,18 @@
             this.dgvToxi = new System.Windows.Forms.DataGridView();
             this.tabPage19 = new System.Windows.Forms.TabPage();
             this.dgvStoolExam = new System.Windows.Forms.DataGridView();
+            this.tabPage18 = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.gbView = new System.Windows.Forms.GroupBox();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.gbEmp = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.cboCust = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnImport = new System.Windows.Forms.Button();
@@ -395,6 +407,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvToxi)).BeginInit();
             this.tabPage19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStoolExam)).BeginInit();
+            this.tabPage18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
             this.SuspendLayout();
             // 
@@ -419,6 +442,7 @@
             this.tC.Controls.Add(this.tabPage16);
             this.tC.Controls.Add(this.tabPage17);
             this.tC.Controls.Add(this.tabPage19);
+            this.tC.Controls.Add(this.tabPage18);
             this.tC.Location = new System.Drawing.Point(12, 79);
             this.tC.Name = "tC";
             this.tC.SelectedIndex = 0;
@@ -3568,6 +3592,137 @@
             this.dgvStoolExam.Size = new System.Drawing.Size(851, 593);
             this.dgvStoolExam.TabIndex = 9;
             // 
+            // tabPage18
+            // 
+            this.tabPage18.Controls.Add(this.splitContainer1);
+            this.tabPage18.Location = new System.Drawing.Point(4, 22);
+            this.tabPage18.Name = "tabPage18";
+            this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage18.Size = new System.Drawing.Size(1276, 782);
+            this.tabPage18.TabIndex = 20;
+            this.tabPage18.Text = "tabPage18";
+            this.tabPage18.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.gbView);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Size = new System.Drawing.Size(1270, 776);
+            this.splitContainer1.SplitterDistance = 329;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // gbView
+            // 
+            this.gbView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbView.Location = new System.Drawing.Point(0, 0);
+            this.gbView.Name = "gbView";
+            this.gbView.Size = new System.Drawing.Size(329, 776);
+            this.gbView.TabIndex = 0;
+            this.gbView.TabStop = false;
+            this.gbView.Text = "รายชื่อพนักงาน";
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.gbEmp);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.groupBox5);
+            this.splitContainer2.Size = new System.Drawing.Size(937, 776);
+            this.splitContainer2.SplitterDistance = 455;
+            this.splitContainer2.TabIndex = 1;
+            // 
+            // gbEmp
+            // 
+            this.gbEmp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbEmp.Location = new System.Drawing.Point(0, 0);
+            this.gbEmp.Name = "gbEmp";
+            this.gbEmp.Size = new System.Drawing.Size(455, 776);
+            this.gbEmp.TabIndex = 0;
+            this.gbEmp.TabStop = false;
+            this.gbEmp.Text = "พนักงานมาตรวจ";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.panel2);
+            this.groupBox5.Controls.Add(this.panel1);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.Location = new System.Drawing.Point(0, 0);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(478, 776);
+            this.groupBox5.TabIndex = 0;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "ตรวจสอบ  Test ตรวจ";
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 95);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(472, 678);
+            this.panel2.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label19);
+            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(3, 16);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(472, 79);
+            this.panel1.TabIndex = 76;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(287, 35);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(41, 13);
+            this.label19.TabIndex = 3;
+            this.label19.Text = "label19";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(70, 35);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(41, 13);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "label18";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(15, 6);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(52, 13);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "barcode :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(95, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(140, 20);
+            this.textBox1.TabIndex = 0;
+            // 
             // cboCust
             // 
             this.cboCust.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -3879,6 +4034,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvToxi)).EndInit();
             this.tabPage19.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStoolExam)).EndInit();
+            this.tabPage18.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -4213,5 +4380,17 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnExcelSum;
         private System.Windows.Forms.CheckBox chkCalResult;
+        private System.Windows.Forms.TabPage tabPage18;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.GroupBox gbView;
+        private System.Windows.Forms.GroupBox gbEmp;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
     }
 }
