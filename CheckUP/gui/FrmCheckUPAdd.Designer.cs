@@ -337,8 +337,9 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.gbEmp = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.gbTest = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -366,6 +367,17 @@
             this.txtCntSuccess = new System.Windows.Forms.TextBox();
             this.label123 = new System.Windows.Forms.Label();
             this.btnExcel1 = new System.Windows.Forms.Button();
+            this.chkHideTab = new System.Windows.Forms.CheckBox();
+            this.nmDSticker = new System.Windows.Forms.NumericUpDown();
+            this.label21 = new System.Windows.Forms.Label();
+            this.tabPage21 = new System.Windows.Forms.TabPage();
+            this.gbSticker1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.gbSticker = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnPrnAll = new System.Windows.Forms.Button();
+            this.btnPrnNoAll = new System.Windows.Forms.Button();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -419,6 +431,10 @@
             this.groupBox5.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDSticker)).BeginInit();
+            this.tabPage21.SuspendLayout();
+            this.gbSticker1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tC
@@ -443,6 +459,7 @@
             this.tC.Controls.Add(this.tabPage17);
             this.tC.Controls.Add(this.tabPage19);
             this.tC.Controls.Add(this.tabPage18);
+            this.tC.Controls.Add(this.tabPage21);
             this.tC.Location = new System.Drawing.Point(12, 79);
             this.tC.Name = "tC";
             this.tC.SelectedIndex = 0;
@@ -2002,7 +2019,6 @@
             this.tabPage20.TabIndex = 19;
             this.tabPage20.Text = "Summary2";
             this.tabPage20.UseVisualStyleBackColor = true;
-            this.tabPage20.Click += new System.EventHandler(this.tabPage20_Click);
             // 
             // btnStoolExamSave
             // 
@@ -3659,7 +3675,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.panel2);
+            this.groupBox5.Controls.Add(this.gbTest);
             this.groupBox5.Controls.Add(this.panel1);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(0, 0);
@@ -3669,16 +3685,17 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "ตรวจสอบ  Test ตรวจ";
             // 
-            // panel2
+            // gbTest
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 95);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(472, 678);
-            this.panel2.TabIndex = 0;
+            this.gbTest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbTest.Location = new System.Drawing.Point(3, 95);
+            this.gbTest.Name = "gbTest";
+            this.gbTest.Size = new System.Drawing.Size(472, 678);
+            this.gbTest.TabIndex = 0;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label17);
@@ -3688,6 +3705,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(472, 79);
             this.panel1.TabIndex = 76;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(290, 6);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(160, 17);
+            this.checkBox1.TabIndex = 77;
+            this.checkBox1.Text = "แสดงเฉพาะ ที่ส่ง test ไม่ครบ";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // label19
             // 
@@ -3872,7 +3899,7 @@
             this.chkActive.AutoSize = true;
             this.chkActive.Checked = true;
             this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.chkActive.Location = new System.Drawing.Point(945, 54);
+            this.chkActive.Location = new System.Drawing.Point(1004, 54);
             this.chkActive.Margin = new System.Windows.Forms.Padding(2);
             this.chkActive.Name = "chkActive";
             this.chkActive.Size = new System.Drawing.Size(61, 21);
@@ -3954,11 +3981,122 @@
             this.btnExcel1.UseVisualStyleBackColor = true;
             this.btnExcel1.Click += new System.EventHandler(this.btnExcel1_Click);
             // 
+            // chkHideTab
+            // 
+            this.chkHideTab.AutoSize = true;
+            this.chkHideTab.Location = new System.Drawing.Point(911, 56);
+            this.chkHideTab.Name = "chkHideTab";
+            this.chkHideTab.Size = new System.Drawing.Size(69, 17);
+            this.chkHideTab.TabIndex = 76;
+            this.chkHideTab.Text = "ซ่อน Tab";
+            this.chkHideTab.UseVisualStyleBackColor = true;
+            // 
+            // nmDSticker
+            // 
+            this.nmDSticker.Location = new System.Drawing.Point(836, 53);
+            this.nmDSticker.Name = "nmDSticker";
+            this.nmDSticker.Size = new System.Drawing.Size(46, 20);
+            this.nmDSticker.TabIndex = 78;
+            this.nmDSticker.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label21.Location = new System.Drawing.Point(758, 55);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(72, 16);
+            this.label21.TabIndex = 77;
+            this.label21.Text = "จน. sticker :";
+            // 
+            // tabPage21
+            // 
+            this.tabPage21.Controls.Add(this.gbSticker1);
+            this.tabPage21.Location = new System.Drawing.Point(4, 22);
+            this.tabPage21.Name = "tabPage21";
+            this.tabPage21.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage21.Size = new System.Drawing.Size(1276, 782);
+            this.tabPage21.TabIndex = 21;
+            this.tabPage21.Text = "tabPage21";
+            this.tabPage21.UseVisualStyleBackColor = true;
+            // 
+            // gbSticker1
+            // 
+            this.gbSticker1.Controls.Add(this.gbSticker);
+            this.gbSticker1.Controls.Add(this.panel2);
+            this.gbSticker1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbSticker1.Location = new System.Drawing.Point(3, 3);
+            this.gbSticker1.Name = "gbSticker1";
+            this.gbSticker1.Size = new System.Drawing.Size(1270, 776);
+            this.gbSticker1.TabIndex = 79;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnPrnNoAll);
+            this.panel2.Controls.Add(this.btnPrnAll);
+            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.label22);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1270, 80);
+            this.panel2.TabIndex = 0;
+            // 
+            // gbSticker
+            // 
+            this.gbSticker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbSticker.Location = new System.Drawing.Point(0, 80);
+            this.gbSticker.Name = "gbSticker";
+            this.gbSticker.Size = new System.Drawing.Size(1270, 696);
+            this.gbSticker.TabIndex = 1;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(24, 15);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(40, 13);
+            this.label22.TabIndex = 79;
+            this.label22.Text = "Sticker";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(71, 12);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(214, 21);
+            this.comboBox1.TabIndex = 80;
+            // 
+            // btnPrnAll
+            // 
+            this.btnPrnAll.Location = new System.Drawing.Point(298, 10);
+            this.btnPrnAll.Name = "btnPrnAll";
+            this.btnPrnAll.Size = new System.Drawing.Size(97, 35);
+            this.btnPrnAll.TabIndex = 81;
+            this.btnPrnAll.Text = "เลือกทั้งหมด";
+            this.btnPrnAll.UseVisualStyleBackColor = true;
+            // 
+            // btnPrnNoAll
+            // 
+            this.btnPrnNoAll.Location = new System.Drawing.Point(401, 10);
+            this.btnPrnNoAll.Name = "btnPrnNoAll";
+            this.btnPrnNoAll.Size = new System.Drawing.Size(97, 35);
+            this.btnPrnNoAll.TabIndex = 82;
+            this.btnPrnNoAll.Text = "ไม่เลือกทั้งหมด";
+            this.btnPrnNoAll.UseVisualStyleBackColor = true;
+            // 
             // FrmCheckUPAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1413, 899);
+            this.Controls.Add(this.nmDSticker);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.chkHideTab);
             this.Controls.Add(this.btnExcel1);
             this.Controls.Add(this.txtCntSuccess);
             this.Controls.Add(this.label123);
@@ -4047,6 +4185,11 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDSticker)).EndInit();
+            this.tabPage21.ResumeLayout(false);
+            this.gbSticker1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4386,11 +4529,23 @@
         private System.Windows.Forms.GroupBox gbEmp;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel gbTest;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.CheckBox chkHideTab;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.NumericUpDown nmDSticker;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TabPage tabPage21;
+        private System.Windows.Forms.Panel gbSticker1;
+        private System.Windows.Forms.Panel gbSticker;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Button btnPrnAll;
+        private System.Windows.Forms.Button btnPrnNoAll;
     }
 }

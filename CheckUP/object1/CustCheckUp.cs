@@ -25,6 +25,7 @@ namespace CheckUP.object1
         public String other1_checkup = "", lung_checkup = "", audio_checkup = "", eye_checkup = "", stoolexam_checkup = "", toxi_checkup = "", fbs_checkup="";
         public String pe_test = "", xray_test = "", cbc_test = "", ua_test = "", tri_test = "", cho_test = "", sgot_test = "", bun_test = "", uric_test = "";
         public String other1_test = "", lung_test = "", audio_test = "", eye_test = "", stoolexam_test = "", toxi_test = "", fbs_test = "";
+        public String sticker = "";
 
         public override String ToString()
         {

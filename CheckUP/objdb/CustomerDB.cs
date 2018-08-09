@@ -111,7 +111,7 @@ namespace CheckUP.objdb
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + cu.table + " Where " + cu.Active + "='1'";
+            sql = "Select * From " + cu.table + " Where " + cu.Active + "='1' Order By cust_code desc ";
             dt = conn.selectData(sql);
 
             return dt;

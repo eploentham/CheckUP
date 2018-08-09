@@ -59,6 +59,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.tC = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label228 = new System.Windows.Forms.Label();
+            this.nmDPatientNumber = new System.Windows.Forms.NumericUpDown();
             this.label152 = new System.Windows.Forms.Label();
             this.nmDDepartment = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
@@ -592,8 +594,10 @@
             this.nmDStoolExamNo = new System.Windows.Forms.NumericUpDown();
             this.label163 = new System.Windows.Forms.Label();
             this.nmDStoolExamRow = new System.Windows.Forms.NumericUpDown();
-            this.label228 = new System.Windows.Forms.Label();
-            this.nmDPatientNumber = new System.Windows.Forms.NumericUpDown();
+            this.label229 = new System.Windows.Forms.Label();
+            this.nmDPositionName = new System.Windows.Forms.NumericUpDown();
+            this.label230 = new System.Windows.Forms.Label();
+            this.nmDVisitHn = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDARow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDAPrefix)).BeginInit();
@@ -609,6 +613,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDCAge)).BeginInit();
             this.tC.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDPatientNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDDepartment)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDPEBloodGroup)).BeginInit();
@@ -847,7 +852,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDPatientNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDPositionName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDVisitHn)).BeginInit();
             this.SuspendLayout();
             // 
             // nmDRow
@@ -1264,6 +1270,10 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label230);
+            this.tabPage1.Controls.Add(this.nmDVisitHn);
+            this.tabPage1.Controls.Add(this.label229);
+            this.tabPage1.Controls.Add(this.nmDPositionName);
             this.tabPage1.Controls.Add(this.label228);
             this.tabPage1.Controls.Add(this.nmDPatientNumber);
             this.tabPage1.Controls.Add(this.label152);
@@ -1308,11 +1318,38 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label228
+            // 
+            this.label228.AutoSize = true;
+            this.label228.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label228.Location = new System.Drawing.Point(310, 28);
+            this.label228.Name = "label228";
+            this.label228.Size = new System.Drawing.Size(68, 16);
+            this.label228.TabIndex = 64;
+            this.label228.Text = "รหัสพนักงาน";
+            // 
+            // nmDPatientNumber
+            // 
+            this.nmDPatientNumber.Location = new System.Drawing.Point(384, 28);
+            this.nmDPatientNumber.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDPatientNumber.Name = "nmDPatientNumber";
+            this.nmDPatientNumber.Size = new System.Drawing.Size(46, 20);
+            this.nmDPatientNumber.TabIndex = 65;
+            this.nmDPatientNumber.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
             // label152
             // 
             this.label152.AutoSize = true;
             this.label152.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label152.Location = new System.Drawing.Point(335, 28);
+            this.label152.Location = new System.Drawing.Point(583, 28);
             this.label152.Name = "label152";
             this.label152.Size = new System.Drawing.Size(34, 16);
             this.label152.TabIndex = 62;
@@ -1320,7 +1357,7 @@
             // 
             // nmDDepartment
             // 
-            this.nmDDepartment.Location = new System.Drawing.Point(391, 28);
+            this.nmDDepartment.Location = new System.Drawing.Point(639, 28);
             this.nmDDepartment.Minimum = new decimal(new int[] {
             1,
             0,
@@ -8568,28 +8605,55 @@
             0,
             0});
             // 
-            // label228
+            // label229
             // 
-            this.label228.AutoSize = true;
-            this.label228.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label228.Location = new System.Drawing.Point(466, 28);
-            this.label228.Name = "label228";
-            this.label228.Size = new System.Drawing.Size(68, 16);
-            this.label228.TabIndex = 64;
-            this.label228.Text = "รหัสพนักงาน";
+            this.label229.AutoSize = true;
+            this.label229.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label229.Location = new System.Drawing.Point(450, 28);
+            this.label229.Name = "label229";
+            this.label229.Size = new System.Drawing.Size(47, 16);
+            this.label229.TabIndex = 66;
+            this.label229.Text = "ตำแหน่ง";
             // 
-            // nmDPatientNumber
+            // nmDPositionName
             // 
-            this.nmDPatientNumber.Location = new System.Drawing.Point(540, 28);
-            this.nmDPatientNumber.Minimum = new decimal(new int[] {
+            this.nmDPositionName.Location = new System.Drawing.Point(506, 28);
+            this.nmDPositionName.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nmDPatientNumber.Name = "nmDPatientNumber";
-            this.nmDPatientNumber.Size = new System.Drawing.Size(46, 20);
-            this.nmDPatientNumber.TabIndex = 65;
-            this.nmDPatientNumber.Value = new decimal(new int[] {
+            this.nmDPositionName.Name = "nmDPositionName";
+            this.nmDPositionName.Size = new System.Drawing.Size(46, 20);
+            this.nmDPositionName.TabIndex = 67;
+            this.nmDPositionName.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label230
+            // 
+            this.label230.AutoSize = true;
+            this.label230.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label230.Location = new System.Drawing.Point(728, 28);
+            this.label230.Name = "label230";
+            this.label230.Size = new System.Drawing.Size(28, 16);
+            this.label230.TabIndex = 68;
+            this.label230.Text = "HN";
+            // 
+            // nmDVisitHn
+            // 
+            this.nmDVisitHn.Location = new System.Drawing.Point(771, 28);
+            this.nmDVisitHn.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmDVisitHn.Name = "nmDVisitHn";
+            this.nmDVisitHn.Size = new System.Drawing.Size(46, 20);
+            this.nmDVisitHn.TabIndex = 69;
+            this.nmDVisitHn.Value = new decimal(new int[] {
             5,
             0,
             0,
@@ -8621,6 +8685,7 @@
             this.tC.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDPatientNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDDepartment)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -8877,7 +8942,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDStoolExamRow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDPatientNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDPositionName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDVisitHn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -9450,5 +9516,9 @@
         private System.Windows.Forms.NumericUpDown nmDCBCResult;
         private System.Windows.Forms.Label label228;
         private System.Windows.Forms.NumericUpDown nmDPatientNumber;
+        private System.Windows.Forms.Label label229;
+        private System.Windows.Forms.NumericUpDown nmDPositionName;
+        private System.Windows.Forms.Label label230;
+        private System.Windows.Forms.NumericUpDown nmDVisitHn;
     }
 }

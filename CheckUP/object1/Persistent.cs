@@ -11,7 +11,7 @@ namespace CheckUP.object1
         public String pkField { get; set; }
         public String sited { get; set; }
         //public String dateGenDB = "Format(Now(),'yyyy')+'-'+Format(Now(),'mm')+'-'+Format(Now(),'dd')+' '+Format(Now(),'hh:nn:ss')";
-        public String dateGenDB = "getdate()";
+        public String dateGenDB = " FORMAT( getdate(),'yyyy-MM-dd hh:mm:ss') ";
         Random r = new Random();
         public Persistent()
         {

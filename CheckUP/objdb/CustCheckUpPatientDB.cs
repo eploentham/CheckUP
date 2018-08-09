@@ -597,7 +597,27 @@ namespace CheckUP.objdb
             ccp.ToxiZincLabName = "toxi_zinc_lab_name";
             ccp.ToxiZincLabNormal = "toxi_zinc_lab_normal";
             ccp.ToxiZincRemark = "toxi_zinc_remark";
-            
+            ccp.position_name = "position_name";
+            ccp.sticker01 = "sticker01";
+            ccp.sticker02 = "sticker02";
+            ccp.sticker03 = "sticker03";
+            ccp.sticker04 = "sticker04";
+            ccp.sticker05 = "sticker05";
+            ccp.sticker06 = "sticker06";
+            ccp.sticker07 = "sticker07";
+            ccp.sticker08 = "sticker08";
+            ccp.sticker09 = "sticker09";
+            ccp.sticker10 = "sticker10";
+            ccp.sticker11 = "sticker11";
+            ccp.sticker12 = "sticker12";
+            ccp.sticker13 = "sticker13";
+            ccp.sticker14 = "sticker14";
+            ccp.sticker15 = "sticker15";
+            ccp.sticker16 = "sticker16";
+            ccp.sticker17 = "sticker17";
+            ccp.sticker18 = "sticker18";
+            ccp.sticker19 = "sticker19";
+            ccp.sticker20 = "sticker20";
 
             ccp.pkField = "patient_id";
             ccp.table = "t_cust_checkup_patient";
@@ -731,7 +751,28 @@ namespace CheckUP.objdb
                 p.statusUricAcid = "0";
                 p.statusVisit = "0";
                 p.statusXray = "0";
-            sql = "Insert Into " + ccp.table+ "(" 
+                p.sticker01 = "0";
+                p.sticker02 = "0";
+                p.sticker03 = "0";
+                p.sticker04 = "0";
+                p.sticker05 = "0";
+                p.sticker06 = "0";
+                p.sticker07 = "0";
+                p.sticker08 = "0";
+                p.sticker09 = "0";
+                p.sticker10 = "0";
+                p.sticker11 = "0";
+                p.sticker12 = "0";
+                p.sticker13 = "0";
+                p.sticker14 = "0";
+                p.sticker15 = "0";
+                p.sticker16 = "0";
+                p.sticker17 = "0";
+                p.sticker18 = "0";
+                p.sticker19 = "0";
+                p.sticker20 = "0";
+
+                sql = "Insert Into " + ccp.table+ "(" 
                 + ccp.Id + ", " + ccp.amphetamine + ", "
                 + ccp.antiHiv + "," + ccp.AudiogramExam + ","
                 + ccp.Audiogram1000L + "," + ccp.Audiogram1000R + ","
@@ -814,7 +855,16 @@ namespace CheckUP.objdb
                     + ccp.statusAntiHiv+","+ccp.statusVisit+","+
                     ccp.triglycerideResult + "," + ccp.triglycerideSummary +","+
                     ccp.liverResult + "," + ccp.liverSummary +","+
-                    ccp.kidneyResult + "," + ccp.kidneySummary + "," + ccp.SexName + ") "
+                    ccp.kidneyResult + "," + ccp.kidneySummary + "," + ccp.SexName + " "+
+                    "," + ccp.sticker01 + "," + ccp.sticker02 + "," + ccp.sticker03 + " " +
+                    "," + ccp.sticker04 + "," + ccp.sticker05 + "," + ccp.sticker06 + " " +
+                    "," + ccp.sticker07 + "," + ccp.sticker08 + "," + ccp.sticker09 + " " +
+                    "," + ccp.sticker10 + "," + ccp.sticker11 + "," + ccp.sticker12 + " " +
+                    "," + ccp.sticker13 + "," + ccp.sticker14 + "," + ccp.sticker15 + " " +
+                    "," + ccp.sticker16 + "," + ccp.sticker17 + "," + ccp.sticker18 + " " +
+                    "," + ccp.sticker19 + "," + ccp.sticker20 + "," + ccp.position_name + " " +
+                    ") "
+
                 + "Values('" + p.Id + "','" + p.amphetamine + "','"
                 + p.antiHiv + "','" + p.AudiogramExam + "','"
                 + p.Audiogram1000L + "','" + p.Audiogram1000R + "','"
@@ -897,7 +947,15 @@ namespace CheckUP.objdb
                     + p.statusAntiHiv + "','" + p.statusVisit + "','"+
                     p.triglycerideResult + "','" + p.triglycerideSummary + "','" +
                     p.liverResult + "','" + p.liverSummary + "','" +
-                    p.kidneyResult + "','" + p.kidneySummary + "','" + p.SexName + "') ";
+                    p.kidneyResult + "','" + p.kidneySummary + "','" + p.SexName + "'"+
+                    ",'" + p.sticker01 + "','" + p.sticker02 + "','" + p.sticker03 + "'" +
+                    ",'" + p.sticker04 + "','" + p.sticker05 + "','" + p.sticker06 + "'" +
+                    ",'" + p.sticker07 + "','" + p.sticker08 + "','" + p.sticker09 + "'" +
+                    ",'" + p.sticker10 + "','" + p.sticker11 + "','" + p.sticker12 + "'" +
+                    ",'" + p.sticker13 + "','" + p.sticker14 + "','" + p.sticker15 + "'" +
+                    ",'" + p.sticker16 + "','" + p.sticker17 + "','" + p.sticker18 + "'" +
+                    ",'" + p.sticker19 + "','" + p.sticker20 + "','" + p.position_name + "'" +
+                    ") ";
                 chk = conn.ExecuteNonQuery(sql);
                 sql = "Insert Into " + ccp1db.ccp1.table + "(" + ccp1db.ccp1.Id + "," + ccp1db.ccp1.CustCheckUpId + "," + ccp1db.ccp1.rowNumber +","+ccp1db.ccp1.Active+","+ccp1db.ccp1.patientFullname+
                     ") Values ('" + p.Id + "','" + p.CustCheckUpId + "'," + p.rowNumber + ",'1','"+p.patientFullname+"')";

@@ -155,6 +155,7 @@ namespace CheckUP.objdb
             cuc.eye_test = "eye_test";
             cuc.stoolexam_test = "stoolexam_test";
             cuc.toxi_test = "toxi_test";
+            cuc.sticker = "sticker";
 
             cuc.pkField = "cust_checkup_patient_id";
             cuc.table = "t_cust_checkup";
@@ -297,6 +298,7 @@ namespace CheckUP.objdb
             item.eye_test = dt.Rows[0][cuc.eye_test].ToString();
             item.stoolexam_test = dt.Rows[0][cuc.stoolexam_test].ToString();
             item.toxi_test = dt.Rows[0][cuc.toxi_test].ToString();
+            item.sticker = dt.Rows[0][cuc.sticker].ToString();
 
             return item;
         }
@@ -355,18 +357,19 @@ namespace CheckUP.objdb
 
             p.Description = p.Description.Replace("'", "''");
             p.Remark = p.Remark.Replace("'", "''");
-
+            int chk1 = 0;
+            p.sticker = int.TryParse(p.sticker, out chk1) ? chk1.ToString() : "0";
 
             sql = "Insert Into " + cuc.table + " (" + cuc.pkField + "," + cuc.Active + "," + cuc.CheckUpDate + "," +
                 cuc.CheckUpEndDate + "," + cuc.CheckUpStartDate + "," + cuc.CntEmployee + "," +
                 cuc.CommitCheckUpDate + "," + cuc.CustId + "," + cuc.CustNameT + "," +
                 cuc.Description + "," + cuc.RegisDate + "," + cuc.Remark + "," +
-                cuc.YearId + "," + cuc.dateCreate + ") " +
+                cuc.YearId + "," + cuc.dateCreate + "," + cuc.sticker + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.CheckUpDate + "','" +
                 p.CheckUpEndDate + "','" + p.CheckUpStartDate + "'," + NumberNull1(p.CntEmployee) + ",'" +
                 p.CommitCheckUpDate + "','" + p.CustId + "','" + p.CustNameT + "','" +
                 p.Description + "','" + p.RegisDate + "','" + p.Remark + "','" +
-                p.YearId + "'," + p.dateGenDB + ")";
+                p.YearId + "'," + p.dateGenDB + ",'" + p.sticker + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -387,6 +390,8 @@ namespace CheckUP.objdb
 
             p.Description = p.Description.Replace("'", "''");
             p.Remark = p.Remark.Replace("'", "''");
+            int chk1 = 0;
+            p.sticker = int.TryParse(p.sticker, out chk1) ? chk1.ToString() : "0";
 
             sql = "Update " + cuc.table + " Set " + cuc.CheckUpDate + "='" + p.CheckUpDate + "', " +
                 cuc.CheckUpEndDate + "='" + p.CheckUpEndDate + "', " +
@@ -398,8 +403,8 @@ namespace CheckUP.objdb
                 cuc.Description + "='" + p.Description + "', " +
                 cuc.RegisDate + "='" + p.RegisDate + "', " +
                 cuc.Remark + "='" + p.Remark + "', " +
-                cuc.YearId + "='" + p.YearId + "' " +
-                
+                cuc.YearId + "='" + p.YearId + "', " +
+                cuc.sticker + "='" + p.sticker + "' " +
 
                 "Where " + cuc.pkField + "='" + p.Id + "'";
             try
@@ -457,10 +462,10 @@ namespace CheckUP.objdb
             }
             return c;
         }
-        public String UpdateCustCheckUp(String saleId, String date, String year)
+        public String UpdateCustCheckUp(String saleId, String date, String year, String sticker)
         {
             String sql = "", chk = "";
-            sql = "Update " + cuc.table + " Set " + cuc.CheckUpDate + "='" + date + "', "+cuc.YearId+"='"+year+"' " +
+            sql = "Update " + cuc.table + " Set " + cuc.CheckUpDate + "='" + date + "', "+cuc.YearId+"='"+year+"',"+cuc.sticker+"='"+sticker+"' " +
                 "Where " + cuc.pkField + "='" + saleId + "'";
             chk = conn.ExecuteNonQuery(sql);
             return chk;

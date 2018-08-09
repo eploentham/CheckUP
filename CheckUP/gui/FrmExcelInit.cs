@@ -374,6 +374,12 @@ namespace CheckUP.gui
             nmDToxiAntimony.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiAntimony));
             nmDToxiFluoride.Value = int.Parse(cc.cf.NumberNull11(ei.ToxiFluoride));
 
+            nmDPatientNumber.Value = int.Parse(cc.cf.NumberNull11(ei.patient_number));
+            nmDPositionName.Value = int.Parse(cc.cf.NumberNull11(ei.position_name));
+            nmDVisitHn.Value = int.Parse(cc.cf.NumberNull11(ei.visit_hn));
+            nmDCPrefix.Value = int.Parse(cc.cf.NumberNull11(ei.SfCFullName));
+            nmDCAge.Value = int.Parse(cc.cf.NumberNull11(ei.SfCAge));
+
             txtPESheetName.Text = ei.PESheetname;
             txtXRaySheetName.Text = ei.XraySheetname;
             txtCBCSheetName.Text = ei.CBCSheetname;
@@ -2327,7 +2333,8 @@ namespace CheckUP.gui
             Cursor.Current = Cursors.WaitCursor;
             Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(ofd.FileName);
-            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.PESheetname];
+            //Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[ei.PESheetname];
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.ActiveSheet;
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
 
             if (xlRange.Cells[nmDRow.Value, nmDDepartment.Value].Value2 != null)
@@ -2397,7 +2404,7 @@ namespace CheckUP.gui
                 txtPrefixTest.Text = "ลำดับ " + No + " ชื่อ นามสกุล " + prefix + " " + FirstName + " " + LastName + " อายุ " + Age + " " + " แผนก " + department + " รหัสพนักงาน " + patientNumber;
                 Cursor.Current = cursor;
                 if (cc.eidb.updateSfA(nmDAAge.Value.ToString(), nmDAPrefix.Value.ToString(), nmDAFirstName.Value.ToString(), nmDALastName.Value.ToString(),
-                    nmDARow.Value.ToString(), nmDRow.Value.ToString(), nmDDepartment.Value.ToString(), nmDPatientNumber.Value.ToString()).Length >= 1)
+                    nmDARow.Value.ToString(), nmDRow.Value.ToString(), nmDDepartment.Value.ToString(), nmDPatientNumber.Value.ToString(), nmDVisitHn.Value.ToString(), nmDPositionName.Value.ToString()).Length >= 1)
                 {
                     ei = cc.eidb.selectByPk();
                     MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
@@ -2452,7 +2459,8 @@ namespace CheckUP.gui
                 LastName = LastName.Trim();
                 txtPrefixTest.Text = "ลำดับ " + No + " ชื่อ นามสกุล " + prefix + " " + FullName + " อายุ " + Age + " " + " แผนก " + department;
                 Cursor.Current = cursor;
-                if (cc.eidb.updateSfB(nmDBAge.Value.ToString(), nmDBPrefix.Value.ToString(), nmDBFullName.Value.ToString(), nmDBRow.Value.ToString(), nmDRow.Value.ToString(), nmDDepartment.Value.ToString(), nmDPatientNumber.Value.ToString()).Length >= 1)
+                if (cc.eidb.updateSfB(nmDBAge.Value.ToString(), nmDBPrefix.Value.ToString(), nmDBFullName.Value.ToString(), nmDBRow.Value.ToString(), nmDRow.Value.ToString()
+                    , nmDDepartment.Value.ToString(), nmDPatientNumber.Value.ToString(), nmDVisitHn.Value.ToString(), nmDPositionName.Value.ToString()).Length >= 1)
                 {
                     ei = cc.eidb.selectByPk();
                     MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
@@ -2491,13 +2499,14 @@ namespace CheckUP.gui
                 txtPrefixTest.Text = "ลำดับ " + No + " ชื่อ นามสกุล " + AllName + " อายุ " + Age + " " + " แผนก " + department;
 
                 Cursor.Current = cursor;
-                if (cc.eidb.updateSfC(nmDCAge.Value.ToString(), nmDCPrefix.Value.ToString(), nmDCRow.Value.ToString(), nmDRow.Value.ToString(), nmDDepartment.Value.ToString(), nmDPatientNumber.Value.ToString()).Length >= 1)
+                if (cc.eidb.updateSfC(nmDCAge.Value.ToString(), nmDCPrefix.Value.ToString(), nmDCRow.Value.ToString(), nmDRow.Value.ToString(), nmDDepartment.Value.ToString()
+                    , nmDPatientNumber.Value.ToString(), nmDVisitHn.Value.ToString(), nmDPositionName.Value.ToString()).Length >= 1)
                 {
                     ei = cc.eidb.selectByPk();
                     MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 }
             }
-            xlWorkbook.Close(true, null, null);
+            //xlWorkbook.Close(true, null, null);
             xlApp.Quit();
             //if (cc.sfdb.insertStaff(s).Length >= 1)
             //{
