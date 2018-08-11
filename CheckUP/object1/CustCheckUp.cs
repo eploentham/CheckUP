@@ -26,6 +26,8 @@ namespace CheckUP.object1
         public String pe_test = "", xray_test = "", cbc_test = "", ua_test = "", tri_test = "", cho_test = "", sgot_test = "", bun_test = "", uric_test = "";
         public String other1_test = "", lung_test = "", audio_test = "", eye_test = "", stoolexam_test = "", toxi_test = "", fbs_test = "";
         public String sticker = "";
+        public String sticker01 = "", sticker02 = "", sticker03 = "", sticker04 = "", sticker05 = "", sticker06 = "", sticker07 = "", sticker08 = "", sticker09 = "", sticker10 = "";
+        public String sticker11 = "", sticker12 = "", sticker13 = "", sticker14 = "", sticker15 = "", sticker16 = "", sticker17 = "", sticker18 = "", sticker19 = "", sticker20 = "";
 
         public override String ToString()
         {

@@ -274,6 +274,9 @@ namespace CheckUP.object1
         //public String status_visit = "", status_cbc = "", status_ua = "", status_fbs = "", status_pe = "", status_xray = "", status_stool = "", status_anti_hiv = "";
         public String sticker01="", sticker02="", sticker03="", sticker04="", sticker05="", sticker06="", sticker07="", sticker08="", sticker09="",sticker10="";
         public String sticker11 = "", sticker12 = "", sticker13 = "", sticker14 = "", sticker15 = "", sticker16 = "", sticker17 = "", sticker18="", sticker19 = "", sticker20 = "";
+
+        public String test01 = "", test02 = "", test03 = "", test04 = "", test05 = "", test06 = "", test07 = "", test08 = "", test09 = "", test10 = "";
+        public String test11 = "", test12 = "", test13 = "", test14 = "", test15 = "", test16 = "", test17 = "", test18 = "", test19 = "", test20 = "";
         public override String ToString()
         {
             return patientFullname;

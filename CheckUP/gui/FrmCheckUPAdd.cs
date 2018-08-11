@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -90,7 +91,7 @@ namespace CheckUP.gui
         int colSId = 1, colSvisitHn = 2, colSname = 3, colS01 = 4, colS02 = 5, colS03 = 6, colS04 = 7, colS05 = 8, colS06 = 9, colS07 = 10, colS08 = 11, colS09 = 12, colS10 = 13, colS11 = 14;
         int colS12 = 15, colS13 = 16, colS14 = 17, colS15 = 18, colS16 = 19, colS17 = 20, colS18 = 21, colS19 = 22, colS20 = 23;
 
-         Font font = new Font("Microsoft Sans Serif", 12);
+        Font font = new Font("Microsoft Sans Serif", 12);
         Boolean flagNew=false;
         String fileName = "", fileNamePE = "", fileNameFBS = "", fileNameXray = "", fileNameCBC = "", fileNameUA = "", fileNameTri = "", fileNameCho = "", fileNameLung="";
         String fileNameSgot = "", fileNameBun = "", fileNameUric = "", fileNameOther1 = "", fileNameAudio="", fileNameEye="", fileNameStoolExam="", fileNameToxi="", fileNameChemU="";
@@ -189,6 +190,11 @@ namespace CheckUP.gui
             btnExcelCho.Click += BtnExcelPE_Click;
             btnExcelSgot.Click += BtnExcelPE_Click;
             btnExcelBun.Click += BtnExcelPE_Click;
+            btnPrnSticker.Click += BtnPrnSticker_Click;
+            btnLabelSticker.Click += BtnLabelSticker_Click;
+            btnPrnAll.Click += BtnPrnAll_Click;
+            btnPrnNoAll.Click += BtnPrnNoAll_Click;
+            txtBarcode.KeyUp += TxtBarcode_KeyUp;
 
             chkHideTab.Click += ChkHideTab_Click;
 
@@ -212,6 +218,7 @@ namespace CheckUP.gui
 
             tC.Font = font;
             cboCust = cc.cudb.getCboCustomer(cboCust);
+            cboSticker = cc.stkdb.getCboSticker(cboSticker);
             //tC.TabPages[tabCho].Text = "Cholesterol";
             setControl(cucId);
             //setGrdSum();
@@ -265,6 +272,75 @@ namespace CheckUP.gui
             {
                 MessageBox.Show("ลำดับ row ไม่ได้ set", "error");
             }
+        }
+
+        private void TxtBarcode_KeyUp(object sender, KeyEventArgs e)
+        {
+            //throw new NotImplementedException();
+            if (e.KeyCode == Keys.Enter)
+            {
+                String[] chk = txtBarcode.Text.Split('-');
+                if (chk.Length > 1)
+                {
+                    int row = grfTest.FindRow(chk[0], 1, colSvisitHn, true);
+                    if (row < 0) return;
+                    grfTest.Row = row;
+                    setTest(txtBarcode.Text, row);
+                }
+            }
+        }
+
+        private void BtnPrnNoAll_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            String col = "";
+            //col = cboSticker.SelectedItem.ToString();
+            col = cc.getValueCboItem(cboSticker);
+            int col1 = 0;
+            int.TryParse(col, out col1);
+            for (int i = 1; i < grfSticker.Rows.Count; i++)
+            {
+                Row row = grfSticker.Rows[i];
+                row[col1 + 3] = "1";
+                cc.ccpdb.UpdateSticker0(txtId.Text, col);
+            }
+        }
+
+        private void BtnPrnAll_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            String col = "";
+            //col = cboSticker.SelectedItem.ToString();
+            col =  cc.getValueCboItem(cboSticker);
+            int col1 = 0;
+            int.TryParse(col, out col1);
+            for (int i = 1; i < grfSticker.Rows.Count; i++)
+            {
+                Row row = grfSticker.Rows[i];
+                row[col1 + 3] = "1";
+                cc.ccpdb.UpdateSticker1(row[colSId].ToString(), col);
+            }
+        }
+
+        private void BtnLabelSticker_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            FrmCheckUPSticker frm = new FrmCheckUPSticker(txtId.Text, cc);
+            frm.ShowDialog(this);
+            setGrfSticker(txtId.Text);
+        }
+
+        private void BtnPrnSticker_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            //ProcessStartInfo psi = new ProccessStartInfo();
+            //psi.FileName = "myfile.txt";
+            //Process p = new Process();
+            //p.StartInfo = psi;
+            //p.Start();
+            cc.getTextSticker(txtId.Text);
+            System.Threading.Thread.Sleep(3000);
+            System.Diagnostics.Process.Start("checkup.btw");
         }
 
         private void ChkHideTab_Click(object sender, EventArgs e)
@@ -493,17 +569,17 @@ namespace CheckUP.gui
             grfTest.Dock = System.Windows.Forms.DockStyle.Fill;
             grfTest.Location = new System.Drawing.Point(0, 0);
 
-            FilterRow fr = new FilterRow(grfTest);
+            //FilterRow fr = new FilterRow(grfTest);
 
             //grfJob.AfterRowColChange += GrfJob_AfterRowColChange;
-            grfTest.DoubleClick += GrfEmp_DoubleClick;
+            grfTest.DoubleClick += GrfTest_DoubleClick;
             //grfExpnC.CellButtonClick += new C1.Win.C1FlexGrid.RowColEventHandler(this.grfDept_CellButtonClick);
             //grfExpnC.CellChanged += new C1.Win.C1FlexGrid.RowColEventHandler(this.grfDept_CellChanged);
             //grfJob.CellChanged += GrfExpnD_CellChanged;
             gbTest.Controls.Add(grfTest);
             grfTest.Clear();
-            grfTest.Rows.Count = 2;
-            grfTest.Cols.Count = 20;
+            grfTest.Rows.Count = 1;
+            grfTest.Cols.Count = 24;
             grfTest.Cols[colTvisitHn].Width = 80;
             grfTest.Cols[colTname].Width = 200;
 
@@ -522,8 +598,8 @@ namespace CheckUP.gui
             if (cucid.Equals("")) return;
             DataTable dt = new DataTable();
             dt = cc.ccpdb.selectAllByCucId(cucid);
-            grfTest.Rows.Count = 2;
-            grfTest.Cols.Count = 20;
+            grfTest.Rows.Count = 1;
+            grfTest.Cols.Count = 24;
             TextBox txt = new TextBox();
 
             grfTest.Cols[colTvisitHn].Editor = txt;
@@ -532,43 +608,51 @@ namespace CheckUP.gui
             grfTest.Cols[colTvisitHn].Width = 80;
             grfTest.Cols[colTname].Width = 200;
             grfTest.Cols[colTvisitHn].Width = 80;
-            grfTest.Cols[colTstatusPE].Width = 40;
-            grfTest.Cols[colTstatusXray].Width = 40;
-            grfTest.Cols[colTstatusFBS].Width = 40;
-            grfTest.Cols[colTstatusCBC].Width = 40;
-            grfTest.Cols[colTstatusUA].Width = 40;
-            grfTest.Cols[colTstatusTri].Width = 40;
-            grfTest.Cols[colTstatusCho].Width = 40;
-            grfTest.Cols[colTstatusSgot].Width = 40;
-            grfTest.Cols[colTstatusBUN].Width = 40;
-            grfTest.Cols[colTstatusUric].Width = 40;
-            grfTest.Cols[colTstatusLung].Width = 40;
-            grfTest.Cols[colTstatusAudio].Width = 40;
-            grfTest.Cols[colTstatusEye].Width = 40;
-            grfTest.Cols[colTstatusToxi].Width = 40;
-            grfTest.Cols[colTstatusStoolExam].Width = 40;
-            grfTest.Cols[colTstatusOther1].Width = 40;
+            grfTest.Cols[colS01].Width = 40;
+            grfTest.Cols[colS02].Width = 40;
+            grfTest.Cols[colS03].Width = 40;
+            grfTest.Cols[colS04].Width = 40;
+            grfTest.Cols[colS05].Width = 40;
+            grfTest.Cols[colS06].Width = 40;
+            grfTest.Cols[colS07].Width = 40;
+            grfTest.Cols[colS08].Width = 40;
+            grfTest.Cols[colS09].Width = 40;
+            grfTest.Cols[colS10].Width = 40;
+            grfTest.Cols[colS11].Width = 40;
+            grfTest.Cols[colS12].Width = 40;
+            grfTest.Cols[colS13].Width = 40;
+            grfTest.Cols[colS14].Width = 40;
+            grfTest.Cols[colS15].Width = 40;
+            grfTest.Cols[colS16].Width = 40;
+            grfTest.Cols[colS17].Width = 40;
+            grfTest.Cols[colS18].Width = 40;
+            grfTest.Cols[colS19].Width = 40;
+            grfTest.Cols[colS20].Width = 40;
 
             grfTest.Cols[colTvisitHn].Caption = "barcode";
             grfTest.Cols[colTname].Caption = "ชื่อ-นามสกุล";
-            grfTest.Cols[colTstatusPE].Caption = "PE";
-            grfTest.Cols[colTstatusXray].Caption = "Xray";
-            grfTest.Cols[colTstatusFBS].Caption = "FBS";
-            grfTest.Cols[colTstatusCBC].Caption = "CBC";
-            grfTest.Cols[colTstatusUA].Caption = "UA";
-            grfTest.Cols[colTstatusTri].Caption = "Trig";
-            grfTest.Cols[colTstatusCho].Caption = "Choles";
-            grfTest.Cols[colTstatusSgot].Caption = "Sgot";
-            grfTest.Cols[colTstatusBUN].Caption = "BUN";
-            grfTest.Cols[colTstatusUric].Caption = "Uric";
-            grfTest.Cols[colTstatusLung].Caption = "Lung";
-            grfTest.Cols[colTstatusAudio].Caption = "Audio";
-            grfTest.Cols[colTstatusEye].Caption = "Eye";
-            grfTest.Cols[colTstatusToxi].Caption = "Toxi";
-            grfTest.Cols[colTstatusStoolExam].Caption = "Stool";
-            grfTest.Cols[colTstatusOther1].Caption = "Other";
+            grfTest.Cols[colS01].Caption = "01";
+            grfTest.Cols[colS02].Caption = "02";
+            grfTest.Cols[colS03].Caption = "03";
+            grfTest.Cols[colS04].Caption = "04";
+            grfTest.Cols[colS05].Caption = "05";
+            grfTest.Cols[colS06].Caption = "06";
+            grfTest.Cols[colS07].Caption = "07";
+            grfTest.Cols[colS08].Caption = "08";
+            grfTest.Cols[colS09].Caption = "09";
+            grfTest.Cols[colS10].Caption = "10";
+            grfTest.Cols[colS11].Caption = "11";
+            grfTest.Cols[colS12].Caption = "12";
+            grfTest.Cols[colS13].Caption = "13";
+            grfTest.Cols[colS14].Caption = "14";
+            grfTest.Cols[colS15].Caption = "15";
+            grfTest.Cols[colS16].Caption = "16";
+            grfTest.Cols[colS17].Caption = "17";
+            grfTest.Cols[colS18].Caption = "18";
+            grfTest.Cols[colS19].Caption = "19";
+            grfTest.Cols[colS20].Caption = "20";
 
-            grfTest.Cols[colEId].Visible = false;
+            grfTest.Cols[colTId].Visible = false;
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -580,17 +664,31 @@ namespace CheckUP.gui
                 row[colTvisitHn] = dt.Rows[i][cc.ccpdb.ccp.visitHn].ToString();
                 row[colTname] = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
 
-                row[colTstatusPE] = dt.Rows[i][cc.ccpdb.ccp.statusPe].ToString();
-                row[colTstatusXray] = dt.Rows[i][cc.ccpdb.ccp.statusXray].ToString();
-                row[colTstatusFBS] = dt.Rows[i][cc.ccpdb.ccp.statusFbs].ToString();
-                row[colTstatusCBC] = dt.Rows[i][cc.ccpdb.ccp.statusCbc].ToString();
-                row[colTstatusUA] = dt.Rows[i][cc.ccpdb.ccp.statusUa].ToString();
-                row[colTstatusCho] = dt.Rows[i][cc.ccpdb.ccp.statusCholes].ToString();
-                row[colTstatusUric] = dt.Rows[i][cc.ccpdb.ccp.statusUricAcid].ToString();
-                row[colTstatusStoolExam] = dt.Rows[i][cc.ccpdb.ccp.statusStool].ToString();
+                row[colS01] = dt.Rows[i][cc.ccpdb.ccp.test01].ToString();
+                row[colS02] = dt.Rows[i][cc.ccpdb.ccp.test02].ToString();
+                row[colS03] = dt.Rows[i][cc.ccpdb.ccp.test03].ToString();
+                row[colS04] = dt.Rows[i][cc.ccpdb.ccp.test04].ToString();
+                row[colS05] = dt.Rows[i][cc.ccpdb.ccp.test05].ToString();
+                row[colS06] = dt.Rows[i][cc.ccpdb.ccp.test06].ToString();
+                row[colS07] = dt.Rows[i][cc.ccpdb.ccp.test07].ToString();
+                row[colS08] = dt.Rows[i][cc.ccpdb.ccp.test08].ToString();
+                row[colS09] = dt.Rows[i][cc.ccpdb.ccp.test09].ToString();
+                row[colS10] = dt.Rows[i][cc.ccpdb.ccp.test10].ToString();
+                row[colS11] = dt.Rows[i][cc.ccpdb.ccp.test11].ToString();
+                row[colS12] = dt.Rows[i][cc.ccpdb.ccp.test12].ToString();
+                row[colS13] = dt.Rows[i][cc.ccpdb.ccp.test13].ToString();
+                row[colS14] = dt.Rows[i][cc.ccpdb.ccp.test14].ToString();
+                row[colS15] = dt.Rows[i][cc.ccpdb.ccp.test15].ToString();
+                row[colS16] = dt.Rows[i][cc.ccpdb.ccp.test16].ToString();
+                row[colS17] = dt.Rows[i][cc.ccpdb.ccp.test17].ToString();
+                row[colS18] = dt.Rows[i][cc.ccpdb.ccp.test18].ToString();
+                row[colS19] = dt.Rows[i][cc.ccpdb.ccp.test19].ToString();
+                row[colS20] = dt.Rows[i][cc.ccpdb.ccp.test20].ToString();
 
             }
             grfTest.Cols[colTId].Visible = false;
+            grfTest.AllowEditing = false;
+            grfTest.SelectionMode = SelectionModeEnum.Cell;
         }
         private void initGrfSticker()
         {
@@ -629,6 +727,7 @@ namespace CheckUP.gui
             if (cucid.Equals("")) return;
             DataTable dt = new DataTable();
             dt = cc.ccpdb.selectAllByCucId(cucid);
+            cuc = cc.cucdb.selectByPk(cucid);
             grfSticker.Rows.Count = 1;
             grfSticker.Cols.Count = 24;
             TextBox txt = new TextBox();
@@ -682,7 +781,7 @@ namespace CheckUP.gui
             grfSticker.Cols[colS19].Caption = "19";
             grfSticker.Cols[colS20].Caption = "20";
 
-            grfSticker.Cols[colEId].Visible = false;
+            grfSticker.Cols[colSId].Visible = false;
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -720,9 +819,314 @@ namespace CheckUP.gui
             int sticker = 20;
             int.TryParse(cuc.sticker, out sticker);
             //sticker = 20 - sticker;
-            for(int i = 20; i > sticker; i--)
+            //String txt1 = "";
+            //txt1 = cc.cucdb.cuc.sticker01.Substring(cuc.sticker01.Length-2);
+            //grfSticker.Cols[colS01].Visible = true;
+            //grfSticker.Cols[colS02].Visible = true;
+            //grfSticker.Cols[colS03].Visible = true;
+            //grfSticker.Cols[colS04].Visible = true;
+            //grfSticker.Cols[colS05].Visible = true;
+            //grfSticker.Cols[colS06].Visible = true;
+            //grfSticker.Cols[colS07].Visible = true;
+            //grfSticker.Cols[colS08].Visible = true;
+            //grfSticker.Cols[colS09].Visible = true;
+            //grfSticker.Cols[colS10].Visible = true;
+            //grfSticker.Cols[colS11].Visible = true;
+            //grfSticker.Cols[colS12].Visible = true;
+            //grfSticker.Cols[colS13].Visible = true;
+            //grfSticker.Cols[colS14].Visible = true;
+            //grfSticker.Cols[colS15].Visible = true;
+            //grfSticker.Cols[colS16].Visible = true;
+            //grfSticker.Cols[colS17].Visible = true;
+            //grfSticker.Cols[colS18].Visible = true;
+            //grfSticker.Cols[colS19].Visible = true;
+            //grfSticker.Cols[colS20].Visible = true;
+            for (int i = 1; i <= 20; i++)
             {
-                grfSticker.Cols[i+3].Visible = false;
+                //txt1 = txt1 + i.ToString("00");
+                if (i == 1)
+                {
+                    if (cuc.sticker01.Equals("1"))
+                    {
+                        grfSticker.Cols[colS01].Visible = true;
+                    }
+                    else
+                    {
+                        grfSticker.Cols[colS01].Visible = false;
+                    }
+                }
+                else if (i == 2)
+                {
+                    if (cuc.sticker02.Equals("1"))
+                    {
+                        grfSticker.Cols[colS02].Visible = true;
+                    }
+                    else
+                    {
+                        grfSticker.Cols[colS02].Visible = false;
+                    }
+                }
+                else if (i == 3)
+                {
+                    if (cuc.sticker03.Equals("1"))
+                    {
+                        grfSticker.Cols[colS03].Visible = true;
+                    }
+                    else
+                    {
+                        grfSticker.Cols[colS03].Visible = false;
+                    }
+                }
+                else if (i == 4)
+                {
+                    if (cuc.sticker04.Equals("1"))
+                    {
+                        grfSticker.Cols[colS04].Visible = true;
+                    }
+                    else
+                    {
+                        grfSticker.Cols[colS04].Visible = false;
+                    }
+                }
+                else if (i == 5)
+                {
+                    if (cuc.sticker05.Equals("1"))
+                    {
+                        grfSticker.Cols[colS05].Visible = true;
+                    }
+                    else
+                    {
+                        grfSticker.Cols[colS05].Visible = false;
+                    }
+                }
+                else if (i == 6)
+                {
+                    if (cuc.sticker06.Equals("1"))
+                    {
+                        grfSticker.Cols[colS06].Visible = true;
+                    }
+                    else
+                    {
+                        grfSticker.Cols[colS06].Visible = false;
+                    }
+                }
+                else if (i == 7)
+                {
+                    if (cuc.sticker07.Equals("1"))
+                    {
+                        grfSticker.Cols[colS07].Visible = true;
+                    }
+                    else
+                    {
+                        grfSticker.Cols[colS07].Visible = false;
+                    }
+                }
+                else if (i == 8)
+                {
+                    if (cuc.sticker08.Equals("1"))
+                    {
+                        grfSticker.Cols[colS08].Visible = true;
+                    }
+                    else
+                    {
+                        grfSticker.Cols[colS08].Visible = false;
+                    }
+                }
+                else if (i == 9)
+                {
+                    if (cuc.sticker09.Equals("1"))
+                    {
+                        grfSticker.Cols[colS09].Visible = true;
+                    }
+                    else
+                    {
+                        grfSticker.Cols[colS09].Visible = false;
+                    }
+                }
+                else if (i == 10)
+                {
+                    if (cuc.sticker10.Equals("1"))
+                    {
+                        grfSticker.Cols[colS10].Visible = true;
+                    }
+                    else
+                    {
+                        grfSticker.Cols[colS10].Visible = false;
+                    }
+                }
+                else if (i == 11)
+                {
+                    if (cuc.sticker11.Equals("1"))
+                    {
+                        grfSticker.Cols[colS11].Visible = true;
+                    }
+                    else
+                    {
+                        grfSticker.Cols[colS11].Visible = false;
+                    }
+                }
+                else if (i == 12)
+                {
+                    if (cuc.sticker12.Equals("1"))
+                    {
+                        grfSticker.Cols[colS12].Visible = true;
+                    }
+                    else
+                    {
+                        grfSticker.Cols[colS12].Visible = false;
+                    }
+                }
+                else if (i == 13)
+                {
+                    if (cuc.sticker13.Equals("1"))
+                    {
+                        grfSticker.Cols[colS13].Visible = true;
+                    }
+                    else
+                    {
+                        grfSticker.Cols[colS13].Visible = false;
+                    }
+                }
+                else if (i == 14)
+                {
+                    if (cuc.sticker14.Equals("1"))
+                    {
+                        grfSticker.Cols[colS14].Visible = true;
+                    }
+                    else
+                    {
+                        grfSticker.Cols[colS14].Visible = false;
+                    }
+                }
+                else if (i == 15)
+                {
+                    if (cuc.sticker15.Equals("1"))
+                    {
+                        grfSticker.Cols[colS15].Visible = true;
+                    }
+                    else
+                    {
+                        grfSticker.Cols[colS15].Visible = false;
+                    }
+                }
+                else if (i == 16)
+                {
+                    if (cuc.sticker16.Equals("1"))
+                    {
+                        grfSticker.Cols[colS16].Visible = true;
+                    }
+                    else
+                    {
+                        grfSticker.Cols[colS16].Visible = false;
+                    }
+                }
+                else if (i == 17)
+                {
+                    if (cuc.sticker17.Equals("1"))
+                    {
+                        grfSticker.Cols[colS17].Visible = true;
+                    }
+                    else
+                    {
+                        grfSticker.Cols[colS17].Visible = false;
+                    }
+                }
+                else if (i == 17)
+                {
+                    if (cuc.sticker17.Equals("1"))
+                    {
+                        grfSticker.Cols[colS17].Visible = true;
+                    }
+                    else
+                    {
+                        grfSticker.Cols[colS17].Visible = false;
+                    }
+                }
+                else if (i == 18)
+                {
+                    if (cuc.sticker18.Equals("1"))
+                    {
+                        grfSticker.Cols[colS18].Visible = true;
+                    }
+                    else
+                    {
+                        grfSticker.Cols[colS18].Visible = false;
+                    }
+                }
+                else if (i == 19)
+                {
+                    if (cuc.sticker19.Equals("1"))
+                    {
+                        grfSticker.Cols[colS19].Visible = true;
+                    }
+                    else
+                    {
+                        grfSticker.Cols[colS19].Visible = false;
+                    }
+                }
+                else if (i == 20)
+                {
+                    if (cuc.sticker20.Equals("1"))
+                    {
+                        grfSticker.Cols[colS20].Visible = true;
+                    }
+                    else
+                    {
+                        grfSticker.Cols[colS20].Visible = false;
+                    }
+                }
+                //grfSticker.Cols[i+3].Visible = false;
+            }
+        }
+        private void setTest(String barcode, int row)
+        {
+            //throw new NotImplementedException();
+            int col1 = 0, chk1=0;
+            String txt = "", id = "";
+            
+            id = grfTest[row, colTId].ToString();
+            String[] chk = barcode.Split('-');
+            if (chk.Length > 1)
+            {
+                if(int.TryParse(chk[1], out chk1))
+                {
+                    col1 = chk1;
+                    txt = grfTest[row, col1+3].ToString();
+                    if (txt.Equals("0"))
+                    {
+                        grfTest[grfTest.Row, col1+3] = "1";
+                        cc.ccpdb.UpdateTest1(id, col1.ToString("00"));
+                        //grfTest.Rows[row].StyleNew.BackColor = Color.Green;
+                        CellRange cel = grfTest.GetCellRange(row, col1 + 3);
+                        cel.StyleNew.BackColor = Color.Green;
+                    }
+                }
+            }
+        }
+        private void GrfTest_DoubleClick(object sender, EventArgs e)
+        {
+            int row = 0, col1 = 0;
+            String txt = "", id = "";
+            int.TryParse(grfTest.Col.ToString(), out col1);
+            col1 = col1 - 3;
+            id = grfTest[grfTest.Row, colSId].ToString();
+            txt = grfTest[grfTest.Row, grfTest.Col].ToString();
+            row = grfTest.Row;
+            if (txt.Equals("1"))
+            {
+                if(MessageBox.Show("ต้องการยกเลิก การรับ Test","", MessageBoxButtons.OKCancel)== DialogResult.OK)
+                {
+                    grfTest[row, grfTest.Col] = "0";
+                    cc.ccpdb.UpdateTest0(id, col1.ToString("00"));
+                    if (grfTest.Row % 2 == 0)
+                    {
+                        grfTest.Rows[row].StyleNew.BackColor = color;
+                    }
+                    else
+                    {
+                        grfTest.Rows[row].StyleNew.BackColor = Color.White;
+                    }
+                }
             }
         }
         private void GrfEmp_DoubleClick(object sender, EventArgs e)
@@ -740,9 +1144,25 @@ namespace CheckUP.gui
         }
         private void GrfSticker_DoubleClick(object sender, EventArgs e)
         {
-            int row = 0;
+            int row = 0, col1 = 0;
+            String txt = "", id="";
+            int.TryParse(grfSticker.Col.ToString(), out col1);
+            col1 = col1 - 3;
+            id = grfSticker[grfSticker.Row, colSId].ToString();
+            txt = grfSticker[grfSticker.Row, grfSticker.Col].ToString();
             row = grfSticker.Row;
-            MessageBox.Show(" row "+ row, "");
+            if (txt.Equals("0"))
+            {
+                grfSticker[grfSticker.Row, grfSticker.Col] = "1";
+                cc.ccpdb.UpdateSticker1(id, col1.ToString("00"));
+            }
+            else
+            {
+                grfSticker[grfSticker.Row, grfSticker.Col] = "0";
+                cc.ccpdb.UpdateSticker0(id, col1.ToString("00"));
+            }
+            //MessageBox.Show(" row "+ row, "");
+
         }
         private void BtnExcelPE_Click(object sender, EventArgs e)
         {
@@ -3111,8 +3531,9 @@ namespace CheckUP.gui
                     MessageBox.Show("ไม่ได้ป้อนชื่อ", "ป้อนข้อมูลไม่ครบ");
                     return "";
                 }
-
+                //MessageBox.Show("44444 ", "Error ");
                 getCustCheckUp();
+                //MessageBox.Show("55555 ", "Error ");
                 cucId = cc.cucdb.insertCustCheckUp(cuc);
                 if (cucId.Length < 1)
                 {
@@ -3122,6 +3543,7 @@ namespace CheckUP.gui
                 }
 
                 pB1.Maximum = rowCount;
+                //MessageBox.Show("1111 ", "Error ");
                 for (int i = int.Parse(nmDRow.Value.ToString()); i <= rowCount; i++)
                 {
                     try
@@ -3507,7 +3929,7 @@ namespace CheckUP.gui
                         {
                             ccp.patientNumber = "";
                         }
-
+                        //MessageBox.Show("9999 ", "Error ");
                         cc.ccpdb.InsertCustCheckUpPatient1(ccp);
                         row++;
                     }

@@ -157,6 +157,27 @@ namespace CheckUP.objdb
             cuc.toxi_test = "toxi_test";
             cuc.sticker = "sticker";
 
+            cuc.sticker01 = "sticker01";
+            cuc.sticker02 = "sticker02";
+            cuc.sticker03 = "sticker03";
+            cuc.sticker04 = "sticker04";
+            cuc.sticker05 = "sticker05";
+            cuc.sticker06 = "sticker06";
+            cuc.sticker07 = "sticker07";
+            cuc.sticker08 = "sticker08";
+            cuc.sticker09 = "sticker09";
+            cuc.sticker10 = "sticker10";
+            cuc.sticker11 = "sticker11";
+            cuc.sticker12 = "sticker12";
+            cuc.sticker13 = "sticker13";
+            cuc.sticker14 = "sticker14";
+            cuc.sticker15 = "sticker15";
+            cuc.sticker16 = "sticker16";
+            cuc.sticker17 = "sticker17";
+            cuc.sticker18 = "sticker18";
+            cuc.sticker19 = "sticker19";
+            cuc.sticker20 = "sticker20";
+
             cuc.pkField = "cust_checkup_patient_id";
             cuc.table = "t_cust_checkup";
         }
@@ -300,6 +321,26 @@ namespace CheckUP.objdb
             item.toxi_test = dt.Rows[0][cuc.toxi_test].ToString();
             item.sticker = dt.Rows[0][cuc.sticker].ToString();
 
+            item.sticker01 = dt.Rows[0][cuc.sticker01].ToString();
+            item.sticker02 = dt.Rows[0][cuc.sticker02].ToString();
+            item.sticker03 = dt.Rows[0][cuc.sticker03].ToString();
+            item.sticker04 = dt.Rows[0][cuc.sticker04].ToString();
+            item.sticker05= dt.Rows[0][cuc.sticker05].ToString();
+            item.sticker06 = dt.Rows[0][cuc.sticker06].ToString();
+            item.sticker07 = dt.Rows[0][cuc.sticker07].ToString();
+            item.sticker08 = dt.Rows[0][cuc.sticker08].ToString();
+            item.sticker09 = dt.Rows[0][cuc.sticker09].ToString();
+            item.sticker10 = dt.Rows[0][cuc.sticker10].ToString();
+            item.sticker11 = dt.Rows[0][cuc.sticker11].ToString();
+            item.sticker12 = dt.Rows[0][cuc.sticker12].ToString();
+            item.sticker13 = dt.Rows[0][cuc.sticker13].ToString();
+            item.sticker14 = dt.Rows[0][cuc.sticker14].ToString();
+            item.sticker15 = dt.Rows[0][cuc.sticker15].ToString();
+            item.sticker16 = dt.Rows[0][cuc.sticker16].ToString();
+            item.sticker17 = dt.Rows[0][cuc.sticker17].ToString();
+            item.sticker18 = dt.Rows[0][cuc.sticker18].ToString();
+            item.sticker19 = dt.Rows[0][cuc.sticker19].ToString();
+            item.sticker20 = dt.Rows[0][cuc.sticker20].ToString();
             return item;
         }
         public DataTable selectAll()
@@ -347,19 +388,35 @@ namespace CheckUP.objdb
         //    }
         //    return item;
         //}
+        private void chkNull(CustCheckUp p)
+        {
+            p.CheckUpDate = p.CheckUpDate == null ? "" : p.CheckUpDate;
+            p.CheckUpEndDate = p.CheckUpEndDate == null ? "" : p.CheckUpEndDate;
+            p.CheckUpStartDate = p.CheckUpStartDate == null ? "" : p.CheckUpStartDate;
+            p.CommitCheckUpDate = p.CommitCheckUpDate == null ? "" : p.CommitCheckUpDate;
+            p.CustId = p.CustId == null ? "" : p.CustId;
+            p.CustNameT = p.CustNameT == null ? "" : p.CustNameT;
+            p.Description = p.Description == null ? "" : p.Description;
+            p.RegisDate = p.RegisDate == null ? "" : p.RegisDate;
+            p.Remark = p.Remark == null ? "" : p.Remark;
+            p.YearId = p.YearId == null ? "" : p.YearId;
+        }
         private String insert(CustCheckUp p)
         {
             String sql = "", chk = "";
+            //MessageBox.Show("0000 ", "Error ");
             if (p.Id.Equals(""))
             {
                 p.Id = "cuc" + p.getGenID();
             }
-
+            //MessageBox.Show("1111 ", "Error ");
             p.Description = p.Description.Replace("'", "''");
             p.Remark = p.Remark.Replace("'", "''");
             int chk1 = 0;
             p.sticker = int.TryParse(p.sticker, out chk1) ? chk1.ToString() : "0";
 
+            chkNull(p);
+            p.Active = "1";
             sql = "Insert Into " + cuc.table + " (" + cuc.pkField + "," + cuc.Active + "," + cuc.CheckUpDate + "," +
                 cuc.CheckUpEndDate + "," + cuc.CheckUpStartDate + "," + cuc.CntEmployee + "," +
                 cuc.CommitCheckUpDate + "," + cuc.CustId + "," + cuc.CustNameT + "," +
@@ -377,7 +434,7 @@ namespace CheckUP.objdb
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex.ToString(), "insert CustCheckUp");
+                MessageBox.Show("Error " + ex.ToString()+"\n"+sql, "insert CustCheckUp");
             }
             finally
             {
@@ -424,7 +481,9 @@ namespace CheckUP.objdb
         {
             CustCheckUp item = new CustCheckUp();
             String chk = "";
+            //MessageBox.Show("1111 ", "Error ");
             item = selectByPk(p.Id);
+            //MessageBox.Show("2222 ", "Error ");
             if (item.Id == "")
             {
                 p.Active = "1";
@@ -1330,6 +1389,111 @@ namespace CheckUP.objdb
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
-
+        public String UpdateSticker(String cuId, String code, String prn)
+        {
+            String sql = "", chk = "";
+            if (code.Equals("01"))
+            {
+                sql = "Update " + cuc.table + " Set " + cuc.sticker01 + "='" + prn + "' " +
+                "Where " + cuc.pkField + "='" + cuId + "'";
+            }
+            else if (code.Equals("02"))
+            {
+                sql = "Update " + cuc.table + " Set " + cuc.sticker02 + "='" + prn + "' " +
+                "Where " + cuc.pkField + "='" + cuId + "'";
+            }
+            else if (code.Equals("03"))
+            {
+                sql = "Update " + cuc.table + " Set " + cuc.sticker03 + "='" + prn + "' " +
+                "Where " + cuc.pkField + "='" + cuId + "'";
+            }
+            else if (code.Equals("04"))
+            {
+                sql = "Update " + cuc.table + " Set " + cuc.sticker04 + "='" + prn + "' " +
+                "Where " + cuc.pkField + "='" + cuId + "'";
+            }
+            else if (code.Equals("05"))
+            {
+                sql = "Update " + cuc.table + " Set " + cuc.sticker05 + "='" + prn + "' " +
+                "Where " + cuc.pkField + "='" + cuId + "'";
+            }
+            else if (code.Equals("06"))
+            {
+                sql = "Update " + cuc.table + " Set " + cuc.sticker06 + "='" + prn + "' " +
+                "Where " + cuc.pkField + "='" + cuId + "'";
+            }
+            else if (code.Equals("07"))
+            {
+                sql = "Update " + cuc.table + " Set " + cuc.sticker07 + "='" + prn + "' " +
+                "Where " + cuc.pkField + "='" + cuId + "'";
+            }
+            else if (code.Equals("08"))
+            {
+                sql = "Update " + cuc.table + " Set " + cuc.sticker08 + "='" + prn + "' " +
+                "Where " + cuc.pkField + "='" + cuId + "'";
+            }
+            else if (code.Equals("09"))
+            {
+                sql = "Update " + cuc.table + " Set " + cuc.sticker09 + "='" + prn + "' " +
+                "Where " + cuc.pkField + "='" + cuId + "'";
+            }
+            else if (code.Equals("10"))
+            {
+                sql = "Update " + cuc.table + " Set " + cuc.sticker10 + "='" + prn + "' " +
+                "Where " + cuc.pkField + "='" + cuId + "'";
+            }
+            else if (code.Equals("11"))
+            {
+                sql = "Update " + cuc.table + " Set " + cuc.sticker11 + "='" + prn + "' " +
+                "Where " + cuc.pkField + "='" + cuId + "'";
+            }
+            else if (code.Equals("12"))
+            {
+                sql = "Update " + cuc.table + " Set " + cuc.sticker12 + "='" + prn + "' " +
+                "Where " + cuc.pkField + "='" + cuId + "'";
+            }
+            else if (code.Equals("13"))
+            {
+                sql = "Update " + cuc.table + " Set " + cuc.sticker13 + "='" + prn + "' " +
+                "Where " + cuc.pkField + "='" + cuId + "'";
+            }
+            else if (code.Equals("14"))
+            {
+                sql = "Update " + cuc.table + " Set " + cuc.sticker14 + "='" + prn + "' " +
+                "Where " + cuc.pkField + "='" + cuId + "'";
+            }
+            else if (code.Equals("15"))
+            {
+                sql = "Update " + cuc.table + " Set " + cuc.sticker15 + "='" + prn + "' " +
+                "Where " + cuc.pkField + "='" + cuId + "'";
+            }
+            else if (code.Equals("16"))
+            {
+                sql = "Update " + cuc.table + " Set " + cuc.sticker16 + "='" + prn + "' " +
+                "Where " + cuc.pkField + "='" + cuId + "'";
+            }
+            else if (code.Equals("17"))
+            {
+                sql = "Update " + cuc.table + " Set " + cuc.sticker17 + "='" + prn + "' " +
+                "Where " + cuc.pkField + "='" + cuId + "'";
+            }
+            else if (code.Equals("18"))
+            {
+                sql = "Update " + cuc.table + " Set " + cuc.sticker18 + "='" + prn + "' " +
+                "Where " + cuc.pkField + "='" + cuId + "'";
+            }
+            else if (code.Equals("19"))
+            {
+                sql = "Update " + cuc.table + " Set " + cuc.sticker19 + "='" + prn + "' " +
+                "Where " + cuc.pkField + "='" + cuId + "'";
+            }
+            else if (code.Equals("20"))
+            {
+                sql = "Update " + cuc.table + " Set " + cuc.sticker20 + "='" + prn + "' " +
+                "Where " + cuc.pkField + "='" + cuId + "'";
+            }
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
     }
 }

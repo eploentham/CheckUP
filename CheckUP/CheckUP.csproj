@@ -35,13 +35,19 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="C1.Win.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
+    <Reference Include="C1.Win.C1Command.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=e808566f358766d8" />
     <Reference Include="C1.Win.C1FlexGrid.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Input.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
@@ -56,6 +62,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Control\CheckControl.cs" />
+    <Compile Include="gui\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmCheckUPAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +85,12 @@
     </Compile>
     <Compile Include="gui\FrmCheckUpEdit.Designer.cs">
       <DependentUpon>FrmCheckUpEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmCheckUPSticker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmCheckUPSticker.Designer.cs">
+      <DependentUpon>FrmCheckUPSticker.cs</DependentUpon>
     </Compile>
     <Compile Include="gui\FrmCheckUPView.cs">
       <SubType>Form</SubType>
@@ -103,6 +127,12 @@
     </Compile>
     <Compile Include="gui\FrmInitConfig.designer.cs">
       <DependentUpon>FrmInitConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmLabelSticker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmLabelSticker.Designer.cs">
+      <DependentUpon>FrmLabelSticker.cs</DependentUpon>
     </Compile>
     <Compile Include="gui\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -159,6 +189,7 @@
     <Compile Include="objdb\ProvinceDB.cs" />
     <Compile Include="objdb\RCheckUpDB.cs" />
     <Compile Include="objdb\StaffDB.cs" />
+    <Compile Include="objdb\StickerDB.cs" />
     <Compile Include="object1\Amphur.cs" />
     <Compile Include="object1\ComboBoxItem.cs" />
     <Compile Include="object1\Company.cs" />
@@ -178,6 +209,7 @@
     <Compile Include="object1\Province.cs" />
     <Compile Include="object1\RCheckUp.cs" />
     <Compile Include="object1\Staff.cs" />
+    <Compile Include="object1\Sticker.cs" />
     <Compile Include="object1\ValueNormalCholes.cs" />
     <Compile Include="object1\ValueNormalLDL.cs" />
     <Compile Include="object1\ValueNormalSugar.cs" />
@@ -259,11 +291,17 @@
       <DependentUpon>XrayDetailPrint.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="gui\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmCheckUPAdd.resx">
       <DependentUpon>FrmCheckUPAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmCheckUpEdit.resx">
       <DependentUpon>FrmCheckUpEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmCheckUPSticker.resx">
+      <DependentUpon>FrmCheckUPSticker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmCheckUPView.resx">
       <DependentUpon>FrmCheckUPView.cs</DependentUpon>
@@ -282,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmInitConfig.resx">
       <DependentUpon>FrmInitConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmLabelSticker.resx">
+      <DependentUpon>FrmLabelSticker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

@@ -3048,3 +3048,5 @@ Failed to load database information.
 7/10/2018 11:27 AM->rpt.setReportCheckUp OK 
 7/10/2018 11:27 AM->rpt.setReportCheckUp OK LoadD:\source\bangna\CheckUP\CheckUP\report\CheckUp_mini_2.rpt
 7/10/2018 11:27 AM->rpt.setReportCheckUp OK SetDataSource
+8/10/2018 3:58 PM->ccp.UpdatePE Error Object reference not set to an instance of an object.
+8/11/2018 8:09 PM->ccp.UpdatePE Error Object reference not set to an instance of an object.
