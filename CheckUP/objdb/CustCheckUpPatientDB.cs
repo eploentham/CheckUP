@@ -619,6 +619,27 @@ namespace CheckUP.objdb
             ccp.sticker19 = "sticker19";
             ccp.sticker20 = "sticker20";
 
+            ccp.test01 = "test01";
+            ccp.test02 = "test02";
+            ccp.test03 = "test03";
+            ccp.test04 = "test04";
+            ccp.test05 = "test05";
+            ccp.test06 = "test06";
+            ccp.test07 = "test07";
+            ccp.test08 = "test08";
+            ccp.test09 = "test09";
+            ccp.test10 = "test10";
+            ccp.test11 = "test11";
+            ccp.test12 = "test12";
+            ccp.test13 = "test13";
+            ccp.test14 = "test14";
+            ccp.test15 = "test15";
+            ccp.test16 = "test16";
+            ccp.test17 = "test17";
+            ccp.test18 = "test18";
+            ccp.test19 = "test19";
+            ccp.test20 = "test20";
+
             ccp.pkField = "patient_id";
             ccp.table = "t_cust_checkup_patient";
         }
@@ -772,6 +793,27 @@ namespace CheckUP.objdb
                 p.sticker19 = "0";
                 p.sticker20 = "0";
 
+                p.test01 = "0";
+                p.test02 = "0";
+                p.test03 = "0";
+                p.test04 = "0";
+                p.test05 = "0";
+                p.test06 = "0";
+                p.test07 = "0";
+                p.test08 = "0";
+                p.test09 = "0";
+                p.test10 = "0";
+                p.test11 = "0";
+                p.test12 = "0";
+                p.test13 = "0";
+                p.test14 = "0";
+                p.test15 = "0";
+                p.test16 = "0";
+                p.test17 = "0";
+                p.test18 = "0";
+                p.test19 = "0";
+                p.test20 = "0";
+
                 sql = "Insert Into " + ccp.table+ "(" 
                 + ccp.Id + ", " + ccp.amphetamine + ", "
                 + ccp.antiHiv + "," + ccp.AudiogramExam + ","
@@ -863,6 +905,13 @@ namespace CheckUP.objdb
                     "," + ccp.sticker13 + "," + ccp.sticker14 + "," + ccp.sticker15 + " " +
                     "," + ccp.sticker16 + "," + ccp.sticker17 + "," + ccp.sticker18 + " " +
                     "," + ccp.sticker19 + "," + ccp.sticker20 + "," + ccp.position_name + " " +
+                    "," + ccp.test01 + "," + ccp.test02 + "," + ccp.test03 + " " +
+                    "," + ccp.test04 + "," + ccp.test05 + "," + ccp.test06 + " " +
+                    "," + ccp.test07 + "," + ccp.test08 + "," + ccp.test09 + " " +
+                    "," + ccp.test10 + "," + ccp.test11 + "," + ccp.test12 + " " +
+                    "," + ccp.test13 + "," + ccp.test14 + "," + ccp.test15 + " " +
+                    "," + ccp.test16 + "," + ccp.test17 + "," + ccp.test18 + " " +
+                    "," + ccp.test19 + "," + ccp.test20 + " " +
                     ") "
 
                 + "Values('" + p.Id + "','" + p.amphetamine + "','"
@@ -955,6 +1004,13 @@ namespace CheckUP.objdb
                     ",'" + p.sticker13 + "','" + p.sticker14 + "','" + p.sticker15 + "'" +
                     ",'" + p.sticker16 + "','" + p.sticker17 + "','" + p.sticker18 + "'" +
                     ",'" + p.sticker19 + "','" + p.sticker20 + "','" + p.position_name + "'" +
+                    ",'" + p.test01 + "','" + p.test02 + "','" + p.test03 + "'" +
+                    ",'" + p.test04 + "','" + p.test05 + "','" + p.test06 + "'" +
+                    ",'" + p.test07 + "','" + p.test08 + "','" + p.test09 + "'" +
+                    ",'" + p.test10 + "','" + p.test11 + "','" + p.test12 + "'" +
+                    ",'" + p.test13 + "','" + p.test14 + "','" + p.test15 + "'" +
+                    ",'" + p.test16 + "','" + p.test17 + "','" + p.test18 + "'" +
+                    ",'" + p.test19 + "','" + p.test20 + "' " +
                     ") ";
                 chk = conn.ExecuteNonQuery(sql);
                 sql = "Insert Into " + ccp1db.ccp1.table + "(" + ccp1db.ccp1.Id + "," + ccp1db.ccp1.CustCheckUpId + "," + ccp1db.ccp1.rowNumber +","+ccp1db.ccp1.Active+","+ccp1db.ccp1.patientFullname+
@@ -1057,6 +1113,38 @@ namespace CheckUP.objdb
             try
             {
                 sql = "Update " + ccp.table + " Set sticker" + col + "='1' " +
+                "Where " + ccp.pkField + "='" + ccpId + "'  ";
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                lw.WriteLog("ccp.UpdatePE Error " + ex.Message);
+                //max = ex.getMessage;
+            }
+            return chk;
+        }
+        public String UpdateTest0(String ccpId, String col)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set test" + col + "='0' " +
+                "Where " + ccp.pkField + "='" + ccpId + "'  ";
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                lw.WriteLog("ccp.UpdatePE Error " + ex.Message);
+                //max = ex.getMessage;
+            }
+            return chk;
+        }
+        public String UpdateTest1(String ccpId, String col)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set test" + col + "='1' " +
                 "Where " + ccp.pkField + "='" + ccpId + "'  ";
                 chk = conn.ExecuteNonQuery(sql);
             }

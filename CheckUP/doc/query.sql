@@ -71,3 +71,48 @@ INSERT INTO b_sticker (sticker_id,sticker_code,sticker_name) VALUES('17','17','-
 INSERT INTO b_sticker (sticker_id,sticker_code,sticker_name) VALUES('18','18','-');
 INSERT INTO b_sticker (sticker_id,sticker_code,sticker_name) VALUES('19','19','-');
 INSERT INTO b_sticker (sticker_id,sticker_code,sticker_name) VALUES('20','20','-');
+
+ALTER TABLE dbo.t_cust_checkup_patient ADD
+	test01 nvarchar(255) NULL,
+	test02 nvarchar(255) NULL,
+	test03 nvarchar(255) NULL,
+	test04 nvarchar(255) NULL,
+	test05 nvarchar(255) NULL,
+	test06 nvarchar(255) NULL,
+	test07 nvarchar(255) NULL,
+	test08 nvarchar(255) NULL,
+	test09 nvarchar(255) NULL,
+	test10 nvarchar(255) NULL,
+	test11 nvarchar(255) NULL,
+	test12 nvarchar(255) NULL,
+	test13 nvarchar(255) NULL,
+	test14 nvarchar(255) NULL,
+	test15 nvarchar(255) NULL,
+	test16 nvarchar(255) NULL,
+	test17 nvarchar(255) NULL,
+	test18 nvarchar(255) NULL,
+	test19 nvarchar(255) NULL,
+	test20 nvarchar(255) NULL
+
+	update t_cust_checkup_patient
+set 
+test01 = '0'
+, test02 = '0'
+, test03 = '0'
+, test04 = '0'
+, test05 = '0'
+, test06 = '0'
+, test07 = '0'
+, test08 = '0'
+, test09 = '0'
+, test10 = '0'
+, test11 = '0'
+, test12 = '0'
+, test13 = '0'
+, test14 = '0'
+, test15 = '0'
+, test16 = '0'
+, test17 = '0'
+, test18 = '0'
+, test19 = '0'
+, test20 = '0'

@@ -279,8 +279,14 @@ namespace CheckUP.gui
             //throw new NotImplementedException();
             if (e.KeyCode == Keys.Enter)
             {
-                int row = grfTest.FindRow(txtBarcode.Text, 1, colSvisitHn, true);
-                grfTest.Rows[row].StyleNew.BackColor = Color.Red;
+                String[] chk = txtBarcode.Text.Split('-');
+                if (chk.Length > 1)
+                {
+                    int row = grfTest.FindRow(chk[0], 1, colSvisitHn, true);
+                    if (row < 0) return;
+                    grfTest.Row = row;
+                    setTest(txtBarcode.Text, row);
+                }
             }
         }
 
@@ -563,17 +569,17 @@ namespace CheckUP.gui
             grfTest.Dock = System.Windows.Forms.DockStyle.Fill;
             grfTest.Location = new System.Drawing.Point(0, 0);
 
-            FilterRow fr = new FilterRow(grfTest);
+            //FilterRow fr = new FilterRow(grfTest);
 
             //grfJob.AfterRowColChange += GrfJob_AfterRowColChange;
-            grfTest.DoubleClick += GrfEmp_DoubleClick;
+            grfTest.DoubleClick += GrfTest_DoubleClick;
             //grfExpnC.CellButtonClick += new C1.Win.C1FlexGrid.RowColEventHandler(this.grfDept_CellButtonClick);
             //grfExpnC.CellChanged += new C1.Win.C1FlexGrid.RowColEventHandler(this.grfDept_CellChanged);
             //grfJob.CellChanged += GrfExpnD_CellChanged;
             gbTest.Controls.Add(grfTest);
             grfTest.Clear();
-            grfTest.Rows.Count = 2;
-            grfTest.Cols.Count = 20;
+            grfTest.Rows.Count = 1;
+            grfTest.Cols.Count = 24;
             grfTest.Cols[colTvisitHn].Width = 80;
             grfTest.Cols[colTname].Width = 200;
 
@@ -592,8 +598,8 @@ namespace CheckUP.gui
             if (cucid.Equals("")) return;
             DataTable dt = new DataTable();
             dt = cc.ccpdb.selectAllByCucId(cucid);
-            grfTest.Rows.Count = 2;
-            grfTest.Cols.Count = 20;
+            grfTest.Rows.Count = 1;
+            grfTest.Cols.Count = 24;
             TextBox txt = new TextBox();
 
             grfTest.Cols[colTvisitHn].Editor = txt;
@@ -602,43 +608,51 @@ namespace CheckUP.gui
             grfTest.Cols[colTvisitHn].Width = 80;
             grfTest.Cols[colTname].Width = 200;
             grfTest.Cols[colTvisitHn].Width = 80;
-            grfTest.Cols[colTstatusPE].Width = 40;
-            grfTest.Cols[colTstatusXray].Width = 40;
-            grfTest.Cols[colTstatusFBS].Width = 40;
-            grfTest.Cols[colTstatusCBC].Width = 40;
-            grfTest.Cols[colTstatusUA].Width = 40;
-            grfTest.Cols[colTstatusTri].Width = 40;
-            grfTest.Cols[colTstatusCho].Width = 40;
-            grfTest.Cols[colTstatusSgot].Width = 40;
-            grfTest.Cols[colTstatusBUN].Width = 40;
-            grfTest.Cols[colTstatusUric].Width = 40;
-            grfTest.Cols[colTstatusLung].Width = 40;
-            grfTest.Cols[colTstatusAudio].Width = 40;
-            grfTest.Cols[colTstatusEye].Width = 40;
-            grfTest.Cols[colTstatusToxi].Width = 40;
-            grfTest.Cols[colTstatusStoolExam].Width = 40;
-            grfTest.Cols[colTstatusOther1].Width = 40;
+            grfTest.Cols[colS01].Width = 40;
+            grfTest.Cols[colS02].Width = 40;
+            grfTest.Cols[colS03].Width = 40;
+            grfTest.Cols[colS04].Width = 40;
+            grfTest.Cols[colS05].Width = 40;
+            grfTest.Cols[colS06].Width = 40;
+            grfTest.Cols[colS07].Width = 40;
+            grfTest.Cols[colS08].Width = 40;
+            grfTest.Cols[colS09].Width = 40;
+            grfTest.Cols[colS10].Width = 40;
+            grfTest.Cols[colS11].Width = 40;
+            grfTest.Cols[colS12].Width = 40;
+            grfTest.Cols[colS13].Width = 40;
+            grfTest.Cols[colS14].Width = 40;
+            grfTest.Cols[colS15].Width = 40;
+            grfTest.Cols[colS16].Width = 40;
+            grfTest.Cols[colS17].Width = 40;
+            grfTest.Cols[colS18].Width = 40;
+            grfTest.Cols[colS19].Width = 40;
+            grfTest.Cols[colS20].Width = 40;
 
             grfTest.Cols[colTvisitHn].Caption = "barcode";
             grfTest.Cols[colTname].Caption = "ชื่อ-นามสกุล";
-            grfTest.Cols[colTstatusPE].Caption = "PE";
-            grfTest.Cols[colTstatusXray].Caption = "Xray";
-            grfTest.Cols[colTstatusFBS].Caption = "FBS";
-            grfTest.Cols[colTstatusCBC].Caption = "CBC";
-            grfTest.Cols[colTstatusUA].Caption = "UA";
-            grfTest.Cols[colTstatusTri].Caption = "Trig";
-            grfTest.Cols[colTstatusCho].Caption = "Choles";
-            grfTest.Cols[colTstatusSgot].Caption = "Sgot";
-            grfTest.Cols[colTstatusBUN].Caption = "BUN";
-            grfTest.Cols[colTstatusUric].Caption = "Uric";
-            grfTest.Cols[colTstatusLung].Caption = "Lung";
-            grfTest.Cols[colTstatusAudio].Caption = "Audio";
-            grfTest.Cols[colTstatusEye].Caption = "Eye";
-            grfTest.Cols[colTstatusToxi].Caption = "Toxi";
-            grfTest.Cols[colTstatusStoolExam].Caption = "Stool";
-            grfTest.Cols[colTstatusOther1].Caption = "Other";
+            grfTest.Cols[colS01].Caption = "01";
+            grfTest.Cols[colS02].Caption = "02";
+            grfTest.Cols[colS03].Caption = "03";
+            grfTest.Cols[colS04].Caption = "04";
+            grfTest.Cols[colS05].Caption = "05";
+            grfTest.Cols[colS06].Caption = "06";
+            grfTest.Cols[colS07].Caption = "07";
+            grfTest.Cols[colS08].Caption = "08";
+            grfTest.Cols[colS09].Caption = "09";
+            grfTest.Cols[colS10].Caption = "10";
+            grfTest.Cols[colS11].Caption = "11";
+            grfTest.Cols[colS12].Caption = "12";
+            grfTest.Cols[colS13].Caption = "13";
+            grfTest.Cols[colS14].Caption = "14";
+            grfTest.Cols[colS15].Caption = "15";
+            grfTest.Cols[colS16].Caption = "16";
+            grfTest.Cols[colS17].Caption = "17";
+            grfTest.Cols[colS18].Caption = "18";
+            grfTest.Cols[colS19].Caption = "19";
+            grfTest.Cols[colS20].Caption = "20";
 
-            grfTest.Cols[colEId].Visible = false;
+            grfTest.Cols[colTId].Visible = false;
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -650,17 +664,31 @@ namespace CheckUP.gui
                 row[colTvisitHn] = dt.Rows[i][cc.ccpdb.ccp.visitHn].ToString();
                 row[colTname] = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
 
-                row[colTstatusPE] = dt.Rows[i][cc.ccpdb.ccp.statusPe].ToString();
-                row[colTstatusXray] = dt.Rows[i][cc.ccpdb.ccp.statusXray].ToString();
-                row[colTstatusFBS] = dt.Rows[i][cc.ccpdb.ccp.statusFbs].ToString();
-                row[colTstatusCBC] = dt.Rows[i][cc.ccpdb.ccp.statusCbc].ToString();
-                row[colTstatusUA] = dt.Rows[i][cc.ccpdb.ccp.statusUa].ToString();
-                row[colTstatusCho] = dt.Rows[i][cc.ccpdb.ccp.statusCholes].ToString();
-                row[colTstatusUric] = dt.Rows[i][cc.ccpdb.ccp.statusUricAcid].ToString();
-                row[colTstatusStoolExam] = dt.Rows[i][cc.ccpdb.ccp.statusStool].ToString();
+                row[colS01] = dt.Rows[i][cc.ccpdb.ccp.test01].ToString();
+                row[colS02] = dt.Rows[i][cc.ccpdb.ccp.test02].ToString();
+                row[colS03] = dt.Rows[i][cc.ccpdb.ccp.test03].ToString();
+                row[colS04] = dt.Rows[i][cc.ccpdb.ccp.test04].ToString();
+                row[colS05] = dt.Rows[i][cc.ccpdb.ccp.test05].ToString();
+                row[colS06] = dt.Rows[i][cc.ccpdb.ccp.test06].ToString();
+                row[colS07] = dt.Rows[i][cc.ccpdb.ccp.test07].ToString();
+                row[colS08] = dt.Rows[i][cc.ccpdb.ccp.test08].ToString();
+                row[colS09] = dt.Rows[i][cc.ccpdb.ccp.test09].ToString();
+                row[colS10] = dt.Rows[i][cc.ccpdb.ccp.test10].ToString();
+                row[colS11] = dt.Rows[i][cc.ccpdb.ccp.test11].ToString();
+                row[colS12] = dt.Rows[i][cc.ccpdb.ccp.test12].ToString();
+                row[colS13] = dt.Rows[i][cc.ccpdb.ccp.test13].ToString();
+                row[colS14] = dt.Rows[i][cc.ccpdb.ccp.test14].ToString();
+                row[colS15] = dt.Rows[i][cc.ccpdb.ccp.test15].ToString();
+                row[colS16] = dt.Rows[i][cc.ccpdb.ccp.test16].ToString();
+                row[colS17] = dt.Rows[i][cc.ccpdb.ccp.test17].ToString();
+                row[colS18] = dt.Rows[i][cc.ccpdb.ccp.test18].ToString();
+                row[colS19] = dt.Rows[i][cc.ccpdb.ccp.test19].ToString();
+                row[colS20] = dt.Rows[i][cc.ccpdb.ccp.test20].ToString();
 
             }
             grfTest.Cols[colTId].Visible = false;
+            grfTest.AllowEditing = false;
+            grfTest.SelectionMode = SelectionModeEnum.Cell;
         }
         private void initGrfSticker()
         {
@@ -1048,6 +1076,57 @@ namespace CheckUP.gui
                     }
                 }
                 //grfSticker.Cols[i+3].Visible = false;
+            }
+        }
+        private void setTest(String barcode, int row)
+        {
+            //throw new NotImplementedException();
+            int col1 = 0, chk1=0;
+            String txt = "", id = "";
+            
+            id = grfTest[row, colTId].ToString();
+            String[] chk = barcode.Split('-');
+            if (chk.Length > 1)
+            {
+                if(int.TryParse(chk[1], out chk1))
+                {
+                    col1 = chk1;
+                    txt = grfTest[row, col1+3].ToString();
+                    if (txt.Equals("0"))
+                    {
+                        grfTest[grfTest.Row, col1+3] = "1";
+                        cc.ccpdb.UpdateTest1(id, col1.ToString("00"));
+                        //grfTest.Rows[row].StyleNew.BackColor = Color.Green;
+                        CellRange cel = grfTest.GetCellRange(row, col1 + 3);
+                        cel.StyleNew.BackColor = Color.Green;
+                    }
+                }
+            }
+        }
+        private void GrfTest_DoubleClick(object sender, EventArgs e)
+        {
+            int row = 0, col1 = 0;
+            String txt = "", id = "";
+            int.TryParse(grfTest.Col.ToString(), out col1);
+            col1 = col1 - 3;
+            id = grfTest[grfTest.Row, colSId].ToString();
+            txt = grfTest[grfTest.Row, grfTest.Col].ToString();
+            row = grfTest.Row;
+            if (txt.Equals("1"))
+            {
+                if(MessageBox.Show("ต้องการยกเลิก การรับ Test","", MessageBoxButtons.OKCancel)== DialogResult.OK)
+                {
+                    grfTest[row, grfTest.Col] = "0";
+                    cc.ccpdb.UpdateTest0(id, col1.ToString("00"));
+                    if (grfTest.Row % 2 == 0)
+                    {
+                        grfTest.Rows[row].StyleNew.BackColor = color;
+                    }
+                    else
+                    {
+                        grfTest.Rows[row].StyleNew.BackColor = Color.White;
+                    }
+                }
             }
         }
         private void GrfEmp_DoubleClick(object sender, EventArgs e)
