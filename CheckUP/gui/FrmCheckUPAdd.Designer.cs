@@ -344,6 +344,14 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tabPage21 = new System.Windows.Forms.TabPage();
+            this.gbSticker1 = new System.Windows.Forms.Panel();
+            this.gbSticker = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnPrnNoAll = new System.Windows.Forms.Button();
+            this.btnPrnAll = new System.Windows.Forms.Button();
+            this.cboSticker = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.cboCust = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnImport = new System.Windows.Forms.Button();
@@ -370,14 +378,8 @@
             this.chkHideTab = new System.Windows.Forms.CheckBox();
             this.nmDSticker = new System.Windows.Forms.NumericUpDown();
             this.label21 = new System.Windows.Forms.Label();
-            this.tabPage21 = new System.Windows.Forms.TabPage();
-            this.gbSticker1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.gbSticker = new System.Windows.Forms.Panel();
-            this.label22 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnPrnAll = new System.Windows.Forms.Button();
-            this.btnPrnNoAll = new System.Windows.Forms.Button();
+            this.btnLabelSticker = new System.Windows.Forms.Button();
+            this.btnPrnSticker = new System.Windows.Forms.Button();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -430,11 +432,11 @@
             this.splitContainer2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDSticker)).BeginInit();
             this.tabPage21.SuspendLayout();
             this.gbSticker1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDSticker)).BeginInit();
             this.SuspendLayout();
             // 
             // tC
@@ -3750,6 +3752,84 @@
             this.textBox1.Size = new System.Drawing.Size(140, 20);
             this.textBox1.TabIndex = 0;
             // 
+            // tabPage21
+            // 
+            this.tabPage21.Controls.Add(this.gbSticker1);
+            this.tabPage21.Location = new System.Drawing.Point(4, 22);
+            this.tabPage21.Name = "tabPage21";
+            this.tabPage21.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage21.Size = new System.Drawing.Size(1276, 782);
+            this.tabPage21.TabIndex = 21;
+            this.tabPage21.Text = "tabPage21";
+            this.tabPage21.UseVisualStyleBackColor = true;
+            // 
+            // gbSticker1
+            // 
+            this.gbSticker1.Controls.Add(this.gbSticker);
+            this.gbSticker1.Controls.Add(this.panel2);
+            this.gbSticker1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbSticker1.Location = new System.Drawing.Point(3, 3);
+            this.gbSticker1.Name = "gbSticker1";
+            this.gbSticker1.Size = new System.Drawing.Size(1270, 776);
+            this.gbSticker1.TabIndex = 79;
+            // 
+            // gbSticker
+            // 
+            this.gbSticker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbSticker.Location = new System.Drawing.Point(0, 80);
+            this.gbSticker.Name = "gbSticker";
+            this.gbSticker.Size = new System.Drawing.Size(1270, 696);
+            this.gbSticker.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnPrnSticker);
+            this.panel2.Controls.Add(this.btnLabelSticker);
+            this.panel2.Controls.Add(this.btnPrnNoAll);
+            this.panel2.Controls.Add(this.btnPrnAll);
+            this.panel2.Controls.Add(this.cboSticker);
+            this.panel2.Controls.Add(this.label22);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1270, 80);
+            this.panel2.TabIndex = 0;
+            // 
+            // btnPrnNoAll
+            // 
+            this.btnPrnNoAll.Location = new System.Drawing.Point(450, 10);
+            this.btnPrnNoAll.Name = "btnPrnNoAll";
+            this.btnPrnNoAll.Size = new System.Drawing.Size(97, 35);
+            this.btnPrnNoAll.TabIndex = 82;
+            this.btnPrnNoAll.Text = "ไม่เลือกทั้งหมด";
+            this.btnPrnNoAll.UseVisualStyleBackColor = true;
+            // 
+            // btnPrnAll
+            // 
+            this.btnPrnAll.Location = new System.Drawing.Point(347, 10);
+            this.btnPrnAll.Name = "btnPrnAll";
+            this.btnPrnAll.Size = new System.Drawing.Size(97, 35);
+            this.btnPrnAll.TabIndex = 81;
+            this.btnPrnAll.Text = "เลือกทั้งหมด";
+            this.btnPrnAll.UseVisualStyleBackColor = true;
+            // 
+            // cboSticker
+            // 
+            this.cboSticker.FormattingEnabled = true;
+            this.cboSticker.Location = new System.Drawing.Point(97, 12);
+            this.cboSticker.Name = "cboSticker";
+            this.cboSticker.Size = new System.Drawing.Size(244, 21);
+            this.cboSticker.TabIndex = 80;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(24, 15);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(40, 13);
+            this.label22.TabIndex = 79;
+            this.label22.Text = "Sticker";
+            // 
             // cboCust
             // 
             this.cboCust.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -4013,81 +4093,23 @@
             this.label21.TabIndex = 77;
             this.label21.Text = "จน. sticker :";
             // 
-            // tabPage21
+            // btnLabelSticker
             // 
-            this.tabPage21.Controls.Add(this.gbSticker1);
-            this.tabPage21.Location = new System.Drawing.Point(4, 22);
-            this.tabPage21.Name = "tabPage21";
-            this.tabPage21.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage21.Size = new System.Drawing.Size(1276, 782);
-            this.tabPage21.TabIndex = 21;
-            this.tabPage21.Text = "tabPage21";
-            this.tabPage21.UseVisualStyleBackColor = true;
+            this.btnLabelSticker.Location = new System.Drawing.Point(553, 10);
+            this.btnLabelSticker.Name = "btnLabelSticker";
+            this.btnLabelSticker.Size = new System.Drawing.Size(97, 35);
+            this.btnLabelSticker.TabIndex = 83;
+            this.btnLabelSticker.Text = "label Sticker";
+            this.btnLabelSticker.UseVisualStyleBackColor = true;
             // 
-            // gbSticker1
+            // btnPrnSticker
             // 
-            this.gbSticker1.Controls.Add(this.gbSticker);
-            this.gbSticker1.Controls.Add(this.panel2);
-            this.gbSticker1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbSticker1.Location = new System.Drawing.Point(3, 3);
-            this.gbSticker1.Name = "gbSticker1";
-            this.gbSticker1.Size = new System.Drawing.Size(1270, 776);
-            this.gbSticker1.TabIndex = 79;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnPrnNoAll);
-            this.panel2.Controls.Add(this.btnPrnAll);
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Controls.Add(this.label22);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1270, 80);
-            this.panel2.TabIndex = 0;
-            // 
-            // gbSticker
-            // 
-            this.gbSticker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbSticker.Location = new System.Drawing.Point(0, 80);
-            this.gbSticker.Name = "gbSticker";
-            this.gbSticker.Size = new System.Drawing.Size(1270, 696);
-            this.gbSticker.TabIndex = 1;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(24, 15);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(40, 13);
-            this.label22.TabIndex = 79;
-            this.label22.Text = "Sticker";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(71, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(214, 21);
-            this.comboBox1.TabIndex = 80;
-            // 
-            // btnPrnAll
-            // 
-            this.btnPrnAll.Location = new System.Drawing.Point(298, 10);
-            this.btnPrnAll.Name = "btnPrnAll";
-            this.btnPrnAll.Size = new System.Drawing.Size(97, 35);
-            this.btnPrnAll.TabIndex = 81;
-            this.btnPrnAll.Text = "เลือกทั้งหมด";
-            this.btnPrnAll.UseVisualStyleBackColor = true;
-            // 
-            // btnPrnNoAll
-            // 
-            this.btnPrnNoAll.Location = new System.Drawing.Point(401, 10);
-            this.btnPrnNoAll.Name = "btnPrnNoAll";
-            this.btnPrnNoAll.Size = new System.Drawing.Size(97, 35);
-            this.btnPrnNoAll.TabIndex = 82;
-            this.btnPrnNoAll.Text = "ไม่เลือกทั้งหมด";
-            this.btnPrnNoAll.UseVisualStyleBackColor = true;
+            this.btnPrnSticker.Location = new System.Drawing.Point(656, 10);
+            this.btnPrnSticker.Name = "btnPrnSticker";
+            this.btnPrnSticker.Size = new System.Drawing.Size(97, 35);
+            this.btnPrnSticker.TabIndex = 83;
+            this.btnPrnSticker.Text = "พิมพ์ Sticker";
+            this.btnPrnSticker.UseVisualStyleBackColor = true;
             // 
             // FrmCheckUPAdd
             // 
@@ -4184,12 +4206,12 @@
             this.groupBox5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDSticker)).EndInit();
             this.tabPage21.ResumeLayout(false);
             this.gbSticker1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDRow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmDSticker)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4543,9 +4565,11 @@
         private System.Windows.Forms.Panel gbSticker1;
         private System.Windows.Forms.Panel gbSticker;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboSticker;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button btnPrnAll;
         private System.Windows.Forms.Button btnPrnNoAll;
+        private System.Windows.Forms.Button btnLabelSticker;
+        private System.Windows.Forms.Button btnPrnSticker;
     }
 }

@@ -1035,6 +1035,38 @@ namespace CheckUP.objdb
             }
             return chk;
         }
+        public String UpdateSticker0(String ccpId, String col)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set sticker"+col+"='0' " +
+                "Where " + ccp.pkField + "='" + ccpId + "'  ";
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                lw.WriteLog("ccp.UpdatePE Error " + ex.Message);
+                //max = ex.getMessage;
+            }
+            return chk;
+        }
+        public String UpdateSticker1(String ccpId, String col)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set sticker" + col + "='1' " +
+                "Where " + ccp.pkField + "='" + ccpId + "'  ";
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                lw.WriteLog("ccp.UpdatePE Error " + ex.Message);
+                //max = ex.getMessage;
+            }
+            return chk;
+        }
         public String UpdateStatusVisit1(String ccpId)
         {
             String chk = "", sql = "";
