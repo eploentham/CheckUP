@@ -34,6 +34,8 @@ namespace CheckUP.gui
         {
             cuc = new CustCheckUp();
             this.cucId = cucId;
+            color = ColorTranslator.FromHtml(cc.initC.grfRowColor);
+
             btnSave.Click += BtnSave_Click;
             btnLabelSticker.Click += BtnLabelSticker_Click;
             initGrfView();
@@ -71,7 +73,7 @@ namespace CheckUP.gui
             //grfView.DoubleClick += GrfView_DoubleClick;
             //grfExpnC.CellButtonClick += new C1.Win.C1FlexGrid.RowColEventHandler(this.grfDept_CellButtonClick);
             //grfExpnC.CellChanged += new C1.Win.C1FlexGrid.RowColEventHandler(this.grfDept_CellChanged);
-            //grfJob.CellChanged += GrfExpnD_CellChanged;
+            grfView.CellChecked += GrfView_CellChecked;
             panel3.Controls.Add(grfView);
             grfView.Clear();
             grfView.Rows.Count = 2;
@@ -86,6 +88,7 @@ namespace CheckUP.gui
             grfView.AllowEditing = true;
             //theme1.SetTheme(grfJob, "Office2013Red");
         }
+        
         private void setGrfView()
         {
             grfView.DataSource = null;
@@ -130,86 +133,288 @@ namespace CheckUP.gui
                 if (i == 0)
                 {
                     row[colPrn] = cuc.sticker01 != null ? cuc.sticker01.Equals("1") ? true : false : false;
+                    if((cuc.sticker01 != null) && (cuc.sticker01.Equals("1")))
+                    {
+                        row[colPrn] = true;
+                        row.StyleNew.BackColor = Color.Fuchsia;
+                    }
+                    else
+                    {
+                        row[colPrn] = false;
+                    }
                 }
                 else if (i == 1)
                 {
                     row[colPrn] = cuc.sticker02 != null ? cuc.sticker02.Equals("1") ? true : false : false;
+                    if ((cuc.sticker02 != null) && (cuc.sticker02.Equals("1")))
+                    {
+                        row[colPrn] = true;
+                        row.StyleNew.BackColor = Color.Fuchsia;
+                    }
+                    else
+                    {
+                        row[colPrn] = false;
+                    }
                 }
                 else if (i == 2)
                 {
                     row[colPrn] = cuc.sticker03 != null ? cuc.sticker03.Equals("1") ? true : false : false;
+                    if ((cuc.sticker03 != null) && (cuc.sticker03.Equals("1")))
+                    {
+                        row[colPrn] = true;
+                        row.StyleNew.BackColor = Color.Fuchsia;
+                    }
+                    else
+                    {
+                        row[colPrn] = false;
+                    }
                 }
                 else if (i == 3)
                 {
                     row[colPrn] = cuc.sticker04 != null ? cuc.sticker04.Equals("1") ? true : false : false;
+                    if ((cuc.sticker04 != null) && (cuc.sticker04.Equals("1")))
+                    {
+                        row[colPrn] = true;
+                        row.StyleNew.BackColor = Color.Fuchsia;
+                    }
+                    else
+                    {
+                        row[colPrn] = false;
+                    }
                 }
                 else if (i == 4)
                 {
                     row[colPrn] = cuc.sticker05 != null ? cuc.sticker05.Equals("1") ? true : false : false;
+                    if ((cuc.sticker05 != null) && (cuc.sticker05.Equals("1")))
+                    {
+                        row[colPrn] = true;
+                        row.StyleNew.BackColor = Color.Fuchsia;
+                    }
+                    else
+                    {
+                        row[colPrn] = false;
+                    }
                 }
                 else if (i == 5)
                 {
                     row[colPrn] = cuc.sticker06 != null ? cuc.sticker06.Equals("1") ? true : false : false;
+                    if ((cuc.sticker06 != null) && (cuc.sticker06.Equals("1")))
+                    {
+                        row[colPrn] = true;
+                        row.StyleNew.BackColor = Color.Fuchsia;
+                    }
+                    else
+                    {
+                        row[colPrn] = false;
+                    }
                 }
                 else if (i == 6)
                 {
                     row[colPrn] = cuc.sticker07 != null ? cuc.sticker07.Equals("1") ? true : false : false;
+                    if ((cuc.sticker07 != null) && (cuc.sticker07.Equals("1")))
+                    {
+                        row[colPrn] = true;
+                        row.StyleNew.BackColor = Color.Fuchsia;
+                    }
+                    else
+                    {
+                        row[colPrn] = false;
+                    }
                 }
                 else if (i == 7)
                 {
-                    row[colPrn] = cuc.sticker08;
+                    row[colPrn] = cuc.sticker08 != null ? cuc.sticker08.Equals("1") ? true : false : false;
+                    if ((cuc.sticker08 != null) && (cuc.sticker08.Equals("1")))
+                    {
+                        row[colPrn] = true;
+                        row.StyleNew.BackColor = Color.Fuchsia;
+                    }
+                    else
+                    {
+                        row[colPrn] = false;
+                    }
                 }
                 else if (i == 8)
                 {
-                    row[colPrn] = cuc.sticker09;
+                    row[colPrn] = cuc.sticker09 != null ? cuc.sticker09.Equals("1") ? true : false : false;
+                    if ((cuc.sticker09 != null) && (cuc.sticker09.Equals("1")))
+                    {
+                        row[colPrn] = true;
+                        row.StyleNew.BackColor = Color.Fuchsia;
+                    }
+                    else
+                    {
+                        row[colPrn] = false;
+                    }
                 }
                 else if (i == 9)
                 {
-                    row[colPrn] = cuc.sticker10;
+                    row[colPrn] = cuc.sticker10 != null ? cuc.sticker10.Equals("1") ? true : false : false;
+                    if ((cuc.sticker10 != null) && (cuc.sticker10.Equals("1")))
+                    {
+                        row[colPrn] = true;
+                        row.StyleNew.BackColor = Color.Fuchsia;
+                    }
+                    else
+                    {
+                        row[colPrn] = false;
+                    }
                 }
                 else if (i == 10)
                 {
-                    row[colPrn] = cuc.sticker11;
+                    row[colPrn] = cuc.sticker11 != null ? cuc.sticker11.Equals("1") ? true : false : false;
+                    if ((cuc.sticker11 != null) && (cuc.sticker11.Equals("1")))
+                    {
+                        row[colPrn] = true;
+                        row.StyleNew.BackColor = Color.Fuchsia;
+                    }
+                    else
+                    {
+                        row[colPrn] = false;
+                    }
                 }
                 else if (i == 11)
                 {
-                    row[colPrn] = cuc.sticker12;
+                    row[colPrn] = cuc.sticker12 != null ? cuc.sticker12.Equals("1") ? true : false : false;
+                    if ((cuc.sticker12 != null) && (cuc.sticker12.Equals("1")))
+                    {
+                        row[colPrn] = true;
+                        row.StyleNew.BackColor = Color.Fuchsia;
+                    }
+                    else
+                    {
+                        row[colPrn] = false;
+                    }
                 }
                 else if (i == 12)
                 {
-                    row[colPrn] = cuc.sticker13;
+                    row[colPrn] = cuc.sticker13 != null ? cuc.sticker13.Equals("1") ? true : false : false;
+                    if ((cuc.sticker13 != null) && (cuc.sticker13.Equals("1")))
+                    {
+                        row[colPrn] = true;
+                        row.StyleNew.BackColor = Color.Fuchsia;
+                    }
+                    else
+                    {
+                        row[colPrn] = false;
+                    }
                 }
                 else if (i == 13)
                 {
-                    row[colPrn] = cuc.sticker14;
+                    row[colPrn] = cuc.sticker14 != null ? cuc.sticker14.Equals("1") ? true : false : false;
+                    if ((cuc.sticker14 != null) && (cuc.sticker14.Equals("1")))
+                    {
+                        row[colPrn] = true;
+                        row.StyleNew.BackColor = Color.Fuchsia;
+                    }
+                    else
+                    {
+                        row[colPrn] = false;
+                    }
                 }
                 else if (i == 14)
                 {
-                    row[colPrn] = cuc.sticker15;
+                    row[colPrn] = cuc.sticker15 != null ? cuc.sticker15.Equals("1") ? true : false : false;
+                    if ((cuc.sticker15 != null) && (cuc.sticker15.Equals("1")))
+                    {
+                        row[colPrn] = true;
+                        row.StyleNew.BackColor = Color.Fuchsia;
+                    }
+                    else
+                    {
+                        row[colPrn] = false;
+                    }
                 }
                 else if (i == 15)
                 {
-                    row[colPrn] = cuc.sticker16;
+                    row[colPrn] = cuc.sticker16 != null ? cuc.sticker16.Equals("1") ? true : false : false;
+                    if ((cuc.sticker16 != null) && (cuc.sticker16.Equals("1")))
+                    {
+                        row[colPrn] = true;
+                        row.StyleNew.BackColor = Color.Fuchsia;
+                    }
+                    else
+                    {
+                        row[colPrn] = false;
+                    }
                 }
                 else if (i == 16)
                 {
-                    row[colPrn] = cuc.sticker17;
+                    row[colPrn] = cuc.sticker17 != null ? cuc.sticker17.Equals("1") ? true : false : false;
+                    if ((cuc.sticker17 != null) && (cuc.sticker17.Equals("1")))
+                    {
+                        row[colPrn] = true;
+                        row.StyleNew.BackColor = Color.Fuchsia;
+                    }
+                    else
+                    {
+                        row[colPrn] = false;
+                    }
                 }
                 else if (i == 17)
                 {
-                    row[colPrn] = cuc.sticker18;
+                    row[colPrn] = cuc.sticker18 != null ? cuc.sticker18.Equals("1") ? true : false : false;
+                    if ((cuc.sticker18 != null) && (cuc.sticker18.Equals("1")))
+                    {
+                        row[colPrn] = true;
+                        row.StyleNew.BackColor = Color.Fuchsia;
+                    }
+                    else
+                    {
+                        row[colPrn] = false;
+                    }
                 }
                 else if (i == 18)
                 {
-                    row[colPrn] = cuc.sticker19;
+                    row[colPrn] = cuc.sticker19 != null ? cuc.sticker19.Equals("1") ? true : false : false;
+                    if ((cuc.sticker19 != null) && (cuc.sticker19.Equals("1")))
+                    {
+                        row[colPrn] = true;
+                        row.StyleNew.BackColor = Color.Fuchsia;
+                    }
+                    else
+                    {
+                        row[colPrn] = false;
+                    }
                 }
                 else if (i == 19)
                 {
-                    row[colPrn] = cuc.sticker20;
+                    row[colPrn] = cuc.sticker20 != null ? cuc.sticker20.Equals("1") ? true : false : false;
+                    if ((cuc.sticker20 != null) && (cuc.sticker20.Equals("1")))
+                    {
+                        row[colPrn] = true;
+                        row.StyleNew.BackColor = Color.Fuchsia;
+                    }
+                    else
+                    {
+                        row[colPrn] = false;
+                    }
                 }
                 
             }
             grfView.Cols[colId].Visible = false;
+        }
+        private void GrfView_CellChecked(object sender, RowColEventArgs e)
+        {
+            //throw new NotImplementedException();
+            if (grfView[e.Row, e.Col] == null) return;
+            Row row = grfView.Rows[grfView.Row];
+            
+            if ((Boolean)row[colPrn] == true)
+            {
+                row.StyleNew.BackColor = Color.Fuchsia;
+            }
+            else
+            {
+                if (e.Row % 2 != 0)
+                {
+                    row.StyleNew.BackColor = color;
+                }
+                else
+                {
+                    row.StyleNew.BackColor = Color.White;
+                }
+            }
         }
         private void FrmCheckUPSticker_Load(object sender, EventArgs e)
         {

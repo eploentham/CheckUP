@@ -343,11 +343,13 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBarcode = new System.Windows.Forms.TextBox();
             this.tabPage21 = new System.Windows.Forms.TabPage();
             this.gbSticker1 = new System.Windows.Forms.Panel();
             this.gbSticker = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnPrnSticker = new System.Windows.Forms.Button();
+            this.btnLabelSticker = new System.Windows.Forms.Button();
             this.btnPrnNoAll = new System.Windows.Forms.Button();
             this.btnPrnAll = new System.Windows.Forms.Button();
             this.cboSticker = new System.Windows.Forms.ComboBox();
@@ -378,8 +380,6 @@
             this.chkHideTab = new System.Windows.Forms.CheckBox();
             this.nmDSticker = new System.Windows.Forms.NumericUpDown();
             this.label21 = new System.Windows.Forms.Label();
-            this.btnLabelSticker = new System.Windows.Forms.Button();
-            this.btnPrnSticker = new System.Windows.Forms.Button();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -3701,7 +3701,7 @@
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtBarcode);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 16);
             this.panel1.Name = "panel1";
@@ -3745,12 +3745,12 @@
             this.label17.TabIndex = 1;
             this.label17.Text = "barcode :";
             // 
-            // textBox1
+            // txtBarcode
             // 
-            this.textBox1.Location = new System.Drawing.Point(95, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtBarcode.Location = new System.Drawing.Point(95, 3);
+            this.txtBarcode.Name = "txtBarcode";
+            this.txtBarcode.Size = new System.Drawing.Size(140, 20);
+            this.txtBarcode.TabIndex = 0;
             // 
             // tabPage21
             // 
@@ -3794,6 +3794,24 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1270, 80);
             this.panel2.TabIndex = 0;
+            // 
+            // btnPrnSticker
+            // 
+            this.btnPrnSticker.Location = new System.Drawing.Point(656, 10);
+            this.btnPrnSticker.Name = "btnPrnSticker";
+            this.btnPrnSticker.Size = new System.Drawing.Size(97, 35);
+            this.btnPrnSticker.TabIndex = 83;
+            this.btnPrnSticker.Text = "พิมพ์ Sticker";
+            this.btnPrnSticker.UseVisualStyleBackColor = true;
+            // 
+            // btnLabelSticker
+            // 
+            this.btnLabelSticker.Location = new System.Drawing.Point(553, 10);
+            this.btnLabelSticker.Name = "btnLabelSticker";
+            this.btnLabelSticker.Size = new System.Drawing.Size(97, 35);
+            this.btnLabelSticker.TabIndex = 83;
+            this.btnLabelSticker.Text = "label Sticker";
+            this.btnLabelSticker.UseVisualStyleBackColor = true;
             // 
             // btnPrnNoAll
             // 
@@ -4092,24 +4110,6 @@
             this.label21.Size = new System.Drawing.Size(72, 16);
             this.label21.TabIndex = 77;
             this.label21.Text = "จน. sticker :";
-            // 
-            // btnLabelSticker
-            // 
-            this.btnLabelSticker.Location = new System.Drawing.Point(553, 10);
-            this.btnLabelSticker.Name = "btnLabelSticker";
-            this.btnLabelSticker.Size = new System.Drawing.Size(97, 35);
-            this.btnLabelSticker.TabIndex = 83;
-            this.btnLabelSticker.Text = "label Sticker";
-            this.btnLabelSticker.UseVisualStyleBackColor = true;
-            // 
-            // btnPrnSticker
-            // 
-            this.btnPrnSticker.Location = new System.Drawing.Point(656, 10);
-            this.btnPrnSticker.Name = "btnPrnSticker";
-            this.btnPrnSticker.Size = new System.Drawing.Size(97, 35);
-            this.btnPrnSticker.TabIndex = 83;
-            this.btnPrnSticker.Text = "พิมพ์ Sticker";
-            this.btnPrnSticker.UseVisualStyleBackColor = true;
             // 
             // FrmCheckUPAdd
             // 
@@ -4553,7 +4553,7 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Panel gbTest;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBarcode;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;

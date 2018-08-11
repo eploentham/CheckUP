@@ -48,7 +48,7 @@ namespace CheckUP.gui
             //grfView.DoubleClick += GrfView_DoubleClick;
             //grfExpnC.CellButtonClick += new C1.Win.C1FlexGrid.RowColEventHandler(this.grfDept_CellButtonClick);
             //grfExpnC.CellChanged += new C1.Win.C1FlexGrid.RowColEventHandler(this.grfDept_CellChanged);
-            //grfJob.CellChanged += GrfExpnD_CellChanged;
+            //grfView.CellChecked += GrfView_CellChecked;
             panel3.Controls.Add(grfView);
             grfView.Clear();
             grfView.Rows.Count = 2;
@@ -63,6 +63,7 @@ namespace CheckUP.gui
             grfView.AllowEditing = true;
             //theme1.SetTheme(grfJob, "Office2013Red");
         }
+        
         private void setGrfView()
         {
             grfView.DataSource = null;
@@ -103,6 +104,12 @@ namespace CheckUP.gui
 
             }
             grfView.Cols[colId].Visible = false;
+        }
+        private void GrfView_CellChecked(object sender, RowColEventArgs e)
+        {
+            //throw new NotImplementedException();
+            if (grfView[e.Row, e.Col] == null) return;
+
         }
         private void BtnSave_Click(object sender, EventArgs e)
         {

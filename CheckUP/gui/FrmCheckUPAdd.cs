@@ -194,6 +194,7 @@ namespace CheckUP.gui
             btnLabelSticker.Click += BtnLabelSticker_Click;
             btnPrnAll.Click += BtnPrnAll_Click;
             btnPrnNoAll.Click += BtnPrnNoAll_Click;
+            txtBarcode.KeyUp += TxtBarcode_KeyUp;
 
             chkHideTab.Click += ChkHideTab_Click;
 
@@ -270,6 +271,16 @@ namespace CheckUP.gui
             else
             {
                 MessageBox.Show("ลำดับ row ไม่ได้ set", "error");
+            }
+        }
+
+        private void TxtBarcode_KeyUp(object sender, KeyEventArgs e)
+        {
+            //throw new NotImplementedException();
+            if (e.KeyCode == Keys.Enter)
+            {
+                int row = grfTest.FindRow(txtBarcode.Text, 1, colSvisitHn, true);
+                grfTest.Rows[row].StyleNew.BackColor = Color.Red;
             }
         }
 
@@ -688,6 +699,7 @@ namespace CheckUP.gui
             if (cucid.Equals("")) return;
             DataTable dt = new DataTable();
             dt = cc.ccpdb.selectAllByCucId(cucid);
+            cuc = cc.cucdb.selectByPk(cucid);
             grfSticker.Rows.Count = 1;
             grfSticker.Cols.Count = 24;
             TextBox txt = new TextBox();
@@ -741,7 +753,7 @@ namespace CheckUP.gui
             grfSticker.Cols[colS19].Caption = "19";
             grfSticker.Cols[colS20].Caption = "20";
 
-            grfSticker.Cols[colEId].Visible = false;
+            grfSticker.Cols[colSId].Visible = false;
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {

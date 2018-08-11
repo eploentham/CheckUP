@@ -2792,9 +2792,11 @@ namespace CheckUP.Control
             dtStk = stkdb.selectAll();
             using (var tw = new StreamWriter("CheckList.txt", false))
             {
+                int row = 0;
                 for(int i = 0; i < dt.Rows.Count; i++)
                 {
-                    col01 = i.ToString("0000");
+                    row = i + 1;
+                    col01 = row.ToString("0000");
                     col02 = " ";
                     col03 = dt.Rows[i][ccpdb.ccp.patientFullname].ToString();
                     //col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString();

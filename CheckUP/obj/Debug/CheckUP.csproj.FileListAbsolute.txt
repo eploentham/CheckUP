@@ -134,3 +134,14 @@ D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.Properties.Resources.resource
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csproj.GenerateResource.cache
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.exe.licenses
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csproj.CoreCompileInputs.cache
+D:\source\bangna\CheckUP\CheckUP\bin\Debug\CheckUP.exe.config
+D:\source\bangna\CheckUP\CheckUP\bin\Debug\CheckUP.exe
+D:\source\bangna\CheckUP\CheckUP\bin\Debug\CheckUP.pdb
+D:\source\bangna\CheckUP\CheckUP\bin\Debug\C1.Win.4.dll
+D:\source\bangna\CheckUP\CheckUP\bin\Debug\C1.Win.C1Command.4.dll
+D:\source\bangna\CheckUP\CheckUP\bin\Debug\C1.Win.C1Input.4.dll
+D:\source\bangna\CheckUP\CheckUP\bin\Debug\C1.Win.C1Command.4.xml
+D:\source\bangna\CheckUP\CheckUP\bin\Debug\C1.Win.C1Input.4.xml
+D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csproj.CopyComplete
+D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.exe
+D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.pdb
