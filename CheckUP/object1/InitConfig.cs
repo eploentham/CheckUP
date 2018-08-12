@@ -13,5 +13,6 @@ namespace CheckUP.object1
         public String Host = "", Port="", reportSumNamePE="", reportSumNameFBS="", reportSumNameCBC="";
 
         public String grdViewFontSize = "", grdViewFontName = "", themeApplication = "", txtFocus = "", grfRowColor = "";
+        public String hostDBonsite = "", userDBonsite = "", nameDBonsite = "", portDBonsite = "", statusonsite = "", passDBonsite="";
     }
 }

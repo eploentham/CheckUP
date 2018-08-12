@@ -740,6 +740,22 @@ namespace CheckUP.objdb
 
             return dt;
         }
+        public String deleteOnSiteAll()
+        {
+            String sql = "", chk = "";
+            sql = "Delete From onsite_" + ccp.table;
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
+        public String insertToOnSite(String cucId)
+        {
+            String sql = "", chk = "";
+            sql = "insert into onsite_" + ccp.table + " " +
+                "select * from "+ ccp.table +" "+
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "'";
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
         private String insert(CustCheckUpPatient p) {
             String sql = "", chk = "";
             if (p.Id.Equals(""))

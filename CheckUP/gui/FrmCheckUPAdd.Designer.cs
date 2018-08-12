@@ -377,9 +377,9 @@
             this.txtCntSuccess = new System.Windows.Forms.TextBox();
             this.label123 = new System.Windows.Forms.Label();
             this.btnExcel1 = new System.Windows.Forms.Button();
-            this.chkHideTab = new System.Windows.Forms.CheckBox();
             this.nmDSticker = new System.Windows.Forms.NumericUpDown();
             this.label21 = new System.Windows.Forms.Label();
+            this.btnOnsite = new System.Windows.Forms.Button();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -1925,6 +1925,7 @@
             // 
             // tabPage20
             // 
+            this.tabPage20.Controls.Add(this.btnOnsite);
             this.tabPage20.Controls.Add(this.btnStoolExamSave);
             this.tabPage20.Controls.Add(this.btnToxiSave);
             this.tabPage20.Controls.Add(this.btnEyeSave);
@@ -4079,16 +4080,6 @@
             this.btnExcel1.UseVisualStyleBackColor = true;
             this.btnExcel1.Click += new System.EventHandler(this.btnExcel1_Click);
             // 
-            // chkHideTab
-            // 
-            this.chkHideTab.AutoSize = true;
-            this.chkHideTab.Location = new System.Drawing.Point(911, 56);
-            this.chkHideTab.Name = "chkHideTab";
-            this.chkHideTab.Size = new System.Drawing.Size(69, 17);
-            this.chkHideTab.TabIndex = 76;
-            this.chkHideTab.Text = "ซ่อน Tab";
-            this.chkHideTab.UseVisualStyleBackColor = true;
-            // 
             // nmDSticker
             // 
             this.nmDSticker.Location = new System.Drawing.Point(836, 53);
@@ -4111,6 +4102,16 @@
             this.label21.TabIndex = 77;
             this.label21.Text = "จน. sticker :";
             // 
+            // btnOnsite
+            // 
+            this.btnOnsite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnOnsite.Location = new System.Drawing.Point(478, 433);
+            this.btnOnsite.Name = "btnOnsite";
+            this.btnOnsite.Size = new System.Drawing.Size(138, 44);
+            this.btnOnsite.TabIndex = 360;
+            this.btnOnsite.Text = "เตรียมข้อมูล ออกหน่วย";
+            this.btnOnsite.UseVisualStyleBackColor = true;
+            // 
             // FrmCheckUPAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4118,7 +4119,6 @@
             this.ClientSize = new System.Drawing.Size(1413, 899);
             this.Controls.Add(this.nmDSticker);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.chkHideTab);
             this.Controls.Add(this.btnExcel1);
             this.Controls.Add(this.txtCntSuccess);
             this.Controls.Add(this.label123);
@@ -4557,7 +4557,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.CheckBox chkHideTab;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.NumericUpDown nmDSticker;
         private System.Windows.Forms.Label label21;
@@ -4571,5 +4570,6 @@
         private System.Windows.Forms.Button btnPrnNoAll;
         private System.Windows.Forms.Button btnLabelSticker;
         private System.Windows.Forms.Button btnPrnSticker;
+        private System.Windows.Forms.Button btnOnsite;
     }
 }

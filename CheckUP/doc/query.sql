@@ -116,3 +116,15 @@ test01 = '0'
 , test18 = '0'
 , test19 = '0'
 , test20 = '0'
+
+select *
+into onsite_t_cust_checkup_patient
+from t_cust_checkup_patient;
+
+select *
+into onsite_t_cust_checkup_patient1
+from t_cust_checkup_patient1;
+
+select *
+into onsite_t_cust_checkup
+from t_cust_checkup;

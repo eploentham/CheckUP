@@ -33,42 +33,49 @@ namespace CheckUP.gui
             {
                 chkClearInput.Checked = false;
             }
-            if (cc.initC.StatusServer.Equals("yes"))
-            {
-                ChkServer.Checked = true;
-                gBServer.Visible = true;
-                ChkClient.Checked = false;
-                gBClient.Visible = false;
+            txtHostDBonsite.Text = cc.initC.hostDBonsite;
+            txtNameDBonsite.Text = cc.initC.nameDBonsite;
+            txtUserDBonsite.Text = cc.initC.userDBonsite;
+            txtPassDBonsite.Text = cc.initC.passDBonsite;
+            txtPortDBonsite.Text = cc.initC.portDBonsite;
 
-                chkConnectServer.Checked = true;
-                txtHost.Text = cc.initC.ServerIP;
-                txtUser.Text = cc.initC.User;
-                txtPwd.Text = cc.initC.Password;
-                txtDatabase.Text = cc.initC.Database;
-                txtDatabase.Visible = true;
-                txtHost.Visible = true;
-                txtPwd.Visible = true;
-                txtUser.Visible = true;
+            ChkServer.Checked = cc.initC.StatusServer.Equals("yes") ? true : false;
+            ChkClient.Checked = cc.initC.StatusServer.Equals("yes") ? false : true;
+
+            //{
+            //    ChkServer.Checked = true;
+            //    gBServer.Visible = true;
+            //    ChkClient.Checked = false;
+            //    gBClient.Visible = false;
+
+            //    chkConnectServer.Checked = true;
+            txtHost.Text = cc.initC.ServerIP;
+            txtUser.Text = cc.initC.User;
+            txtPwd.Text = cc.initC.Password;
+            txtDatabase.Text = cc.initC.Database;
+            txtPort.Text = cc.initC.Port;
+                //txtDatabase.Visible = true;
+                //txtHost.Visible = true;
+                //txtPwd.Visible = true;
+                //txtUser.Visible = true;
                 
-            }
-            else
-            {
-                ChkServer.Checked = false;
-                gBServer.Visible = false;
-                ChkClient.Checked = true;
-                gBClient.Visible = true;
+            //}
+            //else
+            //{
+            //    ChkServer.Checked = false;
+            //    gBServer.Visible = false;
+            //    ChkClient.Checked = true;
+            //    gBClient.Visible = true;
 
-                chkConnectServer.Checked = false;
-                txtDatabase.Visible = false;
-                txtHost.Visible = true;
-                txtPwd.Visible = false;
-                txtUser.Visible = false;
-            }
-            txtIP.Text = cc.initC.IPServer;
-            txtPathData.Text = cc.initC.PathData;
-            txtPathImage.Text = cc.initC.pathImageLogo;
+            //    chkConnectServer.Checked = false;
+            //    txtDatabase.Visible = false;
+            //    txtHost.Visible = true;
+            //    txtPwd.Visible = false;
+            //    txtUser.Visible = false;
+            //}
+            
             txtPathReport.Text = cc.initC.PathReport;
-            txtNameShareData.Text = cc.initC.NameShareData;
+            
             txtQuoLine1.Text = cc.initC.quoLine1;
             txtQuoLine2.Text = cc.initC.quoLine2;
             txtQuoLine3.Text = cc.initC.quoLine3;
@@ -76,23 +83,8 @@ namespace CheckUP.gui
             txtQuoLine5.Text = cc.initC.quoLine5;
             txtQuoLine6.Text = cc.initC.quoLine6;
             txtHost.Text = cc.initC.IPServer;
-            txtConnectShareData.Text = cc.initC.ConnectShareData;
-            if (cc.initC.delImage.Equals("yes"))
-            {
-                chkDelImage.Checked = true;
-            }
-            else
-            {
-                chkDelImage.Checked = false;
-            }
-            if (cc.initC.use32Bit.Equals("yes"))
-            {
-                chkUse32bit.Checked = true;
-            }
-            else
-            {
-                chkUse32bit.Checked = false;
-            }
+            
+            
             if (cc.initC.HideCostQuotation.Equals("yes"))
             {
                 chkHideCostQuotation.Checked = true;
@@ -119,27 +111,28 @@ namespace CheckUP.gui
             cc.SetQuoLine4(txtQuoLine4.Text);
             cc.SetQuoLine5(txtQuoLine5.Text);
             cc.SetQuoLine6(txtQuoLine6.Text);
+
+            cc.SetHostDBinsite(txtHostDBonsite.Text);
+            cc.SetNameDBinsite(txtNameDBonsite.Text);
+            cc.SetUserDBinsite(txtUserDBonsite.Text);
+            cc.SetPassDBinsite(txtPassDBonsite.Text);
+            cc.SetPortDBinsite(txtPortDBonsite.Text);
+
+
+
             cc.SetHideCostQuotation(chkHideCostQuotation.Checked);
             if (ChkServer.Checked)
             {
-                cc.SetSetatusServer(true);
-                cc.SetPathImage(txtPathData.Text);
-                cc.SetPathImageLogo(txtPathImage.Text);
-                cc.SetDelImage(chkDelImage.Checked);
+                cc.SetSetatusServer(true);                              
 
-                cc.SetPathShareImage(txtPathShareImage.Text);
-                cc.SetNameShareData(txtNameShareData.Text);
-                cc.SetIPServer(txtIP.Text);
-                
             }
             else
             {
                 cc.SetSetatusServer(false);
-                cc.SetConnectServer(chkConnectServer.Checked, txtHost.Text, txtUser.Text, txtPwd.Text);
+                //cc.SetConnectServer(chkConnectServer.Checked, txtHost.Text, txtUser.Text, txtPwd.Text);
                 //lc.SetPathImage(txtPathImage.Text);
-                cc.SetIPServer(txtHost.Text);
-                cc.SetPathShareImage(txtConnectShareData.Text);
-                cc.SetConnectShareData(txtConnectShareData.Text);
+                //cc.SetIPServer(txtHost.Text);
+                
 
             }
             cc.GetConfig();
@@ -147,44 +140,38 @@ namespace CheckUP.gui
 
         private void chkConnectServer_Click(object sender, EventArgs e)
         {
-            if (chkConnectServer.Checked)
-            {
-                label1.Visible = true;
-                label2.Visible = true;
-                label3.Visible = true;
-                label4.Visible = true;
-                btnTest.Visible = true;
-                lV1.Visible = true;
+            //if (chkConnectServer.Checked)
+            //{
+            //    label1.Visible = true;
+            //    label2.Visible = true;
+            //    label3.Visible = true;
+            //    label4.Visible = true;
+            //    btnTest.Visible = true;
+            //    lV1.Visible = true;
 
-                txtHost.Visible = true;
-                label8.Visible = true;
-                label10.Visible = true;
-                txtConnectShareData.Visible = true;
-                txtConnectShareImage.Visible = true;
+            //    txtHost.Visible = true;
+                
 
-                txtDatabase.Visible = true;
-                txtUser.Visible = true;
-                txtPwd.Visible = true;
-            }
-            else
-            {
-                label1.Visible = false;
-                label2.Visible = false;
-                label3.Visible = false;
-                label4.Visible = false;
-                btnTest.Visible = false;
-                lV1.Visible = false;
+            //    txtDatabase.Visible = true;
+            //    txtUser.Visible = true;
+            //    txtPwd.Visible = true;
+            //}
+            //else
+            //{
+            //    label1.Visible = false;
+            //    label2.Visible = false;
+            //    label3.Visible = false;
+            //    label4.Visible = false;
+            //    btnTest.Visible = false;
+            //    lV1.Visible = false;
 
-                txtHost.Visible = false;
-                label8.Visible = false;
-                label10.Visible = false;
-                txtConnectShareData.Visible = false;
-                txtConnectShareImage.Visible = false;
+            //    txtHost.Visible = false;
+                
 
-                txtDatabase.Visible = false;
-                txtUser.Visible = false;
-                txtPwd.Visible = false;
-            }
+            //    txtDatabase.Visible = false;
+            //    txtUser.Visible = false;
+            //    txtPwd.Visible = false;
+            //}
         }
 
         private void btnPath_Click(object sender, EventArgs e)
@@ -197,39 +184,20 @@ namespace CheckUP.gui
             //{
             //    MessageBox.Show(theDialog.FileName.ToString());
             //}
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
-            DialogResult result = fbd.ShowDialog();
-            txtPathData.Text = fbd.SelectedPath;
-        }
-
-        private void btnPath1_Click(object sender, EventArgs e)
-        {
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
-            DialogResult result = fbd.ShowDialog();
-            txtPathImage.Text = fbd.SelectedPath;
-        }
-
-        private void btnShare_Click(object sender, EventArgs e)
-        {
-            cc.CreateSharedFolder(txtPathData.Text, txtNameShareData.Text, txtNameShareData.Text);
-            //cc.CreateSharedFolder(Environment.CurrentDirectory + "\\Database\\", txtPathShareData.Text, txtPathShareData.Text);
-        }
-
-        private void btnIP_Click(object sender, EventArgs e)
-        {
-            txtIP.Text = cc.LocalIPAddress();
-        }
+            
+            
+        }        
 
         private void ChkServer_Click(object sender, EventArgs e)
         {
-            gBServer.Visible = true;
-            gBClient.Visible = false;
+            //gBServer.Visible = true;
+            //gBClient.Visible = false;
         }
 
         private void ChkClient_Click(object sender, EventArgs e)
         {
-            gBServer.Visible = false;
-            gBClient.Visible = true;
+            //gBServer.Visible = false;
+            //gBClient.Visible = true;
         }
 
         private void btnPathReport_Click(object sender, EventArgs e)

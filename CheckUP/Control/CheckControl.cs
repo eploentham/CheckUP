@@ -113,21 +113,27 @@ namespace CheckUP.Control
                 //Console.WriteLine("111");
                 //Debug.WriteLine("111");
                 //MessageBox.Show("111 ", "111 ");
-                cop = copdb.selectByPk();
+                //cop = copdb.selectByPk();
                 //MessageBox.Show("222 ", "222 ");
                 //Console.WriteLine("222");
                 //Debug.WriteLine("222");
                 PathLogo = Environment.CurrentDirectory;
                 //MessageBox.Show("111" , "Error");
-                dtccpvn = ccpvndb.selectByPk();
+                //dtccpvn = ccpvndb.selectByPk();
                 //MessageBox.Show("222", "Error");
-                setValueNormal();
+                //setValueNormal();
             }
             catch (Exception ex)
             {
                 //lw.WriteLog("CnviControl.initConfig Error " + ex.Message);
                 MessageBox.Show(""+ex.Message, "Error");
             }
+        }
+        public void setStartApp()
+        {
+            cop = copdb.selectByPk();
+            dtccpvn = ccpvndb.selectByPk();
+            setValueNormal();
         }
         public void setValueNormal()
         {
@@ -170,12 +176,20 @@ namespace CheckUP.Control
         {
             initC.clearInput = iniFile.Read("clearinput");
             initC.connectDatabaseServer = iniFile.Read("connectserver");
-            initC.ServerIP = iniFile.Read("host");
+            initC.Host = iniFile.Read("host");
             initC.User = iniFile.Read("username");
             initC.Password = iniFile.Read("password");
             initC.Port = iniFile.Read("port");
             initC.Database = iniFile.Read("database");
-            initC.Host = initC.ServerIP;
+
+            initC.hostDBonsite = iniFile.Read("hostDBonsite");
+            initC.userDBonsite = iniFile.Read("userDBonsite");
+            initC.passDBonsite = iniFile.Read("passDBonsite");
+            initC.portDBonsite = iniFile.Read("portDBonsite");
+            initC.nameDBonsite = iniFile.Read("nameDBonsite");
+            initC.statusonsite = iniFile.Read("nameDBonsite");
+
+            //initC.Host = initC.ServerIP;
 
             initC.PathData = iniFile.Read("pathimage");
             initC.pathImageLogo = iniFile.Read("pathimagelogo");
@@ -202,6 +216,7 @@ namespace CheckUP.Control
             initC.themeApplication = iniFile.Read("themeApplication");
             initC.txtFocus = iniFile.Read("txtFocus");
             initC.grfRowColor = iniFile.Read("grfRowColor");
+            initC.statusonsite = iniFile.Read("statusonsite");
 
             initC.grdViewFontName = initC.grdViewFontName.Equals("") ? "Microsoft Sans Serif" : initC.grdViewFontName;
             int.TryParse(initC.grdViewFontSize, out grdViewFontSize);
@@ -277,6 +292,30 @@ namespace CheckUP.Control
             //iniFile.Write("quotationline6", path);
             iniFile.WriteUniCode("quotationline6", path);
         }
+        public void SetHostDBinsite(String val)
+        {            
+            iniFile.WriteUniCode("hostDBonsite", val);
+        }
+        public void SetNameDBinsite(String val)
+        {
+            iniFile.WriteUniCode("nameDBonsite", val);
+        }
+        public void SetUserDBinsite(String val)
+        {
+            iniFile.WriteUniCode("userDBonsite", val);
+        }
+        public void SetPassDBinsite(String val)
+        {
+            iniFile.WriteUniCode("passDBonsite", val);
+        }
+        public void SetPortDBinsite(String val)
+        {
+            iniFile.WriteUniCode("portDBonsite", val);
+        }
+        public void SetStatusonsite(String val)
+        {
+            iniFile.WriteUniCode("statusonsite", val);
+        }
         public void SetHideCostQuotation(Boolean value)
         {
             if (value)
@@ -293,10 +332,12 @@ namespace CheckUP.Control
             if (value)
             {
                 iniFile.Write("statusserver", "yes");
+                //iniFile.Write("statusonsite", "yes");
             }
             else
             {
                 iniFile.Write("statusserver", "no");
+                //iniFile.Write("statusonsite", "no");
             }
         }
         public void SetClearInput(Boolean value)
@@ -596,6 +637,16 @@ namespace CheckUP.Control
 
             // Return UTF16 bytes as UTF16 string
             return Encoding.Unicode.GetString(utf16Bytes);
+        }
+        public void genDataOnsite(String cucId)
+        {
+            String sql = "";
+            cucdb.deleteOnSiteAll();
+            ccpdb.deleteOnSiteAll();
+            ccp1db.deleteOnSiteAll();
+            cucdb.insertToOnSite(cucId);
+            ccpdb.insertToOnSite(cucId);
+            ccp1db.insertToOnSite(cucId);
         }
         public void excelSum(String cucId)
         {

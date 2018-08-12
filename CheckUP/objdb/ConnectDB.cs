@@ -50,64 +50,15 @@ namespace CheckUP.objdb
         public ConnectDB(InitConfig i)
         {
             initc = i;
-            //if (initc.use32Bit.Equals("yes"))
-            //{
-            //    if (initc.StatusServer.ToLower().Equals("yes"))
-            //    {
-            //        _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\cemp.mdb;Persist Security Info=False";
-            //    }
-            //    else
-            //    {
-            //        _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\cemp.mdb;Persist Security Info=False";
-            //    }
-            //}
-            //else
-            //{
-            //    if (initc.StatusServer.ToLower().Equals("yes"))
-            //    {
-            //        if (initc.connectDatabaseServer.ToLower().Equals("yes"))
-            //        {
-            //            cMysql = new MySql.Data.MySqlClient.MySqlConnection();
-            //            cMysql.ConnectionString = "server=" + initc.ServerIP + ";uid=" + initc.User + ";pwd=" + initc.Password + ";database=test;";
-            //        }
-            //        else
-            //        {
-            //            if (Environment.Is64BitOperatingSystem)
-            //            {
-            //                _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
-            //                _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\CheckUP.mdb;Persist Security Info=False";
-            //            }
-            //            else
-            //            {
-            //                _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
-            //                _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\CheckUP.mdb;Persist Security Info=False";
-            //            }
-            //        }
-            //    }
-            //    else
-            //    {
-            //        if (Environment.Is64BitOperatingSystem)
-            //        {
-            //            //_mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
-            //            //_mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\lottory.mdb;Persist Security Info=False";
-            //            _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + "\\\\" +initc.IPServer+"\\" + initc.ConnectShareData + "\\Database\\checkup.accdb;Persist Security Info=False";
-            //        }
-            //        else
-            //        {
-            //            //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
-            //            //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + Environment.CurrentDirectory + "\\Database\\lottory.mdb;Persist Security Info=False";
-            //            _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + "\\\\" + initc.IPServer + "\\" + initc.ConnectShareData + "\\Database\\checkup.mdb;Persist Security Info=False";
-            //        }
-            //    }
-            //}
-            //SqlConnection connBIT = new SqlConnection();
-            //connMainHIS.ConnectionString = GetConfig(hostName);
-            _mainConnection.ConnectionString = "Server=" + initc.Host + ";Database=" + initc.Database + ";Uid=" + initc.User + ";Pwd=" + initc.Password + ";Connection Timeout=300;";
-
-            //_mainConnection = new OleDbConnection();
-            //_mainConnection.ConnectionString = GetConfig("Main.ConnectionString");
-
-            //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\lottory\\lottory\\DataBase\\lottory.mdb;Persist Security Info=False";
+            if (initc.statusonsite.Equals("no"))
+            {//Client
+                _mainConnection.ConnectionString = "Server=" + initc.Host + ";Database=" + initc.Database + ";Uid=" + initc.User + ";Pwd=" + initc.Password + ";Connection Timeout=300;";
+            }
+            else
+            {//onsite
+                _mainConnection.ConnectionString = "Server=" + initc.hostDBonsite + ";Database=" + initc.nameDBonsite + ";Uid=" + initc.userDBonsite + ";Pwd=" + initc.passDBonsite + ";Connection Timeout=300;";
+            }
+                        
             _isDisposed = false;
         }
         public ConnectDB(String hostName)

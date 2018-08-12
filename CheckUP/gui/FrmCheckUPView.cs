@@ -1,4 +1,5 @@
-﻿using CheckUP.Control;
+﻿using C1.Win.C1Themes;
+using CheckUP.Control;
 using CheckUP.gui;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ namespace CheckUP
         CheckControl cc;
         int colCnt = 7;
         int colRow = 0, colDesc = 2, colRemark = 3, colId = 4, colCustNameT = 1, colCheckUpDate = 6, colPriority = 5;
+        C1ThemeController theme1;
+
         public FrmCheckUPView(CheckControl c)
         {
             InitializeComponent();
@@ -26,6 +29,8 @@ namespace CheckUP
         private void initConfig()
         {
             //dt = lc.selectStaffAll();
+            theme1 = new C1ThemeController();
+
             setGrd();
             dgvView.ReadOnly = true;
         }
@@ -86,7 +91,13 @@ namespace CheckUP
         }
         private void FrmCheckUPView_Load(object sender, EventArgs e)
         {
-
+            theme1.Theme = C1ThemeController.ApplicationTheme;
+            if (cc.initC.statusonsite.Equals("yes"))
+            {
+                theme1.SetTheme(this, "BeigeOne");
+                //theme1.SetTheme(dgvView, "BeigeOne");
+                btnAdd.Enabled = false;
+            }
         }
 
         private void FrmCheckUPView_Resize(object sender, EventArgs e)

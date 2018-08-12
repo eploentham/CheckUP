@@ -502,6 +502,22 @@ namespace CheckUP.objdb
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
+        public String deleteOnSiteAll()
+        {
+            String sql = "", chk = "";
+            sql = "Delete From onsite_" + cuc.table;
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
+        public String insertToOnSite(String cucId)
+        {
+            String sql = "", chk = "";
+            sql = "insert into onsite_" + cuc.table + " " +
+                "select * from "+ cuc.table +" "+
+                "Where " + cuc.pkField + "='" + cucId + "'";
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
         public ComboBox getCboCustCheckUp(ComboBox c)
         {
             ComboBoxItem item = new ComboBoxItem();

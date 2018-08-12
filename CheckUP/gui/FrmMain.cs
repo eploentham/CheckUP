@@ -11,6 +11,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using C1.Win.C1Themes;
 
 namespace CheckUP
 {
@@ -19,6 +20,8 @@ namespace CheckUP
         CheckControl cc;
         Form frm;
         Staff sf;
+        C1ThemeController theme1;
+
         public FrmMain(Form f, String sfCode, CheckControl l)
         {
             InitializeComponent();
@@ -28,7 +31,10 @@ namespace CheckUP
         {
             //lc = new LottoryControl();
             cc = l;
+            cc.setStartApp();      // ห้ามเอาออก
+
             frm = f;
+            theme1 = new C1ThemeController();
             sf = cc.sfdb.selectByCode(sfCode);
             cc.sf = sf;
             tvMain();
@@ -82,6 +88,12 @@ namespace CheckUP
         private void FrmMain_Load(object sender, EventArgs e)
         {
             this.Text = "Last Update " + System.IO.File.GetLastWriteTime(System.Environment.CurrentDirectory + "\\" + Process.GetCurrentProcess().ProcessName + ".exe");
+            theme1.Theme = C1ThemeController.ApplicationTheme;
+            if (cc.initC.statusonsite.Equals("yes"))
+            {
+                theme1.SetTheme(this, "BeigeOne");
+                theme1.SetTheme(tv1, "BeigeOne");
+            }
         }
 
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)

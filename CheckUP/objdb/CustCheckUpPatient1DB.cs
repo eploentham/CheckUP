@@ -68,6 +68,22 @@ namespace CheckUP.objdb
             ccp1.table = "t_cust_checkup_patient1";
             
         }
+        public String deleteOnSiteAll()
+        {
+            String sql = "", chk = "";
+            sql = "Delete From onsite_" + ccp1.table;
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
+        public String insertToOnSite(String cucId)
+        {
+            String sql = "", chk = "";
+            sql = "insert into onsite_" + ccp1.table + " " +
+                "select * from " + ccp1.table +" "+
+                "Where " + ccp1.CustCheckUpId + "='" + cucId + "'";
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
         public String UpdateOther1(String rowNumber, String cucId, String HBsAg, String HbsAb, String AntiHIV, String VDRL, String Amphetamine, String Calcium, String AntiHav,
             String CAAFP, String CAAFPResult, String CAAFPSummary, String CACEA, String CACEAResult, String CACEASummary, String CAPSA, String CAPSAResult, String CAPSASummary,
             String CAHCG, String CAHCGResult, String CAHCGSummary, String CA153, String CA153Result, String CA153Summary, String CA125, String CA125Result, String CA125Summary,

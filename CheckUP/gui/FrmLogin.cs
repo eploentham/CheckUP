@@ -1,4 +1,5 @@
-﻿using CheckUP.Control;
+﻿using C1.Win.C1Themes;
+using CheckUP.Control;
 using CheckUP.object1;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace CheckUP.gui
     {
         //Test1 t;
         CheckControl cc;
+        C1ThemeController theme1;
         public FrmLogin()
         {
             InitializeComponent();
@@ -24,7 +26,50 @@ namespace CheckUP.gui
         private void initConfig()
         {
             cc = new CheckControl();
+            theme1 = new C1ThemeController();
+            chkOnsite.Click += ChkOnsite_Click;
+            chkClient.Click += ChkClient_Click;
+
+            if (cc.initC.statusonsite.Equals("yes"))
+            {
+                chkOnsite.Checked = true;
+                chkClient.Checked = false;
+            }
+            else
+            {
+                chkOnsite.Checked = false;
+                chkClient.Checked = true;
+            }
         }
+
+        private void ChkClient_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            if (chkClient.Checked)
+            {
+                if (MessageBox.Show("ต้องการเปลี่ยน สถานะ เป็นเครื่องClient", "แจ้งเตือน", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    cc.SetStatusonsite("no");
+                    Application.Restart();
+                    Environment.Exit(0);
+                }
+            }
+        }
+
+        private void ChkOnsite_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            if (chkOnsite.Checked)
+            {
+                if (MessageBox.Show("ต้องการเปลี่ยน สถานะ เป็นเครื่องออกหน่วย", "แจ้งเตือน", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    cc.SetStatusonsite("yes");
+                    Application.Restart();
+                    Environment.Exit(0);
+                }
+            }
+        }
+
         private void getLogin()
         {
             Cursor cursor = Cursor.Current;
@@ -66,7 +111,11 @@ namespace CheckUP.gui
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-
+            theme1.Theme = C1ThemeController.ApplicationTheme;
+            if (chkOnsite.Checked)
+            {
+                theme1.SetTheme(this, "BeigeOne");
+            }
         }
 
         private void btnOk_Click(object sender, EventArgs e)
