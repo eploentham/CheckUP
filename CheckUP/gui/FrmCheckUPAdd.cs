@@ -4585,7 +4585,7 @@ namespace CheckUP.gui
 
         private void btnPEImport_Click(object sender, EventArgs e)
         {
-            String rowNumber = "", chk="",vitalSign="", height="", weight="", bmi="", pulse="", result="", summary="", bloodgroup="", age="", patientNumber="";
+            String rowNumber = "", chk="",vitalSign="", height="", weight="", bmi="", pulse="", result="", summary="", bloodgroup="", age="", patientNumber="", ekg="", ekgresult="", ekgsummary="";
             if (!cc.fileExit(fileNamePE))
             {
                 MessageBox.Show("ไม่พบ file Excel","");
@@ -4700,17 +4700,40 @@ namespace CheckUP.gui
                 {
                     patientNumber = "";
                 }
-
-                if (bmi.Trim().Equals("-") || bmi.Trim().Equals(""))
+                if (xlRange.Cells[i, int.Parse(ei.ekg)].Value2 != null)
                 {
-                    //chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, vitalSign, height, weight, bmi, pulse, result, summary, bloodgroup);
-                    chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, age, vitalSign, height, weight, bmi, pulse, result, summary, bloodgroup, patientNumber);
+                    ekg = xlRange.Cells[i, int.Parse(ei.ekg)].Value2.ToString();
                 }
                 else
                 {
-                    chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, age, vitalSign.Trim(), height.Trim(), weight.Trim(), string.Format("{0:f2}", Double.Parse(cc.cf.NumberNull1(bmi))), pulse.Trim(), result.Trim(), summary.Trim(), bloodgroup.Trim(), patientNumber);
+                    ekg = "";
                 }
-
+                if (xlRange.Cells[i, int.Parse(ei.ekg_result)].Value2 != null)
+                {
+                    ekgresult = xlRange.Cells[i, int.Parse(ei.ekg_result)].Value2.ToString();
+                }
+                else
+                {
+                    ekgresult = "";
+                }
+                if (xlRange.Cells[i, int.Parse(ei.ekg_summary)].Value2 != null)
+                {
+                    ekgsummary = xlRange.Cells[i, int.Parse(ei.ekg_summary)].Value2.ToString();
+                }
+                else
+                {
+                    ekgsummary = "";
+                }
+                if (bmi.Trim().Equals("-") || bmi.Trim().Equals(""))
+                {
+                    //chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, vitalSign, height, weight, bmi, pulse, result, summary, bloodgroup);
+                    chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, age, vitalSign, height, weight, bmi, pulse, result, summary, bloodgroup, patientNumber, ekg,ekgresult, ekgsummary);
+                }
+                else
+                {
+                    chk = cc.ccpdb.UpdatePE(rowNumber, txtId.Text, age, vitalSign.Trim(), height.Trim(), weight.Trim(), string.Format("{0:f2}"
+                        , Double.Parse(cc.cf.NumberNull1(bmi))), pulse.Trim(), result.Trim(), summary.Trim(), bloodgroup.Trim(), patientNumber, ekg.Trim(), ekgresult.Trim(), ekgsummary.Trim());
+                }
                 
                 pB1.Value = i;
                 row++;

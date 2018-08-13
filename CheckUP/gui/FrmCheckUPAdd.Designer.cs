@@ -174,6 +174,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dgvSum = new System.Windows.Forms.DataGridView();
             this.tabPage20 = new System.Windows.Forms.TabPage();
+            this.btnOnsite = new System.Windows.Forms.Button();
             this.btnStoolExamSave = new System.Windows.Forms.Button();
             this.btnToxiSave = new System.Windows.Forms.Button();
             this.btnEyeSave = new System.Windows.Forms.Button();
@@ -379,7 +380,7 @@
             this.btnExcel1 = new System.Windows.Forms.Button();
             this.nmDSticker = new System.Windows.Forms.NumericUpDown();
             this.label21 = new System.Windows.Forms.Label();
-            this.btnOnsite = new System.Windows.Forms.Button();
+            this.btnPrnMiniExcel = new System.Windows.Forms.Button();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -2023,6 +2024,16 @@
             this.tabPage20.Text = "Summary2";
             this.tabPage20.UseVisualStyleBackColor = true;
             // 
+            // btnOnsite
+            // 
+            this.btnOnsite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnOnsite.Location = new System.Drawing.Point(478, 433);
+            this.btnOnsite.Name = "btnOnsite";
+            this.btnOnsite.Size = new System.Drawing.Size(138, 44);
+            this.btnOnsite.TabIndex = 360;
+            this.btnOnsite.Text = "เตรียมข้อมูล ออกหน่วย";
+            this.btnOnsite.UseVisualStyleBackColor = true;
+            // 
             // btnStoolExamSave
             // 
             this.btnStoolExamSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -2838,6 +2849,7 @@
             // 
             // tabPage12
             // 
+            this.tabPage12.Controls.Add(this.btnPrnMiniExcel);
             this.tabPage12.Controls.Add(this.button1);
             this.tabPage12.Controls.Add(this.groupBox2);
             this.tabPage12.Controls.Add(this.btnPrnA5);
@@ -4102,15 +4114,15 @@
             this.label21.TabIndex = 77;
             this.label21.Text = "จน. sticker :";
             // 
-            // btnOnsite
+            // btnPrnMiniExcel
             // 
-            this.btnOnsite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnOnsite.Location = new System.Drawing.Point(478, 433);
-            this.btnOnsite.Name = "btnOnsite";
-            this.btnOnsite.Size = new System.Drawing.Size(138, 44);
-            this.btnOnsite.TabIndex = 360;
-            this.btnOnsite.Text = "เตรียมข้อมูล ออกหน่วย";
-            this.btnOnsite.UseVisualStyleBackColor = true;
+            this.btnPrnMiniExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnPrnMiniExcel.Location = new System.Drawing.Point(322, 199);
+            this.btnPrnMiniExcel.Name = "btnPrnMiniExcel";
+            this.btnPrnMiniExcel.Size = new System.Drawing.Size(197, 34);
+            this.btnPrnMiniExcel.TabIndex = 86;
+            this.btnPrnMiniExcel.Text = " พิมพ์ เล่มเล็ก mini Excel, Word";
+            this.btnPrnMiniExcel.UseVisualStyleBackColor = true;
             // 
             // FrmCheckUPAdd
             // 
@@ -4571,5 +4583,6 @@
         private System.Windows.Forms.Button btnLabelSticker;
         private System.Windows.Forms.Button btnPrnSticker;
         private System.Windows.Forms.Button btnOnsite;
+        private System.Windows.Forms.Button btnPrnMiniExcel;
     }
 }

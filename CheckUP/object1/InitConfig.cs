@@ -14,5 +14,6 @@ namespace CheckUP.object1
 
         public String grdViewFontSize = "", grdViewFontName = "", themeApplication = "", txtFocus = "", grfRowColor = "";
         public String hostDBonsite = "", userDBonsite = "", nameDBonsite = "", portDBonsite = "", statusonsite = "", passDBonsite="";
+        public String pathMini = "";
     }
 }

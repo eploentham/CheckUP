@@ -2518,7 +2518,7 @@ namespace CheckUP.gui
 
         private void btnPEExcel_Click(object sender, EventArgs e)
         {
-            String No = "", age="", bmi="", height="", weight="", pulse="", vi="", result="", summary="", bloodGroup="";
+            String No = "", age="", bmi="", height="", weight="", pulse="", vi="", result="", summary="", bloodGroup="", ekg="", ekgresult="", ekgsummary="";
             ofd.ShowDialog();
             if (ofd.FileName.Equals("")) return;
 
@@ -2622,13 +2622,41 @@ namespace CheckUP.gui
                 summary = "";
             }
             summary = summary.Trim();
+            if (xlRange.Cells[nmDPERow.Value, nmdEKG.Value].Value2 != null)
+            {
+                ekg = xlRange.Cells[nmDPERow.Value, nmdEKG.Value].Value2.ToString();
+            }
+            else
+            {
+                ekg = "";
+            }
+            ekg = ekg.Trim();
+
+            if (xlRange.Cells[nmDPERow.Value, nmdEKGresult.Value].Value2 != null)
+            {
+                ekgresult = xlRange.Cells[nmDPERow.Value, nmdEKGresult.Value].Value2.ToString();
+            }
+            else
+            {
+                ekgresult = "";
+            }
+            ekgresult = ekgresult.Trim();
+            if (xlRange.Cells[nmDPERow.Value, nmdEKGsummary.Value].Value2 != null)
+            {
+                ekgsummary = xlRange.Cells[nmDPERow.Value, nmdEKGsummary.Value].Value2.ToString();
+            }
+            else
+            {
+                ekgsummary = "";
+            }
+            ekgsummary = ekgsummary.Trim();
             txtPETest.Text = "ลำดับ " + No + " อายุ " + age + " น้ำหนัก " + weight + " ส่วนสูง " + height + " BMI " + bmi + " VitalSign " + vi + " Pulse " + pulse +
-                " Blood Group " + bloodGroup + " Result " + result + " Summary " + summary;
+                " Blood Group " + bloodGroup + " Result " + result + " Summary " + summary + " ekg " + ekg + " ekgresult " + ekgresult + " ekgsummary " + ekgsummary;
 
             Cursor.Current = cursor;
             if (cc.eidb.updatePE(nmDPENo.Value.ToString(), nmDPERow.Value.ToString(), nmDPEAge.Value.ToString(), nmDPEBMI.Value.ToString(),
                 nmDPEHeight.Value.ToString(), nmDPEWeight.Value.ToString(), nmDPEPulse.Value.ToString(), nmDPEVi.Value.ToString(), nmDPEResult.Value.ToString(),
-                nmDPESummary.Value.ToString(), nmDPEBloodGroup.Value.ToString(),txtPESheetName.Text).Length >= 1)
+                nmDPESummary.Value.ToString(), nmDPEBloodGroup.Value.ToString(),txtPESheetName.Text, nmdEKG.Value.ToString(), nmdEKGresult.Value.ToString(), nmdEKGsummary.Value.ToString()).Length >= 1)
             {
                 ei = cc.eidb.selectByPk();
                 MessageBox.Show("บันทึกข้อมูล PE เรียบร้อย", "บันทึกข้อมูล");

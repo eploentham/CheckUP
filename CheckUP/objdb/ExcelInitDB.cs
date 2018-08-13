@@ -319,6 +319,9 @@ namespace CheckUP.objdb
             ei.sticker18 = "sticker18";
             ei.sticker19 = "sticker19";
             ei.sticker20 = "sticker20";
+            ei.ekg = "ekg";
+            ei.ekg_result = "ekg_result";
+            ei.ekg_summary = "ekg_summary";
 
             ei.pkField = "id";
             ei.table = "b_excel_init";
@@ -606,6 +609,10 @@ namespace CheckUP.objdb
             item.patient_number = dt.Rows[0][ei.patient_number].ToString();
             item.Active = dt.Rows[0][ei.Active].ToString();
 
+            item.ekg = NumberNull10(dt.Rows[0][ei.ekg].ToString());
+            item.ekg_result = NumberNull10(dt.Rows[0][ei.ekg_result].ToString());
+            item.ekg_summary = NumberNull10(dt.Rows[0][ei.ekg_summary].ToString());
+
             item.visit_hn = dt.Rows[0][ei.visit_hn].ToString();
             item.position_name = dt.Rows[0][ei.position_name].ToString();
             //item.Active = dt.Rows[0][ei.Active].ToString();
@@ -766,7 +773,7 @@ namespace CheckUP.objdb
             return chk;
         }
         public String updatePE( String PENo, String PERow, String PEAge, String PEBMI, String PEHeight, String PEWeight,  String PEPulse,
-            String PEVitalSign, String PEResult, String PESummary, String PEBloodGroup, String sheetname)
+            String PEVitalSign, String PEResult, String PESummary, String PEBloodGroup, String sheetname, String ekg, String ekgResult, String ekgSummary)
         {
             String sql = "", chk = "";
 
@@ -785,6 +792,9 @@ namespace CheckUP.objdb
                 ei.PEVitalSign + "='" + PEVitalSign + "', " +
                 ei.PEWeight + "='" + PEWeight + "', " +
                 ei.PEBloodGroup + "='" + PEBloodGroup + "', "+
+                ei.ekg + "='" + ekg.Replace("'", "''") + "', " +
+                ei.ekg_result + "='" + ekgResult.Replace("'", "''") + "', " +
+                ei.ekg_summary + "='" + ekgSummary.Replace("'","''") + "', " +
                 ei.PESheetname + "='" + sheetname + "' ";
             try
             {

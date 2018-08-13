@@ -40,7 +40,7 @@ namespace CheckUP.Control
         public RCheckUpDB rcdb;
         public CustCheckUpPatientValueNormalDB ccpvndb;
         public StickerDB stkdb;
-        //public ItemGroupDB itgdb;
+        public ExcelInitMiniDB eiminidb;
         //public InvoiceDB invdb;
         //public InvoiceItemDB invidb;
         //public ResultDB rsdb;
@@ -102,7 +102,7 @@ namespace CheckUP.Control
                 rcdb = new RCheckUpDB(conn);
                 ccpvndb = new CustCheckUpPatientValueNormalDB(conn);
                 stkdb = new StickerDB(conn);
-                //itgdb = new ItemGroupDB(conn);
+                eiminidb = new ExcelInitMiniDB(conn);
                 //invdb = new InvoiceDB(conn);
                 //invidb = new InvoiceItemDB(conn);
                 //rsdb = new ResultDB(conn);
@@ -217,6 +217,7 @@ namespace CheckUP.Control
             initC.txtFocus = iniFile.Read("txtFocus");
             initC.grfRowColor = iniFile.Read("grfRowColor");
             initC.statusonsite = iniFile.Read("statusonsite");
+            initC.pathMini = iniFile.Read("pathMini");
 
             initC.grdViewFontName = initC.grdViewFontName.Equals("") ? "Microsoft Sans Serif" : initC.grdViewFontName;
             int.TryParse(initC.grdViewFontSize, out grdViewFontSize);
@@ -229,6 +230,10 @@ namespace CheckUP.Control
         {
             bool folderExists = File.Exists(path);
             return folderExists;
+        }
+        public void SetPathMini(String path)
+        {
+            iniFile.Write("pathMini", path);
         }
         public void SetPathImage(String path)
         {
@@ -2834,6 +2839,249 @@ namespace CheckUP.Control
             }
             Cursor.Current = cursor;
         }
+        public void genExcelMini(String cucId)
+        {
+            CustCheckUp cuc = new CustCheckUp();
+            cuc = cucdb.selectByPk(cucId);
+            Company cop = new Company();
+            cop = copdb.selectByPk();
+            ExcelInitMini eim = new ExcelInitMini();
+            eim = eiminidb.selectByPk();
+            DataTable dt = new DataTable();
+
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
+            dt = ccpdb.selectAllByCucId(cucId);
+            Microsoft.Office.Interop.Excel.Application xlApp = null;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = null;
+            try
+            {
+                dt = ccpdb.selectAllByCucId(cucId);
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlWorkbook = (xlApp.Workbooks.Add(Missing.Value));
+                Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.ActiveSheet;
+                xlWorksheet.Name = "sheet1";
+                xlWorksheet.Cells[1, 1] = "ลำดับที่";
+                xlWorksheet.Cells[2, 1] = "hn";
+                xlWorksheet.Cells[3, 1] = "รหัสพนักงาน";
+                xlWorksheet.Cells[4, 1] = "ชื่อ_นามสกุล";
+                xlWorksheet.Cells[5, 1] = "แผนก";
+                xlWorksheet.Cells[6, 1] = "บริษัท";
+                xlWorksheet.Cells[7, 1] = "วันที่ตรวจ";
+                xlWorksheet.Cells[8, 1] = "หมายเหตุ";
+                xlWorksheet.Cells[9, 1] = "Gender";
+                xlWorksheet.Cells[10, 1] = "Regis";
+                xlWorksheet.Cells[11, 1] = "PE";
+                xlWorksheet.Cells[12, 1] = "BG";
+                xlWorksheet.Cells[13, 1] = "อายุ";
+                xlWorksheet.Cells[14, 1] = "นน.";
+                xlWorksheet.Cells[15, 1] = "สูง";
+                xlWorksheet.Cells[16, 1] = "BP";
+                xlWorksheet.Cells[17, 1] = "Pulse";
+                xlWorksheet.Cells[18, 1] = "BMI";
+                xlWorksheet.Cells[19, 1] = "ผลBMI";
+                xlWorksheet.Cells[20, 1] = "ผลBP";
+                xlWorksheet.Cells[21, 1] = "ผลpulse";
+                xlWorksheet.Cells[22, 1] = "สรุปPE";
+                xlWorksheet.Cells[23, 1] = "คำแนะนำPE";
+                xlWorksheet.Cells[24, 1] = "xray/digital";
+                xlWorksheet.Cells[25, 1] = "ผลxray";
+                xlWorksheet.Cells[26, 1] = "สรุปxray";
+                xlWorksheet.Cells[27, 1] = "แนะนำxray";
+                xlWorksheet.Cells[28, 1] = "CBC";
+                xlWorksheet.Cells[29, 1] = "WBC";
+                xlWorksheet.Cells[30, 1] = "HB";
+                xlWorksheet.Cells[31, 1] = "RBC";
+                xlWorksheet.Cells[32, 1] = "HCT";
+                xlWorksheet.Cells[33, 1] = "MCV";
+                xlWorksheet.Cells[34, 1] = "MCH";
+                xlWorksheet.Cells[35, 1] = "MCHC";
+                xlWorksheet.Cells[36, 1] = "plt C";
+                xlWorksheet.Cells[37, 1] = "plt smr";
+                xlWorksheet.Cells[38, 1] = "R.M";
+                xlWorksheet.Cells[39, 1] = "ผลcbc";
+                xlWorksheet.Cells[40, 1] = "สรุป CBC";
+                xlWorksheet.Cells[41, 1] = "UA";
+                xlWorksheet.Cells[42, 1] = "สี";
+                xlWorksheet.Cells[43, 1] = "กรด";
+                xlWorksheet.Cells[44, 1] = "sp.gr";
+                xlWorksheet.Cells[45, 1] = "น้ำตาล";
+                xlWorksheet.Cells[46, 1] = "โปรตีน";
+                xlWorksheet.Cells[47, 1] = "คีโตน";
+                xlWorksheet.Cells[48, 1] = "wbc1";
+                xlWorksheet.Cells[49, 1] = "rbc1";
+                xlWorksheet.Cells[50, 1] = "epi";
+                xlWorksheet.Cells[51, 1] = "bac";
+                xlWorksheet.Cells[52, 1] = "สรุปUA";
+                xlWorksheet.Cells[53, 1] = "FBS";
+                xlWorksheet.Cells[54, 1] = "ผลFBS";
+                xlWorksheet.Cells[55, 1] = "ผลChol";
+                xlWorksheet.Cells[56, 1] = "ผลTri";
+                xlWorksheet.Cells[57, 1] = "ผลBUN";
+                xlWorksheet.Cells[58, 1] = "ผลCreatinine";
+                xlWorksheet.Cells[59, 1] = "ผลSgot";
+                xlWorksheet.Cells[60, 1] = "ผลSgpt";
+                xlWorksheet.Cells[61, 1] = "ผลHDL";
+                xlWorksheet.Cells[62, 1] = "ผลLDL";
+                xlWorksheet.Cells[63, 1] = "สรุปFBS";
+                xlWorksheet.Cells[64, 1] = "แนะนำFBS";
+                xlWorksheet.Cells[65, 1] = "Chol";
+                xlWorksheet.Cells[66, 1] = "Tri";
+                xlWorksheet.Cells[67, 1] = "สรุปChol_Tri";
+                xlWorksheet.Cells[68, 1] = "แนะนำChol_Tri";
+                xlWorksheet.Cells[69, 1] = "HDL_LDL";
+                xlWorksheet.Cells[70, 1] = "สรุปHDL_LDL";
+                xlWorksheet.Cells[71, 1] = "แนะนำHDL_LDL";
+                xlWorksheet.Cells[72, 1] = "BUN,Crea";
+                xlWorksheet.Cells[73, 1] = "สรุปBUN_Crea";
+                xlWorksheet.Cells[74, 1] = "แนะนำBUN_Crea";
+                xlWorksheet.Cells[75, 1] = "SS";
+                xlWorksheet.Cells[76, 1] = "สรุปSS";
+                xlWorksheet.Cells[77, 1] = "แนะนำSS";
+                xlWorksheet.Cells[78, 1] = "Uric";
+                xlWorksheet.Cells[79, 1] = "ผลUric";
+                xlWorksheet.Cells[80, 1] = "สรุปUric";
+                xlWorksheet.Cells[81, 1] = "แนะนำUric";
+                xlWorksheet.Cells[82, 1] = "ALP";
+                xlWorksheet.Cells[83, 1] = "สรุปALP";
+                xlWorksheet.Cells[84, 1] = "แนะนำALP";
+                xlWorksheet.Cells[85, 1] = "Bilirubin";
+                xlWorksheet.Cells[86, 1] = "ผลBilirubin";
+                xlWorksheet.Cells[87, 1] = "สรุปBilirubin";
+                xlWorksheet.Cells[88, 1] = "แนะนำBilirubin";
+                xlWorksheet.Cells[89, 1] = "HBs Ag";
+                xlWorksheet.Cells[90, 1] = "ผลHBs Ag";
+                xlWorksheet.Cells[91, 1] = "สรุปHBs Ag";
+                xlWorksheet.Cells[92, 1] = "แนะนำHBs Ag";
+                xlWorksheet.Cells[93, 1] = "HBs Ab";
+                xlWorksheet.Cells[94, 1] = "ผลHBs Ab";
+                xlWorksheet.Cells[95, 1] = "สรุปHBs Ab";
+                xlWorksheet.Cells[96, 1] = "แนะนำHBs Ab";
+                xlWorksheet.Cells[97, 1] = "HAV";
+                xlWorksheet.Cells[98, 1] = "ผลHAV";
+                xlWorksheet.Cells[99, 1] = "สรุปHAV";
+                xlWorksheet.Cells[100, 1] = "แนะนำHAV";
+                xlWorksheet.Cells[101, 1] = "Methamphetamine";
+                xlWorksheet.Cells[102, 1] = "ผลMethamphetamine";
+                xlWorksheet.Cells[103, 1] = "สรุปMethamphetamine";
+                xlWorksheet.Cells[104, 1] = "แนะนำMethamphetamine";
+                xlWorksheet.Cells[105, 1] = "AFP";
+                xlWorksheet.Cells[106, 1] = "ผลAFP";
+                xlWorksheet.Cells[107, 1] = "สรุปAFP";
+                xlWorksheet.Cells[108, 1] = "แนะนำAFP";
+                xlWorksheet.Cells[109, 1] = "CEA";
+                xlWorksheet.Cells[110, 1] = "ผลCEA";
+                xlWorksheet.Cells[111, 1] = "สรุปCEA";
+                xlWorksheet.Cells[112, 1] = "แนะนำCEA";
+                xlWorksheet.Cells[113, 1] = "PSA";
+                xlWorksheet.Cells[114, 1] = "ผลPSA";
+                xlWorksheet.Cells[115, 1] = "สรุปPSA";
+                xlWorksheet.Cells[116, 1] = "แนะนำPSA";
+                xlWorksheet.Cells[117, 1] = "Cholinesterase";
+                xlWorksheet.Cells[118, 1] = "ผลCholinesterase";
+                xlWorksheet.Cells[119, 1] = "สรุปCholinesterase";
+                xlWorksheet.Cells[120, 1] = "แนะนำCholinesterase";
+                xlWorksheet.Cells[121, 1] = "Stool Culture";
+                xlWorksheet.Cells[122, 1] = "ผลS/C";
+                xlWorksheet.Cells[123, 1] = "สรุปS/C";
+                xlWorksheet.Cells[124, 1] = "แนะนำS/C";
+                xlWorksheet.Cells[125, 1] = "Stool Exam";
+                xlWorksheet.Cells[126, 1] = "สี/ลักษณะ";
+                xlWorksheet.Cells[127, 1] = "ไข่/พยาธิ";
+                xlWorksheet.Cells[128, 1] = "เม็ดเลือดขาว";
+                xlWorksheet.Cells[129, 1] = "เม็ดเลือดแดง";
+                xlWorksheet.Cells[130, 1] = "ผลS/E";
+                xlWorksheet.Cells[131, 1] = "แนะนำS/E";
+                xlWorksheet.Cells[132, 1] = "Occupation";
+                xlWorksheet.Cells[133, 1] = "การมองระยะไกลโดยรวม";
+                xlWorksheet.Cells[134, 1] = "การมองระยะไกลทั้งสองตา";
+                xlWorksheet.Cells[135, 1] = "การมองระยะไกลตาขวา";
+                xlWorksheet.Cells[136, 1] = "การมองระยะไกลตาซ้าย";
+                xlWorksheet.Cells[137, 1] = "การมองภาพสามมิติระยะไกล";
+                xlWorksheet.Cells[138, 1] = "การทดสอบตาบอดสี";
+                xlWorksheet.Cells[139, 1] = "การมองพร้อมกันแนวดิ่ง";
+                xlWorksheet.Cells[140, 1] = "การมองพร้อมกันแนวนอน";
+                xlWorksheet.Cells[141, 1] = "การมองระยะใกล้ทั้งสองตา";
+                xlWorksheet.Cells[142, 1] = "การมองระยะใกล้ตาขวา";
+                xlWorksheet.Cells[143, 1] = "การมองระยะใกล้ตาซ้าย";
+                xlWorksheet.Cells[144, 1] = "การปรับตัวของกล้ามเนื้อตาในแนวนอน";
+                xlWorksheet.Cells[145, 1] = "สรุปผลการตรวจสายตาอาชีวอนามัย";
+                xlWorksheet.Cells[146, 1] = "Audiogram";
+                xlWorksheet.Cells[147, 1] = "500_R";
+                xlWorksheet.Cells[148, 1] = "1k_R";
+                xlWorksheet.Cells[149, 1] = "2k_R";
+                xlWorksheet.Cells[150, 1] = "3k_R";
+                xlWorksheet.Cells[151, 1] = "4k_R";
+                xlWorksheet.Cells[152, 1] = "6k_R";
+                xlWorksheet.Cells[153, 1] = "8k_R";
+                xlWorksheet.Cells[154, 1] = "สรุปหูขวา1";
+                xlWorksheet.Cells[155, 1] = "สรุปหูขวา2";
+                xlWorksheet.Cells[156, 1] = "สรุปรวมหูขวา";
+                xlWorksheet.Cells[157, 1] = "500_L";
+                xlWorksheet.Cells[158, 1] = "1k_L";
+                xlWorksheet.Cells[159, 1] = "2k_L";
+                xlWorksheet.Cells[160, 1] = "3k_L";
+                xlWorksheet.Cells[161, 1] = "4k_L";
+                xlWorksheet.Cells[162, 1] = "6k_L";
+                xlWorksheet.Cells[163, 1] = "8k_L";
+                xlWorksheet.Cells[164, 1] = "สรุปหูซ้าย1";
+                xlWorksheet.Cells[165, 1] = "สรุปหูซ้าย2";
+                xlWorksheet.Cells[166, 1] = "สรุปรวมหูซ้าย";
+                xlWorksheet.Cells[167, 1] = "สรุปหูสองข้าง";
+                xlWorksheet.Cells[168, 1] = "หมายเหตุ";
+                xlWorksheet.Cells[169, 1] = "Lung";
+                xlWorksheet.Cells[170, 1] = "FVC%Pred";
+                xlWorksheet.Cells[171, 1] = "FEV 1/FVC%Meas";
+                xlWorksheet.Cells[172, 1] = "FEV 1/FVC%Pred";
+                xlWorksheet.Cells[173, 1] = "FEV 1/FVC%/%Pred";
+                xlWorksheet.Cells[174, 1] = "ผลตรวจLFT";
+                xlWorksheet.Cells[175, 1] = "สรุปLFT";
+                xlWorksheet.Cells[176, 1] = "แนะนำLFT";
+                xlWorksheet.Cells[177, 1] = "EKG";
+                xlWorksheet.Cells[178, 1] = "ผลEKG";
+                xlWorksheet.Cells[179, 1] = "สรุปEKG";
+                xlWorksheet.Cells[180, 1] = "แนะนำEKG";
+                xlWorksheet.Cells[181, 1] = "กล้ามเนื้อแขนขา";
+                xlWorksheet.Cells[182, 1] = "ผลแขน";
+                xlWorksheet.Cells[183, 1] = "ผลขา";
+                xlWorksheet.Cells[184, 1] = "สรุปแขนขา";
+                xlWorksheet.Cells[185, 1] = "Inner Scan";
+                xlWorksheet.Cells[186, 1] = "%ไขมัน";
+                xlWorksheet.Cells[187, 1] = "ผลไขมันสะสมในร่างกาย";
+                xlWorksheet.Cells[188, 1] = "% น้ำ";
+                xlWorksheet.Cells[189, 1] = "ระดับไขมันในท้อง";
+                xlWorksheet.Cells[190, 1] = "ผลไขมันในช่องท้อง";
+                xlWorksheet.Cells[191, 1] = "กล้าม เนื้อ";
+                xlWorksheet.Cells[192, 1] = "ระดับ";
+                xlWorksheet.Cells[193, 1] = "ผลกล้ามเนื้อ";
+                xlWorksheet.Cells[194, 1] = "น.น.กระดูก";
+                xlWorksheet.Cells[195, 1] = "ผลกระดูก";
+                xlWorksheet.Cells[196, 1] = "ค่าปกติกระดูก ชาย";
+                xlWorksheet.Cells[197, 1] = "ค่าปกติกระดูก หญิง";
+                xlWorksheet.Cells[198, 1] = "BMR";
+                xlWorksheet.Cells[199, 1] = "อายุจริง";
+                xlWorksheet.Cells[200, 1] = "Age";
+                xlWorksheet.Cells[200, 1] = "ผล BMR";
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    xlWorksheet.Cells[i, 1] = "";
+                }
+                //xlWorkbook.SaveAs(initC.pathMini+"")
+                xlApp.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error excelBUN " + ex.InnerException, "message " + ex.Message);
+            }
+            finally
+            {
+
+            }
+            Cursor.Current = cursor;
+            
+        }
+        
         public void getTextSticker(String cucId)
         {
             String col01="", col02="", col03="", col04="", col05="", col06 = "";

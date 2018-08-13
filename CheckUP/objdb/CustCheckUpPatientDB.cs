@@ -640,6 +640,10 @@ namespace CheckUP.objdb
             ccp.test19 = "test19";
             ccp.test20 = "test20";
 
+            ccp.ekg = "ekg";
+            ccp.ekg_result = "ekg_result";
+            ccp.ekg_summary = "ekg_summary";
+
             ccp.pkField = "patient_id";
             ccp.table = "t_cust_checkup_patient";
         }
@@ -1220,7 +1224,8 @@ namespace CheckUP.objdb
 
             return chk;
         }
-        public String UpdatePE(String rowNumber, String cucId, String vitalSign, String height, String weight, String bmi, String pulse, String result, String summary, String bloodgroup, String patientnumber)
+        public String UpdatePE(String rowNumber, String cucId, String vitalSign, String height, String weight, String bmi, String pulse, String result
+            , String summary, String bloodgroup, String patientnumber)
         {
             String chk = "", sql = "";
             try
@@ -1245,7 +1250,8 @@ namespace CheckUP.objdb
 
             return chk;
         }
-        public String UpdatePE(String rowNumber, String cucId, String age, String vitalSign, String height, String weight, String bmi, String pulse, String result, String summary, String bloodgroup, String patientnumber)
+        public String UpdatePE(String rowNumber, String cucId, String age, String vitalSign, String height, String weight, String bmi, String pulse, String result
+            , String summary, String bloodgroup, String patientnumber, String ekg, String ekgresult, String ekgsummary)
         {
             String chk = "", sql="";
             try
@@ -1260,6 +1266,9 @@ namespace CheckUP.objdb
                 ","+ccp.PeResult + "='" + result.Replace("'", "''") + "' " +
                 "," + ccp.summaryPhysicalExam + "='" + summary.Replace("'", "''") + "' " +
                 "," + ccp.patientNumber + "='" + patientnumber.Replace("'", "''") + "' " +
+                "," + ccp.ekg + "='" + ekg.Replace("'", "''") + "' " +
+                "," + ccp.ekg_result + "='" + ekgresult.Replace("'", "''") + "' " +
+                "," + ccp.ekg_summary + "='" + ekgsummary.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql);
             } catch (Exception ex) {
@@ -2259,6 +2268,24 @@ namespace CheckUP.objdb
                 ccp.uricAcidSuggess + "='" + result.Replace("'", "''") + "', " +
                 ccp.uricAcidSummary + "='" + summary.Replace("'", "''") + "' " +
                     //ccp.sugarSuggess + "='" + suggess + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
+        public String UpdateEKG(String rowNumber, String cucId, String value, String result, String summary)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.ekg + "='" + value + "'," +
+                ccp.ekg_result + "='" + result.Replace("'", "''") + "', " +
+                ccp.ekg_summary + "='" + summary.Replace("'", "''") + "' " +
+                //ccp.sugarSuggess + "='" + suggess + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
                 chk = conn.ExecuteNonQuery(sql); ;
             }

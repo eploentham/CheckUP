@@ -33,6 +33,8 @@ namespace CheckUP.gui
             {
                 chkClearInput.Checked = false;
             }
+            btnPathMini.Click += BtnPathMini_Click;
+
             txtHostDBonsite.Text = cc.initC.hostDBonsite;
             txtNameDBonsite.Text = cc.initC.nameDBonsite;
             txtUserDBonsite.Text = cc.initC.userDBonsite;
@@ -83,7 +85,7 @@ namespace CheckUP.gui
             txtQuoLine5.Text = cc.initC.quoLine5;
             txtQuoLine6.Text = cc.initC.quoLine6;
             txtHost.Text = cc.initC.IPServer;
-            
+            txtPathMini.Text = cc.initC.pathMini;
             
             if (cc.initC.HideCostQuotation.Equals("yes"))
             {
@@ -95,6 +97,16 @@ namespace CheckUP.gui
             }
             pB1.Visible = false;
         }
+
+        private void BtnPathMini_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            DialogResult result = fbd.ShowDialog();
+            txtPathMini.Text = fbd.SelectedPath;
+            cc.SetPathMini(txtPathMini.Text.Trim());
+        }
+
         private void FrmInitConfig_Load(object sender, EventArgs e)
         {
 

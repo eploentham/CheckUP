@@ -128,3 +128,7 @@ from t_cust_checkup_patient1;
 select *
 into onsite_t_cust_checkup
 from t_cust_checkup;
+
+select * 
+into b_excel_init_mini
+from b_excel_init;

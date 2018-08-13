@@ -44,6 +44,9 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtQuoLine1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnPathMini = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtPathMini = new System.Windows.Forms.TextBox();
             this.btnPathReport = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.txtPathReport = new System.Windows.Forms.TextBox();
@@ -52,6 +55,8 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.pB1 = new System.Windows.Forms.ProgressBar();
             this.gBClient = new System.Windows.Forms.GroupBox();
+            this.txtPort = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.chkConnectServer = new System.Windows.Forms.CheckBox();
             this.txtHost = new System.Windows.Forms.TextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
@@ -65,11 +70,8 @@
             this.btnTest = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.gBServer = new System.Windows.Forms.GroupBox();
-            this.ChkClient = new System.Windows.Forms.RadioButton();
-            this.ChkServer = new System.Windows.Forms.RadioButton();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtPathMini = new System.Windows.Forms.TextBox();
+            this.txtPortDBonsite = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtHostDBonsite = new System.Windows.Forms.TextBox();
             this.txtUserDBonsite = new System.Windows.Forms.TextBox();
             this.txtPassDBonsite = new System.Windows.Forms.TextBox();
@@ -78,10 +80,8 @@
             this.txtNameDBonsite = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtPortDBonsite = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtPort = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.ChkClient = new System.Windows.Forms.RadioButton();
+            this.ChkServer = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -245,7 +245,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.btnPathMini);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.txtPathMini);
             this.groupBox2.Controls.Add(this.btnPathReport);
@@ -260,6 +260,34 @@
             this.groupBox2.Size = new System.Drawing.Size(670, 70);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
+            // 
+            // btnPathMini
+            // 
+            this.btnPathMini.Location = new System.Drawing.Point(587, 42);
+            this.btnPathMini.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPathMini.Name = "btnPathMini";
+            this.btnPathMini.Size = new System.Drawing.Size(22, 26);
+            this.btnPathMini.TabIndex = 36;
+            this.btnPathMini.Text = "...";
+            this.btnPathMini.UseVisualStyleBackColor = true;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(170, 49);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(67, 13);
+            this.label18.TabIndex = 35;
+            this.label18.Text = "path เล่มเล็ก";
+            // 
+            // txtPathMini
+            // 
+            this.txtPathMini.Location = new System.Drawing.Point(261, 46);
+            this.txtPathMini.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPathMini.Name = "txtPathMini";
+            this.txtPathMini.Size = new System.Drawing.Size(322, 20);
+            this.txtPathMini.TabIndex = 34;
             // 
             // btnPathReport
             // 
@@ -359,6 +387,24 @@
             this.gBClient.TabIndex = 29;
             this.gBClient.TabStop = false;
             this.gBClient.Text = "Client";
+            // 
+            // txtPort
+            // 
+            this.txtPort.Location = new System.Drawing.Point(120, 135);
+            this.txtPort.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPort.Name = "txtPort";
+            this.txtPort.Size = new System.Drawing.Size(97, 20);
+            this.txtPort.TabIndex = 23;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(14, 138);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(25, 13);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "port";
             // 
             // chkConnectServer
             // 
@@ -495,59 +541,23 @@
             this.gBServer.TabStop = false;
             this.gBServer.Text = "Server";
             // 
-            // ChkClient
+            // txtPortDBonsite
             // 
-            this.ChkClient.AutoSize = true;
-            this.ChkClient.Location = new System.Drawing.Point(24, 204);
-            this.ChkClient.Margin = new System.Windows.Forms.Padding(2);
-            this.ChkClient.Name = "ChkClient";
-            this.ChkClient.Size = new System.Drawing.Size(83, 17);
-            this.ChkClient.TabIndex = 27;
-            this.ChkClient.TabStop = true;
-            this.ChkClient.Text = "เครื่อง Client";
-            this.ChkClient.UseVisualStyleBackColor = true;
-            this.ChkClient.Click += new System.EventHandler(this.ChkClient_Click);
+            this.txtPortDBonsite.Location = new System.Drawing.Point(117, 111);
+            this.txtPortDBonsite.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPortDBonsite.Name = "txtPortDBonsite";
+            this.txtPortDBonsite.Size = new System.Drawing.Size(97, 20);
+            this.txtPortDBonsite.TabIndex = 21;
             // 
-            // ChkServer
+            // label9
             // 
-            this.ChkServer.AutoSize = true;
-            this.ChkServer.Location = new System.Drawing.Point(24, 28);
-            this.ChkServer.Margin = new System.Windows.Forms.Padding(2);
-            this.ChkServer.Name = "ChkServer";
-            this.ChkServer.Size = new System.Drawing.Size(138, 17);
-            this.ChkServer.TabIndex = 26;
-            this.ChkServer.TabStop = true;
-            this.ChkServer.Text = "เครื่อง Server ออกหน่วย";
-            this.ChkServer.UseVisualStyleBackColor = true;
-            this.ChkServer.Click += new System.EventHandler(this.ChkServer_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(587, 42);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(22, 26);
-            this.button3.TabIndex = 36;
-            this.button3.Text = "...";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(170, 49);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(67, 13);
-            this.label18.TabIndex = 35;
-            this.label18.Text = "path เล่มเล็ก";
-            // 
-            // txtPathMini
-            // 
-            this.txtPathMini.Location = new System.Drawing.Point(261, 46);
-            this.txtPathMini.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPathMini.Name = "txtPathMini";
-            this.txtPathMini.Size = new System.Drawing.Size(322, 20);
-            this.txtPathMini.TabIndex = 34;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(11, 114);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(25, 13);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "port";
             // 
             // txtHostDBonsite
             // 
@@ -621,41 +631,31 @@
             this.label8.TabIndex = 18;
             this.label8.Text = "passwword";
             // 
-            // txtPortDBonsite
+            // ChkClient
             // 
-            this.txtPortDBonsite.Location = new System.Drawing.Point(117, 111);
-            this.txtPortDBonsite.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPortDBonsite.Name = "txtPortDBonsite";
-            this.txtPortDBonsite.Size = new System.Drawing.Size(97, 20);
-            this.txtPortDBonsite.TabIndex = 21;
+            this.ChkClient.AutoSize = true;
+            this.ChkClient.Location = new System.Drawing.Point(24, 204);
+            this.ChkClient.Margin = new System.Windows.Forms.Padding(2);
+            this.ChkClient.Name = "ChkClient";
+            this.ChkClient.Size = new System.Drawing.Size(83, 17);
+            this.ChkClient.TabIndex = 27;
+            this.ChkClient.TabStop = true;
+            this.ChkClient.Text = "เครื่อง Client";
+            this.ChkClient.UseVisualStyleBackColor = true;
+            this.ChkClient.Click += new System.EventHandler(this.ChkClient_Click);
             // 
-            // label9
+            // ChkServer
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 114);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(25, 13);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "port";
-            // 
-            // txtPort
-            // 
-            this.txtPort.Location = new System.Drawing.Point(120, 135);
-            this.txtPort.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPort.Name = "txtPort";
-            this.txtPort.Size = new System.Drawing.Size(97, 20);
-            this.txtPort.TabIndex = 23;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(14, 138);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(25, 13);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "port";
+            this.ChkServer.AutoSize = true;
+            this.ChkServer.Location = new System.Drawing.Point(24, 28);
+            this.ChkServer.Margin = new System.Windows.Forms.Padding(2);
+            this.ChkServer.Name = "ChkServer";
+            this.ChkServer.Size = new System.Drawing.Size(138, 17);
+            this.ChkServer.TabIndex = 26;
+            this.ChkServer.TabStop = true;
+            this.ChkServer.Text = "เครื่อง Server ออกหน่วย";
+            this.ChkServer.UseVisualStyleBackColor = true;
+            this.ChkServer.Click += new System.EventHandler(this.ChkServer_Click);
             // 
             // FrmInitConfig
             // 
@@ -725,7 +725,7 @@
         private System.Windows.Forms.TextBox txtQuoLine5;
         private System.Windows.Forms.ProgressBar pB1;
         private System.Windows.Forms.CheckBox chkHideCostQuotation;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnPathMini;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtPathMini;
         private System.Windows.Forms.TextBox txtHostDBonsite;

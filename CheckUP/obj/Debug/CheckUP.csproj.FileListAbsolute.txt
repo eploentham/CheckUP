@@ -165,3 +165,4 @@ D:\source\bangna\CheckUP\CheckUP\bin\Debug\C1.C1Zip.4.dll
 D:\source\bangna\CheckUP\CheckUP\bin\Debug\C1.Win.C1Themes.4.xml
 D:\source\bangna\CheckUP\CheckUP\bin\Debug\C1.C1Zip.4.xml
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csprojAssemblyReference.cache
+D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.gui.FrmExcelInitMini.resources

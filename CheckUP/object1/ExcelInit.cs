@@ -53,7 +53,7 @@ namespace CheckUP.object1
         public String ToxiEthanol = "", ToxiIPA = "", ToxiArsenic = "", ToxiHexane = "", ToxiFomaldehyde = "", ToxiTrichloroethylene = "", ToxiAntimony = "", ToxiFluoride = "", ToxiSheetname = "";
         public String sticker01 = "", sticker02 = "", sticker03 = "", sticker04 = "", sticker05 = "", sticker06 = "", sticker07 = "", sticker08 = "", sticker09 = "", sticker10 = "";
         public String sticker11 = "", sticker12 = "", sticker13 = "", sticker14 = "", sticker15 = "", sticker16 = "", sticker17 = "", sticker18 = "", sticker19 = "", sticker20 = "";
-        //public String xrayChestSummary="";
-
+        public String ekg="", ekg_result = "", ekg_summary = "";
+        
     }
 }

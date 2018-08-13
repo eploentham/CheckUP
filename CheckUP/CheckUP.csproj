@@ -123,6 +123,12 @@
     <Compile Include="gui\FrmExcelInit.Designer.cs">
       <DependentUpon>FrmExcelInit.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmExcelInitMini.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmExcelInitMini.Designer.cs">
+      <DependentUpon>FrmExcelInitMini.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmInitConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,7 @@
     <Compile Include="objdb\CustomerDB.cs" />
     <Compile Include="objdb\DistrictDB.cs" />
     <Compile Include="objdb\ExcelInitDB.cs" />
+    <Compile Include="objdb\ExcelInitMiniDB.cs" />
     <Compile Include="objdb\ProvinceDB.cs" />
     <Compile Include="objdb\RCheckUpDB.cs" />
     <Compile Include="objdb\StaffDB.cs" />
@@ -202,6 +209,7 @@
     <Compile Include="object1\Customer.cs" />
     <Compile Include="object1\District.cs" />
     <Compile Include="object1\ExcelInit.cs" />
+    <Compile Include="object1\ExcelInitMini.cs" />
     <Compile Include="object1\FilterRow.cs" />
     <Compile Include="object1\IniFile.cs" />
     <Compile Include="object1\InitConfig.cs" />
@@ -318,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmExcelInit.resx">
       <DependentUpon>FrmExcelInit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmExcelInitMini.resx">
+      <DependentUpon>FrmExcelInitMini.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmInitConfig.resx">
       <DependentUpon>FrmInitConfig.cs</DependentUpon>

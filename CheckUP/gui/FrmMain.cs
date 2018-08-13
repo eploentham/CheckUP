@@ -78,6 +78,7 @@ namespace CheckUP
             tv1.Nodes["nInitConfig"].Nodes.Add("nCompany", "ข้อมูลบริษัท");
             //    tv1.Nodes["nInitConfig"].Nodes.Add("nRateView", "สร้างอัตรา");
             tv1.Nodes["nInitConfig"].Nodes.Add("nExcelInit", "Excel");
+            tv1.Nodes["nInitConfig"].Nodes.Add("nExcelInitMini", "Excel ผล");
             tv1.Nodes["nInitConfig"].Nodes.Add("nTest", "Test ");
             tv1.Nodes["nInitConfig"].Nodes.Add("nInitConfig", "กำหนดค่าโปรแกรม");
             //}
@@ -125,11 +126,11 @@ namespace CheckUP
                 FrmValueNormal frm = new FrmValueNormal(cc,"");
                 showFrame(frm);
             }
-            //else if (e.Node.Name.ToString() == "nInputResult")
-            //{
-            //    FrmResultView frm = new FrmResultView(sf.Id, cc);
-            //    showFrame(frm);
-            //}
+            else if (e.Node.Name.ToString() == "nExcelInitMini")
+            {
+                FrmExcelInitMini frm = new FrmExcelInitMini(cc);
+                showFrame(frm);
+            }
             //else if (e.Node.Name.ToString() == "nBillView")
             //{
             //    FrmInvoiceView frm = new FrmInvoiceView(cc);
