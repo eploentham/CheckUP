@@ -200,6 +200,7 @@ namespace CheckUP.gui
             btnPrnNoAll.Click += BtnPrnNoAll_Click;
             txtBarcode.KeyUp += TxtBarcode_KeyUp;
             btnOnsite.Click += BtnOnsite_Click;
+            btnPrnMiniExcel.Click += BtnPrnMiniExcel_Click;
 
             //chkHideTab.Click += ChkHideTab_Click;
 
@@ -282,6 +283,12 @@ namespace CheckUP.gui
             {
                 btnOnsite.Hide();
             }
+        }
+
+        private void BtnPrnMiniExcel_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            cc.genExcelMini(txtId.Text);
         }
 
         private void BtnOnsite_Click(object sender, EventArgs e)
