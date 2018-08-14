@@ -201,6 +201,7 @@ namespace CheckUP.gui
             txtBarcode.KeyUp += TxtBarcode_KeyUp;
             btnOnsite.Click += BtnOnsite_Click;
             btnPrnMiniExcel.Click += BtnPrnMiniExcel_Click;
+            btnImportSticker.Click += BtnImportSticker_Click;
 
             //chkHideTab.Click += ChkHideTab_Click;
 
@@ -224,7 +225,7 @@ namespace CheckUP.gui
 
             tC.Font = font;
             cboCust = cc.cudb.getCboCustomer(cboCust);
-            cboSticker = cc.stkdb.getCboSticker(cboSticker);
+            cboSticker = cc.getCboSticker(cucId, cboSticker);
             
             //tC.TabPages[tabCho].Text = "Cholesterol";
             setControl(cucId);
@@ -285,6 +286,17 @@ namespace CheckUP.gui
             }
         }
 
+        private void BtnImportSticker_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            if (MessageBox.Show("ต้องการ นำเข้าข้อมูล จำนวนดวงSticker ออกหน่วย", "เตรียมข้อมูล", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                ofd.ShowDialog();
+                cc.importSticker(txtId.Text, ofd.FileName, nmdStickerRow.Value.ToString(), nmdVisitHn.Value.ToString(), pB1);
+                setGrfSticker(txtId.Text);
+            }
+        }
+
         private void BtnPrnMiniExcel_Click(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
@@ -327,7 +339,7 @@ namespace CheckUP.gui
             for (int i = 1; i < grfSticker.Rows.Count; i++)
             {
                 Row row = grfSticker.Rows[i];
-                row[col1 + 3] = "1";
+                row[col1 + 3] = "0";
                 cc.ccpdb.UpdateSticker0(txtId.Text, col);
             }
         }
@@ -5877,7 +5889,6 @@ namespace CheckUP.gui
         }
         private void btnPrint_Click(object sender, EventArgs e)
         {
-
             setPrint();
 
             DataTable dt = new DataTable();

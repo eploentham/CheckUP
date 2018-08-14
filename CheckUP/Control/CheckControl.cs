@@ -3260,5 +3260,222 @@ namespace CheckUP.Control
                 }
             }
         }
+        public void importSticker(String cucId, String filename, String rowStart, String nmdVisitHn, ProgressBar pB1)
+        {
+            String visitHn = "", txt1="", txt2 = "", txt3 = "", txt4 = "", txt5 = "", txt6 = "", txt7 = "", txt8 = "", txt9 = "", txt10 = "";
+            String txt11 = "", txt12 = "", txt13 = "", txt14 = "", txt15 = "", txt16 = "", txt17 = "", txt18 = "", txt19 = "", txt20 = "";
+            int rowstart=0, colvisithn=0, chk=0;
+            if (!fileExit(filename))
+            {
+                MessageBox.Show("ไม่พบ file Excel", "");
+                return;
+            }
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
+            CustCheckUpPatient ccp = new CustCheckUpPatient();
+            if(!int.TryParse(rowStart, out rowstart))
+            {
+                MessageBox.Show("Error rowStart", "");
+                return;
+            }
+            if (!int.TryParse(nmdVisitHn, out colvisithn))
+            {
+                MessageBox.Show("Error visithn", "");
+                return;
+            }
+            pB1.Visible = true;
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(filename);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.ActiveSheet;
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+            int rowCount = xlRange.Rows.Count;
+            pB1.Maximum = rowCount;
+            for (int i = rowstart; i <= rowCount; i++)
+            {
+                if (xlRange.Cells[i, colvisithn].Value2 != null)
+                {
+                    visitHn = xlRange.Cells[i, colvisithn].Value2.ToString();
+                }
+                else
+                {
+                    visitHn = "";
+                }
+                
+                //txt = xlRange.Cells[i, visithn+2].Value2.ToString();                    
+                txt1 = xlRange.Cells[i, colvisithn + 3].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 3].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                
+                txt2 = xlRange.Cells[i, colvisithn + 4].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 4].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                
+                txt3 = xlRange.Cells[i, colvisithn + 5].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 5].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                
+                txt4 = xlRange.Cells[i, colvisithn + 6].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 6].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                
+                txt5 = xlRange.Cells[i, colvisithn + 7].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 7].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                
+                txt6 = xlRange.Cells[i, colvisithn + 8].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 8].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                
+                txt7 = xlRange.Cells[i, colvisithn + 9].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 9].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                
+                txt8 = xlRange.Cells[i, colvisithn + 10].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 10].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                
+                txt9 = xlRange.Cells[i, colvisithn + 11].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 11].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                
+                txt10 = xlRange.Cells[i, colvisithn + 12].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 12].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                
+                txt11 = xlRange.Cells[i, colvisithn + 13].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 13].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                
+                txt12 = xlRange.Cells[i, colvisithn + 14].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 14].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                
+                txt13 = xlRange.Cells[i, colvisithn + 15].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 15].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                
+                txt14 = xlRange.Cells[i, colvisithn + 16].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 16].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                
+                txt15 = xlRange.Cells[i, colvisithn + 17].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 17].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                
+                txt16 = xlRange.Cells[i, colvisithn + 18].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 18].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                
+                txt17 = xlRange.Cells[i, colvisithn + 19].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 19].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                
+                txt18 = xlRange.Cells[i, colvisithn + 20].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 20].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                
+                txt19 = xlRange.Cells[i, colvisithn + 21].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 21].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                
+                txt20 = xlRange.Cells[i, colvisithn + 22].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 22].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE
+                ccpdb.UpdateSticker(visitHn.ToString(), cucId, txt1, txt2, txt3, txt4, txt5, txt6, txt7, txt8, txt9, txt10, txt11, txt12, txt13, txt14, txt15, txt16, txt17, txt18, txt19, txt20);
+                pB1.Value = i;
+            }
+            pB1.Visible = false;
+        }
+        public ComboBox getCboSticker(String cucId, ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            //stkdb.getCboSticker(c);
+            CustCheckUp cuc = new CustCheckUp();
+            cuc = cucdb.selectByPk(cucId);
+            DataTable dt = stkdb.selectAll();
+            c.Items.Clear();
+            if (cuc.sticker01.Equals("1"))
+            {
+                item = new ComboBoxItem();
+                item.Text = dt.Rows[0][stkdb.stk.sticker_code].ToString() + " " + dt.Rows[0][stkdb.stk.sticker_name].ToString();
+                item.Value = dt.Rows[0][stkdb.stk.sticker_code].ToString();
+                c.Items.Add(item);
+            }
+            if (cuc.sticker02.Equals("1"))
+            {
+                item = new ComboBoxItem();
+                item.Text = dt.Rows[1][stkdb.stk.sticker_code].ToString() + " " + dt.Rows[1][stkdb.stk.sticker_name].ToString();
+                item.Value = dt.Rows[1][stkdb.stk.sticker_code].ToString();
+                c.Items.Add(item);
+            }
+            if (cuc.sticker03.Equals("1"))
+            {
+                item = new ComboBoxItem();
+                item.Text = dt.Rows[2][stkdb.stk.sticker_code].ToString() + " " + dt.Rows[2][stkdb.stk.sticker_name].ToString();
+                item.Value = dt.Rows[2][stkdb.stk.sticker_code].ToString();
+                c.Items.Add(item);
+            }
+            if (cuc.sticker04.Equals("1"))
+            {
+                item = new ComboBoxItem();
+                item.Text = dt.Rows[3][stkdb.stk.sticker_code].ToString() + " " + dt.Rows[3][stkdb.stk.sticker_name].ToString();
+                item.Value = dt.Rows[3][stkdb.stk.sticker_code].ToString();
+                c.Items.Add(item);
+            }
+            if (cuc.sticker05.Equals("1"))
+            {
+                item = new ComboBoxItem();
+                item.Text = dt.Rows[4][stkdb.stk.sticker_code].ToString() + " " + dt.Rows[4][stkdb.stk.sticker_name].ToString();
+                item.Value = dt.Rows[4][stkdb.stk.sticker_code].ToString();
+                c.Items.Add(item);
+            }
+            if (cuc.sticker06.Equals("1"))
+            {
+                item = new ComboBoxItem();
+                item.Text = dt.Rows[5][stkdb.stk.sticker_code].ToString() + " " + dt.Rows[5][stkdb.stk.sticker_name].ToString();
+                item.Value = dt.Rows[5][stkdb.stk.sticker_code].ToString();
+                c.Items.Add(item);
+            }
+            if (cuc.sticker07.Equals("1"))
+            {
+                item = new ComboBoxItem();
+                item.Text = dt.Rows[6][stkdb.stk.sticker_code].ToString() + " " + dt.Rows[6][stkdb.stk.sticker_name].ToString();
+                item.Value = dt.Rows[6][stkdb.stk.sticker_code].ToString();
+                c.Items.Add(item);
+            }
+            if (cuc.sticker08.Equals("1"))
+            {
+                item = new ComboBoxItem();
+                item.Text = dt.Rows[7][stkdb.stk.sticker_code].ToString() + " " + dt.Rows[7][stkdb.stk.sticker_name].ToString();
+                item.Value = dt.Rows[7][stkdb.stk.sticker_code].ToString();
+                c.Items.Add(item);
+            }
+            if (cuc.sticker09.Equals("1"))
+            {
+                item = new ComboBoxItem();
+                item.Text = dt.Rows[8][stkdb.stk.sticker_code].ToString() + " " + dt.Rows[8][stkdb.stk.sticker_name].ToString();
+                item.Value = dt.Rows[8][stkdb.stk.sticker_code].ToString();
+                c.Items.Add(item);
+            }
+            if (cuc.sticker10.Equals("1"))
+            {
+                item = new ComboBoxItem();
+                item.Text = dt.Rows[8][stkdb.stk.sticker_code].ToString() + " " + dt.Rows[8][stkdb.stk.sticker_name].ToString();
+                item.Value = dt.Rows[8][stkdb.stk.sticker_code].ToString();
+                c.Items.Add(item);
+            }
+            if (cuc.sticker11.Equals("1"))
+            {
+                item = new ComboBoxItem();
+                item.Text = dt.Rows[8][stkdb.stk.sticker_code].ToString() + " " + dt.Rows[8][stkdb.stk.sticker_name].ToString();
+                item.Value = dt.Rows[8][stkdb.stk.sticker_code].ToString();
+                c.Items.Add(item);
+            }
+            if (cuc.sticker12.Equals("1"))
+            {
+                item = new ComboBoxItem();
+                item.Text = dt.Rows[8][stkdb.stk.sticker_code].ToString() + " " + dt.Rows[8][stkdb.stk.sticker_name].ToString();
+                item.Value = dt.Rows[8][stkdb.stk.sticker_code].ToString();
+                c.Items.Add(item);
+            }
+            if (cuc.sticker13.Equals("1"))
+            {
+                item = new ComboBoxItem();
+                item.Text = dt.Rows[8][stkdb.stk.sticker_code].ToString() + " " + dt.Rows[8][stkdb.stk.sticker_name].ToString();
+                item.Value = dt.Rows[8][stkdb.stk.sticker_code].ToString();
+                c.Items.Add(item);
+            }
+            if (cuc.sticker14.Equals("1"))
+            {
+                item = new ComboBoxItem();
+                item.Text = dt.Rows[8][stkdb.stk.sticker_code].ToString() + " " + dt.Rows[8][stkdb.stk.sticker_name].ToString();
+                item.Value = dt.Rows[8][stkdb.stk.sticker_code].ToString();
+                c.Items.Add(item);
+            }
+            if (cuc.sticker15.Equals("1"))
+            {
+                item = new ComboBoxItem();
+                item.Text = dt.Rows[8][stkdb.stk.sticker_code].ToString() + " " + dt.Rows[8][stkdb.stk.sticker_name].ToString();
+                item.Value = dt.Rows[8][stkdb.stk.sticker_code].ToString();
+                c.Items.Add(item);
+            }
+            if (cuc.sticker16.Equals("1"))
+            {
+                item = new ComboBoxItem();
+                item.Text = dt.Rows[8][stkdb.stk.sticker_code].ToString() + " " + dt.Rows[8][stkdb.stk.sticker_name].ToString();
+                item.Value = dt.Rows[8][stkdb.stk.sticker_code].ToString();
+                c.Items.Add(item);
+            }
+            if (cuc.sticker17.Equals("1"))
+            {
+                item = new ComboBoxItem();
+                item.Text = dt.Rows[8][stkdb.stk.sticker_code].ToString() + " " + dt.Rows[8][stkdb.stk.sticker_name].ToString();
+                item.Value = dt.Rows[8][stkdb.stk.sticker_code].ToString();
+                c.Items.Add(item);
+            }
+            if (cuc.sticker18.Equals("1"))
+            {
+                item = new ComboBoxItem();
+                item.Text = dt.Rows[8][stkdb.stk.sticker_code].ToString() + " " + dt.Rows[8][stkdb.stk.sticker_name].ToString();
+                item.Value = dt.Rows[8][stkdb.stk.sticker_code].ToString();
+                c.Items.Add(item);
+            }
+            if (cuc.sticker19.Equals("1"))
+            {
+                item = new ComboBoxItem();
+                item.Text = dt.Rows[8][stkdb.stk.sticker_code].ToString() + " " + dt.Rows[8][stkdb.stk.sticker_name].ToString();
+                item.Value = dt.Rows[8][stkdb.stk.sticker_code].ToString();
+                c.Items.Add(item);
+            }
+            if (cuc.sticker20.Equals("1"))
+            {
+                item = new ComboBoxItem();
+                item.Text = dt.Rows[8][stkdb.stk.sticker_code].ToString() + " " + dt.Rows[8][stkdb.stk.sticker_name].ToString();
+                item.Value = dt.Rows[8][stkdb.stk.sticker_code].ToString();
+                c.Items.Add(item);
+            }
+            return c;
+        }
     }
 }

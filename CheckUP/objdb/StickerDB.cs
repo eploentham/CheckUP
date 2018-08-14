@@ -83,6 +83,7 @@ namespace CheckUP.objdb
             ComboBoxItem item = new ComboBoxItem();
             DataTable dt = selectAll();
             //String aaa = "";
+            c.Items.Clear();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 item = new ComboBoxItem();

@@ -1,6 +1,8 @@
-﻿namespace CheckUP.report {
-    
-    
-    public partial class CheckUpDS {
+﻿namespace CheckUP.report
+{
+
+
+    public partial class CheckUpDS
+    {
     }
 }

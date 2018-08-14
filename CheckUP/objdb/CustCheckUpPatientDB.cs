@@ -1111,6 +1111,59 @@ namespace CheckUP.objdb
             }
             return chk;
         }
+        public String UpdateSticker(String visitHn, String cucId, String col, String val)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set sticker" + col + "='"+ val + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.visitHn + "='" + visitHn + "' ";
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                lw.WriteLog("ccp.UpdatePE Error " + ex.Message);
+                //max = ex.getMessage;
+            }
+            return chk;
+        }
+        public String UpdateSticker(String visitHn, String cucId, String val1, String val2, String val3, String val4, String val5, String val6, String val7, String val8, String val9, String val10
+            , String val11, String val12, String val13, String val14, String val15, String val16, String val17, String val18, String val19, String val20)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " +
+                    "sticker01 ='" + val1 + "' " +
+                    ",sticker02 ='" + val2 + "' " +
+                    ",sticker03 ='" + val3 + "' " +
+                    ",sticker04 ='" + val4 + "' " +
+                    ",sticker05 ='" + val5 + "' " +
+                    ",sticker06 ='" + val6 + "' " +
+                    ",sticker07 ='" + val7 + "' " +
+                    ",sticker08 ='" + val8 + "' " +
+                    ",sticker09 ='" + val9 + "' " +
+                    ",sticker10 ='" + val10 + "' " +
+                    ",sticker11 ='" + val11 + "' " +
+                    ",sticker12 ='" + val12 + "' " +
+                    ",sticker13 ='" + val13 + "' " +
+                    ",sticker14 ='" + val14 + "' " +
+                    ",sticker15 ='" + val15 + "' " +
+                    ",sticker16 ='" + val16 + "' " +
+                    ",sticker17 ='" + val17 + "' " +
+                    ",sticker18 ='" + val18 + "' " +
+                    ",sticker19 ='" + val19 + "' " +
+                    ",sticker20 ='" + val20 + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.visitHn + "='" + visitHn + "' ";
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                lw.WriteLog("ccp.UpdatePE Error " + ex.Message);
+                //max = ex.getMessage;
+            }
+            return chk;
+        }
         public String UpdateSticker0(String ccpId, String col)
         {
             String chk = "", sql = "";
