@@ -18,6 +18,7 @@ namespace CheckUP
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
+            //MessageBox.Show("00000", "Error");
             Application.Run(new FrmLogin());
         }
     }

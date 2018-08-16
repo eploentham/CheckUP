@@ -276,9 +276,10 @@ namespace CheckUP
         //        //myParam.
         
                 rpt.SetParameterValue("line1", "ผลตรวจสุขภาพประจำปี "+ cuc.YearId);
-                rpt.SetParameterValue("compName", "โรงพยาบาล อรวรรณ");
-                rpt.SetParameterValue("compAddress", "8/8 หมู่ 6 ต.แพรกษา อ.เมือง จ.สมุทรปราการ 10280 โทร : 02-3342555  Fax.02-3342684");
-
+                //rpt.SetParameterValue("compName", "โรงพยาบาล อรวรรณ");
+                //rpt.SetParameterValue("compAddress", "8/8 หมู่ 6 ต.แพรกษา อ.เมือง จ.สมุทรปราการ 10280 โทร : 02-3342555  Fax.02-3342684");
+                rpt.SetParameterValue("compName", "โรงพยาบาล บางนา5 "+ cc.cop.NameT);
+                rpt.SetParameterValue("compAddress", "55 หมู่4 ถนนเทพารักษ์ ตำบลบางพลีใหญ่ อำเภอบางพลี จังหวัดสมุทรปราการ 10540");
 
                 rpt.SetParameterValue("custName", cuc.CustNameT);
                 //rpt.SetParameterValue("year_id",cuc.YearId);

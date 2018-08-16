@@ -72,6 +72,7 @@ namespace CheckUP.Control
         {
             try
             {
+                //MessageBox.Show("33333", "Error");
                 iniFile = new IniFile(Environment.CurrentDirectory + "\\" + Application.ProductName + ".ini");
                 initC = new InitConfig();
                 GetConfig();
@@ -187,7 +188,7 @@ namespace CheckUP.Control
             initC.passDBonsite = iniFile.Read("passDBonsite");
             initC.portDBonsite = iniFile.Read("portDBonsite");
             initC.nameDBonsite = iniFile.Read("nameDBonsite");
-            initC.statusonsite = iniFile.Read("nameDBonsite");
+            //initC.statusonsite = iniFile.Read("nameDBonsite");
 
             //initC.Host = initC.ServerIP;
 

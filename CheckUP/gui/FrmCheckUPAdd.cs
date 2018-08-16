@@ -226,43 +226,70 @@ namespace CheckUP.gui
             tC.Font = font;
             cboCust = cc.cudb.getCboCustomer(cboCust);
             cboSticker = cc.getCboSticker(cucId, cboSticker);
-            
+
             //tC.TabPages[tabCho].Text = "Cholesterol";
             setControl(cucId);
+            if (!cc.initC.statusonsite.Equals("yes"))
+            {
+                setGrdPE();
+                setGrdXray();
+                setGrdCBC();
+                setGrdFBS();
+                setGrdUA();
+                setGrdTri();
+                setGrdCho();
+                setGrdSgot();
+                setGrdBun();
+                setGrdUric();
+                setGrdOther1();
+                setGrdLung();
+                setGrdAudio();
+                setGrdEye();
+                setGrdStoolExam();
+                setGrdToxi();
+                setGrdPE(cucId);
+                setGrdXray(cucId);
+                setGrdFBS(cucId);
+                setGrdCBC(cucId);
+                setGrdUA(cucId);
+                setGrdTri(cucId);
+                setGrdCholes(cucId);
+                setGrdSgot(cucId);
+                setGrdBun(cucId);
+                setGrdUric(cucId);
+                setGrdOther1(cucId);
+                setGrdLung(cucId);
+                setGrdAudoigram(cucId);
+                setGrdEye(cucId);
+                setGrdStoolExam(cucId);
+                setGrdToxi(cucId);
+            }
+            else
+            {
+                tC.TabPages.Remove(tabPage1);
+                tC.TabPages.Remove(tabPage2);
+                tC.TabPages.Remove(tabPage3);
+                tC.TabPages.Remove(tabPage4);
+                tC.TabPages.Remove(tabPage5);
+                tC.TabPages.Remove(tabPage6);
+                tC.TabPages.Remove(tabPage7);
+                tC.TabPages.Remove(tabPage8);
+                tC.TabPages.Remove(tabPage8);
+                tC.TabPages.Remove(tabPage9);
+                tC.TabPages.Remove(tabPage10);
+                tC.TabPages.Remove(tabPage11);
+                tC.TabPages.Remove(tabPage12);
+                tC.TabPages.Remove(tabPage13);
+                tC.TabPages.Remove(tabPage14);
+                tC.TabPages.Remove(tabPage15);
+                tC.TabPages.Remove(tabPage16);
+                tC.TabPages.Remove(tabPage17);
+                tC.TabPages.Remove(tabPage19);
+                tC.TabPages.Remove(tabPage20);
+            }
+            
             //setGrdSum();
-            setGrdPE();
-            setGrdXray();
-            setGrdCBC();
-            setGrdFBS();
-            setGrdUA();
-            setGrdTri();
-            setGrdCho();
-            setGrdSgot();
-            setGrdBun();
-            setGrdUric();
-            setGrdOther1();
-            setGrdLung();
-            setGrdAudio();
-            setGrdEye();
-            setGrdStoolExam();
-            setGrdToxi();
-
-            setGrdPE(cucId);
-            setGrdXray(cucId);
-            setGrdFBS(cucId);
-            setGrdCBC(cucId);
-            setGrdUA(cucId);
-            setGrdTri(cucId);
-            setGrdCholes(cucId);
-            setGrdSgot(cucId);
-            setGrdBun(cucId);
-            setGrdUric(cucId);
-            setGrdOther1(cucId);
-            setGrdLung(cucId);
-            setGrdAudoigram(cucId);
-            setGrdEye(cucId);
-            setGrdStoolExam(cucId);
-            setGrdToxi(cucId);
+            
             initGrfView();
             setGrfView(cucId);
             initGrfEmp();
@@ -1846,120 +1873,123 @@ namespace CheckUP.gui
             dgvSum.Width = tC.TabPages[tabSum].Width - 10;
             dgvSum.Height = tC.TabPages[tabSum].Height - 30;
 
+            if (!cc.initC.statusonsite.Equals("yes"))
+            {
+                tC.TabPages[tabPE].Width = tC.Width - 10;
+                tC.TabPages[tabPE].Height = tC.Height - 10;
+                dgvPE.Width = tC.TabPages[tabPE].Width - 10;
+                dgvPE.Height = tC.TabPages[tabPE].Height - 30;
+                //dgvPE.Left = dgvSum.Left;
+                //dgvPE.Top = dgvSum.Left;
+                dgvSum.Width = tC.TabPages[tabPE].Width - 10;
+                dgvSum.Height = tC.TabPages[tabPE].Height - 30;
 
-            tC.TabPages[tabPE].Width = tC.Width - 10;
-            tC.TabPages[tabPE].Height = tC.Height - 10;
-            dgvPE.Width = tC.TabPages[tabPE].Width - 10;
-            dgvPE.Height = tC.TabPages[tabPE].Height - 30;
-            //dgvPE.Left = dgvSum.Left;
-            //dgvPE.Top = dgvSum.Left;
-            dgvSum.Width = tC.TabPages[tabPE].Width - 10;
-            dgvSum.Height = tC.TabPages[tabPE].Height - 30;
+                tC.TabPages[tabXRay].Width = tC.Width - 10;
+                tC.TabPages[tabXRay].Height = tC.Height - 10;
+                dgvXRay.Width = tC.TabPages[tabXRay].Width - 10;
+                dgvXRay.Height = tC.TabPages[tabXRay].Height - 30;
+                dgvXRay.Left = dgvPE.Left;
+                dgvXRay.Top = dgvPE.Left;
 
-            tC.TabPages[tabXRay].Width = tC.Width - 10;
-            tC.TabPages[tabXRay].Height = tC.Height - 10;
-            dgvXRay.Width = tC.TabPages[tabXRay].Width - 10;
-            dgvXRay.Height = tC.TabPages[tabXRay].Height - 30;
-            dgvXRay.Left = dgvPE.Left;
-            dgvXRay.Top = dgvPE.Left;
+                tC.TabPages[tabCBC].Width = tC.Width - 10;
+                tC.TabPages[tabCBC].Height = tC.Height - 10;
+                dgvCBC.Width = tC.TabPages[tabCBC].Width - 10;
+                dgvCBC.Height = tC.TabPages[tabCBC].Height - 30;
+                dgvCBC.Left = dgvPE.Left;
+                dgvCBC.Top = dgvPE.Left;
 
-            tC.TabPages[tabCBC].Width = tC.Width - 10;
-            tC.TabPages[tabCBC].Height = tC.Height - 10;
-            dgvCBC.Width = tC.TabPages[tabCBC].Width - 10;
-            dgvCBC.Height = tC.TabPages[tabCBC].Height - 30;
-            dgvCBC.Left = dgvPE.Left;
-            dgvCBC.Top = dgvPE.Left;
+                tC.TabPages[tabFBS].Width = tC.Width - 10;
+                tC.TabPages[tabFBS].Height = tC.Height - 10;
+                dgvFBS.Width = tC.TabPages[tabFBS].Width - 10;
+                dgvFBS.Height = tC.TabPages[tabFBS].Height - 30;
+                dgvFBS.Left = dgvPE.Left;
+                dgvFBS.Top = dgvPE.Left;
 
-            tC.TabPages[tabFBS].Width = tC.Width - 10;
-            tC.TabPages[tabFBS].Height = tC.Height - 10;
-            dgvFBS.Width = tC.TabPages[tabFBS].Width - 10;
-            dgvFBS.Height = tC.TabPages[tabFBS].Height - 30;
-            dgvFBS.Left = dgvPE.Left;
-            dgvFBS.Top = dgvPE.Left;
+                tC.TabPages[tabUA].Width = tC.Width - 10;
+                tC.TabPages[tabUA].Height = tC.Height - 10;
+                dgvUA.Width = tC.TabPages[tabUA].Width - 10;
+                dgvUA.Height = tC.TabPages[tabUA].Height - 30;
+                dgvUA.Left = dgvPE.Left;
+                dgvUA.Top = dgvPE.Left;
 
-            tC.TabPages[tabUA].Width = tC.Width - 10;
-            tC.TabPages[tabUA].Height = tC.Height - 10;
-            dgvUA.Width = tC.TabPages[tabUA].Width - 10;
-            dgvUA.Height = tC.TabPages[tabUA].Height - 30;
-            dgvUA.Left = dgvPE.Left;
-            dgvUA.Top = dgvPE.Left;
+                tC.TabPages[tabTri].Width = tC.Width - 10;
+                tC.TabPages[tabTri].Height = tC.Height - 10;
+                dgvTri.Width = tC.TabPages[tabTri].Width - 10;
+                dgvTri.Height = tC.TabPages[tabTri].Height - 30;
+                dgvTri.Left = dgvPE.Left;
+                dgvTri.Top = dgvPE.Left;
 
-            tC.TabPages[tabTri].Width = tC.Width - 10;
-            tC.TabPages[tabTri].Height = tC.Height - 10;
-            dgvTri.Width = tC.TabPages[tabTri].Width - 10;
-            dgvTri.Height = tC.TabPages[tabTri].Height - 30;
-            dgvTri.Left = dgvPE.Left;
-            dgvTri.Top = dgvPE.Left;
+                tC.TabPages[tabCho].Width = tC.Width - 10;
+                tC.TabPages[tabCho].Height = tC.Height - 10;
+                dgvCho.Width = tC.TabPages[tabCho].Width - 10;
+                dgvCho.Height = tC.TabPages[tabCho].Height - 30;
+                dgvCho.Left = dgvPE.Left;
+                dgvCho.Top = dgvPE.Left;
 
-            tC.TabPages[tabCho].Width = tC.Width - 10;
-            tC.TabPages[tabCho].Height = tC.Height - 10;
-            dgvCho.Width = tC.TabPages[tabCho].Width - 10;
-            dgvCho.Height = tC.TabPages[tabCho].Height - 30;
-            dgvCho.Left = dgvPE.Left;
-            dgvCho.Top = dgvPE.Left;
+                tC.TabPages[tabSgot].Width = tC.Width - 10;
+                tC.TabPages[tabSgot].Height = tC.Height - 10;
+                dgvSgot.Width = tC.TabPages[tabSgot].Width - 10;
+                dgvSgot.Height = tC.TabPages[tabSgot].Height - 30;
+                dgvSgot.Left = dgvPE.Left;
+                dgvSgot.Top = dgvPE.Left;
 
-            tC.TabPages[tabSgot].Width = tC.Width - 10;
-            tC.TabPages[tabSgot].Height = tC.Height - 10;
-            dgvSgot.Width = tC.TabPages[tabSgot].Width - 10;
-            dgvSgot.Height = tC.TabPages[tabSgot].Height - 30;
-            dgvSgot.Left = dgvPE.Left;
-            dgvSgot.Top = dgvPE.Left;
+                tC.TabPages[tabBun].Width = tC.Width - 10;
+                tC.TabPages[tabBun].Height = tC.Height - 10;
+                dgvBun.Width = tC.TabPages[tabBun].Width - 10;
+                dgvBun.Height = tC.TabPages[tabBun].Height - 30;
+                dgvBun.Left = dgvPE.Left;
+                dgvBun.Top = dgvPE.Left;
 
-            tC.TabPages[tabBun].Width = tC.Width - 10;
-            tC.TabPages[tabBun].Height = tC.Height - 10;
-            dgvBun.Width = tC.TabPages[tabBun].Width - 10;
-            dgvBun.Height = tC.TabPages[tabBun].Height - 30;
-            dgvBun.Left = dgvPE.Left;
-            dgvBun.Top = dgvPE.Left;
+                tC.TabPages[tabUric].Width = tC.Width - 10;
+                tC.TabPages[tabUric].Height = tC.Height - 10;
+                dgvUric.Width = tC.TabPages[tabUric].Width - 10;
+                dgvUric.Height = tC.TabPages[tabUric].Height - 30;
+                dgvUric.Left = dgvPE.Left;
+                dgvUric.Top = dgvPE.Left;
 
-            tC.TabPages[tabUric].Width = tC.Width - 10;
-            tC.TabPages[tabUric].Height = tC.Height - 10;
-            dgvUric.Width = tC.TabPages[tabUric].Width - 10;
-            dgvUric.Height = tC.TabPages[tabUric].Height - 30;
-            dgvUric.Left = dgvPE.Left;
-            dgvUric.Top = dgvPE.Left;
+                tC.TabPages[tabOther1].Width = tC.Width - 10;
+                tC.TabPages[tabOther1].Height = tC.Height - 10;
+                dgvOther1.Width = tC.TabPages[tabOther1].Width - 10;
+                dgvOther1.Height = tC.TabPages[tabOther1].Height - 30;
+                dgvOther1.Left = dgvPE.Left;
+                dgvOther1.Top = dgvPE.Left;
 
-            tC.TabPages[tabOther1].Width = tC.Width - 10;
-            tC.TabPages[tabOther1].Height = tC.Height - 10;
-            dgvOther1.Width = tC.TabPages[tabOther1].Width - 10;
-            dgvOther1.Height = tC.TabPages[tabOther1].Height - 30;
-            dgvOther1.Left = dgvPE.Left;
-            dgvOther1.Top = dgvPE.Left;
+                tC.TabPages[tabLung].Width = tC.Width - 10;
+                tC.TabPages[tabLung].Height = tC.Height - 10;
+                dgvLung.Width = tC.TabPages[tabLung].Width - 10;
+                dgvLung.Height = tC.TabPages[tabLung].Height - 30;
+                dgvLung.Left = dgvPE.Left;
+                dgvLung.Top = dgvPE.Left;
 
-            tC.TabPages[tabLung].Width = tC.Width - 10;
-            tC.TabPages[tabLung].Height = tC.Height - 10;
-            dgvLung.Width = tC.TabPages[tabLung].Width - 10;
-            dgvLung.Height = tC.TabPages[tabLung].Height - 30;
-            dgvLung.Left = dgvPE.Left;
-            dgvLung.Top = dgvPE.Left;
+                tC.TabPages[tabAudio].Width = tC.Width - 10;
+                tC.TabPages[tabAudio].Height = tC.Height - 10;
+                dgvAudio.Width = tC.TabPages[tabAudio].Width - 10;
+                dgvAudio.Height = tC.TabPages[tabAudio].Height - 30;
+                dgvAudio.Left = dgvPE.Left;
+                dgvAudio.Top = dgvPE.Left;
 
-            tC.TabPages[tabAudio].Width = tC.Width - 10;
-            tC.TabPages[tabAudio].Height = tC.Height - 10;
-            dgvAudio.Width = tC.TabPages[tabAudio].Width - 10;
-            dgvAudio.Height = tC.TabPages[tabAudio].Height - 30;
-            dgvAudio.Left = dgvPE.Left;
-            dgvAudio.Top = dgvPE.Left;
+                tC.TabPages[tabEye].Width = tC.Width - 10;
+                tC.TabPages[tabEye].Height = tC.Height - 10;
+                dgvEye.Width = tC.TabPages[tabEye].Width - 10;
+                dgvEye.Height = tC.TabPages[tabEye].Height - 30;
+                dgvEye.Left = dgvPE.Left;
+                dgvEye.Top = dgvPE.Left;
 
-            tC.TabPages[tabEye].Width = tC.Width - 10;
-            tC.TabPages[tabEye].Height = tC.Height - 10;
-            dgvEye.Width = tC.TabPages[tabEye].Width - 10;
-            dgvEye.Height = tC.TabPages[tabEye].Height - 30;
-            dgvEye.Left = dgvPE.Left;
-            dgvEye.Top = dgvPE.Left;
+                tC.TabPages[tabStoolExam].Width = tC.Width - 10;
+                tC.TabPages[tabStoolExam].Height = tC.Height - 10;
+                dgvStoolExam.Width = tC.TabPages[tabStoolExam].Width - 10;
+                dgvStoolExam.Height = tC.TabPages[tabStoolExam].Height - 30;
+                dgvStoolExam.Left = dgvPE.Left;
+                dgvStoolExam.Top = dgvPE.Left;
 
-            tC.TabPages[tabStoolExam].Width = tC.Width - 10;
-            tC.TabPages[tabStoolExam].Height = tC.Height - 10;
-            dgvStoolExam.Width = tC.TabPages[tabStoolExam].Width - 10;
-            dgvStoolExam.Height = tC.TabPages[tabStoolExam].Height - 30;
-            dgvStoolExam.Left = dgvPE.Left;
-            dgvStoolExam.Top = dgvPE.Left;
-
-            tC.TabPages[tabToxi].Width = tC.Width - 10;
-            tC.TabPages[tabToxi].Height = tC.Height - 10;
-            dgvToxi.Width = tC.TabPages[tabToxi].Width - 10;
-            dgvToxi.Height = tC.TabPages[tabToxi].Height - 30;
-            dgvToxi.Left = dgvPE.Left;
-            dgvToxi.Top = dgvPE.Left;
+                tC.TabPages[tabToxi].Width = tC.Width - 10;
+                tC.TabPages[tabToxi].Height = tC.Height - 10;
+                dgvToxi.Width = tC.TabPages[tabToxi].Width - 10;
+                dgvToxi.Height = tC.TabPages[tabToxi].Height - 30;
+                dgvToxi.Left = dgvPE.Left;
+                dgvToxi.Top = dgvPE.Left;
+            }
+            
 
             //groupBox1.Width = this.Width - 50;
             //groupBox1.Height = this.Height = 150;
