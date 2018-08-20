@@ -660,7 +660,11 @@ namespace CheckUP.gui
             //grfView.Cols[colVId].Visible = false;
             grfView.Cols[colVId].Visible = false;
             grfView.AllowEditing = false;
+<<<<<<< HEAD
             
+=======
+            FilterRow fr = new FilterRow(grfView);
+>>>>>>> e8afab29450d74f5f0cc513e27244b482ca6179b
         }
         private void initGrfEmp()
         {
