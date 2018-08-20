@@ -44,6 +44,7 @@ namespace CheckUP.object1
             _flex.BeforeMouseDown += new BeforeMouseDownEventHandler(_flex_BeforeMouseDown);
             _flex.RowColChange += new EventHandler(_flex_RowColChange);
             _flex.AfterEdit += new RowColEventHandler(_flex_AfterEdit);
+            _flex.KeyPress += _flex_KeyPress;
 
             // initialize boolean cells <<1.4>>
             CellStyle cs = _flex.Styles.Add("BooleanFilterCell");
@@ -59,6 +60,12 @@ namespace CheckUP.object1
 
             // move cursor to filter row
             _flex.Select(_row, _flex.Cols.Fixed);
+        }
+
+        private void _flex_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //throw new NotImplementedException();
+            UpdateFilter();
         }
 
         // ** object model
@@ -169,6 +176,12 @@ namespace CheckUP.object1
                 DataTable dt = _flex.DataSource as DataTable;
                 if (dt != null) dv = dt.DefaultView;
             }
+            // ทำเพิ่มเอง เพราะ ไม่ได้ใช้ datasource ทำให้ filterrow ไม่ได้
+            //if (dv == null)
+            //{
+                
+            //}
+
             if (dv == null)
             {
                 Debug.WriteLine("DataSource should be a DataTable or DataView.");

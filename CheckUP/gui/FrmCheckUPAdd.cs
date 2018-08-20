@@ -612,6 +612,13 @@ namespace CheckUP.gui
         private void setGrfView(String cucid)
         {
             grfView.DataSource = null;
+
+            DataTable dt1 = new DataTable();
+            dt1.Columns.Add(new DataColumn("id", typeof(string)));
+            dt1.Columns.Add(new DataColumn("barcode", typeof(string)));
+            dt1.Columns.Add(new DataColumn("ชื่อ-นามสกุล", typeof(string)));
+            dt1.Columns.Add(new DataColumn("รหัสพนักงาน", typeof(string)));
+
             grfView.Rows.Count = 2;
             grfView.Clear();
             if (cucid.Equals("")) return;
@@ -628,9 +635,9 @@ namespace CheckUP.gui
             grfView.Cols[colVname].Width = 200;
             grfView.Cols[colVpatnumber].Width = 80;
 
-            grfView.Cols[colVvisitHn].Caption = "barcode";
-            grfView.Cols[colVname].Caption = "ชื่อ-นามสกุล";
-            grfView.Cols[colVpatnumber].Caption = "รหัสพนักงาน";
+            //grfView.Cols[colVvisitHn].Caption = "barcode";
+            //grfView.Cols[colVname].Caption = "ชื่อ-นามสกุล";
+            //grfView.Cols[colVpatnumber].Caption = "รหัสพนักงาน";
 
             grfView.Cols[colVId].Visible = false;
             
@@ -640,13 +647,20 @@ namespace CheckUP.gui
                 row[0] = i + 1;
                 if (i % 2 == 0)
                     row.StyleNew.BackColor = color;
-                row[colVId] = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
-                row[colVvisitHn] = dt.Rows[i][cc.ccpdb.ccp.visitHn].ToString();
-                row[colVname] = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
-                row[colVpatnumber] = dt.Rows[i][cc.ccpdb.ccp.patientNumber].ToString();
-            }            
+                DataRow dr = dt1.NewRow();
+                dr.ItemArray = new object[] { dt.Rows[i][cc.ccpdb.ccp.Id].ToString(), dt.Rows[i][cc.ccpdb.ccp.visitHn].ToString(), dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString()
+                    , dt.Rows[i][cc.ccpdb.ccp.patientNumber].ToString() };
+                dt1.Rows.Add(dr);
+                //row[colVId] = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                //row[colVvisitHn] = dt.Rows[i][cc.ccpdb.ccp.visitHn].ToString();
+                //row[colVname] = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
+                //row[colVpatnumber] = dt.Rows[i][cc.ccpdb.ccp.patientNumber].ToString();
+            }
+            grfView.DataSource = dt1;
+            //grfView.Cols[colVId].Visible = false;
             grfView.Cols[colVId].Visible = false;
             grfView.AllowEditing = false;
+            
         }
         private void initGrfEmp()
         {

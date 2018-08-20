@@ -680,7 +680,7 @@ namespace CheckUP.objdb
             //p.Remark = p.Remark.Replace("'", "''");
             //p.PositionName = p.PositionName.Replace("'", "''");
 
-            sql = "Update " + ei.table + " Set " + ei.CBCBact + "='" + CBCBact + "', " +
+            sql = "Update " + ei.table + " Set " + ei.CBCBact + "='" + CBCBact + "' " +
                 ","+ei.CBCEos + "='" + CBCEos + "' " +
                 "," + ei.CBCHb + "='" + CBCHb + "' " +
                 "," + ei.CBCHct + "='" + CBCHct + "' " +
