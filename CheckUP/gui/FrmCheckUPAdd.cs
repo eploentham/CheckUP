@@ -198,14 +198,15 @@ namespace CheckUP.gui
             btnExcelCho.Click += BtnExcelPE_Click;
             btnExcelSgot.Click += BtnExcelPE_Click;
             btnExcelBun.Click += BtnExcelPE_Click;
-            btnPrnSticker.Click += BtnPrnSticker_Click;
-            btnLabelSticker.Click += BtnLabelSticker_Click;
-            btnPrnAll.Click += BtnPrnAll_Click;
-            btnPrnNoAll.Click += BtnPrnNoAll_Click;
+
+            btnPrnSticker.Click += BtnPrnSticker_Click;         //client
+            btnLabelSticker.Click += BtnLabelSticker_Click;     //client
+            btnPrnAll.Click += BtnPrnAll_Click;                 //client
+            btnPrnNoAll.Click += BtnPrnNoAll_Click;             //client
             txtBarcode.KeyUp += TxtBarcode_KeyUp;
-            btnOnsite.Click += BtnOnsite_Click;
-            btnPrnMiniExcel.Click += BtnPrnMiniExcel_Click;
-            btnImportSticker.Click += BtnImportSticker_Click;
+            btnOnsite.Click += BtnOnsite_Click;                 //client
+            btnPrnMiniExcel.Click += BtnPrnMiniExcel_Click;     //client
+            btnImportSticker.Click += BtnImportSticker_Click;   //client
 
             //chkHideTab.Click += ChkHideTab_Click;
 
@@ -384,7 +385,10 @@ namespace CheckUP.gui
             //throw new NotImplementedException();
             if(MessageBox.Show("ต้องการ เตรียมข้อมูล ออกหน่วย","เตรียมข้อมูล", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
+                btnOnsite.Enabled = false;
                 cc.genDataOnsite(txtId.Text);
+                btnOnsite.Enabled = true;
+                MessageBox.Show("เตรียมข้อมูล เรียบร้อย ", "message ");
             }
         }
 
@@ -467,8 +471,8 @@ namespace CheckUP.gui
         
         private void setGrfColor()
         {
-            int i = 1;
-
+            int i = 2;
+            if (grfEmp == null) return;
             grfEmp.BackColor = Color.White;
             grfView.BackColor = Color.White;
             foreach (Row row1 in grfEmp.Rows)
@@ -510,7 +514,7 @@ namespace CheckUP.gui
             grfView.Dock = System.Windows.Forms.DockStyle.Fill;
             grfView.Location = new System.Drawing.Point(0, 0);
 
-            FilterRow fr = new FilterRow(grfView);
+            //FilterRow fr = new FilterRow(grfView);
 
             //grfJob.AfterRowColChange += GrfJob_AfterRowColChange;
             ContextMenu menuGw = new ContextMenu();
@@ -643,10 +647,10 @@ namespace CheckUP.gui
             
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                Row row = grfView.Rows.Add();
-                row[0] = i + 1;
-                if (i % 2 == 0)
-                    row.StyleNew.BackColor = color;
+                //Row row = grfView.Rows.Add();
+                //row[0] = i + 1;
+                //if (i % 2 == 0)
+                //    row.StyleNew.BackColor = color;
                 DataRow dr = dt1.NewRow();
                 dr.ItemArray = new object[] { dt.Rows[i][cc.ccpdb.ccp.Id].ToString(), dt.Rows[i][cc.ccpdb.ccp.visitHn].ToString(), dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString()
                     , dt.Rows[i][cc.ccpdb.ccp.patientNumber].ToString() };
@@ -660,11 +664,20 @@ namespace CheckUP.gui
             //grfView.Cols[colVId].Visible = false;
             grfView.Cols[colVId].Visible = false;
             grfView.AllowEditing = false;
-<<<<<<< HEAD
-            
-=======
+
             FilterRow fr = new FilterRow(grfView);
->>>>>>> e8afab29450d74f5f0cc513e27244b482ca6179b
+            //setGrfColor();
+            int j = 1;
+            foreach (Row row1 in grfView.Rows)
+            {
+                if (row1[colVId] == null) continue;
+                if (row1[colVId].ToString().Equals("")) continue;
+                if (row1[colVId].ToString().Equals("id")) continue;
+                row1[0] = j;
+                if (j % 2 == 0)
+                    row1.StyleNew.BackColor = color;
+                j++;
+            }
         }
         private void initGrfEmp()
         {

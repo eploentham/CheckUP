@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace CheckUP.objdb
 {
@@ -78,9 +79,10 @@ namespace CheckUP.objdb
         public String insertToOnSite(String cucId)
         {
             String sql = "", chk = "";
-            sql = "insert into onsite_" + ccp1.table + " " +
+            sql = "insert into "+ conn.initc.nameRemoteClient + "." + conn.initc.nameDBonsite + ".dbo." + "onsite_" + ccp1.table + " " +
                 "select * from " + ccp1.table +" "+
                 "Where " + ccp1.CustCheckUpId + "='" + cucId + "'";
+            //MessageBox.Show("SQL " + sql, "message " );
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }

@@ -345,9 +345,13 @@ namespace CheckUP.objdb
         }
         public DataTable selectAll()
         {
-            String sql = "";
+            String sql = "", onsite="";
             DataTable dt = new DataTable();
-            sql = "Select * From " + cuc.table + " Where " + cuc.Active + "='1' Order By "+cuc.dateCreate+" desc";
+            if (conn.initc.statusonsite.Equals(""))
+            {
+                onsite = " onsite_";
+            }
+            sql = "Select * From " + onsite+cuc.table + " Where " + cuc.Active + "='1' Order By "+cuc.dateCreate+" desc";
             dt = conn.selectData(sql);
 
             return dt;
@@ -364,9 +368,13 @@ namespace CheckUP.objdb
         public CustCheckUp selectByPk(String cuId)
         {
             CustCheckUp item = new CustCheckUp();
-            String sql = "";
+            String sql = "", onsite="";
             DataTable dt = new DataTable();
-            sql = "Select * From " + cuc.table + " Where " + cuc.pkField + "='" + cuId + "'";
+            if (conn.initc.statusonsite.Equals(""))
+            {
+                onsite = " onsite_";
+            }
+            sql = "Select * From " + onsite+cuc.table + " Where " + cuc.pkField + "='" + cuId + "'";
             dt = conn.selectData(sql);
             if (dt.Rows.Count > 0)
             {
@@ -512,9 +520,10 @@ namespace CheckUP.objdb
         public String insertToOnSite(String cucId)
         {
             String sql = "", chk = "";
-            sql = "insert into onsite_" + cuc.table + " " +
-                "select * from "+ cuc.table +" "+
+            sql = "insert into "+conn.initc.nameRemoteClient + "." + conn.initc.nameDBonsite + ".dbo." + "onsite_" + cuc.table + " " +
+                "select * from " + cuc.table +" "+
                 "Where " + cuc.pkField + "='" + cucId + "'";
+            //MessageBox.Show("SQL " + sql, "message ");
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }

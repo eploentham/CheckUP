@@ -11,7 +11,7 @@ namespace CheckUP.objdb
     public class StickerDB
     {
         public Sticker stk;
-        ConnectDB conn;
+        ConnectDB conn, connOnSite;
 
         public StickerDB(ConnectDB c)
         {
@@ -27,6 +27,35 @@ namespace CheckUP.objdb
 
             stk.table = "b_sticker";
             stk.pkField = "sticker_id";
+        }
+        public String deleteOnSiteAll()
+        {
+            String sql = "", chk = "";
+            sql = "Delete From " + stk.table;
+            connOnSite = new ConnectDB(conn.initc, ConnectDB.flagOnSite.OnSite);
+            chk = connOnSite.ExecuteNonQuery(sql);
+            
+            return chk;
+        }
+        public String insertToOnSite()
+        {
+            String sql = "", chk = "";
+            DataTable dt = new DataTable();
+            dt = selectAll();
+            sql = "Delete From " + stk.table;
+            connOnSite = new ConnectDB(conn.initc, ConnectDB.flagOnSite.OnSite);
+            chk = connOnSite.ExecuteNonQuery(sql);
+
+            for(int i = 0; i < dt.Rows.Count; i++)
+            {
+                sql = "Insert Into "+stk.table+"("+stk.sticker_id+"," + stk.sticker_code+ "," + stk.sticker_name + ") " +
+                    "Values ()";
+            }
+            sql = "insert into " + conn.initc.nameRemoteClient + "." + conn.initc.nameDBonsite + ".dbo." + "onsite_" + stk.table + " " +
+                "select * from " + stk.table + " " ;
+            //MessageBox.Show("SQL " + sql, "message ");
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
         }
         public DataTable selectAll()
         {

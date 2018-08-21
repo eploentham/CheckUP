@@ -132,3 +132,18 @@ from t_cust_checkup;
 select * 
 into b_excel_init_mini
 from b_excel_init;
+
+
+EXEC sp_addlinkedserver @server='SRV_NAME',
+   @srvproduct=N'',
+   @provider=N'SQLNCLI',   
+   @datasrc=N'aaa.bbb.ccc.ddd';
+
+EXEC sp_addlinkedsrvlogin 'SRV_NAME', 'false', NULL, 'your_remote_db_login_user', 'your_remote_db_login_password'
+
+EXEC sp_addlinkedserver @server='kr_client',
+   @srvproduct=N'',
+   @provider=N'SQLNCLI',   
+   @datasrc=N'mobile';
+
+EXEC sp_addlinkedsrvlogin 'kr_server', 'false', NULL, 'pop', 'Ekartc2c5'

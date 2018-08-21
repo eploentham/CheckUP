@@ -40,16 +40,18 @@ namespace CheckUP.objdb
         public String passwordBua = "";
         public String server = "";
         public String isBranch = "";
-        private InitConfig initc;
+        public InitConfig initc;
         public DataTable toReturn = new DataTable();
         public DataTable dt = new DataTable();
 
         public LogWriter lw;
+        public enum flagOnSite { Client, OnSite};
 
         //OleDbCommand cmdToExecute = new OleDbCommand();
         public ConnectDB(InitConfig i)
         {
             initc = i;
+            lw = new LogWriter();
             if (initc.statusonsite.Equals("no"))
             {//Client
                 _mainConnection.ConnectionString = "Server=" + initc.Host + ";Database=" + initc.Database + ";Uid=" + initc.User + ";Pwd=" + initc.Password + ";Connection Timeout=300;";
@@ -61,40 +63,55 @@ namespace CheckUP.objdb
                         
             _isDisposed = false;
         }
-        public ConnectDB(String hostName)
+        public ConnectDB(InitConfig i, flagOnSite flagonsite)
         {
+            initc = i;
             lw = new LogWriter();
-            if (hostName == "mainhis")
-            {
-                hostname = "mainhis";
-                connMainHIS = new SqlConnection();
-                //connMainHIS.ConnectionString = GetConfig(hostName);
-                connMainHIS.ConnectionString = "Server=" + hostNameMainHIS + ";Database=" + databaseNameMainHIS.ToString() + ";Uid=" + userNameMainHIS + ";Pwd=" + passwordMainHIS + ";";
-            }
-            else if (hostName == "bangna")
-            {
-                hostname = "bangna";
-                connMainHIS = new SqlConnection();
-                //connMainHIS.ConnectionString = GetConfig(hostName);
-                connMainHIS.ConnectionString = "Server=" + hostNameBua + ";Database=" + databaseNameBua + ";Uid=" + userNameBua + ";Pwd=" + passwordBua + ";";
+            if (flagonsite == flagOnSite.Client)
+            {//Client
+                _mainConnection.ConnectionString = "Server=" + initc.Host + ";Database=" + initc.Database + ";Uid=" + initc.User + ";Pwd=" + initc.Password + ";Connection Timeout=300;";
             }
             else
-            {
-                //_mainConnection = new OleDbConnection();
-                ////_mainConnection.ConnectionString = GetConfig("Main.ConnectionString");
-                //if (Environment.Is64BitOperatingSystem)
-                //{
-                //    _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\\source\\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
-                //}
-                //else
-                //{
-                //    _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
-                //}
-                //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
-                _mainConnection.ConnectionString = "Server=" + initc.Host + ";Database=" + initc.Database + ";Uid=" + initc.User + ";Pwd=" + initc.Password + ";Connection Timeout=300;";
-                _isDisposed = false;
+            {//onsite
+                _mainConnection.ConnectionString = "Server=" + initc.hostDBonsite + ";Database=" + initc.nameDBonsite + ";Uid=" + initc.userDBonsite + ";Pwd=" + initc.passDBonsite + ";Connection Timeout=300;";
             }
+
+            _isDisposed = false;
         }
+        //public ConnectDB(String hostName)
+        //{
+        //    lw = new LogWriter();
+        //    if (hostName == "mainhis")
+        //    {
+        //        hostname = "mainhis";
+        //        connMainHIS = new SqlConnection();
+        //        //connMainHIS.ConnectionString = GetConfig(hostName);
+        //        connMainHIS.ConnectionString = "Server=" + hostNameMainHIS + ";Database=" + databaseNameMainHIS.ToString() + ";Uid=" + userNameMainHIS + ";Pwd=" + passwordMainHIS + ";";
+        //    }
+        //    else if (hostName == "bangna")
+        //    {
+        //        hostname = "bangna";
+        //        connMainHIS = new SqlConnection();
+        //        //connMainHIS.ConnectionString = GetConfig(hostName);
+        //        connMainHIS.ConnectionString = "Server=" + hostNameBua + ";Database=" + databaseNameBua + ";Uid=" + userNameBua + ";Pwd=" + passwordBua + ";";
+        //    }
+        //    else
+        //    {
+        //        //_mainConnection = new OleDbConnection();
+        //        ////_mainConnection.ConnectionString = GetConfig("Main.ConnectionString");
+        //        //if (Environment.Is64BitOperatingSystem)
+        //        //{
+        //        //    _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\\source\\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
+        //        //}
+        //        //else
+        //        //{
+        //        //    _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
+        //        //}
+        //        //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
+        //        _mainConnection.ConnectionString = "Server=" + initc.Host + ";Database=" + initc.Database + ";Uid=" + initc.User + ";Pwd=" + initc.Password + ";Connection Timeout=300;";
+        //        _isDisposed = false;
+        //    }
+        //}
         public String GetConfig(String key)
         {
 

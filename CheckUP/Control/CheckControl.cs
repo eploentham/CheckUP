@@ -219,6 +219,7 @@ namespace CheckUP.Control
             initC.grfRowColor = iniFile.Read("grfRowColor");
             initC.statusonsite = iniFile.Read("statusonsite");
             initC.pathMini = iniFile.Read("pathMini");
+            initC.nameRemoteClient  = iniFile.Read("nameRemoteClient");
 
             initC.grdViewFontName = initC.grdViewFontName.Equals("") ? "Microsoft Sans Serif" : initC.grdViewFontName;
             int.TryParse(initC.grdViewFontSize, out grdViewFontSize);
@@ -647,12 +648,20 @@ namespace CheckUP.Control
         public void genDataOnsite(String cucId)
         {
             String sql = "";
+            //MessageBox.Show("111 " + sql, "message ");
+            stkdb.deleteOnSiteAll();
             cucdb.deleteOnSiteAll();
             ccpdb.deleteOnSiteAll();
             ccp1db.deleteOnSiteAll();
+
+            stkdb.insertToOnSite();
             cucdb.insertToOnSite(cucId);
-            ccpdb.insertToOnSite(cucId);
             ccp1db.insertToOnSite(cucId);
+
+            ccpdb.insertToOnSite(cucId);
+            
+            //MessageBox.Show("222 " + sql, "message ");
+            
         }
         public void excelSum(String cucId)
         {

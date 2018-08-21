@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CheckUP.objdb
 {
@@ -662,9 +663,13 @@ namespace CheckUP.objdb
         }
         public DataTable selectByPk(String ccpId)
         {
-            String sql = "";
+            String sql = "", onsite="";
             DataTable dt = new DataTable();
-            sql = "Select * From " + ccp.table + " Where " + ccp.Id + " = '" + ccpId + "'";
+            if (conn.initc.statusonsite.Equals("yes"))
+            {
+                onsite = " onsite_";
+            }
+            sql = "Select * From " + onsite+ccp.table + " Where " + ccp.Id + " = '" + ccpId + "'";
             dt = conn.selectData(sql);
 
             return dt;
@@ -786,9 +791,13 @@ namespace CheckUP.objdb
         }
         public DataTable selectAllStatusVisit1ByCucId(String cucId)
         {
-            String sql = "";
+            String sql = "", onsite="";
             DataTable dt = new DataTable();
-            sql = "Select * From " + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "' and " + ccp.statusVisit + "='1' Order By " + ccp.rowNumber;
+            if (conn.initc.statusonsite.Equals("yes"))
+            {
+                onsite = " onsite_";
+            }
+            sql = "Select * From " + onsite+ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "' and " + ccp.statusVisit + "='1' Order By " + ccp.rowNumber;
             //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
             dt = conn.selectData(sql);
 
@@ -796,9 +805,13 @@ namespace CheckUP.objdb
         }
         public DataTable selectAllStatusVisit0ByCucId(String cucId)
         {
-            String sql = "";
+            String sql = "", onsite="";
             DataTable dt = new DataTable();
-            sql = "Select * From " + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "' and "+ccp.statusVisit+"='0' Order By " + ccp.rowNumber;
+            if (conn.initc.statusonsite.Equals("yes"))
+            {
+                onsite = " onsite_";
+            }
+            sql = "Select * From " + onsite+ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "' and "+ccp.statusVisit+"='0' Order By " + ccp.rowNumber;
             //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
             dt = conn.selectData(sql);
 
@@ -859,19 +872,55 @@ namespace CheckUP.objdb
         public String insertToOnSite(String cucId)
         {
             String sql = "", chk = "";
-            sql = "insert into onsite_" + ccp.table + " " +
-                "select * from "+ ccp.table +" "+
-                "Where " + ccp.CustCheckUpId + "='" + cucId + "'";
-            chk = conn.ExecuteNonQuery(sql);
+            DataTable dt = new DataTable();
+            dt = selectAllByCucId(cucId);
+            if (dt.Rows.Count > 0)
+            {
+                for(int i = 0; i < dt.Rows.Count; i++)
+                {
+                    CustCheckUpPatient ccp1 = new CustCheckUpPatient();
+                    ccp1.Active = "1";
+                    ccp1.Id = dt.Rows[i][ccp.Id] != null ? dt.Rows[i][ccp.Id].ToString() : "";
+                    ccp1.CustCheckUpId = dt.Rows[i][ccp.Id] != null ? dt.Rows[i][ccp.CustCheckUpId].ToString() : "";
+                    ccp1.rowNumber = dt.Rows[i][ccp.Id] != null ? dt.Rows[i][ccp.rowNumber].ToString() : "";
+                    ccp1.visitHn = dt.Rows[i][ccp.Id] != null ? dt.Rows[i][ccp.visitHn].ToString() : "";
+                    ccp1.patientFullname = dt.Rows[i][ccp.Id] != null ? dt.Rows[i][ccp.patientFullname].ToString() : "";
+                    ccp1.departmentName = dt.Rows[i][ccp.Id] != null ? dt.Rows[i][ccp.departmentName].ToString() : "";
+                    ccp1.patientNumber = dt.Rows[i][ccp.Id] != null ? dt.Rows[i][ccp.patientNumber].ToString() : "";
+                    ccp1.sectionName = dt.Rows[i][ccp.Id] != null ? dt.Rows[i][ccp.patientNumber].ToString() : "";
+                    ccp1.position_name = dt.Rows[i][ccp.Id] != null ? dt.Rows[i][ccp.position_name].ToString() : "";
+                    ccp1.statusVisit = "0";
+                    
+                    insertOnSite(ccp1);
+                    UpdateStickerOnSite(ccp1.Id, dt.Rows[i][ccp.sticker01].ToString(), dt.Rows[i][ccp.sticker02].ToString(), dt.Rows[i][ccp.sticker03].ToString(), dt.Rows[i][ccp.sticker04].ToString(), dt.Rows[i][ccp.sticker05].ToString()
+                        , dt.Rows[i][ccp.sticker06].ToString(), dt.Rows[i][ccp.sticker07].ToString(), dt.Rows[i][ccp.sticker08].ToString(), dt.Rows[i][ccp.sticker09].ToString(), dt.Rows[i][ccp.sticker10].ToString()
+                        , dt.Rows[i][ccp.sticker11].ToString(), dt.Rows[i][ccp.sticker12].ToString(), dt.Rows[i][ccp.sticker13].ToString(), dt.Rows[i][ccp.sticker14].ToString(), dt.Rows[i][ccp.sticker15].ToString()
+                        , dt.Rows[i][ccp.sticker16].ToString(), dt.Rows[i][ccp.sticker17].ToString(), dt.Rows[i][ccp.sticker18].ToString(), dt.Rows[i][ccp.sticker19].ToString(), dt.Rows[i][ccp.sticker20].ToString());
+                    UpdateTestOnSite(ccp1.Id, "0", "0", "0", "0", "0"
+                        , "0", "0", "0", "0", "0"
+                        , "0", "0", "0", "0", "0"
+                        , "0", "0", "0", "0", "0");
+                }
+            }
+
+            //sql = "insert into "+ conn.initc.nameRemoteClient + "." + conn.initc.nameDBonsite + ".dbo." + "onsite_" + ccp.table + " " +
+            //    "select * from " + ccp.table +" "+
+            //    "Where " + ccp.CustCheckUpId + "='" + cucId + "'";
+            ////MessageBox.Show("SQL " + sql, "message ");
+            //chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
         private String insert(CustCheckUpPatient p) {
-            String sql = "", chk = "";
+            String sql = "", chk = "", onsite="";
             if (p.Id.Equals(""))
             {
                 p.Id = "ccp" + p.getGenID();
             }
             try {
+                //if (conn.initc.statusonsite.Equals("yes"))
+                //{
+                //    onsite = " onsite_";
+                //}
     //            Connection conn = config1.getConnectionBangna;
     //            Statement st = conn.createStatement;
                 //ccp = getMarketingTCheckupPatientByPK(st,"", p.getMarketingCheckupPatientId,"");
@@ -880,8 +929,8 @@ namespace CheckUP.objdb
                 p.sectionName = p.sectionName.Replace("'", "''");
                 p.summaryPhysicalExam = p.summaryPhysicalExam.Replace("'", "''");
                 p.xrayChestExam = p.xrayChestExam.Replace("'", "''");
-                //p.xrayChestExam = p.xrayChestExam.Replace("'", "''"));
-                //p.xrayChestExam = p.xrayChestExam.Replace("'", "''"));
+                p.position_name = p.position_name.Replace("'", "''");
+                p.SexName = p.SexName.Replace("'", "''");
 
                 //max = getMaxRowMarketingTCheckupPatient(st);
                 p.statusAmphetamine = "0";
@@ -939,7 +988,7 @@ namespace CheckUP.objdb
                 p.test19 = "0";
                 p.test20 = "0";
 
-                sql = "Insert Into " + ccp.table+ "(" 
+                sql = "Insert Into " + onsite + ccp.table+ "(" 
                 + ccp.Id + ", " + ccp.amphetamine + ", "
                 + ccp.antiHiv + "," + ccp.AudiogramExam + ","
                 + ccp.Audiogram1000L + "," + ccp.Audiogram1000R + ","
@@ -1148,6 +1197,296 @@ namespace CheckUP.objdb
             }
             return p.Id;
         }
+        private String insertOnSite(CustCheckUpPatient p)
+        {
+            String sql = "", chk = "", onsite = "";
+            if (p.Id.Equals(""))
+            {
+                p.Id = "ccp" + p.getGenID();
+            }
+            try
+            {
+                
+                onsite = " onsite_";
+                
+                //            Connection conn = config1.getConnectionBangna;
+                //            Statement st = conn.createStatement;
+                //ccp = getMarketingTCheckupPatientByPK(st,"", p.getMarketingCheckupPatientId,"");
+                p.departmentName = p.departmentName.Replace("'", "''");
+                p.patientFullname = p.patientFullname.Replace("'", "''");
+                p.sectionName = p.sectionName.Replace("'", "''");
+                p.summaryPhysicalExam = p.summaryPhysicalExam.Replace("'", "''");
+                p.xrayChestExam = p.xrayChestExam.Replace("'", "''");
+                p.position_name = p.position_name.Replace("'", "''");
+                p.SexName = p.SexName.Replace("'", "''");
+
+                //max = getMaxRowMarketingTCheckupPatient(st);
+                p.statusAmphetamine = "0";
+                p.statusAntiHiv = "0";
+                p.statusCbc = "0";
+                p.statusCholes = "0";
+                p.statusFbs = "0";
+                p.StatusHbsag = "0";
+                p.statusPe = "0";
+                p.statusName = "0";
+                p.statusStool = "0";
+                p.statusUa = "0";
+                p.statusUricAcid = "0";
+                p.statusVisit = "0";
+                p.statusXray = "0";
+                p.sticker01 = "0";
+                p.sticker02 = "0";
+                p.sticker03 = "0";
+                p.sticker04 = "0";
+                p.sticker05 = "0";
+                p.sticker06 = "0";
+                p.sticker07 = "0";
+                p.sticker08 = "0";
+                p.sticker09 = "0";
+                p.sticker10 = "0";
+                p.sticker11 = "0";
+                p.sticker12 = "0";
+                p.sticker13 = "0";
+                p.sticker14 = "0";
+                p.sticker15 = "0";
+                p.sticker16 = "0";
+                p.sticker17 = "0";
+                p.sticker18 = "0";
+                p.sticker19 = "0";
+                p.sticker20 = "0";
+
+                p.test01 = "0";
+                p.test02 = "0";
+                p.test03 = "0";
+                p.test04 = "0";
+                p.test05 = "0";
+                p.test06 = "0";
+                p.test07 = "0";
+                p.test08 = "0";
+                p.test09 = "0";
+                p.test10 = "0";
+                p.test11 = "0";
+                p.test12 = "0";
+                p.test13 = "0";
+                p.test14 = "0";
+                p.test15 = "0";
+                p.test16 = "0";
+                p.test17 = "0";
+                p.test18 = "0";
+                p.test19 = "0";
+                p.test20 = "0";
+
+                sql = "Insert Into " + onsite + ccp.table + "("
+                + ccp.Id + ", " + ccp.amphetamine + ", "
+                + ccp.antiHiv + "," + ccp.AudiogramExam + ","
+                + ccp.Audiogram1000L + "," + ccp.Audiogram1000R + ","
+                + ccp.Audiogram2000L + "," + ccp.Audiogram2000R + ","
+                + ccp.Audiogram3000L + "," + ccp.Audiogram3000R + ","
+
+                + ccp.Audiogram4000L + "," + ccp.Audiogram4000R + ","
+                + ccp.Audiogram6000L + "," + ccp.Audiogram6000R + ","
+                + ccp.Audiogram8000L + "," + ccp.Audiogram8000R + ","
+                + ccp.Audiogram500L + "," + ccp.Audiogram500R + ","
+                + ccp.AudiogramSummaryL + "," + ccp.AudiogramSummaryR + ","
+
+                + ccp.CA125 + "," + ccp.cbcPlateletSmear + ","
+                + ccp.CA199 + "," + ccp.CAAFP + ","
+                + ccp.CACEA + "," + ccp.CAHCG + ","
+                + ccp.calcium + "," + ccp.CAPSA + ","
+                + ccp.cbcBasophil + "," + ccp.cbcEosinophil + ","
+
+                + ccp.cbcHb + "," + ccp.cbcHct + ","
+                + ccp.cbcLymphocyte + "," + ccp.cbcMonocyte + ","
+                + ccp.cbcNeutrophil + "," + ccp.cbcPlateletCount + ","
+                + ccp.cbcRbcMorpholog + "," + ccp.cbcWbc + ","
+                + ccp.cholesterol + "," + ccp.departmentName + ","
+
+                + ccp.disscusExam + "," + ccp.ekgExam + ","
+                + ccp.urineEpithelium + "," + ccp.eyesExam + ","
+                + ccp.BloodGroup + "," + ccp.fSexId + ","
+                + ccp.hbsab + "," + ccp.hbsag + ","
+                + ccp.hdl + "," + ccp.kidneyBun + ","
+
+                + ccp.kidneyCreatinine + "," + ccp.ldl + ","
+                + ccp.liverAlp + "," + ccp.liverSgot + ","
+                + ccp.liverSgpt + "," + ccp.CustCheckUpId + ","
+                + ccp.xrayChestExam + "," + ccp.EyeShortLongLeft + ","
+                + ccp.EyeShortLongRight + "," + ccp.patientAge + ","
+
+                + ccp.patientFullname + "," + ccp.xrayChestSummary + ","
+                + ccp.patientHeight + "," + ccp.patientNumber + ","
+                + ccp.patientPulse + "," + ccp.patientWeight + ","
+                + ccp.pid + "," + ccp.sectionName + ","
+                + ccp.StoolExamAppearance + "," + ccp.ChecklistId + ","
+
+                + ccp.StoolExamColor + "," + ccp.StoolExamParasite + ","
+                + ccp.StoolExamRbc + "," + ccp.StoolExamWbc + ","
+                + ccp.sugar + "," + ccp.suggestExam + ","
+                + ccp.sugarDiagnosis + "," + ccp.sugarSuggess + ","
+                + ccp.sugarSummary + "," + ccp.urineResult + ","
+
+                + ccp.thyroidT3 + "," + ccp.thyroidT4 + ","
+                + ccp.thyroidTsh + "," + ccp.triglyceride + ","
+                + ccp.uricAcid + "," + ccp.urineAppearance + ","
+
+                + ccp.urineBacteria + "," + ccp.urineBlood + ","
+                + ccp.urineKetone + "," + ccp.urineColor + ","
+                + ccp.urinePh + "," + ccp.urineProtein + ","
+                + ccp.urineRbc + "," + ccp.urineSpGr + ","
+                + ccp.urineSugar + "," + ccp.urineWbc + ","
+
+                + ccp.lungFev1Meas + "," + ccp.lungFev1Per + ","
+                + ccp.lungFev1Predic + "," + ccp.lungFvcMeas + ","
+                + ccp.lungFvcPer + "," + ccp.lungFvcPredic + ","
+                + ccp.lungPerFev1 + "," + ccp.lungSuggess + ","
+                + ccp.lungSummary + "," + ccp.urineSummary + ","
+
+                + ccp.cbcSummary + "," + ccp.summaryPhysicalExam + ","
+                + ccp.vdrl + "," + ccp.visitHn + ","
+                + ccp.rowNumber + "," + ccp.cbcMcv + ","
+                    + ccp.stickerQty + "," + ccp.statusCbc + ","
+                    + ccp.statusFbs + "," + ccp.statusUa + ","
+                    + ccp.statusPe + "," + ccp.statusXray + ","
+                    + ccp.statusStool + "," + ccp.StoolExamSummary + ","
+                    + ccp.cholesterolSuggess + "," + ccp.cholesterolSummary + ","
+                    + ccp.cbcMch + "," + ccp.cbcMchc + ","
+                    + ccp.hbsagResult + "," + ccp.hbsagSummary + ","
+                    + ccp.statusCholes + "," + ccp.StatusHbsag + ","
+                    + ccp.cbcRbc + "," + ccp.Active + ","
+                    + ccp.eyeBio + "," + ccp.amphetamineSuggess + ","
+                    + ccp.amphetamineSummary + "," + ccp.antiHivSuggess + ","
+                    + ccp.antiHivSummary + "," + ccp.statusAmphetamine + ","
+                    + ccp.statusAntiHiv + "," + ccp.statusVisit + "," +
+                    ccp.triglycerideResult + "," + ccp.triglycerideSummary + "," +
+                    ccp.liverResult + "," + ccp.liverSummary + "," +
+                    ccp.kidneyResult + "," + ccp.kidneySummary + "," + ccp.SexName + " " +
+                    "," + ccp.sticker01 + "," + ccp.sticker02 + "," + ccp.sticker03 + " " +
+                    "," + ccp.sticker04 + "," + ccp.sticker05 + "," + ccp.sticker06 + " " +
+                    "," + ccp.sticker07 + "," + ccp.sticker08 + "," + ccp.sticker09 + " " +
+                    "," + ccp.sticker10 + "," + ccp.sticker11 + "," + ccp.sticker12 + " " +
+                    "," + ccp.sticker13 + "," + ccp.sticker14 + "," + ccp.sticker15 + " " +
+                    "," + ccp.sticker16 + "," + ccp.sticker17 + "," + ccp.sticker18 + " " +
+                    "," + ccp.sticker19 + "," + ccp.sticker20 + "," + ccp.position_name + " " +
+                    "," + ccp.test01 + "," + ccp.test02 + "," + ccp.test03 + " " +
+                    "," + ccp.test04 + "," + ccp.test05 + "," + ccp.test06 + " " +
+                    "," + ccp.test07 + "," + ccp.test08 + "," + ccp.test09 + " " +
+                    "," + ccp.test10 + "," + ccp.test11 + "," + ccp.test12 + " " +
+                    "," + ccp.test13 + "," + ccp.test14 + "," + ccp.test15 + " " +
+                    "," + ccp.test16 + "," + ccp.test17 + "," + ccp.test18 + " " +
+                    "," + ccp.test19 + "," + ccp.test20 + " " +
+                    ") "
+
+                + "Values('" + p.Id + "','" + p.amphetamine + "','"
+                + p.antiHiv + "','" + p.AudiogramExam + "','"
+                + p.Audiogram1000L + "','" + p.Audiogram1000R + "','"
+                + p.Audiogram2000L + "','" + p.Audiogram2000R + "','"
+                + p.Audiogram3000L + "','" + p.Audiogram3000R + "','"
+
+                + p.Audiogram4000L + "','" + p.Audiogram4000R + "','"
+                + p.Audiogram6000L + "','" + p.Audiogram6000R + "','"
+                + p.Audiogram8000L + "','" + p.Audiogram8000R + "','"
+                + p.Audiogram500L + "','" + p.Audiogram500R + "','"
+                + p.AudiogramSummaryL + "','" + p.AudiogramSummaryR + "','"
+
+                + p.CA125 + "','" + p.cbcPlateletSmear + "','"
+                + p.CA199 + "','" + p.CAAFP + "','"
+                + p.CACEA + "','" + p.CAHCG + "','"
+                + p.calcium + "','" + p.CAPSA + "','"
+                + p.cbcBasophil + "','" + p.cbcEosinophil + "','"
+
+                + p.cbcHb + "','" + p.cbcHct + "','"
+                + p.cbcLymphocyte + "','" + p.cbcMonocyte + "','"
+                + p.cbcNeutrophil + "','" + p.cbcPlateletCount + "','"
+                + p.cbcRbcMorpholog + "','" + p.cbcWbc + "','"
+                + p.cholesterol + "','" + p.departmentName + "','"
+
+                + p.disscusExam + "','" + p.ekgExam + "','"
+                + p.urineEpithelium + "','" + p.eyesExam + "','"
+                + p.BloodGroup + "','" + p.fSexId + "','"
+                + p.hbsab + "','" + p.hbsag + "','"
+                + p.hdl + "','" + p.kidneyBun + "','"
+
+                + p.kidneyCreatinine + "','" + p.ldl + "','"
+                + p.liverAlp + "','" + p.liverSgot + "','"
+                + p.liverSgpt + "','" + p.CustCheckUpId + "','"
+                + p.xrayChestExam + "','" + p.EyeShortLongLeft + "','"
+                + p.EyeShortLongRight + "','" + p.patientAge + "','"
+
+                + p.patientFullname + "','" + p.xrayChestSummary + "','"
+                + p.patientHeight + "','" + p.patientNumber + "','"
+                + p.patientPulse + "','" + p.patientWeight + "','"
+                + p.pid + "','" + p.sectionName + "','"
+                + p.StoolExamAppearance + "','" + p.ChecklistId + "','"
+
+                + p.StoolExamColor + "','" + p.StoolExamParasite + "','"
+                + p.StoolExamRbc + "','" + p.StoolExamWbc + "','"
+                + p.sugar + "','" + p.suggestExam + "','"
+                + p.sugarDiagnosis + "','" + p.sugarSuggess + "','"
+                + p.sugarSummary + "','" + p.urineResult + "','"
+
+                + p.thyroidT3 + "','" + p.thyroidT4 + "','"
+                + p.thyroidTsh + "','" + p.triglyceride + "','"
+                + p.uricAcid + "','" + p.urineAppearance + "','"
+
+                + p.urineBacteria + "','" + p.urineBlood + "','"
+                + p.urineKetone + "','" + p.urineColor + "','"
+                + p.urinePh + "','" + p.urineProtein + "','"
+                + p.urineRbc + "','" + p.urineSpGr + "','"
+                + p.urineSugar + "','" + p.urineWbc + "','"
+
+                + p.lungFev1Meas + "','" + p.lungFev1Per + "','"
+                + p.lungFev1Predic + "','" + p.lungFvcMeas + "','"
+                + p.lungFvcPer + "','" + p.lungFvcPredic + "','"
+                + p.lungPerFev1 + "','" + p.lungSuggess + "','"
+                + p.lungSummary + "','" + p.urineSummary + "','"
+
+                + p.cbcSummary + "','" + p.summaryPhysicalExam + "','"
+                + p.vdrl + "','" + p.visitHn + "',"
+                + p.rowNumber + ",'" + p.cbcMcv + "','"
+                    + p.stickerQty + "','" + p.statusCbc + "','"
+                    + p.statusFbs + "','" + p.statusUa + "','"
+                    + p.statusPe + "','" + p.statusXray + "','"
+                    + p.statusStool + "','" + p.StoolExamSummary + "','"
+                    + p.cholesterolSuggess + "','" + p.cholesterolSummary + "','"
+                    + p.cbcMch + "','" + p.cbcMchc + "','"
+                    + p.hbsagResult + "','" + p.hbsagSummary + "','"
+                    + p.statusCholes + "','" + p.StatusHbsag + "','"
+                    + p.cbcRbc + "','" + p.Active + "','"
+                    + p.eyeBio + "','" + p.amphetamineSuggess + "','"
+                    + p.amphetamineSummary + "','" + p.antiHivSuggess + "','"
+                    + p.antiHivSummary + "','" + p.statusAmphetamine + "','"
+                    + p.statusAntiHiv + "','" + p.statusVisit + "','" +
+                    p.triglycerideResult + "','" + p.triglycerideSummary + "','" +
+                    p.liverResult + "','" + p.liverSummary + "','" +
+                    p.kidneyResult + "','" + p.kidneySummary + "','" + p.SexName + "'" +
+                    ",'" + p.sticker01 + "','" + p.sticker02 + "','" + p.sticker03 + "'" +
+                    ",'" + p.sticker04 + "','" + p.sticker05 + "','" + p.sticker06 + "'" +
+                    ",'" + p.sticker07 + "','" + p.sticker08 + "','" + p.sticker09 + "'" +
+                    ",'" + p.sticker10 + "','" + p.sticker11 + "','" + p.sticker12 + "'" +
+                    ",'" + p.sticker13 + "','" + p.sticker14 + "','" + p.sticker15 + "'" +
+                    ",'" + p.sticker16 + "','" + p.sticker17 + "','" + p.sticker18 + "'" +
+                    ",'" + p.sticker19 + "','" + p.sticker20 + "','" + p.position_name + "'" +
+                    ",'" + p.test01 + "','" + p.test02 + "','" + p.test03 + "'" +
+                    ",'" + p.test04 + "','" + p.test05 + "','" + p.test06 + "'" +
+                    ",'" + p.test07 + "','" + p.test08 + "','" + p.test09 + "'" +
+                    ",'" + p.test10 + "','" + p.test11 + "','" + p.test12 + "'" +
+                    ",'" + p.test13 + "','" + p.test14 + "','" + p.test15 + "'" +
+                    ",'" + p.test16 + "','" + p.test17 + "','" + p.test18 + "'" +
+                    ",'" + p.test19 + "','" + p.test20 + "' " +
+                    ") ";
+                chk = conn.ExecuteNonQuery(sql);
+                //sql = "Insert Into " + ccp1db.ccp1.table + "(" + ccp1db.ccp1.Id + "," + ccp1db.ccp1.CustCheckUpId + "," + ccp1db.ccp1.rowNumber + "," + ccp1db.ccp1.Active + "," + ccp1db.ccp1.patientFullname +
+                //    ") Values ('" + p.Id + "','" + p.CustCheckUpId + "'," + p.rowNumber + ",'1','" + p.patientFullname + "')";
+                //chk = conn.ExecuteNonQuery(sql);
+                //            conn.close;
+            }
+            catch (Exception ex)
+            {
+                //Logger.getLogger(MarketingTCheckupDB.class.getName).log(Level.SEVERE, null, ex);
+                //max = ex.getMessage;
+            }
+            return p.Id;
+        }
         private String update(CustCheckUpPatient p)
         {
             String chk = "";
@@ -1202,10 +1541,14 @@ namespace CheckUP.objdb
         }
         public String UpdateStatusVisit0(String ccpId)
         {
-            String chk = "", sql = "";
+            String chk = "", sql = "", onsite="";
             try
             {
-                sql = "Update " + ccp.table + " Set " + ccp.statusVisit + "='0' " +
+                if (conn.initc.statusonsite.Equals("yes"))
+                {
+                    onsite = " onsite_";
+                }
+                sql = "Update " + onsite+ccp.table + " Set " + ccp.statusVisit + "='0' " +
                 "Where " + ccp.pkField + "='" + ccpId + "'  ";
                 chk = conn.ExecuteNonQuery(sql);
             }
@@ -1269,12 +1612,178 @@ namespace CheckUP.objdb
             }
             return chk;
         }
-        public String UpdateSticker0(String ccpId, String col)
+        public String UpdateSticker(String ccpId, String val1, String val2, String val3, String val4, String val5, String val6, String val7, String val8, String val9, String val10
+            , String val11, String val12, String val13, String val14, String val15, String val16, String val17, String val18, String val19, String val20)
         {
-            String chk = "", sql = "";
+            String chk = "", sql = "", onsite="";
             try
             {
-                sql = "Update " + ccp.table + " Set sticker"+col+"='0' " +
+                if (conn.initc.statusonsite.Equals("yes"))
+                {
+                    onsite = " onsite_";
+                }
+                sql = "Update " + onsite+ccp.table + " Set " +
+                    "sticker01 ='" + val1 + "' " +
+                    ",sticker02 ='" + val2 + "' " +
+                    ",sticker03 ='" + val3 + "' " +
+                    ",sticker04 ='" + val4 + "' " +
+                    ",sticker05 ='" + val5 + "' " +
+                    ",sticker06 ='" + val6 + "' " +
+                    ",sticker07 ='" + val7 + "' " +
+                    ",sticker08 ='" + val8 + "' " +
+                    ",sticker09 ='" + val9 + "' " +
+                    ",sticker10 ='" + val10 + "' " +
+                    ",sticker11 ='" + val11 + "' " +
+                    ",sticker12 ='" + val12 + "' " +
+                    ",sticker13 ='" + val13 + "' " +
+                    ",sticker14 ='" + val14 + "' " +
+                    ",sticker15 ='" + val15 + "' " +
+                    ",sticker16 ='" + val16 + "' " +
+                    ",sticker17 ='" + val17 + "' " +
+                    ",sticker18 ='" + val18 + "' " +
+                    ",sticker19 ='" + val19 + "' " +
+                    ",sticker20 ='" + val20 + "' " +
+                "Where " + ccp.pkField + "='" + ccpId + "'  ";
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                lw.WriteLog("ccp.UpdatePE Error " + ex.Message);
+                //max = ex.getMessage;
+            }
+            return chk;
+        }
+        public String UpdateStickerOnSite(String ccpId, String val1, String val2, String val3, String val4, String val5, String val6, String val7, String val8, String val9, String val10
+            , String val11, String val12, String val13, String val14, String val15, String val16, String val17, String val18, String val19, String val20)
+        {
+            String chk = "", sql = "", onsite = "";
+            try
+            {
+                
+                onsite = " onsite_";
+                
+                sql = "Update " + onsite + ccp.table + " Set " +
+                    "sticker01 ='" + val1 + "' " +
+                    ",sticker02 ='" + val2 + "' " +
+                    ",sticker03 ='" + val3 + "' " +
+                    ",sticker04 ='" + val4 + "' " +
+                    ",sticker05 ='" + val5 + "' " +
+                    ",sticker06 ='" + val6 + "' " +
+                    ",sticker07 ='" + val7 + "' " +
+                    ",sticker08 ='" + val8 + "' " +
+                    ",sticker09 ='" + val9 + "' " +
+                    ",sticker10 ='" + val10 + "' " +
+                    ",sticker11 ='" + val11 + "' " +
+                    ",sticker12 ='" + val12 + "' " +
+                    ",sticker13 ='" + val13 + "' " +
+                    ",sticker14 ='" + val14 + "' " +
+                    ",sticker15 ='" + val15 + "' " +
+                    ",sticker16 ='" + val16 + "' " +
+                    ",sticker17 ='" + val17 + "' " +
+                    ",sticker18 ='" + val18 + "' " +
+                    ",sticker19 ='" + val19 + "' " +
+                    ",sticker20 ='" + val20 + "' " +
+                "Where " + ccp.pkField + "='" + ccpId + "'  ";
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                lw.WriteLog("ccp.UpdatePE Error " + ex.Message);
+                //max = ex.getMessage;
+            }
+            return chk;
+        }
+        public String UpdateTest(String ccpId, String val1, String val2, String val3, String val4, String val5, String val6, String val7, String val8, String val9, String val10
+            , String val11, String val12, String val13, String val14, String val15, String val16, String val17, String val18, String val19, String val20)
+        {
+            String chk = "", sql = "", onsite="";
+            try
+            {
+                if (conn.initc.statusonsite.Equals("yes"))
+                {
+                    onsite = " onsite_";
+                }
+                sql = "Update " + onsite+ccp.table + " Set " +
+                    "test01 ='" + val1 + "' " +
+                    ",test02 ='" + val2 + "' " +
+                    ",test03 ='" + val3 + "' " +
+                    ",test04 ='" + val4 + "' " +
+                    ",test05 ='" + val5 + "' " +
+                    ",test06 ='" + val6 + "' " +
+                    ",test07 ='" + val7 + "' " +
+                    ",test08 ='" + val8 + "' " +
+                    ",test09 ='" + val9 + "' " +
+                    ",test10 ='" + val10 + "' " +
+                    ",test11 ='" + val11 + "' " +
+                    ",test12 ='" + val12 + "' " +
+                    ",test13 ='" + val13 + "' " +
+                    ",test14 ='" + val14 + "' " +
+                    ",test15 ='" + val15 + "' " +
+                    ",test16 ='" + val16 + "' " +
+                    ",test17 ='" + val17 + "' " +
+                    ",test18 ='" + val18 + "' " +
+                    ",test19 ='" + val19 + "' " +
+                    ",test20 ='" + val20 + "' " +
+                "Where " + ccp.pkField + "='" + ccpId + "'  ";
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                lw.WriteLog("ccp.UpdatePE Error " + ex.Message);
+                //max = ex.getMessage;
+            }
+            return chk;
+        }
+        public String UpdateTestOnSite(String ccpId, String val1, String val2, String val3, String val4, String val5, String val6, String val7, String val8, String val9, String val10
+            , String val11, String val12, String val13, String val14, String val15, String val16, String val17, String val18, String val19, String val20)
+        {
+            String chk = "", sql = "", onsite = "";
+            try
+            {
+                
+                onsite = " onsite_";
+                
+                sql = "Update " + onsite + ccp.table + " Set " +
+                    "test01 ='" + val1 + "' " +
+                    ",test02 ='" + val2 + "' " +
+                    ",test03 ='" + val3 + "' " +
+                    ",test04 ='" + val4 + "' " +
+                    ",test05 ='" + val5 + "' " +
+                    ",test06 ='" + val6 + "' " +
+                    ",test07 ='" + val7 + "' " +
+                    ",test08 ='" + val8 + "' " +
+                    ",test09 ='" + val9 + "' " +
+                    ",test10 ='" + val10 + "' " +
+                    ",test11 ='" + val11 + "' " +
+                    ",test12 ='" + val12 + "' " +
+                    ",test13 ='" + val13 + "' " +
+                    ",test14 ='" + val14 + "' " +
+                    ",test15 ='" + val15 + "' " +
+                    ",test16 ='" + val16 + "' " +
+                    ",test17 ='" + val17 + "' " +
+                    ",test18 ='" + val18 + "' " +
+                    ",test19 ='" + val19 + "' " +
+                    ",test20 ='" + val20 + "' " +
+                "Where " + ccp.pkField + "='" + ccpId + "'  ";
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                lw.WriteLog("ccp.UpdatePE Error " + ex.Message);
+                //max = ex.getMessage;
+            }
+            return chk;
+        }
+        public String UpdateSticker0(String ccpId, String col)
+        {
+            String chk = "", sql = "", onsite="";
+            try
+            {
+                if (conn.initc.statusonsite.Equals("yes"))
+                {
+                    onsite = " onsite_";
+                }
+                sql = "Update " + onsite+ccp.table + " Set sticker"+col+"='0' " +
                 "Where " + ccp.pkField + "='" + ccpId + "'  ";
                 chk = conn.ExecuteNonQuery(sql);
             }
@@ -1287,10 +1796,14 @@ namespace CheckUP.objdb
         }
         public String UpdateSticker1(String ccpId, String col)
         {
-            String chk = "", sql = "";
+            String chk = "", sql = "", onsite="";
             try
             {
-                sql = "Update " + ccp.table + " Set sticker" + col + "='1' " +
+                if (conn.initc.statusonsite.Equals("yes"))
+                {
+                    onsite = " onsite_";
+                }
+                sql = "Update " + onsite+ccp.table + " Set sticker" + col + "='1' " +
                 "Where " + ccp.pkField + "='" + ccpId + "'  ";
                 chk = conn.ExecuteNonQuery(sql);
             }
@@ -1303,10 +1816,14 @@ namespace CheckUP.objdb
         }
         public String UpdateTest0(String ccpId, String col)
         {
-            String chk = "", sql = "";
+            String chk = "", sql = "", onsite="";
             try
             {
-                sql = "Update " + ccp.table + " Set test" + col + "='0' " +
+                if (conn.initc.statusonsite.Equals("yes"))
+                {
+                    onsite = " onsite_";
+                }
+                sql = "Update " + onsite+ccp.table + " Set test" + col + "='0' " +
                 "Where " + ccp.pkField + "='" + ccpId + "'  ";
                 chk = conn.ExecuteNonQuery(sql);
             }
@@ -1319,10 +1836,14 @@ namespace CheckUP.objdb
         }
         public String UpdateTest1(String ccpId, String col)
         {
-            String chk = "", sql = "";
+            String chk = "", sql = "", onsite="";
             try
             {
-                sql = "Update " + ccp.table + " Set test" + col + "='1' " +
+                if (conn.initc.statusonsite.Equals("yes"))
+                {
+                    onsite = " onsite_";
+                }
+                sql = "Update " + onsite+ccp.table + " Set test" + col + "='1' " +
                 "Where " + ccp.pkField + "='" + ccpId + "'  ";
                 chk = conn.ExecuteNonQuery(sql);
             }
@@ -1335,10 +1856,14 @@ namespace CheckUP.objdb
         }
         public String UpdateStatusVisit1(String ccpId)
         {
-            String chk = "", sql = "";
+            String chk = "", sql = "", onsite="";
             try
             {
-                sql = "Update " + ccp.table + " Set " + ccp.statusVisit + "='1' " +
+                if (conn.initc.statusonsite.Equals("yes"))
+                {
+                    onsite = " onsite_";
+                }
+                sql = "Update " + onsite+ccp.table + " Set " + ccp.statusVisit + "='1' " +
                 "Where " + ccp.pkField + "='" + ccpId + "'  ";
                 chk = conn.ExecuteNonQuery(sql);
             }
