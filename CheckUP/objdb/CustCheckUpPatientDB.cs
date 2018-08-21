@@ -12,7 +12,7 @@ namespace CheckUP.objdb
 {
     public class CustCheckUpPatientDB
     {
-        ConnectDB conn;
+        ConnectDB conn, connOnSite;
         public CustCheckUpPatient ccp;
         public CustCheckUpPatient1 ccp1;
         public CustCheckUpPatient1DB ccp1db;
@@ -874,6 +874,12 @@ namespace CheckUP.objdb
             String sql = "", chk = "";
             DataTable dt = new DataTable();
             dt = selectAllByCucId(cucId);
+            if (connOnSite == null)
+                connOnSite = new ConnectDB(conn.initc, ConnectDB.flagOnSite.OnSite);
+
+            sql = "Delete From onsite_" + ccp.table;
+            chk = connOnSite.ExecuteNonQuery(sql);
+            
             if (dt.Rows.Count > 0)
             {
                 for(int i = 0; i < dt.Rows.Count; i++)

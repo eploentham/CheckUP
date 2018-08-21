@@ -649,14 +649,14 @@ namespace CheckUP.Control
         {
             String sql = "";
             //MessageBox.Show("111 " + sql, "message ");
-            stkdb.deleteOnSiteAll();
-            cucdb.deleteOnSiteAll();
-            ccpdb.deleteOnSiteAll();
-            ccp1db.deleteOnSiteAll();
+            //stkdb.deleteOnSiteAll();
+            //cucdb.deleteOnSiteAll();
+            //ccpdb.deleteOnSiteAll();
+            //ccp1db.deleteOnSiteAll();
 
             stkdb.insertToOnSite();
             cucdb.insertToOnSite(cucId);
-            ccp1db.insertToOnSite(cucId);
+            //ccp1db.insertToOnSite(cucId);
 
             ccpdb.insertToOnSite(cucId);
             

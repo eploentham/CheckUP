@@ -10,7 +10,7 @@ namespace CheckUP.objdb
 {
     public class CustCheckUpDB
     {
-        ConnectDB conn;
+        ConnectDB conn, connOnSite;
         public CustCheckUp cuc;
         public CustCheckUpDB(ConnectDB c)
         {
@@ -503,6 +503,46 @@ namespace CheckUP.objdb
             }
             return chk;
         }
+        private String insertOnSite(CustCheckUp p, ConnectDB connonsite)
+        {
+            String sql = "", chk = "";
+            //MessageBox.Show("0000 ", "Error ");
+            if (p.Id.Equals(""))
+            {
+                p.Id = "cuc" + p.getGenID();
+            }
+            //MessageBox.Show("1111 ", "Error ");
+            p.Description = p.Description.Replace("'", "''");
+            p.Remark = p.Remark.Replace("'", "''");
+            int chk1 = 0;
+            p.sticker = int.TryParse(p.sticker, out chk1) ? chk1.ToString() : "0";
+
+            chkNull(p);
+            p.Active = "1";
+            sql = "Insert Into " + cuc.table + " (" + cuc.pkField + "," + cuc.Active + "," + cuc.CheckUpDate + "," +
+                cuc.CheckUpEndDate + "," + cuc.CheckUpStartDate + "," + cuc.CntEmployee + "," +
+                cuc.CommitCheckUpDate + "," + cuc.CustId + "," + cuc.CustNameT + "," +
+                cuc.Description + "," + cuc.RegisDate + "," + cuc.Remark + "," +
+                cuc.YearId + "," + cuc.dateCreate + "," + cuc.sticker + ") " +
+                "Values('" + p.Id + "','" + p.Active + "','" + p.CheckUpDate + "','" +
+                p.CheckUpEndDate + "','" + p.CheckUpStartDate + "'," + NumberNull1(p.CntEmployee) + ",'" +
+                p.CommitCheckUpDate + "','" + p.CustId + "','" + p.CustNameT + "','" +
+                p.Description + "','" + p.RegisDate + "','" + p.Remark + "','" +
+                p.YearId + "'," + p.dateGenDB + ",'" + p.sticker + "')";
+            try
+            {
+                chk = connonsite.ExecuteNonQuery(sql);
+                chk = p.Id;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString() + "\n" + sql, "insert CustCheckUp");
+            }
+            finally
+            {
+            }
+            return chk;
+        }
         public String deleteAll()
         {
             String sql = "", chk = "";
@@ -520,11 +560,17 @@ namespace CheckUP.objdb
         public String insertToOnSite(String cucId)
         {
             String sql = "", chk = "";
-            sql = "insert into "+conn.initc.nameRemoteClient + "." + conn.initc.nameDBonsite + ".dbo." + "onsite_" + cuc.table + " " +
-                "select * from " + cuc.table +" "+
-                "Where " + cuc.pkField + "='" + cucId + "'";
-            //MessageBox.Show("SQL " + sql, "message ");
-            chk = conn.ExecuteNonQuery(sql);
+            CustCheckUp cuc1 = new CustCheckUp();
+            cuc1 = selectByPk(cucId);
+            sql = "Delete From onsite_" + cuc.table;
+            connOnSite = new ConnectDB(conn.initc, ConnectDB.flagOnSite.OnSite);
+            chk = connOnSite.ExecuteNonQuery(sql);
+            chk = insertOnSite(cuc1, connOnSite);
+            //sql = "insert into "+conn.initc.nameRemoteClient + "." + conn.initc.nameDBonsite + ".dbo." + "onsite_" + cuc.table + " " +
+            //    "select * from " + cuc.table +" "+
+            //    "Where " + cuc.pkField + "='" + cucId + "'";
+            ////MessageBox.Show("SQL " + sql, "message ");
+            //chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
         public ComboBox getCboCustCheckUp(ComboBox c)
