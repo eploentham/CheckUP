@@ -219,7 +219,10 @@ namespace CheckUP.Control
             initC.grfRowColor = iniFile.Read("grfRowColor");
             initC.statusonsite = iniFile.Read("statusonsite");
             initC.pathMini = iniFile.Read("pathMini");
-            initC.nameRemoteClient  = iniFile.Read("nameRemoteClient");
+            initC.nameRemoteClient  = iniFile.Read("nameRemoteClient");     //ไม่ได้ใช้แล้ว
+            initC.statusconnectCEM = iniFile.Read("statusconnectCEM");
+            initC.pathaccessCEM = iniFile.Read("pathaccessCEM");
+            initC.pathdataCEM = iniFile.Read("pathdataCEM");
 
             initC.grdViewFontName = initC.grdViewFontName.Equals("") ? "Microsoft Sans Serif" : initC.grdViewFontName;
             int.TryParse(initC.grdViewFontSize, out grdViewFontSize);
@@ -233,13 +236,17 @@ namespace CheckUP.Control
             bool folderExists = File.Exists(path);
             return folderExists;
         }
+        public void SetPathImage(String path)
+        {
+            iniFile.Write("pathimage", path);
+        }
         public void SetPathMini(String path)
         {
             iniFile.Write("pathMini", path);
         }
-        public void SetPathImage(String path)
+        public void SetPathAccessCEM(String path)
         {
-            iniFile.Write("pathimage", path);
+            iniFile.Write("pathaccessCEM", path);
         }
         public void SetPathImageLogo(String path)
         {
@@ -411,7 +418,11 @@ namespace CheckUP.Control
             sf = sfdb.selectByCode(code);
             if (sf != null)
             {
-                if (sf.Password.Equals(password))
+                if (sf.Password.Equals(""))
+                {
+                    chk = false;
+                }
+                else if (sf.Password.Equals(password))
                 {
                     chk = true;
                 }

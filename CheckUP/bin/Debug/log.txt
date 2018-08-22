@@ -6518,3 +6518,53 @@ The statement has been terminated.
 The statement has been terminated.
 8/21/2018 4:53 PM->ExecuteNonQuery ex  error Violation of PRIMARY KEY constraint 'PK_onsite_t_cust_checkup_patient'. Cannot insert duplicate key in object 'dbo.onsite_t_cust_checkup_patient'. The duplicate key value is (ccp1843224883).
 The statement has been terminated.
+8/22/2018 8:35 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string 'ลงทะเบียน)'.
+Incorrect syntax near 'ลงทะเบียน)'.
+8/22/2018 8:35 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string 'พบแพทย์)'.
+Incorrect syntax near 'พบแพทย์)'.
+8/22/2018 8:35 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string 'X-Ray/D)'.
+Incorrect syntax near 'X-Ray/D)'.
+8/22/2018 8:35 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string 'CBC)'.
+Incorrect syntax near 'CBC)'.
+8/22/2018 8:35 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string 'สายตาทั่วไป)'.
+Incorrect syntax near 'สายตาทั่วไป)'.
+8/22/2018 8:35 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string 'Clotted Blood)'.
+Incorrect syntax near 'Clotted Blood)'.
+8/22/2018 8:35 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string 'S/C)'.
+Incorrect syntax near 'S/C)'.
+8/22/2018 8:35 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string 'การได้ยิน)'.
+Incorrect syntax near 'การได้ยิน)'.
+8/22/2018 8:35 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string 'FBS)'.
+Incorrect syntax near 'FBS)'.
+8/22/2018 8:35 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string '-)'.
+Incorrect syntax near '-)'.
+8/22/2018 8:35 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string '-)'.
+Incorrect syntax near '-)'.
+8/22/2018 8:35 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string '-)'.
+Incorrect syntax near '-)'.
+8/22/2018 8:35 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string '-)'.
+Incorrect syntax near '-)'.
+8/22/2018 8:35 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string '-)'.
+Incorrect syntax near '-)'.
+8/22/2018 8:35 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string '-)'.
+Incorrect syntax near '-)'.
+8/22/2018 8:35 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string '-)'.
+Incorrect syntax near '-)'.
+8/22/2018 8:35 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string '-)'.
+Incorrect syntax near '-)'.
+8/22/2018 8:35 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string '-)'.
+Incorrect syntax near '-)'.
+8/22/2018 8:35 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string '-)'.
+Incorrect syntax near '-)'.
+8/22/2018 8:35 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string '-)'.
+Incorrect syntax near '-)'.
+8/22/2018 8:35 AM->ExecuteNonQuery ex  error Violation of PRIMARY KEY constraint 'PK_t_cust_checkup'. Cannot insert duplicate key in object 'dbo.t_cust_checkup'. The duplicate key value is (cuc76920913).
+The statement has been terminated.
+8/22/2018 8:43 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string 'ลงทะเบียน)'.
+Incorrect syntax near 'ลงทะเบียน)'.
+8/22/2018 8:44 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string 'ลงทะเบียน)'.
+Incorrect syntax near 'ลงทะเบียน)'.
+8/22/2018 8:44 AM->ExecuteNonQuery ex  error Violation of PRIMARY KEY constraint 'PK_t_cust_checkup'. Cannot insert duplicate key in object 'dbo.t_cust_checkup'. The duplicate key value is (cuc76920913).
+The statement has been terminated.
+8/22/2018 8:48 AM->ExecuteNonQuery ex  error Violation of PRIMARY KEY constraint 'PK_t_cust_checkup'. Cannot insert duplicate key in object 'dbo.t_cust_checkup'. The duplicate key value is (cuc76920913).
+The statement has been terminated.

@@ -18,9 +18,10 @@ namespace CheckUP.gui
         //Test1 t;
         CheckControl cc;
         C1ThemeController theme1;
-        public FrmLogin()
+        public FrmLogin(CheckControl c)
         {
             InitializeComponent();
+            cc = c;
             initConfig();
         }
         private void initConfig()
@@ -40,6 +41,7 @@ namespace CheckUP.gui
                 chkOnsite.Checked = false;
                 chkClient.Checked = true;
             }
+            
         }
 
         private void ChkClient_Click(object sender, EventArgs e)
@@ -74,6 +76,12 @@ namespace CheckUP.gui
         {
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
+            if (txtId.Text.Equals(""))
+            {
+                MessageBox.Show("use ไม่สามารถเป็นค่าว่างได้", "แจ้งเตือน");
+                return;
+            }
+            
             if (cc.getLoginByCode(txtId.Text, txtPwd.Text))
             {
                 Staff sf = cc.sfdb.selectByCode(txtId.Text);

@@ -162,4 +162,8 @@ D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csproj.CoreCompileInputs.cach
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csproj.CopyComplete
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.exe
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.pdb
-D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csprojAssemblyReference.cache
+D:\source\bangna\CheckUP\CheckUP\bin\Debug\C1.Win.Calendar.4.dll
+D:\source\bangna\CheckUP\CheckUP\bin\Debug\C1.Win.Calendar.4.xml
+D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.gui.FrmgetCEM.resources
+D:\source\bangna\CheckUP\CheckUP\bin\Debug\C1.Win.C1Input.4.dll
+D:\source\bangna\CheckUP\CheckUP\bin\Debug\C1.Win.C1Input.4.xml

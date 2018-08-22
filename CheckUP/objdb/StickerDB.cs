@@ -49,7 +49,7 @@ namespace CheckUP.objdb
             for(int i = 0; i < dt.Rows.Count; i++)
             {
                 sql = "Insert Into "+stk.table+"("+stk.sticker_id+"," + stk.sticker_code+ "," + stk.sticker_name + ") " +
-                    "Values ('"+dt.Rows[i][stk.sticker_id].ToString()+"','"+ dt.Rows[i][stk.sticker_code].ToString()+"','"+ dt.Rows[i][stk.sticker_name].ToString().Replace("'","''") + ")";
+                    "Values ('"+dt.Rows[i][stk.sticker_id].ToString()+"','"+ dt.Rows[i][stk.sticker_code].ToString()+"','"+ dt.Rows[i][stk.sticker_name].ToString().Replace("'","''") + "')";
                 chk = connOnSite.ExecuteNonQuery(sql);
             }
             //sql = "insert into " + conn.initc.nameRemoteClient + "." + conn.initc.nameDBonsite + ".dbo." + "onsite_" + stk.table + " " +

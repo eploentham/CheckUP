@@ -1,4 +1,5 @@
-﻿using CheckUP.gui;
+﻿using CheckUP.Control;
+using CheckUP.gui;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,17 @@ namespace CheckUP
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
             //MessageBox.Show("00000", "Error");
-            Application.Run(new FrmLogin());
+            CheckControl cc;
+            cc = new CheckControl();
+            if (cc.initC.statusconnectCEM.Equals("yes"))
+            {
+                Application.Run(new FrmgetCEM(cc));
+            }
+            else
+            {
+                Application.Run(new FrmLogin(cc));
+            }
+            
         }
     }
 }

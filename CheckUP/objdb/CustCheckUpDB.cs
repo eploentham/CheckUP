@@ -519,7 +519,7 @@ namespace CheckUP.objdb
 
             chkNull(p);
             p.Active = "1";
-            sql = "Insert Into " + cuc.table + " (" + cuc.pkField + "," + cuc.Active + "," + cuc.CheckUpDate + "," +
+            sql = "Insert Into onsite_" + cuc.table + " (" + cuc.pkField + "," + cuc.Active + "," + cuc.CheckUpDate + "," +
                 cuc.CheckUpEndDate + "," + cuc.CheckUpStartDate + "," + cuc.CntEmployee + "," +
                 cuc.CommitCheckUpDate + "," + cuc.CustId + "," + cuc.CustNameT + "," +
                 cuc.Description + "," + cuc.RegisDate + "," + cuc.Remark + "," +

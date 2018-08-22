@@ -42,8 +42,9 @@
     <Reference Include="C1.Win.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04, processorArchitecture=MSIL" />
     <Reference Include="C1.Win.C1Command.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=e808566f358766d8" />
     <Reference Include="C1.Win.C1FlexGrid.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
-    <Reference Include="C1.Win.C1Input.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Input.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL" />
     <Reference Include="C1.Win.C1Themes.4, Version=4.0.20182.314, Culture=neutral, PublicKeyToken=594a0605db190bb9, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.Calendar.4, Version=4.0.20181.296, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -132,6 +133,12 @@
     </Compile>
     <Compile Include="gui\FrmExcelInitMini.Designer.cs">
       <DependentUpon>FrmExcelInitMini.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\FrmgetCEM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmgetCEM.Designer.cs">
+      <DependentUpon>FrmgetCEM.cs</DependentUpon>
     </Compile>
     <Compile Include="gui\FrmInitConfig.cs">
       <SubType>Form</SubType>
@@ -336,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmExcelInitMini.resx">
       <DependentUpon>FrmExcelInitMini.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmgetCEM.resx">
+      <DependentUpon>FrmgetCEM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmInitConfig.resx">
       <DependentUpon>FrmInitConfig.cs</DependentUpon>
