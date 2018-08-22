@@ -698,6 +698,19 @@ namespace CheckUP.objdb
             }
             return re;
         }
+        public String selectCntAllOnSiteByCucId(String cucId)
+        {
+            String sql = "", re = "0";
+            DataTable dt = new DataTable();
+            sql = "Select count(1) as cnt From onsite_" + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "'  ";
+            //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
+            dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                re = dt.Rows[0][0].ToString();
+            }
+            return re;
+        }
         public String calCntStickerByCucId(String cucId)
         {
             int cntAll = 0;
@@ -709,6 +722,45 @@ namespace CheckUP.objdb
             if (dt.Rows.Count > 0)
             {
                 for(int i = 0; i < dt.Rows.Count; i++)
+                {
+                    int cnt1 = 0, cnt2 = 0, cnt3 = 0, cnt4 = 0, cnt5 = 0, cnt6 = 0, cnt7 = 0, cnt8 = 0, cnt9 = 0, cnt10 = 0;
+                    int cnt11 = 0, cnt12 = 0, cnt13 = 0, cnt14 = 0, cnt15 = 0, cnt16 = 0, cnt17 = 0, cnt18 = 0, cnt19 = 0, cnt20 = 0;
+                    int.TryParse(dt.Rows[i][ccp.sticker01].ToString(), out cnt1);
+                    int.TryParse(dt.Rows[i][ccp.sticker02].ToString(), out cnt2);
+                    int.TryParse(dt.Rows[i][ccp.sticker03].ToString(), out cnt3);
+                    int.TryParse(dt.Rows[i][ccp.sticker04].ToString(), out cnt4);
+                    int.TryParse(dt.Rows[i][ccp.sticker05].ToString(), out cnt5);
+                    int.TryParse(dt.Rows[i][ccp.sticker06].ToString(), out cnt6);
+                    int.TryParse(dt.Rows[i][ccp.sticker07].ToString(), out cnt7);
+                    int.TryParse(dt.Rows[i][ccp.sticker08].ToString(), out cnt8);
+                    int.TryParse(dt.Rows[i][ccp.sticker09].ToString(), out cnt9);
+                    int.TryParse(dt.Rows[i][ccp.sticker10].ToString(), out cnt10);
+                    int.TryParse(dt.Rows[i][ccp.sticker11].ToString(), out cnt11);
+                    int.TryParse(dt.Rows[i][ccp.sticker12].ToString(), out cnt12);
+                    int.TryParse(dt.Rows[i][ccp.sticker13].ToString(), out cnt13);
+                    int.TryParse(dt.Rows[i][ccp.sticker14].ToString(), out cnt14);
+                    int.TryParse(dt.Rows[i][ccp.sticker15].ToString(), out cnt15);
+                    int.TryParse(dt.Rows[i][ccp.sticker16].ToString(), out cnt16);
+                    int.TryParse(dt.Rows[i][ccp.sticker17].ToString(), out cnt17);
+                    int.TryParse(dt.Rows[i][ccp.sticker18].ToString(), out cnt18);
+                    int.TryParse(dt.Rows[i][ccp.sticker19].ToString(), out cnt19);
+                    int.TryParse(dt.Rows[i][ccp.sticker20].ToString(), out cnt20);
+                    cntAll += cnt1 + cnt2 + cnt3 + cnt4 + cnt5 + cnt6 + cnt7 + cnt8 + cnt9 + cnt10 + cnt11 + cnt12 + cnt13 + cnt14 + cnt15 + cnt16 + cnt17 + cnt18 + cnt19 + cnt20;
+                }
+            }
+            return cntAll.ToString();
+        }
+        public String calCntStickerOnSiteByCucId(String cucId)
+        {
+            int cntAll = 0;
+            String sql = "", re = "0";
+            DataTable dt = new DataTable();
+            sql = "Select * From onsite_" + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "'  ";
+            //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
+            dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     int cnt1 = 0, cnt2 = 0, cnt3 = 0, cnt4 = 0, cnt5 = 0, cnt6 = 0, cnt7 = 0, cnt8 = 0, cnt9 = 0, cnt10 = 0;
                     int cnt11 = 0, cnt12 = 0, cnt13 = 0, cnt14 = 0, cnt15 = 0, cnt16 = 0, cnt17 = 0, cnt18 = 0, cnt19 = 0, cnt20 = 0;
@@ -776,11 +828,63 @@ namespace CheckUP.objdb
             }
             return cntAll.ToString();
         }
+        public String calCntTestOnSiteByCucId(String cucId)
+        {
+            int cntAll = 0;
+            String sql = "", re = "0";
+            DataTable dt = new DataTable();
+            sql = "Select * From onsite_" + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "'  ";
+            //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
+            dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    int cnt1 = 0, cnt2 = 0, cnt3 = 0, cnt4 = 0, cnt5 = 0, cnt6 = 0, cnt7 = 0, cnt8 = 0, cnt9 = 0, cnt10 = 0;
+                    int cnt11 = 0, cnt12 = 0, cnt13 = 0, cnt14 = 0, cnt15 = 0, cnt16 = 0, cnt17 = 0, cnt18 = 0, cnt19 = 0, cnt20 = 0;
+                    int.TryParse(dt.Rows[i][ccp.test01].ToString(), out cnt1);
+                    int.TryParse(dt.Rows[i][ccp.test02].ToString(), out cnt2);
+                    int.TryParse(dt.Rows[i][ccp.test03].ToString(), out cnt3);
+                    int.TryParse(dt.Rows[i][ccp.test04].ToString(), out cnt4);
+                    int.TryParse(dt.Rows[i][ccp.test05].ToString(), out cnt5);
+                    int.TryParse(dt.Rows[i][ccp.test06].ToString(), out cnt6);
+                    int.TryParse(dt.Rows[i][ccp.test07].ToString(), out cnt7);
+                    int.TryParse(dt.Rows[i][ccp.test08].ToString(), out cnt8);
+                    int.TryParse(dt.Rows[i][ccp.test09].ToString(), out cnt9);
+                    int.TryParse(dt.Rows[i][ccp.test10].ToString(), out cnt10);
+                    int.TryParse(dt.Rows[i][ccp.test11].ToString(), out cnt11);
+                    int.TryParse(dt.Rows[i][ccp.test12].ToString(), out cnt12);
+                    int.TryParse(dt.Rows[i][ccp.test13].ToString(), out cnt13);
+                    int.TryParse(dt.Rows[i][ccp.test14].ToString(), out cnt14);
+                    int.TryParse(dt.Rows[i][ccp.test15].ToString(), out cnt15);
+                    int.TryParse(dt.Rows[i][ccp.test16].ToString(), out cnt16);
+                    int.TryParse(dt.Rows[i][ccp.test17].ToString(), out cnt17);
+                    int.TryParse(dt.Rows[i][ccp.test18].ToString(), out cnt18);
+                    int.TryParse(dt.Rows[i][ccp.test19].ToString(), out cnt19);
+                    int.TryParse(dt.Rows[i][ccp.test20].ToString(), out cnt20);
+                    cntAll += cnt1 + cnt2 + cnt3 + cnt4 + cnt5 + cnt6 + cnt7 + cnt8 + cnt9 + cnt10 + cnt11 + cnt12 + cnt13 + cnt14 + cnt15 + cnt16 + cnt17 + cnt18 + cnt19 + cnt20;
+                }
+            }
+            return cntAll.ToString();
+        }
         public String selectCntStatusVisit1ByCucId(String cucId)
         {
             String sql = "", re="0";
             DataTable dt = new DataTable();
             sql = "Select count(1) as cnt From " + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "' and " + ccp.statusVisit + "='1' ";
+            //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
+            dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                re = dt.Rows[0][0].ToString();
+            }
+            return re;
+        }
+        public String selectCntStatusVisit1OnSiteByCucId(String cucId)
+        {
+            String sql = "", re = "0";
+            DataTable dt = new DataTable();
+            sql = "Select count(1) as cnt From onsite_" + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "' and " + ccp.statusVisit + "='1' ";
             //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
             dt = conn.selectData(sql);
             if (dt.Rows.Count > 0)

@@ -147,3 +147,8 @@ EXEC sp_addlinkedserver @server='kr_client',
    @datasrc=N'mobile';
 
 EXEC sp_addlinkedsrvlogin 'kr_server', 'false', NULL, 'pop', 'Ekartc2c5'
+
+SELECT *
+FROM testdetail
+WHERE sampleid=125 AND TestTime >#2018-06-07 00:00:00# and testtime <= #2018-06-07 23:59:00#
+ORDER BY testdetail.testtime, itemid ;

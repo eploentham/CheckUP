@@ -338,8 +338,8 @@ namespace CheckUP.gui
             int all = 0, cnt = 0;
             panel4.Show();
             panel3.Hide();
-            int.TryParse(cc.ccpdb.selectCntAllByCucId(txtId.Text), out all);
-            int.TryParse(cc.ccpdb.selectCntStatusVisit1ByCucId(txtId.Text), out cnt);
+            int.TryParse(cc.ccpdb.selectCntAllOnSiteByCucId(txtId.Text), out all);
+            int.TryParse(cc.ccpdb.selectCntStatusVisit1OnSiteByCucId(txtId.Text), out cnt);
             label21.Text = "ทั้งหมด " ;
             label25.Text = "ที่มาตรวจ ";
             label26.Text = "คงเหลือ ";
@@ -347,8 +347,8 @@ namespace CheckUP.gui
             label29.Text = cnt.ToString();
             label27.Text = (all - cnt).ToString();
 
-            int.TryParse(cc.ccpdb.calCntStickerByCucId(txtId.Text), out all);
-            int.TryParse(cc.ccpdb.calCntTestByCucId(txtId.Text), out cnt);
+            int.TryParse(cc.ccpdb.calCntStickerOnSiteByCucId(txtId.Text), out all);
+            int.TryParse(cc.ccpdb.calCntTestOnSiteByCucId(txtId.Text), out cnt);
             label31.Text = "จำนวน Test ทั้งหมด";
             label32.Text = all.ToString();
             label34.Text = "จำนวน Test ที่เก็บได้";
