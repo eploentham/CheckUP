@@ -879,7 +879,7 @@ namespace CheckUP.objdb
 
             sql = "Delete From onsite_" + ccp.table;
             chk = connOnSite.ExecuteNonQuery(sql);
-            
+            //MessageBox.Show("dt "+dt.Rows.Count, "");
             if (dt.Rows.Count > 0)
             {
                 for(int i = 0; i < dt.Rows.Count; i++)
@@ -897,7 +897,7 @@ namespace CheckUP.objdb
                     ccp1.position_name = dt.Rows[i][ccp.Id] != null ? dt.Rows[i][ccp.position_name].ToString() : "";
                     ccp1.statusVisit = "0";
                     
-                    insertOnSite(ccp1);
+                    insertOnSite(ccp1, connOnSite);
                     UpdateStickerOnSite(ccp1.Id, dt.Rows[i][ccp.sticker01].ToString(), dt.Rows[i][ccp.sticker02].ToString(), dt.Rows[i][ccp.sticker03].ToString(), dt.Rows[i][ccp.sticker04].ToString(), dt.Rows[i][ccp.sticker05].ToString()
                         , dt.Rows[i][ccp.sticker06].ToString(), dt.Rows[i][ccp.sticker07].ToString(), dt.Rows[i][ccp.sticker08].ToString(), dt.Rows[i][ccp.sticker09].ToString(), dt.Rows[i][ccp.sticker10].ToString()
                         , dt.Rows[i][ccp.sticker11].ToString(), dt.Rows[i][ccp.sticker12].ToString(), dt.Rows[i][ccp.sticker13].ToString(), dt.Rows[i][ccp.sticker14].ToString(), dt.Rows[i][ccp.sticker15].ToString()
@@ -1203,7 +1203,7 @@ namespace CheckUP.objdb
             }
             return p.Id;
         }
-        private String insertOnSite(CustCheckUpPatient p)
+        private String insertOnSite(CustCheckUpPatient p, ConnectDB connonsite)
         {
             String sql = "", chk = "", onsite = "";
             if (p.Id.Equals(""))
@@ -1480,7 +1480,7 @@ namespace CheckUP.objdb
                     ",'" + p.test16 + "','" + p.test17 + "','" + p.test18 + "'" +
                     ",'" + p.test19 + "','" + p.test20 + "' " +
                     ") ";
-                chk = conn.ExecuteNonQuery(sql);
+                chk = connonsite.ExecuteNonQuery(sql);
                 //sql = "Insert Into " + ccp1db.ccp1.table + "(" + ccp1db.ccp1.Id + "," + ccp1db.ccp1.CustCheckUpId + "," + ccp1db.ccp1.rowNumber + "," + ccp1db.ccp1.Active + "," + ccp1db.ccp1.patientFullname +
                 //    ") Values ('" + p.Id + "','" + p.CustCheckUpId + "'," + p.rowNumber + ",'1','" + p.patientFullname + "')";
                 //chk = conn.ExecuteNonQuery(sql);
