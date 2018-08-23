@@ -152,3 +152,9 @@ SELECT *
 FROM testdetail
 WHERE sampleid=125 AND TestTime >#2018-06-07 00:00:00# and testtime <= #2018-06-07 23:59:00#
 ORDER BY testdetail.testtime, itemid ;
+
+SELECT testtime, itemid, fullname, testresult, printref 
+FROM testdetail 
+left join testdefine on testdefine.id = testdetail.itemid
+WHERE  TestTime >= #2016-05-01 00:00:00# and testtime <= #2016-05-31 23:59:00# and sampleid =5
+ORDER BY testdetail.testtime, itemid; 

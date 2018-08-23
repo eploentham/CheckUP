@@ -17,6 +17,8 @@ using System.Management;
 using System.Data;
 using System.Reflection;
 using System.Drawing;
+using System.Threading;
+using System.Globalization;
 
 namespace CheckUP.Control
 {
@@ -644,6 +646,28 @@ namespace CheckUP.Control
                 }
             }
             return bahtTH;
+        }
+        public String datetoDB(String dt)
+        {
+            DateTime dt1 = new DateTime();
+            String re = "";
+            if (dt != null)
+            {
+                if (!dt.Equals(""))
+                {
+                    // Thread แบบนี้ ทำให้ โปรแกรม ที่ไปลงที Xtrim ไม่เอา date ผิด
+                    Thread.CurrentThread.CurrentCulture = new CultureInfo("en-us")
+                    {
+                        DateTimeFormat =
+                        {
+                            DateSeparator = "-"
+                        }
+                    };
+                    dt1 = DateTime.Parse(dt.ToString());
+                    re = dt1.Year.ToString() + "-" + dt1.ToString("MM-dd");
+                }
+            }
+            return re;
         }
         public static string Utf8ToUtf16(string utf8String)
         {

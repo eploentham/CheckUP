@@ -1,4 +1,7 @@
-﻿using CheckUP.Control;
+﻿using C1.Win.C1FlexGrid;
+using C1.Win.C1Themes;
+using CheckUP.Control;
+using CheckUP.objdb;
 using CheckUP.object1;
 using System;
 using System.Collections.Generic;
@@ -15,6 +18,14 @@ namespace CheckUP.gui
     {
         CheckControl cc;
         Staff sf;
+        Font fEdit, fEditB;
+        Font font = new Font("Microsoft Sans Serif", 12);
+        C1ThemeController theme1;
+        Color color;
+        C1FlexGrid grfView, grfSample;
+
+        int colVNo = 1;
+        int colStime=1, colSitemid=2, colSfullname=3, colSresult = 4, colSref = 5;
         public FrmgetCEM(CheckControl c)
         {
             InitializeComponent();
@@ -23,17 +34,28 @@ namespace CheckUP.gui
         }
         private void initConfig()
         {
+            fEdit = new Font(cc.initC.grdViewFontName, cc.grdViewFontSize, FontStyle.Regular);
+            fEditB = new Font(cc.initC.grdViewFontName, cc.grdViewFontSize, FontStyle.Bold);
+            color = ColorTranslator.FromHtml(cc.initC.grfRowColor);
+            theme1 = new C1ThemeController();
+
             txtPath.Value = cc.initC.pathaccessCEM;
 
             this.FormClosing += FrmgetCEM_FormClosing;
             btnPath.Click += BtnPath_Click;
             btnRetrive.Click += BtnRetrive_Click;
+
+            initGrfView();
+            initGrfSample();
         }
 
         private void BtnRetrive_Click(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
-
+            String dateStart = "", dateEnd = "";
+            dateStart = cc.datetoDB(txtDateStart.Text);
+            dateEnd = cc.datetoDB(txtDateEnd.Text);
+            setGrfView(dateStart, dateEnd, txtNoStart.Text, txtNoEnd.Text);
         }
 
         private void BtnPath_Click(object sender, EventArgs e)
@@ -49,7 +71,208 @@ namespace CheckUP.gui
                 cc.SetPathAccessCEM(txtPath.Text);
             }
         }
+        private void initGrfView()
+        {
+            grfView = new C1FlexGrid();
+            grfView.Font = fEdit;
+            grfView.Dock = System.Windows.Forms.DockStyle.Fill;
+            grfView.Location = new System.Drawing.Point(0, 0);
 
+            //FilterRow fr = new FilterRow(grfView);
+
+            //grfJob.AfterRowColChange += GrfJob_AfterRowColChange;
+            //ContextMenu menuGw = new ContextMenu();
+            //menuGw.MenuItems.Add("&แก้ไข", new EventHandler(ContextMenu_Gw_Edit));
+            //grfView.ContextMenu = menuGw;
+            grfView.DoubleClick += GrfView_DoubleClick;
+            //grfExpnC.CellButtonClick += new C1.Win.C1FlexGrid.RowColEventHandler(this.grfDept_CellButtonClick);
+            //grfExpnC.CellChanged += new C1.Win.C1FlexGrid.RowColEventHandler(this.grfDept_CellChanged);
+            //grfJob.CellChanged += GrfExpnD_CellChanged;
+            panel1.Controls.Add(grfView);
+            grfView.Clear();
+            grfView.Rows.Count = 2;
+            grfView.Cols.Count = 5;
+            grfView.Cols[colVNo].Width = 150;            
+
+            grfView.Cols[colVNo].Caption = "NO";
+            
+
+            //grfView.Cols[colVNo].Visible = false;
+            grfView.AllowEditing = false;
+            //theme1.SetTheme(grfJob, "Office2013Red");
+        }
+        private void setGrfView(String dateStart, String dateEnd, String noStart, String noEnd)
+        {
+            grfView.DataSource = null;
+
+            DataTable dt1 = new DataTable();
+            dt1.Columns.Add(new DataColumn("no", typeof(string)));
+            grfView.Rows.Count = 2;
+            grfView.Clear();
+            //if (cucid.Equals("")) return;
+            DataTable dt = new DataTable();
+            CemDB cemDB;
+            if (chk64Bit.Checked)
+            {
+                cemDB = new CemDB(txtPath.Text, CemDB.flagAccess.bit64);
+            }
+            else
+            {
+                cemDB = new CemDB(txtPath.Text, CemDB.flagAccess.bit32);
+            }
+            dt = cemDB.getDataHeader(dateStart, dateEnd, noStart, noEnd);
+            grfView.Rows.Count = 2;
+            grfView.Cols.Count = 2;
+            TextBox txt = new TextBox();
+
+            grfView.Cols[colVNo].Editor = txt;
+            grfView.Cols[colVNo].Width = 80;                  
+
+            //grfView.Cols[colVNo].Visible = false;
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                DataRow dr = dt1.NewRow();
+                dr.ItemArray = new object[] { dt.Rows[i]["sampleid"].ToString() };
+                dt1.Rows.Add(dr);
+                
+            }
+            grfView.DataSource = dt1;
+            //grfView.Cols[colVId].Visible = false;
+            //grfView.Cols[colVNo].Visible = false;
+            grfView.AllowEditing = false;
+
+            //FilterRow fr = new FilterRow(grfView);
+            //setGrfColor();
+            int j = 1;
+            foreach (Row row1 in grfView.Rows)
+            {
+                if (row1[colVNo] == null) continue;
+                if (row1[colVNo].ToString().Equals("")) continue;
+                if (row1[colVNo].ToString().Equals("no")) continue;
+                row1[0] = j;
+                if (j % 2 == 0)
+                    row1.StyleNew.BackColor = color;
+                j++;
+            }
+            grfView.Cols[colVNo].AllowEditing = false;
+        }
+        private void GrfView_DoubleClick(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            if (grfView.Row < 1) return;
+            if (grfView[grfView.Row, colVNo] == null) return;
+            String dateStart = "", dateEnd = "";
+            dateStart = cc.datetoDB(txtDateStart.Text);
+            dateEnd = cc.datetoDB(txtDateEnd.Text);
+
+            setGrfSample(dateStart, dateEnd, grfView[grfView.Row, colVNo].ToString());
+        }
+        private void initGrfSample()
+        {
+            grfSample = new C1FlexGrid();
+            grfSample.Font = fEdit;
+            grfSample.Dock = System.Windows.Forms.DockStyle.Fill;
+            grfSample.Location = new System.Drawing.Point(0, 0);
+
+            //FilterRow fr = new FilterRow(grfView);
+
+            //grfJob.AfterRowColChange += GrfJob_AfterRowColChange;
+            //ContextMenu menuGw = new ContextMenu();
+            //menuGw.MenuItems.Add("&แก้ไข", new EventHandler(ContextMenu_Gw_Edit));
+            //grfView.ContextMenu = menuGw;
+            //grfView.DoubleClick += GrfView_DoubleClick;
+            //grfExpnC.CellButtonClick += new C1.Win.C1FlexGrid.RowColEventHandler(this.grfDept_CellButtonClick);
+            //grfExpnC.CellChanged += new C1.Win.C1FlexGrid.RowColEventHandler(this.grfDept_CellChanged);
+            //grfJob.CellChanged += GrfExpnD_CellChanged;
+            panel2.Controls.Add(grfSample);
+            grfSample.Clear();
+            grfSample.Rows.Count = 2;
+            grfSample.Cols.Count = 6;
+            grfSample.Cols[colSresult].Width = 150;
+            grfSample.Cols[colSref].Width = 150;
+
+            grfSample.Cols[colSresult].Caption = "result";
+            grfSample.Cols[colSref].Caption = "REF";
+
+            //grfView.Cols[colVNo].Visible = false;
+            grfSample.AllowEditing = false;
+            //theme1.SetTheme(grfJob, "Office2013Red");
+        }
+        private void setGrfSample(String dateStart, String dateEnd, String noStart)
+        {
+            grfSample.DataSource = null;
+
+            DataTable dt1 = new DataTable();
+            dt1.Columns.Add(new DataColumn("date time", typeof(string)));
+            dt1.Columns.Add(new DataColumn("item", typeof(string)));
+            dt1.Columns.Add(new DataColumn("LAB", typeof(string)));
+            dt1.Columns.Add(new DataColumn("result", typeof(string)));
+            dt1.Columns.Add(new DataColumn("REF", typeof(string)));
+            grfSample.Rows.Count = 2;
+            grfSample.Clear();
+            //if (cucid.Equals("")) return;
+            DataTable dt = new DataTable();
+            CemDB cemDB;
+            if (chk64Bit.Checked)
+            {
+                cemDB = new CemDB(txtPath.Text, CemDB.flagAccess.bit64);
+            }
+            else
+            {
+                cemDB = new CemDB(txtPath.Text, CemDB.flagAccess.bit32);
+            }
+            dt = cemDB.getDataSample(dateStart, dateEnd, noStart);
+            grfSample.Rows.Count = 2;
+            grfSample.Cols.Count = 6;
+            TextBox txt = new TextBox();
+
+            grfSample.Cols[colVNo].Editor = txt;
+            grfSample.Cols[colStime].Width = 150;
+            grfSample.Cols[colSitemid].Width = 150;
+            grfSample.Cols[colSfullname].Width = 150;
+            grfSample.Cols[colSresult].Width = 150;
+            grfSample.Cols[colSref].Width = 150;
+
+            grfSample.Cols[colStime].Caption = "date time";
+            grfSample.Cols[colSitemid].Caption = "item";
+            grfSample.Cols[colSfullname].Caption = "LAB";
+            grfSample.Cols[colSresult].Caption = "result";
+            grfSample.Cols[colSref].Caption = "REF";
+
+            //grfView.Cols[colVNo].Visible = false;
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                DataRow dr = dt1.NewRow();
+                dr.ItemArray = new object[] { dt.Rows[i][0].ToString(), dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(), dt.Rows[i][3].ToString(), dt.Rows[i][4].ToString() };
+                dt1.Rows.Add(dr);
+
+            }
+            grfSample.DataSource = dt1;
+            //grfView.Cols[colVId].Visible = false;
+            //grfView.Cols[colVNo].Visible = false;
+            grfSample.AllowEditing = false;
+
+            //FilterRow fr = new FilterRow(grfView);
+            //setGrfColor();
+            int j = 1;
+            foreach (Row row1 in grfSample.Rows)
+            {
+                if (row1[colStime] == null) continue;
+                if (row1[colStime].ToString().Equals("")) continue;
+                if (row1[colStime].ToString().Equals("testtime")) continue;
+                row1[0] = j;
+                if (j % 2 == 0)
+                    row1.StyleNew.BackColor = color;
+                j++;
+            }
+            grfSample.Cols[colStime].AllowEditing = false;
+            grfSample.Cols[colSitemid].AllowEditing = false;
+            grfSample.Cols[colSfullname].AllowEditing = false;
+            grfSample.Cols[colSresult].AllowEditing = false;
+            grfSample.Cols[colSref].AllowEditing = false;
+        }
         private void FrmgetCEM_FormClosing(object sender, FormClosingEventArgs e)
         {
             //throw new NotImplementedException();
@@ -58,7 +281,10 @@ namespace CheckUP.gui
 
         private void FrmgetCEM_Load(object sender, EventArgs e)
         {
-
+            txtDateStart.Value = System.DateTime.Now.ToString("yyyy-MM-dd");
+            txtDateEnd.Value = System.DateTime.Now.ToString("yyyy-MM-dd");
+            txtNoStart.Value = 1;
+            txtNoEnd.Value = 20;
         }
 
     }

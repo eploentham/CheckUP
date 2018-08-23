@@ -46,6 +46,7 @@ namespace CheckUP.objdb
 
         public LogWriter lw;
         public enum flagOnSite { Client, OnSite};
+        public enum flagAccess { bit32, bit64 };
 
         //OleDbCommand cmdToExecute = new OleDbCommand();
         public ConnectDB(InitConfig i)
@@ -78,40 +79,47 @@ namespace CheckUP.objdb
 
             _isDisposed = false;
         }
-        //public ConnectDB(String hostName)
-        //{
-        //    lw = new LogWriter();
-        //    if (hostName == "mainhis")
-        //    {
-        //        hostname = "mainhis";
-        //        connMainHIS = new SqlConnection();
-        //        //connMainHIS.ConnectionString = GetConfig(hostName);
-        //        connMainHIS.ConnectionString = "Server=" + hostNameMainHIS + ";Database=" + databaseNameMainHIS.ToString() + ";Uid=" + userNameMainHIS + ";Pwd=" + passwordMainHIS + ";";
-        //    }
-        //    else if (hostName == "bangna")
-        //    {
-        //        hostname = "bangna";
-        //        connMainHIS = new SqlConnection();
-        //        //connMainHIS.ConnectionString = GetConfig(hostName);
-        //        connMainHIS.ConnectionString = "Server=" + hostNameBua + ";Database=" + databaseNameBua + ";Uid=" + userNameBua + ";Pwd=" + passwordBua + ";";
-        //    }
-        //    else
-        //    {
-        //        //_mainConnection = new OleDbConnection();
-        //        ////_mainConnection.ConnectionString = GetConfig("Main.ConnectionString");
-        //        //if (Environment.Is64BitOperatingSystem)
-        //        //{
-        //        //    _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\\source\\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
-        //        //}
-        //        //else
-        //        //{
-        //        //    _mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
+        public ConnectDB(String path, String aaa, flagAccess flag)
+        {
+            //    lw = new LogWriter();
+            //    if (hostName == "mainhis")
+            //    {
+            //        hostname = "mainhis";
+            //        connMainHIS = new SqlConnection();
+            //        //connMainHIS.ConnectionString = GetConfig(hostName);
+            //        connMainHIS.ConnectionString = "Server=" + hostNameMainHIS + ";Database=" + databaseNameMainHIS.ToString() + ";Uid=" + userNameMainHIS + ";Pwd=" + passwordMainHIS + ";";
+            //    }
+            //    else if (hostName == "bangna")
+            //    {
+            //        hostname = "bangna";
+            //        connMainHIS = new SqlConnection();
+            //        //connMainHIS.ConnectionString = GetConfig(hostName);
+            //        connMainHIS.ConnectionString = "Server=" + hostNameBua + ";Database=" + databaseNameBua + ";Uid=" + userNameBua + ";Pwd=" + passwordBua + ";";
+            //    }
+            //    else
+            //    {
+            //        //_mainConnection = new OleDbConnection();
+            //        ////_mainConnection.ConnectionString = GetConfig("Main.ConnectionString");
+            //        //if (Environment.Is64BitOperatingSystem)
+            //        //{
+            //        //    _mainConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=D:\\source\\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
+            //        //}
+            //        //else
+            //        //{
+            if (flag == flagAccess.bit32)
+            {
+                cntemp.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + @path + ";Persist Security Info=False";
+            }
+            else
+            {
+                cntemp.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + @path + ";Persist Security Info=False";
+            }
         //        //}
         //        //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";
         //        _mainConnection.ConnectionString = "Server=" + initc.Host + ";Database=" + initc.Database + ";Uid=" + initc.User + ";Pwd=" + initc.Password + ";Connection Timeout=300;";
         //        _isDisposed = false;
-        //    }
-        //}
+            
+        }
         public String GetConfig(String key)
         {
 
@@ -147,6 +155,36 @@ namespace CheckUP.objdb
                 adapter.Dispose();
             }
             
+            return toReturn;
+        }
+        public DataTable selectDataAccecss(String sql)
+        {
+            DataTable toReturn = new DataTable();
+            //toReturn.Clear();
+
+            OleDbDataAdapter adapter = new OleDbDataAdapter(sql, cntemp);
+            //cmdToExecute.Connection = _mainConnection;
+            try
+            {
+                //MessageBox.Show("333 "+ sql, "333 " );
+                //MessageBox.Show("444 " + _mainConnection.ConnectionString, "444 ");
+                cntemp.Open();
+                adapter.Fill(toReturn);
+                //return toReturn;
+            }
+            catch (Exception ex)
+            {
+                //throw new Exception("", ex);
+                //MessageBox.Show("ex "+ ex.InnerException, "error "+ex.Message);
+                lw.WriteLog("selectData " + "ex " + ex.InnerException + " error " + ex.Message);
+            }
+            finally
+            {
+                cntemp.Close();
+                //cmdToExecute.Dispose();
+                adapter.Dispose();
+            }
+
             return toReturn;
         }
         public void selectDataN(String sql)
