@@ -44,9 +44,29 @@ namespace CheckUP.gui
             this.FormClosing += FrmgetCEM_FormClosing;
             btnPath.Click += BtnPath_Click;
             btnRetrive.Click += BtnRetrive_Click;
+            btnGen.Click += BtnGen_Click;
 
             initGrfView();
             initGrfSample();
+        }
+
+        private void BtnGen_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            CemDB cemDB;
+            if (chk64Bit.Checked)
+            {
+                cemDB = new CemDB(txtPath.Text, CemDB.flagAccess.bit64);
+            }
+            else
+            {
+                cemDB = new CemDB(txtPath.Text, CemDB.flagAccess.bit32);
+            }
+            String dateStart = "", dateEnd = "";
+            dateStart = cc.datetoDB(txtDateStart.Text);
+            dateEnd = cc.datetoDB(txtDateEnd.Text);
+
+            cemDB.getTextCEM(dateStart, dateEnd, txtNoStart.Text, txtNoEnd.Text);
         }
 
         private void BtnRetrive_Click(object sender, EventArgs e)
@@ -222,7 +242,7 @@ namespace CheckUP.gui
             {
                 cemDB = new CemDB(txtPath.Text, CemDB.flagAccess.bit32);
             }
-            dt = cemDB.getDataSample(dateStart, dateEnd, noStart);
+            dt = cemDB.getDataSample(dateStart, dateEnd, noStart, noStart);
             grfSample.Rows.Count = 2;
             grfSample.Cols.Count = 6;
             TextBox txt = new TextBox();

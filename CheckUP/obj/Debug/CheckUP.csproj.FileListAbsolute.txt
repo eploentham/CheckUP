@@ -135,7 +135,6 @@ D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.gui.FrmValueNormal.resources
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.Properties.Resources.resources
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csproj.GenerateResource.cache
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.exe.licenses
-D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csprojAssemblyReference.cache
 D:\source\bangna\CheckUP\CheckUP\bin\Debug\CheckUP.exe.config
 D:\source\bangna\CheckUP\CheckUP\bin\Debug\CheckUP.exe
 D:\source\bangna\CheckUP\CheckUP\bin\Debug\CheckUP.pdb

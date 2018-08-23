@@ -199,7 +199,7 @@ namespace CheckUP.gui
             btnExcelSgot.Click += BtnExcelPE_Click;
             btnExcelBun.Click += BtnExcelPE_Click;
 
-            btnPrnSticker.Click += BtnPrnSticker_Click;         //client
+            btnPrnStickerRow3.Click += BtnPrnStickerRow3_Click;         //client
             btnLabelSticker.Click += BtnLabelSticker_Click;     //client
             btnPrnAll.Click += BtnPrnAll_Click;                 //client
             btnPrnNoAll.Click += BtnPrnNoAll_Click;             //client
@@ -207,6 +207,7 @@ namespace CheckUP.gui
             btnOnsite.Click += BtnOnsite_Click;                 //client
             btnPrnMiniExcel.Click += BtnPrnMiniExcel_Click;     //client
             btnImportSticker.Click += BtnImportSticker_Click;   //client
+            
 
             //chkHideTab.Click += ChkHideTab_Click;
 
@@ -456,7 +457,7 @@ namespace CheckUP.gui
             setGrfSticker(txtId.Text);
         }
 
-        private void BtnPrnSticker_Click(object sender, EventArgs e)
+        private void BtnPrnStickerRow3_Click(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
             //ProcessStartInfo psi = new ProccessStartInfo();

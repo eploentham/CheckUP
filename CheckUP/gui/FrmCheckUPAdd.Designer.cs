@@ -267,7 +267,7 @@
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnPrnMiniExcel = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPrnStickerRow3 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkCalResult = new System.Windows.Forms.CheckBox();
             this.btnExcelSum = new System.Windows.Forms.Button();
@@ -2897,7 +2897,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnPrnMiniExcel);
-            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.btnPrnStickerRow3);
             this.groupBox3.Location = new System.Drawing.Point(264, 150);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(249, 194);
@@ -2915,15 +2915,15 @@
             this.btnPrnMiniExcel.Text = " พิมพ์ เล่มเล็ก mini Excel, Word";
             this.btnPrnMiniExcel.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnPrnStickerRow3
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button1.Location = new System.Drawing.Point(14, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(197, 34);
-            this.button1.TabIndex = 85;
-            this.button1.Text = " พิมพ์ Sticker row3";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPrnStickerRow3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnPrnStickerRow3.Location = new System.Drawing.Point(14, 19);
+            this.btnPrnStickerRow3.Name = "btnPrnStickerRow3";
+            this.btnPrnStickerRow3.Size = new System.Drawing.Size(197, 34);
+            this.btnPrnStickerRow3.TabIndex = 85;
+            this.btnPrnStickerRow3.Text = " พิมพ์ Sticker row3";
+            this.btnPrnStickerRow3.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -4800,7 +4800,7 @@
         private System.Windows.Forms.Button btnExcelEye;
         private System.Windows.Forms.Button btnExcelToxi;
         private System.Windows.Forms.Button btnExcelStoolExam;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPrnStickerRow3;
         private System.Windows.Forms.Button btnExcelSum;
         private System.Windows.Forms.CheckBox chkCalResult;
         private System.Windows.Forms.TabPage tabPage18;
