@@ -666,7 +666,7 @@ namespace CheckUP.gui
             grfView.Cols[colVId].Visible = false;
             grfView.AllowEditing = false;
 
-            FilterRow fr = new FilterRow(grfView);
+            FilterRow_OLD fr = new FilterRow_OLD(grfView);
             //setGrfColor();
             int j = 1;
             foreach (Row row1 in grfView.Rows)

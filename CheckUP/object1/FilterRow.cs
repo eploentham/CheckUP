@@ -1,9 +1,10 @@
-﻿using C1.Win.C1FlexGrid;
+using C1.Win.C1FlexGrid;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,12 +12,17 @@ using System.Windows.Forms;
 
 namespace CheckUP.object1
 {
-    public class FilterRow
+    /// <summary>
+	/// Summary description for FilterRow.
+	/// </summary>
+	public class FilterRow
     {
         private C1FlexGrid _flex;
         private CellStyle _style;
         private int _row = -1;          // index of filter row (-1 if none)
         private int _col = -1;          // index of filter row cell being edited (-1 if none)
+        private int _editorSelectionStart = -1; // These are used to preserve Editor state
+        private int _editorSelectionLength = -1; // after filter is applied
 
         // ** ctor
 
@@ -30,8 +36,6 @@ namespace CheckUP.object1
             _flex.Rows.Fixed++;
 
             // customize filter row style
-            // note: customize margins to align checkboxes correctly in filter cells,
-            // which have no vertical border <<1.4>>
             _style = _flex.Styles.Add("Filter", _flex.Styles.Frozen);
             _style.BackColor = SystemColors.Info;
             _style.ForeColor = SystemColors.InfoText;
@@ -44,9 +48,8 @@ namespace CheckUP.object1
             _flex.BeforeMouseDown += new BeforeMouseDownEventHandler(_flex_BeforeMouseDown);
             _flex.RowColChange += new EventHandler(_flex_RowColChange);
             _flex.AfterEdit += new RowColEventHandler(_flex_AfterEdit);
-            _flex.KeyPress += _flex_KeyPress;
+            _flex.ChangeEdit += _flex_ChangeEdit;
 
-            // initialize boolean cells <<1.4>>
             CellStyle cs = _flex.Styles.Add("BooleanFilterCell");
             cs.ImageAlign = ImageAlignEnum.CenterCenter;
             foreach (Column col in _flex.Cols)
@@ -58,14 +61,14 @@ namespace CheckUP.object1
                 }
             }
 
-            // move cursor to filter row
-            _flex.Select(_row, _flex.Cols.Fixed);
+            // move cursor to first row with data
+            _flex.Select(_row + 1, _flex.Cols.Fixed);
         }
 
-        private void _flex_KeyPress(object sender, KeyPressEventArgs e)
+        private void _flex_ChangeEdit(object sender, EventArgs e)
         {
-            //throw new NotImplementedException();
-            UpdateFilter();
+            if (_flex.Row == _row)
+                UpdateFilter();
         }
 
         // ** object model
@@ -129,7 +132,6 @@ namespace CheckUP.object1
                 }
 
                 // eat the event (no sorting, sizing etc)
-                // unless this is a checkbox <<1.4>>
                 if (ht.Type != HitTestTypeEnum.Checkbox)
                     e.Cancel = true;
             }
@@ -147,9 +149,16 @@ namespace CheckUP.object1
                 {
                     _col = _flex.Col;
 
-                    // start editing if this is not a checkbox <<1.4>>
                     if (_flex.Cols[_col].DataType != typeof(bool))
+                    {
                         _flex.StartEditing();
+                        dynamic editor = _flex.Editor;
+                        if (editor.Text != string.Empty)
+                        {
+                            editor.SelectionStart = _editorSelectionStart;
+                            editor.SelectionLength = _editorSelectionLength;
+                        }
+                    }
                 }
             }
         }
@@ -176,19 +185,11 @@ namespace CheckUP.object1
                 DataTable dt = _flex.DataSource as DataTable;
                 if (dt != null) dv = dt.DefaultView;
             }
-            // ทำเพิ่มเอง เพราะ ไม่ได้ใช้ datasource ทำให้ filterrow ไม่ได้
-            //if (dv == null)
-            //{
-                
-            //}
-
             if (dv == null)
             {
-                Debug.WriteLine("DataSource should be a DataTable or DataView.");
                 return;
             }
 
-            // make sure changes are committed to the data source <<1.5>>
             CurrencyManager cm = (CurrencyManager)_flex.BindingContext[_flex.DataSource, _flex.DataMember];
             cm.EndCurrentEdit();
 
@@ -197,9 +198,12 @@ namespace CheckUP.object1
             for (int col = _flex.Cols.Fixed; col < _flex.Cols.Count; col++)
             {
                 // get column value
-                string expr = _flex.GetDataDisplay(_row, col).TrimEnd();
+                string expr = string.Empty;
+                if (_flex.Col == col && _flex.Editor != null)
+                    expr = _flex.Editor.Text.TrimEnd();
+                else
+                    expr = _flex.GetDataDisplay(_row, col).TrimEnd();
 
-                // special handling for boolean columns <<1.4>>
                 if (_flex.Cols[col].DataType == typeof(bool))
                 {
                     switch (_flex.GetCellCheck(_row, col))
@@ -216,7 +220,6 @@ namespace CheckUP.object1
                 // ignore empty cells
                 if (expr.Length == 0) continue;
 
-                // handle data maps <<1.3>>
                 IDictionary dataMap = _flex.Cols[col].DataMap;
                 if (dataMap != null)
                 {
@@ -245,12 +248,14 @@ namespace CheckUP.object1
             try
             {
                 _flex[_row, 0] = null;
+                dynamic editor = _flex.Editor;
+                _editorSelectionStart = editor.SelectionStart;
+                _editorSelectionLength = editor.SelectionLength;
                 dv.RowFilter = strFilter;
             }
             catch
             {
                 _flex[_row, 0] = "Err";
-                Debug.WriteLine("Bad filter expression.");
             }
 
             // stay in filter row
@@ -294,7 +299,6 @@ namespace CheckUP.object1
             }
 
             // if we got here, the condition must be bad (e.g. ><)
-            Debug.WriteLine("Can't build filter expression.");
             return "";
         }
     }
