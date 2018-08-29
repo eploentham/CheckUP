@@ -63,8 +63,11 @@ namespace CheckUP.gui
                 cemDB = new CemDB(txtPath.Text, CemDB.flagAccess.bit32);
             }
             String dateStart = "", dateEnd = "";
-            dateStart = cc.datetoDB(txtDateStart.Text);
-            dateEnd = cc.datetoDB(txtDateEnd.Text);
+            DateTime dateStart1, dateEnd1;
+            dateStart1 = (DateTime)txtDateStart.Value;
+            dateEnd1 = (DateTime)txtDateEnd.Value;
+            dateStart = (dateStart1.Year - 543) + "-" + dateStart1.Month.ToString("00") + "-" + dateStart1.Day.ToString("00");
+            dateEnd = (dateEnd1.Year - 543) + "-" + dateEnd1.Month.ToString("00") + "-" + dateEnd1.Day.ToString("00");
 
             cemDB.getTextCEM(dateStart, dateEnd, txtNoStart.Text, txtNoEnd.Text);
         }
@@ -73,8 +76,14 @@ namespace CheckUP.gui
         {
             //throw new NotImplementedException();
             String dateStart = "", dateEnd = "";
-            dateStart = cc.datetoDB(txtDateStart.Text);
-            dateEnd = cc.datetoDB(txtDateEnd.Text);
+            DateTime dateStart1, dateEnd1;
+            dateStart1 = (DateTime)txtDateStart.Value;
+            dateEnd1 = (DateTime)txtDateEnd.Value;
+            dateStart = (dateStart1.Year - 543) + "-" + dateStart1.Month.ToString("00") + "-" + dateStart1.Day.ToString("00");
+            dateEnd = (dateEnd1.Year - 543) + "-" + dateEnd1.Month.ToString("00") + "-" + dateEnd1.Day.ToString("00");
+            //MessageBox.Show("dateStart " + dateStart);
+            //MessageBox.Show("dateEnd " + dateEnd);
+
             setGrfView(dateStart, dateEnd, txtNoStart.Text, txtNoEnd.Text);
         }
 
@@ -183,8 +192,11 @@ namespace CheckUP.gui
             if (grfView.Row < 1) return;
             if (grfView[grfView.Row, colVNo] == null) return;
             String dateStart = "", dateEnd = "";
-            dateStart = cc.datetoDB(txtDateStart.Text);
-            dateEnd = cc.datetoDB(txtDateEnd.Text);
+            DateTime dateStart1, dateEnd1;
+            dateStart1 = (DateTime)txtDateStart.Value;
+            dateEnd1 = (DateTime)txtDateEnd.Value;
+            dateStart = (dateStart1.Year - 543) + "-" + dateStart1.Month.ToString("00") + "-" + dateStart1.Day.ToString("00");
+            dateEnd = (dateEnd1.Year - 543) + "-" + dateEnd1.Month.ToString("00") + "-" + dateEnd1.Day.ToString("00");
 
             setGrfSample(dateStart, dateEnd, grfView[grfView.Row, colVNo].ToString());
         }

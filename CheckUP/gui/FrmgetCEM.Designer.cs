@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkDate = new System.Windows.Forms.CheckBox();
+            this.chk64Bit = new System.Windows.Forms.CheckBox();
             this.txtDateEnd = new C1.Win.Calendar.C1DateEdit();
             this.txtDateStart = new C1.Win.Calendar.C1DateEdit();
             this.btnPath = new C1.Win.C1Input.C1Button();
@@ -44,8 +46,6 @@
             this.txtNoStart = new C1.Win.C1Input.C1NumericEdit();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.chk64Bit = new System.Windows.Forms.CheckBox();
-            this.chkDate = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDateEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDateStart)).BeginInit();
@@ -76,19 +76,40 @@
             this.groupBox1.Controls.Add(this.txtNoStart);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(666, 81);
+            this.groupBox1.Size = new System.Drawing.Size(827, 81);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "เงื่อนไข";
+            // 
+            // chkDate
+            // 
+            this.chkDate.AutoSize = true;
+            this.chkDate.Location = new System.Drawing.Point(561, 56);
+            this.chkDate.Name = "chkDate";
+            this.chkDate.Size = new System.Drawing.Size(86, 17);
+            this.chkDate.TabIndex = 15;
+            this.chkDate.Text = "dd/MM/yyyy";
+            this.chkDate.UseVisualStyleBackColor = true;
+            // 
+            // chk64Bit
+            // 
+            this.chk64Bit.AutoSize = true;
+            this.chk64Bit.Location = new System.Drawing.Point(561, 37);
+            this.chk64Bit.Name = "chk64Bit";
+            this.chk64Bit.Size = new System.Drawing.Size(52, 17);
+            this.chk64Bit.TabIndex = 11;
+            this.chk64Bit.Text = "64 bit";
+            this.chk64Bit.UseVisualStyleBackColor = true;
             // 
             // txtDateEnd
             // 
             this.txtDateEnd.AllowSpinLoop = false;
             this.txtDateEnd.Calendar.RightToLeft = System.Windows.Forms.RightToLeft.Inherit;
+            this.txtDateEnd.Culture = 1054;
             this.txtDateEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDateEnd.FormatType = C1.Win.C1Input.FormatTypeEnum.ShortDate;
             this.txtDateEnd.ImagePadding = new System.Windows.Forms.Padding(0);
-            this.txtDateEnd.Location = new System.Drawing.Point(306, 34);
+            this.txtDateEnd.Location = new System.Drawing.Point(362, 34);
             this.txtDateEnd.Name = "txtDateEnd";
             this.txtDateEnd.Size = new System.Drawing.Size(111, 20);
             this.txtDateEnd.TabIndex = 14;
@@ -98,6 +119,7 @@
             // 
             this.txtDateStart.AllowSpinLoop = false;
             this.txtDateStart.Calendar.RightToLeft = System.Windows.Forms.RightToLeft.Inherit;
+            this.txtDateStart.Culture = 1054;
             this.txtDateStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDateStart.FormatType = C1.Win.C1Input.FormatTypeEnum.ShortDate;
             this.txtDateStart.ImagePadding = new System.Windows.Forms.Padding(0);
@@ -137,7 +159,7 @@
             // 
             // btnGen
             // 
-            this.btnGen.Location = new System.Drawing.Point(550, 52);
+            this.btnGen.Location = new System.Drawing.Point(657, 52);
             this.btnGen.Name = "btnGen";
             this.btnGen.Size = new System.Drawing.Size(75, 23);
             this.btnGen.TabIndex = 9;
@@ -146,7 +168,7 @@
             // 
             // btnRetrive
             // 
-            this.btnRetrive.Location = new System.Drawing.Point(550, 19);
+            this.btnRetrive.Location = new System.Drawing.Point(657, 19);
             this.btnRetrive.Name = "btnRetrive";
             this.btnRetrive.Size = new System.Drawing.Size(75, 23);
             this.btnRetrive.TabIndex = 1;
@@ -157,7 +179,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(241, 59);
+            this.label4.Location = new System.Drawing.Point(297, 59);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 16);
             this.label4.TabIndex = 8;
@@ -167,7 +189,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(241, 35);
+            this.label3.Location = new System.Drawing.Point(297, 35);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 16);
             this.label3.TabIndex = 7;
@@ -198,7 +220,7 @@
             this.txtNoEnd.DataType = typeof(short);
             this.txtNoEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNoEnd.ImagePadding = new System.Windows.Forms.Padding(0);
-            this.txtNoEnd.Location = new System.Drawing.Point(306, 56);
+            this.txtNoEnd.Location = new System.Drawing.Point(362, 56);
             this.txtNoEnd.Name = "txtNoEnd";
             this.txtNoEnd.Size = new System.Drawing.Size(111, 20);
             this.txtNoEnd.TabIndex = 4;
@@ -234,26 +256,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(608, 473);
             this.panel2.TabIndex = 10;
-            // 
-            // chk64Bit
-            // 
-            this.chk64Bit.AutoSize = true;
-            this.chk64Bit.Location = new System.Drawing.Point(454, 37);
-            this.chk64Bit.Name = "chk64Bit";
-            this.chk64Bit.Size = new System.Drawing.Size(52, 17);
-            this.chk64Bit.TabIndex = 11;
-            this.chk64Bit.Text = "64 bit";
-            this.chk64Bit.UseVisualStyleBackColor = true;
-            // 
-            // chkDate
-            // 
-            this.chkDate.AutoSize = true;
-            this.chkDate.Location = new System.Drawing.Point(454, 56);
-            this.chkDate.Name = "chkDate";
-            this.chkDate.Size = new System.Drawing.Size(86, 17);
-            this.chkDate.TabIndex = 15;
-            this.chkDate.Text = "dd/MM/yyyy";
-            this.chkDate.UseVisualStyleBackColor = true;
             // 
             // FrmgetCEM
             // 

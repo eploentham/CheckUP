@@ -108,11 +108,13 @@ namespace CheckUP.objdb
             //        //{
             if (flag == flagAccess.bit32)
             {
-                cntemp.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + @path + ";Persist Security Info=False";
+                cntemp.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + @path + ";Persist Security Info=False;Jet OLEDB:Database Password=Bs200@mindray;";
+                cntemp.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + @path + ";Persist Security Info=False;";
             }
             else
             {
-                cntemp.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + @path + ";Persist Security Info=False";
+                cntemp.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + @path + ";Persist Security Info=False;Jet OLEDB:Database Password=Bs200@mindray;";
+                cntemp.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + @path + ";Persist Security Info=False;";
             }
         //        //}
         //        //_mainConnection.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=D:\\source\reportBangna\\reportBangna\\DataBase\\reportBangna.mdb;Persist Security Info=False";

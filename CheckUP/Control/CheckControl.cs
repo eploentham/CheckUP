@@ -669,6 +669,20 @@ namespace CheckUP.Control
             }
             return re;
         }
+        public String datetoDB1(String dt)
+        {
+            DateTime dt1 = new DateTime();
+            String re = "";
+            if (dt != null)
+            {
+                if (!dt.Equals(""))
+                {
+                    dt1 = DateTime.Parse(dt.ToString());
+                    re = dt1.Year.ToString() + "-" + dt1.ToString("MM-dd");
+                }
+            }
+            return re;
+        }
         public static string Utf8ToUtf16(string utf8String)
         {
             // Get UTF8 bytes by reading each byte with ANSI encoding

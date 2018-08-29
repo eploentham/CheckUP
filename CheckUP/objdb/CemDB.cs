@@ -37,6 +37,11 @@ namespace CheckUP.objdb
                 "FROM testdetail " +
                 "WHERE  TestTime >= #"+ dateStart + " 00:00:00# and testtime <= #"+ dateEnd + " 23:59:00# " +
                 "ORDER BY sampleid; ";
+            MessageBox.Show("1111111", "getDataHeader");
+            if(conn== null)
+            {
+                MessageBox.Show("2222222", "getDataHeader");
+            }
             dt = conn.selectDataAccecss(sql);
             return dt;
         }
