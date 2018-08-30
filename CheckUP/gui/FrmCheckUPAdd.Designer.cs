@@ -400,6 +400,7 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.btmImportCEM = new System.Windows.Forms.Button();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -1950,6 +1951,7 @@
             // 
             // tabPage20
             // 
+            this.tabPage20.Controls.Add(this.btmImportCEM);
             this.tabPage20.Controls.Add(this.btnOnsite);
             this.tabPage20.Controls.Add(this.btnStoolExamSave);
             this.tabPage20.Controls.Add(this.btnToxiSave);
@@ -4371,6 +4373,16 @@
             this.label21.TabIndex = 0;
             this.label21.Text = "label21";
             // 
+            // btmImportCEM
+            // 
+            this.btmImportCEM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btmImportCEM.Location = new System.Drawing.Point(649, 433);
+            this.btmImportCEM.Name = "btmImportCEM";
+            this.btmImportCEM.Size = new System.Drawing.Size(138, 44);
+            this.btmImportCEM.TabIndex = 361;
+            this.btmImportCEM.Text = "นำเข้า ผลเครื่อง CEM";
+            this.btmImportCEM.UseVisualStyleBackColor = true;
+            // 
             // FrmCheckUPAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4849,5 +4861,6 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Button btmImportCEM;
     }
 }

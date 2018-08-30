@@ -222,6 +222,7 @@
     <Compile Include="object1\ExcelInit.cs" />
     <Compile Include="object1\ExcelInitMini.cs" />
     <Compile Include="object1\FilterRow.cs" />
+    <Compile Include="object1\FilterRowUnBound.cs" />
     <Compile Include="object1\FilterRow_OLD.cs" />
     <Compile Include="object1\IniFile.cs" />
     <Compile Include="object1\InitConfig.cs" />

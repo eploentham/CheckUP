@@ -67,7 +67,7 @@ namespace CheckUP.objdb
             {
                 String col01 = "", col02 = "", col03 = "", col04 = "", col05 = "", col06 = "";
 
-                using (var tw = new StreamWriter("TextCEM.txt", false))
+                using (var tw = new StreamWriter("TextCEM.txt", false, Encoding.UTF8))
                 {
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {

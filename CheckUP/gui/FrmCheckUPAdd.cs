@@ -207,7 +207,8 @@ namespace CheckUP.gui
             btnOnsite.Click += BtnOnsite_Click;                 //client
             btnPrnMiniExcel.Click += BtnPrnMiniExcel_Click;     //client
             btnImportSticker.Click += BtnImportSticker_Click;   //client
-            
+            btmImportCEM.Click += BtmImportCEM_Click;   //client
+
 
             //chkHideTab.Click += ChkHideTab_Click;
 
@@ -325,6 +326,7 @@ namespace CheckUP.gui
                 btnOnsite.Hide();
             }
         }
+        
         private String calTestAll()
         {
             int cnt = 0;
@@ -364,14 +366,31 @@ namespace CheckUP.gui
             label21.Text = "";
             label25.Text = "";
         }
+        private void BtmImportCEM_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            if (MessageBox.Show("ต้องการ นำเข้าข้อมูล ผลตรวจ เครื่อง CEM", "เตรียมข้อมูล", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                ofd.ShowDialog();
+                if (ofd.FileName.Equals(""))
+                {
+
+                }
+                //cc.importSticker(txtId.Text, ofd.FileName, nmdStickerRow.Value.ToString(), nmdVisitHn.Value.ToString(), pB1);
+                //setGrfSticker(txtId.Text);
+            }
+        }
         private void BtnImportSticker_Click(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
             if (MessageBox.Show("ต้องการ นำเข้าข้อมูล จำนวนดวงSticker ออกหน่วย", "เตรียมข้อมูล", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 ofd.ShowDialog();
-                cc.importSticker(txtId.Text, ofd.FileName, nmdStickerRow.Value.ToString(), nmdVisitHn.Value.ToString(), pB1);
-                setGrfSticker(txtId.Text);
+                if (ofd.FileName.Equals(""))
+                {
+                    cc.importSticker(txtId.Text, ofd.FileName, nmdStickerRow.Value.ToString(), nmdVisitHn.Value.ToString(), pB1);
+                    setGrfSticker(txtId.Text);
+                }
             }
         }
 
@@ -565,6 +584,7 @@ namespace CheckUP.gui
             rrr[colEId] = grfView[row, colVId].ToString();
             rrr[colEvisitHn] = grfView[row, colVvisitHn].ToString();
             rrr[colEname] = grfView[row, colVname].ToString();
+            rrr[colEpatnumber] = grfView[row, colVpatnumber].ToString();
 
             Row ttt = grfTest.Rows.Add();
             ttt[colTId] = grfView[row, colVId].ToString();
@@ -572,26 +592,26 @@ namespace CheckUP.gui
             ttt[colTname] = grfView[row, colVname].ToString();
             dtTest.Clear();
             dtTest = cc.ccpdb.selectByPk(grfView[row, colVId].ToString());
-            ttt[colS01] = dtAll.Rows[0][cc.ccpdb.ccp.test01].ToString();
-            ttt[colS02] = dtAll.Rows[0][cc.ccpdb.ccp.test02].ToString();
-            ttt[colS03] = dtAll.Rows[0][cc.ccpdb.ccp.test03].ToString();
-            ttt[colS04] = dtAll.Rows[0][cc.ccpdb.ccp.test04].ToString();
-            ttt[colS05] = dtAll.Rows[0][cc.ccpdb.ccp.test05].ToString();
-            ttt[colS06] = dtAll.Rows[0][cc.ccpdb.ccp.test06].ToString();
-            ttt[colS07] = dtAll.Rows[0][cc.ccpdb.ccp.test07].ToString();
-            ttt[colS08] = dtAll.Rows[0][cc.ccpdb.ccp.test08].ToString();
-            ttt[colS09] = dtAll.Rows[0][cc.ccpdb.ccp.test09].ToString();
-            ttt[colS10] = dtAll.Rows[0][cc.ccpdb.ccp.test10].ToString();
-            ttt[colS11] = dtAll.Rows[0][cc.ccpdb.ccp.test11].ToString();
-            ttt[colS12] = dtAll.Rows[0][cc.ccpdb.ccp.test12].ToString();
-            ttt[colS13] = dtAll.Rows[0][cc.ccpdb.ccp.test13].ToString();
-            ttt[colS14] = dtAll.Rows[0][cc.ccpdb.ccp.test14].ToString();
-            ttt[colS15] = dtAll.Rows[0][cc.ccpdb.ccp.test15].ToString();
-            ttt[colS16] = dtAll.Rows[0][cc.ccpdb.ccp.test16].ToString();
-            ttt[colS17] = dtAll.Rows[0][cc.ccpdb.ccp.test17].ToString();
-            ttt[colS18] = dtAll.Rows[0][cc.ccpdb.ccp.test18].ToString();
-            ttt[colS19] = dtAll.Rows[0][cc.ccpdb.ccp.test19].ToString();
-            ttt[colS20] = dtAll.Rows[0][cc.ccpdb.ccp.test20].ToString();
+            ttt[colS01] = dtTest.Rows[0][cc.ccpdb.ccp.test01].ToString();
+            ttt[colS02] = dtTest.Rows[0][cc.ccpdb.ccp.test02].ToString();
+            ttt[colS03] = dtTest.Rows[0][cc.ccpdb.ccp.test03].ToString();
+            ttt[colS04] = dtTest.Rows[0][cc.ccpdb.ccp.test04].ToString();
+            ttt[colS05] = dtTest.Rows[0][cc.ccpdb.ccp.test05].ToString();
+            ttt[colS06] = dtTest.Rows[0][cc.ccpdb.ccp.test06].ToString();
+            ttt[colS07] = dtTest.Rows[0][cc.ccpdb.ccp.test07].ToString();
+            ttt[colS08] = dtTest.Rows[0][cc.ccpdb.ccp.test08].ToString();
+            ttt[colS09] = dtTest.Rows[0][cc.ccpdb.ccp.test09].ToString();
+            ttt[colS10] = dtTest.Rows[0][cc.ccpdb.ccp.test10].ToString();
+            ttt[colS11] = dtTest.Rows[0][cc.ccpdb.ccp.test11].ToString();
+            ttt[colS12] = dtTest.Rows[0][cc.ccpdb.ccp.test12].ToString();
+            ttt[colS13] = dtTest.Rows[0][cc.ccpdb.ccp.test13].ToString();
+            ttt[colS14] = dtTest.Rows[0][cc.ccpdb.ccp.test14].ToString();
+            ttt[colS15] = dtTest.Rows[0][cc.ccpdb.ccp.test15].ToString();
+            ttt[colS16] = dtTest.Rows[0][cc.ccpdb.ccp.test16].ToString();
+            ttt[colS17] = dtTest.Rows[0][cc.ccpdb.ccp.test17].ToString();
+            ttt[colS18] = dtTest.Rows[0][cc.ccpdb.ccp.test18].ToString();
+            ttt[colS19] = dtTest.Rows[0][cc.ccpdb.ccp.test19].ToString();
+            ttt[colS20] = dtTest.Rows[0][cc.ccpdb.ccp.test20].ToString();
 
             cc.ccpdb.UpdateStatusVisit1(grfView[row, colVId].ToString());
             grfView.Rows.Remove(row);
@@ -663,10 +683,13 @@ namespace CheckUP.gui
             }
             grfView.DataSource = dt1;
             //grfView.Cols[colVId].Visible = false;
+            grfView.Cols[colVvisitHn].Width = 80;
+            grfView.Cols[colVname].Width = 200;
+            grfView.Cols[colVpatnumber].Width = 80;
             grfView.Cols[colVId].Visible = false;
             grfView.AllowEditing = false;
 
-            FilterRow_OLD fr = new FilterRow_OLD(grfView);
+            FilterRow fr = new FilterRow(grfView);
             //setGrfColor();
             int j = 1;
             foreach (Row row1 in grfView.Rows)
@@ -687,10 +710,11 @@ namespace CheckUP.gui
             grfEmp.Dock = System.Windows.Forms.DockStyle.Fill;
             grfEmp.Location = new System.Drawing.Point(0, 0);
 
-            FilterRow fr = new FilterRow(grfEmp);
+            //FilterRowUnBound fr = new FilterRowUnBound(grfEmp);
 
             //grfJob.AfterRowColChange += GrfJob_AfterRowColChange;
             grfEmp.DoubleClick += GrfEmp_DoubleClick;
+            grfEmp.AfterFilter += GrfEmp_AfterFilter;
             //grfExpnC.CellButtonClick += new C1.Win.C1FlexGrid.RowColEventHandler(this.grfDept_CellButtonClick);
             //grfExpnC.CellChanged += new C1.Win.C1FlexGrid.RowColEventHandler(this.grfDept_CellChanged);
             //grfJob.CellChanged += GrfExpnD_CellChanged;
@@ -708,12 +732,23 @@ namespace CheckUP.gui
 
             grfEmp.Cols[colEId].Visible = false;
             grfEmp.AllowEditing = false;
+            grfEmp.AllowFiltering = true;
             //grfEmp.Cols[colVId].Visible = false;
             //theme1.SetTheme(grfJob, "Office2013Red");
         }
+
+        private void GrfEmp_AfterFilter(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            for (int col = grfEmp.Cols.Fixed; col < grfEmp.Cols.Count; ++col)
+            {
+                var filter = grfEmp.Cols[col].ActiveFilter;
+            }
+        }
+
         private void setGrfEmp(String cucid)
         {
-            grfEmp.DataSource = null;
+            //grfEmp.DataSource = null;
             grfEmp.Rows.Count = 2;
             grfEmp.Clear();
             if (cucid.Equals("")) return;
@@ -747,8 +782,10 @@ namespace CheckUP.gui
                 row[colEname] = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
                 row[colVpatnumber] = dt.Rows[i][cc.ccpdb.ccp.patientNumber].ToString();
             }
+            FilterRowUnBound fr = new FilterRowUnBound(grfEmp);
             grfEmp.Cols[colEId].Visible = false;
             grfEmp.AllowEditing = false;
+            grfEmp.AllowFiltering = true;
         }
         private void initGrfTest()
         {
@@ -1809,11 +1846,14 @@ namespace CheckUP.gui
         {
             //throw new NotImplementedException();
             int row = 0;
+            if (grfEmp.Row <= 0) return;
             row = grfEmp.Row;
             Row rrr = grfView.Rows.Add();
             rrr[colVId] = grfEmp[row, colEId].ToString();
             rrr[colVvisitHn] = grfEmp[row, colEvisitHn].ToString();
             rrr[colVname] = grfEmp[row, colEname].ToString();
+            rrr[colVpatnumber] = grfEmp[row, colEpatnumber].ToString();
+
             cc.ccpdb.UpdateStatusVisit0(grfEmp[row, colEId].ToString());
             grfEmp.Rows.Remove(row);
             grfTest.Rows.Remove(row-1);

@@ -3536,5 +3536,32 @@ namespace CheckUP.Control
             }
             return c;
         }
+        public void readTextCEM(String cudId, String filename)
+        {
+            if (filename.Equals(""))
+            {
+                return;
+            }
+            const Int32 BufferSize = 128;
+            using (var fileStream = File.OpenRead(filename))
+            using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true, BufferSize))
+            {
+                String line;
+                while ((line = streamReader.ReadLine()) != null)
+                {
+                    String[] line1 = line.Split('|');
+                    if (line1.Length > 0)
+                    {
+                        String rowid = "", labid="", value1 = "", normal1 = "", labname="";
+                        rowid = line1[1];
+                        labid = line1[2];
+                        value1 = line1[4];
+                        normal1 = line1[5];
+                        labname = line1[3];
+                        
+                    }
+                }
+            }
+        }
     }
 }

@@ -158,3 +158,7 @@ FROM testdetail
 left join testdefine on testdefine.id = testdetail.itemid
 WHERE  TestTime >= #2016-05-01 00:00:00# and testtime <= #2016-05-31 23:59:00# and sampleid =5
 ORDER BY testdetail.testtime, itemid; 
+
+61-08-30
+ALTER TABLE dbo.b_lab_map ADD
+	value_normal nvarchar(255) NULL

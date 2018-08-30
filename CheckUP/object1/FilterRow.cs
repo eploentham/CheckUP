@@ -234,6 +234,7 @@ namespace CheckUP.object1
                 }
 
                 // get filter expression
+                expr = "%"+expr;
                 expr = BuildFilterExpression(col, expr);
                 if (expr.Length == 0) continue;
 
