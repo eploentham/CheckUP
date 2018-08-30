@@ -62,6 +62,7 @@ namespace CheckUP.object1
             }
 
             // move cursor to first row with data
+            if (_row == 1) return;
             _flex.Select(_row + 1, _flex.Cols.Fixed);
         }
 

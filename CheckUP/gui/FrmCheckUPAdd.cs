@@ -748,7 +748,7 @@ namespace CheckUP.gui
 
         private void setGrfEmp(String cucid)
         {
-            //grfEmp.DataSource = null;
+            grfEmp.DataSource = null;
             grfEmp.Rows.Count = 2;
             grfEmp.Clear();
             if (cucid.Equals("")) return;
@@ -770,7 +770,7 @@ namespace CheckUP.gui
             grfEmp.Cols[colEpatnumber].Caption = "รหัสพนักงาน";
 
             grfEmp.Cols[colEId].Visible = false;
-
+            FilterRowUnBound fr = new FilterRowUnBound(grfEmp);
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 Row row = grfEmp.Rows.Add();
@@ -782,7 +782,7 @@ namespace CheckUP.gui
                 row[colEname] = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
                 row[colVpatnumber] = dt.Rows[i][cc.ccpdb.ccp.patientNumber].ToString();
             }
-            FilterRowUnBound fr = new FilterRowUnBound(grfEmp);
+            
             grfEmp.Cols[colEId].Visible = false;
             grfEmp.AllowEditing = false;
             grfEmp.AllowFiltering = true;
