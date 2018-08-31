@@ -3536,7 +3536,7 @@ namespace CheckUP.Control
             }
             return c;
         }
-        public void readTextCEM(String cudId, String filename)
+        public void readTextCEMUpdate(String cudId, String filename)
         {
             if (filename.Equals(""))
             {
@@ -3553,8 +3553,8 @@ namespace CheckUP.Control
                     if (line1.Length > 0)
                     {
                         String rowid = "", labid="", value1 = "", normal1 = "", labname="";
-                        rowid = line1[1];
-                        labid = line1[2];
+                        rowid = line1[1];       //patient id เครื่อง CEM ไม่ได้ป้อน patient
+                        labid = line1[2];       
                         value1 = line1[4];
                         normal1 = line1[5];
                         labname = line1[3];
