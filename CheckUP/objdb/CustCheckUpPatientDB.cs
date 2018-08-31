@@ -716,7 +716,9 @@ namespace CheckUP.objdb
             int cntAll = 0;
             String sql = "", re = "0";
             DataTable dt = new DataTable();
-            sql = "Select * From " + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "'  ";
+            sql = "Select " + ccp.sticker01 + "," + ccp.sticker02 + "," + ccp.sticker03 + "," + ccp.sticker04 + "," + ccp.sticker05 + "," + ccp.sticker06 + "," + ccp.sticker07 + "," + ccp.sticker08 + "," + ccp.sticker09 + "," + ccp.sticker10 + "," +
+                ccp.sticker11 + "," + ccp.sticker12 + "," + ccp.sticker13 + "," + ccp.sticker14 + "," + ccp.sticker15 + "," + ccp.sticker16 + "," + ccp.sticker17 + "," + ccp.sticker18 + "," + ccp.sticker19 + "," + ccp.sticker20 + " " +
+                " From " + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "'  ";
             //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
             dt = conn.selectData(sql);
             if (dt.Rows.Count > 0)
@@ -755,7 +757,9 @@ namespace CheckUP.objdb
             int cntAll = 0;
             String sql = "", re = "0";
             DataTable dt = new DataTable();
-            sql = "Select * From onsite_" + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "'  ";
+            sql = "Select " + ccp.sticker01 + "," + ccp.sticker02 + "," + ccp.sticker03 + "," + ccp.sticker04 + "," + ccp.sticker05 + "," + ccp.sticker06 + "," + ccp.sticker07 + "," + ccp.sticker08 + "," + ccp.sticker09 + "," + ccp.sticker10 + "," +
+                ccp.sticker11 + "," + ccp.sticker12 + "," + ccp.sticker13 + "," + ccp.sticker14 + "," + ccp.sticker15 + "," + ccp.sticker16 + "," + ccp.sticker17 + "," + ccp.sticker18 + "," + ccp.sticker19 + "," + ccp.sticker20 + " " +
+                " From onsite_" + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "'  ";
             //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
             dt = conn.selectData(sql);
             if (dt.Rows.Count > 0)
@@ -794,7 +798,9 @@ namespace CheckUP.objdb
             int cntAll = 0;
             String sql = "", re = "0";
             DataTable dt = new DataTable();
-            sql = "Select * From " + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "'  ";
+            sql = "Select " + ccp.test01 + "," + ccp.test02 + "," + ccp.test03 + "," + ccp.test04 + "," + ccp.test05 + "," + ccp.test06 + "," + ccp.test07 + "," + ccp.test08 + "," + ccp.test09 + "," + ccp.test10 + "," +
+                ccp.test11 + "," + ccp.test12 + "," + ccp.test13 + "," + ccp.test14 + "," + ccp.test15 + "," + ccp.test16 + "," + ccp.test17 + "," + ccp.test18 + "," + ccp.test19 + "," + ccp.test20 + " " +
+                " From " + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "'  ";
             //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
             dt = conn.selectData(sql);
             if (dt.Rows.Count > 0)
@@ -833,7 +839,9 @@ namespace CheckUP.objdb
             int cntAll = 0;
             String sql = "", re = "0";
             DataTable dt = new DataTable();
-            sql = "Select * From onsite_" + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "'  ";
+            sql = "Select "+ ccp.test01 + ","+ ccp.test02 + "," + ccp.test03 + "," + ccp.test04 + "," + ccp.test05 + "," + ccp.test06 + "," + ccp.test07 + "," + ccp.test08 + "," + ccp.test09 + "," + ccp.test10 + ","+
+                ccp.test11 + "," + ccp.test12 + "," + ccp.test13 + "," + ccp.test14 + "," + ccp.test15 + "," + ccp.test16 + "," + ccp.test17 + "," + ccp.test18 + "," + ccp.test19 + "," + ccp.test20 + " " +
+                " From onsite_" + ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "'  ";
             //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
             dt = conn.selectData(sql);
             if (dt.Rows.Count > 0)
@@ -1839,7 +1847,26 @@ namespace CheckUP.objdb
             }
             catch (Exception ex)
             {
-                lw.WriteLog("ccp.UpdatePE Error " + ex.Message);
+                lw.WriteLog("ccp.UpdateTest Error " + ex.Message);
+                //max = ex.getMessage;
+            }
+            return chk;
+        }
+        public String UpdateTestOnSite0All(String ccpId)
+        {
+            String chk = "", sql = "", onsite = "";
+            try
+            {
+                onsite = " onsite_";
+                sql = "Update " + onsite + ccp.table + " Set " +
+                    "test01 ='0' ,test02 ='0' ,test03 ='0' ,test04 ='0' ,test05 ='0' ,test06 ='0' ,test07 ='0' ,test08 ='0' ,test09 ='0' ,test10 ='0' " +
+                    ",test11 ='0' ,test12 ='0' ,test13 ='0' ,test14 ='0' ,test15 ='0' ,test16 ='0' ,test17 ='0' ,test18 ='0' ,test19 ='0' ,test20 ='0' " +
+                "Where " + ccp.CustCheckUpId + "='" + ccpId + "'  ";
+                chk = conn.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                lw.WriteLog("ccp.UpdateTestOnSite0All Error " + ex.Message);
                 //max = ex.getMessage;
             }
             return chk;

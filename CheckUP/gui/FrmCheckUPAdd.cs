@@ -208,6 +208,7 @@ namespace CheckUP.gui
             btnPrnMiniExcel.Click += BtnPrnMiniExcel_Click;     //client
             btnImportSticker.Click += BtnImportSticker_Click;   //client
             btmImportCEM.Click += BtmImportCEM_Click;   //client
+            btnClearTestAll.Click += BtnClearTestAll_Click;
 
 
             //chkHideTab.Click += ChkHideTab_Click;
@@ -366,6 +367,15 @@ namespace CheckUP.gui
             label21.Text = "";
             label25.Text = "";
         }
+        private void BtnClearTestAll_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            if (MessageBox.Show("ต้องการ clear Test ทั้งหมด", "On Site", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                cc.ccpdb.UpdateTestOnSite0All(txtId.Text);
+                showOnsite();
+            }
+        }
         private void BtmImportCEM_Click(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
@@ -491,7 +501,7 @@ namespace CheckUP.gui
         
         private void setGrfColor()
         {
-            int i = 2;
+            int i = 1;
             if (grfEmp == null) return;
             grfEmp.BackColor = Color.White;
             grfView.BackColor = Color.White;
@@ -505,11 +515,13 @@ namespace CheckUP.gui
             {
                 if (row1[colEId] == null) continue;
                 if (row1[colEId].ToString().Equals("")) continue;
+                if (row1[colEvisitHn].ToString().Equals("barcode")) continue;
                 row1[0] = i;
                 if (i % 2 == 0)
                     row1.StyleNew.BackColor = color;
                 i++;
             }
+
             i = 1;
             foreach (Row row1 in grfView.Rows)
             {
@@ -517,10 +529,13 @@ namespace CheckUP.gui
                 if (row1[colVId].ToString().Equals("")) continue;
                 row1.StyleNew.BackColor = Color.White;
             }
-            foreach (Row row1 in grfView.Rows)
+            foreach (Row row1 in grfView.Rows)  
             {
                 if (row1[colVId] == null) continue;
                 if (row1[colVId].ToString().Equals("")) continue;
+                if (row1[colVvisitHn].ToString().Equals("barcode")) continue;
+                //if (i == 1) continue;
+                //if (i == 2) continue;
                 row1[0] = i;
                 if (i % 2 == 0)
                     row1.StyleNew.BackColor = color;
@@ -533,6 +548,7 @@ namespace CheckUP.gui
             grfView.Font = fEdit;
             grfView.Dock = System.Windows.Forms.DockStyle.Fill;
             grfView.Location = new System.Drawing.Point(0, 0);
+            grfView.Cols[colVvisitHn].Sort = SortFlags.Ascending;
 
             //FilterRow fr = new FilterRow(grfView);
 
@@ -617,6 +633,8 @@ namespace CheckUP.gui
             grfView.Rows.Remove(row);
             setGrfColor();
             setOnsiteCnt("on");
+            CellRange rg = grfView.GetCellRange(2, colVvisitHn, grfView.Rows.Count - 1, colVvisitHn);
+            grfView.Sort(SortFlags.Ascending, rg);
         }
         private void setOnsiteCnt(String flag)
         {
@@ -688,6 +706,8 @@ namespace CheckUP.gui
             grfView.Cols[colVpatnumber].Width = 80;
             grfView.Cols[colVId].Visible = false;
             grfView.AllowEditing = false;
+            //grfView.AllowSorting = AllowSortingEnum.SingleColumn;
+            //grfView.Cols[colVvisitHn].Sort = SortFlags.Ascending;
 
             FilterRow fr = new FilterRow(grfView);
             //setGrfColor();
@@ -697,6 +717,7 @@ namespace CheckUP.gui
                 if (row1[colVId] == null) continue;
                 if (row1[colVId].ToString().Equals("")) continue;
                 if (row1[colVId].ToString().Equals("id")) continue;
+                //if (j == 1) continue;
                 row1[0] = j;
                 if (j % 2 == 0)
                     row1.StyleNew.BackColor = color;
@@ -749,6 +770,13 @@ namespace CheckUP.gui
         private void setGrfEmp(String cucid)
         {
             grfEmp.DataSource = null;
+
+            DataTable dt1 = new DataTable();
+            dt1.Columns.Add(new DataColumn("id", typeof(string)));
+            dt1.Columns.Add(new DataColumn("barcode", typeof(string)));
+            dt1.Columns.Add(new DataColumn("ชื่อ-นามสกุล", typeof(string)));
+            dt1.Columns.Add(new DataColumn("รหัสพนักงาน", typeof(string)));
+
             grfEmp.Rows.Count = 2;
             grfEmp.Clear();
             if (cucid.Equals("")) return;
@@ -760,29 +788,47 @@ namespace CheckUP.gui
 
             grfEmp.Cols[colEvisitHn].Editor = txt;
             grfEmp.Cols[colEname].Editor = txt;
+            
+            //grfEmp.Cols[colEvisitHn].Caption = "barcode";
+            //grfEmp.Cols[colEname].Caption = "ชื่อ-นามสกุล";
+            //grfEmp.Cols[colEpatnumber].Caption = "รหัสพนักงาน";
 
+            grfEmp.Cols[colEId].Visible = false;
+            
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                //Row row = grfEmp.Rows.Add();
+                //row[0] = i + 1;
+                //if (i % 2 == 0)
+                //    row.StyleNew.BackColor = color;
+                //row[colEId] = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+                //row[colEvisitHn] = dt.Rows[i][cc.ccpdb.ccp.visitHn].ToString();
+                //row[colEname] = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
+                //row[colVpatnumber] = dt.Rows[i][cc.ccpdb.ccp.patientNumber].ToString();
+
+                DataRow dr = dt1.NewRow();
+                dr.ItemArray = new object[] { dt.Rows[i][cc.ccpdb.ccp.Id].ToString(), dt.Rows[i][cc.ccpdb.ccp.visitHn].ToString(), dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString()
+                    , dt.Rows[i][cc.ccpdb.ccp.patientNumber].ToString() };
+                dt1.Rows.Add(dr);
+            }
+            grfEmp.DataSource = dt1;
+            FilterRow fr = new FilterRow(grfEmp);
             grfEmp.Cols[colEvisitHn].Width = 80;
             grfEmp.Cols[colEname].Width = 200;
             grfEmp.Cols[colEpatnumber].Width = 80;
-
-            grfEmp.Cols[colEvisitHn].Caption = "barcode";
-            grfEmp.Cols[colEname].Caption = "ชื่อ-นามสกุล";
-            grfEmp.Cols[colEpatnumber].Caption = "รหัสพนักงาน";
-
-            grfEmp.Cols[colEId].Visible = false;
-            FilterRowUnBound fr = new FilterRowUnBound(grfEmp);
-            for (int i = 0; i < dt.Rows.Count; i++)
+            int j = 1;
+            foreach (Row row1 in grfEmp.Rows)
             {
-                Row row = grfEmp.Rows.Add();
-                row[0] = i + 1;
-                if (i % 2 == 0)
-                    row.StyleNew.BackColor = color;
-                row[colEId] = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
-                row[colEvisitHn] = dt.Rows[i][cc.ccpdb.ccp.visitHn].ToString();
-                row[colEname] = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
-                row[colVpatnumber] = dt.Rows[i][cc.ccpdb.ccp.patientNumber].ToString();
+                if (row1[colEId] == null) continue;
+                if (row1[colEId].ToString().Equals("")) continue;
+                if (row1[colEId].ToString().Equals("id")) continue;
+                if (j == 1) continue;
+                row1[0] = j;
+                if (j % 2 == 0)
+                    row1.StyleNew.BackColor = color;
+                j++;
             }
-            
+
             grfEmp.Cols[colEId].Visible = false;
             grfEmp.AllowEditing = false;
             grfEmp.AllowFiltering = true;
@@ -1859,6 +1905,12 @@ namespace CheckUP.gui
             grfTest.Rows.Remove(row-1);
             setGrfColor();
             setOnsiteCnt("off");
+            CellRange rg = grfView.GetCellRange(2, colVvisitHn, grfView.Rows.Count - 1, colVvisitHn);
+            grfView.Sort(SortFlags.Ascending, rg);
+            if (grfEmp.Rows.Count == 2)
+            {
+                Console.WriteLine("Button1 clicked");
+            }
         }
         private void GrfSticker_DoubleClick(object sender, EventArgs e)
         {
