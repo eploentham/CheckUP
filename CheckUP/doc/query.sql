@@ -162,3 +162,10 @@ ORDER BY testdetail.testtime, itemid;
 61-08-30
 ALTER TABLE dbo.b_lab_map ADD
 	value_normal nvarchar(255) NULL
+
+
+SELECT  patientinfo.name, testdetail.sampleid, testdetail.id
+                FROM testdetail 
+left join patientinfo on testdetail.id = patientinfo.id
+                WHERE  TestTime >= #24-08-2018 00:00:00# and testtime <= #24-08-2018 23:59:00# and patientinfo.questdate >= #24-08-2018 00:00:00# and patientinfo.questdate <= #24-08-2018 23:59:00#
+                ORDER BY patientinfo.name,sampleid;

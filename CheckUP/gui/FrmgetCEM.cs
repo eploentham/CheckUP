@@ -24,7 +24,7 @@ namespace CheckUP.gui
         Color color;
         C1FlexGrid grfView, grfSample;
 
-        int colVNo = 1;
+        int colVNo = 1, colVName=2;
         int colStime=1, colSitemid=2, colSfullname=3, colSresult = 4, colSref = 5;
         public FrmgetCEM(CheckControl c)
         {
@@ -165,6 +165,7 @@ namespace CheckUP.gui
 
             DataTable dt1 = new DataTable();
             dt1.Columns.Add(new DataColumn("no", typeof(string)));
+            dt1.Columns.Add(new DataColumn("name", typeof(string)));
             grfView.Rows.Count = 2;
             grfView.Clear();
             //if (cucid.Equals("")) return;
@@ -180,7 +181,7 @@ namespace CheckUP.gui
             }
             dt = cemDB.getDataHeader(dateStart, dateEnd, noStart, noEnd);
             grfView.Rows.Count = 2;
-            grfView.Cols.Count = 2;
+            grfView.Cols.Count = 3;
             TextBox txt = new TextBox();
 
             grfView.Cols[colVNo].Editor = txt;
@@ -192,6 +193,7 @@ namespace CheckUP.gui
             {
                 DataRow dr = dt1.NewRow();
                 dr.ItemArray = new object[] { dt.Rows[i]["sampleid"].ToString() };
+                dr.ItemArray = new object[] { dt.Rows[i]["name"].ToString() };
                 dt1.Rows.Add(dr);
                 
             }
