@@ -74,8 +74,9 @@ namespace CheckUP.Control
         {
             try
             {
-                //MessageBox.Show("33333", "Error");
-                iniFile = new IniFile(Environment.CurrentDirectory + "\\" + Application.ProductName + ".ini");
+                //MessageBox.Show("33333 "+ Path.Combine(Environment.CurrentDirectory, Application.ProductName+".ini"), "Error");
+                iniFile = new IniFile(Path.Combine(Environment.CurrentDirectory, Application.ProductName+".ini"));
+                //MessageBox.Show("4444  " + iniFile.Path, "Error");
                 initC = new InitConfig();
                 GetConfig();
                 cf = new Config1();
@@ -3184,13 +3185,14 @@ namespace CheckUP.Control
             DataTable dtStk = new DataTable();
             dt = ccpdb.selectAllByCucId(cucId);
             dtStk = stkdb.selectAll();
-            using (var tw = new StreamWriter("CheckList.txt", false))
+            using (var tw = new StreamWriter(Path.Combine(System.IO.Directory.GetCurrentDirectory(),"CheckList.txt"), false))
             {
                 int row = 0;
                 for(int i = 0; i < dt.Rows.Count; i++)
                 {
                     row = i + 1;
-                    col01 = row.ToString("0000");
+                    //col01 = row.ToString("0000");
+                    col01 = dt.Rows[i][ccpdb.ccp.rowNumber].ToString();
                     col02 = " ";
                     col03 = dt.Rows[i][ccpdb.ccp.patientFullname].ToString();
                     //col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString();
@@ -3200,121 +3202,141 @@ namespace CheckUP.Control
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString()+"-01";
                         col05 = dtStk.Rows[0][stkdb.stk.sticker_name].ToString();
-                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker02].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-02";
                         col05 = dtStk.Rows[1][stkdb.stk.sticker_name].ToString();
-                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker03].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-03";
                         col05 = dtStk.Rows[2][stkdb.stk.sticker_name].ToString();
-                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker04].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-04";
                         col05 = dtStk.Rows[3][stkdb.stk.sticker_name].ToString();
-                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker05].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-05";
                         col05 = dtStk.Rows[4][stkdb.stk.sticker_name].ToString();
-                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
+                        //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker06].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-06";
                         col05 = dtStk.Rows[5][stkdb.stk.sticker_name].ToString();
-                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker07].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-07";
                         col05 = dtStk.Rows[6][stkdb.stk.sticker_name].ToString();
-                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
+                        //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker08].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-08";
                         col05 = dtStk.Rows[7][stkdb.stk.sticker_name].ToString();
-                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" );
+                        //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker09].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-09";
                         col05 = dtStk.Rows[8][stkdb.stk.sticker_name].ToString();
-                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" );
+                        //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker10].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-10";
                         col05 = dtStk.Rows[9][stkdb.stk.sticker_name].ToString();
-                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker11].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-11";
                         col05 = dtStk.Rows[10][stkdb.stk.sticker_name].ToString();
-                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker12].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-12";
                         col05 = dtStk.Rows[11][stkdb.stk.sticker_name].ToString();
-                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker13].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-13";
                         col05 = dtStk.Rows[12][stkdb.stk.sticker_name].ToString();
-                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker14].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-14";
                         col05 = dtStk.Rows[13][stkdb.stk.sticker_name].ToString();
-                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker15].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-15";
                         col05 = dtStk.Rows[14][stkdb.stk.sticker_name].ToString();
-                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker16].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-16";
                         col05 = dtStk.Rows[15][stkdb.stk.sticker_name].ToString();
-                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker17].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-17";
                         col05 = dtStk.Rows[16][stkdb.stk.sticker_name].ToString();
-                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" );
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker18].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-18";
                         col05 = dtStk.Rows[17][stkdb.stk.sticker_name].ToString();
-                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker19].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-19";
                         col05 = dtStk.Rows[18][stkdb.stk.sticker_name].ToString();
-                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" );
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker20].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-20";
                         col05 = dtStk.Rows[19][stkdb.stk.sticker_name].ToString();
-                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
+                        tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                 }
             }

@@ -20,7 +20,7 @@ namespace CheckUP.gui
         Staff sf;
         Font fEdit, fEditB;
         Font font = new Font("Microsoft Sans Serif", 12);
-        C1ThemeController theme1;
+        //C1ThemeController theme1;
         Color color;
         C1FlexGrid grfView, grfSample;
 
@@ -30,22 +30,38 @@ namespace CheckUP.gui
         {
             InitializeComponent();
             cc = c;
+            //MessageBox.Show("00000" , "Error");
             initConfig();
         }
         private void initConfig()
         {
-            fEdit = new Font(cc.initC.grdViewFontName, cc.grdViewFontSize, FontStyle.Regular);
-            fEditB = new Font(cc.initC.grdViewFontName, cc.grdViewFontSize, FontStyle.Bold);
-            color = ColorTranslator.FromHtml(cc.initC.grfRowColor);
-            theme1 = new C1ThemeController();
+            //MessageBox.Show("00000 "+ cc.initC.grdViewFontName, "Error");
+            //MessageBox.Show("00000 " + cc.grdViewFontSize, "Error");
+            //MessageBox.Show("grfRowColor " + cc.initC.grfRowColor, "Error");
+            try
+            {
+                fEdit = new Font(cc.initC.grdViewFontName, cc.grdViewFontSize, FontStyle.Regular);
+                fEditB = new Font(cc.initC.grdViewFontName, cc.grdViewFontSize, FontStyle.Bold);
+                
+                cc.initC.grfRowColor = string.IsNullOrEmpty(cc.initC.grfRowColor) ? "#EADBC4" : cc.initC.grfRowColor;
+                cc.initC.grdViewFontSize = string.IsNullOrEmpty(cc.initC.grdViewFontSize) ? "10" : cc.initC.grdViewFontSize;
+                //MessageBox.Show("grfRowColor1111 " + cc.initC.grfRowColor, "Error");
+                color = ColorTranslator.FromHtml(cc.initC.grfRowColor);
+                //theme1 = new C1ThemeController();
+                //MessageBox.Show("00000", "Error");
+                txtPath.Value = cc.initC.pathaccessCEM;
 
-            txtPath.Value = cc.initC.pathaccessCEM;
-
-            this.FormClosing += FrmgetCEM_FormClosing;
-            btnPath.Click += BtnPath_Click;
-            btnRetrive.Click += BtnRetrive_Click;
-            btnGen.Click += BtnGen_Click;
-
+                this.FormClosing += FrmgetCEM_FormClosing;
+                btnPath.Click += BtnPath_Click;
+                btnRetrive.Click += BtnRetrive_Click;
+                btnGen.Click += BtnGen_Click;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("zzzz "+ex.Message, "Error");
+            }
+            
+            //MessageBox.Show("111111", "Error");
             initGrfView();
             initGrfSample();
         }
@@ -66,12 +82,24 @@ namespace CheckUP.gui
             DateTime dateStart1, dateEnd1;
             dateStart1 = (DateTime)txtDateStart.Value;
             dateEnd1 = (DateTime)txtDateEnd.Value;
-            dateStart = (dateStart1.Year - 543) + "-" + dateStart1.Month.ToString("00") + "-" + dateStart1.Day.ToString("00");
-            dateEnd = (dateEnd1.Year - 543) + "-" + dateEnd1.Month.ToString("00") + "-" + dateEnd1.Day.ToString("00");
+            dateStart = setDate(dateStart1);
+            dateEnd = setDate(dateEnd1);
 
             cemDB.getTextCEM(dateStart, dateEnd, txtNoStart.Text, txtNoEnd.Text);
         }
-
+        private String setDate(DateTime date)
+        {
+            String re = "";
+            if ((date.Year - 543) <= 1500)
+            {
+                re = (date.Year) + "-" + date.Month.ToString("00") + "-" + date.Day.ToString("00");
+            }
+            else
+            {
+                re = (date.Year - 543) + "-" + date.Month.ToString("00") + "-" + date.Day.ToString("00");
+            }
+            return re;
+        }
         private void BtnRetrive_Click(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
@@ -79,8 +107,9 @@ namespace CheckUP.gui
             DateTime dateStart1, dateEnd1;
             dateStart1 = (DateTime)txtDateStart.Value;
             dateEnd1 = (DateTime)txtDateEnd.Value;
-            dateStart = (dateStart1.Year - 543) + "-" + dateStart1.Month.ToString("00") + "-" + dateStart1.Day.ToString("00");
-            dateEnd = (dateEnd1.Year - 543) + "-" + dateEnd1.Month.ToString("00") + "-" + dateEnd1.Day.ToString("00");
+            dateStart = setDate(dateStart1);
+            dateEnd = setDate(dateEnd1);
+
             //MessageBox.Show("dateStart " + dateStart);
             //MessageBox.Show("dateEnd " + dateEnd);
 
@@ -195,8 +224,8 @@ namespace CheckUP.gui
             DateTime dateStart1, dateEnd1;
             dateStart1 = (DateTime)txtDateStart.Value;
             dateEnd1 = (DateTime)txtDateEnd.Value;
-            dateStart = (dateStart1.Year - 543) + "-" + dateStart1.Month.ToString("00") + "-" + dateStart1.Day.ToString("00");
-            dateEnd = (dateEnd1.Year - 543) + "-" + dateEnd1.Month.ToString("00") + "-" + dateEnd1.Day.ToString("00");
+            dateStart = setDate(dateStart1);
+            dateEnd = setDate(dateEnd1);
 
             setGrfSample(dateStart, dateEnd, grfView[grfView.Row, colVNo].ToString());
         }

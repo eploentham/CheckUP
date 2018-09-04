@@ -393,6 +393,9 @@ namespace CheckUP.gui
                 
             }
             grfView.Cols[colId].Visible = false;
+            grfView.Cols[colCode].AllowEditing = false;
+            grfView.Cols[colName].AllowEditing = false;
+            grfView.Cols[colPrn].AllowEditing = true;
         }
         private void GrfView_CellChecked(object sender, RowColEventArgs e)
         {

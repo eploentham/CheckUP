@@ -22,6 +22,7 @@ namespace CheckUP
             //MessageBox.Show("00000", "Error");
             CheckControl cc;
             cc = new CheckControl();
+            //MessageBox.Show("00000" + cc.initC.statusconnectCEM, "Error");
             if (cc.initC.statusconnectCEM.Equals("yes"))
             {
                 Application.Run(new FrmgetCEM(cc));
@@ -30,7 +31,7 @@ namespace CheckUP
             {
                 Application.Run(new FrmLogin(cc));
             }
-            
+
         }
     }
 }

@@ -209,7 +209,7 @@ namespace CheckUP.gui
             btnImportSticker.Click += BtnImportSticker_Click;   //client
             btmImportCEM.Click += BtmImportCEM_Click;   //client
             btnClearTestAll.Click += BtnClearTestAll_Click;
-
+            btnPrnSticker.Click += BtnPrnSticker_Click;
 
             //chkHideTab.Click += ChkHideTab_Click;
 
@@ -326,8 +326,8 @@ namespace CheckUP.gui
             {
                 btnOnsite.Hide();
             }
-        }
-        
+        }        
+
         private String calTestAll()
         {
             int cnt = 0;
@@ -367,6 +367,13 @@ namespace CheckUP.gui
             label21.Text = "";
             label25.Text = "";
         }
+        private void BtnPrnSticker_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            cc.getTextSticker(txtId.Text);
+            System.Threading.Thread.Sleep(3000);
+            System.Diagnostics.Process.Start("checkup.btw");
+        }
         private void BtnClearTestAll_Click(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
@@ -396,7 +403,7 @@ namespace CheckUP.gui
             if (MessageBox.Show("ต้องการ นำเข้าข้อมูล จำนวนดวงSticker ออกหน่วย", "เตรียมข้อมูล", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 ofd.ShowDialog();
-                if (ofd.FileName.Equals(""))
+                if (!ofd.FileName.Equals(""))
                 {
                     cc.importSticker(txtId.Text, ofd.FileName, nmdStickerRow.Value.ToString(), nmdVisitHn.Value.ToString(), pB1);
                     setGrfSticker(txtId.Text);
