@@ -55,10 +55,17 @@ namespace CheckUP.objdb
         {
             DataTable dt = new DataTable();
             String sql = "";
+            //sql = "SELECT testtime,sampleid, itemid, fullname, testresult, printref  " +
+            //    "FROM testdetail " +
+            //    "left join testdefine on testdefine.id = testdetail.itemid " +
+            //    "WHERE  TestTime >= #" + dateStart + " 00:00:00# and testtime <= #" + dateEnd + " 23:59:00# " +
+            //    "and sampleid >="+ noStart+ " and  sampleid <=" + noEnd + " " +
+            //    "ORDER BY sampleid, itemid,testdetail.testtime; ";
             sql = "SELECT testtime,sampleid, itemid, fullname, testresult, printref  " +
                 "FROM testdetail " +
                 "left join testdefine on testdefine.id = testdetail.itemid " +
-                "WHERE  TestTime >= #" + dateStart + " 00:00:00# and testtime <= #" + dateEnd + " 23:59:00# and sampleid >="+ noStart+ " and  sampleid <=" + noEnd + " " +
+                "WHERE  TestTime >= #" + dateStart + " 00:00:00# and testtime <= #" + dateEnd + " 23:59:00# " +
+                "and testdetail.sampleid >=" + noStart + " and  testdetail.sampleid <=" + noEnd + " " +
                 "ORDER BY sampleid, itemid,testdetail.testtime; ";
             dt = conn.selectDataAccecss(sql);
             return dt;

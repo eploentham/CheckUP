@@ -24,7 +24,7 @@ namespace CheckUP.gui
         Color color;
         C1FlexGrid grfView, grfSample;
 
-        int colVNo = 1, colVName=2;
+        int colVName1 = 1, colVpatientid1=2, colVsampleid=3;
         int colStime=1, colSsampleid=2, colSitemid=3, colSfullname=4, colSresult = 5, colSref = 6;
         public FrmgetCEM(CheckControl c)
         {
@@ -80,8 +80,8 @@ namespace CheckUP.gui
             }
             String dateStart = "", dateEnd = "";
             DateTime dateStart1, dateEnd1;
-            dateStart1 = (DateTime)txtDateStart.Value;
-            dateEnd1 = (DateTime)txtDateEnd.Value;
+            dateStart1 = DateTime.Parse(txtDateStart.Text);
+            dateEnd1 = DateTime.Parse(txtDateEnd.Text);
             dateStart = setDate(dateStart1);
             dateEnd = setDate(dateEnd1);
 
@@ -105,8 +105,8 @@ namespace CheckUP.gui
             //throw new NotImplementedException();
             String dateStart = "", dateEnd = "";
             DateTime dateStart1, dateEnd1;
-            dateStart1 = (DateTime)txtDateStart.Value;
-            dateEnd1 = (DateTime)txtDateEnd.Value;
+            dateStart1 = DateTime.Parse(txtDateStart.Text);
+            dateEnd1 = DateTime.Parse(txtDateEnd.Text);
             dateStart = setDate(dateStart1);
             dateEnd = setDate(dateEnd1);
 
@@ -150,11 +150,10 @@ namespace CheckUP.gui
             grfView.Clear();
             grfView.Rows.Count = 2;
             grfView.Cols.Count = 5;
-            grfView.Cols[colVNo].Width = 150;            
+            grfView.Cols[colVName1].Width = 150;            
 
-            grfView.Cols[colVNo].Caption = "NO";
+            grfView.Cols[colVName1].Caption = "NO";
             
-
             //grfView.Cols[colVNo].Visible = false;
             grfView.AllowEditing = false;
             //theme1.SetTheme(grfJob, "Office2013Red");
@@ -166,6 +165,7 @@ namespace CheckUP.gui
             DataTable dt1 = new DataTable();
             dt1.Columns.Add(new DataColumn("patient name", typeof(string)));
             dt1.Columns.Add(new DataColumn("ref id", typeof(string)));
+            dt1.Columns.Add(new DataColumn("sample id", typeof(string)));
             grfView.Rows.Count = 2;
             grfView.Clear();
             //if (cucid.Equals("")) return;
@@ -181,23 +181,27 @@ namespace CheckUP.gui
             }
             dt = cemDB.getDataHeader(dateStart, dateEnd, noStart, noEnd);
             grfView.Rows.Count = 2;
-            grfView.Cols.Count = 2;
+            grfView.Cols.Count = 3;
             TextBox txt = new TextBox();
 
-            grfView.Cols[colVNo].Editor = txt;
-            grfView.Cols[colVNo].Width = 80;                  
+            grfView.Cols[colVName1].Editor = txt;
+            grfView.Cols[colVName1].Width = 80;                  
 
             //grfView.Cols[colVNo].Visible = false;
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 DataRow dr = dt1.NewRow();
-                dr.ItemArray = new object[] { dt.Rows[i]["name"].ToString(), dt.Rows[i]["id"].ToString() };
+                dr.ItemArray = new object[] { dt.Rows[i]["name"].ToString(), dt.Rows[i]["id"].ToString(), dt.Rows[i]["sampleid"].ToString() };
                 //dr.ItemArray = new object[] { dt.Rows[i]["name"].ToString() };
                 dt1.Rows.Add(dr);
                 
             }
             grfView.DataSource = dt1;
+            //grfView.Cols[0].Width = 70;
+            grfView.Cols[colVName1].Width = 90;     //name
+            grfView.Cols[colVpatientid1].Width = 70;     // patient id
+            grfView.Cols[colVsampleid].Width = 70;     // sample id
             //grfView.Cols[colVId].Visible = false;
             //grfView.Cols[colVNo].Visible = false;
             grfView.AllowEditing = false;
@@ -207,30 +211,30 @@ namespace CheckUP.gui
             int j = 1;
             foreach (Row row1 in grfView.Rows)
             {
-                if (row1[colVNo] == null) continue;
-                if (row1[colVNo].ToString().Equals("")) continue;
-                if (row1[colVNo].ToString().Equals("patient name")) continue;
+                if (row1[colVName1] == null) continue;
+                if (row1[colVName1].ToString().Equals("")) continue;
+                if (row1[colVName1].ToString().Equals("patient name")) continue;
                 row1[0] = j;
                 if (j % 2 == 0)
                     row1.StyleNew.BackColor = color;
                 j++;
             }
-            grfView.Cols[colVNo].AllowEditing = false;
+            grfView.Cols[colVName1].AllowEditing = false;
             txtNoEnd.Value = dt.Rows.Count;
         }
         private void GrfView_DoubleClick(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
             if (grfView.Row < 1) return;
-            if (grfView[grfView.Row, colVNo] == null) return;
+            if (grfView[grfView.Row, colVName1] == null) return;
             String dateStart = "", dateEnd = "";
             DateTime dateStart1, dateEnd1;
-            dateStart1 = (DateTime)txtDateStart.Value;
-            dateEnd1 = (DateTime)txtDateEnd.Value;
+            dateStart1 = DateTime.Parse(cc.datetoDB(txtDateStart.Text));
+            dateEnd1 = DateTime.Parse(txtDateEnd.Text);
             dateStart = setDate(dateStart1);
             dateEnd = setDate(dateEnd1);
 
-            setGrfSample(dateStart, dateEnd, grfView[grfView.Row, colVName].ToString());
+            setGrfSample(dateStart, dateEnd, grfView[grfView.Row, colVpatientid1].ToString());
         }
         private void initGrfSample()
         {
@@ -266,7 +270,7 @@ namespace CheckUP.gui
         private void setGrfSample(String dateStart, String dateEnd, String noStart)
         {
             grfSample.DataSource = null;
-
+            grfSample.Clear();
             DataTable dt1 = new DataTable();
             dt1.Columns.Add(new DataColumn("date time", typeof(string)));
             dt1.Columns.Add(new DataColumn("ref id", typeof(string)));
@@ -302,7 +306,7 @@ namespace CheckUP.gui
 
             }
             grfSample.DataSource = dt1;
-            grfSample.Cols[colVNo].Editor = txt;
+            grfSample.Cols[colVName1].Editor = txt;
             grfSample.Cols[colStime].Width = 180;
             grfSample.Cols[colSsampleid].Width = 70;
             grfSample.Cols[colSitemid].Width = 70;
@@ -313,7 +317,7 @@ namespace CheckUP.gui
 
             grfSample.Cols[colStime].Caption = "date time";
             grfSample.Cols[colSitemid].Caption = "LAB id";
-            grfSample.Cols[colSsampleid].Caption = "ref id";
+            grfSample.Cols[colSsampleid].Caption = "sample id";
             grfSample.Cols[colSfullname].Caption = "LAB name";
             grfSample.Cols[colSresult].Caption = "result";
             grfSample.Cols[colSref].Caption = "value normal";
@@ -348,8 +352,8 @@ namespace CheckUP.gui
 
         private void FrmgetCEM_Load(object sender, EventArgs e)
         {
-            txtDateStart.Value = System.DateTime.Now.ToString("yyyy-MM-dd");
-            txtDateEnd.Value = System.DateTime.Now.ToString("yyyy-MM-dd");
+            txtDateStart.Text = System.DateTime.Now.ToString("yyyy-MM-dd");
+            txtDateEnd.Text = System.DateTime.Now.ToString("yyyy-MM-dd");
             txtNoStart.Value = 1;
             txtNoEnd.Value = 20;
         }
