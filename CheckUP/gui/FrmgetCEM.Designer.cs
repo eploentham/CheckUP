@@ -247,21 +247,21 @@
             // 
             this.panel1.Location = new System.Drawing.Point(12, 99);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(534, 473);
+            this.panel1.Size = new System.Drawing.Size(291, 473);
             this.panel1.TabIndex = 9;
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(552, 99);
+            this.panel2.Location = new System.Drawing.Point(312, 99);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(608, 473);
+            this.panel2.Size = new System.Drawing.Size(940, 473);
             this.panel2.TabIndex = 10;
             // 
             // FrmgetCEM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1172, 584);
+            this.ClientSize = new System.Drawing.Size(1264, 584);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);

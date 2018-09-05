@@ -25,7 +25,7 @@ namespace CheckUP.gui
         C1FlexGrid grfView, grfSample;
 
         int colVNo = 1, colVName=2;
-        int colStime=1, colSitemid=2, colSfullname=3, colSresult = 4, colSref = 5;
+        int colStime=1, colSsampleid=2, colSitemid=3, colSfullname=4, colSresult = 5, colSref = 6;
         public FrmgetCEM(CheckControl c)
         {
             InitializeComponent();
@@ -164,8 +164,8 @@ namespace CheckUP.gui
             grfView.DataSource = null;
 
             DataTable dt1 = new DataTable();
-            dt1.Columns.Add(new DataColumn("no", typeof(string)));
-            dt1.Columns.Add(new DataColumn("name", typeof(string)));
+            dt1.Columns.Add(new DataColumn("patient name", typeof(string)));
+            dt1.Columns.Add(new DataColumn("ref id", typeof(string)));
             grfView.Rows.Count = 2;
             grfView.Clear();
             //if (cucid.Equals("")) return;
@@ -181,7 +181,7 @@ namespace CheckUP.gui
             }
             dt = cemDB.getDataHeader(dateStart, dateEnd, noStart, noEnd);
             grfView.Rows.Count = 2;
-            grfView.Cols.Count = 3;
+            grfView.Cols.Count = 2;
             TextBox txt = new TextBox();
 
             grfView.Cols[colVNo].Editor = txt;
@@ -192,8 +192,8 @@ namespace CheckUP.gui
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 DataRow dr = dt1.NewRow();
-                dr.ItemArray = new object[] { dt.Rows[i]["sampleid"].ToString() };
-                dr.ItemArray = new object[] { dt.Rows[i]["name"].ToString() };
+                dr.ItemArray = new object[] { dt.Rows[i]["name"].ToString(), dt.Rows[i]["id"].ToString() };
+                //dr.ItemArray = new object[] { dt.Rows[i]["name"].ToString() };
                 dt1.Rows.Add(dr);
                 
             }
@@ -209,13 +209,14 @@ namespace CheckUP.gui
             {
                 if (row1[colVNo] == null) continue;
                 if (row1[colVNo].ToString().Equals("")) continue;
-                if (row1[colVNo].ToString().Equals("no")) continue;
+                if (row1[colVNo].ToString().Equals("patient name")) continue;
                 row1[0] = j;
                 if (j % 2 == 0)
                     row1.StyleNew.BackColor = color;
                 j++;
             }
             grfView.Cols[colVNo].AllowEditing = false;
+            txtNoEnd.Value = dt.Rows.Count;
         }
         private void GrfView_DoubleClick(object sender, EventArgs e)
         {
@@ -229,7 +230,7 @@ namespace CheckUP.gui
             dateStart = setDate(dateStart1);
             dateEnd = setDate(dateEnd1);
 
-            setGrfSample(dateStart, dateEnd, grfView[grfView.Row, colVNo].ToString());
+            setGrfSample(dateStart, dateEnd, grfView[grfView.Row, colVName].ToString());
         }
         private void initGrfSample()
         {
@@ -251,7 +252,7 @@ namespace CheckUP.gui
             panel2.Controls.Add(grfSample);
             grfSample.Clear();
             grfSample.Rows.Count = 2;
-            grfSample.Cols.Count = 6;
+            grfSample.Cols.Count = 7;
             grfSample.Cols[colSresult].Width = 150;
             grfSample.Cols[colSref].Width = 150;
 
@@ -268,10 +269,11 @@ namespace CheckUP.gui
 
             DataTable dt1 = new DataTable();
             dt1.Columns.Add(new DataColumn("date time", typeof(string)));
-            dt1.Columns.Add(new DataColumn("item", typeof(string)));
-            dt1.Columns.Add(new DataColumn("LAB", typeof(string)));
+            dt1.Columns.Add(new DataColumn("ref id", typeof(string)));
+            dt1.Columns.Add(new DataColumn("LAB id", typeof(string)));
+            dt1.Columns.Add(new DataColumn("LAB name", typeof(string)));
             dt1.Columns.Add(new DataColumn("result", typeof(string)));
-            dt1.Columns.Add(new DataColumn("REF", typeof(string)));
+            dt1.Columns.Add(new DataColumn("value normal", typeof(string)));
             grfSample.Rows.Count = 2;
             grfSample.Clear();
             //if (cucid.Equals("")) return;
@@ -290,29 +292,31 @@ namespace CheckUP.gui
             grfSample.Cols.Count = 6;
             TextBox txt = new TextBox();
 
-            grfSample.Cols[colVNo].Editor = txt;
-            grfSample.Cols[colStime].Width = 150;
-            grfSample.Cols[colSitemid].Width = 150;
-            grfSample.Cols[colSfullname].Width = 150;
-            grfSample.Cols[colSresult].Width = 150;
-            grfSample.Cols[colSref].Width = 150;
-
-            grfSample.Cols[colStime].Caption = "date time";
-            grfSample.Cols[colSitemid].Caption = "item";
-            grfSample.Cols[colSfullname].Caption = "LAB";
-            grfSample.Cols[colSresult].Caption = "result";
-            grfSample.Cols[colSref].Caption = "REF";
-
             //grfView.Cols[colVNo].Visible = false;
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 DataRow dr = dt1.NewRow();
-                dr.ItemArray = new object[] { dt.Rows[i][0].ToString(), dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(), dt.Rows[i][3].ToString(), dt.Rows[i][4].ToString() };
+                dr.ItemArray = new object[] { dt.Rows[i][0].ToString(), dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(), dt.Rows[i][3].ToString(), dt.Rows[i][4].ToString(), dt.Rows[i][5].ToString() };
                 dt1.Rows.Add(dr);
 
             }
             grfSample.DataSource = dt1;
+            grfSample.Cols[colVNo].Editor = txt;
+            grfSample.Cols[colStime].Width = 180;
+            grfSample.Cols[colSsampleid].Width = 70;
+            grfSample.Cols[colSitemid].Width = 70;
+            grfSample.Cols[colSfullname].Width = 180;
+            grfSample.Cols[colSresult].Width = 150;
+            grfSample.Cols[colSref].Width = 150;
+            grfSample.Cols[colSref].Width = 150;
+
+            grfSample.Cols[colStime].Caption = "date time";
+            grfSample.Cols[colSitemid].Caption = "LAB id";
+            grfSample.Cols[colSsampleid].Caption = "ref id";
+            grfSample.Cols[colSfullname].Caption = "LAB name";
+            grfSample.Cols[colSresult].Caption = "result";
+            grfSample.Cols[colSref].Caption = "value normal";
             //grfView.Cols[colVId].Visible = false;
             //grfView.Cols[colVNo].Visible = false;
             grfSample.AllowEditing = false;

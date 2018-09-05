@@ -33,12 +33,18 @@ namespace CheckUP.objdb
         {
             DataTable dt = new DataTable();
             String sql = "";
-            sql = "SELECT distinct sampleid " +
+            //sql = "SELECT distinct sampleid " +
+            //    "FROM testdetail " +
+            //    "WHERE  TestTime >= #"+ dateStart + " 00:00:00# and testtime <= #"+ dateEnd + " 23:59:00# " +
+            //    "ORDER BY sampleid; ";
+            sql = "SELECT  patientinfo.name, testdetail.sampleid, patientinfo.id " +
                 "FROM testdetail " +
-                "WHERE  TestTime >= #"+ dateStart + " 00:00:00# and testtime <= #"+ dateEnd + " 23:59:00# " +
-                "ORDER BY sampleid; ";
+                "Left join patientinfo on testdetail.id = patientinfo.id " +
+                "WHERE  TestTime >= #" + dateStart + " 00:00:00# and testtime <= #" + dateEnd + " 23:59:00# " +
+                "and patientinfo.questdate >= #" + dateStart + " 00:00:00# and patientinfo.questdate <= #" + dateEnd + " 23:59:00# " +
+                "ORDER BY patientinfo.name,sampleid; ";
             //MessageBox.Show("1111111", "getDataHeader");
-            if(conn== null)
+            if (conn== null)
             {
                 MessageBox.Show("2222222", "getDataHeader");
             }
