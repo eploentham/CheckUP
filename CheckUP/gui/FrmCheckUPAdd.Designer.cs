@@ -403,6 +403,8 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.txtCust = new System.Windows.Forms.TextBox();
+            this.cboTestSticker = new System.Windows.Forms.ComboBox();
+            this.label38 = new System.Windows.Forms.Label();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -3768,6 +3770,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label38);
+            this.panel1.Controls.Add(this.cboTestSticker);
             this.panel1.Controls.Add(this.btnClearTestAll);
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.label19);
@@ -3812,7 +3816,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(70, 35);
+            this.label18.Location = new System.Drawing.Point(287, 48);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(41, 13);
             this.label18.TabIndex = 2;
@@ -3821,7 +3825,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(15, 6);
+            this.label17.Location = new System.Drawing.Point(4, 36);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(52, 13);
             this.label17.TabIndex = 1;
@@ -3829,7 +3833,7 @@
             // 
             // txtBarcode
             // 
-            this.txtBarcode.Location = new System.Drawing.Point(95, 3);
+            this.txtBarcode.Location = new System.Drawing.Point(84, 33);
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.Size = new System.Drawing.Size(140, 20);
             this.txtBarcode.TabIndex = 0;
@@ -4404,6 +4408,23 @@
             this.txtCust.Size = new System.Drawing.Size(256, 22);
             this.txtCust.TabIndex = 81;
             // 
+            // cboTestSticker
+            // 
+            this.cboTestSticker.FormattingEnabled = true;
+            this.cboTestSticker.Location = new System.Drawing.Point(84, 6);
+            this.cboTestSticker.Name = "cboTestSticker";
+            this.cboTestSticker.Size = new System.Drawing.Size(185, 21);
+            this.cboTestSticker.TabIndex = 82;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(4, 9);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(46, 13);
+            this.label38.TabIndex = 83;
+            this.label38.Text = "Sticker :";
+            // 
             // FrmCheckUPAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4886,5 +4907,7 @@
         private System.Windows.Forms.Button btmImportCEM;
         private System.Windows.Forms.Button btnClearTestAll;
         private System.Windows.Forms.TextBox txtCust;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.ComboBox cboTestSticker;
     }
 }
