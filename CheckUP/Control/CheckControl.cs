@@ -3585,5 +3585,235 @@ namespace CheckUP.Control
                 }
             }
         }
+        public String formatTextCEM(String value, String labid)
+        {
+            String re = "";
+            //1=FBS     Glucose                                     integer
+            //2=BUN     Blood urea nitrogen                         integer
+            //3=Creatinine     Creatinine                           round 2
+            //4=Chol     Cholesterol                                integer
+            //5=Trig     Triglyceride                               integer
+            //6=Total Protein     Total Protein                     round 1
+            //7=Albumin     Albumin                                 round 1
+            //8=Alkalinephosphatase     Alkalinephosphatase         integer
+            //9=HDL     HDL Cholesterol                             integer
+            //10=SGOT        SGOT(AST)                              integer
+            //11=SGPT        SGPT(ALT)                              integer
+            //12=Uric Acid        Uric Acid                         round 1
+            //13=Bilirubin        Total Bilirubin                   round 1
+            //14=Direct Bilirubin        Direct Bilirubin           round 1
+            //15=LDL        LDL Cholesterol                         integer
+            if (labid.Equals("1"))
+            {
+                Double chk1 = 0;
+                int chk = 0;
+                if(double.TryParse(value, out chk1))
+                {
+                    chk = Convert.ToInt32(chk1);
+                    re = chk.ToString();
+                }
+                else
+                {
+                    re = value;
+                }
+            }
+            else if (labid.Equals("2"))
+            {
+                Double chk1 = 0;
+                int chk = 0;
+                if (double.TryParse(value, out chk1))
+                {
+                    chk = Convert.ToInt32(chk1);
+                    re = chk.ToString();
+                }
+                else
+                {
+                    re = value;
+                }
+            }
+            else if (labid.Equals("3"))
+            {
+                Double chk1 = 0;
+                int chk = 0;
+                if (double.TryParse(value, out chk1))
+                {
+                    chk1 = Math.Round(chk1, 2);
+                    re = chk1.ToString();
+                }
+                else
+                {
+                    re = value;
+                }
+            }
+            else if (labid.Equals("4"))
+            {
+                Double chk1 = 0;
+                int chk = 0;
+                if (double.TryParse(value, out chk1))
+                {
+                    chk = Convert.ToInt32(chk1);
+                    re = chk.ToString();
+                }
+                else
+                {
+                    re = value;
+                }
+            }
+            else if (labid.Equals("5"))
+            {
+                Double chk1 = 0;
+                int chk = 0;
+                if (double.TryParse(value, out chk1))
+                {
+                    chk = Convert.ToInt32(chk1);
+                    re = chk.ToString();
+                }
+                else
+                {
+                    re = value;
+                }
+            }
+            else if (labid.Equals("6"))
+            {
+                Double chk1 = 0;
+                int chk = 0;
+                if (double.TryParse(value, out chk1))
+                {
+                    chk1 = Math.Round(chk1, 1);
+                    re = chk1.ToString();
+                }
+                else
+                {
+                    re = value;
+                }
+            }
+            else if (labid.Equals("7"))
+            {
+                Double chk1 = 0;
+                int chk = 0;
+                if (double.TryParse(value, out chk1))
+                {
+                    chk1 = Math.Round(chk1, 1);
+                    re = chk1.ToString();
+                }
+                else
+                {
+                    re = value;
+                }
+            }
+            else if (labid.Equals("8"))
+            {
+                Double chk1 = 0;
+                int chk = 0;
+                if (double.TryParse(value, out chk1))
+                {
+                    chk = Convert.ToInt32(chk1);
+                    re = chk.ToString();
+                }
+                else
+                {
+                    re = value;
+                }
+            }
+            else if (labid.Equals("9"))
+            {
+                Double chk1 = 0;
+                int chk = 0;
+                if (double.TryParse(value, out chk1))
+                {
+                    chk = Convert.ToInt32(chk1);
+                    re = chk.ToString();
+                }
+                else
+                {
+                    re = value;
+                }
+            }
+            else if (labid.Equals("10"))
+            {
+                Double chk1 = 0;
+                int chk = 0;
+                if (double.TryParse(value, out chk1))
+                {
+                    chk = Convert.ToInt32(chk1);
+                    re = chk.ToString();
+                }
+                else
+                {
+                    re = value;
+                }
+            }
+            else if (labid.Equals("11"))
+            {
+                Double chk1 = 0;
+                int chk = 0;
+                if (double.TryParse(value, out chk1))
+                {
+                    chk = Convert.ToInt32(chk1);
+                    re = chk.ToString();
+                }
+                else
+                {
+                    re = value;
+                }
+            }
+            else if (labid.Equals("12"))
+            {
+                Double chk1 = 0;
+                int chk = 0;
+                if (double.TryParse(value, out chk1))
+                {
+                    chk1 = Math.Round(chk1, 1);
+                    re = chk1.ToString();
+                }
+                else
+                {
+                    re = value;
+                }
+            }
+            else if (labid.Equals("13"))
+            {
+                Double chk1 = 0;
+                int chk = 0;
+                if (double.TryParse(value, out chk1))
+                {
+                    chk1 = Math.Round(chk1, 1);
+                    re = chk1.ToString();
+                }
+                else
+                {
+                    re = value;
+                }
+            }
+            else if (labid.Equals("14"))
+            {
+                Double chk1 = 0;
+                int chk = 0;
+                if (double.TryParse(value, out chk1))
+                {
+                    chk1 = Math.Round(chk1, 1);
+                    re = chk1.ToString();
+                }
+                else
+                {
+                    re = value;
+                }
+            }
+            else if (labid.Equals("15"))
+            {
+                Double chk1 = 0;
+                int chk = 0;
+                if (double.TryParse(value, out chk1))
+                {
+                    chk = Convert.ToInt32(chk1);
+                    re = chk.ToString();
+                }
+                else
+                {
+                    re = value;
+                }
+            }
+            return re;
+        }
     }
 }

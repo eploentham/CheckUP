@@ -343,6 +343,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.gbTest = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnClearTestAll = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -401,7 +402,7 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.btnClearTestAll = new System.Windows.Forms.Button();
+            this.txtCust = new System.Windows.Forms.TextBox();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -3779,6 +3780,16 @@
             this.panel1.Size = new System.Drawing.Size(472, 79);
             this.panel1.TabIndex = 76;
             // 
+            // btnClearTestAll
+            // 
+            this.btnClearTestAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.btnClearTestAll.Location = new System.Drawing.Point(343, 27);
+            this.btnClearTestAll.Name = "btnClearTestAll";
+            this.btnClearTestAll.Size = new System.Drawing.Size(117, 28);
+            this.btnClearTestAll.TabIndex = 78;
+            this.btnClearTestAll.Text = "clear test  ทั้งหมด";
+            this.btnClearTestAll.UseVisualStyleBackColor = true;
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -4385,21 +4396,20 @@
             this.label21.TabIndex = 0;
             this.label21.Text = "label21";
             // 
-            // btnClearTestAll
+            // txtCust
             // 
-            this.btnClearTestAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnClearTestAll.Location = new System.Drawing.Point(343, 27);
-            this.btnClearTestAll.Name = "btnClearTestAll";
-            this.btnClearTestAll.Size = new System.Drawing.Size(117, 28);
-            this.btnClearTestAll.TabIndex = 78;
-            this.btnClearTestAll.Text = "clear test  ทั้งหมด";
-            this.btnClearTestAll.UseVisualStyleBackColor = true;
+            this.txtCust.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCust.Location = new System.Drawing.Point(91, 23);
+            this.txtCust.Name = "txtCust";
+            this.txtCust.Size = new System.Drawing.Size(256, 22);
+            this.txtCust.TabIndex = 81;
             // 
             // FrmCheckUPAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1413, 899);
+            this.Controls.Add(this.txtCust);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.txtCntSuccess);
@@ -4875,5 +4885,6 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Button btmImportCEM;
         private System.Windows.Forms.Button btnClearTestAll;
+        private System.Windows.Forms.TextBox txtCust;
     }
 }

@@ -25,7 +25,9 @@ namespace CheckUP.gui
         C1FlexGrid grfView, grfSample;
 
         int colVName1 = 1, colVpatientid1=2, colVsampleid=3;
-        int colStime=1, colSsampleid=2, colSitemid=3, colSfullname=4, colSresult = 5, colSref = 6;
+        int colStime=1, colSsampleid=2, colSitemid=3, colSfullname=4, colSresult = 5, colSresult1=6, colSref = 7;
+
+        enum flagTestType { retrtiveNo, retriveYes};
         public FrmgetCEM(CheckControl c)
         {
             InitializeComponent();
@@ -84,8 +86,14 @@ namespace CheckUP.gui
             dateEnd1 = DateTime.Parse(txtDateEnd.Text);
             dateStart = setDate(dateStart1);
             dateEnd = setDate(dateEnd1);
-
-            cemDB.getTextCEM(dateStart, dateEnd, txtNoStart.Text, txtNoEnd.Text);
+            if (chkTestType.Checked)
+            {
+                cemDB.getTextCEM(dateStart, dateEnd, txtNoStart.Text, txtNoEnd.Text, CemDB.flagTestType.retriveNo);
+            }
+            else
+            {
+                cemDB.getTextCEM(dateStart, dateEnd, txtNoStart.Text, txtNoEnd.Text, CemDB.flagTestType.retriveYes);
+            }
         }
         private String setDate(DateTime date)
         {
@@ -234,7 +242,14 @@ namespace CheckUP.gui
             dateStart = setDate(dateStart1);
             dateEnd = setDate(dateEnd1);
 
-            setGrfSample(dateStart, dateEnd, grfView[grfView.Row, colVpatientid1].ToString());
+            if (chkTestType.Checked)
+            {
+                setGrfSample(dateStart, dateEnd, grfView[grfView.Row, colVpatientid1].ToString(), flagTestType.retrtiveNo);
+            }
+            else
+            {
+                setGrfSample(dateStart, dateEnd, grfView[grfView.Row, colVpatientid1].ToString(), flagTestType.retriveYes);
+            }
         }
         private void initGrfSample()
         {
@@ -256,7 +271,7 @@ namespace CheckUP.gui
             panel2.Controls.Add(grfSample);
             grfSample.Clear();
             grfSample.Rows.Count = 2;
-            grfSample.Cols.Count = 7;
+            grfSample.Cols.Count = 8;
             grfSample.Cols[colSresult].Width = 150;
             grfSample.Cols[colSref].Width = 150;
 
@@ -267,7 +282,7 @@ namespace CheckUP.gui
             grfSample.AllowEditing = false;
             //theme1.SetTheme(grfJob, "Office2013Red");
         }
-        private void setGrfSample(String dateStart, String dateEnd, String noStart)
+        private void setGrfSample(String dateStart, String dateEnd, String noStart, flagTestType flagtesttype)
         {
             grfSample.DataSource = null;
             grfSample.Clear();
@@ -277,6 +292,7 @@ namespace CheckUP.gui
             dt1.Columns.Add(new DataColumn("LAB id", typeof(string)));
             dt1.Columns.Add(new DataColumn("LAB name", typeof(string)));
             dt1.Columns.Add(new DataColumn("result", typeof(string)));
+            dt1.Columns.Add(new DataColumn("result1", typeof(string)));
             dt1.Columns.Add(new DataColumn("value normal", typeof(string)));
             grfSample.Rows.Count = 2;
             grfSample.Clear();
@@ -291,9 +307,9 @@ namespace CheckUP.gui
             {
                 cemDB = new CemDB(txtPath.Text, CemDB.flagAccess.bit32);
             }
-            dt = cemDB.getDataSample(dateStart, dateEnd, noStart, noStart);
+            dt = cemDB.getDataSample(dateStart, dateEnd, noStart, noStart, CemDB.flagTestType.retriveNo);
             grfSample.Rows.Count = 2;
-            grfSample.Cols.Count = 6;
+            grfSample.Cols.Count = 7;
             TextBox txt = new TextBox();
 
             //grfView.Cols[colVNo].Visible = false;
@@ -301,8 +317,17 @@ namespace CheckUP.gui
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 DataRow dr = dt1.NewRow();
-                dr.ItemArray = new object[] { dt.Rows[i][0].ToString(), dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(), dt.Rows[i][3].ToString(), dt.Rows[i][4].ToString(), dt.Rows[i][5].ToString() };
-                dt1.Rows.Add(dr);
+                String result = "";
+                try
+                {
+                    result = cc.formatTextCEM(dt.Rows[i][4].ToString(), dt.Rows[i][2].ToString());
+                    dr.ItemArray = new object[] { dt.Rows[i][0].ToString(), dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(), dt.Rows[i][3].ToString(), dt.Rows[i][4].ToString(), result, dt.Rows[i][5].ToString() };
+                    dt1.Rows.Add(dr);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(""+ex.Message, "error");
+                }
 
             }
             grfSample.DataSource = dt1;
@@ -311,15 +336,16 @@ namespace CheckUP.gui
             grfSample.Cols[colSsampleid].Width = 70;
             grfSample.Cols[colSitemid].Width = 70;
             grfSample.Cols[colSfullname].Width = 180;
-            grfSample.Cols[colSresult].Width = 150;
-            grfSample.Cols[colSref].Width = 150;
-            grfSample.Cols[colSref].Width = 150;
+            grfSample.Cols[colSresult].Width = 120;
+            grfSample.Cols[colSresult1].Width = 80;
+            grfSample.Cols[colSref].Width = 100;
 
             grfSample.Cols[colStime].Caption = "date time";
             grfSample.Cols[colSitemid].Caption = "LAB id";
             grfSample.Cols[colSsampleid].Caption = "sample id";
             grfSample.Cols[colSfullname].Caption = "LAB name";
             grfSample.Cols[colSresult].Caption = "result";
+            grfSample.Cols[colSresult1].Caption = "result1";
             grfSample.Cols[colSref].Caption = "value normal";
             //grfView.Cols[colVId].Visible = false;
             //grfView.Cols[colVNo].Visible = false;
@@ -332,7 +358,7 @@ namespace CheckUP.gui
             {
                 if (row1[colStime] == null) continue;
                 if (row1[colStime].ToString().Equals("")) continue;
-                if (row1[colStime].ToString().Equals("testtime")) continue;
+                if (row1[colStime].ToString().Equals("date time")) continue;
                 row1[0] = j;
                 if (j % 2 == 0)
                     row1.StyleNew.BackColor = color;
@@ -357,6 +383,5 @@ namespace CheckUP.gui
             txtNoStart.Value = 1;
             txtNoEnd.Value = 20;
         }
-
     }
 }

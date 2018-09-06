@@ -608,13 +608,24 @@ namespace CheckUP.gui
             rrr[colEvisitHn] = grfView[row, colVvisitHn].ToString();
             rrr[colEname] = grfView[row, colVname].ToString();
             rrr[colEpatnumber] = grfView[row, colVpatnumber].ToString();
+            DataTable dtTest = new DataTable();
+            dtTest = cc.ccpdb.selectByPk(grfView[row, colVId].ToString());
 
+            cc.ccpdb.UpdateStatusVisit1(grfView[row, colVId].ToString());
+            cc.ccpdb.UpdateStatusTest(dtTest.Rows[0][cc.ccpdb.ccp.Id].ToString(), dtTest.Rows[0][cc.ccpdb.ccp.sticker01].ToString(), dtTest.Rows[0][cc.ccpdb.ccp.sticker02].ToString(), dtTest.Rows[0][cc.ccpdb.ccp.sticker03].ToString()
+                , dtTest.Rows[0][cc.ccpdb.ccp.sticker04].ToString(), dtTest.Rows[0][cc.ccpdb.ccp.sticker05].ToString(), dtTest.Rows[0][cc.ccpdb.ccp.sticker06].ToString()
+                , dtTest.Rows[0][cc.ccpdb.ccp.sticker07].ToString(), dtTest.Rows[0][cc.ccpdb.ccp.sticker08].ToString(), dtTest.Rows[0][cc.ccpdb.ccp.sticker09].ToString()
+                , dtTest.Rows[0][cc.ccpdb.ccp.sticker10].ToString(), dtTest.Rows[0][cc.ccpdb.ccp.sticker11].ToString(), dtTest.Rows[0][cc.ccpdb.ccp.sticker12].ToString()
+                , dtTest.Rows[0][cc.ccpdb.ccp.sticker13].ToString(), dtTest.Rows[0][cc.ccpdb.ccp.sticker14].ToString(), dtTest.Rows[0][cc.ccpdb.ccp.sticker15].ToString()
+                , dtTest.Rows[0][cc.ccpdb.ccp.sticker16].ToString(), dtTest.Rows[0][cc.ccpdb.ccp.sticker17].ToString(), dtTest.Rows[0][cc.ccpdb.ccp.sticker18].ToString()
+                , dtTest.Rows[0][cc.ccpdb.ccp.sticker19].ToString(), dtTest.Rows[0][cc.ccpdb.ccp.sticker20].ToString());
+            
+            dtTest = new DataTable();
+            dtTest = cc.ccpdb.selectByPk(grfView[row, colVId].ToString());
             Row ttt = grfTest.Rows.Add();
             ttt[colTId] = grfView[row, colVId].ToString();
             ttt[colTvisitHn] = grfView[row, colVvisitHn].ToString();
             ttt[colTname] = grfView[row, colVname].ToString();
-            dtTest.Clear();
-            dtTest = cc.ccpdb.selectByPk(grfView[row, colVId].ToString());
             ttt[colS01] = dtTest.Rows[0][cc.ccpdb.ccp.test01].ToString();
             ttt[colS02] = dtTest.Rows[0][cc.ccpdb.ccp.test02].ToString();
             ttt[colS03] = dtTest.Rows[0][cc.ccpdb.ccp.test03].ToString();
@@ -635,8 +646,8 @@ namespace CheckUP.gui
             ttt[colS18] = dtTest.Rows[0][cc.ccpdb.ccp.test18].ToString();
             ttt[colS19] = dtTest.Rows[0][cc.ccpdb.ccp.test19].ToString();
             ttt[colS20] = dtTest.Rows[0][cc.ccpdb.ccp.test20].ToString();
-
-            cc.ccpdb.UpdateStatusVisit1(grfView[row, colVId].ToString());
+                        
+            
             grfView.Rows.Remove(row);
             setGrfColor();
             setOnsiteCnt("on");
@@ -1250,6 +1261,56 @@ namespace CheckUP.gui
                     CellRange cel = grfTest.GetCellRange(i + 1, colS10);
                     cel.StyleNew.BackColor = Color.Green;
                 }
+                if (dt.Rows[i][cc.ccpdb.ccp.test11].ToString().Equals("1"))
+                {
+                    CellRange cel = grfTest.GetCellRange(i + 1, colS11);
+                    cel.StyleNew.BackColor = Color.Green;
+                }
+                if (dt.Rows[i][cc.ccpdb.ccp.test12].ToString().Equals("1"))
+                {
+                    CellRange cel = grfTest.GetCellRange(i + 1, colS12);
+                    cel.StyleNew.BackColor = Color.Green;
+                }
+                if (dt.Rows[i][cc.ccpdb.ccp.test13].ToString().Equals("1"))
+                {
+                    CellRange cel = grfTest.GetCellRange(i + 1, colS13);
+                    cel.StyleNew.BackColor = Color.Green;
+                }
+                if (dt.Rows[i][cc.ccpdb.ccp.test14].ToString().Equals("1"))
+                {
+                    CellRange cel = grfTest.GetCellRange(i + 1, colS14);
+                    cel.StyleNew.BackColor = Color.Green;
+                }
+                if (dt.Rows[i][cc.ccpdb.ccp.test15].ToString().Equals("1"))
+                {
+                    CellRange cel = grfTest.GetCellRange(i + 1, colS15);
+                    cel.StyleNew.BackColor = Color.Green;
+                }
+                if (dt.Rows[i][cc.ccpdb.ccp.test16].ToString().Equals("1"))
+                {
+                    CellRange cel = grfTest.GetCellRange(i + 1, colS16);
+                    cel.StyleNew.BackColor = Color.Green;
+                }
+                if (dt.Rows[i][cc.ccpdb.ccp.test17].ToString().Equals("1"))
+                {
+                    CellRange cel = grfTest.GetCellRange(i + 1, colS17);
+                    cel.StyleNew.BackColor = Color.Green;
+                }
+                if (dt.Rows[i][cc.ccpdb.ccp.test18].ToString().Equals("1"))
+                {
+                    CellRange cel = grfTest.GetCellRange(i + 1, colS18);
+                    cel.StyleNew.BackColor = Color.Green;
+                }
+                if (dt.Rows[i][cc.ccpdb.ccp.test19].ToString().Equals("1"))
+                {
+                    CellRange cel = grfTest.GetCellRange(i + 1, colS19);
+                    cel.StyleNew.BackColor = Color.Green;
+                }
+                if (dt.Rows[i][cc.ccpdb.ccp.test20].ToString().Equals("1"))
+                {
+                    CellRange cel = grfTest.GetCellRange(i + 1, colS20);
+                    cel.StyleNew.BackColor = Color.Green;
+                }
                 //if (i == 68)
                 //{
                 //    string aa = "";
@@ -1656,75 +1717,83 @@ namespace CheckUP.gui
         private int calColVisible()
         {
             int chkCol = 0;
-            if (grfTest.Cols[colS01].Visible)
+            if (grfTest.Cols[colS01].Visible && (!grfTest.Cols[colS01].ToString().Equals("-")))
             {
                 chkCol++;
             }
-            if (grfTest.Cols[colS02].Visible)
+            if (grfTest.Cols[colS02].Visible && (!grfTest.Cols[colS02].ToString().Equals("-")))
             {
                 chkCol++;
             }
-            if (grfTest.Cols[colS03].Visible)
+            if (grfTest.Cols[colS03].Visible && (!grfTest.Cols[colS03].ToString().Equals("-")))
             {
                 chkCol++;
             }
-            if (grfTest.Cols[colS04].Visible)
+            if (grfTest.Cols[colS04].Visible && (!grfTest.Cols[colS04].ToString().Equals("-")))
             {
                 chkCol++;
             }
-            if (grfTest.Cols[colS05].Visible)
+            if (grfTest.Cols[colS05].Visible && (!grfTest.Cols[colS05].ToString().Equals("-")))
             {
                 chkCol++;
             }
-            if (grfTest.Cols[colS06].Visible)
+            if (grfTest.Cols[colS06].Visible && (!grfTest.Cols[colS06].ToString().Equals("-")))
             {
                 chkCol++;
             }
-            if (grfTest.Cols[colS07].Visible)
+            if (grfTest.Cols[colS07].Visible && (!grfTest.Cols[colS07].ToString().Equals("-")))
             {
                 chkCol++;
             }
-            if (grfTest.Cols[colS08].Visible)
+            if (grfTest.Cols[colS08].Visible && (!grfTest.Cols[colS08].ToString().Equals("-")))
             {
                 chkCol++;
             }
-            if (grfTest.Cols[colS09].Visible)
+            if (grfTest.Cols[colS09].Visible && (!grfTest.Cols[colS09].ToString().Equals("-")))
             {
                 chkCol++;
             }
-            if (grfTest.Cols[colS11].Visible)
+            if (grfTest.Cols[colS10].Visible && (!grfTest.Cols[colS10].ToString().Equals("-")))
             {
                 chkCol++;
             }
-            if (grfTest.Cols[colS12].Visible)
+            if (grfTest.Cols[colS11].Visible && (!grfTest.Cols[colS11].ToString().Equals("-")))
             {
                 chkCol++;
             }
-            if (grfTest.Cols[colS13].Visible)
+            if (grfTest.Cols[colS12].Visible && (!grfTest.Cols[colS12].ToString().Equals("-")))
             {
                 chkCol++;
             }
-            if (grfTest.Cols[colS14].Visible)
+            if (grfTest.Cols[colS13].Visible && (!grfTest.Cols[colS13].ToString().Equals("-")))
             {
                 chkCol++;
             }
-            if (grfTest.Cols[colS15].Visible)
+            if (grfTest.Cols[colS14].Visible && (!grfTest.Cols[colS14].ToString().Equals("-")))
             {
                 chkCol++;
             }
-            if (grfTest.Cols[colS16].Visible)
+            if (grfTest.Cols[colS15].Visible && (!grfTest.Cols[colS15].ToString().Equals("-")))
             {
                 chkCol++;
             }
-            if (grfTest.Cols[colS18].Visible)
+            if (grfTest.Cols[colS16].Visible && (!grfTest.Cols[colS16].ToString().Equals("-")))
             {
                 chkCol++;
             }
-            if (grfTest.Cols[colS19].Visible)
+            if (grfTest.Cols[colS17].Visible && (!grfTest.Cols[colS17].ToString().Equals("-")))
             {
                 chkCol++;
             }
-            if (grfTest.Cols[colS20].Visible)
+            if (grfTest.Cols[colS18].Visible && (!grfTest.Cols[colS18].ToString().Equals("-")))
+            {
+                chkCol++;
+            }
+            if (grfTest.Cols[colS19].Visible && (!grfTest.Cols[colS19].ToString().Equals("-")))
+            {
+                chkCol++;
+            }
+            if (grfTest.Cols[colS20].Visible && (!grfTest.Cols[colS20].ToString().Equals("-")))
             {
                 chkCol++;
             }
@@ -1733,86 +1802,147 @@ namespace CheckUP.gui
         private int calCol1(int row)
         {
             int chkCol = 0;
-            if (grfTest[row, colS01].ToString().Equals("1"))
+            if (grfTest.Cols[colS01].Visible)
             {
-                chkCol++;
+                if(grfTest[row, colS01].ToString().Equals("1") || grfTest[row, colS01].ToString().Equals("-"))
+                {
+                    chkCol++;
+                }
             }
-            if (grfTest[row, colS02].ToString().Equals("1"))
+            if (grfTest.Cols[colS02].Visible)
             {
-                chkCol++;
+                if (grfTest[row, colS02].ToString().Equals("1") || grfTest[row, colS02].ToString().Equals("-"))
+                {
+                    chkCol++;
+                }
             }
-            if (grfTest[row, colS03].ToString().Equals("1"))
+            if (grfTest.Cols[colS03].Visible)
             {
-                chkCol++;
+                if (grfTest[row, colS03].ToString().Equals("1") || grfTest[row, colS03].ToString().Equals("-"))
+                {
+                    chkCol++;
+                }
             }
-            if (grfTest[row, colS04].ToString().Equals("1"))
+            if (grfTest.Cols[colS04].Visible)
             {
-                chkCol++;
+                if (grfTest[row, colS04].ToString().Equals("1") || grfTest[row, colS04].ToString().Equals("-"))
+                {
+                    chkCol++;
+                }
             }
-            if (grfTest[row, colS05].ToString().Equals("1"))
+            if (grfTest.Cols[colS05].Visible)
             {
-                chkCol++;
+                if (grfTest[row, colS05].ToString().Equals("1") || grfTest[row, colS05].ToString().Equals("-"))
+                {
+                    chkCol++;
+                }
             }
-            if (grfTest[row, colS06].ToString().Equals("1"))
+            if (grfTest.Cols[colS06].Visible)
             {
-                chkCol++;
+                if (grfTest[row, colS06].ToString().Equals("1") || grfTest[row, colS06].ToString().Equals("-"))
+                {
+                    chkCol++;
+                }
             }
-            if (grfTest[row, colS07].ToString().Equals("1"))
+            if (grfTest.Cols[colS07].Visible)
             {
-                chkCol++;
+                if (grfTest[row, colS07].ToString().Equals("1") || grfTest[row, colS07].ToString().Equals("-"))
+                {
+                    chkCol++;
+                }
             }
-            if (grfTest[row, colS08].ToString().Equals("1"))
+            if (grfTest.Cols[colS08].Visible)
             {
-                chkCol++;
+                if (grfTest[row, colS08].ToString().Equals("1") || grfTest[row, colS08].ToString().Equals("-"))
+                {
+                    chkCol++;
+                }
             }
-            if (grfTest[row, colS09].ToString().Equals("1"))
+            if (grfTest.Cols[colS09].Visible)
             {
-                chkCol++;
+                if (grfTest[row, colS09].ToString().Equals("1") || grfTest[row, colS09].ToString().Equals("-"))
+                {
+                    chkCol++;
+                }
             }
-            if (grfTest[row, colS10].ToString().Equals("1"))
+            if (grfTest.Cols[colS10].Visible)
             {
-                chkCol++;
+                if (grfTest[row, colS10].ToString().Equals("1") || grfTest[row, colS10].ToString().Equals("-"))
+                {
+                    chkCol++;
+                }
             }
-            if (grfTest[row, colS11].ToString().Equals("1"))
+            if (grfTest.Cols[colS11].Visible)
             {
-                chkCol++;
+                if (grfTest[row, colS11].ToString().Equals("1") || grfTest[row, colS11].ToString().Equals("-"))
+                {
+                    chkCol++;
+                }
             }
-            if (grfTest[row, colS12].ToString().Equals("1"))
+            if (grfTest.Cols[colS12].Visible)
             {
-                chkCol++;
+                if (grfTest[row, colS12].ToString().Equals("1") || grfTest[row, colS12].ToString().Equals("-"))
+                {
+                    chkCol++;
+                }
             }
-            if (grfTest[row, colS13].ToString().Equals("1"))
+            if (grfTest.Cols[colS13].Visible)
             {
-                chkCol++;
+                if (grfTest[row, colS13].ToString().Equals("1") || grfTest[row, colS13].ToString().Equals("-"))
+                {
+                    chkCol++;
+                }
             }
-            if (grfTest[row, colS14].ToString().Equals("1"))
+            if (grfTest.Cols[colS14].Visible)
             {
-                chkCol++;
+                if (grfTest[row, colS14].ToString().Equals("1") || grfTest[row, colS14].ToString().Equals("-"))
+                {
+                    chkCol++;
+                }
             }
-            if (grfTest[row, colS15].ToString().Equals("1"))
+            if (grfTest.Cols[colS15].Visible)
             {
-                chkCol++;
+                if (grfTest[row, colS15].ToString().Equals("1") || grfTest[row, colS15].ToString().Equals("-"))
+                {
+                    chkCol++;
+                }
             }
-            if (grfTest[row, colS16].ToString().Equals("1"))
+            if (grfTest.Cols[colS16].Visible)
             {
-                chkCol++;
+                if (grfTest[row, colS16].ToString().Equals("1") || grfTest[row, colS16].ToString().Equals("-"))
+                {
+                    chkCol++;
+                }
             }
-            if (grfTest[row, colS17].ToString().Equals("1"))
+            if (grfTest.Cols[colS17].Visible)
             {
-                chkCol++;
+                if (grfTest[row, colS17].ToString().Equals("1") || grfTest[row, colS17].ToString().Equals("-"))
+                {
+                    chkCol++;
+                }
             }
-            if (grfTest[row, colS18].ToString().Equals("1"))
+            if (grfTest.Cols[colS18].Visible)
             {
-                chkCol++;
+                if (grfTest[row, colS18].ToString().Equals("1") || grfTest[row, colS18].ToString().Equals("-"))
+                {
+                    chkCol++;
+                }
             }
-            if (grfTest[row, colS19].ToString().Equals("1"))
+            if (grfTest.Cols[colS19].Visible)
             {
-                chkCol++;
+                if (grfTest[row, colS19].ToString().Equals("1") || grfTest[row, colS19].ToString().Equals("-"))
+                {
+                    chkCol++;
+                }
             }
-            if (grfTest[row, colS20].ToString().Equals("1"))
+            if (grfTest.Cols[colS20].Visible)
             {
-                chkCol++;
+                if (grfTest[row, colS20].ToString().Equals("1") || grfTest[row, colS20].ToString().Equals("-"))
+                {
+                    chkCol++;
+                }
             }
+            
             return chkCol;
         }
         private Boolean setTest(String barcode, int row)
@@ -1843,6 +1973,9 @@ namespace CheckUP.gui
                                 cel.StyleNew.BackColor = Color.Green;
                                 int chkColV = calColVisible();
                                 int chkCol1 = calCol1(row);
+                                int colVis = 0, colCol1 = 0;
+                                colVis = calColVisible();
+                                colCol1 = calCol1(row);
                                 if (calColVisible() == calCol1(row))
                                 {
                                     CellRange cel1 = grfTest.GetCellRange(row, colTvisitHn, row, colTname);
@@ -4761,6 +4894,21 @@ namespace CheckUP.gui
                 theme1.SetTheme(grfEmp, "Office2007Silver");
                 theme1.SetTheme(grfTest, "Office2007Silver");
                 theme1.SetTheme(grfView, "Office2007Silver");
+            }
+            if (!flagNew)
+            {
+                cboCust.Enabled = false;
+                btnCust.Hide();
+                txtCust.Show();
+                cboCust.Hide();
+                txtCust.Text = cboCust.Text;
+                //cboCust.AllowDrop = false;
+            }
+            else
+            {
+                txtCust.Hide();
+                cboCust.Show();
+                btnCust.Show();
             }
             setResize();
         }

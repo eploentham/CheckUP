@@ -2011,6 +2011,49 @@ namespace CheckUP.objdb
             }
             return chk;
         }
+        public String UpdateStatusTest(String ccpId, String val1, String val2, String val3, String val4, String val5, String val6, String val7, String val8, String val9, String val10
+            , String val11, String val12, String val13, String val14, String val15, String val16, String val17, String val18, String val19, String val20)
+        {
+            String chk = "", sql = "", onsite = "";
+            String test01 = "", test02 = "", test03 = "", test04 = "", test05 = "", test06 = "", test07 = "", test08 = "", test09 = "", test10 = "";
+            String test11 = "", test12 = "", test13 = "", test14 = "", test15 = "", test16 = "", test17 = "", test18 = "", test19 = "", test20 = "";
+            try
+            {
+                test01 = val1.Equals("1") ? "0" : "-";
+                test02 = val2.Equals("1") ? "0" : "-";
+                test03 = val3.Equals("1") ? "0" : "-";
+                test04 = val4.Equals("1") ? "0" : "-";
+                test05 = val5.Equals("1") ? "0" : "-";
+                test06 = val6.Equals("1") ? "0" : "-";
+                test07 = val7.Equals("1") ? "0" : "-";
+                test08 = val8.Equals("1") ? "0" : "-";
+                test09 = val9.Equals("1") ? "0" : "-";
+                test10 = val10.Equals("1") ? "0" : "-";
+                test11 = val11.Equals("1") ? "0" : "-";
+                test12 = val12.Equals("1") ? "0" : "-";
+                test13 = val13.Equals("1") ? "0" : "-";
+                test14 = val14.Equals("1") ? "0" : "-";
+                test15 = val15.Equals("1") ? "0" : "-";
+                test16 = val16.Equals("1") ? "0" : "-";
+                test17 = val17.Equals("1") ? "0" : "-";
+                test18 = val18.Equals("1") ? "0" : "-";
+                test19 = val19.Equals("1") ? "0" : "-";
+                test20 = val20.Equals("1") ? "0" : "-";
+                if (conn.initc.statusonsite.Equals("yes"))
+                {
+                    onsite = " onsite_";
+                }
+                //chk = conn.ExecuteNonQuery(sql);
+                UpdateTestOnSite(ccpId, test01, test02, test03, test04, test05, test06, test07, test08, test09, test10
+                    , test11, test12, test13, test14, test15, test16, test17, test18, test19, test20);
+            }
+            catch (Exception ex)
+            {
+                lw.WriteLog("ccp.UpdatePE Error " + ex.Message);
+                //max = ex.getMessage;
+            }
+            return chk;
+        }
         public String UpdateName(String rowNumber, String cucId, String name, String age, String sex)
         {
             String chk = "", sql = "", sexname="";

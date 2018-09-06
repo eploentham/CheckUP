@@ -12,6 +12,7 @@ namespace CheckUP.objdb
     {
         ConnectDB conn;
         public enum flagAccess { bit32, bit64 };
+        public enum flagTestType { retriveNo, retriveYes };
         flagAccess flagaccess;
         public CemDB(String path, flagAccess flag)
         {
@@ -51,7 +52,7 @@ namespace CheckUP.objdb
             dt = conn.selectDataAccecss(sql);
             return dt;
         }
-        public DataTable getDataSample(String dateStart, String dateEnd, String noStart, String noEnd)
+        public DataTable getDataSample(String dateStart, String dateEnd, String noStart, String noEnd, flagTestType flagtesttype)
         {
             DataTable dt = new DataTable();
             String sql = "";
@@ -61,21 +62,35 @@ namespace CheckUP.objdb
             //    "WHERE  TestTime >= #" + dateStart + " 00:00:00# and testtime <= #" + dateEnd + " 23:59:00# " +
             //    "and sampleid >="+ noStart+ " and  sampleid <=" + noEnd + " " +
             //    "ORDER BY sampleid, itemid,testdetail.testtime; ";
-            sql = "SELECT testtime,sampleid, itemid, fullname, testresult, printref  " +
+            if(flagtesttype == flagTestType.retriveNo)
+            {
+                sql = "SELECT testtime,sampleid, itemid, fullname, testresult, printref  " +
+                "FROM testdetail " +
+                "left join testdefine on testdefine.id = testdetail.itemid " +
+                "WHERE  TestTime >= #" + dateStart + " 00:00:00# and testtime <= #" + dateEnd + " 23:59:00# " +
+                "and testdetail.sampleid >=" + noStart + " and  testdetail.sampleid <=" + noEnd + " " +
+                " and testdetail.testtype = 0 " +
+                "ORDER BY sampleid, itemid,testdetail.testtime; ";
+            }
+            else
+            {
+                sql = "SELECT testtime,sampleid, itemid, fullname, testresult, printref  " +
                 "FROM testdetail " +
                 "left join testdefine on testdefine.id = testdetail.itemid " +
                 "WHERE  TestTime >= #" + dateStart + " 00:00:00# and testtime <= #" + dateEnd + " 23:59:00# " +
                 "and testdetail.sampleid >=" + noStart + " and  testdetail.sampleid <=" + noEnd + " " +
                 "ORDER BY sampleid, itemid,testdetail.testtime; ";
+            }
+            
             dt = conn.selectDataAccecss(sql);
             return dt;
         }
-        public void getTextCEM(String dateStart, String dateEnd, String noStart, String noEnd)
+        public void getTextCEM(String dateStart, String dateEnd, String noStart, String noEnd, flagTestType flagtesttype)
         {
             DataTable dt = new DataTable();
             String sql = "";
 
-            dt = getDataSample(dateStart, dateEnd, noStart, noEnd);
+            dt = getDataSample(dateStart, dateEnd, noStart, noEnd, flagtesttype);
             if (dt.Rows.Count > 0)
             {
                 String col01 = "", col02 = "", col03 = "", col04 = "", col05 = "", col06 = "";
