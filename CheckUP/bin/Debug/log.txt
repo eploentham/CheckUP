@@ -6576,5 +6576,20 @@ The statement has been terminated.
 9/6/2018 5:06 PM->ExecuteNonQuery ex  error ExecuteNonQuery: CommandText property has not been initialized
 9/6/2018 5:06 PM->ExecuteNonQuery ex  error ExecuteNonQuery: CommandText property has not been initialized
 9/6/2018 5:06 PM->ExecuteNonQuery ex  error ExecuteNonQuery: CommandText property has not been initialized
+<<<<<<< HEAD
 9/7/2018 2:13 PM->selectData ex  error Invalid object name 'b_sticker'.
 9/7/2018 2:13 PM->selectData ex  error Invalid object name 'b_sticker'.
+=======
+9/7/2018 11:42 AM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string ')'.
+Incorrect syntax near ')'.
+9/7/2018 12:53 PM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string ')'.
+Incorrect syntax near ')'.
+9/7/2018 12:53 PM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string ')'.
+Incorrect syntax near ')'.
+9/7/2018 12:54 PM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string ')'.
+Incorrect syntax near ')'.
+9/7/2018 12:54 PM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string ')'.
+Incorrect syntax near ')'.
+9/7/2018 12:54 PM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string ')'.
+Incorrect syntax near ')'.
+>>>>>>> 0a2dd78074d620deb5bc873ab90835bbeae63479

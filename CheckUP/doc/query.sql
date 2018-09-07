@@ -184,3 +184,28 @@ create table t_sticker (
 	 sticker_name varchar(255),
      primary key (sticker_id, cust_checkup_patient_id)
 );
+
+
+update t_cust_checkup
+set 
+	sticker01_name ='',
+	sticker02_name ='',
+	sticker03_name ='',
+	sticker04_name ='',
+	sticker05_name ='',
+	sticker06_name ='',
+	sticker07_name ='',
+	sticker08_name ='',
+	sticker09_name ='',
+	sticker10_name ='',
+	sticker11_name ='',
+	sticker12_name ='',
+	sticker13_name ='',
+	sticker14_name ='',
+	sticker15_name ='',
+	sticker16_name ='',
+	sticker17_name ='',
+	sticker18_name ='',
+	sticker19_name ='',
+	sticker20_name =''
+	
