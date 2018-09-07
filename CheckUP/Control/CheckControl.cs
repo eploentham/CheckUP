@@ -3371,6 +3371,30 @@ namespace CheckUP.Control
             Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
             int rowCount = xlRange.Rows.Count;
             pB1.Maximum = rowCount;
+
+            txt1 = xlRange.Cells[1, colvisithn + 3].Value2 != null ? xlRange.Cells[1, colvisithn + 3].Value2.ToString() : "";   //PE                
+            txt2 = xlRange.Cells[1, colvisithn + 4].Value2 != null ? xlRange.Cells[1, colvisithn + 4].Value2.ToString() : "";   //PE                
+            txt3 = xlRange.Cells[1, colvisithn + 5].Value2 != null ? xlRange.Cells[1, colvisithn + 5].Value2.ToString() : "";   //PE                
+            txt4 = xlRange.Cells[1, colvisithn + 6].Value2 != null ? xlRange.Cells[1, colvisithn + 6].Value2.ToString() : "";   //PE                
+            txt5 = xlRange.Cells[1, colvisithn + 7].Value2 != null ? xlRange.Cells[1, colvisithn + 7].Value2.ToString() : "";   //PE                
+            txt6 = xlRange.Cells[1, colvisithn + 8].Value2 != null ? xlRange.Cells[1, colvisithn + 8].Value2.ToString() : "";   //PE                
+            txt7 = xlRange.Cells[1, colvisithn + 9].Value2 != null ? xlRange.Cells[1, colvisithn + 9].Value2.ToString() : "";   //PE                
+            txt8 = xlRange.Cells[1, colvisithn + 10].Value2 != null ? xlRange.Cells[1, colvisithn + 10].Value2.ToString() : "";   //PE                
+            txt9 = xlRange.Cells[1, colvisithn + 11].Value2 != null ? xlRange.Cells[1, colvisithn + 11].Value2.ToString() : "";   //PE                
+            txt10 = xlRange.Cells[1, colvisithn + 12].Value2 != null ? xlRange.Cells[1, colvisithn + 12].Value2.ToString() : "";   //PE                
+            txt11 = xlRange.Cells[1, colvisithn + 13].Value2 != null ? xlRange.Cells[1, colvisithn + 13].Value2.ToString() : "";   //PE                
+            txt12 = xlRange.Cells[1, colvisithn + 14].Value2 != null ? xlRange.Cells[1, colvisithn + 14].Value2.ToString() : "";   //PE                
+            txt13 = xlRange.Cells[1, colvisithn + 15].Value2 != null ? xlRange.Cells[1, colvisithn + 15].Value2.ToString() : "";   //PE                
+            txt14 = xlRange.Cells[1, colvisithn + 16].Value2 != null ? xlRange.Cells[1, colvisithn + 16].Value2.ToString() : "";   //PE                
+            txt15 = xlRange.Cells[1, colvisithn + 17].Value2 != null ? xlRange.Cells[1, colvisithn + 17].Value2.ToString() : "";   //PE                
+            txt16 = xlRange.Cells[1, colvisithn + 18].Value2 != null ? xlRange.Cells[1, colvisithn + 18].Value2.ToString() : "";   //PE                
+            txt17 = xlRange.Cells[1, colvisithn + 19].Value2 != null ? xlRange.Cells[1, colvisithn + 19].Value2.ToString() : "";   //PE                
+            txt18 = xlRange.Cells[1, colvisithn + 20].Value2 != null ? xlRange.Cells[1, colvisithn + 20].Value2.ToString() : "";   //PE                
+            txt19 = xlRange.Cells[1, colvisithn + 21].Value2 != null ? xlRange.Cells[1, colvisithn + 21].Value2.ToString() : "";   //PE                
+            txt20 = xlRange.Cells[1, colvisithn + 22].Value2 != null ? xlRange.Cells[1, colvisithn + 22].Value2.ToString() : "";   //PE
+
+            cucdb.updateStickerName(cucId, txt1, txt2, txt3, txt4, txt5, txt6, txt7, txt8, txt9, txt10, txt11, txt12, txt13, txt14, txt15, txt16, txt17, txt18, txt19, txt20);
+
             for (int i = rowstart; i <= rowCount; i++)
             {
                 if (xlRange.Cells[i, colvisithn].Value2 != null)
@@ -3381,7 +3405,7 @@ namespace CheckUP.Control
                 {
                     visitHn = "";
                 }
-                
+
                 //txt = xlRange.Cells[i, visithn+2].Value2.ToString();                    
                 txt1 = xlRange.Cells[i, colvisithn + 3].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 3].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                
                 txt2 = xlRange.Cells[i, colvisithn + 4].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 4].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                

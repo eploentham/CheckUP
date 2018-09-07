@@ -234,6 +234,7 @@ namespace CheckUP.gui
             tC.Font = font;
             cboCust = cc.cudb.getCboCustomer(cboCust);
             cboSticker = cc.getCboSticker(cucId, cboSticker);
+            cboTestSticker = cc.cucdb.getCboStickerr(cboTestSticker, cucId);
             //MessageBox.Show("cccc", "");
             //tC.TabPages[tabCho].Text = "Cholesterol";
             setControl(cucId);
@@ -4962,6 +4963,7 @@ namespace CheckUP.gui
                 //Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.ActiveSheet;
                 //Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
                 fileName = ofd.FileName;
+                txtPath.Text = fileName;
             }
             catch (Exception ex){
                 MessageBox.Show("Error "+ex.InnerException, " message "+ex.Message);

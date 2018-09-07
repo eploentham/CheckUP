@@ -178,6 +178,27 @@ namespace CheckUP.objdb
             cuc.sticker19 = "sticker19";
             cuc.sticker20 = "sticker20";
 
+            cuc.sticker01_name = "sticker01_name";
+            cuc.sticker02_name = "sticker02_name";
+            cuc.sticker03_name = "sticker03_name";
+            cuc.sticker04_name = "sticker04_name";
+            cuc.sticker05_name = "sticker05_name";
+            cuc.sticker06_name = "sticker06_name";
+            cuc.sticker07_name = "sticker07_name";
+            cuc.sticker08_name = "sticker08_name";
+            cuc.sticker09_name = "sticker09_name";
+            cuc.sticker10_name = "sticker10_name";
+            cuc.sticker11_name = "sticker11_name";
+            cuc.sticker12_name = "sticker12_name";
+            cuc.sticker13_name = "sticker13_name";
+            cuc.sticker14_name = "sticker14_name";
+            cuc.sticker15_name = "sticker15_name";
+            cuc.sticker16_name = "sticker16_name";
+            cuc.sticker17_name = "sticker17_name";
+            cuc.sticker18_name = "sticker18_name";
+            cuc.sticker19_name = "sticker19_name";
+            cuc.sticker20_name = "sticker20_name";
+
             cuc.pkField = "cust_checkup_patient_id";
             cuc.table = "t_cust_checkup";
         }
@@ -341,16 +362,40 @@ namespace CheckUP.objdb
             item.sticker18 = dt.Rows[0][cuc.sticker18].ToString();
             item.sticker19 = dt.Rows[0][cuc.sticker19].ToString();
             item.sticker20 = dt.Rows[0][cuc.sticker20].ToString();
+
+            item.sticker01_name = dt.Rows[0][cuc.sticker01_name].ToString();
+            item.sticker02_name = dt.Rows[0][cuc.sticker02_name].ToString();
+            item.sticker03_name = dt.Rows[0][cuc.sticker03_name].ToString();
+            item.sticker04_name = dt.Rows[0][cuc.sticker04_name].ToString();
+            item.sticker05_name = dt.Rows[0][cuc.sticker05_name].ToString();
+            item.sticker06_name = dt.Rows[0][cuc.sticker06_name].ToString();
+            item.sticker07_name = dt.Rows[0][cuc.sticker07_name].ToString();
+            item.sticker08_name = dt.Rows[0][cuc.sticker08_name].ToString();
+            item.sticker09_name = dt.Rows[0][cuc.sticker09_name].ToString();
+            item.sticker10_name = dt.Rows[0][cuc.sticker10_name].ToString();
+            item.sticker11_name = dt.Rows[0][cuc.sticker11_name].ToString();
+            item.sticker12_name = dt.Rows[0][cuc.sticker12_name].ToString();
+            item.sticker13_name = dt.Rows[0][cuc.sticker13_name].ToString();
+            item.sticker14_name = dt.Rows[0][cuc.sticker14_name].ToString();
+            item.sticker15_name = dt.Rows[0][cuc.sticker15_name].ToString();
+            item.sticker16_name = dt.Rows[0][cuc.sticker16_name].ToString();
+            item.sticker17_name = dt.Rows[0][cuc.sticker17_name].ToString();
+            item.sticker18_name = dt.Rows[0][cuc.sticker18_name].ToString();
+            item.sticker19_name = dt.Rows[0][cuc.sticker19_name].ToString();
+            item.sticker20_name = dt.Rows[0][cuc.sticker20_name].ToString();
             return item;
         }
         public DataTable selectAll()
         {
             String sql = "", onsite="";
             DataTable dt = new DataTable();
-            if (conn.initc.statusonsite.Equals(""))
+            if (conn.initc.statusonsite.Equals("yes"))
             {
                 onsite = " onsite_";
             }
+            //MessageBox.Show("onsite " + onsite, "");
+            //MessageBox.Show("onsite " + conn.initc.statusonsite, "");
+            //MessageBox.Show("ConnectionString " + conn._mainConnection.ConnectionString, "");
             sql = "Select * From " + onsite+cuc.table + " Where " + cuc.Active + "='1' Order By "+cuc.dateCreate+" desc";
             dt = conn.selectData(sql);
 
@@ -370,11 +415,28 @@ namespace CheckUP.objdb
             CustCheckUp item = new CustCheckUp();
             String sql = "", onsite="";
             DataTable dt = new DataTable();
-            if (conn.initc.statusonsite.Equals(""))
+            if (conn.initc.statusonsite.Equals("yes"))
             {
                 onsite = " onsite_";
             }
             sql = "Select * From " + onsite+cuc.table + " Where " + cuc.pkField + "='" + cuId + "'";
+            dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                item = setData(item, dt);
+            }
+            return item;
+        }
+        public CustCheckUp selectByPk1(String cuId)
+        {
+            CustCheckUp item = new CustCheckUp();
+            String sql = "", onsite = "";
+            DataTable dt = new DataTable();
+            if (conn.initc.statusonsite.Equals("yes"))
+            {
+                onsite = " onsite_";
+            }
+            sql = "Select * From " + cuc.table + " Where " + cuc.pkField + "='" + cuId + "'";
             dt = conn.selectData(sql);
             if (dt.Rows.Count > 0)
             {
@@ -408,6 +470,27 @@ namespace CheckUP.objdb
             p.RegisDate = p.RegisDate == null ? "" : p.RegisDate;
             p.Remark = p.Remark == null ? "" : p.Remark;
             p.YearId = p.YearId == null ? "" : p.YearId;
+
+            p.sticker01 = p.sticker01 == null ? "" : p.sticker01;
+            p.sticker02 = p.sticker02 == null ? "" : p.sticker02;
+            p.sticker03 = p.sticker03 == null ? "" : p.sticker03;
+            p.sticker04 = p.sticker04 == null ? "" : p.sticker04;
+            p.sticker05 = p.sticker05 == null ? "" : p.sticker05;
+            p.sticker06 = p.sticker06 == null ? "" : p.sticker06;
+            p.sticker07 = p.sticker07 == null ? "" : p.sticker07;
+            p.sticker08 = p.sticker08 == null ? "" : p.sticker08;
+            p.sticker09 = p.sticker09 == null ? "" : p.sticker09;
+            p.sticker10 = p.sticker10 == null ? "" : p.sticker10;
+            p.sticker01_name = p.sticker01_name == null ? "" : p.sticker01_name;
+            p.sticker02_name = p.sticker02_name == null ? "" : p.sticker02_name;
+            p.sticker03_name = p.sticker03_name == null ? "" : p.sticker03_name;
+            p.sticker04_name = p.sticker04_name == null ? "" : p.sticker04_name;
+            p.sticker05_name = p.sticker05_name == null ? "" : p.sticker05_name;
+            p.sticker06_name = p.sticker06_name == null ? "" : p.sticker06_name;
+            p.sticker07_name = p.sticker07_name == null ? "" : p.sticker07_name;
+            p.sticker08_name = p.sticker08_name == null ? "" : p.sticker08_name;
+            p.sticker09_name = p.sticker09_name == null ? "" : p.sticker09_name;
+            p.sticker10_name = p.sticker10_name == null ? "" : p.sticker10_name;
         }
         private String insert(CustCheckUp p)
         {
@@ -429,12 +512,42 @@ namespace CheckUP.objdb
                 cuc.CheckUpEndDate + "," + cuc.CheckUpStartDate + "," + cuc.CntEmployee + "," +
                 cuc.CommitCheckUpDate + "," + cuc.CustId + "," + cuc.CustNameT + "," +
                 cuc.Description + "," + cuc.RegisDate + "," + cuc.Remark + "," +
-                cuc.YearId + "," + cuc.dateCreate + "," + cuc.sticker + ") " +
+                cuc.YearId + "," + cuc.dateCreate + "," + cuc.sticker +","+
+                cuc.sticker01 + "," + cuc.sticker02 + "," + cuc.sticker03 + "," +
+                cuc.sticker04 + "," + cuc.sticker05 + "," + cuc.sticker06 + "," +
+                cuc.sticker07 + "," + cuc.sticker08 + "," + cuc.sticker09 + "," +
+                cuc.sticker10 + "," + cuc.sticker11 + "," + cuc.sticker12 + "," +
+                cuc.sticker13 + "," + cuc.sticker14 + "," + cuc.sticker15 + "," +
+                cuc.sticker16 + "," + cuc.sticker17 + "," + cuc.sticker18 + "," +
+                cuc.sticker19 + "," + cuc.sticker20 + "," +
+                cuc.sticker01_name + "," + cuc.sticker02_name + "," + cuc.sticker03_name + "," +
+                cuc.sticker04_name + "," + cuc.sticker05_name + "," + cuc.sticker06_name + "," +
+                cuc.sticker07_name + "," + cuc.sticker08_name + "," + cuc.sticker09_name + "," +
+                cuc.sticker10_name + "," + cuc.sticker11_name + "," + cuc.sticker12_name + "," +
+                cuc.sticker13_name + "," + cuc.sticker14_name + "," + cuc.sticker15_name + "," +
+                cuc.sticker16_name + "," + cuc.sticker17_name + "," + cuc.sticker18_name + "," +
+                cuc.sticker19_name + "," + cuc.sticker20_name + " " +
+                ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.CheckUpDate + "','" +
                 p.CheckUpEndDate + "','" + p.CheckUpStartDate + "'," + NumberNull1(p.CntEmployee) + ",'" +
                 p.CommitCheckUpDate + "','" + p.CustId + "','" + p.CustNameT + "','" +
                 p.Description + "','" + p.RegisDate + "','" + p.Remark + "','" +
-                p.YearId + "'," + p.dateGenDB + ",'" + p.sticker + "')";
+                p.YearId + "'," + p.dateGenDB + ",'" + p.sticker + "','" +
+                p.sticker01 + "','" + p.sticker02 + "','" + p.sticker03 + "','" +
+                p.sticker04 + "','" + p.sticker05 + "','" + p.sticker06 + "','" +
+                p.sticker07 + "','" + p.sticker08 + "','" + p.sticker09 + "','" +
+                p.sticker10 + "','" + p.sticker11 + "','" + p.sticker12 + "','" +
+                p.sticker13 + "','" + p.sticker14 + "','" + p.sticker15 + "','" +
+                p.sticker16 + "','" + p.sticker17 + "','" + p.sticker18 + "','" +
+                p.sticker19 + "','" + p.sticker20 + "','" +
+                p.sticker01_name.Replace("'", "''") + "','" + p.sticker02_name.Replace("'", "''") + "','" + p.sticker03_name.Replace("'", "''") + "','" +
+                p.sticker04_name.Replace("'", "''") + "','" + p.sticker05_name.Replace("'", "''") + "','" + p.sticker06_name.Replace("'", "''") + "','" +
+                p.sticker07_name.Replace("'", "''") + "','" + p.sticker08_name.Replace("'", "''") + "','" + p.sticker09_name.Replace("'", "''") + "','" +
+                p.sticker10_name.Replace("'", "''") + "','" + p.sticker11_name.Replace("'", "''") + "','" + p.sticker12_name.Replace("'", "''") + "','" +
+                p.sticker13_name.Replace("'", "''") + "','" + p.sticker14_name.Replace("'", "''") + "','" + p.sticker15_name.Replace("'", "''") + "','" +
+                p.sticker16_name.Replace("'", "''") + "','" + p.sticker17_name.Replace("'", "''") + "','" + p.sticker18_name.Replace("'", "''") + "','" +
+                p.sticker19_name.Replace("'", "''") + "','" + p.sticker20_name.Replace("'", "''") + "' " +
+                "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -523,12 +636,42 @@ namespace CheckUP.objdb
                 cuc.CheckUpEndDate + "," + cuc.CheckUpStartDate + "," + cuc.CntEmployee + "," +
                 cuc.CommitCheckUpDate + "," + cuc.CustId + "," + cuc.CustNameT + "," +
                 cuc.Description + "," + cuc.RegisDate + "," + cuc.Remark + "," +
-                cuc.YearId + "," + cuc.dateCreate + "," + cuc.sticker + ") " +
+                cuc.YearId + "," + cuc.dateCreate + "," + cuc.sticker + "," +
+                cuc.sticker01 + "," + cuc.sticker02 + "," + cuc.sticker03 + "," +
+                cuc.sticker04 + "," + cuc.sticker05 + "," + cuc.sticker06 + "," +
+                cuc.sticker07 + "," + cuc.sticker08 + "," + cuc.sticker09 + "," +
+                cuc.sticker10 + "," + cuc.sticker11 + "," + cuc.sticker12 + "," +
+                cuc.sticker13 + "," + cuc.sticker14 + "," + cuc.sticker15 + "," +
+                cuc.sticker16 + "," + cuc.sticker17 + "," + cuc.sticker18 + "," +
+                cuc.sticker19 + "," + cuc.sticker20 + "," +
+                cuc.sticker01_name + "," + cuc.sticker02_name + "," + cuc.sticker03_name + "," +
+                cuc.sticker04_name + "," + cuc.sticker05_name + "," + cuc.sticker06_name + "," +
+                cuc.sticker07_name + "," + cuc.sticker08_name + "," + cuc.sticker09_name + "," +
+                cuc.sticker10_name + "," + cuc.sticker11_name + "," + cuc.sticker12_name + "," +
+                cuc.sticker13_name + "," + cuc.sticker14_name + "," + cuc.sticker15_name + "," +
+                cuc.sticker16_name + "," + cuc.sticker17_name + "," + cuc.sticker18_name + "," +
+                cuc.sticker19_name + "," + cuc.sticker20_name + " " +
+                ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.CheckUpDate + "','" +
                 p.CheckUpEndDate + "','" + p.CheckUpStartDate + "'," + NumberNull1(p.CntEmployee) + ",'" +
                 p.CommitCheckUpDate + "','" + p.CustId + "','" + p.CustNameT + "','" +
                 p.Description + "','" + p.RegisDate + "','" + p.Remark + "','" +
-                p.YearId + "'," + p.dateGenDB + ",'" + p.sticker + "')";
+                p.YearId + "'," + p.dateGenDB + ",'" + p.sticker + "','" +
+                p.sticker01 + "','" + p.sticker02 + "','" + p.sticker03 + "','" +
+                p.sticker04 + "','" + p.sticker05 + "','" + p.sticker06 + "','" +
+                p.sticker07 + "','" + p.sticker08 + "','" + p.sticker09 + "','" +
+                p.sticker10 + "','" + p.sticker11 + "','" + p.sticker12 + "','" +
+                p.sticker13 + "','" + p.sticker14 + "','" + p.sticker15 + "','" +
+                p.sticker16 + "','" + p.sticker17 + "','" + p.sticker18 + "','" +
+                p.sticker19 + "','" + p.sticker20 + "','" +
+                p.sticker01_name.Replace("'", "''") + "','" + p.sticker02_name.Replace("'", "''") + "','" + p.sticker03_name.Replace("'", "''") + "','" +
+                p.sticker04_name.Replace("'", "''") + "','" + p.sticker05_name.Replace("'", "''") + "','" + p.sticker06_name.Replace("'", "''") + "','" +
+                p.sticker07_name.Replace("'", "''") + "','" + p.sticker08_name.Replace("'", "''") + "','" + p.sticker09_name.Replace("'", "''") + "','" +
+                p.sticker10_name.Replace("'", "''") + "','" + p.sticker11_name.Replace("'", "''") + "','" + p.sticker12_name.Replace("'", "''") + "','" +
+                p.sticker13_name.Replace("'", "''") + "','" + p.sticker14_name.Replace("'", "''") + "','" + p.sticker15_name.Replace("'", "''") + "','" +
+                p.sticker16_name.Replace("'", "''") + "','" + p.sticker17_name.Replace("'", "''") + "','" + p.sticker18_name.Replace("'", "''") + "','" +
+                p.sticker19_name.Replace("'", "''") + "','" + p.sticker20_name.Replace("'", "''") + "' " +
+                ")";
             try
             {
                 chk = connonsite.ExecuteNonQuery(sql);
@@ -561,9 +704,11 @@ namespace CheckUP.objdb
         {
             String sql = "", chk = "";
             CustCheckUp cuc1 = new CustCheckUp();
-            cuc1 = selectByPk(cucId);
+            cuc1 = selectByPk1(cucId);
             sql = "Delete From onsite_" + cuc.table;
             connOnSite = new ConnectDB(conn.initc, ConnectDB.flagOnSite.OnSite);
+            //MessageBox.Show("CustNameT " + cuc1.CustNameT, "");
+            //MessageBox.Show("hostDBonsite " + conn.initc.hostDBonsite + "\n nameDBonsite " + conn.initc.nameDBonsite + "\n userDBonsite " + conn.initc.userDBonsite + "\n passDBonsite " + conn.initc.passDBonsite, "message ");
             chk = connOnSite.ExecuteNonQuery(sql);
             chk = insertOnSite(cuc1, connOnSite);
             //sql = "insert into "+conn.initc.nameRemoteClient + "." + conn.initc.nameDBonsite + ".dbo." + "onsite_" + cuc.table + " " +
@@ -618,6 +763,45 @@ namespace CheckUP.objdb
             {
                 return o;
             }
+        }
+        public String updateStickerName(String cucId, String name1, String name2, String name3, String name4, String name5, String name6, String name7, String name8, String name9, String name10
+            , String name11, String name12, String name13, String name14, String name15, String name16, String name17, String name18, String name19, String name20)
+        {
+            String sql = "", chk = "";
+            sql = "Update " + cuc.table + " Set " + cuc.sticker01_name + "='" + name1.Replace("'","''") + "' " +
+                "," + cuc.sticker02_name + "='" + name2.Replace("'", "''") + "' " +
+                "," + cuc.sticker03_name + "='" + name3.Replace("'", "''") + "' " +
+                "," + cuc.sticker04_name + "='" + name4.Replace("'", "''") + "' " +
+                "," + cuc.sticker05_name + "='" + name5.Replace("'", "''") + "' " +
+                "," + cuc.sticker06_name + "='" + name6.Replace("'", "''") + "' " +
+                "," + cuc.sticker07_name + "='" + name7.Replace("'", "''") + "' " +
+                "," + cuc.sticker08_name + "='" + name8.Replace("'", "''") + "' " +
+                "," + cuc.sticker09_name + "='" + name9.Replace("'", "''") + "' " +
+                "," + cuc.sticker10_name + "='" + name10.Replace("'", "''") + "' " +
+                "," + cuc.sticker11_name + "='" + name11.Replace("'", "''") + "' " +
+                "," + cuc.sticker12_name + "='" + name12.Replace("'", "''") + "' " +
+                "," + cuc.sticker13_name + "='" + name13.Replace("'", "''") + "' " +
+                "," + cuc.sticker14_name + "='" + name14.Replace("'", "''") + "' " +
+                "," + cuc.sticker15_name + "='" + name15.Replace("'", "''") + "' " +
+                "," + cuc.sticker16_name + "='" + name16.Replace("'", "''") + "' " +
+                "," + cuc.sticker17_name + "='" + name17.Replace("'", "''") + "' " +
+                "," + cuc.sticker18_name + "='" + name18.Replace("'", "''") + "' " +
+                "," + cuc.sticker19_name + "='" + name19.Replace("'", "''") + "' " +
+                "," + cuc.sticker20_name + "='" + name20.Replace("'", "''") + "' " +
+                "Where " + cuc.pkField + "='" + cucId + "'";
+            try
+            {
+                chk = conn.ExecuteNonQuery(sql);
+                //MessageBox.Show("chk " + chk+"\n sql"+sql, "");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.ToString(), "update updatePE");
+            }
+            finally
+            {
+            }
+            return chk;
         }
         public String updatePE(String cucId, String PEAbNormal, String PECnt, String PENormal, String pecheckup, String test)
         {
@@ -1565,6 +1749,162 @@ namespace CheckUP.objdb
             }
             chk = conn.ExecuteNonQuery(sql);
             return chk;
+        }
+        public ComboBox getCboStickerr(ComboBox c, String cucId)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            CustCheckUp cuc = selectByPk(cucId);
+            //String aaa = "";
+            
+            
+            if (!cuc.sticker01_name.Equals(""))
+            {
+                item = new ComboBoxItem();
+                item.Value = "01";
+                item.Text = cuc.sticker01_name;
+                c.Items.Add(item);
+            }
+            if (!cuc.sticker02_name.Equals(""))
+            {
+                item = new ComboBoxItem();
+                item.Value = "02";
+                item.Text = cuc.sticker02_name;
+                c.Items.Add(item);
+            }
+            if (!cuc.sticker01_name.Equals(""))
+            {
+                item = new ComboBoxItem();
+                item.Value = "01";
+                item.Text = cuc.sticker01_name;
+                c.Items.Add(item);
+            }
+            if (!cuc.sticker03_name.Equals(""))
+            {
+                item = new ComboBoxItem();
+                item.Value = "03";
+                item.Text = cuc.sticker03_name;
+                c.Items.Add(item);
+            }
+            if (!cuc.sticker04_name.Equals(""))
+            {
+                item = new ComboBoxItem();
+                item.Value = "04";
+                item.Text = cuc.sticker04_name;
+                c.Items.Add(item);
+            }
+            if (!cuc.sticker05_name.Equals(""))
+            {
+                item = new ComboBoxItem();
+                item.Value = "05";
+                item.Text = cuc.sticker05_name;
+                c.Items.Add(item);
+            }
+            if (!cuc.sticker06_name.Equals(""))
+            {
+                item = new ComboBoxItem();
+                item.Value = "06";
+                item.Text = cuc.sticker06_name;
+                c.Items.Add(item);
+            }
+            if (!cuc.sticker07_name.Equals(""))
+            {
+                item = new ComboBoxItem();
+                item.Value = "07";
+                item.Text = cuc.sticker07_name;
+                c.Items.Add(item);
+            }
+            if (!cuc.sticker08_name.Equals(""))
+            {
+                item = new ComboBoxItem();
+                item.Value = "08";
+                item.Text = cuc.sticker08_name;
+                c.Items.Add(item);
+            }
+            if (!cuc.sticker09_name.Equals(""))
+            {
+                item = new ComboBoxItem();
+                item.Value = "09";
+                item.Text = cuc.sticker09_name;
+                c.Items.Add(item);
+            }
+            if (!cuc.sticker10_name.Equals(""))
+            {
+                item = new ComboBoxItem();
+                item.Value = "10";
+                item.Text = cuc.sticker10_name;
+                c.Items.Add(item);
+            }
+            if (!cuc.sticker11_name.Equals(""))
+            {
+                item = new ComboBoxItem();
+                item.Value = "11";
+                item.Text = cuc.sticker11_name;
+                c.Items.Add(item);
+            }
+            if (!cuc.sticker12_name.Equals(""))
+            {
+                item = new ComboBoxItem();
+                item.Value = "12";
+                item.Text = cuc.sticker12_name;
+                c.Items.Add(item);
+            }
+            if (!cuc.sticker13_name.Equals(""))
+            {
+                item = new ComboBoxItem();
+                item.Value = "13";
+                item.Text = cuc.sticker13_name;
+                c.Items.Add(item);
+            }
+            if (!cuc.sticker14_name.Equals(""))
+            {
+                item = new ComboBoxItem();
+                item.Value = "14";
+                item.Text = cuc.sticker14_name;
+                c.Items.Add(item);
+            }
+            if (!cuc.sticker15_name.Equals(""))
+            {
+                item = new ComboBoxItem();
+                item.Value = "15";
+                item.Text = cuc.sticker15_name;
+                c.Items.Add(item);
+            }
+            if (!cuc.sticker16_name.Equals(""))
+            {
+                item = new ComboBoxItem();
+                item.Value = "16";
+                item.Text = cuc.sticker16_name;
+                c.Items.Add(item);
+            }
+            if (!cuc.sticker17_name.Equals(""))
+            {
+                item = new ComboBoxItem();
+                item.Value = "17";
+                item.Text = cuc.sticker17_name;
+                c.Items.Add(item);
+            }
+            if (!cuc.sticker18_name.Equals(""))
+            {
+                item = new ComboBoxItem();
+                item.Value = "18";
+                item.Text = cuc.sticker18_name;
+                c.Items.Add(item);
+            }
+            if (!cuc.sticker19_name.Equals(""))
+            {
+                item = new ComboBoxItem();
+                item.Value = "19";
+                item.Text = cuc.sticker19_name;
+                c.Items.Add(item);
+            }
+            if (!cuc.sticker20_name.Equals(""))
+            {
+                item = new ComboBoxItem();
+                item.Value = "20";
+                item.Text = cuc.sticker20_name;
+                c.Items.Add(item);
+            }
+            return c;
         }
     }
 }

@@ -28,6 +28,8 @@ namespace CheckUP.object1
         public String sticker = "";
         public String sticker01 = "", sticker02 = "", sticker03 = "", sticker04 = "", sticker05 = "", sticker06 = "", sticker07 = "", sticker08 = "", sticker09 = "", sticker10 = "";
         public String sticker11 = "", sticker12 = "", sticker13 = "", sticker14 = "", sticker15 = "", sticker16 = "", sticker17 = "", sticker18 = "", sticker19 = "", sticker20 = "";
+        public String sticker01_name = "", sticker02_name = "", sticker03_name = "", sticker04_name = "", sticker05_name = "", sticker06_name = "", sticker07_name = "", sticker08_name = "", sticker09_name = "", sticker10_name = "";
+        public String sticker11_name = "", sticker12_name = "", sticker13_name = "", sticker14_name = "", sticker15_name = "", sticker16_name = "", sticker17_name = "", sticker18_name = "", sticker19_name = "", sticker20_name = "";
 
         public override String ToString()
         {
