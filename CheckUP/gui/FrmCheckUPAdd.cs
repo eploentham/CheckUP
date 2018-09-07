@@ -233,7 +233,8 @@ namespace CheckUP.gui
             //MessageBox.Show("bbbb", "");
             tC.Font = font;
             cboCust = cc.cudb.getCboCustomer(cboCust);
-            cboSticker = cc.getCboSticker(cucId, cboSticker);
+            //cboSticker = cc.getCboSticker(cucId, cboSticker);
+            cboSticker = cc.cucdb.getCboStickerr(cboTestSticker, cucId);
             cboTestSticker = cc.cucdb.getCboStickerr(cboTestSticker, cucId);
             //MessageBox.Show("cccc", "");
             //tC.TabPages[tabCho].Text = "Cholesterol";

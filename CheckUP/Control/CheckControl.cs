@@ -3405,7 +3405,6 @@ namespace CheckUP.Control
                 {
                     visitHn = "";
                 }
-
                 //txt = xlRange.Cells[i, visithn+2].Value2.ToString();                    
                 txt1 = xlRange.Cells[i, colvisithn + 3].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 3].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                
                 txt2 = xlRange.Cells[i, colvisithn + 4].Value2 != null ? int.TryParse(xlRange.Cells[i, colvisithn + 4].Value2.ToString(), out chk) ? chk.ToString() : "0" : "0";   //PE                

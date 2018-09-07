@@ -1009,11 +1009,20 @@ namespace CheckUP.objdb
                     ccp1.position_name = dt.Rows[i][ccp.Id] != null ? dt.Rows[i][ccp.position_name].ToString() : "";
                     ccp1.statusVisit = "0";
                     
-                    insertOnSite(ccp1, connOnSite);
-                    UpdateStickerOnSite(ccp1.Id, dt.Rows[i][ccp.sticker01].ToString(), dt.Rows[i][ccp.sticker02].ToString(), dt.Rows[i][ccp.sticker03].ToString(), dt.Rows[i][ccp.sticker04].ToString(), dt.Rows[i][ccp.sticker05].ToString()
+                    String id = insertOnSite(ccp1, connOnSite);
+                    if (i == 1)
+                    {
+                        MessageBox.Show("id " + id, "");
+                    }
+
+                    chk = UpdateStickerOnSite(id, dt.Rows[i][ccp.sticker01].ToString(), dt.Rows[i][ccp.sticker02].ToString(), dt.Rows[i][ccp.sticker03].ToString(), dt.Rows[i][ccp.sticker04].ToString(), dt.Rows[i][ccp.sticker05].ToString()
                         , dt.Rows[i][ccp.sticker06].ToString(), dt.Rows[i][ccp.sticker07].ToString(), dt.Rows[i][ccp.sticker08].ToString(), dt.Rows[i][ccp.sticker09].ToString(), dt.Rows[i][ccp.sticker10].ToString()
                         , dt.Rows[i][ccp.sticker11].ToString(), dt.Rows[i][ccp.sticker12].ToString(), dt.Rows[i][ccp.sticker13].ToString(), dt.Rows[i][ccp.sticker14].ToString(), dt.Rows[i][ccp.sticker15].ToString()
-                        , dt.Rows[i][ccp.sticker16].ToString(), dt.Rows[i][ccp.sticker17].ToString(), dt.Rows[i][ccp.sticker18].ToString(), dt.Rows[i][ccp.sticker19].ToString(), dt.Rows[i][ccp.sticker20].ToString());
+                        , dt.Rows[i][ccp.sticker16].ToString(), dt.Rows[i][ccp.sticker17].ToString(), dt.Rows[i][ccp.sticker18].ToString(), dt.Rows[i][ccp.sticker19].ToString(), dt.Rows[i][ccp.sticker20].ToString(), connOnSite);
+                    if (i == 1)
+                    {
+                        MessageBox.Show("chk " + chk, "");
+                    }
                     UpdateTestOnSite(ccp1.Id, "0", "0", "0", "0", "0"
                         , "0", "0", "0", "0", "0"
                         , "0", "0", "0", "0", "0"
@@ -1772,12 +1781,11 @@ namespace CheckUP.objdb
             return chk;
         }
         public String UpdateStickerOnSite(String ccpId, String val1, String val2, String val3, String val4, String val5, String val6, String val7, String val8, String val9, String val10
-            , String val11, String val12, String val13, String val14, String val15, String val16, String val17, String val18, String val19, String val20)
+            , String val11, String val12, String val13, String val14, String val15, String val16, String val17, String val18, String val19, String val20, ConnectDB connonsite)
         {
             String chk = "", sql = "", onsite = "";
             try
             {
-                
                 onsite = " onsite_";
                 
                 sql = "Update " + onsite + ccp.table + " Set " +
@@ -1802,7 +1810,7 @@ namespace CheckUP.objdb
                     ",sticker19 ='" + val19 + "' " +
                     ",sticker20 ='" + val20 + "' " +
                 "Where " + ccp.pkField + "='" + ccpId + "'  ";
-                chk = conn.ExecuteNonQuery(sql);
+                chk = connonsite.ExecuteNonQuery(sql);
             }
             catch (Exception ex)
             {
