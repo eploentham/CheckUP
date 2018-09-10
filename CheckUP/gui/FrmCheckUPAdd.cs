@@ -342,6 +342,8 @@ namespace CheckUP.gui
         private void showOnsite()
         {
             int all = 0, cnt = 0;
+            panel4.Top = panel3.Top;
+            panel4.Left = panel3.Left;
             panel4.Show();
             panel3.Hide();
             int.TryParse(cc.ccpdb.selectCntAllOnSiteByCucId(txtId.Text), out all);
@@ -452,6 +454,8 @@ namespace CheckUP.gui
                         label35.Text = (all - cnt).ToString();
                     }
                 }
+                label19.Text = txtBarcode.Text;
+                txtBarcode.Text = "";
             }
         }
 

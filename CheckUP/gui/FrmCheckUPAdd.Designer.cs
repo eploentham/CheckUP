@@ -348,7 +348,6 @@
             this.btnClearTestAll = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.txtBarcode = new System.Windows.Forms.TextBox();
             this.tabPage21 = new System.Windows.Forms.TabPage();
@@ -406,6 +405,7 @@
             this.txtCust = new System.Windows.Forms.TextBox();
             this.txtYear = new System.Windows.Forms.TextBox();
             this.label122 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -3771,12 +3771,12 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label38);
             this.panel1.Controls.Add(this.cboTestSticker);
             this.panel1.Controls.Add(this.btnClearTestAll);
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.txtBarcode);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -3815,7 +3815,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(290, 6);
+            this.checkBox1.Location = new System.Drawing.Point(307, 6);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(160, 17);
             this.checkBox1.TabIndex = 77;
@@ -3825,20 +3825,11 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(287, 35);
+            this.label19.Location = new System.Drawing.Point(230, 42);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(41, 13);
             this.label19.TabIndex = 3;
             this.label19.Text = "label19";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(287, 48);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(41, 13);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "label18";
             // 
             // label17
             // 
@@ -4435,6 +4426,15 @@
             this.label122.TabIndex = 77;
             this.label122.Text = "ตรวจสุขภาพประจำปี :";
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(274, 9);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(19, 13);
+            this.label18.TabIndex = 84;
+            this.label18.Text = "18";
+            // 
             // FrmCheckUPAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4877,7 +4877,6 @@
         private System.Windows.Forms.TextBox txtBarcode;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TabPage tabPage21;
         private System.Windows.Forms.Panel gbSticker1;
@@ -4920,5 +4919,6 @@
         private System.Windows.Forms.TextBox txtYear;
         private System.Windows.Forms.Label label122;
         private System.Windows.Forms.TextBox txtPath;
+        private System.Windows.Forms.Label label18;
     }
 }

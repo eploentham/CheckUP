@@ -174,3 +174,4 @@ D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csproj.CoreCompileInputs.cach
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csproj.CopyComplete
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.exe
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.pdb
+D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csprojAssemblyReference.cache
