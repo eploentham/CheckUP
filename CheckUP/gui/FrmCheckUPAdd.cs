@@ -77,7 +77,7 @@ namespace CheckUP.gui
 
         int colEyeRow = 0, colEyeId = 1, colEyeName = 2, colEyeShortLongLeft = 3, colEyeShortLongRight = 4, colEyeSquintLeft = 5, colEyeSquintRight = 6, colEyeDegreeLeft = 7, colEyeDegreeRight = 8, colEyeOldLeft = 9, colEyeOldRight = 10, colEyeBlindness = 10, colEyeResult = 11, colEyeSummary = 12, colEyeExam=13;
         int colEyeCnt = 14;
-
+                
         int colStoolExamRow = 0, colStoolExamId = 1, colStoolExamName = 2, colStoolExamColor = 3, colStoolExamAppearance = 4, colStoolExamWBC = 5, colStoolExamRBC = 6, colParasite = 7, colCulture = 8, colTyhoidH = 9, colTyhoidO = 10, colStoolExamSummary = 11, colCultureSummary = 12;
         int colStoolExamCnt = 13;
 
@@ -106,6 +106,8 @@ namespace CheckUP.gui
         C1FlexGrid grfView, grfEmp, grfTest, grfSticker;
         Color color;
         C1ThemeController theme1;
+        Timer aTimer;
+        int time1 = 0, timerRefresh=0;
 
         public FrmCheckUPAdd(String cucId,Boolean flagnew,CheckControl c)
         {
@@ -210,6 +212,7 @@ namespace CheckUP.gui
             btmImportCEM.Click += BtmImportCEM_Click;   //client
             btnClearTestAll.Click += BtnClearTestAll_Click;
             btnPrnSticker.Click += BtnPrnSticker_Click;
+            cboTestSticker.SelectedIndexChanged += CboTestSticker_SelectedIndexChanged;
 
             //chkHideTab.Click += ChkHideTab_Click;
 
@@ -234,7 +237,7 @@ namespace CheckUP.gui
             tC.Font = font;
             cboCust = cc.cudb.getCboCustomer(cboCust);
             //cboSticker = cc.getCboSticker(cucId, cboSticker);
-            cboSticker = cc.cucdb.getCboStickerr(cboTestSticker, cucId);
+            cboSticker = cc.cucdb.getCboStickerr(cboSticker, cucId);
             cboTestSticker = cc.cucdb.getCboStickerr(cboTestSticker, cucId);
             //MessageBox.Show("cccc", "");
             //tC.TabPages[tabCho].Text = "Cholesterol";
@@ -277,7 +280,7 @@ namespace CheckUP.gui
 
             }
             else
-            {
+            { // on site
                 //MessageBox.Show("1111", "");
                 tC.TabPages.Remove(tabPage1);
                 tC.TabPages.Remove(tabPage2);
@@ -328,7 +331,54 @@ namespace CheckUP.gui
             {
                 btnOnsite.Hide();
             }
-        }        
+            aTimer = new Timer();
+            aTimer.Interval = 1000;
+            aTimer.Enabled = false;
+            aTimer.Tick += ATimer_Tick;
+            int.TryParse(cc.initC.timerRefresh, out timerRefresh);
+            time1 = timerRefresh;
+        }
+
+        private void CboTestSticker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            ComboBoxItem item = (ComboBoxItem)cboTestSticker.SelectedItem;
+            label18.Text = item.Value;
+            txtBarcode.Focus();
+        }
+
+        private void ATimer_Tick(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            time1--;
+            label39.Text = time1.ToString();
+            if (time1 == 0)
+            {
+                try
+                {
+                    grfView.Enabled = false;
+                    grfEmp.Enabled = false;
+                    grfTest.Enabled = false;
+                    txtBarcode.Enabled = false;
+                    time1 = timerRefresh;
+                    setGrfView(txtId.Text);
+                    setGrfEmp(txtId.Text);
+                    setGrfTest(txtId.Text);
+                    setGrfSticker(txtId.Text);
+                }
+                catch(Exception ex)
+                {
+
+                }
+                finally
+                {
+                    grfView.Enabled = true;
+                    grfEmp.Enabled = true;
+                    grfTest.Enabled = true;
+                    txtBarcode.Enabled = true;
+                }
+            }
+        }
 
         private String calTestAll()
         {
@@ -438,24 +488,35 @@ namespace CheckUP.gui
             //throw new NotImplementedException();
             if (e.KeyCode == Keys.Enter)
             {
-                String[] chk = txtBarcode.Text.Split('-');
-                if (chk.Length > 1)
+                try
                 {
-                    int row = grfTest.FindRow(chk[0].ToUpper(), 1, colSvisitHn, true);
-                    if (row < 0) return;
-                    grfTest.Row = row;
-                    
-                    if(setTest(txtBarcode.Text, row))
+                    String[] chk = txtBarcode.Text.Split('-');
+                    if (chk.Length > 1)
                     {
-                        label33.Text = calTestAll().ToString();
-                        int all = 0, cnt = 0;
-                        int.TryParse(label32.Text, out all);
-                        int.TryParse(label33.Text, out cnt);
-                        label35.Text = (all - cnt).ToString();
+                        int row = grfTest.FindRow(chk[0].ToUpper(), 1, colSvisitHn, true);
+                        if (row < 0) return;
+                        grfTest.Row = row;
+
+                        if (setTest(txtBarcode.Text, row))
+                        {
+                            label33.Text = calTestAll().ToString();
+                            int all = 0, cnt = 0;
+                            int.TryParse(label32.Text, out all);
+                            int.TryParse(label33.Text, out cnt);
+                            label35.Text = (all - cnt).ToString();
+                        }
                     }
+                    label19.Text = txtBarcode.Text;
+                    txtBarcode.Text = "";
                 }
-                label19.Text = txtBarcode.Text;
-                txtBarcode.Text = "";
+                catch(Exception ex)
+                {
+
+                }
+                finally
+                {
+                    txtBarcode.Focus();
+                }
             }
         }
 
@@ -587,6 +648,7 @@ namespace CheckUP.gui
 
             grfView.Cols[colVId].Visible = false;
             grfView.AllowEditing = false;
+            FilterRow fr = new FilterRow(grfView);
             //theme1.SetTheme(grfJob, "Office2013Red");
         }
         private void ContextMenu_Gw_Edit(object sender, System.EventArgs e)
@@ -679,7 +741,6 @@ namespace CheckUP.gui
         private void setGrfView(String cucid)
         {
             grfView.DataSource = null;
-
             DataTable dt1 = new DataTable();
             dt1.Columns.Add(new DataColumn("id", typeof(string)));
             dt1.Columns.Add(new DataColumn("barcode", typeof(string)));
@@ -690,13 +751,14 @@ namespace CheckUP.gui
             grfView.Clear();
             if (cucid.Equals("")) return;
             DataTable dt = new DataTable();
-            dt = cc.ccpdb.selectAllStatusVisit0ByCucId(cucid);            
+            //dt = cc.ccpdb.selectAllStatusVisit0ByCucId(cucid);
+            dt = cc.ccpdb.selectAllStatusVisit0ByCucId1(cucid);
             grfView.Rows.Count = 2;
             grfView.Cols.Count = 5;
-            TextBox txt = new TextBox();
+            //TextBox txt = new TextBox();
 
-            grfView.Cols[colVvisitHn].Editor = txt;
-            grfView.Cols[colVname].Editor = txt;            
+            //grfView.Cols[colVvisitHn].Editor = txt;
+            //grfView.Cols[colVname].Editor = txt;            
 
             grfView.Cols[colVvisitHn].Width = 80;
             grfView.Cols[colVname].Width = 200;
@@ -732,8 +794,7 @@ namespace CheckUP.gui
             grfView.AllowEditing = false;
             //grfView.AllowSorting = AllowSortingEnum.SingleColumn;
             //grfView.Cols[colVvisitHn].Sort = SortFlags.Ascending;
-
-            FilterRow fr = new FilterRow(grfView);
+            
             //setGrfColor();
             int j = 1;
             foreach (Row row1 in grfView.Rows)
@@ -747,6 +808,8 @@ namespace CheckUP.gui
                     row1.StyleNew.BackColor = color;
                 j++;
             }
+            //dt1.Dispose();
+            dt.Dispose();
         }
         private void initGrfEmp()
         {
@@ -780,6 +843,7 @@ namespace CheckUP.gui
             grfEmp.AllowFiltering = true;
             //grfEmp.Cols[colVId].Visible = false;
             //theme1.SetTheme(grfJob, "Office2013Red");
+            FilterRow fr = new FilterRow(grfEmp);
         }
 
         private void GrfEmp_AfterFilter(object sender, EventArgs e)
@@ -794,8 +858,8 @@ namespace CheckUP.gui
         private void setGrfEmp(String cucid)
         {
             grfEmp.DataSource = null;
-
             DataTable dt1 = new DataTable();
+            //DataTable dt1 = new DataTable();
             dt1.Columns.Add(new DataColumn("id", typeof(string)));
             dt1.Columns.Add(new DataColumn("barcode", typeof(string)));
             dt1.Columns.Add(new DataColumn("ชื่อ-นามสกุล", typeof(string)));
@@ -805,7 +869,8 @@ namespace CheckUP.gui
             grfEmp.Clear();
             if (cucid.Equals("")) return;
             DataTable dt = new DataTable();
-            dt = cc.ccpdb.selectAllStatusVisit1ByCucId(cucid);
+            //dt = cc.ccpdb.selectAllStatusVisit1ByCucId(cucid);
+            dt = cc.ccpdb.selectAllStatusVisit1ByCucId1(cucid);
             grfEmp.Rows.Count = 2;
             grfEmp.Cols.Count = 5;
             TextBox txt = new TextBox();
@@ -836,7 +901,7 @@ namespace CheckUP.gui
                 dt1.Rows.Add(dr);
             }
             grfEmp.DataSource = dt1;
-            FilterRow fr = new FilterRow(grfEmp);
+            
             grfEmp.Cols[colEvisitHn].Width = 80;
             grfEmp.Cols[colEname].Width = 200;
             grfEmp.Cols[colEpatnumber].Width = 80;
@@ -856,6 +921,8 @@ namespace CheckUP.gui
             grfEmp.Cols[colEId].Visible = false;
             grfEmp.AllowEditing = false;
             grfEmp.AllowFiltering = true;
+            dt.Dispose();
+            //dt1.Dispose();
         }
         private void initGrfTest()
         {
@@ -893,7 +960,8 @@ namespace CheckUP.gui
             if (cucid.Equals("")) return;
             DataTable dt = new DataTable();
             //dt = cc.ccpdb.selectAllByCucId(cucid);
-            dt = cc.ccpdb.selectAllStatusVisit1ByCucId(cucid);
+            //dt = cc.ccpdb.selectAllStatusVisit1ByCucId(cucid);
+            dt = cc.ccpdb.selectAllStatusVisit1ByCucId_1(cucid);
             grfTest.Rows.Count = 1;
             grfTest.Cols.Count = 24;
             TextBox txt = new TextBox();
@@ -1185,7 +1253,7 @@ namespace CheckUP.gui
                 }
                 //grfSticker.Cols[i+3].Visible = false;
             }
-
+            //CellRange cel
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 Row row = grfTest.Rows.Add();
@@ -1331,6 +1399,7 @@ namespace CheckUP.gui
             grfTest.Cols[colTId].Visible = false;
             grfTest.AllowEditing = false;
             grfTest.SelectionMode = SelectionModeEnum.Cell;
+            dt.Dispose();
         }
         private void initGrfSticker()
         {
@@ -1368,7 +1437,8 @@ namespace CheckUP.gui
             grfSticker.Clear();
             if (cucid.Equals("")) return;
             DataTable dt = new DataTable();
-            dt = cc.ccpdb.selectAllByCucId(cucid);
+            //dt = cc.ccpdb.selectAllByCucId(cucid);
+            dt = cc.ccpdb.selectAllByCucId_1(cucid);
             cuc = cc.cucdb.selectByPk(cucid);
             grfSticker.Rows.Count = 1;
             grfSticker.Cols.Count = 24;
@@ -1719,6 +1789,7 @@ namespace CheckUP.gui
                 }
                 //grfSticker.Cols[i+3].Visible = false;
             }
+            dt.Dispose();
         }
         private int calColVisible()
         {
@@ -2031,6 +2102,7 @@ namespace CheckUP.gui
                     }
                     calTestAll();
                     showOnsite();
+                    txtBarcode.Focus();
                 }
             }
         }
@@ -4917,6 +4989,7 @@ namespace CheckUP.gui
                 btnCust.Show();
             }
             setResize();
+            aTimer.Enabled = true;
         }
 
         private void FrmCheckUPAdd_Resize(object sender, EventArgs e)

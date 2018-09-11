@@ -685,6 +685,21 @@ namespace CheckUP.objdb
 
             return dt;
         }
+        public DataTable selectAllByCucId_1(String cucId)
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select " + ccp.Id + "," + ccp.visitHn + "," + ccp.patientFullname + "," + ccp.patientNumber + "," +
+                ccp.sticker01 + "," + ccp.sticker02 + "," + ccp.sticker03 + "," + ccp.sticker04 + "," + ccp.sticker05 + "," + ccp.sticker06 + "," + ccp.sticker07 + "," + ccp.sticker08 + "," + ccp.sticker09 + "," + ccp.sticker10 + "," +
+                ccp.sticker11 + "," + ccp.sticker12 + "," + ccp.sticker13 + "," + ccp.sticker14 + "," + ccp.sticker15 + "," + ccp.sticker16 + "," + ccp.sticker17 + "," + ccp.sticker18 + "," + ccp.sticker19 + "," + ccp.sticker20 + " " +
+                "From " + ccp.table + " " +
+                "Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "' " +
+                "Order By " + ccp.rowNumber;
+            //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
         public String selectCntAllByCucId(String cucId)
         {
             String sql = "", re = "0";
@@ -915,6 +930,42 @@ namespace CheckUP.objdb
 
             return dt;
         }
+        public DataTable selectAllStatusVisit1ByCucId_1(String cucId)
+        {
+            String sql = "", onsite = "";
+            DataTable dt = new DataTable();
+            if (conn.initc.statusonsite.Equals("yes"))
+            {
+                onsite = " onsite_";
+            }
+            sql = "Select " + ccp.Id + "," + ccp.visitHn + "," + ccp.patientFullname + "," + ccp.patientNumber + "," +
+                ccp.test01+","+ ccp.test02 + "," + ccp.test03 + "," + ccp.test04 + "," + ccp.test05 + "," + ccp.test06 + "," + ccp.test07 + "," + ccp.test08 + "," + ccp.test09 + "," + ccp.test10 + "," +
+                ccp.test11 + "," + ccp.test12 + "," + ccp.test13 + "," + ccp.test14 + "," + ccp.test15 + "," + ccp.test16 + "," + ccp.test17 + "," + ccp.test18 + "," + ccp.test19 + "," + ccp.test20 + " " +
+                "From " + onsite + ccp.table + " " +
+                "Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "' and " + ccp.statusVisit + "='1' " +
+                "Order By " + ccp.rowNumber;
+            //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectAllStatusVisit1ByCucId1(String cucId)
+        {
+            String sql = "", onsite = "";
+            DataTable dt = new DataTable();
+            if (conn.initc.statusonsite.Equals("yes"))
+            {
+                onsite = " onsite_";
+            }
+            sql = "Select " + ccp.Id + "," + ccp.visitHn + "," + ccp.patientFullname + "," + ccp.patientNumber + " " +
+                "From " + onsite + ccp.table + " " +
+                "Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "' and " + ccp.statusVisit + "='1' " +
+                "Order By " + ccp.rowNumber;
+            //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
         public DataTable selectAllStatusVisit0ByCucId(String cucId)
         {
             String sql = "", onsite="";
@@ -924,6 +975,23 @@ namespace CheckUP.objdb
                 onsite = " onsite_";
             }
             sql = "Select * From " + onsite+ccp.table + " Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "' and "+ccp.statusVisit+"='0' Order By " + ccp.rowNumber;
+            //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectAllStatusVisit0ByCucId1(String cucId)
+        {
+            String sql = "", onsite = "";
+            DataTable dt = new DataTable();
+            if (conn.initc.statusonsite.Equals("yes"))
+            {
+                onsite = " onsite_";
+            }
+            sql = "Select "+ccp.Id+","+ccp.visitHn+","+ ccp.patientFullname+","+ccp.patientNumber+" " +
+                "From " + onsite + ccp.table + " " +
+                "Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "' and " + ccp.statusVisit + "='0' " +
+                "Order By " + ccp.rowNumber;
             //sql = "Select * From " + ccp1db.ccp1.table + " Where " + ccp1db.ccp1.Active + "='1' and " + ccp1db.ccp1.CustCheckUpId + " = '" + cucId + "' Order By " + ccp1db.ccp1.rowNumber;
             dt = conn.selectData(sql);
 

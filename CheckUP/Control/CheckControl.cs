@@ -226,6 +226,9 @@ namespace CheckUP.Control
             initC.statusconnectCEM = iniFile.Read("statusconnectCEM");
             initC.pathaccessCEM = iniFile.Read("pathaccessCEM");
             initC.pathdataCEM = iniFile.Read("pathdataCEM");
+            initC.timerRefresh = iniFile.Read("timerRefresh");
+            initC.timerRefresh = initC.timerRefresh == null ? "20" : initC.timerRefresh;
+            initC.timerRefresh = initC.timerRefresh.Equals("") ? "20" : initC.timerRefresh;
 
             initC.grdViewFontName = initC.grdViewFontName.Equals("") ? "Microsoft Sans Serif" : initC.grdViewFontName;
             int.TryParse(initC.grdViewFontSize, out grdViewFontSize);
@@ -3393,7 +3396,8 @@ namespace CheckUP.Control
             txt19 = xlRange.Cells[1, colvisithn + 21].Value2 != null ? xlRange.Cells[1, colvisithn + 21].Value2.ToString() : "";   //PE                
             txt20 = xlRange.Cells[1, colvisithn + 22].Value2 != null ? xlRange.Cells[1, colvisithn + 22].Value2.ToString() : "";   //PE
 
-            cucdb.updateStickerName(cucId, txt1, txt2, txt3, txt4, txt5, txt6, txt7, txt8, txt9, txt10, txt11, txt12, txt13, txt14, txt15, txt16, txt17, txt18, txt19, txt20);
+            cucdb.updateStickerName(cucId, txt1.Trim(), txt2.Trim(), txt3.Trim(), txt4.Trim(), txt5.Trim(), txt6.Trim(), txt7.Trim(), txt8.Trim(), txt9.Trim(), txt10.Trim()
+                , txt11.Trim(), txt12.Trim(), txt13.Trim(), txt14.Trim(), txt15.Trim(), txt16.Trim(), txt17.Trim(), txt18.Trim(), txt19.Trim(), txt20.Trim());
 
             for (int i = rowstart; i <= rowCount; i++)
             {

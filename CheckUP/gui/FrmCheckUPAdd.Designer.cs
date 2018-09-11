@@ -343,12 +343,13 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.gbTest = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chkBarcode = new System.Windows.Forms.CheckBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.cboTestSticker = new System.Windows.Forms.ComboBox();
             this.btnClearTestAll = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.txtBarcode = new System.Windows.Forms.TextBox();
             this.tabPage21 = new System.Windows.Forms.TabPage();
             this.gbSticker1 = new System.Windows.Forms.Panel();
@@ -405,7 +406,7 @@
             this.txtCust = new System.Windows.Forms.TextBox();
             this.txtYear = new System.Windows.Forms.TextBox();
             this.label122 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -3771,19 +3772,38 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.chkBarcode);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label38);
             this.panel1.Controls.Add(this.cboTestSticker);
             this.panel1.Controls.Add(this.btnClearTestAll);
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.txtBarcode);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 16);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(472, 79);
             this.panel1.TabIndex = 76;
+            // 
+            // chkBarcode
+            // 
+            this.chkBarcode.AutoSize = true;
+            this.chkBarcode.Location = new System.Drawing.Point(7, 40);
+            this.chkBarcode.Name = "chkBarcode";
+            this.chkBarcode.Size = new System.Drawing.Size(71, 17);
+            this.chkBarcode.TabIndex = 85;
+            this.chkBarcode.Text = "barcode :";
+            this.chkBarcode.UseVisualStyleBackColor = true;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(274, 9);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(19, 13);
+            this.label18.TabIndex = 84;
+            this.label18.Text = "18";
             // 
             // label38
             // 
@@ -3800,14 +3820,14 @@
             this.cboTestSticker.Location = new System.Drawing.Point(84, 6);
             this.cboTestSticker.Name = "cboTestSticker";
             this.cboTestSticker.Size = new System.Drawing.Size(185, 21);
-            this.cboTestSticker.TabIndex = 82;
+            this.cboTestSticker.TabIndex = 82;            
             // 
             // btnClearTestAll
             // 
             this.btnClearTestAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnClearTestAll.Location = new System.Drawing.Point(343, 27);
+            this.btnClearTestAll.Location = new System.Drawing.Point(388, 22);
             this.btnClearTestAll.Name = "btnClearTestAll";
-            this.btnClearTestAll.Size = new System.Drawing.Size(117, 28);
+            this.btnClearTestAll.Size = new System.Drawing.Size(72, 46);
             this.btnClearTestAll.TabIndex = 78;
             this.btnClearTestAll.Text = "clear test  ทั้งหมด";
             this.btnClearTestAll.UseVisualStyleBackColor = true;
@@ -3825,24 +3845,15 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(230, 42);
+            this.label19.Location = new System.Drawing.Point(252, 42);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(41, 13);
             this.label19.TabIndex = 3;
             this.label19.Text = "label19";
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(4, 41);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(52, 13);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "barcode :";
-            // 
             // txtBarcode
             // 
-            this.txtBarcode.Location = new System.Drawing.Point(84, 38);
+            this.txtBarcode.Location = new System.Drawing.Point(106, 38);
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.Size = new System.Drawing.Size(140, 20);
             this.txtBarcode.TabIndex = 0;
@@ -4426,20 +4437,21 @@
             this.label122.TabIndex = 77;
             this.label122.Text = "ตรวจสุขภาพประจำปี :";
             // 
-            // label18
+            // label39
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(274, 9);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(19, 13);
-            this.label18.TabIndex = 84;
-            this.label18.Text = "18";
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(344, 38);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(19, 13);
+            this.label39.TabIndex = 85;
+            this.label39.Text = "18";
             // 
             // FrmCheckUPAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1413, 899);
+            this.Controls.Add(this.label39);
             this.Controls.Add(this.txtYear);
             this.Controls.Add(this.label122);
             this.Controls.Add(this.txtCust);
@@ -4875,7 +4887,6 @@
         private System.Windows.Forms.Panel gbTest;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtBarcode;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TabPage tabPage21;
@@ -4920,5 +4931,7 @@
         private System.Windows.Forms.Label label122;
         private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.CheckBox chkBarcode;
     }
 }

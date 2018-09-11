@@ -768,26 +768,49 @@ namespace CheckUP.objdb
             , String name11, String name12, String name13, String name14, String name15, String name16, String name17, String name18, String name19, String name20)
         {
             String sql = "", chk = "";
-            sql = "Update " + cuc.table + " Set " + cuc.sticker01_name + "='" + name1.Replace("'","''") + "' " +
-                "," + cuc.sticker02_name + "='" + name2.Replace("'", "''") + "' " +
-                "," + cuc.sticker03_name + "='" + name3.Replace("'", "''") + "' " +
-                "," + cuc.sticker04_name + "='" + name4.Replace("'", "''") + "' " +
-                "," + cuc.sticker05_name + "='" + name5.Replace("'", "''") + "' " +
-                "," + cuc.sticker06_name + "='" + name6.Replace("'", "''") + "' " +
-                "," + cuc.sticker07_name + "='" + name7.Replace("'", "''") + "' " +
-                "," + cuc.sticker08_name + "='" + name8.Replace("'", "''") + "' " +
-                "," + cuc.sticker09_name + "='" + name9.Replace("'", "''") + "' " +
-                "," + cuc.sticker10_name + "='" + name10.Replace("'", "''") + "' " +
-                "," + cuc.sticker11_name + "='" + name11.Replace("'", "''") + "' " +
-                "," + cuc.sticker12_name + "='" + name12.Replace("'", "''") + "' " +
-                "," + cuc.sticker13_name + "='" + name13.Replace("'", "''") + "' " +
-                "," + cuc.sticker14_name + "='" + name14.Replace("'", "''") + "' " +
-                "," + cuc.sticker15_name + "='" + name15.Replace("'", "''") + "' " +
-                "," + cuc.sticker16_name + "='" + name16.Replace("'", "''") + "' " +
-                "," + cuc.sticker17_name + "='" + name17.Replace("'", "''") + "' " +
-                "," + cuc.sticker18_name + "='" + name18.Replace("'", "''") + "' " +
-                "," + cuc.sticker19_name + "='" + name19.Replace("'", "''") + "' " +
-                "," + cuc.sticker20_name + "='" + name20.Replace("'", "''") + "' " +
+            String col1 = "", col2 = "", col3 = "", col4 = "", col5 = "", col6 = "", col7 = "", col8 = "", col9 = "", col10="";
+            String col11 = "", col12 = "", col13 = "", col14 = "", col15 = "", col16 = "", col17 = "", col18 = "", col19 = "", col20 = "";
+            col1 = !name1.Equals("") ? "," + cuc.sticker01 + "='1' " : "," + cuc.sticker01 + "='0' ";
+            col2 = !name2.Equals("") ? "," + cuc.sticker02 + "='1' " : "," + cuc.sticker02 + "='0' ";
+            col3 = !name3.Equals("") ? "," + cuc.sticker03 + "='1' " : "," + cuc.sticker03 + "='0' ";
+            col4 = !name4.Equals("") ? "," + cuc.sticker04 + "='1' " : "," + cuc.sticker04 + "='0' ";
+            col5 = !name5.Equals("") ? "," + cuc.sticker05 + "='1' " : "," + cuc.sticker05 + "='0' ";
+            col6 = !name6.Equals("") ? "," + cuc.sticker06 + "='1' " : "," + cuc.sticker06 + "='0' ";
+            col7 = !name7.Equals("") ? "," + cuc.sticker07 + "='1' " : "," + cuc.sticker07 + "='0' ";
+            col8 = !name8.Equals("") ? "," + cuc.sticker08 + "='1' " : "," + cuc.sticker08 + "='0' ";
+            col9 = !name9.Equals("") ? "," + cuc.sticker09 + "='1' " : "," + cuc.sticker09 + "='0' ";
+            col10 = !name10.Equals("") ? "," + cuc.sticker10 + "='1' " : "," + cuc.sticker10 + "='0' ";
+            col11 = !name11.Equals("") ? "," + cuc.sticker11 + "='1' " : "," + cuc.sticker11 + "='0' ";
+            col12 = !name12.Equals("") ? "," + cuc.sticker12 + "='1' " : "," + cuc.sticker12 + "='0' ";
+            col13 = !name13.Equals("") ? "," + cuc.sticker13 + "='1' " : "," + cuc.sticker13 + "='0' ";
+            col14 = !name14.Equals("") ? "," + cuc.sticker14 + "='1' " : "," + cuc.sticker14 + "='0' ";
+            col15 = !name15.Equals("") ? "," + cuc.sticker15 + "='1' " : "," + cuc.sticker15 + "='0' ";
+            col16 = !name16.Equals("") ? "," + cuc.sticker16 + "='1' " : "," + cuc.sticker16 + "='0' ";
+            col17 = !name17.Equals("") ? "," + cuc.sticker17 + "='1' " : "," + cuc.sticker17 + "='0' ";
+            col18 = !name18.Equals("") ? "," + cuc.sticker18 + "='1' " : "," + cuc.sticker18 + "='0' ";
+            col19 = !name19.Equals("") ? "," + cuc.sticker19 + "='1' " : "," + cuc.sticker19 + "='0' ";
+            col20 = !name20.Equals("") ? "," + cuc.sticker20 + "='1' " : "," + cuc.sticker20 + "='0' ";
+
+            sql = "Update " + cuc.table + " Set " + cuc.sticker01_name + "='" + name1.Replace("'","''") + "' " + col1 +
+                "," + cuc.sticker02_name + "='" + name2.Replace("'", "''") + "' " + col2 +
+                "," + cuc.sticker03_name + "='" + name3.Replace("'", "''") + "' " + col3 +
+                "," + cuc.sticker04_name + "='" + name4.Replace("'", "''") + "' " + col4 +
+                "," + cuc.sticker05_name + "='" + name5.Replace("'", "''") + "' " + col5 +
+                "," + cuc.sticker06_name + "='" + name6.Replace("'", "''") + "' " + col6 +
+                "," + cuc.sticker07_name + "='" + name7.Replace("'", "''") + "' " + col7 +
+                "," + cuc.sticker08_name + "='" + name8.Replace("'", "''") + "' " + col8 +
+                "," + cuc.sticker09_name + "='" + name9.Replace("'", "''") + "' " + col9 +
+                "," + cuc.sticker10_name + "='" + name10.Replace("'", "''") + "' " + col10 +
+                "," + cuc.sticker11_name + "='" + name11.Replace("'", "''") + "' " + col11 +
+                "," + cuc.sticker12_name + "='" + name12.Replace("'", "''") + "' " + col12 +
+                "," + cuc.sticker13_name + "='" + name13.Replace("'", "''") + "' " + col13 +
+                "," + cuc.sticker14_name + "='" + name14.Replace("'", "''") + "' " + col14 +
+                "," + cuc.sticker15_name + "='" + name15.Replace("'", "''") + "' " + col15 +
+                "," + cuc.sticker16_name + "='" + name16.Replace("'", "''") + "' " + col16 +
+                "," + cuc.sticker17_name + "='" + name17.Replace("'", "''") + "' " + col17 +
+                "," + cuc.sticker18_name + "='" + name18.Replace("'", "''") + "' " + col18 +
+                "," + cuc.sticker19_name + "='" + name19.Replace("'", "''") + "' " + col19 +
+                "," + cuc.sticker20_name + "='" + name20.Replace("'", "''") + "' " + col20 +
                 "Where " + cuc.pkField + "='" + cucId + "'";
             try
             {
@@ -1755,8 +1778,8 @@ namespace CheckUP.objdb
             ComboBoxItem item = new ComboBoxItem();
             CustCheckUp cuc = selectByPk(cucId);
             //String aaa = "";
-            
-            
+
+            c.Items.Clear();
             if (!cuc.sticker01_name.Equals(""))
             {
                 item = new ComboBoxItem();
