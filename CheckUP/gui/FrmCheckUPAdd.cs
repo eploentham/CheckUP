@@ -213,6 +213,7 @@ namespace CheckUP.gui
             btnClearTestAll.Click += BtnClearTestAll_Click;
             btnPrnSticker.Click += BtnPrnSticker_Click;
             cboTestSticker.SelectedIndexChanged += CboTestSticker_SelectedIndexChanged;
+            btnRefresh.Click += BtnRefresh_Click;
 
             //chkHideTab.Click += ChkHideTab_Click;
 
@@ -339,6 +340,37 @@ namespace CheckUP.gui
             time1 = timerRefresh;
         }
 
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            setRefresh();
+        }
+        private void setRefresh()
+        {            
+            try
+            {
+                grfView.Enabled = false;
+                grfEmp.Enabled = false;
+                grfTest.Enabled = false;
+                txtBarcode.Enabled = false;
+                time1 = timerRefresh;
+                setGrfView(txtId.Text);
+                setGrfEmp(txtId.Text);
+                setGrfTest(txtId.Text);
+                setGrfSticker(txtId.Text);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                grfView.Enabled = true;
+                grfEmp.Enabled = true;
+                grfTest.Enabled = true;
+                txtBarcode.Enabled = true;
+            }
+        }
         private void CboTestSticker_SelectedIndexChanged(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
@@ -350,32 +382,13 @@ namespace CheckUP.gui
         private void ATimer_Tick(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
-            time1--;
-            label39.Text = time1.ToString();
-            if (time1 == 0)
+            if (chkRefresh.Checked)
             {
-                try
+                time1--;
+                label39.Text = time1.ToString();
+                if (time1 == 0)
                 {
-                    grfView.Enabled = false;
-                    grfEmp.Enabled = false;
-                    grfTest.Enabled = false;
-                    txtBarcode.Enabled = false;
-                    time1 = timerRefresh;
-                    setGrfView(txtId.Text);
-                    setGrfEmp(txtId.Text);
-                    setGrfTest(txtId.Text);
-                    setGrfSticker(txtId.Text);
-                }
-                catch(Exception ex)
-                {
-
-                }
-                finally
-                {
-                    grfView.Enabled = true;
-                    grfEmp.Enabled = true;
-                    grfTest.Enabled = true;
-                    txtBarcode.Enabled = true;
+                    setRefresh();
                 }
             }
         }
@@ -579,12 +592,12 @@ namespace CheckUP.gui
             if (grfEmp == null) return;
             grfEmp.BackColor = Color.White;
             grfView.BackColor = Color.White;
-            foreach (Row row1 in grfEmp.Rows)
-            {
-                if (row1[colEId] == null) continue;
-                if (row1[colEId].ToString().Equals("")) continue;               
-                row1.StyleNew.BackColor = Color.White;
-            }
+            //foreach (Row row1 in grfEmp.Rows)
+            //{
+            //    if (row1[colEId] == null) continue;
+            //    if (row1[colEId].ToString().Equals("")) continue;               
+                
+            //}
             foreach (Row row1 in grfEmp.Rows)
             {
                 if (row1[colEId] == null) continue;
@@ -592,17 +605,23 @@ namespace CheckUP.gui
                 if (row1[colEvisitHn].ToString().Equals("barcode")) continue;
                 row1[0] = i;
                 if (i % 2 == 0)
+                {
                     row1.StyleNew.BackColor = color;
+                }
+                else
+                {
+                    row1.StyleNew.BackColor = Color.White;
+                }
                 i++;
             }
 
             i = 1;
-            foreach (Row row1 in grfView.Rows)
-            {
-                if (row1[colVId] == null) continue;
-                if (row1[colVId].ToString().Equals("")) continue;
-                row1.StyleNew.BackColor = Color.White;
-            }
+            //foreach (Row row1 in grfView.Rows)
+            //{
+            //    if (row1[colVId] == null) continue;
+            //    if (row1[colVId].ToString().Equals("")) continue;
+            //    row1.StyleNew.BackColor = Color.White;
+            //}
             foreach (Row row1 in grfView.Rows)  
             {
                 if (row1[colVId] == null) continue;
@@ -612,7 +631,14 @@ namespace CheckUP.gui
                 //if (i == 2) continue;
                 row1[0] = i;
                 if (i % 2 == 0)
+                {
                     row1.StyleNew.BackColor = color;
+                }
+                else
+                {
+                    row1.StyleNew.BackColor = Color.White;
+                }
+                    
                 i++;
             }
         }
@@ -677,7 +703,7 @@ namespace CheckUP.gui
             rrr[colEname] = grfView[row, colVname].ToString();
             rrr[colEpatnumber] = grfView[row, colVpatnumber].ToString();
             DataTable dtTest = new DataTable();
-            dtTest = cc.ccpdb.selectByPk(grfView[row, colVId].ToString());
+            dtTest = cc.ccpdb.selectByPkSticker(grfView[row, colVId].ToString());
 
             cc.ccpdb.UpdateStatusVisit1(grfView[row, colVId].ToString());
             cc.ccpdb.UpdateStatusTest(dtTest.Rows[0][cc.ccpdb.ccp.Id].ToString(), dtTest.Rows[0][cc.ccpdb.ccp.sticker01].ToString(), dtTest.Rows[0][cc.ccpdb.ccp.sticker02].ToString(), dtTest.Rows[0][cc.ccpdb.ccp.sticker03].ToString()
@@ -689,7 +715,7 @@ namespace CheckUP.gui
                 , dtTest.Rows[0][cc.ccpdb.ccp.sticker19].ToString(), dtTest.Rows[0][cc.ccpdb.ccp.sticker20].ToString());
             
             dtTest = new DataTable();
-            dtTest = cc.ccpdb.selectByPk(grfView[row, colVId].ToString());
+            dtTest = cc.ccpdb.selectByPkTest(grfView[row, colVId].ToString());
             Row ttt = grfTest.Rows.Add();
             ttt[colTId] = grfView[row, colVId].ToString();
             ttt[colTvisitHn] = grfView[row, colVvisitHn].ToString();
@@ -714,7 +740,6 @@ namespace CheckUP.gui
             ttt[colS18] = dtTest.Rows[0][cc.ccpdb.ccp.test18].ToString();
             ttt[colS19] = dtTest.Rows[0][cc.ccpdb.ccp.test19].ToString();
             ttt[colS20] = dtTest.Rows[0][cc.ccpdb.ccp.test20].ToString();
-                        
             
             grfView.Rows.Remove(row);
             setGrfColor();
@@ -741,11 +766,11 @@ namespace CheckUP.gui
         private void setGrfView(String cucid)
         {
             grfView.DataSource = null;
-            DataTable dt1 = new DataTable();
-            dt1.Columns.Add(new DataColumn("id", typeof(string)));
-            dt1.Columns.Add(new DataColumn("barcode", typeof(string)));
-            dt1.Columns.Add(new DataColumn("ชื่อ-นามสกุล", typeof(string)));
-            dt1.Columns.Add(new DataColumn("รหัสพนักงาน", typeof(string)));
+            //DataTable dt1 = new DataTable();
+            //dt1.Columns.Add(new DataColumn("id", typeof(string)));
+            //dt1.Columns.Add(new DataColumn("barcode", typeof(string)));
+            //dt1.Columns.Add(new DataColumn("ชื่อ-นามสกุล", typeof(string)));
+            //dt1.Columns.Add(new DataColumn("รหัสพนักงาน", typeof(string)));
 
             grfView.Rows.Count = 2;
             grfView.Clear();
@@ -753,6 +778,7 @@ namespace CheckUP.gui
             DataTable dt = new DataTable();
             //dt = cc.ccpdb.selectAllStatusVisit0ByCucId(cucid);
             dt = cc.ccpdb.selectAllStatusVisit0ByCucId1(cucid);
+            
             grfView.Rows.Count = 2;
             grfView.Cols.Count = 5;
             //TextBox txt = new TextBox();
@@ -770,22 +796,22 @@ namespace CheckUP.gui
 
             grfView.Cols[colVId].Visible = false;
             
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                //Row row = grfView.Rows.Add();
-                //row[0] = i + 1;
-                //if (i % 2 == 0)
-                //    row.StyleNew.BackColor = color;
-                DataRow dr = dt1.NewRow();
-                dr.ItemArray = new object[] { dt.Rows[i][cc.ccpdb.ccp.Id].ToString(), dt.Rows[i][cc.ccpdb.ccp.visitHn].ToString(), dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString()
-                    , dt.Rows[i][cc.ccpdb.ccp.patientNumber].ToString() };
-                dt1.Rows.Add(dr);
-                //row[colVId] = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
-                //row[colVvisitHn] = dt.Rows[i][cc.ccpdb.ccp.visitHn].ToString();
-                //row[colVname] = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
-                //row[colVpatnumber] = dt.Rows[i][cc.ccpdb.ccp.patientNumber].ToString();
-            }
-            grfView.DataSource = dt1;
+            //for (int i = 0; i < dt.Rows.Count; i++)
+            //{
+            //    //Row row = grfView.Rows.Add();
+            //    //row[0] = i + 1;
+            //    //if (i % 2 == 0)
+            //    //    row.StyleNew.BackColor = color;
+            //    DataRow dr = dt1.NewRow();
+            //    dr.ItemArray = new object[] { dt.Rows[i][cc.ccpdb.ccp.Id].ToString(), dt.Rows[i][cc.ccpdb.ccp.visitHn].ToString(), dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString()
+            //        , dt.Rows[i][cc.ccpdb.ccp.patientNumber].ToString() };
+            //    dt1.Rows.Add(dr);
+            //    //row[colVId] = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+            //    //row[colVvisitHn] = dt.Rows[i][cc.ccpdb.ccp.visitHn].ToString();
+            //    //row[colVname] = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
+            //    //row[colVpatnumber] = dt.Rows[i][cc.ccpdb.ccp.patientNumber].ToString();
+            //}
+            grfView.DataSource = dt;
             //grfView.Cols[colVId].Visible = false;
             grfView.Cols[colVvisitHn].Width = 80;
             grfView.Cols[colVname].Width = 200;
@@ -809,7 +835,7 @@ namespace CheckUP.gui
                 j++;
             }
             //dt1.Dispose();
-            dt.Dispose();
+            //dt.Dispose();
         }
         private void initGrfEmp()
         {
@@ -858,12 +884,12 @@ namespace CheckUP.gui
         private void setGrfEmp(String cucid)
         {
             grfEmp.DataSource = null;
-            DataTable dt1 = new DataTable();
             //DataTable dt1 = new DataTable();
-            dt1.Columns.Add(new DataColumn("id", typeof(string)));
-            dt1.Columns.Add(new DataColumn("barcode", typeof(string)));
-            dt1.Columns.Add(new DataColumn("ชื่อ-นามสกุล", typeof(string)));
-            dt1.Columns.Add(new DataColumn("รหัสพนักงาน", typeof(string)));
+            //DataTable dt1 = new DataTable();
+            //dt1.Columns.Add(new DataColumn("id", typeof(string)));
+            //dt1.Columns.Add(new DataColumn("barcode", typeof(string)));
+            //dt1.Columns.Add(new DataColumn("ชื่อ-นามสกุล", typeof(string)));
+            //dt1.Columns.Add(new DataColumn("รหัสพนักงาน", typeof(string)));
 
             grfEmp.Rows.Count = 2;
             grfEmp.Clear();
@@ -884,23 +910,23 @@ namespace CheckUP.gui
 
             grfEmp.Cols[colEId].Visible = false;
             
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                //Row row = grfEmp.Rows.Add();
-                //row[0] = i + 1;
-                //if (i % 2 == 0)
-                //    row.StyleNew.BackColor = color;
-                //row[colEId] = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
-                //row[colEvisitHn] = dt.Rows[i][cc.ccpdb.ccp.visitHn].ToString();
-                //row[colEname] = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
-                //row[colVpatnumber] = dt.Rows[i][cc.ccpdb.ccp.patientNumber].ToString();
+            //for (int i = 0; i < dt.Rows.Count; i++)
+            //{
+            //    //Row row = grfEmp.Rows.Add();
+            //    //row[0] = i + 1;
+            //    //if (i % 2 == 0)
+            //    //    row.StyleNew.BackColor = color;
+            //    //row[colEId] = dt.Rows[i][cc.ccpdb.ccp.Id].ToString();
+            //    //row[colEvisitHn] = dt.Rows[i][cc.ccpdb.ccp.visitHn].ToString();
+            //    //row[colEname] = dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString();
+            //    //row[colVpatnumber] = dt.Rows[i][cc.ccpdb.ccp.patientNumber].ToString();
 
-                DataRow dr = dt1.NewRow();
-                dr.ItemArray = new object[] { dt.Rows[i][cc.ccpdb.ccp.Id].ToString(), dt.Rows[i][cc.ccpdb.ccp.visitHn].ToString(), dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString()
-                    , dt.Rows[i][cc.ccpdb.ccp.patientNumber].ToString() };
-                dt1.Rows.Add(dr);
-            }
-            grfEmp.DataSource = dt1;
+            //    DataRow dr = dt1.NewRow();
+            //    dr.ItemArray = new object[] { dt.Rows[i][cc.ccpdb.ccp.Id].ToString(), dt.Rows[i][cc.ccpdb.ccp.visitHn].ToString(), dt.Rows[i][cc.ccpdb.ccp.patientFullname].ToString()
+            //        , dt.Rows[i][cc.ccpdb.ccp.patientNumber].ToString() };
+            //    dt1.Rows.Add(dr);
+            //}
+            grfEmp.DataSource = dt;
             
             grfEmp.Cols[colEvisitHn].Width = 80;
             grfEmp.Cols[colEname].Width = 200;
@@ -921,7 +947,7 @@ namespace CheckUP.gui
             grfEmp.Cols[colEId].Visible = false;
             grfEmp.AllowEditing = false;
             grfEmp.AllowFiltering = true;
-            dt.Dispose();
+            //dt.Dispose();
             //dt1.Dispose();
         }
         private void initGrfTest()

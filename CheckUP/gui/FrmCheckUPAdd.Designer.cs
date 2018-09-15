@@ -407,6 +407,8 @@
             this.txtYear = new System.Windows.Forms.TextBox();
             this.label122 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
+            this.chkRefresh = new System.Windows.Forms.CheckBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.tC.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSum)).BeginInit();
@@ -3820,7 +3822,7 @@
             this.cboTestSticker.Location = new System.Drawing.Point(84, 6);
             this.cboTestSticker.Name = "cboTestSticker";
             this.cboTestSticker.Size = new System.Drawing.Size(185, 21);
-            this.cboTestSticker.TabIndex = 82;            
+            this.cboTestSticker.TabIndex = 82;
             // 
             // btnClearTestAll
             // 
@@ -4262,7 +4264,10 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnRefresh);
             this.panel4.Controls.Add(this.label35);
+            this.panel4.Controls.Add(this.chkRefresh);
+            this.panel4.Controls.Add(this.label39);
             this.panel4.Controls.Add(this.label37);
             this.panel4.Controls.Add(this.label33);
             this.panel4.Controls.Add(this.label34);
@@ -4295,7 +4300,7 @@
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.ForeColor = System.Drawing.Color.White;
-            this.label37.Location = new System.Drawing.Point(210, 48);
+            this.label37.Location = new System.Drawing.Point(266, 48);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(60, 20);
             this.label37.TabIndex = 10;
@@ -4317,7 +4322,7 @@
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.Color.White;
-            this.label34.Location = new System.Drawing.Point(210, 28);
+            this.label34.Location = new System.Drawing.Point(266, 28);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(60, 20);
             this.label34.TabIndex = 8;
@@ -4339,7 +4344,7 @@
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.White;
-            this.label31.Location = new System.Drawing.Point(210, 4);
+            this.label31.Location = new System.Drawing.Point(266, 4);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(60, 20);
             this.label31.TabIndex = 6;
@@ -4350,7 +4355,7 @@
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(124, 48);
+            this.label27.Location = new System.Drawing.Point(110, 48);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(60, 20);
             this.label27.TabIndex = 5;
@@ -4361,7 +4366,7 @@
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.ForeColor = System.Drawing.Color.White;
-            this.label29.Location = new System.Drawing.Point(124, 26);
+            this.label29.Location = new System.Drawing.Point(110, 26);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(60, 20);
             this.label29.TabIndex = 4;
@@ -4372,7 +4377,7 @@
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.ForeColor = System.Drawing.Color.White;
-            this.label30.Location = new System.Drawing.Point(124, 4);
+            this.label30.Location = new System.Drawing.Point(110, 4);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(60, 20);
             this.label30.TabIndex = 3;
@@ -4440,23 +4445,41 @@
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(344, 38);
+            this.label39.Location = new System.Drawing.Point(243, 50);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(19, 13);
             this.label39.TabIndex = 85;
             this.label39.Text = "18";
+            // 
+            // chkRefresh
+            // 
+            this.chkRefresh.AutoSize = true;
+            this.chkRefresh.Location = new System.Drawing.Point(174, 49);
+            this.chkRefresh.Name = "chkRefresh";
+            this.chkRefresh.Size = new System.Drawing.Size(63, 17);
+            this.chkRefresh.TabIndex = 86;
+            this.chkRefresh.Text = "Refresh";
+            this.chkRefresh.UseVisualStyleBackColor = true;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(185, 23);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(61, 23);
+            this.btnRefresh.TabIndex = 82;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
             // 
             // FrmCheckUPAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1413, 899);
-            this.Controls.Add(this.label39);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.txtYear);
             this.Controls.Add(this.label122);
             this.Controls.Add(this.txtCust);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.txtCntSuccess);
             this.Controls.Add(this.label123);
             this.Controls.Add(this.txtCntEmp);
@@ -4933,5 +4956,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.CheckBox chkBarcode;
+        private System.Windows.Forms.CheckBox chkRefresh;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

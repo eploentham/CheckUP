@@ -6593,3 +6593,5 @@ Incorrect syntax near ')'.
 9/7/2018 12:54 PM->ExecuteNonQuery ex  error Unclosed quotation mark after the character string ')'.
 Incorrect syntax near ')'.
 >>>>>>> 0a2dd78074d620deb5bc873ab90835bbeae63479
+9/13/2018 11:26 AM->selectData ex  error Incorrect syntax near '-'.
+9/13/2018 11:30 AM->selectData ex  error Incorrect syntax near 'name'.

@@ -674,7 +674,40 @@ namespace CheckUP.objdb
 
             return dt;
         }
+        public DataTable selectByPkTest(String ccpId)
+        {
+            String sql = "", onsite = "";
+            DataTable dt = new DataTable();
+            if (conn.initc.statusonsite.Equals("yes"))
+            {
+                onsite = " onsite_";
+            }
+            sql = "Select " + ccp.Id + "," + 
+                ccp.test01 + "," + ccp.test02 + "," + ccp.test03 + "," + ccp.test04 + "," + ccp.test05 + "," + ccp.test06 + "," + ccp.test07 + "," + ccp.test08 + "," + ccp.test09 + "," + ccp.test10 + "," +
+                ccp.test11 + "," + ccp.test12 + "," + ccp.test13 + "," + ccp.test14 + "," + ccp.test15 + "," + ccp.test16 + "," + ccp.test17 + "," + ccp.test18 + "," + ccp.test19 + "," + ccp.test20 + " " + 
+                " From " + onsite + ccp.table + 
+                " Where " + ccp.Id + " = '" + ccpId + "'";
+            dt = conn.selectData(sql);
 
+            return dt;
+        }
+        public DataTable selectByPkSticker(String ccpId)
+        {
+            String sql = "", onsite = "";
+            DataTable dt = new DataTable();
+            if (conn.initc.statusonsite.Equals("yes"))
+            {
+                onsite = " onsite_";
+            }
+            sql = "Select " + ccp.Id + "," +
+                ccp.sticker01 + "," + ccp.sticker02 + "," + ccp.sticker03 + "," + ccp.sticker04 + "," + ccp.sticker05 + "," + ccp.sticker06 + "," + ccp.sticker07 + "," + ccp.sticker08 + "," + ccp.sticker09 + "," + ccp.sticker10 + "," +
+                ccp.sticker11 + "," + ccp.sticker12 + "," + ccp.sticker13 + "," + ccp.sticker14 + "," + ccp.sticker15 + "," + ccp.sticker16 + "," + ccp.sticker17 + "," + ccp.sticker18 + "," + ccp.sticker19 + "," + ccp.sticker20 + " " +
+                " From " + onsite + ccp.table + 
+                " Where " + ccp.Id + " = '" + ccpId + "'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
         public DataTable selectAllByCucId(String cucId)
         {
             String sql = "";
@@ -957,7 +990,7 @@ namespace CheckUP.objdb
             {
                 onsite = " onsite_";
             }
-            sql = "Select " + ccp.Id + "," + ccp.visitHn + "," + ccp.patientFullname + "," + ccp.patientNumber + " " +
+            sql = "Select " + ccp.Id + " as id," + ccp.visitHn + " as barcode," + ccp.patientFullname + " as pat_name," + ccp.patientNumber + " as pat_number " +
                 "From " + onsite + ccp.table + " " +
                 "Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "' and " + ccp.statusVisit + "='1' " +
                 "Order By " + ccp.rowNumber;
@@ -988,7 +1021,7 @@ namespace CheckUP.objdb
             {
                 onsite = " onsite_";
             }
-            sql = "Select "+ccp.Id+","+ccp.visitHn+","+ ccp.patientFullname+","+ccp.patientNumber+" " +
+            sql = "Select "+ccp.Id+" as id,"+ccp.visitHn+ " as barcode," + ccp.patientFullname+ " as pat_name," + ccp.patientNumber+ " as pat_number " +
                 "From " + onsite + ccp.table + " " +
                 "Where " + ccp.Active + "='1' and " + ccp.CustCheckUpId + " = '" + cucId + "' and " + ccp.statusVisit + "='0' " +
                 "Order By " + ccp.rowNumber;
