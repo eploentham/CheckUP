@@ -3193,6 +3193,29 @@ namespace CheckUP.objdb
             }
             return chk;
         }
+        public String UpdateCholesOnly(String rowNumber, String cucId, String value, String result, String summary)
+        {
+            String chk = "", sql = "";
+            try
+            {
+                sql = "Update " + ccp.table + " Set " + ccp.cholesterol + "='" + value + "'," +
+                ccp.cholesterolSuggess + "='" + result.Replace("'", "''") + "', " +
+                ccp.cholesterolSummary + "='" + summary.Replace("'", "''") + "', " +
+                //ccp.ldl + "='" + ldl + "', " +
+                //ccp.hdl + "='" + hdl + "', " +
+                //ccp.ChoLDLResult + "='" + ldlresult.Replace("'", "''") + "', " +
+                //ccp.ChoLDLsummary + "='" + ldlsummary.Replace("'", "''") + "', " +
+                //ccp.ChoHDLResult + "='" + hdlresult.Replace("'", "''") + "', " +
+                //ccp.ChoHDLsummary + "='" + hdlsummary.Replace("'", "''") + "' " +
+                "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
+                chk = conn.ExecuteNonQuery(sql); ;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return chk;
+        }
         public String UpdateSgot(String rowNumber, String cucId, String sgot, String sgpt, String alt, String result, String summary, String alkaline)
         {
             String chk = "", sql = "";

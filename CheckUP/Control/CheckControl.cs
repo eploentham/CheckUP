@@ -61,6 +61,7 @@ namespace CheckUP.Control
         public ValueNormalLDL vLDL;
         public ValueNormalSugar vSugar;
         public ValueNormalTrigly vTrig;
+        public ValueNormalUric vUric;
 
         public LogWriter lw;
         public DataTable dtccpvn;
@@ -85,6 +86,7 @@ namespace CheckUP.Control
                 vLDL = new ValueNormalLDL();
                 vSugar = new ValueNormalSugar();
                 vTrig = new ValueNormalTrigly();
+                vUric = new ValueNormalUric();
 
                 sf = new Staff();
                 //itSearch = new Item();
@@ -144,23 +146,31 @@ namespace CheckUP.Control
             DataTable dt = new DataTable();
             dt = ccpvndb.selectByPk();
             //MessageBox.Show("333", "Error");
-            vCholes.cholesterolValueNormal = dt.Rows[0][ccpvndb.ccpvn.cholesterolValueNormal].ToString();
-            vCholes.cholesterolValueUpper = dt.Rows[0][ccpvndb.ccpvn.cholesterolValueUpper].ToString();
-            vCholes.cholesterolValueUpperSuggess = dt.Rows[0][ccpvndb.ccpvn.cholesterolValueUpperSuggess].ToString();
+            vCholes.cholesterolValueNormal = dt.Rows[0][ccpvndb.ccpvn.cholesterolValueNormal]!=null?dt.Rows[0][ccpvndb.ccpvn.cholesterolValueNormal].ToString():"";
+            vCholes.cholesterolValueUpper = dt.Rows[0][ccpvndb.ccpvn.cholesterolValueUpper]!=null?dt.Rows[0][ccpvndb.ccpvn.cholesterolValueUpper].ToString():"";
+            vCholes.cholesterolValueUpperSuggess = dt.Rows[0][ccpvndb.ccpvn.cholesterolValueUpperSuggess]!=null?dt.Rows[0][ccpvndb.ccpvn.cholesterolValueUpperSuggess].ToString():"";
             //MessageBox.Show("444", "Error");
-            vLDL.ldlValueNormal = dt.Rows[0][ccpvndb.ccpvn.ldlValueNormal].ToString();
-            vLDL.ldlValueUpper = dt.Rows[0][ccpvndb.ccpvn.ldlValueUpper].ToString();
-            vLDL.ldlValueUpperSuggess= dt.Rows[0][ccpvndb.ccpvn.ldlValueUpperSuggess].ToString();
+            vLDL.ldlValueNormal = dt.Rows[0][ccpvndb.ccpvn.ldlValueNormal]!=null?dt.Rows[0][ccpvndb.ccpvn.ldlValueNormal].ToString():"";
+            vLDL.ldlValueUpper = dt.Rows[0][ccpvndb.ccpvn.ldlValueUpper].ToString()!=null?dt.Rows[0][ccpvndb.ccpvn.ldlValueUpper].ToString():"";
+            vLDL.ldlValueUpperSuggess= dt.Rows[0][ccpvndb.ccpvn.ldlValueUpperSuggess]!=null?dt.Rows[0][ccpvndb.ccpvn.ldlValueUpperSuggess].ToString():"";
 
-            vSugar.sugarValueNormal = dt.Rows[0][ccpvndb.ccpvn.sugarValueNormal].ToString();
-            vSugar.sugarValueLower = dt.Rows[0][ccpvndb.ccpvn.sugarValueLower].ToString();
-            vSugar.sugarValueLowerSuggess = dt.Rows[0][ccpvndb.ccpvn.sugarValueLowerSuggess].ToString();
-            vSugar.sugarValueUpper = dt.Rows[0][ccpvndb.ccpvn.sugarValueUpper].ToString();
-            vSugar.sugarValueUpperSuggess = dt.Rows[0][ccpvndb.ccpvn.sugarValueUpperSuggess].ToString();
+            vSugar.sugarValueNormal = dt.Rows[0][ccpvndb.ccpvn.sugarValueNormal].ToString()!=null? dt.Rows[0][ccpvndb.ccpvn.sugarValueNormal].ToString():"";
+            vSugar.sugarValueLower = dt.Rows[0][ccpvndb.ccpvn.sugarValueLower].ToString()!=null?dt.Rows[0][ccpvndb.ccpvn.sugarValueLower].ToString():"";
+            vSugar.sugarValueLowerSuggess = dt.Rows[0][ccpvndb.ccpvn.sugarValueLowerSuggess]!=null?dt.Rows[0][ccpvndb.ccpvn.sugarValueLowerSuggess].ToString():"";
+            vSugar.sugarValueUpper = dt.Rows[0][ccpvndb.ccpvn.sugarValueUpper].ToString()!=null?dt.Rows[0][ccpvndb.ccpvn.sugarValueUpper].ToString():"";
+            vSugar.sugarValueUpperSuggess = dt.Rows[0][ccpvndb.ccpvn.sugarValueUpperSuggess]!=null?dt.Rows[0][ccpvndb.ccpvn.sugarValueUpperSuggess].ToString():"";
 
-            vTrig.triglycerideValueNormal = dt.Rows[0][ccpvndb.ccpvn.triglycerideValueNormal].ToString();
-            vTrig.triglycerideValueUpper = dt.Rows[0][ccpvndb.ccpvn.triglycerideValueUpper].ToString();
-            vTrig.triglycerideValueUpperSuggess = dt.Rows[0][ccpvndb.ccpvn.triglycerideValueUpperSuggess].ToString();
+            vTrig.triglycerideValueNormal = dt.Rows[0][ccpvndb.ccpvn.triglycerideValueNormal]!=null?dt.Rows[0][ccpvndb.ccpvn.triglycerideValueNormal].ToString():"";
+            vTrig.triglycerideValueUpper = dt.Rows[0][ccpvndb.ccpvn.triglycerideValueUpper]!=null?dt.Rows[0][ccpvndb.ccpvn.triglycerideValueUpper].ToString():"";
+            vTrig.triglycerideValueUpperSuggess = dt.Rows[0][ccpvndb.ccpvn.triglycerideValueUpperSuggess]!=null?dt.Rows[0][ccpvndb.ccpvn.triglycerideValueUpperSuggess].ToString():"";
+
+            vUric.uricValueNormalMale = dt.Rows[0][ccpvndb.ccpvn.uricAcidMale]!=null?dt.Rows[0][ccpvndb.ccpvn.uricAcidMale].ToString():"";
+            vUric.uricValueNormalFeMale = dt.Rows[0][ccpvndb.ccpvn.uricAcidFemale]!=null?dt.Rows[0][ccpvndb.ccpvn.uricAcidFemale].ToString():"";
+            vUric.uricValueNormal = dt.Rows[0][ccpvndb.ccpvn.uric_acid_value_normal]!=null?dt.Rows[0][ccpvndb.ccpvn.uric_acid_value_normal].ToString():"";
+            vUric.uricValueUpper = dt.Rows[0][ccpvndb.ccpvn.uric_acid_value_upper]!=null?dt.Rows[0][ccpvndb.ccpvn.uric_acid_value_upper].ToString():"";
+            vUric.uricValueUpperSuggess = dt.Rows[0][ccpvndb.ccpvn.uric_acid_value_upper_suggess]!=null?dt.Rows[0][ccpvndb.ccpvn.uric_acid_value_upper_suggess].ToString():"";
+            vUric.uricValueLower = dt.Rows[0][ccpvndb.ccpvn.uric_acid_value_lower]!=null?dt.Rows[0][ccpvndb.ccpvn.uric_acid_value_lower].ToString():"";
+            vUric.uricValueLowerSuggess = dt.Rows[0][ccpvndb.ccpvn.uric_acid_value_lower_suggess]!=null?dt.Rows[0][ccpvndb.ccpvn.uric_acid_value_lower_suggess].ToString():"";
         }
         public String getTextCboItem(ComboBox c, String valueId)
         {
@@ -1908,6 +1918,90 @@ namespace CheckUP.Control
             }
             Cursor.Current = cursor;
         }
+        public String calUric(String sex,String result)
+        {
+            //Uric      dt.Rows[0][ccpvndb.ccpvn.uricAcidMale]
+            String remark = "@";
+            String[] uricMale = vUric.uricValueNormalMale.Split('@');
+            String[] uricFemale = vUric.uricValueNormalFeMale.Split('@');
+            Double uricMaleMin = 0, uricMaleMax = 0;
+            String uricMaleUnit = "";
+            if (uricMale.Length == 2)
+            {
+                String[] aa = uricMale[0].ToString().Split('-');
+                uricMaleMin = Double.Parse(aa[0]);
+                uricMaleMax = Double.Parse(aa[1]);
+                uricMaleUnit = uricMale[1];
+            }
+            Double uricFemaleMin = 0, uricFemaleMax = 0;
+            String uricFemaleUnit = "";
+            if (uricFemale.Length == 2)
+            {
+                String[] aa = uricFemale[0].ToString().Split('-');
+                uricFemaleMin = Double.Parse(aa[0]);
+                uricFemaleMax = Double.Parse(aa[1]);
+                uricFemaleUnit = uricFemale[1];
+            }
+            
+            try
+            {
+                if (sex.Equals("1"))//male
+                {                    
+                    if (Double.Parse(cf.NumberNull1(result)) > 0)
+                    {
+                        if ((Double.Parse(cf.NumberNull1(result)) >= uricMaleMin) && (Double.Parse(cf.NumberNull1(result)) <= uricMaleMax))
+                        {
+                            remark = vUric.uricValueNormal+"@";
+                        }
+                        else
+                        {
+                            if (Double.Parse(cf.NumberNull1(result)) > uricMaleMax)
+                            {
+                                remark = vUric.uricValueUpper + "@";
+                            }
+                            else
+                            {
+                                remark = vUric.uricValueLower + "@";
+                            }
+                        }
+                    }
+                    else
+                    {
+                        remark = "";
+                    }
+                }
+                else
+                {                    
+                    if (Double.Parse(cf.NumberNull1(result)) > 0)
+                    {
+                        if ((Double.Parse(cf.NumberNull1(result)) >= uricFemaleMin) && (Double.Parse(cf.NumberNull1(result)) <= uricFemaleMax))
+                        {
+                            remark = vUric.uricValueNormal + "@";
+                        }
+                        else
+                        {
+                            if (Double.Parse(cf.NumberNull1(result)) > uricFemaleMax)
+                            {
+                                remark = vUric.uricValueUpper + "@";
+                            }
+                            else
+                            {
+                                remark = vUric.uricValueLower + "@";
+                            }
+                        }
+                    }
+                    else
+                    {
+                        remark = "";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                remark = "แปลผลไม่ได้ " + result;
+            }
+            return remark;
+        }
         public void excelUric(String cucId, Boolean chkResult)
         {
             CustCheckUp cuc = new CustCheckUp();
@@ -2048,19 +2142,19 @@ namespace CheckUP.Control
                         xlWorksheet.Cells[row + j + 1 + 4, 4] = dt.Rows[k][ccpdb.ccp.uricAcid].ToString();
                         if (chkResult)
                         {
-                            //String result = "";
-                            //result = calFBS(dt.Rows[k][ccpdb.ccp.sugar].ToString());
-                            //String[] result1 = result.Split('@');
+                            String result = "";
+                            result = calUric(dt.Rows[k][ccpdb.ccp.SexName].ToString(), dt.Rows[k][ccpdb.ccp.uricAcid].ToString());
+                            String[] result1 = result.Split('@');
 
-                            //xlWorksheet.Cells[row + j + 1 + 4, 5] = result1[0];
-                            //xlWorksheet.Cells[row + j + 1 + 4, 6] = result1[1];
-                            //if (result1[1].Length > 0)
-                            //{
-                            //    Microsoft.Office.Interop.Excel.Range rgPage1;
-                            //    rgPage1 = xlWorksheet.Range[xlWorksheet.Cells[row + j + 1 + 4, 5], xlWorksheet.Cells[row + j + 1 + 4, 6]];
-                            //    rgPage1.Font.Color = Color.Red;
-                            //    rgPage1.Font.Bold = true;
-                            //}
+                            xlWorksheet.Cells[row + j + 1 + 4, 5] = result1[0];
+                            xlWorksheet.Cells[row + j + 1 + 4, 6] = result1[1];
+                            if (result1[1].Length > 0)
+                            {
+                                Microsoft.Office.Interop.Excel.Range rgPage1;
+                                rgPage1 = xlWorksheet.Range[xlWorksheet.Cells[row + j + 1 + 4, 5], xlWorksheet.Cells[row + j + 1 + 4, 6]];
+                                rgPage1.Font.Color = Color.Red;
+                                rgPage1.Font.Bold = true;
+                            }
                             xlWorksheet.Cells[row + j + 1 + 4, 5] = dt.Rows[k][ccpdb.ccp.uricAcidSuggess].ToString();
                             xlWorksheet.Cells[row + j + 1 + 4, 6] = dt.Rows[k][ccpdb.ccp.uricAcidSummary].ToString();
                         }
@@ -2109,11 +2203,11 @@ namespace CheckUP.Control
                     if (int.Parse(cf.NumberNull1(result)) >= triMax)
                     {
                         //rc.Remark = "สูงกว่าปกติ";
-                        remark = vTrig.triglycerideValueUpper;
+                        remark = vTrig.triglycerideValueUpper+"@"+vTrig.triglycerideValueUpperSuggess;
                     }
                     else if (int.Parse(cf.NumberNull1(result)) < triMax)
                     {
-                        remark = vTrig.triglycerideValueNormal;
+                        remark = vTrig.triglycerideValueNormal + "@";
                     }
                 }
                 else
@@ -2312,6 +2406,7 @@ namespace CheckUP.Control
             String remark = "@";
             //Choles
             String[] choles = dtccpvn.Rows[0][ccpvndb.ccpvn.cholesterol].ToString().Split('@');
+
             int cholesMax = 0;
             String cholesUnit = "";
             if (choles.Length == 2)
@@ -3841,6 +3936,44 @@ namespace CheckUP.Control
                 }
             }
             return re;
+        }
+        public void readTextCEM(String cudId,String filename)
+        {
+            const Int32 BufferSize = 128;
+            using (var fileStream = File.OpenRead(filename))
+            using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true, BufferSize))
+            {
+                //4=Glucose
+                //7=Cholesterol
+                //8=Triglyceride
+                //23=Uric Acid
+                //date  colpatid    sample id   item id fullname    test    ref
+                String line ="", chk="", result="";
+                while ((line = streamReader.ReadLine()) != null)
+                {
+                    String[] txt = line.Split('|');
+                    if (txt[3].Equals("7"))
+                    {
+                        result = calCho(txt[5]);
+                        chk = ccpdb.UpdateCholesOnly(txt[1], cudId, txt[5], result, "");
+                    }
+                    else if (txt[3].Equals("8"))
+                    {
+                        result = calTri(txt[5]);
+                        chk = ccpdb.UpdateTrigly(txt[1], cudId, txt[5], result, "");
+                    }
+                    else if (txt[3].Equals("23"))
+                    {
+                        result = calTri(txt[5]);
+                        chk = ccpdb.UpdateUric(txt[1], cudId, txt[5], result, "");
+                    }
+                    else if (txt[3].Equals("4"))
+                    {
+                        result = calFBS(txt[5]);
+                        chk = ccpdb.UpdateFBS(txt[1], cudId, txt[5], result, "","");
+                    }
+                }
+            }
         }
     }
 }

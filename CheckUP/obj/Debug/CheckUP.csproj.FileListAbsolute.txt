@@ -175,3 +175,4 @@ D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csproj.CopyComplete
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.exe
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.pdb
 D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.gui.FrmCheckSample.resources
+D:\source\bangna\CheckUP\CheckUP\obj\Debug\CheckUP.csprojAssemblyReference.cache

@@ -138,6 +138,12 @@ namespace CheckUP.objdb
 
             ccpvn.uricAcidMale = "uric_acid_male";
             ccpvn.uricAcidFemale = "uric_acid_female";
+            ccpvn.uric_acid_value_lower = "uric_acid_value_lower";
+            ccpvn.uric_acid_value_lower_suggess = "uric_acid_value_lower_suggess";
+            ccpvn.uric_acid_value_normal = "uric_acid_value_normal";
+            ccpvn.uric_acid_value_upper = "uric_acid_value_upper";
+            ccpvn.uric_acid_value_upper_suggess = "uric_acid_value_upper_suggess";
+
             ccpvn.cholesterol = "cholesterol";
             ccpvn.cholesterolValueNormal = "cholesterol_value_normal";
             ccpvn.cholesterolValueUpper = "cholesterol_value_upper";
@@ -951,6 +957,12 @@ namespace CheckUP.objdb
 
                 ccpvn1.uricAcidMale = "";
                 ccpvn1.uricAcidFemale = "";
+                ccpvn1.uric_acid_value_lower = "";
+                ccpvn1.uric_acid_value_lower_suggess = "";
+                ccpvn1.uric_acid_value_normal = "";
+                ccpvn1.uric_acid_value_upper = "";
+                ccpvn1.uric_acid_value_upper_suggess = "";
+
                 ccpvn1.cholesterol = "";
                 ccpvn1.cholesterolValueNormal = "";
                 ccpvn1.cholesterolValueUpper = "";

@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -456,9 +457,14 @@ namespace CheckUP.gui
             if (MessageBox.Show("ต้องการ นำเข้าข้อมูล ผลตรวจ เครื่อง CEM", "เตรียมข้อมูล", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 ofd.ShowDialog();
-                if (ofd.FileName.Equals(""))
+                if (!ofd.FileName.Equals(""))
                 {
-
+                    if (ofd.FileName.IndexOf("TextCEM.txt")<0)
+                    {
+                        MessageBox.Show("ไม่พบ TextCEM.txt", "");
+                        return;
+                    }
+                    cc.readTextCEM(txtId.Text, ofd.FileName);
                 }
                 //cc.importSticker(txtId.Text, ofd.FileName, nmdStickerRow.Value.ToString(), nmdVisitHn.Value.ToString(), pB1);
                 //setGrfSticker(txtId.Text);

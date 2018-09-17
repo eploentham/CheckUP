@@ -89,7 +89,7 @@ namespace CheckUP.object1
         public String liverAlpMale = "", liverAlpFeMale = "", liverAlkalineMale = "", liverAlkalineFeMale = "";
         public String liverResult = "";
         public String liverSummary = "";
-        public String uricAcidMale="", uricAcidFemale="";
+        public String uricAcidMale="", uricAcidFemale="", uric_acid_value_normal="",uric_acid_value_lower="", uric_acid_value_upper="", uric_acid_value_lower_suggess="", uric_acid_value_upper_suggess="";
         public String cholesterol="", cholesterolValueNormal="", cholesterolValueUpper="", cholesterolValueUpperSuggess="";
         public String triglyceride="", triglycerideValueNormal="", triglycerideValueUpper= "", triglycerideValueUpperSuggess = "";
         public String triglycerideResult = "";

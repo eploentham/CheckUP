@@ -90,6 +90,12 @@
             this.txtFBSValue = new System.Windows.Forms.TextBox();
             this.label52 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.txtUANit = new System.Windows.Forms.TextBox();
+            this.label183 = new System.Windows.Forms.Label();
+            this.txtUAUro = new System.Windows.Forms.TextBox();
+            this.label182 = new System.Windows.Forms.Label();
+            this.txtUABil = new System.Windows.Forms.TextBox();
+            this.label181 = new System.Windows.Forms.Label();
             this.txtUAGlu = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.txtUALeu = new System.Windows.Forms.TextBox();
@@ -398,12 +404,17 @@
             this.label160 = new System.Windows.Forms.Label();
             this.label161 = new System.Windows.Forms.Label();
             this.tabPage15 = new System.Windows.Forms.TabPage();
-            this.txtUABil = new System.Windows.Forms.TextBox();
-            this.label181 = new System.Windows.Forms.Label();
-            this.txtUAUro = new System.Windows.Forms.TextBox();
-            this.label182 = new System.Windows.Forms.Label();
-            this.txtUANit = new System.Windows.Forms.TextBox();
-            this.label183 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label184 = new System.Windows.Forms.Label();
+            this.label185 = new System.Windows.Forms.Label();
+            this.txtUricValueUpperSuggess = new System.Windows.Forms.TextBox();
+            this.txtUricValueLowerSuggess = new System.Windows.Forms.TextBox();
+            this.txtUricValueUpper = new System.Windows.Forms.TextBox();
+            this.txtUricValueLower = new System.Windows.Forms.TextBox();
+            this.txtUricValueNormal = new System.Windows.Forms.TextBox();
+            this.label186 = new System.Windows.Forms.Label();
+            this.label187 = new System.Windows.Forms.Label();
+            this.label188 = new System.Windows.Forms.Label();
             this.tC.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
@@ -423,6 +434,7 @@
             this.tabPage12.SuspendLayout();
             this.tabPage13.SuspendLayout();
             this.tabPage14.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tC
@@ -1099,6 +1111,60 @@
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "tabPage7";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // txtUANit
+            // 
+            this.txtUANit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtUANit.Location = new System.Drawing.Point(845, 247);
+            this.txtUANit.Name = "txtUANit";
+            this.txtUANit.Size = new System.Drawing.Size(267, 22);
+            this.txtUANit.TabIndex = 116;
+            // 
+            // label183
+            // 
+            this.label183.AutoSize = true;
+            this.label183.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label183.Location = new System.Drawing.Point(770, 248);
+            this.label183.Name = "label183";
+            this.label183.Size = new System.Drawing.Size(24, 16);
+            this.label183.TabIndex = 115;
+            this.label183.Text = "Nit";
+            // 
+            // txtUAUro
+            // 
+            this.txtUAUro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtUAUro.Location = new System.Drawing.Point(845, 198);
+            this.txtUAUro.Name = "txtUAUro";
+            this.txtUAUro.Size = new System.Drawing.Size(267, 22);
+            this.txtUAUro.TabIndex = 114;
+            // 
+            // label182
+            // 
+            this.label182.AutoSize = true;
+            this.label182.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label182.Location = new System.Drawing.Point(770, 199);
+            this.label182.Name = "label182";
+            this.label182.Size = new System.Drawing.Size(30, 16);
+            this.label182.TabIndex = 113;
+            this.label182.Text = "Uro";
+            // 
+            // txtUABil
+            // 
+            this.txtUABil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtUABil.Location = new System.Drawing.Point(845, 143);
+            this.txtUABil.Name = "txtUABil";
+            this.txtUABil.Size = new System.Drawing.Size(267, 22);
+            this.txtUABil.TabIndex = 112;
+            // 
+            // label181
+            // 
+            this.label181.AutoSize = true;
+            this.label181.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label181.Location = new System.Drawing.Point(770, 144);
+            this.label181.Name = "label181";
+            this.label181.Size = new System.Drawing.Size(23, 16);
+            this.label181.TabIndex = 111;
+            this.label181.Text = "Bil";
             // 
             // txtUAGlu
             // 
@@ -2222,6 +2288,7 @@
             // 
             // tabPage11
             // 
+            this.tabPage11.Controls.Add(this.groupBox5);
             this.tabPage11.Controls.Add(this.txtUricFeMaleValue);
             this.tabPage11.Controls.Add(this.label83);
             this.tabPage11.Controls.Add(this.btnUricSave);
@@ -2238,7 +2305,7 @@
             // txtUricFeMaleValue
             // 
             this.txtUricFeMaleValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtUricFeMaleValue.Location = new System.Drawing.Point(210, 111);
+            this.txtUricFeMaleValue.Location = new System.Drawing.Point(133, 77);
             this.txtUricFeMaleValue.Name = "txtUricFeMaleValue";
             this.txtUricFeMaleValue.Size = new System.Drawing.Size(255, 22);
             this.txtUricFeMaleValue.TabIndex = 95;
@@ -2247,7 +2314,7 @@
             // 
             this.label83.AutoSize = true;
             this.label83.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label83.Location = new System.Drawing.Point(58, 114);
+            this.label83.Location = new System.Drawing.Point(14, 80);
             this.label83.Name = "label83";
             this.label83.Size = new System.Drawing.Size(111, 16);
             this.label83.TabIndex = 94;
@@ -2267,7 +2334,7 @@
             // txtUricMaleValue
             // 
             this.txtUricMaleValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtUricMaleValue.Location = new System.Drawing.Point(210, 50);
+            this.txtUricMaleValue.Location = new System.Drawing.Point(133, 50);
             this.txtUricMaleValue.Name = "txtUricMaleValue";
             this.txtUricMaleValue.Size = new System.Drawing.Size(255, 22);
             this.txtUricMaleValue.TabIndex = 92;
@@ -2276,7 +2343,7 @@
             // 
             this.label84.AutoSize = true;
             this.label84.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label84.Location = new System.Drawing.Point(58, 53);
+            this.label84.Location = new System.Drawing.Point(14, 53);
             this.label84.Name = "label84";
             this.label84.Size = new System.Drawing.Size(95, 16);
             this.label84.TabIndex = 49;
@@ -4207,59 +4274,109 @@
             this.tabPage15.Text = "tabPage15";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
-            // txtUABil
+            // groupBox5
             // 
-            this.txtUABil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtUABil.Location = new System.Drawing.Point(845, 143);
-            this.txtUABil.Name = "txtUABil";
-            this.txtUABil.Size = new System.Drawing.Size(267, 22);
-            this.txtUABil.TabIndex = 112;
+            this.groupBox5.Controls.Add(this.label184);
+            this.groupBox5.Controls.Add(this.label185);
+            this.groupBox5.Controls.Add(this.txtUricValueUpperSuggess);
+            this.groupBox5.Controls.Add(this.txtUricValueLowerSuggess);
+            this.groupBox5.Controls.Add(this.txtUricValueUpper);
+            this.groupBox5.Controls.Add(this.txtUricValueLower);
+            this.groupBox5.Controls.Add(this.txtUricValueNormal);
+            this.groupBox5.Controls.Add(this.label186);
+            this.groupBox5.Controls.Add(this.label187);
+            this.groupBox5.Controls.Add(this.label188);
+            this.groupBox5.Location = new System.Drawing.Point(17, 105);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(744, 110);
+            this.groupBox5.TabIndex = 99;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "การแปรผล";
             // 
-            // label181
+            // label184
             // 
-            this.label181.AutoSize = true;
-            this.label181.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label181.Location = new System.Drawing.Point(770, 144);
-            this.label181.Name = "label181";
-            this.label181.Size = new System.Drawing.Size(23, 16);
-            this.label181.TabIndex = 111;
-            this.label181.Text = "Bil";
+            this.label184.AutoSize = true;
+            this.label184.Location = new System.Drawing.Point(308, 81);
+            this.label184.Name = "label184";
+            this.label184.Size = new System.Drawing.Size(53, 13);
+            this.label184.TabIndex = 104;
+            this.label184.Text = "คำแนะนำ";
             // 
-            // txtUAUro
+            // label185
             // 
-            this.txtUAUro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtUAUro.Location = new System.Drawing.Point(845, 198);
-            this.txtUAUro.Name = "txtUAUro";
-            this.txtUAUro.Size = new System.Drawing.Size(267, 22);
-            this.txtUAUro.TabIndex = 114;
+            this.label185.AutoSize = true;
+            this.label185.Location = new System.Drawing.Point(308, 57);
+            this.label185.Name = "label185";
+            this.label185.Size = new System.Drawing.Size(53, 13);
+            this.label185.TabIndex = 103;
+            this.label185.Text = "คำแนะนำ";
             // 
-            // label182
+            // txtUricValueUpperSuggess
             // 
-            this.label182.AutoSize = true;
-            this.label182.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label182.Location = new System.Drawing.Point(770, 199);
-            this.label182.Name = "label182";
-            this.label182.Size = new System.Drawing.Size(30, 16);
-            this.label182.TabIndex = 113;
-            this.label182.Text = "Uro";
+            this.txtUricValueUpperSuggess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtUricValueUpperSuggess.Location = new System.Drawing.Point(375, 76);
+            this.txtUricValueUpperSuggess.Name = "txtUricValueUpperSuggess";
+            this.txtUricValueUpperSuggess.Size = new System.Drawing.Size(347, 22);
+            this.txtUricValueUpperSuggess.TabIndex = 102;
             // 
-            // txtUANit
+            // txtUricValueLowerSuggess
             // 
-            this.txtUANit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtUANit.Location = new System.Drawing.Point(845, 247);
-            this.txtUANit.Name = "txtUANit";
-            this.txtUANit.Size = new System.Drawing.Size(267, 22);
-            this.txtUANit.TabIndex = 116;
+            this.txtUricValueLowerSuggess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtUricValueLowerSuggess.Location = new System.Drawing.Point(375, 52);
+            this.txtUricValueLowerSuggess.Name = "txtUricValueLowerSuggess";
+            this.txtUricValueLowerSuggess.Size = new System.Drawing.Size(347, 22);
+            this.txtUricValueLowerSuggess.TabIndex = 101;
             // 
-            // label183
+            // txtUricValueUpper
             // 
-            this.label183.AutoSize = true;
-            this.label183.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label183.Location = new System.Drawing.Point(770, 248);
-            this.label183.Name = "label183";
-            this.label183.Size = new System.Drawing.Size(24, 16);
-            this.label183.TabIndex = 115;
-            this.label183.Text = "Nit";
+            this.txtUricValueUpper.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtUricValueUpper.Location = new System.Drawing.Point(139, 76);
+            this.txtUricValueUpper.Name = "txtUricValueUpper";
+            this.txtUricValueUpper.Size = new System.Drawing.Size(163, 22);
+            this.txtUricValueUpper.TabIndex = 100;
+            // 
+            // txtUricValueLower
+            // 
+            this.txtUricValueLower.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtUricValueLower.Location = new System.Drawing.Point(139, 52);
+            this.txtUricValueLower.Name = "txtUricValueLower";
+            this.txtUricValueLower.Size = new System.Drawing.Size(163, 22);
+            this.txtUricValueLower.TabIndex = 99;
+            // 
+            // txtUricValueNormal
+            // 
+            this.txtUricValueNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtUricValueNormal.Location = new System.Drawing.Point(139, 28);
+            this.txtUricValueNormal.Name = "txtUricValueNormal";
+            this.txtUricValueNormal.Size = new System.Drawing.Size(163, 22);
+            this.txtUricValueNormal.TabIndex = 98;
+            // 
+            // label186
+            // 
+            this.label186.AutoSize = true;
+            this.label186.Location = new System.Drawing.Point(10, 33);
+            this.label186.Name = "label186";
+            this.label186.Size = new System.Drawing.Size(72, 13);
+            this.label186.TabIndex = 95;
+            this.label186.Text = "พิมพ์ ค่าปกติ :";
+            // 
+            // label187
+            // 
+            this.label187.AutoSize = true;
+            this.label187.Location = new System.Drawing.Point(10, 81);
+            this.label187.Name = "label187";
+            this.label187.Size = new System.Drawing.Size(124, 13);
+            this.label187.TabIndex = 97;
+            this.label187.Text = "พิมพ์ ค่าสูงกว่ามาตรฐาน :";
+            // 
+            // label188
+            // 
+            this.label188.AutoSize = true;
+            this.label188.Location = new System.Drawing.Point(10, 57);
+            this.label188.Name = "label188";
+            this.label188.Size = new System.Drawing.Size(125, 13);
+            this.label188.TabIndex = 96;
+            this.label188.Text = "พิมพ์ ค่าต่ำกว่ามาตรฐาน :";
             // 
             // FrmValueNormal
             // 
@@ -4308,6 +4425,8 @@
             this.tabPage13.PerformLayout();
             this.tabPage14.ResumeLayout(false);
             this.tabPage14.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -4690,5 +4809,16 @@
         private System.Windows.Forms.Label label182;
         private System.Windows.Forms.TextBox txtUABil;
         private System.Windows.Forms.Label label181;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label184;
+        private System.Windows.Forms.Label label185;
+        private System.Windows.Forms.TextBox txtUricValueUpperSuggess;
+        private System.Windows.Forms.TextBox txtUricValueLowerSuggess;
+        private System.Windows.Forms.TextBox txtUricValueUpper;
+        private System.Windows.Forms.TextBox txtUricValueLower;
+        private System.Windows.Forms.TextBox txtUricValueNormal;
+        private System.Windows.Forms.Label label186;
+        private System.Windows.Forms.Label label187;
+        private System.Windows.Forms.Label label188;
     }
 }
