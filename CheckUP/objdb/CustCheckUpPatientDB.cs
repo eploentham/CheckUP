@@ -2275,7 +2275,7 @@ namespace CheckUP.objdb
                 ccp.sugarSummary + "='" + summary.Replace("'", "''") + "', " +
                 ccp.sugarSuggess + "='" + suggess.Replace("'", "''") + "' " +
                 "Where " + ccp.CustCheckUpId + "='" + cucId + "' and " + ccp.rowNumber + "=" + rowNumber + " ";
-                chk = conn.ExecuteNonQuery(sql); ;
+                chk = conn.ExecuteNonQuery(sql);
             }
             catch (Exception ex)
             {

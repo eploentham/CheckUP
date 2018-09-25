@@ -6617,3 +6617,91 @@ Incorrect syntax near ')'.
 9/17/2018 3:59 PM->ExecuteNonQuery ex  error Invalid column name 'Sl2'.
 9/17/2018 3:59 PM->ExecuteNonQuery ex  error Invalid column name 'Sl2'.
 9/17/2018 4:11 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Invalid column name 'Sl2'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Invalid column name 'Sl2'.
+9/20/2018 5:27 PM->ExecuteNonQuery ex  error Invalid column name 'Sl2'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Invalid column name 'Sl2'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Invalid column name 'Sl2'.
+9/20/2018 5:29 PM->ExecuteNonQuery ex  error Invalid column name 'Sl2'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Invalid column name 'Sl2'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Invalid column name 'Sl2'.
+9/20/2018 5:34 PM->ExecuteNonQuery ex  error Invalid column name 'Sl2'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Invalid column name 'Sl2'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Incorrect syntax near the keyword 'Where'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Invalid column name 'Sl2'.
+9/20/2018 5:37 PM->ExecuteNonQuery ex  error Invalid column name 'Sl2'.

@@ -57,6 +57,9 @@ namespace CheckUP.gui
                 btnPath.Click += BtnPath_Click;
                 btnRetrive.Click += BtnRetrive_Click;
                 btnGen.Click += BtnGen_Click;
+                btnExcel.Click += BtnExcel_Click;
+                btnPathText.Click += BtnPathText_Click;
+                pB1.Hide();
             }
             catch(Exception ex)
             {
@@ -66,6 +69,25 @@ namespace CheckUP.gui
             //MessageBox.Show("111111", "Error");
             initGrfView();
             initGrfSample();
+        }
+
+        private void BtnPathText_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.DefaultExt = "Txt";
+
+            ofd.Filter = "Access files (*.txt)|*.txt|All files (*.*)|*.*";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                txtPathText.Text = ofd.FileName;
+            }
+        }
+
+        private void BtnExcel_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            cc.excelGenCEM(txtPathText.Text, pB1);
         }
 
         private void BtnGen_Click(object sender, EventArgs e)

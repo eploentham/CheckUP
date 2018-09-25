@@ -465,6 +465,10 @@ namespace CheckUP.gui
                         return;
                     }
                     cc.readTextCEM(txtId.Text, ofd.FileName);
+                    setGrdFBS(txtId.Text);
+                    setGrdCho();
+                    setGrdTri(txtId.Text);
+                    setGrdUric(txtId.Text);
                 }
                 //cc.importSticker(txtId.Text, ofd.FileName, nmdStickerRow.Value.ToString(), nmdVisitHn.Value.ToString(), pB1);
                 //setGrfSticker(txtId.Text);

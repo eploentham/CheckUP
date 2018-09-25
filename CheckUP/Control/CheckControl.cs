@@ -726,6 +726,103 @@ namespace CheckUP.Control
             //MessageBox.Show("222 " + sql, "message ");
             
         }
+        public void excelGenCEM(String filename, ProgressBar pB1)
+        {
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
+            Microsoft.Office.Interop.Excel.Application xlApp = null;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = null;
+            try
+            {
+                if (!File.Exists(filename))
+                {
+                    MessageBox.Show("ไม่พบ file name excelGenCEM", "");
+                    return;
+                }
+                pB1.Show();
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlWorkbook = (xlApp.Workbooks.Add(Missing.Value));
+                Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.ActiveSheet;
+                const Int32 BufferSize = 128;
+                int row = 0;
+                using (var fileStream = File.OpenRead(filename))
+                {
+                    using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true, BufferSize))
+                    {
+                        String line1;
+                        while ((line1 = streamReader.ReadLine()) != null)
+                        {
+                            row++;
+                        }
+                        streamReader.Close();
+                    }
+                    fileStream.Close();
+                }
+
+                using (var fileStream = File.OpenRead(filename))
+                {
+                    pB1.Maximum = row+1;
+                    pB1.Minimum = 1;
+                    using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true, BufferSize))
+                    {
+                        int i = 1;
+                        String line;
+                        while ((line = streamReader.ReadLine()) != null)
+                        {
+                            String[] txt = line.Split('|');
+                            Microsoft.Office.Interop.Excel.Range rg1;
+                            rg1 = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[i, 1];
+                            rg1.ColumnWidth = 20;
+                            rg1.Value2 = txt[0];
+                            Microsoft.Office.Interop.Excel.Range rg2;
+                            rg2 = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[i, 2];
+                            rg2.ColumnWidth = 10;
+                            rg2.Value2 = txt[1];
+                            Microsoft.Office.Interop.Excel.Range rg3;
+                            rg3 = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[i, 3];
+                            rg3.ColumnWidth = 20;
+                            rg3.Value2 = txt[2];
+                            Microsoft.Office.Interop.Excel.Range rg4;
+                            rg4 = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[i, 4];
+                            rg4.ColumnWidth = 20;
+                            rg4.Value2 = txt[3];
+                            Microsoft.Office.Interop.Excel.Range rg5;
+                            rg5 = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[i, 5];
+                            rg5.ColumnWidth = 20;
+                            rg5.Value2 = txt[4];
+                            Microsoft.Office.Interop.Excel.Range rg6;
+                            rg6 = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[i, 6];
+                            rg6.ColumnWidth = 20;
+                            rg6.Value2 = formatTextCEM(txt[5], txt[3]);
+                            Microsoft.Office.Interop.Excel.Range rg7;
+                            rg7 = (Microsoft.Office.Interop.Excel.Range)xlWorksheet.Cells[i, 7];
+                            rg7.ColumnWidth = 10;
+                            rg7.Value2 = txt[6];
+                            i++;
+                            pB1.Value = i;
+                        }
+                        streamReader.Close();
+                    }
+
+                    // Process line
+                    xlApp.Visible = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error excelGenCEM " + ex.InnerException, "message " + ex.Message);
+            }
+            finally
+            {
+                pB1.Hide();
+                //if (xlWorkbook != null)
+                //    xlWorkbook.Close();
+                //if (xlApp != null)
+                //    xlApp.Quit();
+                //System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
+            }
+            Cursor.Current = cursor;
+        }
         public void excelSum(String cucId)
         {
             CustCheckUp cuc = new CustCheckUp();
@@ -3948,32 +4045,45 @@ namespace CheckUP.Control
                 //8=Triglyceride
                 //23=Uric Acid
                 //date  colpatid    sample id   item id fullname    test    ref
-                String line ="", chk="", result="";
-                while ((line = streamReader.ReadLine()) != null)
+                String line ="", chk="", result="", value="";
+                try
                 {
-                    String[] txt = line.Split('|');
-                    if (txt[3].Equals("7"))
+                    while ((line = streamReader.ReadLine()) != null)
                     {
-                        result = calCho(txt[5]);
-                        chk = ccpdb.UpdateCholesOnly(txt[1], cudId, txt[5], result, "");
-                    }
-                    else if (txt[3].Equals("8"))
-                    {
-                        result = calTri(txt[5]);
-                        chk = ccpdb.UpdateTrigly(txt[1], cudId, txt[5], result, "");
-                    }
-                    else if (txt[3].Equals("23"))
-                    {
-                        result = calTri(txt[5]);
-                        chk = ccpdb.UpdateUric(txt[1], cudId, txt[5], result, "");
-                    }
-                    else if (txt[3].Equals("4"))
-                    {
-                        result = calFBS(txt[5]);
-                        chk = ccpdb.UpdateFBS(txt[1], cudId, txt[5], result, "","");
+                        String[] txt = line.Split('|');
+                        value = formatTextCEM(txt[5], txt[3]);
+                        if (txt[3].Equals("7"))
+                        {
+                            result = calCho(value);
+                            chk = ccpdb.UpdateCholesOnly(txt[1], cudId, value, result, "");
+                        }
+                        else if (txt[3].Equals("8"))
+                        {
+                            result = calTri(value);
+                            chk = ccpdb.UpdateTrigly(txt[1], cudId, value, result, "");
+                        }
+                        else if (txt[3].Equals("23"))
+                        {
+                            result = calTri(value);
+                            chk = ccpdb.UpdateUric(txt[1], cudId, value, result, "");
+                        }
+                        else if (txt[3].Equals("4"))
+                        {
+                            result = calFBS(value);
+                            chk = ccpdb.UpdateFBS(txt[1], cudId, value, result, "", "");
+                        }
                     }
                 }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("error "+ex.Message, "");
+                }
+                finally
+                {
+
+                }
             }
+            MessageBox.Show("นำเข้าผล CEM เรีนยบร้อย", "");
         }
     }
 }

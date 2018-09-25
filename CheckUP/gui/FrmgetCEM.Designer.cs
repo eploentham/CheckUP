@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkTestType = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDateEnd = new System.Windows.Forms.TextBox();
@@ -50,7 +51,11 @@
             this.txtNoStart = new C1.Win.C1Input.C1NumericEdit();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.chkTestType = new System.Windows.Forms.CheckBox();
+            this.btnExcel = new C1.Win.C1Input.C1Button();
+            this.btnPathText = new C1.Win.C1Input.C1Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtPathText = new C1.Win.C1Input.C1TextBox();
+            this.pB1 = new System.Windows.Forms.ProgressBar();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDateEnd1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDateStart1)).BeginInit();
@@ -60,10 +65,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnRetrive)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNoEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNoStart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExcel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPathText)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPathText)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pB1);
+            this.groupBox1.Controls.Add(this.btnPathText);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txtPathText);
+            this.groupBox1.Controls.Add(this.btnExcel);
             this.groupBox1.Controls.Add(this.chkTestType);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -86,10 +99,22 @@
             this.groupBox1.Controls.Add(this.txtNoStart);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(827, 81);
+            this.groupBox1.Size = new System.Drawing.Size(827, 113);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "เงื่อนไข";
+            // 
+            // chkTestType
+            // 
+            this.chkTestType.AutoSize = true;
+            this.chkTestType.Checked = true;
+            this.chkTestType.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkTestType.Location = new System.Drawing.Point(552, 13);
+            this.chkTestType.Name = "chkTestType";
+            this.chkTestType.Size = new System.Drawing.Size(101, 17);
+            this.chkTestType.TabIndex = 20;
+            this.chkTestType.Text = "กรอง Test Type";
+            this.chkTestType.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -291,35 +316,68 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(12, 99);
+            this.panel1.Location = new System.Drawing.Point(12, 131);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(291, 473);
+            this.panel1.Size = new System.Drawing.Size(291, 503);
             this.panel1.TabIndex = 9;
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(312, 99);
+            this.panel2.Location = new System.Drawing.Point(312, 131);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(940, 473);
+            this.panel2.Size = new System.Drawing.Size(940, 503);
             this.panel2.TabIndex = 10;
             // 
-            // chkTestType
+            // btnExcel
             // 
-            this.chkTestType.AutoSize = true;
-            this.chkTestType.Checked = true;
-            this.chkTestType.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkTestType.Location = new System.Drawing.Point(552, 13);
-            this.chkTestType.Name = "chkTestType";
-            this.chkTestType.Size = new System.Drawing.Size(101, 17);
-            this.chkTestType.TabIndex = 20;
-            this.chkTestType.Text = "กรอง Test Type";
-            this.chkTestType.UseVisualStyleBackColor = true;
+            this.btnExcel.Location = new System.Drawing.Point(665, 79);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(75, 23);
+            this.btnExcel.TabIndex = 21;
+            this.btnExcel.Text = "gen Excel";
+            this.btnExcel.UseVisualStyleBackColor = true;
+            // 
+            // btnPathText
+            // 
+            this.btnPathText.Location = new System.Drawing.Point(478, 77);
+            this.btnPathText.Name = "btnPathText";
+            this.btnPathText.Size = new System.Drawing.Size(31, 23);
+            this.btnPathText.TabIndex = 24;
+            this.btnPathText.Text = "...";
+            this.btnPathText.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(15, 80);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(63, 16);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "path Text";
+            // 
+            // txtPathText
+            // 
+            this.txtPathText.AccessibleRole = System.Windows.Forms.AccessibleRole.Sound;
+            this.txtPathText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPathText.Location = new System.Drawing.Point(93, 79);
+            this.txtPathText.Name = "txtPathText";
+            this.txtPathText.Size = new System.Drawing.Size(379, 20);
+            this.txtPathText.TabIndex = 22;
+            this.txtPathText.Tag = null;
+            // 
+            // pB1
+            // 
+            this.pB1.Location = new System.Drawing.Point(515, 77);
+            this.pB1.Name = "pB1";
+            this.pB1.Size = new System.Drawing.Size(144, 23);
+            this.pB1.TabIndex = 25;
             // 
             // FrmgetCEM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 584);
+            this.ClientSize = new System.Drawing.Size(1264, 646);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
@@ -337,6 +395,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnRetrive)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNoEnd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNoStart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExcel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPathText)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPathText)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -368,5 +429,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox chkTestType;
+        private C1.Win.C1Input.C1Button btnExcel;
+        private C1.Win.C1Input.C1Button btnPathText;
+        private System.Windows.Forms.Label label8;
+        private C1.Win.C1Input.C1TextBox txtPathText;
+        private System.Windows.Forms.ProgressBar pB1;
     }
 }
