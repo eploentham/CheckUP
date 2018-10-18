@@ -124,7 +124,6 @@ namespace CheckUP.objdb
         }
         public String GetConfig(String key)
         {
-
             AppSettingsReader _configReader = new AppSettingsReader();
             // Set connection string of the sqlconnection object
             return _configReader.GetValue(key, "".GetType()).ToString();

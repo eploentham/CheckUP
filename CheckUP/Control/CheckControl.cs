@@ -188,55 +188,55 @@ namespace CheckUP.Control
         }
         public void GetConfig()
         {
-            initC.clearInput = iniFile.Read("clearinput");
-            initC.connectDatabaseServer = iniFile.Read("connectserver");
-            initC.Host = iniFile.Read("host");
-            initC.User = iniFile.Read("username");
-            initC.Password = iniFile.Read("password");
-            initC.Port = iniFile.Read("port");
-            initC.Database = iniFile.Read("database");
+            initC.clearInput = iniFile.getIni("CheckUP", "clearinput");
+            initC.connectDatabaseServer = iniFile.getIni("CheckUP", "connectserver");
+            initC.Host = iniFile.getIni("CheckUP", "host");
+            initC.User = iniFile.getIni("CheckUP", "username");
+            initC.Password = iniFile.getIni("CheckUP", "password");
+            initC.Port = iniFile.getIni("CheckUP", "port");
+            initC.Database = iniFile.getIni("CheckUP", "database");
 
-            initC.hostDBonsite = iniFile.Read("hostDBonsite");
-            initC.userDBonsite = iniFile.Read("userDBonsite");
-            initC.passDBonsite = iniFile.Read("passDBonsite");
-            initC.portDBonsite = iniFile.Read("portDBonsite");
-            initC.nameDBonsite = iniFile.Read("nameDBonsite");
-            //initC.statusonsite = iniFile.Read("nameDBonsite");
+            initC.hostDBonsite = iniFile.getIni("CheckUP", "hostDBonsite");
+            initC.userDBonsite = iniFile.getIni("CheckUP", "userDBonsite");
+            initC.passDBonsite = iniFile.getIni("CheckUP", "passDBonsite");
+            initC.portDBonsite = iniFile.getIni("CheckUP", "portDBonsite");
+            initC.nameDBonsite = iniFile.getIni("CheckUP", "nameDBonsite");
+            //initC.statusonsite = iniFile.getIni("CheckUP", "nameDBonsite");
 
             //initC.Host = initC.ServerIP;
 
-            initC.PathData = iniFile.Read("pathimage");
-            initC.pathImageLogo = iniFile.Read("pathimagelogo");
-            initC.delImage = iniFile.Read("delimage");
-            initC.StatusServer = iniFile.Read("statusserver");
-            initC.NameShareData = iniFile.Read("namesharedata");
-            initC.pathShareImage = iniFile.Read("pathshareimage");
-            initC.use32Bit = iniFile.Read("use32bit");
-            initC.PathReport = iniFile.Read("pathreport");
-            initC.ConnectShareData = iniFile.Read("connectsharedata");
-            initC.IPServer = iniFile.Read("ipserver");
+            initC.PathData = iniFile.getIni("CheckUP", "pathimage");
+            initC.pathImageLogo = iniFile.getIni("CheckUP", "pathimagelogo");
+            initC.delImage = iniFile.getIni("CheckUP", "delimage");
+            initC.StatusServer = iniFile.getIni("CheckUP", "statusserver");
+            initC.NameShareData = iniFile.getIni("CheckUP", "namesharedata");
+            initC.pathShareImage = iniFile.getIni("CheckUP", "pathshareimage");
+            initC.use32Bit = iniFile.getIni("CheckUP", "use32bit");
+            initC.PathReport = iniFile.getIni("CheckUP", "pathreport");
+            initC.ConnectShareData = iniFile.getIni("CheckUP", "connectsharedata");
+            initC.IPServer = iniFile.getIni("CheckUP", "ipserver");
 
-            initC.quoLine1 = iniFile.Read("quotationline1");
-            initC.quoLine2 = iniFile.Read("quotationline2");
-            initC.quoLine3 = iniFile.Read("quotationline3");
-            initC.quoLine4 = iniFile.Read("quotationline4");
-            initC.quoLine5 = iniFile.Read("quotationline5");
-            initC.quoLine6 = iniFile.Read("quotationline6");
+            initC.quoLine1 = iniFile.getIni("CheckUP", "quotationline1");
+            initC.quoLine2 = iniFile.getIni("CheckUP", "quotationline2");
+            initC.quoLine3 = iniFile.getIni("CheckUP", "quotationline3");
+            initC.quoLine4 = iniFile.getIni("CheckUP", "quotationline4");
+            initC.quoLine5 = iniFile.getIni("CheckUP", "quotationline5");
+            initC.quoLine6 = iniFile.getIni("CheckUP", "quotationline6");
 
-            initC.HideCostQuotation = iniFile.Read("hidecostquotation");
+            initC.HideCostQuotation = iniFile.getIni("CheckUP", "hidecostquotation");
 
-            initC.grdViewFontSize = iniFile.Read("grdViewFontSize");
-            initC.grdViewFontName = iniFile.Read("grdViewFontName");
-            initC.themeApplication = iniFile.Read("themeApplication");
-            initC.txtFocus = iniFile.Read("txtFocus");
-            initC.grfRowColor = iniFile.Read("grfRowColor");
-            initC.statusonsite = iniFile.Read("statusonsite");
-            initC.pathMini = iniFile.Read("pathMini");
-            initC.nameRemoteClient  = iniFile.Read("nameRemoteClient");     //ไม่ได้ใช้แล้ว
-            initC.statusconnectCEM = iniFile.Read("statusconnectCEM");
-            initC.pathaccessCEM = iniFile.Read("pathaccessCEM");
-            initC.pathdataCEM = iniFile.Read("pathdataCEM");
-            initC.timerRefresh = iniFile.Read("timerRefresh");
+            initC.grdViewFontSize = iniFile.getIni("CheckUP", "grdViewFontSize");
+            initC.grdViewFontName = iniFile.getIni("CheckUP", "grdViewFontName");
+            initC.themeApplication = iniFile.getIni("CheckUP", "themeApplication");
+            initC.txtFocus = iniFile.getIni("CheckUP", "txtFocus");
+            initC.grfRowColor = iniFile.getIni("CheckUP", "grfRowColor");
+            initC.statusonsite = iniFile.getIni("CheckUP", "statusonsite");
+            initC.pathMini = iniFile.getIni("CheckUP", "pathMini");
+            initC.nameRemoteClient  = iniFile.getIni("CheckUP", "nameRemoteClient");     //ไม่ได้ใช้แล้ว
+            initC.statusconnectCEM = iniFile.getIni("CheckUP", "statusconnectCEM");
+            initC.pathaccessCEM = iniFile.getIni("CheckUP", "pathaccessCEM");
+            initC.pathdataCEM = iniFile.getIni("CheckUP", "pathdataCEM");
+            initC.timerRefresh = iniFile.getIni("CheckUP", "timerRefresh");
             initC.timerRefresh = initC.timerRefresh == null ? "20" : initC.timerRefresh;
             initC.timerRefresh = initC.timerRefresh.Equals("") ? "20" : initC.timerRefresh;
 
@@ -254,167 +254,167 @@ namespace CheckUP.Control
         }
         public void SetPathImage(String path)
         {
-            iniFile.Write("pathimage", path);
+            iniFile.setIni("CheckUP", "pathimage", path);
         }
         public void SetPathMini(String path)
         {
-            iniFile.Write("pathMini", path);
+            iniFile.setIni("CheckUP", "pathMini", path);
         }
         public void SetPathAccessCEM(String path)
         {
-            iniFile.Write("pathaccessCEM", path);
+            iniFile.setIni("CheckUP", "pathaccessCEM", path);
         }
         public void SetPathImageLogo(String path)
         {
-            iniFile.Write("pathimagelogo", path);
+            iniFile.setIni("CheckUP", "pathimagelogo", path);
         }
         public void SetConnectShareImage(String path)
         {
-            iniFile.Write("connectshareimage", path);
+            iniFile.setIni("CheckUP", "connectshareimage", path);
         }
         public void SetConnectShareData(String path)
         {
-            iniFile.Write("connectsharedata", path);
+            iniFile.setIni("CheckUP", "connectsharedata", path);
         }
         public void SetNameShareData(String path)
         {
-            iniFile.Write("namesharedata", path);
+            iniFile.setIni("CheckUP", "namesharedata", path);
         }
         public void SetPathShareImage(String path)
         {
-            iniFile.Write("pathshareimage", path);
+            iniFile.setIni("CheckUP", "pathshareimage", path);
         }
         public void SetPathReport(String path)
         {
-            iniFile.Write("pathreport", path);
+            iniFile.setIni("CheckUP", "pathreport", path);
         }
         public void SetIPServer(String path)
         {
-            iniFile.Write("ipserver", path);
+            iniFile.setIni("CheckUP", "ipserver", path);
         }
         public void SetQuoLine1(String path)
         {
-            //iniFile.Write("quotationline1", path);
-            iniFile.WriteUniCode("quotationline1", Utf8ToUtf16(path));
+            //iniFile.setIni("CheckUP", "quotationline1", path);
+            iniFile.setIni("CheckUP", "quotationline1", Utf8ToUtf16(path));
         }
         public void SetQuoLine2(String path)
         {
-            //iniFile.Write("quotationline2", path);
-            iniFile.WriteUniCode("quotationline2", Utf8ToUtf16(path));
+            //iniFile.setIni("CheckUP", "quotationline2", path);
+            iniFile.setIni("CheckUP", "quotationline2", Utf8ToUtf16(path));
         }
         public void SetQuoLine3(String path)
         {
-            //iniFile.Write("quotationline3", path);
-            iniFile.WriteUniCode("quotationline3", path);
+            //iniFile.setIni("CheckUP", "quotationline3", path);
+            iniFile.setIni("CheckUP", "quotationline3", path);
         }
         public void SetQuoLine4(String path)
         {
-            //iniFile.Write("quotationline4", path);
-            iniFile.WriteUniCode("quotationline4", path);
+            //iniFile.setIni("CheckUP", "quotationline4", path);
+            iniFile.setIni("CheckUP", "quotationline4", path);
         }
         public void SetQuoLine5(String path)
         {
-            //iniFile.Write("quotationline5", path);
-            iniFile.WriteUniCode("quotationline5", path);
+            //iniFile.setIni("CheckUP", "quotationline5", path);
+            iniFile.setIni("CheckUP", "quotationline5", path);
         }
         public void SetQuoLine6(String path)
         {
-            //iniFile.Write("quotationline6", path);
-            iniFile.WriteUniCode("quotationline6", path);
+            //iniFile.setIni("CheckUP", "quotationline6", path);
+            iniFile.setIni("CheckUP", "quotationline6", path);
         }
         public void SetHostDBinsite(String val)
         {            
-            iniFile.WriteUniCode("hostDBonsite", val);
+            iniFile.setIni("CheckUP", "hostDBonsite", val);
         }
         public void SetNameDBinsite(String val)
         {
-            iniFile.WriteUniCode("nameDBonsite", val);
+            iniFile.setIni("CheckUP", "nameDBonsite", val);
         }
         public void SetUserDBinsite(String val)
         {
-            iniFile.WriteUniCode("userDBonsite", val);
+            iniFile.setIni("CheckUP", "userDBonsite", val);
         }
         public void SetPassDBinsite(String val)
         {
-            iniFile.WriteUniCode("passDBonsite", val);
+            iniFile.setIni("CheckUP", "passDBonsite", val);
         }
         public void SetPortDBinsite(String val)
         {
-            iniFile.WriteUniCode("portDBonsite", val);
+            iniFile.setIni("CheckUP", "portDBonsite", val);
         }
         public void SetStatusonsite(String val)
         {
-            iniFile.WriteUniCode("statusonsite", val);
+            iniFile.setIni("CheckUP", "statusonsite", val);
         }
         public void SetHideCostQuotation(Boolean value)
         {
             if (value)
             {
-                iniFile.Write("hidecostquotation", "yes");
+                iniFile.setIni("CheckUP", "hidecostquotation", "yes");
             }
             else
             {
-                iniFile.Write("hidecostquotation", "no");
+                iniFile.setIni("CheckUP", "hidecostquotation", "no");
             }
         }
         public void SetSetatusServer(Boolean value)
         {
             if (value)
             {
-                iniFile.Write("statusserver", "yes");
-                //iniFile.Write("statusonsite", "yes");
+                iniFile.setIni("CheckUP", "statusserver", "yes");
+                //iniFile.setIni("CheckUP", "statusonsite", "yes");
             }
             else
             {
-                iniFile.Write("statusserver", "no");
-                //iniFile.Write("statusonsite", "no");
+                iniFile.setIni("CheckUP", "statusserver", "no");
+                //iniFile.setIni("CheckUP", "statusonsite", "no");
             }
         }
         public void SetClearInput(Boolean value)
         {
             if (value)
             {
-                iniFile.Write("clearinput", "yes");
+                iniFile.setIni("CheckUP", "clearinput", "yes");
             }
             else
             {
-                iniFile.Write("clearinput", "no");
+                iniFile.setIni("CheckUP", "clearinput", "no");
             }
         }
         public void SetDelImage(Boolean value)
         {
             if (value)
             {
-                iniFile.Write("delimage", "yes");
+                iniFile.setIni("CheckUP", "delimage", "yes");
             }
             else
             {
-                iniFile.Write("delimage", "no");
+                iniFile.setIni("CheckUP", "delimage", "no");
             }
         }
         public void SetUse32Bit(Boolean value)
         {
             if (value)
             {
-                iniFile.Write("use32bit", "yes");
+                iniFile.setIni("CheckUP", "use32bit", "yes");
             }
             else
             {
-                iniFile.Write("use32bit", "no");
+                iniFile.setIni("CheckUP", "use32bit", "no");
             }
         }
         public void SetConnectServer(Boolean value, String host, String username, String password)
         {
             if (value)
             {
-                iniFile.Write("connectserver", "yes");
-                iniFile.Write("host", host.Trim());
-                iniFile.Write("username", username.Trim());
-                iniFile.Write("password", password.Trim());
+                iniFile.setIni("CheckUP", "connectserver", "yes");
+                iniFile.setIni("CheckUP", "host", host.Trim());
+                iniFile.setIni("CheckUP", "username", username.Trim());
+                iniFile.setIni("CheckUP", "password", password.Trim());
             }
             else
             {
-                iniFile.Write("connectserver", "no");
+                iniFile.setIni("CheckUP", "connectserver", "no");
             }
         }
         public void renameFileImage(String fileName)
@@ -3379,7 +3379,9 @@ namespace CheckUP.Control
             DataTable dt = new DataTable();
             DataTable dtStk = new DataTable();
             dt = ccpdb.selectAllByCucId(cucId);
-            dtStk = stkdb.selectAll();
+            //dtStk = stkdb.selectAll();
+            CustCheckUp cuc = new CustCheckUp();
+            cuc = cucdb.selectByPk(cucId);
             using (var tw = new StreamWriter(Path.Combine(System.IO.Directory.GetCurrentDirectory(),"CheckList.txt"), false))
             {
                 int row = 0;
@@ -3396,140 +3398,140 @@ namespace CheckUP.Control
                     if (dt.Rows[i][ccpdb.ccp.sticker01].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString()+"-01";
-                        col05 = dtStk.Rows[0][stkdb.stk.sticker_name].ToString();
+                        col05 = cuc.sticker01_name;
                         //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                         tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker02].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-02";
-                        col05 = dtStk.Rows[1][stkdb.stk.sticker_name].ToString();
+                        col05 = cuc.sticker02_name;
                         //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                         tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker03].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-03";
-                        col05 = dtStk.Rows[2][stkdb.stk.sticker_name].ToString();
+                        col05 = cuc.sticker03_name;
                         //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                         tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker04].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-04";
-                        col05 = dtStk.Rows[3][stkdb.stk.sticker_name].ToString();
+                        col05 = cuc.sticker04_name;
                         //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                         tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker05].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-05";
-                        col05 = dtStk.Rows[4][stkdb.stk.sticker_name].ToString();
+                        col05 = cuc.sticker05_name;
                         tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                         //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker06].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-06";
-                        col05 = dtStk.Rows[5][stkdb.stk.sticker_name].ToString();
+                        col05 = cuc.sticker06_name;
                         //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                         tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker07].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-07";
-                        col05 = dtStk.Rows[6][stkdb.stk.sticker_name].ToString();
+                        col05 = cuc.sticker07_name;
                         tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                         //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker08].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-08";
-                        col05 = dtStk.Rows[7][stkdb.stk.sticker_name].ToString();
+                        col05 = cuc.sticker08_name;
                         tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" );
                         //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker09].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-09";
-                        col05 = dtStk.Rows[8][stkdb.stk.sticker_name].ToString();
+                        col05 = cuc.sticker09_name;
                         tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" );
                         //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker10].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-10";
-                        col05 = dtStk.Rows[9][stkdb.stk.sticker_name].ToString();
+                        col05 = cuc.sticker10_name;
                         //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                         tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker11].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-11";
-                        col05 = dtStk.Rows[10][stkdb.stk.sticker_name].ToString();
+                        col05 = cuc.sticker11_name;
                         //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                         tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker12].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-12";
-                        col05 = dtStk.Rows[11][stkdb.stk.sticker_name].ToString();
+                        col05 = cuc.sticker12_name;
                         //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                         tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker13].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-13";
-                        col05 = dtStk.Rows[12][stkdb.stk.sticker_name].ToString();
+                        col05 = cuc.sticker13_name;
                         //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                         tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker14].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-14";
-                        col05 = dtStk.Rows[13][stkdb.stk.sticker_name].ToString();
+                        col05 = cuc.sticker14_name;
                         //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                         tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker15].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-15";
-                        col05 = dtStk.Rows[14][stkdb.stk.sticker_name].ToString();
+                        col05 = cuc.sticker15_name;
                         //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                         tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker16].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-16";
-                        col05 = dtStk.Rows[15][stkdb.stk.sticker_name].ToString();
+                        col05 = cuc.sticker16_name;
                         //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                         tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker17].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-17";
-                        col05 = dtStk.Rows[16][stkdb.stk.sticker_name].ToString();
+                        col05 = cuc.sticker17_name;
                         //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                         tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" );
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker18].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-18";
-                        col05 = dtStk.Rows[17][stkdb.stk.sticker_name].ToString();
+                        col05 = cuc.sticker18_name;
                         //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                         tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker19].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-19";
-                        col05 = dtStk.Rows[18][stkdb.stk.sticker_name].ToString();
+                        col05 = cuc.sticker19_name;
                         //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                         tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" );
                     }
                     if (dt.Rows[i][ccpdb.ccp.sticker20].ToString().Equals("1"))
                     {
                         col04 = dt.Rows[i][ccpdb.ccp.visitHn].ToString() + "-20";
-                        col05 = dtStk.Rows[19][stkdb.stk.sticker_name].ToString();
+                        col05 = cuc.sticker20_name;
                         //tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|" + col06);
                         tw.WriteLine(col01 + "|" + col02 + "|" + col03 + "|" + col04 + "|" + col05 + "|");
                     }

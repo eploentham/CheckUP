@@ -547,7 +547,7 @@ namespace CheckUP.objdb
                 p.sticker13_name.Replace("'", "''") + "','" + p.sticker14_name.Replace("'", "''") + "','" + p.sticker15_name.Replace("'", "''") + "','" +
                 p.sticker16_name.Replace("'", "''") + "','" + p.sticker17_name.Replace("'", "''") + "','" + p.sticker18_name.Replace("'", "''") + "','" +
                 p.sticker19_name.Replace("'", "''") + "','" + p.sticker20_name.Replace("'", "''") + "' " +
-                "')";
+                " )";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
