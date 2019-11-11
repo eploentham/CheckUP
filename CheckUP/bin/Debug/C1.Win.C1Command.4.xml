@@ -760,9 +760,22 @@
     </member>
     <member name="E:C1.Win.C1Command.C1DockingManager.Floating">
       <summary>
-                Notifies that a <see cref="T:C1.Win.C1Command.C1DockingTab" /> or a <see cref="T:C1.Win.C1Command.C1DockingTabPage" /> is changing state to floating. Can
-                be canceled.
-            </summary>
+                 Notifies that a <see cref="T:C1.Win.C1Command.C1DockingTab" /> or a <see cref="T:C1.Win.C1Command.C1DockingTabPage" /> is changing state to floating. Can
+                 be canceled.
+             </summary>
+      <remarks>
+             By default, the <see cref="P:System.Windows.Forms.Form.FormBorderStyle" /> of the floating window is <see cref="F:System.Windows.Forms.FormBorderStyle.SizableToolWindow" />, hence only "Close" button is shown in the window's caption.
+            It is possible to change the floating window border style and visibility of Maximize box using <see cref="E:C1.Win.C1Command.C1DockingManager.Floating" /> event handler.
+             </remarks>
+      <example>
+             This example sets sizable FormBorderStyle and shows Maximize box for each floating window shown.
+             <code>
+            private void c1DockingManager1_Floating(object sender, FloatingEventArgs e)
+            {
+                e.FormBorderStyle = FormBorderStyle.Sizable;
+                e.MaximizeBox = true;
+            }
+             </code></example>
     </member>
     <member name="E:C1.Win.C1Command.C1DockingManager.QueryAllowDrop">
       <summary>
@@ -2192,6 +2205,16 @@
             The floated <see cref="T:C1.Win.C1Command.C1DockingTabPage" />.
             </summary>
     </member>
+    <member name="P:C1.Win.C1Command.FloatingEventArgs.FormBorderStyle">
+      <summary>
+            Gets or sets border style of the floating window.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Command.FloatingEventArgs.MaximizeBox">
+      <summary>
+            Gets or sets a value indicating whether the Maximize button is displayed in the caption bar of the floating window. 
+            </summary>
+    </member>
     <member name="T:C1.Win.C1Command.FloatingEventHandler">
       <summary>
             Defines method signature to handle the <see cref="E:C1.Win.C1Command.C1DockingManager.Floating" /> event. 
@@ -2719,6 +2742,21 @@
             </summary>
       <param name="cl">
       </param>
+    </member>
+    <member name="P:C1.Win.C1Command.C1Command.ImageTransparentColor">
+      <summary>
+            Gets or sets the color to treat as transparent in a image.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Command.C1Command.ShouldSerializeImageTransparentColor">
+      <summary>
+            Returns true if this ImageTransparentColor property has changed; otherwise, returns false.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Command.C1Command.ResetImageTransparentColor">
+      <summary>
+            Resets the ImageTransparentColor property to its default value.
+            </summary>
     </member>
     <member name="P:C1.Win.C1Command.C1Command.Owner">
       <summary>
@@ -10797,6 +10835,36 @@
             Options item in the NavBar menu.
             </summary>
     </member>
+    <member name="F:C1.Win.C1Command.UIStringsEnum.NavBarOptionsMenuCancelButtonText">
+      <summary>
+            Cancel button text in the NavBar options menu.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Command.UIStringsEnum.NavBarOptionsMenuLabelText">
+      <summary>
+            Label text in the NavBar options menu.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Command.UIStringsEnum.NavBarOptionsMenuMoveDownButtonText">
+      <summary>
+            MoveDown button text in the NavBar options menu.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Command.UIStringsEnum.NavBarOptionsMenuMoveUpButtonText">
+      <summary>
+            MoveUp button text in the NavBar options menu.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Command.UIStringsEnum.NavBarOptionsMenuOkButtonText">
+      <summary>
+            Ok button text in the NavBar options menu.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1Command.UIStringsEnum.NavBarOptionsMenuResetButtonText">
+      <summary>
+            Reset button text in the NavBar options menu.
+            </summary>
+    </member>
     <member name="F:C1.Win.C1Command.UIStringsEnum.NavBarAddRemoveMenuText">
       <summary>
             Add/remove item in the NavBar menu.
@@ -10941,6 +11009,19 @@
             <para>
             Use members of this enumeration to set the value of the TabSizeMode property of a C1DockingTab.
             </para></summary>
+      <remarks>
+            If <see cref="P:C1.Win.C1Command.C1DockingTab.TabSizeMode" /> is set to "Default", it will be overridden with Theme's TabSizeMode on Theme applying.
+            If <see cref="P:C1.Win.C1Command.C1DockingTab.TabSizeMode" /> is set to any other value, Theme's TabSizeMode won't be applied.
+            </remarks>
+    </member>
+    <member name="F:C1.Win.C1Command.TabSizeModeEnum.Default">
+      <summary>
+             The default sizing mode.
+             </summary>
+      <remarks>
+             If <see cref="P:C1.Win.C1Command.C1DockingTab.TabSizeMode" /> is set to "Default", 
+             it will be overridden with Theme's TabSizeMode on Theme applying.
+            </remarks>
     </member>
     <member name="F:C1.Win.C1Command.TabSizeModeEnum.Normal">
       <summary>

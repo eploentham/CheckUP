@@ -16,6 +16,16 @@
             Initializes a new instance of the <see cref="T:C1.Win.Calendar.C1CalendarView" /> control.
             </summary>
     </member>
+    <member name="E:C1.Win.Calendar.C1CalendarView.DayFormatting">
+      <summary>
+            Occurs before applying styles to a day.
+            </summary>
+    </member>
+    <member name="M:C1.Win.Calendar.C1CalendarView.OnDayFormatting(C1.Win.Calendar.DayFormattingEventArgs)">
+      <summary>
+            Rises the <see cref="E:C1.Win.Calendar.C1CalendarView.DayFormatting" /> event.
+            </summary>
+    </member>
     <member name="E:C1.Win.Calendar.C1CalendarView.BeforeDayTooltipShow">
       <summary>
             Occurs before the day tooltip is shown.
@@ -891,6 +901,16 @@
       <param name="e">
       </param>
     </member>
+    <member name="E:C1.Win.Calendar.CalendarSettings.DayFormatting">
+      <summary>
+            Occurs before applying styles to a day.
+            </summary>
+    </member>
+    <member name="M:C1.Win.Calendar.CalendarSettings.OnDayFormatting(C1.Win.Calendar.DayFormattingEventArgs)">
+      <summary>
+            Rises the <see cref="E:C1.Win.Calendar.CalendarSettings.DayFormatting" /> event.
+            </summary>
+    </member>
     <member name="M:C1.Win.Calendar.CalendarSettings.OnVisualStyleChanged(System.EventArgs)">
       <summary>
             Raises the <see cref="E:C1.Win.Calendar.CalendarSettings.VisualStyleChanged" /> event.
@@ -1069,6 +1089,29 @@
     <member name="P:C1.Win.Calendar.BeforeDayTooltipShowEventArgs.Day">
       <summary>
             Gets the date for which tooltip is about to be shown.
+            </summary>
+    </member>
+    <member name="T:C1.Win.Calendar.DayFormattingEventArgs">
+      <summary>
+            Provides data for the <see cref="E:C1.Win.Calendar.C1CalendarView.DayFormatting" /> event 
+            of the <see cref="T:C1.Win.Calendar.C1CalendarView" /> control. 
+            </summary>
+    </member>
+    <member name="M:C1.Win.Calendar.DayFormattingEventArgs.#ctor(System.DateTime,C1.Win.Calendar.UI.DayStyle)">
+      <summary>
+            Initializes a new instance of the <see cref="T:C1.Win.Calendar.DayFormattingEventArgs" /> class.
+            </summary>
+      <param name="day">The date of the day.</param>
+      <param name="dayStyle">The current style of the day.</param>
+    </member>
+    <member name="P:C1.Win.Calendar.DayFormattingEventArgs.Day">
+      <summary>
+            Gets the date of the day.
+            </summary>
+    </member>
+    <member name="P:C1.Win.Calendar.DayFormattingEventArgs.DayStyle">
+      <summary>
+            Gets the current style of the day.
             </summary>
     </member>
     <member name="T:C1.Win.Calendar.Localization.Strings">

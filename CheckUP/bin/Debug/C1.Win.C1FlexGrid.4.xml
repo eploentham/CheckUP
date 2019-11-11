@@ -86,7 +86,7 @@
       <summary>
             Gets the editor used to modify the filter at run time.
             </summary>
-      <returns>A <see cref="T:System.Windows.Forms.Control" /> to be used to modify the filter at 
+      <returns>An <see cref="T:C1.Win.C1FlexGrid.IC1ColumnFilterEditor" /> to be used to modify the filter at 
             run time.</returns>
       <remarks>The control returned must implement the <see cref="T:C1.Win.C1FlexGrid.IC1ColumnFilterEditor" />
             interface.</remarks>
@@ -115,6 +115,29 @@
       <summary>
             Gets a value that determines whether the containing form should remain 
             open even when it is deactivated.
+            </summary>
+      <remarks>
+            This property allows custom editors to display modal dialogs.
+            </remarks>
+    </member>
+    <member name="T:C1.Win.C1FlexGrid.IConditionValueEditor">
+      <summary>
+            Defines a value editor of filter condition.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1FlexGrid.IConditionValueEditor.SetValue(System.Object)">
+      <summary>
+            Sets a value to editor.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1FlexGrid.IConditionValueEditor.GetValue">
+      <summary>
+            Gets a value of editor.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.IConditionValueEditor.IsDroppedDown">
+      <summary>
+            Gets a value that determines whether the editor's modal form is open or not.
             </summary>
       <remarks>
             This property allows custom editors to display modal dialogs.
@@ -316,9 +339,10 @@
       <param name="key">Value to look up in the dictionary.</param>
       <returns>The string that should be displayed in the grid while not in edit mode.</returns>
       <remarks>
-            When the <see cref="T:C1.Win.C1FlexGrid.IC1MultiColumnDictionary" /> is used to populate a <see cref="T:System.Windows.Forms.ComboBox" />,
-            all columns are displayed when the combo is dropped down. When the combo is closed, only one
-            column can be displayed. This method returns that value.
+            When the <see cref="T:C1.Win.C1FlexGrid.IC1MultiColumnDictionary" /> is used to populate a ComboBox,
+            all columns are displayed when the combo is dropped down. 
+            When the combo is closed, only one column can be displayed.
+            This method returns that value.
             </remarks>
     </member>
     <member name="T:C1.Win.C1FlexGrid.IC1MultiColumnDictionary2">
@@ -2796,7 +2820,7 @@
             Fires before each subtotal row is added to the grid.
             </summary>
       <remarks>
-        <para>Subtotal rows are added when the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method is invoked.</para>
+        <para>Subtotal rows are added when the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method is invoked.</para>
         <para>The event handler may prevent the grid from adding a particular row, or it
             may customize the caption, style, and aggregate value used in the new subtotal row.</para>
       </remarks>
@@ -2813,7 +2837,7 @@
             Fires after each subtotal row has been added to the grid.
             </summary>
       <remarks>
-            Subtotal rows are added when the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method is invoked.
+            Subtotal rows are added when the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method is invoked.
             </remarks>
     </member>
     <member name="M:C1.Win.C1FlexGrid.C1FlexGridBase.OnAfterSubtotal(C1.Win.C1FlexGrid.SubtotalEventArgs)">
@@ -2822,6 +2846,18 @@
             </summary>
       <param name="e">
         <see cref="T:C1.Win.C1FlexGrid.SubtotalEventArgs" /> that contains the event data.</param>
+    </member>
+    <member name="E:C1.Win.C1FlexGrid.C1FlexGridBase.CustomizeFilterEditor">
+      <summary>
+            Fires before creating value editor of condition filter.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1FlexGrid.C1FlexGridBase.OnCustomizeFilterEditor(C1.Win.C1FlexGrid.CustomizeFilterEditorEventArgs)">
+      <summary>
+            Raises the <see cref="E:C1.Win.C1FlexGrid.C1FlexGridBase.CustomizeFilterEditor" /> event.
+            </summary>
+      <param name="e">
+        <see cref="T:C1.Win.C1FlexGrid.CustomizeFilterEditorEventArgs" /> that contains the event data.</param>
     </member>
     <member name="E:C1.Win.C1FlexGrid.C1FlexGridBase.BeforeFilter">
       <summary>
@@ -3863,6 +3899,13 @@
             performs invalidation as needed.
             </remarks>
     </member>
+    <member name="M:C1.Win.C1FlexGrid.C1FlexGridBase.OnClientSizeChanged(System.EventArgs)">
+      <summary>
+            Overridden to update star sizes when the control is resized.
+            </summary>
+      <param name="e">
+        <see cref="T:System.EventArgs" /> that contains the event data.</param>
+    </member>
     <member name="P:C1.Win.C1FlexGrid.C1FlexGridBase.Styles">
       <summary>
             Gets the collection of cell styles defined in the grid.
@@ -4613,7 +4656,7 @@
             collapsible tree similar to the one in the Microsoft TreeView control.
             The <see cref="T:C1.Win.C1FlexGrid.GridTree" /> object is used to specify the position and appearance 
             of the outline tree.</para>
-        <para>For details on create outlines, see the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method and
+        <para>For details on create outlines, see the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method and
             the <see cref="P:C1.Win.C1FlexGrid.Row.IsNode" /> property.</para>
       </remarks>
     </member>
@@ -4660,6 +4703,99 @@
             selection, etc. This can be used to implement split views, where different controls display different 
             parts of the same data.</para>
       </remarks>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.C1FlexGridBase.GroupDescriptions">
+      <summary>
+            Gets or sets a collection of <see cref="T:C1.Win.C1FlexGrid.GroupDescription" /> objects that describe 
+            how items in the data source are grouped in the grid.
+            </summary>
+      <remarks>
+        <para>
+            The <see cref="P:C1.Win.C1FlexGrid.C1FlexGridBase.GroupDescriptions" /> property is similar to the <see cref="P:C1.Win.C1FlexGrid.C1FlexGridBase.GroupDescriptions" />
+            property available in the XAML and JavaScript versions of the FlexGrid.
+            </para>
+        <para>
+            Each group description also specifies a sort direction for the property.
+            For example, if you group the data by Country, the grid will sort the 
+            data by country before creating the groups.
+            </para>
+        <para>
+            Grouping works best when the <see cref="P:C1.Win.C1FlexGrid.C1FlexGridBase.DataSource" /> can be sorted by
+            multiple properties (<see cref="T:System.ComponentModel.IBindingListView" />). This is the case
+            for <see cref="T:System.Data.DataTable" /> sources. If you want to group lists of 
+            arbitrary objects, use the <see cref="T:C1.Win.C1FlexGrid.SortableBindingList`1" /> class.
+            </para>
+        <para>
+            For example:
+            </para>
+        <code>
+            var list = new List&lt;MyDataObject&gt;();
+            for (var i = 0; i &lt; 100; i++)
+            {
+                list.Add(new MyDataObject(i));
+            }
+            grid.DataSource = new SortableBindingList&lt;MyDataObject&gt;(list);
+            grid.SortDescriptions = new List&lt;GroupDescription&gt;()
+            {
+                new GroupDescription("Country"),
+                new GroupDescription("Product"),
+            };
+            </code>
+        <para>
+            The <see cref="P:C1.Win.C1FlexGrid.C1FlexGridBase.GroupDescriptions" /> property uses the grid's 
+            <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum)" /> method to create and update 
+            the groups when the data is modified.
+            </para>
+      </remarks>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.C1FlexGridBase.GroupHeaderFormat">
+      <summary>
+            Gets or sets the format string used to create group headers for each
+            <see cref="T:C1.Win.C1FlexGrid.GroupDescription" />.
+            The GroupHeaderFormat contains placeholders for the group name, current value,
+            and item count. The placeholders are enclosed in curly brackets. For example,
+            the default value for the <see cref="P:C1.Win.C1FlexGrid.C1FlexGridBase.GroupHeaderFormat" /> property is:
+            <code>
+            "{name}: {value} ({count} items)"
+            </code></summary>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.C1FlexGridBase.NullEmptyString">
+      <summary>
+            Gets or sets a value to be displayed in group headers and
+            filter editors to represent null values or empty strings.
+            <para>
+            By default, this property is set to "(null);(empty)".
+            </para></summary>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.C1FlexGridBase.HideGroupedColumns">
+      <summary>
+            Gets or sets a value that determines whether columns included in the
+            <see cref="P:C1.Win.C1FlexGrid.C1FlexGridBase.GroupDescriptions" /> collection should be hidden automatically.
+            </summary>
+    </member>
+    <member name="E:C1.Win.C1FlexGrid.C1FlexGridBase.BeforeGroupUpdate">
+      <summary>
+            Occurs before the grid is grouped based on the value of the <see cref="P:C1.Win.C1FlexGrid.C1FlexGridBase.GroupDescriptions" /> property.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1FlexGrid.C1FlexGridBase.OnBeforeGroupUpdate(System.ComponentModel.CancelEventArgs)">
+      <summary>
+            Raises the <see cref="E:C1.Win.C1FlexGrid.C1FlexGridBase.BeforeGroupUpdate" /> event.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="E:C1.Win.C1FlexGrid.C1FlexGridBase.AfterGroupUpdate">
+      <summary>
+            Occurs after the grid is grouped based on the value of the <see cref="P:C1.Win.C1FlexGrid.C1FlexGridBase.GroupDescriptions" /> property.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1FlexGrid.C1FlexGridBase.OnAfterGroupUpdate(System.EventArgs)">
+      <summary>
+            Raises the <see cref="E:C1.Win.C1FlexGrid.C1FlexGridBase.AfterGroupUpdate" /> event.
+            </summary>
+      <param name="e">
+      </param>
     </member>
     <member name="M:C1.Win.C1FlexGrid.C1FlexGridBase.SetDataBinding(System.Object,System.String)">
       <summary>
@@ -4785,7 +4921,7 @@
       <param name="rightCol">Right column in the range.</param>
       <returns>A <see cref="T:System.Double" /> that represents the aggregate value.</returns>
     </member>
-    <member name="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
+    <member name="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)">
       <summary>
             Groups rows based on cell contents and calculates aggregate values.
             </summary>
@@ -4796,12 +4932,13 @@
       <param name="groupTo">Last column in the range used to detect group breaks.</param>
       <param name="totalOn">Column that contains values to be aggregated (usually numeric).</param>
       <param name="caption">Text to insert in the subtotal rows.</param>
+      <param name="options">Options to use when calculating the aggregates.</param>
       <remarks>
-        <para>The <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method inserts rows containing aggregate values. These new rows are set 
+        <para>The <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method inserts rows containing aggregate values. These new rows are set 
             to behave as tree nodes so they can be collapsed and expanded to display a dynamic hierarchical 
             outline.</para>
         <para>You can control the appearance and behavior of the outline tree using the <see cref="P:C1.Win.C1FlexGrid.C1FlexGridBase.Tree" /> property.</para>
-        <para>The node rows added by the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method have their <see cref="P:C1.Win.C1FlexGrid.RowCol.Style" /> property 
+        <para>The node rows added by the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method have their <see cref="P:C1.Win.C1FlexGrid.RowCol.Style" /> property 
             automatically set to one of the Styles.Subtotal* styles. You can use the <see cref="P:C1.Win.C1FlexGrid.C1FlexGridBase.Styles" /> 
             collection to modify the appearance of all subtotal rows on the grid.</para>
         <para>To create an outline tree manually, insert node rows using the <see cref="M:C1.Win.C1FlexGrid.RowCollection.InsertNode(System.Int32,System.Int32)" /> method, 
@@ -4880,7 +5017,7 @@
       <param name="aggType">
         <see cref="T:C1.Win.C1FlexGrid.AggregateEnum" /> value that specifies the type of aggregate to calculate.</param>
       <remarks>
-            This version of the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method does not take any column parameters,
+            This version of the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method does not take any column parameters,
             and is useful only for clearing the subtotals. For example:
             <code>
             flex.Subtotal(AggregateEnum.Clear); // clear all subtotals
@@ -4898,7 +5035,7 @@
       <param name="totalOn">Name of the column that contains values to be aggregated (usually numeric).</param>
       <param name="caption">Text to insert in the subtotal rows.</param>
       <remarks>
-            This is a variant of the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method
+            This is a variant of the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method
             that takes column names instead of indices.
             </remarks>
     </member>
@@ -4937,7 +5074,7 @@
             </summary>
       <remarks>
         <para>This property determines how the outline tree is drawn, and it also determines
-            whether the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method should add subtotal rows (which are node rows) 
+            whether the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method should add subtotal rows (which are node rows) 
             above or below the data being summarized.</para>
         <para>Changing this property clears any existing nodes.</para>
       </remarks>
@@ -5193,7 +5330,7 @@
         <para>The grid has a default <see cref="T:System.Collections.IComparer" /> implementation that is used to compare 
             cells and determine if their contents are equivalent. This implementation is used when merging, 
             grouping, or searching for values (see the <see cref="P:C1.Win.C1FlexGrid.C1FlexGrid.AllowMerging" /> property and the 
-            <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> and <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.FindRow(System.String,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean)" /> methods).</para>
+            <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> and <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.FindRow(System.String,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean)" /> methods).</para>
         <para>The default implementation is case-sensitive and takes leading and trailing blanks into account.</para>
         <para>If you want to merge cells using a case-insensitive comparison or trimming blanks, 
             write a custom class that implements the <see cref="T:System.Collections.IComparer" /> interface and assign an 
@@ -5202,7 +5339,7 @@
       </remarks>
       <example>
             The code below replaces the built-in comparer with a <see cref="T:System.Collections.CaseInsensitiveComparer" />. 
-            This causes the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method to group items that differ only in case into the
+            This causes the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method to group items that differ only in case into the
             same groups:
             <code>
             // use case-insensitive comparer
@@ -6388,18 +6525,18 @@
     <member name="T:C1.Win.C1FlexGrid.AggregateEnum">
       <summary>
             Specifies the type of aggregate function to calculate with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Aggregate(C1.Win.C1FlexGrid.AggregateEnum,C1.Win.C1FlexGrid.CellRange,C1.Win.C1FlexGrid.AggregateFlags)" /> and 
-            <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> methods.
+            <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> methods.
             </summary>
     </member>
     <member name="F:C1.Win.C1FlexGrid.AggregateEnum.None">
       <summary>
-            No aggregate. This setting is used with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method to create an 
+            No aggregate. This setting is used with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method to create an 
             outline tree without any numerical aggregates.
             </summary>
     </member>
     <member name="F:C1.Win.C1FlexGrid.AggregateEnum.Clear">
       <summary>
-            Clear existing aggregates. This setting is used with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method 
+            Clear existing aggregates. This setting is used with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method 
             to clear any existing subtotals, usually before calculating new subtotals.
             </summary>
     </member>
@@ -6410,7 +6547,7 @@
     </member>
     <member name="F:C1.Win.C1FlexGrid.AggregateEnum.Percent">
       <summary>
-            Percent of grand total. This setting is used with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method to 
+            Percent of grand total. This setting is used with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method to 
             calculate the percentage of the grand total represented by each sub group. (This setting can't 
             be used with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Aggregate(C1.Win.C1FlexGrid.AggregateEnum,C1.Win.C1FlexGrid.CellRange,C1.Win.C1FlexGrid.AggregateFlags)" /> method).
             </summary>
@@ -6506,7 +6643,7 @@
     </member>
     <member name="T:C1.Win.C1FlexGrid.SubtotalPositionEnum">
       <summary>
-            Specifies whether subtotals rows created with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method should be
+            Specifies whether subtotals rows created with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method should be
             inserted above or below the data they refer to.
             </summary>
     </member>
@@ -6639,6 +6776,16 @@
     <member name="F:C1.Win.C1FlexGrid.GridChangedTypeEnum.AfterSelChange">
       <summary>
             The selection has just changed.
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1FlexGrid.GridChangedTypeEnum.ExspressionsAllowed">
+      <summary>
+            Expressions are allowed
+            </summary>
+    </member>
+    <member name="F:C1.Win.C1FlexGrid.GridChangedTypeEnum.ExspressionChanged">
+      <summary>
+             The column expression has changed.
             </summary>
     </member>
     <member name="T:C1.Win.C1FlexGrid.GridChangedEventHandler">
@@ -7065,7 +7212,7 @@
       <summary>
             Gets the editor used to modify the filter at run time.
             </summary>
-      <returns>A <see cref="T:System.Windows.Forms.Control" /> that is used to modify the filter at run time.</returns>
+      <returns>An <see cref="T:C1.Win.C1FlexGrid.IC1ColumnFilterEditor" /> that is used to modify the filter at run time.</returns>
     </member>
     <member name="T:C1.Win.C1FlexGrid.ConditionOperator">
       <summary>
@@ -8031,6 +8178,42 @@
       <param name="parent">Parent of the component being localized.</param>
       <param name="component">Component being localized.</param>
     </member>
+    <member name="T:C1.Win.C1FlexGrid.CustomizeFilterEditorEventHandler">
+      <summary>
+            Represents the method that will handle the <see cref="E:C1.Win.C1FlexGrid.C1FlexGridBase.CustomizeFilterEditor" /> event.
+            </summary>
+      <param name="sender">
+        <see cref="T:C1.Win.C1FlexGrid.C1FlexGridBase" /> object that raised the event.</param>
+      <param name="e">
+        <see cref="T:C1.Win.C1FlexGrid.CustomizeFilterEditorEventArgs" /> that contains the event data.</param>
+    </member>
+    <member name="T:C1.Win.C1FlexGrid.CustomizeFilterEditorEventArgs">
+      <summary>
+            Provides data for the <see cref="E:C1.Win.C1FlexGrid.C1FlexGridBase.CustomizeFilterEditor" /> event.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.CustomizeFilterEditorEventArgs.Control">
+      <summary>
+            Gets or sets the value of the localized string.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.CustomizeFilterEditorEventArgs.Column">
+      <summary>
+            Gets the column for filtering.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.CustomizeFilterEditorEventArgs.EditorType">
+      <summary>
+            Gets the data type for the value editor of filter condition.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1FlexGrid.CustomizeFilterEditorEventArgs.#ctor(C1.Win.C1FlexGrid.Column,System.Type)">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1FlexGrid.CustomizeFilterEditorEventArgs" />.
+            </summary>
+      <param name="column">The column for filtering.</param>
+      <param name="editorType">The data type for the value editor of filter condition.</param>
+    </member>
     <member name="T:C1.Win.C1FlexGrid.AllowFiltering">
       <summary>
             Specifies the type of filter to be used for a <see cref="T:C1.Win.C1FlexGrid.Column" />.
@@ -8449,7 +8632,7 @@
             (collapsing, expanding, moving, and sorting them).
             </summary>
       <remarks>
-            You can create node rows using the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method or by setting the
+            You can create node rows using the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method or by setting the
             <see cref="P:C1.Win.C1FlexGrid.Row.IsNode" /> property to true.
             </remarks>
     </member>
@@ -9466,7 +9649,7 @@
       <remarks>
         <para>This property determines whether the row behaves as a node in an outline tree.</para>
         <para>You can use <see cref="P:C1.Win.C1FlexGrid.Row.IsNode" /> to create custom outline trees, or use the grid's 
-            <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method to create outline trees automatically.</para>
+            <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method to create outline trees automatically.</para>
       </remarks>
     </member>
     <member name="P:C1.Win.C1FlexGrid.Row.Node">
@@ -9541,6 +9724,39 @@
             returns -1 if the row has the default height. To obtain the actual display width of a column, 
             use the <see cref="P:C1.Win.C1FlexGrid.Column.WidthDisplay" /> property.</para>
       </remarks>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.Column.StarWidth">
+      <summary>
+            Gets or sets a column's star-size, expressed in the format '{number}*'.
+            
+            Star-sizing option performs a XAML-style dynamic sizing where column
+            widths are proportional to the number before the star. For example, if
+            a grid has three columns with widths "100", "*", and "3*", the first column
+            will be 100 pixels wide, the second will take up 1/4th of the remaining
+            space, and the last will take up the remaining 3/4ths of the remaining space.
+            
+            Star-sizing allows you to define columns that automatically stretch to fill
+            the width available. For example, set the width of the last column to "*"
+            and it will automatically extend to fill the entire grid width so there's
+            no empty space.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.Column.MinWidth">
+      <summary>
+            Gets or sets the minimum width of the column to use when 
+            star-sizing is enabled (<see cref="P:C1.Win.C1FlexGrid.Column.StarWidth" />).
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.Column.MaxWidth">
+      <summary>
+            Gets or sets the maximum width of the column to use when 
+            star-sizing is enabled (<see cref="P:C1.Win.C1FlexGrid.Column.StarWidth" />).
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.Column.Aggregate">
+      <summary>
+            Gets or sets the aggregate to display on group rows for this column..
+            </summary>
     </member>
     <member name="P:C1.Win.C1FlexGrid.Column.WidthDisplay">
       <summary>
@@ -9797,8 +10013,9 @@
             Gets or sets the default size of the rows or columns in the collection (in pixels).
             </summary>
       <remarks>
-        <para>This value is set automatically when the grid's <see cref="P:System.Windows.Forms.Control.Font" /> property changes.</para>
-        <para>The default size is used when the row's <b>Height</b> property or columns <b>Width</b> property is set to -1.</para>
+        <para>This value is set automatically when the grid's Font property changes.</para>
+        <para>The default size is used when the row's <b>Height</b> property or columns 
+            <b>Width</b> property is set to -1.</para>
       </remarks>
     </member>
     <member name="P:C1.Win.C1FlexGrid.RowColCollection.Grid">
@@ -9857,6 +10074,12 @@
             on the last fixed row. If you set this property to a value larger than the number
             of fixed rows, then the glyphs will not be displayed.
             </remarks>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.RowCollection.GlyphVisible">
+      <summary>
+            Gets or sets a value indicating whether sort, filter, and expression editor glyphs 
+            are displayed.
+            </summary>
     </member>
     <member name="P:C1.Win.C1FlexGrid.RowCollection.Fixed">
       <summary>
@@ -10161,6 +10384,11 @@
             Gets a collection of <see cref="T:C1.Win.C1FlexGrid.Column" /> objects that are currently selected.
             </summary>
     </member>
+    <member name="M:C1.Win.C1FlexGrid.ColumnCollection.Update">
+      <summary>
+            Updates the position and data index of each row in this collection.
+            </summary>
+    </member>
     <member name="M:C1.Win.C1FlexGrid.ColumnCollection.BuildString(System.Boolean)">
       <summary>
             Gets a string build a string that contains a complete description of 
@@ -10397,37 +10625,37 @@
     </member>
     <member name="F:C1.Win.C1FlexGrid.CellStyleEnum.GrandTotal">
       <summary>
-            Style automatically assigned to grand total nodes created with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method.
+            Style automatically assigned to grand total nodes created with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method.
             </summary>
     </member>
     <member name="F:C1.Win.C1FlexGrid.CellStyleEnum.Subtotal0">
       <summary>
-            Style automatically assigned to level-0 nodes created with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method.
+            Style automatically assigned to level-0 nodes created with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method.
             </summary>
     </member>
     <member name="F:C1.Win.C1FlexGrid.CellStyleEnum.Subtotal1">
       <summary>
-            Style automatically assigned to level-1 nodes created with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method.
+            Style automatically assigned to level-1 nodes created with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method.
             </summary>
     </member>
     <member name="F:C1.Win.C1FlexGrid.CellStyleEnum.Subtotal2">
       <summary>
-            Style automatically assigned to level-2 nodes created with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method.
+            Style automatically assigned to level-2 nodes created with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method.
             </summary>
     </member>
     <member name="F:C1.Win.C1FlexGrid.CellStyleEnum.Subtotal3">
       <summary>
-            Style automatically assigned to level-3 nodes created with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method.
+            Style automatically assigned to level-3 nodes created with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method.
             </summary>
     </member>
     <member name="F:C1.Win.C1FlexGrid.CellStyleEnum.Subtotal4">
       <summary>
-            Style automatically assigned to level-4 nodes created with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method.
+            Style automatically assigned to level-4 nodes created with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method.
             </summary>
     </member>
     <member name="F:C1.Win.C1FlexGrid.CellStyleEnum.Subtotal5">
       <summary>
-            Style automatically assigned to level-5 nodes created with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String)" /> method.
+            Style automatically assigned to level-5 nodes created with the <see cref="M:C1.Win.C1FlexGrid.C1FlexGridBase.Subtotal(C1.Win.C1FlexGrid.AggregateEnum,System.Int32,System.Int32,System.Int32,System.Int32,System.String,C1.Win.C1FlexGrid.AggregateFlags)" /> method.
             </summary>
     </member>
     <member name="F:C1.Win.C1FlexGrid.CellStyleEnum.FilterEditor">
@@ -11759,6 +11987,112 @@
       <param name="level">Level of the nodes to sort.</param>
       <param name="comparer">An <see cref="T:System.Collections.IComparer" /> object that compares <see cref="T:C1.Win.C1FlexGrid.Node" /> objects.</param>
     </member>
+    <member name="T:C1.Win.C1FlexGrid.GroupDescription">
+      <summary>
+            Describes the grouping of items using a property name as the criterion.
+            
+            Each group description also specifies a sort direction for the property.
+            For example, if you group the data by Country, the grid will sort the 
+            data by country before creating the groups.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1FlexGrid.GroupDescription.#ctor(System.String,System.Nullable{System.ComponentModel.ListSortDirection},System.Boolean)">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.Win.C1FlexGrid.GroupDescription" />.
+            </summary>
+      <param name="propertyName">Name of the property to group on.</param>
+      <param name="sortDirection">Sort direction to apply within the group. Defaults to Ascending, 
+            may be set to null to group but not sort by this property.</param>
+      <param name="group">Whether to group by this property. Defaults to true, 
+            set to false if you want to sort but not group by this property.</param>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.GroupDescription.PropertyName">
+      <summary>
+            Gets the name of the property to group on.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.GroupDescription.SortDirection">
+      <summary>
+            Gets the sort direction of the property within the group.
+            May be set to null if you want to group but not sort by
+            this property.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.GroupDescription.Group">
+      <summary>
+            Gets a value that indicates whether to group by this property.
+            Set to false if you want to sort but not group by this property.
+            </summary>
+    </member>
+    <member name="T:C1.Win.C1FlexGrid.SortableBindingList`1">
+      <summary>
+            Generic collection that supports data binding and advanced sorting
+            (<see cref="T:System.ComponentModel.IBindingListView" />).
+            <para>
+            This class is especially useful to provide data for grids that use
+            the <see cref="P:C1.Win.C1FlexGrid.C1FlexGridBase.GroupDescriptions" /> property.
+            </para></summary>
+      <typeparam name="T">The type of elements in the list.</typeparam>
+    </member>
+    <member name="M:C1.Win.C1FlexGrid.SortableBindingList`1.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:C1.Win.C1FlexGrid.SortableBindingList`1" /> class.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1FlexGrid.SortableBindingList`1.#ctor(System.Collections.Generic.IList{`0})">
+      <summary>
+            Initializes a new instance of the <see cref="T:C1.Win.C1FlexGrid.SortableBindingList`1" /> class.
+            </summary>
+      <param name="list">An <see cref="T:System.Collections.Generic.IList`1" /> of items to be contained in the <see cref="T:System.ComponentModel.BindingList`1" />.</param>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.SortableBindingList`1.SupportsSortingCore">
+      <summary>
+            Gets a value that indicates whether the list supports sorting.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.SortableBindingList`1.IsSortedCore">
+      <summary>
+            Gets a value that indicates whether the list is sorted.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.SortableBindingList`1.SortDirectionCore">
+      <summary>
+            Gets the direction in which the list is sorted.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.SortableBindingList`1.SortPropertyCore">
+      <summary>
+            Gets the first property descriptor used for sorting the list.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.SortableBindingList`1.SupportsAdvancedSorting">
+      <summary>
+            Gets a value that indicates whether the data source supports advanced sorting.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1FlexGrid.SortableBindingList`1.SortDescriptions">
+      <summary>
+            Gets the collection of sort descriptions currently applied to the data source.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1FlexGrid.SortableBindingList`1.ApplySort(System.ComponentModel.ListSortDescriptionCollection)">
+      <summary>
+            Sorts the data source based on the given <see cref="T:System.ComponentModel.ListSortDescriptionCollection" />.
+            </summary>
+      <param name="sorts">The <see cref="T:System.ComponentModel.ListSortDescriptionCollection" /> containing the sorts to apply to the data source.</param>
+    </member>
+    <member name="M:C1.Win.C1FlexGrid.SortableBindingList`1.RemoveSortCore">
+      <summary>
+            Removes any sorts currently applied to the list.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1FlexGrid.SortableBindingList`1.ApplySortCore(System.ComponentModel.PropertyDescriptor,System.ComponentModel.ListSortDirection)">
+      <summary>
+            Sorts the items on the list based on a single property.
+            </summary>
+      <param name="prop">A <see cref="T:System.ComponentModel.PropertyDescriptor" /> that specifies the property to sort on.</param>
+      <param name="direction">One of the <see cref="T:System.ComponentModel.ListSortDirection" />  values.</param>
+    </member>
     <member name="T:C1.Win.C1FlexGrid.Util.Styles.StyleContext">
       <summary>
             StyleContext contains a base Style definition and a list of
@@ -11901,6 +12235,36 @@
       <summary>
             Resumes updating the control after calls to the <see cref="M:C1.Win.C1FlexGrid.Util.BaseControls.ScrollableControl.BeginUpdate" /> method.
             </summary>
+    </member>
+    <member name="M:C1.Win.C1FlexGrid.Util.BaseControls.ScrollableControl.DeferUpdate">
+      <summary>
+            Suspends notifications until the returned <see cref="T:System.IDisposable" /> 
+            object is disposed.
+            </summary>
+      <returns>An <see cref="T:System.IDisposable" /> object that must be disposed to restore notifications.</returns>
+      <remarks>
+            This method is typically used in update blocks to perform batch updates efficiently
+            and safely.
+            </remarks>
+      <example>
+        <para>The example below shows how you can use the <b>DeferUpdate</b> method to suspend
+            notifications while setting the width of several columns.</para>
+        <para>Note that the call to the <b>DeferUpdate</b> method is placed in a <b>using</b>
+            statement, which automatically disposes of the object and restores updates
+            at the end of the block, even if the code within the block throws an exception.
+            This makes the code more readable and concise than calling the more traditional 
+            <b>BeginUpdate</b> and <b>EndUpdate</b> methods within a try/finally block.</para>
+        <code>
+            var grid = new C1FlexGrid();
+            using (grid.DeferUpdate())
+            {
+              foreach (Column col in grid.Columns)
+              {
+                col.Width = 100;
+              }
+            }
+            </code>
+      </example>
     </member>
     <member name="M:C1.Win.C1FlexGrid.Util.BaseControls.ScrollableControl.OnThemeChanged">
       <summary>

@@ -229,6 +229,551 @@
               <br /> The default is <see cref="F:System.String.Empty" />.
             </value>
     </member>
+    <member name="T:C1.Win.C1Input.C1DropDownControl">
+      <summary>
+            Represents a base drop-down control supporting up/down buttons.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.#ctor">
+      <summary>
+            Initializes a new instance of the C1DropDownControl class.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.Dispose(System.Boolean)">
+      <summary>
+            Releases the resources used by the C1DropDownControl.
+            </summary>
+      <param name="disposing">
+        <b>true</b> to release both managed and unmanaged resources; <b>false</b> to release only unmanaged resources.</param>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.AutoOpen">
+      <summary>
+            Gets or sets a value indicating whether to open the combo box when the control receives the focus.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.DropDownFormCreationTime">
+      <summary>
+            Determines the time when drop down form is created.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.ImagePlace">
+      <summary>
+            Has valid value only if ShowValueImage returns true.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.DropDownStyle">
+      <summary>
+            Gets or sets the style of the combo box.
+            </summary>
+      <remarks>
+            The DropDownStyle property specifies whether the text portion can be edited.
+            <para>
+            If the value is Default, the text is editable and the dropdown list is displayed by clicking the down arrow.
+            </para><para>
+            If the value is DropDownList, the text is not editable and the dropdown list is displayed by clicking any part of the control. 
+            </para></remarks>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.Image">
+      <summary>
+            Gets or sets the button image.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.ImageIndex">
+      <summary>
+            Gets or sets the index of the button image in the ImageList.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.ImageKey">
+      <summary>
+            Gets or sets the key of the button image in the ImageList.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.ImageList">
+      <summary>
+            Gets or sets the ImageList to get the images to display in the drop down items.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.ImagePadding">
+      <summary>
+            Gets or sets the image padding.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.VisibleButtons">
+      <summary>
+            Gets or sets a value specifying which buttons are visible. The default is (UpDown Or DropDown).
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.ShowDropDownButton">
+      <summary>
+            Determines if the dropdown button is visible.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.ShowUpDownButtons">
+      <summary>
+            Determines if the up/down buttons are visible.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.ShowModalButton">
+      <summary>
+            Determines if the modal button is visible.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.ShowCustomButton">
+      <summary>
+            Determines if the modal button is visible.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.InterceptArrowKeys">
+      <summary>
+            Determines if the up/down buttons intercept and handle Up and Down arrow keys.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.DropDownFormClassName">
+      <summary>
+            Specifies the class name of a Form serving as the dropdown window.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.ShouldSerializeDropDownFormClassName">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.ResetDropDownFormClassName">
+      <summary>
+            This method is for internal use only.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.DropDownForm">
+      <summary>
+            Returns dropdown form instance associated with the control.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.DefaultDropDownFormClassName">
+      <summary>
+            Specifies form class that is used by default as the dropdown for the control.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.DefaultDropDownForm">
+      <summary>
+            This method is for internal use only.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.DefaultSize">
+      <summary>
+            This method is for internal use only.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.DroppedDown">
+      <summary>
+            Run-time read-only property indicating if the dropdown is currently open.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.ButtonWidth">
+      <summary>
+            Specifies the button width instead of using the default width.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.GapHeight">
+      <summary>
+            Distance in pixels between the control edge and the dropdown.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.MouseClickPassThrough">
+      <summary>
+            Gets or sets whether the mouse click event is consumed or passed through after closing the dropdown.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.DropDownFormAlign">
+      <summary>
+            Alignment of the dropdown form relative to the control.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.ButtonCursor">
+      <summary>
+            The cursor that is displayed when the mouse is over a button.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.ShouldSerializeButtonCursor">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.ResetButtonCursor">
+      <summary>
+            This method is for internal use only.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.ButtonImages">
+      <summary>
+            Gets or sets the images for buttons
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.ShouldSerializeButtonImages">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.ResetButtonImages">
+      <summary>
+            This method is for internal use only.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.Cursor">
+      <summary>
+            Gets or sets the cursor that is displayed when the mouse pointer is over the control.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.CustomAreaPlace">
+      <summary>
+            This property is for internal use only.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.CustomAreaWidth">
+      <summary>
+            This property is for internal use only.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.UpDownButtonAlignment">
+      <summary>
+            Gets or sets the alignment of the spin button. 
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.SetProposedValue(System.Object)">
+      <summary>
+            This method works exactly as setting the Value property, except that it does not change the internal variable
+            storing the value before editing, so the user can press Esc and restore the previous value. 
+            This method works only in edit  or DropDownList mode. If the control is not in edit or DropDownList mode, this methods does nothing.
+            </summary>
+      <param name="value">Value to set to the control.</param>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OpenDropDown">
+      <summary>
+            Shows the dropdown.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.CloseDropDown">
+      <summary>
+            Closes the dropdown.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.CloseDropDown(System.Boolean)">
+      <summary>
+            Closes the dropdown.
+            </summary>
+      <param name="doPost">
+      </param>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.SpinUp">
+      <summary>
+              Performs the spin up action.
+            </summary>
+      <remarks>
+              This method has the same behavior as pressing the up key.
+            </remarks>
+      <seealso cref="M:C1.Win.C1Input.C1DropDownControl.SpinDown" />
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.SpinDown">
+      <summary>
+              Performs the spin down action.
+            </summary>
+      <remarks>
+              This method has the same behavior as pressing the down key.
+            </remarks>
+      <seealso cref="M:C1.Win.C1Input.C1DropDownControl.SpinUp" />
+    </member>
+    <member name="E:C1.Win.C1Input.C1DropDownControl.DropDownOpening">
+      <summary>
+            Occurs just before the dropdown is opened.
+            </summary>
+    </member>
+    <member name="E:C1.Win.C1Input.C1DropDownControl.BeforeDropDownOpen">
+      <summary>
+            Occurs just before the dropdown is opened.
+            </summary>
+    </member>
+    <member name="E:C1.Win.C1Input.C1DropDownControl.DropDownOpened">
+      <summary>
+            Occurs after the dropdown is opened.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OnDropDownOpening(System.EventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OnBeforeDropDownOpen(System.ComponentModel.CancelEventArgs)">
+      <summary>
+      </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OnDropDownOpened(System.EventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="E:C1.Win.C1Input.C1DropDownControl.DropDownClosed">
+      <summary>
+            Occurs when the dropdown has been closed.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OnDropDownClosed(C1.Win.C1Input.DropDownClosedEventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="E:C1.Win.C1Input.C1DropDownControl.UpDownButtonClick">
+      <summary>
+            Occurs when UpDown buttons are clicked.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OnUpDownButtonClick(C1.Win.C1Input.UpDownButtonClickEventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="E:C1.Win.C1Input.C1DropDownControl.ModalButtonClick">
+      <summary>
+            Occurs when the Modal button is clicked.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OnModalButtonClick(System.EventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="E:C1.Win.C1Input.C1DropDownControl.CustomButtonClick">
+      <summary>
+            Occurs when the Custom button is clicked.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OnCustomButtonClick(System.EventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="E:C1.Win.C1Input.C1DropDownControl.DropDownFormAlignChanged">
+      <summary>
+            Occurs when the value of the DropDownFormAlign property has changed.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OnDropDownFormAlignChanged(System.EventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="E:C1.Win.C1Input.C1DropDownControl.DropDownAlignChanged">
+      <summary>
+            Occurs when the value of the DropDownAlign property has changed.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OnDropDownAlignChanged(System.EventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="E:C1.Win.C1Input.C1DropDownControl.ButtonCursorChanged">
+      <summary>
+            Event fired when the value of ButtonCursor property is changed.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OnButtonCursorChanged(System.EventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OnCreateDropDownFrom(C1.Win.C1Input.DropDownForm)">
+      <summary>
+            Called when a drop down form is created.
+            </summary>
+      <param name="dropDownForm">The new dropdown form.</param>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.MinSizeInternal">
+      <summary>
+            This method is for internal use only.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.CalcSizeInternal">
+      <summary>
+            This method is for internal use only.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.GetImageSize">
+      <summary>
+            Returns image size.
+            </summary>
+      <returns>The size object.</returns>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.ShowImage">
+      <summary>
+            Determines if image should be shown.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.DrawCustomArea(System.Drawing.Graphics)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="g">
+      </param>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OnReadOnlyChanged(System.EventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OnEnabledChanged(System.EventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.WndProc(System.Windows.Forms.Message@)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="m">
+      </param>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OnMouseLeave(System.EventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OnGotFocus(System.EventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OnLostFocus(System.EventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.ProcessKeyPress(System.Windows.Forms.KeyPressEventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.ProcessKeyDown(System.Windows.Forms.KeyEventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.ProcessKeyUp(System.Windows.Forms.KeyEventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OnTextChanged(System.EventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OnValueChanged(System.EventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OnMouseWheel(System.Windows.Forms.MouseEventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.OnCursorChanged(System.EventArgs)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.ShouldHandleEscape">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.PreProcessMessage(System.Windows.Forms.Message@)">
+      <summary>
+            This method is for internal use only.
+            </summary>
+      <param name="m">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.DrawImage(System.Drawing.Graphics,System.Drawing.Rectangle)">
+      <summary>
+            Draws image in the control.
+            </summary>
+      <param name="g">Grapthics object.</param>
+      <param name="bounds">Rectangle to draw image in.</param>
+    </member>
+    <member name="M:C1.Win.C1Input.C1DropDownControl.DrawImage(System.Drawing.Graphics,System.IntPtr,System.Drawing.Rectangle)">
+      <summary>
+            Draws image in the control.
+            </summary>
+      <param name="g">Grapthics object.</param>
+      <param name="dc">Device context.</param>
+      <param name="bounds">Rectangle to draw image in.</param>
+    </member>
+    <member name="P:C1.Win.C1Input.C1DropDownControl.DefaultThemeRootPath">
+      <summary>
+            Default path 
+            </summary>
+    </member>
     <member name="T:C1.Win.C1Input.AutoSuggestMode">
       <summary>
             Gets or sets a value which determines the filtering criteria for items which appear in the dropdown that is displayed when the AutoCompleteMode property is set to 'Suggest' or 'SuggestAppend'.
@@ -737,7 +1282,7 @@
     </member>
     <member name="E:C1.Win.C1Input.C1ComboBox.SelectedIndexChanged">
       <summary>
-            Occurs when the <see cref="E:C1.Win.C1Input.C1ComboBox.SelectedIndexChanged" /> changes.
+            Occurs when the <see cref="P:C1.Win.C1Input.C1ComboBox.SelectedIndex" /> changes.
             </summary>
     </member>
     <member name="M:C1.Win.C1Input.C1ComboBox.CreateItemsCollection">
@@ -820,14 +1365,123 @@
             Represents collection of <see cref="T:C1.Win.C1Input.C1ComboBox" /> drop down items.
             </summary>
     </member>
-    <member name="E:C1.Win.C1Input.ComboBoxItemList.ListChanged">
+    <member name="M:C1.Win.C1Input.ComboBoxItemList.#ctor(C1.Win.C1Input.C1ComboBox)">
       <summary>
-            Occurs when an item is added, removed, changed, moved, or the entire list is refreshed.
+            Initializes a new instance of the <see cref="T:C1.Win.C1Input.ComboBoxItemList" /> class.
             </summary>
     </member>
-    <member name="M:C1.Win.C1Input.ComboBoxItemList.OnListChanged">
+    <member name="P:C1.Win.C1Input.ComboBoxItemList.Item(System.Int32)">
       <summary>
-            Raises the <see cref="E:C1.Win.C1Input.ComboBoxItemList.ListChanged" /> event with the provided arguments.
+            Gets or sets the item at the specified index.
+            </summary>
+    </member>
+    <member name="P:C1.Win.C1Input.ComboBoxItemList.Count">
+      <summary>
+            Gets the number of items contained in the <see cref="T:C1.Win.C1Input.ComboBoxItemList" /> instance.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.ComboBoxItemList.Add(System.Object)">
+      <summary>
+            Adds an item to the <see cref="T:C1.Win.C1Input.ComboBoxItemList" />.
+            </summary>
+      <param name="value">The <see cref="T:System.Object" /> to add to the <see cref="T:C1.Win.C1Input.ComboBoxItemList" />.</param>
+    </member>
+    <member name="M:C1.Win.C1Input.ComboBoxItemList.AddRange(System.Collections.Generic.IEnumerable{System.Object})">
+      <summary>
+            Adds items of the specified collection to the end of the <see cref="T:C1.Win.C1Input.ComboBoxItemList" />.
+            </summary>
+      <param name="collection">The specified collection of items.</param>
+    </member>
+    <member name="M:C1.Win.C1Input.ComboBoxItemList.Clear">
+      <summary>
+            Removes all items from the <see cref="T:C1.Win.C1Input.ComboBoxItemList" />.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.ComboBoxItemList.Contains(System.Object)">
+      <summary>
+            Determines whether an item is in the <see cref="T:C1.Win.C1Input.ComboBoxItemList" />.
+            </summary>
+      <param name="value">The item to locate in the collection.</param>
+    </member>
+    <member name="M:C1.Win.C1Input.ComboBoxItemList.IndexOf(System.Object)">
+      <summary>
+            Searches for the specified item and returns the zero-based index.
+            </summary>
+      <param name="value">The specified item.</param>
+    </member>
+    <member name="M:C1.Win.C1Input.ComboBoxItemList.Insert(System.Int32,System.Object)">
+      <summary>
+            Inserts item into the <see cref="T:C1.Win.C1Input.ComboBoxItemList" /> at the specified index.
+            </summary>
+      <param name="index">Index of the item.</param>
+      <param name="value">The specified item.</param>
+    </member>
+    <member name="M:C1.Win.C1Input.ComboBoxItemList.InsertRange(System.Int32,System.Collections.Generic.IEnumerable{System.Object})">
+      <summary>
+            Inserts items into the <see cref="T:C1.Win.C1Input.ComboBoxItemList" /> at the specified index.
+            </summary>
+      <param name="index">Index of the item.</param>
+      <param name="collection">The specified collection of items.</param>
+    </member>
+    <member name="M:C1.Win.C1Input.ComboBoxItemList.Remove(System.Object)">
+      <summary>
+            Removes the first occurrence of a specified item from the collection.
+            </summary>
+      <param name="value">The specified item.</param>
+    </member>
+    <member name="M:C1.Win.C1Input.ComboBoxItemList.RemoveAt(System.Int32)">
+      <summary>
+            Removes the item at the specified index of the collection.
+            </summary>
+      <param name="index">The specified index.</param>
+    </member>
+    <member name="M:C1.Win.C1Input.ComboBoxItemList.RemoveAll(System.Predicate{System.Object})">
+      <summary>
+            Removes all the items that match the conditions defined by the specified predicate.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.ComboBoxItemList.RemoveRange(System.Int32,System.Int32)">
+      <summary>
+            Removes a range of elements from the <see cref="T:C1.Win.C1Input.ComboBoxItemList" />.
+            </summary>
+      <param name="index">Index of the item.</param>
+      <param name="count">The number of items to remove.</param>
+    </member>
+    <member name="M:C1.Win.C1Input.ComboBoxItemList.GetEnumerator">
+      <summary>
+            Returns an enumerator that iterates through the <see cref="T:C1.Win.C1Input.ComboBoxItemList" />.
+            </summary>
+    </member>
+    <member name="E:C1.Win.C1Input.ComboBoxItemList.CollectionChanged">
+      <summary>
+            Occurs when the <see cref="T:C1.Win.C1Input.ComboBoxItemList" /> changes, either by adding or removing an item.
+            </summary>
+      <remarks>
+            see <seealso cref="T:System.Collections.Specialized.INotifyCollectionChanged" /></remarks>
+    </member>
+    <member name="M:C1.Win.C1Input.ComboBoxItemList.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+      <summary>
+            Fires the CollectionChanged event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.ComboBoxItemList.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Int32)">
+      <summary>
+            Fires the CollectionChanged event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.ComboBoxItemList.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.Generic.IEnumerable{System.Object})">
+      <summary>
+            Fires the CollectionChanged event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.ComboBoxItemList.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.Generic.IEnumerable{System.Object},System.Int32)">
+      <summary>
+            Fires the CollectionChanged event.
+            </summary>
+    </member>
+    <member name="M:C1.Win.C1Input.ComboBoxItemList.OnCollectionReset">
+      <summary>
+            Fires the CollectionChanged event.
             </summary>
     </member>
     <member name="T:C1.Win.C1Input.ComboBoxStyle">
@@ -8526,551 +9180,6 @@
             This method is for internal use only.
             </summary>
       <returns>True if VisualStyleBaseStyle should be serialized, false otherwise.</returns>
-    </member>
-    <member name="T:C1.Win.C1Input.C1DropDownControl">
-      <summary>
-            Represents a base drop-down control supporting up/down buttons.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.DefaultThemeRootPath">
-      <summary>
-            Default path 
-            </summary>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.#ctor">
-      <summary>
-            Initializes a new instance of the C1DropDownControl class.
-            </summary>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.Dispose(System.Boolean)">
-      <summary>
-            Releases the resources used by the C1DropDownControl.
-            </summary>
-      <param name="disposing">
-        <b>true</b> to release both managed and unmanaged resources; <b>false</b> to release only unmanaged resources.</param>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.AutoOpen">
-      <summary>
-            Gets or sets a value indicating whether to open the combo box when the control receives the focus.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.DropDownFormCreationTime">
-      <summary>
-            Determines the time when drop down form is created.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.ImagePlace">
-      <summary>
-            Has valid value only if ShowValueImage returns true.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.DropDownStyle">
-      <summary>
-            Gets or sets the style of the combo box.
-            </summary>
-      <remarks>
-            The DropDownStyle property specifies whether the text portion can be edited.
-            <para>
-            If the value is Default, the text is editable and the dropdown list is displayed by clicking the down arrow.
-            </para><para>
-            If the value is DropDownList, the text is not editable and the dropdown list is displayed by clicking any part of the control. 
-            </para></remarks>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.Image">
-      <summary>
-            Gets or sets the button image.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.ImageIndex">
-      <summary>
-            Gets or sets the index of the button image in the ImageList.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.ImageKey">
-      <summary>
-            Gets or sets the key of the button image in the ImageList.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.ImageList">
-      <summary>
-            Gets or sets the ImageList to get the images to display in the drop down items.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.ImagePadding">
-      <summary>
-            Gets or sets the image padding.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.VisibleButtons">
-      <summary>
-            Gets or sets a value specifying which buttons are visible. The default is (UpDown Or DropDown).
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.ShowDropDownButton">
-      <summary>
-            Determines if the dropdown button is visible.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.ShowUpDownButtons">
-      <summary>
-            Determines if the up/down buttons are visible.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.ShowModalButton">
-      <summary>
-            Determines if the modal button is visible.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.ShowCustomButton">
-      <summary>
-            Determines if the modal button is visible.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.InterceptArrowKeys">
-      <summary>
-            Determines if the up/down buttons intercept and handle Up and Down arrow keys.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.DropDownFormClassName">
-      <summary>
-            Specifies the class name of a Form serving as the dropdown window.
-            </summary>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.ShouldSerializeDropDownFormClassName">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.ResetDropDownFormClassName">
-      <summary>
-            This method is for internal use only.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.DropDownForm">
-      <summary>
-            Returns dropdown form instance associated with the control.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.DefaultDropDownFormClassName">
-      <summary>
-            Specifies form class that is used by default as the dropdown for the control.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.DefaultDropDownForm">
-      <summary>
-            This method is for internal use only.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.DefaultSize">
-      <summary>
-            This method is for internal use only.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.DroppedDown">
-      <summary>
-            Run-time read-only property indicating if the dropdown is currently open.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.ButtonWidth">
-      <summary>
-            Specifies the button width instead of using the default width.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.GapHeight">
-      <summary>
-            Distance in pixels between the control edge and the dropdown.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.MouseClickPassThrough">
-      <summary>
-            Gets or sets whether the mouse click event is consumed or passed through after closing the dropdown.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.DropDownFormAlign">
-      <summary>
-            Alignment of the dropdown form relative to the control.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.ButtonCursor">
-      <summary>
-            The cursor that is displayed when the mouse is over a button.
-            </summary>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.ShouldSerializeButtonCursor">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.ResetButtonCursor">
-      <summary>
-            This method is for internal use only.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.ButtonImages">
-      <summary>
-            Gets or sets the images for buttons
-            </summary>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.ShouldSerializeButtonImages">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.ResetButtonImages">
-      <summary>
-            This method is for internal use only.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.Cursor">
-      <summary>
-            Gets or sets the cursor that is displayed when the mouse pointer is over the control.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.CustomAreaPlace">
-      <summary>
-            This property is for internal use only.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.CustomAreaWidth">
-      <summary>
-            This property is for internal use only.
-            </summary>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.UpDownButtonAlignment">
-      <summary>
-            Gets or sets the alignment of the spin button. 
-            </summary>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.SetProposedValue(System.Object)">
-      <summary>
-            This method works exactly as setting the Value property, except that it does not change the internal variable
-            storing the value before editing, so the user can press Esc and restore the previous value. 
-            This method works only in edit  or DropDownList mode. If the control is not in edit or DropDownList mode, this methods does nothing.
-            </summary>
-      <param name="value">Value to set to the control.</param>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OpenDropDown">
-      <summary>
-            Shows the dropdown.
-            </summary>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.CloseDropDown">
-      <summary>
-            Closes the dropdown.
-            </summary>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.CloseDropDown(System.Boolean)">
-      <summary>
-            Closes the dropdown.
-            </summary>
-      <param name="doPost">
-      </param>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.SpinUp">
-      <summary>
-              Performs the spin up action.
-            </summary>
-      <remarks>
-              This method has the same behavior as pressing the up key.
-            </remarks>
-      <seealso cref="M:C1.Win.C1Input.C1DropDownControl.SpinDown" />
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.SpinDown">
-      <summary>
-              Performs the spin down action.
-            </summary>
-      <remarks>
-              This method has the same behavior as pressing the down key.
-            </remarks>
-      <seealso cref="M:C1.Win.C1Input.C1DropDownControl.SpinUp" />
-    </member>
-    <member name="E:C1.Win.C1Input.C1DropDownControl.DropDownOpening">
-      <summary>
-            Occurs just before the dropdown is opened.
-            </summary>
-    </member>
-    <member name="E:C1.Win.C1Input.C1DropDownControl.BeforeDropDownOpen">
-      <summary>
-            Occurs just before the dropdown is opened.
-            </summary>
-    </member>
-    <member name="E:C1.Win.C1Input.C1DropDownControl.DropDownOpened">
-      <summary>
-            Occurs after the dropdown is opened.
-            </summary>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OnDropDownOpening(System.EventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OnBeforeDropDownOpen(System.ComponentModel.CancelEventArgs)">
-      <summary>
-      </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OnDropDownOpened(System.EventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="E:C1.Win.C1Input.C1DropDownControl.DropDownClosed">
-      <summary>
-            Occurs when the dropdown has been closed.
-            </summary>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OnDropDownClosed(C1.Win.C1Input.DropDownClosedEventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="E:C1.Win.C1Input.C1DropDownControl.UpDownButtonClick">
-      <summary>
-            Occurs when UpDown buttons are clicked.
-            </summary>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OnUpDownButtonClick(C1.Win.C1Input.UpDownButtonClickEventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="E:C1.Win.C1Input.C1DropDownControl.ModalButtonClick">
-      <summary>
-            Occurs when the Modal button is clicked.
-            </summary>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OnModalButtonClick(System.EventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="E:C1.Win.C1Input.C1DropDownControl.CustomButtonClick">
-      <summary>
-            Occurs when the Custom button is clicked.
-            </summary>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OnCustomButtonClick(System.EventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="E:C1.Win.C1Input.C1DropDownControl.DropDownFormAlignChanged">
-      <summary>
-            Occurs when the value of the DropDownFormAlign property has changed.
-            </summary>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OnDropDownFormAlignChanged(System.EventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="E:C1.Win.C1Input.C1DropDownControl.DropDownAlignChanged">
-      <summary>
-            Occurs when the value of the DropDownAlign property has changed.
-            </summary>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OnDropDownAlignChanged(System.EventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="E:C1.Win.C1Input.C1DropDownControl.ButtonCursorChanged">
-      <summary>
-            Event fired when the value of ButtonCursor property is changed.
-            </summary>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OnButtonCursorChanged(System.EventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OnCreateDropDownFrom(C1.Win.C1Input.DropDownForm)">
-      <summary>
-            Called when a drop down form is created.
-            </summary>
-      <param name="dropDownForm">The new dropdown form.</param>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.MinSizeInternal">
-      <summary>
-            This method is for internal use only.
-            </summary>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.CalcSizeInternal">
-      <summary>
-            This method is for internal use only.
-            </summary>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.GetImageSize">
-      <summary>
-            Returns image size.
-            </summary>
-      <returns>The size object.</returns>
-    </member>
-    <member name="P:C1.Win.C1Input.C1DropDownControl.ShowImage">
-      <summary>
-            Determines if image should be shown.
-            </summary>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.DrawCustomArea(System.Drawing.Graphics)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="g">
-      </param>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OnReadOnlyChanged(System.EventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OnEnabledChanged(System.EventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.WndProc(System.Windows.Forms.Message@)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="m">
-      </param>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OnMouseLeave(System.EventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OnGotFocus(System.EventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OnLostFocus(System.EventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.ProcessKeyPress(System.Windows.Forms.KeyPressEventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.ProcessKeyDown(System.Windows.Forms.KeyEventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.ProcessKeyUp(System.Windows.Forms.KeyEventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OnTextChanged(System.EventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OnValueChanged(System.EventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OnMouseWheel(System.Windows.Forms.MouseEventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.OnCursorChanged(System.EventArgs)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="e">
-      </param>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.ShouldHandleEscape">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.PreProcessMessage(System.Windows.Forms.Message@)">
-      <summary>
-            This method is for internal use only.
-            </summary>
-      <param name="m">
-      </param>
-      <returns>
-      </returns>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.DrawImage(System.Drawing.Graphics,System.Drawing.Rectangle)">
-      <summary>
-            Draws image in the control.
-            </summary>
-      <param name="g">Grapthics object.</param>
-      <param name="bounds">Rectangle to draw image in.</param>
-    </member>
-    <member name="M:C1.Win.C1Input.C1DropDownControl.DrawImage(System.Drawing.Graphics,System.IntPtr,System.Drawing.Rectangle)">
-      <summary>
-            Draws image in the control.
-            </summary>
-      <param name="g">Grapthics object.</param>
-      <param name="dc">Device context.</param>
-      <param name="bounds">Rectangle to draw image in.</param>
     </member>
     <member name="T:C1.Win.C1Input.CalendarType">
       <summary>
